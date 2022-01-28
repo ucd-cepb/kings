@@ -5,36 +5,56 @@ library("xml2")
 library(polite)
 library(httr)
 library(tidyverse)
+library(robotstxt)
 pacman::p_load(RSelenium, purrr, rvest, glue)
 
 gsp_url <- "https://sgma.water.ca.gov/portal/gsp/all/"
 paths_allowed(domain = gsp_url)
 #returns TRUE
+
 gsp_session <- bow(gsp_url, force = T)
+gsp_session
 #crawl delay 5 sec
 #15 rules for 4 bots
 
-driver <- rsDriver(port = 4444L, browser = "firefox")
+#requires rtools or xquartz
+#file_path <- getwd() %>% str_replace_all("/", "\\\\\\\\")
+
+
+pdf_xls_prof <- makeFirefoxProfile(list(
+   "pdfjs.disabled"=TRUE,
+   "brower.download.folderList" = 2L,
+   "browser.helperApps.alwaysAsk.force" = F,
+   "browser.download.manager.showWhenStarting" = F,
+   "browser.download.manager.showAlertOnComplete" = F,
+   "plugin.scan.plid.all"=FALSE,
+   "plugin.scan.Acrobat" = "99.0",
+   #"browser.helperApps.neverAsk.saveToDisk" = c('application/pdf','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/excel','application/x-excel'),
+   "browser.helperApps.neverAsk.saveToDisk" = 'application/pdf',
+   "browser.download.dir" = './data_raw'))
+driver <- rsDriver(port = 4445L, browser = "firefox", extraCapabilities = pdf_xls_prof)
+#driver <- remoteDriver$new(port = 4444L, browser = "firefox", extraCapabilities = pdf_xls_prof)
 remote_driver <- driver$client
-remote_driver$open()
+#remote_driver$open()
 remote_driver$navigate(gsp_url)
 Sys.sleep(5)
 
 #find num entries button; changes to 100 entries per page
 #TODO: switch methods to using button at bottom of page
-#there is a bug here
 num_entries_tmp <-remote_driver$findElement(using = "name", "gsp-tb_length")
+#move pointer to dropdown
+remote_driver$mouseMoveToLocation(webElement = num_entries_tmp)
+remote_driver$click(buttonId = 'LEFT')
 num_entries_btn <- remote_driver$findElement(using = "css selector","option[value='100']")
 #move pointer to button
 remote_driver$mouseMoveToLocation(webElement = num_entries_btn)
-
+num_entries_btn$highlightElement()
 #click on num entries button
-num_entries_btn$click()
+num_entries_btn$clickElement()
 Sys.sleep(5)
 
-#alternate method for code below
-#bug:
-#gsp_sel_portal <- remote_driver$getPageSource(gsp_url)
+
+gsp_sel_portal <- remote_driver$getPageSource(gsp_url)
 
 # reads HTML page:
 gsp_html_readout <- gsp_sel_portal[[1]] %>% read_html() 
@@ -52,6 +72,7 @@ for(index in 1:length(gsp_td_unique)){
 links = NULL
 basin_names = NULL
 linkless_names = NULL
+#works for <=100 entries. If >100 entries, must cycle through each page using a class = "paginate_button next" while it exists
 for(i in 1:length(gsp_basin_href)){
    for(j in 1:length(gsp_basin_href[[i]])){
       linkless_names <- append(linkless_names, gsp_basin_href[[i]][[j]] %>% html_elements("strong") %>% html_text())
@@ -60,55 +81,45 @@ for(i in 1:length(gsp_basin_href)){
    }
 }
 
-for(i in 1:length(linkless_names)){
-   links <- append(links, NA)
+if(length(linkless_names)>0){
+   for(i in 1:length(linkless_names)){
+      links <- append(links, NA)
+   }
 }
-   
-links_and_basin_names <- bind_cols(links, c(basin_names, linkless_names))
 
-#TODO: navigate to each page
-#TODO: add id number from url to GSP ID in spreadsheet
-#TODO: find GSP_local_id from each page and add it to spreadsheet
-#TODO: find gsp pdfs and spreadsheets from each page
+links_and_basin_names <- bind_cols(link = links, basin = c(basin_names, linkless_names))
+#add numeric id "gsp_num_id" to spreadsheet
+links_and_basin_names <- links_and_basin_names %>% 
+   mutate(code = (substr(links_and_basin_names$link, 21,length(links_and_basin_names$link))))%>% 
+   mutate(num_zeros = 4 - str_length(code)) %>% 
+   mutate(gsp_num_id = paste(ifelse(num_zeros > 0, "0", ""),ifelse(num_zeros > 1,"0",""),ifelse(num_zeros > 2, "0",""),code,sep = "")) %>% 
+   select(!c(code,num_zeros)) %>% 
+   #find GSP_local_id and add it to spreadsheet
+   mutate(gsp_local_id = gsp_table[[1]]['GSP Local ID'])
 
-#all hyperlinks in table
-#gsp_all_tbl_links <- gsp_html_readout %>% html_elements("td a") 
-
+#go to webpage
+pdf_link <- NULL
+xlsx_link <- NULL
+#1-3 successfully downloaded
+for(i in 4:4){
+   if(!is.na(links_and_basin_names$link[i])){
+      remote_driver$navigate(paste("https://sgma.water.ca.gov",links_and_basin_names$link[i], sep = ""))
+      #pdf_download
+      # Specify URL where file is stored
+      pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
+      # Specify destination where file should be saved
+      destfilepdf <- paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.pdf',sep= "")
+      download.file(pdf_link[[1]], destfilepdf, timeout = 300)
+      Sys.sleep(5)
+      print(paste("pdf",i,"downloaded"))
+      #xlsx_download
+      xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
+      destfilexlsx <- paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.xlsx',sep= "")
+      download.file(xlsx_link[[1]], destfilexlsx, timeout = 120)
+      print(paste("spreadsheet",i,"downloaded"))
+      Sys.sleep(5)
+   }
+}
 
 remote_driver$close()
 rm(driver)
-
-Sys.sleep(1)
-
-
-
-
-#table is found at xml_child(xml_child(xml_child(xml_child(gsp_web_portal, 2), 1), 3), 6)
-
-#gsp-tb is found at xml_attrs(xml_child(xml_child(xml_child(xml_child(gsp_web_portal, 2), 1), 3), 6))[["id"]]
-
-#table-condensed... is found at xml_attrs(xml_child(xml_child(xml_child(xml_child(gsp_web_portal, 2), 1), 3), 6))[["class"]]
-
-#syntax notes
-# #is for ids
-# p is for elements p
-# . is for classes
-# p.certain selects p elements of a class "certain"
-# Then find elements that match a css selector or XPath expression
-# using html_elements(). 
-# p a selects all a elements that are a child of p
-
-#body class chrome GSP > div class container > div class content > div id gsp-tb-wrapper >
-   #table id gsp-tb > thead is the header
-
-#body class chrome GSP > div class container > div class content > div id gsp-tb-wrapper >
-#table id gsp-tb > tbody is the body of the table, and ...tbody > tr role = "row">
-# td class = "sorting_2" > a href "/portal/gsp/preview/[IDnum]" is the portal to the gsp page
-
-#body class chrome GSP > div class container > div class content > div id gsp-tb-wrapper >
-#div class bottom is the page switcher
-
-
-
-#saves each xls locally
-#saves each pdf locally
