@@ -1,24 +1,26 @@
 # kings
 analyzing CA SGMA GSPs to understand groundwater management networks
 
-tentative outline of scripts and functions:
+outline of scripts and functions:
 
 sgma_web_scraper:
-uses rvest
-1) takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
-2) saves each plan summary in data_raw
-3) saves each pdf in data_raw
+uses rselenium and rvest:
+1) takes the numeric id for each GSP, basin name, GSP local id if applicable,
+and the link to the webpage for that GSP if applicable, and writes them to gsp_ids.csv
+2) saves each plan summary spreadsheet in data_raw
+3) saves each plan pdf in data_raw
 
+TODO
 gsp_xls_scraper:
 1) takes an xls file and identifies the pdf sections associated with each
 required element of a management plan, saves this info as a data frame
 
+TODO
 gsp_pdf_scraper:
 uses tokenizer
-use tabulizer?
+may use tabulizer
 1) turns each pdf into a .txt file with each page as one line
 2) identifies the location of each section header
-3) creates a folder of .txt files, where each file contains the text under each section
 
 gsp_element_compiler:
 1) associates each required element of the gsp with its corresponding section .txt files, as a long dataframe
