@@ -69,7 +69,7 @@ consolidate_pgs <- function(tbl) {
    #bind_rows to new table
    all_pages <- data.table(bind_rows(cat_pages, subcat_pages, plancontent_pages))
    #create temp column that is a vector of page ranges
-   all_pages <- add_column(all_pages, page_ranges = strsplit(all_pages$page_num, split = ", "))
+   all_pages <- add_column(all_pages, page_ranges = strsplit(all_pages$page_num, split = ",\\s*"))
    #split this into two new columns that represent start and end pages
    all_pages <- add_column(all_pages, starts_ends = lapply(all_pages$page_ranges, strsplit, split = ":"))
    all_pages <- add_column(all_pages, page_vector = list(NA))
