@@ -10,14 +10,17 @@ and the link to the webpage for that GSP if applicable, and writes them to gsp_i
 2) saves each plan summary spreadsheet in data_raw
 3) saves each plan pdf in data_raw
 
-TODO
 gsp_xls_scraper:
-1) takes an xls file and identifies the pdf sections associated with each
-required element of a management plan, saves this info as a data frame
-
+includes create_page_key, which takes an xlsx file and returns a clean data table with page numbers in the page_vector column that can be used to subset pdf_text to retrieve the pages associated with a plan element. 
+Calls two smaller functions: 
+   read_plan_element reads & cleans Elements of the Plan xlsx, tagging sections and subsections.
+   consolidate_pgs consolidates the page numbers associated with each objective
+   
+   
 TODO
 gsp_pdf_scraper:
-uses tokenizer
+uses pdftools
+may use tokenizer
 may use tabulizer
 1) turns each pdf into a .txt file with each page as one line
 2) identifies the location of each section header

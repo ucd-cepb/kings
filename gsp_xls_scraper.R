@@ -4,11 +4,10 @@ library(tidyverse)
 library(readxl)
 library(data.table)
 
-#test: file = "data_raw/gsp_num_id_0065.xlsx"
-
 create_page_key <- function(file){
    plan <- read_plan_element(file)
-   return(consolidate_pgs(plan))
+   clean_plan <- consolidate_pgs(plan)
+   return(clean_plan)
 }
 read_plan_element <- function(file){
    gsp_num_id <- substr(file,21,24)
@@ -72,7 +71,7 @@ consolidate_pgs <- function(tbl) {
    #create temp column that is a vector of page ranges
    all_pages <- add_column(all_pages, page_ranges = strsplit(all_pages$page_num, split = ", "))
    #split this into two new columns that represent start and end pages
-   all_pages <- add_column(all_pages, starts_ends = lapply(all_dt$page_ranges, strsplit, split = ":"))
+   all_pages <- add_column(all_pages, starts_ends = lapply(all_pages$page_ranges, strsplit, split = ":"))
    all_pages <- add_column(all_pages, page_vector = list(NA))
    
    cvector <- NULL
