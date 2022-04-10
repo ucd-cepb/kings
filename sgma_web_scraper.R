@@ -41,7 +41,7 @@ basin_names = NULL
 gsp_local_id = NULL
 new_page = T
 
-#for each page
+#for each page of the table
 while(new_page){
    gsp_sel_portal <- remote_driver$getPageSource(gsp_url)
    # reads HTML page:
@@ -98,24 +98,35 @@ links_and_basin_names <- links_and_basin_names %>%
 pdf_link <- NULL
 xlsx_link <- NULL
 options(timeout=600)
-#1-end successfully downloaded
+#checks whether pdf has been downloaded
 for(i in 1:length(links_and_basin_names$link)){
-   if(!is.na(links_and_basin_names$link[i])){
+   #checks whether pdf and xlsx have been downloaded
+   if(!is.na(links_and_basin_names$link[i]) & 
+      (!file.exists(paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.pdf',sep= "")) | 
+       !file.exists(paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.xlsx',sep= "")))){
       remote_driver$navigate(paste("https://sgma.water.ca.gov",links_and_basin_names$link[i], sep = ""))
       #pdf_download
       # Specify URL where file is stored
       pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
       # Specify destination where file should be saved
       destfilepdf <- paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.pdf',sep= "")
-      download.file(pdf_link[[1]], destfilepdf, timeout = 600)
-      Sys.sleep(5)
-      print(paste("pdf",i,"downloaded"))
+      if(!file.exists(paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.pdf',sep= ""))){
+         download.file(pdf_link[[1]], destfilepdf, timeout = 600)  
+         print(paste("pdf",i,"downloaded"))
+         Sys.sleep(5)
+      } else{
+         print(paste("pdf",i,"already downloaded"))
+      }
       #xlsx_download
       xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
       destfilexlsx <- paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.xlsx',sep= "")
-      download.file(xlsx_link[[1]], destfilexlsx)
-      print(paste("spreadsheet",i,"downloaded"))
-      Sys.sleep(5)
+      if(!file.exists(paste('./data_raw/gsp_num_id_',links_and_basin_names$gsp_num_id[i],'.xlsx',sep= ""))){
+         download.file(xlsx_link[[1]], destfilexlsx)
+         print(paste("spreadsheet",i,"downloaded"))
+         Sys.sleep(5)
+      } else {
+         print(paste("spreadsheet",i,"already downloaded"))
+      }
    }
 }
 
