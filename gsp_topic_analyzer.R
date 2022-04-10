@@ -124,13 +124,15 @@ meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[!is_comm
 meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,4]
 meta(gsp_corpus, tag = "monitoring", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,5]
 meta(gsp_corpus, tag = "projects_mgmt", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,6]
-#too slow
-gsp_processed <- textProcessor(gsp_text_with_meta[!is_comment&!is_reference,1],
-                               metadata = gsp_text_with_meta[!is_comment&!is_reference,!1],verbose = T)
-saveRDS(gsp_processed, file = paste0("data_temp/","gsp_processed_",format(Sys.time(), "%Y%m%d-%H:%M")))
-gsp_processed$documents
-gsp_processed$vocab
-gsp_processed$meta
+
+saveRDS(gsp_corpus, file = paste0("data_temp/","gsp_corpus_",format(Sys.time(), "%Y%m%d-%H:%M")))
+gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "corpus", full.names = T))])
+
+#TODO change to tm equivalent
+gsp_corpus$documents
+gsp_corpus$vocab
+gsp_corpus$meta
 #alternative options: dfm from quanteda
 #tm --> readCorpus
 #corpus
@@ -140,7 +142,8 @@ gsp_processed$meta
 #TODO set minimum number of gsp_ids words need to appear in
 #TODO optional: set max number of gsp_ids words appear in
 
-#TODO stem, drop punctuation, remove stop words
+#TODO stem, drop punctuation (tm or stm style?), remove stop words, lowercase, remove numbers, drop short words, 
+#TODO drop custom stop words
 
 #TODO replace with tm functions
 #instead of lower.thres look how many gsps each word appears in and cut off 
