@@ -118,12 +118,12 @@ is_reference <- readRDS(
 #metadata: num rows = num documents. num columns = num metadata type
 gsp_corpus <- VCorpus(VectorSource(gsp_text_with_meta[[1]][!is_comment&!is_reference]))
 #TODO fix this issue
-meta(gsp_corpus, tag = "admin", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,2]
-meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,3]
-meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,4]
-meta(gsp_corpus, tag = "monitoring", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,5]
-meta(gsp_corpus, tag = "projects_mgmt", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,6]
-meta(gsp_corpus, tag = "gsp_id", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,7]
+meta(gsp_corpus, tag = "admin", type = "indexed") <- gsp_text_with_meta[[2]][!is_comment&!is_reference]
+meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[[3]][!is_comment&!is_reference]
+meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[[4]][!is_comment&!is_reference]
+meta(gsp_corpus, tag = "monitoring", type = "indexed") <- gsp_text_with_meta[[5]][!is_comment&!is_reference]
+meta(gsp_corpus, tag = "projects_mgmt", type = "indexed") <- gsp_text_with_meta[[6]][!is_comment&!is_reference]
+meta(gsp_corpus, tag = "gsp_id", type = "indexed") <- gsp_text_with_meta[[7]][!is_comment&!is_reference]
 meta(gsp_corpus, tag = "i", type = "indexed") <- c(1:length(gsp_corpus))
 #col names 
 #NLP::meta(txt, colnames(metadata)[i]) <- metadata[,i]
