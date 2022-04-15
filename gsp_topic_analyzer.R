@@ -5,11 +5,6 @@ library(tidytext)
 library(data.table)
 library(tidyverse)
 
-testprocess <- textProcessor(documents = (c("hello fox world. The cat jumped over, the fox.",
-             "green eggs and ham fox in box socks in sock","hi everyone","hello world bits")))
-
-
-
 all_gsp_text <- NULL
 all_text_subcat <- vector(mode = "list", length = 0)
 all_text_cat <- vector(mode = "list", length = 0)
@@ -181,11 +176,6 @@ gsp_corpus <- tm_map(gsp_corpus, stemDocument, language="en")
 #Makes a document-term matrix
 gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
 
-#save dtm
-saveRDS(gsp_dtm, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
-gsp_dtm <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
-   list.files(path = "data_temp", pattern = "dtm", full.names = T))])
-
 #remove terms that are in fewer than 3 gsps
 #TODO set minimum number of gsp_ids words need to appear in
 #TODO optional: set max percent of pages words appear in
@@ -194,8 +184,6 @@ gsp_dtm <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = 
 metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
 
 #remove metadata for not-used docs, then join it in tidyverse
-#group_by gsp_id, then sum by column (term): all groupings where (val>0)
-#if sum <3, remove column (term)
    
 ntokens <- sum(gsp_dtm$v)
 V <- ncol(gsp_dtm)
@@ -207,6 +195,10 @@ dtm_tidy_small <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>
 
 gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
 
+saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
+gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "dtm", full.names = T))])
+
 print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps", 
         V-ncol(gsp_dtm_small), V,
         ntokens-sum(gsp_dtm_small$v), ntokens
@@ -214,63 +206,25 @@ print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsp
 
 gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
 
+saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
+gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "slam", full.names = T))])
+
 #TODO clean following lines
 
 ## It's possible that the processing has caused some documents to be
 ## dropped. These will be removed in the conversion from dtm to
 ## internal representation.  Better keep a record
-kept <- (1:length(documents) %in% unique(dtm$i))
-vocab <- as.character(out$vocab)
-out <- list(documents=out$documents, vocab=vocab, meta=metadata, docs.removed=which(!kept))
-class(out) <- "textProcessor"
-return(out)
-}
 
-#' @method print textProcessor
-#' @export
-print.textProcessor <- function(x,...) {
-   toprint <- sprintf("A text corpus with %i documents, and an %i word dictionary.\n", 
-                      length(x$documents), 
-                      length(x$vocab))
-   cat(toprint)
-}
+#TODO check gsp_text_with_meta syntax
+is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$i))
+sum(is_kept)
+#120109 kept pages
 
-#' @method summary textProcessor
-#' @export
-summary.textProcessor <- function(object,...) {
-   toprint <- sprintf("A text corpus with %i documents, and an %i word dictionary. Use str() to inspect object or see documentation \n", 
-                      length(object$documents), 
-                      length(object$vocab))
-   cat(toprint)
-}
-
-#' @method head textProcessor
-#' @export
-head.textProcessor <- function(x,...) {
-   for(i in 1:length(x)) {
-      print(head(x[[i]]))
-   }
-}
-
-#TODO change to tm equivalent
-gsp_corpus$documents
-gsp_corpus$vocab
-gsp_corpus$meta
-#alternative options: dfm from quanteda
-#tm --> readCorpus
-#corpus
-#txtorg
+gsp_out <- list(documents=gsp_out$documents, vocab=as.character(gsp_out$vocab),
+                meta=metadata, docs.removed=which(!is_kept))
 
 
-
-
-#TODO replace with tm functions
-#instead of lower.thres look how many gsps each word appears in and cut off 
-gsp_out <- prepDocuments(gsp_processed$documents, gsp_processed$vocab,
-                         gsp_processed$meta, lower.thresh = 20)
-#test out different lower thresholds for removing uncommon words
-plotRemoved(gsp_processed$documents, lower.thresh = seq(1, 200, by = 100))
-#prepDocuments cleans, converts to proper format, removes uncommon words
 
 #example:
 data <- read.csv("poliblogs2008.csv")
