@@ -87,7 +87,6 @@ for(i in 1:length(all_text_cat)){
 gsp_text_with_meta <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
                                  sust_criteria = is_criteria, monitoring_networks = is_monitoring,
                                  projects_mgmt_actions = is_projects, gsp_id = gsp_id)
-
 #use to filter out nulls in category
 cat_selector <- !sapply(all_text_cat,is.null)
 #use cat_selector to subset text and all metadata vectors
@@ -117,7 +116,8 @@ is_reference <- readRDS(
 #removes comments and references
 #metadata is all other columns
 #metadata: num rows = num documents. num columns = num metadata type
-gsp_corpus <- VCorpus(VectorSource(gsp_text_with_meta[!is_comment&!is_reference,1]))
+gsp_corpus <- VCorpus(VectorSource(gsp_text_with_meta[[1]][!is_comment&!is_reference]))
+#TODO fix this issue
 meta(gsp_corpus, tag = "admin", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,2]
 meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,3]
 meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,4]
@@ -125,11 +125,9 @@ meta(gsp_corpus, tag = "monitoring", type = "indexed") <- gsp_text_with_meta[!is
 meta(gsp_corpus, tag = "projects_mgmt", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,6]
 meta(gsp_corpus, tag = "gsp_id", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,7]
 meta(gsp_corpus, tag = "i", type = "indexed") <- c(1:length(gsp_corpus))
+#col names 
 #NLP::meta(txt, colnames(metadata)[i]) <- metadata[,i]
 
-saveRDS(gsp_corpus, file = paste0("data_temp/","gsp_corpus_",format(Sys.time(), "%Y%m%d-%H:%M")))
-gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
-   list.files(path = "data_temp", pattern = "corpus", full.names = T))])
 
 #remove white spaces
 gsp_corpus <- tm_map(gsp_corpus, stripWhitespace)
@@ -172,6 +170,10 @@ gsp_corpus <- tm_map(gsp_corpus, removeNumbers)
 #stem words
 gsp_corpus <- tm_map(gsp_corpus, stemDocument, language="en")
 
+saveRDS(gsp_corpus, file = paste0("data_temp/","gsp_corpus_",format(Sys.time(), "%Y%m%d-%H:%M")))
+gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "corpus", full.names = T))])
+
 #drops short words
 #Makes a document-term matrix
 gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
@@ -181,7 +183,7 @@ gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf),
 #TODO optional: set max percent of pages words appear in
 
 #remove documents from metadata to match dtm
-metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
+metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), 1:5, drop = FALSE]
 
 #remove metadata for not-used docs, then join it in tidyverse
    
@@ -212,10 +214,7 @@ gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names =
 
 #TODO clean following lines
 
-## It's possible that the processing has caused some documents to be
-## dropped. These will be removed in the conversion from dtm to
-## internal representation.  Better keep a record
-
+##This records documents dropped in cleaning process
 #TODO check gsp_text_with_meta syntax
 is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$i))
 sum(is_kept)
@@ -224,25 +223,14 @@ sum(is_kept)
 gsp_out <- list(documents=gsp_out$documents, vocab=as.character(gsp_out$vocab),
                 meta=metadata, docs.removed=which(!is_kept))
 
-
-
-#example:
-data <- read.csv("poliblogs2008.csv")
-processed <- textProcessor(data$documents, metadata = data)
-out <- prepDocuments(processed$documents, processed$vocab,
-                        + processed$meta)
-docs <- out$documents
-vocab <- out$vocab
-meta <- out$meta
-
 #example:
 #how to let searchK figure out how many topics to generate
 storage <- searchK(gsp_out$documents, gsp_out$vocab, K = c(7, 10),
                    + prevalence =~ rating + s(day), data = meta)
 
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                 + K = 20, prevalence =~ rating + s(day), max.em.its = 75,
-                 + data = gsp_out$meta, init.type = "Spectral")  
+                  K = 20, prevalence =~ rating + s(day), max.em.its = 75,
+                 data = gsp_out$meta, init.type = "Spectral")  
 
 
 #example:
