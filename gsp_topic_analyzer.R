@@ -1,8 +1,9 @@
 library(stm)
 library(tm)
 library(SnowballC)
-library(tm)
-
+library(tidytext)
+library(data.table)
+library(tidyverse)
 
 testprocess <- textProcessor(documents = (c("hello fox world. The cat jumped over, the fox.",
              "green eggs and ham fox in box socks in sock","hi everyone","hello world bits")))
@@ -14,12 +15,14 @@ all_text_subcat <- vector(mode = "list", length = 0)
 all_text_cat <- vector(mode = "list", length = 0)
 is_comment <- NULL
 is_reference <- NULL
+gsp_id <- NULL
 
 gsp_list <- list.files(path = "data_output", pattern = "_text", full.names = T)
 for(k in 1:length(gsp_list)){
    
    gsp_k <- readRDS(gsp_list[k])
    key_k <- readRDS(paste0("data_output/gsp_num_id_",substr(gsp_list[k],24,27),"_categories"))
+   gsp_id <- append(gsp_id, rep.int(c(substr(gsp_list[k],24,27)),times = length(gsp_k)))
    #i = page number
    for (i in 1:length(gsp_k)){
       page_cat <- NULL
@@ -78,6 +81,7 @@ for(i in 1:length(all_text_cat)){
                       ifelse("Projects and Management Actions" %in% all_text_cat[[i]],TRUE,FALSE))
 }
 
+
 #rows = num docs; cols = metadata types
 #TODO add qualitative metadata
 #gsp_meta <- data.table(matrix(ncol = 4, nrow = 0))
@@ -87,7 +91,7 @@ for(i in 1:length(all_text_cat)){
 #add cat metadata
 gsp_text_with_meta <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
                                  sust_criteria = is_criteria, monitoring_networks = is_monitoring,
-                                 projects_mgmt_actions = is_projects)
+                                 projects_mgmt_actions = is_projects, gsp_id = gsp_id)
 
 #use to filter out nulls in category
 cat_selector <- !sapply(all_text_cat,is.null)
@@ -113,7 +117,7 @@ is_reference <- readRDS(
    list.files(path = "data_temp", pattern = "reference", full.names = T)[length(
       list.files(path = "data_temp", pattern = "reference", full.names = T))])
 
-
+#builds corpus
 #corpus pulls documents from column 1 of gsp_text_with_meta
 #removes comments and references
 #metadata is all other columns
@@ -124,10 +128,129 @@ meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[!is_comm
 meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,4]
 meta(gsp_corpus, tag = "monitoring", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,5]
 meta(gsp_corpus, tag = "projects_mgmt", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,6]
+meta(gsp_corpus, tag = "gsp_id", type = "indexed") <- gsp_text_with_meta[!is_comment&!is_reference,7]
+meta(gsp_corpus, tag = "i", type = "indexed") <- c(1:length(gsp_corpus))
+#NLP::meta(txt, colnames(metadata)[i]) <- metadata[,i]
 
 saveRDS(gsp_corpus, file = paste0("data_temp/","gsp_corpus_",format(Sys.time(), "%Y%m%d-%H:%M")))
 gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
    list.files(path = "data_temp", pattern = "corpus", full.names = T))])
+
+#remove white spaces
+gsp_corpus <- tm_map(gsp_corpus, stripWhitespace)
+
+#convert to lower case
+#if else needed because of API differences, adapted from textProcessor
+if(utils::packageVersion("tm") >= "0.6") {
+   gsp_corpus <- tm_map(gsp_corpus, content_transformer(tolower)) 
+} else {
+   gsp_corpus <- tm_map(gsp_corpus, tolower)
+}
+
+#remove punctuation
+#ucp = T would remove larger set of punctuation
+gsp_corpus <- tm_map(gsp_corpus, removePunctuation, preserve_intra_word_dashes = TRUE,ucp=F)
+
+#TODO custom punctuation removal would go here based on this textProcessor template
+#if(length(custompunctuation)==1 && 
+#   substr(custompunctuation,0,1)=="[") {
+#   #if there is only one entry and it starts with open bracket
+#   #we are going to assume its a regular expression and let it
+#   #through
+#   punct_pattern <- custompunctuation
+#} else {
+#   punct_pattern <-sprintf("[%s]",paste0(custompunctuation,collapse=""))
+#}
+#gsp_corpus<- tm_map(gsp_corpus, content_transformer(function(x, pattern) gsub(pattern, "", x)), 
+#                    punct_pattern)
+
+#Remove stopwords in English
+#this takes a while
+gsp_corpus <- tm_map(gsp_corpus, removeWords, stopwords("en")) 
+
+#TODO custom stopwords would be removed here
+#gsp_corpus <- tm_map(gsp_corpus, removeWords, customstopwords)
+
+#remove numbers
+gsp_corpus <- tm_map(gsp_corpus, removeNumbers)
+
+#stem words
+gsp_corpus <- tm_map(gsp_corpus, stemDocument, language="en")
+
+#drops short words
+#Makes a document-term matrix
+gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
+
+#save dtm
+saveRDS(gsp_dtm, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
+gsp_dtm <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "dtm", full.names = T))])
+
+#remove terms that are in fewer than 3 gsps
+#TODO set minimum number of gsp_ids words need to appear in
+#TODO optional: set max percent of pages words appear in
+
+#remove documents from metadata to match dtm
+metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
+
+#remove metadata for not-used docs, then join it in tidyverse
+#group_by gsp_id, then sum by column (term): all groupings where (val>0)
+#if sum <3, remove column (term)
+   
+ntokens <- sum(gsp_dtm$v)
+V <- ncol(gsp_dtm)
+
+dtm_tidy <- tidy(gsp_dtm) %>% 
+   mutate("document" = as.integer(document)) %>% 
+              inner_join(metadata, by = c("document" = "i"))
+dtm_tidy_small <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>2) %>% ungroup()
+
+gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
+
+print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps", 
+        V-ncol(gsp_dtm_small), V,
+        ntokens-sum(gsp_dtm_small$v), ntokens
+        ))
+
+gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
+
+#TODO clean following lines
+
+## It's possible that the processing has caused some documents to be
+## dropped. These will be removed in the conversion from dtm to
+## internal representation.  Better keep a record
+kept <- (1:length(documents) %in% unique(dtm$i))
+vocab <- as.character(out$vocab)
+out <- list(documents=out$documents, vocab=vocab, meta=metadata, docs.removed=which(!kept))
+class(out) <- "textProcessor"
+return(out)
+}
+
+#' @method print textProcessor
+#' @export
+print.textProcessor <- function(x,...) {
+   toprint <- sprintf("A text corpus with %i documents, and an %i word dictionary.\n", 
+                      length(x$documents), 
+                      length(x$vocab))
+   cat(toprint)
+}
+
+#' @method summary textProcessor
+#' @export
+summary.textProcessor <- function(object,...) {
+   toprint <- sprintf("A text corpus with %i documents, and an %i word dictionary. Use str() to inspect object or see documentation \n", 
+                      length(object$documents), 
+                      length(object$vocab))
+   cat(toprint)
+}
+
+#' @method head textProcessor
+#' @export
+head.textProcessor <- function(x,...) {
+   for(i in 1:length(x)) {
+      print(head(x[[i]]))
+   }
+}
 
 #TODO change to tm equivalent
 gsp_corpus$documents
@@ -138,12 +261,8 @@ gsp_corpus$meta
 #corpus
 #txtorg
 
-#TODO add gsp_id metadata 
-#TODO set minimum number of gsp_ids words need to appear in
-#TODO optional: set max number of gsp_ids words appear in
 
-#TODO stem, drop punctuation (tm or stm style?), remove stop words, lowercase, remove numbers, drop short words, 
-#TODO drop custom stop words
+
 
 #TODO replace with tm functions
 #instead of lower.thres look how many gsps each word appears in and cut off 

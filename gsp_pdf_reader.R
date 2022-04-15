@@ -13,6 +13,7 @@ for(k in 1:length(pdfs)){
    if(!file.exists(paste0("data_output/",substr(pdfs[k],10,24),"_text"))){
       text <- pdf_text(pdfs[[k]])
       print(k)
+      #TODO check for blank pages and use ocr on them
       for(i in 1:length(text)){
          if (nchar(text[i])> 10000){
             text[i] <- NA
@@ -28,17 +29,6 @@ for(k in 1:length(pdfs)){
 }
 
 
-#to retrieve:
-#example
-gsp_num_id <- "0008"
-
-text_of_interest <- readRDS(paste0("data_output/gsp_num_id_",gsp_num_id,"_text"))
-key_of_interest <- readRDS(paste0("data_output/gsp_num_id_",gsp_num_id,"_categories"))
-View(key_of_interest)
-#TODO decide input text you want to have matched then go to page_vector of that element
-#words[key$page_vector[matched]]
-
-#TODO page contains substring of interest?
 #testocr <- pdf_ocr_text(file.path("data_raw/pdftools.pdf"))
 
 #TODO pdf_fonts to find sections
