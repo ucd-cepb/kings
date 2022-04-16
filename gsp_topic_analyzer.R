@@ -83,10 +83,14 @@ for(i in 1:length(all_text_cat)){
 #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
 #bind to metadata table
 
+#remove non-visible characters
+all_gsp_text <- stringr::str_replace_all(all_gsp_text,"[^[:graph:]]", " ")
+
 #add cat metadata
 gsp_text_with_meta <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
                                  sust_criteria = is_criteria, monitoring_networks = is_monitoring,
                                  projects_mgmt_actions = is_projects, gsp_id = gsp_id)
+
 #use to filter out nulls in category
 cat_selector <- !sapply(all_text_cat,is.null)
 #use cat_selector to subset text and all metadata vectors
@@ -117,7 +121,6 @@ is_reference <- readRDS(
 #metadata is all other columns
 #metadata: num rows = num documents. num columns = num metadata type
 gsp_corpus <- VCorpus(VectorSource(gsp_text_with_meta[[1]][!is_comment&!is_reference]))
-#TODO fix this issue
 meta(gsp_corpus, tag = "admin", type = "indexed") <- gsp_text_with_meta[[2]][!is_comment&!is_reference]
 meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[[3]][!is_comment&!is_reference]
 meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[[4]][!is_comment&!is_reference]
@@ -179,23 +182,27 @@ gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.na
 gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
 
 #remove terms that are in fewer than 3 gsps
-#TODO set minimum number of gsp_ids words need to appear in
 #TODO optional: set max percent of pages words appear in
 
 #remove documents from metadata to match dtm
-metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), 1:5, drop = FALSE]
+metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
+#120688 elements
 
-#remove metadata for not-used docs, then join it in tidyverse
-   
 ntokens <- sum(gsp_dtm$v)
 V <- ncol(gsp_dtm)
 
+#join metadata with dtm in tidyverse
 dtm_tidy <- tidy(gsp_dtm) %>% 
    mutate("document" = as.integer(document)) %>% 
               inner_join(metadata, by = c("document" = "i"))
+#8372004 observations in dtm_tidy
+
+#use tidyverse to filter out documents found in < 3 gsps
 dtm_tidy_small <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>2) %>% ungroup()
+#8150314 observations in dtm_tidy_small
 
 gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
+meta_small <- unique(dtm_tidy_small[,c(1,4:9)])
 
 saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
 gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
@@ -205,33 +212,43 @@ print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsp
         V-ncol(gsp_dtm_small), V,
         ntokens-sum(gsp_dtm_small$v), ntokens
         ))
-
+#sometimes this hangs
 gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
 
-saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
-gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
-   list.files(path = "data_temp", pattern = "slam", full.names = T))])
-
-#TODO clean following lines
-
-##This records documents dropped in cleaning process
+#This records documents dropped in cleaning process
 #TODO check gsp_text_with_meta syntax
 is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$i))
 sum(is_kept)
 #120109 kept pages
 
 gsp_out <- list(documents=gsp_out$documents, vocab=as.character(gsp_out$vocab),
-                meta=metadata, docs.removed=which(!is_kept))
+                meta=meta_small, docs.removed=which(!is_kept))
+
+colnames(gsp_out$meta) <- colnames(meta_small)
+saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
+gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "slam", full.names = T))])
+
+simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
+                 K = 5, prevalence =~ admin + basin + sust_criteria +
+                    monitoring + projects_mgmt, max.em.its = 10,
+                 data = gsp_out$meta[,2:6], init.type = "Spectral")  
+
+saveRDS(simple_gsp_model, file = paste0("data_output/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+
+simple_gsp_model <- readRDS(list.files(path = "data_output", pattern = "model", full.names = T)[length(
+   list.files(path = "data_output", pattern = "model", full.names = T))])
+
+#TODO research prevalence and content
+gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
+                  K = 20, prevalence =~ admin + basin + sust_criteria +
+                    monitoring + projects_mgmt, max.em.its = 75,
+                 data = gsp_out$meta[,1:5], init.type = "Spectral")  
 
 #example:
 #how to let searchK figure out how many topics to generate
 storage <- searchK(gsp_out$documents, gsp_out$vocab, K = c(7, 10),
                    + prevalence =~ rating + s(day), data = meta)
-
-gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                  K = 20, prevalence =~ rating + s(day), max.em.its = 75,
-                 data = gsp_out$meta, init.type = "Spectral")  
-
 
 #example:
 #   see page 9 of stm documentation
