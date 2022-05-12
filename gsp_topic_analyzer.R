@@ -4,6 +4,8 @@ library(SnowballC)
 library(tidytext)
 library(data.table)
 library(tidyverse)
+library(sf)
+library(pbapply)
 
 all_gsp_text <- NULL
 all_text_subcat <- vector(mode = "list", length = 0)
@@ -78,9 +80,84 @@ for(i in 1:length(all_text_cat)){
 
 
 #rows = num docs; cols = metadata types
-#TODO add qualitative metadata
+#TODO add qualitative metadata:
+#  attributes of people who produced document, like GSA
+#     findable on portal -> plan page -> "list of GSA(S) that collectively prepared the gsp"
+#     or gsa_gsp_basin_coord
+
+#  TODO attributes of community the document is for
+#  TODO importance of agriculture in each GSA region
+#  census tract
+
+#  TODO social vulnerability index 2018
+albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
+
+#     https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
+#downloaded by hand and placed in data_spatial_raw
+censusplot <- st_read("data_spatial_raw/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
+censusplot <- st_transform(censusplot,albersNA)
+#st_crs pulls up projection
+#alt: st_crs(gsp_submitted)
+censusplot <- st_make_valid(censusplot)
+#uses NAD83
+
+#GSP Posted and GSP Submitted layers downloadable at
+#gsp_map_url = "https://sgma.water.ca.gov/webgis/?jsonfile=https%3a%2f%2fsgma.water.ca.gov%2fportal%2fresources%2fjs%2fmapconfigs%2fGspSubmittalsConfig.js&_dc=0.23941161367525954"
+#downloaded by hand and placed in data_spatial_raw
+#GSP_Submitted should be a superset of GSP_Posted, so GSP_Submitted is used here
+
+#Basin info downloadable by selecting
+#Reference Layers > Groundwater Management > "Bulletin 118 Groundwater Basins - 2018" at
+#  https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#boundaries
+
+fname = unzip("data_spatial_raw/GSP_submitted.zip", list=TRUE)
+unzip("data_spatial_raw/GSP_submitted.zip", files=fname$Name, exdir="data_spatial_raw/GSP_submitted", overwrite=TRUE)
+fpath = file.path("data_spatial_raw/GSP_submitted", grep('shp$',fname$Name,value=T))
+gsp_shapes <- st_read(fpath)
+gsp_shapes <- st_transform(gsp_shapes,albersNA)
+gsp_shapes <- st_make_valid(gsp_shapes)
+
+#census_gspshape_overs = st_intersects(censusplot, gsp_shapes)
+gspshape_census_overs = st_intersects(gsp_shapes, censusplot)
+gspshape_census_props = pblapply(seq_along(gspshape_census_overs),function(i){
+   #proportion of gsp in each census tract = area of census_gsp intersection / gsp area
+   props = st_area(st_intersection(gsp_shapes[i,],censusplot[gspshape_census_overs[[i]],]))/st_area(gsp_shapes[i,])
+   data.table(census_tract_id = censusplot$FIPS[gspshape_census_overs[[i]]],
+              SVI_percentile = ifelse(censusplot$RPL_THEMES[gspshape_census_overs[[i]]]>=0,
+                                      censusplot$RPL_THEMES[gspshape_census_overs[[i]]],NA),
+              gsp_ids = gsp_shapes$GSP.ID[i],
+              #which
+              Prop_Overlap = as.numeric(props))[Prop_Overlap > 0.005]
+}, cl = 4)
+#each datatable is a different gsp
+
+#within each datatable
+#column of census tract ids
+#column of SVIs
+#percent that is each census tract
+
+gspshape_census_dt = rbindlist(gspshape_census_props)
+fwrite(gspshape_census_dt,file = 'data_temp/gsp_census_overlap.csv')
+gspshape_census_dt <- as_tibble(fread(file = 'data_temp/gsp_census_overlap.csv'))
+
+#determines what portion of each GSP has an NA value for SVI
+gsp_svi_adjusted <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_Overlap) %>% 
+   #inflates SVI to account for small dropped census tracts by dividing by sum of proportion overlaps
+   mutate(svi_inflated = SVI_percentile / sum(Prop_Overlap)) %>% 
+   mutate(prop_na = sum(ifelse(is.na(SVI_percentile),Prop_Overlap,0))) %>% 
+   #weighted sum of SVI portions by census tract 
+   #adjusts SVI of GSP to account for NAs
+   mutate(SVI_na_adj = sum((Prop_Overlap / (1-prop_na)) * svi_inflated, na.rm = T)) %>%
+   ungroup() %>% 
+   select(c("gsp_ids", "SVI_na_adj")) %>% 
+   unique()
+
+# TODO gsp_svi <- data.table(id = gspshape_census_dt)
+
+#na-adjusted proportions: prop_overlap / 1-na_prop_overlap
 #gsp_meta <- data.table(matrix(ncol = 4, nrow = 0))
 #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
+#
 #bind to metadata table
 
 #remove non-visible characters
@@ -89,7 +166,8 @@ all_gsp_text <- stringr::str_replace_all(all_gsp_text,"[^[:graph:]]", " ")
 #add cat metadata
 gsp_text_with_meta <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
                                  sust_criteria = is_criteria, monitoring_networks = is_monitoring,
-                                 projects_mgmt_actions = is_projects, gsp_id = gsp_id)
+                                 projects_mgmt_actions = is_projects, gsp_id = gsp_id,
+                                 svi = gsp_svi[id = gsp_id,2])
 
 #use to filter out nulls in category
 cat_selector <- !sapply(all_text_cat,is.null)
@@ -181,9 +259,6 @@ gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.na
 #Makes a document-term matrix
 gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
 
-#remove terms that are in fewer than 3 gsps
-#TODO optional: set max percent of pages words appear in
-
 #remove documents from metadata to match dtm
 metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
 #120688 elements
@@ -197,10 +272,17 @@ dtm_tidy <- tidy(gsp_dtm) %>%
               inner_join(metadata, by = c("document" = "i"))
 #8372004 observations in dtm_tidy
 
-#use tidyverse to filter out documents found in < 3 gsps
-dtm_tidy_small <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>2) %>% ungroup()
-#8150314 observations in dtm_tidy_small
+#use tidyverse to filter out terms found in < 3 gsps
+dtm_tidy_med <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>2) %>% ungroup()
+#8150314 observations in dtm_tidy_med
 
+#filter out terms found in at least 30 percent of pages
+tidy_docs <- length(unique(dtm_tidy$document))
+dtm_tidy_small <- dtm_tidy_med %>% group_by(term) 
+dtm_tidy_small <- dtm_tidy_small %>% 
+   filter( (n() / tidy_docs) < 0.3)
+#7662540 observations in dtm_tidy_small
+dtm_tidy_small <- dtm_tidy_small %>% ungroup()
 gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
 meta_small <- unique(dtm_tidy_small[,c(1,4:9)])
 
@@ -208,10 +290,12 @@ saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), 
 gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
    list.files(path = "data_temp", pattern = "dtm", full.names = T))])
 
-print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps", 
+print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps or > 0.3 of pages", 
         V-ncol(gsp_dtm_small), V,
         ntokens-sum(gsp_dtm_small$v), ntokens
         ))
+#removed 88580 of 121474 terms
+
 #sometimes this hangs
 gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
 
@@ -219,7 +303,7 @@ gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() funct
 #TODO check gsp_text_with_meta syntax
 is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$i))
 sum(is_kept)
-#120109 kept pages
+#120264 kept pages
 
 gsp_out <- list(documents=gsp_out$documents, vocab=as.character(gsp_out$vocab),
                 meta=meta_small, docs.removed=which(!is_kept))
@@ -228,22 +312,38 @@ colnames(gsp_out$meta) <- colnames(meta_small)
 saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
 gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
    list.files(path = "data_temp", pattern = "slam", full.names = T))])
-
+#prevalence: how often topic occurs
+#content: word frequency within topic
+#test svi for both
+#test k = 5, 10, 20, 40, 80
+#cut bad characters
+#drop anything that doesn't have a letter
+#regex or name density check against USGS placenames database
+#or regex for terrible matches and outputs a stopword matrix
+#find groundwater glossary
+#figure out how often topic 9 words show up on the document term matrix (grep) row names for where equals > 0
+#simple model only includes categorical metadata
 simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                 K = 5, prevalence =~ admin + basin + sust_criteria +
-                    monitoring + projects_mgmt, max.em.its = 10,
+                 K = 20, prevalence =~ admin + basin + sust_criteria +
+                    monitoring + projects_mgmt + gsp_id, max.em.its = 50,
                  data = gsp_out$meta[,2:6], init.type = "Spectral")  
+#are we interested in num gsas or num organizations? (Linda knows about num orgs
+#dummy for how many gsas are involved: multiple or one
+#count of total orgs involved)
+saveRDS(simple_gsp_model, file = paste0("data_output/","simple_model_",format(Sys.time(), "%Y%m%d-%H:%M")))
 
-saveRDS(simple_gsp_model, file = paste0("data_output/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+simple_gsp_model_saved <- readRDS(list.files(path = "data_output", pattern = "simple_model", full.names = T)[length(
+   list.files(path = "data_output", pattern = "simple_model", full.names = T))])
 
-simple_gsp_model <- readRDS(list.files(path = "data_output", pattern = "model", full.names = T)[length(
-   list.files(path = "data_output", pattern = "model", full.names = T))])
+
+#inspect words associated with topics using labelTopics
+labelTopics(simple_gsp_model, c(1:20))
 
 #TODO research prevalence and content
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                   K = 20, prevalence =~ admin + basin + sust_criteria +
                     monitoring + projects_mgmt, max.em.its = 75,
-                 data = gsp_out$meta[,1:5], init.type = "Spectral")  
+                 data = gsp_out$meta[,2:6], init.type = "Spectral")  
 
 #example:
 #how to let searchK figure out how many topics to generate
@@ -261,6 +361,7 @@ storage <- searchK(gsp_out$documents, gsp_out$vocab, K = c(7, 10),
 #semantic coherence (frequency of co-occurrence of common words in a toipc)
 #exclusivity of words to topics
 
+#uses selectModels object
 #example:
 #how to plot quality of models
 plotModels(poliblogSelect, pch = c(1, 2, 3, 4),
@@ -270,9 +371,7 @@ plotModels(poliblogSelect, pch = c(1, 2, 3, 4),
 #choose your favorite model
 selectedmodel <- poliblogSelect$runout[[3]]
 
-#how to investigate model results. options:
-#inspect words associated with topics using labelTopics
-#example: labelTopics(poliblogPrevFit, c(6, 13, 18))
+
 #sageLabels can be used when the model has a content covariate
 #both print highest probability words and FREX words associated with each topic
 #FREX is weighted by frequency and exclusivity
