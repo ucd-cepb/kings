@@ -121,13 +121,20 @@ gsp_shapes <- st_make_valid(gsp_shapes)
 gspshape_census_overs = st_intersects(gsp_shapes, censusplot)
 gspshape_census_props = pblapply(seq_along(gspshape_census_overs),function(i){
    #proportion of gsp in each census tract = area of census_gsp intersection / gsp area
-   props = st_area(st_intersection(gsp_shapes[i,],censusplot[gspshape_census_overs[[i]],]))/st_area(gsp_shapes[i,])
+   area_overlap = st_area(st_intersection(gsp_shapes[i,],censusplot[gspshape_census_overs[[i]],]))
+   prop_gsp_in_tract = area_overlap/st_area(gsp_shapes[i,])
+   prop_tract_in_gsp = area_overlap/st_area(censusplot[gspshape_census_overs[[i]],])
    data.table(census_tract_id = censusplot$FIPS[gspshape_census_overs[[i]]],
+              population = censusplot$E_TOTPOP[gspshape_census_overs[[i]]],
               SVI_percentile = ifelse(censusplot$RPL_THEMES[gspshape_census_overs[[i]]]>=0,
                                       censusplot$RPL_THEMES[gspshape_census_overs[[i]]],NA),
               gsp_ids = gsp_shapes$GSP.ID[i],
-              #which
-              Prop_Overlap = as.numeric(props))[Prop_Overlap > 0.005]
+              Prop_GSP_in_tract = as.numeric(prop_gsp_in_tract),
+              Prop_tract_in_GSP = as.numeric(prop_tract_in_gsp)
+              #return entries where over half the tract is in the GSP
+              #as well as entries where less than half the tract is in the GSP
+              #but over half a percent of the GSP is made up of that tract
+              )[Prop_tract_in_GSP >= 0.5 | (Prop_tract_in_GSP < 0.5 & Prop_GSP_in_tract >= 0.005)]
 }, cl = 4)
 #each datatable is a different gsp
 
@@ -140,25 +147,44 @@ gspshape_census_dt = rbindlist(gspshape_census_props)
 fwrite(gspshape_census_dt,file = 'data_temp/gsp_census_overlap.csv')
 gspshape_census_dt <- as_tibble(fread(file = 'data_temp/gsp_census_overlap.csv'))
 
-#determines what portion of each GSP has an NA value for SVI
-gsp_svi_adjusted <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_Overlap) %>% 
+#gives somewhat lower SVIs (thicker left tail)
+gsp_svi_adj_area <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_GSP_in_tract) %>% 
    #inflates SVI to account for small dropped census tracts by dividing by sum of proportion overlaps
-   mutate(svi_inflated = SVI_percentile / sum(Prop_Overlap)) %>% 
-   mutate(prop_na = sum(ifelse(is.na(SVI_percentile),Prop_Overlap,0))) %>% 
+   mutate(svi_inflated = SVI_percentile / sum(Prop_GSP_in_tract)) %>% 
+   mutate(prop_na = sum(ifelse(is.na(SVI_percentile),Prop_GSP_in_tract,0))) %>% 
    #weighted sum of SVI portions by census tract 
+   #determines what portion of each GSP has an NA value for SVI
    #adjusts SVI of GSP to account for NAs
-   mutate(SVI_na_adj = sum((Prop_Overlap / (1-prop_na)) * svi_inflated, na.rm = T)) %>%
+   mutate(SVI_na_adj = sum((Prop_GSP_in_tract / (1-prop_na)) * svi_inflated, na.rm = T)) %>%
    ungroup() %>% 
    select(c("gsp_ids", "SVI_na_adj")) %>% 
    unique()
 
-# TODO gsp_svi <- data.table(id = gspshape_census_dt)
+#gives somewhat higher SVIs (thinner left tail)
+gsp_svi_adj_pop <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_GSP_in_tract, Prop_tract_in_GSP, population) %>% 
+   #deflates pop to account for what percent of the tract is in the GSP
+   mutate(pop_adj = population * Prop_tract_in_GSP) %>% 
+   #calculates percent of GSP population that is in that tract
+   mutate(pop_fraction = pop_adj / sum(pop_adj)) %>% 
+   #tracts with pop of 0 have SVI of NA
+   #weighted sum of SVI portions by population of census tracts
+   mutate(SVI_na_adj = sum(pop_fraction * SVI_percentile, na.rm = T)) %>%
+   ungroup() %>% 
+   select(c("gsp_ids", "SVI_na_adj")) %>% 
+   unique()
 
-#na-adjusted proportions: prop_overlap / 1-na_prop_overlap
+#id formatting
+gsp_svi_adjusted <- gsp_svi_adjusted %>% 
+   mutate(code = (as.character(gsp_ids)))%>% 
+   mutate(num_zeros = 4 - str_length(code)) %>% 
+   mutate(gsp_num_id = paste(ifelse(num_zeros > 0, "0", ""),ifelse(num_zeros > 1,"0",""),ifelse(num_zeros > 2, "0",""),code,sep = "")) %>% 
+   select(!c(code,num_zeros,gsp_ids))
+
+
 #gsp_meta <- data.table(matrix(ncol = 4, nrow = 0))
 #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
 #
-#bind to metadata table
+
 
 #remove non-visible characters
 all_gsp_text <- stringr::str_replace_all(all_gsp_text,"[^[:graph:]]", " ")
@@ -166,8 +192,8 @@ all_gsp_text <- stringr::str_replace_all(all_gsp_text,"[^[:graph:]]", " ")
 #add cat metadata
 gsp_text_with_meta <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
                                  sust_criteria = is_criteria, monitoring_networks = is_monitoring,
-                                 projects_mgmt_actions = is_projects, gsp_id = gsp_id,
-                                 svi = gsp_svi[id = gsp_id,2])
+                                 projects_mgmt_actions = is_projects, gsp_id = gsp_id)
+gsp_text_with_meta <- full_join(gsp_text_with_meta, gsp_svi_adjusted, by = c("gsp_id"="gsp_num_id"))
 
 #use to filter out nulls in category
 cat_selector <- !sapply(all_text_cat,is.null)
