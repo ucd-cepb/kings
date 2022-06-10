@@ -7,6 +7,9 @@ library(tidyverse)
 library(sf)
 library(pbapply)
 
+source('code/functions/corpus_builder.R')
+source('code/functions/make_lang_meta.R')
+
 gsp_text_with_lang <- create_lang_meta()
 create_svi_meta(type)
 
@@ -26,7 +29,7 @@ is_reference <- readRDS(
 
 gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_svi_adjusted, by = c("gsp_id"="gsp_num_id"))
 
-saveRDS(gsp_text_with_meta, file = paste0("data_output/","gsp_docs_w_meta_",format(Sys.time(), "%Y%m%d-%H:%M")))
+#saveRDS(gsp_text_with_meta, file = paste0("data_output/","gsp_docs_w_meta_",format(Sys.time(), "%Y%m%d-%H:%M")))
 
 #retrieves the latest save of gsp_text_with_meta
 gsp_text_with_meta <- readRDS(
@@ -39,6 +42,20 @@ gsp_corpus <- build_corpus(gsp_text_with_meta)
 
 #drops short words
 #Makes a document-term matrix
+
+library(quanteda)
+qcorp <- quanteda::corpus(x = gsp_text_with_meta$text[1:100])
+qtok <- quanteda::tokens(qcorp)
+
+compounds <- c('climate change','Groundwater Sustainability Agency')
+
+tok_compound <- quanteda::tokens_compound(qtok,pattern = phrase(compounds),
+                          concatenator = '_',valuetype = 'regex',case_insensitive=F,window = 0)
+
+qdfm<-quanteda::dfm(tok_compound)
+
+gsm_dtm <- quanteda::convert(qdfm,to = 'tm')
+
 gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
 
 #remove documents from metadata to match dtm
