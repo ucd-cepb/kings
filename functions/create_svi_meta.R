@@ -9,6 +9,9 @@ library(pbapply)
 
 #type = "pop" or "area"
 create_svi_meta <- function(type){
+   if(type != "area" & type != "pop"){
+      stop("type must be \"area\" or \"pop\"")
+   }
    #TODO add qualitative metadata:
    #  attributes of people who produced document, like GSA (number of actors and whether it was only one)
    #     findable on portal -> plan page -> "list of GSA(S) that collectively prepared the gsp"
@@ -18,7 +21,7 @@ create_svi_meta <- function(type){
    #  TODO importance of agriculture in each GSA region
    #  census tract
    
-   #  TODO social vulnerability index 2018
+   #  social vulnerability index 2018
    albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
    
    #     https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
@@ -101,8 +104,12 @@ create_svi_meta <- function(type){
       select(c("gsp_ids", "SVI_na_adj")) %>% 
       unique()
    
-   gsp_svi_adjusted <- ifelse(type == "pop", gsp_svi_adj_pop, 
-                              ifelse(type == "area", gsp_svi_adj_area, NA))
+   if(type == "pop"){
+      gsp_svi_adjusted <- gsp_svi_adj_pop
+   }else{
+      gsp_svi_adjusted <- gsp_svi_adj_area
+   }
+   
    #id formatting
    gsp_svi_adjusted <- gsp_svi_adjusted %>% 
       mutate(code = (as.character(gsp_ids)))%>% 
@@ -110,6 +117,9 @@ create_svi_meta <- function(type){
       mutate(gsp_num_id = paste(ifelse(num_zeros > 0, "0", ""),ifelse(num_zeros > 1,"0",""),ifelse(num_zeros > 2, "0",""),code,sep = "")) %>% 
       select(!c(code,num_zeros,gsp_ids))
    
+   saveRDS(gsp_svi_adjusted, file = paste0("data_output/","gsp_svi_",type,"_",format(Sys.time(), "%Y%m%d-%H:%M")))
+   
+   return(gsp_svi_adjusted)
    
 }
 
