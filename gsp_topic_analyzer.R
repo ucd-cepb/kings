@@ -43,9 +43,6 @@ gsp_corpus <- build_corpus(gsp_text_with_meta)
 gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
    list.files(path = "data_temp", pattern = "corpus", full.names = T))])
 
-
-
-
 #drops short words
 #Makes a document-term matrix
 gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), 
