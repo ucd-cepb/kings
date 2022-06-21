@@ -7,16 +7,22 @@ library(tidyverse)
 library(sf)
 library(pbapply)
 
+source('functions/build_corpus.R')
+source('functions/create_lang_meta.R')
+source('functions/create_svi_meta.R')
+
 gsp_text_with_lang <- create_lang_meta()
+
+type = "area"
+#or type = "pop"
 create_svi_meta(type)
 
-#retrieves the latest save of is_comment and is_reference
-is_comment <- readRDS(
-   list.files(path = "data_temp", pattern = "comment", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "comment", full.names = T))])
-is_reference <- readRDS(
-   list.files(path = "data_temp", pattern = "reference", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "reference", full.names = T))])
+#retrieves the latest save of gsp_text_with_lang
+#generated in create_lang_meta, which allows create_lang_meta() to be skipped
+
+gsp_text_with_lang <- readRDS(
+   list.files(path = "data_output",pattern = "lang", full.names = T)[length(
+      list.files(path = "data_output", pattern = "lang", full.names = T))])
 
 #rows = num docs; cols = metadata types
 
@@ -34,12 +40,16 @@ gsp_text_with_meta <- readRDS(
       list.files(path = "data_output", pattern = "docs", full.names = T))])
 
 gsp_corpus <- build_corpus(gsp_text_with_meta)
+gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "corpus", full.names = T))])
+
 
 
 
 #drops short words
 #Makes a document-term matrix
-gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), tolower = FALSE))
+gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), 
+                                             tolower = FALSE))
 
 #remove documents from metadata to match dtm
 metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]

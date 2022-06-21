@@ -7,6 +7,7 @@ library(tidyverse)
 library(sf)
 library(pbapply)
 
+#type = "pop" or "area"
 create_svi_meta <- function(type){
    #TODO add qualitative metadata:
    #  attributes of people who produced document, like GSA (number of actors and whether it was only one)

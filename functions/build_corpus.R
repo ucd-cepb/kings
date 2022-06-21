@@ -8,12 +8,28 @@ library(sf)
 library(pbapply)
 
 build_corpus <- function(gsp_text_with_meta){
+   is_comment <- gsp_text_with_meta$is_comment
+   is_reference <- gsp_text_with_meta$is_reference
+      
    #builds corpus
    #corpus pulls documents from column 1 of gsp_text_with_meta
    #removes comments and references
    #metadata is all other columns
    #metadata: num rows = num documents. num columns = num metadata type
    #TODO add social metadata
+   
+   library(quanteda)
+   qcorp <- quanteda::corpus(x = gsp_text_with_meta$text[1:100])
+   qtok <- quanteda::tokens(qcorp)
+   compounds <- c('climate change','Groundwater Sustainability Agency')
+   tok_compound <- quanteda::tokens_compound(qtok,pattern = phrase(compounds),
+                                             concatenator = '_',valuetype = 'regex',case_insensitive=F,window = 0)
+   qdfm<-quanteda::dfm(tok_compound)
+   gsm_dtm <- quanteda::convert(qdfm,to = 'tm')
+   
+   
+   
+   
    gsp_corpus <- VCorpus(VectorSource(gsp_text_with_meta[[1]][!is_comment&!is_reference]))
    meta(gsp_corpus, tag = "admin", type = "indexed") <- gsp_text_with_meta[[2]][!is_comment&!is_reference]
    meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[[3]][!is_comment&!is_reference]

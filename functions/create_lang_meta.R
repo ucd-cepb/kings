@@ -85,7 +85,8 @@ create_lang_meta <- function(){
    #add cat metadata
    gsp_text_with_lang <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
                                     sust_criteria = is_criteria, monitoring_networks = is_monitoring,
-                                    projects_mgmt_actions = is_projects, gsp_id = gsp_id)
+                                    projects_mgmt_actions = is_projects, gsp_id = gsp_id,
+                                    is_comment = is_comment, is_reference = is_reference)
    
    #use to filter out nulls in category
    cat_selector <- !sapply(all_text_cat,is.null)
@@ -94,8 +95,6 @@ create_lang_meta <- function(){
    saveRDS(all_text_subcat, file = paste0("data_temp/","gsp_docs_subcat_",format(Sys.time(), "%Y%m%d-%H:%M")))
    saveRDS(all_text_cat, file = paste0("data_temp/","gsp_docs_cat_",format(Sys.time(), "%Y%m%d-%H:%M")))
    saveRDS(cat_selector, file = paste0("data_temp/","gsp_docs_cat_notnull_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   saveRDS(is_comment, file = paste0("data_temp/","gsp_docs_comment_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   saveRDS(is_reference, file = paste0("data_temp/","gsp_docs_reference_",format(Sys.time(), "%Y%m%d-%H:%M")))
    saveRDS(gsp_text_with_lang, file = paste0("data_output/","gsp_docs_w_lang_",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    return(gsp_text_with_lang)
