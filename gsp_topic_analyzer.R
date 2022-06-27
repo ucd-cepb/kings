@@ -13,10 +13,6 @@ source('functions/create_svi_meta.R')
 
 gsp_text_with_lang <- create_lang_meta()
 
-type = "area"
-#or type = "pop"
-create_svi_meta(type)
-
 #retrieves the latest save of gsp_text_with_lang
 #generated in create_lang_meta, which allows create_lang_meta() to be skipped
 
@@ -24,11 +20,16 @@ gsp_text_with_lang <- readRDS(
    list.files(path = "data_output",pattern = "lang", full.names = T)[length(
       list.files(path = "data_output", pattern = "lang", full.names = T))])
 
+
+type = "area"
+#or type = "pop"
+gsp_svi_adjusted <- create_svi_meta(type)
+
+
 #rows = num docs; cols = metadata types
 
 #gsp_meta <- data.table(matrix(ncol = 4, nrow = 0))
 #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
-#
 
 gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_svi_adjusted, by = c("gsp_id"="gsp_num_id"))
 
