@@ -62,7 +62,7 @@ build_corpus <- function(gsp_text_with_meta){
       qdfm <- rbind(qdfm, qdfm_i)
    }
    
-   tok_n <- quanteda::tokens_compound(qtok[(floor(length(qtok)/500)*500):length(qtok)],pattern = phrase(compounds),
+   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/500)*500)+1):length(qtok)],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
    paste0("tok n complete featuring rows ", (floor(length(qtok)/500)*500),":",length(qtok))
