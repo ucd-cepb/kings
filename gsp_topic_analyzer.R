@@ -25,6 +25,12 @@ type = "area"
 #or type = "pop"
 gsp_svi_adjusted <- create_svi_meta(type)
 
+#retrieves lates save of gsp_svi_adjusted of the given type, which allows
+#create_svi_meta to be skipped
+gsp_svi_adjusted <- readRDS(
+   list.files(path = "data_output",pattern = type,full.names = T)[length(
+      list.files(path = "data_output",pattern = type,full.names = T))])
+
 
 #rows = num docs; cols = metadata types
 
@@ -40,15 +46,14 @@ gsp_text_with_meta <- readRDS(
    list.files(path = "data_output", pattern = "docs", full.names = T)[length(
       list.files(path = "data_output", pattern = "docs", full.names = T))])
 
-gsp_corpus <- build_corpus(gsp_text_with_meta)
-gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
-   list.files(path = "data_temp", pattern = "corpus", full.names = T))])
+qdfm_nostop <- build_corpus(gsp_text_with_meta)
 
 #drops short words
-#Makes a document-term matrix
-gsp_dtm <- tm::DocumentTermMatrix(gsp_corpus, control=list(wordLengths=c(3,Inf), 
-                                             tolower = FALSE))
+qdfm_2plus <- dfm_select(qdfm_nostop, min_nchar = 2)
 
+#tm_dtm <- quanteda::convert(qdfm_2plus,to = 'tm')
+
+#TODO sync this part with quanteda
 #remove documents from metadata to match dtm
 metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
 #120688 elements

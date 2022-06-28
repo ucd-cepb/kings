@@ -6,6 +6,9 @@ library(data.table)
 library(tidyverse)
 library(sf)
 library(pbapply)
+library(quanteda)
+
+source('functions/custom_dictionary.R')
 
 build_corpus <- function(gsp_text_with_meta){
    is_comment <- gsp_text_with_meta$is_comment
@@ -18,75 +21,61 @@ build_corpus <- function(gsp_text_with_meta){
    #metadata: num rows = num documents. num columns = num metadata type
    #TODO add social metadata
    
-   library(quanteda)
-   qcorp <- quanteda::corpus(x = gsp_text_with_meta$text[1:100])
-   qtok <- quanteda::tokens(qcorp)
-   compounds <- c('climate change','Groundwater Sustainability Agency')
-   tok_compound <- quanteda::tokens_compound(qtok,pattern = phrase(compounds),
-                                             concatenator = '_',valuetype = 'regex',case_insensitive=F,window = 0)
-   qdfm<-quanteda::dfm(tok_compound)
-   gsm_dtm <- quanteda::convert(qdfm,to = 'tm')
+   qcorp <- quanteda::corpus(x = gsp_text_with_meta[!is_comment&!is_reference],
+                             text_field = "text")
+   qtok <- quanteda::tokens(qcorp,
+                            what = "word",
+                            remove_punct = T,
+                            remove_symbols = F,
+                            remove_numbers = F,
+                            remove_url = T,
+                            remove_separators = T,
+                            split_hyphens = F,
+                            include_docvars = T,
+                            padding = F,
+                            verbose = T)
+   #make sure punct and any symbols removed before numbers
+   #TODO include custom symbols like delta we want saved
+   qtok <- quanteda::tokens(qtok,
+                            what = "word",
+                            remove_numbers = T,
+                            verbose = T)
    
    
+   compounds <- custom_dictionary(c())
    
+   #this takes about 3 hours
+   #converts toLower, does not stem
+  
+   tok_1 <- quanteda::tokens_compound(qtok[1:500],pattern = phrase(compounds),
+                                      concatenator = '_',valuetype = 'regex',
+                                      case_insensitive=T,window = 0)
+   paste0("tok 1 complete featuring rows 1:500")
+   qdfm <- quanteda::dfm(tok_1, verbose = T)
    
-   gsp_corpus <- VCorpus(VectorSource(gsp_text_with_meta[[1]][!is_comment&!is_reference]))
-   meta(gsp_corpus, tag = "admin", type = "indexed") <- gsp_text_with_meta[[2]][!is_comment&!is_reference]
-   meta(gsp_corpus, tag = "basin", type = "indexed") <- gsp_text_with_meta[[3]][!is_comment&!is_reference]
-   meta(gsp_corpus, tag = "sust_criteria", type = "indexed") <- gsp_text_with_meta[[4]][!is_comment&!is_reference]
-   meta(gsp_corpus, tag = "monitoring", type = "indexed") <- gsp_text_with_meta[[5]][!is_comment&!is_reference]
-   meta(gsp_corpus, tag = "projects_mgmt", type = "indexed") <- gsp_text_with_meta[[6]][!is_comment&!is_reference]
-   meta(gsp_corpus, tag = "gsp_id", type = "indexed") <- gsp_text_with_meta[[7]][!is_comment&!is_reference]
-   meta(gsp_corpus, tag = "i", type = "indexed") <- c(1:length(gsp_corpus))
-   #col names 
-   #NLP::meta(txt, colnames(metadata)[i]) <- metadata[,i]
-   
-   
-   #remove white spaces
-   gsp_corpus <- tm_map(gsp_corpus, stripWhitespace)
-   
-   #convert to lower case
-   #if else needed because of API differences, adapted from textProcessor
-   if(utils::packageVersion("tm") >= "0.6") {
-      gsp_corpus <- tm_map(gsp_corpus, content_transformer(tolower)) 
-   } else {
-      gsp_corpus <- tm_map(gsp_corpus, tolower)
+   for(i in 2:(length(qtok)/500)){
+      tok_i <- quanteda::tokens_compound(qtok[(500*(i-1)+1):(500*i)],pattern = phrase(compounds),
+                                         concatenator = '_',valuetype = 'regex',
+                                         case_insensitive=T,window = 0)
+      print(paste0("tok", i, "complete featuring rows ", (500*(i-1)+1),":",(500*i)))
+      qdfm_i <- quanteda::dfm(tok_i, verbose = T)
+      qdfm <- rbind(qdfm, qdfm_i)
    }
    
-   #remove punctuation
-   #ucp = T would remove larger set of punctuation
-   gsp_corpus <- tm_map(gsp_corpus, removePunctuation, preserve_intra_word_dashes = TRUE,ucp=F)
+   tok_n <- quanteda::tokens_compound(qtok[(floor(length(qtok)/500)*500):length(qtok)],pattern = phrase(compounds),
+                                      concatenator = '_',valuetype = 'regex',
+                                      case_insensitive=T,window = 0)
+   paste0("tok n complete featuring rows ", (floor(length(qtok)/500)*500),":",length(qtok))
+   qdfm_n <- quanteda::dfm(tok_n, verbose = T)
+   qdfm <- rbind(qdfm, qdfm_n)
    
-   #TODO make sure underscores are not removed/bigrams, 
+   #dfm_wordstem(qdfm, language = "en") would be used here to stem
    
-   #TODO custom punctuation removal would go here based on this textProcessor template
-   #if(length(custompunctuation)==1 && 
-   #   substr(custompunctuation,0,1)=="[") {
-   #   #if there is only one entry and it starts with open bracket
-   #   #we are going to assume its a regular expression and let it
-   #   #through
-   #   punct_pattern <- custompunctuation
-   #} else {
-   #   punct_pattern <-sprintf("[%s]",paste0(custompunctuation,collapse=""))
-   #}
-   #gsp_corpus<- tm_map(gsp_corpus, content_transformer(function(x, pattern) gsub(pattern, "", x)), 
-   #                    punct_pattern)
+   saveRDS(qdfm, file = paste0("data_temp/","gsp_tok_",format(Sys.time(), "%Y%m%d-%H:%M")))
    
-   #Remove stopwords in English
-   #this takes a while
-   gsp_corpus <- tm_map(gsp_corpus, removeWords, stopwords("en")) 
+   qdfm <- readRDS(list.files(path = "data_temp", pattern = "tok", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "tok", full.names = T))])
+
+   qdfm_nostop <- dfm_remove(qdfm, pattern = stopwords("en"))
    
-   #TODO custom stopwords would be removed here
-   #gsp_corpus <- tm_map(gsp_corpus, removeWords, customstopwords)
-   
-   #remove numbers #do this after removing punctuation
-   gsp_corpus <- tm_map(gsp_corpus, removeNumbers)
-   #TODO numbers (using regex) remove any number except if letter on both ends or 
-   
-   #stem words
-   gsp_corpus <- tm_map(gsp_corpus, stemDocument, language="en")
-   
-   saveRDS(gsp_corpus, file = paste0("data_temp/","gsp_corpus_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   gsp_corpus <- readRDS(list.files(path = "data_temp", pattern = "corpus", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "corpus", full.names = T))])
 }
