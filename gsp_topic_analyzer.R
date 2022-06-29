@@ -46,50 +46,97 @@ gsp_text_with_meta <- readRDS(
    list.files(path = "data_output", pattern = "docs", full.names = T)[length(
       list.files(path = "data_output", pattern = "docs", full.names = T))])
 
-qdfm_nostop <- build_corpus(gsp_text_with_meta)
+qdfm <- build_corpus(gsp_text_with_meta)
+
+#removes stopwords
+qdfm_nostop <- dfm_remove(qdfm, pattern = stopwords("en"))
+
+saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
+
+#retrieves the latest save of qdfm_nostop
+qdfm_nostop <- readRDS(
+   list.files(path = "data_temp", pattern = "nostop", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "nostop", full.names = T))])
+
 
 #drops short words
 qdfm_2plus <- dfm_select(qdfm_nostop, min_nchar = 2)
 
-#tm_dtm <- quanteda::convert(qdfm_2plus,to = 'tm')
+#deletes duplicate rows, if any
+qdfm_2plus <-dfm_compress(qdfm_2plus)
 
-#TODO sync this part with quanteda
-#remove documents from metadata to match dtm
-metadata <- NLP::meta(gsp_corpus)[unique(gsp_dtm$i), , drop = FALSE]
-#120688 elements
+saveRDS(qdfm_2plus, file = paste0("data_temp/","noshort",format(Sys.time(), "%Y%m%d-%H:%M")))
 
-ntokens <- sum(gsp_dtm$v)
-V <- ncol(gsp_dtm)
+#retrieves the latest save of qdfm_2plus
+qdfm_2plus <- readRDS(
+   list.files(path = "data_temp", pattern = "noshort", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "noshort", full.names = T))])
+
+
+
+#prepare metadata to add to tidy dtm
+metadata <- cbind(quanteda::docvars(qdfm_2plus),"document"=
+                  as.integer(substr(
+                     docnames(qdfm_2plus),
+                        5,str_length(docnames(qdfm_2plus)
+                  ))))
 
 #join metadata with dtm in tidyverse
-dtm_tidy <- tidy(gsp_dtm) %>% 
-   mutate("document" = as.integer(document)) %>% 
-              inner_join(metadata, by = c("document" = "i"))
-#8372004 observations in dtm_tidy
+dtm_tidy <- tidy(qdfm_2plus) %>% 
+   mutate("document" = as.integer(
+      substr(document,5,str_length(document)))) %>% 
+              inner_join(metadata, by = c("document" = "document"))
+#9785109 observations in dtm_tidy
+
+saveRDS(dtm_tidy, file = paste0("data_temp/","tidylg",format(Sys.time(), "%Y%m%d-%H:%M")))
+
+#retrieves the latest save of dtm_tidy
+dtm_tidy <- readRDS(
+   list.files(path = "data_temp", pattern = "tidylg", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "tidylg", full.names = T))])
+
+
 
 #use tidyverse to filter out terms found in < 3 gsps
 dtm_tidy_med <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>2) %>% ungroup()
-#8150314 observations in dtm_tidy_med
+#9373829 observations in dtm_tidy_med
 
+saveRDS(dtm_tidy_med, file = paste0("data_temp/","dtm_tidymed",format(Sys.time(), "%Y%m%d-%H:%M")))
+
+#retrieves the latest save of dtm_tidy_med
+dtm_tidy_med <- readRDS(
+   list.files(path = "data_temp", pattern = "tidymed", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "tidymed", full.names = T))])
+
+
+#TODO move to quanteda or tm
 #filter out terms found in at least 30 percent of pages
+#this takes about one hour
 tidy_docs <- length(unique(dtm_tidy$document))
 dtm_tidy_small <- dtm_tidy_med %>% group_by(term) 
 dtm_tidy_small <- dtm_tidy_small %>% 
    filter( (n() / tidy_docs) < 0.3)
-#7662540 observations in dtm_tidy_small
+
+# observations in dtm_tidy_small
 dtm_tidy_small <- dtm_tidy_small %>% ungroup()
+
+#this takes another 3 hours
 gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
-meta_small <- unique(dtm_tidy_small[,c(1,4:9)])
+meta_small <- unique(dtm_tidy_small[,c(1,4:length(dtm_tidy_small))])
 
 saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
 gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
    list.files(path = "data_temp", pattern = "dtm", full.names = T))])
 
+# elements
+ntokens <- sum(ntoken(qdfm_2plus))
+nvocab <- sum(ntype(qdfm_2plus))
 print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps or > 0.3 of pages", 
-        V-ncol(gsp_dtm_small), V,
+        nvocab-ncol(gsp_dtm_small), nvocab,
         ntokens-sum(gsp_dtm_small$v), ntokens
         ))
-#removed 88580 of 121474 terms
+#removed terms
+
 
 #sometimes this hangs
 gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
