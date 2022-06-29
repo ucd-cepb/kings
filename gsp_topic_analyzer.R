@@ -46,6 +46,9 @@ gsp_text_with_meta <- readRDS(
    list.files(path = "data_output", pattern = "docs", full.names = T)[length(
       list.files(path = "data_output", pattern = "docs", full.names = T))])
 
+is_comment <- gsp_text_with_meta$is_comment
+is_reference <- gsp_text_with_meta$is_reference
+
 qdfm <- build_corpus(gsp_text_with_meta)
 
 #removes stopwords
@@ -88,7 +91,7 @@ dtm_tidy <- tidy(qdfm_2plus) %>%
               inner_join(metadata, by = c("document" = "document"))
 #9785109 observations in dtm_tidy
 
-saveRDS(dtm_tidy, file = paste0("data_temp/","tidylg",format(Sys.time(), "%Y%m%d-%H:%M")))
+saveRDS(dtm_tidy, file = paste0("data_temp/","dtm_tidylg",format(Sys.time(), "%Y%m%d-%H:%M")))
 
 #retrieves the latest save of dtm_tidy
 dtm_tidy <- readRDS(
@@ -111,7 +114,7 @@ dtm_tidy_med <- readRDS(
 
 #TODO move to quanteda or tm
 #filter out terms found in at least 30 percent of pages
-#this takes about one hour
+#this sometimes hangs. should not take over 10 min. if it does, restart R.
 tidy_docs <- length(unique(dtm_tidy$document))
 dtm_tidy_small <- dtm_tidy_med %>% group_by(term) 
 dtm_tidy_small <- dtm_tidy_small %>% 
@@ -120,13 +123,26 @@ dtm_tidy_small <- dtm_tidy_small %>%
 # observations in dtm_tidy_small
 dtm_tidy_small <- dtm_tidy_small %>% ungroup()
 
-#this takes another 3 hours
+saveRDS(dtm_tidy_small, file = paste0("data_temp/","dtm_tidysm",format(Sys.time(), "%Y%m%d-%H:%M")))
+
+#retrieves the latest save of dtm_tidy_med
+dtm_tidy_small <- readRDS(
+   list.files(path = "data_temp", pattern = "tidysm", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "tidysm", full.names = T))])
+
+
+#this sometimes hangs. should not take over 10 min. if it does, restart R.
 gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
+#this sometimes hangs. should not take over 10 min. if it does, restart R.
 meta_small <- unique(dtm_tidy_small[,c(1,4:length(dtm_tidy_small))])
 
 saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
 gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
    list.files(path = "data_temp", pattern = "dtm", full.names = T))])
+
+saveRDS(meta_small, file = paste0("data_temp/","gsp_meta_small",format(Sys.time(), "%Y%m%d-%H:%M")))
+meta_small <- readRDS(list.files(path = "data_temp", pattern = "meta_small", full.names = T)[length(
+   list.files(path = "data_temp", pattern = "meta_small", full.names = T))])
 
 # elements
 ntokens <- sum(ntoken(qdfm_2plus))
@@ -135,19 +151,23 @@ print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsp
         nvocab-ncol(gsp_dtm_small), nvocab,
         ntokens-sum(gsp_dtm_small$v), ntokens
         ))
-#removed terms
+#removed 9731829 of 9785109 terms (1680346 of 16568927 tokens) for appearing in < 3 gsps or > 0.3 of pages"
 
 
 #sometimes this hangs
-gsp_out <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
+gsp_out_slam <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
+#type = dtm is for dense matrices
+
+
+
 
 #This records documents dropped in cleaning process
 #TODO check gsp_text_with_meta syntax
 is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$i))
 sum(is_kept)
-#120264 kept pages
+#120821 kept pages
 
-gsp_out <- list(documents=gsp_out$documents, vocab=as.character(gsp_out$vocab),
+gsp_out <- list(documents=gsp_out_slam$documents, vocab=as.character(gsp_out_slam$vocab),
                 meta=meta_small, docs.removed=which(!is_kept))
 
 colnames(gsp_out$meta) <- colnames(meta_small)
@@ -167,8 +187,9 @@ gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names =
 #simple model only includes categorical metadata
 simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                  K = 20, prevalence =~ admin + basin + sust_criteria +
-                    monitoring + projects_mgmt + as.factor(gsp_id) + SVI, max.em.its = 50,
-                 data = gsp_out$meta[,2:6], init.type = "Spectral")  
+                    monitoring_networks + projects_mgmt_actions + as.factor(gsp_id) + SVI_na_adj, max.em.its = 50,
+                 data = gsp_out$meta, init.type = "Spectral")  
+
 #are we interested in num gsas or num organizations? (Linda knows about num orgs
 #dummy for how many gsas are involved: multiple or one
 #count of total orgs involved)
