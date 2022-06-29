@@ -76,6 +76,6 @@ build_corpus <- function(gsp_text_with_meta){
    qdfm <- readRDS(list.files(path = "data_temp", pattern = "tok", full.names = T)[length(
       list.files(path = "data_temp", pattern = "tok", full.names = T))])
 
-   qdfm_nostop <- dfm_remove(qdfm, pattern = stopwords("en"))
+   
    
 }
