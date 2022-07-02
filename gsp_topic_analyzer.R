@@ -6,6 +6,9 @@ library(data.table)
 library(tidyverse)
 library(sf)
 library(pbapply)
+library(geometry)
+library(Rtsne)
+library(rsvd)
 
 source('functions/build_corpus.R')
 source('functions/create_lang_meta.R')
@@ -174,20 +177,22 @@ colnames(gsp_out$meta) <- colnames(meta_small)
 saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
 gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
    list.files(path = "data_temp", pattern = "slam", full.names = T))])
-#prevalence: how often topic occurs
-#content: word frequency within topic
+
 #test svi for both
 #test k = 5, 10, 20, 40, 80
 #cut bad characters
 #drop anything that doesn't have a letter
 #regex or name density check against USGS placenames database
 #or regex for terrible matches and outputs a stopword matrix
-#find groundwater glossary
 #figure out how often topic 9 words show up on the document term matrix (grep) row names for where equals > 0
-#simple model only includes categorical metadata
+#prevalence = how often topic is discussed. category vars included here. svi included.
+#content = word frequency within topic. allows one categorical var, advised to be small
+
+
 simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                 K = 20, prevalence =~ admin + basin + sust_criteria +
-                    monitoring_networks + projects_mgmt_actions + as.factor(gsp_id) + SVI_na_adj, max.em.its = 50,
+                 K = 0, prevalence =~ admin + basin + sust_criteria +
+                    monitoring_networks + projects_mgmt_actions + as.factor(gsp_id) + SVI_na_adj, 
+                 max.em.its = 100,
                  data = gsp_out$meta, init.type = "Spectral")  
 
 #are we interested in num gsas or num organizations? (Linda knows about num orgs
@@ -200,7 +205,7 @@ simple_gsp_model_saved <- readRDS(list.files(path = "data_output", pattern = "si
 
 
 #inspect words associated with topics using labelTopics
-labelTopics(simple_gsp_model, c(1:20))
+labelTopics(simple_gsp_model, c(1:61))
 
 #TODO research prevalence and content
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
