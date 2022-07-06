@@ -41,18 +41,23 @@ gsp_svi_adjusted <- readRDS(
 #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
 
 gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_svi_adjusted, by = c("gsp_id"="gsp_num_id"))
+#filtering NA admin = proxy for GSPs whose texts have not been processed
+gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
 
 saveRDS(gsp_text_with_meta, file = paste0("data_output/","gsp_docs_w_meta_",format(Sys.time(), "%Y%m%d-%H:%M")))
 
 #retrieves the latest save of gsp_text_with_meta
 gsp_text_with_meta <- readRDS(
-   list.files(path = "data_output", pattern = "docs", full.names = T)[length(
-      list.files(path = "data_output", pattern = "docs", full.names = T))])
+   list.files(path = "data_output", pattern = "meta", full.names = T)[length(
+      list.files(path = "data_output", pattern = "meta", full.names = T))])
 
 is_comment <- gsp_text_with_meta$is_comment
 is_reference <- gsp_text_with_meta$is_reference
 
 qdfm <- build_corpus(gsp_text_with_meta)
+
+#the following commands may need to be executed across multiple RStudio sessions
+#to clear up enough memory
 
 #removes stopwords
 qdfm_nostop <- dfm_remove(qdfm, pattern = stopwords("en"))
@@ -190,8 +195,16 @@ gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names =
 
 
 simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                 K = 0, prevalence =~ admin + basin + sust_criteria +
-                    monitoring_networks + projects_mgmt_actions + as.factor(gsp_id) + SVI_na_adj, 
+                 K = 50, prevalence =~ admin + 
+                    basin_plan +
+                    sust_criteria +
+                    monitoring_networks + 
+                    projects_mgmt_actions + 
+                    as.factor(gsp_id) +
+                    SVI_na_adj+
+                    as.factor(approval)+
+                    as.factor(priority)+
+                    ag_gw_asfractof_tot_gw,
                  max.em.its = 100,
                  data = gsp_out$meta, init.type = "Spectral")  
 
@@ -209,7 +222,7 @@ labelTopics(simple_gsp_model, c(1:61))
 
 #TODO research prevalence and content
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                  K = 20, prevalence =~ admin + basin + sust_criteria +
+                  K = 20, prevalence =~ admin + basin_plan + sust_criteria +
                     monitoring + projects_mgmt, max.em.its = 75,
                  data = gsp_out$meta[,2:6], init.type = "Spectral")  
 
