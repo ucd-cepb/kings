@@ -6,6 +6,7 @@ library(data.table)
 library(tidyverse)
 library(sf)
 library(pbapply)
+library(readxl)
 
 create_lang_meta <- function(){
    all_gsp_text <- NULL
@@ -14,13 +15,39 @@ create_lang_meta <- function(){
    is_comment <- NULL
    is_reference <- NULL
    gsp_id <- NULL
+
    
+   gsp_tbl <- read_csv("data_output/gsp_ids.csv")
+   
+   #downloaded from https://data.cnra.ca.gov/dataset/sgma-basin-prioritization/resource/6347629e-340d-4faf-ae7f-159efbfbcdc9
+   final_515_table <- read_excel("data_raw/final-515-table.xlsx")
+   #how much of the basin's total (ag+urban) gw use is due to ag, as a percentage 0-1?
+   final_515_table$basin_id <-   final_515_table$"Basin ID"
+   final_515_table$basin_name <-final_515_table$"Basin Name"
+   final_515_table$ag_gw_af <-   final_515_table$"AG GW \r\nBasin\r\n(AF)"
+   final_515_table$urb_gw_af <- final_515_table$"Urban GW Volume (AF)"
+   final_515_table$priority <- final_515_table$"SGMA 2019 Basin Prioritization\r\n\r\nBasin\r\nPriority"
+   final_515_table <- final_515_table %>% mutate(ag_gw_asfractof_tot_gw = ag_gw_af/
+                                                    (ag_gw_af+urb_gw_af))
+   final_515_table <- select(final_515_table, 
+                             c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority))
+
+   View(final_515_table)
+
+   #joins gsp vars with basin vars
+   #filters out basin ids without plans     
+   gsp_tbl <- gsp_tbl %>% mutate(basin_id = sub(" .*", "", basin) )
+   bsn_and_plan_vars <- full_join(gsp_tbl, final_515_table, by = "basin_id") %>% 
+      mutate(gsp_id = gsp_num_id) %>% select(!gsp_num_id) %>% 
+      filter(!is.na(gsp_id))
+     
    gsp_list <- list.files(path = "data_output", pattern = "_text", full.names = T)
    for(k in 1:length(gsp_list)){
       
       gsp_k <- readRDS(gsp_list[k])
       key_k <- readRDS(paste0("data_output/gsp_num_id_",substr(gsp_list[k],24,27),"_categories"))
       gsp_id <- append(gsp_id, rep.int(c(substr(gsp_list[k],24,27)),times = length(gsp_k)))
+      page_num <- append(page_num, c(1:length(gsp_k)))
       #i = page number
       for (i in 1:length(gsp_k)){
          page_cat <- NULL
@@ -83,11 +110,11 @@ create_lang_meta <- function(){
    all_gsp_text <- stringr::str_replace_all(all_gsp_text,"[^[:graph:]]", " ")
    
    #add cat metadata
-   gsp_text_with_lang <- data.table(text = all_gsp_text, admin = is_admin, basin = is_basin,
+   gsp_text_with_lang <- data.table(text = all_gsp_text, admin = is_admin, basin_plan = is_basin,
                                     sust_criteria = is_criteria, monitoring_networks = is_monitoring,
                                     projects_mgmt_actions = is_projects, gsp_id = gsp_id,
                                     is_comment = is_comment, is_reference = is_reference)
-   
+   gsp_text_with_lang <- full_join(gsp_text_with_lang, bsn_and_plan_vars)
    #use to filter out nulls in category
    cat_selector <- !sapply(all_text_cat,is.null)
    #use cat_selector to subset text and all metadata vectors
