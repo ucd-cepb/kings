@@ -17,7 +17,7 @@ gsp_session
 #crawl delay 5 sec
 #15 rules for 4 bots
 
-driver <- rsDriver(port = 4442L, browser = "firefox")
+driver <- rsDriver(port = 4441L, browser = "firefox")
 remote_driver <- driver$client
 #remote_driver$open()
 remote_driver$navigate(gsp_url)
@@ -102,42 +102,70 @@ gsp_attr <- gsp_attr %>%
 pdf_link <- NULL
 xlsx_link <- NULL
 options(timeout=600)
-#checks whether pdf has been downloaded
+num_gsas <- rep(NA, length(gsp_attr$basin))
+
 for(i in 1:length(gsp_attr$link)){
    #checks whether pdf and xlsx have been downloaded
    if(!is.na(gsp_attr$link[i]) & 
       (!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
-       !file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")))){
+       !file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) |
+       is.na(num_gsas[i]))){
+   
       remote_driver$navigate(paste("https://sgma.water.ca.gov",gsp_attr$link[i], sep = ""))
-      #pdf_download
-      # Specify URL where file is stored
-      dropdown <- remote_driver$findElement(using = "class name", "panel-title")
-      dropdown$clickElement()
       
-      pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
-      # Specify destination where file should be saved
-      destfilepdf <- paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-      if(!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
-         download.file(pdf_link[[1]], destfilepdf, timeout = 600)  
-         print(paste("pdf",i,"downloaded"))
+      if(is.na(num_gsas[i])){
          Sys.sleep(5)
-      } else{
-         print(paste("pdf",i,"already downloaded"))
+         gsp_source <- remote_driver$getPageSource(
+            paste("https://sgma.water.ca.gov",gsp_attr$link[i], sep = ""))
+         # reads HTML page:
+         plan_html_readout <- gsp_source[[1]] %>% 
+            read_html() 
+         #extracting text
+         temp_gsas <- plan_html_readout %>% html_elements(".col-md-12") %>% html_text2()
+         #isolating list of GSAs from other elements
+         temp_gsas <- temp_gsas[grepl("List of GSA",temp_gsas)]
+         #splits on \n to determine number of GSAs (subtracts 1 for header row)
+         num_gsas[i] <- length(strsplit(temp_gsas, "\n")[[1]]) - 1
       }
-      #xlsx_download
-      xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
-      destfilexlsx <- paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-      if(!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
-         download.file(xlsx_link[[1]], destfilexlsx)
-         print(paste("spreadsheet",i,"downloaded"))
-         Sys.sleep(5)
-      } else {
-         print(paste("spreadsheet",i,"already downloaded"))
-      }
-   }
+      
+      if(!is.na(gsp_attr$link[i]) & 
+         (!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
+          !file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")))){
+         
+            #pdf_download
+            # Specify URL where file is stored
+            dropdown <- remote_driver$findElement(using = "class name", "panel-title")
+            dropdown$clickElement()
+            
+            pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
+            # Specify destination where file should be saved
+            destfilepdf <- paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+            if(!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
+               download.file(pdf_link[[1]], destfilepdf, timeout = 600)  
+               print(paste("pdf",i,"downloaded"))
+               Sys.sleep(5)
+            } else{
+               print(paste("pdf",i,"already downloaded"))
+            }
+            #xlsx_download
+            xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
+            destfilexlsx <- paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+            if(!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
+               download.file(xlsx_link[[1]], destfilexlsx)
+               print(paste("spreadsheet",i,"downloaded"))
+               Sys.sleep(5)
+            } else {
+               print(paste("spreadsheet",i,"already downloaded"))
+            }
+      }#end of download if statement
+   }#end of navigate if statement
 }
 
 remote_driver$close()
 rm(driver)
+
+#are there multiple gsas collaborating on this gsp? T/F Var
+mult_gsas <- sapply(num_gsas, function(x){ifelse(x > 1,T,F)})
+gsp_attr <- cbind(gsp_attr, "mult_gsas" = mult_gsas)
 
 write_csv(x =gsp_attr, file = './data_output/gsp_ids.csv')
