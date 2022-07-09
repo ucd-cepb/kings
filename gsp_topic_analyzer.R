@@ -12,7 +12,7 @@ library(rsvd)
 
 source('functions/build_corpus.R')
 source('functions/create_lang_meta.R')
-source('functions/create_svi_meta.R')
+source('functions/create_spat_meta.R')
 
 gsp_text_with_lang <- create_lang_meta()
 
