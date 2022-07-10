@@ -7,6 +7,7 @@ library(tidyverse)
 library(sf)
 library(pbapply)
 library(ggplot2)
+library(scico)
 
 #type = "pop" or "area"
 create_svi_meta <- function(type){
@@ -186,8 +187,8 @@ create_dac_meta <- function(type, scope){
    median(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == T])
    median(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == F])
    
-   ggplot(dac_svi_tbl, aes(x=DAC, y=SVI_percentile, color=DAC)) +
-      geom_boxplot()+theme_bw()
+   ggplot(dac_svi_tbl, aes(x=DAC, y=SVI_percentile, fill=DAC)) +
+      geom_boxplot()+theme_minimal()+scale_fill_scico_d("roma")
    #TODO SVI as function of (DAC | SDAC) 0/1 
    #TODO SVI as 
    #id formatting
