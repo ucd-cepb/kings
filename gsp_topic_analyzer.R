@@ -66,6 +66,11 @@ months <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep",
             "november", "december")
 #removes stopwords
 qdfm_nostop <- dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names, months))
+qdfm_nostop <- dfm_remove(qdfm_nostop, 
+                          pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
+                                      "ϭ","ĩ",
+                                      "ž","ğ","ŝ","ÿ"), 
+                          valuetype = "regex")
 
 saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
 
