@@ -54,8 +54,6 @@ build_corpus <- function(gsp_text_with_meta){
                             include_docvars = T,
                             padding = F,
                             verbose = T)
-   #make sure punct and any symbols removed before numbers
-   #TODO include custom symbols like delta we want saved and remove others
    
    qtok <- quanteda::tokens(qtok,
                             what = "word",
