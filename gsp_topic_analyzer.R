@@ -9,6 +9,7 @@ library(pbapply)
 library(geometry)
 library(Rtsne)
 library(rsvd)
+library(stringi)
 
 source('functions/build_corpus.R')
 source('functions/create_lang_meta.R')
@@ -58,9 +59,13 @@ qdfm <- build_corpus(gsp_text_with_meta)
 
 #the following commands may need to be executed across multiple RStudio sessions
 #to clear up enough memory
-
+pl_names <- generate_place_names()
+months <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", 
+            "sept", "oct", "nov", "dec", "january", "february", "march",
+            "april", "june", "july", "august", "september", "october",
+            "november", "december")
 #removes stopwords
-qdfm_nostop <- dfm_remove(qdfm, pattern = stopwords("en"))
+qdfm_nostop <- dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names, months))
 
 saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
 

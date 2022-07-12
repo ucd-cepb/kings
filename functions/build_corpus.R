@@ -21,22 +21,24 @@ build_corpus <- function(gsp_text_with_meta){
    #removes comments and references
    #metadata is all other columns
    #metadata: num rows = num documents. num columns = num metadata type
-   #TODO add social metadata
-   months <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", 
-               "sept", "oct", "nov", "dec", "january", "february", "march",
-               "april", "june", "july", "august", "september", "october",
-               "november", "december")
 
    #format words in equations to readable text
+   #removes parenthetical pieces that are attached to the end of words, eg SurfaceFlow(i)
+   #to help with equation word formatting
    gsp_text_with_meta$text <- pblapply(1:length(gsp_text_with_meta$text), function(i){
-      stri_replace_all_regex(gsp_text_with_meta$text[i], pattern = c("𝑎","𝑏","𝑐","𝑑","𝑒","𝑓","𝑔","𝑖","𝑗","𝑘","𝑙","𝑚",
+      stri_replace_all_regex(gsp_text_with_meta$text[i], pattern = c("𝑎","𝑏","𝑐","𝑑","𝑒","𝑓","𝑔","ℎ","𝑖","𝑗","𝑘","𝑙","𝑚",
                                                                      "𝑛","𝑜","𝑝","𝑞","𝑟","𝑠","𝑡","𝑢","𝑣","𝑤","𝑥","𝑦","𝑧",
                                                                      "𝐴","𝐵","𝐶","𝐷","𝐸","𝐹","𝐺","𝐻","𝐼","𝐽","𝐾","𝐿","𝑀",
                                                                      "𝑁","𝑂","𝑃","𝑄","𝑅","𝑆",
-                                                                     "𝑇","𝑈","𝑉","𝑊","𝑋","𝑌","𝑍"),
-                             replacement = c(letters[c(1:7, 9:26)],LETTERS),
+                                                                     "𝑇","𝑈","𝑉","𝑊","𝑋","𝑌","𝑍","(?<=\\w)\\([^\\)]+\\)"),
+                             replacement = c(letters,LETTERS,""),
                              vectorize= F)
    })
+   
+   saveRDS(gsp_text_with_meta, file = paste0("data_temp/","gsp_formatted",format(Sys.time(), "%Y%m%d-%H:%M")))
+   
+   gsp_text_with_meta <- readRDS(list.files(path = "data_temp", pattern = "gsp_formatted", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "gsp_formatted", full.names = T))])
    
    
    qcorp <- quanteda::corpus(x = gsp_text_with_meta[!is_comment&!is_reference],
@@ -53,11 +55,17 @@ build_corpus <- function(gsp_text_with_meta){
                             padding = F,
                             verbose = T)
    #make sure punct and any symbols removed before numbers
-   #TODO include custom symbols like delta we want saved
+   #TODO include custom symbols like delta we want saved and remove others
+   
    qtok <- quanteda::tokens(qtok,
                             what = "word",
                             remove_numbers = T,
                             verbose = T)
+   
+   #removes case-sensitive custom stopwords "NA" and "na" 
+   #but keeps "Na" (sodium) before converting toLower
+   qtok <- tokens_replace(qtok, pattern = c("NA","na"), replacement = c("",""), 
+                          valuetype = "fixed", case_insensitive = F, verbose = T)
    
    pl_names <- generate_place_names()
    
