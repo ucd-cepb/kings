@@ -24,5 +24,5 @@ custom_dictionary <- function(add_terms){
    #keep multi-word terms
    water_dictionary <- grep(" ", water_dictionary, value = T)
    
-   water_dictionary <- unique(append(tolower(water_dictionary), add_terms))
+   dictionary <- unique(append(tolower(water_dictionary), add_terms))
 }
