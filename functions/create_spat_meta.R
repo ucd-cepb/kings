@@ -170,10 +170,7 @@ create_dac_meta <- function(type, scope){
       dac_svi_tbl <- dac_svi_tbl[!is.na(dac_svi_tbl$DAC) & 
                                     !is.na(dac_svi_tbl$SVI_percentile)]
       
-      
-      #TODO which tracts are DAC and SDAC?
-      
-      
+
       #normality test shows data is non-normal
       set.seed(0)
       #shapiro.test(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == T])
