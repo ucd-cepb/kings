@@ -59,12 +59,13 @@ qdfm <- build_corpus(gsp_text_with_meta)
 
 #the following commands may need to be executed across multiple RStudio sessions
 #to clear up enough memory
+#TODO add hyphen to months and switch them to regex
 pl_names <- generate_place_names()
 months <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", 
             "sept", "oct", "nov", "dec", "january", "february", "march",
             "april", "june", "july", "august", "september", "october",
             "november", "december")
-#removes stopwords
+#removes stopwords, including placenames, months, and poor conversion cues
 qdfm_nostop <- dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names, months))
 qdfm_nostop <- dfm_remove(qdfm_nostop, 
                           pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
