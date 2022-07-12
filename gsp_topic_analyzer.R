@@ -59,19 +59,25 @@ qdfm <- build_corpus(gsp_text_with_meta)
 
 #the following commands may need to be executed across multiple RStudio sessions
 #to clear up enough memory
-#TODO add hyphen to months and switch them to regex
 pl_names <- generate_place_names()
-months <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", 
-            "sept", "oct", "nov", "dec", "january", "february", "march",
-            "april", "june", "july", "august", "september", "october",
-            "november", "december")
-#removes stopwords, including placenames, months, and poor conversion cues
-qdfm_nostop <- dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names, months))
-qdfm_nostop <- dfm_remove(qdfm_nostop, 
+months <- c("^jan$", "^feb$", "^mar$", "^apr$", "^may$", "^jun$", "^jul$", 
+            "^aug$", "^sep$", 
+            "^sept$", "^oct$", "^nov$", "^dec$", "^january$", "^february$", "^march$",
+            "^april$", "^june$", "^july$", "^august$", "^september$", "^october$",
+            "^november$", "^december$",
+            "jan\\p{Pd}","feb\\p{Pd}","mar\\p{Pd}","apr\\p{Pd}","may\\p{Pd}",
+            "jun\\p{Pd}","jul\\p{Pd}","aug\\p{Pd}",
+            "sep\\p{Pd}","sept\\p{Pd}","oct\\p{Pd}","nov\\p{Pd}","dec\\p{Pd}")
+#removes stopwords, including placenames, poor conversion cues, months, 
+#and words that have no letters (eg negative numbers or number ranges)
+qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names))
+qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                           pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                       "ϭ","ĩ",
-                                      "ž","ğ","ŝ","ÿ"), 
+                                      "ž","ğ","ŝ","ÿ", months), 
                           valuetype = "regex")
+qdfm_nostop <- quanteda::dfm_keep(qdfm_nostop, pattern = c("[a-z]"), 
+                                  valuetype = "regex")
 
 saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
 
@@ -152,6 +158,10 @@ dtm_tidy_small <- readRDS(
 
 #this sometimes hangs. should not take over 10 min. if it does, restart R.
 gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
+#i=doc
+#j=feat
+#v=count
+
 #this sometimes hangs. should not take over 10 min. if it does, restart R.
 meta_small <- unique(dtm_tidy_small[,c(1,4:length(dtm_tidy_small))])
 
@@ -181,8 +191,7 @@ gsp_out_slam <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() 
 
 
 #This records documents dropped in cleaning process
-#TODO check gsp_text_with_meta syntax
-is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$i))
+is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$dimnames$Docs))
 sum(is_kept)
 #120821 kept pages
 
@@ -231,7 +240,6 @@ simple_gsp_model_saved <- readRDS(list.files(path = "data_output", pattern = "si
 #inspect words associated with topics using labelTopics
 labelTopics(simple_gsp_model, c(1:61))
 
-#TODO research prevalence and content
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                   K = 20, prevalence =~ admin + basin_plan + sust_criteria +
                     monitoring + projects_mgmt, max.em.its = 75,
