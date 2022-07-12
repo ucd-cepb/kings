@@ -7,8 +7,10 @@ library(tidyverse)
 library(sf)
 library(pbapply)
 library(quanteda)
+library(stringi)
 
 source('functions/custom_dictionary.R')
+source('functions/generate_place_names.R')
 
 build_corpus <- function(gsp_text_with_meta){
    is_comment <- gsp_text_with_meta$is_comment
@@ -20,6 +22,22 @@ build_corpus <- function(gsp_text_with_meta){
    #metadata is all other columns
    #metadata: num rows = num documents. num columns = num metadata type
    #TODO add social metadata
+   months <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", 
+               "sept", "oct", "nov", "dec", "january", "february", "march",
+               "april", "june", "july", "august", "september", "october",
+               "november", "december")
+
+   #format words in equations to readable text
+   gsp_text_with_meta$text <- pblapply(1:length(gsp_text_with_meta$text), function(i){
+      stri_replace_all_regex(gsp_text_with_meta$text[i], pattern = c("𝑎","𝑏","𝑐","𝑑","𝑒","𝑓","𝑔","𝑖","𝑗","𝑘","𝑙","𝑚",
+                                                                     "𝑛","𝑜","𝑝","𝑞","𝑟","𝑠","𝑡","𝑢","𝑣","𝑤","𝑥","𝑦","𝑧",
+                                                                     "𝐴","𝐵","𝐶","𝐷","𝐸","𝐹","𝐺","𝐻","𝐼","𝐽","𝐾","𝐿","𝑀",
+                                                                     "𝑁","𝑂","𝑃","𝑄","𝑅","𝑆",
+                                                                     "𝑇","𝑈","𝑉","𝑊","𝑋","𝑌","𝑍"),
+                             replacement = c(letters[c(1:7, 9:26)],LETTERS),
+                             vectorize= F)
+   })
+   
    
    qcorp <- quanteda::corpus(x = gsp_text_with_meta[!is_comment&!is_reference],
                              text_field = "text")
@@ -41,8 +59,9 @@ build_corpus <- function(gsp_text_with_meta){
                             remove_numbers = T,
                             verbose = T)
    
+   pl_names <- generate_place_names()
    
-   compounds <- custom_dictionary(c())
+   compounds <- custom_dictionary(c(pl_names[grepl("\\s", pl_names)]))
    
    #this takes about 3 hours
    #converts toLower, does not stem
