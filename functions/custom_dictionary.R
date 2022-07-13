@@ -1,5 +1,5 @@
 #add_terms should be a vector
-custom_dictionary <- function(add_terms){
+custom_dictionary <- function(add_terms = NULL){
    #retrieves the latest save of dictionary
    water_dictionary <- data.table(matrix(nrow = 0, ncol = 3))
    for(i in 1:length(list.files(path = "data_raw", pattern = "Dictionary"))){
@@ -15,14 +15,25 @@ custom_dictionary <- function(add_terms){
       }
    }#end of for
    
-   #removing parenthetical parts and isolating term column
-   water_dictionary <- gsub("\\s*\\([^\\)]+\\)","",as.character(water_dictionary[[3]]))
+   water_dictionary <- as.character(water_dictionary[[3]])
+   
+   #add custom terms
+   dictionary <- unique(append(tolower(water_dictionary), add_terms))
+   
+   #removing parenthetical parts
+   dictionary <- gsub("\\s*\\([^\\)]+\\)","",dictionary)
+   
+   #removing periods
+   dictionary <- gsub("\\.","",dictionary)
    
    #split at / or ,
-   water_dictionary <- unlist(strsplit(water_dictionary, "\\s*(,|/)\\s*"))
+   dictionary <- unlist(strsplit(dictionary, "\\s*(,|/)\\s*"))
    
    #keep multi-word terms
-   water_dictionary <- grep(" ", water_dictionary, value = T)
+   dictionary <- grep(" ", dictionary, value = T)
    
-   dictionary <- unique(append(tolower(water_dictionary), add_terms))
+   #remove any empty strings 
+   dictionary <- stri_remove_empty_na(dictionary)
+   
+   
 }

@@ -37,5 +37,19 @@ generate_place_names <- function(){
                       cnty_names$NAME,
                     str_squish(str_remove(cnty_names$NAME, pattern = "county")))
    
-   return(unique(c(counties, places)))
+   names <- unique(tolower(c(counties, places)))
+   
+   #removing parenthetical parts
+   names <- gsub("\\s*\\([^\\)]+\\)","",names)
+   
+   #removing periods
+   names <- gsub("\\.","",names)
+   
+   #split at / or ,
+   names <- unlist(strsplit(names, "\\s*(,|/)\\s*"))
+   
+   #removing empty entries
+   names <- stri_remove_empty_na(names)
+   
+   return(names)
 }
