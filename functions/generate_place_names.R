@@ -1,7 +1,7 @@
 library(tidyverse)
 library(qdapDictionaries)
 
-generate_place_names <- function(){
+generate_place_names <- function(underscore = F){
    
    #gazetter downloads main page:
    #https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html
@@ -50,6 +50,10 @@ generate_place_names <- function(){
    
    #removing empty entries
    names <- stri_remove_empty_na(names)
+   
+   if(underscore == T){
+      names <- gsub("\\s+", "_", x = names)
+   }
    
    return(names)
 }

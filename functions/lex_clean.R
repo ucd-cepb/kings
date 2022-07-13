@@ -68,6 +68,7 @@ lex_clean <- function(gsp_text_with_meta){
    qtok <- tokens_remove(qtok, pattern = c("NA","na",""),  
                           valuetype = "fixed", case_insensitive = F, verbose = T)
    
+   #TODO underscore place name option
    pl_names <- generate_place_names()
    
    compounds <- custom_dictionary(pl_names[grepl("\\s", pl_names)])
@@ -123,6 +124,7 @@ lex_clean <- function(gsp_text_with_meta){
    
    #removes stopwords, including placenames, poor conversion cues, months, 
    #and words that have no letters (eg negative numbers or number ranges)
+   pl_names <- generate_place_names(underscore = T)
    qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names))
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
@@ -226,8 +228,6 @@ lex_clean <- function(gsp_text_with_meta){
    gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
       list.files(path = "data_temp", pattern = "dtm", full.names = T))])
    
-   rm(dtm_tidy_small)
-   
    #this sometimes hangs. should not take over 10 min. if it does, restart R.
    meta_small <- unique(dtm_tidy_small[,c(1,4:length(dtm_tidy_small))])
    
@@ -235,7 +235,7 @@ lex_clean <- function(gsp_text_with_meta){
    meta_small <- readRDS(list.files(path = "data_temp", pattern = "meta_small", full.names = T)[length(
       list.files(path = "data_temp", pattern = "meta_small", full.names = T))])
    
-
+   rm(dtm_tidy_small)
    print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps or > 0.3 of pages", 
                  nvocab-ncol(gsp_dtm_small), nvocab,
                  ntokens-sum(gsp_dtm_small$v), ntokens
