@@ -103,6 +103,7 @@ pdf_link <- NULL
 xlsx_link <- NULL
 options(timeout=600)
 num_gsas <- rep(NA, length(gsp_attr$basin))
+name_gsas <- vector(mode = "list", length = length(gsp_attr$basin))
 
 for(i in 1:length(gsp_attr$link)){
    #checks whether pdf and xlsx have been downloaded
@@ -125,6 +126,8 @@ for(i in 1:length(gsp_attr$link)){
          #isolating list of GSAs from other elements
          temp_gsas <- temp_gsas[grepl("List of GSA",temp_gsas)]
          #splits on \n to determine number of GSAs (subtracts 1 for header row)
+         name_gsas[[i]] <- strsplit(temp_gsas, "\n")[[1]][2:length(
+            strsplit(temp_gsas, "\n")[[1]])]
          num_gsas[i] <- length(strsplit(temp_gsas, "\n")[[1]]) - 1
       }
       
@@ -167,5 +170,7 @@ rm(driver)
 #are there multiple gsas collaborating on this gsp? T/F Var
 mult_gsas <- sapply(num_gsas, function(x){ifelse(x > 1,T,F)})
 gsp_attr <- cbind(gsp_attr, "mult_gsas" = mult_gsas)
+gsp_attr <- as.data.table(gsp_attr)
+gsp_attr <- cbind(gsp_attr, name_gsas)
 
 write_csv(x =gsp_attr, file = './data_output/gsp_ids.csv')
