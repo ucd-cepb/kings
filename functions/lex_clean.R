@@ -58,6 +58,7 @@ lex_clean <- function(gsp_text_with_meta){
                             padding = F,
                             verbose = T)
    rm(qcorp)
+   #this built-in function only consistently removes positive numbers
    qtok <- quanteda::tokens(qtok,
                             what = "word",
                             remove_numbers = T,
@@ -68,11 +69,9 @@ lex_clean <- function(gsp_text_with_meta){
    qtok <- tokens_remove(qtok, pattern = c("NA","na",""),  
                           valuetype = "fixed", case_insensitive = F, verbose = T)
    
-   #TODO underscore place name option
    pl_names <- generate_place_names()
    
    compounds <- custom_dictionary(pl_names[grepl("\\s", pl_names)])
-   comptest <- custom_dictionary()
    
    #this takes about 3 hours
    #converts toLower, does not stem
@@ -143,7 +142,7 @@ lex_clean <- function(gsp_text_with_meta){
       list.files(path = "data_temp", pattern = "nostop", full.names = T)[length(
          list.files(path = "data_temp", pattern = "nostop", full.names = T))])
    
-   #drops short words
+   #drops short words less than min_nchar long
    qdfm_2plus <- dfm_select(qdfm_nostop, min_nchar = 2)
    
    #deletes duplicate rows, if any
