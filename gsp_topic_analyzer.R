@@ -50,9 +50,8 @@ saveRDS(gsp_text_with_meta, file = paste0("data_output/","gsp_docs_w_meta_",form
 
 #retrieves the latest save of gsp_text_with_meta
 gsp_text_with_meta <- readRDS(
-   list.files(path = "data_output", pattern = "meta", full.names = T)[length(
+   list.files(path = "data_output",pattern = "meta", full.names = T)[length(
       list.files(path = "data_output", pattern = "meta", full.names = T))])
-
 gsp_out <- lex_clean(gsp_text_with_meta)
 
 
@@ -67,7 +66,7 @@ gsp_out <- lex_clean(gsp_text_with_meta)
 #content = word frequency within topic. allows one categorical var, advised to be small
 
 
-simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
+gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                  K = 50, prevalence =~ admin + 
                     basin_plan +
                     sust_criteria +
@@ -81,22 +80,16 @@ simple_gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                  max.em.its = 120,
                  data = gsp_out$meta, init.type = "Spectral")  
 
-#are we interested in num gsas or num organizations? (Linda knows about num orgs
 #dummy for how many gsas are involved: multiple or one
-#count of total orgs involved)
-saveRDS(simple_gsp_model, file = paste0("data_output/","simple_model_",format(Sys.time(), "%Y%m%d-%H:%M")))
 
-simple_gsp_model_saved <- readRDS(list.files(path = "data_output", pattern = "simple_model", full.names = T)[length(
-   list.files(path = "data_output", pattern = "simple_model", full.names = T))])
+saveRDS(gsp_model, file = paste0("data_output/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+
+gsp_model_saved <- readRDS(list.files(path = "data_output", pattern = "model", full.names = T)[length(
+   list.files(path = "data_output", pattern = "model", full.names = T))])
 
 
 #inspect words associated with topics using labelTopics
-labelTopics(simple_gsp_model, c(1:50))
-
-gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                  K = 20, prevalence =~ admin + basin_plan + sust_criteria +
-                    monitoring + projects_mgmt, max.em.its = 75,
-                 data = gsp_out$meta[,2:6], init.type = "Spectral")  
+labelTopics(gsp_model_saved, c(1:50))
 
 #example:
 #how to let searchK figure out how many topics to generate
