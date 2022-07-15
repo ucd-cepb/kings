@@ -64,8 +64,7 @@ Uses helper function:
       Uses helper function:
       (3Ci) generate_place_names, which formats a collection of all
          place names and county names in California, from Gazetteer
-         files that are too large to include in Github. See 
-         generate_place_names for download information.
+         files.
       (3Cii) custom_dictionary, which formats the EPA climate change
          dictionary and a USGS water dictionary and adds results of
          generate_place_names and any other custom words to prepare
