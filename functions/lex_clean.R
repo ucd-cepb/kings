@@ -38,14 +38,17 @@ lex_clean <- function(gsp_text_with_meta){
                              vectorize= F)
    })
    print("Math script formatted")
+   dir.create('data_temp')
    saveRDS(gsp_text_with_meta, file = paste0("data_temp/","gsp_formatted",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    gsp_text_with_meta <- readRDS(list.files(path = "data_temp", pattern = "gsp_formatted", full.names = T)[length(
       list.files(path = "data_temp", pattern = "gsp_formatted", full.names = T))])
    
    gsp_text_with_meta$text <- as.character(gsp_text_with_meta$text)
-   qcorp <- quanteda::corpus(x = gsp_text_with_meta[!is_comment&!is_reference],
-                             text_field = "text")
+
+   
+
+   qcorp <- quanteda::corpus(x = gsp_text_with_meta[!is_comment&!is_reference,], text_field = "text")
    qtok <- quanteda::tokens(qcorp,
                             what = "word",
                             remove_punct = T,
@@ -58,6 +61,7 @@ lex_clean <- function(gsp_text_with_meta){
                             padding = F,
                             verbose = T)
    rm(qcorp)
+   gc()
    #this built-in function only consistently removes positive numbers
    qtok <- quanteda::tokens(qtok,
                             what = "word",

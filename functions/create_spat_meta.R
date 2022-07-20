@@ -1,14 +1,10 @@
-library(stm)
-library(tm)
-library(SnowballC)
-library(tidytext)
-library(data.table)
-library(tidyverse)
-library(sf)
-library(pbapply)
-library(ggplot2)
-library(scico)
-library(rcompanion)
+
+
+packs <- c('scico','rcompanion','tidyverse','pbapply','sf','data.table','tidytext','SnowballC','stm','tm')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
+
 
 #type = "pop" or "area"
 create_svi_meta <- function(type){
