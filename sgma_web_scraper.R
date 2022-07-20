@@ -173,4 +173,4 @@ gsp_attr <- cbind(gsp_attr, "mult_gsas" = mult_gsas)
 gsp_attr <- as.data.table(gsp_attr)
 gsp_attr <- cbind(gsp_attr, name_gsas)
 
-write_csv(x =gsp_attr, file = './data_output/gsp_ids.csv')
+saveRDS(gsp_attr, file = paste0('./data_output/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
