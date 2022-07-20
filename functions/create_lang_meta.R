@@ -8,6 +8,7 @@ library(sf)
 library(pbapply)
 library(readxl)
 
+source("functions/web_data_repair.R")
 create_lang_meta <- function(){
    
    #downloaded from https://data.cnra.ca.gov/dataset/sgma-basin-prioritization/resource/6347629e-340d-4faf-ae7f-159efbfbcdc9
@@ -27,11 +28,16 @@ create_lang_meta <- function(){
       length(list.files(path = "data_output", pattern = "web_vars", full.names = T))])
    #joins gsp vars with basin vars
    #filters out basin ids without plans     
-   gsp_tbl <- gsp_tbl %>% mutate(basin_id = sub(" .*", "", basin) )
-   bsn_and_plan_vars <- full_join(gsp_tbl, final_515_table, by = "basin_id") %>% 
-      mutate(gsp_id = gsp_num_id) %>% select(!gsp_num_id) %>% 
-      filter(!is.na(gsp_id))
-
+   gsp_tbl <- cbind(gsp_tbl, "basin_id" = sub(" .*", "", gsp_tbl$basin))
+   
+   setnames(gsp_tbl,old="gsp_num_id",new="gsp_id") 
+   
+   gsp_tbl <- web_data_repair(new_tbl = gsp_tbl,
+                              old_tbl = read_csv(list.files(path = "data_output", pattern = "gsp_ids", full.names = T)[
+      length(list.files(path = "data_output", pattern = "gsp_ids", full.names = T))]))
+   
+   bsn_and_plan_vars <- merge(gsp_tbl, final_515_table, all.x = T, 
+                              by = "basin_id") 
    page_num <- integer(0)
    gsp_list <- list.files(path = "data_output", pattern = "_text", full.names = T)
    
@@ -120,7 +126,14 @@ create_lang_meta <- function(){
                                     projects_mgmt_actions = is_projects, gsp_id = gsp_id,
                                     is_comment = is_comment, is_reference = is_reference, 
                                     page_num = page_num)
+   
+     
+   bsn_and_plan_vars <- bsn_and_plan_vars[!is.na(bsn_and_plan_vars$gsp_id)]
    gsp_text_with_lang <- full_join(gsp_text_with_lang, bsn_and_plan_vars)
+   
+    
+   
+   
    #use to filter out nulls in category
    cat_selector <- !sapply(all_text_cat,is.null)
    #use cat_selector to subset text and all metadata vectors
