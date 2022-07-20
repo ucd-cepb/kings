@@ -1,21 +1,20 @@
-library(stm)
-library(tm)
-library(SnowballC)
-library(tidytext)
-library(data.table)
-library(tidyverse)
-library(sf)
-library(pbapply)
-library(geometry)
-library(Rtsne)
-library(rsvd)
-library(stringi)
+
+##### NOTE THAT THIS CODE BUILDS FROM WAY BACK TO START
+##### TO SKIP SOME STEPS, SET "SKIP_AHEAD" = TRUE
+SKIP_AHEAD<-TRUE
+packs <- c('stm','tm','SnowballC','tidytext','data.table','tidyverse','sf','pbapply','geometry','Rtsne','rsvd','stringi','stringr','scico')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+check <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(check>0)){print(check)}else{print("got 'em all")}
+lapply(packs, require, character.only = TRUE)
 
 source('functions/lex_clean.R')
 source('functions/create_lang_meta.R')
 source('functions/create_spat_meta.R')
 source('functions/generate_place_names.R')
 
+if(!SKIP_AHEAD){
 gsp_text_with_lang <- create_lang_meta()
 
 #retrieves the latest save of gsp_text_with_lang
@@ -47,13 +46,13 @@ gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_svi_adjusted, by = c("gs
 gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
 
 saveRDS(gsp_text_with_meta, file = paste0("data_output/","gsp_docs_w_meta_",format(Sys.time(), "%Y%m%d-%H:%M")))
+}
 
 #retrieves the latest save of gsp_text_with_meta
 gsp_text_with_meta <- readRDS(
    list.files(path = "data_output",pattern = "meta", full.names = T)[length(
       list.files(path = "data_output", pattern = "meta", full.names = T))])
 gsp_out <- lex_clean(gsp_text_with_meta)
-
 
 #test svi for both
 #test k = 5, 10, 20, 40, 80
