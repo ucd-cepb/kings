@@ -1,5 +1,6 @@
 library(tidyverse)
 library(qdapDictionaries)
+library(stringi)
 
 generate_place_names <- function(underscore = F){
    
@@ -17,6 +18,7 @@ generate_place_names <- function(underscore = F){
       sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") %>% 
       mutate(NAME = tolower(NAME)) 
    
+   #removing last word ("city" or "cdp")
    places <- gsub("\\s+\\w*$", "", x = place_names$NAME)
    
    common_names <- c("airport", "alpine", "bend", "cherokee", "commerce",
@@ -37,19 +39,16 @@ generate_place_names <- function(underscore = F){
                       cnty_names$NAME,
                     str_squish(str_remove(cnty_names$NAME, pattern = "county")))
    
-   names <- unique(tolower(c(counties, places)))
-   
-   #removing parenthetical parts
-   names <- gsub("\\s*\\([^\\)]+\\)","",names)
+   names <- tolower(c(counties, places))
    
    #removing periods
    names <- gsub("\\.","",names)
    
-   #split at / or ,
-   names <- unlist(strsplit(names, "\\s*(,|/)\\s*"))
+   #split at / ( ) or ,
+   names <- unlist(strsplit(names, "\\s*[,|/\\(\\)]\\s*"))
    
    #removing empty entries
-   names <- stri_remove_empty_na(names)
+   names <- unique(stri_remove_empty_na(names))
    
    if(underscore == T){
       names <- gsub("\\s+", "_", x = names)
