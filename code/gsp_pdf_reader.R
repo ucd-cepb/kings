@@ -5,7 +5,7 @@
 library(stm)
 library(pdftools)
 
-source('functions/create_page_key.R')
+source('code/functions/create_page_key.R')
 
 pdfs <- list.files(path = "data_raw/portal", pattern = "pdf", full.names = T)
 #pdf texts 1-112 successfully saved
