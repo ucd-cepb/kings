@@ -39,7 +39,7 @@ create_lang_meta <- function(){
    bsn_and_plan_vars <- merge(gsp_tbl, final_515_table, all.x = T, 
                               by = "basin_id") 
    page_num <- integer(0)
-   gsp_list <- list.files(path = "data_output", pattern = "_text", full.names = T)
+   gsp_list <- list.files(path = "data_cleaned", pattern = "_text", full.names = T)
    
    #minimize num of vars initialized at length zero by using page counter
    for(k in 1:length(gsp_list)){
@@ -61,7 +61,7 @@ create_lang_meta <- function(){
       #find first page of doc k
       page_k1 <- which(page_num %in% 1)[k]
       gsp_k <- readRDS(gsp_list[k])
-      key_k <- readRDS(paste0("data_output/gsp_num_id_",substr(gsp_list[k],24,27),"_categories"))
+      key_k <- readRDS(paste0("data_cleaned/gsp_num_id_",substr(gsp_list[k],24,27),"_categories"))
       gsp_id[page_k1:(page_k1+length(gsp_k)-1)] <- rep.int(c(substr(gsp_list[k],24,27)),times = length(gsp_k))
       #i = page number
       for (i in 1:length(gsp_k)){

@@ -1,4 +1,5 @@
 data_raw/portal/*
+.DS_Store
 # History files
 .Rhistory
 .Rapp.history
