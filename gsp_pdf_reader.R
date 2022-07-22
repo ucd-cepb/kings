@@ -7,7 +7,7 @@ library(pdftools)
 
 source('functions/create_page_key.R')
 
-pdfs <- list.files(path = "data_raw", pattern = "pdf", full.names = T)
+pdfs <- list.files(path = "data_raw/portal", pattern = "pdf", full.names = T)
 #pdf texts 1-112 successfully saved
 #category texts 1-112 successfully saved
 for(k in 1:length(pdfs)){
@@ -31,7 +31,7 @@ for(k in 1:length(pdfs)){
 }
 
 
-#testocr <- pdf_ocr_text(file.path("data_raw/pdftools.pdf"))
+#testocr <- pdf_ocr_text(file.path("data_raw/portal/pdftools.pdf"))
 
 #TODO pdf_fonts to find sections
 

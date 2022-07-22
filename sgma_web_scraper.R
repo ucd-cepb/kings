@@ -108,8 +108,8 @@ name_gsas <- vector(mode = "list", length = length(gsp_attr$basin))
 for(i in 1:length(gsp_attr$link)){
    #checks whether pdf and xlsx have been downloaded
    if(!is.na(gsp_attr$link[i]) & 
-      (!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
-       !file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) |
+      (!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
+       !file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) |
        is.na(num_gsas[i]))){
    
       remote_driver$navigate(paste("https://sgma.water.ca.gov",gsp_attr$link[i], sep = ""))
@@ -132,8 +132,8 @@ for(i in 1:length(gsp_attr$link)){
       }
       
       if(!is.na(gsp_attr$link[i]) & 
-         (!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
-          !file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")))){
+         (!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
+          !file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")))){
          
             #pdf_download
             # Specify URL where file is stored
@@ -142,8 +142,8 @@ for(i in 1:length(gsp_attr$link)){
             
             pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
             # Specify destination where file should be saved
-            destfilepdf <- paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-            if(!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
+            destfilepdf <- paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+            if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
                download.file(pdf_link[[1]], destfilepdf, timeout = 600)  
                print(paste("pdf",i,"downloaded"))
                Sys.sleep(5)
@@ -152,8 +152,8 @@ for(i in 1:length(gsp_attr$link)){
             }
             #xlsx_download
             xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
-            destfilexlsx <- paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-            if(!file.exists(paste('./data_raw/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
+            destfilexlsx <- paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+            if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
                download.file(xlsx_link[[1]], destfilexlsx)
                print(paste("spreadsheet",i,"downloaded"))
                Sys.sleep(5)
