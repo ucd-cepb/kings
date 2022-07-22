@@ -9,8 +9,8 @@ library(pbapply)
 library(quanteda)
 library(stringi)
 
-source('functions/custom_dictionary.R')
-source('functions/generate_place_names.R')
+source('code/functions/custom_dictionary.R')
+source('code/functions/generate_place_names.R')
 
 lex_clean <- function(gsp_text_with_meta){
    is_comment <- gsp_text_with_meta$is_comment
@@ -123,13 +123,18 @@ lex_clean <- function(gsp_text_with_meta){
    
    #removes stopwords, including placenames, poor conversion cues, months, 
    #and words that have no letters (eg negative numbers or number ranges)
+   custom <- c("united", "states", "us", "u.s","u.s.", "california")
    pl_names <- generate_place_names(underscore = T)
-   qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),pl_names))
+   qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
+                                                         custom, pl_names))
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                                    "ϭ","ĩ",
-                                                   "ž","ğ","ŝ","ÿ", months), 
+                                                   "ž","ğ","ŝ","ÿ","þ", months), 
                                        valuetype = "regex")
+   #acronym conversion so that short acronyms don't get dropped
+   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop, pattern = "ej",
+                                        replacement = "environmental_justice")
    qdfm_nostop <- quanteda::dfm_keep(qdfm_nostop, pattern = c("[a-z]"), 
                                      valuetype = "regex")
 
@@ -258,8 +263,6 @@ lex_clean <- function(gsp_text_with_meta){
    colnames(gsp_out$meta) <- colnames(meta_small)
    
    saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "slam", full.names = T))])
    
    return(gsp_out)
 }

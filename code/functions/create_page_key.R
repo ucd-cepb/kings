@@ -4,8 +4,8 @@ library(tidyverse)
 library(readxl)
 library(data.table)
 
-source('functions/read_plan_element.R')
-source('functions/consolidate_pgs.R')
+source('code/functions/read_plan_element.R')
+source('code/functions/consolidate_pgs.R')
 
 create_page_key <- function(file){
    plan <- read_plan_element(file)

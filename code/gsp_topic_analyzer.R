@@ -12,12 +12,12 @@ library(rsvd)
 library(stringi)
 library(wordcloud)
 
-source('functions/lex_clean.R')
-source('functions/create_lang_meta.R')
-source('functions/create_spat_meta.R')
-source('functions/generate_place_names.R')
-source('functions/compare_models.R')
-source('functions/visualize_topics.R')
+source('code/functions/lex_clean.R')
+source('code/functions/create_lang_meta.R')
+source('code/functions/create_spat_meta.R')
+source('code/functions/generate_place_names.R')
+source('code/functions/compare_models.R')
+source('code/functions/visualize_topics.R')
 
 gsp_text_with_lang <- create_lang_meta()
 
