@@ -9,7 +9,7 @@ library(pbapply)
 library(readxl)
 
 source("code/functions/web_data_repair.R")
-create_lang_meta <- function(){
+create_lang_meta <- function(run_repair = F){
    
    #downloaded from https://data.cnra.ca.gov/dataset/sgma-basin-prioritization/resource/6347629e-340d-4faf-ae7f-159efbfbcdc9
    final_515_table <- read_excel("data_raw/final-515-table.xlsx")
@@ -24,17 +24,24 @@ create_lang_meta <- function(){
    final_515_table <- select(final_515_table, 
                              c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority))
 
-   gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_vars", full.names = T)[
-      length(list.files(path = "data_output", pattern = "web_vars", full.names = T))])
-   #joins gsp vars with basin vars
-   #filters out basin ids without plans     
-   gsp_tbl <- cbind(gsp_tbl, "basin_id" = sub(" .*", "", gsp_tbl$basin))
-   
-   setnames(gsp_tbl,old="gsp_num_id",new="gsp_id") 
-   
-   gsp_tbl <- web_data_repair(new_tbl = gsp_tbl,
-                              old_tbl = read_csv(list.files(path = "data_output", pattern = "gsp_ids", full.names = T)[
-      length(list.files(path = "data_output", pattern = "gsp_ids", full.names = T))]))
+   if(run_repair == T){
+      gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_vars", full.names = T)[
+         length(list.files(path = "data_output", pattern = "web_vars", full.names = T))])
+      #joins gsp vars with basin vars
+      #filters out basin ids without plans     
+      gsp_tbl <- cbind(gsp_tbl, "basin_id" = sub(" .*", "", gsp_tbl$basin))
+      
+      setnames(gsp_tbl,old="gsp_num_id",new="gsp_id") 
+      
+      gsp_tbl <- web_data_repair(new_tbl = gsp_tbl,
+                                 old_tbl = read_csv(list.files(path = "data_output", pattern = "gsp_ids", full.names = T)[
+                                    length(list.files(path = "data_output", pattern = "gsp_ids", full.names = T))]))
+      
+      saveRDS(gsp_tbl, file = paste0("data_output/","web_repaired_",format(Sys.time(), "%Y%m%d-%H:%M")))
+      
+   }
+   gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
+      length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
    
    bsn_and_plan_vars <- merge(gsp_tbl, final_515_table, all.x = T, 
                               by = "basin_id") 

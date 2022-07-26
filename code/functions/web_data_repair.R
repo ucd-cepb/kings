@@ -28,10 +28,12 @@ web_data_repair <- function(new_tbl, old_tbl){
             repaired$name_gsas[[i]] = c(
                "Westlands Water District GSA",
                "County of Fresno GSA")
+            repaired$mult_gsas[[i]] <- T
          }
          if(repaired$gsp_id[i]=="0032"){
             repaired$name_gsas[[i]] = c(
             "Cuyama Basin GSA")
+            repaired$mult_gsas[[i]] <- F
          }
          if(repaired$gsp_id[i]=="0035"){
             repaired$name_gsas[[i]] = c(
@@ -39,6 +41,7 @@ web_data_repair <- function(new_tbl, old_tbl){
                "Paso Basin - County of San Luis Obispo GSA",
                "San Miguel Community Services District GSA",
                "Shandon - San Juan GSA")
+            repaired$mult_gsas[[i]] <- T
          }
       }
    }

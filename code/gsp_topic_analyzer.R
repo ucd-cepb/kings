@@ -23,7 +23,7 @@ gsp_topic_analyzer<- function(box_sync = F, build_meta = F, clean_lex = T,
    source('code/functions/visualize_topics.R')
    
    if(build_meta==T){
-      gsp_text_with_lang <- create_lang_meta()
+      gsp_text_with_lang <- create_lang_meta(run_repair = F)
       
       #retrieves the latest save of gsp_text_with_lang
       #generated in create_lang_meta, which allows create_lang_meta() to be skipped
