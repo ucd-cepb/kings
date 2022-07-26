@@ -1,4 +1,4 @@
-sgma_web_scraper <- function(box_sync = F){
+sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    #takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
    #using selenium because rvest cannot read the table
    library(stringr)
@@ -102,9 +102,8 @@ sgma_web_scraper <- function(box_sync = F){
    
    if(box_sync == T){
       #set up Renviron with Box App permissions specific to your user
-      box_auth(client_id = BOX_CLIENT_ID,
-               client_secret = BOX_CLIENT_SECRET)
-      box_setwd(161132377761)
+      box_auth()
+      box_setwd(168118574337)
    }
    
    #go to webpage
@@ -113,6 +112,20 @@ sgma_web_scraper <- function(box_sync = F){
    options(timeout=600)
    num_gsas <- rep(NA, length(gsp_attr$basin))
    name_gsas <- vector(mode = "list", length = length(gsp_attr$basin))
+   
+   if(use_repaired == T){
+      gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
+         length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
+      for(i in 1:length(gsp_attr$gsp_num_id)){
+         indx <- which(gsp_tbl$gsp_id == gsp_attr$gsp_num_id[i])
+         if(length(indx)==1){
+            num_gsas[i] <- ifelse(gsp_tbl$mult_gsas[indx]==T,Inf,1)
+            name_gsas[i] <- gsp_tbl$name_gsas[indx]
+         }
+      }
+   }
+   
+   
    
    for(i in 1:length(gsp_attr$link)){
       #checks whether pdf and xlsx have been downloaded
@@ -152,9 +165,20 @@ sgma_web_scraper <- function(box_sync = F){
             pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
             # Specify destination where file should be saved
             destfilepdf <- paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+            if(box_sync == T){
+               box_pdfs <- as.data.frame(box_search(gsp_attr$gsp_num_id[i], 
+                                       content_types = "name", type = "file", file_extensions = "pdf",
+                                       ancestor_folder_ids = box_getwd()))#searches current box folder
+               if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))&
+                  nrow(box_pdfs) == 1){
+                  box_dl(file_id = box_pdfs$id, pb = T, local_dir = './data_raw/portal')
+                  print(paste("pdf",i,"downloaded from box"))
+               }
+            }
             if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
-               download.file(pdf_link[[1]], destfilepdf, timeout = 600)  
-               print(paste("pdf",i,"downloaded"))
+               download.file(pdf_link[[1]], destfilepdf, timeout = 600) 
+               if(box_sync == T){box_ul(dir_id = box_getwd(),file = destfilepdf,pb = T)}
+               print(paste("pdf",i,"downloaded from portal"))
                Sys.sleep(5)
             } else{
                print(paste("pdf",i,"already downloaded"))
@@ -162,9 +186,21 @@ sgma_web_scraper <- function(box_sync = F){
             #xlsx_download
             xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
             destfilexlsx <- paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+            
+            if(box_sync == T){
+               box_xls <- as.data.frame(box_search(gsp_attr$gsp_num_id[i], 
+                                                    content_types = "name", type = "file", file_extensions = "xlsx",
+                                                    ancestor_folder_ids = box_getwd()))#searches current box folder
+               if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))&
+                  nrow(box_xls) == 1){
+                  box_dl(file_id = box_xls$id, pb = T, local_dir = './data_raw/portal')
+                  print(paste("spreadsheet",i,"downloaded from box"))
+               }
+            }
             if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
                download.file(xlsx_link[[1]], destfilexlsx)
-               print(paste("spreadsheet",i,"downloaded"))
+               if(box_sync == T){box_ul(dir_id = box_getwd(),file = destfilexlsx,pb = T)}
+               print(paste("spreadsheet",i,"downloaded from portal"))
                Sys.sleep(5)
             } else {
                print(paste("spreadsheet",i,"already downloaded"))
