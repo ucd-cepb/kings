@@ -1,4 +1,4 @@
-gsp_topic_analyzer<- function(box_sync = F, build_meta = F, clean_lex = T, 
+gsp_topic_analyzer<- function(build_meta = F, clean_lex = T, 
                               model_compare = F, run_model = T, viz_results = T, 
                               ntopics = NA){
    library(stm)

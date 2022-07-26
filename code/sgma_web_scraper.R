@@ -120,7 +120,7 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
       for(i in 1:length(gsp_attr$gsp_num_id)){
          indx <- which(gsp_tbl$gsp_id == gsp_attr$gsp_num_id[i])
          if(length(indx)==1){
-            num_gsas[i] <- ifelse(gsp_tbl$mult_gsas[indx]==T,Inf,1)
+            num_gsas[i] <- ifelse(length(gsp_tbl$name_gsas[[indx]])>=1,length(gsp_tbl$name_gsas[[indx]]),NA)
             name_gsas[i] <- gsp_tbl$name_gsas[indx]
          }
       }
@@ -173,6 +173,9 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
                   box_dl(file_id = box_pdfs$id, pb = T, local_dir = './data_raw/portal')
                   print(paste("pdf",i,"downloaded from box"))
                }
+               if(nrow(box_pdfs)>1){
+                  print(paste("more than one Box version of pdf",k))
+               }
             }
             if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
                download.file(pdf_link[[1]], destfilepdf, timeout = 600) 
@@ -194,6 +197,8 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
                   nrow(box_xls) == 1){
                   box_dl(file_id = box_xls$id, pb = T, local_dir = './data_raw/portal')
                   print(paste("spreadsheet",i,"downloaded from box"))
+               }if(nrow(box_xls)>1){
+                  print(paste("more than one Box version of spreadsheet",k))
                }
             }
             if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
