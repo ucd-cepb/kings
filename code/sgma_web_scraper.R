@@ -8,18 +8,19 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    library(tidyverse)
    library(robotstxt)
    library(boxr)
+   library(data.table)
    pacman::p_load(RSelenium, purrr, rvest, glue)
    
    gsp_url <- "https://sgma.water.ca.gov/portal/gsp/all/"
    paths_allowed(domain = gsp_url)
    #returns TRUE
    
-   gsp_session <- bow(gsp_url, force = T)
+   gsp_session <- bow(gsp_url, force = T, verbose = F)
    gsp_session
    #crawl delay 5 sec
    #15 rules for 4 bots
    
-   driver <- rsDriver(port = 4441L, browser = "firefox")
+   driver <- rsDriver(port = 4442L, browser = "firefox")
    remote_driver <- driver$client
    #remote_driver$open()
    remote_driver$navigate(gsp_url)
@@ -125,8 +126,6 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
       }
    }
    
-   
-   
    for(i in 1:length(gsp_attr$link)){
       #checks whether pdf and xlsx have been downloaded
       if(!is.na(gsp_attr$link[i]) & 
@@ -220,4 +219,5 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    
    saveRDS(gsp_attr, file = paste0('./data_output/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
    
+   return(invisible())
 }
