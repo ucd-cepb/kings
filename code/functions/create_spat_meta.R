@@ -11,13 +11,18 @@ library(scico)
 library(rcompanion)
 
 #type = "pop" or "area"
-create_svi_meta <- function(type){
+create_svi_meta <- function(type, box_sync = F){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
    #  social vulnerability index 2018
    albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
    
+   if(box_sync == T){
+      #set up Renviron with Box App permissions specific to your user
+      box_auth()
+      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw")
+   }
    # https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
    #downloaded by hand and placed in data_spatial_raw
    censusplot <- st_read("data_spatial_raw/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
@@ -121,107 +126,110 @@ create_dac_meta <- function(type, scope){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
-   if(scope != "tract" & type != "place"){
-      stop("type must be \"tract\" or \"place\"")
+   if(scope != "tract" & scope != "place" & scope != "blockgroup"){
+      stop("scope must be \"tract,\" \"place,\" or \"blockgroup\"")
    }
+   if(type == "area" & scope == "place"){
+      stop("scope \"place\" may not be used with type \"area\"")
+   }
+   
 
    albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
    
-   #     https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
-   #downloaded by hand and placed in data_spatial_raw
-   censusplot <- st_read("data_spatial_raw/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
-   censusplot <- st_transform(censusplot,albersNA)
-   censusplot <- st_make_valid(censusplot)
+   if(box_sync == T){
+      #set up Renviron with Box App permissions specific to your user
+      box_auth()
+      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw")
+   }
    
-   if(scope=="tract"){
-      #https://data.cnra.ca.gov/dataset/dacs-census/resource/e5712534-dc8a-4094-bb0d-91050a63d8f0
-      #downloaded by hand and placed in data_spatial_raw; renamed dacs_2018 
-      #census tract 18
-      dacplot <- st_read("data_spatial_raw/dacs_2018/DAC_CT18.shp")
-      dacplot <- st_transform(dacplot,albersNA)
-      dacplot <- st_make_valid(dacplot)
-      
-      dac_census_overs = st_intersects(dacplot, censusplot)
-      dac_census_props = pblapply(seq_along(dac_census_overs),function(i){
-         #proportion of dac tract in each census tract = area of census_dac intersection / dac area
-         area_overlap = st_area(st_intersection(dacplot[i,],censusplot[dac_census_overs[[i]],]))
-         prop_dac_in_tract = area_overlap/st_area(dacplot[i,])
-         prop_tract_in_dac = area_overlap/st_area(censusplot[dac_census_overs[[i]],])
-         data.table(census_tract_id = censusplot$FIPS[dac_census_overs[[i]]],
-                    dac_tract_id = dacplot$GEOID10[i],
-                    population = censusplot$E_TOTPOP[dac_census_overs[[i]]],
-                    dacpop = dacplot$Pop18[i],
-                    SVI_raw = ifelse(censusplot$SPL_THEMES[dac_census_overs[[i]]]>=0,
-                                     censusplot$SPL_THEMES[dac_census_overs[[i]]],NA),
-                    SVI_percentile = ifelse(censusplot$RPL_THEMES[dac_census_overs[[i]]]>=0,
-                                            censusplot$RPL_THEMES[dac_census_overs[[i]]],NA),
-                    DAC = ifelse(dacplot$DAC18[i] == "Y", T, 
-                                 ifelse(dacplot$DAC18[i]=="N",F,NA)),
-                    Prop_dac_in_tract = as.numeric(prop_dac_in_tract),
-                    Prop_tract_in_dac = as.numeric(prop_tract_in_dac)
-                    #return entries where over 90 percent of the census tract is in the dac tract
-                    #as well as entries where over 90 percent of the dac tract is made up of the census tract
-         )[Prop_tract_in_dac >= 0.9 | Prop_dac_in_tract >= 0.9]
-      }, cl = 4)
-      
-      dac_svi_tbl <- list.rbind(dac_census_props)
-      saveRDS(dac_svi_tbl, "data_output/dac_svi_tbl")
-      
-      dac_svi_tbl <- dac_svi_tbl[!is.na(dac_svi_tbl$DAC) & 
-                                    !is.na(dac_svi_tbl$SVI_percentile)]
-      
-
-      #normality test shows data is non-normal
-      set.seed(0)
-      #shapiro.test(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == T])
-      ks.test(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == T], "pnorm")
-      ks.test(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == F], "pnorm")
-      #not a norm distr
-      ks.test(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == F], 
-              dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == T], alternative = "greater")
-      
-      wilcox.test(dac_svi_tbl$SVI_percentile, as.numeric(dac_svi_tbl$DAC))
-      #null is rejected; SVI of DACs is higher
-      
-      median(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == T])
-      median(dac_svi_tbl$SVI_percentile[dac_svi_tbl$DAC == F])
-      
-      ggplot(dac_svi_tbl, aes(x=DAC, y=SVI_percentile, fill=DAC)) +
-         geom_boxplot()+theme_minimal()+scale_fill_scico_d(palette = "nuuk")
-      
-      #raw
-      ks.test(dac_svi_tbl$SVI_raw[dac_svi_tbl$DAC == T], "pnorm")
-      ks.test(dac_svi_tbl$SVI_raw[dac_svi_tbl$DAC == F], "pnorm")
-      #not a norm distr
-      ks.test(dac_svi_tbl$SVI_raw[dac_svi_tbl$DAC == F], 
-              dac_svi_tbl$SVI_raw[dac_svi_tbl$DAC == T], alternative = "greater")
-      
-      wt <- wilcox.test(dac_svi_tbl$SVI_raw, as.numeric(dac_svi_tbl$DAC))
-      wilcoxonRG(x = dac_svi_tbl$SVI_raw,
-                 g = as.numeric(dac_svi_tbl$DAC) )
-      #null is rejected; SVI of DACs is higher
-      
-      median(dac_svi_tbl$SVI_raw[dac_svi_tbl$DAC == T])
-      median(dac_svi_tbl$SVI_raw[dac_svi_tbl$DAC == F])
-      
-      ggplot(dac_svi_tbl, aes(x=DAC, y=SVI_raw, fill=DAC)) +
-         geom_boxplot()+theme_minimal()+scale_fill_scico_d(palette = "nuuk")
-      
-      #since nominal, should not use pearson
-      #cor.test(as.numeric(dac_svi_tbl$DAC), dac_svi_tbl$SVI_raw, method = "pearson",
-      #        alternative = "greater")
-      
-      dac_svi_model <- lm(dac_svi_tbl$SVI_percentile ~ dac_svi_tbl$DAC)
-      summary(dac_svi_model)
-      apsrtable::apsrtable(dac_svi_model)
-      
-      return(dac_svi_tbl)
-   }#end of scope=tract
+   #https://data.cnra.ca.gov/dataset/dacs-census/resource/e5712534-dc8a-4094-bb0d-91050a63d8f0
+   #downloaded by hand and placed in data_spatial_raw; renamed dacs_2018 
+   dacplot = switch(  
+      scope,  
+      "blockgroup"= st_read("data_spatial_raw/dacs_2018/DAC_BG18.shp"),  
+      "tract"= st_read("data_spatial_raw/dacs_2018/DAC_CT18.shp"),  
+      "place"= st_read("data_spatial_raw/dacs_2018/DAC_Pl18.shp")
+   ) 
+   dacplot <- st_transform(dacplot,albersNA)
+   dacplot <- st_make_valid(dacplot)
    
-   if(scope=="place"){
-      dacplace <- st_read("data_spatial_raw/dacs_2018/DAC_Pl18.shp")
-      dacplace <- st_transform(dacplace,albersNA)
-      dacplace <- st_make_valid(dacplace)
+   fname = unzip("data_spatial_raw/GSP_submitted.zip", list=TRUE)
+   unzip("data_spatial_raw/GSP_submitted.zip", files=fname$Name, exdir="data_spatial_raw/GSP_submitted", overwrite=TRUE)
+   fpath = file.path("data_spatial_raw/GSP_submitted", grep('shp$',fname$Name,value=T))
+   gsp_shapes <- st_read(fpath)
+   gsp_shapes <- st_transform(gsp_shapes,albersNA)
+   gsp_shapes <- st_make_valid(gsp_shapes)
+   
+   #dac_gspshape_overs = st_intersects(dacplot, gsp_shapes)
+   gspshape_dac_overs = st_intersects(gsp_shapes, dacplot)
+   gspshape_dac_props = pblapply(seq_along(gspshape_dac_overs),function(i){
+      #proportion of gsp in each dac region = area of gsp_dac intersection / gsp area
+      area_overlap = st_area(st_intersection(gsp_shapes[i,],dacplot[gspshape_dac_overs[[i]],]))
+      prop_gsp_in_region = area_overlap/st_area(gsp_shapes[i,])
+      prop_region_in_gsp = area_overlap/st_area(dacplot[gspshape_dac_overs[[i]],])
+      data.table(dac_plot_id = dacplot$GEOID[gspshape_dac_overs[[i]]],
+                 population = dacplot$Pop18[gspshape_dac_overs[[i]]],
+                 DAC = ifelse(dacplot$DAC18[gspshape_dac_overs[[i]]] == "Y", T, 
+                              ifelse(dacplot$DAC18[gspshape_dac_overs[[i]]]=="N",F,NA)),
+                 gsp_ids = gsp_shapes$GSP.ID[i],
+                 Prop_GSP_in_region = as.numeric(prop_gsp_in_region),
+                 Prop_region_in_GSP = as.numeric(prop_region_in_gsp)
+                 #return entries where over half a percent of the tract is in the GSP
+                 #as well as entries where over half a percent of the GSP is made up of that tract
+      )[Prop_region_in_GSP >= 0.005 | Prop_GSP_in_region >= 0.005]
+   }, cl = 4)
+   #each datatable is a different gsp
+   
+   #within each datatable
+   #column of dac region ids
+   #percent that is each census tract
+   
+   gspshape_dac_dt = rbindlist(gspshape_dac_props)
+   fwrite(gspshape_dac_dt,
+          file = paste0('data_temp/gsp_dac_overlap_',type,'_',scope,'.csv'))
+   gspshape_dac_dt <- as_tibble(
+         fread(file = paste0('data_temp/gsp_dac_overlap_',type,'_',scope,'.csv')))
+   
+   gsp_id <- as.character(gsp_shapes$GSP.ID)
+   
+   
+   if(type=="area"){
+      
+      gsp_dac_adj_area <- summarize(group_by(gspshape_dac_dt, gsp_ids),DAC, Prop_GSP_in_region) %>% 
+         #finds percent of gsp place, tract, or blockgroup area that is designated a dac
+         mutate(prop_gsp_in_any_region = sum(Prop_GSP_in_region)) %>% 
+         mutate(prop_gsp_in_truedac = sum(ifelse(DAC == T, Prop_GSP_in_region,0),na.rm=T)) %>% 
+         mutate(percent_dac_by_area = sum(ifelse(DAC == T,Prop_GSP_in_region,0),na.rm=T) / sum(Prop_GSP_in_region)) %>% 
+         #if dac = na, the region is included in the total area but not the dac area
+         ungroup() %>% 
+         select(c("gsp_ids", "percent_dac_by_area")) %>% 
+         unique()
+      #if there are no places in the gsp, defaults to percent_dac_by_area = 0 
+      gsps_wo_regions <- as.data.table(cbind(
+         "gsp_ids" = gsp_id[!(gsp_id %in%gsp_dac_adj_area$gsp_ids)],
+         "percent_dac_by_area" = rep(0,times = 
+                                        length(gsp_id[!(gsp_id %in%gsp_dac_adj_area$gsp_ids)]))))
+      gsp_dac_adj_area <- rbind(gsp_dac_adj_area, gsps_wo_regions)
+      
+      saveRDS(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      
+   }#end of type = area
+   
+   if(type=="pop"){
+      #TODO update this
+      #weighted.mean(x=c(0.3,NA),w=c(0.4,0.6),na.rm=T)
+      #gives somewhat higher SVIs (thinner left tail)
+      gsp_svi_adj_pop <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_GSP_in_tract, Prop_tract_in_GSP, population) %>% 
+         #deflates pop to account for what percent of the tract is in the GSP
+         mutate(pop_adj = population * Prop_tract_in_GSP) %>% 
+         #calculates percent of GSP population that is in that tract
+         mutate(pop_fraction = pop_adj / sum(pop_adj)) %>% 
+         #tracts with pop of 0 have SVI of NA
+         #weighted sum of SVI portions by population of census tracts
+         mutate(SVI_na_adj = sum(pop_fraction * SVI_percentile, na.rm = T)) %>%
+         ungroup() %>% 
+         select(c("gsp_ids", "SVI_na_adj")) %>% 
+         unique()
       
       #census_gspshape_overs = st_intersects(censusplot, gsp_shapes)
       gspshape_place_overs = st_intersects(gsp_shapes, dacplace)

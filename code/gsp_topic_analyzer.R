@@ -35,7 +35,7 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
       
       type = "area"
       #or type = "pop"
-      gsp_svi_adjusted <- create_svi_meta(type)
+      gsp_svi_adjusted <- create_svi_meta(type, box_sync = F)
       
       #retrieves lates save of gsp_svi_adjusted of the given type, which allows
       #create_svi_meta to be skipped
