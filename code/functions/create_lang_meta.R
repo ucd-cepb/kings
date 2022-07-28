@@ -138,17 +138,14 @@ create_lang_meta <- function(run_repair = F){
    bsn_and_plan_vars <- bsn_and_plan_vars[!is.na(bsn_and_plan_vars$gsp_id)]
    gsp_text_with_lang <- full_join(gsp_text_with_lang, bsn_and_plan_vars)
    
-    
-   
-   
    #use to filter out nulls in category
    cat_selector <- !sapply(all_text_cat,is.null)
    #use cat_selector to subset text and all metadata vectors
    
-   saveRDS(all_text_subcat, file = paste0("data_temp/","gsp_docs_subcat_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   saveRDS(all_text_cat, file = paste0("data_temp/","gsp_docs_cat_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   saveRDS(cat_selector, file = paste0("data_temp/","gsp_docs_cat_notnull_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   saveRDS(gsp_text_with_lang, file = paste0("data_output/","gsp_docs_w_lang_",format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(all_text_subcat, file = "data_temp/gsp_docs_subcat")
+   saveRDS(all_text_cat, file = "data_temp/gsp_docs_cat")
+   saveRDS(cat_selector, file = "data_temp/gsp_docs_cat_notnull")
+   saveRDS(gsp_text_with_lang, file = "data_output/gsp_docs_w_lang")
    
    return(gsp_text_with_lang)
    
