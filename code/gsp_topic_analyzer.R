@@ -28,34 +28,23 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
       #retrieves the latest save of gsp_text_with_lang
       #generated in create_lang_meta, which allows create_lang_meta() to be skipped
       
-      gsp_text_with_lang <- readRDS(
-         list.files(path = "data_output",pattern = "lang", full.names = T)[length(
-            list.files(path = "data_output", pattern = "lang", full.names = T))])
-      
+      gsp_text_with_lang <- readRDS("data_output/gsp_docs_w_lang")
       
       type = "pop"
       #or type = "area"
       scope = "blockgroup"
       gsp_dac <- create_dac_meta(type, scope, box_sync = T)
-      
-      
+  
       #rows = num docs; cols = metadata types
-      
-      #gsp_meta <- data.table(matrix(ncol = 4, nrow = 0))
-      #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
-      
       gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gsp_num_id"))
       #filtering NA admin = proxy for GSPs whose texts have not been processed
       gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
       
-      saveRDS(gsp_text_with_meta, file = paste0("data_output/","gsp_docs_w_meta_",format(Sys.time(), "%Y%m%d-%H:%M")))
-      
+      saveRDS(gsp_text_with_meta, file = "data_output/gsp_docs_w_meta")
    }
    
    #retrieves the latest save of gsp_text_with_meta
-   gsp_text_with_meta <- readRDS(
-      list.files(path = "data_output",pattern = "meta", full.names = T)[length(
-         list.files(path = "data_output", pattern = "meta", full.names = T))])
+   gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    
    if(clean_lex == T){
       gsp_out <- lex_clean(gsp_text_with_meta)
@@ -87,12 +76,12 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
                        data = gsp_out$meta, init.type = "Spectral")  
       #dummy for how many gsas are involved: multiple or one
       
-      saveRDS(gsp_model, file = paste0("data_output/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+      saveRDS(gsp_model, file = paste0("data_output/mdl","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
       
    }
    
-   gsp_model_saved <- readRDS(list.files(path = "data_output", pattern = "model", full.names = T)[length(
-      list.files(path = "data_output", pattern = "model", full.names = T))])
+   gsp_model_saved <- readRDS(list.files(path = "data_output/mdl", pattern = "model", full.names = T)[length(
+      list.files(path = "data_output/mdl", pattern = "model", full.names = T))])
    
    if(viz_topics == T){
       visualize_topics(gsp_model_saved, 
