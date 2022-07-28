@@ -211,84 +211,43 @@ create_dac_meta <- function(type, scope){
                                         length(gsp_id[!(gsp_id %in%gsp_dac_adj_area$gsp_ids)]))))
       gsp_dac_adj_area <- rbind(gsp_dac_adj_area, gsps_wo_regions)
       
+      gsp_num_id = paste(ifelse((4-str_length(gsp_dac_adj_area$gsp_ids)) > 0, "0", ""),
+                         ifelse((4-str_length(gsp_dac_adj_area$gsp_ids)) > 1,"0",""),
+                         ifelse((4-str_length(gsp_dac_adj_area$gsp_ids)) > 2, "0",""),
+                         (gsp_dac_adj_area$gsp_ids),sep = "")
+      gsp_dac_adj_area <- cbind(gsp_dac_adj_area, gsp_num_id) %>% select(-gsp_ids)
+      
+      
       saveRDS(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
       
    }#end of type = area
    
    if(type=="pop"){
-      #TODO update this
-      #weighted.mean(x=c(0.3,NA),w=c(0.4,0.6),na.rm=T)
-      #gives somewhat higher SVIs (thinner left tail)
-      gsp_svi_adj_pop <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_GSP_in_tract, Prop_tract_in_GSP, population) %>% 
-         #deflates pop to account for what percent of the tract is in the GSP
-         mutate(pop_adj = population * Prop_tract_in_GSP) %>% 
-         #calculates percent of GSP population that is in that tract
-         mutate(pop_fraction = pop_adj / sum(pop_adj)) %>% 
-         #tracts with pop of 0 have SVI of NA
-         #weighted sum of SVI portions by population of census tracts
-         mutate(SVI_na_adj = sum(pop_fraction * SVI_percentile, na.rm = T)) %>%
+      gsp_dac_adj_pop <- summarize(group_by(gspshape_dac_dt, gsp_ids),DAC, Prop_region_in_GSP, population) %>% 
+         #finds percent of gsp place, tract, or blockgroup area that is designated a dac
+         mutate(percent_dac_by_pop = weighted.mean(x=(DAC%in%T),w=population*Prop_region_in_GSP,na.rm=T)) %>% 
+         #if dac = na, the population is included in the total population but not the dac population
+         #adjusts population to only include proportion of region in the GSP. Assumes equal density throughout region
          ungroup() %>% 
-         select(c("gsp_ids", "SVI_na_adj")) %>% 
+         select(c("gsp_ids", "percent_dac_by_pop")) %>% 
          unique()
       
-      #census_gspshape_overs = st_intersects(censusplot, gsp_shapes)
-      gspshape_place_overs = st_intersects(gsp_shapes, dacplace)
-      gspshape_place_props = pblapply(seq_along(gspshape_place_overs),function(i){
-         #proportion of gsp in each census tract = area of census_gsp intersection / gsp area
-         area_overlap = st_area(st_intersection(gsp_shapes[i,],dacplace[gspshape_place_overs[[i]],]))
-         prop_gsp_in_place = area_overlap/st_area(gsp_shapes[i,])
-         prop_place_in_gsp = area_overlap/st_area(dacplace[gspshape_place_overs[[i]],])
-         data.table(place_id = dacplace$GEOID[gspshape_place_overs[[i]]],
-                    population = dacplace$Pop18[gspshape_place_overs[[i]]],
-                    DAC = ifelse(dacplace$DAC18[gspshape_place_overs[[i]]] == "Y", T, 
-                                 ifelse(dacplace$DAC18[gspshape_place_overs[[i]]]=="N",F,NA)),
-                    gsp_id = paste(ifelse((4-str_length(gsp_shapes$GSP.ID[i])) > 0, "0", ""),
-                                   ifelse((4-str_length(gsp_shapes$GSP.ID[i])) > 1,"0",""),
-                                   ifelse((4-str_length(gsp_shapes$GSP.ID[i])) > 2, "0",""),
-                                   (gsp_shapes$GSP.ID[i]),sep = ""),
-                    Prop_GSP_in_place = as.numeric(prop_gsp_in_place),
-                    Prop_place_in_GSP = as.numeric(prop_place_in_gsp)
-                    #return entries where over half a percent of the place is in the GSP
-                    #as well as entries where over half a percent of the GSP is made up of that place
-         )[Prop_place_in_GSP >= 0.005 | Prop_GSP_in_place >= 0.005]
-      }, cl = 4)
+      #if there are no places in the gsp, defaults to percent_dac_by_area = 0 
+      gsps_wo_regions <- as.data.table(cbind(
+         "gsp_ids" = gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)],
+         "percent_dac_by_pop" = rep(0,times = 
+                                        length(gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)]))))
+      gsp_dac_adj_pop <- rbind(gsp_dac_adj_pop, gsps_wo_regions)
       
-      gsp_ids <- as.character(gsp_shapes$GSP.ID)
+      gsp_num_id = paste(ifelse((4-str_length(gsp_dac_adj_pop$gsp_ids)) > 0, "0", ""),
+                         ifelse((4-str_length(gsp_dac_adj_pop$gsp_ids)) > 1,"0",""),
+                         ifelse((4-str_length(gsp_dac_adj_pop$gsp_ids)) > 2, "0",""),
+                         (gsp_dac_adj_pop$gsp_ids),sep = "")
+      gsp_dac_adj_pop <- cbind(gsp_dac_adj_pop, gsp_num_id) %>% select(-gsp_ids)
       
-      gsp_num_id = paste(ifelse((4-str_length(gsp_ids)) > 0, "0", ""),
-                         ifelse((4-str_length(gsp_ids)) > 1,"0",""),
-                         ifelse((4-str_length(gsp_ids)) > 2, "0",""),
-                         (gsp_ids),sep = "")
-      names(gspshape_place_props) = gsp_num_id
+      saveRDS(gsp_dac_adj_pop, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
       
-      
-      gspshape_place_props[gsp_num_id[1]]
-      #each list item is a different gsp
-      
-      #prop_pop_in_dac is percent of pop in places (except for dac=na places)
-      #that lives in a dac place
-      gsp_place_tbbl <- as_tibble(rbindlist(gspshape_place_props))
-      gsp_place_tbbl <- gsp_place_tbbl %>% filter(!is.na(DAC)) %>% 
-         group_by(gsp_id) %>% 
-         mutate(prop_pop_in_dac = sum(ifelse(DAC == T, population*Prop_place_in_GSP, 0)) / 
-                   sum(population*Prop_place_in_GSP))
-      
-      gsp_svi_adjusted <- readRDS(
-         list.files(path = "data_output",pattern = type,full.names = T)[length(
-            list.files(path = "data_output",pattern = type,full.names = T))])
-      
-      spat_tbl <- full_join(gsp_place_tbbl, gsp_svi_adjusted, by = c("gsp_id" = "gsp_num_id"))
-      # proportion of pop in places that live in a dac
-      #pop of places where DAC == T / (pop of places where !is.na(DAC))
-      
-      corr <- cor(spat_tbl$prop_pop_in_dac, spat_tbl$SVI_na_adj, method = "pearson", use = "complete.obs")
-      #join this with svi of basin, area style and pop style
-      
-      saveRDS(spat_tbl, file = paste0("data_output/","spat_tbl_",type,"_",format(Sys.time(), "%Y%m%d-%H:%M")))
-      
-      return(spat_tbl)
-      
-   }#end of scope=place
+   }#end of type=pop
 
    
    
