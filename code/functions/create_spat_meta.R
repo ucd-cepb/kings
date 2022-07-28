@@ -219,6 +219,7 @@ create_dac_meta <- function(type, scope){
       
       
       saveRDS(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      return(gsp_dac_adj_area)
       
    }#end of type = area
    
@@ -246,7 +247,7 @@ create_dac_meta <- function(type, scope){
       gsp_dac_adj_pop <- cbind(gsp_dac_adj_pop, gsp_num_id) %>% select(-gsp_ids)
       
       saveRDS(gsp_dac_adj_pop, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
-      
+      return(gsp_dac_adj_pop)
    }#end of type=pop
 
    
