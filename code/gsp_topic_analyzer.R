@@ -33,15 +33,10 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
             list.files(path = "data_output", pattern = "lang", full.names = T))])
       
       
-      type = "area"
-      #or type = "pop"
-      gsp_svi_adjusted <- create_svi_meta(type, box_sync = F)
-      
-      #retrieves lates save of gsp_svi_adjusted of the given type, which allows
-      #create_svi_meta to be skipped
-      gsp_svi_adjusted <- readRDS(
-         list.files(path = "data_output",pattern = type,full.names = T)[length(
-            list.files(path = "data_output",pattern = type,full.names = T))])
+      type = "pop"
+      #or type = "area"
+      scope = "blockgroup"
+      gsp_dac <- create_dac_meta(type, scope, box_sync = T)
       
       
       #rows = num docs; cols = metadata types
@@ -49,7 +44,7 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
       #gsp_meta <- data.table(matrix(ncol = 4, nrow = 0))
       #colnames(gsp_meta) <- c("GSA","community_attributes","ag_importance","soc_vuln")
       
-      gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_svi_adjusted, by = c("gsp_id"="gsp_num_id"))
+      gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gsp_num_id"))
       #filtering NA admin = proxy for GSPs whose texts have not been processed
       gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
       
@@ -84,7 +79,7 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
                           sust_criteria +
                           monitoring_networks + 
                           projects_mgmt_actions + 
-                          SVI_na_adj+
+                          percent_dac_by_pop+
                           as.factor(approval)+
                           as.factor(priority)+
                           ag_gw_asfractof_tot_gw,

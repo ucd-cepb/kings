@@ -122,7 +122,7 @@ create_svi_meta <- function(type, box_sync = F){
    
 }
 
-create_dac_meta <- function(type, scope){
+create_dac_meta <- function(type, scope, box_sync = F){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
@@ -133,14 +133,31 @@ create_dac_meta <- function(type, scope){
       stop("scope \"place\" may not be used with type \"area\"")
    }
    
-
-   albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
-   
    if(box_sync == T){
       #set up Renviron with Box App permissions specific to your user
       box_auth()
       box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw")
+      box_setwd(161132368565)
+      #sync single file:
+      #box_dacs <- as.data.frame(box_search(paste0(type," AND ", scope), 
+      #                                     content_types = "name", type = "file",
+      #                                     ancestor_folder_ids = box_getwd()))#searches current box folder
+      #if(nrow(box_dacs) == 1){
+      #   box_dl(file_id = box_dacs$id, pb = T, local_dir = './data_output')
+      #   print("DAC data downloaded from box")
+      #}
+      #if(nrow(box_dacs)>1){
+      #   print("More than one Box version of DAC data for this type and scope")
+      #}
+      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)
    }
+   
+   if(file.exists(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))){
+      gsp_dac_adj <- read_csv(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      return(gsp_dac_adj)
+   }
+   
+   albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
    
    #https://data.cnra.ca.gov/dataset/dacs-census/resource/e5712534-dc8a-4094-bb0d-91050a63d8f0
    #downloaded by hand and placed in data_spatial_raw; renamed dacs_2018 
@@ -218,7 +235,8 @@ create_dac_meta <- function(type, scope){
       gsp_dac_adj_area <- cbind(gsp_dac_adj_area, gsp_num_id) %>% select(-gsp_ids)
       
       
-      saveRDS(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      write_csv(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      if(box_sync==T){box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)}
       return(gsp_dac_adj_area)
       
    }#end of type = area
@@ -246,16 +264,10 @@ create_dac_meta <- function(type, scope){
                          (gsp_dac_adj_pop$gsp_ids),sep = "")
       gsp_dac_adj_pop <- cbind(gsp_dac_adj_pop, gsp_num_id) %>% select(-gsp_ids)
       
-      saveRDS(gsp_dac_adj_pop, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      write_csv(gsp_dac_adj_pop, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      if(box_sync==T){box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)}
       return(gsp_dac_adj_pop)
    }#end of type=pop
-
-   
-   
-    
- 
-   
-   
     
 }
 
