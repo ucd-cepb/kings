@@ -33,7 +33,7 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
       type = "pop"
       #or type = "area"
       scope = "blockgroup"
-      gsp_dac <- create_dac_meta(type, scope, box_sync = T)
+      gsp_dac <- create_dac_meta(type, scope, box_sync = T,overwrite = T)
   
       #rows = num docs; cols = metadata types
       gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gsp_num_id"))
