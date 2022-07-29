@@ -22,10 +22,12 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    source('code/functions/generate_place_names.R')
    source('code/functions/compare_models.R')
    source('code/functions/visualize_topics.R')
+   source('code/functions/dac_svi_analysis.R')
    
    if(dac_corr_check==T){
       #correlation check to determine which spatial metadata to use
-      dac_svi_analysis("tract","area")
+      dac_svi_analysis("tract")
+      dac_svi_analysis("place","pop")
       dac_svi_analysis("place","area")
    }
    
