@@ -122,7 +122,7 @@ create_svi_meta <- function(type, box_sync = F){
    
 }
 
-create_dac_meta <- function(type, scope, box_sync = F){
+create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
@@ -152,7 +152,8 @@ create_dac_meta <- function(type, scope, box_sync = F){
       box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)
    }
    
-   if(file.exists(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))){
+   if(file.exists(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv')) &
+      overwrite == F){
       gsp_dac_adj <- read_csv(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
       return(gsp_dac_adj)
    }
@@ -236,7 +237,13 @@ create_dac_meta <- function(type, scope, box_sync = F){
       
       
       write_csv(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
-      if(box_sync==T){box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)}
+      
+      if(box_sync==T & overwrite == F){
+         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = F)
+      }
+      else if(box_sync==T & overwrite == T){
+         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = T)
+      }
       return(gsp_dac_adj_area)
       
    }#end of type = area
@@ -265,7 +272,12 @@ create_dac_meta <- function(type, scope, box_sync = F){
       gsp_dac_adj_pop <- cbind(gsp_dac_adj_pop, gsp_num_id) %>% select(-gsp_ids)
       
       write_csv(gsp_dac_adj_pop, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
-      if(box_sync==T){box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)}
+      if(box_sync==T & overwrite == F){
+         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = F)
+      }
+      else if(box_sync==T & overwrite == T){
+         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = T)
+      }
       return(gsp_dac_adj_pop)
    }#end of type=pop
     
