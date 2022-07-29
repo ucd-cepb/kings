@@ -9,9 +9,10 @@ library(pbapply)
 library(ggplot2)
 library(scico)
 library(rcompanion)
+library(boxr)
 
 #type = "pop" or "area"
-create_svi_meta <- function(type, box_sync = F){
+create_svi_meta <- function(type, box_sync = F, overwrite=F){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
@@ -21,7 +22,15 @@ create_svi_meta <- function(type, box_sync = F){
    if(box_sync == T){
       #set up Renviron with Box App permissions specific to your user
       box_auth()
-      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw")
+      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw",delete = F)
+      box_push(dir_id = 167050269694, local_dir = "./data_spatial_raw", delete = F)
+      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)
+      box_fetch(dir_id = 161132368565, local_dir = "./data_output",delete = F)
+   }
+   
+   if(file.exists(paste0("data_output/gsp_svi_",type)) & overwrite == F){
+      gsp_svi_adjusted <- readRDS(paste0("data_output/","gsp_svi_",type))
+      return(gsp_svi_adjusted)
    }
    # https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
    #downloaded by hand and placed in data_spatial_raw
@@ -59,6 +68,8 @@ create_svi_meta <- function(type, box_sync = F){
                  population = censusplot$E_TOTPOP[gspshape_census_overs[[i]]],
                  SVI_percentile = ifelse(censusplot$RPL_THEMES[gspshape_census_overs[[i]]]>=0,
                                          censusplot$RPL_THEMES[gspshape_census_overs[[i]]],NA),
+                 SVI_raw = ifelse(censusplot$SPL_THEMES[gspshape_census_overs[[i]]]>=0,
+                                  censusplot$SPL_THEMES[gspshape_census_overs[[i]]],NA),
                  gsp_ids = gsp_shapes$GSP.ID[i],
                  Prop_GSP_in_tract = as.numeric(prop_gsp_in_tract),
                  Prop_tract_in_GSP = as.numeric(prop_tract_in_gsp)
@@ -78,10 +89,10 @@ create_svi_meta <- function(type, box_sync = F){
    gspshape_census_dt <- as_tibble(fread(file = 'data_temp/gsp_census_overlap.csv'))
    
    #gives somewhat lower SVIs (thicker left tail)
-   gsp_svi_adj_area <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_GSP_in_tract) %>% 
+   gsp_svi_adj_area <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_raw, Prop_GSP_in_tract) %>% 
       #inflates SVI to account for small dropped census tracts by dividing by sum of proportion overlaps
-      mutate(svi_inflated = SVI_percentile / sum(Prop_GSP_in_tract)) %>% 
-      mutate(prop_na = sum(ifelse(is.na(SVI_percentile),Prop_GSP_in_tract,0))) %>% 
+      mutate(svi_inflated = SVI_raw / sum(Prop_GSP_in_tract)) %>% 
+      mutate(prop_na = sum(ifelse(is.na(SVI_raw),Prop_GSP_in_tract,0))) %>% 
       #weighted sum of SVI portions by census tract 
       #determines what portion of each GSP has an NA value for SVI
       #adjusts SVI of GSP to account for NAs
@@ -91,14 +102,14 @@ create_svi_meta <- function(type, box_sync = F){
       unique()
    #weighted.mean(x=c(0.3,NA),w=c(0.4,0.6),na.rm=T)
    #gives somewhat higher SVIs (thinner left tail)
-   gsp_svi_adj_pop <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_percentile, Prop_GSP_in_tract, Prop_tract_in_GSP, population) %>% 
+   gsp_svi_adj_pop <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_raw, Prop_GSP_in_tract, Prop_tract_in_GSP, population) %>% 
       #deflates pop to account for what percent of the tract is in the GSP
       mutate(pop_adj = population * Prop_tract_in_GSP) %>% 
       #calculates percent of GSP population that is in that tract
       mutate(pop_fraction = pop_adj / sum(pop_adj)) %>% 
       #tracts with pop of 0 have SVI of NA
       #weighted sum of SVI portions by population of census tracts
-      mutate(SVI_na_adj = sum(pop_fraction * SVI_percentile, na.rm = T)) %>%
+      mutate(SVI_na_adj = sum(pop_fraction * SVI_raw, na.rm = T)) %>%
       ungroup() %>% 
       select(c("gsp_ids", "SVI_na_adj")) %>% 
       unique()
@@ -116,8 +127,14 @@ create_svi_meta <- function(type, box_sync = F){
       mutate(gsp_num_id = paste(ifelse(num_zeros > 0, "0", ""),ifelse(num_zeros > 1,"0",""),ifelse(num_zeros > 2, "0",""),code,sep = "")) %>% 
       select(!c(code,num_zeros,gsp_ids))
    
-   saveRDS(gsp_svi_adjusted, file = paste0("data_output/","gsp_svi_",type,"_",format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(gsp_svi_adjusted, file = paste0("data_output/","gsp_svi_",type))
    
+   if(box_sync==T & overwrite == F){
+      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = F)
+   }
+   else if(box_sync==T & overwrite == T){
+      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = T)
+   }
    return(gsp_svi_adjusted)
    
 }
@@ -136,7 +153,8 @@ create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
    if(box_sync == T){
       #set up Renviron with Box App permissions specific to your user
       box_auth()
-      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw")
+      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw",delete = F)
+      box_push(dir_id = 167050269694, local_dir = "./data_spatial_raw", delete = F)
       box_setwd(161132368565)
       #sync single file:
       #box_dacs <- as.data.frame(box_search(paste0(type," AND ", scope), 
@@ -150,6 +168,7 @@ create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
       #   print("More than one Box version of DAC data for this type and scope")
       #}
       box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)
+      box_fetch(dir_id = 161132368565, local_dir = "./data_output",delete = F)
    }
    
    if(file.exists(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv')) &

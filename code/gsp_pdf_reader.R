@@ -1,13 +1,14 @@
+library(boxr)
+library(stm)
+library(pdftools)
+
+source('code/functions/create_page_key.R')
+
 gsp_pdf_reader<- function(box_sync = F){
    #turns each pdf into an array with each page as one line
    #these are saved as RDS files
    #saves a data table for each pdf with its plan element metadata as RDS files
-   
-   library(stm)
-   library(pdftools)
-   
-   source('code/functions/create_page_key.R')
-   
+
    if(box_sync == T){
       #set up Renviron with Box App permissions specific to your user
       box_auth()

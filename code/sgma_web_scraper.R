@@ -9,6 +9,7 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    library(robotstxt)
    library(boxr)
    library(data.table)
+   library(boxr)
    pacman::p_load(RSelenium, purrr, rvest, glue)
    
    gsp_url <- "https://sgma.water.ca.gov/portal/gsp/all/"

@@ -50,8 +50,7 @@ visualize_topics <- function(model, inputs, text_col){
          width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
    
    
-   dim(readPNG("figures/topicqual_repel2.png"))
-   dim(readPNG("figures/topic_quality"))
+   #dim(readPNG("figures/topic_quality"))
    
    text_vect <- unlist(text_col)
    #testing if text_col includes docs.removed and removes them if applicable

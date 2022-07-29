@@ -58,10 +58,10 @@ uses helper function:
       Includes data from CNRA's final_515_table, downloaded to 
          kings/data_raw 
 Uses helper function:
-   (3B) functions/create_spat_meta, which generates spatial metadata
+   (3B) functions/create_dac_meta, which generates spatial metadata
    regarding social vulnerability index and disadvantaged community status 
-   from several shapefiles that are too large to include in Github. See 
-   create_spat_meta function for downloading instructions for these files. 
+   from several shapefiles that are too large to include in Github. These files
+   may be obtained through syncing with Box. 
       (3Bi) The dac_svi_analysis function evaluates the relationship between
          svi and dac status. 
 appends spatial data to gsp_text_with_lang to create gsp_text_with_meta
