@@ -1,4 +1,6 @@
 source('code/sgma_web_scraper.R')
+source('code/gsp_pdf_reader.R')
+source('code/gsp_topic_analyzer.R')
 
 #scrape data
 sgma_web_scraper(box_sync = F, use_repaired = T)

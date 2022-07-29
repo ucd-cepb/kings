@@ -5,14 +5,15 @@ Quick Start:
 
 To clean the lexicon and run the model without regenerating the data, 
 download the latest version of data_output/gsp_text_with_meta and
-run gsp_topic_analyzer.R lines 52-82. 
+run gsp_topic_analyzer.R with clean_lex and run_model = T and other params = F 
 
 To run the model without cleaning the lexicon, download the latest
-version of data_temp/gsp_slam and run gsp_topic_analyzer.R lines 69-82.
+version of data_temp/gsp_slam and run gsp_topic_analyzer.R 
+with run_model = T and other params = F 
 
 Note on Data Files:
 
-Large files are saved locally immediately after generation with a tag for the date and time created. The latest version is automatically retrieved so that analysis can be completed in stages, and to enable RStudio restarts in case of memory scarcity without loss of progress. These files are too large to include in Github.
+Large lex files are saved locally immediately after generation with a tag for the date and time created. The latest version is automatically retrieved so that analysis can be completed in stages, and to enable RStudio restarts in case of memory scarcity without loss of progress. These files are too large to include in Github.
 
 Outline of scripts and functions:
 
