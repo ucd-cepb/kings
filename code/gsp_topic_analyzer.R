@@ -1,4 +1,4 @@
-gsp_topic_analyzer<- function(build_meta = F, clean_lex = T, 
+gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T, 
                               model_compare = F, run_model = T, viz_results = T, 
                               ntopics = NA){
    library(stm)
@@ -14,6 +14,7 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
    library(rsvd)
    library(stringi)
    library(wordcloud)
+   library(boxr)
    
    source('code/functions/lex_clean.R')
    source('code/functions/create_lang_meta.R')
@@ -21,6 +22,12 @@ gsp_topic_analyzer<- function(build_meta = F, clean_lex = T,
    source('code/functions/generate_place_names.R')
    source('code/functions/compare_models.R')
    source('code/functions/visualize_topics.R')
+   
+   if(dac_corr_check==T){
+      #correlation check to determine which spatial metadata to use
+      dac_svi_analysis("tract","area")
+      dac_svi_analysis("place","area")
+   }
    
    if(build_meta==T){
       gsp_text_with_lang <- create_lang_meta(run_repair = F)
