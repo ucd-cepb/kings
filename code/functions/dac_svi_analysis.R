@@ -211,7 +211,7 @@ dac_svi_analysis <- function(scope, type = NA){
              width = 3000, height = 1800, dpi = 300, units = "px", bg = "white")
       
       return(list("correlation" = corr, "spatial_table" = spat_tbl, 
-                  "plot" = paste0("figures/dac_and_svi_place_",type,"_smooth.png")))
+                  "plot" = paste0("figures/dac_and_svi_place_",type,".png")))
       
    }#end of scope=place
 }
