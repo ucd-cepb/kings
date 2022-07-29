@@ -26,9 +26,9 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    
    if(dac_corr_check==T){
       #correlation check to determine which spatial metadata to use
-      dac_svi_analysis("tract")
-      dac_svi_analysis("place","pop")
-      dac_svi_analysis("place","area")
+      results_tract <- dac_svi_analysis("tract")
+      results_place_pop <- dac_svi_analysis("place","pop")
+      results_place_area <- dac_svi_analysis("place","area")
    }
    
    if(build_meta==T){
