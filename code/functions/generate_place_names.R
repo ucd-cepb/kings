@@ -1,6 +1,9 @@
-library(tidyverse)
-library(qdapDictionaries)
-library(stringi)
+
+
+packs <- c('tidyverse','qdapDictionaries','stringi')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 generate_place_names <- function(underscore = F){
    

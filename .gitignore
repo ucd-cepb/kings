@@ -1,9 +1,11 @@
+
 data_raw/portal/*
 data_spatial_raw/*
 data_output/mdl/*
 data_temp/*
 code/regex_test.R
 .DS_Store
+
 # History files
 .Rhistory
 .Rapp.history
