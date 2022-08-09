@@ -1,20 +1,15 @@
 gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T, 
                               model_compare = F, run_model = T, viz_results = T, 
                               ntopics = NA){
-   library(stm)
-   library(tm)
-   library(SnowballC)
-   library(tidytext)
-   library(data.table)
-   library(tidyverse)
-   library(sf)
-   library(pbapply)
-   library(geometry)
-   library(Rtsne)
-   library(rsvd)
-   library(stringi)
-   library(wordcloud)
-   library(boxr)
+   
+   packs <- c('stm','tm','SnowballC','tidytext','data.table',
+              'tidyverse','sf','pbapply','geometry','Rtsne','rsvd',
+              'stringi','stringr','scico','boxr')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   check <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(check>0)){print(check)}else{print("got 'em all")}
+   lapply(packs, require, character.only = TRUE)
    
    source('code/functions/lex_clean.R')
    source('code/functions/create_lang_meta.R')
