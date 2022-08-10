@@ -12,7 +12,7 @@ library(stringi)
 source('code/functions/custom_dictionary.R')
 source('code/functions/generate_place_names.R')
 
-lex_clean <- function(gsp_text_with_meta){
+lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    is_comment <- gsp_text_with_meta$is_comment
    is_reference <- gsp_text_with_meta$is_reference
       
@@ -76,8 +76,9 @@ lex_clean <- function(gsp_text_with_meta){
    pl_names <- generate_place_names()
    
    compounds <- custom_dictionary(pl_names[grepl("\\s", pl_names)])
+   #TODO add agency names here
    
-   #this takes about 3 hours
+   #this takes about 1 hour
    #converts toLower, does not stem
   
    tok_1 <- quanteda::tokens_compound(qtok[1:500],pattern = phrase(compounds),
@@ -128,21 +129,32 @@ lex_clean <- function(gsp_text_with_meta){
    #removes stopwords, including placenames, poor conversion cues, months, 
    #and words that have no letters (eg negative numbers or number ranges)
    custom <- c("united", "states", "us", "u.s","u.s.", "california")
-   pl_names <- generate_place_names(underscore = T)
-   qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
-                                                         custom, pl_names))
+   
+   if(rm_plnames == T){
+      pl_names <- generate_place_names(underscore = T)
+      qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
+                                                            custom,pl_names))
+   }else{
+      qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
+                                                            custom))
+   }
+   
+   
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                                    "ϭ","ĩ",
                                                    "ž","ğ","ŝ","ÿ","þ", months), 
                                        valuetype = "regex")
    #acronym conversion so that short acronyms don't get dropped
-   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop, pattern = "ej",
-                                        replacement = "environmental_justice")
+   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop, pattern = c("ej","na"),
+                                        replacement = c("environmental_justice",
+                                                        "sodium"))
    qdfm_nostop <- quanteda::dfm_keep(qdfm_nostop, pattern = c("[a-z]"), 
                                      valuetype = "regex")
 
-   print("English stopwords, months, and place names removed")
+   print("English stopwords and months removed")
+   if(rm_plnames==T){print("Place names removed")}
+   
    saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    rm(qdfm)
@@ -152,7 +164,7 @@ lex_clean <- function(gsp_text_with_meta){
          list.files(path = "data_temp", pattern = "nostop", full.names = T))])
    
    #drops short words less than min_nchar long
-   qdfm_2plus <- dfm_select(qdfm_nostop, min_nchar = 2)
+   qdfm_2plus <- dfm_select(qdfm_nostop, min_nchar = 3)
    
    #deletes duplicate rows, if any
    qdfm_2plus <-dfm_compress(qdfm_2plus)

@@ -51,7 +51,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    
    if(clean_lex == T){
-      gsp_out <- lex_clean(gsp_text_with_meta)
+      gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F)
       
    }
    

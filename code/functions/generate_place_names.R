@@ -37,11 +37,13 @@ generate_place_names <- function(underscore = F){
       sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA") %>% 
       mutate(NAME = tolower(NAME))
    
-   counties <- ifelse(cnty_names$NAME == "orange county" | 
-                         cnty_names$NAME == "lake county",
-                      cnty_names$NAME,
-                    str_squish(str_remove(cnty_names$NAME, pattern = "county")))
+   #keeps two versions, one with the word County in the name and one without
+   ctemp <- ifelse(cnty_names$NAME == "orange county" | 
+                              cnty_names$NAME == "lake county",
+                              cnty_names$NAME,
+                              str_squish(str_remove(cnty_names$NAME, pattern = "county")))
    
+   counties <- c(cnty_names$NAME, ctemp)
    names <- tolower(c(counties, places))
    
    #removing periods

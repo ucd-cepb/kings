@@ -40,6 +40,11 @@ gsp_pdf_reader<- function(box_sync = F){
             for(i in 1:length(text)){
                if (nchar(text[i])> 10000){
                   text[i] <- NA
+                  #TODO check for page numbers and repeated header info and remove them
+                  #look for >5 spaces /s/s/s/s+  near end $
+                  #if it contains a number or x, v, or i and is < 10 words 
+                  # [0-9 | x | v | i] & num words(captured group <10)
+                  #look at it and then remove
                }
             }
             saveRDS(text, file = paste0("data_cleaned/",substr(pdfs[k],17,31),"_text"))
