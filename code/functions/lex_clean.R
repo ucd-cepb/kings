@@ -7,7 +7,7 @@ lapply(packs, require, character.only = TRUE)
 source('code/functions/custom_dictionary.R')
 source('code/functions/generate_place_names.R')
 
-lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
+lex_clean <- function(gsp_text_with_meta, rm_prnames = F){
    is_comment <- gsp_text_with_meta$is_comment
    is_reference <- gsp_text_with_meta$is_reference
       
@@ -68,11 +68,16 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    qtok <- tokens_remove(qtok, pattern = c("NA","na",""),  
                           valuetype = "fixed", case_insensitive = F, verbose = T)
    
-   pl_names <- generate_place_names()
+   pr_names <- generate_proper_names()
    
-   compounds <- custom_dictionary(pl_names[grepl("\\s", pl_names)])
+   compounds <- custom_dictionary(pr_names[grepl("\\s", pr_names)])
    #TODO add agency names here
    
+   #acronym conversion so that short acronyms don't get dropped
+   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop, pattern = c("EJ","Na","SA","pH"),
+                                        replacement = c("environmental_justice",
+                                                        "sodium","situation_assessment",
+                                                        "potential_of_hydrogen"))
    #this takes about 1 hour
    #converts toLower, does not stem
   
@@ -125,10 +130,10 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    #and words that have no letters (eg negative numbers or number ranges)
    custom <- c("united", "states", "us", "u.s","u.s.", "california")
    
-   if(rm_plnames == T){
-      pl_names <- generate_place_names(underscore = T)
+   if(rm_prnames == T){
+      pr_names <- generate_proper_names(underscore = T)
       qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
-                                                            custom,pl_names))
+                                                            custom,pr_names))
    }else{
       qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
                                                             custom))
@@ -140,15 +145,12 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
                                                    "ϭ","ĩ",
                                                    "ž","ğ","ŝ","ÿ","þ", months), 
                                        valuetype = "regex")
-   #acronym conversion so that short acronyms don't get dropped
-   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop, pattern = c("ej","na"),
-                                        replacement = c("environmental_justice",
-                                                        "sodium"))
+
    qdfm_nostop <- quanteda::dfm_keep(qdfm_nostop, pattern = c("[a-z]"), 
                                      valuetype = "regex")
 
    print("English stopwords and months removed")
-   if(rm_plnames==T){print("Place names removed")}
+   if(rm_prnames==T){print("Place names removed")}
    
    saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
    
