@@ -55,7 +55,7 @@ generate_proper_names <- function(underscore = F){
                      "vineyard", "volcano", "walnut", "winters")
    patt <- paste0("^", common_names, "$", collapse="|")
    
-   places <- str_squish(places[!grepl(patt, places)])
+   places <- places[!grepl(patt, places)]
    
    cnty_names <- as_tibble(read.table("data_raw/2021_Gaz_counties_national.txt",
       sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA") %>% 
@@ -68,7 +68,7 @@ generate_proper_names <- function(underscore = F){
                               str_squish(str_remove(cnty_names$NAME, pattern = "county")))
    
    counties <- c(cnty_names$NAME, ctemp)
-   names <- tolower(c(counties, places, agencies))
+   names <- str_squish(tolower(c(counties, places, agencies)))
    
    #removing periods
    names <- gsub("\\.","",names)
