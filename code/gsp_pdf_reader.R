@@ -47,7 +47,12 @@ gsp_pdf_reader<- function(box_sync = F){
                   # [0-9 | x | v | i] & num words(captured group <10)
                   #look at it and then remove
                }
+               #remove page numbers: 5+ spaces followed by (a combo of 1-6
+               #roman and arabic numerals) or (a letter, hyphen, and
+               #set of numbers such as c-28)
+               
             }
+            text <- str_remove(text,"\\s{3,}([0-9|x|v|i]{1,6}|([a-z]+\\p{Pd}[0-9]+))\\s*$")
             saveRDS(text, file = paste0("data_cleaned/",substr(pdfs[k],17,31),"_text"))
             print(paste("Text",k,"generated from pdf"))
             if(box_sync == T){
