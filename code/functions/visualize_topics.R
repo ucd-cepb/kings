@@ -1,7 +1,10 @@
 visualize_topics <- function(model, inputs, text_col){
-   library(ggplot2)
-   library(ggrepel)
-   library(scico)
+
+   packs <- c('ggplot2','ggrepel','scico')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   lapply(packs, require, character.only = TRUE)
+   
    numTopics = model$settings$dim$K
    labels <- labelTopics(model, topics = c(1:numTopics), n = 10)
    #sageLabels can be used when the model has a content covariate

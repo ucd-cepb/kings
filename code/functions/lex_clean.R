@@ -1,13 +1,8 @@
-library(stm)
-library(tm)
-library(SnowballC)
-library(tidytext)
-library(data.table)
-library(tidyverse)
-library(sf)
-library(pbapply)
-library(quanteda)
-library(stringi)
+packs <- c('stm','tm','SnowballC','tidytext','data.table',
+           'tidyverse','sf','pbapply','quanteda','stringi')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source('code/functions/custom_dictionary.R')
 source('code/functions/generate_place_names.R')

@@ -1,5 +1,3 @@
-
-
 packs <- c('tidyverse','qdapDictionaries','stringi')
 need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}

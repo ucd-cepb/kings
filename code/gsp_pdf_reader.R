@@ -1,6 +1,7 @@
-library(boxr)
-library(stm)
-library(pdftools)
+packs <- c('boxr','stm','pdftools')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source('code/functions/create_page_key.R')
 

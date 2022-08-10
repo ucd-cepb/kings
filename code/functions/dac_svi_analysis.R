@@ -1,11 +1,8 @@
-library(sf)
-library(pbapply)
-library(ggplot2)
-library(stringr)
-library(data.table)
-library(tidyverse)
-library(boxr)
-library(rlist)
+packs <- c('tidyverse','sf','pbapply','ggplot2',
+           'stringr','data.table','boxr','rlist')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source('code/functions/create_spat_meta.R')
 

@@ -1,4 +1,3 @@
-
 read_plan_element <- function(file){
    gsp_num_id <- substr(file,28,31)
    plan_table <- read_excel(file, 

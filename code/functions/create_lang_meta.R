@@ -1,12 +1,8 @@
-library(stm)
-library(tm)
-library(SnowballC)
-library(tidytext)
-library(data.table)
-library(tidyverse)
-library(sf)
-library(pbapply)
-library(readxl)
+packs <- c('stm','tm','SnowballC','tidytext','data.table',
+           'tidyverse','sf','pbapply','readxl')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source("code/functions/web_data_repair.R")
 create_lang_meta <- function(run_repair = F){

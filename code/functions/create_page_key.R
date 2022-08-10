@@ -1,8 +1,9 @@
 #takes an xls file and identifies the pdf pages associated with each
 #required element of a management plan, returns this info as a data.table
-library(tidyverse)
-library(readxl)
-library(data.table)
+packs <- c('tidyverse','readxl','data.table')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source('code/functions/read_plan_element.R')
 source('code/functions/consolidate_pgs.R')
