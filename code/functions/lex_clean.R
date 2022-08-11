@@ -5,7 +5,7 @@ if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
 source('code/functions/custom_dictionary.R')
-source('code/functions/generate_place_names.R')
+source('code/functions/generate_proper_names.R')
 
 lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    is_comment <- gsp_text_with_meta$is_comment
