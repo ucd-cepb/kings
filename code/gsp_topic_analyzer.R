@@ -14,7 +14,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    source('code/functions/lex_clean.R')
    source('code/functions/create_lang_meta.R')
    source('code/functions/create_spat_meta.R')
-   source('code/functions/generate_place_names.R')
+   source('code/functions/generate_proper_names.R')
    source('code/functions/compare_models.R')
    source('code/functions/visualize_topics.R')
    source('code/functions/dac_svi_analysis.R')
