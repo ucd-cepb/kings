@@ -1,4 +1,4 @@
-compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0){
+compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0, enterChoice = F){
    
    if(optimize_K==T){
       #let searchK figure out how many topics to generate
@@ -16,13 +16,17 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
                            N = floor(0.05 * length(documents)),
                            data = gsp_out$meta)
       plot(k_options)
-      sel_model_num <- as.integer(
-         readline(prompt = "Enter the number of your preferred model: "))
-      selected_model <- k_options$runout[[sel_model_num]]
+      if(enterChoice == T){
+         #functionality to choose your favorite model
+         sel_model_num <- as.integer(
+            readline(prompt = "Enter the number of your preferred model: "))
+         selected_model <- k_options$runout[[sel_model_num]]
+      }
+      
    }
    #can skip this as well as multi-modality check if model uses Spectral
    if(topic_stability==T){
-      topic_compare <- selectModel(out$documents, out$vocab, 
+      stab_compare <- selectModel(out$documents, out$vocab, 
                                    K = numTopics,
                                    prevalence =~ admin + 
                                       basin_plan +
@@ -37,15 +41,17 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
                                    data = out$meta, 
                                    runs = 20, 
                                    seed = 12143278)
-      plotModels(topic_compare, legend.position = "bottomright")
-      
-      #choose your favorite model
-      sel_model_num <- as.integer(
-         readline(prompt = "Enter the number of your preferred model: "))
-      selected_model <- topic_compare$runout[[sel_model_num]]
+      plotModels(stab_compare, legend.position = "bottomright")
       #can also add residuals checks and held-out likelihood estimation
+      
    }
-
-   return(selected_model)
+   
+   model_comp <- list("k_options" = ifelse(exists("k_options"),k_options,NA), 
+                      "k_plot" = ifelse(exists("k_plot"),k_plot,NA),
+                      "my_k_model" = ifelse(exists("selected_model"), selected_model,NA),
+                      "stab_compare" = ifelse(exists("stab_compare"),stab_compare,NA),
+                      "stability_plot" = ifelse(exists("stability_plot"),stability_plot,NA))
+   saveRDS(model_comp, "data_temp/model_comparison")
+   return(model_comp)
    
 }

@@ -59,8 +59,8 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
       list.files(path = "data_temp", pattern = "slam", full.names = T))])
    
    if(model_compare==T){
-      selected_model <- compare_models(optimize_K = T, obj = gsp_out)
-      numTopics = selected_model$settings$dim$K
+      models <- compare_models(optimize_K = T, obj = gsp_out)
+      #numTopics = selected_model$settings$dim$K
    }else{
       numTopics = ntopics
    }
