@@ -33,7 +33,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
                              vectorize= F)
    })
    print("Math script formatted")
-   dir.create('data_temp')
+   if(!dir.exists('data_temp')){dir.create('data_temp')}
    saveRDS(gsp_text_with_meta, file = paste0("data_temp/","gsp_formatted",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    gsp_text_with_meta <- readRDS(list.files(path = "data_temp", pattern = "gsp_formatted", full.names = T)[length(
@@ -69,7 +69,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
                           valuetype = "fixed", case_insensitive = F, verbose = T)
    
    #acronym conversion so that short acronyms don't get dropped
-   qdfm_nostop <- quanteda::tokens_replace(qdfm_nostop, pattern = c("EJ","Na","SA","pH"),
+   qtok <- quanteda::tokens_replace(qtok, pattern = c("EJ","Na","SA","pH"),
                                         replacement = c("environmental_justice",
                                                         "sodium","situation_assessment",
                                                         "potential_of_hydrogen"))
