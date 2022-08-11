@@ -13,5 +13,5 @@ gsp_topic_analyzer(dac_corr_check = F, build_meta = T, clean_lex = T,
 
 #clean lex and test how many topics to use
 gsp_topic_analyzer(dac_corr_check = F, build_meta = F, clean_lex = T, 
-                   model_compare = T, run_model = T, viz_results = T, 
+                   model_compare = T, run_model = F, viz_results = F, 
                    ntopics = 50)
