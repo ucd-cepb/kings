@@ -3,7 +3,7 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-generate_proper_names <- function(underscore = F){
+generate_proper_names <- function(underscore = F, for_removal = F){
    
    #water agency downloads page:
    #https://www.watereducation.org/water-related-organizationsagencies
@@ -22,6 +22,8 @@ generate_proper_names <- function(underscore = F){
       filter(agencytypes != "Western States Water Agencies and Districts")
    
    agencies <- agency_names$agencies
+   #adds an important agency not captured properly by website
+   agencies <- append(agencies,"state water resources control board")
    #removes u.s. from beginning of agency names
    agencies <- gsub("^[U|u]\\.*[S|s]\\.*\\s+","",agencies)
    #include alternate spelling of UC
@@ -68,7 +70,13 @@ generate_proper_names <- function(underscore = F){
                               str_squish(str_remove(cnty_names$NAME, pattern = "county")))
    
    counties <- c(cnty_names$NAME, ctemp)
-   names <- str_squish(tolower(c(counties, places, agencies)))
+   
+   #even if we remove places, we don't want to remove agencies
+   if(for_removal == T){
+      names <- str_squish(tolower(c(counties, places, "united states", "california")))
+   }else{
+      names <- str_squish(tolower(c(counties, places, agencies, "united states", "california")))
+   }
    
    #removing periods
    names <- gsub("\\.","",names)
@@ -76,7 +84,7 @@ generate_proper_names <- function(underscore = F){
    #split at / ( ) or ,
    names <- unlist(strsplit(names, "\\s*[,|/\\(\\)]\\s*"))
    
-   #removing empty entries
+   #removing empty and duplicated entries
    names <- unique(stri_remove_empty_na(names))
    
    if(underscore == T){
