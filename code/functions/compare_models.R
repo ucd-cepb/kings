@@ -2,19 +2,22 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
    
    if(optimize_K==T){
       #let searchK figure out how many topics to generate
-      k_options <- searchK(gsp_out$documents, gsp_out$vocab, 
+      k_options <- searchK(obj$documents, obj$vocab, 
                            K = c(5, 10, 20, 40, 80),
                            prevalence =~ admin + 
                               basin_plan +
                               sust_criteria +
                               monitoring_networks + 
                               projects_mgmt_actions + 
-                              SVI_na_adj+
+                              percent_dac_by_pop+
                               as.factor(approval)+
                               as.factor(priority)+
+                              mult_gsas+
                               ag_gw_asfractof_tot_gw,
-                           N = floor(0.05 * length(documents)),
-                           data = gsp_out$meta)
+                           N = floor(0.05 * length(obj$documents)),
+                           cores = 3,
+                           init.type = "Spectral",
+                           data = obj$meta)
       plot(k_options)
       if(enterChoice == T){
          #functionality to choose your favorite model
