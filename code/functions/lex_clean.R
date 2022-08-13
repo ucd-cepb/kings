@@ -76,28 +76,30 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    pr_names <- generate_proper_names()
    
    compounds <- custom_dictionary(pr_names[grepl("\\s", pr_names)])
-   
+   compounds <- stri_remove_empty_na(compounds)
    #this takes about 30 min
    #converts toLower, does not stem
-   tok_1 <- quanteda::tokens_compound(qtok[1:500],pattern = phrase(compounds),
+   tok_1 <- quanteda::tokens_compound(qtok[1:10],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
-   paste0("tok 1 complete featuring rows 1:500")
+   print(paste0("tok 1 complete featuring rows 1:10"))
    qdfm <- quanteda::dfm(tok_1, verbose = T)
    
-   for(i in 2:(length(qtok)/500)){
-      tok_i <- quanteda::tokens_compound(qtok[(500*(i-1)+1):(500*i)],pattern = phrase(compounds),
+   for(i in 2:(length(qtok)/10)){
+      tok_i <- quanteda::tokens_compound(qtok[(10*(i-1)+1):(10*i)],pattern = phrase(compounds),
                                          concatenator = '_',valuetype = 'regex',
                                          case_insensitive=T,window = 0)
-      print(paste0("tok", i, "complete featuring rows ", (500*(i-1)+1),":",(500*i)))
+      if(i %% 50 == 0 ){
+         print(paste0("tok ", i, " complete featuring rows ", (10*(i-1)+1),":",(10*i)))
+      }
       qdfm_i <- quanteda::dfm(tok_i, verbose = T)
       qdfm <- rbind(qdfm, qdfm_i)
    }
    
-   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/500)*500)+1):length(qtok)],pattern = phrase(compounds),
+   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/10)*10)+1):length(qtok)],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
-   paste0("tok n complete featuring rows ", (floor(length(qtok)/500)*500)+1,":",length(qtok))
+   print(paste0("tok n complete featuring rows ", (floor(length(qtok)/10)*10)+1,":",length(qtok)))
    qdfm_n <- quanteda::dfm(tok_n, verbose = T)
    qdfm <- rbind(qdfm, qdfm_n)
    
@@ -108,6 +110,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    rm(tok_1)
    rm(tok_i)
    rm(tok_n)
+   gc()
    #dfm_wordstem(qdfm, language = "en") would be used here to stem
    
    saveRDS(qdfm, file = paste0("data_temp/","gsp_tok_",format(Sys.time(), "%Y%m%d-%H:%M")))
@@ -153,6 +156,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    rm(qdfm)
+   gc()
    #retrieves the latest save of qdfm_nostop
    qdfm_nostop <- readRDS(
       list.files(path = "data_temp", pattern = "nostop", full.names = T)[length(
@@ -264,6 +268,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    
    rm(gsp_text_with_meta)
    rm(metadata)
+   gc()
    #sometimes this hangs
    gsp_out_slam <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
    #type = dtm is for dense matrices
