@@ -75,6 +75,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
                           percent_dac_by_pop+
                           as.factor(approval)+
                           as.factor(priority)+
+                          mult_gsas+
                           ag_gw_asfractof_tot_gw,
                        max.em.its = 150,
                        data = gsp_out$meta, init.type = "Spectral")  
