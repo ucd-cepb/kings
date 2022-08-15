@@ -2,6 +2,7 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
    
    if(optimize_K==T){
       #let searchK figure out how many topics to generate
+      #using 1 core so progress will be shown
       k_options <- searchK(obj$documents, obj$vocab, 
                            K = c(5, 10, 20, 40, 80),
                            prevalence =~ admin + 
@@ -15,7 +16,7 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
                               mult_gsas+
                               ag_gw_asfractof_tot_gw,
                            N = floor(0.05 * length(obj$documents)),
-                           cores = 3,
+                           cores = 1,
                            init.type = "Spectral",
                            data = obj$meta)
       plot(k_options)
