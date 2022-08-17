@@ -1,4 +1,4 @@
-compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0, enterChoice = F){
+compare_models <- function(optimize_K=F, k_set, topic_stability = F, obj, numTopics = 0, enterChoice = F){
    packs <- c('ggplot2','cowplot','furrr','future','stm','tidyverse')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
@@ -7,6 +7,8 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
    lapply(packs, require, character.only = TRUE)
    
    if(optimize_K==T){
+      
+      k_nums <- paste(k_set, sep = "", collapse = "_")
       
       plan(multisession)
       
@@ -18,7 +20,7 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
       
       heldout
       #not sure if this overwrites heldout seed
-      model_collection <- tibble(K = c(5,10,20,40,80,120,160,200,300)) %>%
+      model_collection <- tibble(K = k_set) %>%
          mutate(k_model = future_map(K, ~stm(heldout$documents, heldout$vocab, 
                                                  K = .,
                                                  prevalence =~ admin + 
@@ -35,7 +37,7 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
                                                  max.em.its = 200,
                                                  data = obj$meta), .options = furrr_options(seed = T)))
    
-      saveRDS(model_collection, file = "data_temp/k_model_collection")
+      saveRDS(model_collection, file = paste("data_temp/k_model_collection_",k_nums))
       
       k_opt <- model_collection %>%
          mutate(exclusivity = map(k_model, exclusivity),
@@ -49,7 +51,7 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
       #TODO thank Julia Silge
       k_opt
       
-      saveRDS(k_opt, file = "data_temp/k_opt")
+      saveRDS(k_opt, file = paste0("data_temp/k_opt_",k_nums))
       
       k_pl <- k_opt %>%
          transmute(K,
@@ -69,7 +71,7 @@ compare_models <- function(optimize_K=F, topic_stability = F, obj, numTopics = 0
               #subtitle = "subtitle"
               )
       
-      ggsave("k_plot_custom.png",plot = k_pl, device = "png", path = "figures",
+      ggsave(paste0("k_plot_custom_",k_nums,".png"),plot = k_pl, device = "png", path = "figures",
              width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
       
       #checkResiduals(k_options$runout[[1]], obj$documents, tol = 0.01)
