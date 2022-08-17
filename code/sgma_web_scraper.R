@@ -1,16 +1,12 @@
 sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    #takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
    #using selenium because rvest cannot read the table
-   library(stringr)
-   library("xml2")
-   library(polite)
-   library(httr)
-   library(tidyverse)
-   library(robotstxt)
-   library(boxr)
-   library(data.table)
-   library(boxr)
-   pacman::p_load(RSelenium, purrr, rvest, glue)
+   
+   packs <- c('stringr','xml2','polite', 'httr', 'tidyverse','robotstxt',
+              'boxr','data.table','RSelenium','purrr','rvest','glue')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   lapply(packs, require, character.only = TRUE)
    
    gsp_url <- "https://sgma.water.ca.gov/portal/gsp/all/"
    paths_allowed(domain = gsp_url)

@@ -1,6 +1,7 @@
 #add_terms should be a vector
 custom_dictionary <- function(add_terms = NULL){
    #retrieves the latest save of dictionary
+   
    water_dictionary <- data.table(matrix(nrow = 0, ncol = 3))
    for(i in 1:length(list.files(path = "data_raw", pattern = "Dictionary"))){
       print(i)

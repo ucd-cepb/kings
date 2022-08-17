@@ -1,6 +1,7 @@
-library(boxr)
-library(stm)
-library(pdftools)
+packs <- c('boxr','stm','pdftools')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source('code/functions/create_page_key.R')
 
@@ -41,7 +42,12 @@ gsp_pdf_reader<- function(box_sync = F){
                if (nchar(text[i])> 10000){
                   text[i] <- NA
                }
+               
             }
+            #remove page numbers: 5+ spaces followed by (a combo of 1-6
+            #roman and arabic numerals) or (a letter, hyphen, and
+            #set of numbers such as c-28)
+            text <- str_remove(text,"\\s{3,}([0-9|x|v|i]{1,6}|([a-z]+\\p{Pd}[0-9]+))\\s*$")
             saveRDS(text, file = paste0("data_cleaned/",substr(pdfs[k],17,31),"_text"))
             print(paste("Text",k,"generated from pdf"))
             if(box_sync == T){

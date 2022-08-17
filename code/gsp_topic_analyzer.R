@@ -14,7 +14,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    source('code/functions/lex_clean.R')
    source('code/functions/create_lang_meta.R')
    source('code/functions/create_spat_meta.R')
-   source('code/functions/generate_place_names.R')
+   source('code/functions/generate_proper_names.R')
    source('code/functions/compare_models.R')
    source('code/functions/visualize_topics.R')
    source('code/functions/dac_svi_analysis.R')
@@ -51,7 +51,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    
    if(clean_lex == T){
-      gsp_out <- lex_clean(gsp_text_with_meta)
+      gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F)
       
    }
    
@@ -59,8 +59,8 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
       list.files(path = "data_temp", pattern = "slam", full.names = T))])
    
    if(model_compare==T){
-      selected_model <- compare_models(optimize_K = T, obj = gsp_out)
-      numTopics = selected_model$settings$dim$K
+      models <- compare_models(optimize_K = T, obj = gsp_out)
+      #numTopics = selected_model$settings$dim$K
    }else{
       numTopics = ntopics
    }
@@ -75,6 +75,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
                           percent_dac_by_pop+
                           as.factor(approval)+
                           as.factor(priority)+
+                          mult_gsas+
                           ag_gw_asfractof_tot_gw,
                        max.em.its = 150,
                        data = gsp_out$meta, init.type = "Spectral")  

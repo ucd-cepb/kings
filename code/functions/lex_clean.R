@@ -1,18 +1,13 @@
-library(stm)
-library(tm)
-library(SnowballC)
-library(tidytext)
-library(data.table)
-library(tidyverse)
-library(sf)
-library(pbapply)
-library(quanteda)
-library(stringi)
+packs <- c('stm','tm','SnowballC','tidytext','data.table',
+           'tidyverse','sf','pbapply','quanteda','stringi')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 source('code/functions/custom_dictionary.R')
-source('code/functions/generate_place_names.R')
+source('code/functions/generate_proper_names.R')
 
-lex_clean <- function(gsp_text_with_meta){
+lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
    is_comment <- gsp_text_with_meta$is_comment
    is_reference <- gsp_text_with_meta$is_reference
       
@@ -38,7 +33,7 @@ lex_clean <- function(gsp_text_with_meta){
                              vectorize= F)
    })
    print("Math script formatted")
-   dir.create('data_temp')
+   if(!dir.exists('data_temp')){dir.create('data_temp')}
    saveRDS(gsp_text_with_meta, file = paste0("data_temp/","gsp_formatted",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    gsp_text_with_meta <- readRDS(list.files(path = "data_temp", pattern = "gsp_formatted", full.names = T)[length(
@@ -73,32 +68,38 @@ lex_clean <- function(gsp_text_with_meta){
    qtok <- tokens_remove(qtok, pattern = c("NA","na",""),  
                           valuetype = "fixed", case_insensitive = F, verbose = T)
    
-   pl_names <- generate_place_names()
+   #acronym conversion so that short acronyms don't get dropped
+   qtok <- quanteda::tokens_replace(qtok, pattern = c("EJ","Na","SA","pH"),
+                                        replacement = c("environmental_justice",
+                                                        "sodium","situation_assessment",
+                                                        "potential_of_hydrogen"))
+   pr_names <- generate_proper_names()
    
-   compounds <- custom_dictionary(pl_names[grepl("\\s", pl_names)])
-   
-   #this takes about 3 hours
+   compounds <- custom_dictionary(pr_names[grepl("\\s", pr_names)])
+   compounds <- stri_remove_empty_na(compounds)
+   #this takes about 30 min
    #converts toLower, does not stem
-  
-   tok_1 <- quanteda::tokens_compound(qtok[1:500],pattern = phrase(compounds),
+   tok_1 <- quanteda::tokens_compound(qtok[1:10],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
-   paste0("tok 1 complete featuring rows 1:500")
+   print(paste0("tok 1 complete featuring rows 1:10"))
    qdfm <- quanteda::dfm(tok_1, verbose = T)
    
-   for(i in 2:(length(qtok)/500)){
-      tok_i <- quanteda::tokens_compound(qtok[(500*(i-1)+1):(500*i)],pattern = phrase(compounds),
+   for(i in 2:(length(qtok)/10)){
+      tok_i <- quanteda::tokens_compound(qtok[(10*(i-1)+1):(10*i)],pattern = phrase(compounds),
                                          concatenator = '_',valuetype = 'regex',
                                          case_insensitive=T,window = 0)
-      print(paste0("tok", i, "complete featuring rows ", (500*(i-1)+1),":",(500*i)))
+      if(i %% 50 == 0 ){
+         print(paste0("tok ", i, " complete featuring rows ", (10*(i-1)+1),":",(10*i)))
+      }
       qdfm_i <- quanteda::dfm(tok_i, verbose = T)
       qdfm <- rbind(qdfm, qdfm_i)
    }
    
-   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/500)*500)+1):length(qtok)],pattern = phrase(compounds),
+   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/10)*10)+1):length(qtok)],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
-   paste0("tok n complete featuring rows ", (floor(length(qtok)/500)*500)+1,":",length(qtok))
+   print(paste0("tok n complete featuring rows ", (floor(length(qtok)/10)*10)+1,":",length(qtok)))
    qdfm_n <- quanteda::dfm(tok_n, verbose = T)
    qdfm <- rbind(qdfm, qdfm_n)
    
@@ -109,6 +110,7 @@ lex_clean <- function(gsp_text_with_meta){
    rm(tok_1)
    rm(tok_i)
    rm(tok_n)
+   gc()
    #dfm_wordstem(qdfm, language = "en") would be used here to stem
    
    saveRDS(qdfm, file = paste0("data_temp/","gsp_tok_",format(Sys.time(), "%Y%m%d-%H:%M")))
@@ -125,57 +127,66 @@ lex_clean <- function(gsp_text_with_meta){
                "jun\\p{Pd}","jul\\p{Pd}","aug\\p{Pd}",
                "sep\\p{Pd}","sept\\p{Pd}","oct\\p{Pd}","nov\\p{Pd}","dec\\p{Pd}")
    
-   #removes stopwords, including placenames, poor conversion cues, months, 
+   #removes stopwords, including poor conversion cues, months, 
    #and words that have no letters (eg negative numbers or number ranges)
-   custom <- c("united", "states", "us", "u.s","u.s.", "california")
-   pl_names <- generate_place_names(underscore = T)
-   qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
-                                                         custom, pl_names))
+   custom <- c("us", "u.s","u.s.", "california")
+   
+   if(rm_plnames == T){
+      pr_names <- generate_proper_names(underscore = T, for_removal = T)
+      qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
+                                                            custom,pr_names))
+   }else{
+      qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
+                                                            custom))
+   }
+   
+   
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                                    "ϭ","ĩ",
                                                    "ž","ğ","ŝ","ÿ","þ", months), 
                                        valuetype = "regex")
-   #acronym conversion so that short acronyms don't get dropped
-   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop, pattern = "ej",
-                                        replacement = "environmental_justice")
+
    qdfm_nostop <- quanteda::dfm_keep(qdfm_nostop, pattern = c("[a-z]"), 
                                      valuetype = "regex")
 
-   print("English stopwords, months, and place names removed")
+   print("English stopwords and months removed")
+   if(rm_plnames==T){print("Place names removed")}
+   
    saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    rm(qdfm)
+   gc()
    #retrieves the latest save of qdfm_nostop
    qdfm_nostop <- readRDS(
       list.files(path = "data_temp", pattern = "nostop", full.names = T)[length(
          list.files(path = "data_temp", pattern = "nostop", full.names = T))])
    
    #drops short words less than min_nchar long
-   qdfm_2plus <- dfm_select(qdfm_nostop, min_nchar = 2)
+   qdfm_long <- dfm_select(qdfm_nostop, min_nchar = 3)
    
    #deletes duplicate rows, if any
-   qdfm_2plus <-dfm_compress(qdfm_2plus)
+   qdfm_long <-dfm_compress(qdfm_long)
    
-   saveRDS(qdfm_2plus, file = paste0("data_temp/","noshort",format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(qdfm_long, file = paste0("data_temp/","noshort",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    rm(qdfm_nostop)
    print("short words removed")
    
-   #retrieves the latest save of qdfm_2plus
-   qdfm_2plus <- readRDS(
+   #retrieves the latest save of qdfm_long
+   qdfm_long <- readRDS(
       list.files(path = "data_temp", pattern = "noshort", full.names = T)[length(
          list.files(path = "data_temp", pattern = "noshort", full.names = T))])
    
    #prepare metadata to add to tidy dtm
-   metadata <- cbind(quanteda::docvars(qdfm_2plus),"document"=
+   metadata <- cbind(quanteda::docvars(qdfm_long),"document"=
                         as.integer(substr(
-                           docnames(qdfm_2plus),
-                           5,str_length(docnames(qdfm_2plus)
+                           docnames(qdfm_long),
+                           5,str_length(docnames(qdfm_long)
                            ))))
    
    #join metadata with dtm in tidyverse
-   dtm_tidy <- tidy(qdfm_2plus) %>% 
+   dtm_tidy <- tidy(qdfm_long) %>% 
       mutate("document" = as.integer(
          substr(document,5,str_length(document)))) %>% 
       inner_join(metadata, by = c("document" = "document"))
@@ -184,9 +195,9 @@ lex_clean <- function(gsp_text_with_meta){
    saveRDS(dtm_tidy, file = paste0("data_temp/","dtm_tidylg",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    # elements
-   ntokens <- sum(ntoken(qdfm_2plus))
-   nvocab <- sum(ntype(qdfm_2plus))
-   rm(qdfm_2plus)
+   ntokens <- sum(ntoken(qdfm_long))
+   nvocab <- sum(ntype(qdfm_long))
+   rm(qdfm_long)
    
    #retrieves the latest save of dtm_tidy
    dtm_tidy <- readRDS(
@@ -257,6 +268,7 @@ lex_clean <- function(gsp_text_with_meta){
    
    rm(gsp_text_with_meta)
    rm(metadata)
+   gc()
    #sometimes this hangs
    gsp_out_slam <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
    #type = dtm is for dense matrices
