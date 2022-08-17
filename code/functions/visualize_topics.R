@@ -75,11 +75,8 @@ visualize_topics <- function(model, inputs, text_col){
    plot(gsp_model_saved,type = "labels", topics = c(1:4))
    plot(gsp_model_saved,type = "perspectives", topics = c(1,40))
    plot(gsp_model_saved, type = "summary", xlim = c(0,0.3))
-   
-   #cloud has poor performance: only plots a few words
-   #cloud(gsp_model_saved,documents = gsp_out$documents)
-   
 
+   #tagging pages as a topic
    theta <- as_tibble(gsp_model_saved$theta)
    tags <- rep(NA, nrow(theta))
    for(i in 1:numTopics){
@@ -90,15 +87,21 @@ visualize_topics <- function(model, inputs, text_col){
       }
    }
    
+   #grid of topic percent by gsp
+   theta <- as_tibble(cbind(gsp_model_saved$theta,model$meta$gsp_id) %>%
+                         group_by(gsp_id) %>% summarize(perc_topic = sum(theta)/n())
+   
+   
    #look at the relationship between metadata and topics
    effect <- estimateEffect(1:50 ~ admin + 
                              basin_plan +
                              sust_criteria +
                              monitoring_networks + 
                              projects_mgmt_actions +
-                             SVI_na_adj+
+                             percent_dac_by_pop+
                              as.factor(approval) +
                              as.factor(priority)+ 
+                             mult_gsas+
                              ag_gw_asfractof_tot_gw, 
                           model,
                           meta = inputs$meta, uncertainty = "None")
