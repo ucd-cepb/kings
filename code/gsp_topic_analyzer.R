@@ -50,8 +50,18 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    #retrieves the latest save of gsp_text_with_meta
    gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    
+   topic_indicators <- c("disadvantaged community", "disadvantaged communities",
+                         "community","engagement","outreach","environmental_justice",
+                         "drinking water", "water quality","safe","wells",
+                         "climate change","projection","projections",
+                         "groundwater-dependent ecosystem",
+                         "groundwater dependent ecosystem",
+                         "groundwater-dependent ecosystems",
+                         "groundwater dependent ecosystems",
+                         "gde","gdes","habitat","species")
    if(clean_lex == T){
-      gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F)
+      gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F,
+                           topic_indicators = topic_indicators)
       
    }
    
@@ -59,7 +69,14 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
       list.files(path = "data_temp", pattern = "slam", full.names = T))])
    
    if(model_compare==T){
-      models <- compare_models(optimize_K = T, obj = gsp_out)
+      #uses too much memory to do all at once
+      k_set <- c(120,160,200)
+      models <- compare_models(optimize_K = T, k_set, obj = gsp_out)
+      k_set <- c(5,10,20)
+      models <- compare_models(optimize_K = T, k_set, obj = gsp_out)
+      k_set <- c(40,80)
+      models <- compare_models(optimize_K = T, k_set, obj = gsp_out)
+      
       #numTopics = selected_model$settings$dim$K
    }else{
       numTopics = ntopics
@@ -81,7 +98,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
                        data = gsp_out$meta, init.type = "Spectral")  
       #dummy for how many gsas are involved: multiple or one
       
-      saveRDS(gsp_model, file = paste0("data_output/mdl","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+      saveRDS(gsp_model, file = paste0("data_output/mdl/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
       
    }
    
