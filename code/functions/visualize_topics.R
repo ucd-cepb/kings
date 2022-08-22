@@ -1,6 +1,7 @@
 visualize_topics <- function(model, inputs, text_col, topic_indicators){
 
-   packs <- c('ggplot2','ggrepel','scico','stm','tidyverse','reshape2','igraph','huge','fields')
+   packs <- c('ggplot2','ggrepel','scico','stm','tidyverse','reshape2',
+              'igraph','huge','fields','ggcorrplot')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
    lapply(packs, require, character.only = TRUE)
@@ -24,10 +25,11 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    topics_of_interest<- NULL
    for(i in 1:numTopics){
       
-      if(sum(grepl(pattern = paste(gsub("\\s+","_", x=topic_indicators),collapse="|"), x=label_lg$frex[i,])>0)){
+      if(sum(grepl(pattern = paste(gsub("\\s+","_", x=topic_indicators),collapse="|"), x=label_lg$frex[i,]))>0){
          print(paste0("Top 50 FREX Words in Topic ", i, ":", collapse = ""))
          print(label_lg$frex[i,])
-         topics_of_interest<-append(topics_of_interest,paste0("Topic_",i))
+         topics_of_interest<-append(topics_of_interest,paste0("Topic_",strrep("0",2-nchar(toString(i))),i))
+         
       }
    }
    
@@ -107,6 +109,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    theta_ag <- aggregate(. ~gsp_id, mean, data = theta)
    theta_long <- melt(theta_ag) 
    
+   #colnames -- Topic_XX melts to variable
    topic_theta_plot <- ggplot(theta_long, aes(x = gsp_id, y = variable))+
       geom_raster(aes(fill=value))+
       scale_fill_scico(palette = "tokyo",direction = -1,name = "Proportion\nof GSP\nallocated\nto this\ntopic\n(0-1)")+
@@ -143,53 +146,140 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
           width = 4422, height = 2079, dpi = 300, units = "px", bg = "white")
    
    #TODO see vignette for authors
-   tc <- topicCorr(model, method = "simple", cutoff = 0.05, verbose = TRUE)
+   tcs <- topicCorr(model, method = "simple", cutoff = 0.01, verbose = TRUE)
    tch <- topicCorr(model, method = "huge", verbose = TRUE)
-   tops_of_interest<-c("topic_6","topic_14","topic_21","topic_24",
-   "topic_26","topic_31","topic_37","topic_45")
-   nums_of_interest<-c(6,14,21,24,26,31,37,45)
    nums_of_interest <- sapply(X = topics_of_interest, function(x)as.integer(substr(x,7,nchar(x))))
-   tc_select <- tc$cor[nums_of_interest,nums_of_interest] 
-   colnames(tc_select) <- as.list(tops_of_interest)
-   rownames(tc_select) <- as.list(tops_of_interest)
+   tch_cor <- tch$cor[nums_of_interest,nums_of_interest] 
+   tcs_cor <- tcs$cor[nums_of_interest,nums_of_interest] 
+   colnames(tcs_cor) <- as.list(topics_of_interest)
+   rownames(tcs_cor) <- as.list(topics_of_interest)
    #TODO create category tags and ggplot based on those tags
-   topic_indicators <- c("disadvantaged community", "disadvantaged communities",
-                         "community","engagement","outreach","environmental_justice",
-                         "drinking water", "water quality","safe","wells",
-                         "climate change","projection","projections",
-                         "groundwater-dependent ecosystem",
+   ej <- c("disadvantaged community", "disadvantaged communities",
+                         "^community$","engagement","outreach","environmental_justice")
+   dw <- c("drinking water", "water quality","safe","well")
+   cc <- c("climate change","projection","projections")
+   gde <- c("groundwater-dependent ecosystem",
                          "groundwater dependent ecosystem",
-                         "groundwater-dependent ecosystems",
-                         "groundwater dependent ecosystems",
-                         "gde","gdes","habitat","species")
+                         "^gde$","^gdes$","habitat","species")
    topics <- 1:nrow(tch$posadj)
    tch_pos <- tch$posadj[topics, topics]
+   tch_pos_subset <- tch$posadj[nums_of_interest,nums_of_interest]
+   tcs_pos_subset <- tch$posadj[nums_of_interest,nums_of_interest]
+   tch_cor_subset <- tch$cor[nums_of_interest,nums_of_interest]
+   tcs_cor_subset <- tcs$cor[nums_of_interest,nums_of_interest]
    g <- igraph::graph.adjacency(tch_pos, mode="undirected", weighted=TRUE, diag=FALSE)
+   gh_subset <- igraph::graph.adjacency(tch_pos_subset, mode="undirected", weighted=TRUE, diag=FALSE)
+   gs_subset <- igraph::graph.adjacency(tcs_pos_subset, mode="undirected", weighted=TRUE, diag=FALSE)
+   
    igraph::E(g)$size <- 1
    igraph::E(g)$lty <- 2
    igraph::E(g)$color <- "black"
    igraph::V(g)$label <- V(g)
-   layout <- igraph::layout.fruchterman.reingold
-   num_neighb <- sapply(1:50,function(x)length(neighbors(g,x)))
-   color_vect <- viridis(max(num_neighb)+1)
-   txt_vect <- c("#000000","#FFFFFF")
-   txt_invert <- ifelse(num_neighb < max(num_neighb)/2,2,1)
-   igraph::plot.igraph(g, layout=layout, vertex.color=color_vect[num_neighb+1], vertex.label.cex=0.75, 
-                       vertex.label.color=txt_vect[txt_invert], vertex.size=8)
-   title("Network of Positively Correlated Topics")
+   igraph::E(gh_subset)$size <- 1
+   igraph::E(gh_subset)$lty <- 2
+   igraph::E(gh_subset)$color <- "black"
+   igraph::V(gh_subset)$label <- nums_of_interest
+   igraph::E(gs_subset)$size <- 1
+   igraph::E(gs_subset)$lty <- 2
+   igraph::E(gs_subset)$color <- "black"
+   igraph::V(gs_subset)$label <- nums_of_interest
    
+   layout <- igraph::layout.fruchterman.reingold
+   num_neighb <- sapply(1:length(topics),function(x)length(neighbors(g,x)))
+   num_neighbh_subset <- sapply(1:length(nums_of_interest),function(x)length(neighbors(gh_subset,x)))
+   num_neighbs_subset <- sapply(1:length(nums_of_interest),function(x)length(neighbors(gs_subset,x)))
+   
+   color_vect <- viridis(max(num_neighb)+1)
+   txt_vect_sm <- c("#000000","#FFFFFF")
+   txt_invert <- ifelse(num_neighb < max(num_neighb)/2,2,1)
+   
+   set.seed(3)
+   igraph::plot.igraph(g, layout=layout, vertex.color=color_vect[num_neighb+1], vertex.label.cex=0.75, 
+                       vertex.label.color=txt_vect_sm[txt_invert], vertex.size=8)
+   title("Network of Positively Correlated Topics")
    #Here we create a sample function on the vertices of the graph
    
-   image.plot(legend.only=T, zlim=range(0:15), col=color_vect,
+   image.plot(legend.only=T, zlim=range(0:max(num_neighb)), col=color_vect,
               legend.lab="Number of Neighbors")
    
-   plot.topicCorr(tch,vertex.color = "#f0e442", vertex.size = 5)
+   category_vect <- viridis(5)
+   cat_txt_vect <- c("#000000","#000000","#FFFFFF","#FFFFFF","#FFFFFF")
    
+   is_cc <- vector(length=0)
+   is_ej <- vector(length=0)
+   is_dw <- vector(length=0)
+   is_gde <- vector(length=0)
+   for(i in 1:numTopics){
+      is_cc[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=cc),
+                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      is_ej[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=ej),
+                                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      is_dw[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=dw),
+                                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      is_gde[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=gde),
+                                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      
+   }
+   is_multi <- ifelse(is_cc+is_ej+is_dw+is_gde >1,T,F)
+   
+   categ <- case_when(is_multi ~ "Multi",
+                      is_cc ~ "CC",
+                      is_ej ~ "EJ",
+                      is_dw ~ "DW",
+                      is_gde ~ "GDE")
 
+   category_vect <- viridis(5)
+   cat_color_h <- category_vect[as.numeric(as.factor(V(gh_subset)$category))]
+   cat_color_s <- category_vect[as.numeric(as.factor(V(gs_subset)$category))]
    
+   # Make the plot
+   txt_vect <- c("#FFFFFF","#FFFFFF","#000000","#000000","#000000")
+   txt_color_h <- txt_vect[as.numeric(as.factor(V(gh_subset)$category))]
+   txt_color_s <- txt_vect[as.numeric(as.factor(V(gs_subset)$category))]
    
+   V(gh_subset)$category <- categ[!is.na(categ)]#contain key words?
+   V(gs_subset)$category <- categ[!is.na(categ)]#contain key words?
+   set.seed(3)
+   igraph::plot.igraph(gh_subset, layout=layout, vertex.color=cat_color_h,
+                       vertex.label.cex=0.75, 
+                       vertex.label.color=txt_color_h, vertex.size=8)
+   igraph::plot.igraph(gs_subset, layout=layout, vertex.color=cat_color_s,
+                       vertex.label.cex=0.75, 
+                       vertex.label.color=txt_color_s, vertex.size=8)
+   
+   legend('topleft',legend = levels(as.factor(V(gh_subset)$category)), 
+          pt.cex = 2, pch = 21, cex = 1.2, pt.bg = category_vect,
+          inset = c(0,0))
+   legend('topleft',legend = levels(as.factor(V(gs_subset)$category)), 
+          pt.cex = 2, pch = 21, cex = 1.2, pt.bg = category_vect,
+          inset = c(0,0))
+   title("Network of Positively Correlated Topics of Interest")
    
     #TODO tidystm
+   
+   
+   #grid of topic percent by gsp
+   
+   topic_cor_grid <- tcs$cor
+   colnames(topic_cor_grid) <- paste0("Topic_",
+                                      sapply(1:numTopics,function(x)strrep("0",2-nchar(toString(x)))),
+                                      1:numTopics)
+   rownames(topic_cor_grid) <- paste0("Topic_",
+                                      sapply(1:numTopics,function(x)strrep("0",2-nchar(toString(x)))),
+                                      1:numTopics)
+   grid_mini <- topic_cor_grid[,topics_of_interest]
+   colnames(grid_mini) <- paste0(categ[!is.na(categ)],colnames(grid_mini))
+   grid_mini <- grid_mini[,sort(colnames(grid_mini))]
+   ggcorrplot(grid_mini,
+              colors = c(scico(3, palette = "vik") ))+
+      theme(axis.text.x = element_text(size = 8),  # Order: top, right, bottom, left
+            axis.text.y = element_text(size = 11))+
+      labs(title = "Topic Correlation among Topics of Interest")+
+      theme_classic()+theme(axis.text.x=element_text(size=9, angle = 80, vjust = 0.4),
+                            axis.text.y=element_text(size=10),
+                            plot.title=element_text(size=13,hjust = 0.5))
+   
+   
    
    #TODO stminsights
    #TODO stmBrowser

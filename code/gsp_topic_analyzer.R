@@ -51,10 +51,10 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    
    topic_indicators <- c("disadvantaged community", "disadvantaged communities",
-                         "community","engagement","outreach",
+                         "community","engagement","outreach","environmental_justice",
                          "drinking water", "water quality","safe","wells",
                          "climate change","projection","projections",
-                         "groundwater-dependent_ecosystem",
+                         "groundwater-dependent ecosystem",
                          "groundwater dependent ecosystem",
                          "groundwater-dependent ecosystems",
                          "groundwater dependent ecosystems",
