@@ -7,7 +7,7 @@ lapply(packs, require, character.only = TRUE)
 source('code/functions/custom_dictionary.R')
 source('code/functions/generate_proper_names.R')
 
-lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
+lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL){
    is_comment <- gsp_text_with_meta$is_comment
    is_reference <- gsp_text_with_meta$is_reference
       
@@ -75,7 +75,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F){
                                                         "potential_of_hydrogen"))
    pr_names <- generate_proper_names()
    
-   compounds <- custom_dictionary(pr_names[grepl("\\s", pr_names)])
+   compounds <- custom_dictionary(c(topic_indicators,pr_names[grepl("\\s", pr_names)]))
    compounds <- stri_remove_empty_na(compounds)
    #this takes about 30 min
    #converts toLower, does not stem

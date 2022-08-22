@@ -50,8 +50,18 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    #retrieves the latest save of gsp_text_with_meta
    gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    
+   topic_indicators <- c("disadvantaged community", "disadvantaged communities",
+                         "community","engagement","outreach",
+                         "drinking water", "water quality","safe","wells",
+                         "climate change","projection","projections",
+                         "groundwater-dependent_ecosystem",
+                         "groundwater dependent ecosystem",
+                         "groundwater-dependent ecosystems",
+                         "groundwater dependent ecosystems",
+                         "gde","gdes","habitat","species")
    if(clean_lex == T){
-      gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F)
+      gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F,
+                           topic_indicators = topic_indicators)
       
    }
    
@@ -88,7 +98,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
                        data = gsp_out$meta, init.type = "Spectral")  
       #dummy for how many gsas are involved: multiple or one
       
-      saveRDS(gsp_model, file = paste0("data_output/mdl","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+      saveRDS(gsp_model, file = paste0("data_output/mdl/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
       
    }
    
