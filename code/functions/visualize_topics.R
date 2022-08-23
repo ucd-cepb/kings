@@ -25,7 +25,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    topics_of_interest<- NULL
    for(i in 1:numTopics){
       
-      if(sum(grepl(pattern = paste(gsub("\\s+","_", x=topic_indicators),collapse="|"), x=label_lg$frex[i,]))>0){
+      if(sum(grepl(pattern = paste(gsub("\\s+","_", x=unlist(topic_indicators,use.names=F)),collapse="|"), x=label_lg$frex[i,]))>0){
          print(paste0("Top 50 FREX Words in Topic ", i, ":", collapse = ""))
          print(label_lg$frex[i,])
          topics_of_interest<-append(topics_of_interest,paste0("Topic_",strrep("0",2-nchar(toString(i))),i))
@@ -154,13 +154,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    colnames(tcs_cor) <- as.list(topics_of_interest)
    rownames(tcs_cor) <- as.list(topics_of_interest)
    #TODO create category tags and ggplot based on those tags
-   ej <- c("disadvantaged community", "disadvantaged communities",
-                         "^community$","engagement","outreach","environmental_justice")
-   dw <- c("drinking water", "water quality","safe","well")
-   cc <- c("climate change","projection","projections")
-   gde <- c("groundwater-dependent ecosystem",
-                         "groundwater dependent ecosystem",
-                         "^gde$","^gdes$","habitat","species")
+   
    topics <- 1:nrow(tch$posadj)
    tch_pos <- tch$posadj[topics, topics]
    tch_pos_subset <- tch$posadj[nums_of_interest,nums_of_interest]
@@ -210,13 +204,13 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    is_dw <- vector(length=0)
    is_gde <- vector(length=0)
    for(i in 1:numTopics){
-      is_cc[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=cc),
+      is_cc[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=topic_indicators[["cc"]]),
                                    collapse="|"), x=label_lg$frex[i,]))>0,T,F)
-      is_ej[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=ej),
+      is_ej[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", topic_indicators[["ej"]]),
                                                    collapse="|"), x=label_lg$frex[i,]))>0,T,F)
-      is_dw[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=dw),
+      is_dw[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", topic_indicators[["dw"]]),
                                                    collapse="|"), x=label_lg$frex[i,]))>0,T,F)
-      is_gde[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=gde),
+      is_gde[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", topic_indicators[["gde"]]),
                                                    collapse="|"), x=label_lg$frex[i,]))>0,T,F)
       
    }
