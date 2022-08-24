@@ -251,7 +251,11 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    
     #TODO tidystm
    
-   
+   #sets scale to nearest multiple of .05
+   max_corr <- max(abs(grid_mini)[abs(grid_mini)!=1])
+   max_corr <- ceiling(max_corr*100)/100+
+      ifelse(ceiling(max_corr*100)%%5==0,0,(5-ceiling(max_corr*100)%%5)/100)
+   min_corr <- max_corr*-1
    #grid of topic percent by gsp
    
    topic_cor_grid <- tcs$cor
@@ -271,10 +275,16 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
       labs(title = "Topic Correlation among Topics of Interest")+
       theme_classic()+theme(axis.text.x=element_text(size=9, angle = 80, vjust = 0.4),
                             axis.text.y=element_text(size=10),
-                            plot.title=element_text(size=13,hjust = 0.5))
-   
-   
-   
+                            plot.title=element_text(size=13,hjust = 0.5))+
+      scale_fill_gradient2(low = colors[1], high = colors[3], 
+                           mid = colors[2], midpoint = 0, limit = c(min_corr, max_corr), 
+                           space = "Lab",
+                           name = "Corr", na.value="white")+
+      geom_vline(aes(xintercept=0, color="Same Topic"))+
+      guides(color=guide_legend(title=NULL, colour = "black",
+                                override.aes=list(color="#00000000")))+
+      theme(legend.key=element_rect(colour="black",fill="white",
+                                    linetype="solid"))     
    #TODO stminsights
    #TODO stmBrowser
    #TODO stmCorrViz, including function toLDAvis, which enables export to the LDAvis
