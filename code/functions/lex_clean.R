@@ -136,6 +136,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    #and words that have no letters (eg negative numbers or number ranges)
    custom <- c("us", "u.s","u.s.", "california")
    
+   #TODO consider removing "^plot[0-9]+$"
    if(rm_plnames == T){
       pr_names <- generate_proper_names(underscore = T, for_removal = T)
       qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
