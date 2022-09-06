@@ -1,5 +1,5 @@
 gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T, 
-                              model_compare = F, run_model = T, viz_results = T, 
+                              run_model = T, viz_results = T, 
                               ntopics = NA){
    
    packs <- c('stm','tm','SnowballC','tidytext','data.table',
@@ -79,19 +79,11 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    gsp_out <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
       list.files(path = "data_temp", pattern = "slam", full.names = T))])
    
-   if(model_compare==T){
-      #uses too much memory to do all at once
-      k_set <- c(120,160,200)
-      models <- compare_models(optimize_K = T, k_set, obj = gsp_out)
-      k_set <- c(5,10,20)
-      models <- compare_models(optimize_K = T, k_set, obj = gsp_out)
-      k_set <- c(40,80)
-      models <- compare_models(optimize_K = T, k_set, obj = gsp_out)
-      
-      #numTopics = selected_model$settings$dim$K
-   }else{
-      numTopics = ntopics
-   }
+   #See compare_models script for our process of selecting a value for K
+   
+   #numTopics = selected_model$settings$dim$K
+   
+   numTopics = ntopics
 
    if(run_model == T){
       gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
@@ -104,7 +96,10 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
                           as.factor(approval)+
                           as.factor(priority)+
                           mult_gsas+
-                          ag_gw_asfractof_tot_gw,
+                          ag_gw_asfractof_tot_gw+
+                          hviol_avg_res+
+                          prop_service_gw_source+
+                          service_count,
                        max.em.its = 150,
                        data = gsp_out$meta, init.type = "Spectral")  
       #dummy for how many gsas are involved: multiple or one

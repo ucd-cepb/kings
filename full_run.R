@@ -9,9 +9,9 @@ gsp_pdf_reader(box_sync = F)
 #format metadata, clean corpus, run model, graph results
 gsp_topic_analyzer(dac_corr_check = F, build_meta = T, clean_lex = T, 
                    model_compare = F, run_model = T, viz_results = T, 
-                   ntopics = 50)
+                   ntopics = 60)
 
-#clean lex and test how many topics to use
+#clean lex 
 gsp_topic_analyzer(dac_corr_check = F, build_meta = F, clean_lex = T, 
-                   model_compare = T, run_model = F, viz_results = F, 
-                   ntopics = 50)
+                   run_model = F, viz_results = F, 
+                   ntopics = 60)
