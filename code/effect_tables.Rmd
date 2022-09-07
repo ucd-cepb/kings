@@ -1,0 +1,78 @@
+---
+title: "effect_tables"
+author: "E Zufall"
+date: "9/6/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r, results = 'asis', echo = FALSE}
+library(tidyverse)
+
+   tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", pattern = "eftbl", full.names = T)
+
+   dig_regex <- "[[:digit:]]+"
+   
+   dw_list <- vector("list", length(grep("DW",tbl_list)))  
+   cc_list <- vector("list", length(grep("CC",tbl_list)))
+   ej_list <- vector("list", length(grep("EJ",tbl_list)))
+   gde_list <- vector("list", length(grep("GDE",tbl_list)))
+
+   for(i in 1:length(grep("DW",tbl_list))){
+      dw_list[[i]] <- read_csv(tbl_list[i])
+   }
+   dw_topics <- unlist(str_extract_all(tbl_list[grep("DW",tbl_list)], dig_regex))
+   
+   for(i in 1:length(grep("CC",tbl_list))){
+      cc_list[[i]] <- read_csv(tbl_list[i])
+   }
+   cc_topics <- unlist(str_extract_all(tbl_list[grep("CC",tbl_list)], dig_regex))
+   
+   for(i in 1:length(grep("EJ",tbl_list))){
+      ej_list[[i]] <- read_csv(tbl_list[i])
+   }
+   ej_topics <- unlist(str_extract_all(tbl_list[grep("EJ",tbl_list)], dig_regex))
+   
+   for(i in 1:length(grep("GDE",tbl_list))){
+      gde_list[[i]] <- read_csv(tbl_list[i])
+   }
+   gde_topics <- unlist(str_extract_all(tbl_list[grep("GDE",tbl_list)], dig_regex))
+
+   for(i in 1:floor(length(dw_list)/2)){
+      #2 at a time
+      print(knitr::kable(dw_list[(2*i-1):2*i], "html", digits = getOption("digits"), row.names = NA, col.names = NA, align = "l", caption = "Drinking Water Topics", label = NULL,
+  format.args = list(), escape = TRUE))
+   }
+   if(floor(length(dw_list)/2)!=ceiling(length(dw_list)/2)){
+      #centered
+   }
+   knitr::kable(dw_list, "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "l", caption = NULL, label = NULL,
+  format.args = list(), escape = TRUE)
+
+
+
+```

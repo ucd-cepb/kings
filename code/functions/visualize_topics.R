@@ -1,7 +1,7 @@
 visualize_topics <- function(model, inputs, text_col, topic_indicators){
 
    packs <- c('ggplot2','ggrepel','scico','stm','tidyverse','reshape2',
-              'igraph','huge','fields','ggcorrplot')
+              'igraph','huge','fields','ggcorrplot','htmlTable','data.table')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
    lapply(packs, require, character.only = TRUE)
@@ -22,30 +22,61 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
       print(label_sm$frex[i,])
    }
    
-   topics_of_interest<- NULL
+   topics_of_interest <- NULL
+   nums_of_interest <- NULL
    for(i in 1:numTopics){
       
       if(sum(grepl(pattern = paste(gsub("\\s+","_", x=unlist(topic_indicators,use.names=F)),collapse="|"), x=label_lg$frex[i,]))>0){
          print(paste0("Top 50 FREX Words in Topic ", i, ":", collapse = ""))
          print(label_lg$frex[i,])
+         nums_of_interest <- append(nums_of_interest,i)
          topics_of_interest<-append(topics_of_interest,paste0("Topic_",strrep("0",2-nchar(toString(i))),i))
          
       }
    }
+   is_cc <- vector(length=0)
+   is_ej <- vector(length=0)
+   is_dw <- vector(length=0)
+   is_gde <- vector(length=0)
+   for(i in 1:numTopics){
+      is_cc[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", x=topic_indicators[["cc"]]),
+                                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      is_ej[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", topic_indicators[["ej"]]),
+                                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      is_dw[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", topic_indicators[["dw"]]),
+                                                   collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      is_gde[i] <- ifelse(sum(grepl(pattern = paste(gsub("\\s+","_", topic_indicators[["gde"]]),
+                                                    collapse="|"), x=label_lg$frex[i,]))>0,T,F)
+      
+   }
+   is_multi <- ifelse(is_cc+is_ej+is_dw+is_gde >1,T,F)
    
+   categ <- case_when(is_multi ~ "Multi",
+                      is_cc ~ "CC",
+                      is_ej ~ "EJ",
+                      is_dw ~ "DW",
+                      is_gde ~ "GDE")
+   categ_no_na <- categ[!is.na(categ)]
+   
+   categ_no_multi <- ifelse(is.na(categ),NA,paste0(
+      ifelse(is_cc==T,"CC",""),ifelse(is_dw==T,"DW",""),
+      ifelse(is_ej==T,"EJ",""),ifelse(is_gde==T,"GDE","")
+   ))
+   
+   categ_no_m_na <- categ_no_multi[!is.na(categ_no_multi)]
    
    
    #TODO gratitude to francescoaberlin.blog for this tutorial
    #topics are evaluated on two components:
    #semantic coherence (frequency of co-occurrence of common words in a toipc)
    #exclusivity of words to topic
-   m6_ex_sem<-as.data.frame(cbind(c(1:numTopics),
+   m7_ex_sem<-as.data.frame(cbind(c(1:numTopics),
                                  exclusivity(model), 
                                  semanticCoherence(model=model, 
-                                                   documents = inputs$documents), "model 6"))
+                                                   documents = inputs$documents), "model 7"))
    
    #can compare multiple models by adding to rbind
-   models_ex_sem<-rbind(m6_ex_sem)
+   models_ex_sem<-rbind(m7_ex_sem)
    
    colnames(models_ex_sem)<-c("K","exclusivity", "semantic_coherence", "model")
    models_ex_sem$exclusivity<-as.numeric(as.character(models_ex_sem$exclusivity))
@@ -65,7 +96,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
       scale_color_scico_d(palette = "nuuk")+
       theme_minimal()+theme(plot.title = element_text(hjust = 0.5))
    topic_qual_plot
-   ggsave("topic_quality_model_6.png",plot = topic_qual_plot, device = "png", path = "figures",
+   ggsave("topic_quality_model_7.png",plot = topic_qual_plot, device = "png", path = "figures",
          width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
    
    
@@ -105,15 +136,17 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    #TODO stmCorrViz, including function toLDAvis, which enables export to the LDAvis
    #TODO stmprinter
    
+   
    #look at the relationship between metadata and topics
-   effect <- estimateEffect(1:50 ~ admin + 
+   effect <- estimateEffect(nums_of_interest ~ admin + 
                                basin_plan +
                                sust_criteria +
                                monitoring_networks + 
                                projects_mgmt_actions + 
                                percent_dac_by_pop+
-                               as.factor(approval)+
-                               as.factor(priority)+
+                               factor(approval)+
+                               factor(priority, 
+                                    levels = c("High","Medium","Low","Very Low"), ordered = FALSE)+
                                mult_gsas+
                                ag_gw_asfractof_tot_gw+
                                hviol_avg_res+
@@ -121,7 +154,15 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
                                service_count,
                           model,
                           meta = inputs$meta, uncertainty = "None")
-   summary(effect, topics = c(1:50))
+   sumef <- summary(effect, topics = c(nums_of_interest))
+   
+   for(i in 1:length(sumef$tables)){
+      efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
+                        formatC(sumef$tables[[i]],format = "e", digits = 2)))
+      efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
+      write_csv(efbytopic, file = paste0("data_temp/eftbl_",categ_no_m_na[i],"_topic_",sumef$topics[i]),".csv")
+   }
+   
+   #TODO clean this up
    plot.estimateEffect(effect,covariate = "ag_gw_asfractof_tot_gw")
-   #calculate topic correlations: topicCorr
 }

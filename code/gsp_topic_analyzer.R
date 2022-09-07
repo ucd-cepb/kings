@@ -15,7 +15,7 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
    source('code/functions/create_lang_meta.R')
    source('code/functions/create_spat_meta.R')
    source('code/functions/generate_proper_names.R')
-   source('code/functions/compare_models.R')
+   #source('code/functions/compare_models.R')
    source('code/functions/visualize_topics.R')
    source('code/functions/dac_svi_analysis.R')
    source('code/functions/summarize_pws_by_gsp.R')
@@ -100,8 +100,31 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
                           hviol_avg_res+
                           prop_service_gw_source+
                           service_count,
-                       max.em.its = 150,
-                       data = gsp_out$meta, init.type = "Spectral")  
+                       max.em.its = 50,
+                       data = gsp_out$meta, init.type = "Spectral") 
+      
+      while (!gsp_model$convergence$converged){
+         gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
+                        K = numTopics,
+                        prevalence =~ admin + 
+                           basin_plan +
+                           sust_criteria +
+                           monitoring_networks + 
+                           projects_mgmt_actions + 
+                           percent_dac_by_pop+
+                           as.factor(approval)+
+                           as.factor(priority)+
+                           mult_gsas+
+                           ag_gw_asfractof_tot_gw+
+                           hviol_avg_res+
+                           prop_service_gw_source+
+                           service_count,
+                        init.type = "Spectral",
+                        max.em.its = gsp_model$settings$convergence$max.em.its + 30,
+                        data = gsp_out$meta,
+                        model = gsp_model)
+         saveRDS(gsp_model, paste0("data_temp/gsp_partial"))
+      }
       #dummy for how many gsas are involved: multiple or one
       
       saveRDS(gsp_model, file = paste0("data_output/mdl/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))

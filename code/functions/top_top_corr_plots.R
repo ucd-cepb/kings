@@ -53,6 +53,7 @@ top_top_corr_plots <- function(model){
    category_vect <- viridis(5)
    cat_txt_vect <- c("#000000","#000000","#FFFFFF","#FFFFFF","#FFFFFF")
    
+   #TODO turn this into helper function
    is_cc <- vector(length=0)
    is_ej <- vector(length=0)
    is_dw <- vector(length=0)
