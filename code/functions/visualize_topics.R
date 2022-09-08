@@ -155,10 +155,11 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
                           model,
                           meta = inputs$meta, uncertainty = "None")
    sumef <- summary(effect, topics = c(nums_of_interest))
+   saveRDS(effect,"data_temp/estimateEffects")
    
    for(i in 1:length(sumef$tables)){
       efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
-                        formatC(sumef$tables[[i]],format = "e", digits = 2)))
+                        sumef$tables[[i]]))
       efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
       write_csv(efbytopic, file = paste0("data_temp/eftbl_",categ_no_m_na[i],"_topic_",sumef$topics[i]),".csv")
    }

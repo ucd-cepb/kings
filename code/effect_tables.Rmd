@@ -5,34 +5,28 @@ date: "9/6/2022"
 output: html_document
 ---
 
+
+
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r lib, include = FALSE}
+library(knitr)
+options(knitr.table.format = "html") 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+packs <- c('kableExtra','tidyverse')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   lapply(packs, require, character.only = TRUE)
+```   
 
-```{r cars}
-summary(cars)
-```
+```{r df, include = FALSE}
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-```{r, results = 'asis', echo = FALSE}
-library(tidyverse)
-
-   tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", pattern = "eftbl", full.names = T)
+tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", pattern = "eftbl", full.names = T)
 
    dig_regex <- "[[:digit:]]+"
    
@@ -42,37 +36,138 @@ library(tidyverse)
    gde_list <- vector("list", length(grep("GDE",tbl_list)))
 
    for(i in 1:length(grep("DW",tbl_list))){
-      dw_list[[i]] <- read_csv(tbl_list[i])
+      dw_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- dw_list[[i]]$`Pr(>|t|)`
+      dw_list[[i]]$`Pr(>|t|)` <- as.character(dw_list[[i]]$`Pr(>|t|)`)
+      dw_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(dw_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- dw_list[[i]]$`Pr(>|t|)`=="<0.05" | as.numeric(dw_list[[i]]$`Pr(>|t|)`)<=0.05
+      dw_list[[i]]$`Pr(>|t|)` <- ifelse(sig, paste0("**",dw_list[[i]]$`Pr(>|t|)`,"**"),dw_list[[i]]$`Pr(>|t|)`)
+      dw_list[[i]]$Estimate <- signif(dw_list[[i]]$Estimate, digits = 3)
+      dw_list[[i]]$`Std. Error` <- signif(dw_list[[i]]$`Std. Error`, digits = 3)
+      dw_list[[i]]$`t value` <- signif(dw_list[[i]]$`t value`, digits = 3)
+         
+      #removing var names from even numbered tables so they fit nicely
+      if (i %% 2 == 0){
+         dw_list[[i]] <- dw_list[[i]][,-1]
+      }
    }
    dw_topics <- unlist(str_extract_all(tbl_list[grep("DW",tbl_list)], dig_regex))
    
    for(i in 1:length(grep("CC",tbl_list))){
-      cc_list[[i]] <- read_csv(tbl_list[i])
+      cc_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- cc_list[[i]]$`Pr(>|t|)`
+      cc_list[[i]]$`Pr(>|t|)` <- as.character(cc_list[[i]]$`Pr(>|t|)`)
+      cc_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(cc_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      cc_list[[i]]$Estimate <- signif(cc_list[[i]]$Estimate, digits = 3)
+      cc_list[[i]]$`Std. Error` <- signif(cc_list[[i]]$`Std. Error`, digits = 3)
+      cc_list[[i]]$`t value` <- signif(cc_list[[i]]$`t value`, digits = 3)
+         
+      #removing var names from even numbered tables so they fit nicely
+      if (i %% 2 == 0){
+         cc_list[[i]] <- cc_list[[i]][,-1]
+      }
    }
    cc_topics <- unlist(str_extract_all(tbl_list[grep("CC",tbl_list)], dig_regex))
    
    for(i in 1:length(grep("EJ",tbl_list))){
-      ej_list[[i]] <- read_csv(tbl_list[i])
+      ej_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- ej_list[[i]]$`Pr(>|t|)`
+      ej_list[[i]]$`Pr(>|t|)` <- as.character(ej_list[[i]]$`Pr(>|t|)`)
+      ej_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(ej_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      ej_list[[i]]$Estimate <- signif(ej_list[[i]]$Estimate, digits = 3)
+      ej_list[[i]]$`Std. Error` <- signif(ej_list[[i]]$`Std. Error`, digits = 3)
+      ej_list[[i]]$`t value` <- signif(ej_list[[i]]$`t value`, digits = 3)
+         
+      #removing var names from even numbered tables so they fit nicely
+      if (i %% 2 == 0){
+         ej_list[[i]] <- ej_list[[i]][,-1]
+      }
    }
    ej_topics <- unlist(str_extract_all(tbl_list[grep("EJ",tbl_list)], dig_regex))
    
    for(i in 1:length(grep("GDE",tbl_list))){
-      gde_list[[i]] <- read_csv(tbl_list[i])
+      gde_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- gde_list[[i]]$`Pr(>|t|)`
+      gde_list[[i]]$`Pr(>|t|)` <- as.character(gde_list[[i]]$`Pr(>|t|)`)
+      gde_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(gde_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      gde_list[[i]]$Estimate <- signif(gde_list[[i]]$Estimate, digits = 3)
+      gde_list[[i]]$`Std. Error` <- signif(gde_list[[i]]$`Std. Error`, digits = 3)
+      gde_list[[i]]$`t value` <- signif(gde_list[[i]]$`t value`, digits = 3)
+         
+      #removing var names from even numbered tables so they fit nicely
+      if (i %% 2 == 0){
+         gde_list[[i]] <- gde_list[[i]][,-1]
+      }
    }
    gde_topics <- unlist(str_extract_all(tbl_list[grep("GDE",tbl_list)], dig_regex))
+```
 
-   for(i in 1:floor(length(dw_list)/2)){
-      #2 at a time
-      print(knitr::kable(dw_list[(2*i-1):2*i], "html", digits = getOption("digits"), row.names = NA, col.names = NA, align = "l", caption = "Drinking Water Topics", label = NULL,
-  format.args = list(), escape = TRUE))
+```{r onecol, results = 'asis', include = FALSE}
+library(kableExtra)
+      for(i in 1:length(dw_list)){
+      #print 1 table at a time
+      cap <- "<center><strong>Prevalence of Drinking Water Topics</strong></center>"
+      print(knitr::kable(dw_list[[i]], format = "html", digits = getOption("digits"), align = "l", caption = ifelse(i==1,cap,""), label = NULL, 
+  format.args = list(), escape = FALSE)   %>% kable_styling(c("striped","condensed"),full_width = FALSE)  %>% 
+      add_header_above(c(setNames((4+i%%2), paste0("Topic ",dw_topics[i])))))
    }
-   if(floor(length(dw_list)/2)!=ceiling(length(dw_list)/2)){
-      #centered
-   }
-   knitr::kable(dw_list, "html", digits = getOption("digits"), row.names = NA,
-  col.names = NA, align = "l", caption = NULL, label = NULL,
-  format.args = list(), escape = TRUE)
+
+```
+
+
+```{r list, results = 'asis', echo = FALSE}
+#list solution
+for(i in 1:floor(length(dw_list)/2)){
+#      #print 2 tables side by side at a time
+   library(kableExtra)
+   t1 <- as.data.frame(dw_list[[2*i-1]])
+   t2 <- as.data.frame(dw_list[2*i])
+   cap <- "<center><strong>Prevalence of Drinking Water Topics</strong></center>"
+     print(knitr::kables(list(
+        knitr::kable(t1, format = "html", digits = getOption("digits"), align = "l", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_left")  ,   
+        knitr::kable(t2, format = "html", digits = getOption("digits"), align = "r", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_right")), caption = ifelse(i==1,cap,"") ) %>% add_header_above(c(paste0("Topic ",dw_topics[2*i-1]),paste0("Topic ",dw_topics[2*i]))))
+ 
+}     
+   
+   #for(i in 1:floor(length(dw_list)/2)){
+    #  #print 2 tables side by side at a time
+   #   cap <- "<center><strong>Prevalence of Drinking Water Topics</strong></center>"
+   #   print(knitr::kable(dw_list[(2*i-1):(2*i)], format = "html", digits = getOption("digits"), row.names = NA, col.names = NA, align = "l", caption = ifelse(i==1,cap,""), label = NULL, booktabs = TRUE,
+  #format.args = list(), escape = TRUE)   %>% 
+  #    add_header_above(c(setNames(1, paste0("Topic ",dw_topics[2*i-1])), setNames(1,paste0("Topic ",dw_topics[2*i])))))
+   #}
+   
+ #  if(floor(length(dw_list)/2)!=ceiling(length(dw_list)/2)){
+ #     #center the last table if there are an odd number of tables
+ #  }
+ #  knitr::kable(dw_list, "html", digits = getOption("digits"), row.names = NA,
+ # col.names = NA, align = "c", caption = NULL, label = NULL,
+ # format.args = list(), escape = TRUE) %>% kable_styling("striped") %>% 
+ #     add_header_above(c(" " = 1, paste0("Topics ",dw_topics[length(dw_topics)]) = length(dw_list[[i]]-1)))
 
 
 
 ```
+
+```{r results="asis", echo = FALSE}
+cat("
+<style>
+caption {
+      color: black;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+</style>
+")
+```
+
