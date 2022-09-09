@@ -62,6 +62,8 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
       cc_list[[i]]$`Pr(>|t|)` <- as.character(cc_list[[i]]$`Pr(>|t|)`)
       cc_list[[i]]$`Pr(>|t|)` <-  ifelse(
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(cc_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- cc_list[[i]]$`Pr(>|t|)`=="<0.05" | as.numeric(cc_list[[i]]$`Pr(>|t|)`)<=0.05
+      cc_list[[i]]$`Pr(>|t|)` <- ifelse(sig, paste0("**",cc_list[[i]]$`Pr(>|t|)`,"**"),cc_list[[i]]$`Pr(>|t|)`)
       cc_list[[i]]$Estimate <- signif(cc_list[[i]]$Estimate, digits = 3)
       cc_list[[i]]$`Std. Error` <- signif(cc_list[[i]]$`Std. Error`, digits = 3)
       cc_list[[i]]$`t value` <- signif(cc_list[[i]]$`t value`, digits = 3)
@@ -80,6 +82,8 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
       ej_list[[i]]$`Pr(>|t|)` <- as.character(ej_list[[i]]$`Pr(>|t|)`)
       ej_list[[i]]$`Pr(>|t|)` <-  ifelse(
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(ej_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- ej_list[[i]]$`Pr(>|t|)`=="<0.05" | as.numeric(ej_list[[i]]$`Pr(>|t|)`)<=0.05
+      ej_list[[i]]$`Pr(>|t|)` <- ifelse(sig, paste0("**",ej_list[[i]]$`Pr(>|t|)`,"**"),ej_list[[i]]$`Pr(>|t|)`)
       ej_list[[i]]$Estimate <- signif(ej_list[[i]]$Estimate, digits = 3)
       ej_list[[i]]$`Std. Error` <- signif(ej_list[[i]]$`Std. Error`, digits = 3)
       ej_list[[i]]$`t value` <- signif(ej_list[[i]]$`t value`, digits = 3)
@@ -98,6 +102,8 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
       gde_list[[i]]$`Pr(>|t|)` <- as.character(gde_list[[i]]$`Pr(>|t|)`)
       gde_list[[i]]$`Pr(>|t|)` <-  ifelse(
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(gde_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- gde_list[[i]]$`Pr(>|t|)`=="<0.05" | as.numeric(gde_list[[i]]$`Pr(>|t|)`)<=0.05
+      gde_list[[i]]$`Pr(>|t|)` <- ifelse(sig, paste0("**",gde_list[[i]]$`Pr(>|t|)`,"**"),gde_list[[i]]$`Pr(>|t|)`)
       gde_list[[i]]$Estimate <- signif(gde_list[[i]]$Estimate, digits = 3)
       gde_list[[i]]$`Std. Error` <- signif(gde_list[[i]]$`Std. Error`, digits = 3)
       gde_list[[i]]$`t value` <- signif(gde_list[[i]]$`t value`, digits = 3)
@@ -111,6 +117,7 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
 ```
 
 ```{r onecol, results = 'asis', include = FALSE}
+#this doesn't print because include = FALSE. Use to print one table at a time
 library(kableExtra)
       for(i in 1:length(dw_list)){
       #print 1 table at a time
@@ -128,8 +135,8 @@ library(kableExtra)
 for(i in 1:floor(length(dw_list)/2)){
 #      #print 2 tables side by side at a time
    library(kableExtra)
-   t1 <- as.data.frame(dw_list[[2*i-1]])
-   t2 <- as.data.frame(dw_list[2*i])
+   t1 <- dw_list[[2*i-1]]
+   t2 <- dw_list[[2*i]]
    cap <- "<center><strong>Prevalence of Drinking Water Topics</strong></center>"
      print(knitr::kables(list(
         knitr::kable(t1, format = "html", digits = getOption("digits"), align = "l", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
@@ -138,24 +145,88 @@ for(i in 1:floor(length(dw_list)/2)){
                             full_width = FALSE, position = "float_right")), caption = ifelse(i==1,cap,"") ) %>% add_header_above(c(paste0("Topic ",dw_topics[2*i-1]),paste0("Topic ",dw_topics[2*i]))))
  
 }     
-   
-   #for(i in 1:floor(length(dw_list)/2)){
-    #  #print 2 tables side by side at a time
-   #   cap <- "<center><strong>Prevalence of Drinking Water Topics</strong></center>"
-   #   print(knitr::kable(dw_list[(2*i-1):(2*i)], format = "html", digits = getOption("digits"), row.names = NA, col.names = NA, align = "l", caption = ifelse(i==1,cap,""), label = NULL, booktabs = TRUE,
-  #format.args = list(), escape = TRUE)   %>% 
-  #    add_header_above(c(setNames(1, paste0("Topic ",dw_topics[2*i-1])), setNames(1,paste0("Topic ",dw_topics[2*i])))))
-   #}
-   
- #  if(floor(length(dw_list)/2)!=ceiling(length(dw_list)/2)){
- #     #center the last table if there are an odd number of tables
- #  }
- #  knitr::kable(dw_list, "html", digits = getOption("digits"), row.names = NA,
- # col.names = NA, align = "c", caption = NULL, label = NULL,
- # format.args = list(), escape = TRUE) %>% kable_styling("striped") %>% 
- #     add_header_above(c(" " = 1, paste0("Topics ",dw_topics[length(dw_topics)]) = length(dw_list[[i]]-1)))
 
+   if(floor(length(dw_list)/2)!=ceiling(length(dw_list)/2)){
+      #center the last table if there are an odd number of tables
+      #header labels table with topic number
+      knitr::kable(dw_list[[length(dw_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = NULL, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(dw_list[[length(dw_list)]]), paste0("Topic ",dw_topics[length(dw_topics)]))))
+   }
+   
+   
+   for(i in 1:floor(length(cc_list)/2)){
+#      #print 2 tables side by side at a time
+   library(kableExtra)
+   t1 <- cc_list[[2*i-1]]
+   t2 <- cc_list[[2*i]]
+   cap <- "<center><strong>Prevalence of Climate Change Topics</strong></center>"
+     print(knitr::kables(list(
+        knitr::kable(t1, format = "html", digits = getOption("digits"), align = "l", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_left")  ,   
+        knitr::kable(t2, format = "html", digits = getOption("digits"), align = "r", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_right")), caption = ifelse(i==1,cap,"") ) %>% add_header_above(c(paste0("Topic ",cc_topics[2*i-1]),paste0("Topic ",cc_topics[2*i]))))
+ 
+}     
 
+   if(floor(length(cc_list)/2)!=ceiling(length(cc_list)/2)){
+      #center the last table if there are an odd number of tables
+      #header labels table with topic number
+      knitr::kable(cc_list[[length(cc_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = NULL, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(cc_list[[length(cc_list)]]), paste0("Topic ",cc_topics[length(cc_topics)]))))
+   }
+   
+   
+   for(i in 1:floor(length(ej_list)/2)){
+#      #print 2 tables side by side at a time
+   library(kableExtra)
+   t1 <- ej_list[[2*i-1]]
+   t2 <- ej_list[[2*i]]
+   cap <- "<center><strong>Prevalence of Environmental Justice Topics</strong></center>"
+     print(knitr::kables(list(
+        knitr::kable(t1, format = "html", digits = getOption("digits"), align = "l", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_left")  ,   
+        knitr::kable(t2, format = "html", digits = getOption("digits"), align = "r", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_right")), caption = ifelse(i==1,cap,"") ) %>% add_header_above(c(paste0("Topic ",ej_topics[2*i-1]),paste0("Topic ",ej_topics[2*i]))))
+ 
+}     
+
+   if(floor(length(ej_list)/2)!=ceiling(length(ej_list)/2)){
+      #center the last table if there are an odd number of tables
+      #header labels table with topic number
+      knitr::kable(ej_list[[length(ej_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = NULL, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(ej_list[[length(ej_list)]]), paste0("Topic ",ej_topics[length(ej_topics)]))))
+   }
+   
+   
+   for(i in 1:floor(length(gde_list)/2)){
+#      #print 2 tables side by side at a time
+   library(kableExtra)
+   t1 <- gde_list[[2*i-1]]
+   t2 <- gde_list[[2*i]]
+   cap <- "<center><strong>Prevalence of Groundwater-Dependent Ecosystem Topics</strong></center>"
+     print(knitr::kables(list(
+        knitr::kable(t1, format = "html", digits = getOption("digits"), align = "l", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_left")  ,   
+        knitr::kable(t2, format = "html", digits = getOption("digits"), align = "r", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
+                            full_width = FALSE, position = "float_right")), caption = ifelse(i==1,cap,"") ) %>% add_header_above(c(paste0("Topic ",gde_topics[2*i-1]),paste0("Topic ",gde_topics[2*i]))))
+ 
+}     
+
+   if(floor(length(gde_list)/2)!=ceiling(length(gde_list)/2)){
+      #center the last table if there are an odd number of tables
+      #header labels table with topic number
+      knitr::kable(gde_list[[length(gde_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = NULL, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(gde_list[[length(gde_list)]]), paste0("Topic ",gde_topics[length(gde_topics)]))))
+   }
+   
 
 ```
 
