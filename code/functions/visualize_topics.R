@@ -153,7 +153,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
                                prop_service_gw_source+
                                service_count,
                           model,
-                          meta = inputs$meta, uncertainty = "None")
+                          meta = inputs$meta, uncertainty = "Global")
    sumef <- summary(effect, topics = c(nums_of_interest))
    saveRDS(effect,"data_temp/estimateEffects")
    
@@ -161,7 +161,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
       efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
                         sumef$tables[[i]]))
       efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
-      write_csv(efbytopic, file = paste0("data_temp/eftbl_",categ_no_m_na[i],"_topic_",sumef$topics[i]),".csv")
+      write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumef$topics[i],"_",categ_no_m_na[i],".csv"))
    }
    
    #TODO clean this up
