@@ -1,7 +1,4 @@
 ---
-title: "effect_tables"
-author: "E Zufall"
-date: "9/6/2022"
 output: html_document
 ---
 
