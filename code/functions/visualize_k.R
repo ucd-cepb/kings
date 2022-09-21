@@ -1,4 +1,4 @@
-packs <- c('ggplot2','cowplot','furrr','future','stm','tidyverse','stringr')
+packs <- c('ggplot2','cowplot','furrr','future','stm','tidyverse','stringr','scico')
 need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 check <- packs[!packs %in% installed.packages()[,'Package']]

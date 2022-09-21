@@ -1,10 +1,12 @@
 visualize_topics <- function(model, inputs, text_col, topic_indicators){
 
    packs <- c('ggplot2','ggrepel','scico','stm','tidyverse','reshape2',
-              'igraph','huge','fields','ggcorrplot','htmlTable','data.table')
+              'igraph','huge','fields','ggcorrplot','htmlTable','data.table','viridis','igraph')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
    lapply(packs, require, character.only = TRUE)
+   
+   source('code/functions/top_top_corr_plots.R')
    
    numTopics = model$settings$dim$K
    
@@ -16,17 +18,18 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    #lift() weights words higher if they have lower frequency in other topics
    #score() is similar, but log based -- see lda package
    
-   #inspect words associated with topics using labelTopics
+   #inspect 10 ten frex words associated with each topics using labelTopics
    for(i in 1:numTopics){
-      print(paste0("Top 10 FREX Words in Topic ", i, ":", collapse = ""))
-      print(label_sm$frex[i,])
+      cat(paste0(paste0("Topic ", i, ":", collapse = ""),'\n')) 
+      paste0(paste(label_sm$frex[i,],collapse = ", "),'\n') %>% cat()
    }
    
    topics_of_interest <- NULL
    nums_of_interest <- NULL
    for(i in 1:numTopics){
       
-      if(sum(grepl(pattern = paste(gsub("\\s+","_", x=unlist(topic_indicators,use.names=F)),collapse="|"), x=label_lg$frex[i,]))>0){
+      if(sum(grepl(pattern = paste(gsub("\\s+","_", x=unlist(topic_indicators,use.names=F)),collapse="|"), 
+                   x=label_lg$frex[i,]))>0){
          print(paste0("Top 50 FREX Words in Topic ", i, ":", collapse = ""))
          print(label_lg$frex[i,])
          nums_of_interest <- append(nums_of_interest,i)
@@ -65,6 +68,20 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    
    categ_no_m_na <- categ_no_multi[!is.na(categ_no_multi)]
    
+   c_temp <- lapply(c(1:numTopics), function(x) c(ifelse(is_cc[x]==T,"CC",""),
+                   ifelse(is_dw[x]==T,"DW",""),
+                   ifelse(is_ej[x]==T,"EJ",""),
+                   ifelse(is_gde[x]==T,"GDE","")))
+   
+   categ_print <- lapply(c_temp, function(x) paste0(x[nzchar(x)],collapse = " and "))
+   
+   #print top 50 FREX words in topics of interest
+   for(i in 1:length(topics_of_interest)){
+      cat(paste0(paste0("Topic ", nums_of_interest[i], 
+                        ifelse(nzchar(categ_print[[nums_of_interest[i]]])," (",""),categ_print[[nums_of_interest[i]]],
+                        ifelse(nzchar(categ_print[[nums_of_interest[i]]]),"):",""), collapse = ""),'\n')) 
+      paste0(paste(label_lg$frex[nums_of_interest[i],],collapse = ", "),'\n') %>% cat()
+   }
    
    #TODO gratitude to francescoaberlin.blog for this tutorial
    #topics are evaluated on two components:
@@ -166,4 +183,6 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    
    #TODO clean this up
    plot.estimateEffect(effect,covariate = "ag_gw_asfractof_tot_gw")
+   
+   top_top_corr_plots(model, method = "huge", topics_of_interest, categ)
 }
