@@ -1,4 +1,4 @@
-visualize_topics <- function(model, inputs, text_col, topic_indicators){
+visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F,effects=F){
 
    packs <- c('ggplot2','ggrepel','scico','stm','tidyverse','reshape2',
               'igraph','huge','fields','ggcorrplot','htmlTable','data.table','viridis','igraph')
@@ -87,35 +87,38 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    #topics are evaluated on two components:
    #semantic coherence (frequency of co-occurrence of common words in a toipc)
    #exclusivity of words to topic
-   m7_ex_sem<-as.data.frame(cbind(c(1:numTopics),
-                                 exclusivity(model), 
-                                 semanticCoherence(model=model, 
-                                                   documents = inputs$documents), "model 7"))
-   
-   #can compare multiple models by adding to rbind
-   models_ex_sem<-rbind(m7_ex_sem)
-   
-   colnames(models_ex_sem)<-c("K","exclusivity", "semantic_coherence", "model")
-   models_ex_sem$exclusivity<-as.numeric(as.character(models_ex_sem$exclusivity))
-   models_ex_sem$semantic_coherence<-as.numeric(as.character(models_ex_sem$semantic_coherence))
-   
-   options(repr.plot.width=7, repr.plot.height=7, repr.plot.res=100)
-   
-   topic_qual_plot<-ggplot(models_ex_sem, aes(semantic_coherence, 
-                                              exclusivity, color = model))+
-      geom_point(size = 2, alpha = 1) + 
-      geom_text_repel(aes(label=K), nudge_x=.005, nudge_y=.005, 
-                      size = 2.5, alpha = 0.6, force = 0.8, force_pull = 1.5,
-                      max.overlaps = Inf)+
-      labs(x = "Semantic coherence",
-           y = "Exclusivity",
-           title = "Comparing exclusivity and semantic coherence among model topics")+
-      scale_color_scico_d(palette = "nuuk")+
-      theme_minimal()+theme(plot.title = element_text(hjust = 0.5))
-   topic_qual_plot
-   ggsave("topic_quality_model_7.png",plot = topic_qual_plot, device = "png", path = "figures",
-         width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
-   
+   if(scatter==T){
+      m7_ex_sem<-as.data.frame(cbind(c(1:numTopics),
+                                     exclusivity(model), 
+                                     semanticCoherence(model=model, 
+                                                       documents = inputs$documents), "model 7"))
+      
+      #can compare multiple models by adding to rbind
+      models_ex_sem<-rbind(m7_ex_sem)
+      
+      colnames(models_ex_sem)<-c("K","exclusivity", "semantic_coherence", "model")
+      models_ex_sem$exclusivity<-as.numeric(as.character(models_ex_sem$exclusivity))
+      models_ex_sem$semantic_coherence<-as.numeric(as.character(models_ex_sem$semantic_coherence))
+      
+      options(repr.plot.width=7, repr.plot.height=7, repr.plot.res=100)
+      
+      topic_qual_plot<-ggplot(models_ex_sem, aes(semantic_coherence, 
+                                                 exclusivity, color = model))+
+         geom_point(size = 2, alpha = 1) + 
+         geom_text_repel(aes(label=K), nudge_x=.005, nudge_y=.005, 
+                         size = 2.5, alpha = 0.6, force = 0.8, force_pull = 1.5,
+                         max.overlaps = Inf)+
+         labs(x = "Semantic coherence",
+              y = "Exclusivity",
+              title = "Comparing exclusivity and semantic coherence among model topics")+
+         scale_color_scico_d(palette = "nuuk")+
+         theme_minimal()+theme(plot.title = element_text(hjust = 0.5))
+      topic_qual_plot
+      ggsave("topic_quality_model_7.png",plot = topic_qual_plot, device = "png", path = "figures",
+             width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
+      
+      
+   }
    
    #dim(readPNG("figures/topic_quality"))
    
@@ -126,15 +129,15 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    }
    
    #findThoughts example
-   thoughts <- findThoughts(model, texts = text_vect, topics = c(1:numTopics), n = 3)
+   #thoughts <- findThoughts(model, texts = text_vect, topics = c(1:numTopics), n = 3)
    topics = c(1:numTopics)
    #plotQuote is a graphical wrapper to help present documents as examples
    #example:
-   thought_5 <- findThoughts(model, texts = text_vect, topics = 5, n = 3)
-   plotQuote(thought_5, width = 30, main = "Topic 5")
+   #thought_5 <- findThoughts(model, texts = text_vect, topics = 5, n = 3)
+   #plotQuote(thought_5, width = 30, main = "Topic 5")
    
    #TODO clean this up
-   plot(model, type = "summary", xlim = c(0,0.3))
+   #plot(model, type = "summary", xlim = c(0,0.3))
 
    #tagging pages as a topic
    theta <- as_tibble(model$theta)
@@ -153,36 +156,38 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators){
    #TODO stmCorrViz, including function toLDAvis, which enables export to the LDAvis
    #TODO stmprinter
    
-   
-   #look at the relationship between metadata and topics
-   effect <- estimateEffect(nums_of_interest ~ admin + 
-                               basin_plan +
-                               sust_criteria +
-                               monitoring_networks + 
-                               projects_mgmt_actions + 
-                               percent_dac_by_pop+
-                               factor(approval)+
-                               factor(priority, 
-                                    levels = c("High","Medium","Low","Very Low"), ordered = FALSE)+
-                               mult_gsas+
-                               ag_gw_asfractof_tot_gw+
-                               hviol_avg_res+
-                               prop_service_gw_source+
-                               service_count,
-                          model,
-                          meta = inputs$meta, uncertainty = "Global")
-   sumef <- summary(effect, topics = c(nums_of_interest))
-   saveRDS(effect,"data_temp/estimateEffects")
-   
-   for(i in 1:length(sumef$tables)){
-      efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
-                        sumef$tables[[i]]))
-      efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
-      write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumef$topics[i],"_",categ_no_m_na[i],".csv"))
+   if(effects ==T){
+      #look at the relationship between metadata and topics
+      effect <- estimateEffect(nums_of_interest ~ admin + 
+                                  basin_plan +
+                                  sust_criteria +
+                                  monitoring_networks + 
+                                  projects_mgmt_actions + 
+                                  percent_dac_by_pop+
+                                  factor(approval)+
+                                  factor(priority, 
+                                         levels = c("High","Medium","Low","Very Low"), ordered = FALSE)+
+                                  mult_gsas+
+                                  ag_gw_asfractof_tot_gw+
+                                  hviol_avg_res+
+                                  prop_service_gw_source+
+                                  service_count,
+                               model,
+                               meta = inputs$meta, uncertainty = "Global")
+      sumef <- summary(effect, topics = c(nums_of_interest))
+      saveRDS(effect,"data_temp/estimateEffects")
+      
+      for(i in 1:length(sumef$tables)){
+         efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
+                                          sumef$tables[[i]]))
+         efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
+         write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumef$topics[i],"_",categ_no_m_na[i],".csv"))
+      }
+      
    }
    
    #TODO clean this up
-   plot.estimateEffect(effect,covariate = "ag_gw_asfractof_tot_gw")
+   #plot.estimateEffect(effect,covariate = "ag_gw_asfractof_tot_gw")
    
    top_top_corr_plots(model, method = "huge", topics_of_interest, categ)
 }

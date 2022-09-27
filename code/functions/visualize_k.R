@@ -17,7 +17,6 @@ k_choice <- case_when(!"5" %in% saved_nums ~ 5,
                       !"40" %in% saved_nums ~ 40,
                       !"80" %in% saved_nums ~ 80,
                       !"140" %in% saved_nums ~ 140,
-                      !"200" %in% saved_nums ~ 200,
                       T ~ NA_real_)
 
 if(is.na(k_choice)){
@@ -37,6 +36,7 @@ if(is.na(k_choice)){
       gather(key = Metric, value = Value, -K) %>%
       ggplot(aes(K, Value, color = Metric)) +
       geom_line(size = 1.5, alpha = 0.7, show.legend = FALSE) +
+      geom_point(show.legend=FALSE)+
       facet_wrap(~Metric, scales = "free_y") +
       theme_bw()+
       scale_color_scico_d(palette = "roma")+
