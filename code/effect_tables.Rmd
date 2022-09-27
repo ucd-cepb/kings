@@ -33,7 +33,7 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
    gde_list <- vector("list", length(grep("GDE",tbl_list)))
 
    for(i in 1:length(grep("DW",tbl_list))){
-      dw_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      dw_list[[i]] <- read_csv(tbl_list[grep("DW",tbl_list)[i]], show_col_types = FALSE)
       #changing small p values to "<0.05"
       p_temp <- dw_list[[i]]$`Pr(>|t|)`
       dw_list[[i]]$`Pr(>|t|)` <- as.character(dw_list[[i]]$`Pr(>|t|)`)
@@ -53,7 +53,7 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
    dw_topics <- unlist(str_extract_all(tbl_list[grep("DW",tbl_list)], dig_regex))
    
    for(i in 1:length(grep("CC",tbl_list))){
-      cc_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      cc_list[[i]] <- read_csv(tbl_list[grep("CC",tbl_list)[i]], show_col_types = FALSE)
       #changing small p values to "<0.05"
       p_temp <- cc_list[[i]]$`Pr(>|t|)`
       cc_list[[i]]$`Pr(>|t|)` <- as.character(cc_list[[i]]$`Pr(>|t|)`)
@@ -73,7 +73,7 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
    cc_topics <- unlist(str_extract_all(tbl_list[grep("CC",tbl_list)], dig_regex))
    
    for(i in 1:length(grep("EJ",tbl_list))){
-      ej_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      ej_list[[i]] <- read_csv(tbl_list[grep("EJ",tbl_list)[i]], show_col_types = FALSE)
       #changing small p values to "<0.05"
       p_temp <- ej_list[[i]]$`Pr(>|t|)`
       ej_list[[i]]$`Pr(>|t|)` <- as.character(ej_list[[i]]$`Pr(>|t|)`)
@@ -93,7 +93,7 @@ tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", p
    ej_topics <- unlist(str_extract_all(tbl_list[grep("EJ",tbl_list)], dig_regex))
    
    for(i in 1:length(grep("GDE",tbl_list))){
-      gde_list[[i]] <- read_csv(tbl_list[i], show_col_types = FALSE)
+      gde_list[[i]] <- read_csv(tbl_list[grep("GDE",tbl_list)[i]], show_col_types = FALSE)
       #changing small p values to "<0.05"
       p_temp <- gde_list[[i]]$`Pr(>|t|)`
       gde_list[[i]]$`Pr(>|t|)` <- as.character(gde_list[[i]]$`Pr(>|t|)`)
