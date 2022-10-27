@@ -1,6 +1,6 @@
 plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
    
-   #grid of topic percent by gsp
+   #creates grid plot of topic percent by gsp
    theta <- as_tibble(model$theta)
    dig_max <- max(nchar(colnames(theta)))
    colnames(theta) <- paste0("Topic_",
