@@ -158,6 +158,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
    
    if(effects ==T){
       #look at the relationship between metadata and topics
+      set.seed(432)
       effect <- estimateEffect(nums_of_interest ~ admin + 
                                   basin_plan +
                                   sust_criteria +
@@ -174,12 +175,17 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
                                   service_count,
                                model,
                                meta = inputs$meta, uncertainty = "Global")
-      sumef <- summary(effect, topics = c(nums_of_interest))
       saveRDS(effect,"data_temp/estimateEffects")
-      
+      estimate_effs <- readRDS("data_temp/estimateEffects")
+      set.seed(43)
+      sumef <- summary(estimate_effs, topics = c(nums_of_interest))
       for(i in 1:length(sumef$tables)){
+         set.seed(43)
          efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
                                           sumef$tables[[i]]))
+         #renames "incomplete" to "rejected" for more clarity for readers of the table
+         efbytopic[Factors == "factor(approval)Incomplete", Factors := "factor(approval)Rejected"]
+         #removes clunky portion of priority level name
          efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
          write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumef$topics[i],"_",categ_no_m_na[i],".csv"))
       }
