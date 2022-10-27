@@ -71,11 +71,16 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    #acronym conversion so that short acronyms don't get dropped
    qtok <- quanteda::tokens_replace(qtok, pattern = c("EJ","Na","SA","pH"),
                                         replacement = c("environmental_justice",
-                                                        "sodium","situation_assessment",
-                                                        "potential_of_hydrogen"))
+                                                    "sodium",
+                                                    "situation_assessment",
+                                                    "potential_of_hydrogen"))
    pr_names <- generate_proper_names()
    
-   compounds <- custom_dictionary(c(topic_indicators,pr_names[grepl("\\s", pr_names)]))
+   #adds compound topic indicator words and proper names to custom dictionary
+   compounds <- custom_dictionary(
+      #removes ^ and $ characters from topic_indicator list
+      c(str_remove_all(topic_indicators[grepl("\\s",topic_indicators)],"\\^|\\$"),
+        pr_names[grepl("\\s", pr_names)]))
    compounds <- stri_remove_empty_na(compounds)
    #this takes about 30 min
    #converts toLower, does not stem
@@ -131,6 +136,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    #and words that have no letters (eg negative numbers or number ranges)
    custom <- c("us", "u.s","u.s.", "california")
    
+   #TODO consider removing "^plot[0-9]+$"
    if(rm_plnames == T){
       pr_names <- generate_proper_names(underscore = T, for_removal = T)
       qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
@@ -140,7 +146,9 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
                                                             custom))
    }
    
-   
+   #spell check for mispellings that show up commonly in FREX
+   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop,pattern = c("waterhsed"),
+                                        replacement = c("watershed"))
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                                    "ϭ","ĩ",
