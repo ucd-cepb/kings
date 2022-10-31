@@ -76,7 +76,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       
       
       
-      #####
+      ##### Full Topic Correlation Network
       g <- igraph::graph.adjacency(tch_pos, mode="undirected", weighted=TRUE, diag=FALSE)
       
       igraph::E(g)$size <- 1
@@ -88,14 +88,34 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       color_vect <- viridis(max(num_neighb)+1)
       txt_vect_sm <- c("#000000","#FFFFFF")
       txt_invert <- ifelse(num_neighb < max(num_neighb)/2,2,1)
-      set.seed(3)
-      igraph::plot.igraph(g, layout=layout, vertex.color=color_vect[num_neighb+1], vertex.label.cex=0.75, 
-                          vertex.label.color=txt_vect_sm[txt_invert], vertex.size=8)
-      title("Network of Positively Correlated Topics")
-      image.plot(legend.only=T, zlim=range(0:max(num_neighb)), col=color_vect,
-                 legend.lab="Number of Neighbors")
+      png("figures/net_top_cor_plot_full.png", 3600, 3600)
+      set.seed(73)
+      igraph::plot.igraph(g, layout=layout, 
+                          edge.width = 10,
+                          margin = (0.2), #puts space around edges of plot
+                          vertex.color=color_vect[num_neighb+1], 
+                          vertex.label.cex=6, #vertex text 
+                          vertex.label.color=txt_vect_sm[txt_invert], 
+                          vertex.frame.width = 8, #vertex outline width
+                          vertex.label.family="Times",
+                          vertex.size=8)
+      title("Network of Positively Correlated Topics",
+            cex.main=10, line = -5) #line gives more space above title
+      image.plot(legend.only=T, 
+                 zlim=range(0:max(num_neighb)), 
+                 col=color_vect,
+                 legend.lab="Number of Neighbors", 
+                 legend.width = 12, 
+                 horizontal = F,
+                 legend.shrink = 0.6,
+                 legend.line = -14, #shifts title of color bar to left side
+                 legend.mar = 305, #shifts color bar to left side
+                 legend.cex = 8,
+                 axis.args = list(cex.axis = 6))
+      dev.off()
       
-      #####
+      
+      #####subset of topics correlation plot
       
       tch_pos_subset <- tch$posadj[nums_of_interest,nums_of_interest]
       tch_cor_subset <- tch$cor[nums_of_interest,nums_of_interest]
@@ -116,16 +136,25 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       txt_color_h <- txt_vect[as.numeric(as.factor(V(gh_subset)$category))]
       
       
+      png("figures/net_top_cor_plot_subset.png", 3600, 3600)
       set.seed(3)
-      igraph::plot.igraph(gh_subset, layout=layout, vertex.color=cat_color_h,
-                          vertex.label.cex=0.75, 
-                          vertex.label.color=txt_color_h, vertex.size=8)
+      igraph::plot.igraph(gh_subset, layout=layout, 
+                          vertex.color=cat_color_h,
+                          vertex.label.cex=10, 
+                          vertex.label.family="Times",
+                          vertex.label.color=txt_color_h, 
+                          vertex.frame.width = 10,
+                          edge.width = 30,
+                          vertex.size=10)
       
       legend('topleft',legend = levels(as.factor(V(gh_subset)$category)), 
-             pt.cex = 1, pch = 21, cex = 1.2, pt.bg = category_vect,
-             inset = c(0,0))
-      title("Network of Positively Correlated Topics of Interest")
-      
+             pt.cex = 20, pch = 21, cex = 10, pt.bg = category_vect,
+             box.lwd = 10,
+             pt.lwd = 10,
+             inset = c(0.2,0.2))
+      title("Network of Positively Correlated Topics of Interest",
+            cex.main=10, line = -5)
+      dev.off()
       
    }else{
       print("Method must be \'simple\' or \'huge\'.")
