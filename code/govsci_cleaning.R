@@ -168,6 +168,7 @@ customabbr <- rbind(
    c("California_Department_of_Motor_Vehicles","DMV"),#all states have one of these
    c("California_Department_of_Parks_and_Recreation","California_State_Parks"),
    c("California_Department_of_Pesticide_Regulation","CDPR"),
+   c("California_Department_of_Pesticide_Regulation","DPR"),#also a construction company
    c("California_Department_of_Public_Health","CDPH"),
    c("California_Department_of_Rehabilitation","DOR"),#other states have dor that means something different
    c("California_Department_of_Resources_Recycling_and_Recovery","CalRecycle"),
@@ -429,6 +430,7 @@ customabbr <- rbind(
    c("Natural_Resources_Conservation_Service","NRCS"),
    c("Natural_Resources_Conservation_Service","Soil_Conservation_Service"),#old name
    c("Natural_Resources_Conservation_Service","USDA_NRCS"),
+   c("Natural_Resources_Conservation_Service","USDA-NRCS"),
    c("National Marine Fisheries Service","NOAA_Fisheries"),
    c("Northwest_Power_and_Conservation_Council","Northwest_Power_Planning_Council"),#old name. #old acronym and new acronym not distinguishable from other orgs
    c("Nuclear_Regulatory_Commission","USNRC"),
@@ -489,31 +491,88 @@ customabbr <- rbind(
    c("Agricultural_Marketing_Service","USDA_-_Agricultural_Marketing_Service"),
    c("Agricultural_Marketing_Service","USDA_Agricultural_Marketing_Service"),
    c("Agricultural_Marketing_Service","USDA_AMS"),
+   c("Agricultural_Marketing_Service","USDA-AMS"),
    c("Agricultural_Marketing_Service","USDAAMS"),
    c("Agricultural_Research_Service","USDA_-_Agricultural_Research_Service"),
    c("Agricultural_Research_Service","USDA_Agricultural_Research_Service"),
    c("Agricultural_Research_Service","USDA_ARS"),
+   c("Agricultural_Research_Service","USDA-ARS"),
    c("Agricultural_Research_Service","USDAARS"),   
    c("Economic_Research_Service","USDA_-_Economic_Research_Service"),
    c("Economic_Research_Service","USDA_Economic_Research_Service"),
    c("Economic_Research_Service","USDA_ERS"),
+   c("Economic_Research_Service","USDA-ERS"),
    c("Economic_Research_Service","USDAERS"),     
    c("Foreign_Agricultural_Service","USDA_-_Foreign_Agricultural_Service"),
    c("Foreign_Agricultural_Service","USDA_Foreign_Agricultural_Service"),
    c("Foreign_Agricultural_Service","USDA_FAS"),
+   c("Foreign_Agricultural_Service","USDA-FAS"),
    c("Foreign_Agricultural_Service","USDAFAS"), 
    c("USDA_Office_of_the_Chief_Economist","USDA_-_Office_of_the_Chief_Economist"),
    c("USDA_Office_of_the_Chief_Economist","USDA_OCE"),
+   c("USDA_Office_of_the_Chief_Economist","USDA-OCE"),
    c("USDA_Office_of_the_Chief_Economist","USDAOCE"), 
    c("USDA_Wildlife_Services","USDA_-_Wildlife_Services"),
    c("USDA_Wildlife_Services","USDA_Wildlife_Services"),
    c("USDA_Wildlife_Services","USDA_WS"),
+   c("USDA_Wildlife_Services","USDA-WS"),
    c("Voice_of_America","VoA"),
    c("Voice_of_America","VOA"),
-   c("Wage_and_Hour_Division","WHD")#also world humanitarian day
-   
-   
-   
+   c("Wage_and_Hour_Division","WHD"),#also world humanitarian day
+   c("Sustainable_Groundwater_Management_Act","SGMA"),#sgma specific
+   c("California_Data_Exchange_Center","CDEC"),
+   c("California_Irrigation_Management_Information_System","CIMIS"),
+   c("Central_Valley_Regional_Water_Quality_Control_Board","CVRWQCB"),
+   c("California_Division_of_Drinking Water","DDW"),
+   c("Groundwater_Sustainability_Plan","GSP"),
+   c("San_Joaquin_River_Restoration_Program","SJRRP"),
+   c("National_Cooperative_Soil_Survey_Geographic_Database","SSURGO"),
+   c("National_Cooperative_Soil_Survey_Geographic_Database","Soil_Survey_Geographic_Database"),
+   c("Integrated_Regional_Water_Management_Plan","IRWMP"),
+   c("Integrated_Regional_Water_Management","IRWM"),
+   c("Precipitation-Elevation_Regressions_on_Independent_Slopes_Model","PRISM"),
+   c("California_Geologic_Energy_Management_Division", "CalGEM"),
+   c("California_Statewide_Groundwater_Elevation_Monitoring","CASGEM"),
+   c("Groundwater-Dependent_Ecosystem", "Groundwater_Dependent_Ecosystem"),
+   c("Groundwater-Dependent_Ecosystem", "groundwater_dependent_ecosystem"),
+   c("Groundwater-Dependent_Ecosystem", "GDE"),
+   c("Groundwater_Sustainability_Agency", "GSA"),
+   c("Groundwater_Management_Plan", "GWMP"),
+   c("Irrigated_Lands_Regulatory_Program", "ILRP"),
+   c("Regional_Water_Quality_Control_Board", "RWQCB"),
+   c("Central_Coast_Regional_Water_Quality_Control_Board","CCRWQCB"),
+   c("North_Coast_Regional_Water_Quality_Control_Board","NCRWQCB"),
+   c("California_Environmental_Data_Exchange_Network","CEDEN"),
+   c("National_Centers_for_Environmental_Information", "NCEI"),
+   c("National_Centers_for_Environmental_Information", "NOAA_NCEI"),
+   c("National_Centers_for_Environmental_Information", "National_Climatic_Data_Center"),#old name; 
+   c("National_Centers_for_Environmental_Information", "NCDC"),#old acronym; also hockey org, dance conservancy, criminal defense college
+   c("Safe_Drinking_Water_Information_System","SDWIS"),
+   c("Association_of_Monterey_Bay_Area_Governments","AMBAG"),
+   c("Central_Coast_Groundwater_Coalition","CCGC"),#also community child guidance clinic, color guard org
+   c("California_Environmental_Quality_Act","CEQA"),
+   c("Comprehensive_Environmental_Response_Compensation_and_Liability_Act","CERCLA"),
+   c("Public_Land_Survey_System","PLSS"),
+   c("California_Department_of_Conservation_Division_of_Oil_Gas_and_Geothermal_Resources","DOGGR"),
+   c("Natural_Communities_Commonly_Associated_with_Groundwater","NCCAG"),
+   c("National_Environmental_Policy_Act","NEPA"),
+   c("National_Pollutant_Discharge_Elimination_System", "NPDES"),
+   c("National_Water_Information_System","NWIS"),
+   c("National_Water_Quality_Monitoring_Council", "NWQMC"),
+   c("University_of_California_Water_Security_and_Sustainability_Research_Initiative","UCWSSRI"),
+   c("UC_Water_Security_and_Sustainability_Research_Initiative","UCWSSRI"),
+   c("Disadvantaged_Community","DAC"),
+   c("Disadvantaged_Communities","DACs"),
+   c("Environmental_Quality_Incentives_Program","EQIP"),
+   c("Interferometric_Synthetic_Aperture_Radar","InSAR"),#also autism research org
+   c("Maximum_Contaminant_Level","MCL"),
+   c("Northern_California_Water_Association","NCWA"),#also wrestling org
+   c("Northeastern_California_Water_Association","NECWA"),#also new england coastal wildlife alliance
+   c("Pacific_Gas_and_Electric","PG&E"),
+   c("University_of_California_Cooperative_Extension","UCCE"),#also cisco contact center
+   c("University_of_California_Cooperative_Extension","UCCE"),
+   c("Groundwater_Ambient_Monitoring_and_Assessment","GAMA")#before tolower
+   #several meanings:botanical, companies, and orgs, and last name
 )
 #TODO check on 2293 and 2232
 #TODO check on entries with apostrophes
