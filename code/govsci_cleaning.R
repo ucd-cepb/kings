@@ -6,6 +6,7 @@ govscitbl$Agency <- str_remove(govscitbl$Agency, '^The')
 
 #remove "US" from beginning including duplicates
 #TODO do we remove "US" and "California" as the whole word? [^\\b]
+#TODO remove "United States"
 #TODO US underscores?
 govscitbl$Agency <- str_remove(govscitbl$Agency, '^(US\\s|U\\.S\\.\\s){1,}')
 
@@ -85,14 +86,28 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
                                                  "Kennedy_Center",
                                                  "Labor_Department",
                                                  "NASA",
-                                                 "Archives_National_Archives_and_Records_Administration"
+                                                 "Archives_National_Archives_and_Records_Administration",
+                                                 "National_Library_of_Agriculture",
+                                                 "NOAA_Fisheries",
+                                                 "Northwest_Power_Planning_Council",
+                                                 "NRC",
+                                                 "Office_for_Civil_Rights_Department_of_Health_and_Human_Services",
+                                                 "Open_World_Leadership_Center",
+                                                 "Presidential_Scholars_Commission",
+                                                 "Prisoner_of_War_and_Missing_in_Action_Accounting_Agency",#TODO check slash
+                                                 "Science_Office",
+                                                 "Treasury_Department",
+                                                 "Veterans_Affairs_Department"
+                                                 
 )
                          )]
 
 #TODO also remove acronyms from $Agency list
 #TODO make sure this occurs before tolower
+#this should occur before appending the next list
 
 #abbrevs for unique california and federal orgs/agencies
+#TODO perhaps move to govscienceuseR?
 customabbr <- rbind(
    c("Administration_for_Children_and_Families", "ACF"),
    c("Administration_for_Community_Living","ACL"),
@@ -108,15 +123,24 @@ customabbr <- rbind(
    c("Bureau_of_Alcohol_Tobacco_Firearms_and_Explosives","Alcohol_Tobacco_Firearms_and_Explosives_Bureau"),
    c("Bureau_of_Alcohol_Tobacco_Firearms_and_Explosives","ATF"),
    c("Animal_and_Plant_Health_Inspection_Service","APHIS"),
+   c("Animal_and_Plant_Health_Inspection_Service","USDA_APHIS"),
+   c("Animal_and_Plant_Health_Inspection_Service","USDAAPHIS"),
    c("National_Archives_and_Records_Administration","Archives_National_Archives_and_Records_Administration"),
    c("National_Archives_and_Records_Administration","NARA"),
    c("National_Archives_and_Records_Administration","National_Archives"),
    c("Center_for_Legislative_Archives",NA),
    c("Consumer_Financial_Protection_Bureau","Bureau_of_Consumer_Financial_Protection"),
    c("Consumer_Financial_Protection_Bureau","CFPB"),
+   c("Bureau_of_Economic_Analysis","BEA"),#before tolower
+   c("Bureau_of_Economic_Analysis","USBEA"),
    c("Bureau_of_Justice_Statistics","BJS"),
+   c("Bureau_of_Land_Management","BLM"),
+   c("Bureau_of_Land_Management","USBLM"),
    c("Bureau_of_Labor_Statistics","BLS"),
+   c("Bureau_of_Labor_Statistics","USBLS"),
    c("Bureau_of_Ocean_Energy_Management","BOEM"),
+   c("Bureau_of_Reclamation","USBOR"),
+   c("Bureau_of_Reclamation","USBR"),
    c("Bureau_of_Safety_and_Environmental_Enforcement","BSEE"),
    c("Census_Bureau","Bureau_of_the_Census"),
    c("Census_Bureau","USCB"),
@@ -226,6 +250,7 @@ customabbr <- rbind(
    #csac means too many things
    c("Citizenship_and_Immigration_Services","UCSIS"),
    c("Coast_Guard","USCG"),
+   c("Copyright_Office","USCOP"),
    c("Department_of_Commerce","Commerce_Department"),
    c("Commission_on_International_Religious_Freedom","USCIRF"),
    c("Commission_on_Security_and_Cooperation_in_Europe","CSCE"),
@@ -270,8 +295,11 @@ customabbr <- rbind(
    c("Department_of_Energy","DOE"),
    c("Department_of_Energy","Energy_Department"),
    c("Department_of_Health_and_Human_Services","HHS"),
+   c("Department_of_Health_and_Human_Services","USHHS"),
    c("Department_of_Health_and_Human_Services","Health_and_Human_Services_Department"),
-   c("Department_of_Health_and_Human_Services_Office_for_Civil_Rights","OCR"),#also used to denote pdf to word extraction
+   c("Department_of_Health_and_Human_Services_Office_for_Civil_Rights",NA),#there's also an OCR in the HHS dept. also used to denote pdf to word extraction
+   c("Department_of_Health_and_Human_Services_Office_for_Civil_Rights","Office_for_Civil_Rights_Department_of_Health_and_Human_Services"),
+   c("Department_of_Education_Office_for_Civil_Rights","Office_for_Civil_Rights_Department_of_Education"),
    c("Department_of_Homeland_Security","DHS"),
    c("Department_of_Homeland_Security","Homeland_Security_Department"),
    c("Department_of_Housing_and_Urban_Development","HUD"),
@@ -283,8 +311,11 @@ customabbr <- rbind(
    c("Department_of_Labor","Labor_Department"),
    #dept of interior doi could get picked up in citations
    c("Department_of_the_Interior","Interior_Department"),
+   c("Department_of_the_Interior","USDOI"),
    c("Department_of_Transportation","DoT"),
    c("Department_of_Transportation","DOT"),
+   c("Department_of_Transportation","USDOT"),
+   c("Department_of_Veterans_Affairs","Veterans_Affairs_Department"),
    #Veterans Affairs VA could get picked up as virginia
    c("Drug_Enforcement_Administration","DEA"),
    c("Economic_Research_Service","ERS"),
@@ -332,6 +363,7 @@ customabbr <- rbind(
    c("Food_Safety_and_Inspection_Service","FSIS"),
    c("Foreign_Claims_Settlement_Commission","FCSC"),#also soccer
    c("Forest_Service","USFS"),
+   c("Forest_Service","USDA_FS"),
    c("Geological_Survey","USGS"),
    c("Government_Accountability_Office","GAO"),
    c("Government_National_Mortgage_Association","Ginnie_Mae"),
@@ -361,6 +393,7 @@ customabbr <- rbind(
    c("California_Division_of_Occupational_Safety_and_Health","Cal/OSHA"),#TODO make sure this slash doesn't mess stuff up
    c("National_Aeronautics_and_Space_Administration","NASA"),
    c("National_Agricultural_Statistics_Service","NASS"),
+   c("National_Agricultural_Statistics_Service","USDA_NASS"),
    c("National_Cancer_Institute","NCI"),
    c("National_Credit_Union_Administration","NCUA"),
    c("National_Flood_Insurance_Program","NFIP"),
@@ -369,6 +402,116 @@ customabbr <- rbind(
    c("National_Heart_Lung_and_Blood_Institute","NHLBI"),
    c("National_Highway_Traffic_Safety_Administration","NHTSA"),
    c("National_Indian_Gaming_Commission","NIGC"),
+   c("National_Institute_of_Deafness_and_Other_Communication_Disorders","NIDCD"),
+   c("National_Institute_of_Diabetes_and_Digestive_and_Kidney_Diseases","NIDDK"),
+   c("National_Institute_of_Food_and_Agriculture","NIFA"),#also nebraska investment finance authority
+   c("National_Institute_of_Justice","NIJ"),
+   c("National_Institute_of_Mental_Health","NIMH"),
+   c("National_Institute_of_Neurological_Disorders_and_Stroke","NINDS"),
+   c("National_Institute_of_Occupational_Safety_and_Health","NIOSH"),
+   c("National_Institute_of_Standards_and_Technology","NIST"),
+   c("National_Institutes_of_Health","NIH"),
+   c("National_Interagency_Fire_Center","NIFC"),
+   c("National_Labor_Relations_Board","NLRB"),
+   c("National_Agricultural_Library","National_Library_of_Agriculture"),
+   c("National_Marine_Fisheries_Service","NMFS"),
+   c("National_Nuclear_Security_Administration","NNSA"),
+   c("National_Oceanic_and_Atmospheric_Administration","NOAA"),
+   c("National_Park_Service","NPS"),#also stands for net promoter score
+   c("National_Prevention_Information_Network","NPIN"),
+   c("National_Science_Foundation","NSF"),
+   c("National_Security_Agency","NSA"),
+   c("National_Security_Council","NSC"),
+   c("National_Technical_Information_Service","NTIS"),#also refers to baseball roster
+   c("National_Telecommunications_and_Information_Administration","NTIA"),
+   c("National_Transportation_Safety_Board","NTSB"),
+   c("National_Weather_Service","NWS"),
+   c("Natural_Resources_Conservation_Service","NRCS"),
+   c("Natural_Resources_Conservation_Service","Soil_Conservation_Service"),#old name
+   c("Natural_Resources_Conservation_Service","USDA_NRCS"),
+   c("National Marine Fisheries Service","NOAA_Fisheries"),
+   c("Northwest_Power_and_Conservation_Council","Northwest_Power_Planning_Council"),#old name. #old acronym and new acronym not distinguishable from other orgs
+   c("Nuclear_Regulatory_Commission","USNRC"),
+   #TODO NRC is already included in abbrevs but another national org and a state org share the acronym
+   c("Nuclear_Waste_Technical_Review_Board","NWTRB"),
+   c("Occupational_Safety_and_Health_Review_Commission","OSHRC"),
+   c("Office_of_Career_Technical_and_Adult_Education","OCTAE"),
+   c("Office_of_Director_of_National_Intelligence","ODNI"),
+   c("Office_of_Disability_Employment_Policy","ODEP"),
+   c("Office_of_Elementary_and_Secondary_Education","OESE"),
+   c("Office_of_Fair_Housing_and_Equal_Opportunity","FHEO"),
+   c("Office_of_Justice_Programs","OJP"),
+   c("Office_of_Juvenile_Justice_and_Delinquency_Prevention","OJJDP"),
+   c("Office_of_Lead_Hazard_Control_and_Healthy_Homes","OLHCHH"),
+   c("Office_of_Management_and_Budget","OMB"),
+   c("Office_of_Management_and_Budget","Management_and_Budget_Office"),
+   c("Office_of_Manufactured_Housing_Programs","OMHP"),
+   c("Office_of_National_Drug_Control_Policy","ONDCP"),
+   c("Office_of_Natural_Resources_Revenue","ONRR"),
+   c("Office_of_Science_and_Technology_Policy","OSTP"),
+   c("Office_of_Scientific_and_Technical_Information","OSTI"),
+   c("Office_of_Special_Education_and_Rehabilitative_Services","OSERS"),
+   c("Office_of_Surface_Mining_Reclamation_and_Enforcement","OSMRE"),
+   c("Office_of_the_Director_of_National_Intelligence","ODNI"),
+   c("Office_on_Violence_Against_Women","OVW"),#also ohio wrestling
+   c("Congressional_Office_for_International_Leadership","Open_World_Leadership_Center"),
+   c("Patent_and_Trademark_Office","USPTO"),
+   c("Pension_Benefit_Guaranty_Corporation","PBGC"),
+   c("Pentagon_Force_Protection_Agency","PFPA"),
+   c("Pipeline_and_Hazardous_Materials_Safety_Administration","PHMSA"),
+   c("Postal_Service","USPS"),
+   c("President's_Council_on_Fitness_Sports_and_Nutrition","PCFSN"),
+   c("Commission_on_Presidential_Scholars","Presidential_Scholars_Commission"),
+   c("Defense POW/MIA Accounting Agency","Prisoner_of_War_and_Missing_in_Action_Accounting_Agency"),
+   c("Defense POW/MIA Accounting Agency","DPAA"),#TODO make sure slash doesn't break anything
+   c("Privacy_and_Civil_Liberties_Oversight_Board","PCLOB"),
+   c("Saint_Lawrence_Seaway_Development_Corporation","SLSDC"),
+   c("Saint_Lawrence_Seaway_Development_Corporation","Great_Lakes_Saint_Lawrence_Seaway_Development_Corporation"),
+   c("Saint_Lawrence_Seaway_Development_Corporation","Great_Lakes_St._Lawrence_Seaway_Development_Corporation"),
+   c("Saint_Lawrence_Seaway_Development_Corporation","St._Lawrence_Seaway_Development_Corporation"),
+   c("Office_of_Science","Science_Office"),
+   c("Securities_and_Exchange_Commission","SEC"),
+   c("Substance_Abuse_and_Mental_Health_Services_Administration","SAMHSA"),
+   c("Supreme_Court_of_the_United_States","SCOTUS"),
+   c("Supreme_Court_of_the_United_States","Supreme_Court"),
+   c("Susquehanna_River_Basin_Commission","SRBC"),
+   c("Tennessee_Valley_Authority","TVA"),
+   c("Transportation_Security_Administration","TSA"),
+   c("Department_of_the_Treasury","Treasury_Department"),
+   c("Department_of_the_Treasury","USDT"),#also the code for the crypto company Tether
+   c("Computer_Emergency_Readiness_Team","US-CERT"),
+   c("Army_Combined_Arms_Center","USACAC"),
+   c("Army_Environmental_Command","USAEC"),
+   c("USAGov",NA),
+   c("Army_Public_Health_Center","USAPHC"),
+   c("Army_Alaska","USARAK"),
+   c("Army_Reserve_Command","USARC"),
+   c("Agricultural_Marketing_Service","USDA_-_Agricultural_Marketing_Service"),
+   c("Agricultural_Marketing_Service","USDA_Agricultural_Marketing_Service"),
+   c("Agricultural_Marketing_Service","USDA_AMS"),
+   c("Agricultural_Marketing_Service","USDAAMS"),
+   c("Agricultural_Research_Service","USDA_-_Agricultural_Research_Service"),
+   c("Agricultural_Research_Service","USDA_Agricultural_Research_Service"),
+   c("Agricultural_Research_Service","USDA_ARS"),
+   c("Agricultural_Research_Service","USDAARS"),   
+   c("Economic_Research_Service","USDA_-_Economic_Research_Service"),
+   c("Economic_Research_Service","USDA_Economic_Research_Service"),
+   c("Economic_Research_Service","USDA_ERS"),
+   c("Economic_Research_Service","USDAERS"),     
+   c("Foreign_Agricultural_Service","USDA_-_Foreign_Agricultural_Service"),
+   c("Foreign_Agricultural_Service","USDA_Foreign_Agricultural_Service"),
+   c("Foreign_Agricultural_Service","USDA_FAS"),
+   c("Foreign_Agricultural_Service","USDAFAS"), 
+   c("USDA_Office_of_the_Chief_Economist","USDA_-_Office_of_the_Chief_Economist"),
+   c("USDA_Office_of_the_Chief_Economist","USDA_OCE"),
+   c("USDA_Office_of_the_Chief_Economist","USDAOCE"), 
+   c("USDA_Wildlife_Services","USDA_-_Wildlife_Services"),
+   c("USDA_Wildlife_Services","USDA_Wildlife_Services"),
+   c("USDA_Wildlife_Services","USDA_WS"),
+   c("Voice_of_America","VoA"),
+   c("Voice_of_America","VOA"),
+   c("Wage_and_Hour_Division","WHD")#also world humanitarian day
+   
    
    
 )
