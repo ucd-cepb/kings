@@ -595,5 +595,10 @@ yesabbr <- govscitbl %>% filter(!is.na(Abbr) & nchar(Abbr) != 0)
 noabbr <- noabbr[!(noabbr$Agency %in% yesabbr$Agency),]
 govscitbl <- rbind(yesabbr, noabbr)
 
+govscitbl$Abbr <- ifelse(is.na(govscitbl$Abbr),NA,
+                         ifelse(nchar(govscitbl$Abbr) == 0, NA,
+                                ifelse(substr(govscitbl$Abbr,1,1) != "\b" & substr(govscitbl$Abbr,nchar(govscitbl$Abbr),nchar(govscitbl$Abbr)) != "\b",paste0("\b",govscitbl$Abbr,"\b"),
+                                       govscitbl$Abbr)))
+
 
 
