@@ -526,7 +526,8 @@ customabbr <- rbind(
    c("federal","Voice_of_America","VoA"),
    c("federal","Voice_of_America","VOA"),
    c("federal","Wage_and_Hour_Division","WHD"),#also world humanitarian day
-   c("California","Sustainable_Groundwater_Management_Act","SGMA"),#sgma specific
+   c("California","Sustainable_Groundwater_Management_Act","SGMA"),
+   #the remaining lines are all sgma/groundwater-specific acronyms
    c("California","Data_Exchange_Center","CDEC"),
    c("California","Irrigation_Management_Information_System","CIMIS"),
    c("California","Central_Valley_Regional_Water_Quality_Control_Board","CVRWQCB"),
@@ -615,3 +616,4 @@ if(sum(duplicate_check)>0){
    stop("One or more abbreviations point to multiple agencies and cannot be disambiguated.")
 }
 
+govscitbl
