@@ -99,7 +99,11 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
                                                  "Prisoner_of_War_and_Missing_in_Action_Accounting_Agency",#TODO check slash
                                                  "Science_Office",
                                                  "Treasury_Department",
-                                                 "Veterans_Affairs_Department"
+                                                 "Veterans_Affairs_Department",
+                                                 "and_Geologists_Board_of_Professional_Engineers_Land_Surveyors",
+                                                 "and_Suisun_Board_of_Pilot_Commissioners_for_the_Bays_of_San_Francisco_San_Pablo",
+                                                 "House_of_Representatives",
+                                                 "Senate"
                                                  
 )
                          ),]
@@ -109,6 +113,8 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
 #TODO perhaps move to govscienceuseR?
 customabbr <- rbind(
    c("federal","Administration_for_Children_and_Families", "ACF"),
+   c("federal","Congress—US_Senate","Senate"),#because "California State Senate" goes to "State Senate" and "US Senate" goes to "Senate" with the US/Cal prefix drop
+   c("federal","Congress—US_House_of_Representatives","House_of_Representatives"),
    c("federal","Administration_for_Community_Living","ACL"),
    c("federal","Administrative_Conference_of_the_United_States","ACUS"),
    c("federal","Administrative_Office_of_the_US_Courts","AOUSC"),
@@ -198,6 +204,8 @@ customabbr <- rbind(
    c("California","Infrastructure_and_Economic_Development_Bank", "CIEDB"),
    c("California","Legislative_Analyst's_Office","LAO"),
    c("California","Mental_Health_Services_Oversight_and_Accountability_Commission","MHSOAC"),
+   c("California","Board_for_Professional_Engineers_Land_Surveyors_and_Geologists",NA),
+   c("California","Board_of_Pilot_Commissioners_for_the_Bays_of_San_Francisco_San_Pablo_and_Suisun","Board_of_Pilot_Commissioners"),#BOPC but shares acronym with other orgs/programs
    #Cal Guard vs Calif. State Guard vs Calif National Guard vs Calif. Military Dept??
    c("California","Native_American_Heritage_Commission","NAHC"),#also stands for Natl. Assn. for Home Care and Hospice
    c("California","Natural_Resources_Agency","CNRA"),#also Calif. North Referee Administration for soccer
@@ -232,7 +240,7 @@ customabbr <- rbind(
    c("California","State_Water_Resources_Control_Board","SWRCB"),
    c("California","State_Water_Resources_Control_Board","State_Water_Board"),
    c("California","Tax_Credit_Allocation_Committee","CTCAC"),
-   c("California","Veterans_Board","CalVet"),
+   c("California","Veterans_Board",NA),
    c("California","Veterinary_Medical_Board","VMB"),
    c("California","Victim_Compensation_Board","CalVCB"),
    c("California","Worker's_Compensation_Appeals_Board","WCAB"),
@@ -434,11 +442,9 @@ customabbr <- rbind(
    c("federal","National Marine Fisheries Service","NOAA_Fisheries"),
    c("federal","Northwest_Power_and_Conservation_Council","Northwest_Power_Planning_Council"),#old name. #old acronym and new acronym not distinguishable from other orgs
    c("federal","Nuclear_Regulatory_Commission","USNRC"),
-   #TODO NRC is already included in abbrevs but another national org and a state org share the acronym
    c("federal","Nuclear_Waste_Technical_Review_Board","NWTRB"),
    c("federal","Occupational_Safety_and_Health_Review_Commission","OSHRC"),
    c("federal","Office_of_Career_Technical_and_Adult_Education","OCTAE"),
-   c("federal","Office_of_Director_of_National_Intelligence","ODNI"),
    c("federal","Office_of_Disability_Employment_Policy","ODEP"),
    c("federal","Office_of_Elementary_and_Secondary_Education","OESE"),
    c("federal","Office_of_Fair_Housing_and_Equal_Opportunity","FHEO"),
@@ -455,6 +461,7 @@ customabbr <- rbind(
    c("federal","Office_of_Special_Education_and_Rehabilitative_Services","OSERS"),
    c("federal","Office_of_Surface_Mining_Reclamation_and_Enforcement","OSMRE"),
    c("federal","Office_of_the_Director_of_National_Intelligence","ODNI"),
+   c("federal","Office_of_the_Director_of_National_Intelligence","Office_of_Director_of_National_Intelligence"),
    c("federal","Office_on_Violence_Against_Women","OVW"),#also ohio wrestling
    c("federal","Congressional_Office_for_International_Leadership","Open_World_Leadership_Center"),
    c("federal","Patent_and_Trademark_Office","USPTO"),
@@ -560,7 +567,7 @@ customabbr <- rbind(
    c("federal","National_Water_Information_System","NWIS"),
    c("federal","National_Water_Quality_Monitoring_Council", "NWQMC"),
    c("California","University_of_California_Water_Security_and_Sustainability_Research_Initiative","UCWSSRI"),
-   c("California","UC_Water_Security_and_Sustainability_Research_Initiative","UCWSSRI"),
+   c("California","University_of_California_Water_Security_and_Sustainability_Research_Initiative","UC_Water_Security_and_Sustainability_Research_Initiative"),
    c(NA,"Disadvantaged_Community","DAC"),
    c(NA,"Disadvantaged_Communities","DACs"),
    c("federal","Environmental_Quality_Incentives_Program","EQIP"),
@@ -578,12 +585,15 @@ customabbr <- rbind(
 
 govscitbl <- govscitbl[,!names(govscitbl)%in%"X"]
 colnames(customabbr) <- names(govscitbl)
-#TODO check on 2293 and 2232
 #TODO check on entries with apostrophes
-#TODO throw error if identical acronyms
-#TODO house of reps is duplicated
+
 
 govscitbl <- rbind(govscitbl, customabbr)
+
+govscitbl$Abbr <- ifelse(is.na(govscitbl$Abbr),NA,
+                         ifelse(nchar(govscitbl$Abbr) == 0, NA,
+                                ifelse(substr(govscitbl$Abbr,1,1) != "\b" & substr(govscitbl$Abbr,nchar(govscitbl$Abbr),nchar(govscitbl$Abbr)) != "\b",paste0("\b",govscitbl$Abbr,"\b"),
+                                       govscitbl$Abbr)))
 
 library(dplyr)
 govscitbl <- govscitbl %>% distinct()
@@ -595,10 +605,13 @@ yesabbr <- govscitbl %>% filter(!is.na(Abbr) & nchar(Abbr) != 0)
 noabbr <- noabbr[!(noabbr$Agency %in% yesabbr$Agency),]
 govscitbl <- rbind(yesabbr, noabbr)
 
-govscitbl$Abbr <- ifelse(is.na(govscitbl$Abbr),NA,
-                         ifelse(nchar(govscitbl$Abbr) == 0, NA,
-                                ifelse(substr(govscitbl$Abbr,1,1) != "\b" & substr(govscitbl$Abbr,nchar(govscitbl$Abbr),nchar(govscitbl$Abbr)) != "\b",paste0("\b",govscitbl$Abbr,"\b"),
-                                       govscitbl$Abbr)))
 
 
+govscitbl <- govscitbl[!(govscitbl$Agency=="Nuclear_Regulatory_Commission" & govscitbl$Abbr=="\bNRC\b"),]
+#NRC is already included in abbrevs but another national org and a state org share the acronym
+
+duplicate_check <- duplicated(na.omit(govscitbl$Abbr))
+if(sum(duplicate_check)>0){
+   stop("One or more abbreviations point to multiple agencies and cannot be disambiguated.")
+}
 
