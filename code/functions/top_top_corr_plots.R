@@ -6,6 +6,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
    
    #"simple" method network model
    if(method == "simple"){
+      set.seed(20000)
       tcs <- topicCorr(model, method = "simple", cutoff = 0.01, verbose = TRUE)
       topics <- 1:nrow(tcs$posadj)
       tcs_pos <- tcs$posadj[topics,topics]
@@ -66,6 +67,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       
    #"huge" method network model
    }else if(method == "huge"){
+      set.seed(20000)
       tch <- topicCorr(model, method = "huge", verbose = TRUE)
       for(i in 1:nrow(tch$cor)){
          tch$cor[i,i]=1
