@@ -34,7 +34,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
          print(label_lg$frex[i,])
          nums_of_interest <- append(nums_of_interest,i)
          topics_of_interest<-append(topics_of_interest,paste0("Topic_",strrep("0",2-nchar(toString(i))),i))
-         
+         saveRDS(topics_of_interest,"data_temp/topics_of_interest")
       }
    }
    is_cc <- vector(length=0)
