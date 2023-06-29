@@ -47,7 +47,11 @@ if(mini_data==T | test_data==T){
    
 }
 
-generate_networks(ret_path, generate_phrases, pages, file_ids, parsed_filenames, 
+phrases_to_concatenate <- generate_proper_names(underscore=F,to_lower=F)
+
+generate_networks(ret_path, generate_phrases, phrases_to_concatenate, 
+                  concatenator="_",
+                  pages, file_ids, parsed_filenames, 
                  nodeedge_filenames, parse_from_file)
 
 

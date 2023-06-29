@@ -3,7 +3,7 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-generate_proper_names <- function(underscore = F, for_removal = F){
+generate_proper_names <- function(underscore = F, for_removal = F, to_lower=T){
    
    #water agency downloads page:
    #https://www.watereducation.org/water-related-organizationsagencies
@@ -23,7 +23,12 @@ generate_proper_names <- function(underscore = F, for_removal = F){
    
    agencies <- agency_names$agencies
    #adds an important agency not captured properly by website
-   agencies <- append(agencies,"state water resources control board")
+   if(to_lower==T){
+      agencies <- append(agencies,"state water resources control board")
+   }else{
+      agencies <- append(agencies,"State Water Resources Control Board")
+   }
+   
    #removes u.s. from beginning of agency names
    agencies <- gsub("^[U|u]\\.*[S|s]\\.*\\s+","",agencies)
    #include alternate spelling of UC
@@ -42,41 +47,83 @@ generate_proper_names <- function(underscore = F, for_removal = F){
    #remove dashes between words
    agencies <- str_replace(agencies, "\\s+\\p{Pd}\\s+"," ")
       
-   place_names <- as_tibble(read.table(
-      "data_raw/2021_Gaz_place_national.txt",
-      sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") %>% 
-      mutate(NAME = tolower(NAME)) 
+   if(to_lower==T){
+      place_names <- as_tibble(read.table(
+         "data/2021_Gaz_place_national.txt",
+         sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") %>% 
+         mutate(NAME = tolower(NAME))
+   }else{
+      place_names <- as_tibble(read.table(
+         "data/2021_Gaz_place_national.txt",
+         sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") 
+   }
+   
    
    #removing last word ("city" or "cdp")
    places <- gsub("\\s+\\w*$", "", x = place_names$NAME)
    
-   common_names <- c("airport", "alpine", "bend", "cherokee", "commerce",
-                     "cottonwood", "crest", "home garden",
-                     "lakeside", "live oak", "nice", "oceanside",
-                     "orange", "pike", "ponderosa", "riverbank", "strawberry",
-                     "vineyard", "volcano", "walnut", "winters")
+   if(to_lower==T){
+      common_names <- c("airport", "alpine", "august","bend", "cherokee", "commerce",
+                        "cottonwood", "crest", "home garden",
+                        "lakeside", "live oak", "nice", "oceanside",
+                        "orange", "pike", "ponderosa", "riverbank", "strawberry",
+                        "vineyard", "volcano", "walnut", "winters")
+   }else{
+      common_names <- c("Airport", "Alpine", "August","Bend", "Cherokee", "Commerce",
+                        "Cottonwood", "Crest", "Home Garden",
+                        "Lakeside", "Live Oak", "Nice", "Oceanside",
+                        "Orange", "Pike", "Ponderosa", "Riverbank", "Strawberry",
+                        "Vineyard", "Volcano", "Walnut", "Winters")
+   }
+   
    patt <- paste0("^", common_names, "$", collapse="|")
    
    places <- places[!grepl(patt, places)]
    
-   cnty_names <- as_tibble(read.table("data_raw/2021_Gaz_counties_national.txt",
-      sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA") %>% 
-      mutate(NAME = tolower(NAME))
+   if(to_lower==T){
+      cnty_names <- as_tibble(read.table("data/2021_Gaz_counties_national.txt",
+                                         sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA") %>% 
+         mutate(NAME = tolower(NAME))
+   }
+   else{
+      cnty_names <- as_tibble(read.table("data/2021_Gaz_counties_national.txt",
+                                         sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA")
+   }
    
-   #keeps two versions, one with the word County in the name and one without
-   ctemp <- ifelse(cnty_names$NAME == "orange county" | 
-                              cnty_names$NAME == "lake county",
-                              cnty_names$NAME,
-                              str_squish(str_remove(cnty_names$NAME, pattern = "county")))
+   
+   #keeps two versions, one with the word County in the name and one without, 
+   #except for counties that aren't recognizable unless the word "county" is included
+   if(to_lower==T){
+      ctemp <- ifelse(cnty_names$NAME == "Orange County" | 
+                         cnty_names$NAME == "Lake County",
+                      cnty_names$NAME,
+                      str_squish(str_remove(cnty_names$NAME, pattern = "County")))
+      
+   }else{
+      ctemp <- ifelse(cnty_names$NAME == "orange county" | 
+                         cnty_names$NAME == "lake county",
+                      cnty_names$NAME,
+                      str_squish(str_remove(cnty_names$NAME, pattern = "county")))
+   }
+   
    
    counties <- c(cnty_names$NAME, ctemp)
    
    #even if we remove places, we don't want to remove agencies
-   if(for_removal == T){
-      names <- str_squish(tolower(c(counties, places, "united states", "california")))
+   if(to_lower==T){
+      if(for_removal == T){
+         names <- str_squish(tolower(c(counties, places, "united states", "california")))
+      }else{
+         names <- str_squish(tolower(c(counties, places, agencies, "united states", "california")))
+      }
    }else{
-      names <- str_squish(tolower(c(counties, places, agencies, "united states", "california")))
+      if(for_removal == T){
+         names <- str_squish(c(counties, places, "United States", "California"))
+      }else{
+         names <- str_squish(c(counties, places, agencies, "United States", "California"))
+      }
    }
+   
    
    #removing periods
    names <- gsub("\\.","",names)
