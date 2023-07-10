@@ -49,12 +49,12 @@ generate_proper_names <- function(underscore = F, for_removal = F, to_lower=T){
       
    if(to_lower==T){
       place_names <- as_tibble(read.table(
-         "data/2021_Gaz_place_national.txt",
+         "data_raw/2021_Gaz_place_national.txt",
          sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") %>% 
          mutate(NAME = tolower(NAME))
    }else{
       place_names <- as_tibble(read.table(
-         "data/2021_Gaz_place_national.txt",
+         "data_raw/2021_Gaz_place_national.txt",
          sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") 
    }
    
@@ -81,12 +81,12 @@ generate_proper_names <- function(underscore = F, for_removal = F, to_lower=T){
    places <- places[!grepl(patt, places)]
    
    if(to_lower==T){
-      cnty_names <- as_tibble(read.table("data/2021_Gaz_counties_national.txt",
+      cnty_names <- as_tibble(read.table("data_raw/2021_Gaz_counties_national.txt",
                                          sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA") %>% 
          mutate(NAME = tolower(NAME))
    }
    else{
-      cnty_names <- as_tibble(read.table("data/2021_Gaz_counties_national.txt",
+      cnty_names <- as_tibble(read.table("data_raw/2021_Gaz_counties_national.txt",
                                          sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA")
    }
    
