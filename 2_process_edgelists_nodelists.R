@@ -7,8 +7,14 @@ library(dplyr)
 
 source('govscicleaning.R')
 
+#TODO use clean_entities function on govscitbl
 edges_and_nodes <- list.files(path = "network_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
+
+gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
+agency_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
+   length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
+agency_tbl <- agency_tbl[!is.na(gsp_id),]
 
 for(m in 1:length(edges_and_nodes)){
    
@@ -28,14 +34,20 @@ for(m in 1:length(edges_and_nodes)){
    #removing non-persons/gpes/orgs
    edgelist <- edgelist %>% filter(source %in% nodelist$entity_cat & target %in% nodelist$entity_cat)
    
-   abbr <- function(strng){
-      
-      if (!identical(grep(paste0("\b",strng,"\b"),govscitbl$Abbr,useBytes = F), integer(0))){
-         return(govscitbl$Agency[grep(paste0("\b",strng,"\b"),govscitbl$Abbr, useBytes = F)] )
-      }
-      else
+   agency_disambig <- function(strng,m){
+      #TODO remove parentheses
+      agency_names <- agency_tbl[gsp_id==gspids[m]]$name_gsas[[1]]
+      plural <- agency_tbl[gsp_id==gspids[m]]$mult_gsas
+      if((plural==T && !is.na(strng) && (tolower(strng) %in% c("the_gsas","the_agencies"))) | 
+         (!plural==T && is.na(strng) && (tolower(strng) %in% c("the_gsa","the_agency")))){
+         return(agency_names)
+      }else if (is.na(strng)){
+         return(NA_character_)
+      }else{
          return(strng)
+      }
    }
+   
    
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
@@ -48,9 +60,52 @@ for(m in 1:length(edges_and_nodes)){
    # return(NA)
    #}
    
+
+   #temp rows because changing character column into list column
+   edgelist$sourcetemp <- lapply(edgelist$source, function(strng) agency_disambig(strng,m))
+   edgelist$targettemp <- lapply(edgelist$target, function(strng) agency_disambig(strng,m))
+   edgelist$length_source <- sapply(edgelist$sourcetemp, length)
+   edgelist$length_target <- sapply(edgelist$targettemp, length)
+   rows <- edgelist[rep(seq(1, nrow(edgelist)), edgelist$length_source)]
+   rows$source <- unlist(edgelist$sourcetemp)
+   rowstarget <- rows[rep(seq(1, nrow(rows)), rows$length_target)]
+   rowstarget$target <- unlist(rows$targettemp)
+      
+   rowstarget$sourcetemp <- rowstarget$targettemp <- rowstarget$length_source <- rowstarget$length_target<- NULL
+   edgelist <- rowstarget
+   
+   nodelist$entity_cattemp <- lapply(nodelist$entity_cat, function(strng) agency_disambig(strng,m))
+   nodelist$length_entitycat <- sapply(nodelist$entity_cattemp, length)
+   rows <- nodelist[rep(seq(1, nrow(nodelist)), nodelist$length_entitycat)]
+   rows$entity_cat <- unlist(nodelist$entity_cattemp)
+   rows$entity_cattemp <- rows$length_entitycat <- NULL
+   nodelist <- rows
+ 
+   remove_the <- function(v){
+      remove <- c("^_*The_","^_*the_","^_*THE_","^_*The$","^_*the$","^_*THE$")
+      index <- which(grepl(paste(remove,collapse = '|'),v,perl = T))
+      v[index] <- str_remove_all(v[index],paste(remove,collapse = '|'))
+      return(v)
+   }
+   
+   edgelist$source <- remove_the(edgelist$source)
+   edgelist$target <- remove_the(edgelist$target)
+   nodelist$entity_cat <- remove_the(nodelist$entity_cat)  
+   
+   abbr <- function(strng){
+      
+      if (!identical(grep(paste0("\b",strng,"\b"),govscitbl$Abbr,useBytes = F), integer(0))){
+         return(govscitbl$Agency[grep(paste0("\b",strng,"\b"),govscitbl$Abbr, useBytes = F)] )
+      }
+      else
+         return(strng)
+   }
+   
    edgelist$source <- sapply(edgelist$source, abbr)
    edgelist$target <- sapply(edgelist$target, abbr)
    nodelist$entity_cat <- sapply(nodelist$entity_cat, abbr)
+   
+
    
    colnames(nodelist)[3] <- "num_appearances"
    nodelist <- nodelist %>% arrange(desc(num_appearances))
