@@ -16,11 +16,7 @@ if(test_data==T){
    parsed_filenames <- paste0("data_temp/test_prs",unique_files)
    
 }else{
-   if(generate_phrases==T){
-      gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")#if generate_phrases == T
-   }else{
-      gsp_text_with_meta <- readRDS("prepped_for_sna")#if generate_phrases == F
-   }
+   gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
    gsp_planonly <- gsp_text_with_meta[gsp_text_with_meta$is_comment==FALSE & gsp_text_with_meta$is_reference==FALSE,]
    
    if(mini_data==T){
@@ -51,7 +47,7 @@ if(mini_data==T | test_data==T){
    
 }
 
-phrases_to_concatenate <- generate_proper_names(underscore=F,to_lower=F)
+phrases_to_concatenate <- ifelse(generate_phrases==T, generate_proper_names(underscore=F,to_lower=F),NA)
 
 generate_networks(ret_path, generate_phrases, keep_hyph_together, phrases_to_concatenate, 
                   concatenator="_",
