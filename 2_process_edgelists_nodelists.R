@@ -7,14 +7,20 @@ library(dplyr)
 
 source('govscicleaning.R')
 
-#TODO use clean_entities function on govscitbl
 edges_and_nodes <- list.files(path = "network_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
+govscitbl$Agency <- clean_entities(govscitbl$Agency, remove_nums = T)
+govscitbl$Abbr <- clean_entities(govscitbl$Abbr, remove_nums = T)
+govscitbl <- unique(govscitbl)
 
 gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
 agency_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
    length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
 agency_tbl <- agency_tbl[!is.na(gsp_id),]
+
+#change hyphens and spaces to underscores, to match spacy parse formatting
+agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
+   stringr::str_replace_all(w,"-|\\s","_"))
 
 for(m in 1:length(edges_and_nodes)){
    
@@ -35,8 +41,11 @@ for(m in 1:length(edges_and_nodes)){
    edgelist <- edgelist %>% filter(source %in% nodelist$entity_cat & target %in% nodelist$entity_cat)
    
    agency_disambig <- function(strng,m){
-      #TODO remove parentheses
+      #remove parentheses
       agency_names <- agency_tbl[gsp_id==gspids[m]]$name_gsas[[1]]
+      agency_names <- unlist(lapply(agency_names, function(b) str_split(b,"\\(")[[1]][1]))
+      #clean entities so they are same format as spacy tokens
+      agency_names <- clean_entities(agency_names, remove_nums=T)
       plural <- agency_tbl[gsp_id==gspids[m]]$mult_gsas
       if((plural==T && !is.na(strng) && (tolower(strng) %in% c("the_gsas","the_agencies"))) | 
          (!plural==T && is.na(strng) && (tolower(strng) %in% c("the_gsa","the_agency")))){

@@ -90,6 +90,7 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
                                                  "NASA",
                                                  "Archives_National_Archives_and_Records_Administration",
                                                  "National_Library_of_Agriculture",
+                                                 "NationalMarineFisheriesService",
                                                  "NOAA_Fisheries",
                                                  "Northwest_Power_Planning_Council",
                                                  "NRC",
@@ -113,8 +114,8 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
 #TODO perhaps move to govscienceuseR?
 customabbr <- rbind(
    c("federal","Administration_for_Children_and_Families", "ACF"),
-   c("federal","Congress—US_Senate","Senate"),#because "California State Senate" goes to "State Senate" and "US Senate" goes to "Senate" with the US/Cal prefix drop
-   c("federal","Congress—US_House_of_Representatives","House_of_Representatives"),
+   c("federal","Congress_-_US_Senate","Senate"),#because "California State Senate" goes to "State Senate" and "US Senate" goes to "Senate" with the US/Cal prefix drop
+   c("federal","Congress_-_US_House_of_Representatives","House_of_Representatives"),
    c("federal","Administration_for_Community_Living","ACL"),
    c("federal","Administrative_Conference_of_the_United_States","ACUS"),
    c("federal","Administrative_Office_of_the_US_Courts","AOUSC"),
@@ -193,7 +194,7 @@ customabbr <- rbind(
    c("California","Government_Operations_Agency","GovOps"),
    c("California","Governor's_Office_of_Emergency_Services", "Cal OES"),
    c("California","Governor's_Office_of_Planning_and_Research", "Cal OPR"),#also called OPR but DOJ's Office of Prof. Resp. is also abbreviated OPR
-   c("California","Governor's_Office_of_Business_and_Economic_Development", "GO-Biz"),
+   c("California","Governor's_Office_of_Business_and_Economic_Development", "GO_-_Biz"),
    c("California","Health_and_Human_Services_Agency","CalHHS"),
    c("California","Health_Facilities_Financing_Authority","CHFFA"),
    c("California","Healthy_Food_Financing_Initiative_Council", "CHFFIC"),
@@ -268,7 +269,7 @@ customabbr <- rbind(
    c("federal","Congressional_Budget_Office","CBO"),
    c("federal","Consumer_Product_Safety_Commission","CPSC"),
    c("California","Business_Consumer_Services_and_Housing_Agency","BCSH"),
-   c("California","Physical Therapy Board of California","PTBC"),
+   c("California","Physical_Therapy_Board_of_California","PTBC"),
    c("California","University_of_California","UC"),
    c("federal","Coordinating_Council_on_Juvenile_Justice_and_Delinquency_Prevention","CCJJDP"),
    c("federal","Army_Corps_of_Engineers","Corps_of_Engineers"),
@@ -334,7 +335,7 @@ customabbr <- rbind(
    c("federal","Environmental_Protection_Agency","USEPA"),
    c("federal","Equal_Employment_Opportunity_Commission","EEOC"),
    c("federal","Executive_Office_for_Immigration_Review","EOIR"),
-   c("federal","Export-Import_Bank_of_the_United_States","EXIM"),#exim is also an email keyword
+   c("federal","Export_-_Import_Bank_of_the_United_States","EXIM"),#exim is also an email keyword
    c("federal","Office_of_Fair_Housing_and_Equal_Opportunity","FHEO"),
    c("federal","Office_of_Fair_Housing_and_Equal_Opportunity","Fair_Housing_and_Equal_Opportunity"),
    c("federal","Farm_Credit_System_Insurance_Corporation","FCSIC"),
@@ -389,11 +390,11 @@ customabbr <- rbind(
    c("federal","International_Criminal_Police_Organization","INTERPOL"),
    c("federal","International_Criminal_Police_Organization","InterPol"),
    c("federal","International_Criminal_Police_Organization","National_Central_Bureau_-_Interpol"),
-   c("federal","Japan-United_States_Friendship_Commission","JUSFC"),
+   c("federal","Japan_-_United_States_Friendship_Commission","JUSFC"),
    c("federal","John_F_Kennedy_Center_for_the_Performing_Arts","Kennedy_Center"),
    c("federal","Joint_Congressional_Committee_on_Inaugural_Ceremonies","JCCIC"),
    c("federal","Joint_Fire_Science_Program","JFSP"),
-   c("federal","Joint_Program_Executive_Office_for_Chemical_and_Biological_Defense","JPEO-CBRND"),
+   c("federal","Joint_Program_Executive_Office_for_Chemical_and_Biological_Defense","JPEO_-_CBRND"),
    c("federal","Judicial_Panel_on_Multidistrict_Litigation","JPML"),
    c("federal","Maritime_Administration","MARAD"),
    c("federal","Merit_Systems_Protection_Board","MSPB"),
@@ -406,7 +407,7 @@ customabbr <- rbind(
    c("federal","National_Cancer_Institute","NCI"),
    c("federal","National_Credit_Union_Administration","NCUA"),
    c("federal","National_Flood_Insurance_Program","NFIP"),
-   c("federal","National_Geospatial-Intelligence_Agency","NGIA"),
+   c("federal","National_Geospatial_-_Intelligence_Agency","NGIA"),
    c("federal","National_Health_Information_Center","NHIC"),
    c("federal","National_Heart_Lung_and_Blood_Institute","NHLBI"),
    c("federal","National_Highway_Traffic_Safety_Administration","NHTSA"),
@@ -424,6 +425,7 @@ customabbr <- rbind(
    c("federal","National_Labor_Relations_Board","NLRB"),
    c("federal","National_Agricultural_Library","National_Library_of_Agriculture"),
    c("federal","National_Marine_Fisheries_Service","NMFS"),
+   c("federal","National_Marine_Fisheries_Service","NOAA_Fisheries"),
    c("federal","National_Nuclear_Security_Administration","NNSA"),
    c("federal","National_Oceanic_and_Atmospheric_Administration","NOAA"),
    c("federal","National_Park_Service","NPS"),#also stands for net promoter score
@@ -438,8 +440,8 @@ customabbr <- rbind(
    c("federal","Natural_Resources_Conservation_Service","NRCS"),
    c("federal","Natural_Resources_Conservation_Service","Soil_Conservation_Service"),#old name
    c("federal","Natural_Resources_Conservation_Service","USDA_NRCS"),
-   c("federal","Natural_Resources_Conservation_Service","USDA-NRCS"),
-   c("federal","National Marine Fisheries Service","NOAA_Fisheries"),
+   c("federal","Natural_Resources_Conservation_Service","USDA_-_NRCS"),
+   c("federal","National_Marine_Fisheries_Service","NOAA_Fisheries"),
    c("federal","Northwest_Power_and_Conservation_Council","Northwest_Power_Planning_Council"),#old name. #old acronym and new acronym not distinguishable from other orgs
    c("federal","Nuclear_Regulatory_Commission","USNRC"),
    c("federal","Nuclear_Waste_Technical_Review_Board","NWTRB"),
@@ -488,7 +490,7 @@ customabbr <- rbind(
    c("federal","Transportation_Security_Administration","TSA"),
    c("federal","Department_of_the_Treasury","Treasury_Department"),
    c("federal","Department_of_the_Treasury","USDT"),#also the code for the crypto company Tether
-   c("federal","Computer_Emergency_Readiness_Team","US-CERT"),
+   c("federal","Computer_Emergency_Readiness_Team","US_-_CERT"),
    c("federal","Army_Combined_Arms_Center","USACAC"),
    c("federal","Army_Environmental_Command","USAEC"),
    c("federal","USAGov",NA),
@@ -498,31 +500,31 @@ customabbr <- rbind(
    c("federal","Agricultural_Marketing_Service","USDA_-_Agricultural_Marketing_Service"),
    c("federal","Agricultural_Marketing_Service","USDA_Agricultural_Marketing_Service"),
    c("federal","Agricultural_Marketing_Service","USDA_AMS"),
-   c("federal","Agricultural_Marketing_Service","USDA-AMS"),
+   c("federal","Agricultural_Marketing_Service","USDA_-_AMS"),
    c("federal","Agricultural_Marketing_Service","USDAAMS"),
    c("federal","Agricultural_Research_Service","USDA_-_Agricultural_Research_Service"),
    c("federal","Agricultural_Research_Service","USDA_Agricultural_Research_Service"),
    c("federal","Agricultural_Research_Service","USDA_ARS"),
-   c("federal","Agricultural_Research_Service","USDA-ARS"),
+   c("federal","Agricultural_Research_Service","USDA_-_ARS"),
    c("federal","Agricultural_Research_Service","USDAARS"),   
    c("federal","Economic_Research_Service","USDA_-_Economic_Research_Service"),
    c("federal","Economic_Research_Service","USDA_Economic_Research_Service"),
    c("federal","Economic_Research_Service","USDA_ERS"),
-   c("federal","Economic_Research_Service","USDA-ERS"),
+   c("federal","Economic_Research_Service","USDA_-_ERS"),
    c("federal","Economic_Research_Service","USDAERS"),     
    c("federal","Foreign_Agricultural_Service","USDA_-_Foreign_Agricultural_Service"),
    c("federal","Foreign_Agricultural_Service","USDA_Foreign_Agricultural_Service"),
    c("federal","Foreign_Agricultural_Service","USDA_FAS"),
-   c("federal","Foreign_Agricultural_Service","USDA-FAS"),
+   c("federal","Foreign_Agricultural_Service","USDA_-_FAS"),
    c("federal","Foreign_Agricultural_Service","USDAFAS"), 
    c("federal","USDA_Office_of_the_Chief_Economist","USDA_-_Office_of_the_Chief_Economist"),
    c("federal","USDA_Office_of_the_Chief_Economist","USDA_OCE"),
-   c("federal","USDA_Office_of_the_Chief_Economist","USDA-OCE"),
+   c("federal","USDA_Office_of_the_Chief_Economist","USDA_-_OCE"),
    c("federal","USDA_Office_of_the_Chief_Economist","USDAOCE"), 
    c("federal","USDA_Wildlife_Services","USDA_-_Wildlife_Services"),
    c("federal","USDA_Wildlife_Services","USDA_Wildlife_Services"),
    c("federal","USDA_Wildlife_Services","USDA_WS"),
-   c("federal","USDA_Wildlife_Services","USDA-WS"),
+   c("federal","USDA_Wildlife_Services","USDA_-_WS"),
    c("federal","Voice_of_America","VoA"),
    c("federal","Voice_of_America","VOA"),
    c("federal","Wage_and_Hour_Division","WHD"),#also world humanitarian day
@@ -538,12 +540,12 @@ customabbr <- rbind(
    c("federal","National_Cooperative_Soil_Survey_Geographic_Database","Soil_Survey_Geographic_Database"),
    c("local","Integrated_Regional_Water_Management_Plan","IRWMP"),
    c("local","Integrated_Regional_Water_Management","IRWM"),
-   c(NA,"Precipitation-Elevation_Regressions_on_Independent_Slopes_Model","PRISM"),
+   c(NA,"Precipitation_-_Elevation_Regressions_on_Independent_Slopes_Model","PRISM"),
    c("California","Geologic_Energy_Management_Division", "CalGEM"),
    c("California","Statewide_Groundwater_Elevation_Monitoring","CASGEM"),
-   c(NA,"Groundwater-Dependent_Ecosystem", "Groundwater_Dependent_Ecosystem"),
-   c(NA,"Groundwater-Dependent_Ecosystem", "groundwater_dependent_ecosystem"),
-   c(NA,"Groundwater-Dependent_Ecosystem", "GDE"),
+   c(NA,"Groundwater_-_Dependent_Ecosystem", "Groundwater_Dependent_Ecosystem"),
+   c(NA,"Groundwater_-_Dependent_Ecosystem", "groundwater_dependent_ecosystem"),
+   c(NA,"Groundwater_-_Dependent_Ecosystem", "GDE"),
    c("local","Groundwater_Sustainability_Agency", "GSA"),
    c(NA,"Groundwater_Management_Plan", "GWMP"),
    c("California","Irrigated_Lands_Regulatory_Program", "ILRP"),
@@ -592,7 +594,8 @@ govscitbl <- rbind(govscitbl, customabbr)
 
 govscitbl$Abbr <- ifelse(is.na(govscitbl$Abbr),NA,
                          ifelse(nchar(govscitbl$Abbr) == 0, NA,
-                                ifelse(substr(govscitbl$Abbr,1,1) != "\b" & substr(govscitbl$Abbr,nchar(govscitbl$Abbr),nchar(govscitbl$Abbr)) != "\b",paste0("\b",govscitbl$Abbr,"\b"),
+                                ifelse(substr(govscitbl$Abbr,1,1) == "\b" & substr(govscitbl$Abbr,nchar(govscitbl$Abbr),nchar(govscitbl$Abbr)) == "\b",
+                                       substr(govscitbl$Abbr,2,nchar(govscitbl$Abbr)-1),
                                        govscitbl$Abbr)))
 
 library(dplyr)
@@ -607,7 +610,7 @@ govscitbl <- rbind(yesabbr, noabbr)
 
 
 
-govscitbl <- govscitbl[!(govscitbl$Agency=="Nuclear_Regulatory_Commission" & govscitbl$Abbr=="\bNRC\b"),]
+govscitbl <- govscitbl[!(govscitbl$Agency=="Nuclear_Regulatory_Commission" & govscitbl$Abbr=="NRC"),]
 #NRC is already included in abbrevs but another national org and a state org share the acronym
 
 duplicate_check <- duplicated(na.omit(govscitbl$Abbr))
@@ -616,7 +619,13 @@ if(sum(duplicate_check)>0){
 }
 
 calif_dupl <- govscitbl %>% filter(State=="California")
-calif_dupl$Abbr <- paste0("\bCalifornia_",calif_dupl$Agency,"\b")
+calif_dupl$Abbr <- paste0("California_",calif_dupl$Agency)
+
+#change hyphens and spaces to underscores, since in spacyparse they are treated as separate tokens
+index <- which(grepl("-|\\s",govscitbl$Agency,perl = T))
+govscitbl$Agency[index] <- str_replace_all(govscitbl$Agency[index],"-|\\s","_")
+index <- which(grepl("-|\\s",govscitbl$Abbr,perl = T))
+govscitbl$Abbr[index] <- str_replace_all(govscitbl$Abbr[index],"-|\\s","_")
 
 govscitbl <- rbind(govscitbl, calif_dupl)
 
