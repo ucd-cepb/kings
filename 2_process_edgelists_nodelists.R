@@ -67,12 +67,15 @@ for(m in 1:length(edges_and_nodes)){
    govscitbl_mini <- unique(govscitbl[!is.na(Abbr) & nchar(Abbr)>0,c("Agency","Abbr")])
    customdt <- rbind(acrons[[m]],govscitbl,agency_nicknames[(m*2-1):(m*2)])
    match_partial_entity <- rep(c(T,F,F), c(nrow(acrons[[m]]),nrow(govscitbl),nrow(agency_nicknames[(m*2-1):(m*2)])))
-   prefixes <- list(c("^_*The_","^_*the_","^_*THE_","^_*The$","^_*the$","^_*THE$"), c("US_|U_S_|United_States_|UnitedStates"))
-   edgenodelist_dis <- disambiguate(from=customdt[,2], to=customdt[,1], match_partial_entity, edgenodelist, prefixes)
    
-   #does not remove "California" prefixes
+   #should not drop "us" from custom list, or from nodelist/edgelist. however, if it doesn't match "us" on
+   #drop "us" from the nodelist/edgelist and try again to match with the custom list
+   try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
+   edgenodelist <- disambiguate(from=customdt[,2], to=customdt[,1], 
+                                    match_partial_entity, edgenodelist, try_drop)
+   
  
-   
+###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
    # 
@@ -83,7 +86,7 @@ for(m in 1:length(edges_and_nodes)){
    #}else
    # return(NA)
    #}
-   
+###Section 4 Continued####   
    colnames(nodelist)[3] <- "num_appearances"
    nodelist <- nodelist %>% arrange(desc(num_appearances))
    
@@ -103,7 +106,7 @@ for(m in 1:length(edges_and_nodes)){
    edgelist <- edgelist[,c(2:ncol(edgelist),1)]
    
    
-   ###Section 5: Network Object Generation####
+###Section 5: Network Object Generation####
    #use graph_from_data_frame because you can put node list as an argument
    full_directed_graph <- igraph::graph_from_data_frame(edgelist, vertices = nodelist, directed = T)
    
