@@ -72,9 +72,12 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
                                                  "CDC",
                                                  "Commerce_Department",
                                                  "Consumer Services, and Housing Agency California Business",
+                                                 "Department_of_Transportation",
                                                  "Defense_Department",
                                                  "Energy_Department",
                                                  "Education_Department",
+                                                 "Environmental_Protection_Agency",
+                                                 "Department_of_Veterans_Affairs",
                                                  "Fair_Housing_and_Equal_Opportunity",
                                                  "Fannie_Mae",
                                                  "Freddie_Mac",
@@ -95,9 +98,10 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
                                                  "Northwest_Power_Planning_Council",
                                                  "NRC",
                                                  "Office_for_Civil_Rights_Department_of_Health_and_Human_Services",
+                                                 "Office_of_Health_Information_Integrity",
                                                  "Open_World_Leadership_Center",
                                                  "Presidential_Scholars_Commission",
-                                                 "Prisoner_of_War_and_Missing_in_Action_Accounting_Agency",#TODO check slash
+                                                 "Prisoner_of_War_and_Missing_in_Action_Accounting_Agency",
                                                  "Science_Office",
                                                  "Treasury_Department",
                                                  "Veterans_Affairs_Department",
@@ -112,6 +116,20 @@ govscitbl <- govscitbl[!(govscitbl$Agency %in% c("Agriculture_Department",
 
 #abbrevs for unique california and federal orgs/agencies
 #TODO perhaps move to govscienceuseR?
+
+#the only ambiguous agencies are Department_of_Transportation, Environmental_Protection_Agency,
+#and Department_of_Veterans_Affairs since it's not clear whether it's the federal or state branch
+#This was determined with the following commented code, run after this entire script:
+#govscitbl$State <- clean_entities(govscitbl$State, remove_nums = T)
+#govscitbl$Agency <- clean_entities(govscitbl$Agency, remove_nums = T)
+#govscitbl$Abbr <- clean_entities(govscitbl$Abbr, remove_nums = T)
+#govscitbl <- unique(govscitbl)
+#govscitbl_mini <- unique(govscitbl[!is.na(Abbr) & nchar(Abbr)>0,])
+#dups <- govscitbl_mini[Agency%in% govscitbl_mini[duplicated(govscitbl_mini, by="Agency"),]$Agency,]
+#dups <- unique(dups, by=c("State","Agency"))
+#dups <- dups[,c(.SD,.N),by="Agency"][N==2,]
+#For this reason, the word "California" and "US" are preserved for those agencies
+   
 customabbr <- rbind(
    c("federal","Administration_for_Children_and_Families", "ACF"),
    c("federal","Congress_-_US_Senate","Senate"),#because "California State Senate" goes to "State Senate" and "US Senate" goes to "Senate" with the US/Cal prefix drop
@@ -180,13 +198,13 @@ customabbr <- rbind(
    c("California","Department_of_Resources_Recycling_and_Recovery","CalRecycle"),
    c("California","Department_of_Tax_and_Fee_Administration","CDTFA"),
    c("California","Department_of_Toxic_Substances_Control","DTSC"),
-   c("California","Department_of_Transportation","Caltrans"),
-   c("California","Department_of_Veterans_Affairs","CalVet"),
+   c("California","California_Department_of_Transportation","Caltrans"),
+   c("California","California_Department_of_Veterans_Affairs","CalVet"),
    c("California","Department_of_Water_Resources","DWR"),
    c("California","Disabled_Veterans_Business_Enterprise_Advisory_Council", "DVBE_Advisory_Council"),
    c("California","Emergency_Medical_Services_Authority","EMSA"),#this also stands for European Maritime Safety Agency
    c("California","Energy_Resources_Conservation_and_Development_Commission","California_Energy_Commission"),
-   c("California","Environmental_Protection_Agency","CalEPA"),
+   c("California","California_Environmental_Protection_Agency","CalEPA"),
    c("California","Exposition_and_State_Fair","Cal Expo"),
    c("California","Fair_Political_Practices_Commission","FPPC"),
    c("California","Financing_Coordinating_Committee","CFCC"),#also a college in North Carolina
@@ -321,18 +339,21 @@ customabbr <- rbind(
    #dept of interior doi could get picked up in citations
    c("federal","Department_of_the_Interior","Interior_Department"),
    c("federal","Department_of_the_Interior","USDOI"),
-   c("federal","Department_of_Transportation","DoT"),
-   c("federal","Department_of_Transportation","DOT"),
-   c("federal","Department_of_Transportation","USDOT"),
-   c("federal","Department_of_Veterans_Affairs","Veterans_Affairs_Department"),
+   c("federal","US_Department_of_Transportation","DoT"),
+   c("federal","US_Department_of_Transportation","DOT"),
+   c("federal","US_Department_of_Transportation","USDOT"),
+   c("federal","US_Department_of_Transportation","United_States_Department_of_Transportation"),
+   c("federal","US_Department_of_Veterans_Affairs","Veterans_Affairs_Department"),
+   c("federal","US_Department_of_Veterans_Affairs","United_States_Department_of_Veterans_Affairs"),
    #Veterans Affairs VA could get picked up as virginia
    c("federal","Drug_Enforcement_Administration","DEA"),
    c("federal","Economic_Research_Service","ERS"),
    c("federal","Election_Assistance_Commission","EAC"),#also an intergovernmental org in East Africa
    c("federal","Employee_Benefits_Security_Administration","EBSA"),
-   c("federal","Environmental_Protection_Agency","EPA"),
-   c("federal","Environmental_Protection_Agency","US_EPA"),
-   c("federal","Environmental_Protection_Agency","USEPA"),
+   c("federal","US_Environmental_Protection_Agency","EPA"),
+   c("federal","US_Environmental_Protection_Agency","US_EPA"),
+   c("federal","US_Environmental_Protection_Agency","USEPA"),
+   c("federal","US_Environmental_Protection_Agency","United_States_Environmental_Protection_Agency"),
    c("federal","Equal_Employment_Opportunity_Commission","EEOC"),
    c("federal","Executive_Office_for_Immigration_Review","EOIR"),
    c("federal","Export_-_Import_Bank_of_the_United_States","EXIM"),#exim is also an email keyword
@@ -400,7 +421,7 @@ customabbr <- rbind(
    c("federal","Merit_Systems_Protection_Board","MSPB"),
    c("federal","Military_Academy_West_Point","West_Point"),
    c("federal","Mine_Safety_and_Health_Administration","MSHA"),
-   c("California","California_Division_of_Occupational_Safety_and_Health","Cal/OSHA"),#TODO make sure this slash doesn't mess stuff up
+   c("California","California_Division_of_Occupational_Safety_and_Health","Cal/OSHA"),
    c("federal","National_Aeronautics_and_Space_Administration","NASA"),
    c("federal","National_Agricultural_Statistics_Service","NASS"),
    c("federal","National_Agricultural_Statistics_Service","USDA_NASS"),
@@ -587,7 +608,6 @@ customabbr <- rbind(
 )
 
 colnames(customabbr) <- names(govscitbl)
-#TODO check on entries with apostrophes
 
 
 govscitbl <- rbind(govscitbl, customabbr)
