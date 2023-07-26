@@ -14,7 +14,7 @@ for(fl in parsed_files){
    if(!file.exists(save_file)|overwrite == T){
       print(paste0('analyzing document ',fl))
       temp <- readRDS(fl)
-      custom_entity_extract2(x = temp,cl = 8,return_to_memory = F,file = save_file)
+      custom_entity_extract(x = temp,cl = 8,return_to_memory = F,file = save_file)
    }
 }
 

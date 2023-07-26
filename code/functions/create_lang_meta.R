@@ -64,8 +64,8 @@ create_lang_meta <- function(run_repair = F){
       #find first page of doc k
       page_k1 <- which(page_num %in% 1)[k]
       gsp_k <- readRDS(gsp_list[k])
-      key_k <- readRDS(paste0("data_cleaned/gsp_num_id_",substr(gsp_list[k],24,27),"_categories"))
-      gsp_id[page_k1:(page_k1+length(gsp_k)-1)] <- rep.int(c(substr(gsp_list[k],24,27)),times = length(gsp_k))
+      key_k <- readRDS(paste0("data_cleaned/gsp_num_id_",substr(gsp_list[k],25,28),"_categories"))
+      gsp_id[page_k1:(page_k1+length(gsp_k)-1)] <- rep.int(c(substr(gsp_list[k],25,28)),times = length(gsp_k))
       #i = page number
       for (i in 1:length(gsp_k)){
          page_cat <- NULL
