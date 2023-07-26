@@ -45,20 +45,28 @@ for(m in 1:length(edges_and_nodes)){
 }
 
 ###Section 3: Acronyms####
-
-#add GSAs -> Groundwater_Sustainability_Agencies
-###Section 4: Disambiguation####
-
-
-
+acrons <- vector(mode="list",length=length(edges_and_nodes))
 pdftxt <- readRDS("data_output/cleaned_pdfs")
 
+for(m in 1:length(edges_and_nodes)){
+   acrons[[m]] <-find_acronyms(pdftxt[[m]])   
+}
+for(m in 1:length(edges_and_nodes)){
+   acrons[[m]] <- rbind(list("Groundwater_Sustainability_Agencies","GSAs"),
+         list("Groundwater_Sustainability_Agency","GSA"),
+         list("Groundwater_Sustainability_Plan","GSP"),
+         list("Groundwater_Sustainability_Plans","GSPs"),
+         acrons[[m]])
+   acrons[[m]] <- unique(acrons[[m]],by="acronym")
+   #making sure that the GSA-related acronyms show up properly
+}
+###Section 4: Disambiguation####
 
 for(m in 1:length(edges_and_nodes)){
    edgenodelist <- readRDS(edges_and_nodes[m])
-   acrons <- find_acronyms(pdftxt[[m]])
-   customdt <- rbind(acrons,govscitbl,agency_nicknames[(m*2-1):(m*2)])
-   match_partial_entity <- rep(c(T,F,F), c(nrow(acrons),nrow(govscitbl),nrow(agency_nicknames[(m*2-1):(m*2)])))
+   govscitbl_mini <- unique(govscitbl[!is.na(Abbr) & nchar(Abbr)>0,c("Agency","Abbr")])
+   customdt <- rbind(acrons[[m]],govscitbl,agency_nicknames[(m*2-1):(m*2)])
+   match_partial_entity <- rep(c(T,F,F), c(nrow(acrons[[m]]),nrow(govscitbl),nrow(agency_nicknames[(m*2-1):(m*2)])))
    prefixes <- list(c("^_*The_","^_*the_","^_*THE_","^_*The$","^_*the$","^_*THE$"), c("US_|U_S_|United_States_|UnitedStates"))
    edgenodelist_dis <- disambiguate(from=customdt[,2], to=customdt[,1], match_partial_entity, edgenodelist, prefixes)
    
