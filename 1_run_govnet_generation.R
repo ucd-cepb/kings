@@ -1,3 +1,6 @@
+library(textNet)
+
+
 ret_path <- "/Users/elisemiller/miniconda3/envs/spacy_condaenv/bin/python"
 generate_phrases <- FALSE
 keep_hyph_together <- FALSE
@@ -16,18 +19,16 @@ if(test_data==T){
    parsed_filenames <- paste0("data_temp/test_prs",unique_files)
    
 }else{
-   gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
-   gsp_planonly <- gsp_text_with_meta[gsp_text_with_meta$is_comment==FALSE & gsp_text_with_meta$is_reference==FALSE,]
+   pages <- readRDS("data_output/cleaned_pdfs")
+   file_ids <- unlist(sapply(1:length(pages), function(q) rep(names(pages[q]),length(pages[[q]]))))
+   file_ids <- str_extract(file_ids,'[0-9]{1,}')
+   pages <- unlist(pages)
    
    if(mini_data==T){
-      gsp_planonly <- gsp_planonly[25:31]
+      pages <- sample(pages, 20, replace = F)
    }
-   pages <- gsp_planonly$text
-   file_ids <- gsp_planonly$gsp_id
-   unique_files <- unique(file_ids)
    
-   rm(gsp_text_with_meta)
-   rm(gsp_planonly)
+   unique_files <- unique(file_ids)
    
    if(mini_data==T){
       parsed_filenames <- paste0("data_output/prs_mini_",unique_files)
@@ -40,18 +41,22 @@ if(test_data==T){
 }
 
 if(mini_data==T | test_data==T){
-   nodeedge_filenames <- paste0("network_extr_test/",unique_files)
+   nodeedge_filenames <- paste0("network_extr_test/",unique_files,".RDS")
    
 }else{
-   nodeedge_filenames <- paste0("network_extracts/",unique_files)
+   nodeedge_filenames <- paste0("network_extracts/",unique_files,".RDS")
    
 }
 
 phrases_to_concatenate <- ifelse(generate_phrases==T, generate_proper_names(underscore=F,to_lower=F),NA)
 
-generate_networks(ret_path, generate_phrases, keep_hyph_together, phrases_to_concatenate, 
+
+#### overwrite existing results?
+overwrite = F
+
+generate_networks(ret_path, keep_hyph_together, phrases_to_concatenate, 
                   concatenator="_",
                   pages, file_ids, parsed_filenames, 
-                 nodeedge_filenames, parse_from_file)
-
+                 nodeedge_filenames, parse_from_file,cl=4, 
+                 keep_entities = c('ORG','GPE','PERSON'), overwrite)
 
