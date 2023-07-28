@@ -72,12 +72,16 @@ for(m in 1:length(edges_and_nodes)){
    names(agency_nicknames)=c("to","from")
    customdt[[m]] <- rbind(acrons[[m]],govscitbl_mini)
    customdt[[m]] <- unique(customdt[[m]])
+   match_partial_entity <- rep(c(T,F), c(nrow(customdt[[m]]),nrow(agency_nicknames[(m*2-1):(m*2)])))
    customdt[[m]] <- rbind(customdt[[m]],agency_nicknames[(m*2-1):(m*2)])
+   customdt[[m]]$match_partial_entity <- match_partial_entity
+   rm(match_partial_entity)
    fromgroups <- table(customdt[[m]]$from)
    #now we know the max number of identical is 2, from the agency_nicknames and something else
-   #Subsection A resolves duplicates in from column#### 
    fromgroups <- fromgroups[fromgroups>1]
+   
    if(length(fromgroups)>1){
+      #Subsection A resolves duplicates in from column#### 
       for(k in 1:length(fromgroups)){
          tos <- customdt[[m]][from==names(fromgroups)[k]]$to
          if(length(unique(str_remove(tos,"^United_States_|^US_|California_")))==1){
@@ -91,22 +95,24 @@ for(m in 1:length(edges_and_nodes)){
             keepto <- tos[1]
             makefrom <- tos[2]
          }
+         match_partial <- ifelse(F %in% customdt[[m]][
+            from %in% names(fromgroups)[k]]$match_partial_entity, F, T)
          customdt[[m]] <- customdt[[m]][!(from %in% names(fromgroups)[k])] 
          
-         customdt[[m]] <- rbind(customdt[[m]], list(keepto, names(fromgroups)[k]))
+         
+         customdt[[m]] <- rbind(customdt[[m]], list(keepto, names(fromgroups)[k], match_partial))
          if(!makefrom %in% from){
-            customdt[[m]] <- rbind(customdt[[m]], list(keepto, makefrom))
+            customdt[[m]] <- rbind(customdt[[m]], list(keepto, makefrom, match_partial))
          }
       }
       
    }
-   match_partial_entity <- rep(c(T,F,F), c(nrow(acrons[[m]]),nrow(govscitbl_mini),nrow(agency_nicknames[(m*2-1):(m*2)])))
    
    #should not drop "us" from custom list, or from nodelist/edgelist. however, if it doesn't match "us" on
    #drop "us" from the nodelist/edgelist and try again to match with the custom list
    try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
    edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
-                                    match_partial_entity, edgenodelist, try_drop)
+                                    match_partial_entity=customdt[[m]]$match_partial_entity, edgenodelist, try_drop)
    
  
 ###Orgtype (not currently implemented)####   
