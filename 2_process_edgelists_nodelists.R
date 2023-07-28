@@ -62,16 +62,50 @@ for(m in 1:length(edges_and_nodes)){
 }
 ###Section 4: Disambiguation####
 
+govscitbl_mini <- unique(govscitbl[!is.na(Abbr) & nchar(Abbr)>0,c("Agency","Abbr")])
+names(govscitbl_mini)=c("to","from")
+
+customdt <- vector(mode="list",length=length(edges_and_nodes))
 for(m in 1:length(edges_and_nodes)){
    edgenodelist <- readRDS(edges_and_nodes[m])
-   govscitbl_mini <- unique(govscitbl[!is.na(Abbr) & nchar(Abbr)>0,c("Agency","Abbr")])
-   customdt <- rbind(acrons[[m]],govscitbl,agency_nicknames[(m*2-1):(m*2)])
-   match_partial_entity <- rep(c(T,F,F), c(nrow(acrons[[m]]),nrow(govscitbl),nrow(agency_nicknames[(m*2-1):(m*2)])))
+   names(acrons[[m]])=c("to","from")
+   names(agency_nicknames)=c("to","from")
+   customdt[[m]] <- rbind(acrons[[m]],govscitbl_mini)
+   customdt[[m]] <- unique(customdt[[m]])
+   customdt[[m]] <- rbind(customdt[[m]],agency_nicknames[(m*2-1):(m*2)])
+   fromgroups <- table(customdt[[m]]$from)
+   #now we know the max number of identical is 2, from the agency_nicknames and something else
+   #Subsection A resolves duplicates in from column#### 
+   fromgroups <- fromgroups[fromgroups>1]
+   if(length(fromgroups)>1){
+      for(k in 1:length(fromgroups)){
+         tos <- customdt[[m]][from==names(fromgroups)[k]]$to
+         if(length(unique(str_remove(tos,"^United_States_|^US_|California_")))==1){
+            keepto <- tos[str_detect(tos, "^United_States_|^US_|California_")]
+            makefrom <- tos[!str_detect(tos, "^United_States_|^US_|California_")]
+         }
+         else if(length(unique(nchar(tos)))==2){
+            keepto <- tos[nchar(tos)!=max(nchar(tos))]
+            makefrom <- tos[nchar(tos)==max(nchar(tos))]
+         }else{
+            keepto <- tos[1]
+            makefrom <- tos[2]
+         }
+         customdt[[m]] <- customdt[[m]][!(from %in% names(fromgroups)[k])] 
+         
+         customdt[[m]] <- rbind(customdt[[m]], list(keepto, names(fromgroups)[k]))
+         if(!makefrom %in% from){
+            customdt[[m]] <- rbind(customdt[[m]], list(keepto, makefrom))
+         }
+      }
+      
+   }
+   match_partial_entity <- rep(c(T,F,F), c(nrow(acrons[[m]]),nrow(govscitbl_mini),nrow(agency_nicknames[(m*2-1):(m*2)])))
    
    #should not drop "us" from custom list, or from nodelist/edgelist. however, if it doesn't match "us" on
    #drop "us" from the nodelist/edgelist and try again to match with the custom list
    try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
-   edgenodelist <- disambiguate(from=customdt[,2], to=customdt[,1], 
+   edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
                                     match_partial_entity, edgenodelist, try_drop)
    
  
@@ -79,28 +113,20 @@ for(m in 1:length(edges_and_nodes)){
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
    # 
-   #if (!identical(grep(paste0("\b",strng,"\b"),govscitbl$Agency, useBytes = F), integer(0))){
-   # return(govscitbl$State[grep(paste0("\b",strng,"\b"),govscitbl$Agency, useBytes = F)])
-   #}else if(!identical(grep(paste0("\b",strng,"\b"),govscitbl$Abbr, useBytes = F), integer(0))){
-   # return(govscitbl$State[grep(paste0("\b",strng,"\b"),govscitbl$Abbr, useBytes = F)])
+   #if (!identical(grep(paste0("\b",strng,"\b"),govscitbl_mini$Agency, useBytes = F), integer(0))){
+   # return(govscitbl_mini$State[grep(paste0("\b",strng,"\b"),govscitbl_mini$Agency, useBytes = F)])
+   #}else if(!identical(grep(paste0("\b",strng,"\b"),govscitbl_mini$Abbr, useBytes = F), integer(0))){
+   # return(govscitbl_mini$State[grep(paste0("\b",strng,"\b"),govscitbl_mini$Abbr, useBytes = F)])
    #}else
    # return(NA)
    #}
 ###Section 4 Continued####   
-   colnames(nodelist)[3] <- "num_appearances"
-   nodelist <- nodelist %>% arrange(desc(num_appearances))
-   
-   #get rid of duplicates
-   nodelist <- nodelist %>%
-      group_by(entity_cat) %>%
-      arrange(desc(num_appearances)) %>%
-      filter(row_number()==1)
    
    
    #nodelist$orglevel <- sapply(nodelist$entity_cat, orgtyp)
    #nodelist$type_subtype <- paste0(nodelist$entity_type, "_", nodelist$orglevel)
    #org type:
-   #govscitbl$State[grep(paste0("\b",strng,"\b"),govscitbl$Abbr, useBytes = F)])
+   #govscitbl_mini$State[grep(paste0("\b",strng,"\b"),govscitbl_mini$Abbr, useBytes = F)])
    
    #putting source and target first
    edgelist <- edgelist[,c(2:ncol(edgelist),1)]
