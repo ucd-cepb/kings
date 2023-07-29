@@ -4,6 +4,7 @@ library(ggraph)
 library(sna)
 library(stringr)
 library(dplyr)
+library(data.table)
 
 ###Section 1: Govscitbl####
 source('govscicleaning.R')
@@ -49,7 +50,9 @@ acrons <- vector(mode="list",length=length(edges_and_nodes))
 pdftxt <- readRDS("data_output/cleaned_pdfs")
 
 for(m in 1:length(edges_and_nodes)){
-   acrons[[m]] <-find_acronyms(pdftxt[[m]])   
+   acrons[[m]] <-find_acronyms(pdftxt[[m]])
+   acrons[[m]]$name <- clean_entities(acrons[[m]]$name)
+   acrons[[m]]$acronym <- clean_entities(acrons[[m]]$acronym)
 }
 for(m in 1:length(edges_and_nodes)){
    acrons[[m]] <- rbind(list("Groundwater_Sustainability_Agencies","GSAs"),
@@ -67,7 +70,6 @@ names(govscitbl_mini)=c("to","from")
 
 customdt <- vector(mode="list",length=length(edges_and_nodes))
 for(m in 1:length(edges_and_nodes)){
-   edgenodelist <- readRDS(edges_and_nodes[m])
    names(acrons[[m]])=c("to","from")
    names(agency_nicknames)=c("to","from")
    customdt[[m]] <- rbind(acrons[[m]],govscitbl_mini)
@@ -87,6 +89,11 @@ for(m in 1:length(edges_and_nodes)){
          if(length(unique(str_remove(tos,"^United_States_|^US_|California_")))==1){
             keepto <- tos[str_detect(tos, "^United_States_|^US_|California_")]
             makefrom <- tos[!str_detect(tos, "^United_States_|^US_|California_")]
+            if(length(makefrom)==0){
+               #if one is "United_States" and the other is "US"
+               keepto <- keepto[1]
+               makefrom <- keepto[2]
+            }
          }
          else if(length(unique(nchar(tos)))==2){
             keepto <- tos[nchar(tos)!=max(nchar(tos))]
@@ -95,26 +102,30 @@ for(m in 1:length(edges_and_nodes)){
             keepto <- tos[1]
             makefrom <- tos[2]
          }
-         match_partial <- ifelse(F %in% customdt[[m]][
-            from %in% names(fromgroups)[k]]$match_partial_entity, F, T)
+         match_partial <- ifelse(F %in% customdt[[m]][from %in% names(fromgroups)[k]]$match_partial_entity, F, T)
          customdt[[m]] <- customdt[[m]][!(from %in% names(fromgroups)[k])] 
          
          
          customdt[[m]] <- rbind(customdt[[m]], list(keepto, names(fromgroups)[k], match_partial))
-         if(!makefrom %in% from){
+         if(!makefrom %in% customdt[[m]]$from){
             customdt[[m]] <- rbind(customdt[[m]], list(keepto, makefrom, match_partial))
          }
       }
       
    }
-   
+}
+for(m in 1:length(edges_and_nodes)){
    #should not drop "us" from custom list, or from nodelist/edgelist. however, if it doesn't match "us" on
    #drop "us" from the nodelist/edgelist and try again to match with the custom list
    try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
+   edgenodelist <- readRDS(edges_and_nodes[m])
    edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
                                     match_partial_entity=customdt[[m]]$match_partial_entity, edgenodelist, try_drop)
-   
- 
+   saveRDS(edgenodelist,paste0("cleaned_extracts/_",gspids[m]))
+}
+
+for(m in 1:length(edges_and_nodes)){
+   edgenodelist <- readRDS(paste0("cleaned_extracts/_",gspids[m]))
 ###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
@@ -126,14 +137,13 @@ for(m in 1:length(edges_and_nodes)){
    #}else
    # return(NA)
    #}
-###Section 4 Continued####   
-   
-   
    #nodelist$orglevel <- sapply(nodelist$entity_cat, orgtyp)
    #nodelist$type_subtype <- paste0(nodelist$entity_type, "_", nodelist$orglevel)
    #org type:
    #govscitbl_mini$State[grep(paste0("\b",strng,"\b"),govscitbl_mini$Abbr, useBytes = F)])
-   
+###Section 4 Continued####   
+   edgelist <- edgenodelist$edgelist
+   nodelist <- edgenodelist$nodelist
    #putting source and target first
    edgelist <- edgelist[,c(2:ncol(edgelist),1)]
    
