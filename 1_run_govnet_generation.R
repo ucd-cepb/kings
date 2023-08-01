@@ -60,3 +60,27 @@ generate_networks(ret_path, keep_hyph_together, phrases_to_concatenate,
                  nodeedge_filenames, parse_from_file,cl=4, 
                  keep_entities = c('ORG','GPE','PERSON'), overwrite)
 
+pctalphaineng <- vector(mode="numeric",length=length(gspids))
+pctlettersineng <- vector(mode="numeric",length=length(gspids))
+for(m in 1:length(gspids)){
+   parsed <- readRDS(paste0("data_output/parsed_",gspids[m]))
+   alphatokens <- parsed$token[str_detect(parsed$token, "[[:alpha:]]")]
+   lettertokens <- parsed$token[str_detect(parsed$token, "[a-zA-Z]")]
+   pctalphaineng[m] <- sum(alphatokens %in% eng_words)/length(alphatokens) 
+   pctlettersineng[m] <- sum(lettertokens %in% eng_words)/length(lettertokens) 
+   print(paste0("GSPID ",gspids[m]," has ",pctlettersineng[m] ," % of its letter-containing tokens in the English dictionary."))
+   print(paste0("GSPID ",gspids[m]," has ",pctalphaineng[m] ," % of its alpha-containing tokens in the English dictionary."))
+   
+}
+
+plot(gspids,pctalphaineng,type="l",col="red")
+lines(gspids,pctlettersineng,col="blue")
+#gspids5 ("0012"), 14 ("0021"), 34 ("0048"), 68 ("0089"), 103 ("0129"), and 108 ("0134")
+#identified as having a low percentage of letter-containing words in the 
+#English language.
+#Of these, only 68 ("0089") was below 50%.
+dif <- pctalphaineng - pctlettersineng
+plot(gspids,dif)
+#gspid29 ("0042") and gspid34 ("0048") are outliers,
+#but the diference is no more than 7%, so this was
+#considered acceptable tolerance.

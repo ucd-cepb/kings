@@ -2,21 +2,34 @@ library(network)
 library(tidyverse)
 library(sna)
 library(intergraph)
+library(network)
 
-gsp_text_with_meta <- readRDS("prepped_for_sna")
-gspids <- unique(gsp_text_with_meta$gsp_id)
+edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
+gspids <- substr(edges_and_nodes, 18,21)
+overwrite = T
 
-for(m in 1:length(gspids)){
-  
-  if(!file.exists(paste0("data_output/node_attr_",gspids[m]))){
-    agency_net <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
-    agency_net <- asNetwork(agency_net)
+gsps <- 1:length(gspids)
+for(m in gsps){
+   if(overwrite==T){
+      makefile <- T
+   }else{
+      makefile <- !file.exists(paste0("data_output/node_attr_",gspids[m]))
+   }
+   print(m)
+  if(makefile==T){
+    agency_ig <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
+    agency_df <- get.data.frame(agency_ig, what = "both")
+    agency_net <- network(x=agency_df$edges[,1:2], directed = T,
+                          hyper = F, loops = T, multiple = T, 
+                          bipartiate = F, vertices = agency_df$vertices,
+                          matrix.tye = "edgelist")
     closens <- sna::closeness(agency_net, gmode = "graph", cmode="undirected")
     between <- sna::betweenness(agency_net,gmode = "graph",cmode="undirected")
     deg <- sna::degree(agency_net, gmode = "graph", cmode = "undirected")
-    eigenvector <- sna::evcent(agency_net, gmode = "graph")
+    #eigenvector centrality not calculated because only meaningful for connected components
+    #eigenvector <- sna::evcent(agency_net, gmode = "graph",maxiter = 1e6)
     centr_df <- tibble(name = network::get.vertex.attribute(agency_net, "vertex.names"), 
-                       closens, between, deg, eigenvector, 
+                       closens, between, deg, #eigenvector, 
                        type = network::get.vertex.attribute(agency_net, "type"))
     saveRDS(centr_df, paste0("data_output/node_attr_",gspids[m]))
   }

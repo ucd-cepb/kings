@@ -2,14 +2,15 @@ library(network)
 library(sna)
 library(igraph)
 library(intergraph)
+
+edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
+gspids <- substr(edges_and_nodes, 18,21)
+
 #CHOOSE ONE
 type = "topic"
 type = "governance_dir_full"
 type = "governance_dir_weighted"
 
-gsp_text_with_meta <- readRDS("prepped_for_sna")
-gspids <- unique(gsp_text_with_meta$gsp_id)
-rm(gsp_text_with_meta)
 
 if(type=="governance_dir_full"){
    network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=32))
@@ -51,7 +52,11 @@ if(type=="governance_dir_full"){
 for(m in 1:length(gspids)){
    if(type=="governance_dir_full"){
       igr <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
-      net <- asNetwork(igr)
+      agency_df <- get.data.frame(igr, what = "both")
+      net <- network(x=agency_df$edges[,1:2], directed = T,
+                     hyper = F, loops = T, multiple = T, 
+                     bipartiate = F, vertices = agency_df$vertices,
+                     matrix.tye = "edgelist")
       edgelist <- get.data.frame(igr, what = "edges")
       nodelist <- get.data.frame(igr, what = "vertices")
       percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
@@ -99,7 +104,11 @@ for(m in 1:length(gspids)){
    if(type=="governance_dir_weighted"){
       
       igr <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
-      net <- asNetwork(igr)
+      agency_df <- get.data.frame(igr, what = "both")
+      net <- network(x=agency_df$edges[,1:2], directed = T,
+                            hyper = F, loops = T, multiple = T, 
+                            bipartiate = F, vertices = agency_df$vertices,
+                            matrix.tye = "edgelist")
       edgelist <- get.data.frame(igr, what = "edges")
       nodelist <- get.data.frame(igr, what = "vertices")
       percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
@@ -187,14 +196,27 @@ if(type=="governance_dir_weighted"){
 }
 
 network_properties <- sapply(network_properties, function(x) as.numeric(x))
-network_properties_summary_table <- network_properties[,c("num_nodes", "num_edges",
-                                                          "connectedness", "centralization", "transitivity",
-                                                          "num_communities", "modularity", 
-                                                          "percent_homophily", "reciprocity", 
-                                                          "percent_org_to_org",
-                                                          "percent_org","mean_out_ties","mean_in_ties",
-                                                          "percent_vbn", "percent_vbg","percent_vbp",
-                                                          "percent_vbd","percent_vb","percent_vbz")]
+if(type=="governance_dir_full"){
+   network_properties_summary_table <- network_properties[,c("num_nodes", "num_edges",
+                                                             "connectedness", "centralization", "transitivity",
+                                                             "num_communities", "modularity", 
+                                                             "percent_homophily", "reciprocity", 
+                                                             "percent_org_to_org",
+                                                             "percent_org","mean_out_ties","mean_in_ties",
+                                                             "percent_vbn", "percent_vbg","percent_vbp",
+                                                             "percent_vbd","percent_vb","percent_vbz")]
+   
+}else if(type=="governance_dir_weighted"){
+   network_properties_summary_table <- network_properties[,c("num_nodes", "num_edges",
+                                                             "connectedness", "centralization", "transitivity",
+                                                             "num_communities", "modularity", 
+                                                             "percent_homophily", "reciprocity", 
+                                                             "percent_org_to_org",
+                                                             "percent_org","mean_num_out_neighbors","mean_num_in_neighbors",
+                                                             "percent_vbn", "percent_vbg","percent_vbp",
+                                                             "percent_vbd","percent_vb","percent_vbz")]
+   
+}
 
 View(summary(network_properties_summary_table,digits=2))
 
@@ -217,11 +239,11 @@ verbtensepairs <- ggpairs(as.data.frame(network_properties_for_pairs[,(16:22)]))
 #summarypairs1 did not include column 7
 summarypairs2 <- ggpairs(as.data.frame(network_properties_for_pairs[,(c(1:5,7,16))]))+theme_bw()
 
-ggsave(paste0("verb_tense_and_degree.png"), plot = verbtensepairs, device = "png",
+ggsave(paste0("verb_tense_and_degree_",type,".png"), plot = verbtensepairs, device = "png",
        path = "figures", width = 4020, height = 3015, dpi = 300,
        units = "px", bg = "white")
 
-ggsave(paste0("summarypairs2.png"), plot = summarypairs2, device = "png",
+ggsave(paste0("summarypairs2",type,".png"), plot = summarypairs2, device = "png",
        path = "figures", width = 4020, height = 3015, dpi = 300,
        units = "px", bg = "white")
 

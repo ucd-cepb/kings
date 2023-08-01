@@ -5,6 +5,8 @@ library(sna)
 library(stringr)
 library(dplyr)
 library(data.table)
+library(pbapply)
+library(stringi)
 
 ###Section 1: Govscitbl####
 source('govscicleaning.R')
@@ -25,7 +27,7 @@ agency_tbl <- agency_tbl[!is.na(gsp_id),]
 #change hyphens and spaces to underscores, to match spacy parse formatting
 agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
    stringr::str_replace_all(w,"-|\\s","_"))
-
+#initialize empty dt
 agency_nicknames <- setDT(list("name"=rep(vector(mode="list",length(edges_and_nodes)*2)),
                                "nickname"=rep(NA_character_,length(edges_and_nodes)*2)))
 for(m in 1:length(edges_and_nodes)){
@@ -43,6 +45,16 @@ for(m in 1:length(edges_and_nodes)){
    }
    agency_nicknames[m*2-1, (colnames(agency_nicknames)):= list(agency_names, agency_abbr[1])]
    agency_nicknames[m*2, (colnames(agency_nicknames)):= list(agency_names, agency_abbr[2])]
+
+   if(m %in% c(38,39)){
+      #this one is manually adjusted because the website lists them separately but the
+      #GSP is actually combined
+      agency_nicknames[(m*2-1):(m*2)]$name <- c(
+         "City_of_Marysville_GSA","Cordua_Irrigation_District_GSA",
+         "Yuba_Water_Agency_GSA")
+      agency_nicknames[(m*2-1)]$nickname <- "Groundwater_Sustainability_Agencies"
+      agency_nicknames[(m*2)]$nickname <- "Agencies"
+   }
 }
 
 ###Section 3: Acronyms####
@@ -115,17 +127,18 @@ for(m in 1:length(edges_and_nodes)){
    }
 }
 for(m in 1:length(edges_and_nodes)){
+   print(m)
    #should not drop "us" from custom list, or from nodelist/edgelist. however, if it doesn't match "us" on
    #drop "us" from the nodelist/edgelist and try again to match with the custom list
    try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
    edgenodelist <- readRDS(edges_and_nodes[m])
    edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
                                     match_partial_entity=customdt[[m]]$match_partial_entity, edgenodelist, try_drop)
-   saveRDS(edgenodelist,paste0("cleaned_extracts/_",gspids[m]))
+   saveRDS(edgenodelist,paste0("cleaned_extracts/",gspids[m],".RDS"))
 }
 
 for(m in 1:length(edges_and_nodes)){
-   edgenodelist <- readRDS(paste0("cleaned_extracts/_",gspids[m]))
+   edgenodelist <- readRDS(paste0("cleaned_extracts/",gspids[m],".RDS"))
 ###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
@@ -144,8 +157,20 @@ for(m in 1:length(edges_and_nodes)){
 ###Section 4 Continued####   
    edgelist <- edgenodelist$edgelist
    nodelist <- edgenodelist$nodelist
+   #only using complete edges
+   edgelist <- edgelist %>% filter(!is.na(source) & !is.na(target))
+   #only using edges and nodes where each node has more than one a-z letter
+   edgelist$esletters <- str_remove_all(string = edgelist$source, pattern = "[^a-z_]")
+   edgelist$etletters <- str_remove_all(string = edgelist$target, pattern = "[^a-z_]")
+   nodelist$nletters <- str_remove_all(string = nodelist$entity_cat, pattern = "[^a-z_]")
+   
+   nodelist <- nodelist %>% filter(nchar(nletters)>1)
+   edgelist <- edgelist %>% filter(nchar(esletters)>1 & nchar(etletters)>1)
+   edgelist$esletters <- NULL
+   edgelist$etletters <- NULL
+   nodelist$nletters <- NULL
    #putting source and target first
-   edgelist <- edgelist[,c(2:ncol(edgelist),1)]
+   edgelist <- edgelist[,.SD,.SDcols=c(2:ncol(edgelist),1)]
    
    
 ###Section 5: Network Object Generation####
@@ -166,6 +191,16 @@ for(m in 1:length(edges_and_nodes)){
    weighted_graph <- igraph::delete_edge_attr(weighted_graph, "neg")
    weighted_graph <- igraph::delete_edge_attr(weighted_graph, "doc_sent_verb")
    weighted_graph <- igraph::delete_edge_attr(weighted_graph, "doc_sent_parent")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "helper_lemma")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "helper_token")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "xcomp_verb")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "xcomp_helper_lemma")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "xcomp_helper_token")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "edgeiscomplete")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "has_hedge")
+   weighted_graph <- igraph::delete_edge_attr(weighted_graph, "is_future")
+   
+   
    igraph::E(weighted_graph)$weight <- 1
    weighted_graph <- igraph::simplify(weighted_graph, edge.attr.comb=list(weight="sum"), remove.loops = F)
    

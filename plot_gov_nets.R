@@ -15,6 +15,7 @@ for(m in 1:length(edges_and_nodes)){
       geom_edge_fan(aes(alpha = weight),
                     end_cap = circle(1,"mm"),
                     color = "#333333",
+                    width = 0.2,
                     arrow = arrow(angle=15,length=unit(0.07,"inches"),ends = "last",type = "closed"))+
       #tol_high-contrast color scheme  
       scale_color_manual(values = c("#DDAA33","#004488","#BB5566"))+
