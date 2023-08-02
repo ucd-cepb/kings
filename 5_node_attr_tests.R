@@ -5,9 +5,9 @@ library(broom)
 library(AICcmodavg)
 library(Matrix)
 
-gsp_text_with_meta <- readRDS("prepped_for_sna")
-gspids <- unique(gsp_text_with_meta$gsp_id)
-rm(gsp_text_with_meta)
+edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
+gspids <- substr(edges_and_nodes, 18,21)
+
 
 #uses only a sample of three GSPs
 #gspids <- c("0124","0061","0047")

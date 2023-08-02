@@ -14,11 +14,13 @@ create_lang_meta <- function(run_repair = F){
    final_515_table$basin_name <-final_515_table$"Basin Name"
    final_515_table$ag_gw_af <-   final_515_table$"AG GW \r\nBasin\r\n(AF)"
    final_515_table$urb_gw_af <- final_515_table$"Urban GW Volume (AF)"
+   final_515_table$habitat <- final_515_table$"Habitat\r\nExist\r\n\r\n1 = Yes,\r\nBlank = No"
+   final_515_table$streamflow <- final_515_table$"Streamflow\r\nExist\r\n\r\n1 = Yes,\r\nBlank = No"
    final_515_table$priority <- final_515_table$"SGMA 2019 Basin Prioritization\r\n\r\nBasin\r\nPriority"
    final_515_table <- final_515_table %>% mutate(ag_gw_asfractof_tot_gw = ag_gw_af/
                                                     (ag_gw_af+urb_gw_af))
    final_515_table <- select(final_515_table, 
-                             c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority))
+                             c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority, habitat, streamflow))
 
    if(run_repair == T){
       gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_vars", full.names = T)[
