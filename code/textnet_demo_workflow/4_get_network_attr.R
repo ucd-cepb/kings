@@ -2,6 +2,7 @@ library(network)
 library(sna)
 library(igraph)
 library(intergraph)
+library(tidyverse)
 
 edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
@@ -10,6 +11,7 @@ gspids <- substr(edges_and_nodes, 18,21)
 type = "topic"
 type = "governance_dir_full"
 type = "governance_dir_weighted"
+type = "gov_dir_weight_no_gpes"
 
 
 if(type=="governance_dir_full"){
@@ -39,6 +41,18 @@ if(type=="governance_dir_full"){
                                   "median_num_out_neighbors","mean_num_out_neighbors",
                                   "median_num_in_neighbors","mean_num_in_neighbors",
                                   "mean_edge_weight")
+}else if(type=="gov_dir_weight_no_gpes"){
+   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=22))
+   names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
+                                  "connectedness", "centralization", "transitivity",
+                                  "num_communities", "modularity", 
+                                  "percent_homophily", "reciprocity", 
+                                  "percent_org_to_org","percent_org_to_person",
+                                  "percent_person_to_org","percent_person_to_person",
+                                  "percent_org","percent_persons",
+                                  "median_num_out_neighbors","mean_num_out_neighbors",
+                                  "median_num_in_neighbors","mean_num_in_neighbors",
+                                  "mean_edge_weight")
 }else{
    network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=10))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
@@ -55,7 +69,7 @@ for(m in 1:length(gspids)){
       net <- network(x=agency_df$edges[,1:2], directed = T,
                      hyper = F, loops = T, multiple = T, 
                      bipartiate = F, vertices = agency_df$vertices,
-                     matrix.tye = "edgelist")
+                     matrix.type = "edgelist")
       edgelist <- get.data.frame(igr, what = "edges")
       nodelist <- get.data.frame(igr, what = "vertices")
       percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
@@ -107,7 +121,7 @@ for(m in 1:length(gspids)){
       net <- network(x=agency_df$edges[,1:2], directed = T,
                             hyper = F, loops = T, multiple = F, 
                             bipartiate = F, vertices = agency_df$vertices,
-                            matrix.tye = "edgelist")
+                            matrix.type = "edgelist")
       edgelist <- get.data.frame(igr, what = "edges")
       nodelist <- get.data.frame(igr, what = "vertices")
       percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
@@ -146,7 +160,47 @@ for(m in 1:length(gspids)){
                                   
       )
    }
-   
+   if(type=="gov_dir_weight_no_gpes"){
+      
+      igr <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+      igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") %in% c("ORG","PERSON")])
+      agency_df <- get.data.frame(igr, what = "both")
+      net <- network(x=agency_df$edges[,1:2], directed = T,
+                     hyper = F, loops = T, multiple = F, 
+                     bipartiate = F, vertices = agency_df$vertices,
+                     matrix.type = "edgelist")
+      edgelist <- get.data.frame(igr, what = "edges")
+      nodelist <- get.data.frame(igr, what = "vertices")
+      percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
+      reciprocated <- reciprocity(igr, ignore.loops = T, mode = "default")
+      
+      set.seed(327856)
+      lc <- cluster_louvain(as.undirected(igr, mode = "collapse"))
+      mean_edge_weight <- mean(get.edge.attribute(igr, "weight"))
+      network_properties[m,] <- c(gspids[m], 
+                                  network::network.size(net), 
+                                  network::network.edgecount(net),
+                                  network::network.density(net),
+                                  sna::connectedness(net),
+                                  sna::centralization(net,sna::degree),
+                                  sna::gtrans(net, mode = "graph", use.adjacency=F),
+                                  length(unique(lc$membership)), 
+                                  modularity(igr,lc$membership,edgelist$weights),
+                                  percent_homophily,
+                                  reciprocated,
+                                  sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]=="ORG" & nodelist$entity_type[match(edgelist$to, nodelist$name)]=="ORG") / nrow(edgelist),
+                                  sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]=="ORG" & nodelist$entity_type[match(edgelist$to, nodelist$name)]=="PERSON") / nrow(edgelist),
+                                  sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]=="PERSON" & nodelist$entity_type[match(edgelist$to, nodelist$name)]=="ORG") / nrow(edgelist),
+                                  sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]=="PERSON" & nodelist$entity_type[match(edgelist$to, nodelist$name)]=="PERSON") / nrow(edgelist),
+                                  sum(nodelist$entity_type=="ORG")/nrow(nodelist),
+                                  sum(nodelist$entity_type=="PERSON")/nrow(nodelist),
+                                  #degree includes loops by default
+                                  median(igraph::degree(igr,mode="out")), mean(igraph::degree(igr,mode="out")),
+                                  median(igraph::degree(igr,mode="in")), mean(igraph::degree(igr,mode="in")),
+                                  mean_edge_weight
+                                  
+      )
+   }
    if(type=="topic"){
       net <- readRDS(paste0("data_output/topic_network_",gspids[m]))$posadj
       igr <- igraph::graph.adjacency(net, mode = "undirected",weighted=NULL,diag=F)
@@ -188,8 +242,13 @@ if(type=="governance_dir_weighted"){
    saveRDS(network_properties, "data_output/dir_weighted_network_properties")
    
 }
-
-network_properties <- network_properties[c(1:67,69:119),]
+if(type=="gov_dir_weight_no_gpes"){
+   
+   saveRDS(network_properties, "data_output/gov_dir_weight_no_gpe_network_properties")
+   
+}
+#not including the yuba duplicate and the improper pdf formatting
+network_properties <- network_properties[c(1:38,40:67,69:119),]
 
 network_properties <- sapply(network_properties, function(x) as.numeric(x))
 if(type=="governance_dir_full"){
@@ -201,6 +260,7 @@ if(type=="governance_dir_full"){
                                                              "percent_org","mean_out_ties","mean_in_ties",
                                                              "percent_vbn", "percent_vbg","percent_vbp",
                                                              "percent_vbd","percent_vb","percent_vbz")]
+   View(summary(network_properties_summary_table,digits=2))
    
 }else if(type=="governance_dir_weighted"){
    network_properties_summary_table <- network_properties[,c("num_nodes", "num_edges",
@@ -211,10 +271,11 @@ if(type=="governance_dir_full"){
                                                              "percent_org","mean_num_out_neighbors","mean_num_in_neighbors",
                                                              "mean_edge_weight")]
    
+   View(summary(network_properties_summary_table,digits=2))
+   
 }
 
 
-View(summary(network_properties_summary_table,digits=2))
 
 
 if(type == "governance_dir_full"){
@@ -227,6 +288,7 @@ if(type == "governance_dir_full"){
                                                          "mean_out_ties",
                                                          "percent_vbn", "percent_vbg","percent_vbp",
                                                          "percent_vbd","percent_vb","percent_vbz")]
+   View(summary(network_properties_summary_table,digits=2))
    
 }
 
@@ -254,7 +316,13 @@ gsp_mini <- gsp_mini[gsp_mini$gsp_id!="0089",]
 network_properties <- as_tibble(network_properties)
 net_with_gsa_attr <- cbind(gsp_mini, network_properties)
 
-net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,35,39)]
+if(type=="gov_dir_weight_no_gpes"){
+   net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,30,33)]
+}else{
+   net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,36,39)]
+   
+}
+
 
 net_with_gsa_attr$ynapproved <- ifelse(net_with_gsa_attr$approval %in% c("Inadequate","Incomplete"),"Y",
                                       ifelse(net_with_gsa_attr$approval == "Approved","N","Under_Review"))
@@ -262,17 +330,13 @@ net_with_gsa_attr$ynapproved <- factor(net_with_gsa_attr$ynapproved, ordered = T
 net_with_gsa_attr$priority <- factor(net_with_gsa_attr$priority,ordered=T, levels = c("High","Medium","Low","Very Low"))
 
 net_with_gsa_attr$mult_gsas <- as.logical(net_with_gsa_attr$mult_gsas)
-net_with_gsa_attr$num_nodes <- as.numeric(net_with_gsa_attr$num_nodes)
-net_with_gsa_attr$num_edges <- as.numeric(net_with_gsa_attr$num_edges)
-net_with_gsa_attr$density <- as.numeric(net_with_gsa_attr$density)
 net_with_gsa_attr$connectedness <- as.numeric(net_with_gsa_attr$connectedness)
 net_with_gsa_attr$centralization <- as.numeric(net_with_gsa_attr$centralization)
 net_with_gsa_attr$transitivity <- as.numeric(net_with_gsa_attr$transitivity)
-net_with_gsa_attr$num_communities <- as.numeric(net_with_gsa_attr$num_communities)
 net_with_gsa_attr$modularity <- as.numeric(net_with_gsa_attr$modularity)
 net_with_gsa_attr$percent_homophily <- as.numeric(net_with_gsa_attr$percent_homophily)
 net_with_gsa_attr$reciprocity <- as.numeric(net_with_gsa_attr$reciprocity)
-net_with_gsa_attr$mean_num_in_neighbors <- as.numeric(net_with_gsa_attr$mean_num_in_neighbors)
+net_with_gsa_attr$mean_num_out_neighbors <- as.numeric(net_with_gsa_attr$mean_num_out_neighbors)
 net_with_gsa_attr$mean_edge_weight <- as.numeric(net_with_gsa_attr$mean_edge_weight)
 net_with_gsa_attr$ynapproved <- as.numeric(net_with_gsa_attr$ynapproved)
 net_with_gsa_attr$percent_dac_by_pop <- as.numeric(net_with_gsa_attr$percent_dac_by_pop)
@@ -284,16 +348,17 @@ aprmodel <- lm(ynapproved ~ percent_dac_by_pop + percent_homophily +
 AIC(aprmodel)
 summary(aprmodel)
 #plans with high % dac are more likely to be approved
-#plans with high percent homophily are more likely to be approved
+#plans with high percent homophily are more likely to be approved (if gpes included)
 #plans with high ag gw are more likely to be approved
 
-net <- net_with_gsa_attr[,c(2:20)]
+net <- net_with_gsa_attr[,c(2:19)]
 ggpairs(net)
 
 cor.test(net$percent_dac_by_pop, net$connectedness)
 cor.test(net$percent_dac_by_pop, net$modularity)
-cor.test(net$percent_dac_by_pop, net$mean_num_in_neighbors)
+cor.test(net$percent_dac_by_pop, net$mean_num_out_neighbors)
 
+performance::check_model(lm(percent_dac_by_pop~mean_num_out_neighbors, data=net))
 
 #extremes of connection and centralization
 min_connect <- network_properties_df %>% 

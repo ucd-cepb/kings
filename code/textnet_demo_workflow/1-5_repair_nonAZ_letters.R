@@ -1,3 +1,7 @@
+#this was run to remove non a-z letters before running script 2_process_edgelists_nodelists
+#because the clean_entities function hadn't yet been updated. This is now redundant
+#with the textnet_extract() functionality
+
 edges_and_nodes <- list.files(path = "network_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
 
@@ -23,7 +27,7 @@ for(m in 1:length(gspids)){
                                                     edgelist$target))
    nodelist <- nodelist[nchar(nodelist$entity_cat)>0]
    verblist <- verblist[nchar(verblist$head_verb_lemma)>0]
-   #remove any incomplete edges that may have resulted from the disambiguation process
+   #remove any incomplete edges that may have resulted from the cleaning process
    edgelist$edgeiscomplete <- !is.na(edgelist$source) & !is.na(edgelist$target)
    edgelist[, `:=`(hascompleteedge, any(edgeiscomplete==T)), by = c("doc_sent_verb")]
    edgelist <- edgelist %>% filter((hascompleteedge==T & edgeiscomplete==T) | hascompleteedge==F)

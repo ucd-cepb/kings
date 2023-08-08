@@ -19,10 +19,10 @@ for(m in gsps){
   if(makefile==T){
     agency_ig <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
     agency_df <- get.data.frame(agency_ig, what = "both")
-    agency_net <- network(x=agency_df$edges[,1:2], directed = T,
+    agency_nets <- network(x=agency_df$edges[,1:2], directed = T,
                           hyper = F, loops = T, multiple = T, 
                           bipartiate = F, vertices = agency_df$vertices,
-                          matrix.tye = "edgelist")
+                          matrix.type = "edgelist")
     closens <- sna::closeness(agency_net, gmode = "graph", cmode="undirected")
     between <- sna::betweenness(agency_net,gmode = "graph",cmode="undirected")
     deg <- sna::degree(agency_net, gmode = "graph", cmode = "undirected")

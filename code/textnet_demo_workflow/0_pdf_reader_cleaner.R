@@ -14,7 +14,7 @@ names(pdftexts) <- pdfs
 saveRDS(pdftexts, "data_output/cleaned_pdfs")
 otherpdfs <- readRDS("data_output/cleaned_pdfs")
 
-pdf0089repair <- function(doc, export_paths){
+pdf0089repair <- function(doc){
    texts <- pdf_text(doc)
    #if too many chars, it probably is not an actual page of text but rather a map or figure
    for(i in 1:length(texts)){
@@ -28,6 +28,10 @@ pdf0089repair <- function(doc, export_paths){
    return(texts)
 }
 pdf89 <- "data_raw/gsp_num_id_0089_word_from_plaintext.pdf"
-saveRDS(pdf89,"data_output/cleaned_0089")
+#saved this file in a different place so it's available, but not what is 
+#currently used in the rest of the process, which is the original pdf.
+#GSP 0089 is not preserved anyway in the final statistics, but this file is
+#stored elsewhere so it doesn't get confused with the original version
+saveRDS(pdf0089repair(pdf89),"data_output/cleaned_plainrepair_0089")
 
 
