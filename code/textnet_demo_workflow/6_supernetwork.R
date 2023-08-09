@@ -6,8 +6,8 @@ library(data.table)
 edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
 
-#excluding the garbled PDF ("0089")
-graphs <- c(1:67,69:length(gspids))
+#excluding the garbled PDF ("0089") and the duplicate ("0053")
+graphs <- c(1:38, 40:67,69:length(gspids))
 
 supernodes <- vector(mode = "list", length = length(gspids)-1)
 superedges <- vector(mode = "list", length = length(gspids)-1)
@@ -23,6 +23,7 @@ for(m in graphs){
 superedgesdt <- rbindlist(superedges)
 supernodesdt <- rbindlist(supernodes)
 supernodesdt <- supernodesdt[order(-degr),]
+supernodesdt <- supernodesdt[,num_GSPs_in := .N, by="name"]
 supernodesdt <- supernodesdt[!duplicated(supernodesdt, by="name"),]
 
 supernetwork <- igraph::graph_from_data_frame(superedgesdt,

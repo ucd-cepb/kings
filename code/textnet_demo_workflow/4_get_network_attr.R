@@ -12,6 +12,7 @@ type = "topic"
 type = "governance_dir_full"
 type = "governance_dir_weighted"
 type = "gov_dir_weight_no_gpes"
+#Table 2 uses gov_dir_weight_no_gpes
 
 
 if(type=="governance_dir_full"){
@@ -250,7 +251,9 @@ if(type=="gov_dir_weight_no_gpes"){
 #not including the yuba duplicate and the improper pdf formatting
 network_properties <- network_properties[c(1:38,40:67,69:119),]
 
-network_properties <- sapply(network_properties, function(x) as.numeric(x))
+network_properties <- cbind("gsp_id" = network_properties$gsp_id, 
+                            sapply(network_properties[,2:ncol(network_properties)], function(x) as.numeric(x)))
+
 if(type=="governance_dir_full"){
    network_properties_summary_table <- network_properties[,c("num_nodes", "num_edges",
                                                              "connectedness", "centralization", "transitivity",
@@ -311,15 +314,15 @@ ggsave(paste0("summarypairs2",type,".png"), plot = summarypairs2, device = "png"
 
 gsp_meta <- readRDS("data_output/gsp_docs_w_meta")
 gsp_mini <- unique(gsp_meta[,c(14,16,19:26,7)])
-gsp_mini <- gsp_mini[gsp_mini$gsp_id!="0089",]
+gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
 #for meta
 network_properties <- as_tibble(network_properties)
-net_with_gsa_attr <- cbind(gsp_mini, network_properties)
+net_with_gsa_attr <- merge(gsp_mini, network_properties)
 
 if(type=="gov_dir_weight_no_gpes"){
-   net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,30,33)]
+   #net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,29,32)]
 }else{
-   net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,36,39)]
+   #net_with_gsa_attr <- net_with_gsa_attr[,c(1:10,16:18,20:22,36,39)]
    
 }
 
@@ -340,6 +343,17 @@ net_with_gsa_attr$mean_num_out_neighbors <- as.numeric(net_with_gsa_attr$mean_nu
 net_with_gsa_attr$mean_edge_weight <- as.numeric(net_with_gsa_attr$mean_edge_weight)
 net_with_gsa_attr$ynapproved <- as.numeric(net_with_gsa_attr$ynapproved)
 net_with_gsa_attr$percent_dac_by_pop <- as.numeric(net_with_gsa_attr$percent_dac_by_pop)
+
+
+library(htmlTable)
+library(vtable)
+sumtable(data = net_with_gsa_attr[,-c('gsp_id','id')],add.median = T,out = 'htmlreturn',file = 'figures/table2_sumstats.html',)
+sum_res <- summary(net_with_gsa_attr[,-c('gsp_id','id')])
+
+data.table(sum_res)
+
+
+
 #exploring whether gsa attributes are correlated with any network properties
 #does not appear so.
 aprmodel <- lm(ynapproved ~ percent_dac_by_pop + percent_homophily + 

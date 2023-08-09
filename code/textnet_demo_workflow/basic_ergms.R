@@ -1,14 +1,47 @@
 library(igraph)
 library(pbapply)
 library(statnet)
-flist <- list.files('data/directed_network_objects/networks_collapsed_to_weighted/',full.names = T)
+#box option
+#flist <- list.files('data/output_large_files/weighted_directed_graphs/',full.names = T)
+#local option
+#flist <- list.files("data_output",pattern="to_weighted_graph",full.names=T)
+super <- readRDS("data_output/supernetwork_weighted")
+super <- subgraph(super, V(super)[
+   vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
+superdf <- get.data.frame(super, what="both")
+supern <- network(x=superdf$edges[,1:2], directed = T,
+                  hyper = F, loops = T, multiple = F, 
+                  bipartiate = F, vertices = superdf$vertices,
+                  matrix.type = "edgelist")
+superergm <- ergm(nlist[[n]]~ edges + gwdegree(decay=1,fixed=T) +
+        gwesp(decay=1,fixed=T, cutoff=30) +
+        factor('entity_type',levels = 1:2) + 
+        nodecov('num_GSPs_in')+
+        #nodemix("entity_type",levels2=c(-1,-5,-9)),verbose = F),
+        nodemix("entity_type"),verbose = F)
+saveRDS(superergm, "data_output/superergm")
+
+flist <- flist[c(1:38,40:67,69:length(flist))]
 
 nlist <- pblapply(flist,function(x) {
-   g=readRDS(x);n <- intergraph::asNetwork(g);n})
+   g=readRDS(x)
+   g <- subgraph(g, V(g)[
+      vertex_attr(g,"entity_type") %in% c("ORG","PERSON")])
+   agency_df <- get.data.frame(g, what = "both")
+   n <- network(x=agency_df$edges[,1:2], directed = T,
+                  hyper = F, loops = T, multiple = F, 
+                  bipartiate = F, vertices = agency_df$vertices,
+                  matrix.type = "edgelist")
+   return(n)
+   
+   
+   })
 
 erg_list <- pblapply(seq_along(nlist), function(n) {#print(n);
-tryCatch(ergm(nlist[[n]]~ edges + 
-                # factor('entity_type',levels = 1:3) + 
+tryCatch(ergm(nlist[[n]]~ edges + gwdegree(decay=1,fixed=T) +
+                 gwesp(decay=1,fixed=T, cutoff=30) +
+                factor('entity_type',levels = 1:2) + 
+                #nodecov('num_GSPs_in')+
                #nodemix("entity_type",levels2=c(-1,-5,-9)),verbose = F),
          nodemix("entity_type"),verbose = F),
          error = function(e) NULL)},cl = 8)
@@ -17,6 +50,13 @@ coef_list <- lapply(seq_along(erg_list),function(x)
    tidy(erg_list[[x]],conf.level = 0.95,conf.int = T) %>% mutate(net = x))
 
 coef_dt <- rbindlist(coef_list,use.names = T)
+
+saveRDS(list("models"=erg_list, "coefs"=coef_dt),"data_output/ergm_lists")
+
+
+
+
+
 
 library(ggthemes)
 

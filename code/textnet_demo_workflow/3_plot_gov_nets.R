@@ -1,8 +1,12 @@
-edges_and_nodes <- list.files(path = "network_extracts", full.names = T)
+edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
 
+#only plots orgs and people
 for(m in 1:length(edges_and_nodes)){
    weighted_graph <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+   weighted_graph <- subgraph(weighted_graph, V(weighted_graph)[
+      vertex_attr(weighted_graph,"entity_type") %in% c("ORG","PERSON")])
+   
    #now remove loops so that isolates with a self-loop are not plotted
    weighted_graph_no_loops <- igraph::simplify(weighted_graph, remove.multiple = F, remove.loops = T)
    
@@ -26,7 +30,7 @@ for(m in 1:length(edges_and_nodes)){
       theme_void()
    
    
-   ggsave(paste0("directed_gov_net_toweighted_isoremoved_",gspids[m],".png"), plot = weighted_plot_noisolates, device = "png",
+   ggsave(paste0("directed_gov_net_toweighted_isoremoved_nogpe",gspids[m],".png"), plot = weighted_plot_noisolates, device = "png",
           path = "figures", width = 4020, height = 1890, dpi = 300,
           units = "px", bg = "white")
    

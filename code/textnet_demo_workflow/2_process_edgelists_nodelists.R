@@ -9,7 +9,7 @@ library(pbapply)
 library(stringi)
 
 ###Section 1: Govscitbl####
-source('code/textnet_demo_workflow/govscicleaning.R')
+source('code/textnet_demo_workflow/utils/govscicleaning.R')
 
 govscitbl$State <- clean_entities(govscitbl$State, remove_nums = T)
 govscitbl$Agency <- clean_entities(govscitbl$Agency, remove_nums = T)
