@@ -1,6 +1,7 @@
 library(igraph)
 library(pbapply)
 library(statnet)
+library(Rglpk)
 #box option
 #flist <- list.files('data/output_large_files/weighted_directed_graphs/',full.names = T)
 #local option
@@ -8,26 +9,45 @@ library(statnet)
 super <- readRDS("data_output/supernetwork_weighted")
 super <- subgraph(super, V(super)[
    vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
-superdf <- get.data.frame(super, what="both")
-supern <- network(x=superdf$edges[,1:2], directed = T,
-                  hyper = F, loops = T, multiple = F, 
-                  bipartiate = F, vertices = superdf$vertices,
+super <- igraph::simplify(super, remove.multiple = F, remove.loops = T)
+
+super <- get.data.frame(super, what="both")
+super <- network(x=super$edges[,1:2], directed = T,
+                  hyper = F, loops = F, multiple = F, 
+                  bipartiate = F, vertices = super$vertices,
                   matrix.type = "edgelist")
-superergm <- ergm(nlist[[n]]~ edges + gwdegree(decay=1,fixed=T) +
+set.seed(80)
+superergm <- ergm(super~ edges + #gwdegree(decay=1,fixed=T) +
         gwesp(decay=1,fixed=T, cutoff=30) +
-        factor('entity_type',levels = 1:2) + 
+        #nodefactor('entity_type',levels = 1:2) + 
         nodecov('num_GSPs_in')+
         #nodemix("entity_type",levels2=c(-1,-5,-9)),verbose = F),
         nodemix("entity_type"),verbose = F)
 saveRDS(superergm, "data_output/superergm")
 
+
+
+
+
+
+
+
+
 flist <- flist[c(1:38,40:67,69:length(flist))]
 
+super <- readRDS("data_output/supernetwork_weighted")
+super <- subgraph(super, V(super)[
+   vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
+super <- get.data.frame(super, what="vertices")
+super <- super[,c("name","num_GSPs_in")]
+
 nlist <- pblapply(flist,function(x) {
+   
    g=readRDS(x)
    g <- subgraph(g, V(g)[
       vertex_attr(g,"entity_type") %in% c("ORG","PERSON")])
    agency_df <- get.data.frame(g, what = "both")
+   agency_df$vertices <- left_join(agency_df$vertices, super)
    n <- network(x=agency_df$edges[,1:2], directed = T,
                   hyper = F, loops = T, multiple = F, 
                   bipartiate = F, vertices = agency_df$vertices,
@@ -38,11 +58,9 @@ nlist <- pblapply(flist,function(x) {
    })
 
 erg_list <- pblapply(seq_along(nlist), function(n) {#print(n);
-tryCatch(ergm(nlist[[n]]~ edges + gwdegree(decay=1,fixed=T) +
+tryCatch(ergm(nlist[[n]]~ edges + gwidegree(decay=0.25,fixed=T) +
                  gwesp(decay=1,fixed=T, cutoff=30) +
-                factor('entity_type',levels = 1:2) + 
-                #nodecov('num_GSPs_in')+
-               #nodemix("entity_type",levels2=c(-1,-5,-9)),verbose = F),
+                nodecov('num_GSPs_in')+
          nodemix("entity_type"),verbose = F),
          error = function(e) NULL)},cl = 8)
 
