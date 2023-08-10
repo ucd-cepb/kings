@@ -2,6 +2,8 @@ library(igraph)
 library(pbapply)
 library(statnet)
 library(Rglpk)
+library(broom)
+library(data.table)
 #box option
 #flist <- list.files('data/output_large_files/weighted_directed_graphs/',full.names = T)
 #local option
@@ -46,10 +48,12 @@ nlist <- pblapply(flist,function(x) {
    g=readRDS(x)
    g <- subgraph(g, V(g)[
       vertex_attr(g,"entity_type") %in% c("ORG","PERSON")])
+   g<- igraph::simplify(g, remove.multiple = F, remove.loops = T)
+   
    agency_df <- get.data.frame(g, what = "both")
    agency_df$vertices <- left_join(agency_df$vertices, super)
    n <- network(x=agency_df$edges[,1:2], directed = T,
-                  hyper = F, loops = T, multiple = F, 
+                  hyper = F, loops = F, multiple = F, 
                   bipartiate = F, vertices = agency_df$vertices,
                   matrix.type = "edgelist")
    return(n)
@@ -57,19 +61,25 @@ nlist <- pblapply(flist,function(x) {
    
    })
 
-erg_list <- pblapply(seq_along(nlist), function(n) {#print(n);
+m1_erg_list <- pblapply(seq_along(nlist), function(n) {
+   print(n)
 tryCatch(ergm(nlist[[n]]~ edges + gwidegree(decay=0.25,fixed=T) +
-                 gwesp(decay=1,fixed=T, cutoff=30) +
-                nodecov('num_GSPs_in')+
-         nodemix("entity_type"),verbose = F),
+                 gwesp(decay = 0.25, fixed=T, cutoff=30) +
+                #nodecov('num_GSPs_in')+
+         nodemix("entity_type"),verbose = F,
+         eval.loglik = F,
+         constraints = ~edges,
+         control = control.ergm(seed=1,MCMC.samplesize=2048,
+                                MCMC.interval=4096,
+                                MCMLE.density.guard = exp(4))),
          error = function(e) NULL)},cl = 8)
 
-coef_list <- lapply(seq_along(erg_list),function(x) 
-   tidy(erg_list[[x]],conf.level = 0.95,conf.int = T) %>% mutate(net = x))
+coef_list <- lapply(seq_along(m1_erg_list),function(x) 
+   tidy(m1_erg_list[[x]],conf.level = 0.95,conf.int = T) %>% mutate(net = x))
 
 coef_dt <- rbindlist(coef_list,use.names = T)
 
-saveRDS(list("models"=erg_list, "coefs"=coef_dt),"data_output/ergm_lists")
+saveRDS(list("models"=m1_erg_list, "coefs"=coef_dt),"data_output/m1_ergm_lists")
 
 
 
