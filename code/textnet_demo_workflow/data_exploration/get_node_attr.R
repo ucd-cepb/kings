@@ -40,7 +40,11 @@ for(m in gsps){
     #eigenvector centrality not calculated because only meaningful for connected components
     #eigenvector <- sna::evcent(agency_net, gmode = "graph",maxiter = 1e6)
     centr_df <- tibble(name = network::get.vertex.attribute(agency_net, "vertex.names"), 
-                       closens, between, deg, #eigenvector, 
+                       closens, 
+                       between, 
+                       deg,
+                       num_GSPs_in = network::get.vertex.attribute(agency_net, "num_GSPs_in"),
+                       #eigenvector, 
                        type = network::get.vertex.attribute(agency_net, "type"))
     saveRDS(centr_df, paste0("data_output/node_attr_",gspids[m]))
   }
