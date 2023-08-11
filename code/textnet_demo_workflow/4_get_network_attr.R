@@ -11,8 +11,17 @@ gspids <- substr(edges_and_nodes, 18,21)
 type = "topic"
 type = "governance_dir_full"
 type = "governance_dir_weighted"
+type = "people"
+type = "orgs"
 type = "gov_dir_weight_no_gpes"
 #Table 2 uses gov_dir_weight_no_gpes
+
+
+super <- readRDS("data_output/supernetwork_weighted")
+super <- subgraph(super, V(super)[
+   vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
+super <- get.data.frame(super, what="vertices")
+super <- super[,c("name","num_GSPs_in")]
 
 
 if(type=="governance_dir_full"){
@@ -29,7 +38,8 @@ if(type=="governance_dir_full"){
                                   "median_in_ties","mean_in_ties",
                                   "percent_vbn", "percent_vbg","percent_vbp",
                                   "percent_vbd","percent_vb","percent_vbz")
-}else if(type=="governance_dir_weighted"){
+}
+if(type=="governance_dir_weighted"){
    network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=28))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
                                   "connectedness", "centralization", "transitivity",
@@ -42,7 +52,8 @@ if(type=="governance_dir_full"){
                                   "median_num_out_neighbors","mean_num_out_neighbors",
                                   "median_num_in_neighbors","mean_num_in_neighbors",
                                   "mean_edge_weight")
-}else if(type=="gov_dir_weight_no_gpes"){
+}
+if(type=="gov_dir_weight_no_gpes"){
    network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=22))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
                                   "connectedness", "centralization", "transitivity",
@@ -54,7 +65,28 @@ if(type=="governance_dir_full"){
                                   "median_num_out_neighbors","mean_num_out_neighbors",
                                   "median_num_in_neighbors","mean_num_in_neighbors",
                                   "mean_edge_weight")
-}else{
+}
+if(type=="people"){
+   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=17))
+   names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
+                                  "connectedness", "centralization", "transitivity",
+                                  "num_communities", "modularity", 
+                                  "percent_homophily", "reciprocity", 
+                                  "median_num_out_neighbors","mean_num_out_neighbors",
+                                  "median_num_in_neighbors","mean_num_in_neighbors",
+                                  "mean_edge_weight","num_GSPs_in")
+}
+if(type=="orgs"){
+   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=17))
+   names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
+                                  "connectedness", "centralization", "transitivity",
+                                  "num_communities", "modularity", 
+                                  "percent_homophily", "reciprocity",
+                                  "median_num_out_neighbors","mean_num_out_neighbors",
+                                  "median_num_in_neighbors","mean_num_in_neighbors",
+                                  "mean_edge_weight","num_GSPs_in")
+}
+if(type=="topic"){
    network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=10))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
                                   "connectedness", "centralization", "transitivity",
@@ -202,6 +234,45 @@ for(m in 1:length(gspids)){
                                   
       )
    }
+   if(type %in% c("orgs","people")){
+      igr <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+      if(type=="orgs"){
+         igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") == "ORG"])
+      }else{
+         igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") == "PERSON"])
+      }
+      agency_df <- get.data.frame(igr, what = "both")
+      agency_df$vertices <- left_join(agency_df$vertices, super)
+      net <- network(x=agency_df$edges[,1:2], directed = T,
+                     hyper = F, loops = T, multiple = F, 
+                     bipartiate = F, vertices = agency_df$vertices,
+                     matrix.type = "edgelist")
+      edgelist <- get.data.frame(igr, what = "edges")
+      nodelist <- get.data.frame(igr, what = "vertices")
+      percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
+      reciprocated <- reciprocity(igr, ignore.loops = T, mode = "default")
+      
+      set.seed(327856)
+      lc <- cluster_louvain(as.undirected(igr, mode = "collapse"))
+      mean_edge_weight <- mean(get.edge.attribute(igr, "weight"))
+      network_properties[m,] <- c(gspids[m], 
+                                  network::network.size(net), 
+                                  network::network.edgecount(net),
+                                  network::network.density(net),
+                                  sna::connectedness(net),
+                                  sna::centralization(net,sna::degree),
+                                  sna::gtrans(net, mode = "graph", use.adjacency=F),
+                                  length(unique(lc$membership)), 
+                                  modularity(igr,lc$membership,edgelist$weights),
+                                  percent_homophily,
+                                  reciprocated,
+                                  #degree includes loops by default
+                                  median(igraph::degree(igr,mode="out")), mean(igraph::degree(igr,mode="out")),
+                                  median(igraph::degree(igr,mode="in")), mean(igraph::degree(igr,mode="in")),
+                                  mean_edge_weight, num_GSPs_in
+                                  
+      )
+   }
    if(type=="topic"){
       net <- readRDS(paste0("data_output/topic_network_",gspids[m]))$posadj
       igr <- igraph::graph.adjacency(net, mode = "undirected",weighted=NULL,diag=F)
@@ -247,6 +318,12 @@ if(type=="gov_dir_weight_no_gpes"){
    
    saveRDS(network_properties, "data_output/gov_dir_weight_no_gpe_network_properties")
    
+}
+if(type=="orgs"){
+   saveRDS(network_properties, "data_output/gov_dir_weight_orgs_properties")
+}
+if(type=="people"){
+   saveRDS(network_properties, "data_output/gov_dir_weight_people_properties")
 }
 #not including the yuba duplicate and the improper pdf formatting
 network_properties <- network_properties[c(1:38,40:67,69:119),]
