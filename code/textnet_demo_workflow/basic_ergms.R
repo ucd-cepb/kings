@@ -26,12 +26,13 @@ supersimpl <- network(x=supersimpl$edges[,1:2], directed = T,
                   bipartiate = F, vertices = supersimpl$vertices,
                   matrix.type = "edgelist")
 
-flist <- flist[c(1:38,40:67,69:length(flist))]
+flist <- flist[c(1:38,40:67,69:119)]
 
 super <- get.data.frame(super, what="vertices")
 super <- super[,c("name","num_GSPs_in")]
 
 nlist <- pblapply(flist,function(x) {
+   print(x)
    g=readRDS(x)
    g <- subgraph(g, V(g)[
       vertex_attr(g,"entity_type") %in% c("ORG","PERSON")])
@@ -55,11 +56,10 @@ summs <- pblapply(seq_along(nlist), function(n) {
 })
 summsbind <- rbindlist(summs)
 
+gspids[which(summsbind$mix.entity_type.PERSON.PERSON==0)]
+
 bergm_function <- function(model){
-   M.prior <- c(0, 0, 0, 0, 0, 0, 0)
-   
-   S.prior <- diag(10,7) # matrix for sigma values 
-   
+
    #sometimes bergm will thrown an error that says it has unused arguments, if that is the case need to restart R
    bergm.post <- Bergm::bergm(model,
                        prior.mean = M.prior,
@@ -76,11 +76,17 @@ bergm_function <- function(model){
 for(n in 1:length(nlist)){
    print(n)
    # Model ----
-   m <- nlist[[n]] ~ edges + 
+   
+   M.prior <- c(0, 0, 0, 0, 0)
+      
+   S.prior <- diag(10,5) # matrix for sigma values 
+      
+      
+    m <- nlist[[n]] ~ edges + 
       isolates +
       gwidegree(decay=0.25, fixed = T) + 
       gwesp(decay=0.15, fixed = T,cutoff=30) + 
-      nodemix("entity_type")
+      nodefactor("entity_type")
    
    m <- bergm_function(m)
    
@@ -110,43 +116,31 @@ saveRDS(superergm, "data_output/superergm")
 
 #is not updated after this point:####
 
+m1_erg_list <- lapply(1:length(gspids), function(n) readRDS(
+   paste0("data_output/bergm_",gspids[[n]])))
 
+saveRDS(m1_erg_list,"data_output/m1_bergm_lists")
 
-
-m1_erg_list <- pblapply(seq_along(nlist), function(n) {
-   print(n)
-tryCatch(ergm(nlist[[n]]~ edges + gwidegree(decay=0.25,fixed=T) +
-                 gwesp(decay = 0.25, fixed=T, cutoff=30) +
-                #nodecov('num_GSPs_in')+
-         nodemix("entity_type"),verbose = F,
-         eval.loglik = F,
-         constraints = ~edges,
-         control = control.ergm(seed=1,MCMC.samplesize=2048,
-                                MCMC.interval=4096,
-                                MCMLE.density.guard = exp(4))),
-         error = function(e) NULL)},cl = 8)
-
-coef_list <- lapply(seq_along(m1_erg_list),function(x) 
-   tidy(m1_erg_list[[x]],conf.level = 0.95,conf.int = T) %>% mutate(net = x))
-
-coef_dt <- rbindlist(coef_list,use.names = T)
-
-saveRDS(list("models"=m1_erg_list, "coefs"=coef_dt),"data_output/m1_ergm_lists")
-
-
-
-
-
+coef_dt <- rbindlist(lapply(1:length(m1_erg_list),
+                     function(n) as.data.table(t(colMeans(m1_erg_list[[n]]$Theta)))))
+colnames(coef_dt) <- c("edges","isolates","gwidegree","gwesp","person")
 
 library(ggthemes)
-
-mix_dt<-coef_dt[grepl('mix',term),]
-mix_dt$term <- str_remove_all(mix_dt$term,'mix\\.entity_type\\.')
-mix_dt$term <- str_replace_all(mix_dt$term,"\\.",'-')
-mixcomp <- dcast(mix_dt,net ~ term, value.var = 'estimate')
-
-
+library(statnet)
 library(GGally)
+
+boxplot(coef_dt)
+
+
+
+
+
+
+
+
+
+
+
 
 intercept_pairs <- ggpairs(factcomp[,-c('net')],
        # columnLabels = c("Miles","Displacement","Horsepower",
