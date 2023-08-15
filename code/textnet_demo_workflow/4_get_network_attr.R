@@ -18,8 +18,6 @@ type = "gov_dir_weight_no_gpes"
 
 
 super <- readRDS("data_output/supernetwork_weighted")
-super <- subgraph(super, V(super)[
-   vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
 super <- get.data.frame(super, what="vertices")
 super <- super[,c("name","num_GSPs_in")]
 
@@ -67,24 +65,24 @@ if(type=="gov_dir_weight_no_gpes"){
                                   "mean_edge_weight")
 }
 if(type=="people"){
-   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=17))
+   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=16))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
                                   "connectedness", "centralization", "transitivity",
                                   "num_communities", "modularity", 
                                   "percent_homophily", "reciprocity", 
                                   "median_num_out_neighbors","mean_num_out_neighbors",
                                   "median_num_in_neighbors","mean_num_in_neighbors",
-                                  "mean_edge_weight","num_GSPs_in")
+                                  "mean_edge_weight")
 }
 if(type=="orgs"){
-   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=17))
+   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=16))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
                                   "connectedness", "centralization", "transitivity",
                                   "num_communities", "modularity", 
                                   "percent_homophily", "reciprocity",
                                   "median_num_out_neighbors","mean_num_out_neighbors",
                                   "median_num_in_neighbors","mean_num_in_neighbors",
-                                  "mean_edge_weight","num_GSPs_in")
+                                  "mean_edge_weight")
 }
 if(type=="topic"){
    network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=10))
@@ -243,35 +241,46 @@ for(m in 1:length(gspids)){
       }
       agency_df <- get.data.frame(igr, what = "both")
       agency_df$vertices <- left_join(agency_df$vertices, super)
-      net <- network(x=agency_df$edges[,1:2], directed = T,
-                     hyper = F, loops = T, multiple = F, 
-                     bipartiate = F, vertices = agency_df$vertices,
-                     matrix.type = "edgelist")
-      edgelist <- get.data.frame(igr, what = "edges")
-      nodelist <- get.data.frame(igr, what = "vertices")
-      percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
-      reciprocated <- reciprocity(igr, ignore.loops = T, mode = "default")
-      
-      set.seed(327856)
-      lc <- cluster_louvain(as.undirected(igr, mode = "collapse"))
-      mean_edge_weight <- mean(get.edge.attribute(igr, "weight"))
-      network_properties[m,] <- c(gspids[m], 
-                                  network::network.size(net), 
-                                  network::network.edgecount(net),
-                                  network::network.density(net),
-                                  sna::connectedness(net),
-                                  sna::centralization(net,sna::degree),
-                                  sna::gtrans(net, mode = "graph", use.adjacency=F),
-                                  length(unique(lc$membership)), 
-                                  modularity(igr,lc$membership,edgelist$weights),
-                                  percent_homophily,
-                                  reciprocated,
-                                  #degree includes loops by default
-                                  median(igraph::degree(igr,mode="out")), mean(igraph::degree(igr,mode="out")),
-                                  median(igraph::degree(igr,mode="in")), mean(igraph::degree(igr,mode="in")),
-                                  mean_edge_weight, num_GSPs_in
-                                  
-      )
+      if(nrow(agency_df$edges)>0){
+         net <- network(x=agency_df$edges[,1:2], directed = T,
+                        hyper = F, loops = T, multiple = F, 
+                        bipartiate = F, vertices = agency_df$vertices,
+                        matrix.type = "edgelist")
+         edgelist <- get.data.frame(igr, what = "edges")
+         nodelist <- get.data.frame(igr, what = "vertices")
+         percent_homophily <- sum(nodelist$entity_type[match(edgelist$from, nodelist$name)]==nodelist$entity_type[match(edgelist$to, nodelist$name)]) / nrow(edgelist)
+         reciprocated <- reciprocity(igr, ignore.loops = T, mode = "default")
+         
+         set.seed(327856)
+         lc <- cluster_louvain(as.undirected(igr, mode = "collapse"))
+         mean_edge_weight <- mean(igraph::get.edge.attribute(igr, "weight"))
+         network_properties[m,] <- c(gspids[m], 
+                                     network::network.size(net), 
+                                     network::network.edgecount(net),
+                                     network::network.density(net),
+                                     sna::connectedness(net),
+                                     sna::centralization(net,sna::degree),
+                                     sna::gtrans(net, mode = "graph", use.adjacency=F),
+                                     length(unique(lc$membership)), 
+                                     modularity(igr,lc$membership,edgelist$weights),
+                                     percent_homophily,
+                                     reciprocated,
+                                     #degree includes loops by default
+                                     median(igraph::degree(igr,mode="out")), mean(igraph::degree(igr,mode="out")),
+                                     median(igraph::degree(igr,mode="in")), mean(igraph::degree(igr,mode="in")),
+                                     mean_edge_weight)
+                                     
+      }else{
+         network_properties[m,] <- c(gspids[m],
+                                     nrow(agency_df$vertices),
+                                     nrow(agency_df$edges), 
+                                     0,
+                                     0,
+                                     NA,
+                                     NA,
+                                     nrow(agency_df$vertices),
+                                     rep(NA, 8))
+      }
    }
    if(type=="topic"){
       net <- readRDS(paste0("data_output/topic_network_",gspids[m]))$posadj
