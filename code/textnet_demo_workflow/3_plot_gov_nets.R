@@ -1,3 +1,5 @@
+library(ggraph)
+
 edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
 
@@ -18,11 +20,11 @@ for(m in 1:length(edges_and_nodes)){
       #ggraph::scale_edge_colour_gradient(high = viridis::cividis(5)[1], low = viridis::cividis(5)[4])+
       geom_edge_fan(aes(alpha = weight),
                     end_cap = circle(1,"mm"),
-                    color = "#333333",
-                    width = 0.2,
+                    color = "#000000",
+                    width = 0.3,
                     arrow = arrow(angle=15,length=unit(0.07,"inches"),ends = "last",type = "closed"))+
-      #tol_high-contrast color scheme  
-      scale_color_manual(values = c("#DDAA33","#004488","#BB5566"))+
+      #tol_high-contrast color scheme  "#DDAA33" is the GPE color
+      scale_color_manual(values = c("#004488","#BB5566"))+
       geom_node_point(aes(color = entity_type), size = 1,
                       alpha = 0.8)+
       #geom_node_text(aes(label = labels),
