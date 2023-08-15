@@ -13,7 +13,7 @@ gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
 network_stats <- network_stats[!network_stats$gsp_id %in% c("0089","0053"),]
 #for meta
 network_stats <- as_tibble(network_stats)
-comp <- merge(gsp_mini, network_properties)
+comp <- merge(gsp_mini, network_stats)
 comp$num_nodes <- as.numeric(comp$num_nodes)
 comp$num_edges <- as.numeric(comp$num_edges)
 comp$reciprocity <- as.numeric(comp$reciprocity)
@@ -63,7 +63,19 @@ g6 <- base2 +
    geom_point(aes(y = transitivity),pch = 21,alpha = 0.5) + 
    scale_y_continuous('transitivity score') + 
    ggtitle('transitivity')
+g7 <- base2 + 
+   geom_point(aes(y = modularity),pch = 21,alpha = 0.5) + 
+   scale_y_continuous('modularity score') + 
+   ggtitle('modularity')
+g8 <- base2 + 
+   geom_point(aes(y = reciprocity),pch = 21,alpha = 0.5) + 
+   scale_y_continuous('reciprocity score') + 
+   ggtitle('reciprocity')
+g9 <- base2 + 
+   geom_point(aes(y = connectedness),pch = 21,alpha = 0.5) + 
+   scale_y_continuous('connectedness score') + 
+   ggtitle('connectedness')
 
-grom2 <- (grid.arrange(g5,g6,ncol = 2))
-ggsave(grom2,file = 'figures/central_trans_vs_pages.png',dpi = 450,units = 'in',height = 3.5,width = 7)
+grom2 <- (grid.arrange(g5,g6, g7, g8, g9,ncol = 2))
+ggsave(grom2,file = 'figures/net_stats_vs_pages.png',dpi = 450,units = 'in',height = 9,width = 7)
 
