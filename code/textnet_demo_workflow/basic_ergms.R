@@ -94,6 +94,7 @@ for(n in 1:length(nlist)){
    
 }
 
+#vector memory issues
 set.seed(80)
 superergm <- Bergm::bergm(supersimpl~ edges + isolates +
                              gwidegree(decay=0.25, fixed = T) + 
@@ -113,11 +114,10 @@ saveRDS(superergm, "data_output/superergm")
 
 
 
+used_gspids <- gspids[!gspids %in% c("0053","0089")]
 
-#is not updated after this point:####
-
-m1_erg_list <- lapply(1:length(gspids), function(n) readRDS(
-   paste0("data_output/bergm_",gspids[[n]])))
+m1_erg_list <- lapply(1:length(used_gspids), function(n) readRDS(
+   paste0("data_output/bergm_",used_gspids[[n]])))
 
 saveRDS(m1_erg_list,"data_output/m1_bergm_lists")
 
@@ -129,17 +129,52 @@ library(ggthemes)
 library(statnet)
 library(GGally)
 
-boxplot(coef_dt)
+boxplot(coef_dt[,c("gwidegree","gwesp","person")])
+
+library(coda)
+
+#adapted from summary.bergm
+Theta <- vector(mode="list",length=length(used_gspids))
+Theta <- lapply(1:length(m1_erg_list), function(i) as.mcmc(m1_erg_list[[i]]$Theta))
+quantiles <- c(0.025, 0.25, 0.5, 0.75, 0.975)
+varquant <- lapply(1:length(Theta), function(i) as.data.table(cbind(t(apply(Theta[[i]], 2, quantile, quantiles)),
+                                                            c("edges","isolates","gwidegree","gwesp","person")),
+                                                    ))
+
+vq <- rbindlist(varquant)
+
+coef_dt$edgesLow <- as.numeric(vq$`2.5%`[vq$V6=="edges"])
+coef_dt$edgesHi <- as.numeric(vq$`97.5%`[vq$V6=="edges"])
+coef_dt$isolatesLow <- as.numeric(vq$`2.5%`[vq$V6=="isolates"])
+coef_dt$isolatesHi <- as.numeric(vq$`97.5%`[vq$V6=="isolates"])
+coef_dt$gwidegreeLow <- as.numeric(vq$`2.5%`[vq$V6=="gwidegree"])
+coef_dt$gwidegreeHi <- as.numeric(vq$`97.5%`[vq$V6=="gwidegree"])
+coef_dt$gwespLow <- as.numeric(vq$`2.5%`[vq$V6=="gwesp"])
+coef_dt$gwespHi <- as.numeric(vq$`97.5%`[vq$V6=="gwesp"])
+coef_dt$personLow <- as.numeric(vq$`2.5%`[vq$V6=="person"])
+coef_dt$personHi <- as.numeric(vq$`97.5%`[vq$V6=="person"])
+
+network_properties <- readRDS("data_output/gov_dir_weight_no_gpe_network_properties")
+network_properties <- network_properties[!gspids %in% c("0053","0089"),]
+
+coef_dt$num_nodes <- as.numeric(network_properties$num_nodes)
+#gwesp
+ggplot(coef_dt, aes(num_nodes, gwesp)) +
+   geom_point() +
+   geom_errorbar(aes(ymin = gwespLow, ymax = gwespHi))
+
+#gwdegree
+ggplot(coef_dt, aes(num_nodes, gwidegree)) +
+   geom_point() +
+   geom_errorbar(aes(ymin = gwidegreeLow, ymax = gwidegreeHi))
+
+#re: this, I'm thinking something like 2 panels, 
+#side by side, each panel orders x-axis by network size (# of nodes) (or whatever)
+#, y axis is parameter estimate, but each estimate is plotted as a vertical bar, 
+#bar is interval. one panel for gwidegree, one panel for gwesp
 
 
-
-
-
-
-
-
-
-
+#not updated after this point
 
 
 intercept_pairs <- ggpairs(factcomp[,-c('net')],
