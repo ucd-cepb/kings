@@ -337,8 +337,8 @@ if(type=="people"){
 #not including the yuba duplicate and the improper pdf formatting
 network_properties <- network_properties[c(1:38,40:67,69:119),]
 
-network_properties <- cbind("gsp_id" = network_properties$gsp_id, 
-                            sapply(network_properties[,2:ncol(network_properties)], function(x) as.numeric(x)))
+#network_properties <- cbind("gsp_id" = network_properties$gsp_id, 
+#                            sapply(network_properties[,2:ncol(network_properties)], function(x) as.numeric(x)))
 
 if(type=="governance_dir_full"){
    network_properties_summary_table <- network_properties[,c("num_nodes", "num_edges",

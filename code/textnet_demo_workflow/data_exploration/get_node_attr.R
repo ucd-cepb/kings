@@ -3,7 +3,7 @@ library(tidyverse)
 library(sna)
 library(intergraph)
 library(DirectedClustering)
-library(ggpairs)
+library(GGally)
 
 #removes loops for node attr calculations
 

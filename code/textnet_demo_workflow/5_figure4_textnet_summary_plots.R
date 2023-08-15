@@ -76,6 +76,6 @@ g9 <- base2 +
    scale_y_continuous('connectedness score') + 
    ggtitle('connectedness')
 
-grom2 <- (grid.arrange(g5,g6, g7, g8, g9,ncol = 2))
-ggsave(grom2,file = 'figures/net_stats_vs_pages.png',dpi = 450,units = 'in',height = 9,width = 7)
+grom2 <- (grid.arrange(g7, g9,ncol = 2))
+ggsave(grom2,file = 'figures/net_stats_vs_pages.png',dpi = 450,units = 'in',height = 3.5,width = 7)
 
