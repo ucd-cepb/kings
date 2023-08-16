@@ -1,9 +1,8 @@
 library(dplyr)
-gsp_text_with_meta <- readRDS("prepped_for_sna")
-gsp_planonly <- gsp_text_with_meta[is_comment==FALSE & is_reference==FALSE]
-nrow(gsp_planonly) #= number of pages
 
-gspids <- unique(gsp_planonly$gsp_id)
+edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
+gspids <- substr(edges_and_nodes, 18,21)
+
 length(gspids) # = number of plans
 
 all_parsed <- list.files(path = "data_output", pattern = "parsed", full.names = T)
