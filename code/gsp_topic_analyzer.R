@@ -39,17 +39,18 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
       #or type = "area"
       scope = "blockgroup"
       gsp_dac <- create_dac_meta(type, scope, box_sync = T,overwrite = T)
+      options(timeout=600)
       gsp_pws <- summarize_pws_by_gsp() %>% st_drop_geometry() %>% 
          select(gsp_id, service_count,hviol_avg_res,prop_service_gw_source)
       #rows = num docs; cols = metadata types
       gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gsp_num_id"))
       gsp_text_with_meta <- full_join(gsp_text_with_meta, gsp_pws, by = "gsp_id")
       
-      gsp_text_with_meta <- gsp_text_with_meta %>% mutate(
-                                 hviol_avg_res = ifelse(is.na(hviol_avg_res),0,hviol_avg_res),
-                                 service_count = ifelse(is.na(service_count),0,service_count),
-                                 prop_service_gw_source = 
-                                    ifelse(is.na(prop_service_gw_source),1,prop_service_gw_source)) 
+      #gsp_text_with_meta <- gsp_text_with_meta %>% mutate(
+       #                          hviol_avg_res = ifelse(is.na(hviol_avg_res),0,hviol_avg_res),
+        #                         service_count = ifelse(is.na(service_count),0,service_count),
+         #                        prop_service_gw_source = 
+          #                          ifelse(is.na(prop_service_gw_source),1,prop_service_gw_source)) 
                              
       #filtering NA admin = proxy for GSPs whose texts have not been processed
       gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
@@ -57,8 +58,11 @@ gsp_topic_analyzer<- function(dac_corr_check = F, build_meta = F, clean_lex = T,
       saveRDS(gsp_text_with_meta, file = "data_output/gsp_docs_w_meta")
    }
    
-   #retrieves the latest save of gsp_text_with_meta
-   gsp_text_with_meta <- readRDS("data_output/gsp_docs_w_meta")
+   #retrieves gsp_text_with_meta
+   gsp_text_with_meta <- readRDS(
+      list.files(path = "data_output",pattern = "docs_w_meta",full.names = T)[
+         length(list.files(path = "data_output",pattern = "docs_w_meta",full.names = T))
+      ])
    
    topic_indicators <- list(ej = c("disadvantaged community", "disadvantaged communities",
                                    "^community$","engagement","outreach","environmental_justice"),

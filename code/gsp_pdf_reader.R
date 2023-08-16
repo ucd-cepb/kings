@@ -36,7 +36,7 @@ gsp_pdf_reader<- function(box_sync = F){
          }
          #if still doesn't exist after box process
          if(!file.exists(paste0("data_cleaned/",substr(pdfs[k],17,31),"_text"))){
-            text <- pdf_text(pdfs[[k]])
+            text <- suppressMessages(pdf_text(pdfs[[k]]))
             #TODO check for blank pages and use ocr on them
             for(i in 1:length(text)){
                if (nchar(text[i])> 10000){

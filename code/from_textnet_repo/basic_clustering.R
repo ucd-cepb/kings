@@ -1,9 +1,24 @@
 library(igraph)
 library(pbapply)
 library(statnet)
-flist <- list.files('data/directed_network_objects/networks_collapsed_to_weighted/',full.names = T)
+#symbolic link option below:
+#flist <- list.files('data/output_large_files/weighted_directed_graphs/',full.names = T)
+#local link option below:
+#flist <- list.files('data_output/',pattern = "to_weighted_graph", full.names = T)
+flist <- flist[c(1:38,40:67,69:length(flist))]
 
-nlist <- pblapply(flist,function(x) {intergraph::asNetwork(readRDS(x))})
+nlist <- pblapply(flist,function(x) {
+   igr <- readRDS(x)
+   igr <- subgraph(igr, V(igr)[
+      vertex_attr(igr,"entity_type") %in% c("ORG","PERSON")])
+   
+   agency_df <- get.data.frame(igr, what = "both")
+   net <- network(x=agency_df$edges[,1:2], directed = T,
+                  hyper = F, loops = T, multiple = T, 
+                  bipartiate = F, vertices = agency_df$vertices,
+                  matrix.type = "edgelist")
+   return(net)
+   })
 no_numbers<-lapply(nlist,function(x) get.inducedSubgraph(x,v = which(!grepl('^[0-9]',x %v% 'vertex.names'))))
 no_lowers <-lapply(no_numbers,function(x) get.inducedSubgraph(x,v = which(!grepl('^[a-z]',x %v% 'vertex.names'))))
 
@@ -66,7 +81,7 @@ ggplot(csd) + facet_wrap(~variable,ncol = 2) +
 frbind(table(V(glist[[1]])$entity_type),
       table(V(glist[[2]])$entity_type))
 
-table(V(glist[[1]])$entity_type))
+table(V(glist[[1]])$entity_type)
 
 
 

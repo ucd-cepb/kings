@@ -1,12 +1,6 @@
 library(statnet)
 library(intergraph)
 library(latentnet)
-nlist <- list.files('data/directed_network_objects/networks_collapsed_to_weighted/',full.names = T,recursive = T)
-
-i <- readRDS(nlist[1])
-n <- intergraph::asNetwork(n)
-
-
 library(udpipe)
 s <- 'The SVBGSA and ASGSA established a Coordination Committee.'
 s2 <- 'During development of the 2022 GSPs SVBGSA assessed how URCs and DACs may be engaged with the GSA.'

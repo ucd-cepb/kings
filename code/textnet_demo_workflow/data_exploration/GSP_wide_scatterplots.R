@@ -2,6 +2,8 @@ library(tidyverse)
 library(ggplot2)
 library(vegan)
 
+gov_net <- readRDS("data_output/network_properties")
+topic_net <- readRDS("data_output/topic_network_properties")
 gov_net <- as.data.frame(lapply(gov_net, as.numeric))
 
 topic_net <- as.data.frame(lapply(topic_net, as.numeric))

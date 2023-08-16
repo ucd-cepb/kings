@@ -17,26 +17,11 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    #crawl delay 5 sec
    #15 rules for 4 bots
    
-   driver <- rsDriver(port = 4442L, browser = "firefox")
+   driver <- rsDriver(port = 4441L, browser = "firefox", chromever = NULL)
    remote_driver <- driver$client
    #remote_driver$open()
    remote_driver$navigate(gsp_url)
    Sys.sleep(5)
-   
-   #Website update breaks this section. Not necessary to run.
-   #find num entries button; changes to 100 entries per page
-   #num_entries_tmp <-remote_driver$findElement(using = "name", "gsp-tb_length")
-   #move pointer to dropdown
-   #remote_driver$mouseMoveToLocation(webElement = num_entries_tmp)
-   #remote_driver$click(buttonId = 'LEFT')
-   #Sys.sleep(5)
-   #TODO fix this to accomodate website's new update
-   #num_entries_btn <- remote_driver$findElement(using = "css selector","option[value=\"100\"]")
-   #move pointer to button
-   #remote_driver$mouseMoveToLocation(webElement = num_entries_btn)
-   #click on num entries button
-   #num_entries_btn$clickElement()
-   #Sys.sleep(5)
    
    links = NULL
    gsp_local_id = NULL
@@ -194,7 +179,8 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
                   nrow(box_xls) == 1){
                   box_dl(file_id = box_xls$id, pb = T, local_dir = './data_raw/portal')
                   print(paste("spreadsheet",i,"downloaded from box"))
-               }if(nrow(box_xls)>1){
+               }
+               if(nrow(box_xls)>1){
                   print(paste("more than one Box version of spreadsheet",k))
                }
             }
@@ -211,6 +197,7 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    }
    
    remote_driver$close()
+   driver[["server"]]$stop()
    rm(driver)
    
    #are there multiple gsas collaborating on this gsp? T/F Var
@@ -218,6 +205,30 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    gsp_attr <- cbind(gsp_attr, "mult_gsas" = mult_gsas)
    gsp_attr <- as.data.table(gsp_attr)
    gsp_attr <- cbind(gsp_attr, name_gsas)
+   
+   if("0150" %in% gsp_attr$gsp_num_id){
+      #manual repair, because "Incomplete" refers to the first draft
+      #whereas "Inadequate" refers to the second draft
+      gsp_attr[gsp_num_id=="0150"]$approval <- "Incomplete"
+      
+      #the "review in progress" plans from 2022 have now been reviewed
+      rip_ids <- gsp_tbl[approval=="Review In Progress"]$gsp_id
+      rip_ids <- rip_ids[!is.na(rip_ids)]
+      
+      gsp_tbl$gsp_id <- sapply(1:length(gsp_tbl$gsp_id), function (z){
+         ifelse(gsp_tbl$gsp_id[z] %in% rip_ids, gsp_attr[gsp_num_id==gsp_tbl$gsp_id[z]], gsp_tbl$gsp_id[z])
+      })
+      
+      gsp_new <- gsp_attr[!(gsp_attr$gsp_num_id %in% gsp_tbl$gsp_id),]
+      gsp_tbl$gsp_num_id <- gsp_tbl$gsp_id
+      gsp_tbl <- subset(gsp_tbl, select = -c(gsp_id, basin_id))
+      gsp_tbl$mult_gsas <- as.logical(gsp_tbl$mult_gsas)
+      gsp_tbl <- gsp_tbl[,c("link","basin","approval","gsp_local_id","gsp_num_id","mult_gsas","name_gsas")]
+      gsp_comb <- rbind(gsp_tbl, gsp_new)
+      gsp_comb <- gsp_comb[!is.na(gsp_comb$gsp_num_id)]
+      
+      gsp_attr <- gsp_comb
+   }
    
    saveRDS(gsp_attr, file = paste0('./data_output/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
    
