@@ -21,12 +21,14 @@ comp$centralization <- as.numeric(comp$centralization)
 comp$transitivity <- as.numeric(comp$transitivity)
 comp$connectedness <- as.numeric(comp$connectedness)
 comp$modularity <- as.numeric(comp$modularity)
+comp$mult_gsas <- as.numeric(comp$mult_gsas)
 
 cor.test(comp$N, comp$transitivity)
 cor.test(comp$N, comp$centralization)
 cor.test(comp$N, comp$modularity)
 cor.test(comp$N, comp$connectedness)
 cor.test(comp$N, comp$reciprocity)
+
 library(tidyverse)
 base <- ggplot(data = comp,aes(x = N)) + 
    scale_x_continuous(name = '# pages') + 
@@ -78,4 +80,30 @@ g9 <- base2 +
 
 grom2 <- (grid.arrange(g7, g9,ncol = 2))
 ggsave(grom2,file = 'figures/net_stats_vs_pages.png',dpi = 450,units = 'in',height = 3.5,width = 7)
+
+cor.test(comp$mult_gsas, comp$num_edges)
+cor.test(comp$mult_gsas, comp$num_nodes)
+cor.test(comp$mult_gsas, comp$centralization)
+
+comp$multiple_gsas <- as.logical(comp$mult_gsas)
+comp$multiple_gsas <- as.factor(comp$multiple_gsas)
+
+g10 <- ggplot(data = comp,aes(x = multiple_gsas, y=centralization)) + 
+   geom_boxplot()+
+   theme_bw() 
+
+g11 <- ggplot(data = comp,aes(x = multiple_gsas, y=num_nodes)) + 
+   geom_boxplot()+
+   theme_bw() 
+
+
+g12 <- ggplot(data = comp,aes(x = multiple_gsas, y=num_edges)) + 
+   geom_boxplot()+
+   theme_bw() 
+
+grom3 <- (grid.arrange(g10,g11,g12, ncol=3))
+ggsave(grom3,file = 'figures/mult_gsas.png',dpi = 450,units = 'in',height = 3.5,width = 8)
+
+
+
 

@@ -1,5 +1,6 @@
 library(terra)
 library(tigris)
+library(viridis)
 
 network_properties <- readRDS("data_output/gov_dir_weight_no_gpe_network_properties")
 
@@ -25,19 +26,30 @@ colorpalette <- viridis(100)
 library(RColorBrewer)
 grps <- 10
 brks <- quantile(gsp_shapes$num_nodes, 0:(grps-1)/(grps-1), na.rm=TRUE)
-window(gsp_shapes) <- ext(cal)
-plot(cal)
+# 1. Open png file
+png("figures/nodes_map.png", width = 900, height = "975")
+plot(cal,pax=list(# params for axes
+   cex.axis = 2
+))
 plot(gsp_shapes, "num_nodes", breaks = brks, col=viridis(grps), 
-     add = T, legend=T)
-title("Number of Nodes")
+     add = T, legend=T, main = "Number of Nodes", cex.main=2.5, 
+     plg=list(cex=2)#params for legend
+     )
+#title("Number of Nodes", cex=10)
 #plot(city_boundaries, col="#888888",border = NA, alpha = 0.5, add = T)
+dev.off()
 
 brks <- quantile(gsp_shapes$num_edges, 0:(grps-1)/(grps-1), na.rm=TRUE)
+png("figures/edges_map.png", width = 900, height = "975")
+plot(cal,pax=list(# params for axes
+   cex.axis = 2
+))
 plot(gsp_shapes, "num_edges", breaks = brks, col=viridis(grps),
-     add = T, legend=T)
-title("Number of Edges")
+     add = T, legend=T, main = "Number of Edges", cex.main=2.5,
+     plg=list(cex=2))
+#title("Number of Edges")
 #plot(city_boundaries, col="#888888",border = NA, alpha = 0.5, add = T)
-
+dev.off()
 
 gsp_shapes$area <- expanse(gsp_shapes)
 

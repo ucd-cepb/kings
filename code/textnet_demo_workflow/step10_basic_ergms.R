@@ -128,8 +128,18 @@ colnames(coef_dt) <- c("edges","isolates","gwidegree","gwesp","person")
 library(ggthemes)
 library(statnet)
 library(GGally)
+cdtmelt <- coef_dt
+cdtmelt$rownum <- 1:nrow(cdtmelt)
+cdtmelt <- pivot_longer(cdtmelt, cols = !rownum, names_to = "var",values_to = "estimate")
+cdtmelt$var <- as.factor(cdtmelt$var)
 
-boxplot(coef_dt[,c("gwidegree","gwesp","person")])
+boxplot(coef_dt)
+
+ergm_boxplot <- ggplot(cdtmelt, aes(x=var,y=estimate)) +
+geom_boxplot()+
+   theme_bw() 
+ggsave(file = 'figures/ergm_boxplot.png',plot = ergm_boxplot,units = 'in',dpi = 450,height = 5,width= 7)
+
 
 library(coda)
 
@@ -155,18 +165,22 @@ coef_dt$personLow <- as.numeric(vq$`2.5%`[vq$V6=="person"])
 coef_dt$personHi <- as.numeric(vq$`97.5%`[vq$V6=="person"])
 
 network_properties <- readRDS("data_output/gov_dir_weight_no_gpe_network_properties")
-network_properties <- network_properties[!gspids %in% c("0053","0089"),]
+network_properties <- network_properties[!network_properties$gsp_id %in% c("0053","0089"),]
 
 coef_dt$num_nodes <- as.numeric(network_properties$num_nodes)
 #gwesp
-ggplot(coef_dt, aes(num_nodes, gwesp)) +
+gwesp_nodes <- ggplot(coef_dt, aes(num_nodes, gwesp)) +
    geom_point() +
+   theme_bw() +
    geom_errorbar(aes(ymin = gwespLow, ymax = gwespHi))
+ggsave(file = 'figures/gwesp_nodes.png',plot = gwesp_nodes,units = 'in',dpi = 450,height = 5,width= 7)
 
 #gwdegree
-ggplot(coef_dt, aes(num_nodes, gwidegree)) +
+gwdegree_nodes <- ggplot(coef_dt, aes(num_nodes, gwidegree)) +
    geom_point() +
+   theme_bw() +
    geom_errorbar(aes(ymin = gwidegreeLow, ymax = gwidegreeHi))
+ggsave(file = 'figures/gwdegree_nodes.png',plot = gwdegree_nodes,units = 'in',dpi = 450,height = 5,width= 7)
 
 #re: this, I'm thinking something like 2 panels, 
 #side by side, each panel orders x-axis by network size (# of nodes) (or whatever)

@@ -418,7 +418,7 @@ net_with_gsa_attr$ynapproved <- ifelse(net_with_gsa_attr$approval %in% c("Inadeq
 net_with_gsa_attr$ynapproved <- factor(net_with_gsa_attr$ynapproved, ordered = T, levels = c("N","Under_Review","Y"))
 net_with_gsa_attr$priority <- factor(net_with_gsa_attr$priority,ordered=T, levels = c("High","Medium","Low","Very Low"))
 
-net_with_gsa_attr$mult_gsas <- as.logical(net_with_gsa_attr$mult_gsas)
+net_with_gsa_attr$mult_gsas <- as.numeric(net_with_gsa_attr$mult_gsas)
 net_with_gsa_attr$connectedness <- as.numeric(net_with_gsa_attr$connectedness)
 net_with_gsa_attr$centralization <- as.numeric(net_with_gsa_attr$centralization)
 net_with_gsa_attr$transitivity <- as.numeric(net_with_gsa_attr$transitivity)
@@ -429,7 +429,8 @@ net_with_gsa_attr$mean_num_out_neighbors <- as.numeric(net_with_gsa_attr$mean_nu
 net_with_gsa_attr$mean_edge_weight <- as.numeric(net_with_gsa_attr$mean_edge_weight)
 net_with_gsa_attr$ynapproved <- as.numeric(net_with_gsa_attr$ynapproved)
 net_with_gsa_attr$percent_dac_by_pop <- as.numeric(net_with_gsa_attr$percent_dac_by_pop)
-
+net_with_gsa_attr$num_nodes <- as.numeric(net_with_gsa_attr$num_nodes)
+net_with_gsa_attr$num_edges <- as.numeric(net_with_gsa_attr$num_edges)
 
 library(htmlTable)
 library(vtable)
@@ -451,7 +452,7 @@ summary(aprmodel)
 #plans with high percent homophily are more likely to be approved (if gpes included)
 #plans with high ag gw are more likely to be approved
 
-net <- net_with_gsa_attr[,c(2:19)]
+net <- net_with_gsa_attr
 ggpairs(net)
 
 cor.test(net$percent_dac_by_pop, net$connectedness)
