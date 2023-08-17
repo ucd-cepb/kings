@@ -286,7 +286,5 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    
    colnames(gsp_out$meta) <- colnames(meta_small)
    
-   saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   
    return(gsp_out)
 }

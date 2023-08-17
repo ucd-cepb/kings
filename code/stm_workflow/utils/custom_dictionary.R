@@ -1,3 +1,4 @@
+#used in lex_clean
 #add_terms should be a vector
 custom_dictionary <- function(add_terms = NULL){
    #retrieves the latest save of dictionary

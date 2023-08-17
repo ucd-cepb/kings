@@ -10,8 +10,3 @@ gsp_pdf_reader(box_sync = F)
 gsp_topic_analyzer(dac_corr_check = F, build_meta = T, clean_lex = T, 
                    model_compare = F, run_model = T, viz_results = T, 
                    ntopics = 60)
-
-#clean lex 
-gsp_topic_analyzer(dac_corr_check = F, build_meta = F, clean_lex = T, 
-                   run_model = F, viz_results = F, 
-                   ntopics = 60)
