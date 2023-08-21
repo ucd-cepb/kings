@@ -38,14 +38,13 @@ dep_net <- network(elist,loops = T)
 occ_net <- network(tcrossprod(as.sociomatrix(dep_net)))
 library(ggnetwork)
 
-panelB <- ggplot(ggnetwork(dep_net),aes(x = x,y = y,xend = xend,yend = yend)) + 
-   geom_edges(arrow = arrow(length = unit(0.05, "inches"))) + 
-   geom_nodes() +
-   # geom_edgelabel(aes(label = event))+
+panelB <- ggplot(ggnetwork(dep_net)) + 
+   geom_edges(aes(x = xend,y = yend,xend = x,yend = y),arrow = arrow(length = unit(0.05, "inches"))) + 
+   geom_nodes(aes(x = x,y = y)) + 
    ggtitle('B. Event with directed edges')+
    annotate("text", x = 0.4, y = -0.2, 
             label = "*all edges reflect membership event")+
-   geom_nodelabel_repel(aes(label = vertex.names)) + 
+   geom_nodelabel_repel(aes(x = x,y = y,label = vertex.names)) + 
    theme_void()
 
 occ_geom <- ggnetwork(occ_net)
