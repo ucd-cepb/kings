@@ -4,7 +4,7 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-source("code/functions/web_data_repair.R")
+source("code/stm_workflow/utils/web_data_repair.R")
 create_lang_meta <- function(run_repair = F){
    
    #downloaded from https://data.cnra.ca.gov/dataset/sgma-basin-prioritization/resource/6347629e-340d-4faf-ae7f-159efbfbcdc9

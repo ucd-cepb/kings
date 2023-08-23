@@ -1,10 +1,13 @@
+remotes::install_github("r-spatial/s2") # requires openssl@1.1, can be installed via brew 
+library(s2)
+albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
 
 library(sf)
 library(tigris)
 library(tidyverse)
 library(data.table)
 
-
+sf_use_s2(TRUE)
 
 fl = 'data/spatial_raw_large_files/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp'
 census = st_read(fl)
@@ -22,18 +25,19 @@ votes_by_precinct <- prec[,sum(votes),by=.(prec_key,year,stage,party)]
 votes_by_precinct[,total_votes:=sum(V1),by=.(prec_key,year,stage)]
 votes_by_precinct[,vote_share:=V1/total_votes]
 rep_vote_share_2016 <- votes_by_precinct[party=='republican',]
-prec2016 <- st_read('data/raw_large_files/srprec_state_g16_v01_shp/srprec_state_g16_v01.shp')
+prec2016 <- st_read('data/spatial_raw_large_files/srprec_state_g16_v01_shp/srprec_state_g16_v01.shp')
 
 prec2016$total_votes <- votes_by_precinct$total_votes[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
 prec2016$rep_vote_share <- votes_by_precinct$vote_share[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
 prec2016$rep_votes <- votes_by_precinct$V1[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
 
 
-prec2016 <- st_transform(prec2016,st_crs(gsp))
+prec2016 <- st_transform(prec2016,albersNA)
+gsp <- st_transform(gsp, albersNA)
 library(lwgeom)
 prec2016 <- st_make_valid(prec2016)
 gsp <- st_make_valid(gsp)
-sf_use_s2(FALSE)
+
 prec2016$total_votes[is.na(prec2016$total_votes)]<-0
 prec2016$rep_votes[is.na(prec2016$rep_votes)]<-0
 inters = st_intersection(st_buffer(gsp,0),prec2016)
@@ -62,7 +66,7 @@ gdmelt <- gdmelt[order(cfips,year),Agr_GDP_FFill:=nafill(Agr_GDP,'locf'),by=.(cf
 gdmelt <- gdmelt[order(cfips,year),Total_GDP_FFill:=nafill(Total_GDP,'locf'),by=.(cfips)]
 gdmelt <- gdmelt[year==2016,]
 counties <- tigris::counties(state = 'CA',class = 'sf',cb = T)
-counties <- st_transform(counties,st_crs(gsp))
+counties <- st_transform(counties,albersNA)
 g_c_inter <- st_intersection(gsp,counties)
 g_c_inter$county_area <- st_area(counties)[match(g_c_inter$GEOID,counties$GEOID)]
 g_c_inter$prop_of_county <- st_area(g_c_inter)/g_c_inter$county_area
@@ -83,7 +87,7 @@ gsp$Agr_Share_Of_GDP <- gsp_ag_gdp$gsp.agr.gdp.share[match(gsp$GSP.ID,gsp_ag_gdp
 ed <- fread('data/raw_large_files/ACSST5Y2016.S1501_2023-07-19T133305/ACSST5Y2016.S1501-Data.csv',skip = 1)
 ed <- ed[,.(Geography,`Geographic Area Name`,`Percent!!Estimate!!Population 25 years and over!!Bachelor's degree`)]
 msa <- tigris::core_based_statistical_areas(cb = T,class = 'sf',year = 2016)
-msa <- st_transform(msa,st_crs(gsp))
+msa <- st_transform(msa,albersNA)
 msa_inter <- st_intersects(msa,gsp)
 msa_ca <- msa[sapply(msa_inter,length)>0,]
 msa_ca$Perc_Bach_Degree_Over25 <- ed$`Percent!!Estimate!!Population 25 years and over!!Bachelor's degree`[match(msa_ca$AFFGEOID,ed$Geography)]

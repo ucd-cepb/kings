@@ -4,7 +4,7 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-source('code/functions/create_spat_meta.R')
+source('code/stm_workflow/utils/create_spat_meta.R')
 
 dac_svi_analysis <- function(scope, type = NA){
    
