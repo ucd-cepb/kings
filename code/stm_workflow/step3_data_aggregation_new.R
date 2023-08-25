@@ -29,12 +29,12 @@ gsp_text_with_lang <- create_lang_meta(run_repair = F)
 #retrieves the latest save of gsp_text_with_lang
 #generated in create_lang_meta, which allows create_lang_meta() to be skipped
 
-gsp_text_with_lang <- readRDS("data_output/gsp_docs_w_lang")
+gsp_text_with_lang <- readRDS("data/output_large_files/gsp_docs_w_lang")
 
 type = "pop"
 #or type = "area"
 scope = "blockgroup"
-gsp_dac <- create_dac_meta(type, scope, box_sync = T,overwrite = T)
+gsp_dac <- create_dac_meta(type, scope, overwrite = T)
 options(timeout=600)
 #rows = num docs; cols = metadata types
 gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gsp_num_id"))
@@ -42,8 +42,29 @@ gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gs
 #filtering NA admin = proxy for GSPs whose texts have not been processed
 gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
 
-saveRDS(gsp_text_with_meta, file = "data_output/gsp_docs_w_meta")
+#gsp_text_with_meta_mini <- unique(gsp_text_with_meta[,c(7,14,16,19:26)])
+gsp_text_with_meta$GSP.ID <- as.numeric(gsp_text_with_meta$gsp_id)
+gsp_local$GSP.ID <- as.numeric(gsp_local$GSP.ID)
+library(raster)
+library(rgdal)
+maxdryspell <- raster::raster("data/spatial_raw_large_files/cddm_year_ens32avg_rcp45_2040.tif")
+st_transform(gsp_local, raster::projection(maxdryspell))
 
+gsp_local$maxdryspell <- as.numeric(raster::extract(maxdryspell$cddm_year_ens32avg_rcp45_2040, 
+                                         gsp_local, fun=mean, na.rm=T, sp=F))
+gsp_local <- st_drop_geometry(gsp_local)
 
+gsp_text_with_meta <- left_join(gsp_text_with_meta, gsp_local)
 
+#converting gw severity to binary metrics
+gsp_text_with_meta$subsidence <- ifelse(gsp_text_with_meta$subsidence>0,1,0)
+gsp_text_with_meta$saltintrusion <-ifelse(gsp_text_with_meta$saltintrusion>0,1,0)
+gsp_text_with_meta$declininggw <- ifelse(gsp_text_with_meta$declininggw>0,1,0)
+gsp_text_with_meta$gwsum <- gsp_text_with_meta$declininggw + 
+   gsp_text_with_meta$saltintrusion + 
+   gsp_text_with_meta$subsidence
+saveRDS(gsp_text_with_meta, file = "data/output_large_files/gsp_docs_w_meta")
+
+gsp_mini <- unique(gsp_text_with_meta[,c(7,25,26,27)])
+table(gsp_mini[,2:4])
       

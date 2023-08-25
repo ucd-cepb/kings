@@ -5,29 +5,20 @@ if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
 #type = "pop" or "area"
-create_svi_meta <- function(type, box_sync = F, overwrite=F){
+create_svi_meta <- function(type, overwrite=F){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
    #  social vulnerability index 2018
    albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
    
-   if(box_sync == T){
-      #set up Renviron with Box App permissions specific to your user
-      box_auth()
-      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw",delete = F)
-      box_push(dir_id = 167050269694, local_dir = "./data_spatial_raw", delete = F)
-      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)
-      box_fetch(dir_id = 161132368565, local_dir = "./data_output",delete = F)
-   }
-   
-   if(file.exists(paste0("data_output/gsp_svi_",type)) & overwrite == F){
-      gsp_svi_adjusted <- readRDS(paste0("data_output/","gsp_svi_",type))
+   if(file.exists(paste0("data/output_large_files/gsp_svi_",type)) & overwrite == F){
+      gsp_svi_adjusted <- readRDS(paste0("data/output_large_files/","gsp_svi_",type))
       return(gsp_svi_adjusted)
    }
    # https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
    #downloaded by hand and placed in data_spatial_raw
-   censusplot <- st_read("data_spatial_raw/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
+   censusplot <- st_read("data/spatial_raw_large_files/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
    censusplot <- st_transform(censusplot,albersNA)
    #st_crs pulls up projection
    #alt: st_crs(gsp_submitted)
@@ -43,9 +34,9 @@ create_svi_meta <- function(type, box_sync = F, overwrite=F){
    #Reference Layers > Groundwater Management > "Bulletin 118 Groundwater Basins - 2018" at
    #  https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#boundaries
    
-   fname = unzip("data_spatial_raw/GSP_submitted.zip", list=TRUE)
-   unzip("data_spatial_raw/GSP_submitted.zip", files=fname$Name, exdir="data_spatial_raw/GSP_submitted", overwrite=TRUE)
-   fpath = file.path("data_spatial_raw/GSP_submitted", grep('shp$',fname$Name,value=T))
+   fname = unzip("data/spatial_raw_large_files/GSP_submitted.zip", list=TRUE)
+   unzip("data/spatial_raw_large_files/GSP_submitted.zip", files=fname$Name, exdir="data/spatial_raw_large_files/GSP_submitted", overwrite=TRUE)
+   fpath = file.path("data/spatial_raw_large_files/GSP_submitted", grep('shp$',fname$Name,value=T))
    gsp_shapes <- st_read(fpath)
    gsp_shapes <- st_transform(gsp_shapes,albersNA)
    gsp_shapes <- st_make_valid(gsp_shapes)
@@ -120,19 +111,13 @@ create_svi_meta <- function(type, box_sync = F, overwrite=F){
       mutate(gsp_num_id = paste(ifelse(num_zeros > 0, "0", ""),ifelse(num_zeros > 1,"0",""),ifelse(num_zeros > 2, "0",""),code,sep = "")) %>% 
       select(!c(code,num_zeros,gsp_ids))
    
-   saveRDS(gsp_svi_adjusted, file = paste0("data_output/","gsp_svi_",type))
+   saveRDS(gsp_svi_adjusted, file = paste0("data/output_large_files/","gsp_svi_",type))
    
-   if(box_sync==T & overwrite == F){
-      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = F)
-   }
-   else if(box_sync==T & overwrite == T){
-      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = T)
-   }
    return(gsp_svi_adjusted)
    
 }
 
-create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
+create_dac_meta <- function(type, scope, overwrite=F){
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
@@ -143,30 +128,9 @@ create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
       stop("scope \"place\" may not be used with type \"area\"")
    }
    
-   if(box_sync == T){
-      #set up Renviron with Box App permissions specific to your user
-      box_auth()
-      box_fetch(dir_id = 167050269694, local_dir = "./data_spatial_raw",delete = F)
-      box_push(dir_id = 167050269694, local_dir = "./data_spatial_raw", delete = F)
-      box_setwd(161132368565)
-      #sync single file:
-      #box_dacs <- as.data.frame(box_search(paste0(type," AND ", scope), 
-      #                                     content_types = "name", type = "file",
-      #                                     ancestor_folder_ids = box_getwd()))#searches current box folder
-      #if(nrow(box_dacs) == 1){
-      #   box_dl(file_id = box_dacs$id, pb = T, local_dir = './data_output')
-      #   print("DAC data downloaded from box")
-      #}
-      #if(nrow(box_dacs)>1){
-      #   print("More than one Box version of DAC data for this type and scope")
-      #}
-      box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F)
-      box_fetch(dir_id = 161132368565, local_dir = "./data_output",delete = F)
-   }
-   
-   if(file.exists(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv')) &
+   if(file.exists(paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv')) &
       overwrite == F){
-      gsp_dac_adj <- read_csv(paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      gsp_dac_adj <- read_csv(paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv'))
       return(gsp_dac_adj)
    }
    
@@ -176,16 +140,15 @@ create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
    #downloaded by hand and placed in data_spatial_raw; renamed dacs_2018 
    dacplot = switch(  
       scope,  
-      "blockgroup"= st_read("data_spatial_raw/dacs_2018/DAC_BG18.shp"),  
-      "tract"= st_read("data_spatial_raw/dacs_2018/DAC_CT18.shp"),  
-      "place"= st_read("data_spatial_raw/dacs_2018/DAC_Pl18.shp")
+      "blockgroup"= st_read("data/spatial_raw_large_files/dacs_2018/DAC_BG18.shp"),  
+      "tract"= st_read("data/spatial_raw_large_files/dacs_2018/DAC_CT18.shp"),  
+      "place"= st_read("data/spatial_raw_large_files/dacs_2018/DAC_Pl18.shp")
    ) 
    dacplot <- st_transform(dacplot,albersNA)
    dacplot <- st_make_valid(dacplot)
    
-   fname = unzip("data_spatial_raw/GSP_submitted.zip", list=TRUE)
-   unzip("data_spatial_raw/GSP_submitted.zip", files=fname$Name, exdir="data_spatial_raw/GSP_submitted", overwrite=TRUE)
-   fpath = file.path("data_spatial_raw/GSP_submitted", grep('shp$',fname$Name,value=T))
+   fname = list.files("data/spatial_raw_large_files/GSP_submitted")
+   fpath = file.path("data/spatial_raw_large_files/GSP_submitted", grep('shp$',fname,value=T))
    gsp_shapes <- st_read(fpath)
    gsp_shapes <- st_transform(gsp_shapes,albersNA)
    gsp_shapes <- st_make_valid(gsp_shapes)
@@ -248,14 +211,8 @@ create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
       gsp_dac_adj_area <- cbind(gsp_dac_adj_area, gsp_num_id) %>% select(-gsp_ids)
       
       
-      write_csv(gsp_dac_adj_area, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
+      write_csv(gsp_dac_adj_area, paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv'))
       
-      if(box_sync==T & overwrite == F){
-         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = F)
-      }
-      else if(box_sync==T & overwrite == T){
-         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = T)
-      }
       return(gsp_dac_adj_area)
       
    }#end of type = area
@@ -283,13 +240,8 @@ create_dac_meta <- function(type, scope, box_sync = F,overwrite=F){
                          (gsp_dac_adj_pop$gsp_ids),sep = "")
       gsp_dac_adj_pop <- cbind(gsp_dac_adj_pop, gsp_num_id) %>% select(-gsp_ids)
       
-      write_csv(gsp_dac_adj_pop, paste0('data_output/gsp_percent_dac_',type,'_',scope,'.csv'))
-      if(box_sync==T & overwrite == F){
-         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = F)
-      }
-      else if(box_sync==T & overwrite == T){
-         box_push(dir_id = 161132368565, local_dir = "./data_output",delete = F, overwrite = T)
-      }
+      write_csv(gsp_dac_adj_pop, paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv'))
+      
       return(gsp_dac_adj_pop)
    }#end of type=pop
     

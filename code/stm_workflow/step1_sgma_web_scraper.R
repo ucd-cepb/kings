@@ -206,7 +206,7 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    gsp_attr <- as.data.table(gsp_attr)
    gsp_attr <- cbind(gsp_attr, name_gsas)
    
-   if("0150" %in% gsp_attr$gsp_num_id){
+   if("0150" %in% gsp_attr$gsp_num_id){#proxy for new pull, since 2023 pull
       #manual repair, because "Incomplete" refers to the first draft
       #whereas "Inadequate" refers to the second draft
       gsp_attr[gsp_num_id=="0150"]$approval <- "Incomplete"
