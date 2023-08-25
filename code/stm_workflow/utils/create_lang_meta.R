@@ -17,10 +17,17 @@ create_lang_meta <- function(run_repair = F){
    final_515_table$habitat <- final_515_table$"Habitat\r\nExist\r\n\r\n1 = Yes,\r\nBlank = No"
    final_515_table$streamflow <- final_515_table$"Streamflow\r\nExist\r\n\r\n1 = Yes,\r\nBlank = No"
    final_515_table$priority <- final_515_table$"SGMA 2019 Basin Prioritization\r\n\r\nBasin\r\nPriority"
+   final_515_table$fract_of_area_in_habitat <- final_515_table$"Total Area of Polygons" / final_515_table$"Basin Area (Acre)"
+   final_515_table$publicsupplywells <- final_515_table$"Public Supply Wells\r\n\r\n"
+   final_515_table$declininggw <- final_515_table$"Component 7.a\r\n\r\nDeclining GW Levels\r\nPoints" 
+   final_515_table$subsidence <- final_515_table$"Component 7.b\r\n\r\nSubsidence Points\r\n"
+   final_515_table$saltintrusion <- final_515_table$"Component 7.c\r\n\r\nSalt Intrusion Points"
    final_515_table <- final_515_table %>% mutate(ag_gw_asfractof_tot_gw = ag_gw_af/
                                                     (ag_gw_af+urb_gw_af))
    final_515_table <- select(final_515_table, 
-                             c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority, habitat, streamflow))
+                             c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority, habitat, streamflow,
+                               fract_of_area_in_habitat, publicsupplywells, declininggw,
+                               subsidence, saltintrusion))
 
    if(run_repair == T){
       gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_vars", full.names = T)[
@@ -35,16 +42,16 @@ create_lang_meta <- function(run_repair = F){
                                  old_tbl = read_csv(list.files(path = "data_output", pattern = "gsp_ids", full.names = T)[
                                     length(list.files(path = "data_output", pattern = "gsp_ids", full.names = T))]))
       
-      saveRDS(gsp_tbl, file = paste0("data_output/","web_repaired_",format(Sys.time(), "%Y%m%d-%H:%M")))
+      saveRDS(gsp_tbl, file = paste0("data/output_large_files","web_repaired_",format(Sys.time(), "%Y%m%d-%H:%M")))
       
    }
-   gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
-      length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
+   gsp_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
+      length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
    
    bsn_and_plan_vars <- merge(gsp_tbl, final_515_table, all.x = T, 
                               by = "basin_id") 
    page_num <- integer(0)
-   gsp_list <- list.files(path = "data_cleaned", pattern = "_text", full.names = T)
+   gsp_list <- list.files(path = "data/cleaned_large_files", pattern = "_text", full.names = T)
    
    #minimize num of vars initialized at length zero by using page counter
    for(k in 1:length(gsp_list)){
@@ -66,8 +73,8 @@ create_lang_meta <- function(run_repair = F){
       #find first page of doc k
       page_k1 <- which(page_num %in% 1)[k]
       gsp_k <- readRDS(gsp_list[k])
-      key_k <- readRDS(paste0("data_cleaned/gsp_num_id_",substr(gsp_list[k],25,28),"_categories"))
-      gsp_id[page_k1:(page_k1+length(gsp_k)-1)] <- rep.int(c(substr(gsp_list[k],25,28)),times = length(gsp_k))
+      key_k <- readRDS(paste0("data/cleaned_large_files/gsp_num_id_",gsub("\\D", "", gsp_list[k]),"_categories"))
+      gsp_id[page_k1:(page_k1+length(gsp_k)-1)] <- rep.int(c(gsub("\\D", "", gsp_list[k])),times = length(gsp_k))
       #i = page number
       for (i in 1:length(gsp_k)){
          page_cat <- NULL
@@ -143,7 +150,7 @@ create_lang_meta <- function(run_repair = F){
    saveRDS(all_text_subcat, file = "data_temp/gsp_docs_subcat")
    saveRDS(all_text_cat, file = "data_temp/gsp_docs_cat")
    saveRDS(cat_selector, file = "data_temp/gsp_docs_cat_notnull")
-   saveRDS(gsp_text_with_lang, file = "data_output/gsp_docs_w_lang")
+   saveRDS(gsp_text_with_lang, file = "data/output_large_files/gsp_docs_w_lang")
    
    return(gsp_text_with_lang)
    

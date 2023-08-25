@@ -120,3 +120,4 @@ gsp$local_govs_per_10k_people <- govs_per_10k_people$govs_per_10k_people[match(g
 ### object that now has four gsp-level context predictors
 ## Republican_Vote_Share, Agr_Share_Of_GDP, Perc_Bach_Degree_Over25, local_govs_per_10k_people
 gsp
+gsp_local <- gsp[,c("GSP.ID","Republican_Vote_Share","Agr_Share_Of_GDP","Perc_Bach_Degree_Over25","local_govs_per_10k_people", "geometry")]
