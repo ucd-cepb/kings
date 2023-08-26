@@ -23,6 +23,8 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    
    #the following commands may need to be executed across multiple RStudio sessions
    #to clear up enough memory
+   
+   #Section 1: Math Script Formatting ####
    gsp_text_with_meta$text <- pblapply(1:length(gsp_text_with_meta$text), function(i){
       stri_replace_all_regex(gsp_text_with_meta$text[i], pattern = c("𝑎","𝑏","𝑐","𝑑","𝑒","𝑓","𝑔","ℎ","𝑖","𝑗","𝑘","𝑙","𝑚",
                                                                      "𝑛","𝑜","𝑝","𝑞","𝑟","𝑠","𝑡","𝑢","𝑣","𝑤","𝑥","𝑦","𝑧",
@@ -42,7 +44,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    gsp_text_with_meta$text <- as.character(gsp_text_with_meta$text)
 
    
-
+   #Section 2: Tokenization (Also Removes Punctuation, URLs, and Separators) ####
    qcorp <- quanteda::corpus(x = gsp_text_with_meta[!is_comment&!is_reference,], text_field = "text")
    qtok <- quanteda::tokens(qcorp,
                             what = "word",
@@ -63,6 +65,8 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
                             remove_numbers = T,
                             verbose = T)
    print("Punctuation and numbers removed")
+   
+   #Section 3: Remove Case-Sensitive Custom Stopwords and Protect Short Acronyms Before tolowerization ####
    #removes case-sensitive custom stopwords "NA" and "na" 
    #but keeps "Na" (sodium) before converting toLower
    qtok <- tokens_remove(qtok, pattern = c("NA","na",""),  
@@ -74,13 +78,14 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
                                                     "sodium",
                                                     "situation_assessment",
                                                     "potential_of_hydrogen"))
-   pr_names <- generate_proper_names()
-   
+   pr_names <- generate_proper_names(underscore=F, to_lower=T)
+   pr_compounds <- pr_names$names[grep("\\s", pr_names$names)]
+   #Section 4: Compoundization Using Custom Phrase Dictionary of Topic Indicators and Proper Names ####
    #adds compound topic indicator words and proper names to custom dictionary
    compounds <- custom_dictionary(
       #removes ^ and $ characters from topic_indicator list
-      c(str_remove_all(topic_indicators[grepl("\\s",topic_indicators)],"\\^|\\$"),
-        pr_names[grepl("\\s", pr_names)]))
+      c(str_remove_all(unlist(topic_indicators[grepl("\\s",topic_indicators)]),"\\^|\\$"),
+        pr_compounds))
    compounds <- stri_remove_empty_na(compounds)
    #this takes about 30 min
    #converts toLower, does not stem
@@ -122,7 +127,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    
    qdfm <- readRDS(list.files(path = "data_temp", pattern = "tok", full.names = T)[length(
       list.files(path = "data_temp", pattern = "tok", full.names = T))])
-
+   #Section 5: Stopwords Removed, including Months, California/US, and Place Names Replaced with Generic Names ####
    months <- c("^jan$", "^feb$", "^mar$", "^apr$", "^may$", "^jun$", "^jul$", 
                "^aug$", "^sep$", 
                "^sept$", "^oct$", "^nov$", "^dec$", "^january$", "^february$", "^march$",
@@ -142,24 +147,32 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
       qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
                                                             custom,pr_names))
    }else{
+      #only replace names that have a generic alternative. don't turn names into an empty string generic
+      pr_names <- pr_names[!is.na(pr_names$combogeneric) & nchar(pr_names$combogeneric)>0,]
+      pr_names$names <- gsub("\\s+", "_", x = pr_names$names)
+      #replacing specific place names with generic place names
+      qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop,pattern = pr_names$names,
+                                           replacement = pr_names$combogeneric)
       qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
                                                             custom))
    }
    
+   #Section 6: SpellCheck and Filtering to Remove Poor Conversion Cues and Keep Only Alpha-Containing Words ####
    #spell check for mispellings that show up commonly in FREX
-   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop,pattern = c("waterhsed"),
-                                        replacement = c("watershed"))
+   qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop,pattern = c("waterhsed","waterhseds"),
+                                        replacement = c("watershed","watersheds"))
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                                    "ϭ","ĩ",
                                                    "ž","ğ","ŝ","ÿ","þ", months), 
                                        valuetype = "regex")
-
+   #Keep only tokens that contain letters
    qdfm_nostop <- quanteda::dfm_keep(qdfm_nostop, pattern = c("[a-z]"), 
                                      valuetype = "regex")
 
    print("English stopwords and months removed")
    if(rm_plnames==T){print("Place names removed")}
+   else{print("Place names replaced with generic equivalents")}
    
    saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
    
@@ -170,6 +183,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
       list.files(path = "data_temp", pattern = "nostop", full.names = T)[length(
          list.files(path = "data_temp", pattern = "nostop", full.names = T))])
    
+   #Section 7: Delete Short Words ####
    #drops short words less than min_nchar long
    qdfm_long <- dfm_select(qdfm_nostop, min_nchar = 3)
    
@@ -186,6 +200,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
       list.files(path = "data_temp", pattern = "noshort", full.names = T)[length(
          list.files(path = "data_temp", pattern = "noshort", full.names = T))])
    
+   #Section 8: Remove Very Common and Very Uncommon Words ####
    #prepare metadata to add to tidy dtm
    metadata <- cbind(quanteda::docvars(qdfm_long),"document"=
                         as.integer(substr(
@@ -278,6 +293,8 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    rm(metadata)
    gc()
    #sometimes this hangs
+   
+   #Section 9: File Output ####
    gsp_out_slam <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
    #type = dtm is for dense matrices
    

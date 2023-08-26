@@ -19,5 +19,5 @@ gsp_out <- lex_clean(gsp_text_with_meta, rm_plnames = F,
                      topic_indicators = unlist(topic_indicators,use.names=F))
 
 
-saveRDS(gsp_out, file = paste0("data_temp/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
+saveRDS(gsp_out, file = paste0("data/temp_large_files","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
 
