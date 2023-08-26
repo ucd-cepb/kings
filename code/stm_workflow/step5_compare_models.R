@@ -5,8 +5,8 @@ check <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(check>0)){print(check)}else{print("got 'em all")}
 lapply(packs, require, character.only = TRUE)
 
-obj <- readRDS(list.files(path = "data_temp", pattern = "slam", full.names = T)[length(
-   list.files(path = "data_temp", pattern = "slam", full.names = T))])
+obj <- readRDS(list.files(path = "data/temp_large_files", pattern = "slam", full.names = T)[length(
+   list.files(path = "data/temp_large_files", pattern = "slam", full.names = T))])
 
 k_saves <- list.files(path = "data_temp", pattern = "k_diag", full.names = T)
 # prepare regular expression
@@ -45,14 +45,16 @@ k_model = stm(heldout$documents, heldout$vocab,
                            sust_criteria +
                            monitoring_networks + 
                            projects_mgmt_actions + 
+                           publicsupplywells +
                            percent_dac_by_pop+
-                           as.factor(approval)+
-                           as.factor(priority)+
-                           mult_gsas+
-                           ag_gw_asfractof_tot_gw+
-                           hviol_avg_res+
-                           prop_service_gw_source+
-                           service_count,
+                           fract_of_area_in_habitat +
+                           maxdryspell +
+                           AGR_Share_Of_GDP +
+                           Republican_Vote_Share +
+                           Perc_Bach_Degree_Over25 +
+                           local_govs_per_10k_people +
+                           mult_gsas +
+                           gwsum,
                         init.type = "Spectral",
                         max.em.its = 30,
                         data = obj$meta)
