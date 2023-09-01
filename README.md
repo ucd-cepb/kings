@@ -1,15 +1,20 @@
 # kings
 analyzing CA SGMA GSPs to understand groundwater management networks
 
+This repository contains several analysis projects, each organized as folders under the "code" folder.
+
+The code that accompanies the large demonstration case study of the textnet package is found under "textnet_demo_workflow". The files in this folder generate the network data used in the case study, as well as analysis outputs and accompanying figures. We ran our code in order, from step 1 to step 11, to generate our analysis. These scripts no longer need to be run, as the outputs are already generated. Some additional metadata files are necessary for this analysis, which were generated through the "stm_workflow". 
+
+The code that accompanies the structural topic model is found under "stm_workflow". The files in this folder generate the cleaned lexicon, topic model, analysis outputs, and accompanying figures. We ran our code in order, from step 1 to step 8, to generate our analysis.
+
+The code in the "verb_analysis_workflow" begins an exploratory analysis of the verbs found in the edges of the textnet_demo network. This is not complete.
+
+The code in the "approval_analysis_workflow" begins an exploratory analysis of the change in plans over time and their relationship to approval status. This is not complete.
+
 Quick Start:
 
-To clean the lexicon and run the model without regenerating the data, 
-download the latest version of data_output/gsp_text_with_meta and
-run gsp_topic_analyzer.R with clean_lex and run_model = T and other params = F 
+The "gsp_text_with_meta" file is the main file that is used in all subsequent analysis. This is the result of steps 1-3 of "stm_workflow". (Step 1, which generates the plan metadata and downloads a specific set of GSP pdfs, is not fully reproducible, as it was customized to the website specifications and content at particular dates, which have since shifted. However, by starting with the "gsp_text_with_meta" file and the GSP pdfs that are included on the accompanying Box drive, the various analyses are reproducible.
 
-To run the model without cleaning the lexicon, download the latest
-version of data_temp/gsp_slam and run gsp_topic_analyzer.R 
-with run_model = T and other params = F 
 
 Note on Data Files:
 
