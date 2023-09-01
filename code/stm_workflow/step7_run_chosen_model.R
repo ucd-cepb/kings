@@ -16,14 +16,16 @@ gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                     sust_criteria +
                     monitoring_networks + 
                     projects_mgmt_actions + 
-                    percent_dac_by_pop+
-                    as.factor(approval)+
-                    as.factor(priority)+
-                    mult_gsas+
-                    ag_gw_asfractof_tot_gw+
-                    hviol_avg_res+
-                    prop_service_gw_source+
-                    service_count,
+                    urbangw_af_log_scaled +
+                    percent_dac_by_pop_scaled+
+                    fract_of_area_in_habitat_log_scaled +
+                    maxdryspell_scaled +
+                    Agr_Share_Of_GDP_scaled +
+                    Republican_Vote_Share_scaled +
+                    Perc_Bach_Degree_Over25_scaled +
+                    local_govs_per_10k_people_log_scaled +
+                    mult_gsas +
+                    gwsum,
                  max.em.its = 50,
                  data = gsp_out$meta, init.type = "Spectral") 
 

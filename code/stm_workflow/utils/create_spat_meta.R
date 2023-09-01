@@ -221,17 +221,24 @@ create_dac_meta <- function(type, scope, overwrite=F){
       gsp_dac_adj_pop <- summarize(group_by(gspshape_dac_dt, gsp_ids),DAC, Prop_region_in_GSP, population) %>% 
          #finds percent of gsp place, tract, or blockgroup area that is designated a dac
          mutate(percent_dac_by_pop = weighted.mean(x=(DAC%in%T),w=population*Prop_region_in_GSP,na.rm=T)) %>% 
+         mutate(basin_population = sum(population*Prop_region_in_GSP)) %>% 
+         mutate(dac_population = sum(DAC%in%T * population*Prop_region_in_GSP)) %>% 
          #if dac = na, the population is included in the total population but not the dac population
          #adjusts population to only include proportion of region in the GSP. Assumes equal density throughout region
-         ungroup() %>% 
-         select(c("gsp_ids", "percent_dac_by_pop")) %>% 
+         ungroup() 
+      gsp_dac_adj_pop <- gsp_dac_adj_pop %>% 
+         select(c("gsp_ids", "percent_dac_by_pop", "basin_population", "dac_population")) %>% 
          unique()
       
       #if there are no places in the gsp, defaults to percent_dac_by_area = 0 
       gsps_wo_regions <- as.data.table(cbind(
          "gsp_ids" = gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)],
          "percent_dac_by_pop" = rep(0,times = 
-                                        length(gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)]))))
+                                        length(gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)])),
+         "basin_population"=rep(NA,times = 
+                                         length(gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)])),
+         "dac_population"=rep(NA,times = 
+                                 length(gsp_id[!(gsp_id %in%gsp_dac_adj_pop$gsp_ids)]))))
       gsp_dac_adj_pop <- rbind(gsp_dac_adj_pop, gsps_wo_regions)
       
       gsp_num_id = paste(ifelse((4-str_length(gsp_dac_adj_pop$gsp_ids)) > 0, "0", ""),

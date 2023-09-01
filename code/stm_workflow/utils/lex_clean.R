@@ -1,13 +1,14 @@
-packs <- c('stm','tm','SnowballC','tidytext','data.table',
-           'tidyverse','sf','pbapply','quanteda','stringi')
-need <- packs[!packs %in% installed.packages()[,'Package']]
-if(length(need)>0){install.packages(need)}
-lapply(packs, require, character.only = TRUE)
+source('code/stm_workflow/utils/custom_dictionary.R')
+source('code/stm_workflow/utils/generate_proper_names.R')
 
-source('code/functions/custom_dictionary.R')
-source('code/functions/generate_proper_names.R')
-
-lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL){
+lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
+   packs <- c('stm','tm','SnowballC','tidytext','data.table',
+              'tidyverse','sf','pbapply','quanteda','stringi')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   lapply(packs, require, character.only = TRUE)
+   
+   
    is_comment <- gsp_text_with_meta$is_comment
    is_reference <- gsp_text_with_meta$is_reference
       
@@ -139,28 +140,25 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    
    #removes stopwords, including poor conversion cues, months, 
    #and words that have no letters (eg negative numbers or number ranges)
-   custom <- c("us", "u.s","u.s.", "california")
+   custom <- c("us", "u.s","u.s.", "california", "united states")
    
    #TODO consider removing "^plot[0-9]+$"
-   if(rm_plnames == T){
-      pr_names <- generate_proper_names(underscore = T, for_removal = T)
-      qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
-                                                            custom,pr_names))
-   }else{
-      #only replace names that have a generic alternative. don't turn names into an empty string generic
-      pr_names <- pr_names[!is.na(pr_names$combogeneric) & nchar(pr_names$combogeneric)>0,]
-      pr_names$names <- gsub("\\s+", "_", x = pr_names$names)
-      #replacing specific place names with generic place names
-      qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop,pattern = pr_names$names,
-                                           replacement = pr_names$combogeneric)
-      qdfm_nostop <- quanteda::dfm_remove(qdfm, pattern = c(stopwords("en"),
-                                                            custom))
-   }
-   
+
+   #only replace names that have a generic alternative. don't turn names into an empty string generic
+   pr_names <- pr_names[!is.na(pr_names$combogeneric) & nchar(pr_names$combogeneric)>0,]
+   pr_names$names <- gsub("\\s+", "_", x = pr_names$names)
+   #replacing specific place names with generic place names
+   qdfm_nostop <- quanteda::dfm_replace(qdfm,pattern = pr_names$names,
+                                        replacement = pr_names$combogeneric)
+   qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, pattern = c(stopwords("en"),
+                                                         custom))
+
+
    #Section 6: SpellCheck and Filtering to Remove Poor Conversion Cues and Keep Only Alpha-Containing Words ####
    #spell check for mispellings that show up commonly in FREX
    qdfm_nostop <- quanteda::dfm_replace(qdfm_nostop,pattern = c("waterhsed","waterhseds"),
                                         replacement = c("watershed","watersheds"))
+   #remove poor pdf conversion cues
    qdfm_nostop <- quanteda::dfm_remove(qdfm_nostop, 
                                        pattern = c("ƌ","ă","ƶ","ƚ","ϯ",
                                                    "ϭ","ĩ",
@@ -171,8 +169,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
                                      valuetype = "regex")
 
    print("English stopwords and months removed")
-   if(rm_plnames==T){print("Place names removed")}
-   else{print("Place names replaced with generic equivalents")}
+   print("Place names replaced with generic equivalents")
    
    saveRDS(qdfm_nostop, file = paste0("data_temp/","nostop",format(Sys.time(), "%Y%m%d-%H:%M")))
    
@@ -216,6 +213,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    #11578325 observations in dtm_tidy
    
    saveRDS(dtm_tidy, file = paste0("data_temp/","dtm_tidylg",format(Sys.time(), "%Y%m%d-%H:%M")))
+   rm(metadata)
    
    # elements
    ntokens <- sum(ntoken(qdfm_long))
@@ -239,7 +237,6 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
          list.files(path = "data_temp", pattern = "tidymed", full.names = T))])
    
    print("uncommon words removed")
-   #TODO move to quanteda or tm
    #filter out terms found in at least 30 percent of pages
    #this sometimes hangs. should not take over 10 min. if it does, restart R.
    tidy_docs <- length(unique(dtm_tidy$document))
@@ -254,7 +251,7 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    
    saveRDS(dtm_tidy_small, file = paste0("data_temp/","dtm_tidysm",format(Sys.time(), "%Y%m%d-%H:%M")))
    
-   #retrieves the latest save of dtm_tidy_med
+   #retrieves the latest save of dtm_tidy_sm
    dtm_tidy_small <- readRDS(
       list.files(path = "data_temp", pattern = "tidysm", full.names = T)[length(
          list.files(path = "data_temp", pattern = "tidysm", full.names = T))])
@@ -267,36 +264,46 @@ lex_clean <- function(gsp_text_with_meta, rm_plnames = F,topic_indicators = NULL
    #v=count
    
    saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "dtm", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "dtm", full.names = T))])
+   rm(gsp_dtm_small)
+   
+   gc()
    
    #this sometimes hangs. should not take over 10 min. if it does, restart R.
    meta_small <- unique(dtm_tidy_small[,c(1,4:length(dtm_tidy_small))])
    
    saveRDS(meta_small, file = paste0("data_temp/","gsp_meta_small",format(Sys.time(), "%Y%m%d-%H:%M")))
-   meta_small <- readRDS(list.files(path = "data_temp", pattern = "meta_small", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "meta_small", full.names = T))])
    
    rm(dtm_tidy_small)
+   rm(meta_small)
+   
+   gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "gsp_dtm", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "gsp_dtm", full.names = T))])
+   
    print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps or > 0.3 of pages", 
                  nvocab-ncol(gsp_dtm_small), nvocab,
                  ntokens-sum(gsp_dtm_small$v), ntokens
    ))
-   #removed 11495099 of 11578325 terms (1767807 of 18928618 tokens) for appearing in < 3 gsps or > 0.3 of pages"
+   #removed 9154306 of 9196657 terms (1773374 of 15542019 tokens) for appearing in < 3 gsps or > 0.3 of pages"
 
    #This records documents dropped in cleaning process
    is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$dimnames$Docs))
    sum(is_kept)
-   #121666 kept pages
-   
+   #123551 kept pages
+   saveRDS(is_kept, file = paste0("data_temp/","is_kept",format(Sys.time(), "%Y%m%d-%H:%M")))
    rm(gsp_text_with_meta)
-   rm(metadata)
+   is_kept <- readRDS(list.files(path = "data_temp", pattern = "is_kept", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "is_kept", full.names = T))])
+   
    gc()
-   #sometimes this hangs
    
    #Section 9: File Output ####
-   gsp_out_slam <- readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
+   #sometimes this hangs
+   gsp_out_slam <- stm::readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
    #type = dtm is for dense matrices
+   rm(gsp_dtm_small)
+   
+   meta_small <- readRDS(list.files(path = "data_temp", pattern = "meta_small", full.names = T)[length(
+      list.files(path = "data_temp", pattern = "meta_small", full.names = T))])
    
    gsp_out <- list(documents=gsp_out_slam$documents, vocab=as.character(gsp_out_slam$vocab),
                    meta=meta_small, docs.removed=which(!is_kept))

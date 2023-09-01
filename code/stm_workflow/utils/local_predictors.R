@@ -1,11 +1,16 @@
-remotes::install_github("r-spatial/s2") # requires openssl@1.1, can be installed via brew 
+
+if('r-spatial/s2' %in% installed.packages()[,'Package']){
+   remotes::install_github("r-spatial/s2") # requires openssl@1.1, can be installed via brew 
+}
+
 library(s2)
 albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
 
-library(sf)
-library(tigris)
-library(tidyverse)
-library(data.table)
+packs <- c('sf','tigris','tidyverse',
+           'data.table')
+need <- packs[!packs %in% installed.packages()[,'Package']]
+if(length(need)>0){install.packages(need)}
+lapply(packs, require, character.only = TRUE)
 
 sf_use_s2(TRUE)
 

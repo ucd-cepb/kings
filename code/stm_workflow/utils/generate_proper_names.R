@@ -63,7 +63,7 @@ generate_proper_names <- function(underscore = F, to_lower=T){
    #remove dashes between words
    agencies <- str_replace(agencies, "\\s+\\p{Pd}\\s+"," ")
    
-   basins <- read_excel("data_raw/final-515-table.xlsx")
+   basins <- read_excel("data/raw_large_files/final-515-table.xlsx")
    basins <- c(basins$`Basin Name`, basins$`Subbasin Name`)
    basins <- basins[!is.na(basins)]
    

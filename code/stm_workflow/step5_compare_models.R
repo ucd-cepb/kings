@@ -26,15 +26,15 @@ k_choice <- case_when(!"5" %in% saved_nums ~ 5,
 k_str <- toString(k_choice)
 print(paste0("Now generating model with ",k_str, " topics"))
 
-if(file.exists("data_temp/heldout")) {
-   heldout <- readRDS("data_temp/heldout")
+if(file.exists("data/temp_large_files/heldout")) {
+   heldout <- readRDS("data/temp_large_files/heldout")
 }else{
    heldout <- make.heldout(obj$documents,
                            obj$vocab, 
                            N=floor(0.05 * length(obj$documents)), 
                            proportion=0.5, 
                            seed=12)
-   saveRDS(heldout,file = "data_temp/heldout")
+   saveRDS(heldout,file = "data/temp_large_files/heldout")
 }
 
 
@@ -45,14 +45,14 @@ k_model = stm(heldout$documents, heldout$vocab,
                            sust_criteria +
                            monitoring_networks + 
                            projects_mgmt_actions + 
-                           publicsupplywells +
-                           percent_dac_by_pop+
-                           fract_of_area_in_habitat +
-                           maxdryspell +
-                           AGR_Share_Of_GDP +
-                           Republican_Vote_Share +
-                           Perc_Bach_Degree_Over25 +
-                           local_govs_per_10k_people +
+                           urbangw_af_log_scaled +
+                           percent_dac_by_pop_scaled+
+                           fract_of_area_in_habitat_log_scaled +
+                           maxdryspell_scaled +
+                           Agr_Share_Of_GDP_scaled +
+                           Republican_Vote_Share_scaled +
+                           Perc_Bach_Degree_Over25_scaled +
+                           local_govs_per_10k_people_log_scaled +
                            mult_gsas +
                            gwsum,
                         init.type = "Spectral",
@@ -67,14 +67,16 @@ while (!k_model$convergence$converged){
               sust_criteria +
               monitoring_networks + 
               projects_mgmt_actions + 
-              percent_dac_by_pop+
-              as.factor(approval)+
-              as.factor(priority)+
-              mult_gsas+
-              ag_gw_asfractof_tot_gw+
-              hviol_avg_res+
-              prop_service_gw_source+
-              service_count,
+              urbangw_af_log_scaled +
+              percent_dac_by_pop_scaled+
+              fract_of_area_in_habitat_log_scaled +
+              maxdryspell_scaled +
+              Agr_Share_Of_GDP_scaled +
+              Republican_Vote_Share_scaled +
+              Perc_Bach_Degree_Over25_scaled +
+              local_govs_per_10k_people_log_scaled +
+              mult_gsas +
+              gwsum,
            init.type = "Spectral",
            max.em.its = k_model$settings$convergence$max.em.its + 20,
            data = obj$meta,
