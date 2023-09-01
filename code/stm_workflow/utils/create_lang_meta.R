@@ -8,30 +8,38 @@ source("code/stm_workflow/utils/web_data_repair.R")
 create_lang_meta <- function(run_repair = F){
    
    #downloaded from https://data.cnra.ca.gov/dataset/sgma-basin-prioritization/resource/6347629e-340d-4faf-ae7f-159efbfbcdc9
-   final_515_table <- read_excel("data_raw/final-515-table.xlsx")
+   final_515_table <- read_excel("data/raw_large_files/final-515-table.xlsx")
    #how much of the basin's total (ag+urban) gw use is due to ag, as a percentage 0-1?
    final_515_table$basin_id <-   final_515_table$"Basin ID"
    final_515_table$basin_name <-final_515_table$"Basin Name"
    final_515_table$ag_gw_af <-   final_515_table$"AG GW \r\nBasin\r\n(AF)"
-   final_515_table$urb_gw_af <- final_515_table$"Urban GW Volume (AF)"
    final_515_table$habitat <- final_515_table$"Habitat\r\nExist\r\n\r\n1 = Yes,\r\nBlank = No"
    final_515_table$streamflow <- final_515_table$"Streamflow\r\nExist\r\n\r\n1 = Yes,\r\nBlank = No"
    final_515_table$priority <- final_515_table$"SGMA 2019 Basin Prioritization\r\n\r\nBasin\r\nPriority"
    final_515_table$fract_of_area_in_habitat <- final_515_table$"Total Area of Polygons" / final_515_table$"Basin Area (Acre)"
-   final_515_table$publicsupplywells <- final_515_table$"Public Supply Wells\r\n\r\n"
+   final_515_table$urbangw_af <- final_515_table$"Urban GW Volume (AF)"
    final_515_table$declininggw <- final_515_table$"Component 7.a\r\n\r\nDeclining GW Levels\r\nPoints" 
    final_515_table$subsidence <- final_515_table$"Component 7.b\r\n\r\nSubsidence Points\r\n"
    final_515_table$saltintrusion <- final_515_table$"Component 7.c\r\n\r\nSalt Intrusion Points"
    final_515_table <- final_515_table %>% mutate(ag_gw_asfractof_tot_gw = ag_gw_af/
-                                                    (ag_gw_af+urb_gw_af))
+                                                    (ag_gw_af+urbangw_af))
+   
+   #converting gw severity to binary metrics
+   final_515_table$subsidence <- ifelse(final_515_table$subsidence>0,1,0)
+   final_515_table$saltintrusion <-ifelse(final_515_table$saltintrusion>0,1,0)
+   final_515_table$declininggw <- ifelse(final_515_table$declininggw>0,1,0)
+   
+   
+   final_515_table$gwsum <- final_515_table$declininggw + 
+      final_515_table$saltintrusion + 
+      final_515_table$subsidence
    final_515_table <- select(final_515_table, 
-                             c(basin_id, basin_name, ag_gw_asfractof_tot_gw, priority, habitat, streamflow,
-                               fract_of_area_in_habitat, publicsupplywells, declininggw,
-                               subsidence, saltintrusion))
+                             c(basin_id, basin_name, priority, 
+                               fract_of_area_in_habitat, urbangw_af, gwsum))
 
    if(run_repair == T){
-      gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_vars", full.names = T)[
-         length(list.files(path = "data_output", pattern = "web_vars", full.names = T))])
+      gsp_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_vars", full.names = T)[
+         length(list.files(path = "data/output_large_files", pattern = "web_vars", full.names = T))])
       #joins gsp vars with basin vars
       #filters out basin ids without plans     
       gsp_tbl <- cbind(gsp_tbl, "basin_id" = sub(" .*", "", gsp_tbl$basin))

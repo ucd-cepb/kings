@@ -11,8 +11,6 @@ lapply(packs, require, character.only = TRUE)
 
 source('code/stm_workflow/utils/create_lang_meta.R')
 source('code/stm_workflow/utils/create_spat_meta.R')
-source('code/stm_workflow/utils/generate_proper_names.R')
-#source('code/functions/compare_models.R')
 source('code/stm_workflow/utils/dac_svi_analysis.R')
 source('code/stm_workflow/utils/local_predictors.R')
 
@@ -35,7 +33,6 @@ type = "pop"
 #or type = "area"
 scope = "blockgroup"
 gsp_dac <- create_dac_meta(type, scope, overwrite = T)
-options(timeout=600)
 #rows = num docs; cols = metadata types
 gsp_text_with_meta <- full_join(gsp_text_with_lang, gsp_dac, by = c("gsp_id"="gsp_num_id"))
 
@@ -56,15 +53,30 @@ gsp_local <- st_drop_geometry(gsp_local)
 
 gsp_text_with_meta <- left_join(gsp_text_with_meta, gsp_local)
 
-#converting gw severity to binary metrics
-gsp_text_with_meta$subsidence <- ifelse(gsp_text_with_meta$subsidence>0,1,0)
-gsp_text_with_meta$saltintrusion <-ifelse(gsp_text_with_meta$saltintrusion>0,1,0)
-gsp_text_with_meta$declininggw <- ifelse(gsp_text_with_meta$declininggw>0,1,0)
-gsp_text_with_meta$gwsum <- gsp_text_with_meta$declininggw + 
-   gsp_text_with_meta$saltintrusion + 
-   gsp_text_with_meta$subsidence
+
+gsp_text_with_meta$urbangw_af_log_scaled <- scale(log(gsp_text_with_meta$urbangw_af))
+gsp_text_with_meta$percent_dac_by_pop_scaled <- scale(gsp_text_with_meta$percent_dac_by_pop)
+gsp_text_with_meta$fract_of_area_in_habitat_log_scaled <- scale(log(gsp_text_with_meta$fract_of_area_in_habitat))
+gsp_text_with_meta$maxdryspell_scaled <- scale(gsp_text_with_meta$maxdryspell)
+gsp_text_with_meta$Agr_Share_Of_GDP_scaled <- scale(gsp_text_with_meta$Agr_Share_Of_GDP)
+gsp_text_with_meta$Republican_Vote_Share_scaled <- scale(gsp_text_with_meta$Republican_Vote_Share)
+gsp_text_with_meta$Perc_Bach_Degree_Over25_scaled <- scale(gsp_text_with_meta$Perc_Bach_Degree_Over25)
+gsp_text_with_meta$local_govs_per_10k_people_log_scaled <- scale(log(gsp_text_with_meta$local_govs_per_10k_people))
+
 saveRDS(gsp_text_with_meta, file = "data/output_large_files/gsp_docs_w_meta")
 
-gsp_mini <- unique(gsp_text_with_meta[,c(7,25,26,27)])
-table(gsp_mini[,2:4])
-      
+gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_reference","page_num",
+                                                 "admin","basin_plan","sust_criteria","monitoring_networks",
+                                                 "projects_mgmt_actions","urbangw_af_log_scaled",
+                                                 "percent_dac_by_pop_scaled",
+                                                 "fract_of_area_in_habitat_log_scaled",
+                                                 "maxdryspell_scaled",
+                                                 "Agr_Share_Of_GDP_scaled",
+                                                 "Republican_Vote_Share_scaled",
+                                                 "Perc_Bach_Degree_Over25_scaled",
+                                                 "local_govs_per_10k_people_log_scaled",
+                                                 "mult_gsas",
+                                                 "gwsum",
+                                                 "approval")]
+
+saveRDS(gsp_text_lean, file = "data/output_large_files/gsp_docs_lean")
