@@ -123,12 +123,25 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
    rm(tok_n)
    gc()
    #dfm_wordstem(qdfm, language = "en") would be used here to stem
-   
+
    saveRDS(qdfm, file = paste0("data_temp/","gsp_tok_",format(Sys.time(), "%Y%m%d-%H:%M")))
    
    qdfm <- readRDS(list.files(path = "data_temp", pattern = "tok", full.names = T)[length(
       list.files(path = "data_temp", pattern = "tok", full.names = T))])
-   #Section 5: Stopwords Removed, including Months, California/US, and Place Names Replaced with Generic Names ####
+   
+   #Section 5: Dashes and Underscores cleaned, Stopwords Removed, including Months, California/US, and Place Names Replaced with Generic Names ####
+   
+   #removing multiple underscores 
+   qdfm <- tokens_replace(qdfm, pattern = types(qdfm), replacement = stringi::stri_replace_all_regex(types(qdfm), "_+", "_"),
+                          valuetype = "fixed")
+   #removing multiple hyphens/dashes 
+   qdfm <- tokens_replace(qdfm, pattern = types(qdfm), replacement = stringi::stri_replace_all_regex(types(qdfm), "\\p{Pd}+", "-"),
+                          valuetype = "fixed")
+   #removing leading and trailing underscores and leading and trailing hyphens/dashes
+   qdfm <- tokens_replace(qdfm, pattern = types(qdfm), replacement = stringi::stri_replace_all_regex(types(qdfm), "^_|^\\p{Pd}|_$|\\p{Pd}$", ""),
+                  valuetype = "fixed")
+   
+   
    months <- c("^jan$", "^feb$", "^mar$", "^apr$", "^may$", "^jun$", "^jul$", 
                "^aug$", "^sep$", 
                "^sept$", "^oct$", "^nov$", "^dec$", "^january$", "^february$", "^march$",
@@ -197,118 +210,28 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
       list.files(path = "data_temp", pattern = "noshort", full.names = T)[length(
          list.files(path = "data_temp", pattern = "noshort", full.names = T))])
    
+   #removes 0089 and 0053 before tidying
+   qdfm_long <- dfm_subset(qdfm_long, !(gsp_id %in% c("0053","0089")))
+   
+   library(quanteda.textstats)
+   long_stats <- quanteda.textstats::textstat_frequency(qdfm_long, groups = c(gsp_id))
    #Section 8: Remove Very Common and Very Uncommon Words ####
-   #prepare metadata to add to tidy dtm
-   metadata <- cbind(quanteda::docvars(qdfm_long),"document"=
-                        as.integer(substr(
-                           docnames(qdfm_long),
-                           5,str_length(docnames(qdfm_long)
-                           ))))
-   
-   #join metadata with dtm in tidyverse
-   dtm_tidy <- tidy(qdfm_long) %>% 
-      mutate("document" = as.integer(
-         substr(document,5,str_length(document)))) %>% 
-      inner_join(metadata, by = c("document" = "document"))
-   #11578325 observations in dtm_tidy
-   
-   saveRDS(dtm_tidy, file = paste0("data_temp/","dtm_tidylg",format(Sys.time(), "%Y%m%d-%H:%M")))
-   rm(metadata)
-   
-   # elements
-   ntokens <- sum(ntoken(qdfm_long))
-   nvocab <- sum(ntype(qdfm_long))
-   rm(qdfm_long)
-   
-   #retrieves the latest save of dtm_tidy
-   dtm_tidy <- readRDS(
-      list.files(path = "data_temp", pattern = "tidylg", full.names = T)[length(
-         list.files(path = "data_temp", pattern = "tidylg", full.names = T))])
-   
-   #use tidyverse to filter out terms found in < 3 gsps
-   dtm_tidy_med <- dtm_tidy %>% group_by(term) %>% filter(length(unique(gsp_id))>2) %>% ungroup()
-   #9373829 observations in dtm_tidy_med
-   
-   saveRDS(dtm_tidy_med, file = paste0("data_temp/","dtm_tidymed",format(Sys.time(), "%Y%m%d-%H:%M")))
-   
-   #retrieves the latest save of dtm_tidy_med
-   dtm_tidy_med <- readRDS(
-      list.files(path = "data_temp", pattern = "tidymed", full.names = T)[length(
-         list.files(path = "data_temp", pattern = "tidymed", full.names = T))])
-   
-   print("uncommon words removed")
-   #filter out terms found in at least 30 percent of pages
-   #this sometimes hangs. should not take over 10 min. if it does, restart R.
-   tidy_docs <- length(unique(dtm_tidy$document))
-   dtm_tidy_small <- dtm_tidy_med %>% group_by(term) 
-   dtm_tidy_small <- dtm_tidy_small %>% 
-      filter( (n() / tidy_docs) < 0.3)
-   print("very common words removed")
-   rm(dtm_tidy)
-   rm(dtm_tidy_med)
-   # observations in dtm_tidy_small
-   dtm_tidy_small <- dtm_tidy_small %>% ungroup()
-   
-   saveRDS(dtm_tidy_small, file = paste0("data_temp/","dtm_tidysm",format(Sys.time(), "%Y%m%d-%H:%M")))
-   
-   #retrieves the latest save of dtm_tidy_sm
-   dtm_tidy_small <- readRDS(
-      list.files(path = "data_temp", pattern = "tidysm", full.names = T)[length(
-         list.files(path = "data_temp", pattern = "tidysm", full.names = T))])
-   
-   
-   #this sometimes hangs. should not take over 10 min. if it does, restart R.
-   gsp_dtm_small <- cast_dtm(dtm_tidy_small,document = document, term = term, value = count)
-   #i=doc
-   #j=feat
-   #v=count
-   
-   saveRDS(gsp_dtm_small, file = paste0("data_temp/","gsp_dtm_",format(Sys.time(), "%Y%m%d-%H:%M")))
-   rm(gsp_dtm_small)
-   
-   gc()
-   
-   #this sometimes hangs. should not take over 10 min. if it does, restart R.
-   meta_small <- unique(dtm_tidy_small[,c(1,4:length(dtm_tidy_small))])
-   
-   saveRDS(meta_small, file = paste0("data_temp/","gsp_meta_small",format(Sys.time(), "%Y%m%d-%H:%M")))
-   
-   rm(dtm_tidy_small)
-   rm(meta_small)
-   
-   gsp_dtm_small <- readRDS(list.files(path = "data_temp", pattern = "gsp_dtm", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "gsp_dtm", full.names = T))])
-   
-   print(sprintf("Removed %i of %i terms (%i of %i tokens) for appearing in < 3 gsps or > 0.3 of pages", 
-                 nvocab-ncol(gsp_dtm_small), nvocab,
-                 ntokens-sum(gsp_dtm_small$v), ntokens
-   ))
-   #removed 9154306 of 9196657 terms (1773374 of 15542019 tokens) for appearing in < 3 gsps or > 0.3 of pages"
 
-   #This records documents dropped in cleaning process
-   is_kept <- (1:length(gsp_text_with_meta[[1]][!is_comment&!is_reference]) %in% unique(gsp_dtm_small$dimnames$Docs))
-   sum(is_kept)
-   #123551 kept pages
-   saveRDS(is_kept, file = paste0("data_temp/","is_kept",format(Sys.time(), "%Y%m%d-%H:%M")))
-   rm(gsp_text_with_meta)
-   is_kept <- readRDS(list.files(path = "data_temp", pattern = "is_kept", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "is_kept", full.names = T))])
+   #find terms found in < 3 gsps
+   uncommon_terms <- long_stats %>% group_by(feature) %>% filter(length(unique(group))<3) %>% ungroup()
+   uncommon_terms <- uncommon_terms$feature
    
-   gc()
    
-   #Section 9: File Output ####
-   #sometimes this hangs
-   gsp_out_slam <- stm::readCorpus(gsp_dtm_small, type = "slam") #using the read.slam() function in stm to convert
-   #type = dtm is for dense matrices
-   rm(gsp_dtm_small)
+   qdfm_med <- dfm_select(qdfm_long, pattern = uncommon_terms, selection = "remove", valuetype = "fixed")
+   print("uncommon words removed")
    
-   meta_small <- readRDS(list.files(path = "data_temp", pattern = "meta_small", full.names = T)[length(
-      list.files(path = "data_temp", pattern = "meta_small", full.names = T))])
+   #filter out terms found in at least 30 percent of pages
+   qdfm_sm <- dfm_trim(qdfm_med, max_docfreq= 0.3, docfreq_type = "prop")
    
-   gsp_out <- list(documents=gsp_out_slam$documents, vocab=as.character(gsp_out_slam$vocab),
-                   meta=meta_small, docs.removed=which(!is_kept))
    
-   colnames(gsp_out$meta) <- colnames(meta_small)
+   
+   #122299 kept pages
+   gsp_out <- convert(qdfm_sm, to = "stm")
    
    return(gsp_out)
 }
