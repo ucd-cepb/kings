@@ -67,7 +67,7 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
                             verbose = T)
    print("Punctuation and numbers removed")
    
-   #Section 3: Remove Case-Sensitive Custom Stopwords and Protect Short Acronyms Before tolowerization ####
+   #Section 3a: Remove Case-Sensitive Custom Stopwords and Protect Short Acronyms Before tolowerization ####
    #removes case-sensitive custom stopwords "NA" and "na" 
    #but keeps "Na" (sodium) before converting toLower
    qtok <- tokens_remove(qtok, pattern = c("NA","na",""),  
@@ -79,10 +79,25 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
                                                     "sodium",
                                                     "situation_assessment",
                                                     "potential_of_hydrogen"))
-   pr_names <- generate_proper_names(underscore=F, to_lower=T)
-   pr_compounds <- pr_names$names[grep("\\s", pr_names$names)]
+   
+   
+   #Section 3b Underscore and Dash Cleaning####
+   #removing multiple underscores 
+   qtok <- tokens_replace(qtok, pattern = types(qtok), replacement = stringi::stri_replace_all_regex(types(qtok), "_+", "_"),
+                          valuetype = "fixed")
+   #removing multiple hyphens/dashes 
+   qtok <- tokens_replace(qtok, pattern = types(qtok), replacement = stringi::stri_replace_all_regex(types(qtok), "\\p{Pd}+", "-"),
+                          valuetype = "fixed")
+   #removing leading and trailing underscores and leading and trailing hyphens/dashes
+   qtok <- tokens_replace(qtok, pattern = types(qtok), replacement = stringi::stri_replace_all_regex(types(qtok), "^_|^\\p{Pd}|_$|\\p{Pd}$", ""),
+                          valuetype = "fixed")
+   
    #Section 4: Compoundization Using Custom Phrase Dictionary of Topic Indicators and Proper Names ####
    #adds compound topic indicator words and proper names to custom dictionary
+   
+   pr_names <- generate_proper_names(underscore=F, to_lower=T)
+   pr_compounds <- pr_names$names[grep("\\s", pr_names$names)]
+   
    compounds <- custom_dictionary(
       #removes ^ and $ characters from topic_indicator list
       c(str_remove_all(unlist(topic_indicators[grepl("\\s",topic_indicators)]),"\\^|\\$"),
@@ -90,27 +105,28 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
    compounds <- stri_remove_empty_na(compounds)
    #this takes about 30 min
    #converts toLower, does not stem
-   tok_1 <- quanteda::tokens_compound(qtok[1:10],pattern = phrase(compounds),
+   sect_len <- 10
+   tok_1 <- quanteda::tokens_compound(qtok[1:sect_len],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
-   print(paste0("tok 1 complete featuring rows 1:10"))
+   print(paste0("tok 1 complete featuring rows 1:",sect_len))
    qdfm <- quanteda::dfm(tok_1, verbose = T)
    
-   for(i in 2:(length(qtok)/10)){
-      tok_i <- quanteda::tokens_compound(qtok[(10*(i-1)+1):(10*i)],pattern = phrase(compounds),
+   for(i in 2:(length(qtok)/sect_len)){
+      tok_i <- quanteda::tokens_compound(qtok[(sect_len*(i-1)+1):(sect_len*i)],pattern = phrase(compounds),
                                          concatenator = '_',valuetype = 'regex',
                                          case_insensitive=T,window = 0)
-      if(i %% 50 == 0 ){
-         print(paste0("tok ", i, " complete featuring rows ", (10*(i-1)+1),":",(10*i)))
+      if(i %% (500/sect_len) == 0 ){
+         print(paste0("tok ", i, " complete featuring rows ", (sect_len*(i-1)+1),":",(sect_len*i)))
       }
       qdfm_i <- quanteda::dfm(tok_i, verbose = T)
       qdfm <- rbind(qdfm, qdfm_i)
    }
    
-   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/10)*10)+1):length(qtok)],pattern = phrase(compounds),
+   tok_n <- quanteda::tokens_compound(qtok[((floor(length(qtok)/sect_len)*sect_len)+1):length(qtok)],pattern = phrase(compounds),
                                       concatenator = '_',valuetype = 'regex',
                                       case_insensitive=T,window = 0)
-   print(paste0("tok n complete featuring rows ", (floor(length(qtok)/10)*10)+1,":",length(qtok)))
+   print(paste0("tok n complete featuring rows ", (floor(length(qtok)/sect_len)*sect_len)+1,":",length(qtok)))
    qdfm_n <- quanteda::dfm(tok_n, verbose = T)
    qdfm <- rbind(qdfm, qdfm_n)
    
@@ -129,19 +145,7 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
    qdfm <- readRDS(list.files(path = "data_temp", pattern = "tok", full.names = T)[length(
       list.files(path = "data_temp", pattern = "tok", full.names = T))])
    
-   #Section 5: Dashes and Underscores cleaned, Stopwords Removed, including Months, California/US, and Place Names Replaced with Generic Names ####
-   
-   #removing multiple underscores 
-   qdfm <- tokens_replace(qdfm, pattern = types(qdfm), replacement = stringi::stri_replace_all_regex(types(qdfm), "_+", "_"),
-                          valuetype = "fixed")
-   #removing multiple hyphens/dashes 
-   qdfm <- tokens_replace(qdfm, pattern = types(qdfm), replacement = stringi::stri_replace_all_regex(types(qdfm), "\\p{Pd}+", "-"),
-                          valuetype = "fixed")
-   #removing leading and trailing underscores and leading and trailing hyphens/dashes
-   qdfm <- tokens_replace(qdfm, pattern = types(qdfm), replacement = stringi::stri_replace_all_regex(types(qdfm), "^_|^\\p{Pd}|_$|\\p{Pd}$", ""),
-                  valuetype = "fixed")
-   
-   
+   #Section 5: Stopwords Removed, including Months, California/US, and Place Names Replaced with Generic Names ####
    months <- c("^jan$", "^feb$", "^mar$", "^apr$", "^may$", "^jun$", "^jul$", 
                "^aug$", "^sep$", 
                "^sept$", "^oct$", "^nov$", "^dec$", "^january$", "^february$", "^march$",

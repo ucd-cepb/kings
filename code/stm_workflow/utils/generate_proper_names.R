@@ -1,7 +1,7 @@
 
 
 generate_proper_names <- function(underscore = F, to_lower=T){
-   packs <- c('tidyverse','qdapDictionaries','stringi')
+   packs <- c('tidyverse','qdapDictionaries','stringi','readxl')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
    lapply(packs, require, character.only = TRUE)

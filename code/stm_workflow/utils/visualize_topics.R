@@ -114,7 +114,7 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
          scale_color_scico_d(palette = "nuuk")+
          theme_minimal()+theme(plot.title = element_text(hjust = 0.5))
       topic_qual_plot
-      ggsave("topic_quality_model_7.png",plot = topic_qual_plot, device = "png", path = "figures",
+      ggsave("topic_quality_model.png",plot = topic_qual_plot, device = "png", path = "figures",
              width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
       
       
@@ -122,19 +122,17 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
    
    #dim(readPNG("figures/topic_quality"))
    
-   text_vect <- unlist(text_col)
-   #testing if text_col includes docs.removed and removes them if applicable
-   if (length(text_vect) != length(inputs$documents)){
-      text_vect <- text_vect[-inputs$docs.removed]
-   }
+   metadata <- inputs$meta
+   meta_with_text <- left_join(metadata, gsp_text_with_meta)
+   text_vect <- meta_with_text$text
    
    #findThoughts example
-   #thoughts <- findThoughts(model, texts = text_vect, topics = c(1:numTopics), n = 3)
+   thought18 <- findThoughts(model, texts = text_vect, topics = c(18), n=10)
    topics = c(1:numTopics)
    #plotQuote is a graphical wrapper to help present documents as examples
    #example:
    #thought_5 <- findThoughts(model, texts = text_vect, topics = 5, n = 3)
-   #plotQuote(thought_5, width = 30, main = "Topic 5")
+   #
    
    #TODO clean this up
    #plot(model, type = "summary", xlim = c(0,0.3))

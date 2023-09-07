@@ -14,9 +14,16 @@ saved_nums <- str_extract_all(paste0(k_saves, collapse = "_"), dig_regex)[[1]]
 k_choice <- case_when(!"5" %in% saved_nums ~ 5,
                       !"10" %in% saved_nums ~ 10,
                       !"20" %in% saved_nums ~ 20,
+                      !"30" %in% saved_nums ~ 30,
                       !"40" %in% saved_nums ~ 40,
+                      !"50" %in% saved_nums ~ 50,
+                      !"60" %in% saved_nums ~ 60,
+                      !"70" %in% saved_nums ~ 70,
                       !"80" %in% saved_nums ~ 80,
-                      !"140" %in% saved_nums ~ 140,
+                      !"100" %in% saved_nums ~ 100,
+                      !"120" %in% saved_nums ~ 120,
+                      !"160" %in% saved_nums ~ 160,
+                      !"200" %in% saved_nums ~ 200,
                       T ~ NA_real_)
 
 if(is.na(k_choice)){
