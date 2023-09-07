@@ -83,6 +83,7 @@ gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
 edgelist_w_meta <- merge(gsp_mini, edgelist_with_vclass)
 saveRDS(edgelist_w_meta, "data/output_large_files/edgelist_with_verb_meta")
 
+#Section 1: Verb Classes and Basin Attributes ####
 #VERB CLASSES AND AG
 #summary(glm(type_64 ~ Agr_Share_Of_GDP_scaled + Republican_Vote_Share_scaled, data = edgelist_w_meta, family = "binomial"))
 #class 64 ~ "allow_verbs"
@@ -124,7 +125,7 @@ summary(glm(type_22 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
 
 #class 23 verbs_of_separating_and_disassembling
 summary(glm(type_23 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
-#hypothesis confirmed, although most common word is "vary"
+#hypothesis confirmed, although most common word is "vary" and "divide"
 
 #class 36 verbs_of_social_interaction, eg "communicate", "collaborate", "correspond", "cooperate"
 summary(glm(type_36 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
@@ -197,4 +198,19 @@ summary(glm(type_54 ~ as.factor(approval), data = edgelist_w_meta, family = "bin
 #class 87 verbs_of_focusing_and_comprehending #thoroughness; main verb is "follow"
 summary(glm(type_87 ~ as.factor(approval), data = edgelist_w_meta, family = "binomial"))
 #hypothesis confirmed!
+
+#Section 2: Verb Class and Node Attributes ####
+#(such as degree, centrality, reciprocity, transitivity, and num_GSPs_in)
+#eg do social verbs have more reciprocity and transitivity than other verbs?
+
+#Section 3: Verb Class and Verb Tense/Hedges ####
+#which actions have already been done and which are yet to be done?
+#eg do we see evidence for social verbs/collaboration happening in the past, present, and future to equal degrees?
+#eg do we see transformation verbs (eg signalling landscape transformation and gov structural modifications) happening in the past, present, or future most often?
+#eg do we see hedges disproportionately attached to transformation verbs, signalling the uncertainty of the actual project actions?
+#which types of verbs are the most likely to be hedged, proportionately to their total percentage of use?
+
+#Section 4: Verb Tense and Node Attributes ####
+#do the most central nodes have more past tense, present tense, or future tense edges attached to them than is typical in the network?
+#this may require an ergm.
 
