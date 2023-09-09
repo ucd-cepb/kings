@@ -59,9 +59,10 @@ names(old_new_text) <- c("old","new")
 
 ### Step 2: Parse Text
 
-This is a wrapper for spacyR, but another NLP tool can be used as long as the output conforms to spacy tagging standards: Universal Dependencies tags for part of speech, Penn Treebank tags for tags. The textnet_extract function expects a row for each token. The column names expected by textnet_extract are doc_id (a unique ID for each page), sentence_id (a unique ID for each sentence), token_id (a unique ID for each token), token (a string that is the token, generally a word), lemma (the canonical or dictionary form of the token), pos (a code referring to the token's part of speech, according to http://universaldependencies.org/u/pos/), tag (a code referring to the token's part of speech, according to Penn Treebank https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html), head_token_id (a numeric ID referring to the token_id of the head token of the current row's token), dep_rel (the dependency label according to https://github.com/clir/clearnlp-guidelines/blob/master/md/specifications/dependency_labels.md), and entity (entity category defined by https://catalog.ldc.upenn.edu/docs/LDC2013T19/OntoNotes-Release-5.0.pdf, followed by "_B" if it is the first token in the entity or "_I" otherwise).
+This is a wrapper for spacyR, but another NLP tool can be used as long as the output conforms to spacy tagging standards: Universal Dependencies tags for part of speech, Penn Treebank tags for tags. The textnet_extract function expects a row for each token. The column names expected by textnet_extract are doc_id (a unique ID for each page), sentence_id (a unique ID for each sentence), token_id (a unique ID for each token), token (a string that is the token, generally a word), lemma (the canonical or dictionary form of the token), pos (a code referring to the token's part of speech, according to http://universaldependencies.org/u/pos/), tag (a code referring to the token's part of speech, according to Penn Treebank https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html), head_token_id (a numeric ID referring to the token_id of the head token of the current row's token), dep_rel (the dependency label according to https://github.com/clir/clearnlp-guidelines/blob/master/md/specifications/dependency_labels.md), and entity (entity type category defined by https://catalog.ldc.upenn.edu/docs/LDC2013T19/OntoNotes-Release-5.0.pdf, followed by "_B" if it is the first token in the entity or "_I" otherwise).
 
 ```{r parse, include=FALSE}
+library(textNet)
 ret_path <- "/Users/elisemiller/miniconda3/envs/spacy_condaenv/bin/python"
 pages <- unlist(old_new_text)
 file_ids <- unlist(sapply(1:length(old_new_text), function(q) rep(names(old_new_text[q]),length(old_new_text[[q]]))))
@@ -79,7 +80,9 @@ old_new_parsed <- textNet::parse(ret_path,
 
 ### Step 3: Extract Networks
 
-This is the function that extracts the entity network. It reads in the result of parse() or another parsing tool with appropriate column names
+The textnet_extract() function then extracts the entity network. It reads in the result of parse() or another parsing tool with appropriate column names and tagging conventions. The resulting object consists of a nodelist, an edgelist, a verblist, and a list of appositives. The nodelist variables are entity_cat, the concatenated name of the entity; entity_type, which is a preservation from the entity_type attribute from the output of textNet::parse(); and num_appearances, which is the number of times the entity appears in the PDF text. (This is not the same as node degree, since there may be multiple edges, or if keep_incomplete_edges is set to false, no edges resulting from a single appearance of the entity in the document.)  The entity_type attribute represents Spacy's determination of entity type using its NER recognition, or if a custom parser or NER tool is used, the textnet_extract() function will preserve these entity type designations.
+
+The file is saved to the provided filename, if provided. It is returned to memory if return_to_memory is set to T. At least one of these return pathways must be established to avoid an error. In this example, we only keep entity types in the nodelist, edgelist, and appositivelist that are listed under keep_entities; namely, "ORG", "GPE", and "PERSON".
 
 ```{r extract, include=FALSE}
 nodeedge_filenames <- c("old_extract","new_extract")
@@ -91,20 +94,36 @@ for(m in 1:length(old_new_parsed)){
 ```
 
 ### Step 4: Consolidate Entity Synonyms
-acronyms; known federal and state/regional agency names and abbreviations; document-specific abbreviations or nicknames such as "The Agency"  
+In a document, the same real-world entity may be referenced in multiple ways. For instance, the document may introduce an organization using its full name, then use an acronym for the remainder of the document. To have more reliable network results, it is important to consolidate nodes that represent different naming conventions into a single node. The textNet package comes with a built-in tool for finding acronyms defined parenthetically within the text. This can be run on the result of pdf_clean() to generate a table with one column for acronyms and another for the corresponding full names, such that each row is a different instance of a phrase for which an acronym was detected. The use of find_acronyms() is demonstrated below.
 
-```{r consolidate, include=FALSE}
+```{r acronyms, include=FALSE}
    old_acronyms <- find_acronyms(old_new_text[[1]])
    new_acronyms <- find_acronyms(old_new_text[[2]])
    
-   old_extract_clean <- disambiguate(from = old_acronyms$acronym, to = old_acronyms$name, textnet_extract = readRDS("./old_extract"))
+```
+
+The resulting table of acronyms can then be fed into a disambiguation tool. This tool is very flexible, allowing a user-defined custom vector or list of strings representing the original entity name to search for in the textnet_extract object, and another user-defined custom vector or list of strings representing the entity name to which to convert those instances. Additional inputs that may be useful here are names and abbreviations of known federal and state or regional agencies, or other entities that are likely to be discussed in the particular type of document being analyzed. There may also be topic-specific words or phrases that are likely to be discussed in the document. For instance, in Groundwater Sustainability Plans, it is common to discuss entities that involve the term "subbasin," but the spelling of this is not always consistent. 
+
+In the example below, we define a "from" vector that includes the acronyms found through the previous step, as well as non-standard spellings of "subbasin." This function is case sensitive, so we have included two alternate cases that are likely to appear in the dataset. The "to" vector includes the full names from the find_acronyms result, along with the standard spelling of "subbasin". 
+
+There are a few rules about the "from" and "to" columns. First, the length of "from" and "to" must be identical, since from[[i]] is replaced with to[[i]]. Second, there may not be any duplicated terms in the "from" list, since each string must be matched to a single replacement without ambiguity. It is acceptable to have duplicated terms in the "to" list. 
+
+The "from" argument may be formatted as either a vector or a list. However, if it is a list, no element may contain more than one string. Each element in the list must be a single character vector. This is not the case for the "to" argument. The "match_partial_entity" argument defaults to F for each element of "from" and "to." However, it can be set to T or F for each individual element.  Replacing an acronym with its full name may only be wise if the entire name of the node is that acronym. Otherwise "EPA" could accidentally match on "NEPAL" and create a nonsense entity called "NEnvironmental_Protection_AgencyL". The risk of this for modern, sentence-case documents is decreased, as disambiguate() is intentionally a case-sensitive function. For the example below, we set match_partial_entity to F for each of the acronymns, but to F for the word "Sub_basin," since "Sub_basin" may very well be a portion of a longer entity, for which we would want to standardize the spelling.
+
+The textnet_extract argument accepts the result of the textnet_extract() function. The object returned by disambiguate() updates the edgelist\$source column, edgelist\$target column, and nodelist\$entity_cat column to reflect the new node names.
+
+There may be some cases in which one would want to convert a single node into multiple nodes, each preserving the original node's edges to other nodes. For instance, suppose a legal document refers to "The_Defendants" as a shorthand for referring to three individuals involved in the case. In the network, it may be desirable for these individuals to be represented as their own separate nodes, especially if the network is to be merged with those resulting from other documents, where the three defendants may be named separately. To convert this single node into multiple nodes that preserve all of their original edges to other entities, from[[j]] should be set to "The_Defendants", and to[[j]] should be set to a string vector including the individuals' names, such as c("John_Doe", "Jane_Doe", "Emily_Doe").
+
+The package resolves loops such as from = c("hello","world"); to = c("world","hello") automatically, with a warning summarizing the rows that were removed. The default behavior is to loop through the disambiguation recursively, though by setting recursive to F, this can be overridden. The difference can be seen in the following example. Suppose that the following from list and to list are defined: from = c("MA","Mass"); to = c("Mass","Massachusetts"). If recursive = F, all instances of MA in the original textnet_extract object would be set to Mass, and all instances of Mass in the original textnet_extract object would be set to Massachusetts. If recursive = T, all instances of MA and Mass in the original textnet_extract object would be set to Massachusetts. The ability to toggle this behavior can be useful when concatenating a large from and to list based on multiple sources.
+
+Information about the optional argument try_drop can be found in the package documentation.
+
+```{r consolidate, include = FALSE}
+   old_extract_clean <- disambiguate(from = c(old_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(old_acronyms$name,"Subbasin","Subbasin"),match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T), textnet_extract = readRDS("./old_extract"))
    
-   new_extract_clean <- disambiguate(from = new_acronyms$acronym, to = new_acronyms$name, textnet_extract = readRDS("new_extract"))
+   new_extract_clean <- disambiguate(from = c(new_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(new_acronyms$name,"Subbasin","Subbasin"), match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T), textnet_extract = readRDS("./new_extract"))
 
 ```
-use find_acronyms to find acronyms
-
-Generate your own context-specific list of agency names and abbreviations. A list of U.S. federal agency names and abbreviations is included in the package. 
 
 ### Step 5: Get Network Attributes
 

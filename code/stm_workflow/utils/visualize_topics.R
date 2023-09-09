@@ -18,10 +18,10 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
    #lift() weights words higher if they have lower frequency in other topics
    #score() is similar, but log based -- see lda package
    
-   #inspect 10 ten frex words associated with each topics using labelTopics
+   #inspect 50 ten frex words associated with each topics using labelTopics
    for(i in 1:numTopics){
       cat(paste0(paste0("Topic ", i, ":", collapse = ""),'\n')) 
-      paste0(paste(label_sm$frex[i,],collapse = ", "),'\n') %>% cat()
+      paste0(paste(label_lg$frex[i,],collapse = ", "),'\n') %>% cat()
    }
    
    topics_of_interest <- NULL
@@ -162,15 +162,16 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
                                   sust_criteria +
                                   monitoring_networks + 
                                   projects_mgmt_actions + 
-                                  percent_dac_by_pop+
-                                  factor(approval)+
-                                  factor(priority, 
-                                         levels = c("High","Medium","Low","Very Low"), ordered = FALSE)+
-                                  mult_gsas+
-                                  ag_gw_asfractof_tot_gw+
-                                  hviol_avg_res+
-                                  prop_service_gw_source+
-                                  service_count,
+                                  urbangw_af_log_scaled +
+                                  percent_dac_by_pop_scaled+
+                                  fract_of_area_in_habitat_log_scaled +
+                                  maxdryspell_scaled +
+                                  Agr_Share_Of_GDP_scaled +
+                                  Republican_Vote_Share_scaled +
+                                  Perc_Bach_Degree_Over25_scaled +
+                                  local_govs_per_10k_people_log_scaled +
+                                  mult_gsas +
+                                  gwsum,
                                model,
                                meta = inputs$meta, uncertainty = "Global")
       saveRDS(effect,"data_temp/estimateEffects")
@@ -181,10 +182,6 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
          set.seed(43)
          efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
                                           sumef$tables[[i]]))
-         #renames "incomplete" to "rejected" for more clarity for readers of the table
-         efbytopic[Factors == "factor(approval)Incomplete", Factors := "factor(approval)Rejected"]
-         #removes clunky portion of priority level name
-         efbytopic$Factors <- gsub(", levels = c\\(\"High\", \"Medium\", \"Low\", \"Very Low\"\\), ordered = FALSE","",efbytopic$Factors)
          write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumef$topics[i],"_",categ_no_m_na[i],".csv"))
       }
       
@@ -194,4 +191,6 @@ visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F
    #plot.estimateEffect(effect,covariate = "ag_gw_asfractof_tot_gw")
    
    top_top_corr_plots(model, method = "huge", topics_of_interest, categ)
+   
+   saveRDS(topics_of_interest, "data_temp/topics_of_interest")
 }

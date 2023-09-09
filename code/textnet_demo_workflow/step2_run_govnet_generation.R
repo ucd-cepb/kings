@@ -54,12 +54,18 @@ phrases_to_concatenate <- ifelse(generate_phrases==T, generate_proper_names(unde
 #### overwrite existing results?
 overwrite = F
 
-generate_networks(ret_path, keep_hyph_together, phrases_to_concatenate, 
+all_parsed <- parse(ret_path, keep_hyph_together, phrases_to_concatenate, 
                   concatenator="_",
                   pages, file_ids, parsed_filenames, 
-                 nodeedge_filenames, parse_from_file,cl=4, 
-                 keep_entities = c('ORG','GPE','PERSON'), overwrite)
+                 parse_from_file,
+                 overwrite)
+for(m in 1:length(all_parsed)){
+   textnet_extract(all_parsed[[m]],concatenator="_",file = nodeedge_filenames[m],cl=4,
+                   keep_entities = c('ORG','GPE','PERSON'), 
+                   return_to_memory=F, keep_incomplete_edges=T)
+}
 
+#TODO load gspids for this next chunk of code
 pctalphaineng <- vector(mode="numeric",length=length(gspids))
 pctlettersineng <- vector(mode="numeric",length=length(gspids))
 for(m in 1:length(gspids)){
