@@ -1,7 +1,7 @@
 #after scraping, analyze:
 
 #how do the networks change over time? This would involve running the textNet
-#functions parse(), then textnet_extract(), then find_acronyms() and disambiguate(),
+#functions parse_text(), then textnet_extract(), then find_acronyms() and disambiguate(),
 #then using a tergm to analyze the changes over time
 
 #how to predict network-level attribute (approval) based on network attribute differences?

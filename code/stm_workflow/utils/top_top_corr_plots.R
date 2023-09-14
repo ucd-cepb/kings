@@ -119,7 +119,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       set.seed(3)
       igraph::plot.igraph(gh_subset, layout=layout, vertex.color=cat_color_h,
                           vertex.label.cex=0.75, 
-                          vertex.label.color=txt_color_h, vertex.size=8)
+                          vertex.label.color=txt_color_h, vertex.size=12)
       
       legend('topleft',legend = levels(as.factor(V(gh_subset)$category)), 
              pt.cex = 1, pch = 21, cex = 1.2, pt.bg = category_vect,

@@ -4,13 +4,13 @@ library(ggraph)
 library(data.table)
 
 edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
-gspids <- substr(edges_and_nodes, 18,21)
+gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 #excluding the garbled PDF ("0089") and the duplicate ("0053")
 graphs <- c(1:38, 40:67,69:length(gspids))
 
-supernodes <- vector(mode = "list", length = length(gspids)-1)
-superedges <- vector(mode = "list", length = length(gspids)-1)
+supernodes <- vector(mode = "list", length = length(gspids)-2)
+superedges <- vector(mode = "list", length = length(gspids)-2)
 for(m in graphs){
    print(m)
    single_ig <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))

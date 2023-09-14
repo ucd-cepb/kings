@@ -18,8 +18,8 @@ govscitbl <- unique(govscitbl)
 
 
 ###Section 2: GSAs####
-edges_and_nodes <- list.files(path = "network_extracts", full.names = T)
-gspids <- substr(edges_and_nodes, 18,21)
+edges_and_nodes <- list.files(path = "data/network_extracts", full.names = T)
+gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 agency_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
    length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
@@ -150,7 +150,7 @@ for(m in 1:length(edges_and_nodes)){
    #}else
    # return(NA)
    #}
-   #nodelist$orglevel <- sapply(nodelist$entity_cat, orgtyp)
+   #nodelist$orglevel <- sapply(nodelist$entity_name, orgtyp)
    #nodelist$type_subtype <- paste0(nodelist$entity_type, "_", nodelist$orglevel)
    #org type:
    #govscitbl_mini$State[grep(paste0("\b",strng,"\b"),govscitbl_mini$Abbr, useBytes = F)])
@@ -162,7 +162,7 @@ for(m in 1:length(edges_and_nodes)){
    #only using edges and nodes where each node has more than one a-z letter
    edgelist$esletters <- str_remove_all(string = edgelist$source, pattern = "[^a-z_]")
    edgelist$etletters <- str_remove_all(string = edgelist$target, pattern = "[^a-z_]")
-   nodelist$nletters <- str_remove_all(string = nodelist$entity_cat, pattern = "[^a-z_]")
+   nodelist$nletters <- str_remove_all(string = nodelist$entity_name, pattern = "[^a-z_]")
    
    nodelist <- nodelist %>% filter(nchar(nletters)>1)
    edgelist <- edgelist %>% filter(nchar(esletters)>1 & nchar(etletters)>1)
