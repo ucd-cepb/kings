@@ -34,9 +34,9 @@ for(m in 1:length(file_list)){
 
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      edgelist[[m]] <- left_join(edgelist[[m]],nodelist[[m]][,c("entity_cat","entity_type")], by= c("source"="entity_cat"))
+      edgelist[[m]] <- left_join(edgelist[[m]],nodelist[[m]][,c("entity_name","entity_type")], by= c("source"="entity_name"))
       colnames(edgelist[[m]])[which(colnames(edgelist[[m]])=="entity_type")] <- "source_entity_type"
-      edgelist[[m]] <- left_join(edgelist[[m]],nodelist[[m]][,c("entity_cat","entity_type")], by= c("target"="entity_cat"))
+      edgelist[[m]] <- left_join(edgelist[[m]],nodelist[[m]][,c("entity_name","entity_type")], by= c("target"="entity_name"))
       colnames(edgelist[[m]])[which(colnames(edgelist[[m]])=="entity_type")] <- "target_entity_type"
    }
 }
