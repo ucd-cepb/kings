@@ -138,9 +138,40 @@ The package resolves loops such as from = c("hello","world"); to = c("world","he
 Information about the optional argument try_drop can be found in the package documentation.
 
 ```{r consolidate}
-   old_extract_clean <- disambiguate(from = c(old_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(old_acronyms$name,"Subbasin","Subbasin"),match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T), textnet_extract = extracts[[1]])
+tofrom <- data.table::data.table(from = c(as.list(old_acronyms$acronym),
+             list("Sub_basin","Sub_Basin",
+             "upper_and_lower_aquifers",
+             "Upper_and_lower_aquifers",
+             "Lower_and_upper_aquifers",
+             "lower_and_upper_aquifers")))
+tofrom$to <- c(as.list(old_acronyms$name),
+             list("Subbasin","Subbasin"),
+             list(c("upper_aquifer","lower_aquifer")),
+             list(c("upper_aquifer","lower_aquifer")),
+             list(c("upper_aquifer","lower_aquifer")),
+             list(c("upper_aquifer","lower_aquifer")))
+
+   old_extract_clean <- disambiguate(
+      from = tofrom$from, 
+      to = tofrom$to,
+      match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T,F,F,F,F), 
+      textnet_extract = extracts[[1]])
    
-   new_extract_clean <- disambiguate(from = c(new_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(new_acronyms$name,"Subbasin","Subbasin"), match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T), textnet_extract = extracts[[2]])
+   new_extract_clean <- disambiguate(
+      from = c(as.list(new_acronyms$acronym),
+               list("Sub_basin","Sub_Basin",
+                    "upper_and_lower_aquifers",
+                    "Upper_and_lower_aquifers",
+                    "Lower_and_upper_aquifers",
+                    "lower_and_upper_aquifers")), 
+      to = c(as.list(new_acronyms$name),
+             list("Subbasin","Subbasin"),
+             list(c("upper_aquifer","lower_aquifer")),
+             list(c("upper_aquifer","lower_aquifer")),
+             list(c("upper_aquifer","lower_aquifer")),
+             list(c("upper_aquifer","lower_aquifer"))), 
+      match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T,F,F,F,F), 
+      textnet_extract = extracts[[2]])
 
 ```
 
