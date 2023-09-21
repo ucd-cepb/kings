@@ -17,7 +17,7 @@ type = "gov_dir_weight_no_gpes"
 #Table 2 uses gov_dir_weight_no_gpes
 
 
-super <- readRDS("data_output/supernetwork_weighted")
+super <- readRDS("data/output_large_files/supernetwork_weighted")
 super <- get.data.frame(super, what="vertices")
 super <- super[,c("name","num_GSPs_in")]
 
@@ -95,7 +95,7 @@ if(type=="topic"){
 
 for(m in 1:length(gspids)){
    if(type=="governance_dir_full"){
-      igr <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
+      igr <- readRDS(paste0("data/output_large_files/full_directed_graph_",gspids[m]))
       agency_df <- get.data.frame(igr, what = "both")
       net <- network(x=agency_df$edges[,1:2], directed = T,
                      hyper = F, loops = T, multiple = T, 
@@ -147,7 +147,7 @@ for(m in 1:length(gspids)){
    }
    if(type=="governance_dir_weighted"){
       
-      igr <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+      igr <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
       agency_df <- get.data.frame(igr, what = "both")
       net <- network(x=agency_df$edges[,1:2], directed = T,
                             hyper = F, loops = T, multiple = F, 
@@ -193,7 +193,7 @@ for(m in 1:length(gspids)){
    }
    if(type=="gov_dir_weight_no_gpes"){
       
-      igr <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+      igr <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
       igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") %in% c("ORG","PERSON")])
       agency_df <- get.data.frame(igr, what = "both")
       net <- network(x=agency_df$edges[,1:2], directed = T,
@@ -233,7 +233,7 @@ for(m in 1:length(gspids)){
       )
    }
    if(type %in% c("orgs","people")){
-      igr <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+      igr <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
       if(type=="orgs"){
          igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") == "ORG"])
       }else{
@@ -283,7 +283,7 @@ for(m in 1:length(gspids)){
       }
    }
    if(type=="topic"){
-      net <- readRDS(paste0("data_output/topic_network_",gspids[m]))$posadj
+      net <- readRDS(paste0("data/output_large_files/topic_network_",gspids[m]))$posadj
       igr <- igraph::graph.adjacency(net, mode = "undirected",weighted=NULL,diag=F)
       net <- asNetwork(igr)
       edgelist <- get.data.frame(igr, what = "edges")
@@ -309,30 +309,30 @@ for(m in 1:length(gspids)){
 
 if(type=="topic"){
    
-   saveRDS(network_properties, "data_output/topic_network_properties")
+   saveRDS(network_properties, "data/output_large_files/topic_network_properties")
    
 }
 
 if(type=="governance_dir_full"){
    
-   saveRDS(network_properties, "data_output/dir_full_network_properties")
+   saveRDS(network_properties, "data/output_large_files/dir_full_network_properties")
    
 }
 if(type=="governance_dir_weighted"){
    
-   saveRDS(network_properties, "data_output/dir_weighted_network_properties")
+   saveRDS(network_properties, "data/output_large_files/dir_weighted_network_properties")
    
 }
 if(type=="gov_dir_weight_no_gpes"){
    
-   saveRDS(network_properties, "data_output/gov_dir_weight_no_gpe_network_properties")
+   saveRDS(network_properties, "data/output_large_files/gov_dir_weight_no_gpe_network_properties")
    
 }
 if(type=="orgs"){
-   saveRDS(network_properties, "data_output/gov_dir_weight_orgs_properties")
+   saveRDS(network_properties, "data/output_large_files/gov_dir_weight_orgs_properties")
 }
 if(type=="people"){
-   saveRDS(network_properties, "data_output/gov_dir_weight_people_properties")
+   saveRDS(network_properties, "data/output_large_files/gov_dir_weight_people_properties")
 }
 #not including the yuba duplicate and the improper pdf formatting
 network_properties <- network_properties[c(1:38,40:67,69:119),]
@@ -398,7 +398,7 @@ ggsave(paste0("summarypairs2",type,".png"), plot = summarypairs2, device = "png"
        path = "figures", width = 4020, height = 3015, dpi = 300,
        units = "px", bg = "white")
 
-gsp_meta <- readRDS("data_output/gsp_docs_w_meta")
+gsp_meta <- readRDS("data/output_large_files/gsp_docs_w_meta")
 gsp_mini <- unique(gsp_meta[,c(14,16,19:26,7)])
 gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
 #for meta
