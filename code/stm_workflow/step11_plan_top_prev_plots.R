@@ -1,5 +1,5 @@
 plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
-   
+   library(scico)
    #creates grid plot of topic percent by gsp
    theta <- as_tibble(model$theta)
    dig_max <- max(nchar(colnames(theta)))
@@ -27,19 +27,29 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
    ggsave("theta_by_gsp.png",plot = topic_theta_plot, device = "png", path = "figures",
           width = 4422, height = 2079, dpi = 300, units = "px", bg = "white")
    
+   #TODO update this by adding approval
    theta <- as_tibble(model$theta)
    dig_max <- max(nchar(colnames(theta)))
    colnames(theta) <- paste0("Topic_",
                              sapply(colnames(theta),function(x)strrep("0",dig_max-nchar(x))),
                              str_remove(colnames(theta),"V"))
-   theta <- add_column(theta,"approval" = inputs$meta$approval)
+   
+   #repair approval status from meta with new approval scraping
+   newscrape <- readRDS(list.files("data/raw_large_files/planevolution",pattern="gsp_web_vars",full.names=T)[length(
+      list.files("data/raw_large_files/planevolution",pattern="gsp_web_vars"))])
+   newscrape <- newscrape[newscrape$version==1,]
+   newscrape <- as.data.frame(cbind(gsp_id = newscrape$gsp_num_id, repairedapproval = newscrape$version_approval))
+   
+   mymeta <- dplyr::left_join(inputs$meta, newscrape)
+   
+   theta <- add_column(theta,"approval" = mymeta$repairedapproval)
    theta_ag <- aggregate(. ~approval, mean, data = theta)
-   theta_long <- melt(theta_ag) %>% filter(variable %in% c("Topic_03","Topic_35","Topic_14","Topic_26","Topic_21","Topic_24","Topic_49","Topic_45","Topic_37"))
+   theta_long <- melt(theta_ag) %>% filter(variable %in% c("Topic_02","Topic_07","Topic_10","Topic_14","Topic_16","Topic_24","Topic_25","Topic_26","Topic_29","Topic_30"))
    
    approval_theta_plot <- ggplot(theta_long, aes(x = approval, y = variable))+
       geom_raster(aes(fill=value))+
-      scale_fill_scico(palette = "tokyo",direction = -1,name = "Proportion\nof GSP\nallocated\nto this\ntopic\n(0-1)")+
-      labs(x="GSP ID", y = "Topic", title = "Estimated Proportion of Topics in Each GSP")+
+      scale_fill_scico(palette = "tokyo",direction = -1,name = "Mean Proportion\nof Plan\nallocated\nto this\ntopic\n(0-1)\nby Approval Status")+
+      labs(x="GSP ID", y = "Topic", title = "Estimated Proportion of Topics")+
       theme_classic()+theme(axis.text.x=element_text(size=9, angle = 80, vjust = 0.4),
                             axis.text.y=element_text(size=10),
                             plot.title=element_text(size=13,hjust = 0.5))

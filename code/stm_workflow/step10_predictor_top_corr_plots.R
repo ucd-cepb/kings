@@ -1,25 +1,35 @@
-predictor_top_corr_plots <- function(topic_labels){
+
    library(scico)
    library(ggcorrplot)
-   if(F){
-      #NIFA paper 1 topic labels included for convenience, if not running externally
-      topic_labels <- c("GDE - Topic 14 Habitats and Species",
-                        "DW - Topic 21 Contaminants",
-                        "DW - Topic 24 Depletion Impacts",
-                        "GDE - Topic 26 GDE Mapping",
-                        "CC - Topic 3 CC Projections",
-                        "CC - Topic 35 Flows and Water Budgets",
-                        "EJ - Topic 37 Stakeholder Engagement",
-                        "DW_EJ - Topic 45 DAC Water Supply",
-                        "DW - Topic 49 Network Monitoring"
+   library(GGally)
+  
+      #NIFA paper 1 topic labels 
+      topic_labels <- c("EJ - Topic 2 Stakeholder Engagement",
+                        "CC - Topic 7 Climate Scenarios",
+                        "DW - Topic 10 Water Toxicity",
+                        "GDE - Topic 14 Habitats",
+                        "DW - Topic 16 Water Servicing",
+                        "CC - Topic 24 Water Hydrology and Change",
+                        "DW_EJ - Topic 25 Beneficial Users",
+                        "DW - Topic 26 Contamination Protocol",
+                        "GDE - Topic 29 Species",
+                        "DW - Topic 30 Monitoring"
                         )
-   }
+
+      topic_labels <- c("DW - Topic 10+16+25+26+30",
+                        "GDE - Topic 14 Habitats",
+                        "EJ - Topic 2 Stakeholder Engagement",
+                        "CC - Topic 24 Water Hydrology and Change",
+                        "DW_EJ - Topic 25 Beneficial Users",
+                        "GDE - Topic 29 Species",
+                        "CC - Topic 7 Climate Scenarios"
+      )
    
    tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp",
-                       pattern = "eftbl", full.names = T)
+                       pattern = "eftblskinny", full.names = T)
    cor_tbls <- vector("list",length(tbl_list))
    for(i in 1:length(tbl_list)){
-      cor_tbls[[i]] <- read_csv(tbl_list[i])
+      cor_tbls[[i]] <- read.csv(tbl_list[i])
    }
    names(cor_tbls) <- topic_labels
    cor_tbls <- cor_tbls[order(names(cor_tbls))]
@@ -52,4 +62,3 @@ predictor_top_corr_plots <- function(topic_labels){
    
    ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", path = "figures",
           width = 6030, height = 2835, dpi = 300, units = "px", bg = "white")
-}

@@ -151,12 +151,7 @@ visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,s
    top_top_corr_plots(model, method = "huge", topics_of_interest, categ)
    
    saveRDS(topics_of_interest, "data_temp/topics_of_interest")   
-   #TODO stminsights
-   #TODO stmBrowser
-   #TODO stmCorrViz, including function toLDAvis, which enables export to the LDAvis
-   #TODO stmprinter
    
-   #TODO broken -- fix this syntax
    if(effects ==T){
       #look at the relationship between metadata and topics
       set.seed(432)

@@ -1,6 +1,6 @@
-#this should be a mod to the sgma_web_scraper that collects 
+#this is a mod to the sgma_web_scraper that collects 
 #each version of the plan 
-#as well as the determination letters
+#TODO as well as the determination letters
 #and figures out whether each version was approved or rejected
 #based on whether there is a later version than the one in question
 #(which means the version in question was rejected)
@@ -9,7 +9,7 @@
 
    #takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
    #using selenium because rvest cannot read the table
-   
+   download = F
    packs <- c('stringr','xml2','polite', 'httr', 'tidyverse','robotstxt',
               'boxr','data.table','RSelenium','purrr','rvest','glue')
    need <- packs[!packs %in% installed.packages()[,'Package']]
@@ -25,7 +25,7 @@
    #crawl delay 5 sec
    #15 rules for 4 bots
    
-   driver <- rsDriver(port = 4440L, browser = "firefox", chromever = NULL)
+   driver <- rsDriver(port = 4445L, browser = "firefox", chromever = NULL)
    remote_driver <- driver$client
    #remote_driver$open()
    remote_driver$navigate(gsp_url)
@@ -76,7 +76,7 @@
       }else{
          new_page = T
       }
-   }#end of page specific tasks   
+   }#end of landing page specific tasks   
    
    Sys.sleep(5)
    
@@ -142,12 +142,13 @@
                      pdf_link <- dropdown[[j]]$getElementAttribute("href")
                      
                      destfilepdf <- paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
+                     if(!file.exists(paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) & 
+                        download==T){
                         download.file(pdf_link[[1]], destfilepdf, timeout = 6000) 
                         print(paste("pdf ",i," v2 downloaded from portal"))
                         Sys.sleep(5)
                      } else{
-                        print(paste("pdf ",i," v2 already downloaded"))
+                        print(paste("pdf ",i," v2 will not be downloaded"))
                      }
                   }#end of resubmitted pdf download
                   if(grepl("Elements of the Plan", dropdown[[j]]$getElementAttribute(attrName="text")) ==T ){
@@ -155,12 +156,13 @@
                      xlsx_link <- dropdown[[j]]$getElementAttribute("href")
                      
                      destfilexlsx <- paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
+                     if(!file.exists(paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
+                        download==T){
                         download.file(xlsx_link[[1]], destfilexlsx)
                         print(paste("spreadsheet ",i," v2 downloaded from portal"))
                         Sys.sleep(5)
                      } else {
-                        print(paste("spreadsheet ",i," v2 already downloaded"))
+                        print(paste("spreadsheet ",i," v2 will not be downloaded"))
                      }
                   }#end of resubmitted xls download   
                   
@@ -190,12 +192,13 @@
                      pdf_link <- dropdown[[j]]$getElementAttribute("href")
                      
                      destfilepdf <- paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
+                     if(!file.exists(paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) &
+                        download==T){
                         download.file(pdf_link[[1]], destfilepdf, timeout = 6000) 
                         print(paste("pdf ",i," v1 downloaded from portal"))
                         Sys.sleep(5)
                      } else{
-                        print(paste("pdf ",i," v1 already downloaded"))
+                        print(paste("pdf ",i," v1 will not be downloaded"))
                      }
                   }#end of original pdf download
                   if(grepl("Elements of the Plan", dropdown[[j]]$getElementAttribute(attrName="text")) ==T ){
@@ -203,12 +206,13 @@
                      xlsx_link <- dropdown[[j]]$getElementAttribute("href")
                      
                      destfilexlsx <- paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
+                     if(!file.exists(paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
+                        download==T){
                         download.file(xlsx_link[[1]], destfilexlsx)
                         print(paste("spreadsheet ",i," v1 downloaded from portal"))
                         Sys.sleep(5)
                      } else {
-                        print(paste("spreadsheet ",i," v1 already downloaded"))
+                        print(paste("spreadsheet ",i," v1 will not be downloaded"))
                      }
                   }#end of original xls download   
                   
@@ -236,5 +240,9 @@
    gsp_attr <- as.data.table(gsp_attr)
    gsp_attr <- cbind(gsp_attr, name_gsas)
    
-   saveRDS(gsp_attr, file = paste0('./data/raw_large_files/planevolution/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
+   View(version_ctrls)
+   
+   all_versions <- data.table::rbindlist(version_ctrls)
+   v <- dplyr::full_join(gsp_attr, all_versions)
+   saveRDS(v, file = paste0('./data/raw_large_files/planevolution/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
    
