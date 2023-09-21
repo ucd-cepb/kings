@@ -1,4 +1,4 @@
-pages <- readRDS("data_output/gsp_docs_w_lang")
+pages <- readRDS("data/output_large_files/gsp_docs_w_lang")
 pages <- split(pages, pages$gsp_id)
 keep_pages <- lapply(pages, function(i) i$is_comment==FALSE & i$is_reference==FALSE)
 
@@ -11,8 +11,8 @@ pdftexts <- pdf_clean(pdfs, keep_pages, ocr, maxchar, export_paths, return_to_me
 
 names(pdftexts) <- pdfs
 
-saveRDS(pdftexts, "data_output/cleaned_pdfs")
-otherpdfs <- readRDS("data_output/cleaned_pdfs")
+saveRDS(pdftexts, "data/output_large_files/cleaned_pdfs")
+otherpdfs <- readRDS("data/output_large_files/cleaned_pdfs")
 
 pdf0089repair <- function(doc){
    texts <- pdf_text(doc)
@@ -32,6 +32,6 @@ pdf89 <- "data_raw/gsp_num_id_0089_word_from_plaintext.pdf"
 #currently used in the rest of the process, which is the original pdf.
 #GSP 0089 is not preserved anyway in the final statistics, but this file is
 #stored elsewhere so it doesn't get confused with the original version
-saveRDS(pdf0089repair(pdf89),"data_output/cleaned_plainrepair_0089")
+saveRDS(pdf0089repair(pdf89),"data/output_large_files/cleaned_plainrepair_0089")
 
 

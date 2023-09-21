@@ -2,7 +2,7 @@ library(terra)
 library(tigris)
 library(viridis)
 
-network_properties <- readRDS("data_output/gov_dir_weight_no_gpe_network_properties")
+network_properties <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
 
 gsp_shapes <- vect("data_spatial_raw/GSP_submitted/SubmittedGSP_Master.shp")
 gsp_shapes <- terra::project(gsp_shapes, "+proj=robin +datum=WGS84")

@@ -14,8 +14,8 @@ gspids <- gspids[c(1:38,40:67,69:119)]
 #box option
 #flist <- list.files('data/output_large_files/weighted_directed_graphs/',full.names = T)
 #local option
-#flist <- list.files("data_output",pattern="to_weighted_graph",full.names=T)
-super <- readRDS("data_output/supernetwork_weighted")
+#flist <- list.files("data/output_large_files",pattern="to_weighted_graph",full.names=T)
+super <- readRDS("data/output_large_files/supernetwork_weighted")
 super <- subgraph(super, V(super)[
    vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
 supersimpl <- igraph::simplify(super, remove.multiple = F, remove.loops = T)
@@ -90,7 +90,7 @@ for(n in 1:length(nlist)){
    
    m <- bergm_function(m)
    
-   saveRDS(m, file = paste0("data_output/bergm_",gspids[[n]]))
+   saveRDS(m, file = paste0("data/output_large_files/bergm_",gspids[[n]]))
    
 }
 
@@ -109,7 +109,7 @@ superergm <- Bergm::bergm(supersimpl~ edges + isolates +
                           nchains = 6, 
                           set.seed = 700,
                           verbose = F)
-saveRDS(superergm, "data_output/superergm")
+saveRDS(superergm, "data/output_large_files/superergm")
 
 
 
@@ -117,9 +117,9 @@ saveRDS(superergm, "data_output/superergm")
 used_gspids <- gspids[!gspids %in% c("0053","0089")]
 
 m1_erg_list <- lapply(1:length(used_gspids), function(n) readRDS(
-   paste0("data_output/bergm_",used_gspids[[n]])))
+   paste0("data/output_large_files/bergm_",used_gspids[[n]])))
 
-saveRDS(m1_erg_list,"data_output/m1_bergm_lists")
+saveRDS(m1_erg_list,"data/output_large_files/m1_bergm_lists")
 
 coef_dt <- rbindlist(lapply(1:length(m1_erg_list),
                      function(n) as.data.table(t(colMeans(m1_erg_list[[n]]$Theta)))))
@@ -164,7 +164,7 @@ coef_dt$gwespHi <- as.numeric(vq$`97.5%`[vq$V6=="gwesp"])
 coef_dt$personLow <- as.numeric(vq$`2.5%`[vq$V6=="person"])
 coef_dt$personHi <- as.numeric(vq$`97.5%`[vq$V6=="person"])
 
-network_properties <- readRDS("data_output/gov_dir_weight_no_gpe_network_properties")
+network_properties <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
 network_properties <- network_properties[!network_properties$gsp_id %in% c("0053","0089"),]
 
 coef_dt$num_nodes <- as.numeric(network_properties$num_nodes)

@@ -11,7 +11,7 @@ edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
 overwrite = T
 
-super <- readRDS("data_output/supernetwork_weighted")
+super <- readRDS("data/output_large_files/supernetwork_weighted")
 super <- get.data.frame(super, what="vertices")
 super <- super[,c("name","num_GSPs_in")]
 
@@ -23,11 +23,11 @@ for(m in gsps){
    if(overwrite==T){
       makefile <- T
    }else{
-      makefile <- !file.exists(paste0("data_output/node_attr_",gspids[m]))
+      makefile <- !file.exists(paste0("data/output_large_files/node_attr_",gspids[m]))
    }
    print(m)
   if(makefile==T){
-    agency_ig <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+    agency_ig <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
     agency_ig <- subgraph(agency_ig, V(agency_ig)[
        vertex_attr(agency_ig,"entity_type") %in% c("ORG","PERSON")])
     agency_ig <- igraph::simplify(agency_ig, remove.multiple=T, remove.loops=T)
@@ -54,14 +54,14 @@ for(m in gsps){
                        totalCC,
                        entity_type = get.vertex.attribute(agency_net,"entity_type"),
                        num_GSPs_in = network::get.vertex.attribute(agency_net, "num_GSPs_in"))
-    saveRDS(centr_df, paste0("data_output/node_attr_",gspids[m]))
+    saveRDS(centr_df, paste0("data/output_large_files/node_attr_",gspids[m]))
   }
 }  
   
 centr_df <- vector(mode = "list", length= length(gspids))
 for(m in 1:length(gspids)){
    if(!gspids[m] %in% c("0053","0089")){
-      centr_df[[m]] <- readRDS(paste0("data_output/node_attr_",gspids[m]))
+      centr_df[[m]] <- readRDS(paste0("data/output_large_files/node_attr_",gspids[m]))
       centr_df[[m]]$gspid <- gspids[m]
    }
 }

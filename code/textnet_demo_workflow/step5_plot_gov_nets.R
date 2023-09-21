@@ -5,7 +5,7 @@ gspids <- substr(edges_and_nodes, 18,21)
 
 #only plots orgs and people
 for(m in 1:length(edges_and_nodes)){
-   weighted_graph <- readRDS(paste0("data_output/to_weighted_graph_",gspids[m]))
+   weighted_graph <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
    weighted_graph <- subgraph(weighted_graph, V(weighted_graph)[
       vertex_attr(weighted_graph,"entity_type") %in% c("ORG","PERSON")])
    

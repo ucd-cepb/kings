@@ -1,9 +1,9 @@
 
 
 
-orgs <- readRDS("data_output/gov_dir_weight_orgs_properties")
+orgs <- readRDS("data/output_large_files/gov_dir_weight_orgs_properties")
 
-people <- readRDS("data_output/gov_dir_weight_people_properties")
+people <- readRDS("data/output_large_files/gov_dir_weight_people_properties")
 
 #not including the yuba duplicate and the improper pdf formatting
 orgs <- orgs[c(1:38,40:67,69:119),]

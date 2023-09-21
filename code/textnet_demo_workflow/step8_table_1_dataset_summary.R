@@ -5,7 +5,7 @@ gspids <- substr(edges_and_nodes, 18,21)
 
 length(gspids) # = number of plans
 
-all_parsed <- list.files(path = "data_output", pattern = "parsed", full.names = T)
+all_parsed <- list.files(path = "data/output_large_files", pattern = "parsed", full.names = T)
 
 #removing identical plan 39 ("0053") and 69 ("0089")
 all_parsed <- all_parsed[c(1:38,40:67,69:119)]
@@ -20,7 +20,7 @@ for(i in 1:length(all_parsed)){
 num_sentences
 num_tokens # = number of tokens
 
-meta <- readRDS("data_output/gsp_docs_w_meta")
+meta <- readRDS("data/output_large_files/gsp_docs_w_meta")
 #removing duplicate and poorly formatted pdf
 meta <- meta[!(meta$gsp_id %in% c("0089","0053")),]
 num_pages <- sum(!meta$is_comment & !meta$is_reference)
