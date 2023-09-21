@@ -4,9 +4,7 @@ library(igraph)
 library(intergraph)
 library(vegan)
 
-#choose your gov_net base
-#gov_net_full <- readRDS("data_output/dir_full_network_properties")
-#gov_net_orgs <- readRDS("data_output/dir_full_network_properties_orgs")
+gov_net <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
 gov_net <- as.data.frame(lapply(gov_net, as.numeric))
 
 topic_net <- readRDS("data_output/topic_network_properties")

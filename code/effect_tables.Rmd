@@ -7,6 +7,7 @@ output: html_document
 
 
 ```{r setup, include=FALSE}
+#Note: This function is not used for the STM paper analysis and is not set up to handle grouped topic effects such as the DW effect
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -23,7 +24,7 @@ packs <- c('kableExtra','tidyverse')
 
 ```{r df, include = FALSE}
 
-tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", pattern = "eftbl", full.names = T)
+tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp", pattern = "eftblzero", full.names = T)
 
    dig_regex <- "[[:digit:]]+"
    
@@ -176,8 +177,8 @@ escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>%
       add_header_above(c(setNames(length(cc_list[[length(cc_list)]]), paste0("Topic ",cc_topics[length(cc_topics)]))))
    }
    
-   
-   for(i in 1:floor(length(ej_list)/2)){
+   if(length(ej_list)>1){
+         for(i in 1:floor(length(ej_list)/2)){
 #      #print 2 tables side by side at a time
    library(kableExtra)
    t1 <- ej_list[[2*i-1]]
@@ -189,7 +190,8 @@ escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>%
         knitr::kable(t2, format = "html", digits = getOption("digits"), align = "r", label = NULL, escape = FALSE) %>% kable_styling(bootstrap_options = c("condensed"),
                             full_width = FALSE, position = "float_right")), caption = ifelse(i==1,cap,"") ) %>% add_header_above(c(paste0("Topic ",ej_topics[2*i-1]),paste0("Topic ",ej_topics[2*i]))))
  
-}     
+}  
+   }
 
    if(floor(length(ej_list)/2)!=ceiling(length(ej_list)/2)){
       #center the last table if there are an odd number of tables

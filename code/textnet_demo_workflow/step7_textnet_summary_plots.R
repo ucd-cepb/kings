@@ -81,6 +81,118 @@ g9 <- base2 +
 grom2 <- (grid.arrange(g7, g9,ncol = 2))
 ggsave(grom2,file = 'figures/net_stats_vs_pages.png',dpi = 450,units = 'in',height = 3.5,width = 7)
 
+comp$mult_gsas <- as.factor(comp$mult_gsas)
+res_aov <- aov(num_edges ~ mult_gsas,
+               data = comp
+)
+par(mfrow = c(1, 2)) # combine plots
+
+# histogram
+hist(res_aov$residuals)
+
+# QQ-plot
+library(car)
+qqPlot(res_aov$residuals,
+       id = FALSE # id = FALSE to remove point identification
+)
+shapiro.test(res_aov$residuals) #fails residual normality test 
+
+test <- wilcox.test(comp$num_edges ~ comp$mult_gsas) #not sig at 0.05
+test
+
+#however, because sample of each group >= 30, it's ok to use anova or t-test
+
+#time to test homogeneity
+boxplot(num_edges ~ mult_gsas,
+        data = comp
+)
+
+leveneTest(num_edges ~ mult_gsas,
+           data = comp
+)#not homogeneous
+plot(res_aov, which = 3)#red line not horizontal. homogeneity not met.
+
+#this means we should run a welch anova
+oneway.test(num_edges ~ mult_gsas, data = comp, 
+            var.equal = FALSE)
+
+#now for centralization:
+
+res_aov <- aov(centralization ~ mult_gsas,
+               data = comp
+)
+par(mfrow = c(1, 2)) # combine plots
+
+# histogram
+hist(res_aov$residuals)
+
+# QQ-plot
+library(car)
+qqPlot(res_aov$residuals,
+       id = FALSE # id = FALSE to remove point identification
+)
+shapiro.test(res_aov$residuals) #fails residual normality test 
+
+#time to test homogeneity
+boxplot(centralization ~ mult_gsas,
+        data = comp
+)
+
+leveneTest(centralization ~ mult_gsas,
+           data = comp
+)#not homogeneous
+plot(res_aov, which = 3)#red line not horizontal. homogeneity not met.
+
+#this means we should run a welch anova
+oneway.test(centralization ~ mult_gsas, data = comp, 
+            var.equal = FALSE)
+
+leveneTest(num_nodes ~ mult_gsas,
+           data = comp
+)
+#since there are only two groups, better to run Welch student's t:
+leveneTest(num_edges ~ mult_gsas,
+           data = comp
+)
+t.test(num_edges ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = FALSE)
+leveneTest(num_nodes ~ mult_gsas,
+           data = comp
+)
+t.test(num_nodes ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = T)
+leveneTest(centralization ~ mult_gsas,
+           data = comp
+)
+t.test(centralization ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = FALSE)
+leveneTest(modularity ~ mult_gsas,
+           data = comp
+)
+t.test(modularity ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = T)
+leveneTest(connectedness ~ mult_gsas,
+           data = comp
+)
+t.test(connectedness ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = T)
+leveneTest(transitivity ~ mult_gsas,
+           data = comp
+)
+t.test(transitivity ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = T)
+leveneTest(reciprocity ~ mult_gsas,
+           data = comp
+)
+t.test(reciprocity ~ as.factor(mult_gsas),
+       data = comp,
+       var.equal = T)
 cor.test(comp$mult_gsas, comp$num_edges)
 cor.test(comp$mult_gsas, comp$num_nodes)
 cor.test(comp$mult_gsas, comp$centralization)

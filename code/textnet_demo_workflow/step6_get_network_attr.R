@@ -4,8 +4,8 @@ library(igraph)
 library(intergraph)
 library(tidyverse)
 
-edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
-gspids <- substr(edges_and_nodes, 18,21)
+edges_and_nodes <- list.files(path = "data/cleaned_extracts", full.names = T)
+gspids <-stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 #CHOOSE ONE
 type = "topic"
