@@ -85,11 +85,11 @@ if(type=="orgs"){
                                   "mean_edge_weight")
 }
 if(type=="topic"){
-   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=10))
+   gspids <- gspids[!gspids %in% c("0089","0053")]
+   network_properties <-  data.frame(matrix(NA, nrow = length(gspids), ncol=9))
    names(network_properties) <- c("gsp_id", "num_nodes", "num_edges", "density", 
                                   "connectedness", "centralization", "transitivity",
-                                  "num_communities", "modularity", 
-                                  "percent_homophily")
+                                  "num_communities", "modularity")
 }
 
 
@@ -282,8 +282,13 @@ for(m in 1:length(gspids)){
                                      rep(NA, 8))
       }
    }
-   if(type=="topic"){
-      net <- readRDS(paste0("data/output_large_files/topic_network_",gspids[m]))$posadj
+}
+
+if(type=="topic"){
+   
+   for(m in 1:length(gspids)){
+      
+      net <- readRDS(paste0("data/output_large_files/topic_networks/topic_network_",gspids[m]))$posadj
       igr <- igraph::graph.adjacency(net, mode = "undirected",weighted=NULL,diag=F)
       net <- asNetwork(igr)
       edgelist <- get.data.frame(igr, what = "edges")
@@ -301,9 +306,8 @@ for(m in 1:length(gspids)){
                                   sna::gtrans(net, mode = "graph", use.adjacency=F),
                                   length(unique(lc$membership)), 
                                   modularity(igr,lc$membership,edgelist$weights))
+      
    }
-   
-   
 }
 
 

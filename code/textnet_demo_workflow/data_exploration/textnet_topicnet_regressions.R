@@ -45,3 +45,6 @@ H3_model <- lm(as.matrix(topic_net[,c("connectedness","transitivity",
                  gov_net$percent_homophily
                  )
 
+summary(H1_model)
+summary(H2_model)
+summary(H3_model)
