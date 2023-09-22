@@ -99,7 +99,8 @@
    #go to webpage
    pdf_link <- NULL
    xlsx_link <- NULL
-   options(timeout=6000)
+   options(timeout=1000)
+   
    num_gsas <- rep(NA, length(gsp_attr$basin))
    name_gsas <- vector(mode = "list", length = length(gsp_attr$basin))
    
@@ -141,10 +142,10 @@
                      print("Found a resubmitted plan version.")
                      pdf_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilepdf <- paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) & 
+                     destfilepdf <- paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+                     if(!file.exists(paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) & 
                         download==T){
-                        download.file(pdf_link[[1]], destfilepdf, timeout = 6000) 
+                        GET(pdf_link[[1]], write_disk(destfilepdf,overwrite=T)) 
                         print(paste("pdf ",i," v2 downloaded from portal"))
                         Sys.sleep(5)
                      } else{
@@ -155,10 +156,10 @@
                      
                      xlsx_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilexlsx <- paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
+                     destfilexlsx <- paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+                     if(!file.exists(paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
                         download==T){
-                        download.file(xlsx_link[[1]], destfilexlsx)
+                        GET(xlsx_link[[1]], write_disk(destfilexlsx,overwrite=T))
                         print(paste("spreadsheet ",i," v2 downloaded from portal"))
                         Sys.sleep(5)
                      } else {
@@ -191,10 +192,10 @@
                      print("Found an original plan version.")
                      pdf_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilepdf <- paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) &
+                     destfilepdf <- paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+                     if(!file.exists(paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) &
                         download==T){
-                        download.file(pdf_link[[1]], destfilepdf, timeout = 6000) 
+                        GET(pdf_link[[1]], write_disk(destfilepdf,overwrite=T)) 
                         print(paste("pdf ",i," v1 downloaded from portal"))
                         Sys.sleep(5)
                      } else{
@@ -205,10 +206,10 @@
                      
                      xlsx_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilexlsx <- paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-                     if(!file.exists(paste('./data/raw_large_files/planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
+                     destfilexlsx <- paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+                     if(!file.exists(paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
                         download==T){
-                        download.file(xlsx_link[[1]], destfilexlsx)
+                        GET(xlsx_link[[1]], write_disk(destfilexlsx,overwrite=T))
                         print(paste("spreadsheet ",i," v1 downloaded from portal"))
                         Sys.sleep(5)
                      } else {
@@ -234,6 +235,32 @@
    driver[["server"]]$stop()
    rm(driver)
    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    #are there multiple gsas collaborating on this gsp? T/F Var
    mult_gsas <- sapply(num_gsas, function(x){ifelse(x > 1,T,F)})
    gsp_attr <- cbind(gsp_attr, "mult_gsas" = mult_gsas)
@@ -244,5 +271,5 @@
    
    all_versions <- data.table::rbindlist(version_ctrls)
    v <- dplyr::full_join(gsp_attr, all_versions)
-   saveRDS(v, file = paste0('./data/raw_large_files/planevolution/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(v, file = paste0('./planevolution/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
    
