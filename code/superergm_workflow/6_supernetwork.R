@@ -13,7 +13,7 @@ supernodes <- vector(mode = "list", length = length(gspids)-2)
 superedges <- vector(mode = "list", length = length(gspids)-2)
 for(m in graphs){
    print(m)
-   single_ig <- readRDS(paste0("data_output/full_directed_graph_",gspids[m]))
+   single_ig <- readRDS(paste0("data/output_large_files/full_directed_graph_",gspids[m]))
    sidf <- get.data.frame(single_ig, what = "both")
    supernodes[[m]] <- sidf$vertices
    superedges[[m]] <- sidf$edges
@@ -33,7 +33,7 @@ supernetwork <- igraph::graph_from_data_frame(superedgesdt,
 vcount(supernetwork)
 ecount(supernetwork)
 
-saveRDS(supernetwork, "data_output/supernetwork_full")
+saveRDS(supernetwork, "data/output_large_files/supernetwork_full")
 
 weighted_graph <- supernetwork
 
@@ -64,7 +64,7 @@ weighted_graph <- igraph::set_vertex_attr(weighted_graph, "labels",
                                           value = ifelse(igraph::get.vertex.attribute(weighted_graph,"name") %in% topdegs, 
                                                          igraph::get.vertex.attribute(weighted_graph,"name"), NA))
 
-saveRDS(weighted_graph, "data_output/supernetwork_weighted")
+saveRDS(weighted_graph, "data/output_large_files/supernetwork_weighted")
 
 #code imported from plot_gov_nets.R
 weighted_graph_no_loops <- igraph::simplify(weighted_graph, remove.multiple = F, remove.loops = T)

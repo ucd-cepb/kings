@@ -57,7 +57,7 @@ dac_svi_analysis <- function(scope, type = NA){
       }, cl = 4)
       
       dac_svi_tbl <- list.rbind(dac_census_props)
-      saveRDS(dac_svi_tbl, "data_output/dac_svi_tbl")
+      saveRDS(dac_svi_tbl, "data/output_large_files/dac_svi_tbl")
       
       dac_svi_tbl <- dac_svi_tbl[!is.na(dac_svi_tbl$DAC) & 
                                     !is.na(dac_svi_tbl$SVI_percentile)]
@@ -190,7 +190,7 @@ dac_svi_analysis <- function(scope, type = NA){
       # proportion of pop in places that live in a dac
       #pop of places where DAC == T / (pop of places where !is.na(DAC))
       
-      saveRDS(spat_tbl, file = paste0("data_output/","spat_tbl_",type))
+      saveRDS(spat_tbl, file = paste0("data/output_large_files/","spat_tbl_",type))
       
       uniq_spat_tbl <- spat_tbl %>% select(c("gsp_id","prop_pop_in_dac","SVI_na_adj")) %>% unique()
       corr <- cor(uniq_spat_tbl$prop_pop_in_dac, uniq_spat_tbl$SVI_na_adj, method = "pearson", use = "complete.obs")

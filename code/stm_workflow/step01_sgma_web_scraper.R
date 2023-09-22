@@ -97,8 +97,8 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    name_gsas <- vector(mode = "list", length = length(gsp_attr$basin))
    
    if(use_repaired == T){
-      gsp_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
-         length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
+      gsp_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
+         length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
       for(i in 1:length(gsp_attr$gsp_num_id)){
          indx <- which(gsp_tbl$gsp_id == gsp_attr$gsp_num_id[i])
          if(length(indx)==1){
@@ -230,7 +230,7 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
       gsp_attr <- gsp_comb
    }
    
-   saveRDS(gsp_attr, file = paste0('./data_output/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(gsp_attr, file = paste0('./data/output_large_files/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
    
    return(invisible())
 }

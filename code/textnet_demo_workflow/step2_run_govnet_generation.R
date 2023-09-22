@@ -19,7 +19,7 @@ if(test_data==T){
    parsed_filenames <- paste0("data_temp/test_prs",unique_files)
    
 }else{
-   pages <- readRDS("data_output/cleaned_pdfs")
+   pages <- readRDS("data/output_large_files/cleaned_pdfs")
    file_ids <- unlist(sapply(1:length(pages), function(q) rep(names(pages[q]),length(pages[[q]]))))
    file_ids <- str_extract(file_ids,'[0-9]{1,}')
    pages <- unlist(pages)
@@ -31,12 +31,12 @@ if(test_data==T){
    unique_files <- unique(file_ids)
    
    if(mini_data==T){
-      parsed_filenames <- paste0("data_output/prs_mini_",unique_files)
+      parsed_filenames <- paste0("data/output_large_files/prs_mini_",unique_files)
    }else if(test_data==T){
-      parsed_filenames <- paste0("data_output/prs_test_",unique_files)
+      parsed_filenames <- paste0("data/output_large_files/prs_test_",unique_files)
    }
    else{
-      parsed_filenames <- paste0("data_output/parsed_",unique_files)
+      parsed_filenames <- paste0("data/output_large_files/parsed_",unique_files)
    }
 }
 
@@ -69,7 +69,7 @@ gspids <- stringr::str_extract(nodeedge_filenames,'[0-9]{1,}')
 pctalphaineng <- vector(mode="numeric",length=length(gspids))
 pctlettersineng <- vector(mode="numeric",length=length(gspids))
 for(m in 1:length(gspids)){
-   parsed <- readRDS(paste0("data_output/parsed_",gspids[m]))
+   parsed <- readRDS(paste0("data/output_large_files/parsed_",gspids[m]))
    alphatokens <- parsed$token[str_detect(parsed$token, "[[:alpha:]]")]
    lettertokens <- parsed$token[str_detect(parsed$token, "[a-zA-Z]")]
    pctalphaineng[m] <- sum(alphatokens %in% eng_words)/length(alphatokens) 

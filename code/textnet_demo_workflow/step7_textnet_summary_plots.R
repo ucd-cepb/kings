@@ -3,9 +3,9 @@ library(pbapply)
 library(data.table)
 library(stringr)
 
-network_stats <- readRDS("data_output/gov_dir_weight_no_gpe_network_properties")
+network_stats <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
 
-gsp_meta <- readRDS("data_output/gsp_docs_w_meta")
+gsp_meta <- readRDS("data/output_large_files/gsp_docs_w_meta")
 gsp_meta <- gsp_meta[!is_comment & !is_reference,]
 gsp_meta <- gsp_meta[,c(.SD,.N),by=gsp_id]
 gsp_mini <- unique(gsp_meta[,c(1,14,16,19:27)])

@@ -7,11 +7,11 @@ library(vegan)
 gov_net <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
 gov_net <- as.data.frame(lapply(gov_net, as.numeric))
 
-topic_net <- readRDS("data_output/topic_network_properties")
+topic_net <- readRDS("data/output_large_files/topic_network_properties")
 topic_net <- as.data.frame(lapply(topic_net, as.numeric))
 gov_net <- gov_net[gov_net$gsp_id %in% topic_net$gsp_id,]
 
-topic_prevalences <- readRDS("data_output/topic_prevalence")
+topic_prevalences <- readRDS("data/output_large_files/topic_prevalence")
 
 shannon_div <- diversity(topic_prevalences, index="shannon")
 

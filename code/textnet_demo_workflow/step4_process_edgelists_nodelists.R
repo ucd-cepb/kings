@@ -21,8 +21,8 @@ govscitbl <- unique(govscitbl)
 edges_and_nodes <- list.files(path = "data/network_extracts", full.names = T)
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
-agency_tbl <- readRDS(list.files(path = "data_output", pattern = "web_repaired", full.names = T)[
-   length(list.files(path = "data_output", pattern = "web_repaired", full.names = T))])
+agency_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
+   length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
 agency_tbl <- agency_tbl[!is.na(gsp_id),]
 #change hyphens and spaces to underscores, to match spacy parse formatting
 agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
@@ -59,7 +59,7 @@ for(m in 1:length(edges_and_nodes)){
 
 ###Section 3: Acronyms####
 acrons <- vector(mode="list",length=length(edges_and_nodes))
-pdftxt <- readRDS("data_output/cleaned_pdfs")
+pdftxt <- readRDS("data/output_large_files/cleaned_pdfs")
 
 for(m in 1:length(edges_and_nodes)){
    acrons[[m]] <-find_acronyms(pdftxt[[m]])
@@ -179,7 +179,7 @@ for(m in 1:length(edges_and_nodes)){
    
    full_directed_graph <- igraph::set_vertex_attr(full_directed_graph, "degr", value = igraph::degree(full_directed_graph))
    
-   saveRDS(full_directed_graph, paste0("data_output/full_directed_graph_",gspids[m]))
+   saveRDS(full_directed_graph, paste0("data/output_large_files/full_directed_graph_",gspids[m]))
    
    weighted_graph <- full_directed_graph
    
@@ -211,5 +211,5 @@ for(m in 1:length(edges_and_nodes)){
                                              value = ifelse(igraph::get.vertex.attribute(weighted_graph,"name") %in% topdegs, 
                                                             igraph::get.vertex.attribute(weighted_graph,"name"), NA))
    
-   saveRDS(weighted_graph, paste0("data_output/to_weighted_graph_",gspids[m]))
+   saveRDS(weighted_graph, paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
 }

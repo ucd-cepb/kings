@@ -47,8 +47,8 @@ create_lang_meta <- function(run_repair = F){
       setnames(gsp_tbl,old="gsp_num_id",new="gsp_id") 
       
       gsp_tbl <- web_data_repair(new_tbl = gsp_tbl,
-                                 old_tbl = read_csv(list.files(path = "data_output", pattern = "gsp_ids", full.names = T)[
-                                    length(list.files(path = "data_output", pattern = "gsp_ids", full.names = T))]))
+                                 old_tbl = read_csv(list.files(path = "data/output_large_files", pattern = "gsp_ids", full.names = T)[
+                                    length(list.files(path = "data/output_large_files", pattern = "gsp_ids", full.names = T))]))
       
       saveRDS(gsp_tbl, file = paste0("data/output_large_files","web_repaired_",format(Sys.time(), "%Y%m%d-%H:%M")))
       
