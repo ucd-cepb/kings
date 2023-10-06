@@ -142,8 +142,8 @@
                      print("Found a resubmitted plan version.")
                      pdf_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilepdf <- paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-                     if(!file.exists(paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) & 
+                     destfilepdf <- paste(filekey[filekey$var_name=="plansv2",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+                     if(!file.exists(paste(filekey[filekey$var_name=="plansv2",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")) & 
                         download==T){
                         GET(pdf_link[[1]], write_disk(destfilepdf,overwrite=T)) 
                         print(paste("pdf ",i," v2 downloaded from portal"))
@@ -156,8 +156,8 @@
                      
                      xlsx_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilexlsx <- paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-                     if(!file.exists(paste('./planevolution/v2_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
+                     destfilexlsx <- paste(filekey[filekey$var_name=="plansv2",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+                     if(!file.exists(paste(filekey[filekey$var_name=="plansv2",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
                         download==T){
                         GET(xlsx_link[[1]], write_disk(destfilexlsx,overwrite=T))
                         print(paste("spreadsheet ",i," v2 downloaded from portal"))
@@ -192,8 +192,8 @@
                      print("Found an original plan version.")
                      pdf_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilepdf <- paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
-                     if(!file.exists(paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) &
+                     destfilepdf <- paste(filekey[filekey$var_name=="plansv1",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+                     if(!file.exists(paste(filekey[filekey$var_name=="plansv1",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")) &
                         download==T){
                         GET(pdf_link[[1]], write_disk(destfilepdf,overwrite=T)) 
                         print(paste("pdf ",i," v1 downloaded from portal"))
@@ -206,8 +206,8 @@
                      
                      xlsx_link <- dropdown[[j]]$getElementAttribute("href")
                      
-                     destfilexlsx <- paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
-                     if(!file.exists(paste('./planevolution/v1_gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
+                     destfilexlsx <- paste(filekey[filekey$var_name=="plansv1",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+                     if(!file.exists(paste(filekey[filekey$var_name=="plansv1",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) &
                         download==T){
                         GET(xlsx_link[[1]], write_disk(destfilexlsx,overwrite=T))
                         print(paste("spreadsheet ",i," v1 downloaded from portal"))
@@ -271,5 +271,5 @@
    
    all_versions <- data.table::rbindlist(version_ctrls)
    v <- dplyr::full_join(gsp_attr, all_versions)
-   saveRDS(v, file = paste0('./planevolution/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(v, file = paste0(filekey[filekey$var_name=="gsp_web_vars_planevolutionpaper",]$filepath, format(Sys.time(), "%Y%m%d-%H:%M")))
    

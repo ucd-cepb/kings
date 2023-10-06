@@ -8,7 +8,9 @@ library(dplyr)
 library(Bergm)
 library(bayesplot)
 
-super <- readRDS("data/output_large_files/supernetwork_weighted")
+filekey <- read.csv("filekey.csv")
+
+super <- readRDS(filekey[filekey$var_name=="supernetwork_weighted_govnetpaper",]$filepath)
 super <- subgraph(super, V(super)[
    vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
 supersimpl <- igraph::simplify(super, remove.multiple = F, remove.loops = T)
@@ -39,7 +41,7 @@ superergm <- Bergm::bergm(supersimpl~ edges + isolates +
                           nchains = 6, 
                           set.seed = 700,
                           verbose = F)
-saveRDS(superergm, "data/output_large_files/superergm")
+saveRDS(superergm, filekey[filekey$var_name=="superergm_govnetpaper",]$filepath)
 
 
 

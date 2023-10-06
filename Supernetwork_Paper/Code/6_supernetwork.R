@@ -2,8 +2,9 @@ library(ggplot2)
 library(GGally)
 library(ggraph)
 library(data.table)
+filekey <- read.csv("filekey.csv")
 
-edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
+edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath, full.names = T)
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 #excluding the garbled PDF ("0089") and the duplicate ("0053")
@@ -13,7 +14,7 @@ supernodes <- vector(mode = "list", length = length(gspids)-2)
 superedges <- vector(mode = "list", length = length(gspids)-2)
 for(m in graphs){
    print(m)
-   single_ig <- readRDS(paste0("data/output_large_files/full_directed_graph_",gspids[m]))
+   single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_graphs_govnetpaper",]$filepath,gspids[m]))
    sidf <- get.data.frame(single_ig, what = "both")
    supernodes[[m]] <- sidf$vertices
    superedges[[m]] <- sidf$edges
@@ -33,7 +34,7 @@ supernetwork <- igraph::graph_from_data_frame(superedgesdt,
 vcount(supernetwork)
 ecount(supernetwork)
 
-saveRDS(supernetwork, "data/output_large_files/supernetwork_full")
+saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_full_govnetpaper",]$filepath)
 
 weighted_graph <- supernetwork
 
@@ -64,7 +65,7 @@ weighted_graph <- igraph::set_vertex_attr(weighted_graph, "labels",
                                           value = ifelse(igraph::get.vertex.attribute(weighted_graph,"name") %in% topdegs, 
                                                          igraph::get.vertex.attribute(weighted_graph,"name"), NA))
 
-saveRDS(weighted_graph, "data/output_large_files/supernetwork_weighted")
+saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_weighted_govnetpaper",]$filepath)
 
 #code imported from plot_gov_nets.R
 weighted_graph_no_loops <- igraph::simplify(weighted_graph, remove.multiple = F, remove.loops = T)
@@ -90,6 +91,6 @@ weighted_plot_noisolates <- ggraph(weighted_graph_noisolates, layout = 'fr')+
 
 
 ggsave(paste0("supernetwork.png"), plot = weighted_plot_noisolates, device = "png",
-       path = "figures", width = 4020, height = 1890, dpi = 300,
+       path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
        units = "px", bg = "white")
 
