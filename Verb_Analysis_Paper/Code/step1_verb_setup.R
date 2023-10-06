@@ -13,7 +13,7 @@ gspids <- unname(sapply(file_list, function(k) gsub("\\D", "", k)))
 verblist <- vector(mode="list",length=length(file_list))
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      verblist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,gspids[m],".RDS"))$verblist
+      verblist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))$verblist
    }
 }
 vlist <- rbindlist(verblist)
@@ -24,14 +24,14 @@ vlist <- vlist[!str_detect(vlist$head_verb_lemma,"[0-9]")]
 edgelist <- vector(mode="list",length=length(file_list))
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      edgelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,gspids[m],".RDS"))$edgelist
+      edgelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))$edgelist
    }
 }
 
 nodelist <- vector(mode="list",length=length(file_list))
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      nodelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,gspids[m],".RDS"))$nodelist
+      nodelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))$nodelist
    }
 }
 
