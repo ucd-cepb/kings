@@ -1,89 +1,11 @@
 library(data.table)
 library(stringr)
 library(dplyr)
-#important! If you want to do any additional filtering of the dataset, please 
-#DO NOT edit the cleaned_extracts file. 
-#Instead, save the filtered dataset in a different folder
-file_list <- list.files(path = "data/cleaned_extracts", full.names = T)
-gspids <- unname(sapply(file_list, function(k) gsub("\\D", "", k)))
+filekey <- read.csv("filekey.csv")
 
-verblist <- vector(mode="list",length=length(file_list))
-for(m in 1:length(file_list)){
-   if(!gspids[m] %in% c("0053","0089")){
-      verblist[[m]] <- readRDS(paste0("data/cleaned_extracts/",gspids[m],".RDS"))$verblist
-   }
-}
-vlist <- rbindlist(verblist)
+edgelist_w_meta <- readRDS(filekey[filekey$var_name=="edgelist_w_meta",]$filepath)
 
-vlist <- vlist[!duplicated(vlist$head_verb_lemma)]
-vlist <- vlist[!str_detect(vlist$head_verb_lemma,"[0-9]")]
-
-edgelist <- vector(mode="list",length=length(file_list))
-for(m in 1:length(file_list)){
-   if(!gspids[m] %in% c("0053","0089")){
-      edgelist[[m]] <- readRDS(paste0("data/cleaned_extracts/",gspids[m],".RDS"))$edgelist
-   }
-}
-
-nodelist <- vector(mode="list",length=length(file_list))
-for(m in 1:length(file_list)){
-   if(!gspids[m] %in% c("0053","0089")){
-      nodelist[[m]] <- readRDS(paste0("data/cleaned_extracts/",gspids[m],".RDS"))$nodelist
-   }
-}
-
-for(m in 1:length(file_list)){
-   if(!gspids[m] %in% c("0053","0089")){
-      edgelist[[m]] <- left_join(edgelist[[m]],nodelist[[m]][,c("entity_name","entity_type")], by= c("source"="entity_name"))
-      colnames(edgelist[[m]])[which(colnames(edgelist[[m]])=="entity_type")] <- "source_entity_type"
-      edgelist[[m]] <- left_join(edgelist[[m]],nodelist[[m]][,c("entity_name","entity_type")], by= c("target"="entity_name"))
-      colnames(edgelist[[m]])[which(colnames(edgelist[[m]])=="entity_type")] <- "target_entity_type"
-   }
-}
-
-
-elist <- rbindlist(edgelist)
-evlist <- left_join(elist, vlist)
-
-#dummy out verbnet types
-all_type_ids <- as.character(sort(unique(as.numeric(unlist(evlist$type_id)))))
-type_dummies <- setNames(data.table(matrix(nrow = nrow(evlist), ncol = length(all_type_ids))), paste0("type_",all_type_ids))
-
-for(i in 1:nrow(evlist)){
-   type_dummies[i,names(type_dummies):= lapply(all_type_ids, 
-                              function(j) j %in% evlist$type_id[[i]])]
-}
-
-saveRDS(type_dummies, "data/temp_large_files/verb_type_dummies_for_edgelist")
-edgelist_with_vclass <- cbind(evlist, type_dummies)
-
-edgelist_with_vclass$gsp_id <- unlist(lapply(edgelist_with_vclass$doc_sent_verb, 
-                                      function(j) gsub(".*?([0-9]+).*", "\\1", j)))
-saveRDS(edgelist_with_vclass, "data/output_large_files/edgelist_with_verb_class")
-
-#join on gsp_mini for approval, etc
-
-#vars: source_entity_type, target_entity_type
-#approval
-#drinking water and ag variables
-gsp_meta <- readRDS("data/output_large_files/gsp_docs_lean")
-gsp_mini <- unique(gsp_meta[,c("gsp_id","approval","mult_gsas",
-                               "fract_of_area_in_habitat_log_scaled",
-                               "urbangw_af_log_scaled",
-                               "gwsum",
-                               "percent_dac_by_pop_scaled",
-                               "Republican_Vote_Share_scaled",
-                               "Agr_Share_Of_GDP_scaled",
-                               "Perc_Bach_Degree_Over25_scaled",
-                               "local_govs_per_10k_people_log_scaled",
-                               "maxdryspell_scaled")])
-gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
-#for meta
-#network_properties <- as_tibble(evlist)
-edgelist_w_meta <- merge(gsp_mini, edgelist_with_vclass)
-saveRDS(edgelist_w_meta, "data/output_large_files/edgelist_with_verb_meta")
-
-#Section 1: Verb Classes and Basin Attributes ####
+#Verb Classes ~ Basin Attributes esp coordinating ~ Mult_GSAs and ?? ~ DACs and transformation ~ approval ####
 #VERB CLASSES AND AG
 #summary(glm(type_64 ~ Agr_Share_Of_GDP_scaled + Republican_Vote_Share_scaled, data = edgelist_w_meta, family = "binomial"))
 #class 64 ~ "allow_verbs"
@@ -199,18 +121,9 @@ summary(glm(type_54 ~ as.factor(approval), data = edgelist_w_meta, family = "bin
 summary(glm(type_87 ~ as.factor(approval), data = edgelist_w_meta, family = "binomial"))
 #hypothesis confirmed!
 
+
+
+
 #Section 2: Verb Class and Node Attributes ####
 #(such as degree, centrality, reciprocity, transitivity, and num_GSPs_in)
 #eg do social verbs have more reciprocity and transitivity than other verbs?
-
-#Section 3: Verb Class and Verb Tense/Hedges ####
-#which actions have already been done and which are yet to be done?
-#eg do we see evidence for social verbs/collaboration happening in the past, present, and future to equal degrees?
-#eg do we see transformation verbs (eg signalling landscape transformation and gov structural modifications) happening in the past, present, or future most often?
-#eg do we see hedges disproportionately attached to transformation verbs, signalling the uncertainty of the actual project actions?
-#which types of verbs are the most likely to be hedged, proportionately to their total percentage of use?
-
-#Section 4: Verb Tense and Node Attributes ####
-#do the most central nodes have more past tense, present tense, or future tense edges attached to them than is typical in the network?
-#this may require an ergm.
-

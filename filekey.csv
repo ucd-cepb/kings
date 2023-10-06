@@ -1,0 +1,6 @@
+﻿var_name,filepath,description
+disambiged_extracts_govnetpaper,data/cleaned_extracts,textnet_extract objects that have been through the disambiguate function procedure for the Text_Gov_Network_Methods paper
+verbtype_dummies_for_edgelist,data/temp_large_files/verb_type_dummies_for_edgelist,
+edgelist_w_v_class,data/output_large_files/edgelist_with_verb_class,
+gsp_docs_lean,data/output_large_files/gsp_docs_lean,
+edgelist_w_meta,data/output_large_files/edgelist_with_verb_meta,
