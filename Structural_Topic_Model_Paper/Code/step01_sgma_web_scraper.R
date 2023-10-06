@@ -1,6 +1,18 @@
-sgma_web_scraper <- function(box_sync = F, use_repaired = F){
+box_sync = F
+use_repaired = F
+   #IMPORTANT NOTE
+   #this script was developed when only one version of the plans was online.
+   #use_repaired=T was a feature used in 2022 when the website was under construction.
+   #the code at the end repairs data added in 2023.
+   #Now that more plans have two versions online so approval data are impractical to repair manually, 
+   #this script should no longer be used to replicate results. 
+   #Rather, for best results, the planevolution paper version of this
+   #script should be used to replicate the results, then filtered for only version 1 plans.
+   
    #takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
    #using selenium because rvest cannot read the table
+   
+   filekey <- read.csv("filekey.csv")
    
    packs <- c('stringr','xml2','polite', 'httr', 'tidyverse','robotstxt',
               'boxr','data.table','RSelenium','purrr','rvest','glue')
@@ -97,8 +109,8 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    name_gsas <- vector(mode = "list", length = length(gsp_attr$basin))
    
    if(use_repaired == T){
-      gsp_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
-         length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
+      gsp_tbl <- readRDS(list.files(path = filekey[filekey$var_name=="folder_containing_webrepair",]$filepath, pattern = "web_repaired", full.names = T)[
+         length(list.files(path = filekey[filekey$var_name=="folder_containing_webrepair",]$filepath, pattern = "web_repaired", full.names = T))])
       for(i in 1:length(gsp_attr$gsp_num_id)){
          indx <- which(gsp_tbl$gsp_id == gsp_attr$gsp_num_id[i])
          if(length(indx)==1){
@@ -111,8 +123,8 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
    for(i in 1:length(gsp_attr$link)){
       #checks whether pdf and xlsx have been downloaded
       if(!is.na(gsp_attr$link[i]) & 
-         (!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
-          !file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) |
+         (!file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
+          !file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")) |
           is.na(num_gsas[i]))){
          
          remote_driver$navigate(paste("https://sgma.water.ca.gov",gsp_attr$link[i], sep = ""))
@@ -135,8 +147,8 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
          }
          
          if(!is.na(gsp_attr$link[i]) & 
-            (!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
-             !file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")))){
+            (!file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")) | 
+             !file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")))){
             
             #pdf_download
             # Specify URL where file is stored
@@ -145,21 +157,21 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
             
             pdf_link <- remote_driver$findElement(using = "link text", "Groundwater Sustainability Plan")$getElementAttribute("href")
             # Specify destination where file should be saved
-            destfilepdf <- paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= "")
+            destfilepdf <- paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= "")
             if(box_sync == T){
                box_pdfs <- as.data.frame(box_search(gsp_attr$gsp_num_id[i], 
                                        content_types = "name", type = "file", file_extensions = "pdf",
                                        ancestor_folder_ids = box_getwd()))#searches current box folder
-               if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))&
+               if(!file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= ""))&
                   nrow(box_pdfs) == 1){
-                  box_dl(file_id = box_pdfs$id, pb = T, local_dir = './data_raw/portal')
+                  box_dl(file_id = box_pdfs$id, pb = T, local_dir = filekey[filekey$var_name=="portal_folder_stmpaper",]$filepath)
                   print(paste("pdf",i,"downloaded from box"))
                }
                if(nrow(box_pdfs)>1){
                   print(paste("more than one Box version of pdf",k))
                }
             }
-            if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
+            if(!file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.pdf',sep= ""))){
                download.file(pdf_link[[1]], destfilepdf, timeout = 600) 
                if(box_sync == T){box_ul(dir_id = box_getwd(),file = destfilepdf,pb = T)}
                print(paste("pdf",i,"downloaded from portal"))
@@ -169,22 +181,22 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
             }
             #xlsx_download
             xlsx_link <- remote_driver$findElement(using = "link text", "Elements of the Plan")$getElementAttribute("href")
-            destfilexlsx <- paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
+            destfilexlsx <- paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= "")
             
             if(box_sync == T){
                box_xls <- as.data.frame(box_search(gsp_attr$gsp_num_id[i], 
                                                     content_types = "name", type = "file", file_extensions = "xlsx",
                                                     ancestor_folder_ids = box_getwd()))#searches current box folder
-               if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))&
+               if(!file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))&
                   nrow(box_xls) == 1){
-                  box_dl(file_id = box_xls$id, pb = T, local_dir = './data_raw/portal')
+                  box_dl(file_id = box_xls$id, pb = T, local_dir = filekey[filekey$var_name=="portal_folder_stmpaper",]$filepath)
                   print(paste("spreadsheet",i,"downloaded from box"))
                }
                if(nrow(box_xls)>1){
                   print(paste("more than one Box version of spreadsheet",k))
                }
             }
-            if(!file.exists(paste('./data_raw/portal/gsp_num_id_',gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
+            if(!file.exists(paste(filekey[filekey$var_name=="portal_downloads_stmpaper",]$filepath,gsp_attr$gsp_num_id[i],'.xlsx',sep= ""))){
                download.file(xlsx_link[[1]], destfilexlsx)
                if(box_sync == T){box_ul(dir_id = box_getwd(),file = destfilexlsx,pb = T)}
                print(paste("spreadsheet",i,"downloaded from portal"))
@@ -230,7 +242,5 @@ sgma_web_scraper <- function(box_sync = F, use_repaired = F){
       gsp_attr <- gsp_comb
    }
    
-   saveRDS(gsp_attr, file = paste0('./data/output_large_files/gsp_web_vars_', format(Sys.time(), "%Y%m%d-%H:%M")))
+   saveRDS(gsp_attr, file = paste0(filekey[filekey$var_name=="gsp_web_vars_stmpaper",]$filepath, format(Sys.time(), "%Y%m%d-%H:%M")))
    
-   return(invisible())
-}
