@@ -2,5 +2,13 @@
 disambiged_extracts_govnetpaper,data/cleaned_extracts,textnet_extract objects that have been through the disambiguate function procedure for the Text_Gov_Network_Methods paper
 verbtype_dummies_for_edgelist,data/temp_large_files/verb_type_dummies_for_edgelist,
 edgelist_w_v_class,data/output_large_files/edgelist_with_verb_class,
-gsp_docs_lean,data/output_large_files/gsp_docs_lean,
-edgelist_w_meta,data/output_large_files/edgelist_with_verb_meta,
+gsp_docs_lean,data/output_large_files/gsp_docs_lean,gsp doc with meta data frame that only includes the vars used in the STM paper model
+edgelist_w_meta,data/output_large_files/edgelist_with_verb_meta,edgelist merged with verb metadata
+full_directed_graphs_govnetpaper,data/output_large_files/full_directed_graph_,"Full (multiplex, with isolates) directed graphs including GPEs ORGs and PEOPLE"
+supernetwork_full_govnetpaper,data/output_large_files/supernetwork_full,The supernetwork generated from the full directed graphs from the govnet paper including orgs gpes and people
+supernetwork_weighted_govnetpaper,data/output_large_files/supernetwork_weighted,
+supernetwork_figures,figures,
+superergm_govnetpaper,data/output_large_files/superergm,
+plansv1,./planevolution/v1_gsp_num_id_,
+plansv2,./planevolution/v2_gsp_num_id_,
+gsp_web_vars_planevolutionpaper,./planevolution/gsp_web_vars_,a table of gsp webscraped metadata for both versions of the plans
