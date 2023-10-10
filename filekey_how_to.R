@@ -11,4 +11,7 @@ xfilenamesplits <- unlist(strsplit(xfilename,split="/"))
 xpath <- paste(xfilenamesplits[1:(length(xfilenamesplits)-1)],collapse = "/")
 xpattern <- xfilenamesplits[length(xfilenamesplits)]
 
+#get the most recent file in the xpath that matches xpattern
+recentxfile <- readRDS(list.files(path = xpath, pattern = xpattern, full.names = T)[
+   length(list.files(path = xpath, pattern = xpattern, full.names = T))])
 

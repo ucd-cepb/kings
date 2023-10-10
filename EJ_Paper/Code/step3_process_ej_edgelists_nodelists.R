@@ -17,18 +17,22 @@ library(stringi)
 ej_orgs <- read.csv()
 
 ###Section 1: Govscitbl####
-source('code/textnet_demo_workflow/utils/govscicleaning.R')
+source(filekey[filekey$var_name=="govscicleaning_ej_script",]$filepath)
+govscitbl <- rbind(govscitbl, ej_orgs)
 
 govscitbl$State <- clean_entities(govscitbl$State, remove_nums = T)
 govscitbl$Agency <- clean_entities(govscitbl$Agency, remove_nums = T)
 govscitbl$Abbr <- clean_entities(govscitbl$Abbr, remove_nums = T)
 govscitbl <- unique(govscitbl)
 
-govscitbl <- rbind(govscitbl, ej_orgs)
+
 
 ###Section 2: GSAs####
 extracts <- filekey[filekey$var_name=="nondisambiged_extracts_ejpaper",]$filepath
 edges_and_nodes <- list.files(path = substr(extracts, 1, nchar(extracts)-1), full.names = T)
+#TODO if you wanted to append a State column to the nodelist, this would be the place. 
+#it would involve comparing the node name column of the nodelist to the govscitbl Agency and Abbr columns,
+#then if it's a match, setting that nodelist row's value of the State column to the corresponding govscitbl State column
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 
