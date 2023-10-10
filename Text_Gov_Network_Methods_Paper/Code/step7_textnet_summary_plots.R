@@ -2,10 +2,10 @@ library(igraph)
 library(pbapply)
 library(data.table)
 library(stringr)
+filekey <- read.csv("filekey.csv")
+network_stats <- readRDS(paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/gov_dir_weight_no_gpe_network_properties"))
 
-network_stats <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
-
-gsp_meta <- readRDS("data/output_large_files/gsp_docs_w_meta")
+gsp_meta <- readRDS(filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 gsp_meta <- gsp_meta[!is_comment & !is_reference,]
 gsp_meta <- gsp_meta[,c(.SD,.N),by=gsp_id]
 gsp_mini <- unique(gsp_meta[,c(1,14,16,19:27)])
@@ -52,7 +52,7 @@ g4 <- base +
 
 library(gridExtra)
 grom <- grid.arrange(g1,g2,g3,g4,ncol = 2)
-ggsave(grom,file = 'figures/size_vs_pages.png',dpi = 450,units = 'in',height = 7,width = 7)
+ggsave(grom,file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/size_vs_pages.png'),dpi = 450,units = 'in',height = 7,width = 7)
 
 base2 <- ggplot(data = comp,aes(x = N)) + 
    scale_x_continuous(name = '# pages') + 
@@ -79,7 +79,7 @@ g9 <- base2 +
    ggtitle('connectedness')
 
 grom2 <- (grid.arrange(g7, g9,ncol = 2))
-ggsave(grom2,file = 'figures/net_stats_vs_pages.png',dpi = 450,units = 'in',height = 3.5,width = 7)
+ggsave(grom2,file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/net_stats_vs_pages.png'),dpi = 450,units = 'in',height = 3.5,width = 7)
 
 comp$mult_gsas <- as.factor(comp$mult_gsas)
 res_aov <- aov(num_edges ~ mult_gsas,
@@ -214,7 +214,7 @@ g12 <- ggplot(data = comp,aes(x = multiple_gsas, y=num_edges)) +
    theme_bw() 
 
 grom3 <- (grid.arrange(g10,g11,g12, ncol=3))
-ggsave(grom3,file = 'figures/mult_gsas.png',dpi = 450,units = 'in',height = 3.5,width = 8)
+ggsave(grom3,file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/mult_gsas.png'),dpi = 450,units = 'in',height = 3.5,width = 8)
 
 
 

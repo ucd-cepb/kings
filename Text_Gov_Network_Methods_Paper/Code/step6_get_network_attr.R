@@ -4,7 +4,9 @@ library(igraph)
 library(intergraph)
 library(tidyverse)
 
-edges_and_nodes <- list.files(path = "data/cleaned_extracts", full.names = T)
+filekey <- read.csv("filekey.csv")
+
+edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath, full.names = T)
 gspids <-stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 #CHOOSE ONE
@@ -17,7 +19,7 @@ type = "gov_dir_weight_no_gpes"
 #Table 2 uses gov_dir_weight_no_gpes
 
 
-super <- readRDS("data/output_large_files/supernetwork_weighted")
+super <- readRDS(filekey[filekey$var_name=="supernetwork_weighted_govnetpaper",]$filepath)
 super <- get.data.frame(super, what="vertices")
 super <- super[,c("name","num_GSPs_in")]
 
@@ -95,7 +97,7 @@ if(type=="topic"){
 
 for(m in 1:length(gspids)){
    if(type=="governance_dir_full"){
-      igr <- readRDS(paste0("data/output_large_files/full_directed_graph_",gspids[m]))
+      igr <- readRDS(paste0(filekey[filekey$var_name=="full_directed_graphs_govnetpaper",]$filepath,gspids[m]))
       agency_df <- get.data.frame(igr, what = "both")
       net <- network(x=agency_df$edges[,1:2], directed = T,
                      hyper = F, loops = T, multiple = T, 
@@ -147,7 +149,7 @@ for(m in 1:length(gspids)){
    }
    if(type=="governance_dir_weighted"){
       
-      igr <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
+      igr <- readRDS(paste0(filekey[filekey$var_name=="weighted_nets_govnetpaper",]$filepath,gspids[m]))
       agency_df <- get.data.frame(igr, what = "both")
       net <- network(x=agency_df$edges[,1:2], directed = T,
                             hyper = F, loops = T, multiple = F, 
@@ -193,7 +195,7 @@ for(m in 1:length(gspids)){
    }
    if(type=="gov_dir_weight_no_gpes"){
       
-      igr <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
+      igr <- readRDS(paste0(filekey[filekey$var_name=="weighted_nets_govnetpaper",]$filepath,gspids[m]))
       igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") %in% c("ORG","PERSON")])
       agency_df <- get.data.frame(igr, what = "both")
       net <- network(x=agency_df$edges[,1:2], directed = T,
@@ -233,7 +235,7 @@ for(m in 1:length(gspids)){
       )
    }
    if(type %in% c("orgs","people")){
-      igr <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
+      igr <- readRDS(paste0(filekey[filekey$var_name=="weighted_nets_govnetpaper",]$filepath,gspids[m]))
       if(type=="orgs"){
          igr <- subgraph(igr, V(igr)[vertex_attr(igr,"entity_type") == "ORG"])
       }else{
@@ -288,7 +290,7 @@ if(type=="topic"){
    
    for(m in 1:length(gspids)){
       
-      net <- readRDS(paste0("data/output_large_files/topic_networks/topic_network_",gspids[m]))$posadj
+      net <- readRDS(paste0(filekey[filekey$var_name=="topic_corr_files",]$filepath,gspids[m]))$posadj
       igr <- igraph::graph.adjacency(net, mode = "undirected",weighted=NULL,diag=F)
       net <- asNetwork(igr)
       edgelist <- get.data.frame(igr, what = "edges")
@@ -313,30 +315,30 @@ if(type=="topic"){
 
 if(type=="topic"){
    
-   saveRDS(network_properties, "data/output_large_files/topic_network_properties")
+   saveRDS(network_properties, paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/topic_network_properties"))
    
 }
 
 if(type=="governance_dir_full"){
    
-   saveRDS(network_properties, "data/output_large_files/dir_full_network_properties")
+   saveRDS(network_properties, paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/dir_full_network_properties"))
    
 }
 if(type=="governance_dir_weighted"){
    
-   saveRDS(network_properties, "data/output_large_files/dir_weighted_network_properties")
+   saveRDS(network_properties, paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/dir_weighted_network_properties"))
    
 }
 if(type=="gov_dir_weight_no_gpes"){
    
-   saveRDS(network_properties, "data/output_large_files/gov_dir_weight_no_gpe_network_properties")
+   saveRDS(network_properties, paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/gov_dir_weight_no_gpe_network_properties"))
    
 }
 if(type=="orgs"){
-   saveRDS(network_properties, "data/output_large_files/gov_dir_weight_orgs_properties")
+   saveRDS(network_properties, paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/gov_dir_weight_orgs_properties"))
 }
 if(type=="people"){
-   saveRDS(network_properties, "data/output_large_files/gov_dir_weight_people_properties")
+   saveRDS(network_properties, paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/gov_dir_weight_people_properties"))
 }
 #not including the yuba duplicate and the improper pdf formatting
 network_properties <- network_properties[c(1:38,40:67,69:119),]
@@ -395,14 +397,14 @@ verbtensepairs <- ggpairs(as.data.frame(network_properties_for_pairs[,(16:22)]))
 summarypairs2 <- ggpairs(as.data.frame(network_properties_for_pairs[,(c(1:5,7,16))]))+theme_bw()
 
 ggsave(paste0("verb_tense_and_degree_",type,".png"), plot = verbtensepairs, device = "png",
-       path = "figures", width = 4020, height = 3015, dpi = 300,
+       path = filekey[filekey$var_name=="govnetpaper_figures",]$filepath, width = 4020, height = 3015, dpi = 300,
        units = "px", bg = "white")
 
 ggsave(paste0("summarypairs2",type,".png"), plot = summarypairs2, device = "png",
-       path = "figures", width = 4020, height = 3015, dpi = 300,
+       path = filekey[filekey$var_name=="govnetpaper_figures",]$filepath, width = 4020, height = 3015, dpi = 300,
        units = "px", bg = "white")
 
-gsp_meta <- readRDS("data/output_large_files/gsp_docs_w_meta")
+gsp_meta <- readRDS(filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 gsp_mini <- unique(gsp_meta[,c(14,16,19:26,7)])
 gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
 #for meta

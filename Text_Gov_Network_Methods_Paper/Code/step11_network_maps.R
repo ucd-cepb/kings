@@ -1,13 +1,15 @@
 library(terra)
 library(tigris)
 library(viridis)
+filekey <- read.csv("filekey.csv")
+network_properties <- readRDS(paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/gov_dir_weight_no_gpe_network_properties"))
 
-network_properties <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
-
-gsp_shapes <- vect("data_spatial_raw/GSP_submitted/SubmittedGSP_Master.shp")
+gspzip <- filekey[filekey$var_name=="gsp_submitted_zip",]$filepath
+gspzip <- substr(gspzip, 1, nchar(gspzip)-4)
+gsp_shapes <- vect(paste0(gspzip,"/SubmittedGSP_Master.shp"))
 gsp_shapes <- terra::project(gsp_shapes, "+proj=robin +datum=WGS84")
 
-city_boundaries <- vect("data_spatial_raw/City_Boundaries/City_Boundaries.shp")
+city_boundaries <- vect(filekey[filekey$var_name=="city_boundaries_govnetpaper",]$filepath)
 city_boundaries <- terra::project(city_boundaries, "+proj=robin +datum=WGS84")
 
 us <- tigris::states(cb=T, class = 'sf')
@@ -27,7 +29,7 @@ library(RColorBrewer)
 grps <- 10
 brks <- quantile(gsp_shapes$num_nodes, 0:(grps-1)/(grps-1), na.rm=TRUE)
 # 1. Open png file
-png("figures/nodes_map.png", width = 900, height = "975")
+png(paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/nodes_map.png"), width = 900, height = "975")
 plot(cal,pax=list(# params for axes
    cex.axis = 2
 ))
@@ -40,7 +42,7 @@ plot(gsp_shapes, "num_nodes", breaks = brks, col=viridis(grps),
 dev.off()
 
 brks <- quantile(gsp_shapes$num_edges, 0:(grps-1)/(grps-1), na.rm=TRUE)
-png("figures/edges_map.png", width = 900, height = "975")
+png(paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/edges_map.png"), width = 900, height = "975")
 plot(cal,pax=list(# params for axes
    cex.axis = 2
 ))

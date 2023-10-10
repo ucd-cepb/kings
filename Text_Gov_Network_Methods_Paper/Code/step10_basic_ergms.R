@@ -7,15 +7,15 @@ library(data.table)
 library(dplyr)
 library(Bergm)
 library(bayesplot)
-
-edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
-gspids <- substr(edges_and_nodes, 18,21)
+filekey <- read.csv("filekey.csv")
+edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath, full.names = T)
+gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 gspids <- gspids[c(1:38,40:67,69:119)]
 #box option
 #flist <- list.files('data/output_large_files/weighted_directed_graphs/',full.names = T)
 #local option
 #flist <- list.files("data/output_large_files",pattern="to_weighted_graph",full.names=T)
-super <- readRDS("data/output_large_files/supernetwork_weighted")
+super <- readRDS(filekey[filekey$var_name=="supernetwork_weighted_govnetpaper",]$filepath)
 super <- subgraph(super, V(super)[
    vertex_attr(super,"entity_type") %in% c("ORG","PERSON")])
 supersimpl <- igraph::simplify(super, remove.multiple = F, remove.loops = T)
@@ -90,36 +90,16 @@ for(n in 1:length(nlist)){
    
    m <- bergm_function(m)
    
-   saveRDS(m, file = paste0("data/output_large_files/bergm_",gspids[[n]]))
+   saveRDS(m, file = paste0(filekey[filekey$var_name=="bergms_govnetpaper",]$filepath,gspids[[n]]))
    
 }
-
-#vector memory issues
-set.seed(80)
-superergm <- Bergm::bergm(supersimpl~ edges + isolates +
-                             gwidegree(decay=0.25, fixed = T) + 
-                             gwesp(decay=0.15, fixed = T,cutoff=30) + 
-                             nodemix("entity_type") + nodecov("num_GSPs_in"),
-                          prior.mean = c(0, 0, 0, 0, 0, 0, 0, 0),
-                          prior.sigma = diag(10,8),
-                          gamma = .6, #changes the acceptance rate
-                          burn.in = 1e3,
-                          aux.iters = 2500,
-                          main.iters = 3000,
-                          nchains = 6, 
-                          set.seed = 700,
-                          verbose = F)
-saveRDS(superergm, "data/output_large_files/superergm")
-
-
-
 
 used_gspids <- gspids[!gspids %in% c("0053","0089")]
 
 m1_erg_list <- lapply(1:length(used_gspids), function(n) readRDS(
-   paste0("data/output_large_files/bergm_",used_gspids[[n]])))
+   paste0(filekey[filekey$var_name=="bergms_govnetpaper",]$filepath,used_gspids[[n]])))
 
-saveRDS(m1_erg_list,"data/output_large_files/m1_bergm_lists")
+saveRDS(m1_erg_list,filekey[filekey$var_name=="all_bergms_govnetpaper",]$filepath)
 
 coef_dt <- rbindlist(lapply(1:length(m1_erg_list),
                      function(n) as.data.table(t(colMeans(m1_erg_list[[n]]$Theta)))))
@@ -138,7 +118,7 @@ boxplot(coef_dt)
 ergm_boxplot <- ggplot(cdtmelt, aes(x=var,y=estimate)) +
 geom_boxplot()+
    theme_bw() 
-ggsave(file = 'figures/ergm_boxplot.png',plot = ergm_boxplot,units = 'in',dpi = 450,height = 5,width= 7)
+ggsave(file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/ergm_boxplot.png"),plot = ergm_boxplot,units = 'in',dpi = 450,height = 5,width= 7)
 
 
 library(coda)
@@ -164,7 +144,7 @@ coef_dt$gwespHi <- as.numeric(vq$`97.5%`[vq$V6=="gwesp"])
 coef_dt$personLow <- as.numeric(vq$`2.5%`[vq$V6=="person"])
 coef_dt$personHi <- as.numeric(vq$`97.5%`[vq$V6=="person"])
 
-network_properties <- readRDS("data/output_large_files/gov_dir_weight_no_gpe_network_properties")
+network_properties <- readRDS(paste0(filekey[filekey$var_name=="network_properties_folder_govnetpaper",]$filepath,"/gov_dir_weight_no_gpe_network_properties"))
 network_properties <- network_properties[!network_properties$gsp_id %in% c("0053","0089"),]
 
 coef_dt$num_nodes <- as.numeric(network_properties$num_nodes)
@@ -173,14 +153,14 @@ gwesp_nodes <- ggplot(coef_dt, aes(num_nodes, gwesp)) +
    geom_point() +
    theme_bw() +
    geom_errorbar(aes(ymin = gwespLow, ymax = gwespHi))
-ggsave(file = 'figures/gwesp_nodes.png',plot = gwesp_nodes,units = 'in',dpi = 450,height = 5,width= 7)
+ggsave(file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/gwesp_nodes.png"),plot = gwesp_nodes,units = 'in',dpi = 450,height = 5,width= 7)
 
 #gwdegree
 gwdegree_nodes <- ggplot(coef_dt, aes(num_nodes, gwidegree)) +
    geom_point() +
    theme_bw() +
    geom_errorbar(aes(ymin = gwidegreeLow, ymax = gwidegreeHi))
-ggsave(file = 'figures/gwdegree_nodes.png',plot = gwdegree_nodes,units = 'in',dpi = 450,height = 5,width= 7)
+ggsave(file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/gwdegree_nodes.png"),plot = gwdegree_nodes,units = 'in',dpi = 450,height = 5,width= 7)
 
 #re: this, I'm thinking something like 2 panels, 
 #side by side, each panel orders x-axis by network size (# of nodes) (or whatever)
@@ -200,7 +180,7 @@ intercept_pairs <- ggpairs(factcomp[,-c('net')],
         title = "Scatterplot matrix of tie probabilities by entity type, ERGM") +
     theme_bw()
 
-ggsave(file = 'figures/mix_estimate.png',plot = intercept_pairs,units = 'in',dpi = 450,height = 7,width= 7)
+ggsave(file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/mix_estimate.png"),plot = intercept_pairs,units = 'in',dpi = 450,height = 7,width= 7)
 
 
 
@@ -234,7 +214,7 @@ intercept_pairs <- ggpairs(factcomp[,-c('net')],
                            title = "Scatterplot matrix of entity-specific tie probabilities") +
    theme_bw()
 
-ggsave(file = 'figures/intercep_estimate.png',plot = intercept_pairs,units = 'in',dpi = 450,height = 7,width= 7)
+ggsave(file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,"/intercep_estimate.png"),plot = intercept_pairs,units = 'in',dpi = 450,height = 7,width= 7)
 
 
 

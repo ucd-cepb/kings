@@ -8,8 +8,10 @@ library(data.table)
 library(pbapply)
 library(stringi)
 
+filekey <- read.csv("filekey.csv")
+
 ###Section 1: Govscitbl####
-source('code/textnet_demo_workflow/utils/govscicleaning.R')
+source(filekey[filekey$var_name=="govscicleaning_script",]$filepath)
 
 govscitbl$State <- clean_entities(govscitbl$State, remove_nums = T)
 govscitbl$Agency <- clean_entities(govscitbl$Agency, remove_nums = T)
@@ -18,11 +20,16 @@ govscitbl <- unique(govscitbl)
 
 
 ###Section 2: GSAs####
-edges_and_nodes <- list.files(path = "data/network_extracts", full.names = T)
+edges_and_nodes <- list.files(path = filekey[filekey$var_name=="nondisambiged_extracts_govnetpaper",]$filepath, full.names = T)
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
-agency_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
-   length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
+gsp_tblfilename <- filekey[filekey$var_name=="gsp_web_vars_repaired_stmpaper",]$filepath
+gsp_tblfilenamesplits <- unlist(strsplit(gsp_tblfilename,split="/"))
+gsp_tblpath <- paste(gsp_tblfilenamesplits[1:(length(gsp_tblfilenamesplits)-1)],collapse = "/")
+gsp_tblpattern <- gsp_tblfilenamesplits[length(gsp_tblfilenamesplits)]
+
+agency_tbl <- readRDS(list.files(path = gsp_tblpath, pattern = gsp_tblpattern, full.names = T)[
+   length(list.files(path = gsp_tblpath, pattern = gsp_tblpattern, full.names = T))])
 agency_tbl <- agency_tbl[!is.na(gsp_id),]
 #change hyphens and spaces to underscores, to match spacy parse formatting
 agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
@@ -59,7 +66,7 @@ for(m in 1:length(edges_and_nodes)){
 
 ###Section 3: Acronyms####
 acrons <- vector(mode="list",length=length(edges_and_nodes))
-pdftxt <- readRDS("data/output_large_files/cleaned_pdfs")
+pdftxt <- readRDS(filekey[filekey$var_name=="cleaned_pdfs_for_govnetpaper",]$filepath)
 
 for(m in 1:length(edges_and_nodes)){
    acrons[[m]] <-find_acronyms(pdftxt[[m]])
@@ -134,11 +141,11 @@ for(m in 1:length(edges_and_nodes)){
    edgenodelist <- readRDS(edges_and_nodes[m])
    edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
                                     match_partial_entity=customdt[[m]]$match_partial_entity, edgenodelist, try_drop)
-   saveRDS(edgenodelist,paste0("cleaned_extracts/",gspids[m],".RDS"))
+   saveRDS(edgenodelist,paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))
 }
 
 for(m in 1:length(edges_and_nodes)){
-   edgenodelist <- readRDS(paste0("cleaned_extracts/",gspids[m],".RDS"))
+   edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))
 ###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
@@ -179,7 +186,7 @@ for(m in 1:length(edges_and_nodes)){
    
    full_directed_graph <- igraph::set_vertex_attr(full_directed_graph, "degr", value = igraph::degree(full_directed_graph))
    
-   saveRDS(full_directed_graph, paste0("data/output_large_files/full_directed_graph_",gspids[m]))
+   saveRDS(full_directed_graph, paste0(filekey[filekey$var_name=="full_directed_graphs_govnetpaper",]$filepath,gspids[m]))
    
    weighted_graph <- full_directed_graph
    
@@ -211,5 +218,5 @@ for(m in 1:length(edges_and_nodes)){
                                              value = ifelse(igraph::get.vertex.attribute(weighted_graph,"name") %in% topdegs, 
                                                             igraph::get.vertex.attribute(weighted_graph,"name"), NA))
    
-   saveRDS(weighted_graph, paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
+   saveRDS(weighted_graph, paste0(filekey[filekey$var_name=="weighted_nets_govnetpaper",]$filepath,gspids[m]))
 }

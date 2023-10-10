@@ -1,9 +1,12 @@
 #this was run to remove non a-z letters before running script 2_process_edgelists_nodelists
 #because the clean_entities function hadn't yet been updated. This is now redundant
 #with the textnet_extract() functionality
+filekey <- read.csv("filekey.csv")
 
-edges_and_nodes <- list.files(path = "network_extracts", full.names = T)
-gspids <- substr(edges_and_nodes, 18,21)
+netextracts <- filekey[filekey$var_name=="nondisambiged_extracts_govnetpaper",]$filepath
+netextracts <- substr(netextracts, 1, nchar(netextracts)-1)
+edges_and_nodes <- list.files(path = netextracts, full.names = T)
+gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 for(m in 1:length(gspids)){
    en <- readRDS(edges_and_nodes[m])

@@ -2,6 +2,7 @@ library(statnet)
 library(intergraph)
 library(latentnet)
 library(udpipe)
+filekey <- read.csv("filekey.csv")
 s <- 'The SVBGSA and ASGSA established a Coordination Committee.'
 s2 <- 'During development of the 2022 GSPs SVBGSA assessed how URCs and DACs may be engaged with the GSA.'
 s <- 'The BVBGSA applied for and received a grant from CDWR to fund the preparation of the GSP'
@@ -14,7 +15,7 @@ library(tidyverse)
 library(ggthemes)
 
 sp <- textplot::textplot_dependencyparser(x,title = 'Pre-processing example:',subtitle = 'Tokenization, PoS tagging, and dependency parsing') 
-ggsave(sp,file = 'figures/sample_dep_parse.png',dpi = 450,units = 'in',heigh = 4,width = 10)                                    
+ggsave(sp,file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/sample_dep_parse.png'),dpi = 450,units = 'in',heigh = 4,width = 10)                                    
 
 elist <- data.frame(from = c('BVBGSA','CDWR'),to = c('CDWR','BVBGSA'),
                     event = c('support request','funding'))
@@ -26,7 +27,7 @@ gg_event_example <- ggplot(ggnetwork(dep_net),aes(x = x,y = y,xend = xend,yend =
    geom_nodes() + 
    geom_nodelabel(nudge_y = c(-0.1,0.1),nudge_x = c(0.1,-0.1),aes(label = vertex.names),) + 
    geom_edgetext(aes(label = event),nudge_y = c(-0.2,0.2))
-ggsave(gg_event_example,file = 'figures/event_example.png',units = 'in',height = 2,width = 3,dpi = 300)
+ggsave(gg_event_example,file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/event_example.png'),units = 'in',height = 2,width = 3,dpi = 300)
 
 "The SVBGSA is a Joint Powers Authority (JPA), and its membership includes the County of Monterey, Monterey County Water Resources Agency (MCWRA), City of Salinas, City of Soledad, City of Gonzales, City of King (King City), the Castroville Community Services District (CCSD), and Monterey One Water."
 elist <- data.frame(
@@ -60,7 +61,7 @@ panelA <- ggplot(occ_geom,aes(x = x,y = y,xend = xend,yend = yend)) +
             label = "*all edges reflect co-occurence")
 library(gridExtra)
 
-ggsave(grid.arrange(panelA,panelB,ncol = 2),file = 'figures/compare_coding.png',
+ggsave(grid.arrange(panelA,panelB,ncol = 2),file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/compare_coding.png'),
        height = 5,width= 8,dpi = 450,units = 'in')
 
 

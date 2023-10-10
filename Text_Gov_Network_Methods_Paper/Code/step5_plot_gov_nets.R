@@ -1,11 +1,12 @@
 library(ggraph)
+filekey <- read.csv("filekey.csv")
 
-edges_and_nodes <- list.files(path = "cleaned_extracts", full.names = T)
+edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath, full.names = T)
 gspids <- substr(edges_and_nodes, 18,21)
 
 #only plots orgs and people
 for(m in 1:length(edges_and_nodes)){
-   weighted_graph <- readRDS(paste0("data/output_large_files/to_weighted_graph_",gspids[m]))
+   weighted_graph <- readRDS(paste0(filekey[filekey$var_name=="weighted_netw_govnetpaper",]$filepath,gspids[m]))
    weighted_graph <- subgraph(weighted_graph, V(weighted_graph)[
       vertex_attr(weighted_graph,"entity_type") %in% c("ORG","PERSON")])
    
@@ -33,7 +34,7 @@ for(m in 1:length(edges_and_nodes)){
    
    
    ggsave(paste0("directed_gov_net_toweighted_isoremoved_nogpe",gspids[m],".png"), plot = weighted_plot_noisolates, device = "png",
-          path = "figures", width = 4020, height = 1890, dpi = 300,
+          path = filekey[filekey$var_name=="govnetpaper_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
           units = "px", bg = "white")
    
 }
