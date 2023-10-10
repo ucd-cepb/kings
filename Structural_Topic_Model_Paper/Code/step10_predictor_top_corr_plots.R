@@ -1,4 +1,4 @@
-
+#TODO finish filekey on this script
    library(scico)
    library(ggcorrplot)
    library(GGally)
@@ -24,9 +24,14 @@
                         "GDE - Topic 29 Species",
                         "CC - Topic 7 Climate Scenarios"
       )
+
+   tblfilename <- filekey[filekey$var_name=="effect_table_condensed_csvs_stmpaper",]$filepath
+   tblfilenamesplits <- unlist(strsplit(tblfilename,split="/"))
+   tblpath <- paste(tblfilenamesplits[1:(length(tblfilenamesplits)-1)],collapse = "/")
+   tblpattern <- tblfilenamesplits[length(tblfilenamesplits)]
    
-   tbl_list <- list.files(path = "/Users/elisemiller/R_Projects/kings/data_temp",
-                       pattern = "eftblskinny", full.names = T)
+   tbl_list <- list.files(path = tblpath,
+                       pattern = tblpattern, full.names = T)
    cor_tbls <- vector("list",length(tbl_list))
    for(i in 1:length(tbl_list)){
       cor_tbls[[i]] <- read.csv(tbl_list[i])
@@ -60,5 +65,5 @@
       theme(legend.key=element_rect(colour="black",fill="white",
                                     linetype="solid")) 
    
-   ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", path = "figures",
+   ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
           width = 6030, height = 2835, dpi = 300, units = "px", bg = "white")
