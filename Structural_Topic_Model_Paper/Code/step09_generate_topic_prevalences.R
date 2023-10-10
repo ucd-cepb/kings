@@ -1,3 +1,6 @@
+filekey <- read.csv("filekey.csv")
+
+
 metadata <- inputs$meta
 prev <- as.data.frame(model$theta)
 
@@ -9,4 +12,4 @@ tps <- aggregate(as.matrix(topic_prev[,1:ntopics]), data.frame(topic_prev$gsp_id
 rownames(tps) <- tps[,1]
 tps <- tps[,2:31]
 
-saveRDS(tps, "data/output_large_files/topic_prevalence")
+saveRDS(tps, filekey[filekey$var_name=="topic_prevalence",]$filepath)

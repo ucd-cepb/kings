@@ -1,3 +1,4 @@
+filekey <- read.csv("filekey.csv")
 
 if('r-spatial/s2' %in% installed.packages()[,'Package']){
    remotes::install_github("r-spatial/s2") # requires openssl@1.1, can be installed via brew 
@@ -14,15 +15,16 @@ lapply(packs, require, character.only = TRUE)
 
 sf_use_s2(TRUE)
 
-fl = 'data/spatial_raw_large_files/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp'
+fl = filekey[filekey$var_name=="svi_census_tracts_2018",]$filepath
 census = st_read(fl)
-fl = 'data/spatial_raw_large_files/GSP_submitted/SubmittedGSP_Master.shp'
+gspzip <- filekey[filekey$var_name=="gsp_submitted_zip",]$filepath
+fl = paste0(substr(gspzip,1,nchar(gspzip)-4),'/SubmittedGSP_Master.shp')
 gsp = st_read(fl)
 
 
 ###### VOTE DATA -- 2016 HOUSE ELECTIONS BY PRECINCT --- #####
 #### OVERLAID ON GSP BOUNDARIES ####
-prec <- fread('data/raw_large_files/dataverse_files/2016-precinct-house.tab')
+prec <- fread(filekey[filekey$var_name=="precincts_2016",]$filepath)
 prec <- prec[state=='California',]
 prec$cfips <- formatC(prec$county_fips,width = 5,flag = '0')
 prec$prec_key <- paste0(prec$cfips,prec$precinct)
@@ -30,7 +32,7 @@ votes_by_precinct <- prec[,sum(votes),by=.(prec_key,year,stage,party)]
 votes_by_precinct[,total_votes:=sum(V1),by=.(prec_key,year,stage)]
 votes_by_precinct[,vote_share:=V1/total_votes]
 rep_vote_share_2016 <- votes_by_precinct[party=='republican',]
-prec2016 <- st_read('data/spatial_raw_large_files/srprec_state_g16_v01_shp/srprec_state_g16_v01.shp')
+prec2016 <- st_read(filekey[filekey$var_name=="precincts_spatial_2016",]$filepath)
 
 prec2016$total_votes <- votes_by_precinct$total_votes[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
 prec2016$rep_vote_share <- votes_by_precinct$vote_share[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
@@ -59,7 +61,7 @@ rep_vote_share_by_gsp = inters %>%
 gsp$Republican_Vote_Share <- rep_vote_share_by_gsp$rep_vote_share[match(gsp$GSP.ID,rep_vote_share_by_gsp$GSP.ID)]
 
 
-gdp <- fread('data/raw_large_files/bea_county_gdp.csv',skip = 3)
+gdp <- fread(filekey[filekey$var_name=="bea_gdp",]$filepath,skip = 3)
 gdp <- gdp[-c(which(gdp$GeoFips==''):nrow(gdp)),]
 gdp$cfips <- paste0('0',as.character(gdp$GeoFips))
 gdmelt <- melt(gdp,id.vars = c('cfips','Description'),variable.name = 'year',value.name = 'gdp',measure.vars = patterns('[0-9]{4}'))
@@ -89,7 +91,7 @@ gsp_ag_gdp <- g_c_inter %>% group_by(GSP.ID) %>% summarise(
 
 gsp$Agr_Share_Of_GDP <- gsp_ag_gdp$gsp.agr.gdp.share[match(gsp$GSP.ID,gsp_ag_gdp$GSP.ID)]
 
-ed <- fread('data/raw_large_files/ACSST5Y2016.S1501_2023-07-19T133305/ACSST5Y2016.S1501-Data.csv',skip = 1)
+ed <- fread(filekey[filekey$var_name=="acs_5yr_survey_2016",]$filepath,skip = 1)
 ed <- ed[,.(Geography,`Geographic Area Name`,`Percent!!Estimate!!Population 25 years and over!!Bachelor's degree`)]
 msa <- tigris::core_based_statistical_areas(cb = T,class = 'sf',year = 2016)
 msa <- st_transform(msa,albersNA)
@@ -99,7 +101,7 @@ msa_ca$Perc_Bach_Degree_Over25 <- ed$`Percent!!Estimate!!Population 25 years and
 gsp$Perc_Bach_Degree_Over25 <- msa_ca$Perc_Bach_Degree_Over25[st_nearest_feature(gsp,msa_ca)]
 
 library(readxl)
-sheet_file <- 'data/raw_large_files/Govt_Units_2017_Final.xlsx'
+sheet_file <- filekey[filekey$var_name=="gov_units_2017",]$filepath
 keep_sheets <- which(readxl::excel_sheets(sheet_file) %in% c('General Purpose','Special District'))
 
 sheet_list <- lapply(keep_sheets,function(x) read_excel(sheet_file,sheet = x))
@@ -109,7 +111,7 @@ sheet_dt$CFIPS <- paste0(sheet_dt$FIPS_STATE,sheet_dt$FIPS_COUNTY)
 gov_count <- sheet_dt[,.N,by=.(CFIPS)]
 g_c_inter$govs_in_county <- gov_count$N[match(g_c_inter$CFIPS,gov_count$CFIPS)]
 
-res = fread('data/raw_large_files/PEPPOP2019.PEPANNRES-2023-07-19T210103.csv')
+res = fread(filekey[filekey$var_name=="pep_estimate_2019",]$filepath)
 pops2017 = res[,.(`Geographic Area Name (Grouping)`,`7/1/2017 population estimate!!Population`)]
 setnames(pops2017,names(pops2017),c('County','Pop_Estimate'))
 pops2017$CFIPS <- paste0('06',counties$COUNTYFP[match(str_remove(str_remove(pops2017$County,'\\,.*'),' County'),counties$NAME)])

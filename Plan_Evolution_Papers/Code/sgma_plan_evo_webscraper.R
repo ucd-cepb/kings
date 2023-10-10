@@ -6,6 +6,7 @@
 #(which means the version in question was rejected)
 #or if not, what the current approval status states
 
+filekey <- read.csv("filekey.csv")
 
    #takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
    #using selenium because rvest cannot read the table

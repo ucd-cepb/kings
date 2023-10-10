@@ -5,7 +5,15 @@ check <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(check>0)){print(check)}else{print("got 'em all")}
 lapply(packs, require, character.only = TRUE)
 
-k_saves <- list.files(path = "data_temp", pattern = "k_diag", full.names = T)
+filekey <- read.csv("filekey.csv")
+
+kdiagsfilename <- filekey[filekey$var_name=="k_diag_files_stmpaper",]$filepath
+kdiagsfilenamesplits <- unlist(strsplit(kdiagsfilename,split="/"))
+kdiagspath <- paste(kdiagsfilenamesplits[1:(length(kdiagsfilenamesplits)-1)],collapse = "/")
+kdiagspattern <- kdiagsfilenamesplits[length(kdiagsfilenamesplits)]
+
+
+k_saves <- list.files(path = kdiagspath, pattern = kdiagspattern, full.names = T)
 # prepare regular expression
 dig_regex <- "[[:digit:]]+"
 #checks for previously saved models
@@ -32,7 +40,7 @@ if(is.na(k_choice)){
    for (i in 2:length(k_saves)){
       k_all <- rbind(k_all, readRDS(k_saves[i]))
    }
-   saveRDS(k_all, "data_temp/k_all")
+   saveRDS(k_all, filekey[filekey$var_name=="k_diag_allmodels_stmpaper",]$filepath)
    k_pl <- k_all %>%
       transmute(K,
                 #`Lower bound` = lbound,
@@ -54,7 +62,7 @@ if(is.na(k_choice)){
            #subtitle = "subtitle"
       )
    
-   ggsave(paste0("k_plot_custom_k_all.png"),plot = k_pl, device = "png", path = "figures",
+   ggsave(paste0("k_plot_custom_k_all.png"),plot = k_pl, device = "png", path = filekey[filekey$var_name=="k_diag_figures",]$filepath,
           width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
    
    #checkResiduals(k_options$runout[[1]], obj$documents, tol = 0.01)

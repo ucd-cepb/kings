@@ -1,3 +1,4 @@
+filekey <- read.csv("filekey.csv")
 #stm::topicCorr mod for only a single plan
 method = "huge"
 verbose = T
@@ -17,7 +18,7 @@ if(method=="huge"){
       out$poscor <- ric.npn$refit*(MLE>0)*MLE
       out$cor <- ric.npn$refit*MLE
       class(out) <- "topicCorr"
-      saveRDS(out,paste0("data/output_large_files/topic_networks/topic_network_",m))
+      saveRDS(out,paste0(filekey[filekey$var_name=="topic_corr_files",]$filepath,m))
       
    }
    

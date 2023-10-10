@@ -1,4 +1,9 @@
 plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
+   
+   filekey <- read.csv("filekey.csv")
+   
+   
+   
    library(scico)
    #creates grid plot of topic percent by gsp
    theta <- as_tibble(model$theta)
@@ -24,7 +29,7 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
                             plot.title=element_text(size=13,hjust = 0.5))
    
    topic_theta_plot
-   ggsave("theta_by_gsp.png",plot = topic_theta_plot, device = "png", path = "figures",
+   ggsave("theta_by_gsp.png",plot = topic_theta_plot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
           width = 4422, height = 2079, dpi = 300, units = "px", bg = "white")
    
    #TODO update this by adding approval
@@ -35,8 +40,17 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
                              str_remove(colnames(theta),"V"))
    
    #repair approval status from meta with new approval scraping
-   newscrape <- readRDS(list.files("data/raw_large_files/planevolution",pattern="gsp_web_vars",full.names=T)[length(
-      list.files("data/raw_large_files/planevolution",pattern="gsp_web_vars"))])
+   
+   
+   newscrapefilename <- filekey[filekey$var_name=="gsp_web_vars_planevolutionpaper",]$filepath
+   newscrapefilenamesplits <- unlist(strsplit(newscrapefilename,split="/"))
+   newscrapepath <- paste(newscrapefilenamesplits[1:(length(newscrapefilenamesplits)-1)],collapse = "/")
+   newscrapepattern <- newscrapefilenamesplits[length(newscrapefilenamesplits)]
+   
+   
+   
+   newscrape <- readRDS(list.files(newscrapepath,pattern=newscrapepattern,full.names=T)[length(
+      list.files(newscrapepath,pattern=newscrapepattern))])
    newscrape <- newscrape[newscrape$version==1,]
    newscrape <- as.data.frame(cbind(gsp_id = newscrape$gsp_num_id, repairedapproval = newscrape$version_approval))
    
@@ -55,7 +69,7 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
                             plot.title=element_text(size=13,hjust = 0.5))
    
    approval_theta_plot
-   ggsave("approval_by_gsp.png",plot = approval_theta_plot, device = "png", path = "figures",
+   ggsave("approval_by_gsp.png",plot = approval_theta_plot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
           width = 4422, height = 2079, dpi = 300, units = "px", bg = "white")
 }
    

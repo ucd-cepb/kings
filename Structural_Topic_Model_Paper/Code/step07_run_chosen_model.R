@@ -5,14 +5,22 @@ check <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(check>0)){print(check)}else{print("got 'em all")}
 lapply(packs, require, character.only = TRUE)
 
-gsp_out <- readRDS(list.files(path = "data/temp_large_files", pattern = "slam", full.names = T)[length(
-list.files(path = "data/temp_large_files", pattern = "slam", full.names = T))])
+filekey <- read.csv("filekey.csv")
+
+
+gspoutfilename <- filekey[filekey$var_name=="gsp_out_files",]$filepath
+gspoutfilenamesplits <- unlist(strsplit(gspoutfilename,split="/"))
+gspoutpath <- paste(gspoutfilenamesplits[1:(length(gspoutfilenamesplits)-1)],collapse = "/")
+gspoutpattern <- gspoutfilenamesplits[length(gspoutfilenamesplits)]
+
+gsp_out <- readRDS(list.files(path = gspoutpath, pattern = gspoutpattern, full.names = T)[
+   length(list.files(path = gspoutpath, pattern = gspoutpattern, full.names = T))])
 
 #See step5_compare_models script for our process of selecting a value for K
 
 #numTopics = selected_model$settings$dim$K
 
-numTopics = 67
+numTopics = 30
 
 
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
@@ -56,11 +64,11 @@ while (!gsp_model$convergence$converged){
                     max.em.its = gsp_model$settings$convergence$max.em.its + 30,
                     data = gsp_out$meta,
                     model = gsp_model)
-   saveRDS(gsp_model, paste0("data_temp/gsp_partial"))
+   saveRDS(gsp_model, paste0(filekey[filekey$var_name=="finalmodel_incompletefit_stmpaper",]$filepath))
 }
 
 
-saveRDS(gsp_model, file = paste0("data/output_large_files/mdl/","model_",format(Sys.time(), "%Y%m%d-%H:%M")))
+saveRDS(gsp_model, file = paste0(filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
 
 
    

@@ -1,4 +1,5 @@
 top_top_corr_plots <- function(model, method, topics_of_interest, categ){
+   filekey <- read.csv("filekey.csv")
    #TODO see vignette for authors
    nums_of_interest <- sapply(X = topics_of_interest, function(x)as.integer(substr(x,7,nchar(x))))
    
@@ -172,7 +173,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
          theme(legend.key=element_rect(colour="black",fill="white",
                                        linetype="solid")) 
       
-      ggsave("top_top_corrplot_simple.png",plot = corrplot, device = "png", path = "figures",
+      ggsave("top_top_corrplot_simple.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stm_figures",]$filepath,
              width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
    #"huge" method correlation grid
    } else if(method == "huge"){
@@ -213,7 +214,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
          theme(legend.key=element_rect(colour="black",fill="white",
                                        linetype="solid")) 
       
-      ggsave("top_top_corrplot_huge.png",plot = corrplot, device = "png", path = "figures",
+      ggsave("top_top_corrplot_huge.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stm_figures",]$filepath,
              width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
    } else{
       print("Method must be \'simple\' or \'huge\'.")

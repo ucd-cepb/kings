@@ -1,8 +1,7 @@
 #retrieves gsp_text_with_meta (lean version)
-gsp_text_with_meta <- readRDS(
-   list.files(path = "data/output_large_files",pattern = "docs_lean",full.names = T)[
-      length(list.files(path = "data/output_large_files",pattern = "docs_lean",full.names = T))
-   ])
+filekey <- read.csv("filekey.csv")
+
+gsp_text_with_meta <- readRDS(filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
 
 topic_indicators <- list(ej = c("disadvantaged community", "disadvantaged communities",
                                 "^community$","engagement","outreach","environmental_justice"),
@@ -19,5 +18,5 @@ gsp_out <- lex_clean(gsp_text_with_meta,
                      topic_indicators = unlist(topic_indicators,use.names=F))
 
 
-saveRDS(gsp_out, file = paste0("data/temp_large_files/","gsp_slam_",format(Sys.time(), "%Y%m%d-%H:%M")))
+saveRDS(gsp_out, file = paste0(filekey[filekey$var_name=="gsp_out_files",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
 

@@ -1,13 +1,15 @@
 box_sync = F
 use_repaired = F
    #IMPORTANT NOTE
+   #TODO
    #this script was developed when only one version of the plans was online.
    #use_repaired=T was a feature used in 2022 when the website was under construction.
    #the code at the end repairs data added in 2023.
    #Now that more plans have two versions online so approval data are impractical to repair manually, 
    #this script should no longer be used to replicate results. 
    #Rather, for best results, the planevolution paper version of this
-   #script should be used to replicate the results, then filtered for only version 1 plans.
+   #script should be used to replicate the results, then filtered for only version 1 plans,
+   #then saved as a web_repaired file.
    
    #takes the site id for each GSP and adds it to GSA_GSP_Basin_Coord.csv
    #using selenium because rvest cannot read the table

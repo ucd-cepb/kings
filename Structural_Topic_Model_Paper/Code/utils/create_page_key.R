@@ -5,8 +5,10 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-source('code/functions/read_plan_element.R')
-source('code/functions/consolidate_pgs.R')
+filekey <- read.csv("filekey.csv")
+
+source(filekey[filekey$var_name=="read_plan_element_function",]$filepath)
+source(filekey[filekey$var_name=="consolidate_pgs_function",]$filepath)
 
 create_page_key <- function(file){
    plan <- read_plan_element(file)

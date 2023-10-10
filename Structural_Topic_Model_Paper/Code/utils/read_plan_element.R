@@ -1,5 +1,5 @@
 read_plan_element <- function(file){
-   gsp_num_id <- substr(file,28,31)
+   gsp_num_id <- stringr::str_extract(file,'[0-9]{1,}')
    plan_table <- read_excel(file, 
                             sheet = "Elements of The Plan", 
                             col_names = c("law_loc","article_5_section","subsection","sub-subsection",

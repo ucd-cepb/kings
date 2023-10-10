@@ -1,3 +1,5 @@
+#note -- the assessment links in the gsp_web_vars file are not always proper links -- a check must be done to determine whether the link is broken or not
+
 #after scraping, analyze:
 
 #how do the networks change over time? This would involve running the textNet

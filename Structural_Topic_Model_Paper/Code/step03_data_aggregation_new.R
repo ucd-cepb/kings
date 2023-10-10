@@ -9,10 +9,12 @@ check <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(check>0)){print(check)}else{print("got 'em all")}
 lapply(packs, require, character.only = TRUE)
 
-source('code/stm_workflow/utils/create_lang_meta.R')
-source('code/stm_workflow/utils/create_spat_meta.R')
-source('code/stm_workflow/utils/dac_svi_analysis.R')
-source('code/stm_workflow/utils/local_predictors.R')
+filekey <- read.csv("filekey.csv")
+
+source(filekey[filekey$var_name=="create_lang_meta_function",]$filepath)
+source(filekey[filekey$var_name=="create_spat_meta_function",]$filepath)
+source(filekey[filekey$var_name=="dac_svi_analysis_function",]$filepath)
+source(filekey[filekey$var_name=="local_predictors_script",]$filepath)
 
 if(dac_corr_check==T){
    #correlation check to determine which spatial metadata to use
@@ -27,7 +29,7 @@ gsp_text_with_lang <- create_lang_meta(run_repair = F)
 #retrieves the latest save of gsp_text_with_lang
 #generated in create_lang_meta, which allows create_lang_meta() to be skipped
 
-gsp_text_with_lang <- readRDS("data/output_large_files/gsp_docs_w_lang")
+gsp_text_with_lang <- readRDS(filekey[filekey$var_name=="gsp_docs_lang",]$filepath)
 
 type = "pop"
 #or type = "area"
@@ -44,7 +46,7 @@ gsp_text_with_meta$GSP.ID <- as.numeric(gsp_text_with_meta$gsp_id)
 gsp_local$GSP.ID <- as.numeric(gsp_local$GSP.ID)
 library(raster)
 library(rgdal)
-maxdryspell <- raster::raster("data/spatial_raw_large_files/cddm_year_ens32avg_rcp45_2040.tif")
+maxdryspell <- raster::raster(filekey[filekey$var_name=="max_dry_spell_data",]$filepath)
 st_transform(gsp_local, raster::projection(maxdryspell))
 
 gsp_local$maxdryspell <- as.numeric(raster::extract(maxdryspell$cddm_year_ens32avg_rcp45_2040, 
@@ -63,7 +65,7 @@ gsp_text_with_meta$Republican_Vote_Share_scaled <- scale(gsp_text_with_meta$Repu
 gsp_text_with_meta$Perc_Bach_Degree_Over25_scaled <- scale(gsp_text_with_meta$Perc_Bach_Degree_Over25)
 gsp_text_with_meta$local_govs_per_10k_people_log_scaled <- scale(log(gsp_text_with_meta$local_govs_per_10k_people))
 
-saveRDS(gsp_text_with_meta, file = "data/output_large_files/gsp_docs_w_meta")
+saveRDS(gsp_text_with_meta, file = filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 
 gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_reference","page_num",
                                                  "admin","basin_plan","sust_criteria","monitoring_networks",
@@ -79,4 +81,4 @@ gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_referenc
                                                  "gwsum",
                                                  "approval")]
 
-saveRDS(gsp_text_lean, file = "data/output_large_files/gsp_docs_lean")
+saveRDS(gsp_text_lean, file = filekey[filekey$var_name=="gsp_docs_lean",]$filepath)

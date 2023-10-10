@@ -6,19 +6,21 @@ lapply(packs, require, character.only = TRUE)
 
 #type = "pop" or "area"
 create_svi_meta <- function(type, overwrite=F){
+   filekey <- read.csv("filekey.csv")
+   
    if(type != "area" & type != "pop"){
       stop("type must be \"area\" or \"pop\"")
    }
    #  social vulnerability index 2018
    albersNA = aea.proj <- "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-110 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m"
    
-   if(file.exists(paste0("data/output_large_files/gsp_svi_",type)) & overwrite == F){
-      gsp_svi_adjusted <- readRDS(paste0("data/output_large_files/","gsp_svi_",type))
+   if(file.exists(paste0(filekey[filekey$var_name=="svi_filepaths",]$filepath,type)) & overwrite == F){
+      gsp_svi_adjusted <- readRDS(paste0(filekey[filekey$var_name=="svi_filepaths",]$filepath,type))
       return(gsp_svi_adjusted)
    }
    # https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
    #downloaded by hand and placed in data_spatial_raw
-   censusplot <- st_read("data/spatial_raw_large_files/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
+   censusplot <- st_read(filekey[filekey$var_name=="svi_census_tracts_2018",]$filepath)
    censusplot <- st_transform(censusplot,albersNA)
    #st_crs pulls up projection
    #alt: st_crs(gsp_submitted)
@@ -34,9 +36,10 @@ create_svi_meta <- function(type, overwrite=F){
    #Reference Layers > Groundwater Management > "Bulletin 118 Groundwater Basins - 2018" at
    #  https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#boundaries
    
-   fname = unzip("data/spatial_raw_large_files/GSP_submitted.zip", list=TRUE)
-   unzip("data/spatial_raw_large_files/GSP_submitted.zip", files=fname$Name, exdir="data/spatial_raw_large_files/GSP_submitted", overwrite=TRUE)
-   fpath = file.path("data/spatial_raw_large_files/GSP_submitted", grep('shp$',fname$Name,value=T))
+   gspzip <- filekey[filekey$var_name=="gsp_submitted_zip",]$filepath
+   fname = unzip(gspzip, list=TRUE)
+   unzip(gspzip, files=fname$Name, exdir=substr(gspzip,1,nchar(gspzip)-4), overwrite=TRUE)
+   fpath = file.path(substr(gspzip,1,nchar(gspzip)-4), grep('shp$',fname$Name,value=T))
    gsp_shapes <- st_read(fpath)
    gsp_shapes <- st_transform(gsp_shapes,albersNA)
    gsp_shapes <- st_make_valid(gsp_shapes)
@@ -69,8 +72,8 @@ create_svi_meta <- function(type, overwrite=F){
    #percent that is each census tract
    
    gspshape_census_dt = rbindlist(gspshape_census_props)
-   fwrite(gspshape_census_dt,file = 'data_temp/gsp_census_overlap.csv')
-   gspshape_census_dt <- as_tibble(fread(file = 'data_temp/gsp_census_overlap.csv'))
+   fwrite(gspshape_census_dt,file = filekey[filekey$var_name=="gsp_census_overlaps",]$filepath)
+   gspshape_census_dt <- as_tibble(fread(file = filekey[filekey$var_name=="gsp_census_overlaps",]$filepath))
    
    #gives somewhat lower SVIs (thicker left tail)
    gsp_svi_adj_area <- summarize(group_by(gspshape_census_dt, gsp_ids),SVI_raw, Prop_GSP_in_tract) %>% 
@@ -111,7 +114,7 @@ create_svi_meta <- function(type, overwrite=F){
       mutate(gsp_num_id = paste(ifelse(num_zeros > 0, "0", ""),ifelse(num_zeros > 1,"0",""),ifelse(num_zeros > 2, "0",""),code,sep = "")) %>% 
       select(!c(code,num_zeros,gsp_ids))
    
-   saveRDS(gsp_svi_adjusted, file = paste0("data/output_large_files/","gsp_svi_",type))
+   saveRDS(gsp_svi_adjusted, file = paste0(filekey[filekey$var_name=="svi_filepaths",]$filepath,type))
    
    return(gsp_svi_adjusted)
    
@@ -128,9 +131,9 @@ create_dac_meta <- function(type, scope, overwrite=F){
       stop("scope \"place\" may not be used with type \"area\"")
    }
    
-   if(file.exists(paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv')) &
+   if(file.exists(paste0(filekey[filekey$var_name=="percent_dac_filepaths",]$filepath,type,'_',scope,'.csv')) &
       overwrite == F){
-      gsp_dac_adj <- read_csv(paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv'))
+      gsp_dac_adj <- read_csv(paste0(filekey[filekey$var_name=="percent_dac_filepaths",]$filepath,type,'_',scope,'.csv'))
       return(gsp_dac_adj)
    }
    
@@ -140,15 +143,15 @@ create_dac_meta <- function(type, scope, overwrite=F){
    #downloaded by hand and placed in data_spatial_raw; renamed dacs_2018 
    dacplot = switch(  
       scope,  
-      "blockgroup"= st_read("data/spatial_raw_large_files/dacs_2018/DAC_BG18.shp"),  
-      "tract"= st_read("data/spatial_raw_large_files/dacs_2018/DAC_CT18.shp"),  
-      "place"= st_read("data/spatial_raw_large_files/dacs_2018/DAC_Pl18.shp")
+      "blockgroup"= st_read(paste0(filekey[filekey$var_name=="dacs_2018_files",]$filepath,"/DAC_BG18.shp")),  
+      "tract"= st_read(paste0(filekey[filekey$var_name=="dacs_2018_files",]$filepath,"/DAC_CT18.shp")),  
+      "place"= st_read(paste0(filekey[filekey$var_name=="dacs_2018_files",]$filepath,"/DAC_Pl18.shp"))
    ) 
    dacplot <- st_transform(dacplot,albersNA)
    dacplot <- st_make_valid(dacplot)
    
-   fname = list.files("data/spatial_raw_large_files/GSP_submitted")
-   fpath = file.path("data/spatial_raw_large_files/GSP_submitted", grep('shp$',fname,value=T))
+   fname = list.files(substr(gspzip,1,nchar(gspzip)-4))
+   fpath = file.path(substr(gspzip,1,nchar(gspzip)-4), grep('shp$',fname,value=T))
    gsp_shapes <- st_read(fpath)
    gsp_shapes <- st_transform(gsp_shapes,albersNA)
    gsp_shapes <- st_make_valid(gsp_shapes)
@@ -179,9 +182,9 @@ create_dac_meta <- function(type, scope, overwrite=F){
    
    gspshape_dac_dt = rbindlist(gspshape_dac_props)
    fwrite(gspshape_dac_dt,
-          file = paste0('data_temp/gsp_dac_overlap_',type,'_',scope,'.csv'))
+          file = paste0(filekey[filekey$var_name=="gsp_dac_overlaps",]$filepath,type,'_',scope,'.csv'))
    gspshape_dac_dt <- as_tibble(
-         fread(file = paste0('data_temp/gsp_dac_overlap_',type,'_',scope,'.csv')))
+         fread(file = paste0(filekey[filekey$var_name=="gsp_dac_overlaps",]$filepath,type,'_',scope,'.csv')))
    
    gsp_id <- as.character(gsp_shapes$GSP.ID)
    
@@ -211,7 +214,7 @@ create_dac_meta <- function(type, scope, overwrite=F){
       gsp_dac_adj_area <- cbind(gsp_dac_adj_area, gsp_num_id) %>% select(-gsp_ids)
       
       
-      write_csv(gsp_dac_adj_area, paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv'))
+      write_csv(gsp_dac_adj_area, paste0(filekey[filekey$var_name=="percent_dac_filepaths",]$filepath,type,'_',scope,'.csv'))
       
       return(gsp_dac_adj_area)
       
@@ -247,7 +250,7 @@ create_dac_meta <- function(type, scope, overwrite=F){
                          (gsp_dac_adj_pop$gsp_ids),sep = "")
       gsp_dac_adj_pop <- cbind(gsp_dac_adj_pop, gsp_num_id) %>% select(-gsp_ids)
       
-      write_csv(gsp_dac_adj_pop, paste0('data/output_large_files/gsp_percent_dac_',type,'_',scope,'.csv'))
+      write_csv(gsp_dac_adj_pop, paste0(filekey[filekey$var_name=="percent_dac_filepaths",]$filepath,type,'_',scope,'.csv'))
       
       return(gsp_dac_adj_pop)
    }#end of type=pop

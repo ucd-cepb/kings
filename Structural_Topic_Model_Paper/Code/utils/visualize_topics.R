@@ -1,12 +1,13 @@
-visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,scatter=F,effects=F){
-
+visualize_topics <- function(model, inputs, text_col, topic_indicators,scatter=F,effects=F){
+#note this function is not set up to handle group topics
    packs <- c('ggplot2','ggrepel','scico','stm','tidyverse','reshape2',
               'igraph','huge','fields','ggcorrplot','htmlTable','data.table','viridis','igraph')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
    lapply(packs, require, character.only = TRUE)
    
-   source('code/functions/top_top_corr_plots.R')
+   filekey <- read.csv("filekey.csv")
+   source(filekey[filekey$var_name=="topic_topic_corr_plot_function",]$filepath)
    
    numTopics = model$settings$dim$K
    
@@ -104,9 +105,9 @@ visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,s
       
       topic_qual_plot<-ggplot(models_ex_sem, aes(semantic_coherence, 
                                                  exclusivity, color = model))+
-         geom_point(size = 4, alpha = 1) + 
+         geom_point(size = 2, alpha = 1) + 
          geom_text_repel(aes(label=K), nudge_x=.005, nudge_y=.005, 
-                         size = 4, alpha = 0.6, force = 0.8, force_pull = 1.5,
+                         size = 2.5, alpha = 0.6, force = 0.8, force_pull = 1.5,
                          max.overlaps = Inf)+
          labs(x = "Semantic coherence",
               y = "Exclusivity",
@@ -114,7 +115,7 @@ visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,s
          scale_color_scico_d(palette = "nuuk")+
          theme_minimal()+theme(plot.title = element_text(hjust = 0.5))
       topic_qual_plot
-      ggsave("topic_quality_model.png",plot = topic_qual_plot, device = "png", path = "figures",
+      ggsave("topic_quality_model.png",plot = topic_qual_plot, device = "png", path = filekey[filekey$var_name=="stm_figures",]$filepath,
              width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
       
       
@@ -148,86 +149,49 @@ visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,s
       }
    }
    
-   top_top_corr_plots(model, method = "huge", topics_of_interest, categ)
-   
-   saveRDS(topics_of_interest, "data_temp/topics_of_interest")   
+      
+   #TODO stminsights
+   #TODO stmBrowser
+   #TODO stmCorrViz, including function toLDAvis, which enables export to the LDAvis
+   #TODO stmprinter
    
    if(effects ==T){
       #look at the relationship between metadata and topics
       set.seed(432)
-      othereffects <- estimateEffect(nums_of_interest[!nums_of_interest %in% which(unlist(categ)=="DW")] ~ admin + 
-                                       basin_plan +
-                                       sust_criteria +
-                                       monitoring_networks + 
-                                       projects_mgmt_actions + 
-                                       urbangw_af_log_scaled +
-                                       percent_dac_by_pop_scaled+
-                                       fract_of_area_in_habitat_log_scaled +
-                                       maxdryspell_scaled +
-                                       Agr_Share_Of_GDP_scaled +
-                                       Republican_Vote_Share_scaled +
-                                       Perc_Bach_Degree_Over25_scaled +
-                                       local_govs_per_10k_people_log_scaled +
-                                       mult_gsas +
-                                       gwsum,
-                                    model,
-                                    meta = inputs$meta, uncertainty = "Global")
-      
-      
-      
-      saveRDS(othereffects,"data_temp/estimateotherEffects")
-      #removing the "drinking water only" topics while saving the multi and non-dw topics
-      othertopics <- nums_of_interest[!nums_of_interest %in% which(unlist(categ)=="DW")]
-      other_no_m_na <- categ_no_m_na[categ_no_m_na!="DW"]
+      effect <- estimateEffect(nums_of_interest ~ admin + 
+                                  basin_plan +
+                                  sust_criteria +
+                                  monitoring_networks + 
+                                  projects_mgmt_actions + 
+                                  urbangw_af_log_scaled +
+                                  percent_dac_by_pop_scaled+
+                                  fract_of_area_in_habitat_log_scaled +
+                                  maxdryspell_scaled +
+                                  Agr_Share_Of_GDP_scaled +
+                                  Republican_Vote_Share_scaled +
+                                  Perc_Bach_Degree_Over25_scaled +
+                                  local_govs_per_10k_people_log_scaled +
+                                  mult_gsas +
+                                  gwsum,
+                               model,
+                               meta = inputs$meta, uncertainty = "Global")
+      saveRDS(effect,filekey[filekey$var_name=="estimate_effects_stmpaper",]$filepath)
+      estimate_effs <- readRDS(filekey[filekey$var_name=="estimate_effects_stmpaper",]$filepath)
       set.seed(43)
-      sumefother <- summary(othereffects, topics = othertopics)
-      for(i in 1:length(sumefother$tables)){
+      sumef <- summary(estimate_effs, topics = c(nums_of_interest))
+      for(i in 1:length(sumef$tables)){
          set.seed(43)
-         efbytopic <- as.data.table(cbind("Factors" = rownames(sumefother$tables[[i]]),
-                                          sumefother$tables[[i]]))
-         write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumefother$topics[i],"_",other_no_m_na[i],".csv"))
-         set.seed(43)
-         efbytopicskinny <- as.data.table(cbind("Factors" = rownames(sumefother$tables[[i]]),
-                                          sumefother$tables[[i]]))[,c("Factors","Estimate","Pr(>|t|)")]
-         write_csv(efbytopicskinny, file = paste0("data_temp/eftblskinny_topic_",sumefother$topics[i],"_",other_no_m_na[i],".csv"))
+         efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[i]]),
+                                          sumef$tables[[i]]))
+         write_csv(efbytopic, file = paste0(filekey[filekey$var_name=="effect_table_csvs_stmpaper",]$filepath,sumef$topics[i],"_",categ_no_m_na[i],".csv"))
       }
-      
-      
-      source('code/stm_workflow/utils/estimateEffectDEV.R')
-      set.seed(432)
-      dweffect <- estimateEffectDEV(grep("DW",categ_no_multi) ~ admin + 
-                                       basin_plan +
-                                       sust_criteria +
-                                       monitoring_networks + 
-                                       projects_mgmt_actions + 
-                                       urbangw_af_log_scaled +
-                                       percent_dac_by_pop_scaled+
-                                       fract_of_area_in_habitat_log_scaled +
-                                       maxdryspell_scaled +
-                                       Agr_Share_Of_GDP_scaled +
-                                       Republican_Vote_Share_scaled +
-                                       Perc_Bach_Degree_Over25_scaled +
-                                       local_govs_per_10k_people_log_scaled +
-                                       mult_gsas +
-                                       gwsum,
-                                    model,
-                                    meta = inputs$meta, uncertainty = "Global", group = T)
-      saveRDS(dweffect,"data_temp/estimatedwEffects")
-      set.seed(43)
-      sumefdw <- summary(dweffect)
-      efbytopic <- as.data.table(cbind("Factors" = rownames(sumefdw$tables[[1]]),
-                                       sumefdw$tables[[1]]))
-      write_csv(efbytopic, file = paste0("data_temp/eftbl_topic_",sumefdw$topics,"_drinkingwater.csv"))
-      set.seed(43)
-      efbytopicskinny <- as.data.table(cbind("Factors" = rownames(sumefdw$tables[[1]]),
-                                             sumefdw$tables[[1]]))[,c("Factors","Estimate","Pr(>|t|)")]
-      write_csv(efbytopicskinny, file = paste0("data_temp/eftblskinny_topic_",sumefdw$topics,"_drinkingwater.csv"))
-      
-      
       
    }
    
+   #TODO clean this up
+   #plot.estimateEffect(effect,covariate = "ag_gw_asfractof_tot_gw")
    
+   top_top_corr_plots(model, method = "huge", topics_of_interest, categ)
    
-   
+   saveRDS(topics_of_interest, filekey[filekey$var_name=="topics_of_interest_stmpaper",]$filepath)
 }

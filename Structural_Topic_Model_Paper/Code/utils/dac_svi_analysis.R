@@ -4,7 +4,9 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-source('code/stm_workflow/utils/create_spat_meta.R')
+filekey <- read.csv("filekey.csv")
+
+source(filekey[filekey$var_name=="create_spat_meta_function",]$filepath)
 
 dac_svi_analysis <- function(scope, type = NA){
    
@@ -21,13 +23,13 @@ dac_svi_analysis <- function(scope, type = NA){
       #https://data.cnra.ca.gov/dataset/dacs-census/resource/e5712534-dc8a-4094-bb0d-91050a63d8f0
       #downloaded by hand and placed in data_spatial_raw; renamed dacs_2018 
       #census tract 18
-      dacplot <- st_read("data_spatial_raw/dacs_2018/DAC_CT18.shp")
+      dacplot <- st_read(paste0(filekey[filekey$var_name=="dacs_2018_files",]$filepath,"/DAC_CT18.shp"))
       dacplot <- st_transform(dacplot,albersNA)
       dacplot <- st_make_valid(dacplot)
       
       # https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html
       #downloaded by hand and placed in data_spatial_raw
-      censusplot <- st_read("data_spatial_raw/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp")
+      censusplot <- st_read(filekey[filekey$var_name=="svi_census_tracts_2018",]$filepath)
       censusplot <- st_transform(censusplot,albersNA)
       #st_crs pulls up projection
       #alt: st_crs(gsp_submitted)
@@ -57,7 +59,7 @@ dac_svi_analysis <- function(scope, type = NA){
       }, cl = 4)
       
       dac_svi_tbl <- list.rbind(dac_census_props)
-      saveRDS(dac_svi_tbl, "data/output_large_files/dac_svi_tbl")
+      saveRDS(dac_svi_tbl, filekey[filekey$var_name=="dac_svi_tbl",]$filepath)
       
       dac_svi_tbl <- dac_svi_tbl[!is.na(dac_svi_tbl$DAC) & 
                                     !is.na(dac_svi_tbl$SVI_percentile)]
@@ -105,7 +107,7 @@ dac_svi_analysis <- function(scope, type = NA){
               title = "Social Vulnerability Index \nof Census Tract by DAC Status")+
          theme_bw()+theme(plot.title = element_text(hjust = 0.5))
       dac_svi_boxplot
-      ggsave(paste0("dac_and_svi_tract.png"),plot = dac_svi_boxplot, device = "png", path = "figures",
+      ggsave(paste0("dac_and_svi_tract.png"),plot = dac_svi_boxplot, device = "png", path = filekey[filekey$var_name=="svi_figures",]$filepath,
              width = 1800, height = 1600, dpi = 300, units = "px", bg = "white")
       
       #since nominal, should not use pearson
@@ -118,20 +120,21 @@ dac_svi_analysis <- function(scope, type = NA){
                   "glass_rank" = glass_rank, "mann-whitney" = wt, 
                   "ks_test" = ks,
                   "data_normality"= data_is_norm,
-                  "plot" = paste0("figures/dac_and_svi_tract.png")))
+                  "plot" = paste0(filekey[filekey$var_name=="svi_figures",]$filepath,"/dac_and_svi_tract.png")))
    }#end of scope=tract
    
    if(scope=="place"){
       #do basins with a high proportion of the "place" population in 
       #dac "places" have a higher SVI?
       
-      dacplace <- st_read("data_spatial_raw/dacs_2018/DAC_Pl18.shp")
+      dacplace <- st_read(paste0(filekey[filekey$var_name=="dacs_2018_files",]$filepath,"/DAC_Pl18.shp"))
       dacplace <- st_transform(dacplace,albersNA)
       dacplace <- st_make_valid(dacplace)
       
-      fname = unzip("data_spatial_raw/GSP_submitted.zip", list=TRUE)
-      unzip("data_spatial_raw/GSP_submitted.zip", files=fname$Name, exdir="data_spatial_raw/GSP_submitted", overwrite=TRUE)
-      fpath = file.path("data_spatial_raw/GSP_submitted", grep('shp$',fname$Name,value=T))
+      gspzip <- filekey[filekey$var_name=="gsp_submitted_zip",]$filepath
+      fname = unzip(gspzip, list=TRUE)
+      unzip(gspzip, files=fname$Name, exdir=substr(gspzip,1,nchar(gspzip)-4), overwrite=TRUE)
+      fpath = file.path(substr(gspzip,1,nchar(gspzip)-4), grep('shp$',fname$Name,value=T))
       gsp_shapes <- st_read(fpath)
       gsp_shapes <- st_transform(gsp_shapes,albersNA)
       gsp_shapes <- st_make_valid(gsp_shapes)
@@ -190,7 +193,7 @@ dac_svi_analysis <- function(scope, type = NA){
       # proportion of pop in places that live in a dac
       #pop of places where DAC == T / (pop of places where !is.na(DAC))
       
-      saveRDS(spat_tbl, file = paste0("data/output_large_files/","spat_tbl_",type))
+      saveRDS(spat_tbl, file = paste0(filekey[filekey$var_name=="percent_place_pop_in_dac",]$filepath,type))
       
       uniq_spat_tbl <- spat_tbl %>% select(c("gsp_id","prop_pop_in_dac","SVI_na_adj")) %>% unique()
       corr <- cor(uniq_spat_tbl$prop_pop_in_dac, uniq_spat_tbl$SVI_na_adj, method = "pearson", use = "complete.obs")
@@ -204,11 +207,11 @@ dac_svi_analysis <- function(scope, type = NA){
               title = "Percent DAC and Social Vulnerability Index by GSP")+
          theme_bw()+theme(plot.title = element_text(hjust = 0.5))+geom_smooth()
       dac_svi_plot
-      ggsave(paste0("dac_and_svi_place_",type,".png"),plot = dac_svi_plot, device = "png", path = "figures",
+      ggsave(paste0("dac_and_svi_place_",type,".png"),plot = dac_svi_plot, device = "png", path = filekey[filekey$var_name=="svi_figures",]$filepath,
              width = 3000, height = 1800, dpi = 300, units = "px", bg = "white")
       
       return(list("correlation" = corr, "spatial_table" = spat_tbl, 
-                  "plot" = paste0("figures/dac_and_svi_place_",type,".png")))
+                  "plot" = paste0(filekey[filekey$var_name=="svi_figures",]$filepath,"/dac_and_svi_place_",type,".png")))
       
    }#end of scope=place
 }

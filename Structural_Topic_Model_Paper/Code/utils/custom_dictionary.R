@@ -1,18 +1,20 @@
-#used in lex_clean
+ #used in lex_clean
 #add_terms should be a vector
+filekey <- read.csv("filekey.csv")
+
 custom_dictionary <- function(add_terms = NULL){
    #retrieves the latest save of dictionary
    
    water_dictionary <- data.table(matrix(nrow = 0, ncol = 3))
-   for(i in 1:length(list.files(path = "data/raw_large_files", pattern = "Dictionary"))){
+   for(i in 1:length(list.files(path = filekey[filekey$var_name=="dictionary_folder",]$filepath, pattern = "Dictionary"))){
       print(i)
       if(i == 1){
          water_dictionary <- as.data.table(read_csv(list.files(
-            path = "data/raw_large_files", pattern = "Dictionary", full.names = T)[i]))
+            path = filekey[filekey$var_name=="dictionary_folder",]$filepath, pattern = "Dictionary", full.names = T)[i]))
       }else{
          water_dictionary <- rbind(water_dictionary, 
                                    as.data.table(read_csv(list.files(
-                                      path = "data/raw_large_files", 
+                                      path = filekey[filekey$var_name=="dictionary_folder",]$filepath, 
                                       pattern = "Dictionary", full.names = T)[i])))
       }
    }#end of for

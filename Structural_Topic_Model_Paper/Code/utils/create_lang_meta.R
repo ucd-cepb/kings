@@ -4,11 +4,13 @@ need <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(need)>0){install.packages(need)}
 lapply(packs, require, character.only = TRUE)
 
-source("code/stm_workflow/utils/web_data_repair.R")
+filekey <- read.csv("filekey.csv")
+
+source(filekey[filekey$var_name=="web_data_repair_script",]$filepath)
 create_lang_meta <- function(run_repair = F){
    
    #downloaded from https://data.cnra.ca.gov/dataset/sgma-basin-prioritization/resource/6347629e-340d-4faf-ae7f-159efbfbcdc9
-   final_515_table <- read_excel("data/raw_large_files/final-515-table.xlsx")
+   final_515_table <- read_excel(filekey[filekey$var_name=="basin_515",]$filepath)
    #how much of the basin's total (ag+urban) gw use is due to ag, as a percentage 0-1?
    final_515_table$basin_id <-   final_515_table$"Basin ID"
    final_515_table$basin_name <-final_515_table$"Basin Name"
@@ -37,29 +39,44 @@ create_lang_meta <- function(run_repair = F){
                              c(basin_id, basin_name, priority, 
                                fract_of_area_in_habitat, urbangw_af, gwsum))
 
+   gsp_tblfilename <- filekey[filekey$var_name=="gsp_web_vars_repaired_stmpaper",]$filepath
+   gsp_tblfilenamesplits <- unlist(strsplit(gsp_tblfilename,split="/"))
+   gsp_tblpath <- paste(gsp_tblfilenamesplits[1:(length(gsp_tblfilenamesplits)-1)],collapse = "/")
+   gsp_tblpattern <- gsp_tblfilenamesplits[length(gsp_tblfilenamesplits)]
+   
    if(run_repair == T){
-      gsp_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_vars", full.names = T)[
-         length(list.files(path = "data/output_large_files", pattern = "web_vars", full.names = T))])
+      #separating filepath from pattern, according to filekey
+      gspwebvarsfilename <- filekey[filekey$var_name=="gsp_web_vars_stmpaper",]$filepath
+      gspwebvarsfilenamesplits <- unlist(strsplit(gspwebvarsfilename,split="/"))
+      gspwebvarspath <- paste(gspwebvarsfilenamesplits[1:(length(gspwebvarsfilenamesplits)-1)],collapse = "/")
+      gspwebvarspattern <- gspwebvarsfilenamesplits[length(gspwebvarsfilenamesplits)]
+      
+      gsp_tbl <- readRDS(list.files(path = gspwebvarspath, pattern = gspwebvarspattern, full.names = T)[
+         length(list.files(path = gspwebvarspath, pattern = gspwebvarspattern, full.names = T))])
       #joins gsp vars with basin vars
       #filters out basin ids without plans     
       gsp_tbl <- cbind(gsp_tbl, "basin_id" = sub(" .*", "", gsp_tbl$basin))
       
       setnames(gsp_tbl,old="gsp_num_id",new="gsp_id") 
       
-      gsp_tbl <- web_data_repair(new_tbl = gsp_tbl,
-                                 old_tbl = read_csv(list.files(path = "data/output_large_files", pattern = "gsp_ids", full.names = T)[
-                                    length(list.files(path = "data/output_large_files", pattern = "gsp_ids", full.names = T))]))
       
-      saveRDS(gsp_tbl, file = paste0("data/output_large_files","web_repaired_",format(Sys.time(), "%Y%m%d-%H:%M")))
+      gsp_tbl <- web_data_repair(new_tbl = gsp_tbl,
+                                 old_tbl = read_csv(filekey[filekey$var_name=="gsp_web_vars_2022needs_repair",]$filepath))
+
+      saveRDS(gsp_tbl, file = paste0(gsp_tblpath,gsp_tblpattern,format(Sys.time(), "%Y%m%d-%H:%M")))
       
    }
-   gsp_tbl <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
-      length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
+   gsp_tbl <- readRDS(list.files(path = gsp_tblpath, pattern = gsp_tblpattern, full.names = T)[
+      length(list.files(path = gsp_tblpath, pattern = gsp_tblpattern, full.names = T))])
    
    bsn_and_plan_vars <- merge(gsp_tbl, final_515_table, all.x = T, 
                               by = "basin_id") 
    page_num <- integer(0)
-   gsp_list <- list.files(path = "data/cleaned_large_files", pattern = "_text", full.names = T)
+   gsp_listfilename <- filekey[filekey$var_name=="gsp_text_and_categories_stmpaper",]$filepath
+   gsp_listfilenamesplits <- unlist(strsplit(gsp_listfilename,split="/"))
+   gsp_listpath <- paste(gsp_listfilenamesplits[1:(length(gsp_listfilenamesplits)-1)],collapse = "/")
+   
+   gsp_list <- list.files(path = gsp_listpath, pattern = "_text", full.names = T)
    
    #minimize num of vars initialized at length zero by using page counter
    for(k in 1:length(gsp_list)){
@@ -81,7 +98,7 @@ create_lang_meta <- function(run_repair = F){
       #find first page of doc k
       page_k1 <- which(page_num %in% 1)[k]
       gsp_k <- readRDS(gsp_list[k])
-      key_k <- readRDS(paste0("data/cleaned_large_files/gsp_num_id_",gsub("\\D", "", gsp_list[k]),"_categories"))
+      key_k <- readRDS(paste0(gsp_listfilename,gsub("\\D", "", gsp_list[k]),"_categories"))
       gsp_id[page_k1:(page_k1+length(gsp_k)-1)] <- rep.int(c(gsub("\\D", "", gsp_list[k])),times = length(gsp_k))
       #i = page number
       for (i in 1:length(gsp_k)){
@@ -155,10 +172,10 @@ create_lang_meta <- function(run_repair = F){
    cat_selector <- !sapply(all_text_cat,is.null)
    #use cat_selector to subset text and all metadata vectors
    
-   saveRDS(all_text_subcat, file = "data_temp/gsp_docs_subcat")
-   saveRDS(all_text_cat, file = "data_temp/gsp_docs_cat")
-   saveRDS(cat_selector, file = "data_temp/gsp_docs_cat_notnull")
-   saveRDS(gsp_text_with_lang, file = "data/output_large_files/gsp_docs_w_lang")
+   saveRDS(all_text_subcat, file = filekey[filekey$var_name=="page_subcategory_designation",]$filepath)
+   saveRDS(all_text_cat, file = filekey[filekey$var_name=="page_category_designation",]$filepath)
+   saveRDS(cat_selector, file = filekey[filekey$var_name=="page_in_at_least_one_category",]$filepath)
+   saveRDS(gsp_text_with_lang, file = filekey[filekey$var_name=="gsp_docs_lang",]$filepath)
    
    return(gsp_text_with_lang)
    
