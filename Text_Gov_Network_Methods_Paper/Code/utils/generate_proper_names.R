@@ -1,11 +1,8 @@
-packs <- c('tidyverse','qdapDictionaries','stringi')
-need <- packs[!packs %in% installed.packages()[,'Package']]
-if(length(need)>0){install.packages(need)}
-lapply(packs, require, character.only = TRUE)
-
-underscore = F
-for_removal = F
-to_lower = T
+generate_proper_names <- function(underscore = F, to_lower = T, for_removal = F){
+   packs <- c('tidyverse','qdapDictionaries','stringi')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   lapply(packs, require, character.only = TRUE)
    
    #water agency downloads page:
    #https://www.watereducation.org/water-related-organizationsagencies
@@ -48,7 +45,7 @@ to_lower = T
    agencies <- str_squish(gsub("&","",agencies))
    #remove dashes between words
    agencies <- str_replace(agencies, "\\s+\\p{Pd}\\s+"," ")
-      
+   
    if(to_lower==T){
       place_names <- as_tibble(read.table(
          paste0(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath,"/2021_Gaz_place_national.txt"),
@@ -59,7 +56,7 @@ to_lower = T
          paste0(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath, "/2021_Gaz_place_national.txt"),
          sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") 
    }
-    
+   
    
    #removing last word ("city" or "cdp")
    places <- gsub("\\s+\\w*$", "", x = place_names$NAME)
@@ -84,10 +81,10 @@ to_lower = T
    
    cnty_names <- as_tibble(read.table(
       paste0(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath,"/2021_Gaz_counties_national.txt"),
-                                      sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA")
+      sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA")
    
    if(to_lower==T){cnty_names <- cnty_names %>% mutate(NAME = tolower(NAME))}
-
+   
    #keeps two versions, one with the word County in the name and one without
    
    if(to_lower==T){
@@ -134,6 +131,7 @@ to_lower = T
    if(underscore == T){
       names <- gsub("\\s+", "_", x = names)
    }
-
-saveRDS(names,file = paste0(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath,"/cleaned_agency_list.rds"))
    
+   saveRDS(names,file = paste0(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath,"/cleaned_agency_list.rds"))
+   return(names)
+}

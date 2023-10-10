@@ -1,0 +1,1 @@
+#compile list of EJ orgs and their scope
