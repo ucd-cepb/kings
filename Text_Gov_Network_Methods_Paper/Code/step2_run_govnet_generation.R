@@ -22,7 +22,7 @@ if(test_data==T){
 }else{
    pages <- readRDS(filekey[filekey$var_name=="cleaned_pdfs_for_govnetpaper",]$filepath)
    file_ids <- unlist(sapply(1:length(pages), function(q) rep(names(pages[q]),length(pages[[q]]))))
-   file_ids <- str_extract(file_ids,'[0-9]{1,}')
+   file_ids <- stringr::str_extract(file_ids,'[0-9]{1,}')
    pages <- unlist(pages)
    
    if(mini_data==T){
@@ -47,8 +47,12 @@ if(mini_data==T | test_data==T){
    
 }
 
-phrases_to_concatenate <- ifelse(generate_phrases==T, generate_proper_names(underscore=F,to_lower=F),NA)
-
+#ifelse does not work here since there are two different classes
+if(generate_phrases==T){
+   phrases_to_concatenate <- generate_proper_names(underscore=F,to_lower=F)
+}else{
+   phrases_to_concatenate <- NA
+}
 
 #### overwrite existing results?
 overwrite = F
