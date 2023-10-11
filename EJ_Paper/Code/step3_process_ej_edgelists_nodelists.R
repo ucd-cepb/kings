@@ -9,6 +9,8 @@ library(data.table)
 library(pbapply)
 library(stringi)
 
+filekey <- read.csv("filekey.csv")
+
 ###Section 0: EJ Orgs####
 
 #@HANNAH
@@ -43,7 +45,7 @@ gsp_tblpattern <- gsp_tblfilenamesplits[length(gsp_tblfilenamesplits)]
 
 agency_tbl <- readRDS(list.files(path = gsp_tblpath, pattern = gsp_tblpattern, full.names = T)[
    length(list.files(path = gsp_tblpath, pattern = gsp_tblpattern, full.names = T))])
-agency_tbl <- agency_tbl[!is.na(gsp_id),]
+agency_tbl <- agency_tbl[!is.na(gsp_num_id) & latest_version==T,]
 #change hyphens and spaces to underscores, to match spacy parse formatting
 agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
    stringr::str_replace_all(w,"-|\\s","_"))
@@ -52,11 +54,11 @@ agency_nicknames <- setDT(list("name"=rep(vector(mode="list",length(edges_and_no
                                "nickname"=rep(NA_character_,length(edges_and_nodes)*2)))
 for(m in 1:length(edges_and_nodes)){
    #remove parentheses
-   agency_names <- agency_tbl[gsp_id==gspids[m]]$name_gsas[[1]]
+   agency_names <- agency_tbl[gsp_num_id==gspids[m]]$name_gsas[[1]]
    agency_names <- unlist(lapply(agency_names, function(b) str_split(b,"\\(")[[1]][1]))
    #clean entities so they are same format as spacy tokens
    agency_names <- clean_entities(agency_names, remove_nums=T)
-   plural <- agency_tbl[gsp_id==gspids[m]]$mult_gsas
+   plural <- agency_tbl[gsp_num_id==gspids[m]]$mult_gsas
    
    if(plural==T){
       agency_abbr <- c("Groundwater_Sustainability_Agencies","Agencies")
@@ -233,3 +235,10 @@ for(m in 1:length(edges_and_nodes)){
    
    saveRDS(weighted_graph, paste0(filekey[filekey$var_name=="weighted_nets_ejpaper",]$filepath,gspids[m]))
 }
+
+#IMPORTANT NOTE:
+#This generates all networks, but when you go to run your summary statistics and 
+#analyze their attributes, make sure you remove the networks for GSP ID "0089" and GSP ID "0053" 
+#since 0053 is a duplicate of another network in the dataset, and 0089 has too many pdf conversion errors.
+#(this is not the same as the 89th and 53rd network in the list. 
+#The index for "0053" should be 39, and the index for "0089" should be 68.)
