@@ -1,15 +1,17 @@
 # kings
 analyzing CA SGMA GSPs to understand groundwater management networks
 
-This repository contains several analysis projects, each organized as folders under the "code" folder.
+This repository contains snapshots of the code and data used for several analysis projects, each organized as its own folder.
 
-The code that accompanies the large demonstration case study of the textnet package is found under "textnet_demo_workflow". The files in this folder generate the network data used in the case study, as well as analysis outputs and accompanying figures. We ran our code in order, from step 1 to step 11, to generate our analysis. These scripts no longer need to be run, as the outputs are already generated. Some additional metadata files are necessary for this analysis, which were generated through the "stm_workflow". 
+The code that accompanies the large demonstration case study of the textnet package is found under Text_Gov_Network_Methods_Paper > Code. The files in this folder generate the network data used in the case study, as well as analysis outputs and accompanying figures. We ran our code in order, from step 1 to step 11, to generate our analysis. These scripts no longer need to be run, as the outputs are already generated. Some additional metadata files are necessary for this analysis, which were generated through Structural_Topic_Model_Paper > Code. 
 
-The code that accompanies the structural topic model is found under "stm_workflow". The files in this folder generate the cleaned lexicon, topic model, analysis outputs, and accompanying figures. We ran our code in order, from step 1 to step 8, to generate our analysis.
+The code that accompanies the structural topic model is found under Structural_Topic_Model_Paper > Code. The files in this folder generate the cleaned lexicon, topic model, analysis outputs, and accompanying figures. We ran our code in order, from step 1 to step 13, to generate our analysis.
 
-The code in the "verb_analysis_workflow" begins an exploratory analysis of the verbs found in the edges of the textnet_demo network. This is not complete.
+The code in Verb_Analysis_Paper begins an exploratory analysis of the verbs found in the edges of the textnet_demo network. This is not complete.
 
-The code in the "approval_analysis_workflow" begins an exploratory analysis of the change in plans over time and their relationship to approval status. This is not complete.
+The code in Plan_Evolution_Papers begins an exploratory analysis of the change in plans over time and their relationship to approval status. This is not complete.
+
+The Supernetwork_Paper code allows a composite network to be created from multiple network objects.
 
 Quick Start:
 

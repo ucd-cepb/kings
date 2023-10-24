@@ -17,6 +17,10 @@ filekey <- read.csv("filekey.csv")
 ##TODO load your ej_orgs database here, and use the same column names and 
 #format as govscitbl below. (For $State you could put "Local" or "NGO" or whatever the category is, or leave it blank)
 ej_orgs <- read.csv()
+#Then replace spaces with underlines in each column like this
+ej_orgs$Abbr <- str_replace_all(ej_orgs$Abbr,"-|\\s","_")
+ej_orgs$Agency <- str_replace_all(ej_orgs$Agency,"-|\\s","_")
+ej_orgs$State <- str_replace_all(ej_orgs$State,"-|\\s","_")
 
 ###Section 1: Govscitbl####
 source(filekey[filekey$var_name=="govscicleaning_ej_script",]$filepath)
