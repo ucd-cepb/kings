@@ -6,6 +6,8 @@ data_temp/*
 code/regex_test.R
 .DS_Store
 
+# Environment variable (API key) file
+.env
 # History files
 .Rhistory
 .Rapp.history

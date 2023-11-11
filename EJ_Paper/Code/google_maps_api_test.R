@@ -1,13 +1,18 @@
-source('../cepb_google_maps_api_key')
 library(mapsapi)
-doc = mp_geocode(
+library(googleway)
+library(dotenv)
+
+load_dot_env()
+api_key <- Sys.getenv("GOOGLE_MAPS_API")
+
+doc <- mp_geocode(
    addresses = "Oak Park, Sacramento",
    key = api_key,
    quiet = TRUE
 )
-pnt = mp_get_points(doc)
 
-library(googleway)
+pnt <- mp_get_points(doc)
+
 places_near_oak_park_latlon <- google_places(search_string = 'community organization',location = as.numeric(pnt$pnt$`1`),radius = 500,key = api_key)
 print(places_near_oak_park_latlon$results$name)
 
@@ -18,5 +23,3 @@ lat_lng <- rev(lng_lat)
 plc <- googleway::google_reverse_geocode(location = lat_lng,key = api_key)
 ### turns out this neighborhood name is "North Oak Park"...
 print(plc$results[7,])
-
-    
