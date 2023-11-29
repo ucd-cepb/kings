@@ -12,7 +12,8 @@ shapefile_fp <- "/home/aaron/Documents/WORK/CEPB/data/justice40/usa/usa.shp"
 
 census_tracts <- read_sf(shapefile_fp)
 
-ca_dacs <- census_tracts %>% filter(SF == 'California', SN_C == 1)
+# extract centroid coords from shapes designated as DACs
+ca_dacs <- census_tracts %>% filter(SF == 'California', SN_C == 1) # SN_C -> Identified as disadvantaged
 ca_dacs <- vect(ca_dacs)
 centroids <- centroids(ca_dacs)
 coords <- crds(centroids)
@@ -23,14 +24,14 @@ dac_df$place_name_short <- NA
 dac_df$place_name_long <- NA
 dac_df$place_type <- NA
 
-ddt <- dac_df[1:10,]
+ddt <- dac_df[1024:1034,]
 test_location <- list()
 
 for (i in seq(1,10)){
     loc = c(ddt[i,3],ddt[i,4])
     loc_name <- googleway::google_reverse_geocode(location = loc,
-                                                       location_type = c('approximate'),
-                                                       key = api_key)
+                                                  location_type = c('approximate'),
+                                                  key = api_key)
     ddt[i,'place_type'] <- loc_name$results$types[[1]][[1]]
     ddt[i,'place_name_long'] <- loc_name$results$formatted_address[[1]][[1]]
     ddt[i,'place_name_short'] <- strsplit(loc_name$results$formatted_address[[1]][[1]], ",")[[1]][1]
