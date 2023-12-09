@@ -5,6 +5,15 @@ filekey <- read.csv("filekey.csv")
 
 edgelist_w_meta <- readRDS(filekey[filekey$var_name=="edgelist_w_meta",]$filepath)
 
+taskonly <- edgelist_w_meta[edgelist_w_meta$is_transf==T,]
+#approval based on task hedging
+summary(glm(factor(approval, levels=c("Incomplete","Review In Progress", "Approved")
+               ) ~ has_hedge, data = taskonly, family = "binomial"))
+
+ggplot(taskonly, aes(x = approval, fill = has_hedge)) +
+   geom_bar(position="fill")+
+   ylab("proportion")+
+   scale_fill_viridis_d(option = "E")
 #VERB CLASSES AND approval
 #class 61 ~ "try_verbs"
 summary(glm(type_61 ~ as.factor(approval), data = edgelist_w_meta, family = "binomial"))

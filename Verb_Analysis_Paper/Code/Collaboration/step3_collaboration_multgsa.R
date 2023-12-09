@@ -5,6 +5,8 @@ filekey <- read.csv("filekey.csv")
 
 edgelist_w_meta <- readRDS(filekey[filekey$var_name=="edgelist_w_meta",]$filepath)
 
+summary(glm(is_collab ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
+
 #VERB CLASSES AND mult_gsas
 #class 13 verbs_of_change_of_possession
 summary(glm(type_13 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
@@ -37,6 +39,7 @@ summary(glm(type_37 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
 #class 58 verbs_of_urging_and_begging
 summary(glm(type_58 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
 #hypothesis confirmed! Main verb is "require"
+
 
 #class 70 rely_verbs
 summary(glm(type_70 ~ mult_gsas, data = edgelist_w_meta, family = "binomial"))
