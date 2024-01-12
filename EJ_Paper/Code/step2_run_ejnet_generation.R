@@ -1,7 +1,15 @@
+install.packages("devtools")
+library(reticulate)
+install.packages("reticulate")
+library(devtools)
+install_github("cbail/textnets")
 library(textNet)
+library("spacyr")
+library(textNet)
+library(dplyr)
 filekey <- read.csv("filekey.csv")
+ret_path <- "/Users/hgsha/miniconda3/envs/spacy_condaenv/python"
 
-ret_path <- "/Users/elisemiller/miniconda3/envs/spacy_condaenv/bin/python"
 #replace with your own python location
 
 keep_hyph_together <- FALSE
@@ -11,7 +19,7 @@ parse_from_file <- F
 dacs <- read.csv()#read in dac file
 dacs$numwords <- stringr::str_count(dacs$name, "\\s+")#arrange by descending number of words
 dacs <- arrange(dacs, desc(numwords))
-ej_orgs <- read.csv()#read in ej_org file
+ej_orgs <- read.csv("EJ_Paper/CBO_Dict_R.csv")#read in ej_org file
 ej_orgs$agency_numwords <- stringr::str_count(ej_orgs$Agency, "\\s+")
 ej_orgs$abbr_numwords <- stringr::str_count(ej_orgs$Abbr, "\\s+")
 agencies <- arrange(ej_orgs, desc(agency_numwords))$Agency
