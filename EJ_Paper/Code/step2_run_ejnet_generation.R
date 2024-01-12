@@ -9,7 +9,7 @@ library(textNet)
 library(dplyr)
 filekey <- read.csv("filekey.csv")
 ret_path <- "/Users/hgsha/miniconda3/envs/spacy_condaenv/python"
-
+#ret_path <- Sys.getenv("RETICULATE_PYTHON")
 #replace with your own python location
 
 keep_hyph_together <- FALSE
