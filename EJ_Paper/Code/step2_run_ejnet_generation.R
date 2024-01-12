@@ -6,7 +6,6 @@ ret_path <- "/Users/elisemiller/miniconda3/envs/spacy_condaenv/bin/python"
 
 keep_hyph_together <- FALSE
 generate_phrases <- T
-parse_from_file <- F
 
 dacs <- read.csv()#read in dac file
 dacs$numwords <- stringr::str_count(dacs$name, "\\s+")#arrange by descending number of words
@@ -46,7 +45,6 @@ overwrite = F
 all_parsed <- textNet::parse_text(ret_path, keep_hyph_together, phrases_to_concatenate, 
                  concatenator="_",
                  pages, file_ids, parsed_filenames, 
-                 parse_from_file,
                  overwrite)
 
 dacs_concat <- stringr::str_replace_all(dacs$name,"\\s","_")

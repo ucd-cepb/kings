@@ -86,7 +86,10 @@ shapiro.test(res_aov$residuals)
 #it's ok to use anova or t-test
 
 #time to test homogeneity
-boxplot(pct_collab ~ mult_gsas,
+
+colnames(byplan)[colnames(byplan)=="pct_collab"] <- "prop_collab"
+
+boxplot(prop_collab ~ mult_gsas,
         data = byplan
 )
 
@@ -109,17 +112,18 @@ edgelist_w_meta_max <- edgelist_w_meta
 
 #H3
 edgelist_w_meta$verb_tense_id = factor(edgelist_w_meta$verb_tense,levels=c(
-      "VBN","VBD","VB","VBP","VBZ","VBG","Future")
+   "VB","VBN","VBD","VBP","VBZ","VBG","Future")
    )
 partial.pooling.fit_hedge <- nnet::multinom(formula = has_hedge ~  verbtype +  gsp_id,
                                             data = edgelist_w_meta, model = T)
-partial.pooling.fit_tense <- nnet::multinom(formula = verb_tense_id ~  verbtype +  gsp_id,
-                            data = edgelist_w_meta, model = T)
+partial.pooling.fit_tense <- nnet::multinom(formula = verb_tense_id ~  verbtype ,
+                            data = edgelist_w_meta, model = F)
+partial.pooling.fit_tense
+tdf <- broom::tidy(partial.pooling.fit_tense, exponentiate = FALSE, conf.int = TRUE)
+View(tdf)
 
-#TODO how to interpret and see results
-
-hedgedf <- as.data.frame(summary(partial.pooling.fit_hedge))
-tensedf <- as.data.frame(summary(partial.pooling.fit_tense))
+#hedgedf <- as.data.frame(summary(partial.pooling.fit_hedge))
+#tensedf <- as.data.frame(summary(partial.pooling.fit_tense))
 
 #TODO make anovas for H3-H4, then model for H5 and H6
 library(brms)
@@ -136,6 +140,7 @@ edgelist_w_meta_sample <- edgelist_w_meta %>%
              VBG = sum(verb_tense == 'VBG'),
              Future = sum(verb_tense == 'Future')) %>%
    mutate(cell_size = VBN+VBD+VB+VBP+VBZ+VBG+Future)
+
 
 
 edgelist_w_meta_sample$cell_counts = with(edgelist_w_meta_sample, 
@@ -192,6 +197,87 @@ model <- brm(formula, dat_tibble, multinomial(), priors, control =
 partial.pooling.fit_tense <- nnet::multinom(formula = verb_tense_id ~  verbtype +  (1|gsp_id),
                                             data = edgelist_w_meta_sample, model = T)
 
+byplan <- edgelist_w_meta %>% group_by(gsp_id, approval, 
+                                       fract_of_area_in_habitat_log_scaled,
+                                       urbangw_af_log_scaled,
+                                       gwsum,
+                                       percent_dac_by_pop_scaled,
+                                       Republican_Vote_Share_scaled,
+                                       Agr_Share_Of_GDP_scaled,
+                                       Perc_Bach_Degree_Over25_scaled,
+                                       local_govs_per_10k_people_log_scaled,
+                                       maxdryspell_scaled,
+                                       ) %>% mutate(tasks_hedged = ifelse(verbtype=="Tasks",ifelse(has_hedge==T,1,0),NA)) %>% 
+   summarize(
+   pct_tasks_hedged = mean(tasks_hedged, na.rm=T),
+   pct_collab = mean(is_collab),
+   pct_tasks = mean(is_transf),
+   
+   #pct_multi = sum(edgeiscomplete)/n()
+   )
+byplan <- byplan %>% filter(verbtype %in% c("Tasks","Teamwork"))
+library(GGally)
+byplanmini <- byplan %>% ungroup() 
+byplanmini <- byplanmini[,c(#"approval",
+                            "percent_dac_by_pop_scaled",
+                            #"Republican_Vote_Share_scaled",
+                            "Perc_Bach_Degree_Over25_scaled",
+                            "pct_tasks_hedged","pct_collab","pct_tasks")]
+byplanmini$approval <- factor(byplanmini$approval, levels = c("Incomplete","Review In Progress", "Approved"))
+colnames(byplanmini)[colnames(byplanmini)=="pct_tasks"] <- "prop_outcomes"
+colnames(byplanmini)[colnames(byplanmini)=="pct_tasks_hedged"] <- "prop_outcomes_hedged"
+colnames(byplanmini)[colnames(byplanmini)=="pct_collab"] <- "prop_collab"
+
+
+
+pairs <- byplanmini %>% ggpairs()
+pairs
+library(ggplot2)
+fit_approval <- nnet::multinom(formula = as.factor(approval) ~ pct_tasks_hedged + 
+                                  pct_collab + pct_tasks,
+                               data = byplan, model = F)
+
+fdf <- broom::tidy(fit_approval, exponentiate = FALSE, conf.int = TRUE)
+View(fdf)
+
+simple <- nnet::multinom(formula = as.factor(approval) ~ pct_tasks_hedged ,
+               data = byplan, model = F)
+summary(simple)
+colnames(byplan)[colnames(byplan)=="pct_tasks_hedged"] <- "prop_outcomes_hedged"
+byplan$approval <- ifelse(byplan$approval=="Incomplete","Rejected",byplan$approval)
+boxplot(prop_outcomes_hedged ~ approval,
+        data = byplan
+)
+
+
+res_aov <- aov(pct_tasks_hedged ~ as.factor(approval),
+               data = byplan
+)
+ggplot(aes(x=approval,y=pct_tasks_hedged), data = byplan)+
+   geom_boxplot(fill="#666666") + theme_bw()
+TukeyHSD(res_aov)
+oneway.test(pct_multi ~ verbtype, data = byplan, 
+            var.equal = T)
+res_aov <- aov(pct_multi ~ as.factor(verbtype),
+               data = byplan
+)
+boxplot(pct_multi ~ verbtype,
+        data = byplan
+)
+TukeyHSD(res_aov)
+
+edgelist_w_meta$doc_sent <- unlist(lapply(1:length(mysplits), function(i) paste(mysplits[[i]][1:length(mysplits[[i]])-1],collapse="_")))
+bysentence <- edgelist_w_meta %>% group_by(doc_sent, gsp_id) %>% summarize(has_collab = max(is_collab), has_transf = max(is_transf))
+res_aov <- aov(has_collab ~ as.factor(has_transf),
+               data = bysentence
+)
+res_aov
+boxplot(has_collab ~ has_transf,
+        data = bysentence
+)
+TukeyHSD(res_aov)
+mean(bysentence$has_transf)
+mean(bysentence[bysentence$has_collab==1,bysentence$has_transf])
 
 get_variables(model)
 #this works!

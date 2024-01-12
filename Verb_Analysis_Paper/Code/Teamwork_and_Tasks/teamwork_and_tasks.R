@@ -50,15 +50,15 @@ cor(byplan$pct_collab, byplan$is_transf, method = "pearson") > -1*portiontransf 
 edgelist_w_meta$head_verb_tense <- as.factor(edgelist_w_meta$head_verb_tense)
 
 edgelist_w_meta <- edgelist_w_meta %>% mutate(verbtype = 
-                     ifelse(is_collab==T, ifelse(is_transf==F,"Teamwork","both"), 
-                                    ifelse(is_transf==T, "Tasks","neither")))
+                     ifelse(is_collab==T, ifelse(is_transf==F,"Collaborative Processes","both"), 
+                                    ifelse(is_transf==T, "Actionable Outcomes","neither")))
 edgelist_w_meta$head_verb_tense <- as.character(edgelist_w_meta$head_verb_tense)
 edgelist_w_meta <- edgelist_w_meta %>% mutate(verb_tense = ifelse(
    is_future==T,"Future",head_verb_tense))
 edgelist_w_meta$verb_tense <- factor(edgelist_w_meta$verb_tense,
                   levels = c("VBN","VBD","VBG","VBZ","VBP","VB","Future"))
 edgelist_w_meta$verbtype <- factor(edgelist_w_meta$verbtype,
-                              levels = c("Tasks","both","neither","Teamwork"))
+                              levels = c("Actionable Outcomes","both","neither","Collaborative Processes"))
 
 teamsandtasks <- edgelist_w_meta[!edgelist_w_meta$verbtype %in% c("both"),]
 
@@ -173,12 +173,34 @@ summary(glm(is_transf ~ head_verb_tense + has_hedge + is_future, data = edgelist
 
 library(ggplot2)
 
+
+
+teamsandtasks <- teamsandtasks %>% mutate(verb_tense_simpl = dplyr::case_when(
+   verb_tense =="VBN" | 
+      verb_tense =="VBD" ~ "Past",
+   verb_tense =="VB" | 
+      verb_tense =="VBG" | 
+      verb_tense =="VBZ" | 
+      verb_tense =="VBP" ~ "Present and Base",
+   verb_tense =="Future" ~ "Future"
+   
+))
+teamsandtasks <- teamsandtasks %>% mutate(verbtype_new = dplyr::case_when(
+   verbtype=="Teamwork" ~ "Collaborative Process",
+   verbtype=="Tasks" ~ "Actionable Outcomes",
+   verbtype=="neither" ~ "neither"
+))
+teamsandtasks$verbtype <- teamsandtasks$verbtype_new
+teamsandtasks$verb_tense <- teamsandtasks$verb_tense_simpl
+
+teamsandtasks$verb_tense <- factor(teamsandtasks$verb_tense, levels = c("Past","Present and Base","Future"))
+
 ggplot(teamsandtasks, aes(x = verbtype, fill = verb_tense)) +
    geom_bar(position="fill")+
    ylab("proportion")+
    scale_fill_viridis_d(option = "C")
 
-ggplot(teamsandtasks, aes(x = verbtype, fill = has_hedge)) +
+ggplot(teamsandtasks, aes(x = has_hedge, fill = verbtype)) +
    geom_bar(position="fill")+
    ylab("proportion")+
    scale_fill_viridis_d(option = "D")
@@ -203,8 +225,8 @@ summary(glm(has_hedge ~ as.factor(approval), data = edgelist_w_meta, family = "b
 
 #in other words, under-review plans have more decisive language. 
 
-
-ggplot(taskonly, aes(x = approval, fill = has_hedge)) +
+taskonly$approval <- ifelse(taskonly$approval=="Incomplete","Rejected",taskonly$approval)
+ggplot(taskonly, aes(x = has_hedge, fill = approval)) +
    geom_bar(position="fill")+
    ylab("proportion")+
    scale_fill_viridis_d(option = "E")

@@ -60,7 +60,6 @@ overwrite = F
 all_parsed <- textNet::parse_text(ret_path, keep_hyph_together, phrases_to_concatenate, 
                   concatenator="_",
                   pages, file_ids, parsed_filenames, 
-                 parse_from_file,
                  overwrite)
 for(m in 1:length(all_parsed)){
    textNet::textnet_extract(all_parsed[[m]],concatenator="_",file = nodeedge_filenames[m],cl=4,
