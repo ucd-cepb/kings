@@ -81,7 +81,6 @@ The example below demonstrates how to supplement the Named Entity Recognition ca
                                  pages, 
                                  file_ids, 
                                  parsed_filenames=c("old_parsed","new_parsed"), 
-                                 parse_from_file = F, 
                                  overwrite = T)
 
    water_concat <- stringr::str_replace_all(water,"\\s","_")

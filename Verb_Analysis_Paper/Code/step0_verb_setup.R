@@ -69,6 +69,19 @@ saveRDS(edgelist_with_vclass, filekey[filekey$var_name=="edgelist_w_v_class",]$f
 #vars: source_entity_type, target_entity_type
 #approval
 #drinking water and ag variables
+webvarfilename <- filekey[filekey$var_name=="gsp_web_vars_planevolutionpaper",]$filepath
+webvarfilenamesplits <- unlist(strsplit(webvarfilename,split="/"))
+webvarpath <- paste(webvarfilenamesplits[1:(length(webvarfilenamesplits)-1)],collapse = "/")
+webvarpattern <- webvarfilenamesplits[length(webvarfilenamesplits)]
+
+#get the most recent file in the xpath that matches xpattern
+recentwebvarfile <- readRDS(list.files(path = webvarpath, pattern = webvarpattern, full.names = T)[
+   length(list.files(path = webvarpath, pattern = webvarpattern, full.names = T))])
+gsp_webvars <- recentwebvarfile[recentwebvarfile$version=="1"]
+gsp_webvars <- gsp_webvars[!gsp_webvars$gsp_num_id %in% c("0089","0053"),]
+colnames(gsp_webvars)[colnames(gsp_webvars)=="gsp_num_id"] <- "gsp_id"
+gsp_webvars <- gsp_webvars[,c("gsp_id","version_approval")]
+
 gsp_meta <- readRDS(filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
 gsp_mini <- unique(gsp_meta[,c("gsp_id","approval","mult_gsas",
                                "fract_of_area_in_habitat_log_scaled",
@@ -81,8 +94,14 @@ gsp_mini <- unique(gsp_meta[,c("gsp_id","approval","mult_gsas",
                                "local_govs_per_10k_people_log_scaled",
                                "maxdryspell_scaled")])
 gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
+gsp_mini$approval <- NULL
+
+gsp_all_vars <- full_join(gsp_webvars, gsp_mini)
+
+colnames(gsp_all_vars)[colnames(gsp_all_vars)=="version_approval"] <- "approval"
+
 #for meta
 #network_properties <- as_tibble(evlist)
-edgelist_w_meta <- merge(gsp_mini, edgelist_with_vclass)
+edgelist_w_meta <- merge(gsp_all_vars, edgelist_with_vclass)
 saveRDS(edgelist_w_meta, filekey[filekey$var_name=="edgelist_w_meta",]$filepath)
 

@@ -6,6 +6,8 @@ library(dplyr)
 filekey <- read.csv("filekey.csv")
 
 edgelist_w_meta <- readRDS(filekey[filekey$var_name=="edgelist_w_meta",]$filepath)
+edgelist_w_meta <- edgelist_w_meta[edgelist_w_meta$source_entity_type!="GPE" | 
+                                      edgelist_w_meta$target_entity_type!="GPE",]
 
 
 edgelist_w_meta$is_transf <- 
@@ -46,7 +48,9 @@ summary(glm(is_transf ~ head_verb_tense + has_hedge + is_future, data = edgelist
 
 #Is hedging of transformation related to approval?
 summary(glm(has_hedge ~ as.factor(approval), data = edgelist_w_meta, family = "binomial"))
-#if a sentence is from an inadequate plan, incomplete plan, or plan under review,
+#if a sentence is from a plan under review,
 #it is less likely to be hedged, compared to an approved plan
 
-#in other words, approved plans have less decisive language. :(
+#in other words, under-review plans have more decisive language. 
+
+summary(glm(is_transf ~ as.factor(approval), data = edgelist_w_meta, family = "binomial"))
