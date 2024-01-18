@@ -1,16 +1,17 @@
 install.packages("devtools")
-library(reticulate)
 install.packages("reticulate")
+install.packages("spacyr")
 library(devtools)
 install_github("cbail/textnets")
+install_github('ucd-cepb/textNet')
+library(reticulate)
 library(textNet)
 library("spacyr")
 library(textNet)
 library(dplyr)
+
 filekey <- read.csv("filekey.csv")
-ret_path <- "/Users/hgsha/miniconda3/envs/spacy_condaenv/python"
-#ret_path <- Sys.getenv("RETICULATE_PYTHON")
-#replace with your own python location
+ret_path <- Sys.getenv("RETICULATE_PYTHON")
 
 keep_hyph_together <- FALSE
 generate_phrases <- T

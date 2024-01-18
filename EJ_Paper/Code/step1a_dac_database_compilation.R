@@ -5,17 +5,14 @@ library(googleway)
 library(mapsapi)
 library(dotenv)
 
-setwd('EJ_Paper')
 load_dot_env()
 api_key <- Sys.getenv("GOOGLE_MAPS_API")
-shapefile_fp <- "/home/aaron/Documents/WORK/CEPB/data/justice40/usa/usa.shp"
-# shapefile from justice40
+shapefile_fp <- paste0(Sys.getenv("BOX_PATH"),"/EJ_Paper/dac_shapefiles/i16_Census_Place_DisadvantagedCommunities_2020/i16_Census_Place_DisadvantagedCommunities_2020.shp")
 
 census_tracts <- read_sf(shapefile_fp)
 
 # extract centroid coords from shapes designated as DACs
-ca_dacs <- census_tracts %>% filter(SF == 'California', SN_C == 1) # SN_C -> Identified as disadvantaged
-ca_dacs <- vect(ca_dacs)
+ca_dacs <- vect(census_tracts)
 centroids <- centroids(ca_dacs)
 coords <- crds(centroids)
 dac_df <- data.frame(ca_dacs$GEOID10, ca_dacs$CF, coords[,2], coords[,1]) #recreate as df

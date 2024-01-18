@@ -1,12 +1,12 @@
 library(textNet)
 library(dotenv)
+library(spacyr)
 
-setwd('/home/aaron/Documents/WORK/CEPB/kings/EJ_Paper/')
 load_dot_env()
 ret_path = Sys.getenv('RETICULATE_PYTHON')
 
 # part 1
-pdfs <- c(list.files(path = "/home/aaron/Downloads", pattern = "UCB.pdf", full.names = T))
+pdfs <- c(list.files(path = "C:/Users/aaron/Downloads", pattern = "djls", full.names = T))
 ocr <- F
 maxchar <- 10000
 old_new_text <- textNet::pdf_clean(pdfs, keep_pages=T, ocr=F, maxchar=10000,
@@ -23,9 +23,10 @@ water_phrases <- water[stringr::str_detect(water,"\\s")]
 old_new_parsed <- textNet::parse_text(ret_path,
                                       keep_hyph_together = F,
                                       phrases_to_concatenate = water_phrases,
-                                      concatenator = "_", 
+                                      concatenator = "_",
                                       pages,
                                       file_ids,
                                       parsed_filenames=c("old_parsed","new_parsed"),
-                                      parse_from_file = F,
                                       overwrite = T)
+
+
