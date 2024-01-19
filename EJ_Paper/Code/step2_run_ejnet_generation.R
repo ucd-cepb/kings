@@ -19,6 +19,7 @@ generate_phrases <- T
 dacs <- read.csv()#read in dac file
 dacs$numwords <- stringr::str_count(dacs$name, "\\s+")#arrange by descending number of words
 dacs <- arrange(dacs, desc(numwords))
+
 ej_orgs <- read.csv("EJ_Paper/CBO_Dict_R.csv")#read in ej_org file
 ej_orgs$agency_numwords <- stringr::str_count(ej_orgs$Agency, "\\s+")
 ej_orgs$abbr_numwords <- stringr::str_count(ej_orgs$Abbr, "\\s+")
