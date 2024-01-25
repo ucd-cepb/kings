@@ -13,45 +13,47 @@ block_group_fp <- paste0(Sys.getenv("BOX_PATH"),"/EJ_Paper/dac_shapefiles/block_
 block_groups <- read_sf(block_group_fp)
 
 # extract centroid coords from shapes designated as DACs
-bg_dacs <- block_groups %>% filter(DAC20 == 'Y') # DAC20 = Y -> Identified as disadvantaged
-bg_dacs <- vect(bg_dacs)
-bg_dacs <- project(bg_dacs, "EPSG:4326") #convert to WGS84 latlng
-centroids <- centroids(bg_dacs)
+block_groups <- vect(block_groups)
+block_groups <- project(block_groups, "EPSG:4326") #convert to WGS84 latlng
+centroids <- centroids(block_groups)
 coords <- crds(centroids)
-bg_dac_df <- data.frame(coords[,2], coords[,1]) #recreate as df
-colnames(bg_dac_df) <- c('lat', 'lng')
-bg_dac_df$place_name <- NA
-bg_dac_df$place_type <- NA
+bg_df <- data.frame(coords[,2], coords[,1], block_groups$DAC20) #recreate as df
+colnames(bg_df) <- c('lat', 'lng', 'DAC')
+bg_df$place_name <- NA
+bg_df$place_type <- NA
+
+test <- sample(1:25607, 100)
+
 # get placename using google reverse geocode
-for (i in seq_len(nrow(bg_dac_df))){
-    loc = c(bg_dac_df[i,1],bg_dac_df[i,2])
+for (i in seq_len(nrow(bg_df))){
+    loc = c(bg_df[i,1],bg_df[i,2])
     loc_name <- googleway::google_reverse_geocode(location = loc,
                                                   location_type = c('approximate'),
                                                   key = api_key)
-    bg_dac_df[i,'place_type'] <- loc_name$results$types[[1]][[1]]
+    bg_df[i,'place_type'] <- loc_name$results$types[[1]][[1]]
     # bg_dac_df[i,'place_name_long'] <- loc_name$results$formatted_address[[1]][[1]]
-    bg_dac_df[i,'place_name'] <- strsplit(loc_name$results$formatted_address[[1]][[1]], ",")[[1]][1]
+    bg_df[i,'place_name'] <- strsplit(loc_name$results$formatted_address[[1]][[1]], ",")[[1]][1]
 
     Sys.sleep(0.06) #comply with API request limits
 }
 # filter to only neighborhood place types
-dac_neighborhoods <- bg_dac_df[bg_dac_df['place_type'] == 'neighborhood',]
-dac_neighborhoods <- distinct(dac_neighborhoods, place_name, .keep_all = TRUE)
+neighborhoods_df <- bg_df[bg_df['place_type'] == 'neighborhood',]
+neighborhoods_unique <- distinct(neighborhoods_df, place_name, DAC, .keep_all = TRUE)
 
 #places to get cities/towns/etc
 place_fp <- paste0(Sys.getenv("BOX_PATH"),"/EJ_Paper/dac_shapefiles/place/pdac20.shp")
 places <- read_sf(place_fp)
-p_dacs <- places %>% filter(DAC20 == 'Y') # DAC20 = Y -> Identified as disadvantaged
-p_dacs <- vect(p_dacs)
-p_dacs <- project(p_dacs, "EPSG:4326") #convert to WGS84 latlng
-centroids <- centroids(p_dacs)
-coords <- crds(centroids)
+# p_dacs <- places %>% filter(DAC20 == 'Y') # DAC20 = Y -> Identified as disadvantaged
+places <- vect(places)
+places <- project(places, "EPSG:4326") #convert to WGS84 latlng
+p_centroids <- centroids(places)
+p_coords <- crds(p_centroids)
 
 
-dac_places <- data.frame(coords[,2], coords[,1], p_dacs$NAME20, 'dac_place') #recreate as df
-colnames(dac_places) <- c('lat', 'lng', 'place_name', 'place_type')
+places_df <- data.frame(p_coords[,2], p_coords[,1], places$DAC20, places$NAME20, 'dac_place') #recreate as df
+colnames(places_df) <- c('lat', 'lng', 'DAC', 'place_name', 'place_type')
 
-dacs <- rbind(dac_neighborhoods, dac_places)
+dacs <- rbind(neighborhoods_unique, places_df)
 
 write.csv(dacs, "EJ_Paper/Data/dacs.csv", row.names = FALSE)
 

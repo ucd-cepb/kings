@@ -28,5 +28,3 @@ old_new_parsed <- textNet::parse_text(ret_path,
                                       file_ids,
                                       parsed_filenames=c("old_parsed","new_parsed"),
                                       overwrite = T)
-
-
