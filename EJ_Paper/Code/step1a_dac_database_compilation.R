@@ -22,8 +22,6 @@ colnames(bg_df) <- c('lat', 'lng', 'DAC')
 bg_df$place_name <- NA
 bg_df$place_type <- NA
 
-test <- sample(1:25607, 100)
-
 # get placename using google reverse geocode
 for (i in seq_len(nrow(bg_df))){
     loc = c(bg_df[i,1],bg_df[i,2])
@@ -36,37 +34,43 @@ for (i in seq_len(nrow(bg_df))){
 
     Sys.sleep(0.06) #comply with API request limits
 }
+
 # filter to only neighborhood place types
+neighborhood_fp <- paste0(Sys.getenv("BOX_PATH"),"/EJ_Paper/dac_shapefiles/neighborhoods_all.rda")
 neighborhoods_df <- bg_df[bg_df['place_type'] == 'neighborhood',]
-neighborhoods_unique <- distinct(neighborhoods_df, place_name, DAC, .keep_all = TRUE)
+
+# save(neighborhoods_df, file = neighborhood_fp) #save to not have to rerun
+# load(neighborhood_fp)
+
+neighborhoods_df <- neighborhoods_df %>% 
+    filter(DAC != 'Data Not Available')  %>%
+    mutate(DAC = ifelse(DAC == 'Y', 1, 0)) %>% 
+    group_by(place_name) %>%
+    mutate(DAC = ifelse(any(DAC == 1) & any(DAC == 0), 0.5, DAC)) %>%
+    ungroup()  %>% 
+    distinct(place_name, .keep_all = TRUE)
 
 #places to get cities/towns/etc
 place_fp <- paste0(Sys.getenv("BOX_PATH"),"/EJ_Paper/dac_shapefiles/place/pdac20.shp")
 places <- read_sf(place_fp)
-# p_dacs <- places %>% filter(DAC20 == 'Y') # DAC20 = Y -> Identified as disadvantaged
 places <- vect(places)
 places <- project(places, "EPSG:4326") #convert to WGS84 latlng
 p_centroids <- centroids(places)
 p_coords <- crds(p_centroids)
-
-
-places_df <- data.frame(p_coords[,2], p_coords[,1], places$DAC20, places$NAME20, 'dac_place') #recreate as df
+places_df <- data.frame(p_coords[,2], p_coords[,1], places$DAC20, places$NAME20, 'cd_place') #recreate as df
 colnames(places_df) <- c('lat', 'lng', 'DAC', 'place_name', 'place_type')
+places_df <- places_df %>% 
+    filter(DAC != 'Data Not Available')  %>%
+    mutate(DAC = ifelse(DAC == 'Y', 1, 0)) 
 
-dacs <- rbind(neighborhoods_unique, places_df)
+# neighborhood-place overlaps
+neighborhood_place_overlaps <- inner_join(neighborhoods_df, places_df, by = join_by(place_name))%>% arrange(place_name)
 
-write.csv(dacs, "EJ_Paper/Data/dacs.csv", row.names = FALSE)
+# place-place overlaps
+multiple_cities <- data.frame(table(places_df$place_name)) %>% filter(Freq >= 2)
+colnames(multiple_cities) <- c('place_name', 'freq')
+place_place_overlaps <- inner_join(places_df, multiple_cities, by =  join_by(place_name)) %>% arrange(place_name)
 
-#DAC places: 
-#Download data from
-#https://data.cnra.ca.gov/dataset/dacs-census
-
-#(either 2018 Places dataset
-#https://data.cnra.ca.gov/dataset/dacs-census/resource/b473d0f4-51be-4b40-b647-291f01e2cece
-
-#or 2016 Places dataset)
-#https://data.cnra.ca.gov/dataset/dacs-census/resource/f39435b9-a25f-4c9c-bc03-7019acf7ac0e
-
-#DAC neighborhoods: import results from Google Maps API code
-#get started at
-#https://developers.google.com/maps/faq#usage_apis
+# write to csv
+locs <- rbind(neighborhoods_df, places_df)
+write.csv(locs, "EJ_Paper/Data/locations.csv", row.names = FALSE)
