@@ -73,4 +73,7 @@ place_place_overlaps <- inner_join(places_df, multiple_cities, by =  join_by(pla
 
 # write to csv
 locs <- rbind(neighborhoods_df, places_df)
+locs$place_name <- tolower(locs$place_name)
+locs$place_name <- gsub(" ", "_", locs$place_name)
+
 write.csv(locs, "EJ_Paper/Data/locations.csv", row.names = FALSE)
