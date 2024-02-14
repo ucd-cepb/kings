@@ -1,4 +1,5 @@
 library(data.table)
+library(stringr)
 
 ### set up a symbolic link
 ### on. mac this is > ln -s [Box Location] [Github Location]
@@ -28,7 +29,7 @@ for(file in extract_list[1:5]){
    empty_node_dt = empty_node_dt[,list(num_appearances = sum(num_appearances)),by=.(entity_name,entity_type)]
 }
 
-#no tester
+#all files
 for(file in extract_list){
    print(file)
    temp = grab_orgs(paste0(file_loc,file))
@@ -41,64 +42,52 @@ empty_node_dt$org_type <- NA
 empty_node_dt$CBO <- NA
 
 #CBO Dictionary formatting
-cbo_dictionary <- read.csv("EJ_Paper/CBODict_R_Update.csv")
+cbo_dictionary <- read.csv("EJ_Paper/CBO_Name_lc.csv")
+sd_dictionary <- read.csv("EJ_Paper/Data/SD_Names.csv")
+gov_dictionary <- read.csv("EJ_Paper/Data/govsci_tbl_noblank.csv")
 
-#packages
-library(dplyr)
-library(devtools)
-library(textNet)
-library(spacyr)
-library(reticulate)
-ret_path <- "C:\\Users\\hgsha\\miniforge3\\envs\\spacy_condaenv\\python.exe"
-filekey <- read.csv("filekey.csv")
-
-#Same formatting as org list from cleaned extracts
-#Pulled from Elise's code we were using when we were trying to run spacy
-#Based on my understanding of the code, these are the lines that format it 
-#like the names in the extracted networks
-keep_hyph_together <- FALSE
-generate_phrases <- T
-parse_from_file <- F
-
-names(cbo_dictionary)[1] <- "Agency"
-cbo_dictionary$agency_numwords <- stringr::str_count(cbo_dictionary$Agency, "\\s+")
-cbo_dictionary$abbr_numwords <- stringr::str_count(cbo_dictionary$Acronyms, "\\s+")
-agencies <- arrange(cbo_dictionary, desc(agency_numwords))$Agency
-abbrevs <- arrange(cbo_dictionary, desc(abbr_numwords))$Acronyms
-
-#note about phrases: concatenating phrases with an underscore makes it 
-#extremely unlikely that Spacy will recognize it as an entity anymore,
-#so that's why further down in the script we force it to recognize as entities
-#the phrases we include in the concatenation list.
-if(generate_phrases==T){
-   phrases_to_concatenate <- c(
-      agencies[grepl("\\s",agencies)],#all agency names with spaces in them
-      abbrevs[grepl("\\s", abbrevs)])#all abbr names with spaces in them
-}else{
-   phrases_to_concatenate <- NA
-}
+#Formatting databases - str_replace_all(cbo_dictionary$Name, "//s", "_")
 
 
 
-### hard match against CBO dictionary
-empty_node_dt$CBO[empty_node_dt$entity_name %in% cbo_dictionary$Agency] <- TRUE
-empty_node_dt$org_type[empty_node_dt$entity_name %in% cbo_dictionary$Agency] <- 'CBO'
+### hard match against dictionary
+empty_node_dt$CBO[empty_node_dt$entity_name %in% cbo_dictionary$Name] <- TRUE
+empty_node_dt$org_type[empty_node_dt$entity_name %in% cbo_dictionary$Name] <- 'CBO'
+empty_node_dt$org_type[empty_node_dt$entity_name %in% sd_dictionary$Entity_Name] <- 'SD'
+empty_node_dt$org_type[empty_node_dt$entity_name %in% gov_dictionary$Agency] <- 'NL_Gov'
 
-#### soft match against particular string type
+#Remove local and blanks from NL Gov
+
+#### soft match against particular string type - ERROR POPS UP HERE
 empty_node_dt$org_type[grepl("resource_conservation_district",empty_node_dt$entity_name)] <- 'RCD'
 empty_node_dt$org_type[grepl("groundwater_sustainability_agency",empty_node_dt$entity_name)] <- 'GSA'
+empty_node_dt$org_type[grepl("groundwater_management_agency",empty_node_dt$entity_name)] <- 'GSA'
 
+
+#empty_node_dt$org_type[grepl("conservation_district",empty_node_dt$entity_name)] <- 'RCD?'
+
+#Need to go through identified CBO and alter coding
+empty_node_dt$org_type[empty_node_dt$entity_name == 'nature_conservancy'] <- 'NGO'
+empty_node_dt$CBO[empty_node_dt$entity_name == 'nature_conservancy'] <- FALSE
+
+
+###how to convert dictionary in the same format
 
 ### hard match against specific string type
 empty_node_dt$org_type[empty_node_dt$entity_name == 'yolo_county_conservation_district'] <- 'RCD'
-empty_node_dt$org_type[empty_node_dt$entity_name == 'groundwater_sustainability_plan'] <- 'Misc'
-empty_node_dt$org_type[empty_node_dt$entity_name == 'sustainable_groundwater_management_act'] <- 'Misc'
+empty_node_dt$org_type[empty_node_dt$entity_name == 'groundwater_sustainability_plan'] <- 'NR'
+empty_node_dt$org_type[empty_node_dt$entity_name == 'sustainable_groundwater_management_act'] <- 'NR'
 empty_node_dt$org_type[empty_node_dt$entity_name == 'groundwater_sustainability_agency'] <- 'GSA'
 empty_node_dt$org_type[empty_node_dt$entity_name == 'department_of_water_resources'] <- 'NL Gov'
+empty_node_dt$org_type[empty_node_dt$entity_name == 'groundwater_dependent_ecosystem'] <- 'NR'
+empty_node_dt$org_type[empty_node_dt$entity_name == 'united_states_geological_survey'] <- 'NL Gov'
+empty_node_dt$org_type[empty_node_dt$entity_name == 'board'] <- 'NR'
 
 
-
+#View Data
 head(nodes)
-
 table(n$nodelist$entity_type)
 head(n$nodelist)
+
+#Export data:
+write.csv(empty_node_dt, "EJ_Paper/Data/org_data_need_code.csv")
