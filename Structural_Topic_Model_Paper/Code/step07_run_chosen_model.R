@@ -22,44 +22,31 @@ gsp_out <- readRDS(list.files(path = gspoutpath, pattern = gspoutpattern, full.n
 
 numTopics = 30
 
+form <- ~ admin + 
+   basin_plan +
+   sust_criteria +
+   monitoring_networks + 
+   projects_mgmt_actions + 
+   (Agr_Share_Of_GDP_scaled + Republican_Vote_Share_scaled) *
+   (urbangw_af_log_scaled +
+   percent_dac_by_pop_scaled+
+   fract_of_area_in_habitat_log_scaled +
+   maxdryspell_scaled) +
+   # Perc_Bach_Degree_Over25_scaled +
+   # local_govs_per_10k_people_log_scaled +
+   mult_gsas +
+   gwsum
+
 
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
-                 K = numTopics, prevalence =~ admin + 
-                    basin_plan +
-                    sust_criteria +
-                    monitoring_networks + 
-                    projects_mgmt_actions + 
-                    urbangw_af_log_scaled +
-                    percent_dac_by_pop_scaled+
-                    fract_of_area_in_habitat_log_scaled +
-                    maxdryspell_scaled +
-                    Agr_Share_Of_GDP_scaled +
-                    Republican_Vote_Share_scaled +
-                    Perc_Bach_Degree_Over25_scaled +
-                    local_govs_per_10k_people_log_scaled +
-                    mult_gsas +
-                    gwsum,
+                 K = numTopics, prevalence = form,
                  max.em.its = 30,
                  data = gsp_out$meta, init.type = "Spectral") 
 
 while (!gsp_model$convergence$converged){
    gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                     K = numTopics,
-                    prevalence =~ admin + 
-                       basin_plan +
-                       sust_criteria +
-                       monitoring_networks + 
-                       projects_mgmt_actions + 
-                       urbangw_af_log_scaled +
-                       percent_dac_by_pop_scaled+
-                       fract_of_area_in_habitat_log_scaled +
-                       maxdryspell_scaled +
-                       Agr_Share_Of_GDP_scaled +
-                       Republican_Vote_Share_scaled +
-                       Perc_Bach_Degree_Over25_scaled +
-                       local_govs_per_10k_people_log_scaled +
-                       mult_gsas +#dummy for how many gsas are involved: multiple or one
-                       gwsum,
+                    prevalence = form,
                     init.type = "Spectral",
                     max.em.its = gsp_model$settings$convergence$max.em.its + 30,
                     data = gsp_out$meta,
