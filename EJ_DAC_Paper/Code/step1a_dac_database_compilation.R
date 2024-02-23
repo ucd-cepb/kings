@@ -18,15 +18,23 @@ block_groups <- vect(block_groups)
 block_groups <- project(block_groups, "EPSG:4326") #convert to WGS84 latlng
 centroids <- centroids(block_groups)
 coords <- crds(centroids)
-bg_df <- data.frame(coords[,2], coords[,1], block_groups$DAC20) #recreate as df
-colnames(bg_df) <- c('lat', 'lng', 'DAC')
+bg_df <- data.frame(coords[,2], 
+                    coords[,1], 
+                    block_groups$DAC20, 
+                    block_groups$MHI20,
+                    block_groups$Pop20) #recreate as df
+colnames(bg_df) <- c('lat', 
+                     'lng', 
+                     'DAC',
+                     'MHI',
+                     'POP')
 bg_df$place_name <- NA
 bg_df$place_type <- NA
 
 # get placename using google reverse geocode
-call_google <- readline(prompt = "Call Google Geocode API? (yes/no): ")
+call_google <- TRUE
 
-if(tolower(call_google) == "yes") {
+if(call_google == TRUE) {
    for (i in seq_len(nrow(bg_df))){
       loc = c(bg_df[i,1],bg_df[i,2])
       loc_name <- googleway::google_reverse_geocode(location = loc,
@@ -41,7 +49,7 @@ if(tolower(call_google) == "yes") {
 
 # filter to only neighborhood place types
 neighborhoods_df <- bg_df[bg_df['place_type'] == 'neighborhood',]
-# save(neighborhoods_df, file = neighborhood_fp) #save to not have to rerun
+save(neighborhoods_df, file = neighborhood_fp) #save to not have to rerun
 
 # load in neighborhoods_df
 neighborhood_fp <- paste0(Sys.getenv("BOX_PATH"),
@@ -68,11 +76,19 @@ p_centroids <- centroids(places)
 p_coords <- crds(p_centroids)
 places_df <- data.frame(p_coords[,2], 
                         p_coords[,1], 
-                        places$DAC20, 
+                        places$DAC20,
+                        places$MHI20,
+                        places$Pop20,
                         places$NAME20, 
                         'cd_place') #recreate as df
 
-colnames(places_df) <- c('lat', 'lng', 'DAC', 'place_name', 'place_type')
+colnames(places_df) <- c('lat', 
+                         'lng', 
+                         'DAC', 
+                         'MHI',
+                         'POP',
+                         'place_name', 
+                         'place_type')
 
 places_df <- places_df %>% 
    filter(DAC != 'Data Not Available') %>%

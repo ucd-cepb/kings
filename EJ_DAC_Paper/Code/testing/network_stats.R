@@ -1,8 +1,7 @@
 library(dotenv)
 library(ggraph)
-library(network)
+library(igraph)
 library(tidyverse)
-library(intergraph)
 library(migraph)
 library(data.table)
 
@@ -31,15 +30,23 @@ process_extract <- function(file, drop = 'PERSON'){
    networklist <- list("nodelist" = nl, "edgelist" = el)
    return(networklist)
 }
-net <- list()
-for (i in seq_along(extract_list[2:3])){
-   path = paste0(network_fp, "/",extract_list[i+1])
-   net[[i]] <- process_extract(path)
-   gsp_graph <- network(net[[i]]$edgelist,
-                        vertices = net[[i]]$nodelist,
-                        loops = TRUE,
-                        multiple = TRUE)
-}
+
+# make network graph (rough)
+# net <- list()
+# gsp_graph <- list()
+# for (i in seq_along(extract_list[1:5])){
+#    path = paste0(network_fp, "/",extract_list[i])
+#    net[[i]] <- process_extract(path)
+#    gsp_graph[[i]] <- network(net[[i]]$edgelist,
+#                         vertices = net[[i]]$nodelist,
+#                         loops = TRUE,
+#                         multiple = TRUE,
+#                         matrix.type='edgelist')
+#    plot(gsp_graph[[i]])
+# }
 
 
-gsp_degree <- data.frame(node_degree(gsp_graph))
+test_net <- process_extract(paste0(network_fp, "/",extract_list[1]))
+
+gsp_graph <- graph_from_data_frame(test_net$edgelist,
+                          vertices = test_net$nodelist)
