@@ -68,22 +68,22 @@ byplan
 
 #H2
 
-res_aov <- aov(pct_collab ~ as.factor(mult_gsas),
+res_aov_collab <- aov(pct_collab ~ as.factor(mult_gsas),
                data = byplan
 )
 par(mfrow = c(1, 2)) # combine plots
 
 # histogram
-hist(res_aov$residuals)
+hist(res_aov_collab$residuals)
 
 # QQ-plot
 library(car)
-qqPlot(res_aov$residuals,
+qqPlot(res_aov_collab$residuals,
        id = FALSE # id = FALSE to remove point identification
 )
-shapiro.test(res_aov$residuals) 
-#since p>0.05, we can assume residuals are normally distributed
-#it's ok to use anova or t-test
+shapiro.test(res_aov_collab$residuals) 
+#since p>0.05, we aren't certain that residuals are abnormally distributed
+#we proceed with anova or t-test
 
 #time to test homogeneity
 
@@ -93,17 +93,17 @@ boxplot(prop_collab ~ mult_gsas,
         data = byplan
 )
 
-leveneTest(pct_collab ~ mult_gsas,
+leveneTest(prop_collab ~ mult_gsas,
            data = byplan
 )#is homogeneous
-plot(res_aov, which = 3)#red line is close to horizontal. homogeneity met.
+plot(res_aov_collab, which = 3)#red line is close to horizontal. homogeneity met.
 
 #this means we can run a regular anova, ie res_aov or equivalently:
-oneway.test(pct_collab ~ mult_gsas, data = byplan, 
+oneway.test(prop_collab ~ mult_gsas, data = byplan, 
             var.equal = T)
 #the two groups are different!
-TukeyHSD(res_aov)
-#mult_gsas have 0.02 more percent collaborative verbs compared to single_gsas.
+TukeyHSD(res_aov_collab)
+#mult_gsas have 0.02 (20%) more collaborative verbs compared to single_gsas.
 
 
 edgelist_w_meta_max <- edgelist_w_meta
