@@ -67,6 +67,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       
    #"huge" method network model
    }else if(method == "huge"){
+      set.seed(2000)
       tch <- topicCorr(model, method = "huge", verbose = TRUE)
       for(i in 1:nrow(tch$cor)){
          tch$cor[i,i]=1
@@ -107,7 +108,10 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       igraph::V(gh_subset)$label <- nums_of_interest
       num_neighbh_subset <- sapply(1:length(nums_of_interest),function(x)length(neighbors(gh_subset,x)))
       
-      V(gh_subset)$category <- categ[!is.na(categ)]#contain key words?
+      graphcategs <- categ[!is.na(categ)]
+      #I want Topic 25 to show up as DW_EJ and not "Multi"
+      graphcategs[graphcategs=="Multi"] <- "DW_EJ"
+      V(gh_subset)$category <- graphcategs#contain key words?
       
       category_vect <- viridis(5)
       cat_color_h <- category_vect[as.numeric(as.factor(V(gh_subset)$category))]
@@ -120,7 +124,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       set.seed(3)
       igraph::plot.igraph(gh_subset, layout=layout, vertex.color=cat_color_h,
                           vertex.label.cex=0.75, 
-                          vertex.label.color=txt_color_h, vertex.size=12)
+                          vertex.label.color=txt_color_h, vertex.size=18)
       
       legend('topleft',legend = levels(as.factor(V(gh_subset)$category)), 
              pt.cex = 1, pch = 21, cex = 1.2, pt.bg = category_vect,
@@ -133,7 +137,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
    }
    
    
-   
+   graphcategs[graphcategs=="DW_EJ"] <- "EJ_DW"
    #"simple" method correlation grid
    if(method == "simple"){
       
@@ -190,7 +194,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       max_corr <- ceiling(max_corr*100)/100+
          ifelse(ceiling(max_corr*100)%%5==0,0,(5-ceiling(max_corr*100)%%5)/100)
       min_corr <- max_corr*-1
-      colnames(grid_mini) <- paste0(categ[!is.na(categ)],colnames(grid_mini))
+      colnames(grid_mini) <- paste0(graphcategs,colnames(grid_mini))
       grid_mini <- grid_mini[,sort(colnames(grid_mini))]
       grid_mini <- as.matrix(grid_mini)
       pal <- c(scico(3, palette = "vik") )
