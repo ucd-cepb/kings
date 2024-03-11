@@ -31,21 +31,6 @@ process_extract <- function(file, drop = 'PERSON'){
    return(networklist)
 }
 
-# make network graph (rough)
-# net <- list()
-# gsp_graph <- list()
-# for (i in seq_along(extract_list[1:5])){
-#    path = paste0(network_fp, "/",extract_list[i])
-#    net[[i]] <- process_extract(path)
-#    gsp_graph[[i]] <- network(net[[i]]$edgelist,
-#                         vertices = net[[i]]$nodelist,
-#                         loops = TRUE,
-#                         multiple = TRUE,
-#                         matrix.type='edgelist')
-#    plot(gsp_graph[[i]])
-# }
-
-
 test_net <- process_extract(paste0(network_fp, "/",extract_list[1]))
 
 gsp_graph <- graph_from_data_frame(test_net$edgelist,
