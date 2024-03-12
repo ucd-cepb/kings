@@ -14,7 +14,7 @@ locs <- read.csv('EJ_DAC_Paper/Data/locations.csv')
 
 ### convenience function for reading in and processing nodes
 ### extracts have ORG, PERSON, and GPE nodetypes
-network_process <- function(file, drop = 'PERSON'){
+net_process <- function(file, drop = 'PERSON'){
    # read in rds file
    temp <- readRDS(file)
    # grap nodelist
@@ -28,6 +28,11 @@ network_process <- function(file, drop = 'PERSON'){
       filter(!is.na(source) & !is.na(target))  %>% 
       select(-doc_sent_verb)
    networklist <- list("nodelist" = nl, "edgelist" = el)
+   
+   return(networklist)
+}
+
+net_graph <- function(networklist){
    network_graph <- graph_from_data_frame(networklist$edgelist,
                                           vertices = networklist$nodelist)
    network_graph <- set_vertex_attr(network_graph, 
@@ -41,14 +46,12 @@ network_process <- function(file, drop = 'PERSON'){
                                     value = node_betweenness(network_graph))
    network_graph <- set_vertex_attr(network_graph, 
                                     'eigenvector',
-                                    value = node_eigenvector(network_graph))
+                                    value = node_eigenvector(network_graph))  
    return(network_graph)
 }
 
-gsp_graph <- network_process(paste0(network_fp, "/",extract_list[1]))
-
-gsp_graph <- graph_from_data_frame(test_net$edgelist,
-                                   vertices = test_net$nodelist)
+gsp_list <- net_process(paste0(network_fp, "/",extract_list[1]))
+gsp_graph <- net_graph(gsp_list)
 
 isolates <- which(degree(gsp_graph) == 0)
 graph_2 <- delete.vertices(gsp_graph, isolates)
