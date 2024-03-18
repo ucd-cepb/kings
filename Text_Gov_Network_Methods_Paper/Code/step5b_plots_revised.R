@@ -43,6 +43,7 @@ vector_of_stateagencies <- vector_of_stateagencies[!vector_of_stateagencies %in%
 edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath, full.names = T)
 gspids <- substr(edges_and_nodes, nchar(edges_and_nodes)-7,nchar(edges_and_nodes)-4)
 
+library(igraph)
 #only plots orgs and people
 #single gsa example = 16; 65 and 74 are multi-gsa
 for(m in c(16, 65, 74)){
@@ -126,7 +127,7 @@ for(m in c(16, 65, 74)){
    
    # subgraph
    giant_component <- igraph::induced_subgraph(weighted_graph_noisolates, vert_ids)
-   
+   set.seed(3849)
    weighted_plot_noisolates <- ggraph(giant_component, layout = 'fr')+
       #ggraph::scale_edge_colour_gradient(high = viridis::cividis(5)[1], low = viridis::cividis(5)[4])+
       #Using Paul Tol color schemes
@@ -219,7 +220,7 @@ for(m in c(41, 46)){
                       alpha = 0.8)+
       scale_color_manual(values = c("#004488","#BB5566","#DDAA33"))+
       
-      geom_node_text(aes(label = name), repel = TRUE)
+      geom_node_text(aes(label = name), repel = TRUE)+
       #geom_node_text(aes(label = labels),
       #               size = 3, repel = T, color = "black")+
       theme_void()

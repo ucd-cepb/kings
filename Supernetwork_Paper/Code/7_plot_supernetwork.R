@@ -91,7 +91,7 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
    
    # subgraph
    giant_component <- igraph::induced_subgraph(weighted_graph_noisolates, vert_ids)
-   
+   set.seed(23733240)
    weighted_plot_noisolates <- ggraph(giant_component, layout = 'fr')+
       #ggraph::scale_edge_colour_gradient(high = viridis::cividis(5)[1], low = viridis::cividis(5)[4])+
       #Using Paul Tol color schemes
@@ -105,11 +105,11 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
       scale_color_manual(values = c("#004488","#BB5566","#DDAA33","#DDDDDD"))+
       geom_node_point(aes(color = scope, size = degree),
                       alpha = 0.8)+
-      geom_node_text(aes(label = bigname), size=2, repel = T) +
-      theme_void()
-   
+      geom_node_text(aes(label = bigname), size=2, repel = T, max.overlaps=30) +
+      theme_void()+ theme(legend.position = c(0.8,0.6))
+   weighted_plot_noisolates
    
    ggsave(paste0("supernetwork_plot.png"), plot = weighted_plot_noisolates, device = "png",
-          path = filekey[filekey$var_name=="psj_govnetpaper_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
+          path = filekey[filekey$var_name=="psj_govnetpaper_figures",]$filepath, width = 2200, height = 1890, dpi = 300,
           units = "px", bg = "white")
    
