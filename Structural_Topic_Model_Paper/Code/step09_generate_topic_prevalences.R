@@ -7,6 +7,7 @@ filekey <- read.csv("filekey.csv")
 inputsfilename <- filekey[filekey$var_name=="gsp_out_files",]$filepath
 inputsfilenamesplits <- unlist(strsplit(inputsfilename,split="/"))
 inputspath <- paste(inputsfilenamesplits[1:(length(inputsfilenamesplits)-1)],collapse = "/")
+
 inputspattern <- inputsfilenamesplits[length(inputsfilenamesplits)]
 
 fl <- list.files(path = inputspath, pattern = inputspattern, full.names = T)
@@ -23,8 +24,6 @@ modelpattern <- modelfilenamesplits[length(modelfilenamesplits)]
 minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = T))
 which_file <- which.max(minfo$mtime)
 model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
-
-
 
 # findTopic doens;'t handle regex
 # do it ourselves
@@ -52,6 +51,13 @@ topic_nums})
 
 
 source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
+
+
+problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
+                        'gde' = 'fract_of_area_in_habitat_log_scaled',
+                        'cc' = 'maxdryspell_scaled',
+                        'dw' = 'urbangw_af_log_scale')
+
 ej_interaction0 = estimateEffectDEV(formula = topic_ids$ej ~ Agr_Share_Of_GDP_scaled * (urbangw_af_log_scaled+
                                             percent_dac_by_pop_scaled +
                                            fract_of_area_in_habitat_log_scaled+
