@@ -56,7 +56,68 @@ source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
                         'gde' = 'fract_of_area_in_habitat_log_scaled',
                         'cc' = 'maxdryspell_scaled',
-                        'dw' = 'urbangw_af_log_scale')
+                        'dw' = 'urbangw_af_log_scaled')
+
+
+#### agr interactions ####
+foci <- names(problem_measures)
+agr_interaction_estimates = lapply(foci,function(x){
+   print(x)
+   vr <- as.formula(paste("~",as.name(problem_measures[[x]]),collapse = " "))
+   fr <- update.formula(vr,topic_ids[[x]] ~ . * Agr_Share_Of_GDP_scaled)
+   m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+               stmobj = model)
+   m
+   })
+
+#### rep vote share interactions ####
+rep_interaction_estimates = lapply(foci,function(x){
+   print(x)
+   vr <- as.formula(paste("~",as.name(problem_measures[[x]]),collapse = " "))
+   fr <- update.formula(vr,topic_ids[[x]] ~ . * Republican_Vote_Share_scaled)
+   m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+                          stmobj = model)
+   m
+})
+
+getConfint = function(est,moderator = moderator,
+                      moderator.value = moderator.value,cv = cv){
+   d = data.table(mean = as.data.table(est$means),
+                  t(as.data.table(est$ci)),
+                  x = est$x)
+   d$moderator = moderator;d$covariate = cv;d$moderator.value = moderator.value
+   setnames(d,c('mean.V1','V1','V2'),c('mean','upper','lower'))}
+
+
+mapply(function(x,y,z,m){
+   est <- plot.estimateEffect(x,
+                              model = model,
+                              method = 'continuous',
+                              covariate = y,
+                              moderator.value = z,
+                              moderator = m)
+   getConfint(est = est,mv = m,cv = y)
+}, x = rep_interaction_estimates, y = problem_measures, z = 1,m = 'Republican_Vote_Share_scaled')
+
+
+
+
+
+
+est
+
+
+as.formula(tt)
+
+fm <- as.formula(topic_ids[[x]] ~ as.name(problem_measures[[x]]))
+              fm
+estimateEffectDEV(formula(topic_ids[[x]] ~ as.name(problem_measures[[x]])),
+                  metadata = model$settings$covariates$X,group = T,
+                  stmobj = model)
+
+lapply(foci,function(x){estimateEffectDEV(formula(paste(as.vectortopic_ids[[x]],"~",problem_measures[[x]],collapse = " ")),
+                                          metadata = model$settings$covariates$X,group = T,
+                                          stmobj = model)})
 
 ej_interaction0 = estimateEffectDEV(formula = topic_ids$ej ~ Agr_Share_Of_GDP_scaled * (urbangw_af_log_scaled+
                                             percent_dac_by_pop_scaled +
