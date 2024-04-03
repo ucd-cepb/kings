@@ -25,6 +25,8 @@ minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = 
 which_file <- which.max(minfo$mtime)
 model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
 
+frex_scores[24,]
+topic_ids
 # findTopic doens;'t handle regex
 # do it ourselves
 frex_scores <- labelTopics(model,n = 50)$frex
@@ -39,6 +41,7 @@ topic_indicators <- list(ej = c("disadvantaged community", "disadvantaged commun
                                  "groundwater-dependent ecosystems",
                                  "groundwater dependent ecosystems",
                                  "^gde$","^gdes$","habitat","species","^spp$","vegetation"))
+topic_indicators <- lapply(topic_indicators,str_replace_all,'\\s','_')
 
 ### this returns a vector, not a matrix
 ### but we can redo as a matrix, filling by row, to create boolean
@@ -48,56 +51,155 @@ word_match_matrix <- matrix(grepl(paste(indicator,collapse = '|'),frex_scores),
 topic_nums <- which(rowSums(word_match_matrix)>0)
 topic_nums})
 
-
-
 source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 
-
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
-                        'gde' = 'fract_of_area_in_habitat_log_scaled',
+                        'dw' = 'urbangw_af_log_scaled',
                         'cc' = 'maxdryspell_scaled',
-                        'dw' = 'urbangw_af_log_scaled')
-
+                        'gde' = 'fract_of_area_in_habitat_log_scaled'
+                        )
 
 #### agr interactions ####
 foci <- names(problem_measures)
-agr_interaction_estimates = lapply(foci,function(x){
+agr_interaction_estimates <- vector(mode = 'list',length = length(foci))
+for(x in foci){
    print(x)
-   vr <- as.formula(paste("~",as.name(problem_measures[[x]]),collapse = " "))
-   fr <- update.formula(vr,topic_ids[[x]] ~ . * Agr_Share_Of_GDP_scaled)
-   m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+   problem <- problem_measures[[x]]
+   topic_vec <- topic_ids[[x]]
+   print(paste('topic',topic_vec))
+   #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+   vr <- as.formula(paste("~",as.name(problem),collapse = " "))
+   fr <- update.formula(vr,topic_vec ~ . * Agr_Share_Of_GDP_scaled)
+   if(length(topic_vec)>1){
+      m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
                stmobj = model)
-   m
+   }else{
+      m <- estimateEffect(fr, metadata = model$settings$covariates$X,stmobj = model)
+   }
+   agr_interaction_estimates[[match(x,foci)]] <- m
+}
+names(agr_interaction_estimates) <- paste(foci,'agr',sep = '_')
+
+
+repvote_interaction_estimates <- vector(mode = 'list',length = length(foci))
+for(x in foci){
+   print(x)
+   problem <- problem_measures[[x]]
+   topic_vec <- topic_ids[[x]]
+   print(paste('topic',topic_vec))
+   #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+   vr <- as.formula(paste("~",as.name(problem),collapse = " "))
+   fr <- update.formula(vr,topic_vec ~ . * Republican_Vote_Share_scaled)
+   if(length(topic_vec)>1){
+      m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+                             stmobj = model)
+   }else{
+      m <- estimateEffect(fr, metadata = model$settings$covariates$X,stmobj = model)
+   }
+   repvote_interaction_estimates[[match(x,foci)]] <- m
+}
+names(repvote_interaction_estimates) <- paste(foci,'rep',sep = '_')
+
+interaction_estimates <- c(agr_interaction_estimates,repvote_interaction_estimates)
+
+inter_grid <- expand.grid(moderator = c('Republican_Vote_Share_scaled','Agr_Share_Of_GDP_scaled'),
+                          moderator.value = c(-1,1),
+                          covariate = unlist(problem_measures))
+inter_grid$foci <- rep(foci,each = 4)
+inter_grid$model.match <- paste0(inter_grid$foci,ifelse(grepl('Agr',inter_grid$moderator),'_agr','_rep'))
+
+# getConfint = function(est,moderator = moderator,
+#                       moderator.value = moderator.value,
+#                       covariate = covariate){
+#    d = data.table(mean = as.data.table(est$means),
+#                   t(as.data.table(est$ci)),
+#                   x = est$x)
+#    d$moderator = moderator;d$covariate = covariate;d$moderator.value = moderator.value
+#    setnames(d,c('mean.V1','V1','V2'),c('mean','upper','lower'))}
+
+
+#inter_grid <- inter_grid[inter_grid$covariate=='maxdryspell_scaled',]
+
+confint_list <- lapply(1:nrow(inter_grid),function(i){
+   print(i)
+   # temp_est <- plot.estimateEffect(
+   #                   x = interaction_estimates[[inter_grid$model.match[i]]],
+   #                     model = model,
+   #                     method = 'continuous',
+   #                     moderator = as.character(inter_grid$moderator[i]),
+   #                     moderator.value = inter_grid$moderator.value[i],
+   #                     covariate = as.character(inter_grid$covariate[i]))
+   # 
+   temp_est <- extract.estimateEffectDEV( x = interaction_estimates[[inter_grid$model.match[i]]],
+                              model = model,
+                              method = 'continuous',
+                              moderator = as.character(inter_grid$moderator[i]),
+                              moderator.value = inter_grid$moderator.value[i],
+                              covariate = as.character(inter_grid$covariate[i]))
+   temp_est$model <- inter_grid$model.match[i]
+   temp_est
    })
 
-#### rep vote share interactions ####
-rep_interaction_estimates = lapply(foci,function(x){
-   print(x)
-   vr <- as.formula(paste("~",as.name(problem_measures[[x]]),collapse = " "))
-   fr <- update.formula(vr,topic_ids[[x]] ~ . * Republican_Vote_Share_scaled)
-   m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
-                          stmobj = model)
-   m
-})
 
-getConfint = function(est,moderator = moderator,
-                      moderator.value = moderator.value,cv = cv){
-   d = data.table(mean = as.data.table(est$means),
-                  t(as.data.table(est$ci)),
-                  x = est$x)
-   d$moderator = moderator;d$covariate = cv;d$moderator.value = moderator.value
-   setnames(d,c('mean.V1','V1','V2'),c('mean','upper','lower'))}
+confint_dt <- rbindlist(confint_list,use.names = T,fill = T)
+confint_dt$foci <- inter_grid$foci[match(confint_dt$covariate,inter_grid$covariate)]
 
 
-mapply(function(x,y,z,m){
+library(tidyverse)
+library(ggthemes)
+confint_dt$foci <- toupper(confint_dt$foci)
+gg_repvote <- ggplot(data = confint_dt[moderator == 'Republican_Vote_Share_scaled',]) + 
+   facet_wrap(~foci,scale = 'free') + theme_bw() + 
+   geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
+   geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
+   scale_color_colorblind(name = 'Rep. vote share',
+                          labels = c('-1 SD','+1 SD')) +
+   scale_x_continuous('problem measure (scaled)') + 
+   scale_y_continuous(name = 'estimated marginal effect') + 
+   theme(#legend.position = c(0.8,0.2),
+         legend.position = 'bottom') +
+   ggtitle('Policy priorites moderated by Rep. vote share')
+ggsave(plot = gg_repvote,filename = 'Structural_Topic_Model_Paper/output/repvote_interaction.png',dpi = 450,width = 7,height = 7,units = 'in')
+
+
+gg_agr <- ggplot(data = confint_dt[moderator == "Agr_Share_Of_GDP_scaled" ,]) + 
+   facet_wrap(~foci,scale = 'free') + theme_bw() + 
+   geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
+   geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
+   scale_color_colorblind(name = 'Agr. share of GDP',
+                          labels = c('-1 SD','+1 SD')) +
+   scale_x_continuous('problem measure (scaled)') + 
+   scale_y_continuous(name = 'estimated marginal effect') + 
+   theme(#legend.position = c(0.8,0.2),
+      legend.position = 'bottom') +
+   ggtitle('Policy priorites moderated by agric. industry')
+ggsave(plot = gg_agr,filename = 'Structural_Topic_Model_Paper/output/agr_interaction.png',dpi = 450,width = 7,height = 7,units = 'in')
+
+
+
+topic_ids
+mapply(function(moderator,covariate,moderator.value,model.match) {
+                        plot.estimateEffect(x = interaction_estimates[[model.match]],
+                           model = model,
+                           method = 'continuous',
+                           moderator = moderator,
+                           moderator.value = as.numeric(moderator.value),
+                           covariate = covariate)},
+       moderator = inter_grid$moderator,moderator.value = inter_grid$moderator.value,
+       covariate = inter_grid$covariate,model.match = inter_grid$model.match)
+
+
+                           ))
+
+test = mapply(function(x,y,z,m){
    est <- plot.estimateEffect(x,
                               model = model,
                               method = 'continuous',
                               covariate = y,
                               moderator.value = z,
                               moderator = m)
-   getConfint(est = est,mv = m,cv = y)
-}, x = rep_interaction_estimates, y = problem_measures, z = 1,m = 'Republican_Vote_Share_scaled')
+   getConfint(est = est,moderator.value = m,cv = y)
+}, x = repvote_interaction_estimates, y = problem_measures, z = 1,m = 'Republican_Vote_Share_scaled')
 
 
 
