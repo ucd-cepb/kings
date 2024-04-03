@@ -45,9 +45,9 @@ gsp_text_with_meta <- gsp_text_with_meta %>% filter(!is.na(admin))
 gsp_text_with_meta$GSP.ID <- as.numeric(gsp_text_with_meta$gsp_id)
 gsp_local$GSP.ID <- as.numeric(gsp_local$GSP.ID)
 library(raster)
-library(rgdal)
+#library(rgdal)
 maxdryspell <- raster::raster(filekey[filekey$var_name=="max_dry_spell_data",]$filepath)
-st_transform(gsp_local, raster::projection(maxdryspell))
+gsp_local <- st_transform(gsp_local, raster::projection(maxdryspell))
 
 gsp_local$maxdryspell <- as.numeric(raster::extract(maxdryspell$cddm_year_ens32avg_rcp45_2040, 
                                          gsp_local, fun=mean, na.rm=T, sp=F))
@@ -55,7 +55,7 @@ gsp_local <- st_drop_geometry(gsp_local)
 
 gsp_text_with_meta <- left_join(gsp_text_with_meta, gsp_local)
 
-
+gsp_text_with_meta$basin_population_log_scaled <- scale(log(gsp_text_with_meta$basin_population))
 gsp_text_with_meta$urbangw_af_log_scaled <- scale(log(gsp_text_with_meta$urbangw_af))
 gsp_text_with_meta$percent_dac_by_pop_scaled <- scale(gsp_text_with_meta$percent_dac_by_pop)
 gsp_text_with_meta$fract_of_area_in_habitat_log_scaled <- scale(log(gsp_text_with_meta$fract_of_area_in_habitat))
@@ -64,19 +64,21 @@ gsp_text_with_meta$Agr_Share_Of_GDP_scaled <- scale(gsp_text_with_meta$Agr_Share
 gsp_text_with_meta$Republican_Vote_Share_scaled <- scale(gsp_text_with_meta$Republican_Vote_Share)
 gsp_text_with_meta$Perc_Bach_Degree_Over25_scaled <- scale(gsp_text_with_meta$Perc_Bach_Degree_Over25)
 gsp_text_with_meta$local_govs_per_10k_people_log_scaled <- scale(log(gsp_text_with_meta$local_govs_per_10k_people))
+gsp_text_with_meta$well_MCL_exceedance_count_by_log_pop_scaled <- scale(gsp_text_with_meta$well_MCL_exceedance_count/
+                                                                         log(gsp_text_with_meta$basin_population))
 
 saveRDS(gsp_text_with_meta, file = filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 
 gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_reference","page_num",
                                                  "admin","basin_plan","sust_criteria","monitoring_networks",
-                                                 "projects_mgmt_actions","urbangw_af_log_scaled",
+                                                "basin_population_log_scaled",
+                                                 "projects_mgmt_actions",
                                                  "percent_dac_by_pop_scaled",
+                                       "well_MCL_exceedance_count_by_log_pop_scaled",
                                                  "fract_of_area_in_habitat_log_scaled",
                                                  "maxdryspell_scaled",
                                                  "Agr_Share_Of_GDP_scaled",
                                                  "Republican_Vote_Share_scaled",
-                                                 "Perc_Bach_Degree_Over25_scaled",
-                                                 "local_govs_per_10k_people_log_scaled",
                                                  "mult_gsas",
                                                  "gwsum",
                                                  "approval")]

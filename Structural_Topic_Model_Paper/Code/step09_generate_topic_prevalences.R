@@ -2,6 +2,7 @@
 
 library(stm)
 library(data.table)
+library(stringr)
 filekey <- read.csv("filekey.csv")
 #### this code was taken from step08 ###
 inputsfilename <- filekey[filekey$var_name=="gsp_out_files",]$filepath
@@ -25,8 +26,6 @@ minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = 
 which_file <- which.max(minfo$mtime)
 model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
 
-frex_scores[24,]
-topic_ids
 # findTopic doens;'t handle regex
 # do it ourselves
 frex_scores <- labelTopics(model,n = 50)$frex
@@ -54,13 +53,32 @@ topic_nums})
 source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
-                        'dw' = 'urbangw_af_log_scaled',
+                        'dw' = 'well_MCL_exceedance_count_by_log_pop_scaled',
                         'cc' = 'maxdryspell_scaled',
                         'gde' = 'fract_of_area_in_habitat_log_scaled'
                         )
 
-#### agr interactions ####
 foci <- names(problem_measures)
+problem_estimates <- vector(mode = 'list',length = length(foci))
+for(x in foci){
+   print(x)
+   problem <- problem_measures[[x]]
+   topic_vec <- topic_ids[[x]]
+   print(paste('topic',topic_vec))
+   #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+   vr <- as.formula(paste("~",as.name(problem),collapse = " "))
+   fr <- update.formula(vr,topic_vec ~ . )
+   if(length(topic_vec)>1){
+      m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+                             stmobj = model)
+   }else{
+      m <- estimateEffect(fr, metadata = model$settings$covariates$X,stmobj = model)
+   }
+   problem_estimates[[match(x,foci)]] <- m
+}
+names(problem_estimates) <- paste(foci)
+
+#### agr interactions ####
 agr_interaction_estimates <- vector(mode = 'list',length = length(foci))
 for(x in foci){
    print(x)
@@ -100,8 +118,9 @@ for(x in foci){
 }
 names(repvote_interaction_estimates) <- paste(foci,'rep',sep = '_')
 
-interaction_estimates <- c(agr_interaction_estimates,repvote_interaction_estimates)
 
+interaction_estimates <- c(problem_estimates,agr_interaction_estimates,repvote_interaction_estimates)
+saveRDS(object = interaction_estimates,file = 'data/Structural_Topic_Model_Paper/interaction_estimates.RDS')
 inter_grid <- expand.grid(moderator = c('Republican_Vote_Share_scaled','Agr_Share_Of_GDP_scaled'),
                           moderator.value = c(-1,1),
                           covariate = unlist(problem_measures))
@@ -148,8 +167,12 @@ confint_dt$foci <- inter_grid$foci[match(confint_dt$covariate,inter_grid$covaria
 library(tidyverse)
 library(ggthemes)
 confint_dt$foci <- toupper(confint_dt$foci)
-gg_repvote <- ggplot(data = confint_dt[moderator == 'Republican_Vote_Share_scaled',]) + 
-   facet_wrap(~foci,scale = 'free') + theme_bw() + 
+saveRDS(object = confint_dt,'data/Structural_Topic_Model_Paper/confint_dt.RDS')
+
+
+
+gg_cc <- ggplot(data = confint_dt[foci == 'cc',]) + 
+   facet_wrap(~moderator,scale = 'free') + theme_bw() + 
    geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
    geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
    scale_color_colorblind(name = 'Rep. vote share',

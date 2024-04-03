@@ -28,8 +28,9 @@ form <- ~ admin +
    sust_criteria +
    monitoring_networks + 
    projects_mgmt_actions + 
+   basin_population_log_scaled +
    (Agr_Share_Of_GDP_scaled + Republican_Vote_Share_scaled) *
-   (urbangw_af_log_scaled +
+   (well_MCL_exceedance_count_by_log_pop_scaled +
    percent_dac_by_pop_scaled+
    fract_of_area_in_habitat_log_scaled +
    maxdryspell_scaled) +
@@ -59,5 +60,3 @@ while (!gsp_model$convergence$converged){
 
 saveRDS(gsp_model, file = paste0(filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
 
-
-   
