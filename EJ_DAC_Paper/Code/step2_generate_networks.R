@@ -7,8 +7,7 @@ library(data.table)
 
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"),
-                     "/EJ_Paper/cleaned_extracts_textgov_paper_version")
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_textgov_paper_version")
 extract_list = list.files(network_fp)
 locs <- read.csv('EJ_DAC_Paper/Data/locations.csv')
 
@@ -59,6 +58,4 @@ graph_2 <- delete.vertices(gsp_graph, isolates)
 ggraph(gsp_graph, layout = 'kk') +
    geom_edge_link(color = "black", alpha = .5) + 
    geom_node_point(aes(size = num_appearances, colour = place)) + 
-   theme_graph() 
-
-
+   theme_graph()
