@@ -14,3 +14,4 @@ print(paste0("locations has ",
              nrow(locations %>% filter(place_type == "cd_place")), 
              " of which are census designated places"))
 print(paste0("expected places has ", nrow(missing_rows), " rows that are not in locations"))
+

@@ -9,6 +9,7 @@ load_dot_env()
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_textgov_paper_version")
 extract_list = list.files(network_fp)
+gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 locs <- read.csv('EJ_DAC_Paper/Data/locations.csv')
 
 ### convenience function for reading in and processing nodes
@@ -49,7 +50,7 @@ net_graph <- function(networklist){
    return(network_graph)
 }
 
-gsp_list <- net_process(paste0(network_fp, "/",extract_list[1]))
+gsp_list <- net_process(paste0(network_fp, "/",extract_list[15]))
 gsp_graph <- net_graph(gsp_list)
 
 isolates <- which(degree(gsp_graph) == 0)
@@ -57,5 +58,6 @@ graph_2 <- delete.vertices(gsp_graph, isolates)
 
 ggraph(gsp_graph, layout = 'kk') +
    geom_edge_link(color = "black", alpha = .5) + 
-   geom_node_point(aes(size = num_appearances, colour = place)) + 
+   geom_node_point(aes(size = num_appearances, colour = DAC)) + 
    theme_graph()
+

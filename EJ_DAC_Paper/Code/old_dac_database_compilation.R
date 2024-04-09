@@ -64,7 +64,10 @@ neighborhoods_df <- neighborhoods_df %>%
    ungroup()  %>% 
    distinct(place_name, .keep_all = TRUE)
 
-# ASSUMPTION: If there are multiple neighborhoods with the same name (which occurs very often because there are often multiple block groups within a single neighborhood), where some are DACs and some are not, the mean is taken for the neighborhood and rounded to 0 or 1
+# ASSUMPTION: If there are multiple neighborhoods with the same name (which 
+# occurs very often because there are often multiple block groups within a single 
+# neighborhood), where some are DACs and some are not, the mean is taken for the 
+# neighborhood and rounded to 0 or 1
 
 #places to get cities/towns/etc
 place_fp <- paste0(Sys.getenv("BOX_PATH"),
@@ -98,7 +101,9 @@ places_df <- places_df %>%
    ungroup()  %>%
    distinct(place_name, .keep_all = TRUE)
 
-# ASSUMPTION: If there are two places with the same name and one is a DAC (as is the case in Bayview, Cottonwood, Greenfield, Las Flores, and Live Oak) it is assumed to be a DAC. 
+# # ASSUMPTION: If there are two places with the same name and one is a DAC (as is 
+# the case in Bayview, Cottonwood, Greenfield, Las Flores, and Live Oak) it is 
+# assumed to be a DAC. 
 
 choose_place <- function(place_name_in){
    templocs <- locs %>% 
@@ -119,6 +124,9 @@ locs <- locs %>%
    ungroup()  %>%
    distinct(place_name, .keep_all = TRUE)
 
-# ASSUMPTION: If there are a neighborhood and a CDP with the same name (about 130 cases), the CDP takes precedence in DAC value. Thus if they are both the same, it will be correct in any case, but if they are different the neighborhood (which is less likely to show up) will take on the CDP DAC status
+# ASSUMPTION: If there are a neighborhood and a CDP with the same name 
+# (about 130 cases), the CDP takes precedence in DAC value. Thus if they are 
+# both the same, it will be correct in any case, but if they are different 
+# the neighborhood (which is less likely to show up) will take on the CDP DAC status
 
 write.csv(locs, "EJ_DAC_Paper/Data/locations.csv", row.names = FALSE)
