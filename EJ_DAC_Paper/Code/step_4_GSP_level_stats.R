@@ -1,11 +1,59 @@
+library(dotenv)
+library(ggraph)
+library(igraph)
+library(tidyverse)
+library(migraph)
+library(data.table)
 
-# graphing an example network
-gsp_list_test <- net_process(paste0(network_fp, "/",extract_list[3]))
-gsp_graph_test <- net_graph(gsp_list_test)
+load_dot_env()
 
-# compare 'eigenvector' based on groups defined by 'DAC'
-mean(V(gsp_graph_test)$eigenvector[V(gsp_graph_test)$DAC == 0], na.rm = TRUE)
-mean(V(gsp_graph_test)$eigenvector[V(gsp_graph_test)$DAC == 1], na.rm = TRUE)
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
+extract_list = list.files(network_fp)
+gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+
+dac_e_cent <- data.frame()
+
+# compare eigenvector centrality
+for (g in seq_along(gsp_ids)) {
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   gsp_id <- paste0("gsp_",gsp_ids[g])
+   dac_eig <- mean(V(net)$eigenvector[V(net)$DAC == 0], na.rm = TRUE)
+   non_dac_eig <- mean(V(net)$eigenvector[V(net)$DAC == 1], na.rm = TRUE)
+   new_row <- data.frame(gsp_id = gsp_id,
+                         dac_eig = dac_eig,
+                         non_dac_eig = non_dac_eig,
+                         hyp = dac_eig > non_dac_eig)
+   dac_e_cent <- rbind(dac_e_cent, new_row)
+}
+
+summary(dac_e_cent)
+
+dac_deg_df <- data.frame()
+
+# compare degree 
+for (g in seq_along(gsp_ids)) {
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   gsp_id <- paste0("gsp_",gsp_ids[g])
+   dac_deg <- mean(V(net)$degree[V(net)$DAC == 0], na.rm = TRUE)
+   non_dac_deg <- mean(V(net)$degree[V(net)$DAC == 1], na.rm = TRUE)
+   new_row <- data.frame(gsp_id = gsp_id,
+                         dac_deg = dac_deg,
+                         non_dac_deg = non_dac_deg,
+                         hyp = dac_deg > non_dac_deg)
+   dac_deg_df <- rbind(dac_deg_df, new_row)
+}
+
+summary(dac_deg_df)
+
+ggplot(dac_deg_df) +
+   geom_freqpoly(aes(non_dac_deg), binwidth=0.001, color = 'blue')+
+   geom_freqpoly(aes(dac_deg), binwidth=0.001, color = 'red')
+
+ggplot(dac_e_cent) +
+   geom_freqpoly(aes(non_dac_eig), binwidth=0.001, color = 'blue')+
+   geom_freqpoly(aes(dac_eig), binwidth=0.001, color = 'red')+
+   xlim(0, 0.01)
+
 
 isolates_test <- which(degree(gsp_graph_test) == 0)
 graph_2_test <- delete.vertices(gsp_graph_test, isolates_test)
