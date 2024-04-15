@@ -104,7 +104,7 @@ legend("topleft",
 
 ####################
 
-#Try to run sna statistics - chapter 6.2 in book
+#Try to run sna statistics - chapter 6.2 in book 
 
 g14 <- igraph::graph_from_data_frame(nrelations, direct = F)
 igraph::degree(g14)
