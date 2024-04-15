@@ -4,7 +4,6 @@ library(terra)
 library(dotenv)
 
 load_dot_env()
-api_key <- Sys.getenv("GOOGLE_MAPS_API")
 
 #places to get cities/towns/etc
 place_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/dac_shapefiles/place/pdac20.shp")
@@ -24,10 +23,21 @@ colnames(places_df) <- c('lat',
                          'POP',
                          'place_name')
 
-locs <- places_df %>% 
-   mutate(DAC = ifelse(DAC == 'N', 0, 1),
-          MHI = ifelse(MHI == 0, NA, MHI),
-          place_name = tolower(place_name),
-          place_name = gsub(" ", "_", place_name)) 
+## TODO
+## COLLECT RELEVANT CENSUS DATA
+## MERGE CENSUS DATA
+## FIX DUPLICATED PLACES 
 
-write.csv(locs, "EJ_DAC_Paper/Data/locations.csv", row.names = FALSE)
+places_out <- places_df %>% 
+   mutate(DAC = ifelse(DAC == 'N', 0, 1), # 0 = no DAC, 1 OR data not available = DAC
+          MHI = ifelse(MHI == 0, NA, MHI), 
+          place_name = tolower(place_name),
+          place_name = gsub(" ", "_", place_name)) %>% 
+   distinct(place_name, .keep_all = TRUE) # THIS IS A BAD ASSUMPTION AND NEEDS TO BE FIXED LATER
+      
+write.csv(places_out, "EJ_DAC_Paper/Data/places.csv", row.names = FALSE)
+
+# ISSUE OF DUPLICATED PLACES NEEDS TO BE FIXED
+dups <- duplicated(places_df$place_name) | duplicated(places_df$place_name, fromLast = TRUE)
+duplicated_places <- places_df[dups,] %>% arrange(place_name)
+duplicated_places
