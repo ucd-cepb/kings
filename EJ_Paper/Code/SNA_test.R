@@ -2,8 +2,6 @@
 #This script should only be run after the EJ orgs database is ready
 library(igraph)
 library(devtools)
-install.packages("ggraph")
-install_github("https://github.com/thomasp85/ggraph")
 library(ggraph)
 library(sna)
 library(stringr)
@@ -11,12 +9,10 @@ library(dplyr)
 library(data.table)
 library(pbapply)
 library(stringi)
-library(data.table)
 library(stringr)
 library(tidyverse)
 library(dplyr)
 library(plyr)
-library(ggplot2)
 ###Set up
 file_loc <- 'C:\\Users\\hgsha\\Box Sync\\Kings_Large_Files\\data\\EJ_Paper\\cleaned_extracts_textgov_paper_version\\'
 extract_list = list.files(file_loc)
@@ -39,8 +35,11 @@ nodelist_merge <- inner_join(nodes_007, org_nodes, by = c("entity_name", "entity
 network::as.network(edges_007) ###this throws up an error that there are NA values
 ###Need to ask how to run things when there is missing data
 
+######TESTING AGGREGATING MY DATA
+nodelist_merge$new_name <- gsub("wd$", "water_district", nodelist_merge$entity_name)
 
-###Test with complete edges - walking through iGraph vignette
+
+###Test with complete edgesvector()###Test with complete edges - walking through iGraph vignette
 ###https://ona-book.org/gitbook/restructuring-data.html
 edge_test <- edges_007 %>% filter(edgeiscomplete=="TRUE") %>%
    select(source, target)
@@ -88,7 +87,7 @@ legend("topleft",
 ###Drop "Drop" Category
 
 categories_to_filter <- c("Ambig", "Follow", "Drop")
-filtered_nodeinfo <- nodeinfo[!(nodeinfo$comb_org %in% categories_to_filter), ]
+filtered_nodeinfo <- nodeinfo[!(nodelist_merge$comb_org %in% categories_to_filter), ]
 categories_to_label <- c("NGO", "CBO")
 
 plot(nrelations, 
@@ -102,7 +101,27 @@ legend("topleft",
        fill = category_colors,
        cex = 0.4)
 
+###Network stats
+degree.direct <- degree(nrelations)
+between <- betweenness(nrelations)
+close <- closeness(nrelations)
+centralities <- cbind(degree.direct, between, close)
+write.csv(centralities, "centralities_test.csv")
+
 ####################
+##Filter nodelist merge
+filter(nodelist_merge$comb_org %in% c("CBO", "NGO"))
+
+cbo <- nodelist_merge %>%
+   filter(comb_org =='CBO' | comb_org == 'NGO')
+
+nl_gov <- nodelist_merge %>%
+   filter(comb_org == 'NL_Gov')
+special <- nodelist_merge %>%
+   filter(comb_org == 'Spec_Dist')
+gsa <-nodelist_merge %>%
+   filter(comb_org == 'GSA')
+
 
 #Try to run sna statistics - chapter 6.2 in book 
 
