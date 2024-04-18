@@ -2,6 +2,7 @@
 
 library(stm)
 library(data.table)
+library(stringr)
 filekey <- read.csv("filekey.csv")
 #### this code was taken from step08 ###
 inputsfilename <- filekey[filekey$var_name=="gsp_out_files",]$filepath
@@ -25,8 +26,6 @@ minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = 
 which_file <- which.max(minfo$mtime)
 model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
 
-frex_scores[24,]
-topic_ids
 # findTopic doens;'t handle regex
 # do it ourselves
 frex_scores <- labelTopics(model,n = 50)$frex
@@ -53,6 +52,7 @@ topic_nums})
 
 source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 
+### update w/ wells
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
                         'dw' = 'urbangw_af_log_scaled',
                         'cc' = 'maxdryspell_scaled',
@@ -143,7 +143,6 @@ confint_list <- lapply(1:nrow(inter_grid),function(i){
 
 confint_dt <- rbindlist(confint_list,use.names = T,fill = T)
 confint_dt$foci <- inter_grid$foci[match(confint_dt$covariate,inter_grid$covariate)]
-
 
 library(tidyverse)
 library(ggthemes)
