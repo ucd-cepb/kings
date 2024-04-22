@@ -16,6 +16,13 @@ extract_list = list.files(network_fp)
 # places and expected places
 places_raw <- read.csv('EJ_DAC_Paper/Data/places.csv')
 expected_places <- read_csv("EJ_DAC_Paper/Data/expected_places.csv")
+census <- read_csv("EJ_DAC_Paper/Data/ACS_2020_DP05/ACS_2020_DP05-Data.csv")
+census_latino <- census %>% 
+   select(GEO_ID,DP05_0071PE) %>% 
+   # last 6 digits of geoid
+   mutate(geoid = as.integer(substr(GEO_ID, 10, 16))) %>% 
+   select(-GEO_ID) %>% 
+   rename(per_latino = DP05_0071PE)
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
@@ -30,11 +37,14 @@ for (g in seq_along(gsp_ids)) {
       # only keep places for this GSP ID
       filter(GSP_ID == gsp_ids[g]) %>%
       # add MHI, POP, DAC, coords
-      left_join(places_raw, by = c('NAME20' = 'place_name')) %>% 
+      left_join(places_raw, by = c('GEOID20' = 'geoid')) %>% 
+      # add percent latino
+      left_join(census_latino, by = c('GEOID20' = 'geoid')) %>%
       # add places showing up in network
       left_join(gsp_list, by = c("NAME20" = "entity_name")) %>%
       # binary exists column based on if expected place is in network
-      mutate(exists = ifelse(is.na(entity_type), 0, 1)) %>% 
+      mutate(exists = ifelse(is.na(entity_type), 0, 1),
+             per_latino = as.numeric(per_latino) ) %>% 
       # remove network info
       select(-c('entity_type', 'num_appearances')) %>% 
       select(-GSP_ID, GSP_ID)

@@ -66,7 +66,7 @@ for (g in seq_along(gsp_ids)) {
            )
 }
 
-# gsp_list_test <- net_process(file = paste0(network_fp, "/",extract_list[3]),
-#                              gsp_id = gsp_ids[3])
-# 
-# gsp_graph_test <- net_graph(gsp_list_test)
+gsp_list_test <- net_process(file = paste0(network_fp, "/",extract_list[3]),
+                             gsp_id = gsp_ids[3])
+
+gsp_graph_test <- net_graph(gsp_list_test)

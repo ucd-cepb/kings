@@ -21,16 +21,19 @@ intersections = gpd.overlay(place_bounds, gsp_bounds, how='intersection')
 unique_places = intersections.dissolve(by='GSP_ID', 
                                        as_index=False,
                                        aggfunc = {
-                                           'NAME20': lambda x: x.unique(),
-                                           'Basin_Name': lambda x: x.unique()[0],
-                                           'Basin_Numb': lambda x: x.unique()[0], 
-                                           'Basin_Subb': lambda x: x.unique()[0],   
+                                        'NAME20': lambda x: x.unique(),
+                                        'GEOID20': lambda x: x.unique(),
+                                        'Basin_Name': lambda x: x.unique()[0],
+                                        'Basin_Numb': lambda x: x.unique()[0], 
+                                        'Basin_Subb': lambda x: x.unique()[0],   
                                        }) 
 
 unique_places.drop_duplicates(subset = ['GSP_ID'],inplace=True)
 
-expected_places = unique_places.drop(columns=['geometry', 'Basin_Numb', 'Basin_Name']).explode('NAME20')
+expected_places = unique_places.drop(columns=['geometry', 'Basin_Numb', 'Basin_Name']).explode(['NAME20','GEOID20'])
 
 expected_places['NAME20'] = expected_places['NAME20'].str.replace(' ', '_').str.lower()
+
+expected_places['GEOID20'] = expected_places['GEOID20'].astype(int)
 
 expected_places.to_csv("EJ_DAC_Paper/Data/expected_places.csv", index=False)
