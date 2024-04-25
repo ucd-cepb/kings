@@ -11,7 +11,6 @@ library(pbapply)
 library(stringi)
 library(stringr)
 library(tidyverse)
-library(dplyr)
 library(plyr)
 ###Set up
 file_loc <- 'C:\\Users\\hgsha\\Box Sync\\Kings_Large_Files\\data\\EJ_Paper\\cleaned_extracts_textgov_paper_version\\'
@@ -28,21 +27,42 @@ nodes_007 <- n$nodelist
 nodes_007 <- nodes_007[nodes_007$entity_type != 'PERSON']
 
 #Join nodelist with my list
-org_nodes <- read.csv("EJ_Paper/Data/Test/merged_dt.csv")
+org_nodes <- read.csv("EJ_Paper/Data/Test/merged_dt_4_24.csv")
 #Does not include GPE, only orgs
 nodelist_merge <- inner_join(nodes_007, org_nodes, by = c("entity_name", "entity_type"))
 
-network::as.network(edges_007) ###this throws up an error that there are NA values
+#network::as.network(edges_007) ###this throws up an error that there are NA values
 ###Need to ask how to run things when there is missing data
 
-######TESTING AGGREGATING MY DATA
-nodelist_merge$new_name <- gsub("wd$", "water_district", nodelist_merge$entity_name)
+######FIXING COMMON DUPLICATION PROBLEMS
+nodelist_merge$new_name <- gsub("_wd$", "_water_district", nodelist_merge$entity_name) #works
+nodelist_merge$new_name <- gsub("_s$", "", nodelist_merge$new_name) #works
+nodelist_merge$new_name <- gsub("^a_", "", nodelist_merge$new_name) #works
+nodelist_merge$new_name <- gsub("(.+?_)\\1+", "\\1", nodelist_merge$new_name) #works
+nodelist_merge$new_name <- gsub('([a-z]+_[a-z]+_)\\1+','\\1',nodelist_merge$new_name,perl = T) #works
+#nodelist_merge$new_name <- gsub('([a-z0-9]{1,}_[a-z0-9]{1,}_){2,}','\\1',nodelist_merge$new_name,perl = T) - still doesn't work
+#nodelist_merge$new_name <- gsub('([a-z0-9]{1,}_[a-z0-9]{1,}_)+','\\1',nodelist_merge$entity_name,perl = T) #removes too much
 
+nl_gov <- nodelist_merge %>%
+   filter(comb_org == 'NL_Gov')
+spec <- nodelist_merge %>%
+   filter(comb_org == 'Spec_Dist')
+cbo <- nodelist_merge %>%
+   filter(comb_org == 'CBO')
+
+project <- nodelist_merge %>%
+   filter(comb_org == 'Project')
+
+saveRDS(nrelations, file = "network.rds")
 
 ###Test with complete edgesvector()###Test with complete edges - walking through iGraph vignette
 ###https://ona-book.org/gitbook/restructuring-data.html
 edge_test <- edges_007 %>% filter(edgeiscomplete=="TRUE") %>%
    select(source, target)
+
+###
+###Need to add new names to edge_test
+###
 
 edge_m <- as.matrix(edge_test)
 isSymmetric(edge_m)
@@ -101,10 +121,22 @@ legend("topleft",
        fill = category_colors,
        cex = 0.4)
 
-###Network stats
-degree.direct <- degree(nrelations)
-between <- betweenness(nrelations)
-close <- closeness(nrelations)
+###NETWORK STATISTICS###
+
+##
+degree_cent <- degree(nrelations) #NUMBER OF EDGES
+degree_sna <- degree(nrelations, gmode = "digraph")
+degree_sna_in <- degree(nrelations, gmode = "digraph", cmode ="indegree")
+degree_sna_out <- degree(nrelations, gmode = "digraph", cmode ="outdegree")
+###Need to figure out how to drop 2 categories
+
+degree_out <- degree(nrelations, mode = "out")
+help(degree)
+degree_sna <- sna::degree(nrelations, gmode = "graph")
+
+degree_cent <- degree(edgelist, mode = "in")
+between_cent <- betweenness(edgelist) #NUMBER OF SHORTEST PATHS THAT PASS THROUGH NODE
+close_cent <- closeness(nrelations) #HOW CLOSE TO OTHER NODES IN NETWORK
 centralities <- cbind(degree.direct, between, close)
 write.csv(centralities, "centralities_test.csv")
 
