@@ -4,6 +4,7 @@ library(igraph)
 library(tidyverse)
 library(migraph)
 library(data.table)
+library(ggcorrplot)
 
 load_dot_env()
 
@@ -59,31 +60,33 @@ places_data <- data.frame()
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    gsp_id <- paste0("gsp_",gsp_ids[g])
-   places <- as_data_frame(induced_subgraph(net, which(V(net)$exists == 1)), what = "vertices")
-   places_data <- rbind(places_data, places)
+   places <- igraph::as_data_frame(induced_subgraph(net, which(V(net)$exists == 1)), what = "vertices")
+   places_data <- tibble(rbind(places_data, places))
 }
 
+places_data <- places_data %>% 
+   filter(!is.na(MHI))
+
+
+places_data_num <- places_data[, sapply(places_data, function (x) is.numeric(x))]
+places_data_num <- places_data_num %>% select(-c(lat, lng, GSP_ID,GEOID20, exists,closeness))
+pmat <- cor_pmat(places_data_num)
+cor_places <- cor(places_data_num)
+ggcorrplot(cor_places,
+           p.mat=pmat,
+           hc.order = TRUE,
+           type = 'lower',
+           lab = TRUE,
+           insig = 'blank')
+
 deg_mod <- lm(degree ~ MHI+POP+incorporated+per_latino, data = places_data); summary(deg_mod)
-clo_mod <- lm(closeness ~ MHI+POP+incorporated+per_latino, data = places_data); summary(clo_mod)
 eig_mod <- lm(eigenvector ~ MHI+POP+incorporated+per_latino, data = places_data); summary(eig_mod)
-bet_mod <- lm(betweeness ~ MHI+POP+incorporated+per_latino, data = places_data); summary(bet_mod)
 
-gsp_list_test <- net_process(file = paste0(network_fp, "/",extract_list[3]),
-                             gsp_id = gsp_ids[3])
-
-gsp_graph_test <- net_graph(gsp_list_test)
-
-isolates_test <- which(degree(gsp_graph_test) == 0)
-graph_2_test <- delete.vertices(gsp_graph_test, isolates_test)
-
-ggraph(gsp_graph_test, layout = 'kk') +
-   geom_edge_link(color = "black", alpha = .5) + 
-   geom_node_point(aes(size = num_appearances, colour = DAC)) + 
-   theme_graph()
 
 ## TODO
-## get census data
-## correlation table between community characteristics and place in network
+
+## indegree outdegree to ensure directionality to extent possible
+## only
 ## clean up stats
 ## simplify table of contents to 4/5 categories
 ## tage each edge to the section of the ToC it belongs to
