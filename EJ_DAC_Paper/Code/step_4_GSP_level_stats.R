@@ -12,6 +12,25 @@ network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACifie
 extract_list = list.files(network_fp)
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
+summary_all <- data.frame()
+
+for (g in seq_along(gsp_ids)) {
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   gsp_id <- paste0("gsp_",gsp_ids[g])
+   new_row <- data.frame(gsp_id = gsp_id,
+                         num_node = vcount(net),
+                         num_edge = ecount(net),
+                         # deg = mean(V(net)$degree, na.rm = TRUE),
+                         eig = mean(V(net)$eigenvector, na.rm = TRUE),
+                         # clos = mean(V(net)$closeness, na.rm = TRUE),
+                         # bet = mean(V(net)$betweenness, na.rm = TRUE),
+                         dist = mean(V(net)$leader_dist, na.rm = TRUE)
+   )
+   summary_all <- rbind(summary_all, new_row)
+}
+
+summary(summary_all %>% select(deg, eig, dist))
+
 dac_e_cent <- data.frame()
 
 # compare eigenvector centrality
@@ -64,8 +83,11 @@ for (g in seq_along(gsp_ids)) {
    places_data <- tibble(rbind(places_data, places))
 }
 
+
+
 places_data <- places_data %>% 
-   filter(!is.na(MHI))
+   filter(!is.na(MHI)) %>% 
+   filter(exists==1)
 
 
 places_data_num <- places_data[, sapply(places_data, function (x) is.numeric(x))]
@@ -83,10 +105,9 @@ deg_mod <- lm(degree ~ MHI+POP+incorporated+per_latino, data = places_data); sum
 eig_mod <- lm(eigenvector ~ MHI+POP+incorporated+per_latino, data = places_data); summary(eig_mod)
 
 
+
 ## TODO
 
-## indegree outdegree to ensure directionality to extent possible
-## only
 ## clean up stats
 ## simplify table of contents to 4/5 categories
 ## tage each edge to the section of the ToC it belongs to

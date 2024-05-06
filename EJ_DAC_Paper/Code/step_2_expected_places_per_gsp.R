@@ -51,4 +51,5 @@ for (g in seq_along(gsp_ids)) {
 }
 
 all_places <- bind_rows(places)
+saveRDS(places, "EJ_DAC_Paper/Data/place_existance.RDS")
 write_csv(all_places, "EJ_DAC_Paper/Data/all_places.csv")
