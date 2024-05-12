@@ -5,6 +5,7 @@ library(tidyverse)
 library(migraph)
 library(data.table)
 library(ggcorrplot)
+library(knitr)
 
 load_dot_env()
 
@@ -29,7 +30,11 @@ for (g in seq_along(gsp_ids)) {
    summary_all <- rbind(summary_all, new_row)
 }
 
-summary(summary_all %>% select(deg, eig, dist))
+sum_tab <- summary_all %>% 
+   select(-gsp_id) %>% 
+   summary()
+
+kable(sum_tab)
 
 dac_e_cent <- data.frame()
 
