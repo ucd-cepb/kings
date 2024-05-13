@@ -23,6 +23,8 @@ for (g in seq_along(gsp_ids)) {
    all_nodes <- rbind(all_nodes, nodes)
 }
 
+all_nodes <- tibble(all_nodes)
+
 ###
 ### HYPOTHESIS 1: DACs have lower existence than non-disadvantaged communities
 ###
@@ -43,7 +45,7 @@ exists_mod <- glm(exists ~ MHI+POP+incorporated+per_latino, data = all_places); 
 # t text for eigenvector centrality
 eig_t <- t.test(all_nodes$eigenvector ~ all_nodes$DAC); eig_t
 
-eig_mod <- lm(eigenvector ~ MHI+POP+incorporated+per_latino, data = all_nodes); summary(eig_mod)
+eig_mod <- lm(eigenvector ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_nodes); summary(eig_mod)
 
 
 ###
@@ -52,7 +54,7 @@ eig_mod <- lm(eigenvector ~ MHI+POP+incorporated+per_latino, data = all_nodes); 
 
 lead_t <- t.test(all_nodes$leader_dist ~ all_nodes$DAC); lead_t
 
-lead_mod <- lm(leader_dist ~ MHI+POP+incorporated+per_latino, data = all_nodes); summary(lead_mod)
+lead_mod <- lm(leader_dist ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_nodes); summary(lead_mod)
 
 ###
 ### HYPOTHESIS 4: MHI threshold
