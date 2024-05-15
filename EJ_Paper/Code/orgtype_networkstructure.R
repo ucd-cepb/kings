@@ -20,24 +20,17 @@ org_nodes <- read.csv("C:\\Users\\hgsha\\Desktop\\kings\\EJ_Paper\\Data\\Test\\m
 
 
 #Create table
-results <- data.frame((matrix(NA, nrow=126, ncol = 16)))
-names(results) <- c("ID","Ambig", "CBO","Coalition","Consult",
-                    "Drop","Follow", "GSA","Loc_Gov",
-                    "NGO","NL_Gov","Private", "Project", 
-                    "Research", "Spec_Dist","WC")
-id_numbers <- seq(7,132)
-results$ID <- sprintf("%03d", id_numbers)
+empty_df <- data.frame()
 
 
-
-results <- data.frame((matrix(NA, nrow=1, ncol = 18)))
+results <- data.frame((matrix(, nrow=1, ncol = 18)))
 names(results) <- c("Ambig", "CBO","Coalition","Consult",
                     "Drop","Follow", "GSA","Loc_Gov", "Nat_Am",
                     "NGO","NL_Gov", "Other", "Private", "Project", "RCD",
                     "Research", "Spec_Dist","WC")
 
 
-for(file in extract_list[1:5]){
+for(file in extract_list[1]){
    print(file)
    temp = readRDS(file)
    #read in edgelist
@@ -46,38 +39,21 @@ for(file in extract_list[1:5]){
    #only use complete edges
    edge_complete <- temp$edgelist %>% filter(edgeiscomplete=="TRUE") %>%
       select(source, target)
-   #remove GPE and People
-   #grab_orgs <- function(file,drop = c('PERSON', 'GPE')){
-      # read in rds file
-    #  temp = readRDS(file)
-      # isolate nodelist
-     # nodes = temp$nodelist
-      # filter out node types we don't want
-      #nodes = nodes[!nodes$entity_type%in% drop,]
-      #return(nodes)
-   #}
-   #nodes = for(file in extract_list[1]){
-    #  print(file)
-     # temp = grab_orgs(paste0(file_loc,file))
-      #empty_node_dt <- rbind(empty_node_dt,temp,fill = T,use.names = T)
-      #empty_node_dt = empty_node_dt[,list(num_appearances = sum(num_appearances)),
-                                #    by=.(entity_name,entity_type)]
-   #}
-   #merge files
+   #merge nodelist
    nodelist_merge <- inner_join(temp$nodelist, org_nodes, by = c("entity_name", "entity_type"))
+   #create networks
    net <- network(edge_complete, matrix.type="edgelist", loops = T, 
                   directed = T, duplicates = TRUE, multiple = T)
+   #remove duplicates for igraph
    duplicated_vertices <- nodelist_merge$entity_name[duplicated(nodelist_merge$entity_name)]
    if(length(duplicated_vertices)>0 ) {
       nodelist_merge <- nodelist_merge[!duplicated(nodelist_merge$entity_name),]
    }
-   #remove missing vertex namesmissing_vertices <- setdiff(unique(edge_complete$source), unique(nodelist_merge$entity_name))
+   #Remove misaligned vertex/edge items
    missing_vertices <- setdiff(unique(edge_complete$source), unique(nodelist_merge$entity_name))
-   print(missing_vertices)
    edge_complete_s <- edge_complete[!edge_complete$source %in% missing_vertices, ]
    
    missing_vertices_t <-setdiff(unique(edge_complete_s$target), unique(nodelist_merge$entity_name))
-   print(missing_vertices_t)
    edge_complete_all <- edge_complete_s[!edge_complete_s$target %in% missing_vertices_t,]
    
    #try network again
@@ -90,14 +66,52 @@ for(file in extract_list[1:5]){
    head(V(igr)$entity_type)
    head(V(igr)$name)
    
-   #try calculation
-   count_org <- table(V(igr)$comb_org)
-   print(count_org)
-   results <- rbind(results, count_org)
+   #make objects out of node attributes
+   vertex_names <- V(igr)$name
+   comb_org <- V(igr)$comb_org
+   
+   #make df out of selected items
+   node_attr <- data.frame(Name = vertex_names, comb_org = comb_org)
+   edgelist <- as.data.frame(as_edgelist(igr))
+   
+   org_counts <- table(node_attr$comb_org)
+   print(org_counts)
+   org_counts_df <- as.data.frame(org_counts)
+   class(org_counts_df)
+   row.names(org_counts_df) <- org_counts_df$Var1
+   org_counts_df <- subset(org_counts_df, select = -Var1)
+   t_org <- t(org_counts_df)
+   t_org_df <- as.data.frame(t_org)
+   
+#merge data
+   columns <- colnames(results)
+   for (col in columns) {
+      if(col %in% colnames(t_org_df)) {
+         results[[col]] <- t_org_df[[col]]
+      } else {
+         results[[col]] <- rep(0, nrow(results))
+      }
+   }
+   print(results)
+   
+}
+
+
+   
+  # count_org <- table(V(igr)$comb_org)
+   #print(count_org)
+   #rbind works when just binding this and an empty dataframe
+
+      #try calculation
+   #empty_df<- data.frame()
+   #for (file in extract_list[1]) {
+    #  net.list = readRDS(file)
+     # tb = table(V(igr)$comb_org)
+      #empty_df <- plyr::rbind.fill(empty_df, data.frame(rbind(tb)))
+   }
    }
 print(results)
-
-
+?rbind
 #remove missing nodes
 missing_vertices <- setdiff(unique(edge_complete_1$source), unique(nodelist_merge$entity_name))
 print(missing_vertices)
@@ -119,7 +133,7 @@ edge_complete_1 <- edge_complete[!edge_complete$source %in% missing_vertices & !
 ??graph_from_data_frame
 
 ##DRAFT - IGNORE
-for(file in extract_list[1:2]){
+for(file in extract_list[1:3]){
    print(file)
    temp = readRDS(file)
    edges = temp$edgelist
