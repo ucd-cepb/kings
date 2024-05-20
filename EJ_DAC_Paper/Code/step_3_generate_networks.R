@@ -85,10 +85,12 @@ net_graph <- function(networklist, gsp_id){
                       gsa_names, 
                       by = "GSA_ID")$GSA_Name
    gsa_names <- c(gsa_names, 'groundwater_sustainability_agency') #add in deafult
-   
+   print(gsa_names)
    #distance to gsa(s)
    gsa_ins <- which(V(network_graph)$name %in% gsa_names)
-   mean_dist <- list()
+   mean_dist <- data.frame(matrix(ncol = length(gsa_ins), nrow = vcount(network_graph)))
+   colnames(mean_dist) <- paste0('X', gsa_ins)
+   
    for (i in gsa_ins){
       dist <- distances(network_graph, 
                         to=i,
@@ -97,16 +99,31 @@ net_graph <- function(networklist, gsp_id){
       dist[is.nan(dist)] <- NA # replace NA with NA
       mean_dist[[paste0('X', i)]] <- dist
    }
-   
+   colnames(mean_dist) <- V(network_graph)$name[gsa_ins]
+      
    # calculate leader distance per node
-   leader_dist_raw <- data.frame(mean_dist)
    leader_weights <- V(network_graph)[gsa_ins]$num_appearances
-   weighted_dists <- (sweep(leader_dist_raw, 2, leader_weights, "*")) 
-   leader_dist <- rowSums(weighted_dists, na.rm = TRUE) / sum(leader_weights)
+   leader_weights <- leader_weights / sum(leader_weights)
+   print(leader_weights)
+   print(head(mean_dist))
+   weighted_dists <- (sweep(mean_dist, 2, leader_weights, "*")) 
+   print(head(weighted_dists))
+   leader_dist_weight <- rowSums(weighted_dists, na.rm = TRUE) 
+   leader_dist_unweight <- rowMeans(mean_dist, na.rm = TRUE)
+   leader_dist_min <- apply(mean_dist, 1, min, na.rm = TRUE)
+   
+   ## ADD IN schematic 
+   ## SCALE network stats (eig) by mean/sd 
    
    network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist',
-                                    value = leader_dist)
+                                    'leader_dist_w',
+                                    value = leader_dist_weight)
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist_uw',
+                                    value = leader_dist_unweight)
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist_min',
+                                    value = leader_dist_min)
    network_graph <- set_vertex_attr(network_graph, 
                                     'degree',
                                     value = node_degree(network_graph))
@@ -161,7 +178,7 @@ net_graph <- function(networklist, gsp_id){
       sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$projects_mgmt_actions)
    })
    
-   return(network_graph_simp)
+   return(list(network_graph_simp, mean_dist))
 }
 
 # apply functions to all networks

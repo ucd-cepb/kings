@@ -1,0 +1,174 @@
+---
+output: pdf_document
+---
+
+```{r, include=FALSE}
+library(dotenv)
+library(tidyverse)
+library(stargazer)
+library(ggraph)
+library(igraph)
+library(migraph)
+library(data.table)
+library(ggcorrplot)
+
+setwd("~/Documents/WORK/kings")
+load_dot_env()
+
+place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
+all_places <- bind_rows(place_existance)
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
+extract_list = list.files(network_fp)
+gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+
+
+all_nodes <- data.frame()
+
+for (g in seq_along(gsp_ids)) {
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   gsp_id <- paste0("gsp_",gsp_ids[g])
+   nodes <- igraph::as_data_frame(net, what = "vertices")
+   nodes$gsp_id <- gsp_id
+   all_nodes <- rbind(all_nodes, nodes)
+}
+
+all_place_nodes <- tibble(all_nodes) %>% 
+   filter(exists == 1) %>% 
+   rename(admin= admin_sum, 
+          basin_plan = basin_plan_sum, 
+          sust_criteria = sust_criteria_sum, 
+          monitoring_networks = monitoring_networks_sum, 
+          projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
+   mutate(eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
+          leader_std = (leader_dist - mean(leader_dist, na.rm=TRUE)) / sd(leader_dist, na.rm=TRUE),
+          MHI_std = MHI/10000,
+          POP_std = POP/1000000)
+   
+   
+place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
+all_places <- bind_rows(place_existance)
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
+extract_list = list.files(network_fp)
+gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+
+
+```
+
+
+
+###
+### HYPOTHESIS 2: DACs have lower eigenvector centrality than non-disadvantaged communities
+###
+
+```{r, results='asis'}
+# t text for eigenvector centrality
+eig_t <- t.test(all_place_nodes$eig_std ~ all_place_nodes$DAC); eig_t
+lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
+
+```
+
+
+
+###
+### HYPOTHESIS 3: DACs have lower leader closeness than non-disadvantaged communities
+###
+
+```{r, results='asis'}
+
+eig_mod <- lm(eig_std ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino+
+                 admin+
+                 basin_plan+
+                 sust_criteria+
+                 monitoring_networks+
+                 projects_mgmt_actions,
+              data = all_place_nodes)
+
+eig_mod_simp <- lm(eig_std ~ MHI_std, data = all_place_nodes)
+
+lead_mod <- lm(leader_std ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino+
+                 admin+
+                 basin_plan+
+                 sust_criteria+
+                 monitoring_networks+
+                 projects_mgmt_actions,
+              data = all_place_nodes)
+
+lead_mod_simp <- lm(leader_std ~ MHI_std, data = all_place_nodes)
+
+stargazer(eig_mod, eig_mod_simp, lead_mod, lead_mod_simp, type='latex')
+
+
+```
+
+<!-- ### -->
+<!-- ### HYPOTHESIS 4a: DACs appear in the ADMIN section of the GSPs less than non-disadvantaged communities -->
+<!-- ### -->
+<!-- ```{r, results='asis'} -->
+
+<!-- admin_t <- t.test(all_place_nodes$admin_sum ~ all_place_nodes$DAC); admin_t -->
+
+<!-- admin_mod <- lm(admin_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
+<!-- admin_mod_2 <- lm(admin_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
+<!-- admin_mod_3 <- lm(admin ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+
+<!-- stargazer(admin_mod, admin_mod_2, admin_mod_3, type='latex') -->
+<!-- ``` -->
+
+<!-- ### -->
+<!-- ### HYPOTHESIS 4b: DACs appear in the BASIN PLAN section of the GSPs less than non-disadvantaged communities -->
+<!-- ### -->
+<!-- ```{r, results='asis'} -->
+<!-- basin_plan_t <- t.test(all_place_nodes$basin_plan_sum ~ all_place_nodes$DAC); basin_plan_t -->
+<!-- basin_plan_mod <- lm(basin_plan_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
+<!-- basin_plan_mod_2 <- lm(basin_plan_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
+<!-- basin_plan_mod_3 <- lm(basin_plan ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+
+<!-- stargazer(basin_plan_mod, basin_plan_mod_2, basin_plan_mod_3, type='latex') -->
+<!-- ``` -->
+
+<!-- ### -->
+<!-- ### HYPOTHESIS 4c: DACs appear in the SUSTAINABLE CRITERIA section of the GSPs less than non-disadvantaged communities -->
+<!-- ### -->
+<!-- ```{r, results='asis'} -->
+<!-- sust_criteria_t <- t.test(all_place_nodes$sust_criteria_sum ~ all_place_nodes$DAC); sust_criteria_t -->
+
+<!-- sust_criteria_mod <- lm(sust_criteria_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
+<!-- sust_criteria_mod_2 <- lm(sust_criteria_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
+<!-- sust_criteria_mod_3 <- lm(sust_criteria ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+
+<!-- stargazer(sust_criteria_mod, sust_criteria_mod_2, sust_criteria_mod_3, type='latex') -->
+<!-- ``` -->
+
+<!-- ### -->
+<!-- ### HYPOTHESIS 4d: DACs appear in the MONITORING NETWORKS section of the GSPs less than non-disadvantaged communities -->
+<!-- ### -->
+<!-- ```{r, results='asis'} -->
+<!-- monitoring_networks_t <- t.test(all_place_nodes$monitoring_networks_sum ~ all_place_nodes$DAC); monitoring_networks_t -->
+
+<!-- monitoring_networks_mod <- lm(monitoring_networks_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
+<!-- monitoring_networks_mod_2 <- lm(monitoring_networks_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
+<!-- monitoring_networks_mod_3 <- lm(monitoring_networks ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+
+<!-- stargazer(monitoring_networks_mod, monitoring_networks_mod_2, monitoring_networks_mod_3, type='latex') -->
+<!-- ``` -->
+
+<!-- ### -->
+<!-- ### HYPOTHESIS 4e: DACs appear in the PROJECT MANAGEMENT ACTIONS section of the GSPs less than non-disadvantaged communities -->
+<!-- ### -->
+<!-- ```{r, results='asis'} -->
+<!-- projects_mgmt_actions_t <- t.test(all_place_nodes$projects_mgmt_actions_sum ~ all_place_nodes$DAC); projects_mgmt_actions_t -->
+
+<!-- projects_mgmt_actions_mod <- lm(projects_mgmt_actions_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
+<!-- projects_mgmt_actions_mod_2 <- lm(projects_mgmt_actions_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
+<!-- # projects_mgmt_actions_mod_3 <- lm(projects_mgmt_actions ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+
+<!-- stargazer(projects_mgmt_actions_mod, projects_mgmt_actions_mod_2, type='latex') -->
+
+<!-- ``` -->
+

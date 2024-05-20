@@ -1,3 +1,4 @@
+library(dotenv)
 library(tidyverse)
 library(stargazer)
 library(ggraph)
@@ -5,6 +6,8 @@ library(igraph)
 library(migraph)
 library(data.table)
 library(ggcorrplot)
+
+load_dot_env()
 
 place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
 all_places <- bind_rows(place_existance)
