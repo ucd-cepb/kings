@@ -10,15 +10,13 @@ library(devtools)
 library(statnet)
 library(ggplot2)
 #Set directory
-file_loc <- 'C:\\Users\\hgsha\\Box Sync\\Kings_Large_Files\\data\\EJ_Paper\\cleaned_extracts_textgov_paper_version\\'
+file_loc <- 'data/EJ_Paper/cleaned_extracts_textgov_paper_version/'
 extract_list = list.files(file_loc)
 #files
-org_nodes <- read.csv("C:\\Users\\hgsha\\Desktop\\kings\\EJ_Paper\\Data\\Test\\merged_dt_4_24.csv")
+org_nodes <- read.csv("EJ_Paper/Data/Test/merged_dt_4_24.csv")
 #Create table
 #Create table
 empty_df <- data.frame()
-
-extract_list
 
 #Start of the loop
 for(file in extract_list){
@@ -68,6 +66,7 @@ for(file in extract_list){
    stats_df$FILE = file
    empty_df <- plyr::rbind.fill(empty_df,stats_df)
 }
+empty_df
 
 #Summary degree centralization; ##NEED TO RUN HISTOGRAM
 Central <- ggplot(empty_df, aes(x = degree_centralization)) +
@@ -90,6 +89,13 @@ percentage_df <- as.data.frame(lapply(
 
 #appropriate packages
 library(ggplot2)
+
+head(percentage_df)
+library(tidyr)
+
+melt_version = tidyr::pivot_longer(percentage_df,cols = which(colnames(percentage_df) %in% org_type))
+ggplot(melt_version,aes(x = value,fill = name)) + geom_histogram()+
+   facet_wrap(~name) + theme_bw() + guides(fill = F)
 
 
 #Create histogram
@@ -340,9 +346,8 @@ org_type_df <- org_type_df %>% mutate_all(
 empty_df <- data.frame()
 
 
-for(file in extract_list[1:2]){
+result_by_graph <- lapply(extract_list,function(file){
    print(file)
-   #file = extract_list[1]
    temp = readRDS(paste0(file_loc,file))
    #read in edgelist
    edges = temp$edgelist
@@ -378,20 +383,23 @@ for(file in extract_list[1:2]){
    comb_org <- V(igr)$comb_org
    
    #calculate degree
-   V(igr)$degree <- igraph::degree(igr)
-   degree <- V(igr)$degree
-   
-   #make df out of selected items
-   degree_empty <- data.frame()
-   degree_df<- data.frame(org_type = comb_org, degree = degree)
-   df <- degree_df %>%
-      dplyr::group_by(org_type) %>%
-      dplyr::summarise(mean_deg = mean(degree, na.rm=T)) %>% data.frame()
-   
-   transposed_df <- t(df$mean_deg)
-   colnames(transposed_df) <- df$org_type
+   V(igr)$degree <- igraph::degree(igr,mode = 'total')
+   # degree <- V(igr)$degree
+   # 
+   # #make df out of selected items
+   # degree_empty <- data.frame()
+   # degree_df<- data.frame(org_type = comb_org, degree = degree)
+   # df <- degree_df %>%
+   #    dplyr::group_by(org_type) %>%
+   #    dplyr::summarise(mean_deg = mean(degree, na.rm=T)) %>% data.frame()
+   # 
+   # 
+   #transposed_df <- t(df$mean_deg)
+   transposed_df <- t(tapply( V(igr)$degree, V(igr)$comb_org,mean))
+
+   colnames(trannetcolnames(transposed_df) <- df$org_type
    transposed_df <- data.frame(transposed_df) #puts it in the right format
-  
+   colnames(transposed_df) <- paste0(colnames(transposed_df),'.meandegree')
    ##NEED TO FINISH THIS
 
    #summ_df <- plyr::rbind.fill(degree_empty, summ_df)
@@ -402,16 +410,27 @@ for(file in extract_list[1:2]){
    edgelist <- as.data.frame(as_edgelist(igr))
    org_counts <- table(node_attr$comb_org)
    org_counts_df <- data.frame(rbind(org_counts))
+   colnames(org_counts_df) <- paste0(colnames(org_type_df),'.count')
    motif_counts_df <- data.frame(rbind(summary(net ~ edges + triangles + twopath)))
    graph_stats_df <- data.frame(network_density = network.density(net),
                                 degree_centralization = sna::centralization(net,sna::degree))
    stats_df = cbind(org_counts_df,motif_counts_df,graph_stats_df, transposed_df) ##why isn't summ_df getting into empty df
    stats_df$FILE = file
-   empty_df <- plyr::rbind.fill(empty_df,stats_df, graph_stats_df) ##why is it copying rows?
+   stats_df ##why is it copying rows?
 }
+)
+#### this function in data.table takes a list object where each item in the list is a data.frame (or data.table)
+   #### and it binds them all together
+graph_dt = data.table::rbindlist(result_by_graph,use.names = T,fill = T)
+
+
+
+
+
 
 library(tidyr)
 
+empty_df
 #Test summarize
 degree_df<- data.frame(org_type = comb_org, degree = degree)
 summ_df <- data.frame(degree_df %>% 
