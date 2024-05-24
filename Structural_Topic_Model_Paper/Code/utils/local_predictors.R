@@ -24,31 +24,39 @@ gsp = st_read(fl)
 
 ###### VOTE DATA -- 2016 HOUSE ELECTIONS BY PRECINCT --- #####
 #### OVERLAID ON GSP BOUNDARIES ####
-prec <- fread(filekey[filekey$var_name=="precincts_2016",]$filepath)
-prec <- prec[state=='California',]
-prec$cfips <- formatC(prec$county_fips,width = 5,flag = '0')
-prec$prec_key <- paste0(prec$cfips,prec$precinct)
-votes_by_precinct <- prec[,sum(votes),by=.(prec_key,year,stage,party)]
-votes_by_precinct[,total_votes:=sum(V1),by=.(prec_key,year,stage)]
-votes_by_precinct[,vote_share:=V1/total_votes]
-rep_vote_share_2016 <- votes_by_precinct[party=='republican',]
-prec2016 <- st_read(filekey[filekey$var_name=="precincts_spatial_2016",]$filepath)
+prec <- fread(filekey[filekey$var_name=="precincts_2018_primary",]$filepath)
+#prec <- prec[state=='California',]
+prec$cfips <- paste0('06',formatC(prec$COUNTY,width = 3,flag = '0'))
+prec$prec_key <- prec$SRPREC_KEY
 
-prec2016$total_votes <- votes_by_precinct$total_votes[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
-prec2016$rep_vote_share <- votes_by_precinct$vote_share[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
-prec2016$rep_votes <- votes_by_precinct$V1[match(prec2016$SRPREC_KEY,votes_by_precinct$prec_key)]
+votes_by_precinct <- prec[,list(sum(REP),sum(TOTREG_R)),by=.(SRPREC_KEY)]
+setnames(votes_by_precinct,c('V1','V2'),c('REP_VOTES','TOTAL_VOTES'))
+#votes_by_precinct <- prec[,sum(votes),by=.(prec_key,year,stage,party)]
+#votes_by_precinct[,total_votes:=sum(V1),by=.(prec_key,year,stage)]
+#votes_by_precinct[,vote_share:=V1/total_votes]
+#rep_vote_share_2018 <- votes_by_precinct[party=='republican',]
 
+rep_vote_share_2018_primary <- votes_by_precinct#[TOTAL_VOTES>0,]
+rep_vote_share_2018_primary$vote_share = rep_vote_share_2018_primary$REP_VOTES/rep_vote_share_2018_primary$TOTAL_VOTES
 
-prec2016 <- st_transform(prec2016,albersNA)
+prec2018 <- st_read(filekey[filekey$var_name=="precincts_spatial_primary_2018",]$filepath)
+#prec2018 <- prec2018[prec2018$PRECINCT!='water',]
+join_index <- match(prec2018$SRPREC_KEY,rep_vote_share_2018_primary$SRPREC_KEY)
+
+prec2018$total_votes <- rep_vote_share_2018_primary$TOTAL_VOTES[join_index]
+prec2018$rep_vote_share <- rep_vote_share_2018_primary$vote_share[join_index]
+prec2018$rep_votes <- rep_vote_share_2018_primary$REP_VOTES[join_index]
+
+prec2018 <- st_transform(prec2018,albersNA)
 gsp <- st_transform(gsp, albersNA)
 library(lwgeom)
-prec2016 <- st_make_valid(prec2016)
+prec2018 <- st_make_valid(prec2018)
 gsp <- st_make_valid(gsp)
 
-prec2016$total_votes[is.na(prec2016$total_votes)]<-0
-prec2016$rep_votes[is.na(prec2016$rep_votes)]<-0
-inters = st_intersection(st_buffer(gsp,0),prec2016)
-inters$precinct_total_area <- st_area(prec2016)[match(inters$SRPREC_KEY,prec2016$SRPREC_KEY)]
+prec2018$total_votes[is.na(prec2018$total_votes)]<-0
+prec2018$rep_votes[is.na(prec2018$rep_votes)]<-0
+inters = st_intersection(st_buffer(gsp,0),prec2018)
+inters$precinct_total_area <- st_area(prec2018)[match(inters$SRPREC_KEY,prec2018$SRPREC_KEY)]
 inters$intersect_area <- st_area(inters)
 inters$prop = inters$intersect_area/inters$precinct_total_area 
 rep_vote_share_by_gsp = inters %>% 
@@ -57,9 +65,8 @@ rep_vote_share_by_gsp = inters %>%
    group_by(GSP.ID) %>%
    summarise(rep_votes = sum(rep_votes_weighted),tot_votes = sum(tot_votes_weighted)) %>%
    mutate(rep_vote_share = rep_votes/tot_votes)
-
+summary(rep_vote_share_by_gsp$rep_vote_share)
 gsp$Republican_Vote_Share <- rep_vote_share_by_gsp$rep_vote_share[match(gsp$GSP.ID,rep_vote_share_by_gsp$GSP.ID)]
-
 
 gdp <- fread(filekey[filekey$var_name=="bea_gdp",]$filepath,skip = 3)
 gdp <- gdp[-c(which(gdp$GeoFips==''):nrow(gdp)),]
@@ -126,5 +133,5 @@ gsp$local_govs_per_10k_people <- govs_per_10k_people$govs_per_10k_people[match(g
 
 ### object that now has four gsp-level context predictors
 ## Republican_Vote_Share, Agr_Share_Of_GDP, Perc_Bach_Degree_Over25, local_govs_per_10k_people
-gsp
+
 gsp_local <- gsp[,c("GSP.ID","Republican_Vote_Share","Agr_Share_Of_GDP","Perc_Bach_Degree_Over25","local_govs_per_10k_people", "geometry")]

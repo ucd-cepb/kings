@@ -21,7 +21,7 @@ generate_proper_names <- function(underscore = F, to_lower=T){
    #https://www2.census.gov/programs-surveys/popest/tables/2020-2022/cities/totals/SUB-IP-EST2022-POP-06.xlsx
    
    #filter out state names from org list
-   agency_names <- as_tibble(read_csv("data/raw_large_files/agency_list.csv")) %>% 
+   agency_names <- as_tibble(read_csv("data/Multipurpose_Files/agency_list.csv")) %>% 
       filter(agencytypes != "Western States Water Agencies and Districts")
    
    agencies_generic <- 
@@ -31,7 +31,7 @@ generate_proper_names <- function(underscore = F, to_lower=T){
       .default = NA_character_
    )
    agencies <- agency_names$agencies
-   
+
    #adds an important agency not captured properly by website
    if(to_lower==T){
       agencies <- append(agencies,"state water resources control board")
@@ -69,14 +69,14 @@ generate_proper_names <- function(underscore = F, to_lower=T){
    
    basins_generic <- rep("gw_basin",length(basins))
    
-   gsas <- readRDS(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T)[
-      length(list.files(path = "data/output_large_files", pattern = "web_repaired", full.names = T))])
+   gsas <- readRDS(list.files(path = "data/Structural_Topic_Model_Paper/", pattern = "web_repaired", full.names = T)[
+      length(list.files(path = "data/Structural_Topic_Model_Paper/", pattern = "web_repaired", full.names = T))])
    gsas <- gsas$name_gsas
    #remove parentheses
    gsas <- str_squish(unlist(lapply(gsas, function(b) str_split(b,"\\(")[[1]][1])))
    gsas_generic <- rep("a_gsa",length(gsas))  
     
-   calcities <- read_excel("data/raw_large_files/California_Cities_Population_Estimates.xlsx")
+   calcities <- read_excel("data/Multipurpose_Files/California_Cities_Population_Estimates.xlsx")
    colnames(calcities) <- c("name","apr2020","jul2020","jul2021","jul2022")
    calcities <- calcities[4:(nrow(calcities)-5),]
    calcities$name <- unlist(lapply(calcities$name, function(b) str_split(b, ",")[[1]][1]))
@@ -89,12 +89,12 @@ generate_proper_names <- function(underscore = F, to_lower=T){
    if(to_lower==T){
       calcities$name <- tolower(calcities$name)
       place_names <- as_tibble(read.table(
-         "data/raw_large_files/2021_Gaz_place_national.txt",
+         "data/Multipurpose_Files/2021_Gaz_place_national.txt",
          sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") %>% 
          mutate(NAME = tolower(NAME))
    } else{
       place_names <- as_tibble(read.table(
-         "data/raw_large_files/2021_Gaz_place_national.txt",
+         "data/Multipurpose_Files/2021_Gaz_place_national.txt",
          sep="\t", quote = "", header=TRUE)) %>% filter(USPS == "CA") 
    }
    places_generic <- ifelse(grepl(" cdp", tolower(place_names$NAME)),"a_cdp",
@@ -123,11 +123,11 @@ generate_proper_names <- function(underscore = F, to_lower=T){
    places <- places[!grepl(patt, places)]
    
    if(to_lower==T){
-      cnty_names <- as_tibble(read.table("data/raw_large_files/2021_Gaz_counties_national.txt",
+      cnty_names <- as_tibble(read.table("data/Multipurpose_Files/2021_Gaz_counties_national.txt",
                                          sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA") %>% 
          mutate(NAME = tolower(NAME))
    } else{
-      cnty_names <- as_tibble(read.table("data/raw_large_files/2021_Gaz_counties_national.txt",
+      cnty_names <- as_tibble(read.table("data/Multipurpose_Files/2021_Gaz_counties_national.txt",
                                          sep="\t", quote = "", header = TRUE)) %>% filter(USPS == "CA")
    }
    

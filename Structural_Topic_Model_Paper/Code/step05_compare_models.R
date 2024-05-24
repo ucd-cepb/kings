@@ -24,8 +24,10 @@ kdiagpath <- paste(kdiagfilenamesplits[1:(length(kdiagfilenamesplits)-1)],collap
 kdiagpattern <- kdiagfilenamesplits[length(kdiagfilenamesplits)]
 
 #when running
+
 #set with a higher convergence tolerance to speed estimates for the appropriate number of topics
 while(counter <= 14){
+   print(counter)
    k_saves <- list.files(path = kdiagpath, pattern = kdiagpattern, full.names = T)
    # prepare regular expression
    dig_regex <- "[[:digit:]]+"
@@ -51,7 +53,8 @@ while(counter <= 14){
    print(paste0("Now generating model with ",k_str, " topics"))
    
    if(file.exists(filekey[filekey$var_name=="heldout",]$filepath)) {
-      heldout <- readRDS("heldout")
+      ##### this used to just say readRDS("heldout") which didnt' work###
+      heldout <- readRDS(filekey[filekey$var_name=="heldout",]$filepath)
    }else{
       heldout <- make.heldout(obj$documents,
                               obj$vocab, 
@@ -76,15 +79,15 @@ while(counter <= 14){
                        maxdryspell_scaled +
                        Agr_Share_Of_GDP_scaled +
                        Republican_Vote_Share_scaled +
-                       Perc_Bach_Degree_Over25_scaled +
-                       local_govs_per_10k_people_log_scaled +
+                      # Perc_Bach_Degree_Over25_scaled +
+                      # local_govs_per_10k_people_log_scaled +
                        mult_gsas +
                        gwsum,
                     init.type = "Spectral",
                     max.em.its = 30,
                     emtol = 0.001,
                     data = obj$meta)
-      saveRDS(k_model, paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
+      saveRDS(k_model, file = paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
       while (!k_model$convergence$converged){
          k_model <- stm(heldout$documents, heldout$vocab, 
                         K = k_choice,
@@ -99,8 +102,8 @@ while(counter <= 14){
                            maxdryspell_scaled +
                            Agr_Share_Of_GDP_scaled +
                            Republican_Vote_Share_scaled +
-                           Perc_Bach_Degree_Over25_scaled +
-                           local_govs_per_10k_people_log_scaled +
+                           #Perc_Bach_Degree_Over25_scaled +
+                           #local_govs_per_10k_people_log_scaled +
                            mult_gsas +
                            gwsum,
                         init.type = "Spectral",
@@ -108,7 +111,7 @@ while(counter <= 14){
                         emtol = 0.001,
                         data = obj$meta,
                         model = k_model)
-         saveRDS(k_model, paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
+         saveRDS(k_model, file = paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
       }
       saveRDS(k_model, file = paste0(filekey[filekey$var_name=="k_fitted_models_stmpaper",]$filepath,k_str))
       
@@ -123,12 +126,11 @@ while(counter <= 14){
                 lbound = bound + lfact,
                 iterations = length(k_model$convergence$bound))
       #TODO thank Julia Silge
-      
       saveRDS(k_diag, file = paste0(filekey[filekey$var_name=="k_diag_files_stmpaper",]$filepath,k_str))
    }
    
    counter <- counter+1
 }
-   
+
 
 
