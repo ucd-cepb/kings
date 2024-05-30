@@ -5,6 +5,10 @@ check <- packs[!packs %in% installed.packages()[,'Package']]
 if(length(check>0)){print(check)}else{print("All packages ready")}
 lapply(packs, require, character.only = TRUE)
 
+###NOTE
+###Before running this file, move any existing k files to the archived comparison runs subfolder
+#Otherwise the program will see existing files and not overwrite them
+
 filekey <- read.csv("filekey.csv")
 
 gspoutfilename <- filekey[filekey$var_name=="gsp_out_files",]$filepath
@@ -12,12 +16,14 @@ gspoutfilenamesplits <- unlist(strsplit(gspoutfilename,split="/"))
 gspoutpath <- paste(gspoutfilenamesplits[1:(length(gspoutfilenamesplits)-1)],collapse = "/")
 gspoutpattern <- gspoutfilenamesplits[length(gspoutfilenamesplits)]
 
-obj <- readRDS(list.files(path = gspoutpath, pattern = gspoutpattern, full.names = T)[
-   length(list.files(path = gspoutpath, pattern = gspoutpattern, full.names = T))])
+finfo <- file.info(list.files(path = gspoutpath, pattern = gspoutpattern, full.names = T))
+version_select <- which(finfo$mtime==max(finfo$mtime))
+
+obj <- readRDS(rownames(finfo)[version_select])
 
 counter <- 1
 
-
+obj$meta$priority_category <- as.factor(obj$meta$priority_category)
 kdiagfilename <- filekey[filekey$var_name=="k_diag_files_stmpaper",]$filepath
 kdiagfilenamesplits <- unlist(strsplit(kdiagfilename,split="/"))
 kdiagpath <- paste(kdiagfilenamesplits[1:(length(kdiagfilenamesplits)-1)],collapse = "/")
@@ -51,7 +57,8 @@ while(counter <= 14){
    print(paste0("Now generating model with ",k_str, " topics"))
    
    if(file.exists(filekey[filekey$var_name=="heldout",]$filepath)) {
-      heldout <- readRDS("heldout")
+      ##### this used to just say readRDS("heldout") which didnt' work###
+      heldout <- readRDS(filekey[filekey$var_name=="heldout",]$filepath)
    }else{
       heldout <- make.heldout(obj$documents,
                               obj$vocab, 
@@ -70,16 +77,17 @@ while(counter <= 14){
                        sust_criteria +
                        monitoring_networks + 
                        projects_mgmt_actions + 
-                       urbangw_af_log_scaled +
-                       percent_dac_by_pop_scaled+
-                       fract_of_area_in_habitat_log_scaled +
-                       maxdryspell_scaled +
-                       Agr_Share_Of_GDP_scaled +
-                       Republican_Vote_Share_scaled +
-                       Perc_Bach_Degree_Over25_scaled +
-                       local_govs_per_10k_people_log_scaled +
                        mult_gsas +
-                       gwsum,
+                       priority_category +
+                       dsci_scaled +
+                       basin_population_log_scaled +
+                       percent_dac_by_pop_scaled +
+                       log_well_MCL_exceedance_count_by_log_pop_scaled +
+                       #drywells were included in the May 2024 run
+                       #log_drywell_per_log_person_scaled +
+                       fract_of_area_in_habitat_log_scaled +
+                       Agr_Share_Of_GDP_scaled +
+                       Republican_Vote_Share_scaled,
                     init.type = "Spectral",
                     max.em.its = 30,
                     emtol = 0.001,
@@ -93,16 +101,16 @@ while(counter <= 14){
                            sust_criteria +
                            monitoring_networks + 
                            projects_mgmt_actions + 
-                           urbangw_af_log_scaled +
+                           mult_gsas +         
+                           priority_category + 
+                           dsci_scaled +
+                           basin_population_log_scaled +
                            percent_dac_by_pop_scaled+
+                           log_well_MCL_exceedance_count_by_log_pop_scaled +
+                           log_drywell_per_log_person_scaled +
                            fract_of_area_in_habitat_log_scaled +
-                           maxdryspell_scaled +
                            Agr_Share_Of_GDP_scaled +
-                           Republican_Vote_Share_scaled +
-                           Perc_Bach_Degree_Over25_scaled +
-                           local_govs_per_10k_people_log_scaled +
-                           mult_gsas +
-                           gwsum,
+                           Republican_Vote_Share_scaled,
                         init.type = "Spectral",
                         max.em.its = k_model$settings$convergence$max.em.its + 20,
                         emtol = 0.001,
@@ -123,7 +131,6 @@ while(counter <= 14){
                 lbound = bound + lfact,
                 iterations = length(k_model$convergence$bound))
       #TODO thank Julia Silge
-      
       saveRDS(k_diag, file = paste0(filekey[filekey$var_name=="k_diag_files_stmpaper",]$filepath,k_str))
    }
    
