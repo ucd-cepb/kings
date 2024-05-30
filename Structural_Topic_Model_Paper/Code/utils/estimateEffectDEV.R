@@ -145,7 +145,7 @@ rmvnorm<-function(n,mu,Sigma,chol.Sigma=chol(Sigma)) {
    t(  t(E%*%chol.Sigma) +c(mu))
 }
 
-summary.estimateEffect <- function(object, topics=NULL, nsim=500, ...) {
+summary.estimateEffectDEV <- function(object, topics=NULL, nsim=500, ...) {
    if(is.null(topics)) topics <- object$topics
    if(any(!(topics %in% object$topics))) {
       stop("Some topics specified with the topics argument are not available in this estimateEffect object.")
@@ -174,7 +174,7 @@ summary.estimateEffect <- function(object, topics=NULL, nsim=500, ...) {
 
 
 
-print.summary.estimateEffect <- function(x, digits = max(3L, getOption("digits") - 3L), 
+print.summary.estimateEffectDEV <- function(x, digits = max(3L, getOption("digits") - 3L), 
                                          signif.stars = getOption("show.signif.stars"), ...) {
    cat("\nCall:\n", paste(deparse(x$call), sep = "\n", collapse = "\n"), 
        "\n\n", sep = "")
@@ -202,7 +202,7 @@ nonnegint <- function(x) {
    all(is.wholenumber(x)) & all(x>=0)
 }
 
-extract.estimateEffect <- function (x, covariate, model = NULL, topics = x$topics, method = "pointestimate", 
+extract.estimateEffectDEV <- function (x, covariate, model = NULL, topics = x$topics, method = "pointestimate", 
                                     cov.value1 = NULL, cov.value2 = NULL, moderator = NULL, moderator.value = NULL, 
                                     npoints = 100, nsims = 100, ci.level = 0.95, custom.labels = NULL, 
                                     labeltype = "numbers", n = 7, frexw = 0.5) 
