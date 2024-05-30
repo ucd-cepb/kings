@@ -30,8 +30,10 @@ kdiagpath <- paste(kdiagfilenamesplits[1:(length(kdiagfilenamesplits)-1)],collap
 kdiagpattern <- kdiagfilenamesplits[length(kdiagfilenamesplits)]
 
 #when running
+
 #set with a higher convergence tolerance to speed estimates for the appropriate number of topics
 while(counter <= 14){
+   print(counter)
    k_saves <- list.files(path = kdiagpath, pattern = kdiagpattern, full.names = T)
    # prepare regular expression
    dig_regex <- "[[:digit:]]+"
@@ -92,7 +94,7 @@ while(counter <= 14){
                     max.em.its = 30,
                     emtol = 0.001,
                     data = obj$meta)
-      saveRDS(k_model, paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
+      saveRDS(k_model, file = paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
       while (!k_model$convergence$converged){
          k_model <- stm(heldout$documents, heldout$vocab, 
                         K = k_choice,
@@ -116,7 +118,7 @@ while(counter <= 14){
                         emtol = 0.001,
                         data = obj$meta,
                         model = k_model)
-         saveRDS(k_model, paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
+         saveRDS(k_model, file = paste0(filekey[filekey$var_name=="k_incomplete_modelfits_stmpaper",]$filepath,k_str))
       }
       saveRDS(k_model, file = paste0(filekey[filekey$var_name=="k_fitted_models_stmpaper",]$filepath,k_str))
       
@@ -136,6 +138,6 @@ while(counter <= 14){
    
    counter <- counter+1
 }
-   
+
 
 

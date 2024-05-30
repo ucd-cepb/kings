@@ -1,8 +1,8 @@
-source('code/stm_workflow/utils/custom_dictionary.R')
-source('code/stm_workflow/utils/generate_proper_names.R')
+source('Structural_Topic_Model_Paper/Code/utils/custom_dictionary.R')
+source('Structural_Topic_Model_Paper/Code/utils/generate_proper_names.R')
 
 lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
-   packs <- c('stm','tm','SnowballC','tidytext','data.table',
+   packs <- c('stm','tm','SnowballC','tidytext','data.table','quanteda.textstats',
               'tidyverse','sf','pbapply','quanteda','stringi')
    need <- packs[!packs %in% installed.packages()[,'Package']]
    if(length(need)>0){install.packages(need)}
@@ -217,7 +217,6 @@ lex_clean <- function(gsp_text_with_meta, topic_indicators = NULL){
    #removes 0089 and 0053 before tidying
    qdfm_long <- dfm_subset(qdfm_long, !(gsp_id %in% c("0053","0089")))
    
-   library(quanteda.textstats)
    long_stats <- quanteda.textstats::textstat_frequency(qdfm_long, groups = c(gsp_id))
    #Section 8: Remove Very Common and Very Uncommon Words ####
 

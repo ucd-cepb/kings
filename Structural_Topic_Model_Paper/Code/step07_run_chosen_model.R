@@ -17,8 +17,8 @@ slam_files <- list.files(path = gspoutpath, pattern = gspoutpattern, full.names 
 
 newest_slam_file <- slam_files[which.max(file.info(slam_files)$mtime)]
 gsp_out <- readRDS(newest_slam_file)
-
-
+        
+                                
 #numTopics = selected_model$settings$dim$K
 
 numTopics = 30
@@ -44,7 +44,7 @@ gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                  K = numTopics, prevalence = form,
                  max.em.its = 30,
                  data = gsp_out$meta, init.type = "Spectral") 
-
+                               
 while (!gsp_model$convergence$converged){
    gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                     K = numTopics,
@@ -55,6 +55,8 @@ while (!gsp_model$convergence$converged){
                     model = gsp_model)
    saveRDS(gsp_model, paste0(filekey[filekey$var_name=="finalmodel_incompletefit_stmpaper",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
 }
+
+
 
 
 saveRDS(gsp_model, file = paste0(filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
