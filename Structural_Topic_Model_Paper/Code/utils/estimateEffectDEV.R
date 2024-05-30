@@ -172,6 +172,7 @@ summary.estimateEffectDEV <- function(object, topics=NULL, nsim=500, ...) {
 }
 # Section 3 ####
 
+
 print.summary.estimateEffectDEV <- function(x, digits = max(3L, getOption("digits") - 3L), 
                                          signif.stars = getOption("show.signif.stars"), ...) {
    cat("\nCall:\n", paste(deparse(x$call), sep = "\n", collapse = "\n"), 

@@ -37,7 +37,16 @@ byplan <- edgelist_w_meta %>% group_by(gsp_id) %>% summarize(pct_collab = mean(i
 cor(byplan$pct_collab, byplan$is_transf, method = "pearson")
 
 #H1 confirmed?
-cor(byplan$pct_collab, byplan$is_transf, method = "pearson") > -1*portiontransf / portionnotcollab
+alpha <- cor(byplan$pct_collab, byplan$is_transf, method = "pearson") #> -1*portiontransf / portionnotcollab
+
+N <- 1000
+bootstrap <- vector(mode = "list", length = N)
+corrs <- vector(mode = "list", length = N)
+for(i in 1:N){
+   bootstrap[[i]] <- sample(byplan$is_transf, length(byplan$is_transf), replace = F)
+   corrs[[i]] <- cor(byplan$pct_collab, bootstrap[[i]], method = "pearson")
+}
+
 
 #only keep the six main verb tenses
 edgelist_w_meta <- edgelist_w_meta[edgelist_w_meta$head_verb_tense %in% c(

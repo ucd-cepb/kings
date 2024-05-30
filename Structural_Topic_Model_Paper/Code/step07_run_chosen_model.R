@@ -28,16 +28,18 @@ form <- ~ admin +
    sust_criteria +
    monitoring_networks + 
    projects_mgmt_actions + 
-   (Agr_Share_Of_GDP_scaled + Republican_Vote_Share_scaled) *
-   (urbangw_af_log_scaled +
-   percent_dac_by_pop_scaled+
-   fract_of_area_in_habitat_log_scaled +
-   maxdryspell_scaled) +
-   # Perc_Bach_Degree_Over25_scaled +
-   # local_govs_per_10k_people_log_scaled +
    mult_gsas +
-   gwsum
+   priority_category +
+   basin_population_log_scaled +
+   (Agr_Share_Of_GDP_scaled +
+       Republican_Vote_Share_scaled) *
+   (log_well_MCL_exceedance_count_by_log_pop_scaled +
+       percent_dac_by_pop_scaled +
+       fract_of_area_in_habitat_log_scaled +
+       dsci_scaled)
 
+#run using R 4.3.0. 
+set.seed(80000)
 gsp_model <- stm(documents = gsp_out$documents, vocab = gsp_out$vocab,
                  K = numTopics, prevalence = form,
                  max.em.its = 30,
@@ -51,7 +53,7 @@ while (!gsp_model$convergence$converged){
                     max.em.its = gsp_model$settings$convergence$max.em.its + 30,
                     data = gsp_out$meta,
                     model = gsp_model)
-   saveRDS(gsp_model, paste0(filekey[filekey$var_name=="finalmodel_incompletefit_stmpaper",]$filepath))
+   saveRDS(gsp_model, paste0(filekey[filekey$var_name=="finalmodel_incompletefit_stmpaper",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
 }
 
 

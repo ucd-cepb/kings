@@ -1,6 +1,6 @@
 library(stringr)
 
-govscitbl <- readRDS(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath,"/govscienceuseR_agencies.RDS")
+govscitbl <- readRDS(paste0(filekey[filekey$var_name=="govsci_inputs_folder",]$filepath,"/govscienceuseR_agencies.RDS"))
 
 govscitbl$Agency <- str_remove(govscitbl$Agency, '^The\\s')
 govscitbl$Agency <- str_remove(govscitbl$Agency, '^California\\s')
