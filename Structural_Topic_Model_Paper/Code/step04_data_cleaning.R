@@ -14,6 +14,7 @@ topic_indicators <- list(ej = c("disadvantaged community", "disadvantaged commun
                                  "^gde$","^gdes$","habitat","species"))
 
 #Clean Lex ####
+source("Structural_Topic_Model_Paper/Code/utils/lex_clean.R")
 gsp_out <- lex_clean(gsp_text_with_meta, 
                      topic_indicators = unlist(topic_indicators,use.names=F))
 
