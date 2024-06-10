@@ -17,12 +17,9 @@
                         )
 
       topic_labels <- c("DW - Topic 10+16+25+26+30",
-                        "GDE - Topic 14 Habitats",
-                        "EJ - Topic 2 Stakeholder Engagement",
-                        "CC - Topic 24 Water Hydrology and Change",
-                        "DW_EJ - Topic 25 Beneficial Users",
-                        "GDE - Topic 29 Species",
-                        "CC - Topic 7 Climate Scenarios"
+                        "GDE - Topic 14+29",
+                        "EJ - Topic 2+25",
+                        "CC - Topic 7+24"
       )
 
    tblfilename <- filekey[filekey$var_name=="effect_table_condensed_csvs_stmpaper",]$filepath
@@ -47,7 +44,8 @@
    max_corr <- ceiling(max_corr*1000)/1000+
       ifelse(ceiling(max_corr*1000)%%5==0,0,(5-ceiling(max_corr*1000)%%5)/1000)
    min_corr <- max_corr*-1
-   corrplot <- ggcorrplot(cor_mat,
+   cor_mat_mini <- cor_mat[1:16,]
+   corrplot <- ggcorrplot(cor_mat_mini,
                           colors = pal)+
       theme(axis.text.x = element_text(size = 20),  # Order: top, right, bottom, left
             axis.text.y = element_text(size = 20))+
@@ -64,6 +62,6 @@
                            name = "Corr", na.value="white")+
       theme(legend.key=element_rect(colour="black",fill="white",
                                     linetype="solid")) 
-   
-   ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
-          width = 6030, height = 2835, dpi = 300, units = "px", bg = "white")
+   saveRDS(corrplot, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath, "/corrplot_topicprevalence_on_predictors"))
+   ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", #path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
+          width = 6030, height = 4835, dpi = 300, units = "px", bg = "white")
