@@ -168,7 +168,8 @@ gspmini <- gsp_text_with_meta[!duplicated(gsp_text_with_meta$GSP.ID),]
 gspmini <- select(gspmini, -c("text","is_comment","is_reference",
                                 "page_num","admin","basin_plan","sust_criteria",
                                 "monitoring_networks","projects_mgmt_actions"))
-write_csv(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata",]$filepath)
+write_csv(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata_csv",]$filepath)
+saveRDS(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata_rds",]$filepath)
 
 gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_reference","page_num",
                                                  "admin","basin_plan","sust_criteria",
