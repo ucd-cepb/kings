@@ -151,12 +151,13 @@ tofrom$to <- c(as.list(old_acronyms$name),
              list(c("upper_aquifer","lower_aquifer")))
 
    old_extract_clean <- disambiguate(
+      textnet_extract = extracts[[1]],
       from = tofrom$from, 
       to = tofrom$to,
-      match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T,F,F,F,F), 
-      textnet_extract = extracts[[1]])
+      match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T,F,F,F,F))
    
    new_extract_clean <- disambiguate(
+      textnet_extract = extracts[[2]], 
       from = c(as.list(new_acronyms$acronym),
                list("Sub_basin","Sub_Basin",
                     "upper_and_lower_aquifers",
@@ -169,8 +170,7 @@ tofrom$to <- c(as.list(old_acronyms$name),
              list(c("upper_aquifer","lower_aquifer")),
              list(c("upper_aquifer","lower_aquifer")),
              list(c("upper_aquifer","lower_aquifer"))), 
-      match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T,F,F,F,F), 
-      textnet_extract = extracts[[2]])
+      match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T,F,F,F,F))
 
 ```
 

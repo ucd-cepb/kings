@@ -119,9 +119,9 @@ The package resolves loops such as from = c("hello","world"); to = c("world","he
 Information about the optional argument try_drop can be found in the package documentation.
 
 ```{r consolidate, include = FALSE}
-   old_extract_clean <- disambiguate(from = c(old_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(old_acronyms$name,"Subbasin","Subbasin"),match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T), textnet_extract = readRDS("./old_extract"))
+   old_extract_clean <- disambiguate(textnet_extract = readRDS("./old_extract"), from = c(old_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(old_acronyms$name,"Subbasin","Subbasin"),match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T))
    
-   new_extract_clean <- disambiguate(from = c(new_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(new_acronyms$name,"Subbasin","Subbasin"), match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T), textnet_extract = readRDS("./new_extract"))
+   new_extract_clean <- disambiguate(textnet_extract = readRDS("./new_extract"), from = c(new_acronyms$acronym,"Sub_basin","Sub_Basin"), to = c(new_acronyms$name,"Subbasin","Subbasin"), match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T))
 
 ```
 
