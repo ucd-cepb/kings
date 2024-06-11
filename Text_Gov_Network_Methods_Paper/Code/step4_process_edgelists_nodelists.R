@@ -141,7 +141,7 @@ for(m in 1:length(edges_and_nodes)){
    try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
    edgenodelist <- readRDS(edges_and_nodes[m])
    edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
-                                    match_partial_entity=customdt[[m]]$match_partial_entity, edgenodelist, try_drop)
+                                    match_partial_entity=customdt[[m]]$match_partial_entity, textnet_extract = edgenodelist, try_drop = try_drop)
    saveRDS(edgenodelist,paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))
 }
 
