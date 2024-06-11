@@ -42,7 +42,7 @@ agency_nicknames <- setDT(list("name"=rep(vector(mode="list",length(edges_and_no
                                "nickname"=rep(NA_character_,length(edges_and_nodes)*2)))
 for(m in 1:length(edges_and_nodes)){
    #remove parentheses
-   agency_names <- agency_tbl[gsp_id==gspids[m]]$name_gsas[[1]]
+   agency_names <- agency_tbl[gsp_id==gspids[m]]$name_gsas20230731[[1]]
    agency_names <- unlist(lapply(agency_names, function(b) str_split(b,"\\(")[[1]][1]))
    #clean entities so they are same format as spacy tokens
    agency_names <- clean_entities(agency_names, remove_nums=T)
@@ -165,7 +165,7 @@ for(m in 1:length(edges_and_nodes)){
 }
 
 for(m in 1:length(edges_and_nodes)){
-   #edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+   edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
 ###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
