@@ -146,7 +146,7 @@ for(m in 1:length(edges_and_nodes)){
 }
 
 for(m in 1:length(edges_and_nodes)){
-   #edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))
+   edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))
 ###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
