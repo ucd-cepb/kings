@@ -4,6 +4,9 @@ library(ggraph)
 library(data.table)
 filekey <- read.csv("filekey.csv")
 
+use_filtered_parsefiles <- T
+
+
 edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath, full.names = T)
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
@@ -14,7 +17,12 @@ supernodes <- vector(mode = "list", length = length(gspids)-2)
 superedges <- vector(mode = "list", length = length(gspids)-2)
 for(m in graphs){
    print(m)
-   single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_unfiltered_graphs_superpaper",]$filepath,gspids[m]))
+   if(use_filtered_parsefiles == T){
+      single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_filtered_graphs_superpaper",]$filepath,gspids[m]))
+      
+   }else{
+      single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_unfiltered_graphs_superpaper",]$filepath,gspids[m]))
+   }
    single_ig <- single_ig[[1]]
    sidf <- get.data.frame(single_ig, what = "both")
    supernodes[[m]] <- sidf$vertices
@@ -35,7 +43,13 @@ supernetwork <- igraph::graph_from_data_frame(superedgesdt,
 vcount(supernetwork)
 ecount(supernetwork)
 
-saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_full_superpaper",]$filepath)
+if(use_filtered_parsefiles == T){
+   saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_filtered_full_superpaper",]$filepath)
+   
+}else{
+   saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_unfiltered_full_superpaper",]$filepath)
+   
+}
 colnames(superedgesdt)[colnames(superedgesdt)=="from"] <- "source"
 colnames(superedgesdt)[colnames(superedgesdt)=="to"] <- "target"
 
@@ -43,15 +57,19 @@ weighted_graph <- textNet::export_to_network(textnet_extract = list("nodelist" =
                                                 export_format = "igraph", 
                                                 keep_isolates = T, collapse_edges = T, self_loops = T)
    
-   #uses original edges to calculate degree
+   #uses original edges to calculate degree (aka strength of weighted graph)
    strength <- sort(igraph::strength(weighted_graph[[1]]),decreasing = T)
    topstrength <- names(strength[1:7])
    weighted_graph[[1]] <- igraph::set_vertex_attr(weighted_graph[[1]], "labels", 
                                              value = ifelse(igraph::get.vertex.attribute(weighted_graph[[1]],"name") %in% topstrength, 
                                                             igraph::get.vertex.attribute(weighted_graph[[1]],"name"), NA))
    
-  
-saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_weighted_superpaper",]$filepath)
+if(use_filtered_parsefiles == T){
+   saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_filtered_weighted_superpaper",]$filepath)
+}else{
+   saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_unfiltered_weighted_superpaper",]$filepath)
+   
+}
 
 #code imported from plot_gov_nets.R
 weighted_graph_no_isolates <- textNet::export_to_network(textnet_extract = list("nodelist" = supernodesdt, "edgelist" = superedgesdt), 
@@ -74,8 +92,15 @@ weighted_plot_noisolates <- ggraph(weighted_graph_no_isolates[[1]], layout = 'fr
    #               size = 3, repel = T, color = "black")+
    theme_void()
 
-
-ggsave(paste0("supernetwork.png"), plot = weighted_plot_noisolates, device = "png",
-       path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
-       units = "px", bg = "white")
+if(use_filtered_parsefiles == T){
+   ggsave(paste0("supernetwork_filtered.png"), plot = weighted_plot_noisolates, device = "png",
+          path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
+          units = "px", bg = "white")
+   
+}else{
+   ggsave(paste0("supernetwork_unfiltered.png"), plot = weighted_plot_noisolates, device = "png",
+          path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
+          units = "px", bg = "white")
+   
+}
 

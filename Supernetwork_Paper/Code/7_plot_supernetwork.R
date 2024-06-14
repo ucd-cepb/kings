@@ -1,5 +1,13 @@
-
-supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper",]$filepath)
+library(igraph)
+library(intergraph)
+use_filtered_parsefiles <- T
+if(use_filtered_parsefiles==T){
+   supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_filtered_full_superpaper",]$filepath)
+   
+}else{
+   supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_unfiltered_full_superpaper",]$filepath)
+   
+}
 
    full_graph <- subgraph(supernetwork, V(supernetwork)[
       vertex_attr(supernetwork,"entity_type") %in% c("ORG","PERSON")])
@@ -29,14 +37,47 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
       
    )
    
-   edges <- as_data_frame(full_graph_noisolates)
+   edges <- igraph::as_data_frame(full_graph_noisolates)
    edges$head_verb_tense <- factor(edges$head_verb_tense, levels = c("Past","Present","Future"))
    
    edg <- edges |> group_by(to,from) |> mutate(most_common_tense = which.max(tabulate(head_verb_tense)))
    
    igraph::E(full_graph_noisolates)$most_common_tense <- edg$most_common_tense
    
-   nodes <- as_data_frame(full_graph_noisolates, what = "vertices")
+   nodes <- igraph::as_data_frame(full_graph_noisolates, what = "vertices")
+   
+   govsci_tbl_clean <- readRDS(filekey[filekey$var_name=="govsci_tbl_clean",]$filepath)
+   nonagencies <- c("Irrigation_Management_Information_System",
+                    "Groundwater_Sustainability_Plan",
+                    "National_Cooperative_Soil_Survey_Geographic_Database",
+                    "Soil_Survey_Geographic_Database",
+                    "Integrated_Regional_Water_Management_Plan",
+                    "Integrated_Regional_Water_Management",
+                    "Precipitation_-_Elevation_Regressions_on_Independent_Slopes_Model",
+                    "Statewide_Groundwater_Elevation_Monitoring",
+                    "Groundwater_Dependent_Ecosystem",
+                    "Irrigated_Lands_Regulatory_Program", 
+                    "Environmental_Data_Exchange_Network",
+                    "Safe_Drinking_Water_Information_System",
+                    "Environmental_Quality_Act",
+                    "Comprehensive_Environmental_Response_Compensation_and_Liability_Act",
+                    "Public_Land_Survey_System",
+                    "National_Environmental_Policy_Act",
+                    "National_Pollutant_Discharge_Elimination_System",
+                    "National_Water_Information_System",
+                    "Environmental_Quality_Incentives_Program",
+                    "Groundwater_Ambient_Monitoring_and_Assessment",
+                    "Climate_Reference_Network",
+                    "Sustainable_Groundwater_Management_Act")
+   
+   
+   vector_of_GSAs <- readRDS(filekey[filekey$var_name=="vector_of_GSAs",]$filepath)
+   vector_of_GSAs <- append(vector_of_GSAs, "Groundwater_Sustainability_Agency")
+   vector_of_feds <- govsci_tbl_clean[State=="federal",]$Agency
+   vector_of_feds <- vector_of_feds[!vector_of_feds %in% nonagencies]
+   vector_of_stateagencies <- govsci_tbl_clean[State=="California",]$Agency
+   vector_of_stateagencies <- vector_of_stateagencies[!vector_of_stateagencies %in% nonagencies]
+   
    nodes$scope <- case_when(nodes$name %in% tolower(vector_of_GSAs) ~ "GSA",
                             nodes$name %in% tolower(vector_of_feds) | 
                                nodes$name == "united_states_bureau_of_reclamation" ~ "Federal" ,
@@ -47,7 +88,7 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
    
    full_graph_noisolates <- subgraph(full_graph_noisolates, V(full_graph_noisolates)[
       vertex_attr(full_graph_noisolates,"scope") %in% c("GSA","Federal","State")])
-   
+   self_loops = F
    full_graph_noisolates <- igraph::delete_edge_attr(full_graph_noisolates, "head_verb_id")
    full_graph_noisolates <- igraph::delete_edge_attr(full_graph_noisolates, "head_verb_tense")
    full_graph_noisolates <- igraph::delete_edge_attr(full_graph_noisolates, "head_verb_name")
@@ -91,7 +132,7 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
    
    # subgraph
    giant_component <- igraph::induced_subgraph(weighted_graph_noisolates, vert_ids)
-   set.seed(23733240)
+   set.seed(233)
    weighted_plot_noisolates <- ggraph(giant_component, layout = 'fr')+
       #ggraph::scale_edge_colour_gradient(high = viridis::cividis(5)[1], low = viridis::cividis(5)[4])+
       #Using Paul Tol color schemes
@@ -106,10 +147,18 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
       geom_node_point(aes(color = scope, size = degree),
                       alpha = 0.8)+
       geom_node_text(aes(label = bigname), size=2, repel = T, max.overlaps=30) +
-      theme_void()+ theme(legend.position = c(0.8,0.6))
+      theme_void()+ theme(legend.position.inside = c(0.8,0.6))
    weighted_plot_noisolates
    
-   ggsave(paste0("supernetwork_plot.png"), plot = weighted_plot_noisolates, device = "png",
-          path = filekey[filekey$var_name=="psj_govnetpaper_figures",]$filepath, width = 2200, height = 1890, dpi = 300,
-          units = "px", bg = "white")
+   if(use_filtered_parsefiles==T){
+      ggsave(paste0("supernetwork_giantcomponent_filtered_plot.png"), plot = weighted_plot_noisolates, device = "png",
+             path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 2200, height = 1890, dpi = 300,
+             units = "px", bg = "white")
+      
+   }else{
+      ggsave(paste0("supernetwork_giantcomponent_unfiltered_plot.png"), plot = weighted_plot_noisolates, device = "png",
+             path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 2200, height = 1890, dpi = 300,
+             units = "px", bg = "white")
+      
+   }
    

@@ -9,8 +9,9 @@ library(pbapply)
 library(stringi)
 library(textNet)
 
-
 filekey <- read.csv("filekey.csv")
+
+use_filtered_parsefiles <- T
 
 saveRDS(sessionInfo(), filekey[filekey$var_name=="sessioninfo_superpaper",]$filepath)
 ###Section 1: Govscitbl####
@@ -23,7 +24,12 @@ govscitbl <- unique(govscitbl)
 #saveRDS(govscitbl, filekey[filekey$var_name=="govsci_tbl_clean",]$filepath)
 write.csv(govscitbl, paste0(filekey[filekey$var_name=="govsci_tbl_clean",]$filepath,".csv"))
 ###Section 2: GSAs####
-edges_and_nodes <- list.files(path = filekey[filekey$var_name=="nondisambiged_extracts_superpaper",]$filepath, full.names = T)
+if(use_filtered_parsefiles == T){
+   edges_and_nodes <- list.files(path = filekey[filekey$var_name=="nondisambiged_filtered_extracts_superpaper",]$filepath, full.names = T)
+}else{
+   edges_and_nodes <- list.files(path = filekey[filekey$var_name=="nondisambiged_unfiltered_extracts_superpaper",]$filepath, full.names = T)
+   
+}
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 gsp_tblfilename <- filekey[filekey$var_name=="gsp_planwise_metadata_rds",]$filepath
@@ -161,11 +167,23 @@ for(m in 1:length(edges_and_nodes)){
                                 try_drop = try_drop,
                                 recursive = T,
                                 concatenator = "_")
-   saveRDS(edgenodelist,paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+   if(use_filtered_parsefiles == T){
+      saveRDS(edgenodelist,paste0(filekey[filekey$var_name=="disambiged_filtered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+      
+   }else{
+      saveRDS(edgenodelist,paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+   }
 }
 
 for(m in 1:length(edges_and_nodes)){
-   edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+   if(use_filtered_parsefiles == T){
+      edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_filtered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+      
+   }else{
+      edgenodelist <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))
+      
+   }
+   
 ###Orgtype (not currently implemented)####   
    #TODO fix orgtyp bug
    #orgtyp <- function(strng){
@@ -208,8 +226,13 @@ for(m in 1:length(edges_and_nodes)){
                                                 keep_isolates = T, collapse_edges = F, self_loops = T)
    
    full_directed_graph[[1]] <- igraph::set_vertex_attr(full_directed_graph[[1]], "degr", value = igraph::degree(full_directed_graph[[1]]))
-   
-   saveRDS(full_directed_graph, paste0(filekey[filekey$var_name=="full_directed_unfiltered_graphs_superpaper",]$filepath,gspids[m]))
+   if(use_filtered_parsefiles==T){
+      saveRDS(full_directed_graph, paste0(filekey[filekey$var_name=="full_directed_filtered_graphs_superpaper",]$filepath,gspids[m]))
+      
+   }else{
+      saveRDS(full_directed_graph, paste0(filekey[filekey$var_name=="full_directed_unfiltered_graphs_superpaper",]$filepath,gspids[m]))
+      
+   }
    
    weighted_graph <- textNet::export_to_network(textnet_extract = list("nodelist" = nodelist, "edgelist" = edgelist), 
                                                 export_format = "igraph", 
@@ -221,6 +244,12 @@ for(m in 1:length(edges_and_nodes)){
    weighted_graph[[1]] <- igraph::set_vertex_attr(weighted_graph[[1]], "labels", 
                                              value = ifelse(igraph::get.vertex.attribute(weighted_graph[[1]],"name") %in% topstrength, 
                                                             igraph::get.vertex.attribute(weighted_graph[[1]],"name"), NA))
+   if(use_filtered_parsefiles==T){
+      saveRDS(weighted_graph, paste0(filekey[filekey$var_name=="weighted_filtered_nets_superpaper",]$filepath,gspids[m]))
+      
+   }else{
+      saveRDS(weighted_graph, paste0(filekey[filekey$var_name=="weighted_unfiltered_nets_superpaper",]$filepath,gspids[m]))
+      
+   }
    
-   saveRDS(weighted_graph, paste0(filekey[filekey$var_name=="weighted_unfiltered_nets_superpaper",]$filepath,gspids[m]))
 }
