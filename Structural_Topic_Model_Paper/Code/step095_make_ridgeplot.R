@@ -30,5 +30,5 @@ ridgeplot <- ggplot(tps_unitopics, aes(x = proportion, y = category, fill = cate
       panel.spacing = unit(0.1, "lines"),
       strip.text.x = element_text(size = 8)
    )
-ggsave(plot = ridgeplot,filename = "ridgeplot.png",dpi = 450,width = 7,height = 4,units = 'in')
+ggsave(plot = ridgeplot, path = filekey[filekey$var_name=="stmpaper_figures",]$filepath, filename = "ridgeplot.png",dpi = 450,width = 7,height = 4,units = 'in')
 
