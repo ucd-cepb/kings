@@ -30,7 +30,7 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
    
    topic_theta_plot
    ggsave("theta_by_gsp.png",plot = topic_theta_plot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
-          width = 4422, height = 2079, dpi = 300, units = "px", bg = "white")
+          width = 4422, height = 2079, dpi = 600, units = "px", bg = "white")
    
    #TODO update this by adding approval
    theta <- as_tibble(model$theta)
@@ -40,23 +40,22 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
                              str_remove(colnames(theta),"V"))
    
    #repair approval status from meta with new approval scraping
+   #no longer necessary with new gsp_text_with_meta file from May 2024
+   #newscrapefilename <- filekey[filekey$var_name=="gsp_web_vars_planevolutionpaper",]$filepath
+   #newscrapefilenamesplits <- unlist(strsplit(newscrapefilename,split="/"))
+   #newscrapepath <- paste(newscrapefilenamesplits[1:(length(newscrapefilenamesplits)-1)],collapse = "/")
+   #newscrapepattern <- newscrapefilenamesplits[length(newscrapefilenamesplits)]
    
    
-   newscrapefilename <- filekey[filekey$var_name=="gsp_web_vars_planevolutionpaper",]$filepath
-   newscrapefilenamesplits <- unlist(strsplit(newscrapefilename,split="/"))
-   newscrapepath <- paste(newscrapefilenamesplits[1:(length(newscrapefilenamesplits)-1)],collapse = "/")
-   newscrapepattern <- newscrapefilenamesplits[length(newscrapefilenamesplits)]
    
+   #newscrape <- readRDS(list.files(newscrapepath,pattern=newscrapepattern,full.names=T)[length(
+   #   list.files(newscrapepath,pattern=newscrapepattern))])
+   #newscrape <- newscrape[newscrape$version==1,]
+   #newscrape <- as.data.frame(cbind(gsp_id = newscrape$gsp_num_id, repairedapproval = newscrape$version_approval))
    
+   #mymeta <- dplyr::left_join(inputs$meta, newscrape)
    
-   newscrape <- readRDS(list.files(newscrapepath,pattern=newscrapepattern,full.names=T)[length(
-      list.files(newscrapepath,pattern=newscrapepattern))])
-   newscrape <- newscrape[newscrape$version==1,]
-   newscrape <- as.data.frame(cbind(gsp_id = newscrape$gsp_num_id, repairedapproval = newscrape$version_approval))
-   
-   mymeta <- dplyr::left_join(inputs$meta, newscrape)
-   
-   theta <- add_column(theta,"approval" = mymeta$repairedapproval)
+   theta <- add_column(theta,"approval" = inputs$meta$version_approval)
    theta_ag <- aggregate(. ~approval, mean, data = theta)
    theta_long <- melt(theta_ag) %>% filter(variable %in% c("Topic_02","Topic_07","Topic_10","Topic_14","Topic_16","Topic_24","Topic_25","Topic_26","Topic_29","Topic_30"))
    
@@ -68,9 +67,10 @@ plan_top_prev_plots <- function(model, inputs, topics_of_interest, categ){
                             axis.text.y=element_text(size=10),
                             plot.title=element_text(size=13,hjust = 0.5))
    
+   saveRDS(approval_theta_plot, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath, "/approval_theta_plot"))
    approval_theta_plot
    ggsave("approval_by_gsp.png",plot = approval_theta_plot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
-          width = 4422, height = 2079, dpi = 300, units = "px", bg = "white")
+          width = 4422, height = 2079, dpi = 600, units = "px", bg = "white")
 }
    
 

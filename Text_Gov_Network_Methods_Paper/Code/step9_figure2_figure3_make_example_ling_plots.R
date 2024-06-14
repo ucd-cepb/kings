@@ -13,7 +13,7 @@ x <- udpipe_annotate(ud_model, x = s)
 x <- as.data.frame(x)
 library(tidyverse)
 library(ggthemes)
-
+library(ggnetwork)
 sp <- textplot::textplot_dependencyparser(x,title = 'Pre-processing example:',subtitle = 'Tokenization, PoS tagging, and dependency parsing') 
 ggsave(sp,file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/sample_dep_parse.png'),dpi = 450,units = 'in',heigh = 4,width = 10)                                    
 
@@ -37,14 +37,14 @@ elist <- data.frame(
 
 dep_net <- network(elist,loops = T)
 occ_net <- network(tcrossprod(as.sociomatrix(dep_net)))
-library(ggnetwork)
+
 
 panelB <- ggplot(ggnetwork(dep_net)) + 
-   geom_edges(aes(x = xend,y = yend,xend = x,yend = y),arrow = arrow(length = unit(0.05, "inches"))) + 
+   geom_edges(aes(x = xend,y = yend,xend = x,yend = y),arrow = arrow(length = unit(0.1, "inches"))) + 
    geom_nodes(aes(x = x,y = y)) + 
-   ggtitle('B. Event with directed edges')+
+   ggtitle('B. Syntax-based coding')+
    annotate("text", x = 0.4, y = -0.2, 
-            label = "*all edges reflect membership event")+
+            label = "*directed edge")+
    geom_nodelabel_repel(aes(x = x,y = y,label = vertex.names)) + 
    theme_void()
 
@@ -56,9 +56,9 @@ panelA <- ggplot(occ_geom,aes(x = x,y = y,xend = xend,yend = yend)) +
    geom_nodes() +
    geom_nodelabel_repel(aes(label = vertex.names)) + 
    theme_void() + 
-   ggtitle('A. Co-occurence with undirected edges')+
+   ggtitle('A. Co-occurrence-based coding')+
    annotate("text", x = 0.4, y = -0.2, 
-            label = "*all edges reflect co-occurence")
+            label = "*undirected edge")
 library(gridExtra)
 
 ggsave(grid.arrange(panelA,panelB,ncol = 2),file = paste0(filekey[filekey$var_name=="govnetpaper_figures",]$filepath,'/compare_coding.png'),

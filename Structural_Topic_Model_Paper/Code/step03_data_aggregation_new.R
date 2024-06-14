@@ -156,15 +156,22 @@ gsp_text_with_meta$mult_gsas <- ifelse(gsp_text_with_meta$gsp_id == "0008", T, g
 #gsp_text_with_meta$name_gsas20230922 
 #gsp_text_with_meta$name_gsas20230731 
 
+gsp_text_with_meta$priority_category <- ifelse(gsp_text_with_meta$priority %in% c("Very Low", "Low"), "low_or_verylow",
+                                               ifelse(gsp_text_with_meta$priority == "Medium", "med", 
+                                                      ifelse(gsp_text_with_meta$priority == "High", "high", NA)))
+
 saveRDS(gsp_text_with_meta, file = filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 gsp_text_with_meta <- readRDS(file = filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 
-gsp_text_with_meta$priority_category <- ifelse(gsp_text_with_meta$priority %in% c("Very Low", "Low"), "low_or_verylow",
-                                    ifelse(gsp_text_with_meta$priority == "Medium", "med", 
-                                           ifelse(gsp_text_with_meta$priority == "High", "high", NA)))
-
+gsp_text_with_meta$version_approval20230922 <- gsp_text_with_meta$version_approval
 
 gspmini <- gsp_text_with_meta[!duplicated(gsp_text_with_meta$GSP.ID),]
+gspmini <- select(gspmini, -c("text","is_comment","is_reference",
+                                "page_num","admin","basin_plan","sust_criteria",
+                                "monitoring_networks","projects_mgmt_actions"))
+write_csv(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata_csv",]$filepath)
+saveRDS(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata_rds",]$filepath)
+
 gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_reference","page_num",
                                                  "admin","basin_plan","sust_criteria",
                                                  "monitoring_networks",
@@ -176,7 +183,6 @@ gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_referenc
                                                  "Agr_Share_Of_GDP_scaled",
                                                  "Republican_Vote_Share_scaled",
                                                  "mult_gsas",
-                                                 "dsci_scaled",
                                                  "priority_category",
                                                  "version_approval20230922",
                                                  "basin_population_log_scaled")]
@@ -195,3 +201,24 @@ ggcorrplot(cor(gspmini[,c(
    ), lab = T)
 saveRDS(gsp_text_lean, file = filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
 gsp_text_lean <- readRDS(file = filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
+
+#summaries
+set.seed(30)
+
+summary(gsp_text_with_meta$admin)
+summary(gsp_text_with_meta$basin_plan)
+summary(gsp_text_with_meta$sust_criteria)
+summary(gsp_text_with_meta$monitoring_networks)
+summary(gsp_text_with_meta$projects_mgmt_actions)
+summary(gsp_text_with_meta$mult_gsas)
+table(gsp_text_with_meta$priority_category)
+set.seed(30)
+summary(gsp_text_with_meta$basin_population)
+summary(gsp_text_with_meta$percent_dac_by_pop)
+summary(gsp_text_with_meta$exceedance)
+summary(gsp_text_with_meta$DSCI)
+set.seed(30)
+summary(gsp_text_with_meta$fract_of_area_in_habitat)
+summary(gsp_text_with_meta$Agr_Share_Of_GDP)
+summary(gsp_text_with_meta$Republican_Vote_Share)
+table(gspmini$version_approval20230922)

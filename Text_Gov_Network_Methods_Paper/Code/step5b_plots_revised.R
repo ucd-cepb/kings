@@ -44,8 +44,9 @@ edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extra
 gspids <- substr(edges_and_nodes, nchar(edges_and_nodes)-7,nchar(edges_and_nodes)-4)
 
 library(igraph)
+library(ggraph)
 #only plots orgs and people
-#single gsa example = 16; 65 and 74 are multi-gsa
+#single gsa example = 16; 65 and 74 are multi-gsa "0023" "0086" "0095"
 for(m in c(16, 65, 74)){
    full_graph <- readRDS(paste0(filekey[filekey$var_name=="full_directed_graphs_govnetpaper",]$filepath,gspids[m]))
    full_graph <- subgraph(full_graph, V(full_graph)[
@@ -123,10 +124,17 @@ for(m in c(16, 65, 74)){
    giant_component_id <- which.max(components$csize)
    
    # ids
+   sizerange <- 8
+   minsize <- 3
+   maxsize <- minsize+sizerange
    vert_ids <- V(weighted_graph_noisolates)[components$membership == giant_component_id]
-   
    # subgraph
    giant_component <- igraph::induced_subgraph(weighted_graph_noisolates, vert_ids)
+   E(giant_component)$rad <- 
+      ((sizerange * (head_of(giant_component, E(giant_component))$degree - 
+                        min(V(giant_component)$degree)) / (
+                           max(V(giant_component)$degree) - 
+                              min(V(giant_component)$degree))) + minsize) *1.2
    set.seed(3849)
    weighted_plot_noisolates <- ggraph(giant_component, layout = 'fr')+
       #ggraph::scale_edge_colour_gradient(high = viridis::cividis(5)[1], low = viridis::cividis(5)[4])+
@@ -134,13 +142,15 @@ for(m in c(16, 65, 74)){
       scale_edge_color_manual(values = c("#88CCEE","#999933","#CC6677"))+
       geom_edge_fan(aes(color = most_common_tense),
                     alpha = 1, 
-                    end_cap = circle(1,"mm"),
+                    end_cap = circle(rep(E(giant_component)$rad,each=2),"pt"),
                     width = 0.4,
-                    arrow = arrow(angle=15,length=unit(0.03,"inches"),ends = "last",type = "closed"))+
+                    n=2,
+                    arrow = arrow(angle=15,length=unit(0.1,"inches"),ends = "last",type = "closed"))+
       #tol_high-contrast color scheme  "#DDAA33" is the GPE color
       scale_color_manual(values = c("#004488","#BB5566","#DDAA33","#DDDDDD"))+
       geom_node_point(aes(color = scope, size = degree),
-                      alpha = 0.8)+
+                      alpha = 1)+
+      scale_size(range = c(minsize, maxsize)) +
       #geom_node_text(aes(label = name), size=2, repel = F) +
       theme_void()
    
@@ -148,6 +158,7 @@ for(m in c(16, 65, 74)){
    ggsave(paste0("giant_component_plot_",gspids[m],".png"), plot = weighted_plot_noisolates, device = "png",
           path = filekey[filekey$var_name=="psj_govnetpaper_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
           units = "px", bg = "white")
+   saveRDS(weighted_plot_noisolates, "giant_component_rds")
    
 }
 

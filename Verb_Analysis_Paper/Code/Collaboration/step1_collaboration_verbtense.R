@@ -39,14 +39,20 @@ cor(byplan$pct_collab, byplan$is_transf, method = "pearson")
 #H1 confirmed?
 alpha <- cor(byplan$pct_collab, byplan$is_transf, method = "pearson") #> -1*portiontransf / portionnotcollab
 
+set.seed(431)
 N <- 1000
 bootstrap <- vector(mode = "list", length = N)
-corrs <- vector(mode = "list", length = N)
+corrs <- vector(mode = "numeric", length = N)
 for(i in 1:N){
-   bootstrap[[i]] <- sample(byplan$is_transf, length(byplan$is_transf), replace = F)
-   corrs[[i]] <- cor(byplan$pct_collab, bootstrap[[i]], method = "pearson")
+   bootstrap[[i]] <- sample(byplan$is_transf, length(byplan$is_transf), replace = T)
+   corrs[i] <- cor(byplan$pct_collab, bootstrap[[i]], method = "pearson")
 }
-
+boxplot(corrs)
+stripchart(alpha,              # Data
+           pch = 19,          # Pch symbols
+           col = "blue",           # Color of the symbol
+           vertical = TRUE,   # Vertical mode
+           add = TRUE)
 
 #only keep the six main verb tenses
 edgelist_w_meta <- edgelist_w_meta[edgelist_w_meta$head_verb_tense %in% c(
