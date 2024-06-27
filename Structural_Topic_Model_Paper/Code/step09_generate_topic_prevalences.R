@@ -13,10 +13,11 @@ inputspattern <- inputsfilenamesplits[length(inputsfilenamesplits)]
 
 fl <- list.files(path = inputspath, pattern = inputspattern, full.names = T)
 which_file <- which.max(file.info(fl)$mtime)
+print(paste('using',
+list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file]))
+
 
 inputs <- readRDS(list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file])
-
-
 modelfilename <- filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath
 modelfilenamesplits <- unlist(strsplit(modelfilename,split="/"))
 modelpath <- paste(modelfilenamesplits[1:(length(modelfilenamesplits)-1)],collapse = "/")
@@ -24,6 +25,7 @@ modelpattern <- modelfilenamesplits[length(modelfilenamesplits)]
 
 minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = T))
 which_file <- which.max(minfo$mtime)
+print(paste('using',list.files(path = modelpath, pattern = "model", full.names = T)[which_file]))
 model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
 
 # findTopic doens;'t handle regex
