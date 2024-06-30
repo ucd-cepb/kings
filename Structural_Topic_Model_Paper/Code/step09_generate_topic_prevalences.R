@@ -13,10 +13,9 @@ inputspattern <- inputsfilenamesplits[length(inputsfilenamesplits)]
 
 fl <- list.files(path = inputspath, pattern = inputspattern, full.names = T)
 which_file <- which.max(file.info(fl)$mtime)
-print(paste('using',
-list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file]))
 
-
+grab_this_inputs = list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file]
+print(grab_this_inputs)
 inputs <- readRDS(list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file])
 modelfilename <- filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath
 modelfilenamesplits <- unlist(strsplit(modelfilename,split="/"))
@@ -25,8 +24,11 @@ modelpattern <- modelfilenamesplits[length(modelfilenamesplits)]
 
 minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = T))
 which_file <- which.max(minfo$mtime)
-print(paste('using',list.files(path = modelpath, pattern = "model", full.names = T)[which_file]))
-model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
+
+grab_this_model = list.files(path = modelpath, pattern = "model", full.names = T)[which_file]
+print(grab_this_model)
+model <- readRDS(grab_this_model)
+
 
 # findTopic doens;'t handle regex
 # do it ourselves
@@ -56,13 +58,32 @@ source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 
 ### update w/ wells
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
-                        'dw' = 'urbangw_af_log_scaled',
-                        'cc' = 'maxdryspell_scaled',
+                        'dw' = 'log_well_MCL_exceedance_count_by_log_pop_scaled',
+                        'cc' = 'dsci_scaled',
                         'gde' = 'fract_of_area_in_habitat_log_scaled'
                         )
 
-#### agr interactions ####
 foci <- names(problem_measures)
+problem_estimates <- vector(mode = 'list',length = length(foci))
+for(x in foci){
+   print(x)
+   problem <- problem_measures[[x]]
+   topic_vec <- topic_ids[[x]]
+   print(paste('topic',topic_vec))
+   #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+   vr <- as.formula(paste("~",as.name(problem),collapse = " "))
+   fr <- update.formula(vr,topic_vec ~ . )
+   if(length(topic_vec)>1){
+      m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+                             stmobj = model)
+   }else{
+      m <- estimateEffect(fr, metadata = model$settings$covariates$X,stmobj = model)
+   }
+   problem_estimates[[match(x,foci)]] <- m
+}
+names(problem_estimates) <- paste(foci)
+
+#### agr interactions ####
 agr_interaction_estimates <- vector(mode = 'list',length = length(foci))
 for(x in foci){
    print(x)
@@ -102,8 +123,9 @@ for(x in foci){
 }
 names(repvote_interaction_estimates) <- paste(foci,'rep',sep = '_')
 
-interaction_estimates <- c(agr_interaction_estimates,repvote_interaction_estimates)
 
+interaction_estimates <- c(problem_estimates,agr_interaction_estimates,repvote_interaction_estimates)
+saveRDS(object = interaction_estimates,file = 'data/Structural_Topic_Model_Paper/interaction_estimates.RDS')
 inter_grid <- expand.grid(moderator = c('Republican_Vote_Share_scaled','Agr_Share_Of_GDP_scaled'),
                           moderator.value = c(-1,1),
                           covariate = unlist(problem_measures))
@@ -149,18 +171,81 @@ confint_dt$foci <- inter_grid$foci[match(confint_dt$covariate,inter_grid$covaria
 library(tidyverse)
 library(ggthemes)
 confint_dt$foci <- toupper(confint_dt$foci)
-gg_repvote <- ggplot(data = confint_dt[moderator == 'Republican_Vote_Share_scaled',]) + 
-   facet_wrap(~foci,scale = 'free') + theme_bw() + 
+saveRDS(object = confint_dt,'data/Structural_Topic_Model_Paper/confint_dt.RDS')
+
+
+linear_confints <- rbindlist(lapply(foci,function(f) {
+dt <- extract.estimateEffectDEV(interaction_estimates[[f]],
+                     npoints = 10,
+                    method = 'continuous',
+                    model = model,covariate = problem_measures[[f]])
+dt$problem <- f
+dt}))
+
+linear_confints$problem <- toupper(linear_confints$problem)
+gg_problem_severity <- ggplot(linear_confints) + facet_wrap(~problem,scale = 'free') + theme_bw() + 
+   ggtitle('Focus on problem as problem severity increases') +
+   geom_path(aes(x = covariate.value,y =estimate)) + 
+   scale_y_continuous(name = 'estimated topic proportion')+
+   scale_x_continuous(name = 'problem severity measure') +
+   geom_ribbon(aes(x = covariate.value,max = ci.upper,min = ci.lower),
+               col = 'black',fill = NA,lty = 2)
+ggsave(plot = gg_problem_severity,filename = 'Structural_Topic_Model_Paper/output/problem_severity.png',dpi = 450,width = 7,height = 7,units = 'in')
+
+
+
+gg_cc <- ggplot(data = confint_dt[foci == 'CC',]) + 
+   facet_wrap(~moderator,scale = 'free') + theme_bw() + 
    geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
    geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
-   scale_color_colorblind(name = 'Rep. vote share',
+   scale_color_colorblind(name = 'Moderator',
                           labels = c('-1 SD','+1 SD')) +
    scale_x_continuous('problem measure (scaled)') + 
-   scale_y_continuous(name = 'estimated marginal effect') + 
+   scale_y_continuous(name = 'estimated climate topic %') + 
    theme(#legend.position = c(0.8,0.2),
          legend.position = 'bottom') +
-   ggtitle('Policy priorites moderated by Rep. vote share')
-ggsave(plot = gg_repvote,filename = 'Structural_Topic_Model_Paper/output/repvote_interaction.png',dpi = 450,width = 7,height = 7,units = 'in')
+   ggtitle('Climate focus moderated by local political economy')
+ggsave(plot = gg_cc,filename = 'Structural_Topic_Model_Paper/output/climate_interaction.png',dpi = 450,width = 7,height = 3.5,units = 'in')
+
+gg_gde <- ggplot(data = confint_dt[foci == 'GDE',]) + 
+   facet_wrap(~moderator,scale = 'free') + theme_bw() + 
+   geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
+   geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
+   scale_color_colorblind(name = 'Moderator',
+                          labels = c('-1 SD','+1 SD')) +
+   scale_x_continuous('problem measure (scaled)') + 
+   scale_y_continuous(name = 'estimated GDE topic %') + 
+   theme(#legend.position = c(0.8,0.2),
+      legend.position = 'bottom') +
+   ggtitle('GDE focus moderated by local political economy')
+ggsave(plot = gg_gde,filename = 'Structural_Topic_Model_Paper/output/gde_interaction.png',dpi = 450,width = 7,height = 3.5,units = 'in')
+
+
+gg_ej <- ggplot(data = confint_dt[foci == 'EJ',]) + 
+   facet_wrap(~moderator,scale = 'free') + theme_bw() + 
+   geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
+   geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
+   scale_color_colorblind(name = 'Moderator',
+                          labels = c('-1 SD','+1 SD')) +
+   scale_x_continuous('problem measure (scaled)') + 
+   scale_y_continuous(name = 'estimated EJ topic %') + 
+   theme(#legend.position = c(0.8,0.2),
+      legend.position = 'bottom') +
+   ggtitle('EJ focus moderated by local political economy')
+ggsave(plot = gg_ej,filename = 'Structural_Topic_Model_Paper/output/ej_interaction.png',dpi = 450,width = 7,height = 3.5,units = 'in')
+
+gg_dw <- ggplot(data = confint_dt[foci == 'DW',]) + 
+   facet_wrap(~moderator,scale = 'free') + theme_bw() + 
+   geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
+   geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
+   scale_color_colorblind(name = 'Moderator',
+                          labels = c('-1 SD','+1 SD')) +
+   scale_x_continuous('problem measure (scaled)') + 
+   scale_y_continuous(name = 'estimated DW topic %') + 
+   theme(#legend.position = c(0.8,0.2),
+      legend.position = 'bottom') +
+   ggtitle('DW focus moderated by local political economy')
+ggsave(plot = gg_dw,filename = 'Structural_Topic_Model_Paper/output/dw_interaction.png',dpi = 450,width = 7,height = 3.5,units = 'in')
 
 
 gg_agr <- ggplot(data = confint_dt[moderator == "Agr_Share_Of_GDP_scaled" ,]) + 
@@ -176,156 +261,17 @@ gg_agr <- ggplot(data = confint_dt[moderator == "Agr_Share_Of_GDP_scaled" ,]) +
    ggtitle('Policy priorites moderated by agric. industry')
 ggsave(plot = gg_agr,filename = 'Structural_Topic_Model_Paper/output/agr_interaction.png',dpi = 450,width = 7,height = 7,units = 'in')
 
+gg_rep <- ggplot(data = confint_dt[moderator == "Republican_Vote_Share_scaled" ,]) + 
+   facet_wrap(~foci,scale = 'free') + theme_bw() + 
+   geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
+   geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
+   scale_color_colorblind(name = 'Republican_Vote_Share',
+                          labels = c('-1 SD','+1 SD')) +
+   scale_x_continuous('problem measure (scaled)') + 
+   scale_y_continuous(name = 'estimated marginal effect') + 
+   theme(#legend.position = c(0.8,0.2),
+      legend.position = 'bottom') +
+   ggtitle('Policy priorites moderated by Republican vote share')
+ggsave(plot = gg_rep,filename = 'Structural_Topic_Model_Paper/output/rep_interaction.png',dpi = 450,width = 7,height = 7,units = 'in')
 
 
-topic_ids
-mapply(function(moderator,covariate,moderator.value,model.match) {
-                        plot.estimateEffect(x = interaction_estimates[[model.match]],
-                           model = model,
-                           method = 'continuous',
-                           moderator = moderator,
-                           moderator.value = as.numeric(moderator.value),
-                           covariate = covariate)},
-       moderator = inter_grid$moderator,moderator.value = inter_grid$moderator.value,
-       covariate = inter_grid$covariate,model.match = inter_grid$model.match)
-
-
-                           ))
-
-test = mapply(function(x,y,z,m){
-   est <- plot.estimateEffect(x,
-                              model = model,
-                              method = 'continuous',
-                              covariate = y,
-                              moderator.value = z,
-                              moderator = m)
-   getConfint(est = est,moderator.value = m,cv = y)
-}, x = repvote_interaction_estimates, y = problem_measures, z = 1,m = 'Republican_Vote_Share_scaled')
-
-
-
-
-
-
-est
-
-
-as.formula(tt)
-
-fm <- as.formula(topic_ids[[x]] ~ as.name(problem_measures[[x]]))
-              fm
-estimateEffectDEV(formula(topic_ids[[x]] ~ as.name(problem_measures[[x]])),
-                  metadata = model$settings$covariates$X,group = T,
-                  stmobj = model)
-
-lapply(foci,function(x){estimateEffectDEV(formula(paste(as.vectortopic_ids[[x]],"~",problem_measures[[x]],collapse = " ")),
-                                          metadata = model$settings$covariates$X,group = T,
-                                          stmobj = model)})
-
-ej_interaction0 = estimateEffectDEV(formula = topic_ids$ej ~ Agr_Share_Of_GDP_scaled * (urbangw_af_log_scaled+
-                                            percent_dac_by_pop_scaled +
-                                           fract_of_area_in_habitat_log_scaled+
-                                          maxdryspell_scaled),
-                           metadata = model$settings$covariates$X,group = T,
-                           stmobj = model)
-ej_interaction1 = estimateEffectDEV(formula = topic_ids$ej ~ Agr_Share_Of_GDP_scaled * percent_dac_by_pop_scaled,
-                                    metadata = model$settings$covariates$X,group = T,
-                                    stmobj = model)
-
-par(mfrow=c(1,2))
-plot(ej_interaction0, "percent_dac_by_pop_scaled", method="continuous",
-    # cov.value1=1, cov.value2=-1, 
-     xlim=c(-2,2), moderator="Agr_Share_Of_GDP_scaled", moderator.value=c(1))
-plot(ej_interaction1, "percent_dac_by_pop_scaled", method="continuous",
-     #cov.value1=1, cov.value2=-1, 
-     xlim=c(-2,2), moderator="Agr_Share_Of_GDP_scaled", moderator.value=c(1))
-
-
-plot(prep, "treatment", method="pointestimate",
-     cov.value1=1, cov.value2=0, xlim=c(-1,1), moderator="binaryvar",
-     moderator.value=0)
-
-
-colnames(model$settings$covariates$X)
-summary(test)
-* urbangw_af_log_scaled + 
-   Republican_Vote_Share_scaled * percent_dac_by_pop_scaled + 
-   Republican_Vote_Share_scaled * fract_of_area_in_habitat_log_scaled + 
-   Republican_Vote_Share_scaled * maxdryspell_scaled
-
-dim(model$settings$covariates$X)
-apply(topic_labels,2,function(x) grepl(paste(topic_indicators$ej,collapse = '|'),x))
-
-
-grepl(paste(topic_indicators$ej,collapse = '|'),)
-
-#### par(mfrow = c(1,2))
-par(mfrow = c(1,2))
-tt1 = plot.estimateEffect(test,covariate = 'maxdryspell_scaled',topics = 7,method = 'continuous',
-                    moderator = 'Republican_Vote_Share_scaled',npoints = 20,
-                    moderator.value = -2,printlegend = F,main = 'drought * low Rep. vote share')
-tt2 = plot.estimateEffect(test,covariate = 'maxdryspell_scaled',topics = 7,method = 'continuous',
-                    main = 'drought * high Rep. vote share',
-                    moderator = 'Republican_Vote_Share_scaled',npoints = 20,
-                    moderator.value = 2,printlegend = F)
-
-library(ggplot2)
-extractPoints = function(x,x_variable = NULL,conditional_variable = NULL){
-   ### x = output from plot.estimateEffect
-   ### x_variable = string for name of plot x-axis variable
-   ### conditional_variable = string for condition level of moderator variable (.e.g, "high republican vote share")
-   cidt = data.table(t(as.data.table(x$ci)))
-   setnames(cidt,new = c('lower','upper'))
-   cidt = data.table(mean = unlist(x$means),cidt)
-   if(!is.null(x_variable)){cidt[[x_variable]] <- tt$x}else{cidt$x <- tt$x}
-   if(!is.null(conditional_variable)){cidt$conditional_variable<- conditional_variable}
-   return(cidt)
-}
-
-df = rbind(
-      extractPoints(x = tt1,x_variable = 'maxdryspell_scaled',conditional_variable = 'low Rep. vote share'),
-   extractPoints(x = tt2,x_variable = 'maxdryspell_scaled',conditional_variable = 'high Rep. vote share'),
-   use.names = T,fill = T)
-
-ggplot(df) + 
-   geom_ribbon(fill = NA,aes(x = maxdryspell_scaled,
-                             ymin = lower,
-                             ymax = upper,col = conditional_variable),lty = 2)+
-   geom_path(aes(x = maxdryspell_scaled,y = mean,col = conditional_variable),lty = 1)+
-   theme_bw()
-
-
-tt3 = plot.estimateEffect(test,covariate = 'maxdryspell_scaled',topics = 24,method = 'continuous',
-                          moderator = 'Republican_Vote_Share_scaled',npoints = 20,
-                          moderator.value = -2,printlegend = F,main = 'drought * low Rep. vote share')
-tt4 = plot.estimateEffect(test,covariate = 'maxdryspell_scaled',topics = 24,method = 'continuous',
-                          main = 'drought * high Rep. vote share',
-                          moderator = 'Republican_Vote_Share_scaled',npoints = 20,
-                          moderator.value = 2,printlegend = F)
-
-df2 = rbind(
-   extractPoints(x = tt3,x_variable = 'maxdryspell_scaled',conditional_variable = 'low Rep. vote share'),
-   extractPoints(x = tt4,x_variable = 'maxdryspell_scaled',conditional_variable = 'high Rep. vote share'),
-   use.names = T,fill = T)
-
-ggplot(df2) + 
-   geom_ribbon(fill = NA,aes(x = maxdryspell_scaled,
-                             ymin = lower,
-                             ymax = upper,col = conditional_variable),lty = 2)+
-   geom_path(aes(x = maxdryspell_scaled,y = mean,col = conditional_variable),lty = 1)+
-   theme_bw()
-
-#####
-
-metadata <- inputs$meta
-prev <- as.data.frame(model$theta)
-
-topic_prev <- cbind(prev, metadata)
-
-ntopics <- model$settings$dim$K
-
-tps <- aggregate(as.matrix(topic_prev[,1:ntopics]), data.frame(topic_prev$gsp_id), mean)
-rownames(tps) <- tps[,1]
-tps <- tps[,2:31]
-
-saveRDS(tps, filekey[filekey$var_name=="topic_prevalence",]$filepath)
