@@ -13,7 +13,8 @@ inputspattern <- inputsfilenamesplits[length(inputsfilenamesplits)]
 
 fl <- list.files(path = inputspath, pattern = inputspattern, full.names = T)
 which_file <- which.max(file.info(fl)$mtime)
-
+grab_this_inputs = list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file]
+print(grab_this_inputs)
 inputs <- readRDS(list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file])
 
 
@@ -24,7 +25,9 @@ modelpattern <- modelfilenamesplits[length(modelfilenamesplits)]
 
 minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = T))
 which_file <- which.max(minfo$mtime)
-model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[which_file])
+grab_this_model = list.files(path = modelpath, pattern = "model", full.names = T)[which_file]
+print(grab_this_model)
+model <- readRDS(grab_this_model)
 
 # findTopic doens;'t handle regex
 # do it ourselves
@@ -53,8 +56,8 @@ topic_nums})
 source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
-                        'dw' = 'well_MCL_exceedance_count_by_log_pop_scaled',
-                        'cc' = 'maxdryspell_scaled',
+                        'dw' = 'log_well_MCL_exceedance_count_by_log_pop_scaled',
+                        'cc' = 'dsci_scaled',
                         'gde' = 'fract_of_area_in_habitat_log_scaled'
                         )
 
@@ -188,32 +191,6 @@ gg_problem_severity <- ggplot(linear_confints) + facet_wrap(~problem,scale = 'fr
                col = 'black',fill = NA,lty = 2)
 ggsave(plot = gg_problem_severity,filename = 'Structural_Topic_Model_Paper/output/problem_severity.png',dpi = 450,width = 7,height = 7,units = 'in')
 
-#### current climate problem ###
-x <- 'cc'
-problem <- 'gwsum'
-topic_vec <- topic_ids[[x]]
-print(paste('topic',topic_vec))
-#vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
-vr <- as.formula(paste("~",as.name(problem),collapse = " "))
-fr <- update.formula(vr,topic_vec ~ . )
-m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
-                          stmobj = model)
-
-ex <- extract.estimateEffectDEV(m,
-                    model = model,covariate = 'gwsum')
-
-gg_gwsum <- ggplot(data = ex) + geom_errorbar(aes(ymin = ci.lower,
-                                      ymax = ci.upper,
-                                      x = covariate.value),width = 0.15)+ 
-   geom_point(aes(x = covariate.value,y = estimate)) +
-   theme_bw() +
-   scale_y_continuous(name = 'estimated climate topic proportion')+
-   scale_x_continuous(name = 'Priority points (intrusion + dry wells + subsidence') +
-   ggtitle('Plan climate focus by basin priority level (current climate pressures)')
-
-ggsave(plot = gg_gwsum,
-       filename = 'Structural_Topic_Model_Paper/output/current_climate_pressure.png',
-       dpi = 450,width = 7,height = 6.5,units = 'in')
 
 
 gg_cc <- ggplot(data = confint_dt[foci == 'CC',]) + 
