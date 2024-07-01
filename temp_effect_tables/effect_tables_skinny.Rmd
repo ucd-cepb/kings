@@ -50,11 +50,9 @@ tbl_list <- list.files(path = eftblpath, pattern = eftblpattern, full.names = T)
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(dw_list[[i]]$`Pr(>|t|)`),digits = 2)))
       sig <- dw_list[[i]]$`Pr(>|t|)`=="<0.05"
       dw_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
-      dw_list[[i]]$Estimate <- signif(dw_list[[i]]$Estimate, digits = 3)
+      dw_list[[i]]$Estimate <- format(signif(dw_list[[i]]$Estimate, digits = 3), scientific = T)
       dw_list[[i]]$`Std. Error` <- NULL
       dw_list[[i]]$`t value` <- NULL
-         
- 
    }
    
    dw_topics <- unlist(str_extract_all(strsplit(tbl_list[grep("DW",tbl_list)], ":")[[1]][2], dig_regex))
@@ -68,7 +66,7 @@ tbl_list <- list.files(path = eftblpath, pattern = eftblpattern, full.names = T)
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(cc_list[[i]]$`Pr(>|t|)`),digits = 2)))
       sig <- cc_list[[i]]$`Pr(>|t|)`=="<0.05" 
       cc_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
-      cc_list[[i]]$Estimate <- signif(cc_list[[i]]$Estimate, digits = 3)
+      cc_list[[i]]$Estimate <- format(signif(cc_list[[i]]$Estimate, digits = 3),scientific=T)
       cc_list[[i]]$`Std. Error` <- NULL
       cc_list[[i]]$`t value` <- NULL
          
@@ -85,7 +83,7 @@ tbl_list <- list.files(path = eftblpath, pattern = eftblpattern, full.names = T)
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(ej_list[[i]]$`Pr(>|t|)`),digits = 2)))
       sig <- ej_list[[i]]$`Pr(>|t|)`=="<0.05" 
       ej_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
-      ej_list[[i]]$Estimate <- signif(ej_list[[i]]$Estimate, digits = 3)
+      ej_list[[i]]$Estimate <- format(signif(ej_list[[i]]$Estimate, digits = 3), scientific = T)
       ej_list[[i]]$`Std. Error` <- NULL
       ej_list[[i]]$`t value` <- NULL
          
@@ -102,7 +100,7 @@ tbl_list <- list.files(path = eftblpath, pattern = eftblpattern, full.names = T)
          p_temp<0.05,"<0.05",as.character(signif(as.numeric(gde_list[[i]]$`Pr(>|t|)`),digits = 2)))
       sig <- gde_list[[i]]$`Pr(>|t|)`=="<0.05"
       gde_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
-      gde_list[[i]]$Estimate <- signif(gde_list[[i]]$Estimate, digits = 3)
+      gde_list[[i]]$Estimate <- format(signif(gde_list[[i]]$Estimate, digits = 3), scientific=T)
       gde_list[[i]]$`Std. Error` <- NULL
       gde_list[[i]]$`t value` <- NULL
          
