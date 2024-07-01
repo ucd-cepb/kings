@@ -13,10 +13,10 @@ inputspattern <- inputsfilenamesplits[length(inputsfilenamesplits)]
 
 fl <- list.files(path = inputspath, pattern = inputspattern, full.names = T)
 which_file <- which.max(file.info(fl)$mtime)
+input_file = list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file]
+print(input_file)
+inputs <- readRDS(input_file)
 
-grab_this_inputs = list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file]
-print(grab_this_inputs)
-inputs <- readRDS(list.files(path = inputspath, pattern = inputspattern, full.names = T)[which_file])
 modelfilename <- filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath
 modelfilenamesplits <- unlist(strsplit(modelfilename,split="/"))
 modelpath <- paste(modelfilenamesplits[1:(length(modelfilenamesplits)-1)],collapse = "/")
@@ -24,11 +24,9 @@ modelpattern <- modelfilenamesplits[length(modelfilenamesplits)]
 
 minfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = T))
 which_file <- which.max(minfo$mtime)
-
-grab_this_model = list.files(path = modelpath, pattern = "model", full.names = T)[which_file]
-print(grab_this_model)
-model <- readRDS(grab_this_model)
-
+model_file <- list.files(path = modelpath, pattern = "model", full.names = T)[which_file]
+print(model_file)
+model <- readRDS(model_file)
 
 # findTopic doens;'t handle regex
 # do it ourselves
@@ -49,22 +47,23 @@ topic_indicators <- lapply(topic_indicators,str_replace_all,'\\s','_')
 ### this returns a vector, not a matrix
 ### but we can redo as a matrix, filling by row, to create boolean
 topic_ids <- lapply(topic_indicators,function(indicator){
-word_match_matrix <- matrix(grepl(paste(indicator,collapse = '|'),frex_scores),
-          byrow = F,ncol = ncol(frex_scores))
-topic_nums <- which(rowSums(word_match_matrix)>0)
-topic_nums})
+   word_match_matrix <- matrix(grepl(paste(indicator,collapse = '|'),frex_scores),
+                               byrow = F,ncol = ncol(frex_scores))
+   topic_nums <- which(rowSums(word_match_matrix)>0)
+   topic_nums})
 
 source('Structural_Topic_Model_Paper/Code/utils/estimateEffectDEV.R')
 
-### update w/ wells
+
 problem_measures = list('ej' = 'percent_dac_by_pop_scaled',
                         'dw' = 'log_well_MCL_exceedance_count_by_log_pop_scaled',
                         'cc' = 'dsci_scaled',
                         'gde' = 'fract_of_area_in_habitat_log_scaled'
-                        )
+)
 
 foci <- names(problem_measures)
 problem_estimates <- vector(mode = 'list',length = length(foci))
+
 for(x in foci){
    print(x)
    problem <- problem_measures[[x]]
@@ -83,6 +82,30 @@ for(x in foci){
 }
 names(problem_estimates) <- paste(foci)
 
+pol_measures = list('politics' = 'Republican_Vote_Share_scaled',
+                    'econ_interest' = 'Agr_Share_Of_GDP_scaled')
+pol_estimates <- vector(mode = 'list',length = length(foci))
+for(x in foci){
+   print(x)
+   pol1 <- pol_measures[1]
+   pol2 <- pol_measures[2]
+   topic_vec <- topic_ids[[x]]
+   print(paste('topic',topic_vec))
+   #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+   vr <- as.formula(paste("~",pol1,'+',pol2,collapse = " "))
+   fr <- update.formula(vr,topic_vec ~ . )
+   if(length(topic_vec)>1){
+      m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+                             stmobj = model)
+   }else{
+      m <- estimateEffect(fr, metadata = model$settings$covariates$X,stmobj = model)
+   }
+   pol_estimates[[match(x,foci)]] <- m
+}
+names(pol_estimates) <- paste0('pol_',foci)
+
+
+
 #### agr interactions ####
 agr_interaction_estimates <- vector(mode = 'list',length = length(foci))
 for(x in foci){
@@ -95,7 +118,7 @@ for(x in foci){
    fr <- update.formula(vr,topic_vec ~ . * Agr_Share_Of_GDP_scaled)
    if(length(topic_vec)>1){
       m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
-               stmobj = model)
+                             stmobj = model)
    }else{
       m <- estimateEffect(fr, metadata = model$settings$covariates$X,stmobj = model)
    }
@@ -124,7 +147,7 @@ for(x in foci){
 names(repvote_interaction_estimates) <- paste(foci,'rep',sep = '_')
 
 
-interaction_estimates <- c(problem_estimates,agr_interaction_estimates,repvote_interaction_estimates)
+interaction_estimates <- c(problem_estimates,pol_estimates,agr_interaction_estimates,repvote_interaction_estimates)
 saveRDS(object = interaction_estimates,file = 'data/Structural_Topic_Model_Paper/interaction_estimates.RDS')
 inter_grid <- expand.grid(moderator = c('Republican_Vote_Share_scaled','Agr_Share_Of_GDP_scaled'),
                           moderator.value = c(-1,1),
@@ -155,18 +178,19 @@ confint_list <- lapply(1:nrow(inter_grid),function(i){
    #                     covariate = as.character(inter_grid$covariate[i]))
    # 
    temp_est <- extract.estimateEffectDEV( x = interaction_estimates[[inter_grid$model.match[i]]],
-                              model = model,
-                              method = 'continuous',
-                              moderator = as.character(inter_grid$moderator[i]),
-                              moderator.value = inter_grid$moderator.value[i],
-                              covariate = as.character(inter_grid$covariate[i]))
+                                          model = model,
+                                          method = 'continuous',
+                                          moderator = as.character(inter_grid$moderator[i]),
+                                          moderator.value = inter_grid$moderator.value[i],
+                                          covariate = as.character(inter_grid$covariate[i]))
    temp_est$model <- inter_grid$model.match[i]
    temp_est
-   })
+})
 
 
 confint_dt <- rbindlist(confint_list,use.names = T,fill = T)
 confint_dt$foci <- inter_grid$foci[match(confint_dt$covariate,inter_grid$covariate)]
+
 
 library(tidyverse)
 library(ggthemes)
@@ -175,12 +199,12 @@ saveRDS(object = confint_dt,'data/Structural_Topic_Model_Paper/confint_dt.RDS')
 
 
 linear_confints <- rbindlist(lapply(foci,function(f) {
-dt <- extract.estimateEffectDEV(interaction_estimates[[f]],
-                     npoints = 10,
-                    method = 'continuous',
-                    model = model,covariate = problem_measures[[f]])
-dt$problem <- f
-dt}))
+   dt <- extract.estimateEffectDEV(interaction_estimates[[f]],
+                                   npoints = 10,
+                                   method = 'continuous',
+                                   model = model,covariate = problem_measures[[f]])
+   dt$problem <- f
+   dt}))
 
 linear_confints$problem <- toupper(linear_confints$problem)
 gg_problem_severity <- ggplot(linear_confints) + facet_wrap(~problem,scale = 'free') + theme_bw() + 
@@ -194,6 +218,71 @@ ggsave(plot = gg_problem_severity,filename = 'Structural_Topic_Model_Paper/outpu
 
 
 
+linear_pol_confints <- rbindlist(lapply(foci,function(f) {
+   f_pol = paste0('pol_',f)
+   dt <- extract.estimateEffectDEV(interaction_estimates[[f_pol]],
+                                   npoints = 10,
+                                   method = 'continuous',
+                                   model = model,
+                                   covariate = unlist(pol_measures)[1])
+   dt2 <- extract.estimateEffectDEV(interaction_estimates[[f_pol]],
+                                    npoints = 10,
+                                    method = 'continuous',
+                                    model = model,
+                                    covariate = unlist(pol_measures)[2])
+   dt <- rbind(dt,dt2)
+   dt$problem <- f
+   dt}))
+
+
+
+linear_pol_confints$problem <- toupper(linear_pol_confints$problem)
+
+
+(gg_pol <- ggplot(linear_pol_confints,aes(col = covariate,group = covariate)) + 
+      facet_wrap(~problem,scale = 'fixed') + 
+      theme_bw() + 
+      ggtitle('Focus on topic given local political economy') +
+      geom_path(aes(x = covariate.value,y =estimate)) + 
+      scale_y_continuous(name = 'estimated topic proportion')+
+      scale_x_continuous(name = 'problem severity measure') +
+      scale_color_manual(values =  colorblind_pal()(8)[c(3,7)],
+                         labels = c('Agr. share of GDP','Republican vote share')) + 
+      theme(legend.position = 'bottom',legend.title = element_blank()) + 
+      geom_ribbon(aes(x = covariate.value,
+                      max = ci.upper,min = ci.lower,col = covariate),fill = NA,lty = 2) +
+      NULL)
+
+ggsave(plot = gg_pol,filename = 'Structural_Topic_Model_Paper/output/political_econ_linear.png',dpi = 450,width = 7,height = 7,units = 'in')
+
+# #### current climate problem ###
+# x <- 'cc'
+# problem <- 'gwsum'
+# topic_vec <- topic_ids[[x]]
+# print(paste('topic',topic_vec))
+# #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+# vr <- as.formula(paste("~",as.name(problem),collapse = " "))
+# fr <- update.formula(vr,topic_vec ~ . )
+# m <- estimateEffectDEV(fr, metadata = model$settings$covariates$X,group = T,
+#                        stmobj = model)
+# 
+# ex <- extract.estimateEffectDEV(m,
+#                                 model = model,covariate = 'gwsum')
+# 
+# gg_gwsum <- ggplot(data = ex) + geom_errorbar(aes(ymin = ci.lower,
+#                                                   ymax = ci.upper,
+#                                                   x = covariate.value),width = 0.15)+ 
+#    geom_point(aes(x = covariate.value,y = estimate)) +
+#    theme_bw() +
+#    scale_y_continuous(name = 'estimated climate topic proportion')+
+#    scale_x_continuous(name = 'Priority points (intrusion + dry wells + subsidence') +
+#    ggtitle('Plan climate focus by basin priority level (current climate pressures)')
+# 
+# ggsave(plot = gg_gwsum,
+#        filename = 'Structural_Topic_Model_Paper/output/current_climate_pressure.png',
+#        dpi = 450,width = 7,height = 6.5,units = 'in')
+
+
 gg_cc <- ggplot(data = confint_dt[foci == 'CC',]) + 
    facet_wrap(~moderator,scale = 'free') + theme_bw() + 
    geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
@@ -203,7 +292,7 @@ gg_cc <- ggplot(data = confint_dt[foci == 'CC',]) +
    scale_x_continuous('problem measure (scaled)') + 
    scale_y_continuous(name = 'estimated climate topic %') + 
    theme(#legend.position = c(0.8,0.2),
-         legend.position = 'bottom') +
+      legend.position = 'bottom') +
    ggtitle('Climate focus moderated by local political economy')
 ggsave(plot = gg_cc,filename = 'Structural_Topic_Model_Paper/output/climate_interaction.png',dpi = 450,width = 7,height = 3.5,units = 'in')
 
@@ -265,7 +354,7 @@ gg_rep <- ggplot(data = confint_dt[moderator == "Republican_Vote_Share_scaled" ,
    facet_wrap(~foci,scale = 'free') + theme_bw() + 
    geom_path(aes(x = covariate.value,y = estimate,col = as.factor(moderator.value))) +
    geom_ribbon(aes(x = covariate.value,max= ci.upper,min = ci.lower,col = as.factor(moderator.value)),lty = 2,fill = NA) + 
-   scale_color_colorblind(name = 'Republican_Vote_Share',
+   scale_color_colorblind(name = 'Republican vote share',
                           labels = c('-1 SD','+1 SD')) +
    scale_x_continuous('problem measure (scaled)') + 
    scale_y_continuous(name = 'estimated marginal effect') + 
@@ -273,5 +362,3 @@ gg_rep <- ggplot(data = confint_dt[moderator == "Republican_Vote_Share_scaled" ,
       legend.position = 'bottom') +
    ggtitle('Policy priorites moderated by Republican vote share')
 ggsave(plot = gg_rep,filename = 'Structural_Topic_Model_Paper/output/rep_interaction.png',dpi = 450,width = 7,height = 7,units = 'in')
-
-
