@@ -1,6 +1,9 @@
 ---
 output: pdf_document
 ---
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "~/Documents/WORK/kings")
+```
 
 ```{r, include=FALSE}
 library(dotenv)
@@ -25,49 +28,89 @@ gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 all_nodes <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
-   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))[[1]]
    gsp_id <- paste0("gsp_",gsp_ids[g])
-   nodes <- igraph::as_data_frame(net, what = "vertices")
+   nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
+   places <- nodes %>% filter(exists == 1)
+   # num_places <- length(unique(places$name))
    nodes$gsp_id <- gsp_id
+   mentions <- rowSums(nodes %>% 
+                          select(admin_sum, 
+                                 basin_plan_sum, 
+                                 sust_criteria_sum,
+                                 monitoring_networks_sum,
+                                 projects_mgmt_actions_sum))
+   nodes <- nodes %>% 
+      rename(admin= admin_sum, 
+             basin_plan = basin_plan_sum,
+             sust_criteria = sust_criteria_sum,
+             monitoring_networks = monitoring_networks_sum, 
+             projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
+      mutate(admin_per = 100*(admin/mentions),
+             basin_plan_per = 100*(basin_plan/mentions),
+             sust_criteria_per = 100*(sust_criteria/mentions),
+             monitoring_networks_per = 100*(monitoring_networks/mentions),
+             projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions))
    all_nodes <- rbind(all_nodes, nodes)
 }
 
-all_place_nodes <- tibble(all_nodes) %>% 
-   filter(exists == 1) %>% 
-   rename(admin= admin_sum, 
-          basin_plan = basin_plan_sum, 
-          sust_criteria = sust_criteria_sum, 
-          monitoring_networks = monitoring_networks_sum, 
-          projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
+all_nodes <- all_nodes %>% 
+   mutate(leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
+          leader_dist_w = ifelse(is.infinite(leader_dist_w), NA, leader_dist_w),
+          leader_dist_uw = ifelse(is.infinite(leader_dist_uw), NA, leader_dist_uw)) %>%
    mutate(eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-          leader_std = (leader_dist - mean(leader_dist, na.rm=TRUE)) / sd(leader_dist, na.rm=TRUE),
+          leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
           MHI_std = MHI/10000,
-          POP_std = POP/1000000)
-   
-   
-place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
-all_places <- bind_rows(place_existance)
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
-extract_list = list.files(network_fp)
-gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+          POP_std = POP/1000000,
+          exists = ifelse(is.na(exists), 0, 1))
 
-
+all_place_nodes <- all_nodes %>% 
+   filter(exists == 1)
+   
 ```
 
+###
+### HYPOTHESIS 1: DACs have lower existence than non-disadvantaged communities
+###
 
+```{r}
+#cross-tab for (DAC, exists)
+with(all_places, table(exists, DAC))
+
+# glm for if DAC influences exists
+exists_t <- glm(exists~DAC, 
+                family = binomial,
+                data = all_place_nodes); stargazer(exists_t, type='text')
+
+exists_mod <- glm(exists ~ MHI+POP+incorporated+per_latino, 
+                  family = binomial,
+                  data = all_place_nodes); stargazer(exists_mod, type='text')
+```
 
 ###
 ### HYPOTHESIS 2: DACs have lower eigenvector centrality than non-disadvantaged communities
 ###
 
 ```{r, results='asis'}
-# t text for eigenvector centrality
+
 eig_t <- t.test(all_place_nodes$eig_std ~ all_place_nodes$DAC); eig_t
-lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
 
+eig_mod <- lm(eig_std ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+              data = all_place_nodes)
+
+eig_mod_2 <- lm(eig_std ~ DAC+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+              data = all_place_nodes)
+
+stargazer(eig_mod, eig_mod_2, type='text')
+
+stargazer(eig_mod, eig_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
 ```
-
-
 
 ###
 ### HYPOTHESIS 3: DACs have lower leader closeness than non-disadvantaged communities
@@ -75,100 +118,149 @@ lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
 
 ```{r, results='asis'}
 
-eig_mod <- lm(eig_std ~ MHI_std+
-                 POP_std+
-                 incorporated+
-                 per_latino+
-                 admin+
-                 basin_plan+
-                 sust_criteria+
-                 monitoring_networks+
-                 projects_mgmt_actions,
-              data = all_place_nodes)
-
-eig_mod_simp <- lm(eig_std ~ MHI_std, data = all_place_nodes)
+lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
 
 lead_mod <- lm(leader_std ~ MHI_std+
                  POP_std+
                  incorporated+
-                 per_latino+
-                 admin+
-                 basin_plan+
-                 sust_criteria+
-                 monitoring_networks+
-                 projects_mgmt_actions,
+                 per_latino,
               data = all_place_nodes)
 
-lead_mod_simp <- lm(leader_std ~ MHI_std, data = all_place_nodes)
 
-stargazer(eig_mod, eig_mod_simp, lead_mod, lead_mod_simp, type='latex')
+lead_mod_2 <- lm(leader_std ~ DAC+
+                 per_latino+
+                 POP_std+
+                 incorporated,
+              data = all_place_nodes)
 
+stargazer(lead_mod, lead_mod_2, type='text', out = 'EJ_DAC_Paper/Out/mods/2_lead_mod.html')
+```
+
+```{r, results='asis'}
+
+eig_a <- lm(eig_std ~ admin_per,
+              data = all_nodes)
+
+
+eig_b <- lm(eig_std ~ basin_plan_per,
+              data = all_nodes)
+
+
+eig_c <- lm(eig_std ~ sust_criteria_per,
+              data = all_nodes)
+
+
+eig_d <- lm(eig_std ~ monitoring_networks_per,
+              data = all_nodes)
+
+
+eig_e <- lm(eig_std ~ projects_mgmt_actions_per,
+              data = all_nodes)
+
+stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='text')
+
+stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='html', out = 'EJ_DAC_Paper/Out/mods/3_eig_locs_mod.html')
+```
+
+```{r, results='asis'}
+
+lead_a <- lm(leader_std ~ admin_per,
+              data = all_nodes)
+
+
+lead_b <- lm(leader_std ~ basin_plan_per,
+              data = all_nodes)
+
+
+lead_c <- lm(leader_std ~ sust_criteria_per,
+              data = all_nodes)
+
+
+lead_d <- lm(leader_std ~ monitoring_networks_per,
+              data = all_nodes)
+
+
+lead_e <- lm(leader_std ~ projects_mgmt_actions_per,
+              data = all_nodes)
+
+stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='text')
+
+stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='html', out = 'EJ_DAC_Paper/Out/mods/4_lead_locs_mod.html')
 
 ```
 
-<!-- ### -->
-<!-- ### HYPOTHESIS 4a: DACs appear in the ADMIN section of the GSPs less than non-disadvantaged communities -->
-<!-- ### -->
-<!-- ```{r, results='asis'} -->
+```{r, results='asis'}
 
-<!-- admin_t <- t.test(all_place_nodes$admin_sum ~ all_place_nodes$DAC); admin_t -->
+a_dac <- glm(admin ~ exists,
+             family = poisson,
+              data = all_nodes)
 
-<!-- admin_mod <- lm(admin_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
-<!-- admin_mod_2 <- lm(admin_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
-<!-- admin_mod_3 <- lm(admin ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
 
-<!-- stargazer(admin_mod, admin_mod_2, admin_mod_3, type='latex') -->
-<!-- ``` -->
+b_dac <- glm(basin_plan ~ exists,
+             family = poisson,
+              data = all_nodes)
 
-<!-- ### -->
-<!-- ### HYPOTHESIS 4b: DACs appear in the BASIN PLAN section of the GSPs less than non-disadvantaged communities -->
-<!-- ### -->
-<!-- ```{r, results='asis'} -->
-<!-- basin_plan_t <- t.test(all_place_nodes$basin_plan_sum ~ all_place_nodes$DAC); basin_plan_t -->
-<!-- basin_plan_mod <- lm(basin_plan_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
-<!-- basin_plan_mod_2 <- lm(basin_plan_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
-<!-- basin_plan_mod_3 <- lm(basin_plan ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+c_dac <- glm(sust_criteria ~ exists,
+             family = poisson,
+              data = all_nodes)
 
-<!-- stargazer(basin_plan_mod, basin_plan_mod_2, basin_plan_mod_3, type='latex') -->
-<!-- ``` -->
+d_dac <- glm(monitoring_networks ~ exists,
+             family = poisson,
+              data = all_nodes)
 
-<!-- ### -->
-<!-- ### HYPOTHESIS 4c: DACs appear in the SUSTAINABLE CRITERIA section of the GSPs less than non-disadvantaged communities -->
-<!-- ### -->
-<!-- ```{r, results='asis'} -->
-<!-- sust_criteria_t <- t.test(all_place_nodes$sust_criteria_sum ~ all_place_nodes$DAC); sust_criteria_t -->
+e_dac <- glm(projects_mgmt_actions ~ exists,
+             family = poisson,
+              data = all_nodes)
 
-<!-- sust_criteria_mod <- lm(sust_criteria_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
-<!-- sust_criteria_mod_2 <- lm(sust_criteria_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
-<!-- sust_criteria_mod_3 <- lm(sust_criteria ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
-<!-- stargazer(sust_criteria_mod, sust_criteria_mod_2, sust_criteria_mod_3, type='latex') -->
-<!-- ``` -->
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/5_place_locs_mod.html')
+```
 
-<!-- ### -->
-<!-- ### HYPOTHESIS 4d: DACs appear in the MONITORING NETWORKS section of the GSPs less than non-disadvantaged communities -->
-<!-- ### -->
-<!-- ```{r, results='asis'} -->
-<!-- monitoring_networks_t <- t.test(all_place_nodes$monitoring_networks_sum ~ all_place_nodes$DAC); monitoring_networks_t -->
+```{r, results='asis'}
 
-<!-- monitoring_networks_mod <- lm(monitoring_networks_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
-<!-- monitoring_networks_mod_2 <- lm(monitoring_networks_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
-<!-- monitoring_networks_mod_3 <- lm(monitoring_networks ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+a_dac <- glm(admin ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
 
-<!-- stargazer(monitoring_networks_mod, monitoring_networks_mod_2, monitoring_networks_mod_3, type='latex') -->
-<!-- ``` -->
 
-<!-- ### -->
-<!-- ### HYPOTHESIS 4e: DACs appear in the PROJECT MANAGEMENT ACTIONS section of the GSPs less than non-disadvantaged communities -->
-<!-- ### -->
-<!-- ```{r, results='asis'} -->
-<!-- projects_mgmt_actions_t <- t.test(all_place_nodes$projects_mgmt_actions_sum ~ all_place_nodes$DAC); projects_mgmt_actions_t -->
+b_dac <- glm(basin_plan ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
 
-<!-- projects_mgmt_actions_mod <- lm(projects_mgmt_actions_sum ~ MHI+POP+incorporated+per_latino+num_appearances, data = all_place_nodes) -->
-<!-- projects_mgmt_actions_mod_2 <- lm(projects_mgmt_actions_sum ~ MHI+POP+incorporated+per_latino, data = all_place_nodes) -->
-<!-- # projects_mgmt_actions_mod_3 <- lm(projects_mgmt_actions ~ MHI+POP+inc+latino+num_app, data = gsp_summary) -->
+c_dac <- glm(sust_criteria ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
 
-<!-- stargazer(projects_mgmt_actions_mod, projects_mgmt_actions_mod_2, type='latex') -->
+d_dac <- glm(monitoring_networks ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
 
-<!-- ``` -->
+e_dac <- glm(projects_mgmt_actions ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
+
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/6_dac_locs_mod.html')
+
+```
+
+
+
 

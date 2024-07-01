@@ -178,7 +178,7 @@ net_graph <- function(networklist, gsp_id){
       sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$projects_mgmt_actions)
    })
    
-   return(list(network_graph_simp, mean_dist))
+   return(network_graph_simp)
 }
 
 # apply functions to all networks
