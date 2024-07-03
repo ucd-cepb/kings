@@ -56,6 +56,8 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       txt_color_s <- txt_vect[as.numeric(as.factor(V(gs_subset)$category))]
       
       set.seed(3)
+      png("topics_of_interest_correlation.png",width = 9000, height = 6000, units = "px", res = 800)
+      
       igraph::plot.igraph(gs_subset, layout=layout, vertex.color=cat_color_s,
                           vertex.label.cex=0.75, 
                           vertex.label.color=txt_color_s, vertex.size=8)
@@ -64,13 +66,16 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
              pt.cex = 2, pch = 21, cex = 1.2, pt.bg = category_vect,
              inset = c(0,0))
       title("Network of Positively Correlated Topics of Interest")
-      
+      dev.off()
    #"huge" method network model
    }else if(method == "huge"){
+      set.seed(2000)
       tch <- topicCorr(model, method = "huge", verbose = TRUE)
+      
       for(i in 1:nrow(tch$cor)){
          tch$cor[i,i]=1
       }
+      saveRDS(topicCorr, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/topicCorr"))
       topics <- 1:nrow(tch$posadj)
       tch_cor <- tch$cor[topics,topics] 
       tch_pos <- tch$posadj[topics, topics]
@@ -89,13 +94,18 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       color_vect <- viridis(max(num_neighb)+1)
       txt_vect_sm <- c("#000000","#FFFFFF")
       txt_invert <- ifelse(num_neighb < max(num_neighb)/2,2,1)
+      
+      saveRDS(g, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/all_topics_correlation"))
       set.seed(3)
+      png("all_topics_correlation.png",width = 9000, height = 6000, units = "px", res = 800)
+      
       igraph::plot.igraph(g, layout=layout, vertex.color=color_vect[num_neighb+1], vertex.label.cex=0.75, 
                           vertex.label.color=txt_vect_sm[txt_invert], vertex.size=8)
       title("Network of Positively Correlated Topics")
       image.plot(legend.only=T, zlim=range(0:max(num_neighb)), col=color_vect,
                  legend.lab="Number of Neighbors")
       
+      dev.off()
       #####
       
       tch_pos_subset <- tch$posadj[nums_of_interest,nums_of_interest]
@@ -107,7 +117,10 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       igraph::V(gh_subset)$label <- nums_of_interest
       num_neighbh_subset <- sapply(1:length(nums_of_interest),function(x)length(neighbors(gh_subset,x)))
       
-      V(gh_subset)$category <- categ[!is.na(categ)]#contain key words?
+      graphcategs <- categ[!is.na(categ)]
+      #I want Topic 25 to show up as DW_EJ and not "Multi"
+      graphcategs[graphcategs=="Multi"] <- "DW_EJ"
+      V(gh_subset)$category <- graphcategs#contain key words?
       
       category_vect <- viridis(5)
       cat_color_h <- category_vect[as.numeric(as.factor(V(gh_subset)$category))]
@@ -116,24 +129,27 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       txt_vect <- c("#FFFFFF","#FFFFFF","#000000","#000000","#000000")
       txt_color_h <- txt_vect[as.numeric(as.factor(V(gh_subset)$category))]
       
+      saveRDS(gh_subset, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/topics_of_interest_correlation"))
       
       set.seed(3)
+      png("topics_of_interest_correlation.png",width = 9000, height = 6000, units = "px", res = 800)
+      
       igraph::plot.igraph(gh_subset, layout=layout, vertex.color=cat_color_h,
                           vertex.label.cex=0.75, 
-                          vertex.label.color=txt_color_h, vertex.size=12)
+                          vertex.label.color=txt_color_h, vertex.size=18)
       
       legend('topleft',legend = levels(as.factor(V(gh_subset)$category)), 
              pt.cex = 1, pch = 21, cex = 1.2, pt.bg = category_vect,
              inset = c(0,0))
       title("Network of Positively Correlated Topics of Interest")
-      
+      dev.off()
       
    }else{
       print("Method must be \'simple\' or \'huge\'.")
    }
    
    
-   
+   graphcategs[graphcategs=="DW_EJ"] <- "EJ_DW"
    #"simple" method correlation grid
    if(method == "simple"){
       
@@ -173,7 +189,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
          theme(legend.key=element_rect(colour="black",fill="white",
                                        linetype="solid")) 
       
-      ggsave("top_top_corrplot_simple.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stm_figures",]$filepath,
+      ggsave("top_top_corrplot_simple.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
              width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
    #"huge" method correlation grid
    } else if(method == "huge"){
@@ -190,7 +206,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       max_corr <- ceiling(max_corr*100)/100+
          ifelse(ceiling(max_corr*100)%%5==0,0,(5-ceiling(max_corr*100)%%5)/100)
       min_corr <- max_corr*-1
-      colnames(grid_mini) <- paste0(categ[!is.na(categ)],colnames(grid_mini))
+      colnames(grid_mini) <- paste0(graphcategs,colnames(grid_mini))
       grid_mini <- grid_mini[,sort(colnames(grid_mini))]
       grid_mini <- as.matrix(grid_mini)
       pal <- c(scico(3, palette = "vik") )
@@ -213,9 +229,9 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
                                    override.aes=list(color="#00000000")))+
          theme(legend.key=element_rect(colour="black",fill="white",
                                        linetype="solid")) 
-      
+      saveRDS(corrplot, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/corrplot.RDS"))
       ggsave("top_top_corrplot_huge.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stm_figures",]$filepath,
-             width = 4020, height = 1890, dpi = 300, units = "px", bg = "white")
+             width = 4020, height = 1890, dpi = 600, units = "px", bg = "white")
    } else{
       print("Method must be \'simple\' or \'huge\'.")
    }

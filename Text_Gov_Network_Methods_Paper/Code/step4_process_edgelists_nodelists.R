@@ -7,18 +7,18 @@ library(dplyr)
 library(data.table)
 library(pbapply)
 library(stringi)
-
+library(textNet)
 filekey <- read.csv("filekey.csv")
 
 ###Section 1: Govscitbl####
 source(filekey[filekey$var_name=="govscicleaning_script",]$filepath)
 
-govscitbl$State <- clean_entities(govscitbl$State, remove_nums = T)
-govscitbl$Agency <- clean_entities(govscitbl$Agency, remove_nums = T)
-govscitbl$Abbr <- clean_entities(govscitbl$Abbr, remove_nums = T)
+govscitbl$State <- textNet::clean_entities(govscitbl$State, remove_nums = T)
+govscitbl$Agency <- textNet::clean_entities(govscitbl$Agency, remove_nums = T)
+govscitbl$Abbr <- textNet::clean_entities(govscitbl$Abbr, remove_nums = T)
 govscitbl <- unique(govscitbl)
-
-
+saveRDS(govscitbl, filekey[filekey$var_name=="govsci_tbl_clean",]$filepath)
+write.csv(govscitbl, paste0(filekey[filekey$var_name=="govsci_tbl_clean",]$filepath,".csv"))
 ###Section 2: GSAs####
 edges_and_nodes <- list.files(path = filekey[filekey$var_name=="nondisambiged_extracts_govnetpaper",]$filepath, full.names = T)
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
@@ -56,9 +56,11 @@ for(m in 1:length(edges_and_nodes)){
    if(m %in% c(38,39)){
       #this one is manually adjusted because the website lists them separately but the
       #GSP is actually combined
-      agency_nicknames[(m*2-1):(m*2)]$name <- c(
+      agency_nicknames[(m*2-1):(m*2)]$name <- list(c(
          "City_of_Marysville_GSA","Cordua_Irrigation_District_GSA",
-         "Yuba_Water_Agency_GSA")
+         "Yuba_Water_Agency_GSA"),c(
+            "City_of_Marysville_GSA","Cordua_Irrigation_District_GSA",
+            "Yuba_Water_Agency_GSA"))
       agency_nicknames[(m*2-1)]$nickname <- "Groundwater_Sustainability_Agencies"
       agency_nicknames[(m*2)]$nickname <- "Agencies"
    }
@@ -113,8 +115,7 @@ for(m in 1:length(edges_and_nodes)){
                keepto <- keepto[1]
                makefrom <- keepto[2]
             }
-         }
-         else if(length(unique(nchar(tos)))==2){
+         }else if(length(unique(nchar(tos)))==2){
             keepto <- tos[nchar(tos)!=max(nchar(tos))]
             makefrom <- tos[nchar(tos)==max(nchar(tos))]
          }else{
@@ -140,7 +141,7 @@ for(m in 1:length(edges_and_nodes)){
    try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
    edgenodelist <- readRDS(edges_and_nodes[m])
    edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to, 
-                                    match_partial_entity=customdt[[m]]$match_partial_entity, edgenodelist, try_drop)
+                                    match_partial_entity=customdt[[m]]$match_partial_entity, textnet_extract = edgenodelist, try_drop = try_drop)
    saveRDS(edgenodelist,paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))
 }
 

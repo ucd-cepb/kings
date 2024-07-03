@@ -1,0 +1,156 @@
+---
+output: html_document
+---
+
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "..")
+getwd()
+```
+
+
+```{r lib, include = FALSE}
+library(knitr)
+options(knitr.table.format = "html") 
+
+packs <- c('kableExtra','tidyverse')
+   need <- packs[!packs %in% installed.packages()[,'Package']]
+   if(length(need)>0){install.packages(need)}
+   lapply(packs, require, character.only = TRUE)
+```   
+
+```{r df, include = FALSE}
+filekey <- read.csv("filekey.csv")
+eftblfilename <- filekey[filekey$var_name=="effect_table_condensed_csvs_stmpaper",]$filepath
+eftblfilenamesplits <- unlist(strsplit(eftblfilename,split="/"))
+eftblpath <- paste(eftblfilenamesplits[1:(length(eftblfilenamesplits)-1)],collapse = "/")
+eftblpattern <- eftblfilenamesplits[length(eftblfilenamesplits)]
+
+
+
+tbl_list <- list.files(path = eftblpath, pattern = eftblpattern, full.names = T)
+
+   dig_regex <- "[[:digit:]]+"
+   
+   dw_list <- vector("list", length(grep("DW",tbl_list)))  
+   cc_list <- vector("list", length(grep("CC",tbl_list)))
+   ej_list <- vector("list", length(grep("EJ",tbl_list)))
+   gde_list <- vector("list", length(grep("GDE",tbl_list)))
+
+   for(i in 1:length(grep("DW",tbl_list))){
+      dw_list[[i]] <- read_csv(tbl_list[grep("DW",tbl_list)[i]], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- dw_list[[i]]$`Pr(>|t|)`
+      dw_list[[i]]$`Pr(>|t|)` <- as.character(dw_list[[i]]$`Pr(>|t|)`)
+      dw_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(dw_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- dw_list[[i]]$`Pr(>|t|)`=="<0.05"
+      dw_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
+      dw_list[[i]]$Estimate <- format(signif(dw_list[[i]]$Estimate, digits = 3), scientific = T)
+      dw_list[[i]]$`Std. Error` <- NULL
+      dw_list[[i]]$`t value` <- NULL
+   }
+   
+   dw_topics <- unlist(str_extract_all(strsplit(tbl_list[grep("DW",tbl_list)], ":")[[1]][2], dig_regex))
+   
+   for(i in 1:length(grep("CC",tbl_list))){
+      cc_list[[i]] <- read_csv(tbl_list[grep("CC",tbl_list)[i]], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- cc_list[[i]]$`Pr(>|t|)`
+      cc_list[[i]]$`Pr(>|t|)` <- as.character(cc_list[[i]]$`Pr(>|t|)`)
+      cc_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(cc_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- cc_list[[i]]$`Pr(>|t|)`=="<0.05" 
+      cc_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
+      cc_list[[i]]$Estimate <- format(signif(cc_list[[i]]$Estimate, digits = 3),scientific=T)
+      cc_list[[i]]$`Std. Error` <- NULL
+      cc_list[[i]]$`t value` <- NULL
+         
+
+   }
+   cc_topics <- unlist(str_extract_all(strsplit(tbl_list[grep("CC",tbl_list)], ":")[[1]][2], dig_regex))
+   
+   for(i in 1:length(grep("EJ",tbl_list))){
+      ej_list[[i]] <- read_csv(tbl_list[grep("EJ",tbl_list)[i]], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- ej_list[[i]]$`Pr(>|t|)`
+      ej_list[[i]]$`Pr(>|t|)` <- as.character(ej_list[[i]]$`Pr(>|t|)`)
+      ej_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(ej_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- ej_list[[i]]$`Pr(>|t|)`=="<0.05" 
+      ej_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
+      ej_list[[i]]$Estimate <- format(signif(ej_list[[i]]$Estimate, digits = 3), scientific = T)
+      ej_list[[i]]$`Std. Error` <- NULL
+      ej_list[[i]]$`t value` <- NULL
+         
+
+   }
+   ej_topics <- unlist(str_extract_all(strsplit(tbl_list[grep("EJ",tbl_list)], ":")[[1]][2], dig_regex))
+   
+   for(i in 1:length(grep("GDE",tbl_list))){
+      gde_list[[i]] <- read_csv(tbl_list[grep("GDE",tbl_list)[i]], show_col_types = FALSE)
+      #changing small p values to "<0.05"
+      p_temp <- gde_list[[i]]$`Pr(>|t|)`
+      gde_list[[i]]$`Pr(>|t|)` <- as.character(gde_list[[i]]$`Pr(>|t|)`)
+      gde_list[[i]]$`Pr(>|t|)` <-  ifelse(
+         p_temp<0.05,"<0.05",as.character(signif(as.numeric(gde_list[[i]]$`Pr(>|t|)`),digits = 2)))
+      sig <- gde_list[[i]]$`Pr(>|t|)`=="<0.05"
+      gde_list[[i]]$`Pr(>|t|)` <- ifelse(sig, "**","")
+      gde_list[[i]]$Estimate <- format(signif(gde_list[[i]]$Estimate, digits = 3), scientific=T)
+      gde_list[[i]]$`Std. Error` <- NULL
+      gde_list[[i]]$`t value` <- NULL
+         
+      
+
+   }
+   gde_topics <- unlist(str_extract_all(strsplit(tbl_list[grep("GDE",tbl_list)], ":")[[1]][2], dig_regex))
+```
+
+
+```{r list, results = 'asis', echo = FALSE}
+#list solution
+    
+
+#center the last table
+#header labels table with topic number
+cap <- "<center><strong>Prevalence of Drinking Water Topics</strong></center>"
+knitr::kable(dw_list[[length(dw_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = cap, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(dw_list[[length(dw_list)]]), paste0("Topic ",dw_topics,collapse="+")))) 
+   
+cap <- "<center><strong>Prevalence of Environmental Justice Topics</strong></center>"
+knitr::kable(ej_list[[length(ej_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = cap, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(ej_list[[length(ej_list)]]), paste0("Topic ",ej_topics,collapse="+")))) 
+
+cap <- "<center><strong>Prevalence of Climate Change Topics</strong></center>"
+knitr::kable(cc_list[[length(cc_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = cap, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(cc_list[[length(cc_list)]]), paste0("Topic ",cc_topics,collapse="+")))) 
+
+cap <- "<center><strong>Prevalence of Groundwater Dependent Ecosystem Topics</strong></center>"
+knitr::kable(gde_list[[length(gde_list)]], "html", digits = getOption("digits"), row.names = NA,
+  col.names = NA, align = "c", caption = cap, label = NULL,
+escape = FALSE) %>% kable_styling("condensed", full_width = FALSE) %>% 
+      add_header_above(c(setNames(length(gde_list[[length(gde_list)]]), paste0("Topic ",gde_topics,collapse="+")))) 
+```
+
+```{r results="asis", echo = FALSE}
+cat("
+<style>
+caption {
+      color: black;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+</style>
+")
+```
+

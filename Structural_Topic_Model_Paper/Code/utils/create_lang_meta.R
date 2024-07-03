@@ -23,6 +23,11 @@ create_lang_meta <- function(run_repair = F){
    final_515_table$declininggw <- final_515_table$"Component 7.a\r\n\r\nDeclining GW Levels\r\nPoints" 
    final_515_table$subsidence <- final_515_table$"Component 7.b\r\n\r\nSubsidence Points\r\n"
    final_515_table$saltintrusion <- final_515_table$"Component 7.c\r\n\r\nSalt Intrusion Points"
+<<<<<<< HEAD
+   final_515_table$exceedance <- final_515_table$"WQ - Total Number of unique wells with an MCL Excd between 1/1/2000 and 4/1/2017"
+=======
+   final_515_table$well_MCL_exceedance_count <- final_515_table$`WQ - Total Number of unique wells with an MCL Excd between 1/1/2000 and 4/1/2017`
+>>>>>>> interaction-play
    final_515_table <- final_515_table %>% mutate(ag_gw_asfractof_tot_gw = ag_gw_af/
                                                     (ag_gw_af+urbangw_af))
    
@@ -35,9 +40,14 @@ create_lang_meta <- function(run_repair = F){
    final_515_table$gwsum <- final_515_table$declininggw + 
       final_515_table$saltintrusion + 
       final_515_table$subsidence
-   final_515_table <- select(final_515_table, 
+   final_515_table <- dplyr::select(final_515_table, 
                              c(basin_id, basin_name, priority, 
-                               fract_of_area_in_habitat, urbangw_af, gwsum))
+<<<<<<< HEAD
+                               fract_of_area_in_habitat, urbangw_af, gwsum, exceedance))
+=======
+                               fract_of_area_in_habitat, urbangw_af, gwsum,
+                               well_MCL_exceedance_count))
+>>>>>>> interaction-play
 
    gsp_tblfilename <- filekey[filekey$var_name=="gsp_web_vars_repaired_stmpaper",]$filepath
    gsp_tblfilenamesplits <- unlist(strsplit(gsp_tblfilename,split="/"))

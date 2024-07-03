@@ -5,10 +5,14 @@ modelfilenamesplits <- unlist(strsplit(modelfilename,split="/"))
 modelpath <- paste(modelfilenamesplits[1:(length(modelfilenamesplits)-1)],collapse = "/")
 modelpattern <- modelfilenamesplits[length(modelfilenamesplits)]
 
-model <- readRDS(list.files(path = modelpath, pattern = "model", full.names = T)[
-   length(list.files(path = modelpath, pattern = "model", full.names = T))])
+finfo <- file.info(list.files(path = modelpath, pattern = "model", full.names = T))
+version_select <- which(finfo$mtime==max(finfo$mtime))
+
+model <- readRDS(rownames(finfo)[version_select])
 
    
+#######. NOTE TO ELISE #####
+### IMPLEMENT THE STRUCTURE I USE ABOVE WITH FILE INFO TO SELECT THE MOST RECENT ONE ###
 
 inputsfilename <- filekey[filekey$var_name=="gsp_out_files",]$filepath
 inputsfilenamesplits <- unlist(strsplit(inputsfilename,split="/"))

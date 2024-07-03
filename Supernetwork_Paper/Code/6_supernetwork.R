@@ -4,7 +4,10 @@ library(ggraph)
 library(data.table)
 filekey <- read.csv("filekey.csv")
 
-edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath, full.names = T)
+use_filtered_parsefiles <- T
+
+
+edges_and_nodes <- list.files(path = filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath, full.names = T)
 gspids <- stringr::str_extract(edges_and_nodes,'[0-9]{1,}')
 
 #excluding the garbled PDF ("0089") and the duplicate ("0053")
@@ -14,7 +17,13 @@ supernodes <- vector(mode = "list", length = length(gspids)-2)
 superedges <- vector(mode = "list", length = length(gspids)-2)
 for(m in graphs){
    print(m)
-   single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_graphs_govnetpaper",]$filepath,gspids[m]))
+   if(use_filtered_parsefiles == T){
+      single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_filtered_graphs_superpaper",]$filepath,gspids[m]))
+      
+   }else{
+      single_ig <- readRDS(paste0(filekey[filekey$var_name=="full_directed_unfiltered_graphs_superpaper",]$filepath,gspids[m]))
+   }
+   single_ig <- single_ig[[1]]
    sidf <- get.data.frame(single_ig, what = "both")
    supernodes[[m]] <- sidf$vertices
    superedges[[m]] <- sidf$edges
@@ -34,47 +43,41 @@ supernetwork <- igraph::graph_from_data_frame(superedgesdt,
 vcount(supernetwork)
 ecount(supernetwork)
 
-saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_full_govnetpaper",]$filepath)
+if(use_filtered_parsefiles == T){
+   saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_filtered_full_superpaper",]$filepath)
+   
+}else{
+   saveRDS(supernetwork, filekey[filekey$var_name=="supernetwork_unfiltered_full_superpaper",]$filepath)
+   
+}
+colnames(superedgesdt)[colnames(superedgesdt)=="from"] <- "source"
+colnames(superedgesdt)[colnames(superedgesdt)=="to"] <- "target"
 
-weighted_graph <- supernetwork
-
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "head_verb_id")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "head_verb_tense")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "head_verb_name")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "head_verb_lemma")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "parent_verb_id")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "neg")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "doc_sent_verb")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "doc_sent_parent")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "helper_lemma")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "helper_token")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "xcomp_verb")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "xcomp_helper_lemma")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "xcomp_helper_token")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "edgeiscomplete")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "has_hedge")
-weighted_graph <- igraph::delete_edge_attr(weighted_graph, "is_future")
-
-igraph::E(weighted_graph)$weight <- 1
-weighted_graph <- igraph::simplify(weighted_graph, edge.attr.comb=list(weight="sum"), remove.loops = F)
-
-#uses original edges to calculate degree
-degs <- sort(igraph::degree(supernetwork),decreasing = T)
-topdegs <- names(degs[1:7])
-weighted_graph <- igraph::set_vertex_attr(weighted_graph, "labels", 
-                                          value = ifelse(igraph::get.vertex.attribute(weighted_graph,"name") %in% topdegs, 
-                                                         igraph::get.vertex.attribute(weighted_graph,"name"), NA))
-
-saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_weighted_govnetpaper",]$filepath)
+weighted_graph <- textNet::export_to_network(textnet_extract = list("nodelist" = supernodesdt, "edgelist" = superedgesdt), 
+                                                export_format = "igraph", 
+                                                keep_isolates = T, collapse_edges = T, self_loops = T)
+   
+   #uses original edges to calculate degree (aka strength of weighted graph)
+   strength <- sort(igraph::strength(weighted_graph[[1]]),decreasing = T)
+   topstrength <- names(strength[1:7])
+   weighted_graph[[1]] <- igraph::set_vertex_attr(weighted_graph[[1]], "labels", 
+                                             value = ifelse(igraph::get.vertex.attribute(weighted_graph[[1]],"name") %in% topstrength, 
+                                                            igraph::get.vertex.attribute(weighted_graph[[1]],"name"), NA))
+   
+if(use_filtered_parsefiles == T){
+   saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_filtered_weighted_superpaper",]$filepath)
+}else{
+   saveRDS(weighted_graph, filekey[filekey$var_name=="supernetwork_unfiltered_weighted_superpaper",]$filepath)
+   
+}
 
 #code imported from plot_gov_nets.R
-weighted_graph_no_loops <- igraph::simplify(weighted_graph, remove.multiple = F, remove.loops = T)
-
-isolates = which(igraph::degree(weighted_graph_no_loops)==0)
-weighted_graph_noisolates = igraph::delete.vertices(weighted_graph_no_loops, isolates)
+weighted_graph_no_isolates <- textNet::export_to_network(textnet_extract = list("nodelist" = supernodesdt, "edgelist" = superedgesdt), 
+                                                      export_format = "igraph", 
+                                                      keep_isolates = F, collapse_edges = T, self_loops = F)
 
 #order of these layers matters
-weighted_plot_noisolates <- ggraph(weighted_graph_noisolates, layout = 'fr')+
+weighted_plot_noisolates <- ggraph(weighted_graph_no_isolates[[1]], layout = 'fr')+
    #ggraph::scale_edge_colour_gradient(high = viridis::cividis(5)[1], low = viridis::cividis(5)[4])+
    geom_edge_fan(aes(alpha = weight),
                  end_cap = circle(1,"mm"),
@@ -89,8 +92,15 @@ weighted_plot_noisolates <- ggraph(weighted_graph_noisolates, layout = 'fr')+
    #               size = 3, repel = T, color = "black")+
    theme_void()
 
-
-ggsave(paste0("supernetwork.png"), plot = weighted_plot_noisolates, device = "png",
-       path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
-       units = "px", bg = "white")
+if(use_filtered_parsefiles == T){
+   ggsave(paste0("supernetwork_filtered.png"), plot = weighted_plot_noisolates, device = "png",
+          path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
+          units = "px", bg = "white")
+   
+}else{
+   ggsave(paste0("supernetwork_unfiltered.png"), plot = weighted_plot_noisolates, device = "png",
+          path = filekey[filekey$var_name=="supernetwork_figures",]$filepath, width = 4020, height = 1890, dpi = 300,
+          units = "px", bg = "white")
+   
+}
 
