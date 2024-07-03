@@ -8,6 +8,8 @@ code/regex_test.R
 
 # Environment variable (API key) file
 .env
+# VS Code workspace file
+*.code-workspace
 #Profile
 .Rprofile
 # History files
