@@ -78,13 +78,15 @@ all_place_nodes <- all_nodes %>%
 with(all_places, table(exists, DAC))
 
 # glm for if DAC influences exists
-exists_t <- glm(exists~DAC, 
+exists_mod <- glm(exists~DAC+POP+incorporated+per_latino, 
                 family = binomial,
-                data = all_place_nodes); stargazer(exists_t, type='text')
+                data = all_place_nodes); stargazer(exists_mod, type='text')
 
-exists_mod <- glm(exists ~ MHI+POP+incorporated+per_latino, 
+exists_mod_2 <- glm(exists ~ MHI+POP+incorporated+per_latino, 
                   family = binomial,
-                  data = all_place_nodes); stargazer(exists_mod, type='text')
+                  data = all_place_nodes); stargazer(exists_mod_2, type='text')
+
+stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/0_exists_mod.html')
 ```
 
 ###
@@ -95,13 +97,13 @@ exists_mod <- glm(exists ~ MHI+POP+incorporated+per_latino,
 
 eig_t <- t.test(all_place_nodes$eig_std ~ all_place_nodes$DAC); eig_t
 
-eig_mod <- lm(eig_std ~ MHI_std+
+eig_mod <- lm(log(eig_std) ~ MHI_std+
                  POP_std+
                  incorporated+
                  per_latino,
               data = all_place_nodes)
 
-eig_mod_2 <- lm(eig_std ~ DAC+
+eig_mod_2 <- lm(log(eig_std) ~ DAC+
                  POP_std+
                  incorporated+
                  per_latino,
@@ -120,21 +122,39 @@ stargazer(eig_mod, eig_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1_eig_mo
 
 lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
 
-lead_mod <- lm(leader_std ~ MHI_std+
+lead_mod <- glm(leader_dist_min ~ MHI_std+
                  POP_std+
                  incorporated+
                  per_latino,
+                family=poisson,
               data = all_place_nodes)
 
 
-lead_mod_2 <- lm(leader_std ~ DAC+
+lead_mod_2 <- glm(leader_dist_min ~ DAC+
                  per_latino+
                  POP_std+
                  incorporated,
+                 family=poisson,
               data = all_place_nodes)
+
 
 stargazer(lead_mod, lead_mod_2, type='text', out = 'EJ_DAC_Paper/Out/mods/2_lead_mod.html')
 ```
+
+```{r}
+mod_names <- c('exists_mod', 'exists_mod_2', 'eig_mod', 'eig_mod_2', 'lead_mod', 'lead_mod_2')
+mods <- list(exists_mod, exists_mod_2, eig_mod, eig_mod_2, lead_mod, lead_mod_2)
+
+coef_data <- data.frame()
+
+for (i in seq_along(mods)) {
+   coef <- tidy(mods[[i]], conf.int = TRUE, conf.level = 0.90) %>%
+      filter(term %in% c('POP_std', 'incorporated', 'per_latino', 'Intercept'))
+   coef$mod_name <- mod_names[i]
+   coef_data <- rbind(coef_data, coef)
+}
+```
+
 
 ```{r, results='asis'}
 
