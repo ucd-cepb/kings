@@ -8,8 +8,11 @@ library(data.table)
 load_dot_env()
 
 # path to created network data
-network_fp <- paste0(Sys.getenv("BOX_PATH"), 
-                     "/EJ_Paper/cleaned_extracts_textgov_paper_version")
+# network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_textgov_paper_version")
+
+network_fp <- paste0(Sys.getenv("BOX_PATH"),
+                     "/Supernetwork_Paper/cleaned_unfiltered_extracts")
+
 extract_list <- list.files(network_fp)
 
 # path to page-level data
@@ -21,6 +24,9 @@ gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 all_places <- read.csv('EJ_DAC_Paper/Data/all_places.csv')
 gsa_gsp <- read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv')
 gsa_names <- read.csv('EJ_DAC_Paper/Data/gsa_names.csv')
+gsa_names_2 <- gsa_names
+gsa_names_2$GSA_Name <- str_replace(gsa_names$GSA_Name, "groundwater_sustainability_agency", "gsa")
+gsa_names <- rbind(gsa_names, gsa_names_2)
 
 # function to grab section columns from page_features to bind to edges
 parent_loc_to_section <- function(pointer_str){
@@ -84,10 +90,18 @@ net_graph <- function(networklist, gsp_id){
    gsa_names <- merge(data.frame(GSA_ID = gsa_ids), 
                       gsa_names, 
                       by = "GSA_ID")$GSA_Name
-   gsa_names <- c(gsa_names, 'groundwater_sustainability_agency') #add in deafult
-   print(gsa_names)
+   gsa_names <- c(gsa_names, 'groundwater_sustainability_agency', 'gsa') #add in deafult
+   gsa_ins <- c(which(V(network_graph)$name %in% gsa_names))
+   
+   # if gsa matching fails identify most common node with GSA in name
+   if (length(gsa_ins) == 0){
+      #df with all possible GSA candidates
+      ins <- which(str_detect(networklist$nodelist$entity_name, 'groundwater_sustainability_agency|gsa'))
+      gsa_ins <- ins[which.max(networklist$nodelist$num_appearances[ins])]
+      gsa_names <- c(gsa_names, networklist$nodelist$entity_name[gsa_ins])
+   }
+   
    #distance to gsa(s)
-   gsa_ins <- which(V(network_graph)$name %in% gsa_names)
    mean_dist <- data.frame(matrix(ncol = length(gsa_ins), nrow = vcount(network_graph)))
    colnames(mean_dist) <- paste0('X', gsa_ins)
    
@@ -104,16 +118,12 @@ net_graph <- function(networklist, gsp_id){
    # calculate leader distance per node
    leader_weights <- V(network_graph)[gsa_ins]$num_appearances
    leader_weights <- leader_weights / sum(leader_weights)
-   print(leader_weights)
-   print(head(mean_dist))
    weighted_dists <- (sweep(mean_dist, 2, leader_weights, "*")) 
-   print(head(weighted_dists))
    leader_dist_weight <- rowSums(weighted_dists, na.rm = TRUE) 
    leader_dist_unweight <- rowMeans(mean_dist, na.rm = TRUE)
    leader_dist_min <- apply(mean_dist, 1, min, na.rm = TRUE)
    
    ## ADD IN schematic 
-   ## SCALE network stats (eig) by mean/sd 
    
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_w',
@@ -208,15 +218,15 @@ for (g in seq_along(gsp_ids)) {
 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[6]),
-                             gsp_id = gsp_ids[6])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[67]),
+                             gsp_id = gsp_ids[67])
 
 ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[6])
+                 gsp_id = gsp_ids[67])
 
 
-isolates_test <- which(degree(gsp_graph_test) == 0)
-graph_2_test <- delete.vertices(gsp_graph_test, isolates_test)
+isolates_test <- which(degree(ggt) == 0)
+graph_2_test <- delete.vertices(ggt, isolates_test)
 
 ggraph(graph_2_test, 
        layout = 'igraph',

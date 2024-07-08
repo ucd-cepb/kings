@@ -17,7 +17,7 @@ gsp_summary <- data.frame()
 dac_summary <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
-   net <- readRDS(paste0(network_fp, "/", extract_list[g]))[[1]] # revert after re run step3
+   net <- readRDS(paste0(network_fp, "/", extract_list[g])) # revert after re run step3
    gsp_id <- paste0("gsp_",gsp_ids[g])
    net_nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
    gsp_sum <- net_nodes %>%

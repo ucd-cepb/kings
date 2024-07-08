@@ -28,7 +28,7 @@ gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 all_nodes <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
-   net <- readRDS(paste0(network_fp, "/", extract_list[g]))[[1]]
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    gsp_id <- paste0("gsp_",gsp_ids[g])
    nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
    places <- nodes %>% filter(exists == 1)
