@@ -50,19 +50,17 @@ for (g in seq_along(gsp_ids)) {
              basin_plan_per = 100*(basin_plan/mentions),
              sust_criteria_per = 100*(sust_criteria/mentions),
              monitoring_networks_per = 100*(monitoring_networks/mentions),
-             projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions))
+             projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
+             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
+             leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
+             leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
+             leader_dist_w = ifelse(is.infinite(leader_dist_w), NA, leader_dist_w),
+             leader_dist_uw = ifelse(is.infinite(leader_dist_uw), NA, leader_dist_uw),
+             MHI_std = MHI/10000,
+             POP_std = POP/1000000
+             )
    all_nodes <- rbind(all_nodes, nodes)
 }
-
-all_nodes <- all_nodes %>% 
-   mutate(leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
-          leader_dist_w = ifelse(is.infinite(leader_dist_w), NA, leader_dist_w),
-          leader_dist_uw = ifelse(is.infinite(leader_dist_uw), NA, leader_dist_uw)) %>%
-   mutate(eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-          leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
-          MHI_std = MHI/10000,
-          POP_std = POP/1000000,
-          exists = ifelse(is.na(exists), 0, 1))
 
 all_place_nodes <- all_nodes %>% 
    filter(exists == 1)
@@ -80,11 +78,13 @@ with(all_places, table(exists, DAC))
 # glm for if DAC influences exists
 exists_mod <- glm(exists~DAC+POP+incorporated+per_latino, 
                 family = binomial,
-                data = all_place_nodes); stargazer(exists_mod, type='text')
+                data = all_places)
 
 exists_mod_2 <- glm(exists ~ MHI+POP+incorporated+per_latino, 
                   family = binomial,
-                  data = all_place_nodes); stargazer(exists_mod_2, type='text')
+                  data = all_places)
+
+stargazer(exists_mod, exists_mod_2, type='text')
 
 stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/0_exists_mod.html')
 ```
@@ -141,6 +141,7 @@ lead_mod_2 <- glm(leader_dist_min ~ DAC+
 stargazer(lead_mod, lead_mod_2, type='text', out = 'EJ_DAC_Paper/Out/mods/2_lead_mod.html')
 ```
 
+
 ```{r}
 mod_names <- c('exists_mod', 'exists_mod_2', 'eig_mod', 'eig_mod_2', 'lead_mod', 'lead_mod_2')
 mods <- list(exists_mod, exists_mod_2, eig_mod, eig_mod_2, lead_mod, lead_mod_2)
@@ -158,23 +159,23 @@ for (i in seq_along(mods)) {
 
 ```{r, results='asis'}
 
-eig_a <- lm(eig_std ~ admin_per,
+eig_a <- lm(log(eig_std) ~ admin_per,
               data = all_nodes)
 
 
-eig_b <- lm(eig_std ~ basin_plan_per,
+eig_b <- lm(log(eig_std) ~ basin_plan_per,
               data = all_nodes)
 
 
-eig_c <- lm(eig_std ~ sust_criteria_per,
+eig_c <- lm(log(eig_std) ~ sust_criteria_per,
               data = all_nodes)
 
 
-eig_d <- lm(eig_std ~ monitoring_networks_per,
+eig_d <- lm(log(eig_std) ~ monitoring_networks_per,
               data = all_nodes)
 
 
-eig_e <- lm(eig_std ~ projects_mgmt_actions_per,
+eig_e <- lm(log(eig_std) ~ projects_mgmt_actions_per,
               data = all_nodes)
 
 stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='text')
@@ -184,23 +185,28 @@ stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='html', out = 'EJ_DAC_Paper/Ou
 
 ```{r, results='asis'}
 
-lead_a <- lm(leader_std ~ admin_per,
+lead_a <- glm(leader_dist_min ~ admin_per,
+              family=poisson,
               data = all_nodes)
 
 
-lead_b <- lm(leader_std ~ basin_plan_per,
+lead_b <- glm(leader_dist_min ~ basin_plan_per,
+              family=poisson,
               data = all_nodes)
 
 
-lead_c <- lm(leader_std ~ sust_criteria_per,
+lead_c <- glm(leader_dist_min ~ sust_criteria_per,
+              family=poisson,
               data = all_nodes)
 
 
-lead_d <- lm(leader_std ~ monitoring_networks_per,
+lead_d <- glm(leader_dist_min ~ monitoring_networks_per,
+              family=poisson,
               data = all_nodes)
 
 
-lead_e <- lm(leader_std ~ projects_mgmt_actions_per,
+lead_e <- glm(leader_dist_min ~ projects_mgmt_actions_per,
+              family=poisson,
               data = all_nodes)
 
 stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='text')

@@ -102,8 +102,8 @@ net_graph <- function(networklist, gsp_id){
    }
    
    #distance to gsa(s)
-   mean_dist <- data.frame(matrix(ncol = length(gsa_ins), nrow = vcount(network_graph)))
-   colnames(mean_dist) <- paste0('X', gsa_ins)
+   dists <- data.frame(matrix(ncol = length(gsa_ins), nrow = vcount(network_graph)))
+   colnames(dists) <- paste0('X', gsa_ins)
    
    for (i in gsa_ins){
       dist <- distances(network_graph, 
@@ -111,17 +111,18 @@ net_graph <- function(networklist, gsp_id){
                         mode = 'in')
       dist[is.infinite(dist)] <- NA # replace infinite distance with NA
       dist[is.nan(dist)] <- NA # replace NA with NA
-      mean_dist[[paste0('X', i)]] <- dist
+      dists[[paste0('X', i)]] <- dist
    }
-   colnames(mean_dist) <- V(network_graph)$name[gsa_ins]
+   colnames(dists) <- V(network_graph)$name[gsa_ins]
       
    # calculate leader distance per node
-   leader_weights <- V(network_graph)[gsa_ins]$num_appearances
-   leader_weights <- leader_weights / sum(leader_weights)
-   weighted_dists <- (sweep(mean_dist, 2, leader_weights, "*")) 
-   leader_dist_weight <- rowSums(weighted_dists, na.rm = TRUE) 
-   leader_dist_unweight <- rowMeans(mean_dist, na.rm = TRUE)
-   leader_dist_min <- apply(mean_dist, 1, min, na.rm = TRUE)
+   
+   # leader_weights <- V(network_graph)[gsa_ins]$num_appearances
+   # leader_weights <- leader_weights / sum(leader_weights)
+   # weighted_dists <- (sweep(dists, 2, leader_weights, "*")) 
+   # leader_dist_weight <- rowSums(weighted_dists, na.rm = TRUE) 
+   # leader_dist_unweight <- rowMeans(dists, na.rm = TRUE)
+   leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
    
    ## ADD IN schematic 
    
