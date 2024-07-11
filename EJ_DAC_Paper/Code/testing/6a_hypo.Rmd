@@ -57,13 +57,14 @@ for (g in seq_along(gsp_ids)) {
              leader_dist_w = ifelse(is.infinite(leader_dist_w), NA, leader_dist_w),
              leader_dist_uw = ifelse(is.infinite(leader_dist_uw), NA, leader_dist_uw),
              MHI_std = MHI/10000,
-             POP_std = POP/1000000
+             POP_std = POP/1000000,
+             is_place = ifelse(is.na(GEOID20), 0, 1),
              )
    all_nodes <- rbind(all_nodes, nodes)
 }
 
 all_place_nodes <- all_nodes %>% 
-   filter(exists == 1)
+   filter(is_place == 1)
    
 ```
 
@@ -120,7 +121,7 @@ stargazer(eig_mod, eig_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1_eig_mo
 
 ```{r, results='asis'}
 
-lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
+# lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
 
 lead_mod <- glm(leader_dist_min ~ MHI_std+
                  POP_std+
@@ -217,24 +218,24 @@ stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='html', out = 'EJ_DAC_Pap
 
 ```{r, results='asis'}
 
-a_dac <- glm(admin ~ exists,
+a_dac <- glm(admin ~ is_place,
              family = poisson,
               data = all_nodes)
 
 
-b_dac <- glm(basin_plan ~ exists,
+b_dac <- glm(basin_plan ~ is_place,
              family = poisson,
               data = all_nodes)
 
-c_dac <- glm(sust_criteria ~ exists,
+c_dac <- glm(sust_criteria ~ is_place,
              family = poisson,
               data = all_nodes)
 
-d_dac <- glm(monitoring_networks ~ exists,
+d_dac <- glm(monitoring_networks ~ is_place,
              family = poisson,
               data = all_nodes)
 
-e_dac <- glm(projects_mgmt_actions ~ exists,
+e_dac <- glm(projects_mgmt_actions ~ is_place,
              family = poisson,
               data = all_nodes)
 
@@ -288,5 +289,41 @@ stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Ou
 ```
 
 
+```{r, results='asis'}
+
+a_dac <- lm(admin_per ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+              data = all_place_nodes)
+
+
+b_dac <- lm(basin_plan_per ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+              data = all_place_nodes)
+
+c_dac <- lm(sust_criteria_per ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+              data = all_place_nodes)
+
+d_dac <- lm(monitoring_networks_per ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+              data = all_place_nodes)
+
+e_dac <- lm(projects_mgmt_actions_per ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+              data = all_place_nodes)
+
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
+
+```
 
 

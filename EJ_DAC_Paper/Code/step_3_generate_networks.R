@@ -25,7 +25,9 @@ all_places <- read.csv('EJ_DAC_Paper/Data/all_places.csv')
 gsa_gsp <- read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv')
 gsa_names <- read.csv('EJ_DAC_Paper/Data/gsa_names.csv')
 gsa_names_2 <- gsa_names
-gsa_names_2$GSA_Name <- str_replace(gsa_names$GSA_Name, "groundwater_sustainability_agency", "gsa")
+gsa_names_2$GSA_Name <- str_replace(gsa_names$GSA_Name, 
+                                    "groundwater_sustainability_agency", 
+                                    "gsa")
 gsa_names <- rbind(gsa_names, gsa_names_2)
 
 # function to grab section columns from page_features to bind to edges
@@ -96,13 +98,15 @@ net_graph <- function(networklist, gsp_id){
    # if gsa matching fails identify most common node with GSA in name
    if (length(gsa_ins) == 0){
       #df with all possible GSA candidates
-      ins <- which(str_detect(networklist$nodelist$entity_name, 'groundwater_sustainability_agency|gsa'))
+      ins <- which(str_detect(networklist$nodelist$entity_name, 
+                              'groundwater_sustainability_agency|gsa'))
       gsa_ins <- ins[which.max(networklist$nodelist$num_appearances[ins])]
       gsa_names <- c(gsa_names, networklist$nodelist$entity_name[gsa_ins])
    }
    
    #distance to gsa(s)
-   dists <- data.frame(matrix(ncol = length(gsa_ins), nrow = vcount(network_graph)))
+   dists <- data.frame(matrix(ncol = length(gsa_ins), 
+                              nrow = vcount(network_graph)))
    colnames(dists) <- paste0('X', gsa_ins)
    
    for (i in gsa_ins){
