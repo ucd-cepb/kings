@@ -92,8 +92,8 @@ read_plan_element_function,Structural_Topic_Model_Paper/Code/utils/read_plan_ele
 stmpaper_figures,data/Structural_Topic_Model_Paper/figures,
 superergm_govnetpaper,data/Supernetwork_Paper/superergm,
 supernetwork_figures,data/Supernetwork_Paper/figures,
-supernetwork_full_govnetpaper,data/Text_Gov_Network_Paper/supernetwork_full,The supernetwork generated from the full directed graphs from the govnet paper including orgs gpes and people
-supernetwork_weighted_govnetpaper,data/Text_Gov_Network_Paper/supernetwork_weighted,
+supernetwork_full_govnetpaper,data/Text_Gov_Network_Methods_Paper/supernetwork_full,The supernetwork generated from the full directed graphs from the govnet paper including orgs gpes and people
+supernetwork_weighted_govnetpaper,data/Text_Gov_Network_Methods_Paper/supernetwork_weighted,
 svi_census_tracts_2018,data/Structural_Topic_Model_Paper/spatial_files/SVI_shapefiles_CA_censustracts/SVI2018_CALIFORNIA_tract.shp,
 svi_figures,data/Structural_Topic_Model_Paper/figures,
 svi_filepaths,data/Structural_Topic_Model_Paper/gsp_svi_,
