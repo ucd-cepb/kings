@@ -10,7 +10,9 @@ load_dot_env()
 # Side quest script to identify which expected places are found in each GSP
 
 # path to existing network objects
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_textgov_paper_version")
+
+network_fp <- paste0(Sys.getenv("BOX_PATH"), 
+                     "/Supernetwork_Paper/cleaned_unfiltered_extracts")
 extract_list = list.files(network_fp)
 
 # places and expected places
