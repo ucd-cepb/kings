@@ -38,32 +38,34 @@ for (g in seq_along(gsp_ids)) {
                                  sust_criteria_sum,
                                  monitoring_networks_sum,
                                  projects_mgmt_actions_sum))
-   nodes <- nodes %>% 
+   suppressWarnings({nodes <- nodes %>% 
       rename(admin= admin_sum, 
              basin_plan = basin_plan_sum,
              sust_criteria = sust_criteria_sum,
              monitoring_networks = monitoring_networks_sum, 
-             projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
+             projects_mgmt_actions = projects_mgmt_actions_sum) %>%
+      mutate(across(any_of(c('degree', 'closeness', 'betweeness', 'eigenvector', 'indegree', 'outdegree', 'gsp_id')),
+                    as.numeric)) %>% 
       mutate(admin_per = 100*(admin/mentions),
              basin_plan_per = 100*(basin_plan/mentions),
              sust_criteria_per = 100*(sust_criteria/mentions),
              monitoring_networks_per = 100*(monitoring_networks/mentions),
              projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
              eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-             leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
+             eig_std_2 = eig_std + 1,
              deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
              leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
              MHI_std = MHI/10000,
              POP_std = POP/1000000,
              is_place = ifelse(is.na(GEOID20), 0, 1),
-             )
+             ) 
    all_nodes <- rbind(all_nodes, nodes)
+   })
 }
 
 all_place_nodes <- all_nodes %>% 
    filter(is_place == 1) %>% 
-   mutate(eig_std_2 = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-          appears_in_sec = ifelse(is.nan(admin_per), 0, 1))
+   mutate(appears_in_sec = ifelse(is.nan(admin_per), 0, 1))
    
 ```
 
@@ -88,19 +90,21 @@ for (g in seq_along(gsp_ids)) {
                                  sust_criteria_sum,
                                  monitoring_networks_sum,
                                  projects_mgmt_actions_sum))
-   nodes <- nodes %>% 
+    suppressWarnings({nodes <- nodes %>% 
       rename(admin= admin_sum, 
              basin_plan = basin_plan_sum,
              sust_criteria = sust_criteria_sum,
              monitoring_networks = monitoring_networks_sum, 
              projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
+      mutate(across(any_of(c('degree', 'closeness', 'betweeness', 'eigenvector', 'indegree', 'outdegree', 'gsp_id')),
+                    as.numeric)) %>% 
       mutate(admin_per = 100*(admin/mentions),
              basin_plan_per = 100*(basin_plan/mentions),
              sust_criteria_per = 100*(sust_criteria/mentions),
              monitoring_networks_per = 100*(monitoring_networks/mentions),
              projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
              eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-             leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
+             eig_std_2 = eig_std + 1,
              deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
              leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
              MHI_std = MHI/10000,
@@ -108,11 +112,11 @@ for (g in seq_along(gsp_ids)) {
              is_place = ifelse(is.na(GEOID20), 0, 1),
              )
    sub_all_nodes <- rbind(sub_all_nodes, nodes)
+   })
 }
 
 sub_all_place_nodes <- sub_all_nodes %>% 
-   filter(is_place == 1) %>% 
-   mutate(eig_std_2 = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE))
+   filter(is_place == 1)
    
 ```
 
@@ -218,6 +222,43 @@ eig_mod_4 <- lm(log(eig_std) ~ DAC+
                  POP_std+
                  incorporated+
                  per_latino,
+              data = sub_all_place_nodes)
+
+stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
+
+stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html', 
+          out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
+```
+
+
+```{r, results='asis'}
+
+eig_mod <- glm(eig_std_2 ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+               family= inverse.gaussian(link = "log"),
+              data = all_place_nodes)
+
+eig_mod_2 <- glm(eig_std_2 ~ DAC+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+               family= inverse.gaussian(link = "log"),
+              data = all_place_nodes)
+
+eig_mod_3<- glm(eig_std_2 ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+               family= inverse.gaussian(link = "log"),
+              data = sub_all_place_nodes)
+
+eig_mod_4 <- glm(eig_std_2 ~ DAC+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+               family= inverse.gaussian(link = "log"),
               data = sub_all_place_nodes)
 
 stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
