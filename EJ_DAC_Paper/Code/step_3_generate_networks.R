@@ -118,49 +118,19 @@ net_graph <- function(networklist, gsp_id){
       dists[[paste0('X', i)]] <- dist
    }
    colnames(dists) <- V(network_graph)$name[gsa_ins]
-      
-   # calculate leader distance per node
-   
-   # leader_weights <- V(network_graph)[gsa_ins]$num_appearances
-   # leader_weights <- leader_weights / sum(leader_weights)
-   # weighted_dists <- (sweep(dists, 2, leader_weights, "*")) 
-   # leader_dist_weight <- rowSums(weighted_dists, na.rm = TRUE) 
-   # leader_dist_unweight <- rowMeans(dists, na.rm = TRUE)
    leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
    
-   ## ADD IN schematic 
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_w',
-                                    value = leader_dist_weight)
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_uw',
-                                    value = leader_dist_unweight)
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_min',
                                     value = leader_dist_min)
-   network_graph <- set_vertex_attr(network_graph, 
-                                    'degree',
-                                    value = node_degree(network_graph))
-   network_graph <- set_vertex_attr(network_graph, 
-                                    'closeness',
-                                    value = node_closeness(network_graph))
-   network_graph <- set_vertex_attr(network_graph, 
-                                    'betweeness',
-                                    value = node_betweenness(network_graph))
-   network_graph <- set_vertex_attr(network_graph, 
-                                    'eigenvector',
-                                    value = node_eigenvector(network_graph))  
+   
    network_graph <- set_vertex_attr(network_graph,
-                                    'indegree',
-                                    value = node_indegree(network_graph))
+                                         'GSA',
+                                         value = ifelse(V(network_graph)$name %in% gsa_names, 1, 0))
+   
    network_graph <- set_vertex_attr(network_graph,
-                                    'outdegree',
-                                    value = node_outdegree(network_graph))
-   # set binary variable for GSAs if node name is in gsa_names
-   network_graph <- set_vertex_attr(network_graph,
-                                    'GSA',
-                                    value = ifelse(V(network_graph)$name %in% gsa_names, 1, 0))
+                                    'is_place',
+                                    value = ifelse(is.na(V(network_graph)$GEOID20), 0, 1))
    
    network_graph_simp <- igraph::simplify(network_graph, 
                                           remove.multiple = TRUE,
@@ -193,7 +163,53 @@ net_graph <- function(networklist, gsp_id){
       sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$projects_mgmt_actions)
    })
    
-   return(network_graph_simp)
+   sub_network_graph <- induced_subgraph(network_graph_simp, 
+                                         which(V(network_graph_simp)$admin_sum > 0|
+                                                  V(network_graph_simp)$sust_criteria_sum > 0| 
+                                                  V(network_graph_simp)$monitoring_networks_sum > 0))
+   
+   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+                                    'degree',
+                                    value = node_degree(network_graph_simp))
+   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+                                    'closeness',
+                                    value = node_closeness(network_graph_simp))
+   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+                                    'betweeness',
+                                    value = node_betweenness(network_graph_simp))
+   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+                                    'eigenvector',
+                                    value = node_eigenvector(network_graph_simp))  
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
+                                    'indegree',
+                                    value = node_indegree(network_graph_simp))
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
+                                    'outdegree',
+                                    value = node_outdegree(network_graph_simp))
+   
+   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   sub_network_graph <- set_vertex_attr(sub_network_graph, 
+                                         'degree',
+                                         value = node_degree(sub_network_graph))
+   sub_network_graph <- set_vertex_attr(sub_network_graph, 
+                                         'closeness',
+                                         value = node_closeness(sub_network_graph))
+   sub_network_graph <- set_vertex_attr(sub_network_graph, 
+                                         'betweeness',
+                                         value = node_betweenness(sub_network_graph))
+   sub_network_graph <- set_vertex_attr(sub_network_graph, 
+                                         'eigenvector',
+                                         value = node_eigenvector(sub_network_graph))  
+   sub_network_graph <- set_vertex_attr(sub_network_graph,
+                                         'indegree',
+                                         value = node_indegree(sub_network_graph))
+   sub_network_graph <- set_vertex_attr(sub_network_graph,
+                                         'outdegree',
+                                         value = node_outdegree(sub_network_graph))
+   
+   
+   return(list(network_graph_simp, sub_network_graph))
 }
 
 # apply functions to all networks
@@ -211,10 +227,17 @@ for (g in seq_along(gsp_ids)) {
    gsp_graph <- net_graph(gsp_list, 
                           gsp_id = gsp_ids[g])
    
-   print(paste0("Saving ", gsp_id))
-   saveRDS(object = gsp_graph,
+   print(paste0("Saving Graph ", gsp_id))
+   saveRDS(object = gsp_graph[[1]],
            file = paste0(Sys.getenv("BOX_PATH"),
                          "/EJ_Paper/cleaned_extracts_DACified",
+                         "/",
+                         extract_list[g]))
+   
+   print(paste0("Saving Subgraph ", gsp_id))
+   saveRDS(object = gsp_graph[[2]],
+           file = paste0(Sys.getenv("BOX_PATH"),
+                         "/EJ_Paper/cleaned_extracts_DACified_substantive",
                          "/",
                          extract_list[g]))
    
@@ -230,13 +253,13 @@ ggt <- net_graph(glt,
                  gsp_id = gsp_ids[67])
 
 
-isolates_test <- which(degree(ggt) == 0)
-graph_2_test <- delete.vertices(ggt, isolates_test)
+isolates_test <- which(degree(ggt[[2]]) == 0)
+graph_2_test <- delete.vertices(ggt[[2]], isolates_test)
 
-ggraph(graph_2_test, 
+ggraph(ggt[[2]], 
        layout = 'igraph',
        algorithm = 'nicely') +
    geom_edge_link(color = "black", 
                   alpha = .5) + 
-   geom_node_point(aes(size = num_appearances, colour = exists)) + 
+   geom_node_point(aes(size = num_appearances, colour = admin_sum)) +
    theme_graph()

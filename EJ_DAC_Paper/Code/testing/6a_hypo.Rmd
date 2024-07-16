@@ -24,7 +24,6 @@ network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACifie
 extract_list = list.files(network_fp)
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
-
 all_nodes <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
@@ -32,7 +31,6 @@ for (g in seq_along(gsp_ids)) {
    gsp_id <- paste0("gsp_",gsp_ids[g])
    nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
    places <- nodes %>% filter(exists == 1)
-   # num_places <- length(unique(places$name))
    nodes$gsp_id <- gsp_id
    mentions <- rowSums(nodes %>% 
                           select(admin_sum, 
@@ -53,9 +51,8 @@ for (g in seq_along(gsp_ids)) {
              projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
              eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
              leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
+             deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
              leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
-             leader_dist_w = ifelse(is.infinite(leader_dist_w), NA, leader_dist_w),
-             leader_dist_uw = ifelse(is.infinite(leader_dist_uw), NA, leader_dist_uw),
              MHI_std = MHI/10000,
              POP_std = POP/1000000,
              is_place = ifelse(is.na(GEOID20), 0, 1),
@@ -64,12 +61,64 @@ for (g in seq_along(gsp_ids)) {
 }
 
 all_place_nodes <- all_nodes %>% 
-   filter(is_place == 1)
+   filter(is_place == 1) %>% 
+   mutate(eig_std_2 = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
+          appears_in_sec = ifelse(is.nan(admin_per), 0, 1))
    
 ```
 
+```{r}
+
+network_fp <- paste0(Sys.getenv("BOX_PATH"), 
+                     "/EJ_Paper/cleaned_extracts_DACified_substantive")
+extract_list = list.files(network_fp)
+gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+
+sub_all_nodes <- data.frame()
+
+for (g in seq_along(gsp_ids)) {
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   gsp_id <- paste0("gsp_",gsp_ids[g])
+   nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
+   places <- nodes %>% filter(exists == 1)
+   nodes$gsp_id <- gsp_id
+   mentions <- rowSums(nodes %>% 
+                          select(admin_sum, 
+                                 basin_plan_sum, 
+                                 sust_criteria_sum,
+                                 monitoring_networks_sum,
+                                 projects_mgmt_actions_sum))
+   nodes <- nodes %>% 
+      rename(admin= admin_sum, 
+             basin_plan = basin_plan_sum,
+             sust_criteria = sust_criteria_sum,
+             monitoring_networks = monitoring_networks_sum, 
+             projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
+      mutate(admin_per = 100*(admin/mentions),
+             basin_plan_per = 100*(basin_plan/mentions),
+             sust_criteria_per = 100*(sust_criteria/mentions),
+             monitoring_networks_per = 100*(monitoring_networks/mentions),
+             projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
+             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
+             leader_std = (leader_dist_min - mean(leader_dist_min, na.rm=TRUE)) / sd(leader_dist_min, na.rm=TRUE),
+             deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
+             leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
+             MHI_std = MHI/10000,
+             POP_std = POP/1000000,
+             is_place = ifelse(is.na(GEOID20), 0, 1),
+             )
+   sub_all_nodes <- rbind(sub_all_nodes, nodes)
+}
+
+sub_all_place_nodes <- sub_all_nodes %>% 
+   filter(is_place == 1) %>% 
+   mutate(eig_std_2 = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE))
+   
+```
+
+
 ###
-### HYPOTHESIS 1: DACs have lower existence than non-disadvantaged communities
+### HYPOTHESIS 1a: DACs have lower existence than non-disadvantaged communities
 ###
 
 ```{r}
@@ -90,13 +139,60 @@ stargazer(exists_mod, exists_mod_2, type='text')
 stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/0_exists_mod.html')
 ```
 
+
 ###
-### HYPOTHESIS 2: DACs have lower eigenvector centrality than non-disadvantaged communities
+### HYPOTHESIS 1b: DACs have lower count within sections than non-disadvantaged communities
 ###
 
 ```{r, results='asis'}
 
-eig_t <- t.test(all_place_nodes$eig_std ~ all_place_nodes$DAC); eig_t
+a_dac <- glm(admin ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+
+b_dac <- glm(basin_plan ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+c_dac <- glm(sust_criteria ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+d_dac <- glm(monitoring_networks ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+e_dac <- glm(projects_mgmt_actions ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
+
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/6_dac_locs_mod.html')
+
+```
+
+###
+### HYPOTHESIS 2a: DACs have lower eigenvector centrality than non-disadvantaged communities
+###
+
+```{r, results='asis'}
 
 eig_mod <- lm(log(eig_std) ~ MHI_std+
                  POP_std+
@@ -110,53 +206,28 @@ eig_mod_2 <- lm(log(eig_std) ~ DAC+
                  per_latino,
               data = all_place_nodes)
 
-stargazer(eig_mod, eig_mod_2, type='text')
-
-stargazer(eig_mod, eig_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
-```
-
-###
-### HYPOTHESIS 3: DACs have lower leader closeness than non-disadvantaged communities
-###
-
-```{r, results='asis'}
-
-# lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
-
-lead_mod <- glm(leader_dist_min ~ MHI_std+
+eig_mod_3<- lm(log(eig_std) ~ MHI_std+
                  POP_std+
                  incorporated+
                  per_latino,
-                family=poisson,
-              data = all_place_nodes)
+              data = sub_all_place_nodes)
 
-
-lead_mod_2 <- glm(leader_dist_min ~ DAC+
-                 per_latino+
+eig_mod_4 <- lm(log(eig_std) ~ DAC+
                  POP_std+
-                 incorporated,
-                 family=poisson,
-              data = all_place_nodes)
+                 incorporated+
+                 per_latino,
+              data = sub_all_place_nodes)
 
+stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
 
-stargazer(lead_mod, lead_mod_2, type='text', out = 'EJ_DAC_Paper/Out/mods/2_lead_mod.html')
+stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html', 
+          out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
 ```
 
 
-```{r}
-mod_names <- c('exists_mod', 'exists_mod_2', 'eig_mod', 'eig_mod_2', 'lead_mod', 'lead_mod_2')
-mods <- list(exists_mod, exists_mod_2, eig_mod, eig_mod_2, lead_mod, lead_mod_2)
-
-coef_data <- data.frame()
-
-for (i in seq_along(mods)) {
-   coef <- tidy(mods[[i]], conf.int = TRUE, conf.level = 0.90) %>%
-      filter(term %in% c('POP_std', 'incorporated', 'per_latino', 'Intercept'))
-   coef$mod_name <- mod_names[i]
-   coef_data <- rbind(coef_data, coef)
-}
-```
-
+###
+### HYPOTHESIS 2b: DACs have lower eigenvector centrality than non-disadvantaged communities
+###
 
 ```{r, results='asis'}
 
@@ -183,6 +254,52 @@ stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='text')
 
 stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='html', out = 'EJ_DAC_Paper/Out/mods/3_eig_locs_mod.html')
 ```
+
+###
+### HYPOTHESIS 3a: DACs have lower leader closeness than non-disadvantaged communities
+###
+
+```{r, results='asis'}
+
+# lead_t <- t.test(all_place_nodes$leader_std ~ all_place_nodes$DAC); lead_t
+
+lead_mod <- glm(leader_dist_min ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+                family=poisson,
+              data = all_place_nodes)
+
+
+lead_mod_2 <- glm(leader_dist_min ~ DAC+
+                 per_latino+
+                 POP_std+
+                 incorporated,
+                 family=poisson,
+              data = all_place_nodes)
+
+lead_mod_3 <- glm(leader_dist_min ~ MHI_std+
+                 POP_std+
+                 incorporated+
+                 per_latino,
+                family=poisson,
+              data = sub_all_place_nodes)
+
+
+lead_mod_4 <- glm(leader_dist_min ~ DAC+
+                 per_latino+
+                 POP_std+
+                 incorporated,
+                 family=poisson,
+              data = sub_all_place_nodes)
+
+stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
+          
+stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text',
+          out = 'EJ_DAC_Paper/Out/mods/2_lead_mod.html')
+```
+
+
 
 ```{r, results='asis'}
 
@@ -244,49 +361,6 @@ stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/5_place_locs_mod.html')
 ```
 
-```{r, results='asis'}
-
-a_dac <- glm(admin ~ DAC+
-               POP_std+
-               incorporated+
-               per_latino,
-             family=poisson,
-              data = all_place_nodes)
-
-
-b_dac <- glm(basin_plan ~ DAC+
-               POP_std+
-               incorporated+
-               per_latino,
-             family=poisson,
-              data = all_place_nodes)
-
-c_dac <- glm(sust_criteria ~ DAC+
-               POP_std+
-               incorporated+
-               per_latino,
-             family=poisson,
-              data = all_place_nodes)
-
-d_dac <- glm(monitoring_networks ~ DAC+
-               POP_std+
-               incorporated+
-               per_latino,
-             family=poisson,
-              data = all_place_nodes)
-
-e_dac <- glm(projects_mgmt_actions ~ DAC+
-               POP_std+
-               incorporated+
-               per_latino,
-             family=poisson,
-              data = all_place_nodes)
-
-stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
-
-stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/6_dac_locs_mod.html')
-
-```
 
 
 ```{r, results='asis'}
