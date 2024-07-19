@@ -51,8 +51,7 @@ for (g in seq_along(gsp_ids)) {
              sust_criteria_per = 100*(sust_criteria/mentions),
              monitoring_networks_per = 100*(monitoring_networks/mentions),
              projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
-             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-             eig_std_2 = eig_std + 1,
+             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE) + 1,
              deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
              leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
              MHI_std = MHI/10000,
@@ -72,16 +71,29 @@ all_place_nodes <- all_nodes %>%
 ```{r}
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"), 
-                     "/EJ_Paper/cleaned_extracts_DACified_substantive")
+                     "/EJ_Paper/cleaned_extracts_DACified")
 extract_list = list.files(network_fp)
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
 sub_all_nodes <- data.frame()
+edges_in_sec <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   sec_counts <-  E(net)$admin+ E(net)$basin_plan+ E(net)$sust_criteria+ E(net)$monitoring_networks+ E(net)$projects_mgmt_actions
+   edges_in_sec <- rbind(edges_in_sec, 
+                         data.frame(gsp_id = gsp_ids[g], 
+                                    sec_counts = sum(sec_counts==0),
+                                    edges = ecount(net),
+                                    per_in_sec = 100*(sum(sec_counts==0)/ecount(net))
+                                    ))
+   subnet <- induced_subgraph(net, 
+                              which(V(net)$admin_sum > 0|
+                                       V(net)$sust_criteria_sum > 0| 
+                                       V(net)$monitoring_networks_sum > 0|
+                                       V(net)$projects_mgmt_actions_sum > 0))
    gsp_id <- paste0("gsp_",gsp_ids[g])
-   nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
+   nodes <- tibble(igraph::as_data_frame(subnet, what = "vertices"))
    places <- nodes %>% filter(exists == 1)
    nodes$gsp_id <- gsp_id
    mentions <- rowSums(nodes %>% 
@@ -103,8 +115,7 @@ for (g in seq_along(gsp_ids)) {
              sust_criteria_per = 100*(sust_criteria/mentions),
              monitoring_networks_per = 100*(monitoring_networks/mentions),
              projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
-             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE),
-             eig_std_2 = eig_std + 1,
+             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE) + 1,
              deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
              leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
              MHI_std = MHI/10000,
@@ -140,7 +151,7 @@ exists_mod_2 <- glm(exists ~ MHI+POP+incorporated+per_latino,
 
 stargazer(exists_mod, exists_mod_2, type='text')
 
-stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/0_exists_mod.html')
+stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
 ```
 
 
@@ -188,7 +199,7 @@ e_dac <- glm(projects_mgmt_actions ~ DAC+
 
 stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
-stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/6_dac_locs_mod.html')
+stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_dac_locs_mod.html')
 
 ```
 
@@ -199,62 +210,62 @@ stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Ou
 ###
 
 ```{r, results='asis'}
+# 
+# eig_mod <- lm(log(eig_std) ~ MHI_std+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#               data = all_place_nodes)
+# 
+# eig_mod_2 <- lm(log(eig_std) ~ DAC+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#               data = all_place_nodes)
+# 
+# eig_mod_3<- lm(log(eig_std) ~ MHI_std+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#               data = sub_all_place_nodes)
+# 
+# eig_mod_4 <- lm(log(eig_std) ~ DAC+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#               data = sub_all_place_nodes)
+# 
+# stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
 
-eig_mod <- lm(log(eig_std) ~ MHI_std+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-              data = all_place_nodes)
-
-eig_mod_2 <- lm(log(eig_std) ~ DAC+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-              data = all_place_nodes)
-
-eig_mod_3<- lm(log(eig_std) ~ MHI_std+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-              data = sub_all_place_nodes)
-
-eig_mod_4 <- lm(log(eig_std) ~ DAC+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-              data = sub_all_place_nodes)
-
-stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
-
-stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html', 
-          out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
+# stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html', 
+#           out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
 ```
 
 
 ```{r, results='asis'}
 
-eig_mod <- glm(eig_std_2 ~ MHI_std+
+eig_mod <- glm(eig_std ~ MHI_std+
                  POP_std+
                  incorporated+
                  per_latino,
                family= inverse.gaussian(link = "log"),
               data = all_place_nodes)
 
-eig_mod_2 <- glm(eig_std_2 ~ DAC+
+eig_mod_2 <- glm(eig_std ~ DAC+
                  POP_std+
                  incorporated+
                  per_latino,
                family= inverse.gaussian(link = "log"),
               data = all_place_nodes)
 
-eig_mod_3<- glm(eig_std_2 ~ MHI_std+
+eig_mod_3<- glm(eig_std ~ MHI_std+
                  POP_std+
                  incorporated+
                  per_latino,
                family= inverse.gaussian(link = "log"),
               data = sub_all_place_nodes)
 
-eig_mod_4 <- glm(eig_std_2 ~ DAC+
+eig_mod_4 <- glm(eig_std ~ DAC+
                  POP_std+
                  incorporated+
                  per_latino,
@@ -263,8 +274,8 @@ eig_mod_4 <- glm(eig_std_2 ~ DAC+
 
 stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
 
-stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html', 
-          out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
+stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html',
+          out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
 ```
 
 
@@ -309,7 +320,7 @@ lead_mod_4 <- glm(leader_dist_min ~ DAC+
 stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
           
 stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text',
-          out = 'EJ_DAC_Paper/Out/mods/2_lead_mod.html')
+          out = 'EJ_DAC_Paper/Out/mods/3ab_lead_mod.html')
 ```
 
 ###
@@ -319,23 +330,28 @@ stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text',
 
 ```{r, results='asis'}
 
-eig_a <- lm(log(eig_std) ~ admin_per,
+eig_a <- glm((eig_std) ~ admin_per,
+               family= inverse.gaussian(link = "log"),
               data = all_nodes)
 
 
-eig_b <- lm(log(eig_std) ~ basin_plan_per,
+eig_b <- glm((eig_std) ~ basin_plan_per,
+               family= inverse.gaussian(link = "log"),
               data = all_nodes)
 
 
-eig_c <- lm(log(eig_std) ~ sust_criteria_per,
+eig_c <- glm((eig_std) ~ sust_criteria_per,
+               family= inverse.gaussian(link = "log"),
               data = all_nodes)
 
 
-eig_d <- lm(log(eig_std) ~ monitoring_networks_per,
+eig_d <- glm((eig_std) ~ monitoring_networks_per,
+               family= inverse.gaussian(link = "log"),
               data = all_nodes)
 
 
-eig_e <- lm(log(eig_std) ~ projects_mgmt_actions_per,
+eig_e <- glm((eig_std) ~ projects_mgmt_actions_per,
+               family= inverse.gaussian(link = "log"),
               data = all_nodes)
 
 stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='text')
