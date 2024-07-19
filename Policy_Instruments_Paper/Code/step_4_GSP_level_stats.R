@@ -17,7 +17,7 @@ policies <- read_csv("Policy_Instruments_Paper/Data/policy_instruments_bruno.csv
 
 replace_letters <- function(x) {
    x <- gsub('Y', 1, x)
-   x <- gsub('M', 0.5, x)
+   x <- gsub('M', 1, x)
    x <- gsub('N', 0, x)
    return(x)
 }
@@ -87,10 +87,15 @@ merged <- gsp_summary %>%
 
 summary(merged)
 
-cor_places <- cor(merged)
-pmat <- cor_pmat(merged)
+library(broom)
 
-ggcorrplot(cor_places,
-           lab = TRUE,
-           digits = 1
-)
+# Assuming df is your dataframe
+mods <- map(names(merged)[28:32], ~{
+   model <- glm(reformulate(names(merged)[2:13], response = .x), data = merged, family = binomial)
+   tidy(model)
+})
+
+mod_df <- bind_rows(mods, .id = "dependent_var")
+
+mod_df %>% filter(p.value < 0.05) %>% kable()
+   
