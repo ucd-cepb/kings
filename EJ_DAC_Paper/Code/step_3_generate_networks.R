@@ -7,12 +7,8 @@ library(data.table)
 
 load_dot_env()
 
-# path to created network data
-# network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_textgov_paper_version")
-
 network_fp <- paste0(Sys.getenv("BOX_PATH"),
                      "/Supernetwork_Paper/cleaned_unfiltered_extracts")
-
 extract_list <- list.files(network_fp)
 
 # path to page-level data
@@ -163,10 +159,6 @@ net_graph <- function(networklist, gsp_id){
       sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$projects_mgmt_actions)
    })
    
-   sub_network_graph <- induced_subgraph(network_graph_simp, 
-                                         which(V(network_graph_simp)$admin_sum > 0|
-                                                  V(network_graph_simp)$sust_criteria_sum > 0| 
-                                                  V(network_graph_simp)$monitoring_networks_sum > 0))
    
    network_graph_simp <- set_vertex_attr(network_graph_simp, 
                                     'degree',
@@ -187,29 +179,7 @@ net_graph <- function(networklist, gsp_id){
                                     'outdegree',
                                     value = node_outdegree(network_graph_simp))
    
-   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
-   sub_network_graph <- set_vertex_attr(sub_network_graph, 
-                                         'degree',
-                                         value = node_degree(sub_network_graph))
-   sub_network_graph <- set_vertex_attr(sub_network_graph, 
-                                         'closeness',
-                                         value = node_closeness(sub_network_graph))
-   sub_network_graph <- set_vertex_attr(sub_network_graph, 
-                                         'betweeness',
-                                         value = node_betweenness(sub_network_graph))
-   sub_network_graph <- set_vertex_attr(sub_network_graph, 
-                                         'eigenvector',
-                                         value = node_eigenvector(sub_network_graph))  
-   sub_network_graph <- set_vertex_attr(sub_network_graph,
-                                         'indegree',
-                                         value = node_indegree(sub_network_graph))
-   sub_network_graph <- set_vertex_attr(sub_network_graph,
-                                         'outdegree',
-                                         value = node_outdegree(sub_network_graph))
-   
-   
-   return(list(network_graph_simp, sub_network_graph))
+   return(network_graph_simp)
 }
 
 # apply functions to all networks
@@ -228,19 +198,12 @@ for (g in seq_along(gsp_ids)) {
                           gsp_id = gsp_ids[g])
    
    print(paste0("Saving Graph ", gsp_id))
-   saveRDS(object = gsp_graph[[1]],
+   saveRDS(object = gsp_graph,
            file = paste0(Sys.getenv("BOX_PATH"),
                          "/EJ_Paper/cleaned_extracts_DACified",
                          "/",
                          extract_list[g]))
-   
-   print(paste0("Saving Subgraph ", gsp_id))
-   saveRDS(object = gsp_graph[[2]],
-           file = paste0(Sys.getenv("BOX_PATH"),
-                         "/EJ_Paper/cleaned_extracts_DACified_substantive",
-                         "/",
-                         extract_list[g]))
-   
+
    print(paste0("Finished ", gsp_id))
 }
 
@@ -253,8 +216,8 @@ ggt <- net_graph(glt,
                  gsp_id = gsp_ids[67])
 
 
-isolates_test <- which(degree(ggt[[2]]) == 0)
-graph_2_test <- delete.vertices(ggt[[2]], isolates_test)
+isolates_test <- which(degree(ggt) == 0)
+graph_2_test <- delete.vertices(ggt, isolates_test)
 
 ggraph(ggt[[2]], 
        layout = 'igraph',
