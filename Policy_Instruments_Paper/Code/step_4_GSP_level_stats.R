@@ -6,10 +6,11 @@ library(migraph)
 library(data.table)
 library(ggcorrplot)
 library(knitr)
+library(broom)
 
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/Policy_Instruments_Paper/cleaned_extracts_PIP")
 extract_list = list.files(network_fp)
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
@@ -31,7 +32,6 @@ policies_clean <- policies %>%
 
 colnames(policies_clean) <- c('GSP_ID', 'allocations', 'trading', 'taxes_fees', 
                               'pumping_restrictions', 'efficiency_incentives')
-   
 
 gsp_summary <- data.frame()
 
@@ -44,35 +44,28 @@ for (g in seq_along(gsp_ids)) {
       net_density = migraph::network_density(net),
       net_diameter = migraph::network_diameter(net),
       net_components = migraph::network_components(net),
-      net_cohesion = migraph::network_cohesion(net),
-      net_adhesion = migraph::network_adhesion(net),
       net_degree = migraph::network_degree(net),
       net_betweenness = migraph::network_betweenness(net),
       net_eigenvector = migraph::network_eigenvector(net),
       net_core = migraph::network_core(net),
       net_reciprocity = migraph::network_reciprocity(net),
       net_transitivity = migraph::network_transitivity(net),
-      net_assortativity = migraph::network_assortativity(net)
+      net_assortativity = migraph::network_assortativity(net),
+      net_tri = sum(igraph::triangles(net)),
+      net_eccentricity = max(igraph::eccentricity(net))
    )
    
    net_nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
    node_means <- net_nodes %>%
-      select(-c(entity_type, GEOID20, Basin_Subb, lat, lng, GSP_ID)) %>%
+      select(-c(entity_type)) %>%
       mutate(leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min)) %>%
-      summarise(MHI = mean(MHI, na.rm = TRUE),
-                POP = mean(POP, na.rm = TRUE),
-                num_app = mean(num_appearances, na.rm = TRUE),
-                inc = mean(incorporated, na.rm = TRUE),
-                latino = mean(per_latino, na.rm = TRUE),
-                eig = mean(eigenvector, na.rm = TRUE),
-                lead_min = mean(leader_dist_min, na.rm = TRUE),
-                degree = mean(degree, na.rm = TRUE),
-                closeness = mean(closeness, na.rm = TRUE),
-                admin = mean(admin_sum, na.rm = TRUE),
-                basin_plan = mean(basin_plan_sum, na.rm = TRUE),
-                sust_criteria = mean(sust_criteria_sum, na.rm = TRUE),
-                monitoring_networks = mean(monitoring_networks_sum, na.rm = TRUE),
-                projects_mgmt_actions = mean(projects_mgmt_actions_sum, na.rm = TRUE)) 
+      summarise(lead_min = mean(leader_dist_min, na.rm = TRUE)
+                # admin = mean(admin_sum, na.rm = TRUE),
+                # basin_plan = mean(basin_plan_sum, na.rm = TRUE),
+                # sust_criteria = mean(sust_criteria_sum, na.rm = TRUE),
+                # monitoring_networks = mean(monitoring_networks_sum, na.rm = TRUE),
+                # projects_mgmt_actions = mean(projects_mgmt_actions_sum, na.rm = TRUE)
+                ) 
    
    gsp_summary <- rbind(gsp_summary, 
                         cbind(gsp_stats, node_means)) 
@@ -87,15 +80,22 @@ merged <- gsp_summary %>%
 
 summary(merged)
 
-library(broom)
-
-# Assuming df is your dataframe
-mods <- map(names(merged)[28:32], ~{
-   model <- glm(reformulate(names(merged)[2:13], response = .x), data = merged, family = binomial)
+# mods across all dependent variables
+mods <- map(names(merged)[15:19], ~{
+   model <- glm(reformulate(names(merged)[2:14], response = .x), 
+                data = merged, 
+                family = binomial)
    tidy(model)
 })
 
 mod_df <- bind_rows(mods, .id = "dependent_var")
 
-mod_df %>% filter(p.value < 0.05) %>% kable()
+number_to_phrase <- c("1" = "Allocations", "2" = "Trading", "3" = "Taxes/Fees", 
+                      "4" = "Pumping Restrictions", "5" = "Efficiency Incentives")
+
+mod_df$dependent_var <- mod_df$dependent_var %>% 
+   as.character() %>% 
+   map_chr(~ number_to_phrase[.])
+
+mod_df %>% filter(p.value < 0.05) 
    
