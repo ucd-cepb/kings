@@ -28,19 +28,23 @@ letter_cols <- c('Allocations', 'Trading', 'Taxes/Fees', 'Pumping Restrictions',
 
 policies_clean <- policies %>% 
    select(GSP_ID, all_of(letter_cols)) %>%
-   mutate(across(all_of(letter_cols), ~ replace_letters(.)))
+   mutate(across(all_of(letter_cols), ~ replace_letters(.)),
+          across(all_of(letter_cols), ~ as.numeric(.))) %>% 
+   mutate(any = ifelse(rowSums(select(., all_of(letter_cols))) > 0, 1, 0))
 
 colnames(policies_clean) <- c('GSP_ID', 'allocations', 'trading', 'taxes_fees', 
-                              'pumping_restrictions', 'efficiency_incentives')
+                              'pumping_restrictions', 'efficiency_incentives', 'any')
 
 gsp_summary <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
-   net <- readRDS(paste0(network_fp, "/", extract_list[g])) # revert after re run step3
+   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    gsp_id <- gsp_ids[g]
    
    gsp_stats <- data.frame(
       gsp_id = as.numeric(gsp_id),
+      n= vcount(net),
+      m = ecount(net),
       net_density = migraph::network_density(net),
       net_diameter = migraph::network_diameter(net),
       net_components = migraph::network_components(net),
@@ -54,25 +58,32 @@ for (g in seq_along(gsp_ids)) {
       net_tri = sum(igraph::triangles(net)),
       net_eccentricity = max(igraph::eccentricity(net))
    )
+   gsp_summary <- rbind(gsp_summary,gsp_stats)
    
-   net_nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
-   node_means <- net_nodes %>%
-      select(-c(entity_type)) %>%
-      mutate(leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min)) %>%
-      summarise(lead_min = mean(leader_dist_min, na.rm = TRUE)
-                # admin = mean(admin_sum, na.rm = TRUE),
-                # basin_plan = mean(basin_plan_sum, na.rm = TRUE),
-                # sust_criteria = mean(sust_criteria_sum, na.rm = TRUE),
-                # monitoring_networks = mean(monitoring_networks_sum, na.rm = TRUE),
-                # projects_mgmt_actions = mean(projects_mgmt_actions_sum, na.rm = TRUE)
-                ) 
+   # remove isolates
+   gnet <- delete.vertices(net, which(degree(net) == 0))
    
-   gsp_summary <- rbind(gsp_summary, 
-                        cbind(gsp_stats, node_means)) 
+   graph <- ggraph(gnet, layout = 'fr') + 
+      geom_edge_link() + 
+      geom_node_point(aes(color = org_type, size = degree)) + 
+      theme_void() + 
+      ggtitle(paste0("GSP ", gsp_id))
+   
+   ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"), graph)
 }
 
+
+# remove isolates
+gnet <- delete.vertices(net, which(degree(net) == 0))
+
+graph <- ggraph(gnet, layout = 'fr') + 
+   geom_edge_link() + 
+   geom_node_point(aes(color = org_type, size = degree)) + 
+   theme_void() + 
+   ggtitle(paste0("GSP ", gsp_id))
+
 gsp_summary <- tibble(gsp_summary)
-gsp_summary 
+gsp_summary
 
 merged <- gsp_summary %>% 
    left_join(policies_clean, by = c("gsp_id" = "GSP_ID")) %>% 
@@ -81,21 +92,38 @@ merged <- gsp_summary %>%
 summary(merged)
 
 # mods across all dependent variables
-mods <- map(names(merged)[15:19], ~{
-   model <- glm(reformulate(names(merged)[2:14], response = .x), 
+for (var in names(merged)[4:16]){
+   model <- glm(reformulate(var, response = 'allocations'), 
                 data = merged, 
                 family = binomial)
-   tidy(model)
-})
+   print(summary(model))}
 
-mod_df <- bind_rows(mods, .id = "dependent_var")
+for (var in names(merged)[4:16]){
+   model <- glm(reformulate(var, response = 'trading'), 
+                data = merged, 
+                family = binomial)
+   print(summary(model))}
 
-number_to_phrase <- c("1" = "Allocations", "2" = "Trading", "3" = "Taxes/Fees", 
-                      "4" = "Pumping Restrictions", "5" = "Efficiency Incentives")
+for (var in names(merged)[4:16]){
+   model <- glm(reformulate(var, response = 'taxes_fees'), 
+                data = merged, 
+                family = binomial)
+   print(summary(model))}
 
-mod_df$dependent_var <- mod_df$dependent_var %>% 
-   as.character() %>% 
-   map_chr(~ number_to_phrase[.])
+for (var in names(merged)[4:16]){
+   model <- glm(reformulate(var, response = 'pumping_restrictions'), 
+                data = merged, 
+                family = binomial)
+   print(summary(model))}
 
-mod_df %>% filter(p.value < 0.05) 
-   
+for (var in names(merged)[4:16]){
+   model <- glm(reformulate(var, response = 'efficiency_incentives'), 
+                data = merged, 
+                family = binomial)
+   print(summary(model))}
+
+for (var in names(merged)[4:16]){
+   model <- glm(reformulate(var, response = 'any'), 
+                data = merged, 
+                family = binomial)
+   print(summary(model))}
