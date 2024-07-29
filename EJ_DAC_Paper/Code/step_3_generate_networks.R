@@ -16,15 +16,50 @@ pages_fp <- paste0(Sys.getenv("BOX_PATH"),
                    "/Structural_Topic_Model_Paper/gsp_docs_lean")
 page_features <- tibble(readRDS(pages_fp))
 
-gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 all_places <- read.csv('EJ_DAC_Paper/Data/all_places.csv')
-gsa_gsp <- read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv')
+
+gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+gsa_gsp <- tibble(read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv'))
 gsa_names <- read.csv('EJ_DAC_Paper/Data/gsa_names.csv')
+
+# replace groundwater_sustainability_agency with gsa
 gsa_names_2 <- gsa_names
 gsa_names_2$GSA_Name <- str_replace(gsa_names$GSA_Name, 
                                     "groundwater_sustainability_agency", 
                                     "gsa")
-gsa_names <- rbind(gsa_names, gsa_names_2)
+
+# add in gsa names with 'groundwater' in them already, removing 'groundwater_sustainability_agency'
+gsa_names_3 <- gsa_names %>% 
+   mutate(GSA_Name = str_replace(gsa_names$GSA_Name, 
+                                 "_groundwater_sustainability_agency", 
+                                 "")) %>% 
+   filter(grepl("groundwater", GSA_Name))
+
+# manually add gsa names that appear in net but not in list
+gsa_names_4 <- data.frame(GSA_ID=c('147',
+                                   '461',
+                                   '457',
+                                   '253',
+                                   '456',
+                                   '106',
+                                   '415',
+                                   '418',
+                                   '384',
+                                   '49',
+                                   '49'),
+                          GSA_Name = c('sacramento_central_groundwater_authority',
+                                       'salinas_valley_basin_groundwater_sustainability_agency',
+                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
+                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_scott_river',
+                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_shasta',
+                                       'yuba_water_agency',
+                                       'yuba_water_agency',
+                                       'tehama_county_flood_control_and_water_conservation_district',
+                                       'reclamation_district_no_501_groundwater_sustainability_agency_northern_delta_groundwater_sustainability_agency',
+                                       'fox_canyon_groundwater_management_agency',
+                                       'arroyo_santa_rosa_groundwater_sustainability_agency')
+)
+gsa_names <- rbind(gsa_names, gsa_names_2, gsa_names_3, gsa_names_4)
 
 # function to grab section columns from page_features to bind to edges
 parent_loc_to_section <- function(pointer_str){
@@ -85,20 +120,11 @@ net_graph <- function(networklist, gsp_id){
    # get gsa names from gsa_gsp and gsa_names
    gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
    gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
-   gsa_names <- merge(data.frame(GSA_ID = gsa_ids), 
-                      gsa_names, 
-                      by = "GSA_ID")$GSA_Name
-   gsa_names <- c(gsa_names, 'groundwater_sustainability_agency', 'gsa') #add in deafult
-   gsa_ins <- c(which(V(network_graph)$name %in% gsa_names))
-   
-   # if gsa matching fails identify most common node with GSA in name
-   if (length(gsa_ins) == 0){
-      #df with all possible GSA candidates
-      ins <- which(str_detect(networklist$nodelist$entity_name, 
-                              'groundwater_sustainability_agency|gsa'))
-      gsa_ins <- ins[which.max(networklist$nodelist$num_appearances[ins])]
-      gsa_names <- c(gsa_names, networklist$nodelist$entity_name[gsa_ins])
-   }
+   gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
+                       gsa_names, 
+                       by = "GSA_ID")$GSA_Name
+   gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa') #add in deafult
+   gsa_ins <- c(which(V(network_graph)$name %in% gsa_names2))
    
    #distance to gsa(s)
    dists <- data.frame(matrix(ncol = length(gsa_ins), 
@@ -122,7 +148,7 @@ net_graph <- function(networklist, gsp_id){
    
    network_graph <- set_vertex_attr(network_graph,
                                          'GSA',
-                                         value = ifelse(V(network_graph)$name %in% gsa_names, 1, 0))
+                                         value = ifelse(V(network_graph)$name %in% gsa_names2, 1, 0))
    
    network_graph <- set_vertex_attr(network_graph,
                                     'is_place',
@@ -209,11 +235,14 @@ for (g in seq_along(gsp_ids)) {
 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[67]),
-                             gsp_id = gsp_ids[67])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[92]),
+                             gsp_id = gsp_ids[92])
 
 ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[67])
+                 gsp_id = gsp_ids[92])
+
+V(ggt)[V(ggt)$GSA ==1]
+
 
 
 isolates_test <- which(degree(ggt) == 0)
