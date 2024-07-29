@@ -17,14 +17,46 @@ pages_fp <- paste0(Sys.getenv("BOX_PATH"),
 page_features <- tibble(readRDS(pages_fp))
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
-all_places <- read.csv('EJ_DAC_Paper/Data/all_places.csv')
-gsa_gsp <- read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv')
+gsa_gsp <- tibble(read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv'))
 gsa_names <- read.csv('EJ_DAC_Paper/Data/gsa_names.csv')
+
+# replace groundwater_sustainability_agency with gsa
 gsa_names_2 <- gsa_names
 gsa_names_2$GSA_Name <- str_replace(gsa_names$GSA_Name, 
                                     "groundwater_sustainability_agency", 
                                     "gsa")
-gsa_names <- rbind(gsa_names, gsa_names_2)
+
+# add in gsa names with 'groundwater' in them already, removing 'groundwater_sustainability_agency'
+gsa_names_3 <- gsa_names %>% 
+   mutate(GSA_Name = str_replace(gsa_names$GSA_Name, 
+                                 "_groundwater_sustainability_agency", 
+                                 "")) %>% 
+   filter(grepl("groundwater", GSA_Name))
+
+gsa_names_4 <- data.frame(GSA_ID=c('111',
+                                   '29',
+                                   '88',
+                                   '89',
+                                   '90',
+                                   '52',
+                                   '53',
+                                   '94',
+                                   '117',
+                                   '156',
+                                   '156'),
+                          GSA_Name = c('sacramento_central_groundwater_authority',
+                                       'salinas_valley_basin_groundwater_sustainability_agency',
+                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
+                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_scott_river',
+                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_shasta',
+                                       'yuba_water_agency',
+                                       'yuba_water_agency',
+                                       'tehama_county_flood_control_and_water_conservation_district',
+                                       'reclamation_district_no_501_groundwater_sustainability_agency_northern_delta_groundwater_sustainability_agency',
+                                       'fox_canyon_groundwater_management_agency',
+                                       'arroyo_santa_rosa_groundwater_sustainability_agency')
+)
+gsa_names <- rbind(gsa_names, gsa_names_2, gsa_names_3, gsa_names_4)
 
 # add node labels from Hannah doc
 
@@ -57,16 +89,11 @@ parent_loc_to_section <- function(pointer_str){
              projects_mgmt_actions = as.numeric(projects_mgmt_actions))
    return(page_sections)
 }
-
 # process node/edgelist for use
 net_process <- function(file, gsp_id){
-   # read in rds file
-   temp <- readRDS(file)
    # grab nodelist
-   nl <- tibble(temp$nodelist)
+   nl <- tibble(readRDS(file)$nodelist)
    # tag places and DACs
-   all_places <- all_places %>% filter(GSP_ID == gsp_id )
-   # nl <- nl %>% left_join(all_places, by=join_by(entity_name == NAME20))
    nl <- nl %>% left_join(label_dict, by=join_by(entity_name == entity_name))
    nl <- nl %>% left_join(govsci_dict, by=join_by(entity_name == Agency)) %>% 
       mutate(org_type = case_when(
@@ -78,7 +105,7 @@ net_process <- function(file, gsp_id){
       select(-c(X, State, Abbr)) %>% 
       distinct(., entity_name, .keep_all = TRUE)
 
-   el <- tibble(temp$edgelist)
+   el <- tibble(readRDS(file)$edgelist)
    edge_sources <- data.frame()
    for (edge in el$doc_sent_parent) {
       edge_source <- parent_loc_to_section(edge)
@@ -143,10 +170,6 @@ net_graph <- function(networklist, gsp_id){
    network_graph <- set_vertex_attr(network_graph,
                                          'GSA',
                                          value = ifelse(V(network_graph)$name %in% gsa_names, 1, 0))
-   
-   # network_graph <- set_vertex_attr(network_graph,
-   #                                  'is_place',
-   #                                  value = ifelse(is.na(V(network_graph)$GEOID20), 0, 1))
    
    network_graph_simp <- igraph::simplify(network_graph, 
                                           remove.multiple = TRUE,
@@ -229,11 +252,11 @@ for (g in seq_along(gsp_ids)) {
 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[13]),
-                             gsp_id = gsp_ids[13])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[67]),
+                             gsp_id = gsp_ids[67])
 
 ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[13])
+                 gsp_id = gsp_ids[67])
 
 
 isolates_test <- which(degree(ggt) == 0)
