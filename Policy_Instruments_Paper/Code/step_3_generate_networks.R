@@ -33,17 +33,17 @@ gsa_names_3 <- gsa_names %>%
                                  "")) %>% 
    filter(grepl("groundwater", GSA_Name))
 
-gsa_names_4 <- data.frame(GSA_ID=c('111',
-                                   '29',
-                                   '88',
-                                   '89',
-                                   '90',
-                                   '52',
-                                   '53',
-                                   '94',
-                                   '117',
-                                   '156',
-                                   '156'),
+gsa_names_4 <- data.frame(GSA_ID=c('147',
+                                   '461',
+                                   '457',
+                                   '253',
+                                   '456',
+                                   '106',
+                                   '415',
+                                   '418',
+                                   '384',
+                                   '49',
+                                   '49'),
                           GSA_Name = c('sacramento_central_groundwater_authority',
                                        'salinas_valley_basin_groundwater_sustainability_agency',
                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
@@ -89,20 +89,22 @@ parent_loc_to_section <- function(pointer_str){
              projects_mgmt_actions = as.numeric(projects_mgmt_actions))
    return(page_sections)
 }
+
 # process node/edgelist for use
 net_process <- function(file, gsp_id){
    # grab nodelist
    nl <- tibble(readRDS(file)$nodelist)
    # tag places and DACs
-   nl <- nl %>% left_join(label_dict, by=join_by(entity_name == entity_name))
-   nl <- nl %>% left_join(govsci_dict, by=join_by(entity_name == Agency)) %>% 
+   nl <- nl %>% 
+      left_join(label_dict, by=join_by(entity_name == entity_name))%>% 
+      left_join(govsci_dict, by=join_by(entity_name == Agency)) %>%
       mutate(org_type = case_when(
          State == 'local' ~ "Loc_Gov",
          State == 'federal' ~ "NL_Gov",
          State == 'California' ~ "CA_Gov",
          TRUE ~ org_type
-      )) %>% 
-      select(-c(X, State, Abbr)) %>% 
+      )) %>%
+      select(-c(X, State, Abbr)) %>%
       distinct(., entity_name, .keep_all = TRUE)
 
    el <- tibble(readRDS(file)$edgelist)
@@ -114,8 +116,8 @@ net_process <- function(file, gsp_id){
    el <- cbind(el, edge_sources)
 
    # filter out NA edges and irrelevant cols
-   el <- el %>% 
-      select(-doc_sent_verb) %>% 
+   el <- el %>%
+      select(-doc_sent_verb) %>%
       filter(!is.na(source) & !is.na(target))
    
    networklist <- list("nodelist" = tibble(nl), "edgelist" = tibble(el))
@@ -132,28 +134,19 @@ net_graph <- function(networklist, gsp_id){
    # get gsa names from gsa_gsp and gsa_names
    gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
    gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
-   gsa_names <- merge(data.frame(GSA_ID = gsa_ids), 
-                      gsa_names, 
-                      by = "GSA_ID")$GSA_Name
-   gsa_names <- c(gsa_names, 'groundwater_sustainability_agency', 'gsa') #add in deafult
-   gsa_ins <- c(which(V(network_graph)$name %in% gsa_names))
-   
-   # if gsa matching fails identify most common node with GSA in name
-   if (length(gsa_ins) == 0){
-      #df with all possible GSA candidates
-      ins <- which(str_detect(networklist$nodelist$entity_name, 
-                              'groundwater_sustainability_agency|gsa'))
-      gsa_ins <- ins[which.max(networklist$nodelist$num_appearances[ins])]
-      gsa_names <- c(gsa_names, networklist$nodelist$entity_name[gsa_ins])
-   }
-   
-   #distance to gsa(s)
-   dists <- data.frame(matrix(ncol = length(gsa_ins), 
+   gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
+                       gsa_names, 
+                       by = "GSA_ID")$GSA_Name
+   gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa') #add in deafult
+   gsa_ins <- c(which(V(network_graph)$name %in% gsa_names2))
+
+   # distance to gsa(s)
+   dists <- data.frame(matrix(ncol = length(gsa_ins),
                               nrow = vcount(network_graph)))
    colnames(dists) <- paste0('X', gsa_ins)
-   
+
    for (i in gsa_ins){
-      dist <- distances(network_graph, 
+      dist <- distances(network_graph,
                         to=i,
                         mode = 'in')
       dist[is.infinite(dist)] <- NA # replace infinite distance with NA
@@ -162,16 +155,16 @@ net_graph <- function(networklist, gsp_id){
    }
    colnames(dists) <- V(network_graph)$name[gsa_ins]
    leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
-   
+
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_min',
                                     value = leader_dist_min)
-   
+
    network_graph <- set_vertex_attr(network_graph,
-                                         'GSA',
-                                         value = ifelse(V(network_graph)$name %in% gsa_names, 1, 0))
-   
-   network_graph_simp <- igraph::simplify(network_graph, 
+                                    'GSA',
+                                    value = ifelse(V(network_graph)$name %in% gsa_names2, 1, 0))
+
+   network_graph_simp <- igraph::simplify(network_graph,
                                           remove.multiple = TRUE,
                                           remove.loops = FALSE,
                                           edge.attr.comb = list(neg = 'mean',
@@ -185,7 +178,7 @@ net_graph <- function(networklist, gsp_id){
                                                                 monitoring_networks = 'sum',
                                                                 projects_mgmt_actions = 'sum',
                                                                 'ignore'))
-   
+
    V(network_graph_simp)$admin_sum <- sapply(V(network_graph_simp), function(v) {
       sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$admin)
    })
@@ -201,27 +194,27 @@ net_graph <- function(networklist, gsp_id){
    V(network_graph_simp)$projects_mgmt_actions_sum <- sapply(V(network_graph_simp), function(v) {
       sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$projects_mgmt_actions)
    })
-   
-   
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+
+
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
                                     'degree',
                                     value = node_degree(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
                                     'closeness',
                                     value = node_closeness(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
                                     'betweeness',
                                     value = node_betweenness(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
                                     'eigenvector',
-                                    value = node_eigenvector(network_graph_simp))  
+                                    value = node_eigenvector(network_graph_simp))
    network_graph_simp <- set_vertex_attr(network_graph_simp,
                                     'indegree',
                                     value = node_indegree(network_graph_simp))
    network_graph_simp <- set_vertex_attr(network_graph_simp,
                                     'outdegree',
                                     value = node_outdegree(network_graph_simp))
-   
+
    return(network_graph_simp)
 }
 
@@ -229,34 +222,36 @@ net_graph <- function(networklist, gsp_id){
 for (g in seq_along(gsp_ids)) {
    gsp_id <- paste0("gsp_",gsp_ids[g])
    
-   print(paste0("Processing ", gsp_id))
+   # print(paste0("Processing ", gsp_id))
    gsp_list <- net_process(file = paste0(network_fp, 
                                          "/",
                                          extract_list[g]),
                            gsp_id = gsp_ids[g]
                            )
    
-   print(paste0("Graphing ", gsp_id))
+   # print(paste0("Graphing ", gsp_id))
    gsp_graph <- net_graph(gsp_list, 
                           gsp_id = gsp_ids[g])
    
-   print(paste0("Saving Graph ", gsp_id))
-   saveRDS(object = gsp_graph,
-           file = paste0(Sys.getenv("BOX_PATH"),
-                         "/Policy_Instrument_Paper/cleaned_extracts_PIP",
-                         "/",
-                         extract_list[g]))
+   # print(paste0("Saving Graph ", gsp_id))
+   # saveRDS(object = gsp_graph,
+   #         file = paste0(Sys.getenv("BOX_PATH"),
+   #                       "/Policy_Instruments_Paper/cleaned_extracts_PIP",
+   #                       "/",
+   #                       extract_list[g]))
 
-   print(paste0("Finished ", gsp_id))
+   # print(paste0("Finished ", gsp_id))
 }
-
+# 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[67]),
-                             gsp_id = gsp_ids[67])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[92]),
+                             gsp_id = gsp_ids[92])
 
 ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[67])
+                 gsp_id = gsp_ids[92])
+
+V(ggt)[V(ggt)$GSA ==1]
 
 
 isolates_test <- which(degree(ggt) == 0)

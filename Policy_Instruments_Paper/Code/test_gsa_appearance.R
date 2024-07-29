@@ -33,17 +33,17 @@ gsa_names_3 <- gsa_names %>%
                               "")) %>% 
    filter(grepl("groundwater", GSA_Name))
 
-gsa_names_4 <- data.frame(GSA_ID=c('111',
-                                   '29',
-                                   '88',
-                                   '89',
-                                   '90',
-                                   '52',
-                                   '53',
-                                   '94',
-                                   '117',
-                                   '156',
-                                   '156'),
+gsa_names_4 <- data.frame(GSA_ID=c('147',
+                                   '461',
+                                   '457',
+                                   '253',
+                                   '456',
+                                   '106',
+                                   '415',
+                                   '418',
+                                   '384',
+                                   '49',
+                                   '49'),
                           GSA_Name = c('sacramento_central_groundwater_authority',
                                        'salinas_valley_basin_groundwater_sustainability_agency',
                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
@@ -94,6 +94,7 @@ net_process <- function(file, gsp_id){
    
    gsa_df_sub <- data.frame(gsp_id=gsp_id, 
                             gsa_names=gsa_names2,
+                            # gsa_ids=gsa_ids,
                             exp_gsas = length(gsa_ids)) %>% 
       mutate(in_net = ifelse(gsa_names %in% nl$entity_name, 1, 0))
    
@@ -132,7 +133,7 @@ df <- gsa_df %>%
 print(df, n=100)
 
 
-x <- '100'
+x <- '111'
 print(gsa_df %>% filter(gsp_id == x), n=400)
 file <- paste0(network_fp, "/", extract_list[which(gsp_ids == x)])
 nl <- tibble(readRDS(file)$nodelist)
