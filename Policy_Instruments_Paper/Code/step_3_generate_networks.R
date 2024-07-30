@@ -222,25 +222,25 @@ net_graph <- function(networklist, gsp_id){
 for (g in seq_along(gsp_ids)) {
    gsp_id <- paste0("gsp_",gsp_ids[g])
    
-   # print(paste0("Processing ", gsp_id))
+   print(paste0("Processing ", gsp_id))
    gsp_list <- net_process(file = paste0(network_fp, 
                                          "/",
                                          extract_list[g]),
                            gsp_id = gsp_ids[g]
                            )
    
-   # print(paste0("Graphing ", gsp_id))
+   print(paste0("Graphing ", gsp_id))
    gsp_graph <- net_graph(gsp_list, 
                           gsp_id = gsp_ids[g])
    
-   # print(paste0("Saving Graph ", gsp_id))
-   # saveRDS(object = gsp_graph,
-   #         file = paste0(Sys.getenv("BOX_PATH"),
-   #                       "/Policy_Instruments_Paper/cleaned_extracts_PIP",
-   #                       "/",
-   #                       extract_list[g]))
+   print(paste0("Saving Graph ", gsp_id))
+   saveRDS(object = gsp_graph,
+           file = paste0(Sys.getenv("BOX_PATH"),
+                         "/Policy_Instruments_Paper/cleaned_extracts_PIP",
+                         "/",
+                         extract_list[g]))
 
-   # print(paste0("Finished ", gsp_id))
+   print(paste0("Finished ", gsp_id))
 }
 # 
 # test functions for one network
