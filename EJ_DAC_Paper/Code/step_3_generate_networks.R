@@ -240,18 +240,3 @@ glt <- net_process(file = paste0(network_fp, "/",extract_list[92]),
 
 ggt <- net_graph(glt,
                  gsp_id = gsp_ids[92])
-
-V(ggt)[V(ggt)$GSA ==1]
-
-
-
-isolates_test <- which(degree(ggt) == 0)
-graph_2_test <- delete.vertices(ggt, isolates_test)
-
-ggraph(ggt[[2]], 
-       layout = 'igraph',
-       algorithm = 'nicely') +
-   geom_edge_link(color = "black", 
-                  alpha = .5) + 
-   geom_node_point(aes(size = num_appearances, colour = admin_sum)) +
-   theme_graph()
