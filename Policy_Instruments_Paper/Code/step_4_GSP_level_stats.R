@@ -60,27 +60,21 @@ for (g in seq_along(gsp_ids)) {
    )
    gsp_summary <- rbind(gsp_summary,gsp_stats)
    
+   igraph::as_data_frame(net, what = 'vertices') %>% 
+      filter(org_type == 'GSA' & GSA == 0)
+   
    # remove isolates
    gnet <- delete.vertices(net, which(degree(net) == 0))
    
-   graph <- ggraph(gnet, layout = 'fr') + 
-      geom_edge_link() + 
-      geom_node_point(aes(color = org_type, size = degree)) + 
-      theme_void() + 
-      ggtitle(paste0("GSP ", gsp_id))
+   graph <- ggraph(gnet, layout = 'fr') +
+      geom_edge_link() +
+      geom_node_point(aes(color = org_type, size = degree, shape = as.factor(GSA))) +
+      theme_void() +
+      ggtitle(paste0("GSP ", gsp_id))+
+      theme_graph(background='white')
    
    ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"), graph)
 }
-
-
-# remove isolates
-gnet <- delete.vertices(net, which(degree(net) == 0))
-
-graph <- ggraph(gnet, layout = 'fr') + 
-   geom_edge_link() + 
-   geom_node_point(aes(color = org_type, size = degree)) + 
-   theme_void() + 
-   ggtitle(paste0("GSP ", gsp_id))
 
 gsp_summary <- tibble(gsp_summary)
 gsp_summary

@@ -43,7 +43,8 @@ gsa_names_4 <- data.frame(GSA_ID=c('147',
                                    '418',
                                    '384',
                                    '49',
-                                   '49'),
+                                   '49',
+                                   '24'),
                           GSA_Name = c('sacramento_central_groundwater_authority',
                                        'salinas_valley_basin_groundwater_sustainability_agency',
                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
@@ -54,7 +55,8 @@ gsa_names_4 <- data.frame(GSA_ID=c('147',
                                        'tehama_county_flood_control_and_water_conservation_district',
                                        'reclamation_district_no_501_groundwater_sustainability_agency_northern_delta_groundwater_sustainability_agency',
                                        'fox_canyon_groundwater_management_agency',
-                                       'arroyo_santa_rosa_groundwater_sustainability_agency')
+                                       'arroyo_santa_rosa_groundwater_sustainability_agency',
+                                       'mga')
 )
 gsa_names <- rbind(gsa_names, gsa_names_2, gsa_names_3, gsa_names_4)
 
@@ -90,10 +92,73 @@ parent_loc_to_section <- function(pointer_str){
    return(page_sections)
 }
 
+aggregate_gsas <- function(graph) {
+   # Identify GSA nodes
+   
+   gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
+   gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
+   gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
+                       gsa_names, 
+                       by = "GSA_ID")$GSA_Name
+   gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa') #add in deafult
+   
+   gsa_nodes <- V(graph)$name[V(graph)$name %in% gsa_names2]
+   
+   # Identify GSA-adjacent nodes
+   gsa_adjacent_nodes <- V(graph)$name[!is.na(V(graph)$org_type) & V(graph)$org_type == 'GSA']
+   
+   for (adj_node in gsa_adjacent_nodes) {
+      for (gsa_node in gsa_nodes) {
+         if (str_detect(adj_node, gsa_node)) {
+            # Create a unique index for the merge
+            merge_index <- which(V(graph)$name == gsa_node)
+            
+            # Find indices of the nodes to be merged
+            to_merge <- V(graph)$name %in% c(gsa_node, adj_node)
+            
+            # Merge nodes
+            graph <- contract(graph, 
+                              mapping = ifelse(to_merge, merge_index, seq_along(V(graph))), 
+                              vertex.attr.comb = list(name="first",
+                                                      entity_type='first',
+                                                      num_appearances='sum',
+                                                      org_type='first'))
+            
+            graph <- set_vertex_attr(graph,
+                                     'org_type',
+                                     index = which(V(graph)$name == gsa_node),
+                                     value = 'GSA')
+            
+            V(graph)$name <- as.character(V(graph)$name)
+            V(graph)$entity_type <- as.character(V(graph)$entity_type)
+            V(graph)$org_type <- as.character(V(graph)$org_type)
+            
+            graph <- delete_vertices(graph, V(graph)[name == "character(0)"])
+         } else {
+            graph <- set_vertex_attr(graph,
+                                     'org_type',
+                                     index = which(V(graph)$name == adj_node),
+                                     value = 'Ambig')
+         }
+      }
+   }
+   return(graph)
+}
+
+
 # process node/edgelist for use
 net_process <- function(file, gsp_id){
    # grab nodelist
    nl <- tibble(readRDS(file)$nodelist)
+   
+   # get gsa names from gsa_gsp and gsa_names
+   gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
+   gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
+   gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
+                       gsa_names, 
+                       by = "GSA_ID")$GSA_Name
+   gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa')
+   
    # tag places and DACs
    nl <- nl %>% 
       left_join(label_dict, by=join_by(entity_name == entity_name))%>% 
@@ -102,6 +167,9 @@ net_process <- function(file, gsp_id){
          State == 'local' ~ "Loc_Gov",
          State == 'federal' ~ "NL_Gov",
          State == 'California' ~ "CA_Gov",
+         entity_name %in% gsa_names2 ~ "GSA",
+         org_type == 'Ambig' ~ NA,
+         org_type == 'Drop' ~ NA,
          TRUE ~ org_type
       )) %>%
       select(-c(X, State, Abbr)) %>%
@@ -131,7 +199,8 @@ net_graph <- function(networklist, gsp_id){
    network_graph <- igraph::graph_from_data_frame(networklist$edgelist,
                                                   vertices = networklist$nodelist)
    
-   # get gsa names from gsa_gsp and gsa_names
+   network_graph <- aggregate_gsas(network_graph)
+   
    gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
    gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
    gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
@@ -245,22 +314,22 @@ for (g in seq_along(gsp_ids)) {
 # 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[92]),
-                             gsp_id = gsp_ids[92])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[4]),
+                             gsp_id = gsp_ids[4])
 
 ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[92])
+                 gsp_id = gsp_ids[4])
 
 V(ggt)[V(ggt)$GSA ==1]
 
+print(glt$nodelist %>% filter(org_type != 'Drop' & org_type != 'Ambig' & !is.na(org_type)), n=300)
 
 isolates_test <- which(degree(ggt) == 0)
 graph_2_test <- delete.vertices(ggt, isolates_test)
 
-ggraph(ggt[[2]], 
-       layout = 'igraph',
-       algorithm = 'nicely') +
-   geom_edge_link(color = "black", 
-                  alpha = .5) + 
-   geom_node_point(aes(size = num_appearances, colour = admin_sum)) +
-   theme_graph()
+ggraph(graph_2_test, layout = 'fr') +
+   geom_edge_link() +
+   geom_node_point(aes(color = org_type, size = degree, shape = as.factor(GSA))) +
+   theme_void() +
+   ggtitle(paste0("GSP ", gsp_id))+
+   theme_graph(background='white')
