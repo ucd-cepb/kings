@@ -16,7 +16,7 @@ gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
 policies <- read_csv("Policy_Instruments_Paper/Data/policy_instruments_bruno.csv")
 
-replace_letters <- function(x) {
+replace_letters <- function(x) { 
    x <- gsub('Y', 1, x)
    x <- gsub('M', 1, x)
    x <- gsub('N', 0, x)
@@ -36,11 +36,13 @@ colnames(policies_clean) <- c('GSP_ID', 'allocations', 'trading', 'taxes_fees',
                               'pumping_restrictions', 'efficiency_incentives', 'any')
 
 gsp_summary <- data.frame()
+nets <- list()
 
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    gsp_id <- gsp_ids[g]
-   
+   nets[[gsp_id]] <- net
+
    gsp_stats <- data.frame(
       gsp_id = as.numeric(gsp_id),
       n= vcount(net),
@@ -60,9 +62,6 @@ for (g in seq_along(gsp_ids)) {
    )
    gsp_summary <- rbind(gsp_summary,gsp_stats)
    
-   igraph::as_data_frame(net, what = 'vertices') %>% 
-      filter(org_type == 'GSA' & GSA == 0)
-   
    # remove isolates
    gnet <- delete.vertices(net, which(degree(net) == 0))
    
@@ -73,7 +72,11 @@ for (g in seq_along(gsp_ids)) {
       ggtitle(paste0("GSP ", gsp_id))+
       theme_graph(background='white')
    
-   ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"), graph)
+   ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"), 
+          graph,
+          width = 9,
+          height = 9,
+          units = 'in')
 }
 
 gsp_summary <- tibble(gsp_summary)
@@ -121,3 +124,16 @@ for (var in names(merged)[4:16]){
                 data = merged, 
                 family = binomial)
    print(summary(model))}
+
+
+for (i in seq_along(nets)) {
+   net <- nets[[i]]
+   t <- tibble(igraph::as_data_frame(net, what = 'vertices'))
+   print(gsp_ids[i])
+   print(t |> select(c(name, org_type, GSA)), n=20)
+   print("Press 'y' to continue: ")
+   response <- readline()
+   if (tolower(response) != 'y') {
+      break
+   }
+}
