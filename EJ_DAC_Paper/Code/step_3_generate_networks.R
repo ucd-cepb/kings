@@ -35,7 +35,6 @@ gsa_names_3 <- gsa_names %>%
                                  "")) %>% 
    filter(grepl("groundwater", GSA_Name))
 
-# manually add gsa names that appear in net but not in list
 gsa_names_4 <- data.frame(GSA_ID=c('147',
                                    '461',
                                    '457',
@@ -45,20 +44,35 @@ gsa_names_4 <- data.frame(GSA_ID=c('147',
                                    '415',
                                    '418',
                                    '384',
+                                   '432',
+                                   '163',
+                                   '433',
+                                   '434',
                                    '49',
-                                   '49'),
+                                   '24',
+                                   '403', 
+                                   '47'
+                                   ),
                           GSA_Name = c('sacramento_central_groundwater_authority',
-                                       'salinas_valley_basin_groundwater_sustainability_agency',
-                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
-                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_scott_river',
-                                       'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_shasta',
-                                       'yuba_water_agency',
-                                       'yuba_water_agency',
-                                       'tehama_county_flood_control_and_water_conservation_district',
-                                       'reclamation_district_no_501_groundwater_sustainability_agency_northern_delta_groundwater_sustainability_agency',
-                                       'fox_canyon_groundwater_management_agency',
-                                       'arroyo_santa_rosa_groundwater_sustainability_agency')
-)
+                                        'salinas_valley_basin_groundwater_sustainability_agency',
+                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
+                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_scott_river',
+                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_shasta',
+                                        'yuba_water_agency',
+                                        'yuba_water_agency',
+                                        'tehama_county_flood_control_and_water_conservation_district',
+                                        'reclamation_district_no_501_groundwater_sustainability_agency_northern_delta_groundwater_sustainability_agency',
+                                        'fox_canyon_groundwater_management_agency',
+                                        'fox_canyon_groundwater_management_agency',
+                                        'fox_canyon_groundwater_management_agency',
+                                        'fox_canyon_groundwater_management_agency',
+                                        'arroyo_santa_rosa_groundwater_sustainability_agency',
+                                        'mga',
+                                        'owens_valley_groundwater_authority',
+                                        'madera_co_groundwater_sustainability_agency'
+                                       )
+                          )
+
 gsa_names <- rbind(gsa_names, gsa_names_2, gsa_names_3, gsa_names_4)
 
 # function to grab section columns from page_features to bind to edges
@@ -112,7 +126,7 @@ net_process <- function(file, gsp_id){
 }
 
 # process node/edgelist to igraph object
-net_graph <- function(networklist, gsp_id){
+net_graph <- function(networklist, gsp_id, aggregate = FALSE){
    
    network_graph <- igraph::graph_from_data_frame(networklist$edgelist,
                                                   vertices = networklist$nodelist)

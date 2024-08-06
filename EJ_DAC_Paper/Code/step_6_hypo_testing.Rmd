@@ -151,7 +151,7 @@ exists_mod_2 <- glm(exists ~ MHI+POP+incorporated+per_latino,
 
 stargazer(exists_mod, exists_mod_2, type='text')
 
-stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
+# stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
 ```
 
 
@@ -199,7 +199,7 @@ e_dac <- glm(projects_mgmt_actions ~ DAC+
 
 stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
-stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_dac_locs_mod.html')
+# stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_dac_locs_mod.html')
 
 ```
 
@@ -274,8 +274,8 @@ eig_mod_4 <- glm(eig_std ~ DAC+
 
 stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
 
-stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html',
-          out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
+# stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html',
+#           out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
 ```
 
 
@@ -319,8 +319,8 @@ lead_mod_4 <- glm(leader_dist_min ~ DAC+
 
 stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
           
-stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text',
-          out = 'EJ_DAC_Paper/Out/mods/3ab_lead_mod.html')
+# stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text',
+#           out = 'EJ_DAC_Paper/Out/mods/3ab_lead_mod.html')
 ```
 
 ###
@@ -356,7 +356,7 @@ eig_e <- glm((eig_std) ~ projects_mgmt_actions_per,
 
 stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='text')
 
-stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='html', out = 'EJ_DAC_Paper/Out/mods/3_eig_locs_mod.html')
+# stargazer(eig_a, eig_b, eig_c, eig_d, eig_e, type='html', out = 'EJ_DAC_Paper/Out/mods/3_eig_locs_mod.html')
 ```
 
 
@@ -388,7 +388,7 @@ lead_e <- glm(leader_dist_min ~ projects_mgmt_actions_per,
 
 stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='text')
 
-stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='html', out = 'EJ_DAC_Paper/Out/mods/4_lead_locs_mod.html')
+# stargazer(lead_a, lead_b, lead_c, lead_d, lead_e, type='html', out = 'EJ_DAC_Paper/Out/mods/4_lead_locs_mod.html')
 
 ```
 
@@ -417,5 +417,5 @@ e_dac <- glm(projects_mgmt_actions ~ is_place,
 
 stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
-stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/5_place_locs_mod.html')
+# stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/5_place_locs_mod.html')
 ```
