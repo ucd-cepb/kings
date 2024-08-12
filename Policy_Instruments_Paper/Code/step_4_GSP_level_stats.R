@@ -1,5 +1,5 @@
-library(dotenv)
 library(ggraph)
+library(dotenv)
 library(igraph)
 library(tidyverse)
 library(migraph)
@@ -12,43 +12,76 @@ network_fp <- paste0(Sys.getenv("BOX_PATH"), "/Policy_Instruments_Paper/cleaned_
 extract_list = list.files(network_fp)
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
-policies <- read_csv("Policy_Instruments_Paper/Data/policy_instruments_bruno.csv")
+gsp_meta <- read_csv(paste0(Sys.getenv("BOX_PATH"), "/Structural_Topic_Model_Paper/gsp_ids_with_metadata.csv")) %>% 
+   select(c(priority, gwsum, GSP.ID)) %>%
+   mutate(
+      priority_High = if_else(priority == 'High', 1, 0),
+      priority_Medium = if_else(priority == 'Medium', 1, 0),
+      priority_Low = if_else(priority == 'Low', 1, 0),
+      priority_Very_Low = if_else(priority == 'Very Low', 1, 0),
+      gwsum_0 = if_else(gwsum == 0, 1, 0),
+      gwsum_1 = if_else(gwsum == 1, 1, 0),
+      gwsum_2 = if_else(gwsum == 2, 1, 0),
+      gwsum_3 = if_else(gwsum == 3, 1, 0)
+   )%>% 
+   select(-c(priority, gwsum))
 
 replace_letters <- function(x) { 
    x <- gsub('Y', 1, x)
-   x <- gsub('M', 0.5, x)
+   x <- gsub('M', 1, x)
    x <- gsub('N', 0, x)
    return(x)
 }
 
-letter_cols <- c('Allocations', 'Trading', 'Taxes/Fees', 'Pumping Restrictions', 
-                 'Efficiency Incentives') 
+policies <- read_csv("Policy_Instruments_Paper/Data/policy_instruments_bruno.csv") 
+
+pol_cols <- c('allocations', 'taxes', 'pumping_restrictions',  
+                 'efficiency_incentives') 
 
 policies_clean <- policies %>% 
-   select(GSP_ID, all_of(letter_cols)) %>%
-   mutate(across(all_of(letter_cols), ~ replace_letters(.)),
-          across(all_of(letter_cols), ~ as.numeric(.))) %>% 
-   mutate(any = ifelse(rowSums(select(., all_of(letter_cols))) > 0, 1, 0))
-
-colnames(policies_clean) <- c('GSP_ID', 'allocations', 'trading', 'taxes_fees', 
-                              'pumping_restrictions', 'efficiency_incentives', 'any')
+   select(c('GSP_ID', 'Allocations', 'Taxes/Fees', 
+            'Pumping Restrictions', 'Efficiency Incentives')
+          ) %>%
+   set_names(c('GSP_ID', 'allocations', 'taxes', 
+               'pumping_restrictions', 'efficiency_incentives')
+             ) %>%
+   mutate(across(everything(), ~ replace_letters(.)),
+          across(everything(), ~ as.numeric(.))
+          ) %>% 
+   mutate(any = ifelse(rowSums(select(., all_of(pol_cols))) > 0, 1, 0),
+          all = rowSums(select(., all_of(pol_cols))),
+          carrot = (allocations + efficiency_incentives)/2,
+          stick = (pumping_restrictions + taxes)/2,
+          all_w = (2*allocations + 3*taxes + 4*pumping_restrictions + efficiency_incentives)
+          )
 
 gsp_summary <- data.frame()
 nets <- list()
 
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+   gsp_id <- gsp_ids[g]
+   nets[[gsp_id]] <- net
    
    net <- set_vertex_attr(net,
                           'core',
                           value = node_core(net))
-   
-   gsp_id <- gsp_ids[g]
-   nets[[gsp_id]] <- net
-   
-   snet <- induced_subgraph(net, V(net)[GSA == 1])
    corenet <- induced_subgraph(net, V(net)[core == 1])
-   govnet <- V(net)[V(net)$org_type %in% c('CA_Gov', 'Loc_Gov', 'GSA', 'NL_Gov', 'Spec_Dist')]
+   
+   orgnet <- induced_subgraph(net, V(net)[!is.na(org_type)])
+   orgnet_noi <- delete.vertices(orgnet, which(degree(orgnet) == 0))
+   
+   orgnet_gsa_deg <- sum(igraph::degree(orgnet_noi, 
+                                     v=V(orgnet_noi)[GSA == 1], 
+                                     mode = 'all'))
+   
+   corenet_gsa_deg <- sum(igraph::degree(corenet, 
+                                     v=V(corenet)[GSA == 1], 
+                                     mode = 'all'))
+   
+   net_gsa_deg <- sum(igraph::degree(net,
+                                     v=V(net)[GSA == 1],
+                                     mode = 'all'))
    
    gsp_stats <- data.frame(
       gsp_id = as.numeric(gsp_id),
@@ -67,9 +100,7 @@ for (g in seq_along(gsp_ids)) {
       net_assortativity = migraph::network_assortativity(net),
       net_tri = sum(igraph::triangles(net)),
       net_eccentricity = max(igraph::eccentricity(net)),
-      net_cent_bet = igraph::centr_betw(net)$centralization,
-      net_cent_deg = igraph::centr_degree(net)$centralization,
-      net_cent_eig = igraph::centr_eigen(net)$centralization,
+      net_gsa_deg = net_gsa_deg / ecount(net),
       
       cnet_density = migraph::network_density(corenet),
       cnet_diameter = migraph::network_diameter(corenet),
@@ -83,75 +114,157 @@ for (g in seq_along(gsp_ids)) {
       cnet_assortativity = migraph::network_assortativity(corenet),
       cnet_tri = sum(igraph::triangles(corenet)),
       cnet_eccentricity = max(igraph::eccentricity(corenet)),
-      cnet_cent_clo = igraph::centr_clo(corenet)$centralization,
+      cnet_gsa_deg =  corenet_gsa_deg / ecount(corenet),
       
-      org_types = length(unique(V(net)$org_type)),
-      gsa_deg = sum(degree(net, v=govnet, mode='out')) / ecount(net)
+      orgnet_density = migraph::network_density(orgnet_noi),
+      orgnet_diameter = migraph::network_diameter(orgnet_noi),
+      orgnet_components = migraph::network_components(orgnet_noi),
+      orgnet_degree = migraph::network_degree(orgnet_noi),
+      orgnet_betweenness = migraph::network_betweenness(orgnet_noi),
+      orgnet_eigenvector = migraph::network_eigenvector(orgnet_noi),
+      orgnet_fact = migraph::network_factions(orgnet_noi),
+      orgnet_reciprocity = migraph::network_reciprocity(orgnet_noi),
+      orgnet_transitivity = migraph::network_transitivity(orgnet_noi),
+      orgnet_assortativity = migraph::network_assortativity(orgnet_noi),
+      orgnet_tri = sum(igraph::triangles(orgnet_noi)),
+      orgnet_eccentricity = max(igraph::eccentricity(orgnet_noi)),
+      orgnet_gsa_deg = orgnet_gsa_deg / ecount(orgnet_noi),
+      
+      org_types = length(unique(V(net)$org_type))
    )
    gsp_summary <- rbind(gsp_summary,gsp_stats)
    
    # remove isolates
-   gnet <- delete.vertices(net, which(degree(net) == 0))
-   
-   # graph <- ggraph(corenet, layout = 'fr') +
-   #    geom_edge_link() +
-   #    geom_node_point(aes(color = org_type, size = degree, shape = as.factor(GSA))) +
-   #    theme_void() +
-   #    ggtitle(paste0("GSP ", gsp_id))+
-   #    theme_graph(background='white')
-   
-   # ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"),
-   #        graph,
-   #        width = 9,
-   #        height = 9,
-   #        units = 'in')
+
+   graph <- ggraph(orgnet_noi, layout = 'fr') +
+      geom_edge_link() +
+      geom_node_point(aes(color = org_type, size = degree)) +
+      theme_void() +
+      ggtitle(paste0("GSP ", gsp_id))+
+      theme_graph(background='white')+
+      scale_color_discrete(name = "Organization Type") +
+      scale_size_continuous(name = "Degree")
+
+   ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"),
+          graph,
+          width = 9,
+          height = 9,
+          units = 'in')
 }
 
 gsp_summary <- tibble(gsp_summary)
 gsp_summary
 
 merged <- gsp_summary %>% 
+   left_join(gsp_meta, by = c("gsp_id" = "GSP.ID")) %>%
    left_join(policies_clean, by = c("gsp_id" = "GSP_ID")) %>% 
    mutate(across(everything(), ~ as.numeric(.)))
 
 summary(merged)
 
-dep_vars <- names(merged)[2:34]; dep_vars
+dep_vars <- names(merged)[2:42]; dep_vars
 
-# mods across all dependent variables
-for (var in dep_vars){
-   model <- glm(reformulate(var, response = 'allocations'), 
-                data = merged, 
-                family = binomial)
-   print(summary(model))}
+base_vars <- c("priority_High", "priority_Medium", "priority_Low", "priority_Very_Low",
+               "gwsum_0", "gwsum_1", "gwsum_2", "gwsum_3")
 
-for (var in dep_vars){
-   model <- glm(reformulate(var, response = 'trading'), 
-                data = merged %>% filter(allocations==1), 
-                family = binomial)
-   print(summary(model))}
+# Fit multivariate models for each variable in dep_vars including the base_vars
 
-for (var in dep_vars){
-   model <- glm(reformulate(var, response = 'taxes_fees'), 
-                data = merged, 
-                family = binomial)
-   print(summary(model))}
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'allocations')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
 
-for (var in dep_vars){
-   model <- glm(reformulate(var, response = 'pumping_restrictions'), 
-                data = merged, 
-                family = binomial)
-   print(summary(model))}
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'taxes')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
 
-for (var in dep_vars){
-   model <- glm(reformulate(var, response = 'efficiency_incentives'), 
-                data = merged, 
-                family = binomial)
-   print(summary(model))}
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'pumping_restrictions')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
 
-for (var in dep_vars){
-   model <- glm(reformulate(var, response = 'any'), 
-                data = merged, 
-                family = binomial)
-   print(summary(model))}
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'efficiency_incentives')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
+
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'any')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
+
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'all')
+   model <- glm(formula, data = merged, family = poisson)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
+
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'all_w')
+   model <- glm(formula, data = merged, family = poisson)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
+
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'carrot')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
+
+for (var in dep_vars) {
+   all_vars <- c(base_vars, var)
+   formula <- reformulate(all_vars, response = 'stick')
+   model <- glm(formula, data = merged, family = binomial)
+   model_summary <- summary(model)
+   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
+   if (p_values[var] < 0.05){
+      print(model_summary)
+   }
+}
 
