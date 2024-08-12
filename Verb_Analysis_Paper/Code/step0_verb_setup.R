@@ -6,14 +6,14 @@ library(dplyr)
 #Instead, save the filtered dataset in a different folder
 filekey <- read.csv("filekey.csv")
 
-file_list <- list.files(path = filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,
+file_list <- list.files(path = filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,
                         full.names = T)
 gspids <- unname(sapply(file_list, function(k) gsub("\\D", "", k)))
 
 verblist <- vector(mode="list",length=length(file_list))
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      verblist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))$verblist
+      verblist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))$verblist
    }
 }
 vlist <- rbindlist(verblist)
@@ -24,14 +24,14 @@ vlist <- vlist[!str_detect(vlist$head_verb_lemma,"[0-9]")]
 edgelist <- vector(mode="list",length=length(file_list))
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      edgelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))$edgelist
+      edgelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))$edgelist
    }
 }
 
 nodelist <- vector(mode="list",length=length(file_list))
 for(m in 1:length(file_list)){
    if(!gspids[m] %in% c("0053","0089")){
-      nodelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_extracts_govnetpaper",]$filepath,"/",gspids[m],".RDS"))$nodelist
+      nodelist[[m]] <- readRDS(paste0(filekey[filekey$var_name=="disambiged_unfiltered_extracts_superpaper",]$filepath,"/",gspids[m],".RDS"))$nodelist
    }
 }
 
@@ -83,18 +83,16 @@ colnames(gsp_webvars)[colnames(gsp_webvars)=="gsp_num_id"] <- "gsp_id"
 gsp_webvars <- gsp_webvars[,c("gsp_id","version_approval")]
 
 gsp_meta <- readRDS(filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
-gsp_mini <- unique(gsp_meta[,c("gsp_id","approval","mult_gsas",
+gsp_mini <- unique(gsp_meta[,c("gsp_id","version_approval20230922","mult_gsas",
                                "fract_of_area_in_habitat_log_scaled",
-                               "urbangw_af_log_scaled",
-                               "gwsum",
+                               "log_well_MCL_exceedance_count_by_log_pop_scaled",
+                               "priority_category",
                                "percent_dac_by_pop_scaled",
                                "Republican_Vote_Share_scaled",
                                "Agr_Share_Of_GDP_scaled",
-                               "Perc_Bach_Degree_Over25_scaled",
-                               "local_govs_per_10k_people_log_scaled",
-                               "maxdryspell_scaled")])
+                               "dsci_scaled")])
 gsp_mini <- gsp_mini[!gsp_mini$gsp_id %in% c("0089","0053"),]
-gsp_mini$approval <- NULL
+gsp_mini$version_approval20230922 <- NULL
 
 gsp_all_vars <- full_join(gsp_webvars, gsp_mini)
 
