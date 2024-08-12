@@ -29,7 +29,7 @@ gsp_meta <- read_csv(paste0(Sys.getenv("BOX_PATH"), "/Structural_Topic_Model_Pap
 
 replace_letters <- function(x) { 
    x <- gsub('Y', 1, x)
-   x <- gsub('M', 1, x)
+   x <- gsub('M', 0, x)
    x <- gsub('N', 0, x)
    return(x)
 }
@@ -37,25 +37,25 @@ replace_letters <- function(x) {
 policies <- read_csv("Policy_Instruments_Paper/Data/policy_instruments_bruno.csv") 
 
 pol_cols <- c('allocations', 'taxes', 'pumping_restrictions',  
-                 'efficiency_incentives') 
+              'efficiency_incentives') 
 
 policies_clean <- policies %>% 
    select(c('GSP_ID', 'Allocations', 'Taxes/Fees', 
             'Pumping Restrictions', 'Efficiency Incentives')
-          ) %>%
+   ) %>%
    set_names(c('GSP_ID', 'allocations', 'taxes', 
                'pumping_restrictions', 'efficiency_incentives')
-             ) %>%
+   ) %>%
    mutate(across(everything(), ~ replace_letters(.)),
           across(everything(), ~ as.numeric(.))
-          ) %>% 
+   ) %>% 
    mutate(any = ifelse(rowSums(select(., all_of(pol_cols))) > 0, 1, 0),
-          all = rowSums(select(., all_of(pol_cols))),
+          all = rowSums(select(., all_of(pol_cols)))/4,
           carrot = (allocations + efficiency_incentives)/2,
           stick = (pumping_restrictions + taxes)/2,
-          all_w = (2*allocations + 3*taxes + 4*pumping_restrictions + efficiency_incentives),
+          all_w = (2*allocations + 3*taxes + 4*pumping_restrictions + efficiency_incentives)/10,
           strict = (pumping_restrictions + taxes - allocations - efficiency_incentives+2)/4
-          )
+   )
 
 gsp_summary <- data.frame()
 nets <- list()
@@ -74,12 +74,12 @@ for (g in seq_along(gsp_ids)) {
    orgnet_noi <- delete.vertices(orgnet, which(degree(orgnet) == 0))
    
    orgnet_gsa_deg <- sum(igraph::degree(orgnet_noi, 
-                                     v=V(orgnet_noi)[GSA == 1], 
-                                     mode = 'all'))
+                                        v=V(orgnet_noi)[GSA == 1], 
+                                        mode = 'all'))
    
    corenet_gsa_deg <- sum(igraph::degree(corenet, 
-                                     v=V(corenet)[GSA == 1], 
-                                     mode = 'all'))
+                                         v=V(corenet)[GSA == 1], 
+                                         mode = 'all'))
    
    net_gsa_deg <- sum(igraph::degree(net,
                                      v=V(net)[GSA == 1],
@@ -139,7 +139,7 @@ for (g in seq_along(gsp_ids)) {
    # remove isolates
    
    # net_noi <- delete.vertices(net, which(degree(net) == 0))
-
+   
    # graph <- ggraph(net_noi, layout = 'fr') +
    #    geom_edge_link() +
    #    geom_node_point(aes(color = org_type, size = degree)) +
@@ -148,7 +148,7 @@ for (g in seq_along(gsp_ids)) {
    #    theme_graph(background='white')+
    #    scale_color_discrete(name = "Organization Type") +
    #    scale_size_continuous(name = "Degree")
-
+   
    # ggsave(paste0("Policy_Instruments_Paper/Graphs/gsp_", gsp_id, ".png"),
    #        graph,
    #        width = 9,
@@ -163,126 +163,57 @@ merged <- gsp_summary %>%
    right_join(policies_clean, by = c("gsp_id" = "GSP_ID")) %>% 
    mutate(across(everything(), ~ as.numeric(.)))
 
-summary(merged)
-
 dep_vars <- names(merged)[2:31]; dep_vars
+indep_vars <- names(merged)[40:49]; indep_vars
 
-base_vars <- c("priority_High", "priority_Medium", "priority_Low", "priority_Very_Low",
-               "gwsum_0", "gwsum_1", "gwsum_2", "gwsum_3")
+mod_results <- list()
+mod_results_sig <- list()
 
 # Fit multivariate models for each variable in dep_vars including the base_vars
 
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'allocations')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
+
+# Function to rename and select columns
+rename_and_select <- function(df, name) {
+   df %>%
+      rename(!!name := estimate) %>%
+      select(var, !!sym(name))
 }
 
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'taxes')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
+
+for (ivar in indep_vars) {
+   ivar_df <- data.frame(var = character(), 
+                         estimate = numeric(),
+                         p_val = numeric())
+
+   for (dvar in dep_vars) {
+      formula <- reformulate(dvar, response = ivar)
+      model <- glm(formula, data = merged, family = binomial)
+      model_summary <- summary(model)
+      row_add <- data.frame(var = dvar,
+                            estimate = model_summary$coefficients[2,1],
+                            p_val = model_summary$coefficients[2,4])
+      ivar_df <- rbind(ivar_df, row_add)
    }
+   
+   ivar_df_sig <- ivar_df %>% 
+      mutate(estimate = ifelse(p_val < 0.05, estimate, NA)) %>% 
+      select(-p_val)
+   
+   
+   mod_results[[ivar]] <- ivar_df
+   mod_results_sig[[ivar]] <- ivar_df_sig
 }
 
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'pumping_restrictions')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
+# Apply the function and cbind the results
+mod_results_sig <- mod_results_sig %>%
+   imap(rename_and_select) %>%
+   reduce(left_join, by = c("var"))
 
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'efficiency_incentives')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
+mod_results_sig_pes <- mod_results_sig
 
-# for aggregate stats
-
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'any')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
-
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'all')
-   model <- glm(formula, data = merged, family = poisson)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
-
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'all_w')
-   model <- glm(formula, data = merged, family = poisson)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
-
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'carrot')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
-
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'stick')
-   model <- glm(formula, data = merged, family = binomial)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.05){
-      print(model_summary)
-   }
-}
-
-for (var in dep_vars) {
-   all_vars <- c(base_vars, var)
-   formula <- reformulate(all_vars, response = 'strict')
-   model <- glm(formula, data = merged, family = poisson)
-   model_summary <- summary(model)
-   p_values <- model_summary$coefficients[, "Pr(>|z|)"]
-   if (p_values[var] < 0.1){
-      print(model_summary)
-   }
-}
+mod_results_sig_op
+mod_results_sig_neut
+mod_results_sig_pes
 
 
 dep_vars <- names(merged)[31:44]; dep_vars
