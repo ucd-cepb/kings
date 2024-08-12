@@ -27,11 +27,6 @@ colnames(places_df) <- c('lat',
                          'POP',
                          'place_name')
 
-## TODO
-## COLLECT RELEVANT CENSUS DATA
-## MERGE CENSUS DATA
-## FIX DUPLICATED PLACES 
-
 places_out <- places_df %>% 
    mutate(DAC = ifelse(DAC == 'N', 0, 1), # 0 = no DAC, 1 OR data not available = DAC
           MHI = ifelse(MHI == 0, NA, MHI), 
