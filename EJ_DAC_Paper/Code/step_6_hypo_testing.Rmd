@@ -197,7 +197,15 @@ e_dac <- glm(projects_mgmt_actions ~ DAC+
              family=poisson,
               data = all_place_nodes)
 
-stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
+
+f_dac <- glm(num_appearances ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+stargazer(f_dac, a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
 # stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_dac_locs_mod.html')
 

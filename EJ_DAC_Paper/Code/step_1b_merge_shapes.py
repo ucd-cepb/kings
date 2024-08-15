@@ -1,18 +1,22 @@
 import geopandas as gpd
 import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 # set wd to `kings` through .env or some other way 
 os.chdir(os.getenv("WD"))
+box_path = os.getenv("BOX_PATH")
 
 # read in everything
 filekey = pd.read_csv("filekey.csv")
 gsp_basin_ids = pd.read_csv("EJ_DAC_Paper/Data/gsp_basin_ids.csv")
-place_bounds_raw = gpd.read_file(os.path.join(filekey.loc[filekey['var_name'] == 'pdac_shp', 'filepath'].values[0]))
-gsp_bounds_raw = gpd.read_file(os.path.join(filekey.loc[filekey['var_name'] == 'gsp_shp', 'filepath'].values[0]))
-gsa_bounds_raw = gpd.read_file(os.path.join(filekey.loc[filekey['var_name'] == 'gsa_shp', 'filepath'].values[0]))
+place_bounds_raw = gpd.read_file(box_path + "/EJ_Paper/dac_shapefiles/place/pdac20.shp")
+gsp_bounds_raw = gpd.read_file(box_path + "/EJ_Paper/dac_shapefiles/gsp/gsp.shp")
+gsa_bounds_raw = gpd.read_file(box_path + "/EJ_Paper/dac_shapefiles/gsa/gsa.shp")
+cal = gpd.read_file(box_path + "/EJ_Paper/dac_shapefiles/ca/CA_State.shp")
 
 # select relevent columns
 place_bounds = place_bounds_raw[['GEOID20', 'NAME20', 'Pop20', 'MHI20', 'HH20', 'DAC20', 'geometry']]
@@ -39,6 +43,29 @@ expected_places['NAME20'] = expected_places['NAME20'].str.replace(' ', '_').str.
 expected_places['GEOID20'] = expected_places['GEOID20'].astype(int)
 
 expected_places.to_csv("EJ_DAC_Paper/Data/expected_places.csv", index=False)
+
+# Plot the California state with white background and black outline
+
+ax = cal.plot(color='white', edgecolor='black', linewidth=1)
+
+# Plot the GSAs in blue with grey borders on top of the state map
+gsp_bounds_raw.plot(ax=ax, color='tab:blue', edgecolor='tab:blue', linewidth=0.1)
+place_bounds_raw.plot(ax=ax, color='tab:green', edgecolor='tab:green', linewidth=0.1)
+unique_places.plot(ax=ax, color='tab:orange', edgecolor='tab:orange', linewidth=0.1)
+
+# legend
+gsp_patch = mpatches.Patch(color='tab:blue', label='GSPs')
+place_patch = mpatches.Patch(color='tab:green', label='Places')
+intersection_patch = mpatches.Patch(color='tab:orange', label='Intersections')
+
+# Add the legend to the plot
+ax.legend(handles=[gsp_patch, place_patch, intersection_patch], loc='upper right')
+# remove axis
+ax.axis('off')
+
+# Display the plot
+plt.savefig("EJ_DAC_Paper/Out/gsa_over_california.png", dpi=300)
+plt.close()
 
 # gsas per gsp
 gsp_bounds_raw[['GSP_ID', 'GSA_IDs']].to_csv('EJ_DAC_Paper/Data/gsa_gsp.csv', index=False)
