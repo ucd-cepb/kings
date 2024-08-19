@@ -75,6 +75,7 @@ gsa_names_4 <- data.frame(GSA_ID=c('147',
 
 gsa_names <- rbind(gsa_names, gsa_names_2, gsa_names_3, gsa_names_4)
 
+
 # function to grab section columns from page_features to bind to edges
 parent_loc_to_section <- function(pointer_str){
    # split str after '.pdf' and before '_'
@@ -105,7 +106,9 @@ net_process <- function(file, gsp_id){
    nl <- tibble(temp$nodelist)
    # tag places and DACs
    all_places <- all_places %>% filter(GSP_ID == gsp_id )
-   nl <- nl %>% left_join(all_places, by=join_by(entity_name == NAME20))
+   nl <- nl %>% 
+      left_join(all_places, by=join_by(entity_name == NAME20)) %>% 
+      select(-c(entity_type, num_appearances))
 
    el <- tibble(temp$edgelist)
    edge_sources <- data.frame()
@@ -201,23 +204,26 @@ net_graph <- function(networklist, gsp_id, aggregate = FALSE){
    
    
    network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'degree',
-                                    value = node_degree(network_graph_simp))
+                                          'degree',
+                                          value = node_degree(network_graph_simp))
    network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'closeness',
-                                    value = node_closeness(network_graph_simp))
+                                          'closeness',
+                                          value = node_closeness(network_graph_simp))
    network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'betweeness',
-                                    value = node_betweenness(network_graph_simp))
+                                          'betweeness',
+                                          value = node_betweenness(network_graph_simp))
    network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'eigenvector',
-                                    value = node_eigenvector(network_graph_simp))  
+                                          'eigenvector',
+                                          value = node_eigenvector(network_graph_simp))  
    network_graph_simp <- set_vertex_attr(network_graph_simp,
-                                    'indegree',
-                                    value = node_indegree(network_graph_simp))
+                                          'indegree',
+                                          value = node_indegree(network_graph_simp))
    network_graph_simp <- set_vertex_attr(network_graph_simp,
-                                    'outdegree',
-                                    value = node_outdegree(network_graph_simp))
+                                          'outdegree',
+                                          value = node_outdegree(network_graph_simp))
+   network_graph_simp <- set_vertex_attr(network_graph_simp,
+                                         'degree',
+                                         value = node_deg(network_graph_simp, direction = 'all'))
    
    return(network_graph_simp)
 }

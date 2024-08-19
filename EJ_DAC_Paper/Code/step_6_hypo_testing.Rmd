@@ -141,17 +141,17 @@ sub_all_place_nodes <- sub_all_nodes %>%
 with(all_places, table(exists, DAC))
 
 # glm for if DAC influences exists
-exists_mod <- glm(exists~DAC+POP+incorporated+per_latino, 
+exists_mod <- glm(exists~incorporated*DAC+POP+per_latino, 
                 family = binomial,
                 data = all_places)
 
-exists_mod_2 <- glm(exists ~ MHI+POP+incorporated+per_latino, 
+exists_mod_2 <- glm(exists ~ MHI*incorporated+POP+per_latino, 
                   family = binomial,
                   data = all_places)
 
 stargazer(exists_mod, exists_mod_2, type='text')
 
-# stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
+stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
 ```
 
 
@@ -252,19 +252,19 @@ stargazer(f_dac, a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
 ```{r, results='asis'}
 
-eig_mod <- glm(eig_std ~ MHI_std+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-               family= inverse.gaussian(link = "log"),
-              data = all_place_nodes)
+# eig_mod <- glm(eig_std ~ MHI_std+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#                family= inverse.gaussian(link = "log"),
+#               data = all_place_nodes)
 
-eig_mod_2 <- glm(eig_std ~ DAC+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-               family= inverse.gaussian(link = "log"),
-              data = all_place_nodes)
+# eig_mod_2 <- glm(eig_std ~ DAC+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#                family= inverse.gaussian(link = "log"),
+#               data = all_place_nodes)
 
 eig_mod_3<- glm(eig_std ~ MHI_std+
                  POP_std+
@@ -280,10 +280,10 @@ eig_mod_4 <- glm(eig_std ~ DAC+
                family= inverse.gaussian(link = "log"),
               data = sub_all_place_nodes)
 
-stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
+stargazer(eig_mod_3, eig_mod_4, type='text')
 
-# stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html',
-#           out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
+stargazer(eig_mod_3, eig_mod_4, type='html',
+          out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
 ```
 
 
@@ -295,20 +295,20 @@ stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
 
 ```{r, results='asis'}
 
-lead_mod <- glm(leader_dist_min ~ MHI_std+
-                 POP_std+
-                 incorporated+
-                 per_latino,
-                family=poisson,
-              data = all_place_nodes)
-
-
-lead_mod_2 <- glm(leader_dist_min ~ DAC+
-                 per_latino+
-                 POP_std+
-                 incorporated,
-                 family=poisson,
-              data = all_place_nodes)
+# lead_mod <- glm(leader_dist_min ~ MHI_std+
+#                  POP_std+
+#                  incorporated+
+#                  per_latino,
+#                 family=poisson,
+#               data = all_place_nodes)
+# 
+# 
+# lead_mod_2 <- glm(leader_dist_min ~ DAC+
+#                  per_latino+
+#                  POP_std+
+#                  incorporated,
+#                  family=poisson,
+#               data = all_place_nodes)
 
 lead_mod_3 <- glm(leader_dist_min ~ MHI_std+
                  POP_std+
@@ -325,7 +325,7 @@ lead_mod_4 <- glm(leader_dist_min ~ DAC+
                  family=poisson,
               data = sub_all_place_nodes)
 
-stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
+stargazer(lead_mod_3, lead_mod_4, type='text')
           
 # stargazer(lead_mod, lead_mod_2, lead_mod_3, lead_mod_4, type='text',
 #           out = 'EJ_DAC_Paper/Out/mods/3ab_lead_mod.html')
