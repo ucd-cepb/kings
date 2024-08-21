@@ -99,7 +99,8 @@ net_stats <- function(network_graph, gsp_id) {
    for (i in gsa_ins){
       dist <- distances(network_graph, 
                         to=i,
-                        mode = 'in')
+                        mode = 'in',
+                        weights=NA)
       dist[is.infinite(dist)] <- NA # replace infinite distance with NA
       dist[is.nan(dist)] <- NA # replace NA with NA
       dists[[paste0('X', i)]] <- dist
@@ -108,9 +109,47 @@ net_stats <- function(network_graph, gsp_id) {
    colnames(dists) <- V(network_graph)$name[gsa_ins]
    leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
    
+   #distance to gsa(s) WEIGHTED
+   dists_w <- data.frame(matrix(ncol = length(gsa_ins), 
+                              nrow = vcount(network_graph)))
+   colnames(dists_w) <- paste0('X', gsa_ins)
+   
+   for (i in gsa_ins){
+      dist_w <- distances(network_graph, 
+                        to=i,
+                        mode = 'in',
+                        weights=E(network_graph)$weight)
+      dist_w[is.infinite(dist_w)] <- NA # replace infinite distance with NA
+      dist_w[is.nan(dist_w)] <- NA # replace NA with NA
+      dists_w[[paste0('X', i)]] <- dist_w
+   }
+   
+   colnames(dists_w) <- V(network_graph)$name[gsa_ins]
+   leader_dist_min_w <- apply(dists_w, 1, min, na.rm = TRUE)
+   
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_min',
-                                    value = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min))
+                                    value = ifelse(is.infinite(leader_dist_min), 
+                                                   NA, 
+                                                   leader_dist_min))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist_min_w',
+                                    value = ifelse(is.infinite(leader_dist_min_w), 
+                                                   NA, 
+                                                   leader_dist_min_w))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist_min_nona',
+                                    value = ifelse(is.infinite(leader_dist_min), 
+                                                   diameter(network_graph), 
+                                                   leader_dist_min))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist_min_w_nona',
+                                    value = ifelse(is.infinite(leader_dist_min_w), 
+                                                   diameter(network_graph), 
+                                                   leader_dist_min_w))
    
    network_graph <- set_vertex_attr(network_graph,
                                     'GSA',
@@ -119,6 +158,47 @@ net_stats <- function(network_graph, gsp_id) {
    network_graph <- set_vertex_attr(network_graph,
                                     'is_place',
                                     value = ifelse(is.na(V(network_graph)$GEOID20), 0, 1))
+
+   network_graph <- set_vertex_attr(network_graph,
+                                    'in',
+                                    value = node_indegree(network_graph, 
+                                                          normalized=FALSE))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'in_w',
+                                    value = node_indegree(network_graph, 
+                                                          normalized=FALSE,
+                                                          alpha=1))
+   network_graph <- set_vertex_attr(network_graph,
+                                    'in_w',
+                                    value = ifelse(is.nan(V(network_graph)$in_w), 
+                                                   0, 
+                                                   V(network_graph)$in_w))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'out',
+                                    value = node_outdegree(network_graph,
+                                                           normalized=FALSE))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'out_w',
+                                    value = node_outdegree(network_graph,
+                                                           normalized=FALSE,
+                                                           alpha=1))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'out_w',
+                                    value = ifelse(is.nan(V(network_graph)$out_w), 
+                                                   0, 
+                                                   V(network_graph)$out_w))
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'deg',
+                                    value = node_deg(network_graph, 
+                                                     direction = 'all'))
+   network_graph <- set_vertex_attr(network_graph,
+                                    'eig',
+                                    value = node_eigenvector(network_graph))
    
    network_graph <- set_vertex_attr(network_graph, 
                                     'pr',
@@ -130,25 +210,6 @@ net_stats <- function(network_graph, gsp_id) {
                                     value = igraph::page_rank(network_graph,
                                                               weights = V(network_graph)$weight)$vector)
    
-   network_graph <- set_vertex_attr(network_graph,
-                                    'alpha',
-                                    value = node_alpha(network_graph))
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                    'in',
-                                    value = node_indegree(network_graph, 
-                                                          normalized=FALSE))
-   network_graph <- set_vertex_attr(network_graph,
-                                    'out',
-                                    value = node_outdegree(network_graph,
-                                                           normalized=FALSE))
-   network_graph <- set_vertex_attr(network_graph,
-                                    'deg',
-                                    value = node_deg(network_graph, 
-                                                     direction = 'all'))
-   network_graph <- set_vertex_attr(network_graph,
-                                    'eig',
-                                    value = node_eigenvector(network_graph))
    
    V(network_graph)$admin_both <- sapply(V(network_graph), function(v) {
       sum(E(network_graph)[incident(network_graph, v, mode = "all")]$admin)
@@ -232,7 +293,7 @@ subnet_stats <- function(network_graph, gsp_id) {
 }
 
 # process stats for each network
-for (g in 111:117) {
+for (g in seq_along(gsp_ids)) {
    gsp_id <- gsp_ids[g]
    
    graph_stats <- net_stats(network_graph = readRDS(paste0(network_fp, 
