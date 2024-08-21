@@ -3,17 +3,15 @@ output: pdf_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_knit$set(root.dir = "~/Documents/WORK/kings")
-```
 
-```{r, include=FALSE}
 library(dotenv)
 library(tidyverse)
 library(stargazer)
-library(ggraph)
 library(igraph)
 library(migraph)
-library(data.table)
-library(ggcorrplot)
+```
+
+```{r, include=FALSE}
 
 setwd("~/Documents/WORK/kings")
 load_dot_env()
@@ -21,7 +19,8 @@ load_dot_env()
 place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
 all_places <- bind_rows(place_existance)
 network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
-extract_list = list.files(network_fp)
+extract_list <- list.files(network_fp)
+
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
 all_nodes <- data.frame()
@@ -29,100 +28,88 @@ all_nodes <- data.frame()
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    gsp_id <- paste0("gsp_",gsp_ids[g])
+   
    nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
-   places <- nodes %>% filter(exists == 1)
-   nodes$gsp_id <- gsp_id
-   mentions <- rowSums(nodes %>% 
-                          select(admin_sum, 
-                                 basin_plan_sum, 
-                                 sust_criteria_sum,
-                                 monitoring_networks_sum,
-                                 projects_mgmt_actions_sum))
-   suppressWarnings({nodes <- nodes %>% 
-      rename(admin= admin_sum, 
-             basin_plan = basin_plan_sum,
-             sust_criteria = sust_criteria_sum,
-             monitoring_networks = monitoring_networks_sum, 
-             projects_mgmt_actions = projects_mgmt_actions_sum) %>%
-      mutate(across(any_of(c('degree', 'closeness', 'betweeness', 'eigenvector', 'indegree', 'outdegree', 'gsp_id')),
-                    as.numeric)) %>% 
-      mutate(admin_per = 100*(admin/mentions),
-             basin_plan_per = 100*(basin_plan/mentions),
-             sust_criteria_per = 100*(sust_criteria/mentions),
-             monitoring_networks_per = 100*(monitoring_networks/mentions),
-             projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
-             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE) + 1,
-             deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
-             leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
-             MHI_std = MHI/10000,
-             POP_std = POP/1000000,
-             is_place = ifelse(is.na(GEOID20), 0, 1),
+   suppressWarnings({
+      nodes <- nodes %>% 
+         mutate(across(any_of(c('deg', 'pr', 'pr_w', 'alpha', 'in', 'out', 'eig', 'gsp_id')),
+                    as.numeric),
+                gsp_id = as.numeric(gsp_id)) %>% 
+         mutate(
+            # pagerank for whole network
+            pr_std = (pr - mean(pr, na.rm=TRUE)) / sd(pr, na.rm=TRUE) + 1,
+            prw_std = (pr_w - mean(pr_w, na.rm=TRUE)) / sd(pr_w, na.rm=TRUE) + 1,
+            
+            leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
+            MHI_std = MHI/10000,
+            POP_std = POP/1000000,
+            is_place = ifelse(is.na(GEOID20), 0, 1),
              ) 
-   all_nodes <- rbind(all_nodes, nodes)
+      all_nodes <- rbind(all_nodes, nodes)
    })
 }
 
 all_place_nodes <- all_nodes %>% 
-   filter(is_place == 1) %>% 
-   mutate(appears_in_sec = ifelse(is.nan(admin_per), 0, 1))
-   
+   filter(is_place == 1) 
 ```
 
 ```{r}
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), 
-                     "/EJ_Paper/cleaned_extracts_DACified")
-extract_list = list.files(network_fp)
-gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
-
 sub_all_nodes <- data.frame()
-edges_in_sec <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
-   sec_counts <-  E(net)$admin+ E(net)$basin_plan+ E(net)$sust_criteria+ E(net)$monitoring_networks+ E(net)$projects_mgmt_actions
-   edges_in_sec <- rbind(edges_in_sec, 
-                         data.frame(gsp_id = gsp_ids[g], 
-                                    sec_counts = sum(sec_counts==0),
-                                    edges = ecount(net),
-                                    per_in_sec = 100*(sum(sec_counts==0)/ecount(net))
-                                    ))
-   subnet <- induced_subgraph(net, 
-                              which(V(net)$admin_sum > 0|
-                                       V(net)$sust_criteria_sum > 0| 
-                                       V(net)$monitoring_networks_sum > 0|
-                                       V(net)$projects_mgmt_actions_sum > 0))
    gsp_id <- paste0("gsp_",gsp_ids[g])
+
+   subnet <- induced_subgraph(net, 
+                              which(V(net)$admin_in > 0|
+                                       V(net)$sust_criteria_in > 0| 
+                                       V(net)$monitoring_networks_in > 0|
+                                       V(net)$projects_mgmt_actions_in > 0))
+   subnet <- set_vertex_attr(subnet,
+                             's_pr',
+                             value = igraph::page_rank(subnet,
+                                                       weights = NA)$vector)  
+   subnet <- set_vertex_attr(subnet,
+                             's_pr_w',
+                             value = igraph::page_rank(subnet,
+                                                       weights = V(subnet)$weight)$vector)
+   subnet <- set_vertex_attr(subnet,
+                             's_alpha',
+                             value = node_alpha(subnet))
+   subnet <- set_vertex_attr(subnet,
+                             's_in',
+                             value = node_indegree(subnet))
+   subnet <- set_vertex_attr(subnet,
+                             's_out',
+                             value = node_outdegree(subnet))
+   subnet <- set_vertex_attr(subnet,
+                             's_deg',
+                             value = node_deg(subnet, direction = 'all'))
+   subnet <- set_vertex_attr(subnet,
+                             's_eig',
+                             value = node_eigenvector(subnet))
+   
    nodes <- tibble(igraph::as_data_frame(subnet, what = "vertices"))
-   places <- nodes %>% filter(exists == 1)
-   nodes$gsp_id <- gsp_id
-   mentions <- rowSums(nodes %>% 
-                          select(admin_sum, 
-                                 basin_plan_sum, 
-                                 sust_criteria_sum,
-                                 monitoring_networks_sum,
-                                 projects_mgmt_actions_sum))
-    suppressWarnings({nodes <- nodes %>% 
-      rename(admin= admin_sum, 
-             basin_plan = basin_plan_sum,
-             sust_criteria = sust_criteria_sum,
-             monitoring_networks = monitoring_networks_sum, 
-             projects_mgmt_actions = projects_mgmt_actions_sum) %>% 
-      mutate(across(any_of(c('degree', 'closeness', 'betweeness', 'eigenvector', 'indegree', 'outdegree', 'gsp_id')),
-                    as.numeric)) %>% 
-      mutate(admin_per = 100*(admin/mentions),
-             basin_plan_per = 100*(basin_plan/mentions),
-             sust_criteria_per = 100*(sust_criteria/mentions),
-             monitoring_networks_per = 100*(monitoring_networks/mentions),
-             projects_mgmt_actions_per = 100*(projects_mgmt_actions/mentions),
-             eig_std = (eigenvector - mean(eigenvector, na.rm=TRUE)) / sd(eigenvector, na.rm=TRUE) + 1,
-             deg_std = (degree - mean(degree, na.rm=TRUE)) / sd(degree, na.rm=TRUE),
-             leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
-             MHI_std = MHI/10000,
-             POP_std = POP/1000000,
-             is_place = ifelse(is.na(GEOID20), 0, 1),
+   suppressWarnings({
+      nodes <- nodes %>% 
+         mutate(across(any_of(c('deg', 'pr', 'pr_w', 'alpha', 'in', 'out', 'eig', 'gsp_id')),
+                    as.numeric),
+                gsp_id = as.numeric(gsp_id)) %>% 
+         mutate(
+            # pagerank for whole network
+            pr_std = (pr - mean(pr, na.rm=TRUE)) / sd(pr, na.rm=TRUE) + 1,
+            prw_std = (pr_w - mean(pr_w, na.rm=TRUE)) / sd(pr_w, na.rm=TRUE) + 1,
+            # pagerank for substnative subnet
+            s_pr_std = (s_pr - mean(s_pr, na.rm=TRUE)) / sd(s_pr, na.rm=TRUE) + 1,
+            s_prw_std = (s_pr_w - mean(s_pr_w, na.rm=TRUE)) / sd(s_pr_w, na.rm=TRUE) + 1,
+             
+            leader_dist_min = ifelse(is.infinite(leader_dist_min), NA, leader_dist_min),
+            MHI_std = MHI/10000,
+            POP_std = POP/1000000,
+            is_place = ifelse(is.na(GEOID20), 0, 1),
              )
-   sub_all_nodes <- rbind(sub_all_nodes, nodes)
+      sub_all_nodes <- rbind(sub_all_nodes, nodes)
    })
 }
 
@@ -151,7 +138,7 @@ exists_mod_2 <- glm(exists ~ MHI*incorporated+POP+per_latino,
 
 stargazer(exists_mod, exists_mod_2, type='text')
 
-stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
+# stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_exists_mod.html')
 ```
 
 
@@ -161,7 +148,21 @@ stargazer(exists_mod, exists_mod_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a
 
 ```{r, results='asis'}
 
-a_dac <- glm(admin ~ DAC+
+f_dac <- glm(`in` ~ DAC+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+g_dac <- glm(`in` ~ MHI_std+
+               POP_std+
+               incorporated+
+               per_latino,
+             family=poisson,
+              data = all_place_nodes)
+
+a_dac <- glm(admin_in ~ DAC+
                POP_std+
                incorporated+
                per_latino,
@@ -169,28 +170,28 @@ a_dac <- glm(admin ~ DAC+
               data = all_place_nodes)
 
 
-b_dac <- glm(basin_plan ~ DAC+
+b_dac <- glm(basin_plan_in ~ DAC+
                POP_std+
                incorporated+
                per_latino,
              family=poisson,
               data = all_place_nodes)
 
-c_dac <- glm(sust_criteria ~ DAC+
+c_dac <- glm(sust_criteria_in ~ DAC+
                POP_std+
                incorporated+
                per_latino,
              family=poisson,
               data = all_place_nodes)
 
-d_dac <- glm(monitoring_networks ~ DAC+
+d_dac <- glm(monitoring_networks_in ~ DAC+
                POP_std+
                incorporated+
                per_latino,
              family=poisson,
               data = all_place_nodes)
 
-e_dac <- glm(projects_mgmt_actions ~ DAC+
+e_dac <- glm(projects_mgmt_actions_in ~ DAC+
                POP_std+
                incorporated+
                per_latino,
@@ -198,14 +199,7 @@ e_dac <- glm(projects_mgmt_actions ~ DAC+
               data = all_place_nodes)
 
 
-f_dac <- glm(num_appearances ~ DAC+
-               POP_std+
-               incorporated+
-               per_latino,
-             family=poisson,
-              data = all_place_nodes)
-
-stargazer(f_dac, a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
+stargazer(f_dac, g_dac, a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 
 # stargazer(a_dac, b_dac, c_dac, d_dac, e_dac, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_dac_locs_mod.html')
 
@@ -217,73 +211,28 @@ stargazer(f_dac, a_dac, b_dac, c_dac, d_dac, e_dac, type='text')
 ### HYPOTHESIS 2b: DACs have lower eigenvector centrality than non-disadvantaged communities in substantive sections
 ###
 
-```{r, results='asis'}
-# 
-# eig_mod <- lm(log(eig_std) ~ MHI_std+
-#                  POP_std+
-#                  incorporated+
-#                  per_latino,
-#               data = all_place_nodes)
-# 
-# eig_mod_2 <- lm(log(eig_std) ~ DAC+
-#                  POP_std+
-#                  incorporated+
-#                  per_latino,
-#               data = all_place_nodes)
-# 
-# eig_mod_3<- lm(log(eig_std) ~ MHI_std+
-#                  POP_std+
-#                  incorporated+
-#                  per_latino,
-#               data = sub_all_place_nodes)
-# 
-# eig_mod_4 <- lm(log(eig_std) ~ DAC+
-#                  POP_std+
-#                  incorporated+
-#                  per_latino,
-#               data = sub_all_place_nodes)
-# 
-# stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='text')
-
-# stargazer(eig_mod, eig_mod_2, eig_mod_3, eig_mod_4, type='html', 
-#           out = 'EJ_DAC_Paper/Out/mods/1_eig_mod.html')
-```
 
 
 ```{r, results='asis'}
 
-# eig_mod <- glm(eig_std ~ MHI_std+
-#                  POP_std+
-#                  incorporated+
-#                  per_latino,
-#                family= inverse.gaussian(link = "log"),
-#               data = all_place_nodes)
-
-# eig_mod_2 <- glm(eig_std ~ DAC+
-#                  POP_std+
-#                  incorporated+
-#                  per_latino,
-#                family= inverse.gaussian(link = "log"),
-#               data = all_place_nodes)
-
-eig_mod_3<- glm(eig_std ~ MHI_std+
+eig_mod_3<- glm(prw_std ~ MHI_std+
                  POP_std+
                  incorporated+
                  per_latino,
-               family= inverse.gaussian(link = "log"),
+               family= poisson,
               data = sub_all_place_nodes)
 
-eig_mod_4 <- glm(eig_std ~ DAC+
+eig_mod_4 <- glm(prw_std ~ DAC+
                  POP_std+
                  incorporated+
                  per_latino,
-               family= inverse.gaussian(link = "log"),
+               family= poisson,
               data = sub_all_place_nodes)
 
 stargazer(eig_mod_3, eig_mod_4, type='text')
 
-stargazer(eig_mod_3, eig_mod_4, type='html',
-          out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
+# stargazer(eig_mod_3, eig_mod_4, type='html',
+#           out = 'EJ_DAC_Paper/Out/mods/2ab_eig_mod.html')
 ```
 
 
