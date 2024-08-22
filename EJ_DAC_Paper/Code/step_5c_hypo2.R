@@ -7,7 +7,7 @@ library(sjPlot)
 
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified_substantive")
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
 extract_list <- list.files(network_fp)
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
@@ -51,6 +51,8 @@ stargazer(out_1, out_2, type='text')
 
 stargazer(out_1, out_2, type='html', out = 'EJ_DAC_Paper/Out/mods/2a_power_net.html')
 
+dac_stat <- exp(summary(out_1)$coefficients[2,1]); print(dac_stat)
+mhi_stat <- exp(summary(out_2)$coefficients[2,1])*3.31; print(mhi_stat)
 
 out_a <- glm(admin_out ~ DAC+
                 POP_std+
@@ -90,7 +92,8 @@ out_e <- glm(projects_mgmt_actions_out ~ DAC+
 
 stargazer(out_1, out_a, out_b, out_c, out_d, out_e, type='text')
 
-stargazer(out_1, out_a, out_b, out_c, out_d, out_e, type='html', out = 'EJ_DAC_Paper/Out/mods/2b_power_by_section.html')
+stargazer(out_1, out_a, out_b, out_c, out_d, out_e, type='html', 
+          out = 'EJ_DAC_Paper/Out/mods/2b_power_by_section.html')
 
 plot_models(in_3, in_a, in_b, in_c, in_d, in_e,
             rm.terms = c('per_latino', 'POP_std'),

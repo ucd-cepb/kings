@@ -4,10 +4,11 @@ library(stargazer)
 library(igraph)
 library(migraph)
 library(sjPlot)
+library(ggpubr)
 
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified_substantive")
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
 extract_list <- list.files(network_fp)
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
@@ -51,6 +52,9 @@ stargazer(in_1, in_2, type='text')
 
 stargazer(in_1, in_2, type='html', out = 'EJ_DAC_Paper/Out/mods/1a_recognition_net.html')
 
+dac_stat <- exp(summary(in_1)$coefficients[2,1]); print(dac_stat)
+mhi_stat <- exp(summary(in_2)$coefficients[2,1])*3.31; print(mhi_stat)
+
 in_a <- glm(admin_in ~ DAC+
                POP_std+
                incorporated+
@@ -91,13 +95,4 @@ stargazer(in_1, in_a, in_b, in_c, in_d, in_e, type='text')
 
 stargazer(in_1, in_a, in_b, in_c, in_d, in_e, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_recognition_by_section.html')
 
-plot_models(in_1, in_a, in_b, in_c, in_d, in_e,
-            rm.terms = c('per_latino', 'POP_std'),
-            m.labels = c('Indegree',
-                         'Admin indegree',
-                         'Basin plan indegree',
-                         'Sust criteria indegree',
-                         'Monitoring networks indegree',
-                         'Projects mgmt actions indegree'),
-            axis.labels = c('Incorporated', 'DAC'),
-            axis.lim = c(0.5, 5))
+

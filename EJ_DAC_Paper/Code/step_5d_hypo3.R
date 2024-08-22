@@ -7,7 +7,7 @@ library(sjPlot)
 
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified_substantive")
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
 extract_list <- list.files(network_fp)
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
@@ -34,7 +34,58 @@ for (g in seq_along(gsp_ids)) {
 }
 
 
-lead_mod_1 <- glm(leader_dist_min ~ MHI_std+
+# lead_mod_1 <- glm(leader_dist_min ~ MHI_std+
+#                      POP_std+
+#                      incorporated+
+#                      per_latino,
+#                   family=poisson,
+#                   data = all_place_nodes)
+# 
+# 
+# lead_mod_2 <- glm(leader_dist_min ~ DAC+
+#                      per_latino+
+#                      POP_std+
+#                      incorporated,
+#                   family=poisson,
+#                   data = all_place_nodes)
+# 
+# lead_mod_3 <- glm(leader_dist_min_w ~ MHI_std+
+#                      POP_std+
+#                      incorporated+
+#                      per_latino,
+#                   family=poisson,
+#                   data = all_place_nodes)
+# 
+# 
+# lead_mod_4 <- glm(leader_dist_min_w ~ DAC+
+#                      per_latino+
+#                      POP_std+
+#                      incorporated,
+#                   family=poisson,
+#                   data = all_place_nodes)
+# 
+# stargazer(lead_mod_1, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
+# 
+# stargazer(lead_mod_1, lead_mod_2, lead_mod_3, lead_mod_4, 
+#           type='html', out = 'EJ_DAC_Paper/Out/mods/3a_leader_net.html')
+
+
+# lead_mod_1 <- glm(leader_dist_min_nona ~ MHI_std+
+#                      POP_std+
+#                      incorporated+
+#                      per_latino,
+#                   family=poisson,
+#                   data = all_place_nodes)
+# 
+# 
+# lead_mod_2 <- glm(leader_dist_min_nona ~ DAC+
+#                      per_latino+
+#                      POP_std+
+#                      incorporated,
+#                   family=poisson,
+#                   data = all_place_nodes)
+
+lead_mod_3 <- glm(leader_dist_min_w_nona ~ DAC+
                      POP_std+
                      incorporated+
                      per_latino,
@@ -42,59 +93,15 @@ lead_mod_1 <- glm(leader_dist_min ~ MHI_std+
                   data = all_place_nodes)
 
 
-lead_mod_2 <- glm(leader_dist_min ~ DAC+
+lead_mod_4 <- glm(leader_dist_min_w_nona ~ MHI_std+
                      per_latino+
                      POP_std+
                      incorporated,
                   family=poisson,
                   data = all_place_nodes)
 
-lead_mod_3 <- glm(leader_dist_min_w ~ MHI_std+
-                     POP_std+
-                     incorporated+
-                     per_latino,
-                  family=poisson,
-                  data = all_place_nodes)
+stargazer(lead_mod_3, lead_mod_4, type='text')
 
+stargazer(lead_mod_3, lead_mod_4, 
+          type='html', out = 'EJ_DAC_Paper/Out/mods/3b_leader_net_nona.html')
 
-lead_mod_4 <- glm(leader_dist_min_w ~ DAC+
-                     per_latino+
-                     POP_std+
-                     incorporated,
-                  family=poisson,
-                  data = all_place_nodes)
-
-stargazer(lead_mod_1, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
-
-
-lead_mod_1 <- glm(leader_dist_min_nona ~ MHI_std+
-                     POP_std+
-                     incorporated+
-                     per_latino,
-                  family=poisson,
-                  data = all_place_nodes)
-
-
-lead_mod_2 <- glm(leader_dist_min_nona ~ DAC+
-                     per_latino+
-                     POP_std+
-                     incorporated,
-                  family=poisson,
-                  data = all_place_nodes)
-
-lead_mod_3 <- glm(leader_dist_min_w_nona ~ MHI_std+
-                     POP_std+
-                     incorporated+
-                     per_latino,
-                  family=poisson,
-                  data = all_place_nodes)
-
-
-lead_mod_4 <- glm(leader_dist_min_w_nona ~ DAC+
-                     per_latino+
-                     POP_std+
-                     incorporated,
-                  family=poisson,
-                  data = all_place_nodes)
-
-stargazer(lead_mod_1, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
