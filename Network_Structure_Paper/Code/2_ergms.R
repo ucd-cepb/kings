@@ -17,7 +17,6 @@ df <- data.frame()
 
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
-   net %v% "org_type" <- ifelse(is.na(net %v% "org_type"), "notorg", net %v% "org_type")
    gsp_id <- gsp_ids[g]
    nets[[gsp_id]] <- net
    estats <- summary(net ~ edges+mutual+triangle+nodefactor('org_type'))
