@@ -12,13 +12,6 @@ network_fp <- paste0(Sys.getenv("BOX_PATH"),
 extract_list <- list.files(network_fp)
 extract_list <- setdiff(extract_list, c("0053.RDS", '0089.RDS'))
 
-# path to page-level data
-pages_fp <- paste0(Sys.getenv("BOX_PATH"), 
-                   "/Structural_Topic_Model_Paper/gsp_docs_lean")
-
-page_features <- tibble(readRDS(pages_fp)) %>% 
-   mutate(gsp_id = as.numeric(gsp_id))
-
 all_places <- read.csv('EJ_DAC_Paper/Data/all_places.csv')
 
 gsp_ids <- as.numeric(gsub("^0+", "", gsub("\\.RDS", "", extract_list)))
@@ -27,35 +20,35 @@ edge_fp <- paste0(Sys.getenv("BOX_PATH"), "/Verb_Analysis_Paper/edgelist_with_ve
 
 wl <- readLines('EJ_DAC_Paper/Data/wl.txt')
 
+# path to page-level data
+pages_fp <- paste0(Sys.getenv("BOX_PATH"), 
+                   "/Structural_Topic_Model_Paper/gsp_docs_lean")
+
+page_features <- tibble(readRDS(pages_fp)) %>% 
+   mutate(gsp_id = as.numeric(gsp_id)) %>%
+   filter(is_comment == FALSE & is_reference == FALSE) %>% 
+   mutate(original_page_num = as.numeric(page_num),
+          page_num = ave(1:nrow(.), gsp_id, FUN = seq_along)) %>% #renumber pages after removing comments/reference
+   select(c("gsp_id", "page_num", "admin", "basin_plan", 
+            "sust_criteria", "monitoring_networks", 
+            "projects_mgmt_actions", "is_comment", "is_reference", "original_page_num"))
+
 ve <- readRDS(edge_fp) %>% 
    as_tibble() %>% 
    filter(!is.na(source) & !is.na(target)) %>% # remove edges without both nodes attached
    filter(head_verb_lemma %in% wl) %>% # compare with scowl wl
    select(-c(2:10)) %>% 
-   mutate(GSP_ID = as.numeric(gsp_id)) %>% 
+   mutate(GSP_ID = as.numeric(gsp_id),
+          page_num = as.numeric(stringr::str_remove(stringr::str_remove(doc_sent_verb, 
+                                                                        ".*pdf"), 
+                                                    "_.*"))) %>% 
    select(-c(gsp_id, doc_sent_verb)) %>%
-   select(source, target, GSP_ID, everything()) %>% 
-   select(-c(24:124))
-
-# function to grab section columns from page_features to bind to edges
-parent_loc_to_section <- function(pointer_str){
-   # identify gsp and page number from pointer string
-   pointer_str <- strsplit(pointer_str, "_")[[1]][5]
-   gsp_id_in <- as.numeric(strsplit(pointer_str, ".pdf")[[1]][1])
-   page_num_in <- as.numeric(strsplit(pointer_str, ".pdf")[[1]][2])
-
-   # filter page_features doc to sepcific gsp and page number
-   page_sections <- page_features %>% 
-      filter(gsp_id == gsp_id_in) %>% 
-      filter(page_num == page_num_in) %>% 
-      select(page_num, is_comment, is_reference, 
-             admin, basin_plan, sust_criteria, 
-             monitoring_networks, projects_mgmt_actions) %>% 
-      mutate(across(c(admin, basin_plan, sust_criteria, 
-                      monitoring_networks, projects_mgmt_actions), 
-                    as.numeric))
-   return(page_sections)
-}
+   select(source, target, GSP_ID, doc_sent_parent, everything()) %>% 
+   select(-c(24:124)) 
+   
+ve_w_sections <- ve %>% 
+   left_join(page_features, by = c("GSP_ID" = "gsp_id",
+                                   "page_num" = "page_num"))
 
 # process node/edgelist for use
 net_process <- function(file, gsp_id){
@@ -72,11 +65,9 @@ net_process <- function(file, gsp_id){
                 by=join_by(entity_name == NAME20)) %>% 
       select(-c(entity_type, num_appearances))
 
-   el <- ve %>% 
+   el <- ve_w_sections %>% 
       filter(GSP_ID == gsp_id) %>% 
-      mutate(edge_sources = map(doc_sent_parent, parent_loc_to_section),
-             weight = 1) %>%
-      unnest_wider(edge_sources)
+      mutate(weight = 1)
    
    networklist <- list("nodelist" = tibble(nl), "edgelist" = tibble(el))
 
@@ -99,6 +90,7 @@ net_graph <- function(networklist, gsp_id) {
                                                                 is_future = 'mean',
                                                                 gsp_id = 'mean',
                                                                 page_num = 'concat',
+                                                                original_page_num = 'concat',
                                                                 admin = 'sum',
                                                                 basin_plan = 'sum',
                                                                 sust_criteria = 'sum',
@@ -147,8 +139,8 @@ for (g in seq_along(gsp_ids)) {
 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[36]),
-                             gsp_id = gsp_ids[36])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[102]),
+                             gsp_id = gsp_ids[102])
 
 ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[36])
+                 gsp_id = gsp_ids[102])
