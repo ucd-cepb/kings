@@ -15,32 +15,25 @@ nets <- list()
 stats <- list()
 df <- data.frame()
 
+
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    gsp_id <- gsp_ids[g]
    nets[[gsp_id]] <- net
-   estats <- summary(net ~ edges+mutual+triangle+nodefactor('org_type'))
+   estats <- summary(net ~ edges+mutual)
    stats[[gsp_id]] <- estats
-   rowx <- pivot_wider(cbind(gsp_id, tidy(estats)), 
-                       id_cols = gsp_id, 
-                       names_from = names, 
+   rowx <- pivot_wider(cbind(gsp_id, tidy(estats)),
+                       id_cols = gsp_id,
+                       names_from = names,
                        values_from = x)
    mstats <- data.frame(net_density = gden(net),
                         net_diameter = max(ifelse(is.infinite(geodist(net)$gdist), 0, geodist(net)$gdist)),
-                        net_components = components(net, connected = 'weak'),
-                        net_core = kcores(net),
                         net_reciprocity = grecip(net)
                         )
    rowx <- bind_cols(rowx, mstats)
-   df <- bind_rows(df, rowx) 
+   df <- bind_rows(df, rowx)
 }
 
-df <- tibble(df) %>% 
-   mutate(across(everything(), replace_na, 0),
-          across(everything(), as.numeric)) %>% 
-   select(-nodefactor.org_type.notorg)
+colnames(df)
 
-summary(princomp(scale(df)))
-plot(ca(df))
-df
-
+summary(princomp(scale(dfx)))

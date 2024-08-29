@@ -168,7 +168,7 @@ net_process <- function(file, gsp_id){
 }
 
 # aggregate gsas (called in net_graph)
-net_aggregate <- function(networklist, gsp_id) {
+net_graph <- function(networklist, gsp_id) {
    
    graph <- igraph::graph_from_data_frame(networklist$edgelist,
                                           vertices = networklist$nodelist)
@@ -181,7 +181,7 @@ net_aggregate <- function(networklist, gsp_id) {
                        by = "GSA_ID")$GSA_Name
    
    gsa_nodes <- V(graph)$name[V(graph)$name %in% gsa_names2]
-   
+
    # Identify GSA-adjacent nodes
    gsa_adjacent_nodes <- V(graph)$name[!is.na(V(graph)$org_type) & V(graph)$org_type == 'GSA']
    gsa_adjacent_nodes <- setdiff(gsa_adjacent_nodes, gsa_nodes)
@@ -272,82 +272,76 @@ net_aggregate <- function(networklist, gsp_id) {
                                                    projects_mgmt_actions = 'sum',
                                                    'ignore'))
    
+   # remove nodes with no org_type
+   graph <- delete_vertices(graph, which(is.na(V(graph)$org_type)))
+   # remove isolates
+   graph <- delete_vertices(graph, which(igraph::degree(graph) == 0))
+   
    networklist <- list('nodelist' = igraph::as_data_frame(graph, what='vertices'),
                        'edgelist' = igraph::as_data_frame(graph, what='edges'))
    
-   return(networklist)
-}
-
-# process node/edgelist to network object
-net_graph <- function(networklist, gsp_id) {
-   
-   networklist <- net_aggregate(networklist, gsp_id)
-   
-   # Create a network object from the edgelist and nodelist
    network_graph <- network::network(networklist$edgelist, 
                                      vertex.attr = networklist$nodelist, 
                                      directed = TRUE,
                                      loops = TRUE,
-                                     multiple = TRUE)
+                                     multiple = FALSE)
    
-   gsas <- gsa_gsp %>% filter(GSP_ID == as.numeric(gsp_id))
-   gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
-   gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
-                       gsa_names, 
-                       by = "GSA_ID")$GSA_Name
-   gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa') # add in default
-   gsa_ins <- which(network.vertex.names(network_graph) %in% gsa_names2)
+   igraph <- graph
    
-   # attributes
-   network::set.vertex.attribute(network_graph, 
-                                 'GSA', 
-                                 ifelse(network.vertex.names(network_graph) %in% gsa_names2, 1, 0))
-   
-   network::set.vertex.attribute(network_graph, 
-                                 'org_type', 
-                                 value = 'GSA', 
-                                 v = which(network::get.vertex.attribute(network_graph, 'GSA') == 1))
-   
-   network::set.vertex.attribute(network_graph, 
-                                 'org_type', 
-                                 value = 'other', 
-                                 v = which(is.na(network::get.vertex.attribute(network_graph, 'org_type'))))
-   
-   return(network_graph)
+   return(list(igraph = igraph, 
+               network_graph = network_graph))
 }
+
 
 # Apply functions to all networks
 for (g in seq_along(gsp_ids)) {
+   
    gsp_id <- paste0("gsp_", gsp_ids[g])
    
-   tryCatch({
-      print(paste0("Processing ", gsp_id))
-      gsp_list <- net_process(file = paste0(network_fp, "/", extract_list[g]),
+   gsp_list <- net_process(file = paste0(network_fp, "/", extract_list[g]),
                               gsp_id = gsp_ids[g])
-      
-      print(paste0("Graphing ", gsp_id))
-      gsp_graph <- net_graph(gsp_list, gsp_id = gsp_ids[g])
-      
-      print(paste0("Saving Graph ", gsp_id))
-      saveRDS(object = gsp_graph,
-              file = paste0(Sys.getenv("BOX_PATH"),
-                            "/network_structure_by_plan/cleaned_extracts",
-                            "/", extract_list[g]))
-      
-      print(paste0("Finished ", gsp_id))
-      
-   }, error = function(e) {
-      cat("Error in processing GSP ID:", gsp_id, "\n")
-      cat("Error message:", e$message, "\n")
-   })
+   
+   gsp_graph <- net_graph(gsp_list, gsp_id = gsp_ids[g])
+   
+   saveRDS(object = gsp_graph$network_graph,
+           file = paste0(Sys.getenv("BOX_PATH"),
+                         "/network_structure_by_plan/cleaned_extracts",
+                         "/", extract_list[g]))
+   
+   ggraph::ggraph(gsp_graph$igraph, layout = 'fr') +
+      geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
+      geom_node_point(aes(color = org_type), size = 5) +
+      geom_node_text(aes(label = name), repel = TRUE) +
+      theme_void() +
+      theme(legend.position = "none") +
+      ggtitle(paste0("GSP: ", gsp_id)) 
+   
+   ggsave(paste0('Network_Structure_Paper/Out/gsp_graphs/', gsp_id, '.png'),
+       width = 9, height = 9, dpi = 300)
+
+   print(paste0("Finished GSP ", gsp_id))
 }
 
 # test functions for one network
 
-glt <- net_process(file = paste0(network_fp, "/",extract_list[4]),
-                             gsp_id = gsp_ids[4])
+idt <- 4
+gsp_idt <- gsp_ids[idt]
 
-ggt <- net_graph(glt, gsp_id = gsp_ids[4])
+glt <- net_process(file = paste0(network_fp, "/",extract_list[idt]),
+                             gsp_id = gsp_idt)
+
+ggt <- net_graph(glt, gsp_id = gsp_idt)
+
+ggraph::ggraph(ggt$igraph, layout = 'fr') +
+   geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
+   geom_node_point(aes(color = org_type), size = 5) +
+   geom_node_text(aes(label = name), repel = TRUE) +
+   theme_void() +
+   theme(legend.position = "none") +
+   ggtitle(paste0("GSP: ", gsp_id)) 
+
+ggsave(paste0('Network_Structure_Paper/Out/gsp_graphs/', gsp_id, '.png'),
+       width = 9, height = 9, dpi = 300)
 
 (ggt %v% 'vertex.names')[get.vertex.attribute(ggt, 'GSA') == 1]
 
