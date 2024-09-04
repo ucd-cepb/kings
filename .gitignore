@@ -6,6 +6,7 @@ data_temp/*
 code/regex_test.R
 .DS_Store
 Policy_Instruments_Paper/Graphs/*
+Network_Structure_Paper/Out/*
 
 # Environment variable (API key) file
 .env

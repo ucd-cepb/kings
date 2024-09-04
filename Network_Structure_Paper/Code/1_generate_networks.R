@@ -54,7 +54,8 @@ clean_gsa_names <- function(gsa_names) {
                                       '422',
                                       '124',
                                       '420', 
-                                      '419'
+                                      '419',
+                                      '268'
    ),
    GSA_Name = c('sacramento_central_groundwater_authority',
                 'salinas_valley_basin_groundwater_sustainability_agency',
@@ -76,7 +77,8 @@ clean_gsa_names <- function(gsa_names) {
                 'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_antelope',
                 'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_bowman', 
                 'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_los_molinos',
-                'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_red_bluff'
+                'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_red_bluff',
+                'svbgsa'
    )
    )
    
@@ -101,8 +103,9 @@ page_features <- tibble(readRDS(pages_fp)) %>%
 edge_fp <- paste0(Sys.getenv("BOX_PATH"), "/Verb_Analysis_Paper/edgelist_with_verb_meta")
 valid_tenses <- c("VB", "VBD", "VBN", "VBG", "VBP", "VBZ")
 
-ve <- readRDS(edge_fp) %>% 
-   as_tibble() %>% 
+all_edges <- readRDS(edge_fp) %>% as_tibble()
+
+ve <- all_edges %>% 
    filter(!is.na(source) & !is.na(target)) %>% # remove edges without both nodes attached
    filter(head_verb_tense %in% valid_tenses) %>%  # filter for specific verb tenses
    filter(head_verb_lemma %in% wl) %>% # compare with scowl wl
@@ -253,6 +256,17 @@ net_graph <- function(networklist, gsp_id) {
       }
    }
    
+   graph <- set_vertex_attr(graph,
+                            'GSA',
+                            value = ifelse(V(graph)$org_type == 'GSA', 1, 0)
+                            )
+   
+   graph <- set_vertex_attr(graph,
+                            'GSA',
+                            value = 0,
+                            index = which(is.na(V(graph)$org_type) )
+   )
+   
    graph <- igraph::simplify(graph,
                              remove.multiple = TRUE,
                              remove.loops = FALSE,
@@ -271,11 +285,6 @@ net_graph <- function(networklist, gsp_id) {
                                                    monitoring_networks = 'sum',
                                                    projects_mgmt_actions = 'sum',
                                                    'ignore'))
-   
-   # remove nodes with no org_type
-   graph <- delete_vertices(graph, which(is.na(V(graph)$org_type)))
-   # remove isolates
-   graph <- delete_vertices(graph, which(igraph::degree(graph) == 0))
    
    networklist <- list('nodelist' = igraph::as_data_frame(graph, what='vertices'),
                        'edgelist' = igraph::as_data_frame(graph, what='edges'))
@@ -308,14 +317,15 @@ for (g in seq_along(gsp_ids)) {
                          "/network_structure_by_plan/cleaned_extracts",
                          "/", extract_list[g]))
    
-   ggraph::ggraph(gsp_graph$igraph, layout = 'fr') +
+   # remove isolates
+   plot_graph <- delete_vertices(gsp_graph$igraph, which(igraph::degree(gsp_graph$igraph) == 0))
+   
+   ggraph::ggraph(plot_graph, layout = 'fr') +
       geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
       geom_node_point(aes(color = org_type), size = 5) +
-      geom_node_text(aes(label = name), repel = TRUE) +
       theme_void() +
-      theme(legend.position = "none") +
-      ggtitle(paste0("GSP: ", gsp_id)) 
-   
+      ggtitle(paste0("GSP: ", gsp_id))
+
    ggsave(paste0('Network_Structure_Paper/Out/gsp_graphs/', gsp_id, '.png'),
        width = 9, height = 9, dpi = 300)
 
@@ -324,7 +334,7 @@ for (g in seq_along(gsp_ids)) {
 
 # test functions for one network
 
-idt <- 4
+idt <- 86
 gsp_idt <- gsp_ids[idt]
 
 glt <- net_process(file = paste0(network_fp, "/",extract_list[idt]),
@@ -332,17 +342,12 @@ glt <- net_process(file = paste0(network_fp, "/",extract_list[idt]),
 
 ggt <- net_graph(glt, gsp_id = gsp_idt)
 
-ggraph::ggraph(ggt$igraph, layout = 'fr') +
+plot_graph <- delete_vertices(ggt$igraph, which(igraph::degree(ggt$igraph) == 0))
+
+ggraph::ggraph(plot_graph, layout = 'fr') +
    geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
    geom_node_point(aes(color = org_type), size = 5) +
-   geom_node_text(aes(label = name), repel = TRUE) +
+   # geom_node_text(aes(label = name), repel = TRUE) +
    theme_void() +
-   theme(legend.position = "none") +
-   ggtitle(paste0("GSP: ", gsp_id)) 
-
-ggsave(paste0('Network_Structure_Paper/Out/gsp_graphs/', gsp_id, '.png'),
-       width = 9, height = 9, dpi = 300)
-
-(ggt %v% 'vertex.names')[get.vertex.attribute(ggt, 'GSA') == 1]
-
-print(glt$nodelist %>% filter(org_type != 'Drop' & org_type != 'Ambig' & !is.na(org_type)), n=300)
+   # theme(legend.position = "none") +
+   ggtitle(paste0("GSP: ", gsp_idt)) 
