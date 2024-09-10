@@ -11,7 +11,7 @@ topic_net <- readRDS("data/output_large_files/topic_network_properties")
 topic_net <- as.data.frame(lapply(topic_net, as.numeric))
 gov_net <- gov_net[gov_net$gsp_id %in% topic_net$gsp_id,]
 
-topic_prevalences <- readRDS("data/output_large_files/topic_prevalence")
+topic_prevalences <- readRDS("data/Structural_Topic_Model_Paper/topic_prevalence")
 
 shannon_div <- diversity(topic_prevalences, index="shannon")
 
