@@ -1,4 +1,6 @@
-
+library(igraph)
+library(dplyr)
+library(data.table)
 supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper",]$filepath)
 
    full_graph <- subgraph(supernetwork, V(supernetwork)[
@@ -29,14 +31,14 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
       
    )
    
-   edges <- as_data_frame(full_graph_noisolates)
+   edges <- igraph::as_data_frame(full_graph_noisolates)
    edges$head_verb_tense <- factor(edges$head_verb_tense, levels = c("Past","Present","Future"))
    
    edg <- edges |> group_by(to,from) |> mutate(most_common_tense = which.max(tabulate(head_verb_tense)))
    
    igraph::E(full_graph_noisolates)$most_common_tense <- edg$most_common_tense
    
-   nodes <- as_data_frame(full_graph_noisolates, what = "vertices")
+   nodes <- igraph::as_data_frame(full_graph_noisolates, what = "vertices")
    nodes$scope <- case_when(nodes$name %in% tolower(vector_of_GSAs) ~ "GSA",
                             nodes$name %in% tolower(vector_of_feds) | 
                                nodes$name == "united_states_bureau_of_reclamation" ~ "Federal" ,
@@ -105,11 +107,11 @@ supernetwork <- readRDS(filekey[filekey$var_name=="supernetwork_full_govnetpaper
       scale_color_manual(values = c("#004488","#BB5566","#DDAA33","#DDDDDD"))+
       geom_node_point(aes(color = scope, size = degree),
                       alpha = 0.8)+
-      geom_node_text(aes(label = bigname), size=2, repel = T, max.overlaps=30) +
+      geom_node_text(aes(label = bigname), size=2.7, repel = T, max.overlaps=30) +
       theme_void()+ theme(legend.position = c(0.8,0.6))
    weighted_plot_noisolates
    
-   ggsave(paste0("supernetwork_plot.png"), plot = weighted_plot_noisolates, device = "png",
-          path = filekey[filekey$var_name=="psj_govnetpaper_figures",]$filepath, width = 2200, height = 1890, dpi = 300,
+   ggsave(paste0("Figure7_HighRes.png"), plot = weighted_plot_noisolates, device = "png",
+          path = filekey[filekey$var_name=="psj_govnetpaper_figures",]$filepath, width = 2844, height = 2128, dpi = 300,
           units = "px", bg = "white")
    
