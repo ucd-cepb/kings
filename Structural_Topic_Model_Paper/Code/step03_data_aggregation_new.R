@@ -53,11 +53,19 @@ gsp_text_with_meta$GSP.ID <- as.numeric(gsp_text_with_meta$gsp_id)
 gsp_local$GSP.ID <- as.numeric(gsp_local$GSP.ID)
 saveRDS(gsp_local, filekey[filekey$var_name=="gsplocal",]$filepath)
 library(raster)
+<<<<<<< HEAD
 library(rgdal)
 maxdryspell2040 <- raster::raster(filekey[filekey$var_name=="max_dry_spell_2040_data",]$filepath)
 plot(maxdryspell2040)
 gsp_local <- st_transform(gsp_local, raster::projection(maxdryspell2040))
 gsp_local$max2040dryspell <- as.numeric(raster::extract(maxdryspell2040$cddm_year_ens32avg_rcp45_2040, 
+=======
+#library(rgdal)
+maxdryspell <- raster::raster(filekey[filekey$var_name=="max_dry_spell_data",]$filepath)
+gsp_local <- st_transform(gsp_local, raster::projection(maxdryspell))
+
+gsp_local$maxdryspell <- as.numeric(raster::extract(maxdryspell$cddm_year_ens32avg_rcp45_2040, 
+>>>>>>> interaction-play
                                          gsp_local, fun=mean, na.rm=T, sp=F))
 
 max2012dryspell <- raster::raster(filekey[filekey$var_name=="max_dry_spell_2012_data",]$filepath)
@@ -66,6 +74,7 @@ gsp_local <- st_transform(gsp_local, raster::projection(max2012dryspell))
 gsp_local$max2012dryspell <- as.numeric(raster::extract(max2012dryspell$cddm_year_ens32avg_rcp45_2012, 
                                                     gsp_local, fun=mean, na.rm=T, sp=F))
 
+<<<<<<< HEAD
 #DSCI weekly, 
 #TODO could use geometric mean
 huc8s <- sf::read_sf(filekey[filekey$var_name=="huc8s",]$filepath)
@@ -130,6 +139,9 @@ gsp_text_with_meta <- left_join(gsp_text_with_meta, gsp_local_nogeom)
 mini515 <- final_515_table[,c("basin_id","exceedance")]
 gsp_text_with_meta <- left_join(gsp_text_with_meta, mini515)
 
+=======
+gsp_text_with_meta$basin_population_log_scaled <- scale(log(gsp_text_with_meta$basin_population))
+>>>>>>> interaction-play
 gsp_text_with_meta$urbangw_af_log_scaled <- scale(log(gsp_text_with_meta$urbangw_af))
 gsp_text_with_meta$percent_dac_by_pop_scaled <- scale(gsp_text_with_meta$percent_dac_by_pop)
 gsp_text_with_meta$fract_of_area_in_habitat_log_scaled <- scale(log(gsp_text_with_meta$fract_of_area_in_habitat))
@@ -138,6 +150,7 @@ gsp_text_with_meta$Agr_Share_Of_GDP_scaled <- scale(gsp_text_with_meta$Agr_Share
 gsp_text_with_meta$Republican_Vote_Share_scaled <- scale(gsp_text_with_meta$Republican_Vote_Share)
 gsp_text_with_meta$Perc_Bach_Degree_Over25_scaled <- scale(gsp_text_with_meta$Perc_Bach_Degree_Over25)
 gsp_text_with_meta$local_govs_per_10k_people_log_scaled <- scale(log(gsp_text_with_meta$local_govs_per_10k_people))
+<<<<<<< HEAD
 gsp_text_with_meta$log_well_MCL_exceedance_count_by_log_pop_scaled <- scale(log(gsp_text_with_meta$exceedance+0.1) / log(gsp_text_with_meta$basin_population))
 gsp_text_with_meta$log_drywell_per_log_person_scaled <- scale(log(gsp_text_with_meta$drywellcount2014_2020+0.1) / log(gsp_text_with_meta$basin_population))
 gsp_text_with_meta$basin_population_log_scaled <- scale(log(gsp_text_with_meta$basin_population))
@@ -159,6 +172,10 @@ gsp_text_with_meta$mult_gsas <- ifelse(gsp_text_with_meta$gsp_id == "0008", T, g
 gsp_text_with_meta$priority_category <- ifelse(gsp_text_with_meta$priority %in% c("Very Low", "Low"), "low_or_verylow",
                                                ifelse(gsp_text_with_meta$priority == "Medium", "med", 
                                                       ifelse(gsp_text_with_meta$priority == "High", "high", NA)))
+=======
+gsp_text_with_meta$well_MCL_exceedance_count_by_log_pop_scaled <- scale(gsp_text_with_meta$well_MCL_exceedance_count/
+                                                                         log(gsp_text_with_meta$basin_population))
+>>>>>>> interaction-play
 
 saveRDS(gsp_text_with_meta, file = filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
 gsp_text_with_meta <- readRDS(file = filekey[filekey$var_name=="gsp_docs_meta_stmpaper",]$filepath)
@@ -173,11 +190,18 @@ write_csv(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata_csv",]$filep
 saveRDS(gspmini, filekey[filekey$var_name=="gsp_planwise_metadata_rds",]$filepath)
 
 gsp_text_lean <- gsp_text_with_meta[,c("text","gsp_id","is_comment","is_reference","page_num",
+<<<<<<< HEAD
                                                  "admin","basin_plan","sust_criteria",
                                                  "monitoring_networks",
                                                  "projects_mgmt_actions",
                                                  "log_well_MCL_exceedance_count_by_log_pop_scaled",
+=======
+                                                 "admin","basin_plan","sust_criteria","monitoring_networks",
+                                                "basin_population_log_scaled",
+                                                 "projects_mgmt_actions",
+>>>>>>> interaction-play
                                                  "percent_dac_by_pop_scaled",
+                                       "well_MCL_exceedance_count_by_log_pop_scaled",
                                                  "fract_of_area_in_habitat_log_scaled",
                                                  "dsci_scaled",
                                                  "Agr_Share_Of_GDP_scaled",

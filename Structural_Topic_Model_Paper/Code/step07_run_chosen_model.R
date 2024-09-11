@@ -61,5 +61,3 @@ while (!gsp_model$convergence$converged){
 
 saveRDS(gsp_model, file = paste0(filekey[filekey$var_name=="finalmodelfits_stmpaper",]$filepath,format(Sys.time(), "%Y%m%d-%H:%M")))
 
-
-   
