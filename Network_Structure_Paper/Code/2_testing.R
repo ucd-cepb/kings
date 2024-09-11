@@ -57,7 +57,7 @@ df <- data.frame()
 for (g in seq_along(gsp_ids)) {
    net <- readRDS(paste0(network_fp, "/", extract_list[g]))
    
-   # set org_type of NA to 'other'
+   # set org_type of NA to 'other' and split into 'org' or 'GSA'
    net %v% 'org_type' <- ifelse(is.na(net %v% 'org_type'), 'not_org', 'org')
    net %v% 'org_type' <- ifelse(net %v% 'GSA' == 1, 'GSA', net %v% 'org_type')
    
@@ -70,11 +70,6 @@ for (g in seq_along(gsp_ids)) {
                      nodemix('org_type')+
                         
                      # hypo 2, transitivitiy 
-                     # gwesp(decay_param, fixed=TRUE, type = 'OTP')+
-                     # gwesp(decay_param, fixed=TRUE, type = 'ITP')+
-                     # gwesp(decay_param, fixed=TRUE, type = 'RTP')+
-                     # gwesp(decay_param, fixed=TRUE, type = 'OSP')+
-                     # gwesp(decay_param, fixed=TRUE, type = 'ISP')+
                      
                      triangles()+
                      ttriple()+
@@ -98,7 +93,9 @@ for (g in seq_along(gsp_ids)) {
    mstats <- data.frame(n = network.size(net),
                         m = network.edgecount(net),
                         net_density = gden(net),
-                        net_diameter = max(ifelse(is.infinite(geodist(net)$gdist), 0, geodist(net)$gdist)),
+                        net_diameter = max(ifelse(is.infinite(geodist(net)$gdist), 
+                                                  0, 
+                                                  geodist(net)$gdist)),
                         net_reciprocity = grecip(net)
    )
    
@@ -139,12 +136,19 @@ plot_column <- function(column_name) {
    results <- calculate_summary_and_test(dfx, column_name)
    
    p_value_text <- ifelse(results$p_value < 0.05, 
-                          paste("p-value:", signif(results$p_value, 3), "(Significant)"), 
-                          paste("p-value:", signif(results$p_value, 3), "(Not Significant)"))
+                          paste("p-value:", 
+                                signif(results$p_value, 3), 
+                                "(Significant)"), 
+                          paste("p-value:", 
+                                signif(results$p_value, 3), 
+                                "(Not Significant)"))
    
    ggplot(dfx, aes_string(x = 'pred_def', y = column_name, fill = 'pred_def')) +
       stat_summary(fun = mean, geom = "bar", position = "dodge") +
-      stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2, position = position_dodge(0.9)) +
+      stat_summary(fun.data = mean_se, 
+                   geom = "errorbar", 
+                   width = 0.2, 
+                   position = position_dodge(0.9)) +
       labs(
          y = column_name, 
          title = paste("Mean of", column_name, "by pred_def"),
