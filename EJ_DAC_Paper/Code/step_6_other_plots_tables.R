@@ -129,7 +129,7 @@ dims_p <- ggarrange(in_p, out_p, lead_p,
                     common.legend = TRUE, 
                     legend = "bottom",
                     labels = "AUTO"); dims_p
-ggsave('EJ_DAC_Paper/Out/dims_p.png', dims_p, width = 7, height = 7)
+ggsave('EJ_DAC_Paper/Out/dims_p.png', dims_p, width = 8.2, height = 7)
 
    }
 
@@ -238,23 +238,6 @@ dims_p_old <- ggarrange(in_p_old, out_p_old, lead_p_old,
           labels = "AUTO") 
 }
 
-
-palette <- brewer.pal(n = 4, name = "Set1")  
-
-# # Create the 3D scatter plot
-# p <- plot_ly(group_means, 
-#              x = ~in_w, y = ~out_w, z = ~leader_dist, 
-#              type = 'scatter3d', 
-#              mode = 'markers', 
-#              marker = list(size = 5),
-#              color = ~color, 
-#              colors = "Set1") %>%
-#    layout(scene = list(
-#       xaxis = list(title = 'Indegree'),
-#       yaxis = list(title = 'Outdegree'),
-#       zaxis = list(title = 'Leader Distance')
-#    )); p
-
 palette <- c(brewer.pal(n = 4, name = "Pastel1"), brewer.pal(n = 4, name = "Set1"))
 
 # Create the 3D scatter plot with pastel colors for individual points and dark colors for means
@@ -273,15 +256,16 @@ p <- plot_ly() %>%
                x = ~in_w, y = ~out_w, z = ~leader_dist,
                marker = list(size = 10, 
                              opacity = 1),
-               color=~color,
-               showlegend = FALSE
+               color=~color
                ) %>%
    # Set axis labels
    layout(scene = list(
       xaxis = list(title = 'Indegree', range = c(0, 20)),
       yaxis = list(title = 'Outdegree', range = c(0, 20)),
       zaxis = list(title = 'Leader Distance', range = c(0,20))
-   ))
+   ), 
+   legend = list(orientation = 'h', x = 0, y = 0)
+   )
 
 p
 
