@@ -6,6 +6,8 @@ library(migraph)
 library(sjPlot)
 library(ggpubr)
 library(skimr)
+library(plotly)
+library(RColorBrewer)
 
 load_dot_env()
 
@@ -55,16 +57,244 @@ all_place_nodes %>%
    mutate(across(where(is.numeric), ~ round(.x, 3))) %>%   
    write_csv("EJ_DAC_Paper/Out/data_summary.csv")
 
+# dimension plots
+
+group_means <- all_place_nodes %>% 
+   group_by(incorporated, DAC) %>%
+   summarize(in_w = mean(in_w),
+             out_w = mean(out_w),
+             leader_dist = mean(leader_dist_min_w_nona)) %>% 
+   ungroup() %>% 
+   mutate(d_lab = case_when(DAC == 0 ~ 'non-DAC',
+                            DAC == 1 ~ 'DAC',
+                            TRUE ~ 'NA'),
+          i_lab = case_when(incorporated == 0 ~ 'Unincorporated',
+                            incorporated == 1 ~ 'Incorporated',
+                            TRUE ~ 'NA'),
+          color = paste0('Mean ', i_lab, ' ', d_lab),
+          y_val = as.numeric(factor(color)))
+
+# Define the palette
+names <- c(sort(unique(apn_graph_1$color)), sort(unique(group_means$color)))
+palette <- c(brewer.pal(n = 4, name = "Pastel1"), brewer.pal(n = 4, name = "Set1"))
+named_palette <- setNames(palette, names)
+
+apn_graph_1 <- all_place_nodes %>%
+   mutate(d_lab = case_when(DAC == 0 ~ 'non-DAC',
+                            DAC == 1 ~ 'DAC',
+                            TRUE ~ 'NA'),
+          i_lab = case_when(incorporated == 0 ~ 'Unincorporated',
+                            incorporated == 1 ~ 'Incorporated',
+                            TRUE ~ 'NA'),
+          color = paste0(i_lab, ' ', d_lab),
+          y_val = as.numeric(factor(color))) 
+
+# DOTPLOT (LINE GRAPH)
+{
+in_p <- ggplot() +
+   geom_point(data=apn_graph_1, aes(x = in_w, y = y_val, color = color)) +
+   geom_point(data=group_means, aes(x = in_w, y = y_val, color = color, size=5), show.legend = c(size=FALSE)) +
+   scale_color_manual(name = 'Color', values = named_palette, breaks=names) +
+   xlab('Weighted Indegree') +
+   xlim(c(0,20))+
+   theme_minimal() +
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank()); in_p
+
+out_p <- ggplot() +
+   geom_point(data=apn_graph_1, aes(x = out_w, y = y_val, color = color)) +
+   geom_point(data=group_means, aes(x = out_w, y = y_val, color = color, size=5,), show.legend = c(size=FALSE)) +
+   scale_color_manual(values = named_palette, breaks=names) +
+   xlab('Weighted Outdegree') +
+   xlim(c(0,20))+
+   theme_minimal() +
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank()); out_p
+
+lead_p <- ggplot() +
+   geom_point(data=apn_graph_1, aes(x = leader_dist_min_w_nona, y = y_val, color = color)) +
+   geom_point(data=group_means, aes(x = leader_dist, y = y_val, color = color, size=5), show.legend = c(size=FALSE)) +
+   scale_color_manual(values = named_palette, breaks=names) +
+   xlab('Leader Distance')+
+   xlim(c(0,20))+
+   theme_minimal() +
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank()); lead_p
+
+dims_p <- ggarrange(in_p, out_p, lead_p, 
+                    nrow = 3, 
+                    common.legend = TRUE, 
+                    legend = "bottom",
+                    labels = "AUTO"); dims_p
+ggsave('EJ_DAC_Paper/Out/dims_p.png', dims_p, width = 7, height = 7)
+
+   }
+
+# HISTOGRAM
+{
+in_hist <- ggplot() +
+   geom_density(data=apn_graph_1, 
+                aes(x = in_w, color = color, fill = color),
+                alpha = 1,
+                show.legend=c(color=FALSE)
+                ) +
+   geom_vline(data = group_means, 
+              aes(xintercept = in_w, color = color), 
+              linetype = "dashed",
+              show.legend = FALSE
+              ) +
+   xlab('Weighted Indegree') +
+   ylab('Density')+
+   xlim(c(0, 10)) +
+   scale_color_manual(name = 'Color',values = named_palette, breaks = names) +
+   scale_fill_manual(name = 'Color', values = named_palette, breaks = names) +
+   theme_minimal() ; in_hist
+
+out_hist <- ggplot() +
+   geom_density(data=apn_graph_1, 
+                aes(x = out_w, color = color, fill = color),
+                alpha = 1, 
+                show.legend=c(color=FALSE)
+                ) +
+   geom_vline(data = group_means, 
+              aes(xintercept = out_w, color = color), 
+              linetype = "dashed", 
+              show.legend = FALSE) +
+   xlab('Weighted Outdegree') +
+   ylab('Density')+
+   xlim(c(0, 10)) +
+   scale_color_manual(name = 'Color',values = named_palette, breaks = names) +
+   scale_fill_manual(name = 'Color', values = named_palette, breaks = names) +
+   theme_minimal() ; out_hist
+
+
+lead_hist <- ggplot() +
+   geom_density(data=apn_graph_1, 
+                aes(x = leader_dist_min_w_nona, color = color, fill = color),
+                alpha = 1,
+                show.legend=c(color=FALSE)
+   ) +
+   geom_vline(data = group_means, 
+              aes(xintercept = leader_dist, color = color), 
+              linetype = "dashed",
+              show.legend = FALSE
+   ) +
+   xlab('Leader Distance') +
+   ylab('Density')+
+   xlim(c(0, 20)) +
+   scale_color_manual(name = 'Color', values = named_palette, breaks = names) +
+   scale_fill_manual(name = 'Color',values = named_palette, breaks = names) +
+   theme_minimal() ; lead_hist
+
+dims_hist <- ggarrange(in_hist, out_hist, lead_hist, 
+                       nrow = 3, 
+                       common.legend = TRUE, 
+                       legend = "bottom",
+                       labels = "AUTO"); dims_hist
+
+ggsave('EJ_DAC_Paper/Out/dims_hist.png', dims_hist, width = 7, height = 5)
+
+}
+
+# OLD DOTPLOT (no background dots)
+{
+   
+palette2 <-  brewer.pal(n = 4, name = "Set1")
+   
+in_p_old <- ggplot(group_means, aes(x=in_w, y=1, color=color))+
+   geom_point()+
+   scale_color_manual(values = palette2) +
+   xlab('Weighted Indegree')+
+   theme_minimal()+
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank())
+
+out_p_old <- ggplot(group_means, aes(x=out_w, y=1, color=color))+
+   geom_point()+
+   scale_color_manual(values = palette2) +
+   xlab('Weighted Outdegree')+
+   theme_minimal()+
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank())
+
+lead_p_old <- ggplot(group_means, aes(x=leader_dist, y=1, color=color))+
+   geom_point()+
+   scale_color_manual(values = palette2) +
+   xlab('Leader Distance')+
+   theme_minimal()+
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank())
+
+dims_p_old <- ggarrange(in_p_old, out_p_old, lead_p_old, 
+          nrow = 3, 
+          common.legend = TRUE, 
+          legend = "bottom",
+          labels = "AUTO") 
+}
+
+
+palette <- brewer.pal(n = 4, name = "Set1")  
+
+# # Create the 3D scatter plot
+# p <- plot_ly(group_means, 
+#              x = ~in_w, y = ~out_w, z = ~leader_dist, 
+#              type = 'scatter3d', 
+#              mode = 'markers', 
+#              marker = list(size = 5),
+#              color = ~color, 
+#              colors = "Set1") %>%
+#    layout(scene = list(
+#       xaxis = list(title = 'Indegree'),
+#       yaxis = list(title = 'Outdegree'),
+#       zaxis = list(title = 'Leader Distance')
+#    )); p
+
+palette <- c(brewer.pal(n = 4, name = "Pastel1"), brewer.pal(n = 4, name = "Set1"))
+
+# Create the 3D scatter plot with pastel colors for individual points and dark colors for means
+p <- plot_ly() %>%
+   add_markers(data = apn_graph_1,
+               x = ~in_w, 
+               y = ~out_w, 
+               z = ~leader_dist_min_w_nona,
+               marker = list(size = 8,
+                             opacity = 0.7),
+               color = ~color,
+               colors = named_palette
+               ) %>%
+   add_markers(inherit=FALSE,
+               data = group_means,
+               x = ~in_w, y = ~out_w, z = ~leader_dist,
+               marker = list(size = 10, 
+                             opacity = 1),
+               color=~color,
+               showlegend = FALSE
+               ) %>%
+   # Set axis labels
+   layout(scene = list(
+      xaxis = list(title = 'Indegree', range = c(0, 20)),
+      yaxis = list(title = 'Outdegree', range = c(0, 20)),
+      zaxis = list(title = 'Leader Distance', range = c(0,20))
+   ))
+
+p
+
 # interaction plot for in_w, out_w
 
-apn_graph <- all_place_nodes %>% 
+apn_graph_2 <- all_place_nodes %>% 
    mutate(incorporated = as.factor(incorporated))
 
 int_in <- glm(`in_w` ~ MHI_std*incorporated+
                  POP_std+
                  per_latino,
               family=poisson,
-              data = apn_graph)
+              data = apn_graph_2)
 
 
 int_plot_in <- plot_model(int_in, type = 'int', 
@@ -81,7 +311,7 @@ int_out <- glm(`out_w` ~ MHI_std*incorporated+
                   POP_std+
                   per_latino,
                family=poisson,
-               data = apn_graph)
+               data = apn_graph_2)
 
 int_plot_out <- plot_model(int_out, type = 'int', 
                            terms = c('incorporated', 'MHI'),
