@@ -13,6 +13,8 @@ load_dot_env()
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
 extract_list <- list.files(network_fp)
+place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
+
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 
@@ -89,8 +91,53 @@ apn_graph_1 <- all_place_nodes %>%
           color = paste0(i_lab, ' ', d_lab),
           y_val = as.numeric(factor(color))) 
 
+all_places <- bind_rows(place_existance) %>% 
+   mutate(DAC = as.factor(DAC),
+          incorporated = as.factor(incorporated),
+          exists = as.factor(exists))
+
+exists_mod_3 <- glm(exists~DAC+incorporated+POP+per_latino, 
+                    family = binomial,
+                    data = all_places)
+
+ap_graph <- all_places %>% 
+   drop_na(c(DAC, incorporated, POP, per_latino)) %>% 
+   mutate(exists_prob = predict(exists_mod_3, type = 'response'),
+          d_lab = case_when(DAC == 0 ~ 'non-DAC',
+                            DAC == 1 ~ 'DAC',
+                            TRUE ~ 'NA'),
+          i_lab = case_when(incorporated == 0 ~ 'Unincorporated',
+                            incorporated == 1 ~ 'Incorporated',
+                            TRUE ~ 'NA'),
+          color = paste0(i_lab, ' ', d_lab),
+          y_val = as.numeric(factor(color)))
+
+ap_group_means <- ap_graph %>% 
+   group_by(incorporated, DAC) %>%
+   summarize(exists_prob = mean(exists_prob)) %>% 
+   ungroup() %>% 
+   mutate(d_lab = case_when(DAC == 0 ~ 'non-DAC',
+                            DAC == 1 ~ 'DAC',
+                            TRUE ~ 'NA'),
+          i_lab = case_when(incorporated == 0 ~ 'Unincorporated',
+                            incorporated == 1 ~ 'Incorporated',
+                            TRUE ~ 'NA'),
+          color = paste0('Mean ', i_lab, ' ', d_lab),
+          y_val = as.numeric(factor(color)))
+
 # DOTPLOT (LINE GRAPH)
 {
+
+exists_p <- ggplot() +
+   geom_point(data=ap_graph, aes(x = exists_prob, y = y_val, color = color)) +
+   geom_point(data=ap_group_means, aes(x = exists_prob, y = y_val, color = color, size=5), show.legend = c(size=FALSE)) +
+   scale_color_manual(name = 'Color', values = named_palette, breaks=names) +
+   xlab('Probability of Existence') +
+   theme_minimal() +
+   theme(axis.text.y = element_blank(),
+         axis.title.y = element_blank(),
+         axis.ticks.y = element_blank()); exists_p
+   
 in_p <- ggplot() +
    geom_point(data=apn_graph_1, aes(x = in_w, y = y_val, color = color)) +
    geom_point(data=group_means, aes(x = in_w, y = y_val, color = color, size=5), show.legend = c(size=FALSE)) +
@@ -124,12 +171,13 @@ lead_p <- ggplot() +
          axis.title.y = element_blank(),
          axis.ticks.y = element_blank()); lead_p
 
-dims_p <- ggarrange(in_p, out_p, lead_p, 
-                    nrow = 3, 
+dims_p <- ggarrange(exists_p, in_p, out_p, lead_p, 
+                    nrow = 4, 
                     common.legend = TRUE, 
                     legend = "bottom",
                     labels = "AUTO"); dims_p
-ggsave('EJ_DAC_Paper/Out/dims_p.png', dims_p, width = 8.2, height = 7)
+
+ggsave('EJ_DAC_Paper/Out/dims_p.png', dims_p, width = 9.2, height = 9.5)
 
    }
 

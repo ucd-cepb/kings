@@ -1,9 +1,12 @@
 library(tidyverse)
 library(stargazer)
+library(dotenv)
+library(sjPlot)
 
 load_dot_env()
 
 place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
+
 all_places <- bind_rows(place_existance) %>% 
    mutate(DAC = as.factor(DAC),
           incorporated = as.factor(incorporated),
@@ -35,6 +38,7 @@ exists_mod_4 <- glm(exists ~ MHI+incorporated+POP+per_latino,
 stargazer(exists_mod_3, exists_mod_4, type='text')
 
 stargazer(exists_mod_3, exists_mod_4, type='html', out = 'EJ_DAC_Paper/Out/mods/0_exists_mod.html')
+
 
 exists_plot <- plot_model(exists_mod, type = 'int', 
                           terms = c('incorporated', 'DAC'),
