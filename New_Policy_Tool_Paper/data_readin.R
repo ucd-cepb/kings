@@ -7,6 +7,4 @@ network_files <- lapply(paste0(filekey[filekey$var_name=="disambiged_extracts_go
 
 gsp_meta <- read.csv(filekey[filekey$var_name == "gsp_planwise_metadata_csv",]$filepath)
 
-
-
 policies <- read.csv(filekey[filekey$var_name=="bruno_data",]$filepath) 
