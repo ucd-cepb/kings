@@ -96,7 +96,7 @@ plots <- list(
                      y_var = "exists", 
                      data = all_places, 
                      family = 'binomial',
-                     x_label = "MHI (1,000 $)", 
+                     x_label = "MHI (10,000 $)", 
                      y_label = "Exists (Binary)", 
                      axis_lim = list(c(0, 15), c(0, 1))), 
    
@@ -104,7 +104,7 @@ plots <- list(
                      y_var = "in_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "MHI (1,000 $)", 
+                     x_label = "MHI (10,000 $)", 
                      y_label = "Indegree", 
                      axis_lim = list(c(0, 15), c(0, 15))),
    
@@ -112,7 +112,7 @@ plots <- list(
                      y_var = "out_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "MHI (1,000 $)", 
+                     x_label = "MHI (10,000 $)", 
                      y_label = "Outdegree", 
                      axis_lim = list(c(0, 15), c(0, 15))),
    
@@ -120,7 +120,7 @@ plots <- list(
                      y_var = "leader_dist_min_w_nona", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "MHI (1,000 $)", 
+                     x_label = "MHI (10,000 $)", 
                      y_label = "Leader Distance (Min)", 
                      axis_lim = list(c(0, 15), c(0, 15)))
 )
