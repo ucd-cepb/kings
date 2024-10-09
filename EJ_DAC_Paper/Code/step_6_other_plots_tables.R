@@ -151,8 +151,8 @@ apn_graph_1 <- all_place_nodes %>%
           color = paste0(i_lab, ' ', d_lab),
           y_val = as.numeric(factor(color))) 
 
-names <- c(sort(unique(apn_graph_1$color)), sort(unique(group_means$color)))
-palette <- c(brewer.pal(n = 4, name = "Pastel1"), brewer.pal(n = 4, name = "Set1"))
+names <- sort(unique(apn_graph_1$color))
+palette <- c(brewer.pal(n = 6, name = "Paired"))[c(1,2,5,6)]
 named_palette <- setNames(palette, names)
 
 
@@ -162,17 +162,10 @@ p <- plot_ly() %>%
                x = ~in_w, 
                y = ~out_w, 
                z = ~leader_dist_min_w_nona,
-               marker = list(size = 8,
-                             opacity = 0.7),
+               marker = list(size = 5,
+                             opacity = 0.5),
                color = ~color,
                colors = named_palette
-   ) %>%
-   add_markers(inherit=FALSE,
-               data = group_means,
-               x = ~in_w, y = ~out_w, z = ~leader_dist,
-               marker = list(size = 10, 
-                             opacity = 1),
-               color=~color
    ) %>%
    # Set axis labels
    layout(scene = list(
