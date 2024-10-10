@@ -1,4 +1,3 @@
-data/*
 data_raw/portal/*
 data_spatial_raw/*
 data_output/mdl/*
@@ -6,7 +5,6 @@ data_temp/*
 code/regex_test.R
 .DS_Store
 Policy_Instruments_Paper/Graphs/*
-
 # Environment variable (API key) file
 .env
 # VS Code workspace file
@@ -45,3 +43,5 @@ vignettes/*.pdf
 ~/.boxr-oauth
 ###3 udpipe model
 *.udpipe
+data
+Box
