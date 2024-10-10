@@ -1,0 +1,61 @@
+---
+title: "pre-vignette"
+author: "E Zufall"
+date: "2024-10-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+First, we read in the pre-processed data and call textnet_extract() to produce the network object:
+### Pre-Processing Step I: Process PDFs
+
+This is a wrapper for pdftools, which has the option of using pdf_text or OCR. We have also added an optional header/footer removal tool. This optional tool is solely based on carriage returns in the first or last few lines of the document, so may inadvertently remove portions of paragraphs. However, not removing headers or footers can lead to improper inclusion of header and footer material in sentences, artificially inflating the presence of nodes whose entity names are included in the header and footer. Because of the risk of headers and footers to preferentially inflate the presence of a few nodes, the header/footer remover is included by default. It can be turned off if the user has a preferred header/footer removal tool to use instead, or if the input documents lack headers and footers.
+
+```{r pdf_clean}
+   library(textNet)
+   library(stringr)
+   pdfs <- c(list.files(path = ".", pattern = "old.pdf", full.names = T), 
+          list.files(path = ".", pattern = "new.pdf", full.names = T))
+   ocr <- F
+   maxchar <- 10000
+
+   old_new_text <- textNet::pdf_clean(pdfs, keep_pages=T, ocr=F, maxchar=10000, 
+                     export_paths=NULL, return_to_memory=T, suppressWarn = F, auto_headfoot_remove = T)
+   names(old_new_text) <- c("old","new")
+```
+
+### Pre-Processing Step II: Parse Text
+
+This is a wrapper for the pre-trained multipurpose NLP model spaCy, which we access through the R package spacyr. It produces a table that can be fed into the textnet_extract function in the following step. To initialize the session, the user must define the "RETICULATE_PYTHON" path, abbreviated as "ret_path" in textNet, as demonstrated in the example below. The page contents processed in the Step 1 must now be specified in vector form in the "pages" argument. To determine which file each page belongs to, the user must specify the file_ids of each page. We have demonstrated how to do this below. The package by default does not preserve hyphenated terms, but rather treats them as separate tokens. This can be adjusted. 
+
+The user may also specify "phrases_to_concatenate", an argument representing a set of phrases for spaCy to keep together during its parsing. The example below demonstrates how to use this feature to supplement the Named Entity Recognition capabilities of spaCy with a custom list of entities. This supplementation could be used to ensure that specific known entities are recognized; for instance, spaCy might not detect that a consulting firm such as "Schmidt and Associates" is one entity rather than two. Conversely, this capability could be leveraged to create a new category of entities to detect, that a pretrained model is not designed to specifically recognize. For instance, to create a public health network, one might include a known list of contaminants and diseases and designate custom entity type tags for them, such as "CONTAM" and "DISEASE"). In this example, we investigate the connections between the organizations, people, and geopolitical entities discussed in the plan with the flow of water in the basin. To assist with this, we have input a custom list of known water bodies in the region governed by our test document and have given it the entity designation "WATER". This is carried out by setting the variable "phrases_to_concatenate" to a character vector, including all of the custom entities. Then, the entity type can be set to the desired category. Note that this function is case-sensitive.
+
+```{r parse}
+   library(findpython)
+   ret_path <- find_python_cmd(required_modules = c('spacy', 'en_core_web_lg'))
+   pages <- unlist(old_new_text)
+   file_ids <- unlist(sapply(1:length(old_new_text), function(q) rep(names(old_new_text[q]),length(old_new_text[[q]]))))
+
+   water <- c("surface water", "Surface water", "groundwater", "Groundwater", "San Joaquin River", "Cottonwood Creek", "Chowchilla Canal Bypass", "Friant Dam", "Sack Dam", "Friant Canal", "Chowchilla Bypass", "Fresno River", "Sacramento River", "Merced River","Chowchilla River", "Bass Lake", "Crane Valley Dam", "Willow Creek", "Millerton Lake", "Mammoth Pool", "Dam 6 Lake", "Delta","Tulare Lake", "Madera-Chowchilla canal", "lower aquifer", "upper aquifer", "upper and lower aquifers", "lower and upper aquifers", "Lower aquifer", "Upper aquifer", "Upper and lower aquifers", "Lower and upper aquifers")
+
+   textNet::parse_text(ret_path, phrases_to_concatenate = water_phrases, pages = pages, file_ids = file_ids,  parsed_filenames=c("old_parsed","new_parsed"))
+
+   water_concat <- stringr::str_replace_all(water,"\\s","_")
+
+#we don't want to overwrite the entity type. For instance, the word "Groundwater" 
+#may just be part of an organization called a "Groundwater Sustainability Agency"
+   old_parsed <- lapply(1:length(old_new_parsed), function (i){
+      old_new_parsed[[i]][old_new_parsed[[i]]$token %in% water_concat & old_new_parsed[[i]]$entity=="",]$entity <- "WATER_B"
+      return(old_new_parsed[[i]])
+})
+   new_parsed <- lapply(1:length(old_new_parsed), function (i){
+      old_new_parsed[[i]][old_new_parsed[[i]]$token %in% water_concat & old_new_parsed[[i]]$entity=="",]$entity <- "WATER_B"
+      return(old_new_parsed[[i]])
+})
+
+```
+

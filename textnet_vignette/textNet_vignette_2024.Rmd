@@ -1,7 +1,7 @@
 ---
 title: "textNet_vignette"
 author: "E Zufall and T Scott"
-date: "2024-06-12"
+date: "2024-10-12"
 output: html_document
 ---
 
@@ -11,101 +11,67 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-While a number of tools exist to generate networks based on co-occurrence of words within documents (such as the "textnets" package, the Nocodefunctions app, InfraNodus, and many more), there are, to our knowledge, no tools for generating directed networks based on the syntactic relationships between entities within a sentence, for arbitrarily long documents. As many official documents, such as government planning documents, court proceedings, or bills such as those studied in the social sciences, as well as environmental impact assessments and other scientific reports, consist of thousands of pages, this type of replicable, automated network extraction is extremely valuable. Furthermore, existing network extraction methods that use co-occurrence leave a vast amount of data on the table; namely, the rich edge attribute data and directionality of each verb phrase defining the particular relationship between two entities, and the respective roles of the entity nodes involved in that verb phrase. We present an R package, textNet, designed to enable directed, multiplex, multimodal network extraction from text documents through syntactic dependency parsing, in a replicable, automated fashion for collections of arbitrarily long documents. The textNet package facilitates the automated analysis and comparison of many documents, based on their respective network characteristics. Its flexibility allows for any desired entity categories, such as organizations, geopolitical entities, dates, or custom-defined categories, to be preserved.  
+Network measurement in social science typically relies on data collected through surveys and interviews. Document-based measurement is automatable and scalable, providing opportunities for large scale or longitudinal research that are not possible through traditional methods. A number of tools exist to generate networks based on co-occurrence of words within documents (such as the "textnets" package, the Nocodefunctions app, InfraNodus, and many more). But there is, to our knowledge, no open-source tool that generates network data based on the syntactic relationships between entities within a sentence. textNet allows a user to input one or more PDF documents and create arbitrarily complex directed, multiplex, and multimodal network graphs. textNet also works on arbitrarily long documents, making it well suited for research applications using long texts such as government planning documents, court proceedings, regulatory impact analyses, and environmental impact assessments. 
 
-## What's Different about textNet
+## Statement of Need
+
+This type of replicable, automated network extraction is extremely valuable. Furthermore, existing network extraction methods that use co-occurrence leave a vast amount of data on the table, namely, the rich edge attribute data and directionality of each verb phrase defining the particular relationship between two entities, and the respective roles of the entity nodes involved in that verb phrase. We present an R package, textNet, designed to enable directed, multiplex, multimodal network extraction from text documents through syntactic dependency parsing, in a replicable, automated fashion for collections of arbitrarily long documents. The textNet package facilitates the automated analysis and comparison of many documents, based on their respective network characteristics. Its flexibility allows for any desired entity categories, such as organizations, geopolitical entities, dates, or custom-defined categories, to be preserved.  
 
 ### Directed Graph Production
-As a syntax-based network extractor, textNet identifies source and target nodes, enabling the production of directed graphs, as opposed to the undirected graphs produced by methods based on identifying co-occurring nodes in a document. We demonstrate the resulting directed graphs in Step 5. However, the textNet method does not preclude the use of co-occurrence as well; we layer on this additional capability in Step 7 by showing how multiple network objects can be combined. The document in which the edges occur is coded as an edge attribute, preserving the ability to determine which nodes co-occur in the same documents. Additionally, the occurrence of nodes in multiple documents can be explored, as demonstrated in Step 8, where we tabulate how many nodes are present in each document.
+As a syntax-based network extractor, textNet identifies source and target nodes. This produces directed graphs that contain information about network flow. Methods based on identifying co-occurring nodes in a document, by contrast, produce undirected graphs. textNet also allows the user to code ties based on co-occurrence in a designated piece of text if desired.
+
+## Multiplex Graph Output
+
+Syntax-based measurement encodes edges based on subject-verb-object relationships. textNet stores verb information as edge attributes, which allows the user to preserve arbitrarily complex topological layers (of different types of relationships) or customize groupings of edge types to simplify representation.
+
+## Multimode Graph Output
 
 ### Avoids Saturation
-Furthermore, co-occurrence graphs have the tendency to generate saturated subgraphs, since every co-occurring collection of entities has every possible edge drawn amongst them. By contrast, textNet draws connections not between every entity in the document or even the sentence, but specifically between pairs of entities that are mediated by an event relationship. This leads to sparser graphs that preserve the ability for greater structural variance, and correspondingly, network analysis of structural attributes of the graphs. We will explore simple examples of structural comparisons in Step 5 and Step 8 of this vignette, but with a more extensive set of graphs to compare, this opportunity is greatly increased.
+Co-occurrence graphs have the tendency to generate saturated subgraphs, since every co-occurring collection of entities has every possible edge drawn amongst them. By contrast, textNet draws connections not between every entity in the document or even the sentence, but specifically between pairs of entities that are mediated by an event relationship. This leads to sparser graphs that preserve the ability for greater structural variance, and correspondingly, network analysis of structural attributes of the graphs. 
 
-### Multiplex and Multimode Graph Output
-Finally, the networks generated by textNet are both multiplex and multimode. We will show some simple ways to explore the multiple types of edges in Step 6, as well as an example of how to collapse the multiplex network into a weighted network for plotting and analysis in Step 5. We demonstrate ways to explore the multiple types of nodes in Step 8.
+##Installation
+The stable version of this package can be installed from Github, using the devtools package:
 
-## How to Use textNet
-
-The following example will walk through the steps of using the textNet package to generate a "before" and "after" network of organizations and people discussed in the Gravelly Ford Water District Groundwater Sustainability Plan, before and after it underwent revisions required by the California Department of Water Resources. 
-
-### Step 1: Process PDFs
-
-This is a wrapper for pdftools, which has the option of using pdf_text or OCR. We have also added an optional header/footer removal tool. This optional tool is solely based on carriage returns in the first or last few lines of the document, so may inadvertently remove portions of paragraphs. However, not removing headers or footers can lead to improper inclusion of header and footer material in sentences, artificially inflating the presence of nodes whose entity names are included in the header and footer. Because of the risk of headers and footers to preferentially inflate the presence of a few nodes, the header/footer remover is included by default. It can be turned off if the user has a preferred header/footer removal tool to use instead, or if the input documents lack headers and footers.
-
-```{r pdf_clean}
-   library(textNet)
-   library(stringr)
-   pdfs <- c(list.files(path = ".", pattern = "old.pdf", full.names = T), 
-          list.files(path = ".", pattern = "new.pdf", full.names = T))
-   ocr <- F
-   maxchar <- 10000
-
-   old_new_text <- textNet::pdf_clean(pdfs, keep_pages=T, ocr=F, maxchar=10000, 
-                     export_paths=NULL, return_to_memory=T, suppressWarn = F, auto_headfoot_remove = T)
-   names(old_new_text) <- c("old","new")
+```{r devtools, eval=F}
+devtools::install_github("ucd-cepb/textnet")
+library(textNet)
 ```
+The textNet package suggests several convenience wrappers of packages such as spacyr, pdftools, igraph, and network. To use the full functionality of textNet, such as pre-processing tools and post-processing analysis tools, we recommend installing these packages, which for spacyr requires integration with Python. However, the user may wish to preprocess and parse data using their own NLP engine, and skip directly to the textnet_extract() function, which does not depend on any of the aforementioned packages. The textnet_extract() function does, however, use functions from pbapply, data_table, dplyr, and tidyr.
 
-### Step 2: Parse Text
+## Overview and Main Functions
+The package architecture relies on four sets of functions around core tasks:
+• [OPTIONAL] Pre-processing: pdf_clean(), which is a wrapper for the pdftools::pdf_text function which includes a custom header/footer text removal feature, and parse_text(), which is a wrapper for the spacyr package and uses the spaCy natural language processing engine to parse text and perform part of speech tagging, dependency parsing, and named entity recognition. Alternatively, as described below, the user can skip this step and load parsed text directly into the package.
+• Network extraction: textnet_extract(), which generates a graph database from parsed text based upon tags and dependency relations
+• Disambiguation: tools for cleaning, recoding, and aggregating node and edge attributes, such as the find_acronyms() function, which can be paired with the disambiguation() function to identify acronyms in the text and replace them with the full entity name.
+• Exploration: the export_to_network() function for exporting the graph database to igraph and network objects, top_features() for viewing node and edge attributes, and combine_networks() for aggregating multiple document-based graphs based on common nodes.
 
-This is a wrapper for the pre-trained multipurpose NLP model spaCy, which we access through the R package spacyr. It produces a table that can be fed into the textnet_extract function in the following step. To initialize the session, the user must define the "RETICULATE_PYTHON" path, abbreviated as "ret_path" in textNet, as demonstrated in the example below. The page contents processed in the Step 1 must now be specified in vector form in the "pages" argument. To determine which file each page belongs to, the user must specify the file_ids of each page. We have demonstrated how to do this below. The package by default does not preserve hyphenated terms, but rather treats them as separate tokens. This can be adjusted. 
+## Example 
 
-The user may also specify "phrases_to_concatenate", an argument representing a set of phrases for spaCy to keep together during its parsing. The example below demonstrates how to use this feature to supplement the Named Entity Recognition capabilities of spaCy with a custom list of entities. This supplementation could be used to ensure that specific known entities are recognized; for instance, spaCy might not detect that a consulting firm such as "Schmidt and Associates" is one entity rather than two. Conversely, this capability could be leveraged to create a new category of entities to detect, that a pretrained model is not designed to specifically recognize. For instance, to create a public health network, one might include a known list of contaminants and diseases and designate custom entity type tags for them, such as "CONTAM" and "DISEASE"). In this example, we investigate the connections between the organizations, people, and geopolitical entities discussed in the plan with the flow of water in the basin. To assist with this, we have input a custom list of known water bodies in the region governed by our test document and have given it the entity designation "WATER". This is carried out by setting the variable "phrases_to_concatenate" to a character vector, including all of the custom entities. Then, the entity type can be set to the desired category. Note that this function is case-sensitive.
-
-```{r parse}
-   ret_path <- "/Users/elisemiller/miniconda3/envs/spacy_condaenv/bin/python"
-   pages <- unlist(old_new_text)
-   file_ids <- unlist(sapply(1:length(old_new_text), function(q) rep(names(old_new_text[q]),length(old_new_text[[q]]))))
-
-   water <- c("surface water", "Surface water", "groundwater", "Groundwater", "San Joaquin River", "Cottonwood Creek", "Chowchilla Canal Bypass", "Friant Dam", "Sack Dam", "Friant Canal", "Chowchilla Bypass", "Fresno River", "Sacramento River", "Merced River","Chowchilla River", "Bass Lake", "Crane Valley Dam", "Willow Creek", "Millerton Lake", "Mammoth Pool", "Dam 6 Lake", "Delta","Tulare Lake", "Madera-Chowchilla canal", "lower aquifer", "upper aquifer", "upper and lower aquifers", "lower and upper aquifers", "Lower aquifer", "Upper aquifer", "Upper and lower aquifers", "Lower and upper aquifers")
-
-   water_phrases <- water[stringr::str_detect(water,"\\s")]
-   old_new_parsed <- textNet::parse_text(ret_path, 
-                                 keep_hyph_together = F, 
-                                 phrases_to_concatenate = water_phrases, 
-                                 concatenator = "_", 
-                                 pages, 
-                                 file_ids, 
-                                 parsed_filenames=c("old_parsed","new_parsed"), 
-                                 overwrite = T)
-
-   water_concat <- stringr::str_replace_all(water,"\\s","_")
-
-#we don't want to overwrite the entity type. For instance, the word "Groundwater" 
-#may just be part of an organization called a "Groundwater Sustainability Agency"
-   old_new_parsed <- lapply(1:length(old_new_parsed), function (i){
-      old_new_parsed[[i]][old_new_parsed[[i]]$token %in% water_concat & old_new_parsed[[i]]$entity=="",]$entity <- "WATER_B"
-      return(old_new_parsed[[i]])
-})
+The following example uses parsed text from the Gravelly Ford Water District Groundwater Sustainability Plan in the state of California, before and after the plan underwent revisions required by the California Department of Water Resources. Both versions of the plan were pre-processed using the optional pdf_clean() and parse_text() functions, as shown in the appendix below and package repository. textNet is designed for modularity with respect to pdf-to-text conversion and NLP engine. The user can derive plain text by any approach, and likewise perform event extraction with any NLP engine or large language model (LLM) (more on LLM extensions below) and bring these data to textNet. The textnet_extract() function expects the parsed table to follow specific conventions for column names and speech tagging, so externally produced data must be converted to standards outlined in the package manual.
+First, we read in the pre-processed data and call textnet_extract() to produce the network object:
 
 ```
-
-Another NLP tool may be used instead of the built-in textNet function at this phase, as long as the output conforms to spaCy tagging standards: Universal Dependencies tags for the "pos" part-of-speech column, and Penn Treebank tags for the "tags" column. The textnet_extract function expects the parsed table to follow specific conventions. First, a row must be included for each token. The column names expected by textnet_extract are:
-
-doc_id, a unique ID for each page
-sentence_id, a unique ID for each sentence
-token_id, a unique ID for each token
-token, the token, generally a word, represented as a string
-lemma, the canonical or dictionary form of the token
-pos, a code referring to the token's part of speech, defined according to http://universaldependencies.org/u/pos/
-tag, a code referring to the token's part of speech, according to Penn Treebank https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
-head_token_id, a numeric ID referring to the token_id of the head token of the current row's token
-dep_rel, the dependency label according to https://github.com/clir/clearnlp-guidelines/blob/master/md/specifications/dependency_labels.md
-entity, the entity type category defined by https://catalog.ldc.upenn.edu/docs/LDC2013T19/OntoNotes-Release-5.0.pdf. This is represented as as string, ending in "_B" if it is the first token in the entity or "_I" otherwise).
+Data <- read in data
+Textnet data <- textnet_extract(data)
+```
+The resulting object consists of a nodelist, an edgelist, a verblist, and a list of appositives. The nodelist variables are entity_name, the concatenated name of the entity; entity_type, which is a preservation from the entity_type attribute from the output of textNet::parse_text(); and num_appearances, which is the number of times the entity appears in the PDF text. The default entity types are based on spaCy’s NER tags, but entity types can be customized as desired. In this example, we only keep entity types in the nodelist, edgelist, and appositivelist that are listed under keep_entities; namely, “ORG”, “GPE”, “PERSON”, and “WATER”.
 
 
-### Step 3: Extract Networks
+ 
+
+### Step 1: Extract Networks
 
 The textnet_extract() function then extracts the entity network. It reads in the result of parse_text() as above or another parsing tool with appropriate column names and tagging conventions. The resulting object consists of a nodelist, an edgelist, a verblist, and a list of appositives. The nodelist variables are entity_name, the concatenated name of the entity; entity_type, which is a preservation from the entity_type attribute from the output of textNet::parse_text(); and num_appearances, which is the number of times the entity appears in the PDF text. (This is not the same as node degree, since there may be multiple edges, or if keep_incomplete_edges is set to false, no edges resulting from a single appearance of the entity in the document.)  The entity_type attribute represents Spacy's determination of entity type using its NER recognition, or if a custom parser or NER tool is used, the textnet_extract() function will preserve these entity type designations.
 
 The file is saved to the provided filename, if provided. It is returned to memory if return_to_memory is set to T. At least one of these return pathways must be established to avoid an error. In this example, we only keep entity types in the nodelist, edgelist, and appositivelist that are listed under keep_entities; namely, "ORG", "GPE", "PERSON", and "WATER".
 
 ```{r extract}
-   extracts <- vector(mode="list",length=length(old_new_parsed))
-   for(m in 1:length(old_new_parsed)){
-      extracts[[m]] <- textnet_extract(old_new_parsed[[m]],concatenator="_",cl=4,
-                   keep_entities = c('ORG','GPE','PERSON','WATER'), 
-                   return_to_memory=T, keep_incomplete_edges=T)
-   }
+   extracts <- vector(mode="list",length=2)
+   extracts[[1]] <- textnet_extract(old_parsed[[m]], cl=4,
+                   keep_entities = c('ORG','GPE','PERSON','WATER'))
+   extracts[[2]] <- textnet_extract(new_parsed[[m]], cl=4,
+                   keep_entities = c('ORG','GPE','PERSON','WATER'))
+   
 ```
 
 ### Step 4: Consolidate Entity Synonyms
@@ -371,6 +337,74 @@ The textNet::textnet_extract() function returns the full list of open clausal co
 The extraction function also detects hedging words and negations. The function textNet::textnet_extract() produces an edge attribute "has_hedge", which is T if there is a hedging auxiliary verb ("may","might","can","could") or main verb ("seem","appear","suggest","tend","assume","indicate","estimate","doubt","believe") in the verb phrase.
 
 Tense is also detected. The six tenses tagged by spaCy in textNet::parse_text() are preserved by textNet::textnet_extract() as an edge attribute "head_verb_tense". This attribute can take on one of six values: "VB" (verb, base form), "VBD" (verb, past tense), "VBG" (verb, gerund or present participle), "VBN" (verb, past participle), "VBP" (verb, non-3rd person singular present), or "VBZ" (verb, 3rd person singular present). Additionally, an edge attribute "is_future" is generated by textNet::textnet_extract(), which is T if the verb phrase contains an xcomp, has the token "going" as a head verb, and a being verb token as an auxiliary verb (i.e. is of the form "going to <verb>") or contains one of the following auxiliary verbs: "shall","will","wo", or "'ll" (i.e. is of the form "will <verb>").
+
+## Appendix
+This appendix describes the pre-processing tools available through the textNet package, which enable the user to generate the data frame expected by the textnet_extract() function.
+
+### Pre-Processing Step I: Process PDFs
+
+This is a wrapper for pdftools, which has the option of using pdf_text or OCR. We have also added an optional header/footer removal tool. This optional tool is solely based on carriage returns in the first or last few lines of the document, so may inadvertently remove portions of paragraphs. However, not removing headers or footers can lead to improper inclusion of header and footer material in sentences, artificially inflating the presence of nodes whose entity names are included in the header and footer. Because of the risk of headers and footers to preferentially inflate the presence of a few nodes, the header/footer remover is included by default. It can be turned off if the user has a preferred header/footer removal tool to use instead, or if the input documents lack headers and footers.
+
+```{r pdf_clean}
+   library(textNet)
+   library(stringr)
+   pdfs <- c(list.files(path = ".", pattern = "old.pdf", full.names = T), 
+          list.files(path = ".", pattern = "new.pdf", full.names = T))
+   ocr <- F
+   maxchar <- 10000
+
+   old_new_text <- textNet::pdf_clean(pdfs, keep_pages=T, ocr=F, maxchar=10000, 
+                     export_paths=NULL, return_to_memory=T, suppressWarn = F, auto_headfoot_remove = T)
+   names(old_new_text) <- c("old","new")
+```
+
+### Pre-Processing Step II: Parse Text
+
+This is a wrapper for the pre-trained multipurpose NLP model spaCy, which we access through the R package spacyr. It produces a table that can be fed into the textnet_extract function in the following step. To initialize the session, the user must define the "RETICULATE_PYTHON" path, abbreviated as "ret_path" in textNet, as demonstrated in the example below. The page contents processed in the Step 1 must now be specified in vector form in the "pages" argument. To determine which file each page belongs to, the user must specify the file_ids of each page. We have demonstrated how to do this below. The package by default does not preserve hyphenated terms, but rather treats them as separate tokens. This can be adjusted. 
+
+The user may also specify "phrases_to_concatenate", an argument representing a set of phrases for spaCy to keep together during its parsing. The example below demonstrates how to use this feature to supplement the Named Entity Recognition capabilities of spaCy with a custom list of entities. This supplementation could be used to ensure that specific known entities are recognized; for instance, spaCy might not detect that a consulting firm such as "Schmidt and Associates" is one entity rather than two. Conversely, this capability could be leveraged to create a new category of entities to detect, that a pretrained model is not designed to specifically recognize. For instance, to create a public health network, one might include a known list of contaminants and diseases and designate custom entity type tags for them, such as "CONTAM" and "DISEASE"). In this example, we investigate the connections between the organizations, people, and geopolitical entities discussed in the plan with the flow of water in the basin. To assist with this, we have input a custom list of known water bodies in the region governed by our test document and have given it the entity designation "WATER". This is carried out by setting the variable "phrases_to_concatenate" to a character vector, including all of the custom entities. Then, the entity type can be set to the desired category. Note that this function is case-sensitive.
+
+```{r parse}
+   library(findpython)
+   ret_path <- find_python_cmd(required_modules = c('spacy', 'en_core_web_lg'))
+   pages <- unlist(old_new_text)
+   file_ids <- unlist(sapply(1:length(old_new_text), function(q) rep(names(old_new_text[q]),length(old_new_text[[q]]))))
+
+   water <- c("surface water", "Surface water", "groundwater", "Groundwater", "San Joaquin River", "Cottonwood Creek", "Chowchilla Canal Bypass", "Friant Dam", "Sack Dam", "Friant Canal", "Chowchilla Bypass", "Fresno River", "Sacramento River", "Merced River","Chowchilla River", "Bass Lake", "Crane Valley Dam", "Willow Creek", "Millerton Lake", "Mammoth Pool", "Dam 6 Lake", "Delta","Tulare Lake", "Madera-Chowchilla canal", "lower aquifer", "upper aquifer", "upper and lower aquifers", "lower and upper aquifers", "Lower aquifer", "Upper aquifer", "Upper and lower aquifers", "Lower and upper aquifers")
+
+   water_phrases <- water[stringr::str_detect(water,"\\s")]
+   old_new_parsed <- textNet::parse_text(ret_path, 
+                                 keep_hyph_together = F, 
+                                 phrases_to_concatenate = water_phrases, 
+                                 concatenator = "_", 
+                                 pages, 
+                                 file_ids, 
+                                 parsed_filenames=c("old_parsed","new_parsed"), 
+                                 overwrite = T)
+
+   water_concat <- stringr::str_replace_all(water,"\\s","_")
+
+#we don't want to overwrite the entity type. For instance, the word "Groundwater" 
+#may just be part of an organization called a "Groundwater Sustainability Agency"
+   old_new_parsed <- lapply(1:length(old_new_parsed), function (i){
+      old_new_parsed[[i]][old_new_parsed[[i]]$token %in% water_concat & old_new_parsed[[i]]$entity=="",]$entity <- "WATER_B"
+      return(old_new_parsed[[i]])
+})
+
+```
+
+Another NLP tool may be used instead of the built-in textNet function at this phase, as long as the output conforms to spaCy tagging standards: Universal Dependencies tags for the "pos" part-of-speech column, and Penn Treebank tags for the "tags" column. The textnet_extract function expects the parsed table to follow specific conventions. First, a row must be included for each token. The column names expected by textnet_extract are:
+
+doc_id, a unique ID for each page
+sentence_id, a unique ID for each sentence
+token_id, a unique ID for each token
+token, the token, generally a word, represented as a string
+lemma, the canonical or dictionary form of the token
+pos, a code referring to the token's part of speech, defined according to http://universaldependencies.org/u/pos/
+tag, a code referring to the token's part of speech, according to Penn Treebank https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+head_token_id, a numeric ID referring to the token_id of the head token of the current row's token
+dep_rel, the dependency label according to https://github.com/clir/clearnlp-guidelines/blob/master/md/specifications/dependency_labels.md
+entity, the entity type category defined by https://catalog.ldc.upenn.edu/docs/LDC2013T19/OntoNotes-Release-5.0.pdf. This is represented as as string, ending in "_B" if it is the first token in the entity or "_I" otherwise).
 
 
 
