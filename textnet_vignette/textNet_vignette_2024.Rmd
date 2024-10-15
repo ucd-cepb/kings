@@ -241,7 +241,7 @@ For best results, composite network generation should not be done without an ade
       scale_color_manual(values = c("#4477AA","#228833","#CCBB44","#66CCEE"))+
       geom_node_point(aes(color = entity_type), size = 1,
                       alpha = 0.8)+
-      labs(title= "New Network")+
+      labs(title= "Composite Network")+
       theme_void()
 ```
 
