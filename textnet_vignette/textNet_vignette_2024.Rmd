@@ -133,13 +133,29 @@ tofrom <- data.table::data.table(
       textnet_extract = extracts[[1]],
       from = tofrom$from, 
       to = tofrom$to,
-      match_partial_entity = c(rep(F,length(old_acronyms$acronym)),T,T,F,F,F,F))
+      match_partial_entity = c(rep(F,nrow(old_acronyms)),T,T,F,F,F,F))
+   
+   tofrom <- data.table::data.table(
+   from = c(as.list(new_acronyms$acronym),
+             list("Sub_basin",
+                  "Sub_Basin",
+                  "upper_and_lower_aquifers",
+                  "Upper_and_lower_aquifers",
+                  "Lower_and_upper_aquifers",
+                  "lower_and_upper_aquifers")), 
+   to = c(as.list(new_acronyms$name),
+             list("Subbasin",
+                  "Subbasin",
+                  c("upper_aquifer","lower_aquifer"),
+                  c("upper_aquifer","lower_aquifer"),
+                  c("upper_aquifer","lower_aquifer"),
+                  c("upper_aquifer","lower_aquifer"))))
    
    new_extract_clean <- disambiguate(
       textnet_extract = extracts[[2]], 
       from = tofrom$from, 
       to = tofrom$to,
-      match_partial_entity = c(rep(F,length(new_acronyms$acronym)),T,T,F,F,F,F))
+      match_partial_entity = c(rep(F,nrow(new_acronyms)),T,T,F,F,F,F))
 
 ```
 
