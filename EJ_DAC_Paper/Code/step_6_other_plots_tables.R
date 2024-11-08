@@ -260,7 +260,10 @@ p
       theme_minimal() +
       theme(axis.text.y = element_blank(),
             axis.title.y = element_blank(),
-            axis.ticks.y = element_blank()); exists_p
+            axis.ticks.y = element_blank(),
+            legend.position = "bottom"); exists_p
+   
+   ggsave('EJ_DAC_Paper/Out/exists_p.png', exists_p, width = 8, height = 4)
    
    in_p <- ggplot() +
       geom_point(data=apn_graph_1, aes(x = in_w, y = y_val, color = color)) +
@@ -271,7 +274,10 @@ p
       theme_minimal() +
       theme(axis.text.y = element_blank(),
             axis.title.y = element_blank(),
-            axis.ticks.y = element_blank()); in_p
+            axis.ticks.y = element_blank(),
+            legend.position = "bottom"); in_p
+   
+   ggsave('EJ_DAC_Paper/Out/in_p.png', in_p, width = 10, height = 3)
    
    out_p <- ggplot() +
       geom_point(data=apn_graph_1, aes(x = out_w, y = y_val, color = color)) +
@@ -282,7 +288,8 @@ p
       theme_minimal() +
       theme(axis.text.y = element_blank(),
             axis.title.y = element_blank(),
-            axis.ticks.y = element_blank()); out_p
+            axis.ticks.y = element_blank(),
+            legend.position = "bottom"); out_p
    
    lead_p <- ggplot() +
       geom_point(data=apn_graph_1, aes(x = leader_dist_min_w_nona, y = y_val, color = color)) +
@@ -293,7 +300,8 @@ p
       theme_minimal() +
       theme(axis.text.y = element_blank(),
             axis.title.y = element_blank(),
-            axis.ticks.y = element_blank()); lead_p
+            axis.ticks.y = element_blank(),
+            legend.position = "bottom"); lead_p
    
    dims_p <- ggarrange(exists_p, in_p, out_p, lead_p, 
                        nrow = 4, 
