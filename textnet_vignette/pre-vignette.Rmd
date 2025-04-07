@@ -1,0 +1,56 @@
+---
+title: "pre-vignette"
+author: "E Zufall"
+date: "2024-10-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+First, we read in the pre-processed data and call textnet_extract() to produce the network object:
+### Pre-Processing Step I: Process PDFs
+
+This is a wrapper for pdftools, which has the option of using pdf_text or OCR. We have also added an optional header/footer removal tool. This optional tool is solely based on carriage returns in the first or last few lines of the document, so may inadvertently remove portions of paragraphs. However, not removing headers or footers can lead to improper inclusion of header and footer material in sentences, artificially inflating the presence of nodes whose entity names are included in the header and footer. Because of the risk of headers and footers to preferentially inflate the presence of a few nodes, the header/footer remover is included by default. It can be turned off if the user has a preferred header/footer removal tool to use instead, or if the input documents lack headers and footers.
+
+```{r pdf_clean_setup, echo = F}
+   library(textNet)
+   library(stringr)
+   URL <- "https://sgma.water.ca.gov/portal/service/gspdocument/download/2840"
+   download.file(URL, destfile = "old.pdf", method="curl")
+   
+   URL <- "https://sgma.water.ca.gov/portal/service/gspdocument/download/9625"
+   download.file(URL, destfile = "new.pdf", method="curl")
+   
+   pdfs <- c("old.pdf", 
+          "new.pdf")
+
+   old_new_text <- textNet::pdf_clean(pdfs, keep_pages=T, ocr=F, maxchar=10000, 
+                     export_paths=NULL, return_to_memory=T, suppressWarn = F, auto_headfoot_remove = T)
+   names(old_new_text) <- c("old","new")
+   
+   save(old_new_text, file = "old_new_text.rda")
+```
+
+
+```{r parse_setup, echo = F}
+   library(findpython)
+   ret_path <- find_python_cmd(required_modules = c('spacy', 'en_core_web_lg'))
+   
+
+   water_bodies <- c("surface water", "Surface water", "groundwater", "Groundwater", "San Joaquin River", "Cottonwood Creek", "Chowchilla Canal Bypass", "Friant Dam", "Sack Dam", "Friant Canal", "Chowchilla Bypass", "Fresno River", "Sacramento River", "Merced River","Chowchilla River", "Bass Lake", "Crane Valley Dam", "Willow Creek", "Millerton Lake", "Mammoth Pool", "Dam 6 Lake", "Delta","Tulare Lake", "Madera-Chowchilla canal", "lower aquifer", "upper aquifer", "upper and lower aquifers", "lower and upper aquifers", "Lower aquifer", "Upper aquifer", "Upper and lower aquifers", "Lower and upper aquifers")
+
+   old_new_parsed <- textNet::parse_text(ret_path, 
+                          keep_hyph_together = F, 
+                          phrases_to_concatenate = water_bodies, 
+                          concatenator = "_", 
+                          text_list = old_new_text, 
+                                 parsed_filenames=c("old_parsed","new_parsed"), 
+                                 overwrite = T,
+                          custom_entities = list(WATER = water_bodies))
+
+   save(old_new_parsed, file = "old_new_parsed.rda")
+```
+
