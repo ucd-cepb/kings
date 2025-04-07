@@ -43,5 +43,10 @@ vignettes/*.pdf
 ~/.boxr-oauth
 ###3 udpipe model
 *.udpipe
+
+
+# symbolic link for Wendy
+/New_Policy_Tool_Paper/Network_policy_tool_paper
+
 data
 Box
