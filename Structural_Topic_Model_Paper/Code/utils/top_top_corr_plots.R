@@ -75,7 +75,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
       for(i in 1:nrow(tch$cor)){
          tch$cor[i,i]=1
       }
-      saveRDS(topicCorr, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/topicCorr"))
+      saveRDS(tch, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/topicCorr"))
       topics <- 1:nrow(tch$posadj)
       tch_cor <- tch$cor[topics,topics] 
       tch_pos <- tch$posadj[topics, topics]
@@ -230,7 +230,7 @@ top_top_corr_plots <- function(model, method, topics_of_interest, categ){
          theme(legend.key=element_rect(colour="black",fill="white",
                                        linetype="solid")) 
       saveRDS(corrplot, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath,"/corrplot.RDS"))
-      ggsave("top_top_corrplot_huge.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stm_figures",]$filepath,
+      ggsave("top_top_corrplot_huge.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
              width = 4020, height = 1890, dpi = 600, units = "px", bg = "white")
    } else{
       print("Method must be \'simple\' or \'huge\'.")
