@@ -26,7 +26,8 @@ library(lavaan)
 ################### isolated graph #########################
 file_paths <- list.files(path = "/Users/wendysong/Documents/Davis/PhD research/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-output_folder <- "/Users/wendysong/Documents/Davis/PhD research/network_policy/graphs/"
+# the try on box/git 
+output_folder <- "New_Policy_Tool_Paper/Network_policy_tool_paper/PhD_research/network_policy/graphs"
 
 
 for (i in 1:length(file_paths)) {
@@ -45,7 +46,8 @@ for (i in 1:length(file_paths)) {
   
   nodelist_filtered <- nodes[, c("entity_name", "entity_type", "num_appearances"), drop = FALSE]
   colnames(nodelist_filtered)[colnames(nodelist_filtered) == "entity_name"] <- "name"
-  
+ 
+  # non-isolated   
   na_edges <- edge_list_filtered[is.na(edge_list_filtered$source) | is.na(edge_list_filtered$target), ]
   edge_list_filtered <- na.omit(edge_list_filtered)
   
@@ -206,7 +208,9 @@ meta_data <- read.csv("/Users/wendysong/Documents/Davis/PhD research/gsp_ids_wit
 print(names(meta_data))
 # mult_gsas,priority,urbangw_af,percent_dac_by_pop_scaled,fract_of_area_in_habitat,maxdryspell_scaled,Agr_Share_Of_GDP_scaled,Perc_Bach_Degree_Over25_scaled, Perc_Bach_Degree_Over25_scaled,basin_population, Republican_Vote_Share_scaled
 data_meta <- merged_dataset %>%
-  left_join(meta_data %>% select(gsp_id,mult_gsas,priority,urbangw_af,percent_dac_by_pop_scaled,fract_of_area_in_habitat,maxdryspell_scaled,Agr_Share_Of_GDP_scaled,Perc_Bach_Degree_Over25_scaled, Perc_Bach_Degree_Over25_scaled,basin_population, Republican_Vote_Share_scaled, exante_collab
+  left_join(meta_data %>% select(gsp_id,mult_gsas,priority,urbangw_af,percent_dac_by_pop_scaled,fract_of_area_in_habitat,
+                                 maxdryspell_scaled,Agr_Share_Of_GDP_scaled,Perc_Bach_Degree_Over25_scaled, Perc_Bach_Degree_Over25_scaled,
+                                 basin_population, Republican_Vote_Share_scaled, exante_collab
   ), by = "gsp_id")
 
 data_meta <- data_meta %>%
