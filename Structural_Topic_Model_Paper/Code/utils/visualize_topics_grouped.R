@@ -98,13 +98,13 @@ visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,s
 
    if(scatter==T){
       set.seed(80000)
-      m20240528_ex_sem<-as.data.frame(cbind(c(1:numTopics),
+      m20250123_ex_sem<-as.data.frame(cbind(c(1:numTopics),
                                      exclusivity(model), 
                                      semanticCoherence(model=model, 
-                                                       documents = inputs$documents), "model 20240528"))
+                                                       documents = inputs$documents), "model 20250123"))
       
       #can compare multiple models by adding to rbind
-      models_ex_sem<-rbind(m20240528_ex_sem)
+      models_ex_sem<-rbind(m20250123_ex_sem)
       
       colnames(models_ex_sem)<-c("K","exclusivity", "semantic_coherence", "model")
       models_ex_sem$exclusivity<-as.numeric(as.character(models_ex_sem$exclusivity))
@@ -195,38 +195,48 @@ visualize_topics_grouped <- function(model, inputs, text_col, topic_indicators,s
       greplist <- list(grep("DW",categ_no_multi), grep("EJ",categ_no_multi), 
                        grep("CC",categ_no_multi), grep("GDE",categ_no_multi))
       unitopics <- c("DW","EJ","CC","GDE")
-      for(i in 1:4){
-         esteffect[[i]] <- estimateEffectDEV(greplist[[i]] ~ admin + 
-                                   basin_plan +
-                                   sust_criteria +
-                                   monitoring_networks + 
-                                   projects_mgmt_actions + 
-                                   mult_gsas +
-                                   priority_category +
-                                   basin_population_log_scaled +
-                                   (Agr_Share_Of_GDP_scaled +
-                                       Republican_Vote_Share_scaled) *
-                                   (log_well_MCL_exceedance_count_by_log_pop_scaled +
-                                       percent_dac_by_pop_scaled +
-                                       fract_of_area_in_habitat_log_scaled +
-                                       dsci_scaled),
-                                model,
-                                meta = inputs$meta, uncertainty = "Global", group = T)
+      
+      foci <- names(problem_measures)
+      full_estimates <- vector(mode = 'list',length = length(foci))
+      
+      full_form <- ~admin + basin_plan + sust_criteria + monitoring_networks + projects_mgmt_actions + 
+         mult_gsas + exante_collab + priority_category + basin_population_log_scaled + 
+         Republican_Vote_Share_scaled + Agr_Share_Of_GDP_scaled +log_well_MCL_exceedance_count_by_log_pop_scaled +
+         percent_dac_by_pop_scaled +
+         fract_of_area_in_habitat_log_scaled +
+         dsci_scaled
+      
+      for(x in foci){
+         print(x)
+         problem <- problem_measures[[x]]
+         topic_vec <- topic_ids[[x]]
+         print(paste('topic',topic_vec))
+         #vr <- as.formula(paste("~",paste0('s(',as.name(problem),',4)'),collapse = " "))
+         vr <- as.formula(full_form)
+         fr <- update.formula(vr,topic_vec ~ . )
+         if(length(topic_vec)>1){
+            m <- estimateEffectDEV(fr, metadata = inputs$meta,group = T,
+                                   stmobj = model)
+         }else{
+            m <- estimateEffect(fr, metadata = inputs$meta,stmobj = model)
+         }
+         full_estimates[[match(x,foci)]] <- m
          set.seed(43)
-         sumef <- summary(esteffect[[i]])
+         sumef <- summary(m)
          efbytopic <- as.data.table(cbind("Factors" = rownames(sumef$tables[[1]]),
                                           sumef$tables[[1]]))
          write_csv(efbytopic, file = paste0(filekey[filekey$var_name=="effect_table_csvs_stmpaper",]$filepath,
-                                            sumef$topics,"_",unitopics[i],".csv"))
+                                            sumef$topics,"_",x,".csv"))
          efbytopicskinny <- as.data.table(cbind("Factors" = rownames(sumef$tables[[1]]),
                                                 sumef$tables[[1]]))[,c("Factors","Estimate","Pr(>|t|)")]
          write_csv(efbytopicskinny, file = paste0(filekey[filekey$var_name=="effect_table_condensed_csvs_stmpaper",]$filepath,
-                                                  sumef$topics,"_",unitopics[i],".csv"))
-         
+                                                  sumef$topics,"_",x,".csv"))
          
       }
+      names(full_estimates) <- paste(foci)
+      
      
-      saveRDS(esteffect,filekey[filekey$var_name=="estimate_unitopic_effects",]$filepath)
+      saveRDS(full_estimates,filekey[filekey$var_name=="estimate_unitopic_effects",]$filepath)
       
       
       

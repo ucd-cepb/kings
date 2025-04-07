@@ -31,6 +31,9 @@
                        pattern = tblpattern, full.names = T)
    cor_tbls <- vector("list",length(tbl_list))
    for(i in 1:length(tbl_list)){
+      #sumef <- summary(esteffect[[i]])
+      #as.data.table(cbind("Factors" = rownames(sumef$tables[[1]]),
+      #sumef$tables[[1]]))[,c("Factors","Estimate","Pr(>|t|)")]
       cor_tbls[[i]] <- read.csv(tbl_list[i])
    }
    names(cor_tbls) <- topic_labels
@@ -63,5 +66,5 @@
       theme(legend.key=element_rect(colour="black",fill="white",
                                     linetype="solid")) 
    saveRDS(corrplot, paste0(filekey[filekey$var_name=="stmpaper_figures",]$filepath, "/corrplot_topicprevalence_on_predictors"))
-   ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", #path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
+   ggsave("predictor_top_corrplot.png",plot = corrplot, device = "png", path = filekey[filekey$var_name=="stmpaper_figures",]$filepath,
           width = 6030, height = 4835, dpi = 300, units = "px", bg = "white")
