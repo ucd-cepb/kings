@@ -5,6 +5,16 @@
 # CFA: Confirmatory Factor Analysis 
 # policy instrument: allocation, trading, pumping restriction, taxes, effective incentives 
 
+
+## April 7
+# have github/box file as input or output 
+
+
+## April 17
+# 1. Get rid of transivitsty_local
+# 2. Correlated the PCA 1/2/3 to characteristics of the basin
+# 3. Compute C-P fitting score 
+
 # Library
 library(ggplot2)
 library(corrplot)
@@ -24,10 +34,10 @@ library(lavaan)
 
 ############################## import the network #########################
 ################### isolated graph #########################
-file_paths <- list.files(path = "/Users/wendysong/Documents/Davis/PhD research/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-# the try on box/git 
-output_folder <- "New_Policy_Tool_Paper/Network_policy_tool_paper/PhD_research/network_policy/graphs"
+# try on box/git 
+output_folder <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_policy/graphs"
 
 
 for (i in 1:length(file_paths)) {
@@ -109,10 +119,11 @@ for (i in 1:length(file_paths)) {
 #num_nodes, num_edges, avg_degree, avg_path_length, 
 #centralization, transitivity(local, global), modularity
 
-file_paths <- list.files(path = "/Users/wendysong/Documents/Davis/PhD research/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-output_folder_statistics <- "/Users/wendysong/Documents/Davis/PhD research/network_policy/"
+output_folder_statistics <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_policy/"
 output_csv_path <- paste0(output_folder_statistics, "network_statistics_isolated.csv")
+#output_csv_path_CP <- paste0(output_folder_statistics, "network_statistics_isolated_CP.csv")
 merged_dataset_path <- paste0(output_folder_statistics, "merged_dataset_isolated.csv")
 
 ## weighted demo
@@ -191,20 +202,20 @@ write.csv(all_network_stats, file = output_csv_path, row.names = FALSE, append =
 
 
 # ------------------------ merge with policy instrument ----------------------------
-policy_data <- read.csv("/Users/wendysong/Documents/Davis/PhD research/policy_by_plan.csv")
+policy_data <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/policy_by_plan.csv")
 policy_data[, 2:6] <- lapply(policy_data[, 2:6], function(x) ifelse(x == 2, 1, ifelse(x == 1, 0.5, 0)))
 # ???????? consider trading as saperate, pending
 policy_data$policy_index <- rowSums(policy_data[, 2:6])
 policy_data$maybe_total <- rowSums(policy_data[, 2:6] == 0.5)
 
-network_statistics <- read.csv("/Users/wendysong/Documents/Davis/PhD research/network_policy/network_statistics_isolated.csv") 
+network_statistics <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_policy/network_statistics_isolated.csv") 
 merged_dataset <- merge(network_statistics, policy_data, by = "gsp_id", all.x = TRUE)
 print(names(merged_dataset))       
 write.csv(merged_dataset, file = merged_dataset_path, row.names = FALSE, append = TRUE)
 
 # ------------------------ merge with meta_data --------------------------------------
 
-meta_data <- read.csv("/Users/wendysong/Documents/Davis/PhD research/gsp_ids_with_metadata.csv")
+meta_data <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/gsp_ids_with_metadata.csv")
 print(names(meta_data))
 # mult_gsas,priority,urbangw_af,percent_dac_by_pop_scaled,fract_of_area_in_habitat,maxdryspell_scaled,Agr_Share_Of_GDP_scaled,Perc_Bach_Degree_Over25_scaled, Perc_Bach_Degree_Over25_scaled,basin_population, Republican_Vote_Share_scaled
 data_meta <- merged_dataset %>%
