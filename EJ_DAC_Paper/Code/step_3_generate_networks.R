@@ -80,7 +80,6 @@ net_graph <- function(networklist, gsp_id) {
    network_graph <- igraph::graph_from_data_frame(networklist$edgelist,
                                                   vertices = networklist$nodelist)
    
-   # network_graph_simp <- network_graph
    network_graph <- igraph::simplify(network_graph,
                                           remove.multiple = TRUE,
                                           remove.loops = FALSE,

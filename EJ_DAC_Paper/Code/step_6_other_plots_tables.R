@@ -1,3 +1,4 @@
+library(scales)
 library(dotenv)
 library(tidyverse)
 library(stargazer)
@@ -27,8 +28,8 @@ for (g in seq_along(gsp_ids)) {
    nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
    place_nodes <- nodes %>% 
       mutate(
-         MHI_std = MHI/10000,
-         POP_std = POP/1000000,
+         MHI_log = log(MHI),
+         POP_log = log(POP),
          is_place = ifelse(is.na(GEOID20), 0, 1)
       ) %>% 
       filter(is_place == 1) 
@@ -40,11 +41,13 @@ all_places <- bind_rows(place_existance) %>%
    mutate(DAC = as.factor(DAC),
           incorporated = as.factor(incorporated),
           exists = as.factor(exists),
-          MHI_std = MHI/10000,
-          POP_std = POP/1000000,)
+          MHI_log = log(MHI),
+          POP_log = log(POP)
+   )
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# data summary table
+# data summary table 
+# table 2 in section 3.3
 
 all_place_nodes %>% 
    select( MHI, POP, DAC, incorporated, per_latino, in_w, out_w, leader_dist_min_w_nona) %>%
@@ -69,12 +72,11 @@ all_place_nodes %>%
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# PLOTS
+# PLOT - FIGURE 2 in RESULTS
 
-
-create_model_plot <- function(data, family, x_var, y_var, x_label, y_label, axis_lim) {
+create_model_plot <- function(data, family, x_var, y_var, x_label, y_label) {
    # Fit the model
-   formula_str <- as.formula(paste(y_var, "~", x_var, "+ incorporated + POP_std + per_latino"))
+   formula_str <- as.formula(paste(y_var, "~", x_var, "+ incorporated + POP_log + per_latino"))
    model <- glm(formula_str, family = family, data = data)
    
    # Create the prediction plot
@@ -82,48 +84,52 @@ create_model_plot <- function(data, family, x_var, y_var, x_label, y_label, axis
                       terms = c(x_var, 'incorporated'),
                       title = " ",
                       legend.title = 'Incorporated',
-                      axis.title = c(x_label, y_label),
-                      axis.lim = axis_lim) +
-      geom_vline(xintercept = c(4.85, 8.16), linetype = "dashed", color = "black") +
-      theme_minimal()
+                      axis.title = c(x_label, y_label)) +
+      geom_vline(xintercept = c(10.78932, 11.30958), linetype = "dashed", color = "black") +
+      theme_minimal() +
+      scale_x_continuous(
+         name = "log(MHI)",
+         sec.axis = sec_axis(
+            trans = ~ exp(.),
+            name = "MHI",
+            breaks = exp(seq(10, 12, by = 1)),
+            labels = label_comma() # Use commas for non-scientific formatting
+         )
+      )
    
    return(plot)
 }
 
 # Calling the function for each combination with customized axis labels and axis limits
 plots <- list(
-   create_model_plot(x_var = "MHI_std", 
+   create_model_plot(x_var = "MHI_log", 
                      y_var = "exists", 
                      data = all_places, 
                      family = 'binomial',
-                     x_label = "MHI (10,000 $)", 
-                     y_label = "Exists (Binary)", 
-                     axis_lim = list(c(0, 15), c(0, 1))), 
+                     x_label = "log(MHI)", 
+                     y_label = "Exists (Binary)"), 
    
-   create_model_plot(x_var = "MHI_std", 
+   create_model_plot(x_var = "MHI_log", 
                      y_var = "in_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "MHI (10,000 $)", 
-                     y_label = "Indegree", 
-                     axis_lim = list(c(0, 15), c(0, 15))),
+                     x_label = "log(MHI)", 
+                     y_label = "Indegree"),
    
-   create_model_plot(x_var = "MHI_std", 
+   create_model_plot(x_var = "MHI_log", 
                      y_var = "out_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "MHI (10,000 $)", 
-                     y_label = "Outdegree", 
-                     axis_lim = list(c(0, 15), c(0, 15))),
+                     x_label = "log(MHI)", 
+                     y_label = "Outdegree"),
    
-   create_model_plot(x_var = "MHI_std", 
+   create_model_plot(x_var = "MHI_log", 
                      y_var = "leader_dist_min_w_nona", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "MHI (10,000 $)", 
-                     y_label = "Leader Distance (Min)", 
-                     axis_lim = list(c(0, 15), c(0, 15)))
-)
+                     x_label = "log(MHI)", 
+                     y_label = "Leader Distance (Min)"))
+
 
 # Print plots
 for (plot in plots) {
@@ -136,47 +142,6 @@ results_plot <- ggarrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]],
                           labels = "AUTO"); results_plot
 
 ggsave('EJ_DAC_Paper/Out/results_plot.png', results_plot, width = 7, height = 6)
-
-# 3d plot
-
-# Define the palette
-
-apn_graph_1 <- all_place_nodes %>%
-   mutate(d_lab = case_when(DAC == 0 ~ 'non-DAC',
-                            DAC == 1 ~ 'DAC',
-                            TRUE ~ 'NA'),
-          i_lab = case_when(incorporated == 0 ~ 'Unincorporated',
-                            incorporated == 1 ~ 'Incorporated',
-                            TRUE ~ 'NA'),
-          color = paste0(i_lab, ' ', d_lab),
-          y_val = as.numeric(factor(color))) 
-
-names <- sort(unique(apn_graph_1$color))
-palette <- c(brewer.pal(n = 6, name = "Paired"))[c(1,2,5,6)]
-named_palette <- setNames(palette, names)
-
-
-# Create the 3D scatter plot with pastel colors for individual points and dark colors for means
-p <- plot_ly() %>%
-   add_markers(data = apn_graph_1,
-               x = ~in_w, 
-               y = ~out_w, 
-               z = ~leader_dist_min_w_nona,
-               marker = list(size = 5,
-                             opacity = 0.5),
-               color = ~color,
-               colors = named_palette
-   ) %>%
-   # Set axis labels
-   layout(scene = list(
-      xaxis = list(title = 'Indegree', range = c(0, 20)),
-      yaxis = list(title = 'Outdegree', range = c(0, 20)),
-      zaxis = list(title = 'Leader Distance', range = c(0,20))
-   ), 
-   legend = list(orientation = 'h', x = 0, y = 0)
-   )
-
-p
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # OLD CODE for plots
@@ -277,7 +242,7 @@ p
             axis.ticks.y = element_blank(),
             legend.position = "bottom"); in_p
    
-   ggsave('EJ_DAC_Paper/Out/in_p.png', in_p, width = 10, height = 3)
+   ggsave('EJ_DAC_Paper/Out/in_p.png', in_p, width = 8, height = 4)
    
    out_p <- ggplot() +
       geom_point(data=apn_graph_1, aes(x = out_w, y = y_val, color = color)) +
@@ -291,6 +256,8 @@ p
             axis.ticks.y = element_blank(),
             legend.position = "bottom"); out_p
    
+   ggsave('EJ_DAC_Paper/Out/out_p.png', out_p, width = 8, height = 4)
+   
    lead_p <- ggplot() +
       geom_point(data=apn_graph_1, aes(x = leader_dist_min_w_nona, y = y_val, color = color)) +
       geom_point(data=group_means, aes(x = leader_dist, y = y_val, color = color, size=5), show.legend = c(size=FALSE)) +
@@ -302,6 +269,8 @@ p
             axis.title.y = element_blank(),
             axis.ticks.y = element_blank(),
             legend.position = "bottom"); lead_p
+   
+   ggsave('EJ_DAC_Paper/Out/lead_p.png', lead_p, width = 8, height = 4)
    
    dims_p <- ggarrange(exists_p, in_p, out_p, lead_p, 
                        nrow = 4, 
@@ -379,3 +348,45 @@ p
    
 }
 
+# 3D PLOT
+{
+   # 3d plot
+   
+   # Define the palette
+   
+   apn_graph_1 <- all_place_nodes %>%
+      mutate(d_lab = case_when(DAC == 0 ~ 'non-DAC',
+                               DAC == 1 ~ 'DAC',
+                               TRUE ~ 'NA'),
+             i_lab = case_when(incorporated == 0 ~ 'Unincorporated',
+                               incorporated == 1 ~ 'Incorporated',
+                               TRUE ~ 'NA'),
+             color = paste0(i_lab, ' ', d_lab),
+             y_val = as.numeric(factor(color))) 
+   
+   names <- sort(unique(apn_graph_1$color))
+   palette <- c(brewer.pal(n = 6, name = "Paired"))[c(1,2,5,6)]
+   named_palette <- setNames(palette, names)
+   
+   
+   # Create the 3D scatter plot with pastel colors for individual points and dark colors for means
+   p <- plot_ly() %>%
+      add_markers(data = apn_graph_1,
+                  x = ~in_w, 
+                  y = ~out_w, 
+                  z = ~leader_dist_min_w_nona,
+                  marker = list(size = 5,
+                                opacity = 0.5),
+                  color = ~color,
+                  colors = named_palette
+      ) %>%
+      # Set axis labels
+      layout(scene = list(
+         xaxis = list(title = 'Indegree', range = c(0, 20)),
+         yaxis = list(title = 'Outdegree', range = c(0, 20)),
+         zaxis = list(title = 'Leader Distance', range = c(0,20))
+      ), 
+      legend = list(orientation = 'h', x = 0, y = 0)
+      )
+   
+   p}
