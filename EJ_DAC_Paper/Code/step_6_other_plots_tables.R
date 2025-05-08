@@ -84,6 +84,7 @@ create_model_plot <- function(data, family, x_var, y_var, x_label, y_label) {
                       terms = c(x_var, 'incorporated'),
                       title = " ",
                       legend.title = 'Incorporated',
+                      colors=c('darkorange', 'forestgreen'),
                       axis.title = c(x_label, y_label)) +
       geom_vline(xintercept = c(10.78932, 11.30958), linetype = "dashed", color = "black") +
       theme_minimal() +
@@ -137,7 +138,7 @@ for (plot in plots) {
 }
 
 
-results_plot <- ggarrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], 
+results_plot <- ggarrange(plots[[1]], plots[[4]], plots[[2]], plots[[3]], 
                           nrow = 2, ncol = 2, common.legend = TRUE, legend = "bottom",
                           labels = "AUTO"); results_plot
 

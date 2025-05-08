@@ -48,6 +48,8 @@ lead_mod_4 <- glm(leader_dist_min_w_nona ~ MHI_log+
                   family=poisson,
                   data = all_place_nodes)
 
+stargazer(in_1, in_2, out_1, out_2, type='text')
+
 stargazer(lead_mod_3, lead_mod_4, type='text')
 
 stargazer(lead_mod_3, lead_mod_4, 
