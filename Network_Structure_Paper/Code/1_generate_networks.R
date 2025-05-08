@@ -153,12 +153,14 @@ net_process <- function(file, gsp_id){
          State == 'local' ~ "Loc_Gov",
          State == 'federal' ~ "NL_Gov",
          State == 'California' ~ "CA_Gov",
-         entity_name %in% gsa_names2 ~ "GSA",
+         # entity_type == 'PERSON' ~ 'person',
+         # entity_type == 'GPE' ~ 'gpe',
          org_type == 'Ambig' ~ NA,
          org_type == 'Drop' ~ NA,
+         entity_name %in% gsa_names2 ~ "GSA",
          TRUE ~ org_type
       )) %>%
-      select(-c(X, State, Abbr)) %>%
+      # select(-c(X, State, Abbr)) %>%
       distinct(., entity_name, .keep_all = TRUE)
 
    el <- ve_w_sections %>% 
@@ -334,7 +336,7 @@ for (g in seq_along(gsp_ids)) {
 
 # test functions for one network
 
-idt <- 86
+idt <- 80
 gsp_idt <- gsp_ids[idt]
 
 glt <- net_process(file = paste0(network_fp, "/",extract_list[idt]),
@@ -344,6 +346,17 @@ ggt <- net_graph(glt, gsp_id = gsp_idt)
 
 plot_graph <- delete_vertices(ggt$igraph, which(igraph::degree(ggt$igraph) == 0))
 
+# add degree to plot_graph
+
+plot_graph <- set_vertex_attr(plot_graph,
+                               'degree',
+                               value = igraph::degree(plot_graph))
+
+igraph::as_data_frame(plot_graph, what='vertices') %>% 
+   as_tibble %>% 
+   # filter(is.na(org_type)) %>% 
+   arrange(desc(degree))
+
 ggraph::ggraph(plot_graph, layout = 'fr') +
    geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
    geom_node_point(aes(color = org_type), size = 5) +
@@ -351,3 +364,4 @@ ggraph::ggraph(plot_graph, layout = 'fr') +
    theme_void() +
    # theme(legend.position = "none") +
    ggtitle(paste0("GSP: ", gsp_idt)) 
+
