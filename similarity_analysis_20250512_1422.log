@@ -1,0 +1,15 @@
+2025-05-12 14:22:58 [INFO] Using 8 cores for processing 
+2025-05-12 14:22:58 [INFO] Starting file discovery 
+2025-05-12 14:22:58 [INFO] Found 10 text files 
+2025-05-12 14:22:58 [INFO] Reading and processing files 
+2025-05-12 14:22:59 [INFO] Cleaning texts 
+2025-05-12 14:23:03 [INFO] Preparing text vector 
+2025-05-12 14:23:04 [INFO] Memory usage: 0.00011 MB 
+2025-05-12 14:23:04 [INFO] Creating text reuse corpus 
+2025-05-12 14:23:12 [INFO] Memory usage: 0.00025 MB 
+2025-05-12 14:23:12 [INFO] Splitting corpus and applying LSH 
+2025-05-12 14:23:26 [INFO] Processing any failed LSH operations 
+2025-05-12 14:23:26 [INFO] Combining buckets and finding candidates 
+2025-05-12 14:23:26 [INFO] Found 2527 candidate pairs 
+2025-05-12 14:23:26 [INFO] Memory usage: 0.00028 MB 
+2025-05-12 14:23:26 [INFO] Scoring candidate pairs 

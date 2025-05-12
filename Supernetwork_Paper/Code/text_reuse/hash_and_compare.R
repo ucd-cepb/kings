@@ -1,37 +1,67 @@
+#' Text Similarity Analysis for Portal Files
+#' 
+#' This script processes text files to identify similarities between documents
+#' using minhashing and locality-sensitive hashing techniques.
+#' Memory requirement: can be pretty significant
+#' 
 
 
-##### A FEW STEPS HERE, PARTICULARLY THE CORPUS GENERATION, ARE EXTREMELY COMPUTATIONALLY INTENSIVE
-##### THIS WAS RUN ON A GOOGLE VIRTUAL MACHINE WITH 16 CORES AND 360 GB OF RAM (MEMORY IS THE LIMITING FACTOR, ADDING MORE CORES DOES NOT HELP)
-##### IF MEMORY GETS TOO TIGHT, THE CORPUS GENERATION WILL APPEAR TO WORK, BUT A MESSAGE WILL OCCUR THAT SAYS A BUNCH (E.G. 1M OR 100K) OF THE TEXTS
-# WERE TOO SHORT AND THUS DROPPED. IF THIS OCCURS, IT MEANS THE CODE DID NOT WORK RIGHT AND SHOULD BE RUN AGAIN.
-where = 'remote'# or "remote"
-rerun_existing = F
+# ----- Configuration -----
+CONFIG <- list(
+   # Optimized for M2 Pro - using more cores but leaving some for system processes
+   cores = min(8, parallel::detectCores() - 2),
+   min_text_length = 400,
+   max_text_length = 1e10,
+   cut_prop = 0.1,
+   space_prop_multiplier = 5,
+   minhash_size = 240,
+   minhash_seed = 40,
+   lsh_bands = 60,
+   min_score = 50,
+   page_delimiter = "<<PAGE_BREAK>>",
+   output_dir = "Supernetwork_Paper/data_products/score_results/"
+)
 
-pack = c('data.table','quanteda','tm','textclean','stringr','pbapply',
-         'parallel','doParallel','benchmarkme','tidyverse','textreuse','dplyr')
-need = pack[!pack %in% installed.packages()[,'Package']]
-lapply(need,install.packages)
-lapply(pack,require,character.only=T)
+# ----- Setup -----
+# Package management
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+   data.table, quanteda, tm, textclean, stringr,
+   future, future.apply, furrr, textreuse, dplyr, tidyverse,
+   progressr, readr
+)
 
-# Read PDF texts from the portal_files directory
-pdf_directory <- 'kings/Multipurpose_Files/portal_files'
+# Add Apple Silicon specific optimization
+if (Sys.info()["sysname"] == "Darwin" && 
+    grepl("arm64", R.version$platform)) {
+   pacman::p_load(RcppParallel)
+   RcppParallel::setThreadOptions(numThreads = CONFIG$cores)
+}
 
-text_files <- list.files('Multipurpose_Files/portal_files/',pattern= 'txt$',full.names = T)
-finfo <- file.info(text_files)
-#finfo <- finfo[finfo$ctime > lubridate::ymd_hms('2025-05-12 11:00:00 PDT'),]
-#text_files <- text_files[text_files %in% rownames(finfo)]
+# Increase memory limit for parallel operations
+options(future.globals.maxSize = 1024^3 * 16)  # Allow up to 16GB for parallel operations
 
-page_delimiter <- "<<PAGE_BREAK>>"
+# Setup logging
+log_file <- file(paste0("similarity_analysis_", format(Sys.time(), "%Y%m%d_%H%M"), ".log"), "w")
+log_message <- function(msg, level = "INFO") {
+   timestamp <- format(Sys.time(), "%Y-%m-%d %H:%M:%S")
+   message <- paste0(timestamp, " [", level, "] ", msg)
+   cat(message, "\n", file = log_file, append = TRUE)
+   cat(message, "\n")
+}
 
-text_list <- lapply(text_files,function(x) {
-   print(x)
-   read_back <- readLines(x, warn = FALSE)
-   read_back <- paste(read_back, collapse = "\n")
-   pages <- unlist(strsplit(read_back, page_delimiter, fixed = TRUE))
-})
+# Setup parallelization
+plan(multisession, workers = CONFIG$cores)
+options(future.globals.onReference = "warning")
+log_message(paste("Using", CONFIG$cores, "cores for processing"))
 
+# Configure progress reporting
+progressr::handlers(global = TRUE)
+progressr::handlers("progress")
 
-cleanText <- function(text, cut_prop = 0.1,space_prop_multiplier = 5) {
+# ----- Functions -----
+cleanText <- function(text, cut_prop = CONFIG$cut_prop, 
+                      space_prop_multiplier = CONFIG$space_prop_multiplier) {
    text = gsub('\"\"', '', text, fixed = TRUE)
    chars = nchar(text)
    periods = stringr::str_count(text, "\\.")
@@ -40,78 +70,190 @@ cleanText <- function(text, cut_prop = 0.1,space_prop_multiplier = 5) {
    tildes = stringr::str_count(text, '~')
    quotes = stringr::str_count(text, '\\"')
    spaces = stringr::str_count(text, '\\s')
-   valid_indices = chars > 400 & chars <= 1e10 & (periods/chars) < cut_prop & (quotes/chars) < cut_prop & 
-      (tildes/chars) < cut_prop & (numbers/chars) < cut_prop & 
-      (caps/chars) < cut_prop & (spaces/chars) < (cut_prop * space_prop_multiplier)
+   valid_indices = chars > CONFIG$min_text_length & 
+      chars <= CONFIG$max_text_length & 
+      (periods/chars) < cut_prop & 
+      (quotes/chars) < cut_prop & 
+      (tildes/chars) < cut_prop & 
+      (numbers/chars) < cut_prop & 
+      (caps/chars) < cut_prop & 
+      (spaces/chars) < (cut_prop * space_prop_multiplier)
    text[!valid_indices] <- NA
    return(text)
 }
 
-library(pbapply)
-text_list2 <- pblapply(text_list,cleanText,cl = 8)
+read_text_file <- function(filepath) {
+   tryCatch({
+      text <- readr::read_file(filepath)
+      pages <- strsplit(text, CONFIG$page_delimiter, fixed = TRUE)[[1]]
+      return(pages)
+   }, error = function(e) {
+      log_message(paste("Error reading file:", filepath, "-", e$message), "ERROR")
+      return(character(0))
+   })
+}
 
-file_rep_list <- mapply(function(x,y) rep(x,y),x = basename(files),y = sapply(text_list2,length))
-file_vec <- unlist(file_rep_list)
-page_list <- lapply(text_list2,seq_along)
-page_vec <- unlist(page_list)
+report_memory <- function() {
+   mem_used <- gc(reset = TRUE)
+   log_message(paste("Memory usage:", format(mem_used[2, 2] / 1024^2, digits = 2), "MB"))
+}
 
-text_vec <- unlist(text_list2)
-names(text_vec) <- paste0(file_vec,'_',page_vec)
+# ----- Main Process -----
+# File discovery and reading
+log_message("Starting file discovery")
+text_files <- list.files('Multipurpose_Files/portal_files/', 
+                         pattern = 'txt$', full.names = TRUE)
 
+if (length(text_files) == 0) {
+   stop("No text files found in the specified directory")
+}
+log_message(paste("Found", length(text_files), "text files"))
 
+# 2. Reading and processing files
+log_message("Reading and processing files")
+text_list <- progressr::with_progress({
+   p <- progressr::progressor(steps = length(text_files))
+   future_lapply(text_files, function(file) {
+      result <- read_text_file(file)
+      p()
+      return(result)
+   }, future.seed = TRUE)
+})
+
+# 3. Clean texts
+log_message("Cleaning texts")
+text_list2 <- future_lapply(text_list, cleanText, future.seed = TRUE)
+
+# Added intermediate cleanup
+rm(text_list)
 gc()
-minhash <- minhash_generator(n = 240, seed = 40)
-progress_bars = T
-mcores = 8
-options("mc.cores" = mcores)
-portal_corpus = TextReuseCorpus(text = text_vec,
-                                tokenizer = tokenize_ngrams, n = 10,
-                                minhash_func = minhash, keep_tokens = TRUE,
-                                progress = progress_bars, skip_short = T)
+
+# 4. Prepare text vector
+log_message("Preparing text vector")
+# Create data structure for document management
+documents <- data.table(
+   file_path = rep(text_files, sapply(text_list2, length)),
+   file_name = rep(basename(text_files), sapply(text_list2, length)),
+   page_num = unlist(lapply(sapply(text_list2, length), seq_len)),
+   text = unlist(text_list2)
+)
+documents <- documents[!is.na(text)]
+
+# Added intermediate cleanup
+rm(text_list2)
 gc()
 
-# Adjust the number of cores to match the available resources on your computer.
-# For example, if you have 8 cores available, you might set mcores to 4 to leave
-# some resources for other processes.
-mcores = 4
-options("mc.cores" = mcores)
-split_corpus_ntiles = dplyr::ntile(x = seq(portal_corpus), n = mcores*10)
-split_corpus = split(portal_corpus, split_corpus_ntiles)
+text_vec <- documents$text
+names(text_vec) <- paste0(documents$file_name, '_', documents$page_num)
+
+report_memory()
+
+# 5. Create corpus
+log_message("Creating text reuse corpus")
+minhash <- minhash_generator(n = CONFIG$minhash_size, seed = CONFIG$minhash_seed)
+
+portal_corpus <- TextReuseCorpus(
+   text = text_vec,
+   tokenizer = tokenize_ngrams, n = 10,
+   minhash_func = minhash, keep_tokens = TRUE,
+   progress = FALSE, skip_short = TRUE
+)
+
+report_memory()
+
+# 6. Split corpus and apply LSH - optimized chunk size
+log_message("Splitting corpus and applying LSH")
+split_corpus_ntiles <- dplyr::ntile(x = seq(portal_corpus), n = CONFIG$cores * 5)
+split_corpus <- split(portal_corpus, split_corpus_ntiles)
 rm(portal_corpus)
 gc()
 
-#cluster = makeCluster(mcores)
-#registerDoParallel(cl = cluster)
-#parallel::clusterEvalQ(cluster, 'require(data.table)')
-#parallel::clusterEvalQ(cluster, 'require(textreuse)')
+split_buckets <- progressr::with_progress({
+   p <- progressr::progressor(steps = length(split_corpus))
+   future_map(split_corpus, function(x) {
+      result <- tryCatch({
+         textreuse::lsh(x, bands = CONFIG$lsh_bands)
+      }, error = function(e) {
+         log_message(paste("Error in LSH:", e$message), "ERROR")
+         NULL
+      })
+      p()
+      return(result)
+   }, .options = furrr_options(seed = TRUE))
+})
 
-##### this is currently just running sequentially ###
-split_buckets = foreach(x = split_corpus) %do% {textreuse::lsh(x, bands = 60)}
-
-while(any(sapply(split_buckets, is.null))){
-  null_fails = which(sapply(split_buckets, is.null))
-  split_buckets[null_fails] <- pblapply(null_fails, function(x) lsh(split_corpus[[x]], bands = 60, progress = F), cl = 5)
+# 7. Retry failed LSH operations
+log_message("Processing any failed LSH operations")
+retry_count <- 0
+while(any(sapply(split_buckets, is.null)) && retry_count < 3) {
+   retry_count <- retry_count + 1
+   null_fails <- which(sapply(split_buckets, is.null))
+   log_message(paste("Retrying", length(null_fails), "failed LSH operations (attempt", retry_count, ")"))
+   
+   split_buckets[null_fails] <- future_lapply(null_fails, function(x) {
+      tryCatch({
+         textreuse::lsh(split_corpus[[x]], bands = CONFIG$lsh_bands, progress = FALSE)
+      }, error = function(e) {
+         log_message(paste("Error in LSH retry:", e$message), "ERROR")
+         NULL
+      })
+   }, future.seed = TRUE)
 }
 
-portal_buckets = do.call(rbind, split_buckets)
+if(any(sapply(split_buckets, is.null))) {
+   log_message(paste(sum(sapply(split_buckets, is.null)), "LSH operations permanently failed"), "WARN")
+}
+
+# 8. Combine buckets and get candidates
+log_message("Combining buckets and finding candidates")
+portal_buckets <- do.call(rbind, split_buckets[!sapply(split_buckets, is.null)])
 portal_candidates <- lsh_candidates(buckets = portal_buckets)
-require(dplyr)
-candidate_splits = split(portal_candidates, ntile(1:nrow(portal_candidates), n = nrow(portal_candidates) %/% 10000))
-gc()
+log_message(paste("Found", nrow(portal_candidates), "candidate pairs"))
 
-parallel::clusterEvalQ(cluster, 'require(data.table)')
-parallel::clusterEvalQ(cluster, 'require(textreuse)')
-score_list = foreach(i = candidate_splits) %dopar% {
-  send_names = unique(c(i$a, i$b))
-  send_text = flist[send_names]
-  score_list = mapply(function(aa, bb) textreuse::align_local(a = aa, b = bb)$score, aa = send_text[i$a], bb = send_text[i$b])
-  data.table::data.table(a = i$a, b = i$b, score = score_list)
-}
-stopCluster(cluster)
-gc()
+report_memory()
 
-score_dt = rbindlist(score_list)
-score_dt <- score_dt[score >= 300,]
+# 9. Score candidates - optimized chunk size for processing larger chunks
+log_message("Scoring candidate pairs")
+candidate_splits <- split(portal_candidates, 
+                          ntile(1:nrow(portal_candidates), 
+                                n = min(100, nrow(portal_candidates) %/% 20000)))
 
-dir.create('Supernetwork_Paper/data_products/score_results/', showWarnings = FALSE)
-saveRDS(score_dt, paste0("Supernetwork_Paper/data_products/score_results/portal_page_scores_scratch_file.rds"), compress = TRUE)
+score_list <- progressr::with_progress({
+   p <- progressr::progressor(steps = length(candidate_splits))
+   future_lapply(candidate_splits, function(chunk) {
+      # Extract document IDs and texts
+      a_docs <- documents[match(chunk$a, paste0(file_name, '_', page_num))]
+      b_docs <- documents[match(chunk$b, paste0(file_name, '_', page_num))]
+      
+      # Calculate alignment scores
+      scores <- mapply(function(a_text, b_text) {
+         tryCatch({
+            textreuse::align_local(a = a_text, b = b_text)$score
+         }, error = function(e) {
+            log_message(paste("Error in alignment:", e$message), "ERROR")
+            0
+         })
+      }, a_text = a_docs$text, b_text = b_docs$text)
+      
+      p()
+      data.table(a = chunk$a, b = chunk$b, score = scores)
+   }, future.seed = TRUE)
+})
+
+# 10. Combine and filter results
+log_message("Combining and filtering results")
+score_dt <- rbindlist(score_list)
+score_dt <- score_dt[score >= CONFIG$min_score]
+log_message(paste("Found", nrow(score_dt), "significant matches with score >=", CONFIG$min_score))
+
+# 11. Save results
+log_message("Saving results")
+dir.create(CONFIG$output_dir, showWarnings = FALSE, recursive = TRUE)
+output_file <- paste0(CONFIG$output_dir, "portal_page_scores_", 
+                      format(Sys.time(), "%Y%m%d"), ".rds")
+saveRDS(score_dt, output_file, compress = TRUE)
+
+log_message(paste("Results saved to", output_file))
+log_message("Process completed successfully")
+
+close(log_file)

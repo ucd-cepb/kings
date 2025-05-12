@@ -1,0 +1,5 @@
+2025-05-12 14:15:52 [INFO] Using 8 cores for processing 
+2025-05-12 14:15:52 [INFO] Starting file discovery 
+2025-05-12 14:15:52 [INFO] Found 158 text files 
+2025-05-12 14:15:52 [INFO] Reading and processing files 
+2025-05-12 14:15:52 [ERROR] Critical error: should not be called with handlers on the stack 

@@ -1,0 +1,20 @@
+2025-05-12 14:24:08 [INFO] Using 8 cores for processing 
+2025-05-12 14:24:08 [INFO] Starting file discovery 
+2025-05-12 14:24:08 [INFO] Found 158 text files 
+2025-05-12 14:24:08 [INFO] Reading and processing files 
+2025-05-12 14:24:12 [INFO] Cleaning texts 
+2025-05-12 14:24:34 [INFO] Preparing text vector 
+2025-05-12 14:24:35 [INFO] Memory usage: 0.00045 MB 
+2025-05-12 14:24:35 [INFO] Creating text reuse corpus 
+2025-05-12 14:27:10 [INFO] Memory usage: 0.0021 MB 
+2025-05-12 14:27:10 [INFO] Splitting corpus and applying LSH 
+2025-05-12 14:30:46 [INFO] Processing any failed LSH operations 
+2025-05-12 14:30:46 [INFO] Combining buckets and finding candidates 
+2025-05-12 14:31:01 [INFO] Found 162504 candidate pairs 
+2025-05-12 14:31:04 [INFO] Memory usage: 0.0025 MB 
+2025-05-12 14:31:04 [INFO] Scoring candidate pairs 
+2025-05-12 14:39:26 [INFO] Combining and filtering results 
+2025-05-12 14:39:26 [INFO] Found 143628 significant matches with score >= 300 
+2025-05-12 14:39:26 [INFO] Saving results 
+2025-05-12 14:39:26 [INFO] Results saved to Supernetwork_Paper/data_products/score_results/portal_page_scores_20250512.rds 
+2025-05-12 14:39:26 [INFO] Process completed successfully 
