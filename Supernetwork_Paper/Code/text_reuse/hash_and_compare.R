@@ -16,13 +16,22 @@ lapply(pack,require,character.only=T)
 # Read PDF texts from the portal_files directory
 pdf_directory <- 'kings/Multipurpose_Files/portal_files'
 
-
 text_files <- list.files('Multipurpose_Files/portal_files/',pattern= 'txt$',full.names = T)
+finfo <- file.info(text_files)
+#finfo <- finfo[finfo$ctime > lubridate::ymd_hms('2025-05-12 11:00:00 PDT'),]
+#text_files <- text_files[text_files %in% rownames(finfo)]
 
-text_list <- lapply(text_files[1:10],readLines)
+page_delimiter <- "<<PAGE_BREAK>>"
 
-cleanText <- function(text, cut_prop = 0.1) {
-   cut = cut_prop
+text_list <- lapply(text_files,function(x) {
+   print(x)
+   read_back <- readLines(x, warn = FALSE)
+   read_back <- paste(read_back, collapse = "\n")
+   pages <- unlist(strsplit(read_back, page_delimiter, fixed = TRUE))
+})
+
+
+cleanText <- function(text, cut_prop = 0.1,space_prop_multiplier = 5) {
    text = gsub('\"\"', '', text, fixed = TRUE)
    chars = nchar(text)
    periods = stringr::str_count(text, "\\.")
@@ -31,39 +40,31 @@ cleanText <- function(text, cut_prop = 0.1) {
    tildes = stringr::str_count(text, '~')
    quotes = stringr::str_count(text, '\\"')
    spaces = stringr::str_count(text, '\\s')
-   valid_indices = chars > 400 & chars <= 1e5 & (periods/chars) < cut & (quotes/chars) < cut & 
-      (tildes/chars) < cut & (numbers/chars) < cut & 
-      (caps/chars) < cut & (spaces/chars) < (cut * 2)
-   text[valid_indices] <- ifelse(chars[valid_indices] > 1e5, NA, text[valid_indices])
-   text[valid_indices]
+   valid_indices = chars > 400 & chars <= 1e10 & (periods/chars) < cut_prop & (quotes/chars) < cut_prop & 
+      (tildes/chars) < cut_prop & (numbers/chars) < cut_prop & 
+      (caps/chars) < cut_prop & (spaces/chars) < (cut_prop * space_prop_multiplier)
+   text[!valid_indices] <- NA
+   return(text)
 }
 
-length(text_list)
-text_list[[10]]
+library(pbapply)
+text_list2 <- pblapply(text_list,cleanText,cl = 8)
+
+file_rep_list <- mapply(function(x,y) rep(x,y),x = basename(files),y = sapply(text_list2,length))
+file_vec <- unlist(file_rep_list)
+page_list <- lapply(text_list2,seq_along)
+page_vec <- unlist(page_list)
+
+text_vec <- unlist(text_list2)
+names(text_vec) <- paste0(file_vec,'_',page_vec)
 
 
-text_list <- lapply(text_list,cleanText)
-
-
-
-text_files
-sapply(text_list,length)
-
-
-1e5 == 100000
-
-
-# Prepare the text list for processing
-flist = unlist(pdf_texts)
-names(flist) <- names(pdf_texts)
 gc()
-
 minhash <- minhash_generator(n = 240, seed = 40)
 progress_bars = T
-mcores = 4
+mcores = 8
 options("mc.cores" = mcores)
-
-portal_corpus = TextReuseCorpus(text = flist,
+portal_corpus = TextReuseCorpus(text = text_vec,
                                 tokenizer = tokenize_ngrams, n = 10,
                                 minhash_func = minhash, keep_tokens = TRUE,
                                 progress = progress_bars, skip_short = T)
@@ -79,11 +80,13 @@ split_corpus = split(portal_corpus, split_corpus_ntiles)
 rm(portal_corpus)
 gc()
 
-cluster = makeCluster(mcores)
-registerDoParallel(cl = cluster)
-parallel::clusterEvalQ(cluster, 'require(data.table)')
-parallel::clusterEvalQ(cluster, 'require(textreuse)')
-split_buckets = foreach(x = split_corpus) %dopar% {textreuse::lsh(x, bands = 60)}
+#cluster = makeCluster(mcores)
+#registerDoParallel(cl = cluster)
+#parallel::clusterEvalQ(cluster, 'require(data.table)')
+#parallel::clusterEvalQ(cluster, 'require(textreuse)')
+
+##### this is currently just running sequentially ###
+split_buckets = foreach(x = split_corpus) %do% {textreuse::lsh(x, bands = 60)}
 
 while(any(sapply(split_buckets, is.null))){
   null_fails = which(sapply(split_buckets, is.null))
