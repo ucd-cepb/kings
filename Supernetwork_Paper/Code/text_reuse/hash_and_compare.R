@@ -128,6 +128,10 @@ text_list2 <- future_lapply(text_list, cleanText, future.seed = TRUE)
 rm(text_list)
 gc()
 
+
+page_info <- readRDS("Multipurpose_Files/gsp_docs_w_meta")
+page_info <- page_info[,.(gsp_id,page_num,admin,basin_plan,sust_criteria,monitoring_networks,projects_mgmt_actions,is_comment,is_reference)]
+
 # 4. Prepare text vector
 log_message("Preparing text vector")
 # Create data structure for document management
@@ -137,8 +141,11 @@ documents <- data.table(
    page_num = unlist(lapply(sapply(text_list2, length), seq_len)),
    text = unlist(text_list2)
 )
-documents <- documents[!is.na(text)]
+documents$gsp_id <- str_extract(documents$file_path,'[0-9]{4}')
 
+documents <- merge(documents,page_info,all.x = T)
+documents <- documents[!is.na(text)]
+saveRDS(documents,'Supernetwork_Paper/data_products/page_metadata.RDS')
 # Added intermediate cleanup
 rm(text_list2)
 gc()
