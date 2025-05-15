@@ -1,8 +1,0 @@
-2025-05-12 14:21:06 [INFO] Using 8 cores for processing 
-2025-05-12 14:21:06 [INFO] Starting file discovery 
-2025-05-12 14:21:06 [INFO] Found 158 text files 
-2025-05-12 14:21:06 [INFO] Reading and processing files 
-2025-05-12 14:21:12 [INFO] Cleaning texts 
-2025-05-12 14:21:33 [INFO] Preparing text vector 
-2025-05-12 14:21:33 [INFO] Memory usage: 0.00021 MB 
-2025-05-12 14:21:33 [INFO] Creating text reuse corpus 

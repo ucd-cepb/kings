@@ -122,64 +122,135 @@ theme_map() + guides(alpha = 'none') +
 scale_size_continuous(range = c(0.1,5),name = '% highly similar pages') +
 ggtitle('High % of page simliarity between GSPs')
 
-# replicate this plot but for ONLY pages that are base_plan == TRUE#
 
-# Initialize lists to store network and ggplot objects for each plan section type
-network_list <- list()
-ggplot_list <- list()
 
-# Iterate over each plan section type
-for (section in columns_to_merge) {
-    # Filter the documents data for pages where the section is TRUE
-    documents_section <- documents[get(section) == TRUE, .(gsp_id, page_num)]
-    
-    # Filter the shared_v1 data for pages where the section is TRUE in either file
-    shared_v1_section <- shared_v1[
-        (a_gsp_id %in% documents_section$gsp_id & a_page_num %in% documents_section$page_num) |
-        (b_gsp_id %in% documents_section$gsp_id & b_page_num %in% documents_section$page_num)
-    ]
-    
-    # Initialize the network for the current section
-    netV1_section <- network.initialize(n = length(flist_v1), directed = FALSE)
-    netV1_section %v% 'vertex.names' <- flist_v1
-    
-    # Add edges to the network for the current section
-    add.edges(netV1_section, 
-              names.eval = rep(list(list('plus300_pages', 'plus300_ratio')), nrow(shared_v1_section)),
-              vals.eval = lapply(1:nrow(shared_v1_section), function(r) { as.list(shared_v1_section[r, c('N', 'plus300_ratio')]) }),
-              head = match(shared_v1_section$a_file, netV1_section %v% 'vertex.names'),
-              tail = match(shared_v1_section$b_file, netV1_section %v% 'vertex.names'))
-    
-    # Create spatial attributes for vertices in the current section network
-    vertex_gsp_ids_section <- str_extract(netV1_section %v% 'vertex.names', '[0-9]{4}$')
-    point_indices_section <- match(vertex_gsp_ids_section, result_points$gsp_id)
-    
-    # Add coordinates to the network vertices for the current section
-    netV1_section %v% 'lon' <- st_coordinates(result_points$point_geometry)[point_indices_section, 1]
-    netV1_section %v% 'lat' <- st_coordinates(result_points$point_geometry)[point_indices_section, 2]
-    
-    # Create layout matrix from coordinates for the current section
-    geo_layout_section = st_coordinates(result_points$point_geometry)[point_indices_section,]
-    
-    # Ensure the network object is properly fortified with consistent data for the current section
-    netV1_section_gg <- ggnetwork::fortify(netV1_section, layout = geo_layout_section, scale = F)
-    
-    # Store the network object in the list
-    network_list[[section]] <- netV1_section
-    
-    # Create and store the ggplot object for the current section
-    ggplot_list[[section]] <- ggplot() + 
-        geom_sf(data = gsp_bounds) + 
-        geom_nodes(data = netV1_section_gg, aes(x = x, y = y)) + 
-        geom_edges(data = netV1_section_gg[netV1_section_gg$plus300_ratio > 0.10,],
-                   aes(x = x, y = y, xend = xend, yend = yend, size = round(100 * plus300_ratio, 0), alpha = round(100 * plus300_ratio, 0))) + 
-        theme_map() + guides(alpha = 'none') + 
-        scale_size_continuous(range = c(0.1, 5), name = '% highly similar pages') +
-        ggtitle(paste('High % of page similarity between GSPs (', section, ' Only)', sep = ''))
+
+
+
+
+
+
+# Fortify with layout
+netV1_gg <- ggnetwork::fortify(netV1, layout = geo_layout)
+
+# Create the plot
+ggplot(netV1_gg, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(aes(size = plus300_pages), alpha = 0.5) +
+  geom_nodes(size = 3) +
+  theme_void()
+
+
+
+fortify.network()
+?ggnetwork
+netV1_gg <- ggnetwork(netV1)
+netV1_gg
+
+,layout = cbind(netV1 %v% 'lon',netV1 %v% 'lat'))
+netV1_gg
+
+
+
+ggplot() + geom_nodes(data = netV1_gg,aes(x = lat,y = lon)) +
+   geom_edges(data =data = netV1_gg,aes(x = lat,y = lon,xend = ) )
+# Create a simple data frame with the coordinates
+layout_df <- data.frame(
+   x = netV1 %v% 'x',
+   y = netV1 %v% 'y'
+)
+
+# Check for NA values
+if(any(is.na(layout_df$x) | is.na(layout_df$y))) {
+   cat("Warning: There are NA values in the coordinates\n")
+   # You might want to handle these
+}
+
+
+# Create edge dataframe from the network object
+edges <- as.data.frame(as.matrix.network.edgelist(netV1))
+colnames(edges) <- c("from_idx", "to_idx")
+edges$weight <- netV1 %e% "plus300_pages"
+
+# Add coordinates for the edges
+edges$x1 <- netV1 %v% "x"[edges$from_idx]
+edges$y1 <- netV1 %v% "y"[edges$from_idx]
+edges$x2 <- netV1 %v% "x"[edges$to_idx]
+edges$y2 <- netV1 %v% "y"[edges$to_idx]
+
+# Create node dataframe
+nodes <- data.frame(
+   id = 1:network.size(netV1),
+   name = netV1 %v% "vertex.names",
+   x = netV1 %v% "x",
+   y = netV1 %v% "y"
+)
+
+# Filter out any edges with NA coordinates
+if(any(is.na(edges$x1) | is.na(edges$y1) | is.na(edges$x2) | is.na(edges$y2))) {
+   cat("Warning: Some edges have missing coordinates. Removing these edges.\n")
+   edges <- edges[!is.na(edges$x1) & !is.na(edges$y1) & 
+                     !is.na(edges$x2) & !is.na(edges$y2), ]
 }
 
 
 
 
+# Create a layout matrix using the coordinates
+layout_matrix <- cbind(netV1 %v% "x", netV1 %v% "y")
+# Use this matrix directly
+netV1_gg <- ggnetwork(netV1, layout = layout_matrix)
+# Get a layout from network.layout
+layout_matrix <- network.layout.fruchtermanreingold(netV1)
+
+# Use that layout with ggnetwork
+netV1_gg <- ggnetwork(netV1, layout = layout_matrix)
+layout_matrix
+
+netV1_gg <- ggnetwork(netV1, layout = NULL, cell.jitter = 0, arrow.gap = 0)
 
 
+ggnetwork(netV1)
+
+
+
+net <- GGally::ggnet2(netV1)
+net
+
+
+# Convert network to ggnetwork format with node coordinates from spatial data
+netV1_gg <- ggnetwork(netV1, layout = cbind(netV1 %v% 'x',  netV1 %v% 'y'))
+
+# Replace the x and y coordinates directly
+netV1_gg$x <- layout_df$x[netV1_gg$vertex.names]
+netV1_gg$y <- layout_df$y[netV1_gg$vertex.names]
+netV1_gg$xend <- layout_df$x[netV1_gg$vertex.namesend]
+netV1_gg$yend <- layout_df$y[netV1_gg$vertex.namesend]
+
+
+
+netV1
+
+
+duplicated(netV1 %v% 'y')
+
+
+# Plot using ggplot2
+ggplot() +
+   geom_sf(data = gsp_bounds, color = "black", fill = "lightblue", alpha = 0.5) +
+   geom_edges(data = netV1_gg, 
+              aes(x = x, y = y, xend = xend, yend = yend, size = plus300_pages), 
+              color = "blue", alpha = 0.7) +
+   geom_nodes(data = netV1_gg, 
+              aes(x = x, y = y), 
+              color = "red", size = 3) +
+   scale_size_continuous(name = "Pages with score > 300",
+                         range = c(0.2, 2)) +
+   theme_minimal() + 
+   labs(title = "GSP Network Overlay", 
+        subtitle = "Links represent text similarity between GSP documents")
+
+# If you want to also plot just the basins with their names
+ggplot() +
+   geom_sf(data = gsp_bounds, aes(fill = Basin_Name)) +
+   theme_minimal() +
+   labs(title = "GSP Basins", fill = "Basin Name")
