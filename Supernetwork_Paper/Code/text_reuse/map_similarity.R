@@ -39,7 +39,8 @@ basin_ids <- fread('EJ_DAC_Paper/Data/gsp_basin_ids.csv')
 score_dt$a_file <- as.character(score_dt$a_file)
 score_dt$b_file <- as.character(score_dt$b_file)
 
-
+score_dt$a_version <- str_extract(score_dt$a_file,'^v[1-9]')
+score_dt$b_version <- str_extract(score_dt$b_file,'^v[1-9]')
 
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
@@ -67,6 +68,7 @@ shared_300_total$a_page_total <- page_count$N[match(shared_300_total$a_gsp_id,pa
 shared_300_total$b_page_total <- page_count$N[match(shared_300_total$b_gsp_id,page_count$gsp_id)]
 shared_300_total[,min_page_total:=min(a_page_total,b_page_total)]
 
+#### need to replicate this in the loop below
 shared_300_total[, min_page := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = c("a_page_total",'b_page_total')]
 shared_300_total$plus300_ratio <- shared_300_total$N/shared_300_total$min_page
 
@@ -130,14 +132,12 @@ ggplot_list <- list()
 
 # Iterate over each plan section type
 for (section in columns_to_merge) {
+   section = 'admin'
     # Filter the documents data for pages where the section is TRUE
     documents_section <- documents[get(section) == TRUE, .(gsp_id, page_num)]
     
-    # Filter the shared_v1 data for pages where the section is TRUE in either file
-    shared_v1_section <- shared_v1[
-        (a_gsp_id %in% documents_section$gsp_id & a_page_num %in% documents_section$page_num) |
-        (b_gsp_id %in% documents_section$gsp_id & b_page_num %in% documents_section$page_num)
-    ]
+    shared_dt <- score_dt[score > 300 & a_version == 'v1' & b_version == 'v1' & get(paste0('a_',section))==T & get(paste0('b_',section)) , .N, by = .(a_file, b_file, a_version, b_version,a_gsp_id,b_gsp_id)]
+    shared_dt$section <- section
     
     # Initialize the network for the current section
     netV1_section <- network.initialize(n = length(flist_v1), directed = FALSE)
@@ -145,8 +145,8 @@ for (section in columns_to_merge) {
     
     # Add edges to the network for the current section
     add.edges(netV1_section, 
-              names.eval = rep(list(list('plus300_pages', 'plus300_ratio')), nrow(shared_v1_section)),
-              vals.eval = lapply(1:nrow(shared_v1_section), function(r) { as.list(shared_v1_section[r, c('N', 'plus300_ratio')]) }),
+              names.eval = rep(list(list('plus300_pages', 'plus300_ratio')), nrow(shared_dt)),
+              vals.eval = lapply(1:nrow(shared_v1_section), function(r) { as.list(shared_dt[r, c('N', 'plus300_ratio')]) }),
               head = match(shared_v1_section$a_file, netV1_section %v% 'vertex.names'),
               tail = match(shared_v1_section$b_file, netV1_section %v% 'vertex.names'))
     
