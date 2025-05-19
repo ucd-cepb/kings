@@ -28,6 +28,9 @@ documents <- readRDS('Supernetwork_Paper/data_products/page_metadata.RDS')
 # Define the columns to be vectorized
 columns_to_merge <- c("basin_plan", "sust_criteria", "monitoring_networks", "projects_mgmt_actions", "admin")
 
+page_sums <- documents[, setNames(lapply(.SD, sum, na.rm = TRUE), paste0('p_', columns_to_merge)), .SDcols = columns_to_merge,by=.(gsp_id)]
+
+
 score_dt <- merge(score_dt,documents[,c('gsp_id','page_num',columns_to_merge),with = F],by.x = c('a_gsp_id','a_page_num'),by.y = c('gsp_id','page_num'))
 setnames(score_dt,columns_to_merge,paste0('a_',columns_to_merge))
 score_dt <- merge(score_dt,documents[,c('gsp_id','page_num',columns_to_merge),with = F],by.x = c('b_gsp_id','b_page_num'),by.y = c('gsp_id','page_num'))
@@ -132,13 +135,26 @@ ggplot_list <- list()
 
 # Iterate over each plan section type
 for (section in columns_to_merge) {
-   section = 'admin'
+    section = 'admin'
     # Filter the documents data for pages where the section is TRUE
-    documents_section <- documents[get(section) == TRUE, .(gsp_id, page_num)]
+    documents_section <- documents[get(section) == TRUE,.N,by=.(gsp_id)]
+    setnames(documents_section,'N','section_page_count')
     
     shared_dt <- score_dt[score > 300 & a_version == 'v1' & b_version == 'v1' & get(paste0('a_',section))==T & get(paste0('b_',section)) , .N, by = .(a_file, b_file, a_version, b_version,a_gsp_id,b_gsp_id)]
+    setnames(shared_dt,'N','plus300_pages')
     shared_dt$section <- section
     
+    # Merge shared_dt with documents_section to create a_N and b_N columns
+    shared_dt <- merge(shared_dt, documents_section, by.x = 'a_gsp_id', by.y = 'gsp_id', all.x = TRUE)
+    setnames(shared_dt, 'section_page_count', 'a_section_count')
+    
+
+    shared_dt <- merge(shared_dt, documents_section, by.x = 'b_gsp_id', by.y = 'gsp_id', all.x = TRUE)
+    setnames(shared_dt, 'section_page_count', 'b_N')
+    
+    
+    
+   
     # Initialize the network for the current section
     netV1_section <- network.initialize(n = length(flist_v1), directed = FALSE)
     netV1_section %v% 'vertex.names' <- flist_v1
