@@ -546,3 +546,39 @@ overall_summary <- combined_core_df %>%
    mutate(percent_core = round(100 * count_core / sum(count_core), 1)) %>%
    arrange(desc(percent_core))
 write_csv(overall_summary, file.path(output_dir, "core_orgtype_percent_overall.csv"))
+
+# What ae GPE in core 
+gpe_core_records <- list()
+
+for (file in csv_files) {
+   df <- read_csv(file, show_col_types = FALSE)
+   
+   if (!all(c("core", "org_type", "name") %in% names(df))) next
+   
+   gsp_id <- tools::file_path_sans_ext(basename(file))  # e.g. "0007"
+   
+   # Get GPE nodes in core
+   df_gpe_core <- df %>%
+      filter(core == 1, org_type == "GPE") %>%
+      mutate(gsp_id = gsp_id)
+   
+   if (nrow(df_gpe_core) > 0) {
+      gpe_core_records[[gsp_id]] <- df_gpe_core
+   }
+}
+
+combined_gpe_core <- bind_rows(gpe_core_records)
+
+gpe_summary <- combined_gpe_core %>%
+   group_by(name) %>%
+   summarise(
+      frequency = n(),
+      gsp_ids = paste(sort(unique(gsp_id)), collapse = ",")
+   ) %>%
+   arrange(desc(frequency))
+
+write_csv(gpe_summary, file.path(output_dir, "core_GPE_name_summary.csv"))
+
+## Reassign GPE and NA to proper label
+
+

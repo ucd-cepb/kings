@@ -20,6 +20,12 @@
 # 2. CP_fit_score: nonisolated vs. GC
 # 3. Regression SES and GSA on cp_fit_score
 
+## May 21
+# 1. run regression only on those significant variables
+# 2. run cf fitting/ modularity on policy instrument in separate regression
+# 3. avg cf score for each policy instrument.
+# 4. cf score for CAC and MBI, policy adoption as index: 0,1,2. Order probit
+
 # Library
 library(ggplot2)
 library(corrplot)
@@ -37,6 +43,7 @@ library(reshape2)
 library(cluster)
 library(lavaan)
 library(netUtils)
+library(stats)
 
 ############################## import the network #########################
 ################### isolated graph #########################
@@ -568,7 +575,7 @@ cor(cf_fit_score, exante_collab)
 
 # Logistic regression for each dependent variable
 models <- lapply(c("Allocations", "Trading","Taxes.Fees", "Pumping.Restrictions", "Efficiency.Incentives"), function(y) {
-   glm(as.formula(paste(y, "~ cluster")), 
+   glm(as.formula(paste(y, "~ priority")), 
        data = data, 
        family = binomial)
 })
@@ -707,3 +714,96 @@ formula <- as.formula(
 
 model <- lm(formula, data = data)
 summary(model)
+
+
+## May 21
+
+# 1. check for significance of SES and GSA on Modularity/cf fitting score 
+model <- lm(modularity ~ mult_gsas + priority + exante_collab +
+               gwsum + exceedance + basin_population + local_govs_per_10k_people +
+               max2012dryspell + urbangw_af_log_scaled + percent_dac_by_pop_scaled +
+               fract_of_area_in_habitat_log_scaled + maxdryspell_scaled +
+               Agr_Share_Of_GDP_scaled + Perc_Bach_Degree_Over25_scaled +
+               log_well_MCL_exceedance_count_by_log_pop_scaled + drywellcount2014_2020 +
+               log_drywell_per_log_person_scaled + dsci_scaled + Republican_Vote_Share,
+            data = data)
+summary(model)
+
+# 2. cp_fit_score sumamry by policy_instrument adopted
+out <- list()
+
+out[["Allocations"]] <- summary(data$cp_fit_score[data$Allocations == 1])
+out[["Trading"]] <- summary(data$cp_fit_score[data$Trading == 1])
+out[["Taxes.Fees"]] <- summary(data$cp_fit_score[data$Taxes.Fees == 1])
+out[["Pumping.Restrictions"]] <- summary(data$cp_fit_score[data$Pumping.Restrictions == 1])
+out[["Efficiency.Incentives"]] <- summary(data$cp_fit_score[data$Efficiency.Incentives == 1])
+cp_summary_table <- do.call(rbind, out)
+print(cp_summary_table)
+
+# By Policy Type
+tapply(data$cp_fit_score, data$instrument_type, summary)
+
+
+# Significant vars: mult_gsas, gwsum, local_govs_per_10k_people, fract_of_area_in_habitat_log_scaled,Perc_Bach_Degree_Over25_scaled
+# basin_population, urbangw_af_log_scaled, log_drywell_per_log_person_scaled, log_well_MCL_exceedance_count_by_log_pop_scaled
+# Regression on only those significant
+
+model <- lm(  policy_index_int ~  cp_fit_score + modularity + mult_gsas + gwsum + local_govs_per_10k_people + 
+               fract_of_area_in_habitat_log_scaled + Perc_Bach_Degree_Over25_scaled +
+               basin_population + urbangw_af_log_scaled + 
+               log_drywell_per_log_person_scaled + log_well_MCL_exceedance_count_by_log_pop_scaled, data = data)
+summary(model)
+
+model <- lm ( priority ~ mult_gsas  + exante_collab +
+                 gwsum + exceedance + basin_population + local_govs_per_10k_people +
+                 max2012dryspell + urbangw_af_log_scaled + percent_dac_by_pop_scaled +
+                 fract_of_area_in_habitat_log_scaled + maxdryspell_scaled +
+                 Agr_Share_Of_GDP_scaled + Perc_Bach_Degree_Over25_scaled +
+                 log_well_MCL_exceedance_count_by_log_pop_scaled + drywellcount2014_2020 +
+                 log_drywell_per_log_person_scaled + dsci_scaled + Republican_Vote_Share, data = data)
+cor(data$priority, data$gwsum, use = "complete.obs")
+
+
+library(MASS)
+
+# ordered probit model 
+policy_vars <- c("Allocations", "Trading", "Taxes.Fees", 
+                 "Pumping.Restrictions", "Efficiency.Incentives")
+data$policy_index_int <- rowSums(data[policy_vars], na.rm = TRUE)
+data$policy_index_int <- as.ordered(data$policy_index_int)
+
+model <- polr(
+   policy_index_int ~ cp_fit_score + modularity + mult_gsas + gwsum + 
+      local_govs_per_10k_people + fract_of_area_in_habitat_log_scaled + 
+      Perc_Bach_Degree_Over25_scaled + basin_population + 
+      urbangw_af_log_scaled + log_drywell_per_log_person_scaled + 
+      log_well_MCL_exceedance_count_by_log_pop_scaled,
+   data = data,
+   method = "probit"
+)
+
+
+summary(model)
+
+long_data <- data %>%
+   dplyr::select(priority, all_of(policy_vars)) %>%
+   pivot_longer(cols = all_of(policy_vars), names_to = "Policy", values_to = "Adopted")
+ggplot(long_data, aes(x = as.factor(Adopted), y = priority)) +
+   geom_boxplot() +
+   facet_wrap(~ Policy, scales = "free_y") +
+   labs(x = "Policy Adopted (0 = No, 1 = Yes)", y = "Priority", 
+        title = "Priority Distribution by Policy Instrument") +
+   theme_minimal()
+
+summary(data$priority)
+
+
+ggplot(data, aes(x = priority)) +
+   geom_histogram(binwidth = 1, fill = "steelblue", color = "black", boundary = 0.5) +
+   scale_x_continuous(breaks = 1:4) +
+   labs(
+      title = "Frequency Histogram of Priority",
+      x = "Priority Level",
+      y = "Count"
+   ) +
+   theme_minimal()
