@@ -47,6 +47,20 @@ out_2 <- glm(`out_w` ~ MHI_log+
              family=poisson,
              data = all_place_nodes)
 
+# # out_3 <- glm(`out_w_norm` ~ DAC+
+#                 POP_log+
+#                 incorporated+
+#                 per_latino,
+#              family=poisson,
+#              data = all_place_nodes)
+# 
+# out_4 <- glm(`out_w_norm` ~ MHI_log+
+#                 POP_log+
+#                 incorporated+
+#                 per_latino,
+#              family=poisson,
+#              data = all_place_nodes)
+
 stargazer(out_1, out_2, type='text')
 
 stargazer(out_1, out_2, type='html', out = 'EJ_DAC_Paper/Out/mods/h2b_influence_outdegree.html')

@@ -48,7 +48,8 @@ clean_gsa_names <- function(gsa_names) {
                                       '422',
                                       '124',
                                       '420', 
-                                      '419'
+                                      '419',
+                                      '349'
                                       ),
                              GSA_Name = c('sacramento_central_groundwater_authority',
                                            'salinas_valley_basin_groundwater_sustainability_agency',
@@ -70,7 +71,8 @@ clean_gsa_names <- function(gsa_names) {
                                           'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_antelope',
                                           'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_bowman', 
                                           'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_los_molinos',
-                                          'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_red_bluff'
+                                          'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_red_bluff',
+                                          'yucaipa_groundwater_sustainability_agency'
                                           )
                              )
    
@@ -145,11 +147,19 @@ net_stats <- function(network_graph, gsp_id) {
                                                    diameter(network_graph), 
                                                    leader_dist_min))
    
+   leader_dist_min_w_nona <- ifelse(is.infinite(leader_dist_min_w), 
+                                    diameter(network_graph), 
+                                    leader_dist_min_w)
+   
+   leader_dist_min_w_nona_norm <- (leader_dist_min_w_nona - min(leader_dist_min_w_nona, na.rm = TRUE)) / (max(leader_dist_min_w_nona, na.rm = TRUE) - min(leader_dist_min_w_nona, na.rm = TRUE))
+   
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_min_w_nona',
-                                    value = ifelse(is.infinite(leader_dist_min_w), 
-                                                   diameter(network_graph), 
-                                                   leader_dist_min_w))
+                                    value = leader_dist_min_w_nona)
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist_min_w_nona_norm',
+                                    value = leader_dist_min_w_nona_norm)
    
    network_graph <- set_vertex_attr(network_graph,
                                     'GSA',
@@ -164,33 +174,42 @@ net_stats <- function(network_graph, gsp_id) {
                                     value = node_indegree(network_graph, 
                                                           normalized=FALSE))
    
+   in_w <- node_indegree(network_graph, 
+                      normalized=FALSE,
+                      alpha=1)
+   
+   in_w <- ifelse(is.nan(in_w), 0, in_w)
+   
+   in_w_norm <- (in_w - min(in_w, na.rm = TRUE)) / (max(in_w, na.rm = TRUE) - min(in_w, na.rm = TRUE))
+   
    network_graph <- set_vertex_attr(network_graph,
                                     'in_w',
-                                    value = node_indegree(network_graph, 
-                                                          normalized=FALSE,
-                                                          alpha=1))
+                                    value = in_w)
+   
    network_graph <- set_vertex_attr(network_graph,
-                                    'in_w',
-                                    value = ifelse(is.nan(V(network_graph)$in_w), 
-                                                   0, 
-                                                   V(network_graph)$in_w))
+                                    'in_w_norm',
+                                    value = in_w_norm)
    
    network_graph <- set_vertex_attr(network_graph,
                                     'out',
                                     value = node_outdegree(network_graph,
                                                            normalized=FALSE))
    
-   network_graph <- set_vertex_attr(network_graph,
-                                    'out_w',
-                                    value = node_outdegree(network_graph,
-                                                           normalized=FALSE,
-                                                           alpha=1))
+   out_w <- node_outdegree(network_graph,
+                      normalized=FALSE,
+                      alpha=1)
+   
+   out_w <- ifelse(is.nan(out_w), 0, out_w)
+   
+   out_w_norm <- (out_w - min(out_w, na.rm = TRUE)) / (max(out_w, na.rm = TRUE) - min(out_w, na.rm = TRUE))
    
    network_graph <- set_vertex_attr(network_graph,
                                     'out_w',
-                                    value = ifelse(is.nan(V(network_graph)$out_w), 
-                                                   0, 
-                                                   V(network_graph)$out_w))
+                                    value = out_w)
+   
+   network_graph <- set_vertex_attr(network_graph,
+                                    'out_w_norm',
+                                    value = out_w_norm)
    
    network_graph <- set_vertex_attr(network_graph,
                                     'deg',
@@ -211,83 +230,6 @@ net_stats <- function(network_graph, gsp_id) {
                                                               weights = V(network_graph)$weight)$vector)
    
    
-   V(network_graph)$admin_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$admin)
-   })
-   V(network_graph)$basin_plan_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$basin_plan)
-   })
-   V(network_graph)$sust_criteria_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$sust_criteria)
-   })
-   V(network_graph)$monitoring_networks_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$monitoring_networks)
-   })
-   V(network_graph)$projects_mgmt_actions_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$projects_mgmt_actions)
-   })
-   
-   V(network_graph)$admin_in <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "in")]$admin)
-   })
-   V(network_graph)$basin_plan_in <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "in")]$basin_plan)
-   })
-   V(network_graph)$sust_criteria_in <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "in")]$sust_criteria)
-   })
-   V(network_graph)$monitoring_networks_in <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "in")]$monitoring_networks)
-   })
-   V(network_graph)$projects_mgmt_actions_in <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "in")]$projects_mgmt_actions)
-   })
-   
-   V(network_graph)$admin_out <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "out")]$admin)
-   })
-   V(network_graph)$basin_plan_out <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "out")]$basin_plan)
-   })
-   V(network_graph)$sust_criteria_out <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "out")]$sust_criteria)
-   })
-   V(network_graph)$monitoring_networks_out <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "out")]$monitoring_networks)
-   })
-   V(network_graph)$projects_mgmt_actions_out <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "out")]$projects_mgmt_actions)
-   })
-   
-   
-   return(network_graph)
-}
-
-subnet_stats <- function(network_graph, gsp_id) {
-   
-   V(network_graph)$admin_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$admin)
-   })
-   V(network_graph)$basin_plan_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$basin_plan)
-   })
-   V(network_graph)$sust_criteria_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$sust_criteria)
-   })
-   V(network_graph)$monitoring_networks_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$monitoring_networks)
-   })
-   V(network_graph)$projects_mgmt_actions_both <- sapply(V(network_graph), function(v) {
-      sum(E(network_graph)[incident(network_graph, v, mode = "all")]$projects_mgmt_actions)
-   })
-   
-   network_graph <- induced_subgraph(network_graph, 
-                              which(V(network_graph)$admin_both > 0|
-                                       V(network_graph)$sust_criteria_both > 0| 
-                                       V(network_graph)$monitoring_networks_both > 0|
-                                       V(network_graph)$projects_mgmt_actions_both > 0))
-   
-   network_graph <- net_stats(network_graph, gsp_id)
    
    return(network_graph)
 }
@@ -308,20 +250,6 @@ for (g in seq_along(gsp_ids)) {
            file = paste0(Sys.getenv("BOX_PATH"), 
                          "/EJ_Paper/cleaned_extracts_DACified/", 
                          extract_list[g]))
-   # Timing for subnet_stats
-   
-   subgraph_stats <- subnet_stats(network_graph = readRDS(paste0(network_fp, 
-                                                                  "/", 
-                                                                  extract_list[g])
-                                                          ), 
-                                  gsp_id = gsp_ids[g]
-      )
-   
-   # Save graph
-   saveRDS(object = subgraph_stats, 
-           file = paste0(Sys.getenv("BOX_PATH"), 
-                         "/EJ_Paper/cleaned_extracts_DACified_substantive/", 
-                         extract_list[g]))
    
    print(paste0("Finished ", gsp_id))
    
@@ -329,15 +257,49 @@ for (g in seq_along(gsp_ids)) {
 
 # test 
 
-neti <- 111
-
+neti <- 15
 net <- net_stats(network_graph = readRDS(paste0(network_fp, "/",extract_list[neti])),
                    gsp_id = gsp_ids[neti])
+df <- tibble(igraph::as_data_frame(net, what='vertices'))
 
-df <- tibble(igraph::as_data_frame(net, what='vertices')); summary(df)
+gsast<- gsa_gsp %>% 
+   filter(GSP_ID == gsp_ids[neti]) %>% 
+   pull(GSA_IDs) %>% 
+   str_split(",") %>% 
+   unlist() %>% 
+   as.integer() 
 
-snet <- subnet_stats(network_graph = readRDS(paste0(network_fp, "/",extract_list[neti])),
-                     gsp_id = gsp_ids[neti])
+gsa_names %>%
+   filter(GSA_ID %in% gsast) %>% 
+   select(GSA_ID, GSA_Name)
 
-sdf <- tibble(igraph::as_data_frame(snet, what='vertices')); summary(sdf)
+df %>% 
+   filter(str_detect(name, "groundwater_sustainability_agency")|
+             str_detect(name, "gsa")) %>% 
+   select(name, GSA, deg) %>% 
+   print(n=Inf)
 
+dfm1 <- df %>% 
+   filter(str_detect(name, "groundwater_sustainability_agency")|
+             str_detect(name, "gsa")) %>% 
+   pull(name) %>% 
+   str_replace_all("_", " ") %>%
+   corpus() %>% 
+   tokens() %>%
+   tokens_compound(pattern = phrase(c('groundwater sustainability agency',
+                                      'board of directors'))) %>% 
+   dfm()
+
+dfm2 <- gsa_names %>%
+   filter(GSA_ID %in% gsast) %>% 
+   pull(GSA_Name) %>% 
+   str_replace_all("_", " ") %>%
+   corpus() %>% 
+   tokens() %>% 
+   tokens_compound(pattern = phrase('groundwater sustainability agency')) %>% 
+   dfm()
+
+textstat_simil(dfm1, dfm2,
+               method='dice',
+               min_simil = 0.8)
+gsa_names %>% filter(GSA_ID %in% gsast)

@@ -87,9 +87,11 @@ create_model_plot <- function(data, family, x_var, y_var, x_label, y_label) {
                       colors=c('darkorange', 'forestgreen'),
                       axis.title = c(x_label, y_label)) +
       geom_vline(xintercept = c(10.78932, 11.30958), linetype = "dashed", color = "black") +
+      annotate('text', x=10.5, y=0.33, label='DAC')+
+      annotate('text', x=11.8, y=0.33, label='non-DAC')+
       theme_minimal() +
       scale_x_continuous(
-         name = "log(MHI)",
+         name = "ln(MHI)",
          sec.axis = sec_axis(
             trans = ~ exp(.),
             name = "MHI",
@@ -107,28 +109,28 @@ plots <- list(
                      y_var = "exists", 
                      data = all_places, 
                      family = 'binomial',
-                     x_label = "log(MHI)", 
+                     x_label = "ln(MHI)", 
                      y_label = "Exists (Binary)"), 
    
    create_model_plot(x_var = "MHI_log", 
                      y_var = "in_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "log(MHI)", 
+                     x_label = "ln(MHI)", 
                      y_label = "Indegree"),
    
    create_model_plot(x_var = "MHI_log", 
                      y_var = "out_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "log(MHI)", 
+                     x_label = "ln(MHI)", 
                      y_label = "Outdegree"),
    
    create_model_plot(x_var = "MHI_log", 
                      y_var = "leader_dist_min_w_nona", 
                      data = all_place_nodes, 
                      family = 'poisson',
-                     x_label = "log(MHI)", 
+                     x_label = "ln(MHI)", 
                      y_label = "Leader Distance (Min)"))
 
 
@@ -138,7 +140,7 @@ for (plot in plots) {
 }
 
 
-results_plot <- ggarrange(plots[[1]], plots[[4]], plots[[2]], plots[[3]], 
+results_plot <- ggarrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], 
                           nrow = 2, ncol = 2, common.legend = TRUE, legend = "bottom",
                           labels = "AUTO"); results_plot
 
