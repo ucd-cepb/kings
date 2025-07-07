@@ -9,11 +9,11 @@ library(data.table)
 # ln -s ~/Library/CloudStorage/Box-Box/Kings_Large_Files/data ~/Documents/GitHub/kings/
 ## 1. load the rds, summary network statistics
 
-file_paths <- list.files(path = "data/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
 
 
-## long term, add to this function so you can specify the options (.e.g, how ot handle weights, wehter to remove isolates)
+## long term, add to this function so you can specify the options (.e.g, how ot handle weights, whether to remove isolates)
 rds2network <- function(network_file_path,isolates = F,loops = F,object = c('igraph','network')) {
    data <- readRDS(network_file_path)
    nodes <- data$nodelist
@@ -50,9 +50,9 @@ all_networks <- lapply(file_paths[1:10],rds2network,isolates = F,object = 'netwo
 
 names(all_networks) <- file_paths[1:10]
 ### this runs count statistic summary on network objects
+
 stats_list <- lapply(all_networks, function(x) {
-   summary(x~edges + mutual + transitive)
-   }
+   summary(x~edges + mutual + transitive) })
 
    
 ### this fits ERGM...
