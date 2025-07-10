@@ -9,6 +9,7 @@ library(data.table)
 library(statnet)
 library(stringr)
 library(tidycensus)
+library(ellmer)
 
 load_dot_env()
 setwd(Sys.getenv('WD'))
@@ -215,7 +216,7 @@ ve_w_sections <- ve %>%
                                    "page_num" = "page_num"))
 
 # node tagging function
-tag_nodes_enhanced <- function(nl, gsp_id) {
+tag_nodes_first <- function(nl, gsp_id) {
    # Get GSA names for this GSP
    gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
    gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
@@ -358,7 +359,7 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
    
    nl <- nl %>%
       mutate(
-         LEGAL = ifelse(grepl("(laws?|regulations?|acts?|statutes?|codes?|ordinances?|policy|policies?|guidelines?)$", tolower(entity_name)), 1, LEGAL)
+         LEGAL = ifelse(grepl("(laws?|regulations?|acts?|bills?|statutes?|codes?|ordinances?|policy|policies?|guidelines?)$", tolower(entity_name)), 1, LEGAL)
       )
    
    
@@ -407,6 +408,143 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
    return(nl)
 }
 
+
+# Second-pass node tagging function using ellmer/OpenAI
+# This function uses GPT-4o-mini to classify entities that weren't tagged by tag_nodes_first
+# It processes nodes in batches to avoid API rate limits and token limits
+tag_nodes_second <- function(nl, gsp_id, batch_size = 20) {
+   
+   # Filter for nodes that don't have entity_type assigned
+   untagged_nodes <- nl %>% 
+      filter(is.na(entity_type))
+   
+   if (nrow(untagged_nodes) == 0) {
+      cat("No untagged nodes found for GSP", gsp_id, "\n")
+      return(nl)
+   }
+   
+   cat("Processing", nrow(untagged_nodes), "untagged nodes for GSP", gsp_id, "\n")
+   cat("Using batch size:", batch_size, "\n")
+   
+   # Define the tag structure for the AI model
+   tag_definitions <- "
+   Available tags:
+   - Local_Gov: Local government entities (not cities/counties)
+   - State_Gov: State government entities
+   - Federal_Gov: Federal government entities
+   - District: Special districts and water districts
+   - Basin: Water basins and subbasins
+   - Natural_Feature: Rivers, lakes, aquifers, ecosystems
+   - Infrastructure: Dams, reservoirs, facilities
+   - Group: Committees, boards, associations, authorities
+   - Technical: Data systems, models, reports, monitoring
+   - Water_Project: Water infrastructure projects
+   - Reference: Document references (appendix, table, etc.)
+   - Geographic_Unit: Geographic regions, areas, zones
+   - Legal: Laws, regulations, policies, codes
+   - Data_System: Data and information systems
+   - Person: Both a first and last name of a person
+   - NGO: A non-governmental organization, association, or foundation
+   - Company: A company, corporation, or business
+   - Nonsense: Nonsense entities  
+   "
+   
+   # Split nodes into batches
+   node_batches <- split(untagged_nodes, ceiling(seq_along(untagged_nodes$entity_name) / batch_size))
+   
+   all_results <- list()
+   
+   for (i in seq_along(node_batches)) {
+      batch <- node_batches[[i]]
+      
+      # Create prompts for each entity in the batch
+      prompts <- as.list(batch$entity_name)
+      
+      # Define the type structure for structured extraction
+      type_entity_classification <- type_object(
+         name = type_string("The name of the entity being classified, always written in snake_case and copied exactly from the document without removing or changing any characters."),
+         type_string = type_enum(paste("The entity type classification. If in doubt, classify as Nonsense.", tag_definitions),
+                                c( "Local_Gov", "State_Gov", "Federal_Gov", "District", "Basin", 
+                                  "Natural_Feature", "Infrastructure", "Group", "Technical", 
+                                  "Water_Project", "Reference", "Geographic_Unit", "Legal", 
+                                  "Data_System", "Nonsense", "Person", "NGO", "Company"))
+      )
+      
+      # Use ellmer parallel_chat_structured to process batch
+      tryCatch({
+         chat <- ellmer::chat_openai(system_prompt = 'You are an expert in categorizing entities from groundwater sustainability plans.',
+                                     model='gpt-4.1-mini')
+         
+         response <- ellmer::parallel_chat_structured(
+            chat,
+            prompts,
+            type = type_entity_classification
+         )
+
+         print(response)
+         
+         # Extract the results
+         if (!is.null(response) && nrow(response) > 0) {
+            # Response is a data frame with name and type_string columns
+            batch_results <- data.frame(
+               entity_name = response$name,
+               ai_tag = response$type_string,
+               stringsAsFactors = FALSE
+            )
+            all_results[[i]] <- batch_results
+         } else {
+            # Handle case where no classifications were returned
+            all_results[[i]] <- data.frame(
+               entity_name = batch$entity_name,
+               ai_tag = NA_character_,
+               stringsAsFactors = FALSE
+            )
+         }
+         
+         cat("Completed batch", i, "of", length(node_batches), "\n")
+         
+         # Rate limiting
+         Sys.sleep(2)
+         
+      }, error = function(e) {
+         cat("Error in batch", i, ":", e$message, "\n")
+         # Return empty results for this batch
+         all_results[[i]] <- data.frame(
+            entity_name = batch$entity_name,
+            ai_tag = NA_character_,
+            stringsAsFactors = FALSE
+         )
+      })
+   }
+   
+   # Combine all results
+   if (length(all_results) > 0) {
+      ai_results <- do.call(rbind, all_results)
+      
+      # Remove any duplicates and ensure proper matching
+      ai_results <- ai_results %>%
+         distinct(entity_name, .keep_all = TRUE) %>%
+         filter(!is.na(ai_tag))
+      
+      # Merge AI results back to the original nodelist
+      nl <- nl %>%
+         left_join(ai_results, by = "entity_name") %>%
+         mutate(
+            entity_type = coalesce(entity_type, ai_tag)
+         ) %>%
+         select(-ai_tag)
+      
+      # Count how many were successfully tagged
+      newly_tagged <- sum(!is.na(ai_results$ai_tag))
+      cat("Successfully tagged", newly_tagged, "out of", nrow(untagged_nodes), "entities\n")
+   } else {
+      cat("No AI results obtained\n")
+   }
+   
+   return(nl)
+}
+
+
 # Enhanced net_process function
 net_process <- function(file, gsp_id){
    # grab nodelist
@@ -414,8 +552,11 @@ net_process <- function(file, gsp_id){
       mutate(entity_name = str_remove(entity_name, "_s$"),
              entity_name = str_replace(entity_name, "_s_", "s_")) 
    
-   # Apply enhanced tagging
-   nl <- tag_nodes_enhanced(nl, gsp_id)
+   # Apply first-pass tagging
+   nl <- tag_nodes_first(nl, gsp_id)
+   
+   # Apply second-pass AI tagging for untagged nodes
+   nl <- tag_nodes_second(nl, gsp_id)
 
    # Keep existing org_type logic for backward compatibility
    nl <- nl %>% 
@@ -483,82 +624,6 @@ net_graph <- function(networklist, gsp_id, remove_isolates = TRUE) {
                network_graph = network_graph))
 }
 
-na_nodes_to_be_tagged <- data.frame(
-   gsp_id = integer(),
-   entity_name = character(),
-   num_appearances = integer()
-)
-
-all_nodes <- data.frame(
-   entity_name = character(),
-   gsp_id = integer(),
-   num_appearances = integer(),
-   entity_type = character()
-)
-
-# Apply functions to all networks
-for (g in seq_along(gsp_ids)) {
-   
-   gsp_id <- paste0("gsp_", gsp_ids[g])
-   
-   gsp_list <- net_process(file = paste0(network_fp, "/", extract_list[g]),
-                           gsp_id = gsp_ids[g])
-   
-   gsp_graph <- net_graph(gsp_list, gsp_id = gsp_ids[g])
-   
-   saveRDS(object = gsp_graph$network_graph,
-           file = paste0(Sys.getenv("BOX_PATH"),
-                         "/network_structure_by_plan/networks_fully_labeled",
-                         "/", extract_list[g]))
-   
-   # store nodes to view
-   na_nodes <- igraph::as_data_frame(gsp_graph$igraph, what='vertices') %>%
-      tibble() %>% 
-      filter(is.na(entity_type)) %>%
-      select(name, num_appearances, degree) %>% 
-      mutate(gsp_id = gsp_ids[g])
-   
-   sub_all_nodes <- igraph::as_data_frame(gsp_graph$igraph, what='vertices') %>%
-      tibble() %>% 
-      select(name, num_appearances, entity_type) %>% 
-      mutate(gsp_id = gsp_ids[g])
-   
-   na_nodes_to_be_tagged <- rbind(na_nodes_to_be_tagged, na_nodes)
-   
-   all_nodes <- rbind(all_nodes, sub_all_nodes)
-   
-   ggraph::ggraph(gsp_graph$igraph, layout = 'fr') +
-      geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
-      geom_node_point(aes(color = entity_type, size=degree)) +
-      theme_void() +
-      ggtitle(paste0("GSP: ", gsp_id))
-   
-   ggsave(paste0('Network_Structure_Paper/Out/gsp_graphs/', gsp_id, '.png'),
-          width = 9, height = 9, dpi = 300)
-   
-   print(paste0("Finished GSP ", gsp_id))
-}
-
-na_nodes_to_be_tagged_final <- na_nodes_to_be_tagged %>%
-   group_by(name) %>%
-   summarise(
-      num_appearances = sum(num_appearances),
-      num_gsps = length(unique(gsp_id)),
-      mean_degree = round(mean(degree), 0),
-   ) %>%
-   arrange(desc(num_appearances))
-
-all_nodes_final <- all_nodes %>%
-   group_by(name) %>%
-   summarise(
-      num_appearances_sum = sum(num_appearances),
-      num_appearances_mean = round(mean(num_appearances), 0),
-      num_types = n_distinct(entity_type),
-      entity_type = first(entity_type)
-   ) %>% 
-   arrange(desc(num_appearances_sum))
-
-View(na_nodes_to_be_tagged_final %>% filter(str_length(name) > 3 & (mean_degree > 10 | num_gsps > 2 | num_appearances > 2)))
 
 # Function to generate abbreviation from underscore-separated terms
 generate_abbreviation <- function(entity_name) {
@@ -622,97 +687,6 @@ reverse_abbreviation_lookup <- function(abbreviation, nodes_df, top_n = 5) {
    
    return(matches)
 }
-
-reverse_abbreviation_lookup("aem", all_nodes_final)
-
-write.csv(na_nodes_to_be_tagged_final, 
-          file = 'Network_Structure_Paper/Out/na_nodes_to_be_tagged.csv', 
-          row.names = FALSE)
-
-write.csv(all_nodes_final,
-          file = 'Network_Structure_Paper/Out/all_nodes_final.csv', 
-          row.names = FALSE)
-
-# test code for one network
-
-idt <- 40
-gsp_idt <- gsp_ids[idt]
-
-glt <- net_process(file = paste0(network_fp, "/",extract_list[idt]),
-                   gsp_id = gsp_idt)
-
-ggt <- net_graph(glt, gsp_id = gsp_idt)
-
-plot_graph <- delete_vertices(ggt$igraph, which(igraph::degree(ggt$igraph) == 0))
-
-# add degree to plot_graph
-
-plot_graph <- set_vertex_attr(plot_graph,
-                              'degree',
-                              value = igraph::degree(plot_graph))
-
-igraph::as_data_frame(plot_graph, what='vertices') %>% 
-   as_tibble %>% 
-   # filter(is.na(org_type)) %>% 
-   arrange(desc(degree))
-
-ggraph::ggraph(plot_graph, layout = 'fr') +
-   geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
-   geom_node_point(aes(color = entity_type, size=degree)) +
-   # geom_node_text(aes(label = name), repel = TRUE) +
-   theme_void() +
-   # theme(legend.position = "none") +
-   ggtitle(paste0("GSP: ", gsp_idt)) 
-
-
-
-
-## code for abbreviations (not inuse)
-
-# Function to check if a term is likely an abbreviation
-is_likely_abbreviation <- function(entity_name) {
-   # Check if it's in the word list, between 2-8 characters, and all uppercase
-   return(!entity_name %in% wl && 
-             nchar(entity_name) >= 3 && 
-             nchar(entity_name) <= 8 )
-}
-
-# Generate abbreviations for all nodes with underscores
-nodes_with_abbrevs <- all_nodes_final %>%
-   mutate(
-      calculated_abbreviation = sapply(entity_name, generate_abbreviation, USE.NAMES = FALSE),
-      is_abbreviation = sapply(entity_name, is_likely_abbreviation, USE.NAMES = FALSE)
-   ) 
-
-
-
-abbreviation_matches <- nodes_with_abbrevs %>%
-   inner_join(nodes_with_abbrevs %>%
-                 filter(is_abbreviation == TRUE) %>%
-                 select(entity_name),
-              by = c("calculated_abbreviation" = "entity_name")
-   )
-
-# Find nodes that are abbreviations but don't have a matching full name
-standalone_abbreviations <- nodes_with_abbrevs %>%
-   filter(is_abbreviation == TRUE) %>%
-   anti_join(
-      abbreviation_matches %>% select(entity_name_abbrev),
-      by = c("entity_name" = "entity_name_abbrev")
-   ) %>%
-   select(entity_name, num_appearances, entity_type) %>%
-   arrange(desc(num_appearances))
-
-# Find nodes with calculated abbreviations that don't match any existing abbreviation
-unmatched_full_names <- nodes_with_abbrevs %>%
-   filter(!is.null(calculated_abbreviation)) %>%
-   anti_join(
-      abbreviation_matches %>% select(entity_name_full),
-      by = c("entity_name" = "entity_name_full")
-   ) %>%
-   select(entity_name, calculated_abbreviation, num_appearances, entity_type) %>%
-   arrange(desc(num_appearances))
-
 
 
 # nolint end 
