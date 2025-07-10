@@ -230,7 +230,7 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
          CITY = 0,
          COUNTY = 0,
          BASIN = 0,
-         WATER_BODY = 0,
+         NATURAL_FEATURE = 0,
          INFRASTRUCTURE = 0,
          LOCAL_GSA = 0,
          OTHER_GSA = 0,
@@ -238,9 +238,14 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
          LOCAL_GOV = 0,
          STATE_GOV = 0,
          FEDERAL_GOV = 0,
-         WATER_DISTRICT = 0,
-         IRR_DISTRICT = 0,
-         CONS_DISTRICT = 0
+         DISTRICT = 0,
+         GROUP = 0,
+         DATA = 0,
+         WATER_PROJECT = 0,
+         REFERENCE = 0,
+         GEO_UNIT = 0,
+         LEGAL = 0,
+         TECHNICAL = 0
       )
    
    # Add in government tags 
@@ -256,8 +261,8 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
    # Tag cities and counties based on tidycensus data
    nl <- nl %>%
       mutate(
-         CITY = ifelse(tolower(entity_name) %in% ca_places$NAME, 1, CITY),
-         COUNTY = ifelse(tolower(entity_name) %in% ca_counties$NAME, 1, COUNTY)
+         CITY = ifelse(tolower(entity_name) %in% ca_places$NAME | grepl("city_of", tolower(entity_name)), 1, CITY),
+         COUNTY = ifelse(tolower(entity_name) %in% ca_counties$NAME | grepl('county$', tolower(entity_name)), 1, COUNTY)
       )
 
    # Tag local GSAs (existing logic)
@@ -282,7 +287,7 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
             1, 
             LOCAL_GOV),
          STATE_GOV = ifelse(
-            govsci_level == "california",
+            govsci_level == "california" | grepl("california", tolower(entity_name)),
             1, 
             STATE_GOV),
          FEDERAL_GOV = ifelse(
@@ -291,64 +296,113 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
             FEDERAL_GOV)
       )
    
-   # tag water-related specical districts
+   # tag specical districts
    
    nl <- nl %>%
       mutate(
-         WATER_DISTRICT = ifelse(grepl("water_district$", tolower(entity_name)), 1, WATER_DISTRICT),
-         IRR_DISTRICT = ifelse(grepl("irrigation_district$", tolower(entity_name)), 1, IRR_DISTRICT),
-         CONS_DISTRICT = ifelse(grepl("conservation_district$", tolower(entity_name)), 1, CONS_DISTRICT)
+         DISTRICT = ifelse(grepl("districts?$", tolower(entity_name)), 1, DISTRICT)
       )
    
    # Tag basins based on text content
    nl <- nl %>%
       mutate(
-         BASIN = ifelse(grepl("(basin|subbasin)$", tolower(entity_name)), 1, BASIN)
+         BASIN = ifelse(grepl("(basins?|subbasins?)$", tolower(entity_name)), 1, BASIN)
       )
    
-   # Tag water bodies based on text content
+   # Tag natural features (water bodies, ecosystems, and water systems)
    nl <- nl %>%
       mutate(
-         WATER_BODY = ifelse(grepl("(river|lake|creek|slough)$", tolower(entity_name)), 1, WATER_BODY)
+         NATURAL_FEATURE = ifelse(grepl("(rivers?|lakes?|creeks?|sloughs?|ecosystems?|formations?|water_systems?|aquifers?|aquifer_systems?|clays?|sands?|silts?|loams?|alluvium|sediments?|natural_communities_commonly_associated_with_groundwater)$", tolower(entity_name)), 1, NATURAL_FEATURE)
       )
    
    # Tag built infrastructure
    nl <- nl %>%
       mutate(
-         INFRASTRUCTURE = ifelse(grepl("(dam|reservoir|weir)$", tolower(entity_name)), 1, INFRASTRUCTURE)
+         INFRASTRUCTURE = ifelse(grepl("(dams?|reservoirs?|weirs?)$", tolower(entity_name)), 1, INFRASTRUCTURE)
       )
+   
+   # Tag committees, boards, and working groups
+   nl <- nl %>%
+      mutate(
+         GROUP = ifelse(grepl("(boards?|committees?|commissions?|councils?|departments?|groups?|mou|board_of_directors?|board_of_supervisors?|agreements?|agency|agencies|authority|authorities|associations?)$", tolower(entity_name)), 1, GROUP)
+      )
+   
+   # Tag data systems and monitoring programs
+   nl <- nl %>%
+      mutate(
+         TECHNICAL = ifelse(grepl("((management|information)_systems?|plans?)$", tolower(entity_name)) | 
+         grepl("(data|modflow|monitor|report|model|technical)", tolower(entity_name)), 
+         1, TECHNICAL)
+      )
+   
+   # Tag water projects
+   nl <- nl %>%
+      mutate(
+         WATER_PROJECT = ifelse(grepl("(projects?)$", tolower(entity_name)), 1, WATER_PROJECT)
+      )
+   
+   # Tag references to other parts of the document
+   nl <- nl %>%
+      mutate(
+         REFERENCE = ifelse(grepl("(^|_)(appendix|exhibit|page|section|table|figure|map)(_|$)", tolower(entity_name)), 1, REFERENCE)
+      )
+   
+   # tag regions, areas, or other geographic features
+   
+   nl <- nl %>%
+      mutate(
+         GEO_UNIT = ifelse(grepl("(regions?|areas?|valleys?|setting|zones?)$", tolower(entity_name)), 1, GEO_UNIT)
+      )
+   
+   # tag laws
+   
+   nl <- nl %>%
+      mutate(
+         LEGAL = ifelse(grepl("(laws?|regulations?|acts?|statutes?|codes?|ordinances?|policy|policies?|guidelines?)$", tolower(entity_name)), 1, LEGAL)
+      )
+   
    
    # consolidate and finalize tags
    nl <- nl %>% 
-      mutate(num_tags = rowSums(across(c(CITY, COUNTY, BASIN, WATER_BODY, 
+      mutate(num_tags = rowSums(across(c(CITY, COUNTY, BASIN, NATURAL_FEATURE, 
                   INFRASTRUCTURE, LOCAL_GSA, OTHER_GSA, 
-                  LOCAL_GOV, STATE_GOV, FEDERAL_GOV, WATER_DISTRICT,
-                  IRR_DISTRICT, CONS_DISTRICT))))
+                  LOCAL_GOV, STATE_GOV, FEDERAL_GOV, DISTRICT, GROUP, GEO_UNIT,
+                  DATA, WATER_PROJECT, REFERENCE, GEO_UNIT, LEGAL))))
    
    nl <- nl %>%
       mutate(
          entity_type = case_when(
+            # listed in priority of confidence
+            # specific named entities 
             LOCAL_GSA == 1 ~ "Local_GSA",
             OTHER_GSA == 1 ~ "Other_GSA",
             COUNTY == 1 ~ "County",
             CITY == 1 ~ "City",
             
-            WATER_DISTRICT == 1 ~ "Water_District",
-            IRR_DISTRICT == 1 ~ "Irrigation_District",
-            CONS_DISTRICT == 1 ~ "Conservation_District",
-            
+            # government entities from govsci_dict and secondary GSA source
             LOCAL_GOV == 1 ~ "Local_Gov",
             STATE_GOV == 1 ~ "State_Gov",
             FEDERAL_GOV == 1 ~ "Federal_Gov",
             OTHER_GSA2 == 1 ~ "Other_GSA",
             
+            # grepl based searches (ordered from most specific to most broad)
+            DISTRICT == 1 ~ "District",
+            DATA == 1 ~ "Data_System",
             INFRASTRUCTURE == 1 ~ "Infrastructure",
-            WATER_BODY == 1 ~ "Water_Body",
+            NATURAL_FEATURE == 1 ~ "Natural_Feature",
             BASIN == 1 ~ "Basin",
-            
+            WATER_PROJECT == 1 ~ "Water_Project",
+            REFERENCE == 1 ~ "Reference",
+            GEO_UNIT == 1 ~ "Geographic_Unit",
+            GROUP == 1 ~ "Group",
+            LEGAL == 1 ~ "Legal",
+            TECHNICAL == 1 ~ "Technical",
+
             TRUE ~ NA_character_ )) %>%
-      select(-c(CITY, COUNTY, BASIN, WATER_BODY, INFRASTRUCTURE,
-                OTHER_GSA, LOCAL_GOV, STATE_GOV, FEDERAL_GOV))
+      select(-c(CITY, COUNTY, BASIN, NATURAL_FEATURE, INFRASTRUCTURE,
+                OTHER_GSA, LOCAL_GOV, STATE_GOV, FEDERAL_GOV,
+               GROUP, DATA, WATER_PROJECT, REFERENCE, OTHER_GSA2,
+               DISTRICT, GEO_UNIT, LEGAL))
    
    return(nl)
 }
@@ -356,28 +410,22 @@ tag_nodes_enhanced <- function(nl, gsp_id) {
 # Enhanced net_process function
 net_process <- function(file, gsp_id){
    # grab nodelist
-   nl <- tibble(readRDS(file)$nodelist)
-
+   nl <- tibble(readRDS(file)$nodelist) %>% 
+      mutate(entity_name = str_remove(entity_name, "_s$"),
+             entity_name = str_replace(entity_name, "_s_", "s_")) 
+   
    # Apply enhanced tagging
    nl <- tag_nodes_enhanced(nl, gsp_id)
-   
+
    # Keep existing org_type logic for backward compatibility
    nl <- nl %>% 
       left_join(label_dict, by=join_by(entity_name == entity_name))%>% 
-      # mutate(org_type = case_when(
-      #    govsci_level == 'local' ~ "Loc_Gov",
-      #    govsci_level == 'federal' ~ "NL_Gov",
-      #    govsci_level == 'california' ~ "CA_Gov",
-      #    org_type == 'Ambig' ~ NA,
-      #    org_type == 'Drop' ~ NA,
-      #    LOCAL_GSA == 1 ~ "GSA",
-      #    TRUE ~ org_type
-      # )) %>%
       distinct(., entity_name, .keep_all = TRUE) %>% 
       select(-c(govsci_level, LOCAL_GSA))
 
    el <- ve_w_sections %>% 
       filter(GSP_ID == gsp_id) %>% 
+      filter(source %in% nl$entity_name & target %in% nl$entity_name) %>%
       mutate(weight = 1)
    
    networklist <- list("nodelist" = tibble(nl), "edgelist" = tibble(el))
@@ -387,7 +435,7 @@ net_process <- function(file, gsp_id){
 
 
 # aggregate gsas (called in net_graph)
-net_graph <- function(networklist, gsp_id) {
+net_graph <- function(networklist, gsp_id, remove_isolates = TRUE) {
    
    graph <- igraph::graph_from_data_frame(networklist$edgelist,
                                           vertices = networklist$nodelist)
@@ -411,6 +459,15 @@ net_graph <- function(networklist, gsp_id) {
                                                    projects_mgmt_actions = 'sum',
                                                    'ignore'))
    
+   graph <- set_vertex_attr(graph,
+                            'degree',
+                            value = igraph::degree(graph))
+   
+   if (remove_isolates) {
+      # Remove isolates
+      graph <- delete_vertices(graph, which(igraph::degree(graph) == 0))
+   }
+   
    networklist <- list('nodelist' = igraph::as_data_frame(graph, what='vertices'),
                        'edgelist' = igraph::as_data_frame(graph, what='edges'))
    
@@ -432,6 +489,13 @@ na_nodes_to_be_tagged <- data.frame(
    num_appearances = integer()
 )
 
+all_nodes <- data.frame(
+   entity_name = character(),
+   gsp_id = integer(),
+   num_appearances = integer(),
+   entity_type = character()
+)
+
 # Apply functions to all networks
 for (g in seq_along(gsp_ids)) {
    
@@ -440,14 +504,6 @@ for (g in seq_along(gsp_ids)) {
    gsp_list <- net_process(file = paste0(network_fp, "/", extract_list[g]),
                            gsp_id = gsp_ids[g])
    
-   na_nodes <- gsp_list$nodelist %>%
-      filter(is.na(entity_type)) %>%
-      select(entity_name, num_appearances) %>% 
-      mutate(gsp_id = gsp_ids[g]) %>%
-      head(10)
-   
-   na_nodes_to_be_tagged <- rbind(na_nodes_to_be_tagged, na_nodes)
-      
    gsp_graph <- net_graph(gsp_list, gsp_id = gsp_ids[g])
    
    saveRDS(object = gsp_graph$network_graph,
@@ -455,12 +511,25 @@ for (g in seq_along(gsp_ids)) {
                          "/network_structure_by_plan/networks_fully_labeled",
                          "/", extract_list[g]))
    
-   # remove isolates
-   plot_graph <- delete_vertices(gsp_graph$igraph, which(igraph::degree(gsp_graph$igraph) == 0))
+   # store nodes to view
+   na_nodes <- igraph::as_data_frame(gsp_graph$igraph, what='vertices') %>%
+      tibble() %>% 
+      filter(is.na(entity_type)) %>%
+      select(name, num_appearances, degree) %>% 
+      mutate(gsp_id = gsp_ids[g])
    
-   ggraph::ggraph(plot_graph, layout = 'fr') +
+   sub_all_nodes <- igraph::as_data_frame(gsp_graph$igraph, what='vertices') %>%
+      tibble() %>% 
+      select(name, num_appearances, entity_type) %>% 
+      mutate(gsp_id = gsp_ids[g])
+   
+   na_nodes_to_be_tagged <- rbind(na_nodes_to_be_tagged, na_nodes)
+   
+   all_nodes <- rbind(all_nodes, sub_all_nodes)
+   
+   ggraph::ggraph(gsp_graph$igraph, layout = 'fr') +
       geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
-      geom_node_point(aes(color = entity_type), size = 5) +
+      geom_node_point(aes(color = entity_type, size=degree)) +
       theme_void() +
       ggtitle(paste0("GSP: ", gsp_id))
    
@@ -471,18 +540,102 @@ for (g in seq_along(gsp_ids)) {
 }
 
 na_nodes_to_be_tagged_final <- na_nodes_to_be_tagged %>%
-   group_by(entity_name) %>%
+   group_by(name) %>%
    summarise(
       num_appearances = sum(num_appearances),
-      num_gsps = length(unique(gsp_id))
+      num_gsps = length(unique(gsp_id)),
+      mean_degree = round(mean(degree), 0),
    ) %>%
    arrange(desc(num_appearances))
 
+all_nodes_final <- all_nodes %>%
+   group_by(name) %>%
+   summarise(
+      num_appearances_sum = sum(num_appearances),
+      num_appearances_mean = round(mean(num_appearances), 0),
+      num_types = n_distinct(entity_type),
+      entity_type = first(entity_type)
+   ) %>% 
+   arrange(desc(num_appearances_sum))
 
+View(na_nodes_to_be_tagged_final %>% filter(str_length(name) > 3 & (mean_degree > 10 | num_gsps > 2 | num_appearances > 2)))
 
-# test code
+# Function to generate abbreviation from underscore-separated terms
+generate_abbreviation <- function(entity_name) {
+   sapply(entity_name, function(name) {
+      if (grepl("_", name)) {
+         # Split by underscore and take first letter of each part
+         parts <- strsplit(name, "_")[[1]]
+         abbreviation <- paste(sapply(parts, function(x) substr(x, 1, 1)), collapse = "")
+         return(tolower(abbreviation))
+      } else {
+         return(name)
+      }
+   }, USE.NAMES = FALSE)
+}
 
-idt <- 50
+reverse_abbreviation_lookup <- function(abbreviation, nodes_df, top_n = 5) {
+   
+   # Convert abbreviation to lowercase for consistency
+   abbrev_lower <- tolower(abbreviation)
+   abbrev_letters <- strsplit(abbrev_lower, "")[[1]]
+   
+   # Create pattern: each letter should match the first letter of a word
+   # For "cvp", this creates "^c[^_]*_v[^_]*_p[^_]*$"
+   pattern_parts <- sapply(abbrev_letters, function(letter) {
+      paste0(letter, "[^_]*")
+   })
+   
+   # Join with underscores and add anchors
+   pattern <- paste0("^", paste(pattern_parts, collapse = "_"), "$")
+   
+   # Find matching entities
+   matches <- nodes_df %>%
+      filter(grepl(pattern, name, ignore.case = TRUE)) %>%
+      # Add a score based on various factors
+      mutate(
+         # Perfect length match (same number of underscore-separated parts)
+         word_count = str_count(name, "_") + 1,
+         expected_word_count = length(abbrev_letters),
+         length_match = word_count == expected_word_count,
+         
+         # Calculate match score (higher is better)
+         match_score = case_when(
+            length_match ~ num_appearances_sum * 2,  # Bonus for perfect word count match
+            TRUE ~ num_appearances_sum
+         ),
+         
+         # Add pattern confidence (exact first letters)
+         abbreviation_check = generate_abbreviation(name) == abbrev_lower,
+         
+         # Final score
+         final_score = case_when(
+            abbreviation_check ~ match_score * 3,  # High confidence if abbreviation matches exactly
+            length_match ~ match_score * 1.5,     # Medium confidence for word count match
+            TRUE ~ match_score                     # Base score
+         )
+      ) %>%
+      arrange(desc(final_score)) %>%
+      select(name, final_score, num_appearances_sum, entity_type, 
+             abbreviation_check, length_match) %>%
+      head(top_n)
+   
+   return(matches)
+}
+
+reverse_abbreviation_lookup("aem", all_nodes_final)
+
+write.csv(na_nodes_to_be_tagged_final, 
+          file = 'Network_Structure_Paper/Out/na_nodes_to_be_tagged.csv', 
+          row.names = FALSE)
+
+write.csv(all_nodes_final,
+          file = 'Network_Structure_Paper/Out/all_nodes_final.csv', 
+          row.names = FALSE)
+
+# test code for one network
+
+idt <- 40
 gsp_idt <- gsp_ids[idt]
 
 glt <- net_process(file = paste0(network_fp, "/",extract_list[idt]),
@@ -510,5 +663,56 @@ ggraph::ggraph(plot_graph, layout = 'fr') +
    theme_void() +
    # theme(legend.position = "none") +
    ggtitle(paste0("GSP: ", gsp_idt)) 
+
+
+
+
+## code for abbreviations (not inuse)
+
+# Function to check if a term is likely an abbreviation
+is_likely_abbreviation <- function(entity_name) {
+   # Check if it's in the word list, between 2-8 characters, and all uppercase
+   return(!entity_name %in% wl && 
+             nchar(entity_name) >= 3 && 
+             nchar(entity_name) <= 8 )
+}
+
+# Generate abbreviations for all nodes with underscores
+nodes_with_abbrevs <- all_nodes_final %>%
+   mutate(
+      calculated_abbreviation = sapply(entity_name, generate_abbreviation, USE.NAMES = FALSE),
+      is_abbreviation = sapply(entity_name, is_likely_abbreviation, USE.NAMES = FALSE)
+   ) 
+
+
+
+abbreviation_matches <- nodes_with_abbrevs %>%
+   inner_join(nodes_with_abbrevs %>%
+                 filter(is_abbreviation == TRUE) %>%
+                 select(entity_name),
+              by = c("calculated_abbreviation" = "entity_name")
+   )
+
+# Find nodes that are abbreviations but don't have a matching full name
+standalone_abbreviations <- nodes_with_abbrevs %>%
+   filter(is_abbreviation == TRUE) %>%
+   anti_join(
+      abbreviation_matches %>% select(entity_name_abbrev),
+      by = c("entity_name" = "entity_name_abbrev")
+   ) %>%
+   select(entity_name, num_appearances, entity_type) %>%
+   arrange(desc(num_appearances))
+
+# Find nodes with calculated abbreviations that don't match any existing abbreviation
+unmatched_full_names <- nodes_with_abbrevs %>%
+   filter(!is.null(calculated_abbreviation)) %>%
+   anti_join(
+      abbreviation_matches %>% select(entity_name_full),
+      by = c("entity_name" = "entity_name_full")
+   ) %>%
+   select(entity_name, calculated_abbreviation, num_appearances, entity_type) %>%
+   arrange(desc(num_appearances))
+
+
 
 # nolint end 
