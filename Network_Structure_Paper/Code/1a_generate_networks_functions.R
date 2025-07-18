@@ -10,8 +10,9 @@ library(statnet)
 library(stringr)
 library(tidycensus)
 library(ellmer)
+library(dotenv)
 
-load_dot_env()
+load_dot_env('../../.env')
 setwd(Sys.getenv('WD'))
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"),
@@ -50,40 +51,58 @@ gsa_gsp <- tibble(read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv'))
 gsa_names <- read.csv('EJ_DAC_Paper/Data/gsa_names.csv') %>% 
    tibble()
 
-ca_places1 <- get_acs(
-  geography = "place",
-  cache_table = TRUE,
-  variables = "B01003_001",  # Total population
-  state = "CA",
-  year = 2020,
-  survey = "acs5"
-) %>%
-  mutate(NAME = tolower(NAME),
-         NAME = str_remove(NAME, " cdp.*?, california"),
-         NAME = str_remove(NAME, ' city, california'),
-         NAME = str_remove(NAME, ' town, california'),
-         NAME = str_replace_all(NAME, ' ', '_')) %>%
-  select(NAME) %>%
-  distinct()
+# --- CA Places and Counties: Use local cache if available ---
+
+# Define file paths for local cache
+ca_places_fp <- 'Network_Structure_Paper/Data/ca_places_2020.rds'
+ca_counties_fp <- 'Network_Structure_Paper/Data/ca_counties_2020.rds'
+
+# Load or create CA places
+if (file.exists(ca_places_fp)) {
+  ca_places1 <- readRDS(ca_places_fp)
+} else {
+  ca_places1 <- get_acs(
+    geography = "place",
+    cache_table = TRUE,
+    variables = "B01003_001",  # Total population
+    state = "CA",
+    year = 2020,
+    survey = "acs5"
+  ) %>%
+    mutate(NAME = tolower(NAME),
+           NAME = str_remove(NAME, " cdp.*?, california"),
+           NAME = str_remove(NAME, ' city, california'),
+           NAME = str_remove(NAME, ' town, california'),
+           NAME = str_replace_all(NAME, ' ', '_')) %>%
+    select(NAME) %>%
+    distinct()
+  saveRDS(ca_places1, ca_places_fp)
+}
 
 ca_places2 <- ca_places1 %>% 
    mutate(NAME = paste("city_of", NAME, sep = "_"))
 
 ca_places <- rbind(ca_places1, ca_places2)
 
-ca_counties1 <- get_acs(
-  geography = "county",
-  cache_table = TRUE,
-  variables = "B01003_001",  # Total population
-  state = "CA",
-  year = 2020,
-  survey = "acs5"
-) %>%
-  mutate(NAME = tolower(NAME), 
-         NAME = str_remove(NAME, " county, california"),
-         NAME = str_replace_all(NAME, ' ', '_')) %>%
-  select(NAME) %>%
-  distinct()
+# Load or create CA counties
+if (file.exists(ca_counties_fp)) {
+  ca_counties1 <- readRDS(ca_counties_fp)
+} else {
+  ca_counties1 <- get_acs(
+    geography = "county",
+    cache_table = TRUE,
+    variables = "B01003_001",  # Total population
+    state = "CA",
+    year = 2020,
+    survey = "acs5"
+  ) %>%
+    mutate(NAME = tolower(NAME), 
+           NAME = str_remove(NAME, " county, california"),
+           NAME = str_replace_all(NAME, ' ', '_')) %>%
+    select(NAME) %>%
+    distinct()
+  saveRDS(ca_counties1, ca_counties_fp)
+}
 
 ca_counties2 <- ca_counties1 %>% 
    mutate(NAME = paste(NAME, "county", sep = "_")) 
@@ -257,8 +276,6 @@ tag_nodes_first <- function(nl, gsp_id) {
       mutate(govsci_level = ifelse(is.na(govsci_level), "not_gov", tolower(govsci_level))) %>% 
       select(-c('Abbr', 'govsci_agency', 'govsci_level.x', 'govsci_level.y'))
    
-   
-   
    # Tag cities and counties based on tidycensus data
    nl <- nl %>%
       mutate(
@@ -307,7 +324,7 @@ tag_nodes_first <- function(nl, gsp_id) {
    # Tag basins based on text content
    nl <- nl %>%
       mutate(
-         BASIN = ifelse(grepl("(basins?|subbasins?)$", tolower(entity_name)), 1, BASIN)
+         BASIN = ifelse(grepl("(basins?)$", tolower(entity_name)), 1, BASIN)
       )
    
    # Tag natural features (water bodies, ecosystems, and water systems)
@@ -481,8 +498,6 @@ tag_nodes_second <- function(nl, gsp_id, batch_size = 20) {
             type = type_entity_classification
          )
 
-         print(response)
-         
          # Extract the results
          if (!is.null(response) && nrow(response) > 0) {
             # Response is a data frame with name and type_string columns
@@ -545,8 +560,8 @@ tag_nodes_second <- function(nl, gsp_id, batch_size = 20) {
 }
 
 
-# Enhanced net_process function
-net_process <- function(file, gsp_id){
+# Enhanced net_process function with AI tagging toggle
+net_process <- function(file, gsp_id, use_ai_tagging = FALSE){
    # grab nodelist
    nl <- tibble(readRDS(file)$nodelist) %>% 
       mutate(entity_name = str_remove(entity_name, "_s$"),
@@ -555,8 +570,10 @@ net_process <- function(file, gsp_id){
    # Apply first-pass tagging
    nl <- tag_nodes_first(nl, gsp_id)
    
-   # Apply second-pass AI tagging for untagged nodes
-   nl <- tag_nodes_second(nl, gsp_id)
+   # Conditionally apply second-pass AI tagging for untagged nodes
+   if (use_ai_tagging) {
+      nl <- tag_nodes_second(nl, gsp_id)
+   }
 
    # Keep existing org_type logic for backward compatibility
    nl <- nl %>% 
@@ -573,7 +590,6 @@ net_process <- function(file, gsp_id){
 
    return(networklist)
 }
-
 
 # aggregate gsas (called in net_graph)
 net_graph <- function(networklist, gsp_id, remove_isolates = TRUE) {

@@ -1,0 +1,116 @@
+---
+title: "Node Tagging in GSP Networks"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    css: styles.css
+---
+
+<style>
+.reveal .slides {
+  font-size: 24px;
+}
+</style>
+
+## Dictionary-Based Tagging
+
+- **GSAs, Counties, Cities, and Governments** are tagged using reference dictionaries:
+  - **GSAs**: Matched using a cleaned list of GSA names and abbreviations.
+  - **Counties/Cities**: Matched using lists from the US Census.
+  - **Governments**: Matched using a government science dictionary (govsci_dict), including abbreviations and levels (local, state, federal).
+
+## Grepl-Based Tagging {.scrollable}
+
+- Pattern-based tags are assigned by matching suffixes or keywords in the entity name.
+
+```{r grepl_examples, echo=FALSE}
+library(tidyverse)
+
+# Patterns/keywords used for each grepl-based tag
+examples <- tibble::tribble(
+  ~Tag, ~Patterns_or_Keywords,
+  "Basin", "basin(s), subbasin(s)",
+  "Natural_Feature", "river(s), lake(s), creek(s), slough(s), ecosystem(s), formation(s), water_system(s), aquifer(s), clay(s), sand(s), silt(s), loam(s), alluvium, sediment(s), natural_communities_commonly_associated_with_groundwater",
+  "Infrastructure", "dam(s), reservoir(s), weir(s)",
+  "District", "district(s)",
+  "Group", "board(s), committee(s), commission(s), council(s), department(s), group(s), mou, board_of_director(s), board_of_supervisor(s), agreement(s), agency, agencies, authority, authorities, association(s)",
+  "Technical", "(management|information)_system(s), plan(s), data, modflow, monitor, report, model, technical",
+  "Water_Project", "project(s)",
+  "Reference", "appendix, exhibit, page, section, table, figure, map (as prefix, infix, or suffix)",
+  "Geographic_Unit", "region(s), area(s), valley(s), setting, zone(s)",
+  "Legal", "law(s), regulation(s), act(s), bill(s), statute(s), code(s), ordinance(s), policy, policies, guideline(s)"
+)
+
+knitr::kable(examples, col.names = c("Tag", "Patterns/Keywords Used"), align = "c", format = "html") %>%
+  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+## AI-Based Tagging 
+
+- **AI Tagging** is performed using the `ellmer` package and OpenAI's GPT-4o-mini model.
+- Only nodes that remain untagged after the first pass are sent to the AI for classification.
+- The AI uses a structured prompt with the following unique tags (in addition to the previous ones):
+  - `Person`: Both a first and last name of a person
+  - `NGO`: Non-governmental organization, association, or foundation
+  - `Company`: Company, corporation, or business
+  - `Nonsense`: Nonsense or unclassifiable entities
+- The AI returns a tag for each node, which is merged back into the nodelist.
+
+## Demonstration: AI Tagging on a Sample of Untagged Nodes {.scrollable}
+
+```{r setup, include=FALSE}
+# Source the tagging functions
+source("1a_generate_networks_functions.R")
+```
+
+```{r ai_tagging_sample}
+#| echo: false
+#| output-location: slide
+
+# Load a sample of untagged nodes (as in test_tag_nodes_second.R)
+nantbt <- readr::read_csv('../Out/na_nodes_to_be_tagged.csv')
+
+# Take a random sample of 20 untagged nodes
+sample_nl <- dplyr::slice_sample(nantbt, n = 20) %>%
+  dplyr::mutate(entity_type = NA_character_) %>%
+  dplyr::rename(entity_name = name)
+
+# Run AI tagging on the sample
+sample_tagged <- tag_nodes_second(sample_nl, 
+                                  gsp_id = "test_sample", 
+                                  batch_size = 10)
+
+sample_tagged_simple <- sample_tagged %>%
+  dplyr::select(entity_name, entity_type)
+
+knitr::kable(sample_tagged_simple, caption = "AI-Tagged Sample of Untagged Nodes", align = "c", format = "html") %>%
+  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed"))
+
+```
+
+## Summary of Node Tagging Approaches {.scrollable}
+
+```{r tag_summary, echo=FALSE}
+library(tibble)
+library(knitr)
+library(kableExtra)
+
+tag_types <- tibble::tribble(
+  ~"Dictionary-based Tags", ~"Grepl-based Tags", ~"AI-only Tags",
+  "Local_GSA",              "Basin",            "Person",
+  "Other_GSA",              "Natural_Feature",  "NGO",
+  "County",                 "Infrastructure",   "Company",
+  "City",                   "District",         "Nonsense",
+  "Local_Gov",              "Group",            "Data_System",
+  "State_Gov",              "Technical",        "",
+  "Federal_Gov",            "Water_Project",    "",
+  "",                       "Reference",        "",
+  "",                       "Geographic_Unit",  "",
+  "",                       "Legal",            ""
+)
+
+kable(tag_types, align = "c", col.names = c("Dictionary-based Tags", "Grepl-based Tags", "AI-only Tags"), format = "html") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed"))
+```
+
