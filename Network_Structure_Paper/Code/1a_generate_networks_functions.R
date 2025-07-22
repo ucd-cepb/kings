@@ -12,7 +12,8 @@ library(tidycensus)
 library(ellmer)
 library(dotenv)
 
-load_dot_env('../../.env')
+
+load_dot_env('.env')
 setwd(Sys.getenv('WD'))
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"),
@@ -23,8 +24,9 @@ label_fp <- paste0(Sys.getenv("BOX_PATH"),
 label_dict <- read.csv(label_fp) %>% 
    tibble()
 
-govsci_fp <- paste0(Sys.getenv("BOX_PATH"),
+govsci_fp <- paste0(Sys.getenv("BOX_PATH"), 
                     "/Multipurpose_Files/Dictionaries/govsci_tbl_noblank.csv")
+
 govsci_dict1 <- read.csv(govsci_fp) %>% 
    tibble() %>% 
    mutate(Abbr = tolower(Abbr)) %>%
@@ -167,7 +169,8 @@ clean_gsa_names <- function(gsa_names) {
                                       '124',
                                       '420',
                                       '419',
-                                      '268'
+                                      '268',
+                                      '323'
    ),
    GSA_Name = c('sacramento_central_groundwater_authority',
                 'salinas_valley_basin_groundwater_sustainability_agency',
@@ -190,7 +193,8 @@ clean_gsa_names <- function(gsa_names) {
                 'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_bowman',
                 'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_los_molinos',
                 'tehama_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_red_bluff',
-                'svbgsa'
+                'svbgsa',
+                'cga'
    )
    )
    
@@ -259,13 +263,15 @@ tag_nodes_first <- function(nl, gsp_id) {
          STATE_GOV = 0,
          FEDERAL_GOV = 0,
          DISTRICT = 0,
+         DISTRICT2 = 0,
          GROUP = 0,
          DATA = 0,
          WATER_PROJECT = 0,
          REFERENCE = 0,
          GEO_UNIT = 0,
          LEGAL = 0,
-         TECHNICAL = 0
+         TECHNICAL = 0,
+         AI_TAGGED = 0
       )
    
    # Add in government tags 
@@ -318,7 +324,14 @@ tag_nodes_first <- function(nl, gsp_id) {
    
    nl <- nl %>%
       mutate(
-         DISTRICT = ifelse(grepl("districts?$", tolower(entity_name)), 1, DISTRICT)
+         DISTRICT = ifelse(grepl("districts?$", tolower(entity_name)),
+                           1, DISTRICT)
+      )
+   
+   nl <- nl %>% 
+      mutate(
+         DISTRICT2 = ifelse(grepl("id|wd|rcd$", tolower(entity_name)),
+                            1, DISTRICT2)
       )
    
    # Tag basins based on text content
@@ -342,7 +355,7 @@ tag_nodes_first <- function(nl, gsp_id) {
    # Tag committees, boards, and working groups
    nl <- nl %>%
       mutate(
-         GROUP = ifelse(grepl("(boards?|committees?|commissions?|councils?|departments?|groups?|mou|board_of_directors?|board_of_supervisors?|agreements?|agency|agencies|authority|authorities|associations?)$", tolower(entity_name)), 1, GROUP)
+         GROUP = ifelse(grepl("(boards?|committees?|commissions?|community|communities|councils?|departments?|groups?|mou|board_of_directors?|board_of_supervisors?|agreements?|agency|agencies|authority|authorities)$", tolower(entity_name)), 1, GROUP)
       )
    
    # Tag data systems and monitoring programs
@@ -384,8 +397,8 @@ tag_nodes_first <- function(nl, gsp_id) {
    nl <- nl %>% 
       mutate(num_tags = rowSums(across(c(CITY, COUNTY, BASIN, NATURAL_FEATURE, 
                   INFRASTRUCTURE, LOCAL_GSA, OTHER_GSA, 
-                  LOCAL_GOV, STATE_GOV, FEDERAL_GOV, DISTRICT, GROUP, GEO_UNIT,
-                  DATA, WATER_PROJECT, REFERENCE, GEO_UNIT, LEGAL))))
+                  LOCAL_GOV, STATE_GOV, FEDERAL_GOV, DISTRICT, DISTRICT2, GROUP,
+                  GEO_UNIT, DATA, WATER_PROJECT, REFERENCE, GEO_UNIT, LEGAL))))
    
    nl <- nl %>%
       mutate(
@@ -414,13 +427,16 @@ tag_nodes_first <- function(nl, gsp_id) {
             GEO_UNIT == 1 ~ "Geographic_Unit",
             GROUP == 1 ~ "Group",
             LEGAL == 1 ~ "Legal",
+            
+            # wide net grepl searches (technical includes text inside of string and district2 is very vague)
             TECHNICAL == 1 ~ "Technical",
+            DISTRICT2 == 1 ~ "District",
 
             TRUE ~ NA_character_ )) %>%
       select(-c(CITY, COUNTY, BASIN, NATURAL_FEATURE, INFRASTRUCTURE,
                 OTHER_GSA, LOCAL_GOV, STATE_GOV, FEDERAL_GOV,
                GROUP, DATA, WATER_PROJECT, REFERENCE, OTHER_GSA2,
-               DISTRICT, GEO_UNIT, LEGAL))
+               DISTRICT, DISTRICT2, GEO_UNIT, LEGAL, TECHNICAL))
    
    return(nl)
 }
@@ -539,15 +555,17 @@ tag_nodes_second <- function(nl, gsp_id, batch_size = 20) {
       # Remove any duplicates and ensure proper matching
       ai_results <- ai_results %>%
          distinct(entity_name, .keep_all = TRUE) %>%
-         filter(!is.na(ai_tag))
+         filter(!is.na(ai_tag)) %>% 
+         mutate(AI_TAGGED = 1)
       
       # Merge AI results back to the original nodelist
       nl <- nl %>%
          left_join(ai_results, by = "entity_name") %>%
          mutate(
-            entity_type = coalesce(entity_type, ai_tag)
+            entity_type = coalesce(entity_type, ai_tag),
+            AI_TAGGED = coalesce(AI_TAGGED.y, AI_TAGGED.x)
          ) %>%
-         select(-ai_tag)
+         select(-c(ai_tag, AI_TAGGED.x, AI_TAGGED.y))
       
       # Count how many were successfully tagged
       newly_tagged <- sum(!is.na(ai_results$ai_tag))
@@ -655,11 +673,16 @@ generate_abbreviation <- function(entity_name) {
    }, USE.NAMES = FALSE)
 }
 
-reverse_abbreviation_lookup <- function(abbreviation, nodes_df, top_n = 5) {
+reverse_abbreviation_lookup <- function(abbreviation, nodes_df, top_n = 5, name_col = "name") {
    
    # Convert abbreviation to lowercase for consistency
    abbrev_lower <- tolower(abbreviation)
    abbrev_letters <- strsplit(abbrev_lower, "")[[1]]
+   
+   # If num_appearances_sum is missing, add it with default value 1
+   if (!"num_appearances_sum" %in% colnames(nodes_df)) {
+      nodes_df$num_appearances_sum <- 1
+   }
    
    # Create pattern: each letter should match the first letter of a word
    # For "cvp", this creates "^c[^_]*_v[^_]*_p[^_]*$"
@@ -670,39 +693,133 @@ reverse_abbreviation_lookup <- function(abbreviation, nodes_df, top_n = 5) {
    # Join with underscores and add anchors
    pattern <- paste0("^", paste(pattern_parts, collapse = "_"), "$")
    
+   # Dynamically refer to the column for lookup
+   name_sym <- rlang::sym(name_col)
+   
    # Find matching entities
    matches <- nodes_df %>%
-      filter(grepl(pattern, name, ignore.case = TRUE)) %>%
-      # Add a score based on various factors
+      filter(grepl(pattern, !!name_sym, ignore.case = TRUE)) %>%
       mutate(
          # Perfect length match (same number of underscore-separated parts)
-         word_count = str_count(name, "_") + 1,
+         word_count = stringr::str_count(!!name_sym, "_") + 1,
          expected_word_count = length(abbrev_letters),
          length_match = word_count == expected_word_count,
          
          # Calculate match score (higher is better)
-         match_score = case_when(
+         match_score = dplyr::case_when(
             length_match ~ num_appearances_sum * 2,  # Bonus for perfect word count match
             TRUE ~ num_appearances_sum
          ),
          
          # Add pattern confidence (exact first letters)
-         abbreviation_check = generate_abbreviation(name) == abbrev_lower,
+         abbreviation_check = generate_abbreviation(!!name_sym) == abbrev_lower,
          
          # Final score
-         final_score = case_when(
+         final_score = dplyr::case_when(
             abbreviation_check ~ match_score * 3,  # High confidence if abbreviation matches exactly
             length_match ~ match_score * 1.5,     # Medium confidence for word count match
             TRUE ~ match_score                     # Base score
          )
       ) %>%
       arrange(desc(final_score)) %>%
-      select(name, final_score, num_appearances_sum, entity_type, 
-             abbreviation_check, length_match) %>%
+      select(
+         !!name_sym, final_score, num_appearances_sum, entity_type, 
+         abbreviation_check, length_match
+      ) %>%
       head(top_n)
    
    return(matches)
 }
 
+
+#' Plot a network igraph object with custom color and shape schema for node types
+#' @param igraph_obj An igraph object
+#' @param title Optional plot title
+#' @return ggplot object
+plot_graph <- function(igraph_obj, title = NULL) {
+  # Define color and shape mappings (order matters for legend)
+  node_type_levels <- c(
+    "Local_GSA", "Other_GSA", "District",
+    "Local_Gov", "State_Gov", "Federal_Gov",
+    "City", "County",
+    "Basin", "Natural_Feature", "Geographic_Unit",
+    "Infrastructure", "Water_Project",
+    "Group", "NGO", "Company",
+    "Technical", "Reference",
+    "Legal",
+    "Person",
+    "Nonsense"
+  )
+  node_type_colors <- c(
+    Local_GSA = "#20b2aa", Other_GSA = "#20b2aa", # Teal
+    District = "#122382", 
+    Local_Gov = "#6baed6", State_Gov = "#2171b5", Federal_Gov = "#08306b", # Blue shades
+    City = "#ff9800", County = "#e65100", # Orange shades
+    Basin = "#2ca02c", Natural_Feature = "#98df8a", Geographic_Unit = "#b2df8a", # Green shades
+    Infrastructure = "#8e24aa", Water_Project = "#ce93d8", # Purple shades
+    Group = "#8B0000", NGO = "#E57373", Company = "#FFCDD2", # Reds
+    Technical = "#607d8b", Reference = "#b0bec5", Legal = "#757575", # Greys
+    Person = "#ffd700", # Yellow
+    Nonsense = "#000000" # Black
+  )
+  node_type_shapes <- c(
+    Local_GSA = 24, # Triangle up
+    Other_GSA = 25, # Triangle down
+    District = 25,   # Hexagon
+    Local_Gov = 22, State_Gov = 22, Federal_Gov = 22, # Square
+    City = 21, County = 21, # Circle
+    Basin = 21, Natural_Feature = 21, Geographic_Unit = 21, # Circle
+    Infrastructure = 24, Water_Project = 24, # Triangle up
+    Group = 23, NGO = 23, Company = 23, # Diamond
+    Technical = 25, Reference = 25, # Triangle down
+    Legal = 8, # Star
+    Person = 21, # Circle
+    Nonsense = 4 # Cross
+  )
+
+  # Get vertex data and set factor for entity_type
+  vdf <- igraph::as_data_frame(igraph_obj, what = 'vertices')
+  vdf$entity_type <- factor(vdf$entity_type, levels = node_type_levels)
+  # Rebuild igraph with updated vertex attributes (if needed)
+  ig <- igraph::graph_from_data_frame(
+    igraph::as_data_frame(igraph_obj, what = 'edges'),
+    vertices = vdf,
+    directed = TRUE
+  )
+
+  p <- ggraph::ggraph(ig, layout = 'fr') +
+    geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
+    geom_node_point(
+      aes(
+        color = entity_type, fill = entity_type, shape = entity_type, size = degree
+      ),
+      stroke = 1.2
+    ) +
+    scale_color_manual(
+      values = node_type_colors,
+      breaks = node_type_levels,
+      name = "Node Type"
+    ) +
+    scale_fill_manual(
+      values = node_type_colors,
+      breaks = node_type_levels,
+      name = "Node Type"
+    ) +
+    scale_shape_manual(
+      values = node_type_shapes,
+      breaks = node_type_levels,
+      name = "Node Type"
+    ) +
+    guides(
+      color = guide_legend(override.aes = list(size = 5)),
+      fill = guide_legend(override.aes = list(size = 5)),
+      shape = guide_legend(override.aes = list(size = 5))
+    ) +
+    theme_void()
+  if (!is.null(title)) {
+    p <- p + ggtitle(title)
+  }
+  return(p)
+}
 
 # nolint end 
