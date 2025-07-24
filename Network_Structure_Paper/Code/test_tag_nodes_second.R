@@ -30,6 +30,20 @@ ggt <- net_graph(glt,
 p <- plot_graph(ggt$igraph, title = paste0("GSP: ", gsp_idt))
 print(p)
 
+# Filter to only nodes in the specified group and plot with the main plot function
+
+filter_types <- c("Local_GSA", "Other_GSA", "District", "Local_Gov", "State_Gov", "Federal_Gov", "City", "County")
+
+# Get vertex data and filter
+vdf <- igraph::as_data_frame(ggt$igraph, what = 'vertices')
+keep_nodes <- vdf$name[vdf$entity_type %in% filter_types]
+
+# Induce subgraph
+sub_ig <- igraph::induced_subgraph(ggt$igraph, vids = keep_nodes)
+
+# Plot using the main plot_graph function
+p_filtered <- plot_graph(sub_ig, title = paste0("GSP: ", gsp_idt, " (Filtered)") )
+print(p_filtered)
 
 # test from nodes to be tagged (deprecated)
 # nantbt <- read_csv('Network_Structure_Paper/Out/na_nodes_to_be_tagged.csv')

@@ -13,10 +13,8 @@ all_nodes <- data.frame(
    gsp_id = integer()
 )
 
-gsp_ids_test <- head(gsp_ids, 3)
-
 # Apply functions to all networks
-for (g in seq_along(gsp_ids_test)) {
+for (g in seq_along(gsp_ids)) {
    
    gsp_id <- paste0("gsp_", gsp_ids[g])
 
@@ -66,9 +64,9 @@ for (g in seq_along(gsp_ids_test)) {
                 tu_diff$input, "/", tu_diff$output, "/", tu_diff$price))
 }
 
-# write.csv(all_nodes,
-#           file = 'Network_Structure_Paper/Out/all_nodes_raw.csv',
-#           row.names = FALSE)
+write.csv(all_nodes,
+          file = 'Network_Structure_Paper/Out/all_nodes_raw.csv',
+          row.names = FALSE)
 
 all_nodes_final <- all_nodes %>%
    group_by(name) %>%
@@ -76,14 +74,20 @@ all_nodes_final <- all_nodes %>%
       num_appearances_sum = sum(num_appearances),
       num_appearances_mean = round(mean(num_appearances), 0),
       num_types = n_distinct(entity_type),
-      entity_type = first(entity_type)
+      entity_type = first(entity_type),
+      AI_TAGGED = mean(AI_TAGGED)
    ) %>% 
    arrange(desc(num_appearances_sum))
 
-# write.csv(all_nodes_final,
-#           file = 'Network_Structure_Paper/Out/all_nodes_cleaned.csv', 
-#           row.names = FALSE)
+write.csv(all_nodes_final,
+          file = 'Network_Structure_Paper/Out/all_nodes_cleaned.csv',
+          row.names = FALSE)
 
+type_summary <- all_nodes_final %>% 
+   group_by(AI_TAGGED, entity_type) %>% 
+   summarize(n=n()) %>% 
+   pivot_wider(names_from = AI_TAGGED, values_from = n) %>% 
+   select(c(entity_type, `0`, `1`))
 
 
 
