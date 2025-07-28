@@ -178,6 +178,7 @@ interaction_estimates <- c(problem_estimates,#pol_estimates,
                            agr_interaction_estimates,
                            repvote_interaction_estimates)
 saveRDS(object = interaction_estimates,file = 'data/Structural_Topic_Model_Paper/interaction_estimates_RnR.RDS')
+interaction_estimates <- readRDS(file = 'data/Structural_Topic_Model_Paper/interaction_estimates_RnR.RDS')
 
 inter_grid <- expand.grid(moderator = c('Republican_Vote_Share_scaled','Agr_Share_Of_GDP_scaled'),
                           moderator.value = c(-1,1),
@@ -208,7 +209,11 @@ model_coefs$Estimate <- round(model_coefs$Estimate,4)
 model_coefs$SE <- round(model_coefs$Std..Error,4)
 model_coefs$p.value <- round(model_coefs$Pr...t..,4)
 
-
+# patch: report rounded numerical p-values 
+model_coefs$Estimate_mini <- round(model_coefs$Estimate,2)
+model_coefs$SE_mini <- round(model_coefs$Std..Error,2)
+model_coefs$p.value_mini <- round(model_coefs$Pr...t..,2)
+model_coefs_mini <- model_coefs %>% select(model, coef, Estimate_mini, p.value_mini)
 library(texreg)
 linear_mods = c('ej','dw','cc','gde')
 agr_mods = paste0(c('ej','dw','cc','gde'),'_agr')
@@ -223,7 +228,7 @@ tr <- lapply(linear_mods, function(x) {
    return(t)
 })
 htmlreg(tr,single.row = T,caption.above = 'Base model estimates',
-        file = 'Structural_Topic_Model_Paper/output/table_base_coef_appendixRnR.html')
+        file = 'test_table_base_coef_appendixCA.html')
 
 tr <- lapply(agr_mods, function(x) {
    d <- model_coefs[model_coefs$model == x, ]
@@ -561,7 +566,7 @@ names(agr_rep_interaction_estimates) <- paste(foci,'agr_rep',sep = '_')
 
 
 saveRDS(object = agr_rep_interaction_estimates,file = 'data/Structural_Topic_Model_Paper/agr_rep_interaction_estimates_estimates_RnR.RDS')
-
+agr_rep_interaction_estimates <- readRDS('data/Structural_Topic_Model_Paper/agr_rep_interaction_estimates_estimates_RnR.RDS')
 agr_rep_summaries = lapply(agr_rep_interaction_estimates,summary)
 agr_rep_tabs = lapply(seq_along(agr_rep_summaries),function(x) data.frame(agr_rep_summaries[[x]]$tables[[1]],
                                                                       coef = rownames(agr_rep_summaries[[x]]$tables[[1]]),

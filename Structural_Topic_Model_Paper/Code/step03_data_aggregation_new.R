@@ -206,23 +206,4 @@ ggcorrplot(cor(gspmini[,c(
 saveRDS(gsp_text_lean, file = filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
 gsp_text_lean <- readRDS(file = filekey[filekey$var_name=="gsp_docs_lean",]$filepath)
 
-#summaries
-set.seed(30)
-
-summary(gsp_text_with_meta$admin)
-summary(gsp_text_with_meta$basin_plan)
-summary(gsp_text_with_meta$sust_criteria)
-summary(gsp_text_with_meta$monitoring_networks)
-summary(gsp_text_with_meta$projects_mgmt_actions)
-summary(gsp_text_with_meta$mult_gsas)
-table(gsp_text_with_meta$priority_category)
-set.seed(30)
-summary(gsp_text_with_meta$basin_population)
-summary(gsp_text_with_meta$percent_dac_by_pop)
-summary(gsp_text_with_meta$well_MCL_exceedance_count)
-summary(gsp_text_with_meta$DSCI)
-set.seed(30)
-summary(gsp_text_with_meta$fract_of_area_in_habitat)
-summary(gsp_text_with_meta$Agr_Share_Of_GDP)
-summary(gsp_text_with_meta$Republican_Vote_Share)
 table(gspmini$version_approval20230922)
