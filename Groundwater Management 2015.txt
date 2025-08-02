@@ -1,0 +1,1145 @@
+Abstract
+Water management requires a hectic effort for achieving the preset targets taking into consideration a multitude of aspects, including hydrometeorology, suitable geographical location, climate, hydrology, physiography, geology, hydrogeology, hydrochemistry, depositional environments, and storage and transmission properties of aquifers in addition to its availability. Groundwater exploitation without management program leads to depletion of present-day storages, which are necessary for reliefs in emergency situations. The main theme of this chapter is to provide simple, applicable, and practical groundwater management guidance. For this purpose, management planning and environmental aspects are explained with local conditional circumstances as preliminary requirements and subsequent groundwater objectives such as various safe yield and sustainability concepts. Integrated groundwater management subjects are covered with emphasis on within and interaquifer management strategies. Especially, the logical principles and statements are mentioned because they provide the basis in any management program including the conceptual management models. Uncertainties in hydrogeological quantities such as porosity, specific yield, storage and transmissivity coefficients, saturated and unsaturated thicknesses are taken into consideration by means of the proposed probabilistic and statistical innovative approaches. The risk concept is explained in the groundwater management programs. Optimum yield principles are presented in an aquifer management system. A set of practical applications are given for further clarification of different aspects in an effective groundwater management study.
+
+6.1. General
+Pressure on global water resources is increasing in an unprecedented manner, and therefore, sustainable groundwater management practices gain importance more than ever before. Although there are many procedures, formulations, and algorithms for sustainable aquifer management (AM), still there is a great need for effective, practical, and applied methodologies. A large number of different approaches including numerical models and their software are available for ready uses, but sustainable water management needs special attention for successful local applications. It is practically impossible to provide a general definition and solution to cover different management strategy, because each AM requires solutions under special, local, and environmental conditions, which may not be exactly valid for other regions. Among the nonsustainable practices are quantitative (overpumping, destruction of wetlands, salinization of soils, and water resources) and qualitative (contamination, salt, chlorinated hydrocarbons) issues. Although the role of numerical modeling as a tool is significant for sustainable management practices, its pros and cons must be identified for each case prior to mechanical applications.
+Water management requires a hectic effort for achieving the preset targets taking into consideration a multitude of aspects, including hydrometeorology, suitable geographical location, climate, hydrology, physiography, geology, hydrogeology, hydrochemistry, depositional environments, and storage and transmission properties of aquifers in addition to its availability. Groundwater exploitation without management program leads to depletion of present-day storages, which are necessary for reliefs in emergency situations (Şen, 2008).
+Water resources management problems are unique in many regions and not only the physical aspects of intermittent or no-surface runoff, depletion of existing groundwater storages, overexploitation and consumption, salt water intrusion, and pollution of unconfined aquifers are among the major problems, but also there are managerial aspects of lack of trained personnel, deficient institutional arrangements, and poor or nonexistent resource management rules, regulations, programs, and software. In many regions, groundwater resources are exploited almost free of charge.
+Especially in drainage basin, the scale studies in water resources assessment concerning meteorological, geological, morphological, and hydrological studies have interconnected importance. Based on sufficient meteorological and hydrological data, there are different methods developed for the conversion of rainfall to run off, i.e., rainfall-runoff models, rainfall as input and runoff as output. It is necessary to depend on simple and practical formulations and approaches based on rational thinking and logic in addition to the most sophisticated scientific and academic interest models that provide applicable procedures.
+6.2. Management Planning
+		In different parts of the world, groundwater resources are not managed by considering optimum common benefit for the present and future generations. Simple and effective management rules and regulations must be put forward prior to the preparation of a dynamic, optimum, and adaptive management program planning, operation, and maintenance tasks. Such rules and regulations should be based on local knowledge and experiences supported by scientific information sources. The main concern of management must be planned in such a way that,1. Groundwater abstractions must be adjusted according to sustainable supply and demand stipulations in the future.  2. The renewable (recharge) character of potential aquifers must be considered with optimum aquifer pump rates (discharges), well-field locations, and especially, priority of subaquifer units within the integrated aquifer-system management.  3. The economy, social impact, local administration strategies, and water quality variations should also be considered. 
+Due to nonscientific applications and nonexistence of proper management programs, some of the significant aquifers are almost mined in the world. A good example for this is the Ogallala aquifer in the United States, which is overexploited. Groundwater resources may set the limit on the use of other resources and thus ultimately on the density of population and the standards of living that can be sustained in areas of interest (Walton, 1970).
+		Water resources are subject to various external effects that may cause quantitative decrease and/or qualitative deterioration by time. Among the undesirable events, the following points are worth to consider:1. Population increase not only by birth but equally important by migration due to economic, political, military, agriculture, social, and hazardous situations.  2. Industrial investments, development, and processing in potential catchment areas, and especially, groundwater recharge areas lead to water resources pollution, and hence, water potentiality for domestic use decreases.  3. Recent climate change, global warming, and greenhouse events give rise to groundwater resources' quantity and quality deteriorations.  4. Mismanagement of water resources, in general, and groundwater reservoirs in particular, may lead to overpumping toward aquifer mining causing consequent groundwater quality changes, sinkholes, and subsidence. 
+		Groundwater resources are the most conservative reservoirs and have the most strategic significance due to the following facts:1. They are replenished by rainfall after infiltration and penetration processes through subsurface geological layers, and therefore, their quality is better than that of surface waters. Especially, geological formations including quartz, granite, sandstones, and alluvial deposits provide the best-quality groundwater reservoirs.  2. They are protected from any atmospheric pollution dangers and can preserve the quality and temperature throughout the year.  3. They are available anywhere in the world, and therefore, they are the most dependable water resources especially in the cases of emergency such as natural or anthropogenic disasters.  4. Aquifers are natural and dependable reservoir spaces as future exploitable water resources without much cost. They reduce evaporation losses almost to zero even in very hot climate regions, and therefore, they are most dependable and preferable in arid regions. 
+It is a general rule that groundwater modeling software programs are commercially available and one can buy and apply them to solve his/her problem. In cases of management problems, each region has its own circumstances that must be taken into account, and therefore, ready management programs may not be sufficient. They need basic philosophy and logical statements for management under the light of particular and local sets of social, economic, and administrational rules. In many parts of the world, groundwater storages are exploited without rules and regulations for commercial benefits (Şen, 2008).
+The exploitation and consumption of groundwater must be so adjusted that the present storages sustain critical periods until the next rainfall event occurrences with sufficient groundwater recharges. It has been noticed that the indigenous plants and animals have adapted to this paradigm by various methods of drought evasion. Human adaptation to this situation cannot be thought without an effective management program. The purpose of integrated AM is to understand the human, ecological, economical, hydrological, hydrogeological, and hydrochemical interactions and to apply these concepts for groundwater storage improvements in addition to other essential resources such as soil and land use for long-term sustainable development and productivity. For an effective and strategic integrated groundwater resources management in two or more aquifers, the first step is to get a common agreement including each authority concerned. The implementation of any effective scientific management program can be achieved with the support of administrational and/or political authorities.
+6.3. Management Environments
+		In general, there are seven different but mutually inclusive management planning components depending on the final purpose. The following points should be considered individually or collectively in an integrated groundwater management study:1. Spatial environment: The groundwater resources may cover more than 4 km depth within the Earth's crust, but exploitation cannot be done practically at more than 2 km depth. Most often the groundwater wells and boreholes have depths varying from a couple of meters (shallow) to 100–1500 m (deep). The depth is one of the restrictive factors in strategic groundwater resources planning. The aquifer extent is important as another spatial factor. For instance, it is essential to know the surface area of recharge exposure in strategic groundwater resources planning.  2. Temporal environment: The connection of aquifers with the present-day hydrological cycle must be considered, if any, and according to replenishment rates, groundwater withdrawal amounts should be planned and managed. Aquifers may be classified as replenishable and nonreplenishable according to their connections with the hydrological cycle. Quaternary deposit formation unconfined aquifers are in contact with the present-day hydrological cycle. Occasional floods, flash floods, or large amounts of runoff volumes provide additional rich natural and artificial recharge possibilities. Rainfall events provide temporal recharge occasions, and therefore, it is necessary to take into account the haphazard temporal variability of rainfall in any groundwater recharge study (Chapter 4).  3. Hydrogeological environment: The geological formations play a dominant role in any groundwater resources evaluation, management, assessment, and exploitation. Such a role is dependent on the geological formation composition with voids, fissures, fractures, crevices, solution cavities, faults, and other structural geological features. The amount of porous, fractured, and possible karstic media should be considered in an effective and strategic management planning.  4. Hydrochemical environment: The groundwater quality, ionic exchange, salt water intrusion, upconing, and closeness to sea shore are additional factors that must be taken into consideration in strategic planning and management of an aquifer. Comparatively worse-quality water zones within the study area cannot be overlooked, since an artificial mixture of different groundwater qualities may give rise to acceptable quality levels (Chapters 4 and 5Chapter 4Chapter 5).  5. Alternative strategies: The planner or decision maker may have different alternatives for the same problem, so that s/he can decide on the most suitable solution under local circumstances. If there are two or more aquifers, then the question is which groundwater reservoir should have exploitation priority? For how long it should be exploited before the second alternative enters the circuit for joint strategic planning?  6. Emergency situations: The planner must keep in mind that in emergency cases such as diseases, terrorist attacks, wars, and natural destructions including earthquakes, landslides, etc. the infrastructure of alternative water resources supply system may malfunction, but the groundwater supplements remain at their highest precious levels. 
+6.4. Local Conditions
+		The groundwater resources are location dependent in terms of local geological, hydrogeological, geochemical, morphological, tectonic, climatological, social, and economic factors. In humid regions, the groundwater resources are not exploited extensively due to surface water resources alternatives. For strategic planning, the following specific points must be considered:1. Rainfall events, aquifer recharge areas, and following infiltration rates become important. It is, therefore, necessary to know the surface geological and morphological features so as to calculate the runoff and groundwater recharge (Chapter 4).  2. The plain areas at lower lands are the main courses of surface flow that originates from relatively higher surroundings. It is important to know the areal extent and infiltration properties of these plains. The rainfall and runoff relationships must be taken into consideration by simple techniques (Chapter 1) including flood and flash flood occurrences. Such simple considerations may lead to further extensive evaluations that may furnish a simple strategy rather than the use of complicated software models, which are developed mostly for humid regions.  3. The geometric dimensions of subsurface cross-section must be determined through geophysical prospecting. Earth surface and especially piezometric surface (water table) slopes are also important for surface and subsurface groundwater flow movement evaluations.  4. Groundwater management practices require determination of different hydrogeological parameters such as porosity, specific yield (storage coefficient or effective porosity), and hydraulic conductivity for actual water volume calculations. It is preferable to obtain parameter estimations by field techniques, and especially, through the aquifer tests and their proper interpretations (Chapters 2, 3, and 4Chapter 2Chapter 3Chapter 4).  5. In replenishable groundwater reservoir strategic planning, the groundwater quality is significant not only for management, but also for controlling the excessive exploitation possibilities. Naturally, groundwater does not have uniform but different water types existing in the same storage. In general, the bottom layers in aquifers are saline, and therefore, its upconing to pumping wells must be avoided.  6. Safe yield exploitation must be considered for natural replenishment and groundwater abstraction balance. A certain amount of water must be left within the aquifer for uses in cases of possible future unexpected emergency cases.  7. The population and its future growth are strategical factors for groundwater allocation. The minimum requirements, say, 50 l/day/capita or 70 l/day/capita can be taken into account in emergency situations (Şen et al., 2013).  8. Private well owners must be convinced to allow for groundwater strategic planning by avoiding haphazard and unnecessary exploitations. 
+6.5. Preliminary Management Requirements
+						An effective and well-organized development plan for integrated groundwater management for different aquifers is very essential because such a plan relates all necessary tasks, resources, and time. Groundwater management studies should include the following three fundamental requirements. Their completion may give way to answer many simple and essential questions about the availability of groundwater resources in an area.1. Database: Data must be assembled from different sources such as previous reports and studies, reconnaissance field surveys, and through discussions with local experts on the subject as well as with experienced settlers. It is fruitful to collect linguistic (verbal) information from the settlers about the current and past practices of groundwater exploitation, rainfall regime, and recharge possibilities. Such a linguistic database is missing or not cared for in many groundwater resources development and management programs. Recently, fuzzy logic and system approach have been helping to treat the verbal data for the purpose of management in an effective manner (Şen, 2010). Most often, numerical data are derived from various maps such as topographic, geographic, and geologic maps in addition to photogrammetry, digital elevation model, and satellite images. Meteorological, climatologic, and hydrological records are the backbone of the database prior to groundwater management studies. In order to gain a preliminary overall view, it is necessary to have a reconnaissance phase, where all available maps, data, and numerical or verbal information are reviewed for appreciation of the ultimate management work with a set of relevant objectives and restrictions. This phase also provides basic data and information on hydrologic, geologic, hydrogeological, groundwater quality, and other related aspects. Qualitative reconnaissance methods are only an expedient and they cannot substitute adequately and carefully designed qualitative groundwater management studies.  2. Restrictions: It is necessary to define the framework of groundwater assessment from different problematic views including possible restriction impositions such as,a. Water demand quantity and types (mainly domestic, agriculture, industrial),  b. Safe yield,  c. Possibility of well numbers and locations,  d. Water supply quality,  e. Recharge possibilities and restrictions,  f. Pump levels and capacities,  g. Unsaturated volume for future water storage,  h. Saturated water volume for availability,  i. Rainfall water volume for recharge,  j. Groundwater potentiality,  k. Any limitation on well-completion methods,  l. Groundwater contamination and pollution possibilities,  m. Economic situation under available budget restrictions,  n. Other jointly manageable nearby groundwater storages.   Decomposition of AM program into subprograms is helpful so as to assess the economic, hydrologic, hydrogeological, and hydrochemical supply and demand aspects of each unit toward an integrated decision making.  3. Effective field survey: It is necessary to undertake a field survey with the aforementioned information and queries at hand in order to appreciate the effect of each groundwater occurrence, movement, and quality factors so as to achieve a complete, sustainable, and successful management program. A set of management options can be generated according to different scenarios, which are useful for identifying the optimum solution in the uncertainty domain of the problem especially in a multiple-aquifer system management. After these three fundamental steps, one can imagine a rather clear picture about the groundwater resources situation in the study area. The following questions can be asked, which provide clues about the solutions:a. Which locations have the priority for groundwater development in the area?  b. What other groundwater resources in the nearby locations can be managed in an integrated manner so as to reach a better optimum solution?  c. What are the possibilities of additional well drilling, location, and pumping in the study area?  d. Are there adequate groundwater resources quantitatively to meet the demand in the area?  e. Is the groundwater quality suitable for developmental activities in and nearby areas?  f. What are the discharge and recharge possibilities and rates temporally and spatially in the area?  g. Are there groundwater mixture possibilities so as to enhance the groundwater quality and quantity? (Chapters 4 and 5Chapter 4Chapter 5)  h. What are the potentialities in the area? Are there different aquifers that may be exploited in an integrated manner?  i. Are there possibilities of quick drawdown drops, thus an increase in the pumping lift and cost?  j. Are there any potential hazards either to the groundwater reservoir from pollution or to any infrastructure due to excessive pumping and subsidence?  k. What is the number of population that can be supported by the available groundwater resources?  l. If already there are groundwater developments in the study area, is it possible to integrate them into the management program?   
+It is possible to provide simple preliminary, rational, and logical answers to these questions on the basis of collected numerical and verbal databases. Prior to any detailed and refined management study, the planner should try to provide simple answers for the study area.
+It is not possible to avoid uncertainties in groundwater management programs, but through an effective planning one can reduce them to a minimum by developing an adaptive management program, which renews itself each time with the coming of new information.
+6.6. Groundwater Management Objectives
+		At the regional scale, it is extremely important to undertake identification of priorities according to the following steps:1. Groundwater system susceptibility assessment to degradation through inadequately controlled exploitation,  2. Identification of critical areas and their declaration as resource conservation zones, a concept which can play a critical role in the development of effective groundwater management. 
+Any groundwater resources management involves planning, implementation, and operation that are necessary to provide safe and reliable groundwater supplies. The groundwater management objectives are focused on aquifer yield, recharges, and water quality in addition to legal, socioeconomic, and political factors. Although formal groundwater management is important in large-scale developments, it may also be applied to smaller-scale or even individual well projects. In any groundwater management, safe and sustainable yields are among the main objectives.
+6.6.1. Safe Yield
+In groundwater management, the safe yield is the rate at which groundwater can be withdrawn from an aquifer without causing an undesirable adverse effect (Dottridge and Jaber, 1999, Heath and Spruill, 2003). The traditional definition of the safe yield assumes the pumping rate equal to the total recharge. Nian-Feng et al. (2001) assume that the safe yield is 50% of total natural recharge of groundwater.
+Any groundwater management should include objectives of renewability (replenishment, recharge) of the resources, practical exploitations, and consumption rationality. The concept of “safe yield” comes into view as a basic objective, which is associated with the amount of supply that a water user can sustainably depend upon. Meinzer (1934) defined the safe yield of an aquifer as “the practicable rate of perennially withdrawing water from it for human use.” In this definition, “perennial withdrawing” does not suit the aquifers in arid regions, and therefore, the safe yield can be modified as that “amount of groundwater storage, which can be abstracted to cover the supply needs during a stipulated period of time without damaging the aquifer, which is replenished only ephemerally each year after occasional, sporadic, and sufficiently intense rainfalls and their consequent floods.” In general, the safe yield must be adjusted in such a way that neither the quantity nor the quality of groundwater is allowed to reach unacceptable limits. In practical studies, the safe yield should be less than the annual average recharge in order to compensate minor groundwater losses. If the safe yield is overtopped for some time then the aquifer is bound to be mined, which is an undesirable situation in groundwater management strategies. The main reason for such mined aquifers in some parts of the world is the nonexistence of an effective groundwater management system.
+EXAMPLE 6.1 SAFE YIELD CALCULATION
+		A confined aquifer has 25 km2 areal extent and its thickness is 12.6 m. The aquifer hydraulic conductivity and the storage coefficient are 3.2 × 10−1 and 2.8 × 10−3 m/min, respectively. An observation well monitoring for several years indicated piezometric level changes between 27 and 24 m. Lateral flow rate due to infiltration from far distances is 1.5 m3/s. Under these circumstances,1. What is the aquifer safe yield?  2. If each well pump is 5 l/s, how many wells are needed for safe exploitation? 
+Solution 6.1
+		In this case, the lateral flow does not enter calculations because the piezometric level fluctuation already assumes its effect.1. Since long-term piezometric level fluctuation difference is 27 − 24 = 3 m, the total amount of water that can be withdrawn from this aquifer can be calculated according to Eq. (2.22), which yields annually safe yield water volume as, 
+
+		2. The pump discharge from a single well is Qw = 5 l/s = 5 × 10−3 × 365 × 24 × 60 × 60  ≈ 0.16 × 106 m3/year. Hence, the number, n, of wells is, 
+
+In practical applications, an additional standby well must be taken for operation in case of any one of these two wells' failure. Hence, three wells are enough for sustainable management.
+6.6.2. Sustainable Yield
+Sustainable development is defined as the enhancement of the economic, social, and ecological well-being of current and future generations. In practice, the sustainable yield corresponds to water abstraction from an aquifer during one year such that undesirable effects are not allowed in the area. This yield can also be limited by an amount less than recharge but should not exceed the long-term mean annual discharge. It can also be limited by the physical size of the aquifer including saturated and unsaturated volumes or by the rate at which water moves to the withdrawal area. For instance, groundwater entrance velocity into the well can be used as a guide for sustainable yield calculations (Section 6.14). In the long term, the sequences of wet and dry spells tend to balance out average recharge rate, but management ignorance may lead to overdraft.
+It is not possible to maintain a constant sustainable yield in a management program, due to various reasons. The sustainable yield may change seasonally and interannually.
+The rearrangement of the pumping pattern, urbanization, and changes in vegetation and crop patterns reduce natural recharge. The change in the groundwater exploitation pattern such as from domestic to agriculture or vice versa or to industrial affects sustainable yield pattern.
+The groundwater storage volume, water quantity, and quality may change due to some nonpumping effects as a result of agricultural and industrial developments. The irrigation return water may increase the groundwater storage volume, but in the meantime may cause deterioration in water quality. At some places, illegal wells may pump groundwater for commercial benefits without management considerations and this invites groundwater depletion and salinization. All such activities endanger the sustainability of groundwater resources.
+EXAMPLE 6.2 SUSTAINABLE YIELD CALCULATION
+		Extensive study in an area has indicated that the groundwater recharge is about 1.20 × 106 m3/year. In the meantime, there is a need for water supply for domestic and agricultural activities in nearby areas. The population of the town is 15,000 and per capita daily consumption is planned at 110 l/capita/day. Yearly agricultural water demand is calculated as 0.70 × 106 m3/year.1. Check whether the groundwater storage is enough for sustainable development.  2. If not, what could be suggested for sustainability? 
+Solution 6.2
+		Sustainability in this case is dependent on groundwater abstraction as equal to yearly replenishment of the aquifer.1. The total annual demand (groundwater supply) has two components: domestic and agricultural demands. Since per capita consumption is restricted by 110 l/capita/day, the annual domestic demand, QAD, is 
+
+The total annual demand, QDT, is the summation of this value with the agricultural need.
+
+				Since the total annual demand is greater than groundwater recharge (1.30 × 106 > 1.20 × 106), it is not possible to sustain the groundwater storage without additional water level drop.2. For the sustainability of the aquifer 1.30 × 106 – 1.20 × 106 = 0.10 × 106 m3/year must be supported by some other water resources. Additional water support may be solved by several alternatives depending on the circumstances among which one or a few of the following solutions might be adopted.a. If the above calculations are valid for a dry year or for a short duration drought period, then additional groundwater may be taken from the same aquifer, in the hope that future wet periods may refill the aquifer to its normal levels. Hence, long duration sustainability may be satisfied by local groundwater management. Such a decision should be based on dry period rainfall analyses and its groundwater recharge impact studies. In some areas, the return period of dry seasons may be established through past records' examination and for instance it may have 2-year, 3-year, or 5-year periods. Depending on the aquifer potentiality and water storage volume, the final decision can be made by considering the convenient return period.  b. For local and temporary dry periods, the per capita water consumption may be reduced to such a level that the water deficit, 0.10 × 106 m3/year, can be covered. For instance, if the consumption rate is reduced by 20 l/capita/day, then the water that can be saved is  In this way, local administrators may avoid unsustainability for one year with the contribution from the local people with their endurance and patience. This is, in a way, a good strategy because rather than having expensive solutions, the temporary water shortage can be alleviated by water saving. The success of this alternative depends on public awareness.  c. It may also be possible to save agricultural water demand to a certain extent by changing crop types that require less water. Furthermore, the local experts and administrators may lay down plans for joint water savage from per capita and agriculture demands.  d. If the aforementioned solutions are not sufficient or cannot be applicable for some reasons, then additional water supply should be sought from outside the area. Among such alternatives are sources from nearby aquifers, lakes, and surface or subsurface dams. In case of none of such alternatives, as in arid regions, for long term sustainability desalination plants may be established.   
+6.6.3. Safe Yield and Sustainability
+After Meinzer's (1934) definition of “safe yield” as the perennial water abstraction from an aquifer without producing any undesirable results, Todd (1980) suggested “perennial yield” as the flow of water that can be abstracted from a given aquifer without producing adverse results. Each aquifer has a different safe yield, depending on its recharge and hydrogeological parameters. The key point is the consensus on the “undesirable” or “adverse” results. In any groundwater management task, there are different expectations by consumers, administrators, scientists, government officers, farmers, society, and environmentalists. In some regions, the deeper the well the more is the groundwater potentiality, which may cause friction between rich and poor people. All these points are from the quantity point of view; however, the groundwater quality becomes more of concern in many cases. Quality variations are more difficult to control and manage because they are not well perceived and understood by the public, mass media, and even by decision makers, engineers, and hydrogeologists. Once the aquifer is depleted it may take years to recover.
+		Groundwater management deals with the complex interaction between human societal activities and the physical environment, which pose an extremely complex and difficult problem to solve for the benefit of all parties involved. Those using aquifer are little motivated to preserve it; any preservation may simply be exploited in future by other individuals. Consequently, there are rivalries between the exploiters without care about management programs. Such a competition might lead to inflicting damages on the third party, which is the society itself. Among the management strategies are the following points:1. Adjustment of the annual rates of pumping, generally, based on monthly rates,  2. Adjustment of the well configuration,  3. Augmentation of water supply from other sources or groundwater recharge enhancement,  4. Awareness of groundwater beneficiaries,  5. Limitation of exposition according to monitoring results. 
+		Strategic planning does not mean aquifer overexploitation or storage of groundwater more than necessary. The following points must be taken into consideration for a successful management policy:1. Physical dimensions of exploitable water quantity and possible groundwater recharge amounts. It is necessary that a hydrodynamic equilibrium is held between the natural and/or artificial recharge and groundwater abstraction rates.  2. Chemical dimensions of groundwater quality variations during recharge or exploitation processes. Degradation in groundwater quality must not be allowed.  3. Economic consequences over short- and long terms.  4. Social impacts are also important. For instance, detrimental effects on third-party users must be avoided.  5. Environmental sustainability consequences over short and long terms.  6. Social impacts are also important. Damage to the natural environment, especially sensitive aquatic ecosystems, must be avoided. 
+		In any strategic planning of groundwater resources, answers to the following questions are the preliminary requirements for efficient planning:1. How to exploit the groundwater resources? Is it from physical, hydraulic, social, or engineering points of view?  2. Is it necessary to maintain a minimum groundwater table level especially in unconfined aquifers?  3. Is it necessary to maximize the annual benefits and overturn from economic points of view?  4. Do the groundwater quality variations play a significant and perhaps sole role in the groundwater allocation in emergency cases?  5. Is it necessary to maintain a certain amount of groundwater volume in the aquifer so as to cover the emergency needs of population of a certain size? 
+		After what have been explained in the previous sections, it is clear that each area needs its own management and development program by considering the site-specific conditions, restrictions, and data availability. The groundwater usage may be curtailed through some of the following effective mechanisms:1. The groundwater reservoir monitoring requires extensive records and investigations. This may be one of the key reasons why overdraft may escape recognition until it is too late, because the effects of development are commonly obscure and complex, and becomes understandably slow by time.  2. The causes and effects of groundwater overdraft are not reversible immediately or fully. Consequently, cutting of withdrawals in the reverse order of their priorities does not assure that the overdraft trend will be reversed. There may be two reasonable doubts that the available facts would suffice to sustain against any appeal from an order for reduction, or that the statutory procedure would recapture the status of the earlier appropriators.  3. Even though the perennial or sustainable yield and appropriations for use may be almost balanceable, some further development may also be feasible. 
+6.7. Integrated Groundwater Management
+								In a conjunctive use of different groundwater storages on the basis of a proper management framework, the planner or decision maker should try and maximize the use of all available storages in the best, convenient (to the society), and optimum ways. There are different alternatives such as inter- and intraaquifer groundwater transfers by simultaneous consideration of recharge, abstraction, and distribution characteristics within an integrated system, which provides minimization of water losses, optimization, and conservation of groundwater storage at convenient times and locations, and efficient distribution networks with a convenient number of wells. Assessment and management are the key factors in integrated development and management strategies for water resources. Without a correct and detailed assessment, it is almost impossible to plan, design, realize, and manage water resources development projects. The results of the assessment and subsequent management are the bases for any decision-making process, since they can lead to large investments and serious consequences for the environment. Proper management and utilization of aquifer flow depend essentially on the availability of data and rational, logical, and scientific analysis techniques. Water resources assessment consists of determining the quantity, quality, and variability for sustainable development and rational management. The following steps are necessary to have the final solution with confidence:1. Individual considerations: These include detailed hydrologic and hydrogeological works within each drainage basin and aquifer independently from each other. For strategic planning, the major questions are:a. What are the climatological, meteorological, and hydrological recipients from the rainfall events, which have direct impacts on water resources in the region? (Chapter 1)  b. What are the recharge possibilities and present abstraction rates from each aquifer?  c. What are the volumes of saturation and unsaturated layers in each aquifer with respect to future groundwater storages? (Chapter 4)  d. What are the natural safe yield level and volume in addition to permissible abstraction volume?  e. What are the hydrochemical facies and groundwater quality zonation in relation to host geology and regional hydrological regime? (Chapter 5)  f. What are the artificial groundwater recharge enhancement practices that can be applied efficiently? (Chapter 4)    2. Conjunctive considerations: Conjunctive groundwater resources exploitation must be sought in cases of two or more different aquifer availability. For this purpose, the following questions are valid:a. What are the two best aquifers that will result in the most optimal conjunctive usage?  b. What is the best manner of groundwater withdrawal from the aquifers during different months of the year, and what is the ratio of supply from each aquifer for meeting the demand?  c. What is the mixing ratio based on the water quality of each aquifer for the satisfaction of demand quality?  d. What are the water withdrawal preference locations in each aquifer and volume (discharge) each month?  e. What is the suggested plan for necessary infrastructure (wells, pipes, storage tanks, pumps, etc.)?    3. Desalination consideration: The strategic planning of groundwater resources especially in arid and semiarid regions must also consider the possible supports of desalination plants, if any. Herein, the following questions can be asked:a. Which are the prior aquifers for groundwater mixture with desalinization water?  b. What percent of desalination water should be mixed with which aquifer?  c. Is it possible to store desalination water in the unsaturated zone, and if possible, in which aquifers?   
+6.8. Basic Management Variables
+Drainage basin hydrologic systems have significant spatial and temporal variability. Long dry periods may continue for several years causing severe droughts; short-duration heavy rainfalls may cause floods with damages on human life and property but also provide groundwater recharge opportunities in arid and semiarid regions. Recently, due to urbanization, agriculture, and industrial activities, water resources mobilization has increased unprecedentedly for water supply and demand purposes. Such increases are observable in many countries for satisfying the expected socioeconomic development and to ensure food security. Some countries have had opportunity to benefit from nonconventional water resources, such as desalination units despite the high cost.
+6.8.1. Water Demand
+Accurate and up-to-date population data are a prerequisite for many different applications, including risk and vulnerability management. There is, however, a shortage of data with a high spatial resolution, particularly in developing countries. Global population data sets are designed for global modeling studies, including climate change research, and their resolution is generally too low for local or community purposes. Population data with an appropriate format and resolution is required for a variety of applications such as spatial planning processes, disaster and emergency management, and risk and vulnerability assessment (Aubrecht et al., 2010, Hall et al., 2008, Schneiderbauer, 2007, Sweitzer and Langaas, 1995, Tatem and Linard, 2011).
+Different shareholders request water for various purposes, including domestic, agricultural, and industrial and production activities. Domestic use depends on the per capita water consumption per time interval, say, a day. In order to calculate expected total water request for a population, first the projection of population growth is necessary and then per capita per day water demand multiplication by the projected population number yields total water demand.
+Simple models for population growth assume that there are no migrations, natural disasters, epidemic sicknesses, and therefore, an initial population size, N0, is bound to increase by time, N(t). Provided that there are no water and food restrictions, rationally and logically the population growth will have a proportional but nonlinear increase by time, which can be appreciated as the curves in Figure 6.1.
+
+		Download: Download full-size image
+FIGURE 6.1. Natural population growth.
+It is well known that a curve with an intercept on one axis and asymptotic to another has an exponential function shape (Şen, 2013). Hence, it is possible to write the mathematical form of this curve as,
+(6.1)
+where γ is the population growth rate. Depending on the sign of γ, the population growth (γ > 0) or decay (γ < 0) takes place. In practical studies and future planning, population increase is always taken into consideration.
+		On the other hand, in water and food restrictive cases although the population increase will be initially similar to A in Figure 6.1, but later on it will have to approach a limitation as for curve B. Water demand problems in many parts of the world can be summarized along the following points, which are not exhaustive:1. Demand for groundwater is in steady increase all over the world, hence each day there are well diggings or drillings.  2. Uncontrolled groundwater abstraction is in operation because of missing management programs.  3. Sea water intrusion takes place along the coastal areas due to overpumping, and hence, water quality deteriorates steadily.  4. Upconing of saline water due to overpumping leads to groundwater quality deteriorations in deep aquifers.  5. Extravagant groundwater use for agriculture through old-fashioned irrigation practices wastes groundwater. This leads also to top fertile soil degradation as a result of salinization.  6. Insufficient and inefficient city water distribution networks cause leakages from the pipes. These leakages may be thought of as augmentation in the city groundwater storages, but they cause water table rise and damage to infrastructure (foundations, cables, etc.).  7. There are impacts of man's activities on groundwater duality as a result of contamination.  8. Water migration between fresh and saline aquifers due to bad well construction.  9. Due to overpumping, groundwater levels drop, and hence, groundwater haulage expenses increase. 
+EXAMPLE 6.3 POPULATION PREDICTION AND WATER DEMAND
+		In a town of 10,600 persons, presently available sustainable groundwater resources are about 0.530 × 106 m3 per year. The population growth rate is 0.04 per year. Usual per capita consumption is 120 l/day. However, in dry periods the least per capita is planned as 70 l/capita/day.1. Is the present groundwater resources enough for water supply?  2. What is the amount of remaining yearly water? For how many years it is sufficient without any other water supply alternative entrance into the scene?  3. What are the water supply amounts after 5 and 10 years? Is the existing resource sufficient for their supply? If not, what to do?  4. How many people can be supplied by groundwater resources during a drought period? 
+Solution 6.3
+		It is assumed that in this town the water demand is only for domestic use, and agricultural products are imported from other areas and there is no industrial development.1. In order to check whether the existing water supply is enough, the annual water consumption rate, QA, can be calculated as, 
+
+				Since, this is less than the existing groundwater supply, (0.464 × 106 < 0.530 × 106), the annual groundwater supply is sufficient to satisfy the domestic water supply.2. The amount of remaining annual water volume is 0.530 × 106 – 0.464 × 106 = 0.066 × 106 m3. For future simple management prediction, with the same per capita water consumption rate, the question is for how many years sustainability can be continued? Since future available water amount is 0.186 × 106 m3/year and the number of years to consume this amount is not known, let us denote it by y. With the given population growth rate, the number of future years can be calculated simply as follows.a. Let us consider one year, then the population will increase to 10,600 × (1 + 0.04) = 11,024 capita. Their annual water consumption is,   
+
+This is still less than the available groundwater resource, and hence, one can make similar calculations for the second year with the new population, which is 11,024 × (1 + 0.04) = 11,465 capita and their water consumption is,
+
+Still there is a room for available water cover. Hence, the third-year population is 11,465 × (1 + 0.04) = 11,924 capita and the water consumption is,
+
+Continuation of similar calculations yields the population of the fourth year as 11,924 × (1 + 0.04) = 12,401 and water demand is,
+
+		Since this amount is bigger than the available groundwater volume (0.543 × 106 > 0.530 × 106), after the fourth year, due to population increase, water stress and shortage will start.3. Especially with the start of the fifth year, the local administrators should look for additional water supply alternatives for better management strategy. However, they should take precautions and make preparations under the light of the previous calculations, because the population growth indicates that within the fifth year water shortage will start. So, they can make their plans a few years earlier and start the most convenient additional water supply alternative(s) as mentioned in Example 6.2.  4. During a drought year with the same original population and 70 l/capita/day water consumption, the number of people, n, that can be supplied without water shortage is, 
+
+6.8.2. Aquifer Features
+		The following aquifer features such as geometric, geologic, hydrogeological, and social properties are among the main factors for groundwater availability and management calculations in an area.1. The geometry of aquifer boundaries, saturation and unsaturated thicknesses, and widths and areal extensions,  2. The hydrogeological properties of the aquifer material as for the storage coefficient, hydraulic conductivity, permeability, and transmissivity,  3. Aquifer material composition with reference to its homogeneity, isotropy, etc.  4. Piezometric (water table) level map and the direction of groundwater flow (hydraulic gradient),  5. Aquifer material type as porous, fractured, or karstic medium,  6. Groundwater flow regime as laminar or turbulent,  7. Water quality,  8. Recharge and/or spring locations,  9. Initial and boundary conditions,  10. Aquifer safe yield levels,  11. Data availability and reliability,  12. Individual or conjunctive management models,  13. Local legal rules and regulations,  14. Objective function and restrictions,  15. Political and transboundary conditions, if any. 
+6.9. Hydrogeological Management
+		In an effective groundwater management, it is necessary to link flow and storage managements in proportion for sustainable and harmonious exploitation alternatives. Groundwater exploitation and management processes go through a nonequilibrium phase, the length of which depends on the following points:1. The rate of groundwater abstraction, and hence, the aquifer's hydrogeological features and parameters,  2. Boundary conditions and the rapidity of compensatory reactions, for example, reduction in the natural outflow and/or increase in the induced inflow. 
+				According to exploitation strategies, the following management practices of the aquifer reserve are therefore conceivable and practical, but under certain restrictive constraints (Margat and Saad, 1983):1. A maximum and lasting exploitation strategy of the renewable resources, in a regime of dynamic equilibrium with average abstraction, which is approximately equal to average recharge (possibly enhanced by boundary effects) without taking into account the season or even possible annual variations (increased abstraction in periods of drought). Thus, after a decrease in the initial phase of nonequilibrium, the stabilized reserve is used, usually, as a regulatory factor such as annual or multiannual, its natural regulatory function being amplified under the constraints of preserving a minimum flow rate at the outflow boundaries of the aquifer (springs, low water level in draining streams, etc.) or preserving the fresh-water/sea-water equilibrium in a coastal aquifer.  2. In a strategy of repeated exploitation of the storage and then through flow only, in a prolonged unbalanced regime, that may be “guided” or unintentional in the initial phase, and in which abstraction (increasing or stabilized) is greater than recharge (even when enhanced by boundary effects), a second phase involves reducing abstraction to restore the equilibrium. In this case, the depletion of the reserve contributes largely, sometimes predominantly, to the production of water, during an initial phase of limited medium- to long-term duration, which is limited either by external constraints (see strategy a below) or by a reduction in the productivity of wells (drawdown by deteriorating aquifer conditions and limited by the base of the aquifer). In the latter phase of possible reequilibration, the reserve may be either:a. stabilized, on average, provided that it has reached an equilibrium bringing abstraction close to recharge, or  b. restored in part, by reducing the abstraction below average (repayment of the loan) and sometimes by artificially increasing recharge and then at a new equilibrium.    3. A strategy of mining or exhaustive exploitation with abstraction increases or otherwise, in operation greater than the average recharge. In this case, depletion of the reserve provides most of the water produced, and the exploitation is in the long term more or less limited when drawdown becomes excessive without later returning to a regime of reequilibrium. The recovery of the reserve may be too slow and sometimes hindered by irreversible degradation of the original capacity of the reservoir due to subsidence. 
+6.9.1. Strategic Groundwater Storage Planning
+		In general, there are two strategic planning procedures in a region depending on a number of groundwater sources (aquifers). Herein, the meaning of a region is the area with at least two aquifers, so that they can compete with each other for joint strategic exploitation. Hence, in a regional planning, two complementary studies are:1. Within aquifer (microplanning),  2. Interaquifer (macroplanning). 
+6.9.1.1. Within-Aquifer Management
+		All aquifers do not lend themselves indifferently to the methods of management as explained along the following strategies.1. Strategy 1: This is appropriate for unconfined aquifers of small and medium capacity and of limited thickness, with a high rate of recharge (reserves of the order of one to 10 times the average annual volume of discharge), and includes the case where a confined aquifer is exploited near the point as it becomes unconfined. This strategy is used particularly in cases where constraints limit the possible drawdown (to preserve open water bodies or watercourses, to conserve hydraulic links with surface water supply sources to prevent the displacement of the fresh water/sea water interface, etc.), whatever the rate of recharge of the aquifer is.  2. Strategy 2: This is more convenient for unconfined and semiconfined aquifers with high capacity and a small-to-medium recharge rate (reserves of the order of 10 to a 100 times greater than the average volume of annual recharge), without appreciable constraints for the conservation of water levels. For example, this strategy is appropriate in an aquifer with outlets that are independent of water courses (areas of evaporation in arid regions).  3. Strategy 3: This is possible for aquifers of high capacity with little recharge (reserves in the order of 100 to 1000 times greater than the average annual volume of recharge). Development can take place in the unconfined and confined zones where transmissivity and storativity are high. This is the case for most of the deep aquifers in sedimentary basins, the most transmissive layers of which drain the less-permeable but higher-storage layers (aquitards). 
+		The aquifer is considered as a whole for the rainfall occurrences and subsequent time-lagged infiltration (Chapter 1), which fills the voids in the unsaturated zones for strategic groundwater recharges and withdrawals (Chapters 3 and 4Chapter 3Chapter 4). Different parts of the aquifer must be identified with hydrogeological features that are meaningful in strategic planning and management. For instance, different parts of the main aquifer may provide competing alternatives. In a within-aquifer strategic planning study, the following points are significant for consideration:1. An aquifer is considered as composed of different strategic parameter variations. Generally, any aquifer is considered as composed of three fuzzy parts (“low,” “medium,” and “high” potentialities), which are rather arbitrarily divided according to expert views (Chapters 3 and 4Chapter 3Chapter 4). On the other hand, each part can be taken as a potential strategic planning unit.  2. An aquifer may also be considered as composed of different hydro-geo-stratigraphic units as aquifers and nonaquifers. Such a subdivision is useful from groundwater resources point of view, but it needs detailed information about the subsurface geological and hydrogeological information.  3. Division of any aquifer can be based on the groundwater quality zonation and such a division favors strategic groundwater resources planning for water quality satisfaction (Chapter 5).  4. Aquifers can be divided according to social, industrial, military, and agricultural uses. This is tantamount to saying that subdivision achievement can be obtained on the basis of priorities.  5. It is also possible to consider subdivision of an aquifer by recharge (infiltration and its augmentation) possibilities, because the recharge areas have the major significance for groundwater storage increments.  6. Strategic significance of an aquifer can be based also on the human activities, water shortages for certain periods, floods, and natural and social impacts. For instance, if an aquifer is far away from human activities, whatever the groundwater resources availability, it may not be included in strategic planning purposes in the short-term projections. 
+The rational and/or methodological comparisons of subdivisions will lead to the best management strategy. Prior to a regional study, strategic subaquifers must be depicted with all available data, field reconnaissance, knowledge, and information.
+6.9.1.2. Interaquifer Management
+		This is a large-scale (macroplanning) strategic groundwater resources planning, including two or more aquifers with their competitive properties. In a large-scale strategic planning, the following points must be taken into consideration:1. It is necessary that there is an actual or expected future possible cause for groundwater overexploitation. For instance, expansion of a city might lead to a steady strategic planning of surface water, and especially, groundwater resources in arid and semiarid regions. Population growth, land use, scarcity in the rainfall occurrences, and water quality deterioration due to mismanagement and uncontrolled pollution activities are among strategic groundwater planning and management ingredients.  2. It is preferable to interchange and to exploit groundwater resources jointly in nearby rather than far-away aquifers, which serve  at times of emergency. If the regional hydrologic and subsurface groundwater balances require, it is possible to transport groundwater between adjacent aquifers.  3. The competitive divisions on a small scale (within aquifer) are considered first to compete among each other and additionally other small-scale features of different aquifers in the same region must be allowed to compete with the previous considerations. It may be feasible to transport and consume groundwater resource among nearby aquifers.  4. It is possible that each division from different aquifers may have different strategic planning facilities, and in such a situation, the priorities must be given according to local administration's or the central government's views. 
+Interaquifer planning should be effective after the completion of micro-planning strategies in each aquifer.
+6.10. Basic Management Models for Aquifers
+In order to cope with future rational groundwater distribution and demand, there is an urgent need for efficient planning and management schemes taking into consideration the sustainability principles.
+AM includes several concepts as supply, demand, wet and dry periods, economy, water quality, social affairs, etc. Merrit (2004) suggested that demand can have at least four quite distinctive implications such as the use of water, the consumption of water, the need for water, or the economic demand for water. He defined each one of these terms carefully in the context of regional hydrosocial balance. Water resource management is a form of “demand management,” but such a concept has not been taken into consideration as one of the major active factors. Rather, the management strategies have dealt with increasing the water supply by new sources.
+In potential aquifers, there is a real problem in groundwater resources exploitation including development and AM, which are almost nonexistent. Groundwater is not extracted by considering optimum benefit for the present and future generations, and especially, for possible critical dry periods. There is a more general point that AM is now widely seen principally as a form of “demand management.”
+Simple and effective AM rules and regulations must be put forward prior to the preparation of dynamic and adaptive management software. AM must be programmed in such a way that abstraction should be adjusted in accordance with the groundwater resources supply expectations within stipulated time periods in a sustainable and perennial supply manner. The renewable (recharge) character of potential aquifers must be considered with suitable aquifer pumping rates (discharges), well-field locations, and especially, priority of subunits within a single aquifer system as well as in the integrated and joint aquifer systems.
+Balkhair (2002) has suggested the selection of five potential Wadis from arid regions of western Arabian Peninsula for the most optimum groundwater reservoir management through a multicriteria decision-making. He used 12 hydrologic and hydrogeological variables on a lump basis for each Quaternary deposit aquifer. Although his approach can be used as a preliminary step for solution, it includes many restrictive assumptions and subjective indexing of some variables.
+Herein, generally, the basic decision variables for AM study are shown in TABLE 6.1, TABLE 6.2 for aquifers A and B, respectively. Although there are numerous management variables that may contribute to overall multivariable decision criteria for integrated AM system, herein, the most effective 18 numerical and 2 linguistic variables are considered. These tables include all types of numerical and verbal information needed for successful development and application of an effective groundwater management program. Each item is based on detailed field survey, office work, and the application of relevant techniques explained in the previous chapters.
+TABLE 6.1. Strategic Groundwater Planning Management Variables in Aquifer A
+Aquifer A
+Aquifer Features
+Subaquifers
+A1
+A2
+A3
+A4
+Annual rainfall (mm/year)
+189
+192
+173
+182
+Alluvium surface area (×103 m2)
+6612.1
+5816.9
+15494.1
+1652
+Direct rain water volume (×106 m3/year)
+1.25
+1.12
+2.68
+0.3
+Possible direct annual recharge (×106 m3/year)
+0.25
+0.17
+0.27
+0.075
+Water table area (×103 m2)
+5687.6
+4449.1
+12354.7
+1236
+Average saturated thickness (m)
+31.6
+57.2
+36.6
+18.7
+Average unsaturated thickness (m)
+10.3
+19.6
+27.3
+14.8
+Average transmissivity (m2/day)
+659.7
+1510
+282
+557
+Average hydraulic conductivity (m/day)
+20.9
+26.4
+7.7
+29.78
+Hydraulic gradient
+0.0126
+0.008
+0.005
+0.00614
+Subsurface flow rate (m3/m/day)
+8.31
+12.08
+1.41
+3.42
+Average storativity
+0.09
+0.128
+0.045
+0.068
+Average effective porosity
+0.25
+0.25
+0.2
+0.3
+Abstractable groundwater volume (×106 m3)
+16.17
+32.57
+20.35
+1.57
+Rechargeable direct groundwater volume (×106 m3)
+17.03
+28.5
+84.6
+7.33
+Abstractable fullness ratio
+0.48
+0.53
+0.18
+0.17
+Present groundwater consumption (×106 m3/year)
+3.11
+6.17
+16.50
+5.05
+Average water quality (EC, micro-mhos)
+1150
+2245
+2293
+1020
+Recharge possibility
+High
+Poor
+Medium
+Medium
+Geological environment
+Alluvium diorite granodiorite
+Alluvium metabasalt volcano-clastic
+Alluvium metabasalt volcano-clastic
+Alluvium hornblende quartz-feldspar, marble
+TABLE 6.2. Strategic Groundwater Planning Management Variables in Aquifer B
+Aquifer B
+Aquifer Features
+Subaquifers
+B1
+B2
+B3
+B4
+B5
+Annual rainfall (mm/year)
+357
+357
+166
+166
+166
+Alluvium surface area (×103 m2)
+31895
+8989
+1514
+3,027
+35789
+Direct rain water volume (×106 m3/year)
+11.39
+3.21
+0.25
+0.50
+5.94
+Possible direct annual recharge (×106 m3/year)
+1.71
+0.48
+0.05
+0.1
+1.19
+Water table area (×103 m2)
+29907
+7678
+9367
+1873
+22997
+Average saturated thickness (m)
+7.27
+8.06
+4.36
+5.00
+14.59
+Average unsaturated thickness (m)
+31.73
+18.94
+37.52
+41.69
+43.63
+Average transmissivity (m2/day)
+187
+14
+63.8
+659.7
+431.8
+Average hydraulic conductivity (m/day)
+25.7
+1.7
+14.6
+139.1
+29.6
+Hydraulic gradient
+0.026
+0.017
+0.005
+0.0086
+0.011
+Subsurface flow rate (m3/m/day)
+9.88
+0.58
+0.16
+7.18
+4.90
+Average storativity
+0.2476
+0.1099
+0.0694
+0.1836
+0.1391
+Average effective porosity
+0.25
+0.25
+0.20
+0.30
+0.25
+Abstractable groundwater volume (×106 m3)
+53.83
+6.80
+2.83
+1.72
+56.83
+Rechargeable direct groundwater volume (×106 m3)
+253.0
+42.50
+11.36
+37.86
+390.40
+Abstractable fullness ratio
+0.17
+0.14
+0.2
+0.04
+0.12
+Present groundwater consumption (×106 m3/year)
+1.2
+1.4
+0.14
+2.6
+10.6
+Average water quality (EC, micro-mhos)
+977
+838
+1346
+1063
+1393
+Recharge possibility
+High
+Moderate
+Poor
+Moderate
+High
+Geological environment
+Alluvium biotic monzogranite
+Alluvium diorite monzogranite
+Alluvium diorite monzogranite
+Alluvium diorite monzogranite
+Alluvium diorite monzogranite
+Table 6.1 has four columns, whereas Table 6.2 has five columns each for different subaquifer within major aquifers A and B, respectively. Accordingly, in Table 6.1 there are 20 × 4 = 80 pieces of information and in Table 6.2, 20 × 5 = 100 inputs are available.
+6.10.1. Logical and Rational Management Rules
+		Haphazard and heuristic techniques and readily available software are not employed, because they are with hidden and unclear logical and rational formulations. Prior to an AM system, it is necessary to consider the conceptual, rational, and logical basic model features first individually and then in an integrated manner. Such models provide information about the following points:1. Definition of the phenomenon in terms of features recognizable by observations, experiences, and simple analyses or validated simulations. A management program should be based on various linguistic and simple conceptual principles and alternatives.  2. Description of the AM practices in terms of various alternatives, size, intensity, and accompanying groundwater conditions.  3. Logical statements about the physical processes, which enable understanding of the factors that dominate the mode and rate of groundwater recharges and consumptions. This corresponds to the derivation of basic and simple logical rules and regulations about the overall system performance.  4. Specification of the key hydrogeological fields demonstrating the main processes such as the recharge potential, saturated and unsaturated zone potentials for abstraction, and groundwater storage augmentation possibilities.  5. Guidance for hydrogeological conditions using diagnostic and prognostic stages that best discriminate between development and nondevelopment guidance for the AM. 
+		The rational and logical principles provide decision makers with the following knowledge, which can be employed in any effective AM study:1. Diagnosis: This is the preliminary step that helps in understanding the internal and external activities within the whole system under consideration.  2. Synthesis: Available verbal and numerical data and information must be synthesized for arriving at preliminary conclusions that help guide toward the optimum pattern of AM.  3. Logic: This provides a “mental picture” of the AM aspects within- and intraaquifer situations.  4. Isolation: The basic ingredients such as subaquifers and AM variables are isolated from each other so as to assess the individual effects.  5. Main pattern: This includes the identification of main and distinctive patterns within the whole complex system.  6. Numerical evaluation: Mental and logical aspects are executed numerically by considering fundamental formulations with individual and joint AM operations.  7. Numerical projections: Based on the previous steps, numerical predictions are produced as future projections under different scenarios.  8. Numerical products: Different tools are used for modification of numerical products.  9. Simple calculations: Rather than involved mathematical procedures, it is preferred to construct preliminary steps for a simple AM.  10. Data gaps: Suggested scenarios provide the possibility of filling in gaps in the data. 
+6.10.2. Basic Data
+The joint and integrated groundwater management of aquifers in A and B provide an opportunity to enhance the joint water supply (TABLE 6.1, TABLE 6.2). The general configuration of joint management program for A–B system can be considered initially as in Figure 6.2.
+
+		Download: Download full-size image
+FIGURE 6.2. A–B overall groundwater management systems.
+				The following points are important in the conceptualization of this system and they must be imbedded into the final AM program:1. A and B do not have any direct interchange but their management will depend on what goes inside A–B block (joint management) diagram.  2. A–B block receives groundwater in different ratios from each aquifer but the total water amount remains equal to what monthly water demand is.  3. A–B block may be thought of as similar to surface water reservoirs (dams) where joint water withdrawals contribute in different proportions to overall demand.  4. In deciding on the water withdrawal ratios from each aquifer to A–B system one of the following three alternatives can be considered:a. Quantity-based ratio,  b. Quality-based ratio,  c. Quantity-quality-based ratios.   In particular, for the initial development of the AM program, herein, the quantity-based ratio determination is used.  5. The groundwater supply from the joint aquifer (A–B) management goes directly into the water distribution system. 
+6.10.3. Conceptual Model of Aquifer (A–B) Systems
+The conceptual model of subaquifers in each aquifer is presented in Figure 6.3 for the joint A–B management program. This is a block diagram that shows the natural groundwater flow from different subaquifers of each aquifer; A and B.
+
+		Download: Download full-size image
+FIGURE 6.3. A–B detailed groundwater management system.
+It is worth to notice that each subaquifer is connected either in parallel or in series. Parallel connection implies that the groundwater withdrawal from one of the subaquifers does not affect the other, and hence, their contribution to the A–B system is independent from each other. On the other hand, the serial connection implies that the groundwater withdrawal is interconnected between the components. Depending on the aquifer transmissivity value, the greater the transmissivity the smaller is the required time of groundwater transportation. In the case of serial connection, the aquifer plays a similar role as that of a series of pipe flow. There are nine components (subaquifers) that may contribute to the overall A–B system in the AM stages.
+6.10.4. Logical Management Principles
+The joint operation between the subaquifers can be achieved by two logical connections: AND or OR. If the subaquifers are in serial connection then they must function for the overall performance of the system, and therefore, the subaquifers are connected by AND, whereas parallel units contribute to the overall performance of the system by OR connective. The statements including ANDs and ORs are referred to as the rule base. Consideration of these points provides possibility to extract the relevant rules for each conceptual model under consideration. Each rule indicates independent contribution to the overall demand. Let us consider the configuration A only in Figure 6.3. This leads to a set of rules as in the following frame, which gives the opportunity to assess the whole A basin subaquifer units in an exhaustive management program.
+
+		Download: Download full-size image
+Herein, there are seven independent logical rules (alternatives) for groundwater management in system A. The first rule is unique and very independent from other subaquifers. Other rules indicate joint operation of different subaquifer combinations which can be identified from the subaquifer connections as in Figure 6.3. The first two rules are for two of the upper subaquifers' joint operation for groundwater transfer to system A; the next three rules are for three subaquifers' joint operation, whereas the last rule is for the whole subaquifers' joint operation for water supply to system A. Similarly, consideration of subaquifer configuration for B yields the following logical rule chain:
+
+		Download: Download full-size image
+Hence, for B within-AM, there are nine independent logical management rules.
+In order to supply groundwater from A–B system, there are many independent rules, and in total there are 7 × 9 = 63 alternatives. It is not necessary to write down all these rules, but the most logical ones are listed in the following frame:
+
+		Download: Download full-size image
+It is a difficult task to identify the best and the most strategic joint AM rule among these logical rules. However, as the specific aspects are taken into consideration the picture becomes more obvious.
+EXAMPLE 6.4 LOGICAL MANAGEMENT RULE
+		In an area (A) there are agricultural activities that need 15 × 106 m3 groundwater per year. Adjacent groundwater resources with safe yields of 0.82 × 106 m3/year, 11.2 × 106 m3/year, and 0.56 × 106 m3/year are confined (C), unconfined aquifer (U), and leaky (L) aquifers, respectively.1. Give a logical management plan for the agricultural activity possibilities with support of these aquifers by considering seasonality and generate few possible logical scenarios (Note: do not consider quantities).  2. Calculate whether these aquifers are necessary for sustainable yield satisfaction of the agricultural activities in this area.  3. Make suggestions, if needed. 
+Solution 6.4
+It helps to consider a simple configuration of all the components in this problem, which is given in Figure 6.4.
+
+		Download: Download full-size image
+FIGURE 6.4. Water resources and demand center configuration.
+		Water supply to the agricultural area may be brought through a storage tank, which impounds different aquifer contributions according to monthly or seasonal activities.1. In dry seasons, their joint use comes into practical application, and therefore, the logical management basis may have only one alternative as, 
+C(AND)U(AND)L.
+This implies joint groundwater withdrawal from each aquifer. In wet seasons, depending on the circumstances, there may be various alternatives, two of which are given below and others may be generated by the reader.
+If only one aquifer is enough for agricultural activity then the logical arrangement should be through ORing as,
+C
+(OR)
+U
+(OR)
+L
+If only two of the aquifers should cover the agricultural activities, then the following scenario is possible:
+C(AND)U
+OR
+C(AND)L
+OR
+		U(AND)L2. Each aquifer has its safe yield, but sustainable yield for the agricultural activities is possible if the summation of these safe yields is more than the agricultural activity water demand. The total safe yield, ST, of the system is, 
+
+		Since 12.58 × 106 m3/year <15 × 106 m3/year, these groundwater resources cannot provide sustainable yield for the agricultural activity.3. In order to maintain sustainable yield, it is necessary to import additional water from some other nearby aquifers or surface water impoundments. The amount of additional water is 15 × 106–12.58 × 106 = 2.42 m3/year. 
+EXAMPLE 6.5 LOGICAL GROUNDWATER MANAGEMENT
+		In an arid region, groundwater storage is available within and along the branches of a Quaternary basin as in Figure 6.5.1. Write down all the possible logical alternatives for groundwater flow possibility to outlet, if only A, B, G, and H aquifers are functioning.  2. Write down all the possible logical alternatives for groundwater flow possibility to outlet, if only A, E, F, G, and H branch aquifers are active.  3. What are the logical possibilities if aquifers D, F, and A are depleted? 
+
+		Download: Download full-size image
+FIGURE 6.5. Drainage basin with subbasins.
+Note: Assume that each alternative is sufficient for water demand at the outlet.
+Solution 6.5
+		In the entire cases, one should keep in mind that the groundwater flow is from upstream toward the downstream and finally to the outlet.1. The logical groundwater flow sequence toward outlet from branches A, B, G, and H can be written as follows, 
+A(AND)G(AND)H
+(OR)
+		B(AND)G(AND)H2. A(AND)G(AND)H 
+(OR)
+E(AND)H
+(OR)
+		F(AND)H3. Consideration of natural groundwater flow indicates that depletion in F implies depletion in C and D. Hence, the following logical management is possible 
+B(AND)G(AND)H
+(OR)
+A(AND)G(AND)H
+E(AND)H
+EXAMPLE 6.6 RECHARGEABLE LOGICAL MANAGEMENT RULE
+What are the alternatives of rechargeable water amount based on logical rules for the drainage basin A, as explained in Section 6.10.4. The necessary data are given in Table 6.1.
+Solution 6.6
+If the seven rules are valid as presented in Section 6.10.4 among the four subaquifers, then the quantitative rechargeable water volumes and the total of each rule are given in the following box:
+
+		Download: Download full-size image
+A first glance into this box yields quantitative management rule sequence according to ascending rechargeable groundwater volumes as 1, 2, 5, 3, 6, 4, and 7.
+EXAMPLE 6.7 ABSTRACTABLE LOGICAL MANAGEMENT RULE
+Table 6.2 includes five subbasins strategic groundwater resources management necessary data. Calculate the available abstractable groundwater volume and suggest the sequence of different scenarios.
+Solution 6.7
+The data values in Table 6.2 help convert the rule base for system B in Section 6.10.4 into the following quantitative abstractable water volume box:
+
+		Download: Download full-size image
+The sequence of rules on the basis of ascending order for abstractable groundwater volume usages is as 1, 4, 3, 7, 2, 6, 8, and 9.
+6.11. Probabilistic Risk Management in an Aquifer
+Uncertainty within hydrogeological data and groundwater maps is rarely analyzed or discussed in practical applications. Rather, a set of simplifying assumptions are considered, and hence, the spatial variability in the aquifer parameters is ignored holistically. The increasing use of computers, for storing, retrieving, and serving large hydrogeological data sets made it easier to systematically analyze aquifer data. Error theory can be used for evaluating the total uncertainty of lithological and aquifer parameter data assessment from water well records (Chapter 3). Randomness is used in the statistical sense in order to describe the groundwater phenomenon on a regional basis (Seabear and Hollyday, 1966, Koch and Link, 1971, Davis, 1982).
+Stochastic hydrogeology as suggested by Delhomme (1978) deals with uncertainty in groundwater resources evaluation and contaminant transport management problems. Although various geometrical (extent, areal coverage, thickness, slope, etc.), structural (fault, folds, fractures, fissures, joints), textural (porosity, specific surface, grain-size composition, sorting, etc.), hydraulic (hydraulic conductivity, storage coefficient, etc.), and geological properties are random in various degrees, hydrogeologists generally use deterministic approaches in problem solving. Deterministic approaches give on the average satisfactory single numerical results at the local scale, but on a regional scale (because of the heterogeneities, discontinuities, and anisotropies) the point values fail to provide reliable solutions especially in management studies. For instance, pumping tests provide representative and reliable aquifer parameters within the small depression cone influence areas, which is generally less than 300–400 m in confined aquifers and approximately 100 m in unconfined aquifers (Chapter 3). Deterministic results cannot represent large portions of the aquifers. Hence, the simplest way of regionalizing a variable or a parameter is possible through probabilistic and statistical techniques, which can then be incorporated into groundwater management programs.
+		Any measured data either on the field or in the laboratory represent quantities that are numerically different from each other. Randomness does not mean that the hydrogeological parameter values are spatially independent, but they are not predictable point wise even though their values might be available at a set of irregular sites. In order to obtain a representative and reliable estimate for the whole aquifer, the hydrogeologists often use a single deterministic value such as the arithmetic, geometric, or harmonic mean or the median or an expert value (Chapter 3). However, such a simplification brings the following disadvantages:1. It is not possible to make risk assessments in groundwater problems.  2. The results cannot be related to actual surface or subsurface geology.  3. Theoretical probability distribution functions (pdfs) cannot be established.  4. Quantitative correlation analysis cannot be performed between lithological and hydrogeological parameters. 
+The probabilistic approach is but one technique used by geostatisticians to characterize spatial variability and to express a simple criterion for goodness of estimation (Journel, 1983). Such an approach needs at most a graphical representation of data without the need for computers, and hence, proves to be more practical.
+In the classical groundwater storage volume calculations, simply the volume of the saturation zone is multiplied by the storage coefficient of the aquifer so as to find the amount of extractable groundwater volume similar to what has been explained in Chapter 4, Section 4.12.7. Groundwater storage volume, GS, can be calculated by means of the following simple expression,
+(6.2)
+where A is the water table area; h is the average aquifer thickness; and S is the average storage coefficient. For refining the estimation procedure, it is possible to define the specific groundwater storage capacity, gS, as the volume of groundwater per unit water table area as
+(6.3)
+On the other hand, the specific subsurface flow rate, q, is equal to the volume of groundwater that passes through the whole section of the aquifer per unit width
+(6.4)
+where T is the aquifer average transmissivity and i is the hydraulic gradient. Since these parameters (gS and q) assume different values from one site to another, they are random. Their estimations can be achieved by probabilistic or statistical methods under a certain risk level. Hydrogeologists should be ready to accept a certain band of error (±5% or ±10%) in estimations.
+6.11.1. Probabilistic Approach
+Each one of the hydrogeological parameters varies spatially according to a certain pdf. For instance, from several thousand well logs in different aquifers, the specific yield is found to abide with log-normal pdf (Seabear and Hollyday, 1966). The slope method in Chapter 3, Section 3.7, provides ability to identify the random characters in the hydrologic parameters even from a single aquifer test. A plot of storage coefficients obtained by the slope-matching procedure from Schultz (1973) data is shown on the logarithmic pdf paper in Figure 6.6.
+
+		Download: Download full-size image
+FIGURE 6.6. Storage coefficient data.
+In this plot, the probability, Pm, to each storage coefficient is attached by the classical empirical formula as
+(6.5)
+where n is the number of data and m is the rank of the data value considered in the form of ascending sequence. Similarly, Davis (1969) concluded that for unconsolidated water-bearing formations, the hydraulic conductivity has a log-normal pdf. In addition, during a pumping test, heterogeneities in the transmissivity values have been quantified by the slope-matching method. The plotting of these transmissivity values on a logarithmic pdf paper gives a straight line indicating that the transmissivity values are also log normally distributed (see Figure 6.7). Krumbein and Graybill (1965) and Way (1968) observed that the thickness of sedimentary beds is log normally distributed. Similar observations are confirmed by Gheorghe (1978).
+
+		Download: Download full-size image
+FIGURE 6.7. Transmissivity (m2/min) data.
+As a result of all the aforementioned discussions, it is reasonable to assume that all the basic hydrogeological variables are generally distributed according to the logarithmic pdf, detailed information about which is presented by Aitcheson and Brown (1957).
+Fortunately, the composite variables in Eqs (6.3), (6.4) are expressed as simple multiplications of the relevant basic parameters. The multiplication property for the log-normally distributed variables makes the composite variable also to have a similar pdf. Hence, taking the logarithms of both sides in Eq. (6.3) leads to
+(6.6)
+The logarithmic transformation of logarithmically distributed random variables renders these variables into normally (Gaussian) distributed random variables. Hence, the arithmetic mean and standard deviation of the logs of the composite variable are sufficient for a complete definition of the Gaussian pdf. For this purpose, the arithmetic mean, , and the standard deviation, , of the composite variable becomes after some algebraic manipulations as,
+(6.7)
+and
+(6.8)
+respectively. In these expressions, μLnh and μLnS are the arithmetic averages and  and  are the variances. Finally,  indicates the average of the cross-multiplication of Lnh and LnS values, which is known in the geostatistics literature as the cross-variance (covariance), that is representative of the cross-correlation between h and S in this case (Şen, 2009).
+6.11.2. Statistical Management Model
+Apart from the probabilistic approach, statistical methodologies consider errors involved in each aquifer parameter and their mutual interactions in forming the composite variable. The simplest treatment is possible by the perturbation theory where each basic variable is composed of random fluctuations around their respective arithmetic averages. For instance, a random variable, say x, can be written in two parts, namely, its average value  and fluctuations ex corresponding to errors as . In such a definition, the error term ex has zero arithmetic average with standard deviation equivalent to the standard deviation of the original random variable, x.
+Similarly, according to the perturbation theory, each basic hydrogeological variable such as thickness, h, storativity, S, transmissivity, T, and hydraulic gradient, i, can be written as , , , and , respectively. Substitution of these expressions into Eqs (6.2), (6.3) leads to the following averages of the composite variables,
+(6.9)
+and,
+(6.10)
+where  and  show the cross-covariance between the two basic hydrogeological parameters considered and they may assume positive or negative values corresponding to over- and underestimation, respectively.
+		It is obvious from these two expressions that errors in terms of deviations from the arithmetic mean play a significant role when they are dependent on each other. These expressions imply that over- or underestimations appear in the specific groundwater storage capacity and the subsurface flow rates due to the  and  terms, respectively. However, their contribution might be equal to zero under the following circumstances:1. If the storativity is independent of aquifer thickness, although this is valid in a single well, but when multitude of wells are considered in a region then the storage coefficient may be dependent upon the thickness, which may be different in different well locations. Hence, in an area of rough bedrock topography the thicknesses may vary significantly in the region. In an ideal (theoretical) case, when the thickness of the aquifer is assumed as constant over the entire aquifer area then .  2. If the aquifer reservoir material composition is homogeneous and isotropic, it implies that . Contrary to the previous case, the aquifer storage coefficient is constant due to the material composition, but the aquifer thickness may vary due to the piezometric level and subsurface bedrock topographies. Areal constancy of the storage coefficient causes .  3. If both the aquifer saturation thickness and the storage coefficient values are areally constant, then again . 
+Unfortunately, none of the aforementioned three cases exist in actual field studies. Similar arguments may be stated for  being equal to zero. Since neither the aquifer material is homogeneous and isotropic nor the saturation thickness is uniform, there will always be additional error terms in the form of cross-covariance as in Eqs (6.9), (6.10).
+Fitting a straight line on probabilistic papers as in the previous subsection is equivalent to obtaining the population of the concerned variable. In order to obtain the corresponding pdf, the necessary calculations are given step by step in Chapter 4, Section 4.14.2.
+The plots of the resulting pdfs are shown in FIGURE 6.8, FIGURE 6.9 for the specific storage and subsurface flow rate, respectively. Deterministically, the total volume of available groundwater within the saturated zone of the Quaternary deposits is given as 3.1 × 106 m3 provided that the average thickness and the storage coefficient are used within a 3.4 km2 area. This volume corresponds to 0.91 m of specific groundwater storage. However, the most frequently occurring specific groundwater storage and the total groundwater storage volume are 0.54 m (see Figure 6.8) and 1.8 × 106 m3, respectively. Hence, the relative error is almost 73% between the deterministic and statistical approaches. This is an extremely large overestimation which may give rise to a multitude of problems such as water shortages for agricultural activities or urban water supply, overpumping and mining of the aquifer, and economic losses due to extra wells, pipes, pumps, etc.
+
+		Download: Download full-size image
+FIGURE 6.8. Specific groundwater storage pdf.
+
+		Download: Download full-size image
+FIGURE 6.9. Specific subsurface flow rate pdf.
+In Figure 6.9, the probability is on the vertical and the specific subsurface flow (according to Eq. (6.4)) is on the horizontal axis. For instance, the risk associated with the classical estimation of the groundwater storage volume is 0.22. However, the most frequently occurring estimate has a risk value of 0.41. As a result of using the latter estimate, the risk decreases as the cost of reliability increases.
+In general, the increase in the groundwater storage volume gives rise to an increase in the risk component. Practical questions arise as “how to estimate the groundwater resources volume in a given area?” and “what risk level should be accepted in such a determination?” Once the estimation of the available groundwater storage volume is determined, all of the subsequent activities of exploitation, distribution, management, well number and location, development, and budget to be invested for such activities are dependent primarily on this estimate. In the absence of any further information, such as economic and political conditions, the best estimate corresponds to the maximum frequency as explained above (FIGURE 6.8, FIGURE 6.9).
+If the risk level is predetermined, then the cumulative pdf such as in Figure 6.10 provides an estimate of the groundwater storage volume. For instance, for a given risk values of 0.36 (the reliability is 0.64) the corresponding specific groundwater storage value is 8 m.
+
+		Download: Download full-size image
+FIGURE 6.10. Cumulative pdf of the specific groundwater storage.
+There is always some risk associated with the estimate and for zero risk the groundwater storage volume is also equal to zero. As for the specific subsurface flow, the most frequently occurring rate under unit hydraulic gradient is 44 m2/min with a risk level equal to 0.70 (see Figure 6.11) and 0.85 m2/min from the classical approach, which has the risk value as 0.22. Hence, the relative error is 91%, which is a large difference, and it affects dangerously the water balance equation for the study area, because it implies more output than likely.
+
+		Download: Download full-size image
+FIGURE 6.11. Cumulative pdf of the specific subsurface flow rate.
+		Risk levels are comparatively small compared to the case of specific groundwater storage. The aforementioned methodology has produced the following important implications and advantages over commonly used classical deterministic techniques:1. It is a quantitative way of assessing hydrogeological risk for groundwater resources evaluation.  2. It is a flexible procedure that yields various alternative estimates of composite decision variables.  3. It is a probabilistic approach for determining the best estimate based on most frequently occurrence (model) value.  4. Finding the pdf of the composite variables provides meaningful information with regard to the population behavior of these variables, hence reducing more data necessity for meaningful results.  5. It is a way of incorporating the risk concept in groundwater development and management studies. 
+6.12. Groundwater Level Rise Modeling in Cities
+Due to mismanaged human activities, leakages, and infiltrations from different sources (water supply pipes, water supply storage tanks, and some local sewerages), the natural groundwater balance is overturned into an unbalanced situation where the input to water table is comparatively more than the outgoing groundwater flow toward the depression areas, rivers, or seas. Depending on the season of the year, the groundwater table not only fluctuates but there is also a steady increase in the form of steady groundwater rise. For instance, the studies carried out in Jeddah City, Kingdom of Saudi Arabia, indicated that on the average there was about 0.10 cm groundwater table rise in each year (Al-Sefry and Şen, 2006). Among the main reasons are leakages from the city water supply pipes, insufficient tanker water haulages and their use for irrigation purposes, sewage water leakages, leakages from water storage tanks, garden watering, rainfall, and natural groundwater flow.
+		The changes in recharge caused by urbanization influence the groundwater levels and flow regime in underlying aquifers. As suggested by Van Stempvoort and Simpson (1995), this can take considerable time because the response constants of aquifers are normally the largest of all components of the urban hydrological cycle. Hydrogeologists speak of urbanization impact on groundwater in terms of large-scale temporal changes, while the geotechnologists tend to think in terms of the impact on urban structures in a site-specific steady state sense (Foster et al., 1994). In urban areas, subsurface infiltration rates increase and the effects on groundwater table level are dependent on the following points:1. The single-most significant aquifer parameter for groundwater regime and flow is hydraulic conductivity that changes laterally and vertically. Hence, the lateral and vertical hydraulic conductivity changes must be determined as much as possible (Chapter 3). Otherwise, theoretically isotropic and homogeneous aquifer assumptions cannot lead to reliable management studies.  2. The aquifers are heavily exploited in urban areas for water supply. The groundwater levels decline or rise if malfunctioning water distribution and wastewater collector systems exist.  3. Impermeabilization of Earth's surface in urban areas by asphalt roads, roofs, airports, etc. reduces the natural groundwater recharge from direct rainfall or runoff. 
+		Groundwater regime and levels beneath urban areas vary with urbanization development and such a variation may cause different problems including stability, integrity, and operation of subsurface installations and engineering structures. The following are the side effects of groundwater level rise:1. Dampness, seepage, and flooding take place in low lands, depressions, and basements of buildings.  2. Groundwater rise may show damages on engineering structures such as foundations, bridge piers, etc.  3. In groundwater rise cases, effective stress and shear strength reduction may lead to soil-bearing-capacity reductions and effective soil stress decrease causes instability of the slope that may cause instability in structures (roads, buildings, bridges, etc.).  4. Groundwater rise coupled with chemical composition may cause corrosion in foundations. This happens if the groundwater has high SO42−, Cl−, and Mg2+ concentrations.  5. Groundwater level rise may lead to uplift of structures such as water storage tanks, cesspools, septic tanks, building basements, tunnels, and drainage channels.  6. When wastewater collectors are beneath the groundwater table, then major seepage may occur into these collectors and this extra water volume raises pumping costs.  7. High groundwater levels may lead to leakage in water supply pipe lines, and hence, the water supply network distributes polluted supply to house taps. 
+6.12.1. Groundwater Rise Calculations
+The simple risk, R, can be defined as the probability of a variable, V, to be greater than the critical level, CL, (nationally or internationally allowable levels) at least once over the stipulated time period, Tr, (return period). If the sequence of future likely occurrence of V is V1, V2,…, Vn then the joint probability of n event nonoccurrence, P(n), is defined as, (Şen, 1999a)
+(6.11)
+Hence, the simple risk, R, the probability of occurrence as a complementary event is defined as,
+(6.12)
+The calculation of the multivariate probability term on the right-hand side is dependent on the data variability and theoretically it can be calculated by multiple integration of the multivariate pdf through tetrachoric series expansion (Saldarriaga and Yevjevich, 1970). However, in the case of a simple dependence structure such as the first-order Markov process, the right-hand side factorizes into various terms, which are explained by Şen, 1976, Şen, 2009.
+In the risk assessment of any variable, it is necessary to decide first on the frequency of critical-level exceedance, which is related to Tr after which it is then possible to determine the magnitude of the design variable based on the most suitable pdf. The return period is defined as the average length of time over which V will exceed only once. The random variable, Tr, specifies the time between any two successive exceedances. Its distribution in the case of independent discrete observations is given by Feller (1967) as,
+(6.13)
+or
+(6.14)
+where j is discrete duration of nonexceedence, and p and q are the risk and safety probabilities, respectively. The return period can be obtained as,
+(6.15)
+where
+(6.16)
+which is the probability of exceedance. If the theoretical pdf of the variable concerned is denoted by f(V) then Eq. (6.16) can be rewritten as,
+(6.17)
+In order to apply Eq. (6.17), it is necessary to specify the theoretical pdf of the variable concerned from the available data. For the case study, 118 groundwater-sampling points are scattered over the whole of Jeddah, Kingdom of Saudi Arabia, and the water samples from these locations are analyzed hydrochemically in the laboratories for major ionic concentrations. Herein, only two quality variables, namely, chloride (Cl−) and sulfate (SO42−) are considered with actual groundwater level measurement (GL). The theoretical logarithmic-normal, Cauchy and Weibull pdfs are found suitable for Cl−, SO42−, and GL, respectively. The theoretical pdfs are obtained from the experimental histograms as shown in FIGURE 6.12, FIGURE 6.13, FIGURE 6.14.
+
+		Download: Download full-size image
+FIGURE 6.12. (a) Histogram (b) log-normal cumulative pdf for chloride.
+
+		Download: Download full-size image
+FIGURE 6.13. (a) Histogram (b) Cauchy cumulative pdf for sulfate.
+
+		Download: Download full-size image
+FIGURE 6.14. (a) Histogram (b) Weibull cumulative pdf for groundwater level.
+In risk calculation, the basic function is the cumulative pdf for each variable, which shows the probability of exceedance.
+6.13. Aquifer Uncertainties and Strategic Planning
+		Aquifer test assumptions collectively are considered as valid conceptually and deterministically for models without random components for the aquifer system, and hence, they do not allow risk assessments (Chapters 3 and 4Chapter 3Chapter 4). The following major concepts are significant in any groundwater assessment, planning and management:1. For water availability, aquifer thickness of saturation zone at a set of cross-sections must be explored by geophysical methods for their cross-section dimension determinations. In calculations, rather than depending on average depths, the possible uncertainties in the saturation thickness should be taken into consideration by considering a convenient pdf of depths in the study area. Another source of uncertainty for the availability calculation is the aquifer parameters that vary spatially. Herein, groundwater availability will be calculated based on risk levels of both the saturation depth and aquifer parameter as already explained in Chapter 4.  2. The average thickness of the unsaturated zone should be taken into account in calculating the possible strategic additional groundwater augmentation in the future. In such a calculation, there is little uncertainty in the unsaturated thickness, after all it is measured directly on the field prior to aquifer test as static water level, but the uncertainty in the calculation of possible future additional water storage is attached with the occurrence time, the amount of storm, rainfall, and the antecedent soil conditions. These uncertainties are calculated from the past rainfall records, and accordingly, risk levels are adopted (Chapters 1 and 4Chapter 1Chapter 4).  3. Potentiality of any aquifer is related to its response to yielding water supply through wells, in other words, the easiness of groundwater withdrawal. This is dependent on aquifer transmissibility values, hence the uncertainties in transmissibility are accounted by simple probabilistic calculation, and finally, the abstractable groundwater volumes are provided in a graphical form for different risk levels and time durations (Chapter 4, Section 4.14.4). 
+6.13.1. Risk Calculations for Various Hydrogeological Parameters
+Storativity (S), transmissivity (T), saturation thickness (St), unsaturated thickness, (Ut), and the porosity (p) variables are basic parameters in any strategic groundwater resources evaluation for aquifer potentiality (Chapter 4). For risk calculations, it is assumed that their regional variations are represented by logarithmic-normal pdf and the necessary steps are given already in Chapter 4, Section 4.14.2.
+For the strategic groundwater resources calculations, it is useful to prepare a table (Table 6.3), which shows the variation of each aquifer parameters with a given set of risk levels (5%, 10%, 25%, 50%, 75%, 95%, and 99%).
+TABLE 6.3. Hydrogeological Parameter Risk Levels
+Risk (%)
+S
+T (m2/day)
+p
+DS (m)
+DU (m)
+5
+0.8
+2800
+0.65
+28
+48
+10
+0.62
+1950
+0.58
+24
+42
+25
+0.28
+620
+0.43
+18
+30
+50
+0.075
+310
+0.32
+13
+18
+75
+0.019
+58
+0.23
+10
+9
+95
+0.0071
+16
+0.17
+7
+6
+99
+0.0088
+10
+0.11
+4
+5
+Note: S = Storativity; T = Transmissivity (m2/day); p = Porosity; DS = Saturation thickness (m); DU = Unsaturated thickness (m).
+Fitting a straight line on the semilogarithmic paper is equivalent to obtaining the regional variable, and hence, the probability statements can be made including risk amounts corresponding to any value. For instance, the probability of the storage coefficient being equal to or greater than, say, 5.8 × 10−2 is approximately as 0.89 (Figure 4.38). Furthermore, for any valid transmissivity and saturation thickness corresponding risks can be read from Figures 4.39 to 4.40Figure 4.39Figure 4.40, respectively. The amount of groundwater storage underneath unit square meter of area can be calculated as (Al-Sefry and Şen, 2006),
+(6.18)
+where  is the average of storativity and saturation thickness multiplication,  represents the correlation coefficient between storativity and saturation thickness,  and  are standard deviations of saturation thickness and storativity, respectively.
+EXAMPLE 6.8 GROUNDWATER PROBABILISTIC STORAGE CALCULATION
+Table 4.12 presents the random behavior of some hydrogeological variables in an area. Calculate the groundwater storage volume per square meter by considering random variability of each parameter.
+Solution 6.8
+The groundwater storage volume per square meter has already been given by Eq. (6.18). The relevant parameters from this table are,  = 8.75 m,  = 1.556 × 10−1,  = −0.203,  = 8.12 m, and  = 0.0914 m. Hence, the substitutions of these values into the relevant equation yields,
+
+In order to calculate the whole available groundwater in the aquifer, this value must be multiplied with the area of the water table.
+6.14. Optimum Yield and Management in a Well Field
+		Optimum yield is the quantity of water that can be pumped out from a well with no damage either to the aquifer or to the well itself. In management studies, pumping discharges must be kept below the optimum yield. In order to avoid extra costs and unnecessary drawdowns, the interference between the wells must be avoided through an effective management program. In many areas, the wells are already drilled, and hence, the distances between them are known. These distances can be considered as constraints in the evaluation of optimum discharge such that there is no interference among adjacent wells. Optimum discharge is neither unique nor constant, but its value at any time depends on the spacing between wells and the aquifer material properties in the vicinity of each well. In any groundwater management, the question is what amount of optimum discharges should be withdrawn from each well. The answer must be such that:1. There is no damage to the well-aquifer interactions in individual well locations.  2. No interference should occur among the multiple well locations. 
+These two conditions should be satisfied simultaneously during a simple management program. It is apparent from the radial flow concept that as the groundwater approaches a well its velocity increases. Exceedance of velocity over a critical limit gives rise to the transportation of fine particles from the aquifer into the gravel pack. Subsequently, these fine particles cause plugs in the filters, which might lead to extra head losses, and consequently, drawdown increments. Approach velocity attains its maximum value at the well circumference and filters where the transport of fine materials is most likely to occur. The groundwater velocity at any point within the aquifer is equivalent to the specific discharge, q, (Darcy velocity) which has been given in Chapter 2 by Eq. (2.24) and also in this chapter by Eq. (6.4). This velocity should not be confused with the real flow velocity for which the flow area is the intergranular pore space. The real velocity, vr, is estimated after dividing the specific discharge by the porosity, p, as,
+(6.19)
+in which An is the circumferential pore area of the well interface within the whole aquifer. Physically, the approach velocity is dependent on the grain-size distribution of the aquifer material and on the hydraulic conductivity more than any other aquifer parameter. It is not possible to establish such dependence through analytical methods. By observing a number of operating wells, Sichard (1927) proposed an empirical relationship between the hydraulic conductivity of aquifer, K, and approach velocity, vaq, which is supported by factor as (Huismann, 1972),
+(6.20)
+This relationship provides a valid design criterion where conductivity is determined preferably by in situ pumping tests or from the specific discharge measurements within each well, if possible. The second alternative is employed in calculating the transmissivity values, which are then converted into hydraulic conductivities by dividing these values by the aquifer thickness at each well location. It is possible to rewrite the optimum discharge, Qoi, for the i-th well by considering the approach velocity in Eq. (6.20) (Holting, 1980) as,
+(6.21)
+where rwi and Ki are the well radius and hydraulic conductivity, respectively, mi is the saturation thickness, and n is the number of wells.
+The second stage in a simple management program is the condition that there will not appear any interference between the wells. Two or more wells pumping from the same aquifer will interfere with each other if the distance between them is more than the summation of their radii of influence values. Several interfering pumping wells impose addition of the drawdowns at any point within the aquifer. For confined aquifer in the steady state flow case, the relevant discharge expression can be obtained from Eq. (3.17) in Chapter 3 for i-th well by considering the radius of influence, Ri, and the well drawdown, swi as,
+(6.22)
+in which rwi is the well radius and Ti is the transmissivity at the same well location. In practical studies,one can adopt the radius of influence from an empirical formulation suggested by Holting (1980) as,
+(6.23)
+The substitution of this expression into Eq. (6.22) leads to,
+(6.24)
+In order to satisfy simultaneously the aforementioned two stages in the same management program, Eqs (6.21), (6.24) are set equal to each other and after some algebra one can obtain the optimum drawdown expression as,
+(6.25)
+In this expression, all the quantities are known except the drawdown swi within the i-th well. For each well site, the optimum drawdown can be calculated from this expression by trial-and-error approximation. These solutions do not take into consideration the distances between the existing wells. They are converted into the sequence or radius of influences, Rwi, through Eq. (6.23). In any existing well field, the distances among the adjacent wells can be found directly from the well location map. Let Dij indicate the distance between two adjacent wells at sites i and j. If there are n existing wells, there will be n(n − 1)/2 different distances. For a reliable management program, the summation of the two adjacent well radius of influence should be smaller than the actual distance between them, Dij,
+(6.26)
+This is the distance constraint in the management program. Equation (6.26) should be checked for each pair of adjacent wells. If the constraint is not satisfied, then the radius of influence in one or two of the wells will be reduced conveniently until the acceptable inequality is obtained. Reduction in the radius of influence implies reduction in the pump discharges. According to new values of the radius of influences, it is possible to calculate the corresponding drawdown in concerned wells from Eq. (6.23) as,
+(6.27)
+With adjusted values at hand, the optimum discharge for each well can be recalculated from Eq. (6.24). Finally, corresponding groundwater velocities, voi, can be obtained from Eq. (6.26) at the well surface as,
+(6.28)
+		The following points help achieve optimum groundwater management program and they are important for inclusion in any management program in the future:1. The regional optimum water levels can be estimated by the simple management rules and formulations presented above.  2. Interference among adjacent wells must be avoided during any groundwater management program. 
+EXAMPLE 6.9 OPTIMUM YIELD MANAGEMENT
+Figure 6.15 indicates well field configuration and Table 6.4 includes necessary information about the wells and aquifer parameter values. Find the optimum well yields such that there is no inference between the wells.
+
+		Download: Download full-size image
+FIGURE 6.15. Well-field configuration.
+TABLE 6.4. Well-Field Configuration and Hydrogeological Quantities
+Well number
+W1
+W2
+W3
+W4
+Well radius, ri (m)
+1.20
+0.95
+1.10
+1.23
+Hydraulic conductivity, Ki (m/s)
+3.5 × 10−4
+5 × 10−4
+1.3 × 10−4
+3.5 × 10−4
+Saturation thickness, m (m)
+56.8
+87.5
+14.9
+43.6
+Distances between wells, Dij (km)
+W1
+0
+2.1
+3.5
+3.1
+W2
+
+0
+2.6
+3.8
+W3
+
+
+0
+1.9
+Solution 6.9
+The first step is to decide about the radius of influence for each well. This can be decided as in Figure 6.16 by considering the distances between neighboring wells such that there will not be interference between their depression cones.
+
+		Download: Download full-size image
+FIGURE 6.16. Radius of influence design.
+		This is the most ideal design, which gives the radius of influence from considerations of W1–W2 and W3–W4 pairs. Hence, from the distances between W1 and W2, the radius of influence for each well is 3.5/2 = 1.75 km and for wells W3 and W4 it is 1.9/2 = 0.95 km. These are the maximum allowable radii of influences. Hence, there are plenty of alternatives provided that the radius of influences remains less than these values.1. Let us first determine the optimum drawdown values from Eq. (6.27) for each well. The substitution of the radius of influence and the hydraulic conductivity values into this expression yields the third line in Table 6.5. TABLE 6.5. Calculation Results
+		Well number
+		W1
+		W2
+		W3
+		W4
+		Well radius, ri (m)
+		1.20
+		0.95
+		1.10
+		1.23
+		Drawdown (m) from Eq. (6.26)
+		0.62
+		0.90
+		0.23
+		0.62
+		Optimum discharge (m3/s) from Eq. (6.23)
+		0.0396
+		0.0845
+		0.0038
+		0.0305
+		Optimum discharge (l/s)
+		39.62
+		84.47
+		3.81
+		30.51
+		    2. The inference among the adjacent wells is avoided according to the aforementioned calculations and accordingly the optimum discharge values can be obtained from Eq. (6.24) by substitution of the relevant values and the results are given in the fourth and fifth rows in m3/s and l/s, respectively. 
+6.14.1. Optimum Aquifer Yield
+The safe yield is already defined in Section 6.6.1. Any withdrawal in excess of safe yield is an overdraft. The term overdraft may include not only depletion of the groundwater reserves, but also the intrusion of undesirable water quality (Domenico, 1972, Kazmann, 1972).
+For the explanation of optimum aquifer yield, Al-Kharj area close to Al-Riyadh, capital of Saudi Arabia, is chosen for explanation (Figure 6.17).
+
+		Download: Download full-size image
+FIGURE 6.17. Location map.
+This area is an important center of growth and agricultural activity. The available water comes from four productive multiple aquifers, namely, Wasia, Biyadh, Sulaiy, and Arab sedimentary formations, which should be exploited with an efficient management plan. The Wasia and Biyadh formations are clastic productive aquifers, whereas the Sulaiy and Arab formations include nonclastic aquifers. The Sulaiy formation has undergone considerable underground solutions to form a karstic topography over some parts of Al-Kharj area. The Arab formation is characterized by joints, fractures, and solution openings up to 1 m in diameter (Bazuhair, 1989).
+Due to difficulty in finding satisfactory observation wells, only 10 wells are tested during field work. The pumping test data are analyzed using different analytical methods as Theis, 1935, Cooper and Jacob, 1946, and Boulton (1963). The specific capacity method of Walton (1970) is applied to estimate the transmissivity of the productive aquifers (Chapter 3). The sieve analysis of the clastic samples are plotted to provide cumulative frequency curves (Chapter 4). From these curves, different parameters necessary for the detection of the permeability are obtained and substituted in the equations provided by Hazen (1893) and Masch and Denny (1966).
+The permeability values for these productive aquifers are determined according to different methods presented in Table 6.6 where the big range of Biyadh and Wasia aquifers is due to the differences in grain size, lateral variation, cementation, and/or secondary permeability.
+TABLE 6.6. Summary of Results
+Aquifer Name
+Cooper and Jacob (Chapter 3)
+Recovery Straight Line (Chapter 3)
+Theis Type Curve (Chapter 3)
+Boulton Type Curve (Chapter 4)
+Specific Capacity (Chapter 2)
+Grain-Size Method (Chapter 2)
+Hazen Method K (m/day)
+Mean Diameter (mm)
+T (m2/day)
+Wasia
+2756.2
+–
+–
+1500–2300
+1500–2200
+13.5–42.3
+14
+Biyadh
+108.9–604.8
+34.6–388.8
+96.9–817.7
+–
+31–1950
+2.88–25.92
+7
+Sulaiy
+–
+34.6
+–
+–
+28–54
+–
+–
+Arab
+2877.12
+–
+–
+666.65
+2000–2950
+–
+–
+Şen (1983) derived a solution to determine the storativity in the absence of observation well as already explained in Chapter 3 (Eq. (3.89)). His equation is applicable to confined, and after drawdown correction (Eq. (4.9)) to unconfined aquifers. The parameters required for the application of his formula as well as the calculated S values are shown in Table 6.7.
+TABLE 6.7. Parameters Used for Calculation of Storativity
+Aquifer Name
+T (m2/day)
+(day)
+Smax (m)
+Q Practical Discharge (m3/day)
+rw (m)
+S (−)
+Wasia
+2758.10
+0.20000
+1.17
+1507.16
+0.16
+2.30 × 10−7
+Biyadh
+664.00
+0.404000
+9.19
+5443.2
+0.16
+3.22 × 10−2
+Sulaiy
+34.56
+0.29166
+7.00
+276.5
+0.16
+2.65 × 10−2
+Arab
+2873.90
+0.186100
+3.05
+5024.0
+0.16
+1.5 × 10−5
+In areas, like Al-Kharj, where the groundwater is the only source for supply, the increase in demand will mean abstraction of more groundwater with increase in the population (Example 6.2). In order to preserve the aquifer safe yield, it is very convenient to have proper plan, design, management, and operation rules. The optimum aquifer yield determination is one of the significant factors in managing the available groundwater in each aquifer of Al-Kharj area. For this purpose, Eq. (6.21) can be used for optimum well discharge calculations. On the other hand, Eqs (6.23), (6.24) are ready for the empirical calculations of the maximum radius of influence, Rmax, and the optimum well discharge, Qopt. The calculations from Eq. (6.25) are given in Table 6.8 for optimum aquifer yield.
+TABLE 6.8. Parameters Used to Determine Rmax and the Optimum Aquifer Yield
+Aquifer Name
+Average Thickness, h (m)
+K (m/day)
+ (√(m/s)
+rw (m)
+smax (Practical) (m)
+Rmax (m)
+πR2 (m2)
+Qopt (m3/hour)
+Wasia
+235
+40.0
+0.0220
+0.16
+1.17
+77.2
+18713.9
+1296.0
+Biyadh
+39
+17.0
+0.0160
+0.16
+9.19
+441.1
+610947.3
+151.2
+Sulaiy
+30
+1.8
+0.0046
+0.16
+7.00
+96.6
+29301.1
+33.5
+Arab
+164
+18
+0.0144
+0.16
+3.05
+131.8
+54545.7
+575.0
+In the study area, the maximum radius of influence is useful for calculating the allowable maximum number of wells for production without interference between the adjacent wells. Table 6.9 gives all the necessary numerical data for this purpose.
+TABLE 6.9. Parameter Values
+Parameters
+Quantity
+Total aquifer area, Aa
+25,000,000 m2
+Irrigated area, Ar
+23,000,000 m3
+Biyadh average saturation thickness (m)
+65 m
+Transmissivity (T)
+664 m2/day (well no.4)
+Hydraulic conductivity (K)
+10.22 m/day = 0.000118 m/s
+Well radius (rw)
+0.16 m
+Maximum drawdown (smax)
+9.19 m
+Radius of influence (Rmax)
+303.27 m
+Optimal discharge (Qopt)
+2900 m3/day
+Area of influence (AI)
+288,794 m3
+Existing daily discharge
+198,995 m3
+Required daily discharge
+250,720 m3
+Existing wells
+55
+The number of wells is equal to the division of total aquifer area, by the influenced area of the well. Hence, the number of wells is  Accordingly, at least one standby well must be ready for use in case of any well malfunction, and therefore, the total well number should be taken as 80.
+There is a logical relationship between the aquifer water abstraction discharge, number of wells, and time as in Figure 6.18 for Wasia aquifer.
+
+		Download: Download full-size image
+FIGURE 6.18. Groundwater depletion charts.
+Such charts are achieved by assuming various discharge values quantity charges from which the yearly consumption can be calculated for a given number of wells. The number of years for depletion is calculated by dividing the total amount of water by the yearly consumption. However, the daily discharges are considered as summer and winter for 10–24 hours, respectively. The average saturation thickness helps calculate the total volume of the aquifer by considering the aquifer material as homogeneous and isotropic. The total volume of water can be calculated from Eq. (6.2).
+EXAMPLE 6.10 WELL NUMBER, DEPLETION-YEAR DURATION, AND DISCHARGE CALCULATIONS
+		In Al-Kharj area, optimum groundwater yield planning is thought such that the aquifer will be mined.1. If optimum well discharge alternative planning is considered by means of 20 wells with different set of continuous discharges as 5 m3/hour or 10 m3/hour, then provide a few alternatives for aquifer safe yield depletion during 25 years.  2. In this area, the annual water demand is 0.5 × 106 m3, for which one of the alternatives in the previous step is the most suitable. Explain your interpretation of the final decision. 
+Solution 6.10
+		Optimum groundwater resources planning require optimum discharge variation with a number of wells and years as in Figure 6.18.1. There are various alternatives for the solution because each well from 20 can be arranged such that either 5 m3/hour or 10 m3/hour can be selected. According to the circumstances, one can decide which wells should pump one of these alternatives. The reader can appreciate that there are numerous alternatives. However, herein a few of them will be explained so that the reader can make practice accordingly with other alternatives. 
+Since it is mentioned that there is continuous discharge, it means that the pumps will work 24 hours and the stipulated time horizon for aquifer is 25 years. The discharge-year-well number relationship is already provided for the study area (Al-Kharj) in Figure 6.18. Since the safe aquifer capacity is expected to deplete in a 25-year period, the vertical line in Figure 6.19 indicates the relationship between the discharges and well numbers.
+
+		Download: Download full-size image
+FIGURE 6.19. Aquifer depletion calculations.
+						It is obvious that 20 wells can deplete the aquifer safe capacity with discharge much less than 1.25 m3/hour during 25 years. The possible discharges for 24 hour operation for 25-year duration are nine wells with 1.25 m3/hour, seven wells with 2.5 m3/hour discharge, two wells with 5 m3/hour, and one well with 10 m3/hour. Under these circumstances, the combination of 20 wells can be achieved through the following different alternatives: a. Two 9-well groups each with 1.25 m3/hour discharge and two wells with 5 m3/hour. Hence, the total discharge becomes 2 × 9 × 1.25 + 2 × 5 = 32.500 m3/hour.  b. Two 9-well groups each with 1.25 m3/hour discharge and two 1-well groups with 10 m3/hour. The total discharge adds up to 2 × 9 × 1.25 + 2 × 1 × 10 = 42.500 m3/hour.  c. One 9-well group with 1.25 m3/hour, one 7-well group each with 2.5 m3/hour, and two 2-well groups with 5 m3/hour. This makes totally 9 × 1.25 + 7 × 2.5 + 2 × 5 = 48.750 m3/hour.  d. Two 7-well groups each with 2.5 m3/hour discharge and three 2-well groups with 5 m3/hour. The total discharge is 2 × 7 × 2.5 + 3 × 2 × 5 = 65.000 m3/hour.  e. There are many other combinations that are left for the reader to make similar deductions and calculations.    2. In order to make a decision one should know what is the total annual water amount from each alternative.a. The total annual yield from the first alternative is 32.500 × 24 × 365 = 0.285 × 106 m3,  b. The same calculation for this step is 42.500 × 24 × 365 = 0.373 × 106 m3,  c. For the this alternative the total annual water volume is 48.750 × 24 × 365 = 0.427 × 106 m3, and  d. Finally, 65.000 × 24 × 365 = 0.569 × 106 m3.   
+Among these alternatives the last one is sufficient for the necessary water demand, because 0.569 × 106 > 0.500 × 106. This alternative implies from the previous step that two 7-well groups (14 wells) and three 2-well groups (6 wells) are necessary. So, it is up to the planner to decide which 14 wells and 6 wells should be distributed among 20 wells.
+6.15. Water Storage Volume Risk Calculation
+In any strategic groundwater reservoir planning, the main concern is not with the individual haphazard changes of hydrogeological parameters only, but also their effects on possible storage volume calculations. It has already been mentioned and the procedure is presented fully in Section 6.10 that the single-most significant composite variable is the specific groundwater storage capacity, gs, which is defined as the multiplication of the storage coefficient, S, by the saturation thickness (Eq. (6.3)). According to Figure 4.37 in Chapter 4, abstractable groundwater volume is calculated as 71 × 106 m3. By considering 50 and 70 l/person/day as mentioned in Section 6.4, various scenarios can be thought as shown in Table 6.10.
+TABLE 6.10. Different Water Supply Scenarios
+Consumption 50 l/capita/day
+Consumption 70 l/capita/day
+Population (×106)
+Time
+Population (×106)
+Time
+Day
+Month
+Day
+Month
+0.5
+7584
+252
+0.5
+5417
+180
+1.0
+3792
+126
+1.0
+2708
+90
+1.5
+2528
+84
+1.5
+1805
+60
+2.0
+1896
+63
+2.0
+1354
+45
+2.5
+1516
+50
+2.5
+1083
+36
+3.0
+1264
+42
+3.0
+902
+30
+3.5
+1083
+36
+3.5
+773
+25
+4.0
+948
+31
+4.0
+677
+22
+4.5
+842
+28
+4.5
+601
+20
+5.0
+758
+25
+5.0
+541
+18
+5.5
+689
+22
+5.5
+492
+16
+6.0
+632
+21
+6.0
+451
+15
+8.0
+474
+15
+8.0
+338
+11
+10.0
+379
+12
+10.0
+257
+8
+It is possible to draw population–duration curves by considering 50, 70, 100, and 150 l/day/person consumption rates as shown in Figure 6.20.
+
+		Download: Download full-size image
+FIGURE 6.20. Per capita per day water demand-population-duration relationships.
+		Practical questions are how to estimate and manage the groundwater resources volume in a given area and what risk level should be accepted in such a management. Once the estimation of the available groundwater storage volume is determined, all of the subsequent main activities of exploitation, distribution, management, well number and location, development and economy for such activities are dependent primarily on these estimates. It is possible to extend such management studies in the following directions:1. For regional modeling and management purposes, the pdfs of different hydrogeological variables can be incorporated within the framework of geostatistical prediction (Şen, 2009).  2. For economic purposes, various risk levels can be combined with their consequences in terms of, say, dollars and an economically optimum prediction can then be obtained.  3. The pdfs and associated risks can be used in conjunction with opinions of experts so as to unite the theory, field observations, and professional experience in arriving at reasonable estimates. 
+EXAMPLE 6.11 PROBABILISTIC RISK MANAGEMENT
+The application of the probabilistic risk and statistical formulations developed in previous sections is demonstrated for the Wadi Qudaid unconfined aquifer near the city of Jeddah, Kingdom of Saudi Arabia (Şen, 1999a). The Wadi alluvium is composed of coarse to medium Quaternary deposits and surficial sand dunes. The bedrock topography and the alluvial thickness are very irregular in addition to the heterogeneity of the aquifer material. These features are very obvious from Table 6.11 where the basic hydrogeological parameters, as found in each of the seven wells in the area, exhibit regional variations.
+TABLE 6.11. Pumping-Test Results
+Well No.
+Storativity S (−)
+Error (%)
+Transmissivity (m2/min) T
+Error (%)
+Saturation thickness m (m)
+Error (%)
+1
+3.3 × 10−2
+−3.6 × 10−2
+1.8 × 10−1
+−7.1 × 10−1
+13.40
+0.34
+2
+3.5 × 10−2
+−3.4 × 10−2
+1.2 × 10−1
+−7.7 × 10−1
+12.10
+−0.96
+3
+2.0 × 10−2
+−4.9 × 10−2
+4.1 × 10−1
+−4.8 × 10−1
+10.50
+−2.56
+4
+8.5 × 10−2
+1.6 × 10−2
+2.3 × 10−1
+−6.6 × 10−1
+12.20
+−0.86
+5
+1.9 × 10−1
+1.2 × 10−1
+4.2 × 10−0
+3.3 × 100
+10.30
+−2.76
+6
+5.2 × 10−2
+−1.7 × 10−2
+1.2 × 10−1
+−7.7 × 10−1
+14.95
+1.89
+7
+7.0 × 10−2
+1.0 × 10−2
+9.6 × 10−1
+−7.0 × 10−2
+18.00
+4.94
+Averages
+6.9 × 10−2
+≈0.0
+8.9 × 10−1
+≈0.0
+13.06
+≈0.0
+Variances
+13.2 × 10−2
+7.4 × 10−2
+10.98 × 10−1
+16.9 × 10−1
+35.19
+6.6
+Cross-variances
+
+
+
+
+
+
+Solution 6.11
+The parameters are obtained from a large-diameter well aquifer test according to Papadopulos and Cooper (1967) type curves. Comparison of each parameter value at individual well with arithmetic averages indicates rather random behavior. The error terms are also presented in Table 6.12. For the probabilistic risk calculations, first storativity, transmissivity, and thickness values are plotted separately on logarithmic pdf papers with the most suitable straight lines. These plots are presented in FIGURE 6.21, FIGURE 6.22, FIGURE 6.23 where the scatter of points appears along straight lines which confirm the assumption that the parameters abide by a logarithmic-normal pdf.
+TABLE 6.12. Risk Levels of Various Hydrogeological Variables
+Risk (%)
+Saturated Layer Thickness (m)
+Unsaturated Layer Thickness (m)
+Porosity (%)
+Storativity (−)
+Transmissivity (m2/day)
+Specific Groundwater Storage (m)
+Specific Recharge Storage (m)
+0.95
+28.12
+49.87
+68.05
+0.6602
+210
+18.56
+33.93
+0.90
+23.80
+38.59
+57.78
+0.2201
+199
+5.24
+22.30
+0.75
+18.00
+26.00
+43.97
+0.1852
+184
+3.33
+11.43
+0.50
+13.20
+16.78
+32.46
+0.0765
+167
+1.01
+5.45
+0.25
+9.67
+10.82
+23.96
+0.0316
+153
+0.31
+2.59
+0.10
+7.32
+7.29
+18.23
+0.0143
+140
+0.10
+1.33
+0.05
+6.19
+5.76
+15.48
+0.0089
+134
+0.06
+0.89
+
+		Download: Download full-size image
+FIGURE 6.21. Storage coefficient data from Wadi Qudaid.
+
+		Download: Download full-size image
+FIGURE 6.22. Transmissivity (m2/min) data from Wadi Qudaid.
+
+		Download: Download full-size image
+FIGURE 6.23. Alluvium thicknesses in Wadi Qudaid.
+6.16. Aquifer Uncertainties and Management
+Availability and potentiality of groundwater resources are two significant concepts for strategic planning. Geometric dimensions with hydrogeological parameter estimations help assess these two concepts numerically.
+Large error in the deterministic method affects the water balance equation. The methodology described in this section has the following important implications and advantages over commonly used classical deterministic techniques as already explained in Section 6.11.2.
+		In the previous sections, arithmetic average formulations are used because there is an implied assumption that all the deviations have Gaussian (normal) pdf. However, the pdf of many hydrogeological variables accord with logarithmic-normal pdf (Freeze and Cherry, 1979). After the decision on the logarithmic-normal pdf as the best representative model, it is possible to calculate numerical risks attached with the parameter values. Preliminary steps are presented by Şen (1999b) for risk assessment in groundwater calculations. In order to make probabilistic risk assessments of various possible scenarios for groundwater strategic availability and recharge possibilities, the following hydrogeological variables should be attached with risk levels.1. The storativity (S) risk model: It is natural that the storativity value changes from well location to other within the geological formations in general, and within the Wadi aquifer in particular. Ten aquifer tests are performed on the field and additionally seven tests are also given by Şen (1999b), hence totally 17 well-test results exist. Their logarithmic-normal pdf model is shown in Figure 6.24. 
+		Download: Download full-size image
+		FIGURE 6.24. Storativity-risk models.    2. Transmissivity(T)-risk model: The same number of data is available for this parameter also from two sources. It is well established in the literature that hydraulic conductivity or transmissivity has logarithmic normally distributed values within geological formations. This statement validates the use of logarithmic-normal pdf for transmissivity risk assessments. The transmissivity-risk model is presented in Figure 6.25. 
+		Download: Download full-size image
+		FIGURE 6.25. Transmissivity-risk models.    3. Saturation-thickness(DS)-risk model: Within the aquifer area, the saturation thickness changes according to the alluvium bed topography. This is the reason why different saturation thicknesses are valid at each well-test location. In order to generalize the saturation thickness within the Wadi, again logarithmic-normal pdf model is used, and consequent saturation thickness-risk relationship is obtained as shown in Figure 6.26, where only 10 well depths are available. It is clear that there are sharp risk variations within small differences in the saturation thickness values. 
+		Download: Download full-size image
+		FIGURE 6.26. Saturation-thickness-risk model.    4. Unsaturated thickness(DU)-risk model: Almost all the groundwater reservoirs in the study area appear as unconfined aquifers, and therefore, the groundwater table is expected, in general, to follow the surface topographic features. However, due to heavy pumping in the area, this is not the case, and consequently, there are big variations in the unsaturated thickness. The risk model is again provided through the suitable logarithmic-normal pdf as in Figure 6.27. 
+		Download: Download full-size image
+		FIGURE 6.27. Unsaturated-thickness-risk models.   Comparison of the last two figures indicates actually that the unsaturated thickness has a wider domain of variation than saturation thickness.  5. Porosity(p)-risk model: In order to be able to calculate the possible amount of recharge and additional groundwater rise over the present groundwater table, it is necessary that the porosity distribution or its model should also be taken into consideration in the calculations. For this purpose, the possible porosity values obtained in the alluvium aquifers are considered with its logarithmic-normal model as shown in Figure 6.28. It is obvious that the matching of measured points to this model shows a good agreement. 
+		Download: Download full-size image
+		FIGURE 6.28. Porosity-risk numbers.   
+Table 6.12 gives risk levels at a set of levels for hydrogeological parameters. The last two columns include the risky specific groundwater and the specific recharge storage values. The specific recharge value is the amount of water that the aquifer can take from unit surface area, and hence, its calculation is a result of porosity multiplication by unsaturated layer thickness. The plots of risk, R, versus specific groundwater and recharge storages yield straight lines on a semilogarithmic paper as in Figure 6.29.
+
+		Download: Download full-size image
+FIGURE 6.29. Specific storages.
+The specific groundwater, GS, and recharge, RS, storage equations can be found from the slopes and intercepts on the horizontal axis as,
+(6.29)
+and,
+(6.30)
+For an expert who is ready to work under 10% risk, the specific groundwater storage appears as 0.36 m per square meter. For the sake of argument, if an inexperienced hydrogeologist is ready to accept 50% risk then his/her estimate will be 0.44. However, as his/her experience increases the risk level will become smaller, and accordingly, s/he will arrive at more conservative estimates.
+
