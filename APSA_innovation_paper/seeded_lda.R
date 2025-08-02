@@ -8,8 +8,8 @@
 
 #this is compared with a regular management LDA and the similar words are
 #removed from the seed
-install.packages("tm")
-install.packages("SnowballC")
+#install.packages("tm")
+#install.packages("SnowballC")
 library(tm)
 library(SnowballC)
 library(stm)
@@ -23,18 +23,18 @@ data4 <- read.table("Groundwater resources sustainability 2021.txt",sep = "\t", 
 
 data12 <- rbind(data1, data2)
 
-text1 <- stm::textProcessor(data1$V1)
-textout <- stm::prepDocuments(text1$documents, text1$vocab, text1$meta)
-docs <- textout$documents
-vocab <- textout$vocab
-meta <- textout$meta
+#text1 <- stm::textProcessor(data1$V1)
+#textout <- stm::prepDocuments(text1$documents, text1$vocab, text1$meta)
+#docs <- textout$documents
+#vocab <- textout$vocab
+#meta <- textout$meta
 
-myk1 <- searchK(docs, vocab, K = c(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60))
-plot(myk$results$K, myk$results$heldout)
-model1 <- stm(documents = docs, vocab = vocab,
-    K = 10, init.type = "Spectral")
-mylabels1 <- labelTopics(model1, n = 20)
-mylabels1$lift
+#myk1 <- searchK(docs, vocab, K = c(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60))
+#plot(myk$results$K, myk$results$heldout)
+#model1 <- stm(documents = docs, vocab = vocab,
+#    K = 10, init.type = "Spectral")
+#mylabels1 <- labelTopics(model1, n = 20)
+#mylabels1$lift
 
 text12 <- stm::textProcessor(data12$V1)
 textout <- stm::prepDocuments(text12$documents, text12$vocab, text12$meta)
@@ -50,18 +50,18 @@ mylabels12 <- labelTopics(model12, n = 50)
 mylabels12$lift
 
 
-text2 <- stm::textProcessor(data2$V1)
-textout <- stm::prepDocuments(text2$documents, text2$vocab, text2$meta)
-docs <- textout$documents
-vocab <- textout$vocab
-meta <- textout$meta
+#text2 <- stm::textProcessor(data2$V1)
+#textout <- stm::prepDocuments(text2$documents, text2$vocab, text2$meta)
+#docs <- textout$documents
+#vocab <- textout$vocab
+#meta <- textout$meta
 
-myk <- searchK(docs, vocab, K = c(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60))
-plot(myk$results$K, myk$results$heldout)
-model2 <- stm(documents = docs, vocab = vocab,
-              K = 15, init.type = "Spectral")
-mylabels2 <- labelTopics(model2, n = 20)
-mylabels2$lift
+#myk <- searchK(docs, vocab, K = c(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60))
+#plot(myk$results$K, myk$results$heldout)
+#model2 <- stm(documents = docs, vocab = vocab,
+#              K = 15, init.type = "Spectral")
+#mylabels2 <- labelTopics(model2, n = 20)
+#mylabels2$lift
 
 
 #normal groundwater management chapter in a book
@@ -94,11 +94,11 @@ mylabels4 <- labelTopics(model4, n = 100)
 mylabels4$lift
 
 #innovative
-any(stringr::str_detect(mylabels1$lift, "innov"))
-any(stringr::str_detect(mylabels2$lift, "innov"))
+#any(stringr::str_detect(mylabels1$lift, "innov"))
+#any(stringr::str_detect(mylabels2$lift, "innov"))
 #non-innovative
-any(stringr::str_detect(mylabels3$lift, "innov"))
-any(stringr::str_detect(mylabels4$lift, "innov"))
+#any(stringr::str_detect(mylabels3$lift, "innov"))
+#any(stringr::str_detect(mylabels4$lift, "innov"))
 
 
 #what innovative words are not lifted in the general groundwater management chapters?
@@ -134,11 +134,22 @@ dict <- quanteda::dictionary(list(
 ))
 
 
-install.packages("seededlda")
+#install.packages("seededlda")
 library(seededlda)
+
+save.image(file = paste0("workspace_", Sys.Date(), ".RData"))
+
 set.seed(3000)
+#this will not produce identical results even with the seed
+#because of the use of parallel processing
 seedmodel <- textmodel_seededlda(qdfm, dict,
                     valuetype = "fixed",
-                    verbose = T)
+                    verbose = T,
+                    residual = 40,
+                    batch_size = 0.01)
 
-saveRDS(seedmodel, "data/Innovation_Paper/")
+saveRDS(seedmodel, "data/Innovation_Paper/seedmodel_40resid")
+
+
+#run the following function on existing models to determine the optimum
+#divergence()
