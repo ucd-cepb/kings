@@ -66,5 +66,36 @@ for(m in 1:length(topiccorrs)){
 
 
 ####
+install.packages("remotes")
+remotes::install_github("LeiGuo0812/quickNet")
+library(quickNet)
+netmat <- matrix(nrow = length(gspids), ncol = length(gspids))
+#records the z-scores for each pair in netmat
+for(m in 1:(length(gspids))){
+   topiccorr_m <- readRDS(paste0("data/Innovation_Paper/topic_correlation_networks/net_",gspids[m]))
+   tch_pos_m <- topiccorr_m$posadj
+   tch_pos_m <- as.matrix(tch_pos_m)
+   
+   for(n in 1:length(gspids)){
+      
+      if(m<n){
+         topiccorr_n <- readRDS(paste0("data/Innovation_Paper/topic_correlation_networks/net_",gspids[n]))
+         tch_pos_n <- topiccorr_n$posadj
+         tch_pos_n <- as.matrix(tch_pos_n)
+         
+         netmat[m,n] <- netCor(tch_pos_m, tch_pos_n)$z.stat
+      }
+   }
+}
+
+rownames(netmat) <- gspids
+colnames(netmat) <- gspids
+saveRDS(netmat, "data/Innovation_Paper/Mantel_permutation_matrix.RDS")   
+   
+   
+   
+
+
+
 
 
