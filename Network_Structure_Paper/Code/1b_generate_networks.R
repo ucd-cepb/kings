@@ -68,7 +68,7 @@ write.csv(all_nodes,
           file = 'Network_Structure_Paper/Out/all_nodes_raw.csv',
           row.names = FALSE)
 
-all_nodes_final <- all_nodes %>%
+all_nodes_final <- all_nodes_raw %>%
    group_by(name) %>%
    summarise(
       num_appearances_sum = sum(num_appearances),
