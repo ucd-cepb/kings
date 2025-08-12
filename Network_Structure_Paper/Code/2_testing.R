@@ -7,12 +7,27 @@ library(broom)
 library(statnet)
 library(ca)
 library(skimr)
+library(dotenv)
 
 load_dot_env()
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"), 
-                     "/network_structure_by_plan/cleaned_extracts")
+                     "/network_structure_by_plan/networks_fully_labeled")
 extract_list = list.files(network_fp)
+
+i <- 1
+net_i <- readRDS(paste0(network_fp, "/", extract_list[i]))
+net_i_df_edges <- network::as.data.frame.network(net_i, unit='edges')
+net_i_df_verts <- network::as.data.frame.network(net_i, unit='vertices')
+
+net_i_igraph <- graph <- igraph::graph_from_data_frame(net_i_df_edges,
+                                                       vertices = net_i_df_verts)
+
+
+
+
+
+
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
 # gsp_ids <- setdiff(gsp_ids, "112")
 
