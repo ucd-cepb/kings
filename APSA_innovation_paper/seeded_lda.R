@@ -41,6 +41,7 @@ textout <- stm::prepDocuments(text12$documents, text12$vocab, text12$meta)
 docs <- textout$documents
 vocab <- textout$vocab
 meta <- textout$meta
+saveRDS(textout, "data/Innovation_Paper/textout.RDS")
 
 myk12 <- searchK(docs, vocab, K = c(5, 10, 15, 20, 25, 30, 35, 40))
 plot(myk12$results$K, myk12$results$residual)
@@ -146,7 +147,7 @@ seedmodel <- textmodel_seededlda(qdfm, dict,
                     valuetype = "fixed",
                     verbose = T,
                     residual = 40,
-                    batch_size = 0.01)
+                    batch_size = 0.001)
 
 saveRDS(seedmodel, "data/Innovation_Paper/seedmodel_40resid")
 
