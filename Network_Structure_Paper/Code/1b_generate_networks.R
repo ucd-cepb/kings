@@ -88,7 +88,7 @@ type_summary <- all_nodes_final %>%
    summarize(n=n()) %>% 
    pivot_wider(names_from = AI_TAGGED, values_from = n) %>% 
    select(c(entity_type, `0`, `1`))
-
+   
 
 
 
