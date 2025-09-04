@@ -1,0 +1,1402 @@
+[
+  {
+    "author": [
+      {
+        "family": "Abbott",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "2015",
+      "Spring"
+    ],
+    "title": [
+      "Wells and Words. The Relationship Between Drawdown, Transmissivity, and Well Yield. Groundwater Resources Association of California Hydrovisions"
+    ],
+    "volume": [
+      "24"
+    ],
+    "url": [
+      "https://www.grac.org/media/files/files/1c7f642e/spring2015.pdf"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ayers",
+        "given": "R.S."
+      },
+      {
+        "family": "Westcot",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Water Quality for Agriculture"
+    ],
+    "container-title": [
+      "FAO Irrigation and Drainage Paper. Food and Agriculture Organization of the United Nations"
+    ],
+    "note": [
+      "Retrieved on February 12, 2019 from"
+    ],
+    "url": [
+      "http://www.fao.org/3/T0234E/T0234E00.htm"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Burton",
+        "given": "C.A."
+      },
+      {
+        "family": "Shelton",
+        "given": "J.L."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Status and Understanding of Groundwater Quality in the Two Southern San Joaquin Valley Study Units, 2005-2006: California GAMA Priority Basin Project"
+    ],
+    "genre": [
+      "USGS. Scientific Investigations Report 2011-5218."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2011/5218/pdf/sir20115218.pdf"
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Water Well Standards: State of California"
+    ],
+    "date": [
+      "1981"
+    ],
+    "volume": [
+      "74-81"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/pubs/groundwater/water_well_standards__bulletin_74-81_/ca_well_standards_bulletin74-81_1981.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "DWR Bulletin"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "California Well Standards"
+    ],
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "74-90"
+    ],
+    "url": [
+      "http://wdl.water.ca.gov/waterdatalibrary/docs/historic/Bulletins/Bulletin_74/Bulletin_74-90__1991.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "DWR Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "California’s Groundwater Bulletin 118, Tulare Lake Hydrologic Region, San Joaquin Valley Groundwater Basin, Kings Subbasin"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/bulletin118/basindescriptions/5-22.08.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "California’s Groundwater Bulletin 118, San Joaquin River Hydrologic Region"
+    ],
+    "publisher": [
+      "San Joaquin Valley Groundwater Basin"
+    ],
+    "location": [
+      "Madera Subbasin"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Groundwater Elevation Monitoring Guidelines"
+    ],
+    "date": [
+      "2010-12"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/CASGEM/Files/CASGEM-DWR-GW-Guidelines-Final-121510.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Modeling Best Management Practice"
+    ],
+    "date": [
+      "2016"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-5-Modeling_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Water Budget Best Management Practice"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Monitoring Networks and Identification of Data Gaps BMP"
+    ],
+    "date": [
+      "2016-12"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-2-Monitoring-Networks-and-Identification-of-Data-Gaps_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Monitoring Protocols, Standards, and Sites BMP"
+    ],
+    "date": [
+      "2016-12"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-1-Monitoring-Protocols-Standards-and-Sites_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Sustainable Management Criteria Best Management Practice"
+    ],
+    "date": [
+      "2017"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf California Department of Water Resources (DWR",
+      "Evaluation of the Effect of Subsidence on Flow Capacity in the Chowchilla and Eastside Bypasses, and Reach 4A of the San Joaquin River"
+    ],
+    "date": [
+      "2018"
+    ],
+    "publisher": [
+      "San Joaquin River Restoration Program"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "date": [
+      "2018-04"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/sgma-climate-change-resources"
+    ],
+    "note": [
+      "California Department of Water Resources (DWR). (n.d.). Groundwater Management: Basin Boundary Modifications:"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Basin Boundary Tools and Map"
+    ],
+    "note": [
+      "Retrieved July 21, 2019 from"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Basin-Boundary-Modifications"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Clemmens",
+        "given": "A.J."
+      },
+      {
+        "family": "Burt",
+        "given": "C.M."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Accuracy of Irrigation Efficiency Estimates"
+    ],
+    "volume": [
+      "123"
+    ],
+    "pages": [
+      "443–453"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Irrigation and Drainage Engineering"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      },
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "given": "Scalmanini"
+      }
+    ],
+    "date": [
+      "2017-07"
+    ],
+    "title": [
+      "Technical Memorandum: Madera Subbasin Sustainable Groundwater Management Act (SGMA) Data Collection and Analyses"
+    ],
+    "url": [
+      "https://www.madera.gov/wpcontent/uploads/2017/10/Madera-Subbasin-Data-Collection-and-Analysis-Final-Memo.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      },
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "given": "Scalmanini"
+      }
+    ],
+    "date": [
+      "2018-01"
+    ],
+    "title": [
+      "Draft Technical Memorandum: Madera Subbasin Sustainable Groundwater Management Act (SGMA) Basin Boundary Water Budget"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://www.maderacountywater.com/wp-content/uploads/2016/10/Madera-Subbasin-Preliminary-Water-Balance-Analysis-TM-draft-20180212.pdf"
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Davis, G.H., Green, J.H., Olmsted, F.H., Brown, D.W"
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground-Water Conditions and Storage Capacity in the San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "USGS. Water Supply Paper 1469"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wsp1469"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Mack",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Use of Groundwater Reservoirs for Storage of Surface Water in the San Joaquin Valley California"
+    ],
+    "note": [
+      "USGS. Water Supply paper 1618."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wsp1618"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "F.G",
+        "given": "Driscoll"
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Groundwater and Wells"
+    ],
+    "publisher": [
+      "University of Michigan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Farr",
+        "given": "T.G."
+      },
+      {
+        "family": "Jones",
+        "given": "C."
+      },
+      {
+        "family": "Liu",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Progress Report: Subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California"
+    ],
+    "publisher": [
+      "NASA Jet Propulsion Laboratory, California Institute of Technology"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Availability of the Central Valley Aquifer, California"
+    ],
+    "container-title": [
+      "USGS. Professional Paper 1766"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/pp1766"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Applied Hydrology"
+    ],
+    "publisher": [
+      "Pearson"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2014-01"
+    ],
+    "publisher": [
+      "East San Joaquin Water Quality Coalition Groundwater Quality Assessment Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2016-06"
+    ],
+    "title": [
+      "Region 5: Updated Groundwater Quality Analysis and High Resolution Mapping for"
+    ],
+    "publisher": [
+      "Central Valley Salt and Nitrate Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "MacGillivray",
+        "given": "N.A."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Effective precipitation: a field study to assess consumptive use of winter rains by spring and summer crops"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Madera"
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Madera County General Plan Policy Document"
+    ],
+    "url": [
+      "https://www.maderacounty.com/Home/ShowDocument?id=2850"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Madera"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Madera County Dairy Element to the General Plan"
+    ],
+    "publisher": [
+      "City of Madera"
+    ],
+    "url": [
+      "https://www.maderacounty.com/Home/ShowDocument?id=2848"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Marchand",
+        "given": "D.E."
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "Preliminary Quaternary Geologic Map of the Madera Area, California"
+    ],
+    "genre": [
+      "USGS. Open File Report 76-841."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Marchand",
+        "given": "D.E."
+      },
+      {
+        "family": "Allwardt",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "1981",
+      "1470"
+    ],
+    "title": [
+      "Late Cenozoic Stratigraphic Units, Northeastern San Joaquin Valley, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "USGS. Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mitten",
+        "given": "H.T."
+      },
+      {
+        "family": "LeBlanc",
+        "given": "R.A."
+      },
+      {
+        "family": "Bertoldi",
+        "given": "G.L."
+      }
+    ],
+    "date": [
+      "1970"
+    ],
+    "title": [
+      "Geology, Hydrology, and Water Quality in the Madera Area, San Joaquin Valley, California"
+    ],
+    "genre": [
+      "USGS. Open-file Report 70-228."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr70228,",
+      "https://pubs.usgs.gov/of/1970/0228/report.pdf",
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/office/ssr10/tr/?cid=nrcs144p2_074846"
+    ],
+    "container-title": [
+      "National Resources Conservation Service (NRCS). Soil Textural Classes & Related Saturated Hydraulic Conductivity Classes, United States Department of Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground Water (approximately 3,000 micromhos) in the San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "USGS. Hydrologic Investigations Atlas HA-489"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ha489"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Ground-Water Basin of the Central Valley, California, with Texture Maps and Sections"
+    ],
+    "genre": [
+      "USGS. Professional Paper 1401-C."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/pp/1401c/report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Pritchard Consulting Group",
+        "given": "K.D.S.A."
+      },
+      {
+        "family": "Rogers",
+        "given": "Wood"
+      }
+    ],
+    "date": [
+      "2014-12"
+    ],
+    "title": [
+      "Madera Regional Groundwater Management Plan"
+    ],
+    "url": [
+      "https://www.maderacountywater.com/wp-content/uploads/2016/10/Madera-Regional-GMP-Final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Group",
+        "given": "Pritchard Consulting"
+      }
+    ],
+    "date": [
+      "2008-05"
+    ],
+    "title": [
+      "Review of Groundwater Conditions for New Stone Water District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Group",
+        "given": "Pritchard Consulting"
+      }
+    ],
+    "date": [
+      "2009-05-07"
+    ],
+    "title": [
+      "Memorandum, SJR Restoration Water Supply Impact Accounting Tool"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Group",
+        "given": "Pritchard Consulting"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Groundwater Management Plan"
+    ],
+    "location": [
+      "Madera County"
+    ],
+    "publisher": [
+      "Root Creek Water District"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/docs/GWMP/SJ-11_RootCreekWD_GWMP_2012.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Group",
+        "given": "Pritchard Consulting"
+      }
+    ],
+    "date": [
+      "2014-12"
+    ],
+    "title": [
+      "Madera Integrated Regional Water Management Plan"
+    ],
+    "url": [
+      "https://www.maderacountywater.com/wp-content/uploads/2017/05/Madera-Integrated-Regional-Water-Final.2014.12.09.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Reclamation"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "San Joaquin River Restoration Project - Geodetic Network; GPS Survey Report"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "note": [
+      "Retrieved from"
+    ],
+    "url": [
+      "https://www.restoresjr.net/?wpfb_dl=1331"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Shelton",
+        "given": "J.L."
+      },
+      {
+        "family": "Fram",
+        "given": "M.S."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Quality Data in the Madera-Chowchilla Study Unit, 2008: Results from the California GAMA Program"
+    ],
+    "volume": [
+      "455"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/water_issues/programs/gama/docs/usgs_saa_mad_chwch.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "USGS. Data Series"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Thomasson",
+        "given": "H.G."
+      }
+    ],
+    "director": [
+      {
+        "literal": "Jr., Olmsted, F.J., & LeRoux, E.F."
+      }
+    ],
+    "date": [
+      "1960",
+      "1464"
+    ],
+    "title": [
+      "Geology, Water Resources and Usable Ground-Water Storage Capacity of part of Solano County"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "USGS. Water Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015-07"
+    ],
+    "note": [
+      "San Joaquin River Restoration Program: Revised Framework for Implementation. ."
+    ],
+    "url": [
+      "http://www.restoresjr.net/?wpfb_dl=2003"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Environmental Protection Agency",
+      "Guidance on Systematic Planning Using the Data Quality Objectives Process"
+    ],
+    "date": [
+      "2006-02"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/documents/guidance_systematic_planning_dqo_process.pdf"
+    ],
+    "container-title": [
+      "US Bureau of Reclamation. (n.d.). San Joaquin River Restoration Program: Subsidence Monitoring"
+    ],
+    "note": [
+      "Retrieved July 21,"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "genre": [
+      "from"
+    ],
+    "url": [
+      "http://www.restoresjr.net/science/subsidence-monitoring"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "A.K."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Swain",
+        "given": "L.A."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Ground-Water Flow in the"
+    ],
+    "location": [
+      "Central Valley, California"
+    ],
+    "publisher": [
+      "USGS"
+    ],
+    "type": "book"
+  },
+  {
+    "genre": [
+      "Professional Paper 1401-D."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/pp/1401d/report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Luhdorff",
+        "given": "C.A.S.E.S.T.U.D.I.E.S."
+      },
+      {
+        "family": "Scalmanini Consulting Engineers",
+        "given": "J.W.Borchers"
+      },
+      {
+        "family": "Carpenter",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-04"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California. Full Report of Findings prepared for California Water Foundation"
+    ],
+    "pages": [
+      "151"
+    ],
+    "url": [
+      "http://ca.water.usgs.gov/land_subsidence/california-subsidence-cause-effect.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Traum",
+        "given": "J."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      }
+    ],
+    "date": [
+      "2015",
+      "2016"
+    ],
+    "title": [
+      "Water availability and land subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "publisher": [
+      "Hydrogeol J"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "675"
+    ],
+    "doi": [
+      "10.1007/s10040-015-1339-x."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/701605"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Pugh",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1972; US Geological Survey Professional Paper 437-H; prepared in cooperation with the California Department of Water Resources"
+    ],
+    "pages": [
+      "87"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/pp/0437h/report.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      },
+      {
+        "family": "Solt",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Land subsidence along the Delta-Mendota Canal in the northern part of the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, 2003-10; USGS Scientific Investigations Report 2013-5142, prepared in cooperation with U.S. Bureau of Reclamation and the San Luis and Delta-Mendota Water Authority"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/sir20135142"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      },
+      {
+        "family": "Solt",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014",
+      "1993"
+    ],
+    "title": [
+      "Land subsidence, groundwater levels, and geology in the",
+      "U.S"
+    ],
+    "location": [
+      "Coachella Valley, California"
+    ],
+    "volume": [
+      "2014–5075"
+    ],
+    "pages": [
+      "62"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20145075."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey, Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20145075."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Barcelona",
+        "given": "M.J."
+      },
+      {
+        "family": "Gibb",
+        "given": "J.P."
+      },
+      {
+        "family": "Helfrich",
+        "given": "J.A."
+      },
+      {
+        "given": "EEGraske"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Practical Guide for Ground-Water Sampling"
+    ],
+    "publisher": [
+      "Illinois State Water Survey"
+    ],
+    "location": [
+      "Champaign, Illinois"
+    ],
+    "pages": [
+      "103"
+    ],
+    "url": [
+      "www.orau.org/ptp/PTP%20Library/library/epa/samplings/pracgw.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Buchanan",
+        "given": "T.J."
+      },
+      {
+        "family": "Somers",
+        "given": "W.P."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Discharge measurements at gaging stations; techniques of water-resources investigations of the United States Geologic Survey chapter A8"
+    ],
+    "location": [
+      "Washington D.C"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/twri/twri3a8/html/pdf.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Cunningham",
+        "given": "W.L."
+      },
+      {
+        "family": "Schalk",
+        "given": "C.W."
+      },
+      {
+        "given": "comps"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater technical procedures of the U.S"
+    ],
+    "container-title": [
+      "Geological Survey: U.S. Geological Survey Techniques and Methods"
+    ],
+    "pages": [
+      "1– 1"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/1a1/pdf/tm1-a1.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Groundwater elevation monitoring guidelines"
+    ],
+    "url": [
+      "http://www.water.ca.gov/groundwater/casgem/pdfs/CASGEM%20DWR%20GW%20Gu"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "Holmes, R.R. Jr., P.J. Terrio, M.A. Harris, and P.C. Mills"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Introduction to field methods for hydrologic and environmental studies"
+    ],
+    "genre": [
+      "open-file report 01-50,"
+    ],
+    "publisher": [
+      "USGS"
+    ],
+    "location": [
+      "Urbana, Illinois"
+    ],
+    "pages": [
+      "241"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr0150"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Puls",
+        "given": "R.W."
+      },
+      {
+        "family": "Barcelona",
+        "given": "M.J."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "note": [
+      "Low-Flow (Minimal Drawdown) Ground-Water Sampling Procedures; US EPA, Ground Water Issue EPA/540/S-95/504."
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/lwflw2a.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rantz",
+        "given": "S.E."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Measurement and computation of streamflow; U.S. Geological Survey, Water Supply Paper 2175"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/wsp/wsp2175/#table"
+    ],
+    "note": [
+      "Subcommittee on Ground Water of the Advisory Committee on Water Information,"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "A national framework for ground-water monitoring in the United States"
+    ],
+    "url": [
+      "http://acwi.gov/sogw/ngwmn_framework_report_july2013.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Vail",
+        "given": "J."
+      },
+      {
+        "family": "France",
+        "given": "D."
+      },
+      {
+        "family": "Lewis",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Operating Procedure: Groundwater Sampling SESDPROC-301-R3"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Online System for Well Completion Reports (OSWCR). California Department of Water Resources. http://water.ca.gov/oswcr/index.cfm Measuring Land Subsidence web page"
+    ],
+    "container-title": [
+      "U.S. Geological Survey. http://ca.water.usgs.gov/land_subsidence/california-subsidence-measuring.html USGS Global Positioning Application and Practice web page. U.S. Geological Survey. http://water.usgs.gov/osw/gps/ Appendix C - Public Meeting Tracker New Stone Water District GSA - Madera Subbasin Outreach Check List Localized/GSA Engagement Informing the Public about GSP Development Progress"
+    ],
+    "type": "paper-conference"
+  }
+]

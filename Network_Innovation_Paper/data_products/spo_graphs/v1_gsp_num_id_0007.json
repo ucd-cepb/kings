@@ -1,0 +1,579 @@
+{
+  "file_name": "v1_gsp_num_id_0007.txt",
+  "processed_pages": 56,
+  "total_pages": 731,
+  "relevant_pages": [
+    65,
+    66,
+    97,
+    98,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    116,
+    117,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    133,
+    165,
+    166,
+    167,
+    168,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    182,
+    183,
+    184,
+    185,
+    186,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    404,
+    418,
+    419,
+    532,
+    533
+  ],
+  "total_triplets": 64,
+  "triplets": [
+    {
+      "subject": "California Code of Regulations",
+      "predicate": "Sustainable",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 532,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Groundwater Management Act",
+      "predicate": "California",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 532,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "2020",
+      "predicate": "COVID-19",
+      "object": "point in time",
+      "confidence": 1.0,
+      "page_num": 533,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "GSP",
+      "predicate": "Sustainable",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 418,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Criteria of the GSP",
+      "predicate": "GSP",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 418,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Groundwater Sustainability Plan",
+      "predicate": "Groundwater",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 165,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Groundwater Sustainability Plan",
+      "predicate": "Groundwater",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 165,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Groundwater Recharge Projects",
+      "predicate": "Groundwater",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 165,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "San Joaquin River",
+      "predicate": "Friant",
+      "object": "mouth of the watercourse",
+      "confidence": 1.0,
+      "page_num": 167,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Friant",
+      "predicate": "San",
+      "object": "tributary",
+      "confidence": 1.0,
+      "page_num": 167,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Aliso Water District",
+      "predicate": "Pritchard",
+      "object": "located in the administrative territorial entity",
+      "confidence": 1.0,
+      "page_num": 168,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Fresno River",
+      "predicate": "Aliso",
+      "object": "mouth of the watercourse",
+      "confidence": 1.0,
+      "page_num": 172,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Aliso Canal",
+      "predicate": "Fresno",
+      "object": "tributary",
+      "confidence": 1.0,
+      "page_num": 172,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Fresno River",
+      "predicate": "Aliso",
+      "object": "mouth of the watercourse",
+      "confidence": 1.0,
+      "page_num": 173,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Aliso Canal",
+      "predicate": "Fresno",
+      "object": "tributary",
+      "confidence": 1.0,
+      "page_num": 173,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Fresno River",
+      "predicate": "Aliso",
+      "object": "mouth of the watercourse",
+      "confidence": 1.0,
+      "page_num": 173,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "recharge",
+      "predicate": "Groundwater",
+      "object": "use",
+      "confidence": 1.0,
+      "page_num": 174,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "irrigation",
+      "predicate": "pumping",
+      "object": "different from",
+      "confidence": 1.0,
+      "page_num": 175,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "pumping groundwater",
+      "predicate": "irrigation",
+      "object": "different from",
+      "confidence": 1.0,
+      "page_num": 175,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "irrigation",
+      "predicate": "drip",
+      "object": "subclass of",
+      "confidence": 1.0,
+      "page_num": 177,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "irrigation",
+      "predicate": "micro",
+      "object": "subclass of",
+      "confidence": 1.0,
+      "page_num": 177,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Lower San Joaquin",
+      "predicate": "Bypass",
+      "object": "located in or next to body of water",
+      "confidence": 1.0,
+      "page_num": 179,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "Aliso",
+      "object": "product or material produced",
+      "confidence": 1.0,
+      "page_num": 180,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "(1997-2017)",
+      "predicate": "(CFS)",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 182,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "(CFS)",
+      "predicate": "(1997-2017)",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 182,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "(1997-2017)",
+      "predicate": "(CFS)",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 182,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Levee District",
+      "predicate": "CBP",
+      "object": "operator",
+      "confidence": 1.0,
+      "page_num": 183,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "Groundwater",
+      "object": "use",
+      "confidence": 1.0,
+      "page_num": 186,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Groundwater pumping meters",
+      "predicate": "groundwater",
+      "object": "uses",
+      "confidence": 1.0,
+      "page_num": 186,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "inflows",
+      "predicate": "groundwater",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 190,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "inflows",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 190,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "irrigation",
+      "predicate": "fallowing",
+      "object": "subclass of",
+      "confidence": 1.0,
+      "page_num": 191,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "aquifer",
+      "predicate": "groundwater",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 192,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "aquifer",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 192,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Aliso Water District Groundwater Sustainability Agency",
+      "predicate": "Board",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 66,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "recharge",
+      "predicate": "Groundwater",
+      "object": "different from",
+      "confidence": 1.0,
+      "page_num": 193,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Groundwater extractions",
+      "predicate": "recharge",
+      "object": "different from",
+      "confidence": 1.0,
+      "page_num": 193,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Criteria",
+      "predicate": "Sustainable",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 97,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Criteria",
+      "predicate": "Sustainable",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 97,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Criteria",
+      "predicate": "Sustainable",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 97,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Action Plan",
+      "predicate": "Sustainable",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 98,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Criteria",
+      "predicate": "Sustainable",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 98,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Action Plan",
+      "predicate": "Sustainable",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 98,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Sustainable Management Action Plan",
+      "predicate": "Sustainable",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 98,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "AWD",
+      "predicate": "Aliso",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 101,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Aliso Water District Groundwater Sustainability Agency",
+      "predicate": "AWD",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 101,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "Groundwater",
+      "object": "facet of",
+      "confidence": 1.0,
+      "page_num": 103,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Aliso",
+      "predicate": "Aliso",
+      "object": "located in the administrative territorial entity",
+      "confidence": 1.0,
+      "page_num": 104,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "2020",
+      "predicate": "COVID-19",
+      "object": "point in time",
+      "confidence": 1.0,
+      "page_num": 108,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "change in storage",
+      "predicate": "Subsidence",
+      "object": "has effect",
+      "confidence": 1.0,
+      "page_num": 109,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Subsidence",
+      "predicate": "change",
+      "object": "has cause",
+      "confidence": 1.0,
+      "page_num": 109,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "A-Clay",
+      "object": "subclass of",
+      "confidence": 1.0,
+      "page_num": 110,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "drought",
+      "predicate": "most",
+      "object": "instance of",
+      "confidence": 1.0,
+      "page_num": 113,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "2020",
+      "predicate": "COVID-19",
+      "object": "point in time",
+      "confidence": 1.0,
+      "page_num": 117,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "water",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 121,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "water quality",
+      "predicate": "groundwater",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 121,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "aquifer",
+      "predicate": "groundwater",
+      "object": "part of",
+      "confidence": 1.0,
+      "page_num": 122,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "groundwater",
+      "predicate": "aquifer",
+      "object": "has part",
+      "confidence": 1.0,
+      "page_num": 122,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Kings",
+      "predicate": "Mendota",
+      "object": "located in the administrative territorial entity",
+      "confidence": 1.0,
+      "page_num": 123,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Madera Subbasin",
+      "predicate": "Gravelly",
+      "object": "located in the administrative territorial entity",
+      "confidence": 1.0,
+      "page_num": 124,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "Gravelly Ford GSA",
+      "predicate": "Madera",
+      "object": "contains administrative territorial entity",
+      "confidence": 1.0,
+      "page_num": 124,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "COVID-19 pandemic",
+      "predicate": "COVID-19",
+      "object": "has effect",
+      "confidence": 1.0,
+      "page_num": 125,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "COVID-19 pandemic",
+      "predicate": "COVID-19",
+      "object": "has cause",
+      "confidence": 1.0,
+      "page_num": 125,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    },
+    {
+      "subject": "2040",
+      "predicate": "2020",
+      "object": "point in time",
+      "confidence": 1.0,
+      "page_num": 127,
+      "file_name": "v1_gsp_num_id_0007.txt"
+    }
+  ],
+  "timestamp": "2025-08-19T13:15:08.909953"
+}

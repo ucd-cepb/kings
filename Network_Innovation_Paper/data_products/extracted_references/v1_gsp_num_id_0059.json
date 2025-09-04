@@ -1,0 +1,6299 @@
+[
+  {
+    "author": [
+      {
+        "family": "Alpert",
+        "given": "Holly"
+      },
+      {
+        "family": "D",
+        "given": "Ph"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-10"
+    ],
+    "title": [
+      "Inyo-Mono Integrated Regional Water Management Plan"
+    ],
+    "container-title": [
+      "Prepared for the Inyo-Mono Integrated Regional Water Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 23. Waters; Division 2. Department of Water Resources; Chapter 1.5. Groundwater Management; Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans. GSP Emergency Regulations"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Water Code; SB1168, AB1739, and SB1319"
+    ],
+    "publisher": [
+      "Sustainable Groundwater Management Act"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Services",
+        "given": "Ecological Research"
+      }
+    ],
+    "date": [
+      "1991",
+      "1991-10"
+    ],
+    "title": [
+      "Elements of a Habitat Management Plan for the Mohave Tui Chub at the China Lake Naval Weapons Center Relative to the City of Ridgecrest’s Wastewater Reclamation Project"
+    ],
+    "container-title": [
+      "Document provided by Stephan Bork of the Indian Wells Valley Technical Advisory Committee"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Environmental Science"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-05"
+    ],
+    "title": [
+      "City of Ridgecrest General Plan Update, Draft Environmental Impact Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "title": [
+      "Inyo County Planning Department",
+      "Inyo County General Plan - Introduction"
+    ],
+    "date": [
+      "2013",
+      "2013-05"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Department",
+        "given": "Kern County Planning"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-09"
+    ],
+    "title": [
+      "Kern County General Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "McGraw",
+        "given": "D."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Jasoni",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-09"
+    ],
+    "title": [
+      "Groundwater Resource Sustainability: Modeling Evaluation for the Naval Air Weapons Station, China Lake. California. prepared by Desert Research Institute for the Naval Air Warfare Center Weapons Division"
+    ],
+    "genre": [
+      "Final Evaluation Report NAWCWD TP 8811."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-10"
+    ],
+    "title": [
+      "Wastewater Treatment Plant Facility Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "RMC",
+        "given": "Woodard"
+      },
+      {
+        "family": "Curan"
+      },
+      {
+        "family": "Groundwater",
+        "given": "Parker"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-03"
+    ],
+    "title": [
+      "Indian Wells Valley Groundwater Basin Salt and Nutrient Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for City of Ridgecrest and the Indian Wells Valley Water District"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Tetra Tech E.M."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-07"
+    ],
+    "title": [
+      "Prepared for the Department of the Navy"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-01"
+    ],
+    "title": [
+      "Indian Wells Valley Resource Opportunity Plan, Water Availability and Conservation Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for Kern County Planning and Community Development Department"
+    ]
+  },
+  {
+    "publisher": [
+      "URS Corporation"
+    ],
+    "date": [
+      "2007",
+      "2007-03"
+    ],
+    "title": [
+      "County of San Bernardino 2007 General Plan. Prepared for the San Bernardino County Land Use Services Division"
+    ],
+    "type": "book"
+  },
+  {
+    "location": [
+      "Austin, C.F",
+      "Ridgecrest, CA"
+    ],
+    "date": [
+      "1988-06-10"
+    ],
+    "title": [
+      "Hydrology of Indian Wells Valley"
+    ],
+    "container-title": [
+      "NAWS Geothermal Division. Memorandum to NAWS Environmental Division"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bacon",
+        "given": "Steve"
+      },
+      {
+        "others": true
+      }
+    ],
+    "volume": [
+
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "GSA Annual meeting, paper"
+    ],
+    "issue": [
+      "310-7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bacon",
+        "given": "Steve"
+      },
+      {
+        "others": true
+      }
+    ],
+    "volume": [
+      "25"
+    ],
+    "date": [
+      "2006"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Quaternary Science Reviews"
+    ],
+    "pages": [
+      "1264–1282"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bullard",
+        "given": "Thomas"
+      },
+      {
+        "family": "Bacon",
+        "given": "Steven"
+      },
+      {
+        "family": "Adams",
+        "given": "Kenneth"
+      },
+      {
+        "family": "Decker",
+        "given": "David"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-05"
+    ],
+    "title": [
+      "Geomorphic Map of the China Lake Basin Below 700 m in Support of Cultural Resource Management at Naval Air Weapons Station China Lake. Prepared for Naval Air Warfare Center Weapons Division China Lake, CA. Prepared by Desert Research Institute"
+    ],
+    "genre": [
+      "NAWCWD TP 8839."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Berenbrock",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Ground-water data for Indian Wells Valley, Kern, Inyo, and San Bernardino Counties, California, 197-84"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Open File Report 86-315. Prepared in cooperation with the Indian Wells Valley Water District and the US Department of the Navy"
+    ],
+    "location": [
+      "China Lake Naval Weapon Center"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Berenbrock",
+        "given": "Charles"
+      },
+      {
+        "family": "Martin",
+        "given": "Peter"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "The Ground-Water Flow System in Indian Wells Valley, Kern, Inyo, and San Bernardino Counties, California"
+    ],
+    "genre": [
+      "USGS Water-Resources Investigations Report 89-4191."
+    ],
+    "container-title": [
+      "Prepared in cooperation with Indian Wells Valley Water District and the U.S. Deportment of the Navy"
+    ],
+    "location": [
+      "China Lake Naval Weapons Center"
+    ],
+    "note": [
+      "87pp."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Berenbrock",
+        "given": "C."
+      },
+      {
+        "family": "Schroeder",
+        "given": "R.A."
+      }
+    ],
+    "date": [
+      "1994",
+      "1987"
+    ],
+    "title": [
+      "Ground-water flow and quality, and geochemical processes, in Indian Wells Valley, Kern, Inyo, and San Bernardino Counties"
+    ],
+    "location": [
+      "California",
+      "China Lake Naval Weapons Center"
+    ],
+    "genre": [
+      "Water-Resources Investigations Report 93-4003."
+    ],
+    "container-title": [
+      "United States Geological Survey. Prepared in cooperation with the Indian Wells Valley Water District and the U.S. Department of the Navy"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bloyd",
+        "given": "R.M."
+      },
+      {
+        "family": "Robson",
+        "given": "S.G."
+      }
+    ],
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "Mathematical Ground-Water Model of Indian Wells Valley, California"
+    ],
+    "genre": [
+      "USGS Open-File Report 72-41."
+    ],
+    "container-title": [
+      "Prepared in cooperation with the Indian Wells Valley County Water District and the Department of the Navy"
+    ],
+    "pages": [
+      "39"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-03"
+    ],
+    "title": [
+      "Indian Wells Valley Basin Groundwater Flow Model and Hydrogeologic Study"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for IWVWD"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 23. Waters; Division 2. Department of Water Resources; Chapter 1.5. Groundwater Management; Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans. GSP Emergency Regulations"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Groundwater Basins in California"
+    ],
+    "date": [
+      "1980"
+    ],
+    "volume": [
+      "118-80"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2016",
+      "2016-07"
+    ],
+    "title": [
+      "Groundwater Sustainability Plan (GSP) Emergency Regulations Guide"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Sustainable Groundwater Management Program"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Hydrogeologic Conceptual Model Best Management Practice"
+    ],
+    "container-title": [
+      "Sustainable Groundwater Management Program BMP"
+    ],
+    "pages": [
+      "42"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Modeling Best Management Practice"
+    ],
+    "container-title": [
+      "Sustainable Groundwater Management Program BMP"
+    ],
+    "pages": [
+      "42"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Water Budget Best Management Practice"
+    ],
+    "container-title": [
+      "Sustainable Groundwater Management Program BMP"
+    ],
+    "pages": [
+      "53"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board Lahontan Region",
+      "Water quality control plan for the Lahontan Region"
+    ],
+    "date": [
+      "2016",
+      "2016-01"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Boards",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2018",
+      "2019-04-15"
+    ],
+    "title": [
+      "Secondary drinking water standards"
+    ],
+    "note": [
+      "Accessed at:"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/ddw_secondar"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Boards",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-04-15"
+    ],
+    "title": [
+      "Contaminants in drinking water"
+    ],
+    "note": [
+      "Accessed at:"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Chemicalcontaminants.ht"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Water Code; SB1168, AB1739, and SB1319"
+    ],
+    "publisher": [
+      "Sustainable Groundwater Management Act"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Complete Report on the Construction of the Los Angeles Aqueduct, published by the Los Angeles Department of Public Service"
+    ],
+    "date": [
+      "1916"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the hydrologic system and selected water management alternatives in the Owens Valley, California"
+    ],
+    "container-title": [
+      "USGS Water Supply Paper 2370-H"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dokka",
+        "given": "R.K."
+      },
+      {
+        "family": "Travis",
+        "given": "C.J."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "The role of the Eastern California shear zone in accommodating Pacific–North American plate motion"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "1323–1326"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysical Research Letters"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "L.C.",
+        "given": "Dutcher"
+      },
+      {
+        "family": "Moyle",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Geologic and Hydrologic Features of Indian"
+    ],
+    "location": [
+      "Wells Valley, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Paper",
+        "given": "U.S.G.S.Water Supply"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Prepared in cooperation with the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Epstein",
+        "given": "B."
+      },
+      {
+        "family": "Pohll",
+        "given": "G.M."
+      },
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "Carroll",
+        "given": "R.W.H."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Development and uncertainty analysis of an empirical recharge prediction model for Nevada’s desert basins"
+    ],
+    "volume": [
+      "5"
+    ],
+    "pages": [
+      "1–22"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Nevada Water Resources Association"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Farnsworth",
+        "given": "R.K."
+      },
+      {
+        "family": "Thompson",
+        "given": "E.S."
+      },
+      {
+        "family": "Peck",
+        "given": "E.L."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Evaporation Atlas for the Contiguous 48 United States. National Oceanic and Atmospheric Administration, National Weather Service"
+    ],
+    "genre": [
+      "NOAA Technical Report NWS 33."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Farquhar",
+        "given": "Francis P."
+      }
+    ],
+    "title": [
+      "History of the Sierra Nevada"
+    ],
+    "date": [
+      "1946"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Garner",
+        "given": "C."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11-17"
+    ],
+    "title": [
+      "Technical memorandum: Indian Wells Valley groundwater model update"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Desert Research Institute"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Giambastiani",
+        "given": "Mark A."
+      },
+      {
+        "family": "Bullard",
+        "given": "Thomas F."
+      }
+    ],
+    "volume": [
+      "43"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Pacific Coast Archeological Society Quarterly"
+    ],
+    "issue": [
+      "1 and 2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harris",
+        "given": "Glenn"
+      }
+    ],
+    "date": [
+      "2013-03-23"
+    ],
+    "title": [
+      "History of Water Use in the Indian Wells Valley, Part I"
+    ],
+    "note": [
+      "Retrieved from www.ridgecrestca.com."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Daily Independent"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Haslebacher",
+        "given": "T.C."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-03-09",
+      "2018"
+    ],
+    "title": [
+      "Indian Wells Valley Stream Monitoring Report",
+      "– Field Activities and Data Interpretation"
+    ],
+    "volume": [
+      "04",
+      "3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "February",
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hauksson",
+        "given": "E."
+      },
+      {
+        "family": "Hutton",
+        "given": "K."
+      },
+      {
+        "family": "Kanamori",
+        "given": "H."
+      },
+      {
+        "family": "Jones",
+        "given": "L."
+      },
+      {
+        "family": "Mori",
+        "given": "J."
+      },
+      {
+        "family": "Hough",
+        "given": "S."
+      },
+      {
+        "family": "Roquemore",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Preliminary report on the 1995 Ridgecrest earthquake sequence in eastern California"
+    ],
+    "volume": [
+      "66"
+    ],
+    "pages": [
+      "54–60"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Seismological Research Letters"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hereford",
+        "given": "R."
+      },
+      {
+        "family": "Webb",
+        "given": "R.H."
+      },
+      {
+        "family": "Longpre",
+        "given": "C.I."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Precipitation history of the Mojave Desert region, 1893-2001"
+    ],
+    "volume": [
+
+    ],
+    "publisher": [
+      "United State Geological Survey"
+    ],
+    "issue": [
+      "117-03)"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Houghton",
+        "given": "HydroGeo-Logic"
+      }
+    ],
+    "date": [
+      "1996",
+      "1996-11"
+    ],
+    "title": [
+      "Geohydrologic investigation report Naval Air Weapons Station, Indian Wells Valley, China Lake, California"
+    ],
+    "publisher": [
+      "Prepared for Naval Air Weapons Station Environmental Projects Office"
+    ],
+    "location": [
+      "China Lake, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "I.W.V.C.W.M.G."
+      },
+      {
+        "given": "G.T.C."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-03"
+    ],
+    "title": [
+      "Installation and Implementation of a Comprehensive Groundwater Monitoring Program for the Indian Wells Valley, California"
+    ],
+    "container-title": [
+      "Prepared for: Local Groundwater Assistance Program AB303. Prepared by: IWV Cooperative Groundwater Technical Advisory Committee and Geochemical Technologies Corporation (GTC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Katzenstein",
+        "given": "K.W."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Evaluating Potential Land Subsidence Induced by Groundwater Withdrawal from the Indian Wells Valley, CA Using InSAR"
+    ],
+    "container-title": [
+      "Geological Society of America Abstracts with Programs"
+    ],
+    "volume": [
+      "45"
+    ],
+    "pages": [
+      "775"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Kunkel",
+        "given": "Fred"
+      },
+      {
+        "family": "Chase",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Geology and Ground Water in Indian Wells Valley, California"
+    ],
+    "genre": [
+      "USGS Open-File Report 69-329."
+    ],
+    "container-title": [
+      "Prepared in cooperation with the Naval Weapons"
+    ],
+    "location": [
+      "Center, China Lake, California"
+    ],
+    "note": [
+      "89pp."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Lahee",
+        "given": "F.H."
+      }
+    ],
+    "date": [
+      "1961"
+    ],
+    "title": [
+      "Field Geology"
+    ],
+    "publisher": [
+      "McGraw-Hill Book Company, Inc"
+    ],
+    "location": [
+      "New York"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Lancaster",
+        "given": "Nicholas"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-05"
+    ],
+    "title": [
+      "Eolian Hazard Assessment for the SNORT Facility. Prepared for Naval Air Warfare Center Weapons Division China Lake, CA. Prepared by Desert Research Institute"
+    ],
+    "genre": [
+      "NAWCWD TP. 8840."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hydrologic",
+        "given": "Layne-Western"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Simulated impacts of changes to IWVWD wells"
+    ],
+    "container-title": [
+      "Appendix G in ECORP Consulting Inc., Draft Environmental Impact Report Water Supply Improvement Project"
+    ],
+    "publisher": [
+      "Prepared for Indian Wells Valley Water District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Lee",
+        "given": "Charles H."
+      }
+    ],
+    "date": [
+      "1912"
+    ],
+    "title": [
+      "Groundwater Resources of Indian Wells Valley"
+    ],
+    "container-title": [
+      "Report of the Conservation Commission of the State of California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "McGraw",
+        "given": "D."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Jasoni",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Resource Sustainability: Modeling Evaluation for the Naval Air Weapons Station, China Lake, California"
+    ],
+    "genre": [
+      "Report NAWCWD TP 8811."
+    ],
+    "note": [
+      "Prepared by Desert Research Institute. Prepared for Naval Air Warfare Center Weapons Division, China Lake. September 2016."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Moyle"
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Data on Water Wells in Indian Wells Valley Area"
+    ],
+    "note": [
+      "Prepared for DWR Bulletin No. 91-9; prepared by United States Department of Interior Geological Survey."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Monastero",
+        "given": "F.C."
+      },
+      {
+        "family": "Walker",
+        "given": "J.D."
+      },
+      {
+        "family": "Katzenstein",
+        "given": "A.M."
+      },
+      {
+        "family": "Sabin",
+        "given": "A.F."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Neogene evolution of the Indian Wells Valley, east-central California"
+    ],
+    "volume": [
+      "195"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America Memoir"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ostdick",
+        "given": "James"
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Masters of Science, California State University-Bakersfield. The Hydrogeology of Southwestern Indian Wells Valley, Kern County"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "Evidence for Extrabasinal, Fracture-Directed Groundwater Recharge From the Adjacent Sierra Nevada Mountains"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "P.R.I.S.M.Climate"
+      },
+      {
+        "family": "University",
+        "given": "Oregon State"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "note": [
+      "1981-2010 Annual Precipitation Climate Normals. 800m raster grid."
+    ],
+    "url": [
+      "http://www.prism.oregonstate.edu/normals/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Reilly",
+        "given": "T.E."
+      },
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "2004",
+      "2004"
+    ],
+    "title": [
+      "Guidelines for Evaluating Ground-Water Flow Models"
+    ],
+    "pages": [
+      "30"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Scientific Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ribble",
+        "given": "G.E."
+      },
+      {
+        "family": "Haslebacher",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2000",
+      "2000-02"
+    ],
+    "title": [
+      "A Methodology for Estimating Water Yield of Sierra Watersheds Tributary to Indian Wells Valley"
+    ],
+    "container-title": [
+      "Prepared by Kern County Water Agency"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Stoner",
+        "given": "M."
+      },
+      {
+        "family": "Bilhorn",
+        "given": "T."
+      },
+      {
+        "family": "Maas",
+        "given": "J."
+      },
+      {
+        "family": "Dickey",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Native Spring Investigation Data Report"
+    ],
+    "volume": [
+
+    ],
+    "publisher": [
+      "Naval Air Weapons Station China Lake CA"
+    ],
+    "issue": [
+      "NAWS-CL-TP-005)"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "EM",
+        "given": "Tetra Tech"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-07"
+    ],
+    "title": [
+      "Final Basinwide Hydrogeologic Characterization Summary Report"
+    ],
+    "container-title": [
+      "NAWS China Lake, California. Prepared under CLEANII Contract for Department of the Navy"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "EM",
+        "given": "Tetra Tech"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "AB 303 Grant; Groundwater Management in the Indian Wells Valley Basin"
+    ],
+    "location": [
+      "Ridgecrest, California"
+    ],
+    "note": [
+      "Prepared for Eastern Kern County Resources Conservation District. June 2003."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Thorn",
+        "given": "P."
+      },
+      {
+        "family": "Parker",
+        "given": "T."
+      },
+      {
+        "family": "Halkjaer",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-03"
+    ],
+    "title": [
+      "Draft: Indian Wells Valley hydrogeologic conceptual model traditional HCM"
+    ],
+    "container-title": [
+      "Prepared for Indian Wells Valley Water District and the Brackish Groundwater Resources Study Group"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Thyne",
+        "given": "G.D."
+      },
+      {
+        "family": "Gillespe",
+        "given": "J.M."
+      },
+      {
+        "family": "Ostdick",
+        "given": "J.R.November"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Evidence for interbasin flow through bedrock in the southeastern Sierra Nevada"
+    ],
+    "volume": [
+      "111"
+    ],
+    "pages": [
+      "1600–1616"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America Bull"
+    ],
+    "issue": [
+      "11"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-01"
+    ],
+    "title": [
+      "Indian Wells Valley Resource Opportunity Plan, Water Availability and Conservation Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for Kern County Planning and Community Development Department"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "TriEcoTt"
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-02"
+    ],
+    "title": [
+      "Technical justification of beneficial used changes for groundwater in Salt Wells Valley and shallow groundwater in Eastern Indian Wells Valley"
+    ],
+    "container-title": [
+      "Prepared by TriEcoTt, a joint venture of TriEco LLC and Tetra Tech EM Inc. Prepared for Department of the Navy"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1993",
+      "1993-12"
+    ],
+    "title": [
+      "Indian Wells Valley Groundwater Project: USBR Technical Report Volume II. A cooperative effort among the BOR"
+    ],
+    "container-title": [
+      "IWVWD, North American Chemical Company, and NAWS"
+    ],
+    "note": [
+      "Prepared by USBR Lower Colorado Region."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Agriculture Natural Resources Conservation Service",
+        "given": "U.S.Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Soil Survey of Northeastern Kern Area, California. Ridgecrest Part. Interim Report"
+    ],
+    "container-title": [
+      "In cooperation with Eastern Kern County Resource Conservation District and Regents of the University of California (Agricultural Experiment Station"
+    ],
+    "note": [
+      "Natural Resources Conservation Service, NRCS)."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Agriculture",
+        "given": "U.S.Department",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Natural Resources Conservation Service (NRCS",
+      "Dominant soil orders"
+    ],
+    "date": [
+      "1998",
+      "2019-04-04"
+    ],
+    "note": [
+      "Accessed at:"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/Internet/FSE_MEDIA/stelprdb1237749.pdf,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agriculture Natural Resources Conservation Service",
+        "given": "U.S.Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-04-04"
+    ],
+    "title": [
+      "The twelve orders of soil taxonomy"
+    ],
+    "note": [
+      "Accessed at:"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils"
+    ],
+    "genre": [
+      "/survey/class/data /?cid=nrcs142p2_053588,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agriculture Soil Conservation Service",
+        "given": "U.S.Department",
+        "particle": "of"
+      },
+      {
+        "given": "undated"
+      }
+    ],
+    "title": [
+      "Soil Survey of Portions of the China Lake Weapons Center, California, including Parts of Inyo, Kern and San Bernardino Counties. Interim Report"
+    ],
+    "container-title": [
+      "In cooperation with the Department of the Navy, China Lake Naval Weapons Center, CA. (Soil Conservation Service, SCS) U.S. Geological Survey (USGS), National Geospatial Program. 2019. USGS National Hydrography Dataset Best Resolution (NHD"
+    ],
+    "note": [
+      "for Hydrologic Unit (HU) 4 - 1809 (published 20190401).",
+      "Accessed at: ftp://rockyftp.cr.usgs.gov/vdelivery/Datasets/Staged/Hydrography/NHD/HU4/HighResolution /GDB/NHD_H_1809_HU4_GDB.zip, 2018. Estimating Natural Recharge in Indian Wells Valley; Final Progress Report, June 21, 2018 Presentation."
+    ],
+    "location": [
+      "Reston, VA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Huene",
+        "given": "R.E.",
+        "particle": "Von"
+      }
+    ],
+    "date": [
+      "1960"
+    ],
+    "title": [
+      "Structural geology and gravimetry of Indian Wells Valley"
+    ],
+    "location": [
+      "southeastern California",
+      "Los Angeles"
+    ],
+    "publisher": [
+      "California State University"
+    ],
+    "genre": [
+      "Ph.D. thesis,"
+    ],
+    "pages": [
+      "138"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Warner",
+        "given": "J.W."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Ground-water quality in Indian Wells Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water Resources Investigations Report 8-75,"
+    ],
+    "pages": [
+      "59"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Wesnousky",
+        "given": "S.G."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Active faulting in the Walker Lane"
+    ],
+    "volume": [
+      "24, TC3009"
+    ],
+    "doi": [
+      "10.1029/2004TC0"
+    ],
+    "pages": [
+      "01645"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Tectonics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Wesnousky",
+        "given": "S.G."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12-05"
+    ],
+    "title": [
+      "Remote Automated Weather Station (RAWS) Data for Five Mile, Blue Max, Indian Wells Canyon, Walker Pass, Bird Springs, and Laural Mountain Stations"
+    ],
+    "note": [
+      "Accessed at:"
+    ],
+    "url": [
+      "https://raws.dri.edu/scaF.html,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Zbur",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "A geophysical investigation of Indian Wells Valley"
+    ],
+    "location": [
+      "California",
+      "China Lake, California"
+    ],
+    "publisher": [
+      "U.S. Naval Ordnance Test Station",
+      "NOTS Technical Publication"
+    ],
+    "volume": [
+      "2795"
+    ],
+    "pages": [
+      "98"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 23. Waters; Division 2. Department of Water Resources; Chapter 1.5. Groundwater Management; Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans. GSP Emergency Regulations"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board Lahontan Region",
+      "Water Quality Control Plan for the Lahontan Region"
+    ],
+    "date": [
+      "2016",
+      "2016-01"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Region",
+        "given": "California Regional Water Quality Control Board Lahontan"
+      }
+    ],
+    "date": [
+      "2016",
+      "2015-02"
+    ],
+    "title": [
+      "Proposed Basin Plan Amendment to Remove the Municipal and Domestic Supply (MUN) Beneficial Use Designation from Certain Ground Water Beneath Naval Air Weapons Station China Lake, Kern, Inyo, and San Bernardino Counties"
+    ],
+    "genre": [
+      "Resolution R6V-2015-0005."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Water Code; SB1168, AB1739, and SB1319"
+    ],
+    "publisher": [
+      "Sustainable Groundwater Management Act"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "L.C.",
+        "given": "Dutcher"
+      },
+      {
+        "family": "Moyle",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Geologic and Hydrologic Features of Indian"
+    ],
+    "location": [
+      "Wells Valley, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Paper",
+        "given": "U.S.G.S.Water Supply"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Prepared in cooperation with the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Water Budget Best Management Practice"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Sustainable Groundwater Management Program BMP, 53pp"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dustbusters",
+        "given": "Antelope Valley"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-10"
+    ],
+    "title": [
+      "Agricultural Guide to Controlling Windblown Sand and Dust"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 23. Waters; Division 2. Department of Water Resources; Chapter 1.5. Groundwater Management; Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans. GSP Emergency Regulations"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "California Regional Water Quality Control"
+      },
+      {
+        "family": "Region",
+        "given": "Lahontan"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-01"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Lahontan Region"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "North and South Basins"
+    ]
+  },
+  {
+    "title": [
+      "California Water Code; SB1168, AB1739, and SB1319"
+    ],
+    "publisher": [
+      "Sustainable Groundwater Management Act"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Carollo"
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-09"
+    ],
+    "title": [
+      "City of Ridgecrest Wastewater Treatment Plant Final Project Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-06"
+    ],
+    "title": [
+      "Management of the California State Water Project: Bulletin 132-16"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-03"
+    ],
+    "title": [
+      "Final State Water Project Delivery Capability Report 2017"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Environmental Science"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-05"
+    ],
+    "title": [
+      "City of Ridgecrest General Plan Update, Draft Environmental Impact Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Services",
+        "given": "Ecological Research"
+      }
+    ],
+    "date": [
+      "1991",
+      "1991-10"
+    ],
+    "title": [
+      "Elements of a Habitat Management Plan for the Mohave Tui Chub at the China Lake Naval Weapons Center Relative to the City of Ridgecrest’s Wastewater Reclamation Project"
+    ],
+    "container-title": [
+      "Document provided by Stephan Bork of the Indian Wells Valley Technical Advisory Committee"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Plumlee",
+        "given": "Megan H."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Costs of Advanced Treatment in Water Reclamation"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "485–95"
+    ],
+    "date": [
+      "2014-09"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ozone: Science & Engineering: The Journal of the International Ozone Association"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-10"
+    ],
+    "title": [
+      "Wastewater Treatment Plant Facility Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "R.M.C."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-01"
+    ],
+    "title": [
+      "Draft Indian Wells Valley Groundwater Basin Salt and Nutrient Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "State Water Resources Control"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Investigation on the Feasibility of Developing Uniform Water Recycling Criteria for Direct Potable Reuse"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2"
+    ],
+    "author": [
+      {
+        "family": "Basin",
+        "given": "Brite"
+      }
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3"
+    ],
+    "publisher": [
+      "Central Basin"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "9"
+    ],
+    "publisher": [
+      "Main San Gabriel Basin"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "14"
+    ],
+    "author": [
+      {
+        "family": "Basin",
+        "given": "Riverside"
+      }
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "15"
+    ],
+    "author": [
+      {
+        "family": "Area",
+        "given": "San Bernardino Basin"
+      }
+    ],
+    "volume": [
+      "16"
+    ],
+    "location": [
+      "San Jacinto Basin"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "17"
+    ],
+    "author": [
+      {
+        "family": "Watershed",
+        "given": "Santa Margarita River"
+      }
+    ],
+    "title": [
+      "18"
+    ],
+    "location": [
+      "Santa Maria Valley Basin",
+      "Santa Paula Basin"
+    ],
+    "note": [
+      "19"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "20"
+    ],
+    "author": [
+      {
+        "family": "System",
+        "given": "Scott River Stream"
+      }
+    ],
+    "title": [
+      "21) Seaside Basin. (22) Six Basins"
+    ],
+    "volume": [
+      "23"
+    ],
+    "location": [
+      "Tehachapi Basin"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "24"
+    ],
+    "title": [
+      "Upper Los Angeles River Area"
+    ],
+    "genre": [
+      "(25)"
+    ],
+    "publisher": [
+      "Warren Valley Basin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Attachment",
+        "given": "A."
+      }
+    ],
+    "title": [
+      "Photographs of Mojave’s Agricultural Operations and Irrigation Systems in the Indian Wells Valley Indian Wells Valley Groundwater Authority"
+    ],
+    "date": [
+      "2020-01-08"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Year APN Parcel Name Owner acquired Beneficial Use 056-072-05 Cooley MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-072-16"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Cooley M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Agriculture 056-095-48 Coyote Trail MOJAVE PISTACHIOS LLC Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-113-45"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-46"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-48"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-53"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-54"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-55"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-56"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-291-19"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2013 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-292-01"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2011 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-292-02"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2011 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-292-04"
+    ],
+    "container-title": [
+      "Leliter 220 MOJAVE PISTACHIOS LLC 2011 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-28"
+    ],
+    "container-title": [
+      "Leliter 360 MOJAVE PISTACHIOS LLC 2011 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-113-29"
+    ],
+    "container-title": [
+      "Leliter 360 MOJAVE PISTACHIOS LLC 2011 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-340-18"
+    ],
+    "container-title": [
+      "Leliter 360 MOJAVE PISTACHIOS LLC 2011 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-340-19"
+    ],
+    "title": [
+      "Leliter 360 MOJAVE PISTACHIOS LLC 2011 Agriculture Al & Linda Leroy"
+    ],
+    "note": [
+      "leased by 056-095-08 Leroy Mojave Pistachio LLC) Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-460-01"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-02"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-03"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-04"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-05"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-06"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-07"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-08"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-09"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-10"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-11"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-12"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-14"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2020-01-08"
+    ],
+    "title": [
+      "Page 23 Year APN Parcel Name Owner acquired Beneficial Use 064-460-17 Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-460-32"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-33"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-34"
+    ],
+    "container-title": [
+      "Office 80 MOJAVE PISTACHIOS LLC 2012 Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-35"
+    ],
+    "author": [
+      {
+        "literal": "Office 80 MOJAVE PISTACHIOS LLC"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Agriculture William Switzer (leased by 064-082-39 Switzer Mojave Pistachio LLC"
+    ],
+    "note": [
+      "Agriculture William Switzer (leased by 064-082-40 Switzer Mojave Pistachio LLC) Agriculture William Switzer Trust (leased 064-082-42 Switzer by Mojave Pistachio LLC) Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-17"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Yo Young M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-084-13"
+    ],
+    "container-title": [
+      "Siebenthal 160 MOJAVE PISTACHIOS LLC 2011 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-084-14"
+    ],
+    "container-title": [
+      "Siebenthal 160 MOJAVE PISTACHIOS LLC 2011 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-084-15"
+    ],
+    "container-title": [
+      "Siebenthal 160 MOJAVE PISTACHIOS LLC 2011 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-084-16"
+    ],
+    "container-title": [
+      "Siebenthal 160 MOJAVE PISTACHIOS LLC 2011 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-132-44"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-45"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-46"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-48"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-49"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-50"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-51"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-53"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-54"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-55"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-56"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-132-57"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-150-36"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "West Airport M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-440-20"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Yo Young M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-230-04"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-291-17"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-291-18"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-291-20"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-291-21"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-293-02"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-293-03"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "undeveloped Indian Wells Valley Groundwater Authority January 8, 2020 Page 24 Year APN Parcel Name Owner acquired Beneficial Use"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-380-12"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-380-13"
+    ],
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Neal Ranch M.O.J.A.V.E.P.I.S.T.A.C.H.I.O.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "056-095-46"
+    ],
+    "container-title": [
+      "W of H395 MOJAVE PISTACHIOS LLC 2013 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-095-47"
+    ],
+    "container-title": [
+      "W of H395 MOJAVE PISTACHIOS LLC 2013 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-095-05"
+    ],
+    "container-title": [
+      "W of H395 MOJAVE PISTACHIOS LLC 2013 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "056-095-43"
+    ],
+    "container-title": [
+      "W of H395 MOJAVE PISTACHIOS LLC 2013 undeveloped"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "064-460-31"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-11"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-61"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-62"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-63"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-64"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-133-05"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-133-06"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "064-082-13"
+    ],
+    "title": [
+      "Nugent Family Trust 2013 Agriculture Comment Document No"
+    ],
+    "volume": [
+      "15"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public Review Draft – Meadowbrook Dairy Comments"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Section 5.3.2 Project No. 2: Optimize Use of Recycled Water"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Section 5.3.4 Project No. 4:"
+    ],
+    "publisher": [
+      "Shallow Well Mitigation Program"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "I.W.V.G.A."
+      }
+    ],
+    "title": [
+      "Water Resources Manager and Staff Re: Indian Wells Valley Groundwater Authority Groundwater Sustainability Plan December 2019 Public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Zhang",
+        "given": "Relevant Publications Jim"
+      },
+      {
+        "family": "Teasdale",
+        "given": "Eddy"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "An Iterative Method of Modeling Pump and Treat-Injection System with \"Partial Treatment"
+    ],
+    "container-title": [
+      "AGU Meeting 2015"
+    ],
+    "location": [
+      "San Francisco, CA"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Zhang",
+        "given": "Jim"
+      },
+      {
+        "family": "Teasdale",
+        "given": "Eddy"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Steady-State Flow Model Calibration Using Multiple Sets of Observed Groundwater Elevation Data"
+    ],
+    "container-title": [
+      "AGU Meeting 2012"
+    ],
+    "location": [
+      "San Francisco, CA"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Teasdale",
+        "given": "Eddy W."
+      },
+      {
+        "family": "Zhang",
+        "given": "Jim"
+      },
+      {
+        "family": "Elliott",
+        "given": "Liz"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010"
+    ],
+    "title": [
+      "Using General Head Boundary Conditions in Groundwater Flow Models"
+    ],
+    "location": [
+      "San Francisco, CA"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "AGU Meeting"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Parrish",
+        "given": "K.E."
+      },
+      {
+        "family": "Nommenson",
+        "given": "R."
+      },
+      {
+        "family": "Teasdale",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2008",
+      "October"
+    ],
+    "title": [
+      "Practical Groundwater Cleanup Optimization with a TMR Model"
+    ],
+    "container-title": [
+      "Abstracts for Applications of Optimization Techniques to Groundwater Symposium"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Teasdale",
+        "given": "Eddy W."
+      },
+      {
+        "family": "Zhang",
+        "given": "Jim"
+      },
+      {
+        "family": "Parrish",
+        "given": "Kent"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "An Enhanced Method of MODFLOW Simulation of Groundwater Extraction/Injection through Wells Penetrating Multiple Aquifers"
+    ],
+    "container-title": [
+      "AGU Meeting 2007"
+    ],
+    "location": [
+      "San Francisco, CA"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Parrish",
+        "given": "Kent"
+      },
+      {
+        "family": "Zhang",
+        "given": "Jim"
+      },
+      {
+        "family": "Teasdale",
+        "given": "Eddy"
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-12"
+    ],
+    "title": [
+      "A Closed-form Equation for Predicting Groundwater Response to Pumping in Homogeneous, Confined Horizontal Aquifer with Unidirectional Flow"
+    ],
+    "location": [
+      "San Francisco, CA"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "AGU Meeting"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Teasdale",
+        "given": "Eddy"
+      },
+      {
+        "family": "Parrish",
+        "given": "Kent"
+      },
+      {
+        "family": "Titus",
+        "given": "Ed"
+      },
+      {
+        "given": "Presentation"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Well Field Optimization"
+    ],
+    "container-title": [
+      "27th Biennial Groundwater Conference and 16th Annual Meeting of the Groundwater Resources Association of California"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Teasdale",
+        "given": "Eddy"
+      },
+      {
+        "family": "Parrish",
+        "given": "Kent"
+      },
+      {
+        "family": "Clayton",
+        "given": "Robb"
+      },
+      {
+        "given": "Presentation"
+      }
+    ],
+    "date": [
+      "2005",
+      "2004-10"
+    ],
+    "title": [
+      " Groundwater Models"
+    ],
+    "container-title": [
+      "The Geological Conceptual Approach\" 25th Biennial Groundwater Conference and 14th Annual Meeting of the Groundwater Resources Association of California. \" Groundwater Pollution.\" Presentation: Northern California Natural History Museum without walls lecture series"
+    ],
+    "location": [
+      "Chico, CA"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "In-Situ Well Rehabilitation Techniques, Case Studies from the Desert\""
+    ],
+    "container-title": [
+      "Presented as an in-house training seminar"
+    ],
+    "location": [
+      "Leeds U.K"
+    ],
+    "date": [
+      "2003-11"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bush",
+        "given": "John H."
+      },
+      {
+        "family": "Garwood",
+        "given": "Dean L."
+      },
+      {
+        "family": "Teasdale",
+        "given": "Eddy W."
+      },
+      {
+        "given": "Poster"
+      }
+    ],
+    "date": [
+      "2002",
+      "2002-12"
+    ],
+    "title": [
+      "Re-Interpretation of the Pullman-Moscow Geology, Idaho-Washington: \"An Example of the Importance of Geological Mapping to Groundwater Modeling\""
+    ],
+    "genre": [
+      "Idaho Rural Water Development Project,"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Other significant players in the region include NASA Armstrong Fl ight Research Center, the Air Force Research Laboratory 's Rocket Lab and U.S"
+    ],
+    "volume": [
+      "42"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Air Force Plant"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Groundwater",
+        "given": "housing"
+      },
+      {
+        "given": "economics"
+      },
+      {
+        "family": "U.S. Space Force?",
+        "particle": "the"
+      }
+    ],
+    "title": [
+      "Conference covers city/ county outlook BY JESSICA WESTON"
+    ],
+    "volume": [
+      "4"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "CITY EDITORjweston@ridgecrestca.com Daily Independent Mar"
+    ]
+  },
+  {
+    "title": [
+      "Gleason closed by emphasizing his conviction that \"the future of Kern County is here"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/3/2020"
+    ],
+    "note": [
+      "Navy to GA: Groundwater 'No. 1 encroachment issue' - News - Ridgecrest Daily Independent -"
+    ],
+    "location": [
+      "Ridgecrest, CA - Ridgecrest, CA"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The letter is posted on ?..~9?.~.:!D.Y.0.':~.~:.?.EJ?.!~:~~?.Y.~.~-~-~-~~~-~~-~-~-' under 02/21/19 Letter from the Navy"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/3/2020"
+    ],
+    "note": [
+      "Navy to GA: Groundwater 'No. 1 encroachment issue'- News- Ridgecrest Daily Independent -"
+    ],
+    "location": [
+      "Ridgecrest, CA- Ridgecrest, CA"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/3/2020"
+    ],
+    "note": [
+      "Navy toGA: Groundwater 'No. 1 encroachment issue'- News- Ridgecrest Daily Independent-"
+    ],
+    "location": [
+      "Ridgecrest, CA- Ridgecrest, CA"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://www."
+    ],
+    "title": [
+      "ridgecrestca .com/news/20 180406/gleason-muses-on-maldef-settlement 2/6 1/7/2020 Gleason muses on MALDEF settlement- News - Ridgecrest Daily Independent"
+    ],
+    "location": [
+      "Ridgecrest, CA - Ridgecrest, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Borchers",
+        "given": "J.W."
+      },
+      {
+        "family": "Carpenter",
+        "given": "M."
+      },
+      {
+        "family": "Bryant",
+        "given": "W.A."
+      },
+      {
+        "family": "Hart",
+        "given": "E.W."
+      }
+    ],
+    "date": [
+      "2014",
+      "2007"
+    ],
+    "title": [
+      "Land subsidence from groundwater use in California, Full Report of Findings",
+      "Fault rupture hazard zones in California: Alquist-Priolo earthquake fault zoning act with index to earthquake fault zones maps"
+    ],
+    "genre": [
+      "report,"
+    ],
+    "publisher": [
+      "California Water Foundation"
+    ],
+    "pages": [
+      "151",
+      "42"
+    ],
+    "volume": [
+      "42"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Geological Survey Special Publication"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bullard",
+        "given": "T.F."
+      },
+      {
+        "family": "Bacon",
+        "given": "S.N."
+      },
+      {
+        "family": "Adams",
+        "given": "K.D."
+      },
+      {
+        "family": "Decker",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "Phase II: Geomorphic map of China Lake basin below 700 m in support of cultural resource management at NAWS China Lake. Final report prepared for Naval Air Warfare Center, Weapons Division by Naval Earth Sciences and Engineering Program"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "31"
+    ],
+    "note": [
+      "plus appendices."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Desert Research Institute. Dated October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the hydrologic system and selected water-management alternatives in the Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "pages": [
+      "2370– , 175"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dokka",
+        "given": "R.K."
+      },
+      {
+        "family": "Travis",
+        "given": "C.J."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "The role of the Eastern California shear zone in accommodating Pacific–North American plate motion"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "1323–1326"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysical Research Letters"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "dePolo",
+        "given": "C.M."
+      },
+      {
+        "family": "Clark",
+        "given": "D.G."
+      },
+      {
+        "family": "Slemmons",
+        "given": "D.B."
+      },
+      {
+        "family": "Ramelli",
+        "given": "A.R."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Historic surface faulting in the Basin and Range Province, western North America: Implications for fault segmentation"
+    ],
+    "volume": [
+      "13"
+    ],
+    "pages": [
+      "123–136"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Structural Geology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Traum",
+        "given": "J."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Water availability and land subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "note": [
+      "Hydrogeology Journal, DOI 10.1007/s10040-015-1339-x."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "D.L.",
+        "given": "Galloway"
+      },
+      {
+        "family": "D.R.",
+        "given": "Jones"
+      },
+      {
+        "family": "S.E",
+        "given": "Ingebritsen"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Land subsidence in the United States"
+    ],
+    "volume": [
+      "1182"
+    ],
+    "pages": [
+      "175"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Garner",
+        "given": "C."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "RE: Indian Wells Valley Groundwater Model Update"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "28,"
+    ],
+    "note": [
+      "plus figures and appendices."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Technical Memorandum to Stetson Engineers from Desert Research Institute dated November"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hauksson",
+        "given": "E."
+      },
+      {
+        "family": "Hutton",
+        "given": "K."
+      },
+      {
+        "family": "Kanamori",
+        "given": "H."
+      },
+      {
+        "family": "Jones",
+        "given": "L."
+      },
+      {
+        "family": "Mori",
+        "given": "J."
+      },
+      {
+        "family": "Hough",
+        "given": "S."
+      },
+      {
+        "family": "Roquemore",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Preliminary report on the 1995 Ridgecrest earthquake sequence in eastern California"
+    ],
+    "volume": [
+      "66"
+    ],
+    "pages": [
+      "54–60"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Seismological Research Letters"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hoffmann",
+        "given": "J."
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Zebker",
+        "given": "H.A."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Inverse modeling of interbed storage parameters using land subsidence observations, Antelope Valley, California"
+    ],
+    "volume": [
+      "39"
+    ],
+    "pages": [
+      "1–13"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Research"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Katzenstein",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Evaluation potential land subsidence induced by ground water withdrawal from the Indian Wells Valley, CA using InSAR"
+    ],
+    "container-title": [
+      "Geological Society of America Abstracts with Programs"
+    ],
+    "volume": [
+      "45"
+    ],
+    "pages": [
+      "775"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Katzenstein",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-01-21"
+    ],
+    "title": [
+      "InSAR analysis of aquifer-system response to pumping in the Indian Wells Valley, Kern County, California"
+    ],
+    "pages": [
+      "23"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final Technical Report prepared for Desert Research Institute"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "McGraw",
+        "given": "D."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Jasoni",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Resource Sustainability: Modeling Evaluation for the Naval Air Weapons Station, China Lake, California, Prepared by Desert Research Institute for the Naval Air Warfare Center Weapons Division"
+    ],
+    "location": [
+      "China Lake, CA, NAWCWD"
+    ],
+    "genre": [
+      "TP 8811."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Monastero",
+        "given": "F.C."
+      },
+      {
+        "family": "Walker",
+        "given": "J.D."
+      },
+      {
+        "family": "Katzenstein",
+        "given": "A.M."
+      },
+      {
+        "family": "Sabin",
+        "given": "A.E."
+      }
+    ],
+    "date": [
+      "2002",
+      "195"
+    ],
+    "title": [
+      "Neogene Evolution of the Indian Wells Valley, East-Central California"
+    ],
+    "editor": [
+      {
+        "family": "In",
+        "given": "Glazner"
+      },
+      {
+        "family": "A.F.",
+        "given": "Walker"
+      },
+      {
+        "family": "J.D."
+      },
+      {
+        "family": "Bartley",
+        "given": "J.M."
+      }
+    ],
+    "container-title": [
+      "Geologic Evolution of the Mojave Desert and Southwestern Basin and Range"
+    ],
+    "location": [
+      "Boulder, Colorado"
+    ],
+    "publisher": [
+      "Geological Society of America Memoir"
+    ],
+    "pages": [
+      "199–228"
+    ],
+    "type": "chapter"
+  },
+  {
+    "editor": [
+      {
+        "family": "Motts",
+        "given": "W.S."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Geology and hydrology of selected playas in Western United States: Amherst"
+    ],
+    "publisher": [
+      "University of Massachusetts"
+    ],
+    "pages": [
+      "305"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Peltzer",
+        "given": "G."
+      },
+      {
+        "family": "Crampé",
+        "given": "F."
+      },
+      {
+        "family": "Hensley",
+        "given": "S."
+      },
+      {
+        "family": "Rosen",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Transient strain accumulation and fault interaction in the eastern California shear zone"
+    ],
+    "volume": [
+      "29"
+    ],
+    "pages": [
+      "975–978"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Aquifer-system compaction and land subsidence: measurements, analyses, and simulations―the Holly site, Edwards Air Force Base"
+    ],
+    "location": [
+      "Antelope Valley, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 00-4015,"
+    ],
+    "pages": [
+      "91–97"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "Michelle"
+      },
+      {
+        "family": "Ikehara",
+        "given": "M.E."
+      },
+      {
+        "family": "Stork",
+        "given": "S.V."
+      },
+      {
+        "family": "Amelung",
+        "given": "Falk"
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Detection and measurement of land subsidence using interferometric synthetic aperture radar and global positioning system, San Bernardino County, Mojave Desert"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 03-4015,"
+    ],
+    "pages": [
+      "60"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Solt",
+        "given": "M."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Subsidence (2004–2009) in and near lakebeds of the Mojave River and Morongo groundwater basins, southwest Mojave Desert"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Scientific"
+    ],
+    "genre": [
+      "Investigations Report 2014-5011, unpaginated,"
+    ],
+    "url": [
+      "http://"
+    ],
+    "doi": [
+      "10.3133/sir20145011."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Stamos",
+        "given": "C.L."
+      },
+      {
+        "family": "Glockhoff",
+        "given": "C.S."
+      },
+      {
+        "family": "McPherson",
+        "given": "K.R."
+      },
+      {
+        "family": "Julich",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Water-level and landsubsidence studies in the Mojave River and Morongo groundwater basins: U.S"
+    ],
+    "genre": [
+      "Geological Survey Scientific Investigations Report 2007-5097, unpaginated,"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Stamos",
+        "given": "C.L."
+      },
+      {
+        "family": "Martin",
+        "given": "Peter"
+      },
+      {
+        "family": "Nishikawa",
+        "given": "Tracy"
+      },
+      {
+        "family": "Cox",
+        "given": "B.F."
+      }
+    ],
+    "date": [
+      "2001",
+      "2001-09-03"
+    ],
+    "title": [
+      "Simulation of groundwater flow in the Mojave River Basin, California",
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water- Resources Investigations Report 2001-4002,"
+    ],
+    "pages": [
+      "137"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "title": [
+      "Geological Survey and California Geological Survey",
+      "Quaternary fault and fold database for the United States"
+    ],
+    "date": [
+      "2006"
+    ],
+    "note": [
+      "accessed April 14, 2009, from USGS web site:"
+    ],
+    "url": [
+      "http//earthquake.usgs.gov/hazards/qfaults/."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Wesnousky",
+        "given": "S.G."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Active faulting in the Walker Lane"
+    ],
+    "volume": [
+      "24, TC3009"
+    ],
+    "doi": [
+      "10.1029/2004TC001645."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Tectonics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Zellmer",
+        "given": "J.T."
+      },
+      {
+        "family": "Roquemore",
+        "given": "G.R."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Tectonic deformation of a Supersonic Naval Ordnance Research Track, Indian Wells Valley, California"
+    ],
+    "volume": [
+      "3"
+    ],
+    "pages": [
+      "205–215"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental and Engineering Geoscience"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      },
+      {
+        "family": "J",
+        "given": "Hunt R."
+      }
+    ],
+    "date": [
+      "2015",
+      "564p"
+    ],
+    "title": [
+      "Applied Groundwater Modeling"
+    ],
+    "location": [
+      "Second Edition",
+      "New York"
+    ],
+    "publisher": [
+      "Simulation of Flow and Advective Transport, Elsevier"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bullard",
+        "given": "T.F."
+      },
+      {
+        "family": "Bacon",
+        "given": "S.N."
+      },
+      {
+        "family": "Adams",
+        "given": "K.D."
+      },
+      {
+        "family": "Decker",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Geomorphic map of China Lake basin below 700 m elevation in Support of Cultural Resource Management at Naval Air Weapons Station China Lake, prepared by Desert Research Institute for Naval Air Warfare Center Weapons Division"
+    ],
+    "location": [
+      "China Lake, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Lancaster",
+        "given": "N.L."
+      },
+      {
+        "family": "Bacon",
+        "given": "S.N."
+      },
+      {
+        "family": "Bullard",
+        "given": "T.F."
+      },
+      {
+        "family": "Baker",
+        "given": "S.E."
+      },
+      {
+        "family": "Decker",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Eolian Hazard Assessment for the SNORT Facility, prepared by Desert Research Institute for Naval Air Warfare Center Weapons Division"
+    ],
+    "location": [
+      "China Lake, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Banta",
+        "given": "E.R."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "MODFLOW-2000, The U.S. Geological Survey Modular Ground- Water Model—Documentation of Packages for Simulating Evapotranspiration with a Segmented Function (ETS1) and Drains with Return Flow (DRT1). U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 00-466."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Beamer",
+        "given": "J.P."
+      },
+      {
+        "family": "Huntington",
+        "given": "J.L."
+      },
+      {
+        "family": "Morton",
+        "given": "C.G."
+      },
+      {
+        "family": "Pohll",
+        "given": "G.M."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Estimating Annual Groundwater Evapotranspiration from Phreatophytes in the Great Basin Using LANDSAT and Flux Tower Measurements"
+    ],
+    "volume": [
+      "49"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of the American Water Resources Association"
+    ],
+    "issue": [
+      "3"
+    ],
+    "pages": [
+      "518–533"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bean",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Hydrogeologic Conditions in Indian Wells Valley and Vicinity"
+    ],
+    "publisher": [
+      "Prepared for California Department of Water Resources"
+    ],
+    "pages": [
+      "56"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Berenbrock",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1987",
+      "1977"
+    ],
+    "title": [
+      "Ground-water data for Indian Wells Valley, Kern, Inyo, and San Bernardino Counties",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 86-315,"
+    ],
+    "pages": [
+      "56"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Berenbrock",
+        "given": "C."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "The Ground-Water Flow System in Indian Wells Valley, Kern, Inyo, and San Bernardino Counties, California"
+    ],
+    "genre": [
+      "U.S. Geological Survey Water-Resources Investigations Report 89-4191."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Berenbrock",
+        "given": "C."
+      },
+      {
+        "family": "Schroeder",
+        "given": "R.A."
+      }
+    ],
+    "date": [
+      "1994",
+      "1987"
+    ],
+    "title": [
+      "Ground-Water Flow and Quality, and Geochemical Processes",
+      "U.S"
+    ],
+    "editor": [
+      {
+        "family": "Valley",
+        "given": "Indian Wells"
+      },
+      {
+        "family": "Kern",
+        "given": "Inyo"
+      },
+      {
+        "family": "Counties",
+        "given": "San Bernardino"
+      }
+    ],
+    "location": [
+      "California"
+    ],
+    "source": [
+      "Geological Survey, Water-Resources Investigations Report 93-4003."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Indian Wells Valley Basin Groundwater Model and Hydrogeologic Study, Final report"
+    ],
+    "publisher": [
+      "Prepared for Indian Wells Valley Water District"
+    ],
+    "location": [
+      "Ridgecrest, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bullard",
+        "given": "T.F."
+      },
+      {
+        "family": "Bacon",
+        "given": "S.N."
+      },
+      {
+        "family": "Adams",
+        "given": "K.D."
+      },
+      {
+        "family": "Decker",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-03"
+    ],
+    "title": [
+      "Phase II: Geomorphic Map of the China lake Basin below 700 m in Support of cultural Resource Management at NAWS China Lake. Report prepared by Desert Research Institute for Naval Air Warfare Center, Weapons Division",
+      "DRI Division of Hydrologic Sciences"
+    ],
+    "location": [
+      "NAWS China Lake, CA"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "58"
+    ],
+    "note": [
+      "+ 2 appendices and map."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "NESEP Publication"
+    ],
+    "issue": [
+      "50011"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boards",
+        "given": "California Water"
+      }
+    ],
+    "title": [
+      "Groundwater Ambient Monitoring and Assessment Program (GAMA"
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/gama/gamamap/public/"
+    ],
+    "note": [
+      "accessed November 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the hydrologic system and selected water-management alternatives in the Owens Valley, California, U.S"
+    ],
+    "container-title": [
+      "Geological Survey Water Supply Paper"
+    ],
+    "pages": [
+      "2370–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Doherty",
+        "given": "J.E."
+      },
+      {
+        "family": "Hunt",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Approaches to highly parameterized inversion---A guide to using PEST for groundwater-model calibration"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Scientific Investigations Report 2010-5169"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dullien",
+        "given": "F.A.L."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Porous Media: Fluid Transport and Pore Structure"
+    ],
+    "publisher": [
+      "Academic"
+    ],
+    "location": [
+      "San Diego"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Gelhar",
+        "given": "L.W."
+      },
+      {
+        "family": "Welty",
+        "given": "C."
+      },
+      {
+        "family": "Rehfeldt",
+        "given": "K.R."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "A critical review of data on field-scale dispersion in aquifers"
+    ],
+    "volume": [
+      "28"
+    ],
+    "doi": [
+      "10.1029/92WR00607."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Research"
+    ],
+    "issue": [
+      "7"
+    ],
+    "pages": [
+      "1955–1974"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Garner",
+        "given": "C."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Indian Wells Valley Groundwater Model Update"
+    ],
+    "publisher": [
+      "Desert Research Institute Technical Memorandum"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Güler",
+        "given": "C."
+      },
+      {
+        "family": "Thyne",
+        "given": "G.D."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Hydrologic and geologic factors controlling surface and groundwater chemistry in Indian Wells-Owens Valley area, southeastern California, USA"
+    ],
+    "volume": [
+      "285"
+    ],
+    "doi": [
+      "10.1016/j.jhydrol.2003.08.019."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "MODFLOW-2005: the U.S. Geological Survey modular ground-water model--the ground-water flow process"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Techniques and Methods"
+    ],
+    "pages": [
+      "6– 16"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "Kern County Water"
+      }
+    ],
+    "title": [
+      "Base WQ spreadsheet"
+    ],
+    "note": [
+      "Received by Stetson Engineers Dec. 17, 2018 from Michelle Anderson."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Krieger"
+      },
+      {
+        "given": "Stewart"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "location": [
+      "Ridgecrest, California",
+      "Ridgecrest, California"
+    ],
+    "publisher": [
+      "Prepared for Indian Wells Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Maxey",
+        "given": "G.B."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Hydrogeology of Desert Basins"
+    ],
+    "volume": [
+      "6"
+    ],
+    "doi": [
+      "10.1111/j.1745-6584.1968.tb01660.x."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ground Water"
+    ],
+    "issue": [
+      "5"
+    ],
+    "pages": [
+      "10–22"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "McGraw",
+        "given": "D."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Pohll",
+        "given": "G."
+      },
+      {
+        "family": "Chapman",
+        "given": "J."
+      },
+      {
+        "family": "Bacon",
+        "given": "S."
+      },
+      {
+        "family": "Jasoni",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Resource Sustainability: Modeling Evaluation for the Naval Air Weapons Station, China Lake"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "prepared by Desert Research Institute for the Naval Air Warfare Center Weapons Division, Final Evaluation Report NAWCWD TP 8811."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Menke",
+        "given": "J."
+      },
+      {
+        "family": "Reyes",
+        "given": "E."
+      },
+      {
+        "family": "Glass",
+        "given": "A."
+      },
+      {
+        "family": "Johnson",
+        "given": "D."
+      },
+      {
+        "family": "Reyes",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "2013 California Vegetation Map in Support of the Desert Renewable Energy Conservation Plan"
+    ],
+    "container-title": [
+      "Final Report. Prepared for the California Department of Fish and Wildlife Renewable Energy Program and the California Energy Commission"
+    ],
+    "publisher": [
+      "Aerial Information Systems, Inc"
+    ],
+    "location": [
+      "Redlands, CA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Moyle",
+        "given": "W.R.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Data on water wells in Indian Wells Valley area, Inyo, Kern, and San Bernardino Counties, California"
+    ],
+    "volume": [
+      "91-9"
+    ],
+    "pages": [
+      "243"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Water Resources Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Sorab",
+        "given": "P."
+      },
+      {
+        "family": "Motomu",
+        "given": "I."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "MODFLOW-NWT, A Newton formulation for MODFLOW-2005"
+    ],
+    "volume": [
+      "6-A37"
+    ],
+    "pages": [
+      "44"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Stephens",
+        "given": "D.B."
+      },
+      {
+        "family": "Hsu",
+        "given": "K."
+      },
+      {
+        "family": "Prieksat",
+        "given": "M.A."
+      },
+      {
+        "family": "Ankeny",
+        "given": "M.D."
+      },
+      {
+        "family": "Blandford",
+        "given": "N."
+      },
+      {
+        "family": "Roth",
+        "given": "T.L."
+      },
+      {
+        "family": "Kelsey",
+        "given": "J.A."
+      },
+      {
+        "family": "Whitworth",
+        "given": "J.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "A comparison of estimated and calculated effective porosity"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "156–165"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Stetson"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12-12"
+    ],
+    "title": [
+      "Notes on Determination of Balanced Hydrologic Period and Model Recharge Distribution. Memo to Greg Pohll"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Desert Research Institute"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Thyne",
+        "given": "G.D."
+      },
+      {
+        "family": "Gillespe",
+        "given": "J.M."
+      },
+      {
+        "family": "Ostdick",
+        "given": "J.R."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Evidence for interbasin flow through bedrock in the southeastern Sierra Nevada"
+    ],
+    "volume": [
+      "111"
+    ],
+    "pages": [
+      "1600–1616"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America Bull"
+    ],
+    "issue": [
+      "11"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Indian Wells Valley Resource Opportunity Plan - Water Availability and Conservation Report"
+    ],
+    "note": [
+      "prepared for Kern County Planning & Community Development Department."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "TriEcoTt",
+        "given": "Joint Venture"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Technical Justification for Beneficial Use Changes for Groundwater in Salt Wells Valley and Shallow Groundwater in Eastern Indian Wells Valley"
+    ],
+    "container-title": [
+      "Prepared for Department of the Navy, Naval Facilities Engineering Command Southwest"
+    ],
+    "location": [
+      "San Diego, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Indian Wells Valley Groundwater Project"
+    ],
+    "genre": [
+      "USBR Technical Report"
+    ],
+    "volume": [
+      "Volumes I and II"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Zheng",
+        "given": "C."
+      },
+      {
+        "family": "Wang",
+        "given": "P.P."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "MT3DMS: a modular three-dimensional multispecies transport model for simulation of advection, dispersion, and chemical reactions of contaminants in groundwater systems: documentation and user's guide. Prepared for U.S"
+    ],
+    "publisher": [
+      "Army Corps of Engineers"
+    ],
+    "genre": [
+      "Strategic Environmental Research and Development Program Contract Report SERDP-99-1."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "D.R.A.F.T."
+      }
+    ],
+    "title": [
+      "Subject to change 2019-09-27 Slide 13"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The 1975 Water Quality Control Plan for the permits"
+    ],
+    "note": [
+      "Effluent limitations are established in North Lahontan Basin, as amended through permits both to protect water for beneficial uses"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "and within the area of the discharge, and to meet or achieve water quality objectives. The 1975 Water Quality Control Plan for the South Lahontan Basin"
+    ],
+    "note": [
+      "as amended through Methodology For Establishing Water Quality"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "container-title": [
+      "and Objectives"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "The 1980 Lake Tahoe Basin Water Quality Water quality objectives are numerical or narrative"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Plan",
+        "given": "as amended through"
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Narrative and numerical water quality objectives define the upper concentration or other limits that Water quality objectives apply to “waters of the the Regional Board considers protective of State” and “waters of the United States"
+    ],
+    "container-title": [
+      "Some of beneficial uses"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "DWR",
+        "given": "December"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Monitoring Networks and Identification of Data Gaps BMP"
+    ],
+    "container-title": [
+      "Best Management Practices for the Sustainable Management of Groundwater"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": ""
+      }
+    ],
+    "date": [
+      "2016-12"
+    ],
+    "title": [
+      "Monitoring Protocols"
+    ],
+    "container-title": [
+      "Standards, and Sites BMP. Best Management Practices for the Sustainable Management of Groundwater"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": ""
+      }
+    ],
+    "date": [
+      "2016-12-22"
+    ],
+    "title": [
+      "Bulletin 118 Interim Update 2016, California’s Groundwater Working Toward Sustainability"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Indian Wells Valley Cooperative Groundwater Management Group. SB X7_6 Requirements (per State Department of Water Resources Guidelines"
+    ],
+    "container-title": [
+      "California Statewide Groundwater Elevation Monitoring Program: Indian Wells Valley Groundwater Basin"
+    ],
+    "pages": [
+      "6–54"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "EPA",
+        "given": "U.S."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Guidance on Systematic Planning Using the Data Quality Objective Process"
+    ],
+    "container-title": [
+      "IPA QA/G-4"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "USGS",
+        "given": "January"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Water-Quality Sampling by the U.S"
+    ],
+    "container-title": [
+      "Geological Survey: Standard Protocols and Procedures. Fact Sheet 2010-3121"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": ""
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater Technical Procedures of the U.S. Geological Survey. USGS Techniques and Methods 1-A1"
+    ],
+    "editor": [
+      {
+        "family": "Cunningham",
+        "given": "W.L."
+      },
+      {
+        "family": "Schalk",
+        "given": "C.W."
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": ""
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "National Field Manual for the Collection of Water Quality Data"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": ""
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Measurement and Computation of Streamflow",
+      "Measurement of Stage and Discharge"
+    ],
+    "volume": [
+      "1"
+    ],
+    "genre": [
+      "Geological Survey Water-Supply Paper 2175,"
+    ],
+    "note": [
+      "Rantz, S. E., and others."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Stetson Engineers"
+      }
+    ],
+    "date": [
+      "2018-10-14"
+    ],
+    "container-title": [
+      "Draft Monitoring Protocols California Statewide Groundwater Monitoring Program Indian Wells Valley CALIFORNIA STATEWIDE GROUNDWATER ELEVATION MONITORING PROGRAM"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "title": [
+      "Name of Association: Indian Wells Valley Cooperative Groundwater Management Group (IWVCGWMG). Signatories include: County of Kern, Kern County Water Agency, Eastern Kern County Resource Conservation District, City of Ridgecrest, Indian Wells Valley Water District, Inyokern Community Services District, Eastern Kern County Airport District, Naval Air Weapons Station-China Lake, Searles Valley Minerals Corporation, Bureau of Land Management, and Quist Farms"
+    ],
+    "container-title": [
+      "The Indian Well Valley Cooperative Groundwater Management Plan was originally signed in September"
+    ],
+    "date": [
+      "1995"
+    ],
+    "note": [
+      "and revised in 2006."
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "5"
+    ],
+    "title": [
+      "Map and shapefile showing area to be monitored: Will provide to State-DWR during week of"
+    ],
+    "date": [
+      "2010-12-20"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Institute",
+        "given": "Desert Research"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-09"
+    ],
+    "title": [
+      "Groundwater Resources Sustainability: Modeling Evaluation for the Naval Air Weapons Station, China Lake, California"
+    ],
+    "container-title": [
+      "Prepared by DRI Nevada System of Higher Education"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-06"
+    ],
+    "title": [
+      "Management of the California State Water Project: Bulletin 132-16"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-03"
+    ],
+    "title": [
+      "Final State Water Project Delivery Capability Report 2017"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "GSP §## from California Code of Regulations (CCR"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California Code of Regulations; Title 23"
+    ],
+    "container-title": [
+      "Waters; Division 2. Department of Water Resources; Chapter 1.5. Groundwater Management; Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Karpiscak"
+      }
+    ],
+    "date": [
+      "1994",
+      "1994-05"
+    ],
+    "title": [
+      "Evaporative Cooler Water Use. College of Agriculture and Life Sciences, University of Arizona (Tuscon, AZ"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-01"
+    ],
+    "title": [
+      "Indian Wells Valley Resource Opportunity Plan, Water Availability and Conservation Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for Kern County Planning and Community Development Department"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "TriEcoTt – a joint venture of TriEco LLC and Tetra Tech EM Inc."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Final Technical Justification for Beneficial Use Changes for Groundwater in Salt Wells Valley and Shallow Groundwater in Eastern Indian Wells Valley"
+    ],
+    "note": [
+      "Prepared for the Department of the Navy. February 2013."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curan"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-08"
+    ],
+    "title": [
+      "Fremont Valley Basin: Groundwater Management Plan, Public Draft. Prepared for the city of California City; Antelope Valley – East Kern Water Agency, Mojave Public Utilities District, etc"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "TO: Indian Wells Valley Groundwater Authority Technical Advisory Committee (TAC"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "California Regional Water Quality Control"
+      },
+      {
+        "family": "Region",
+        "given": "Lahontan"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-01"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Lahontan Region"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "North and South Basins"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Carollo"
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-09"
+    ],
+    "title": [
+      "City of Ridgecrest Wastewater Treatment Plant Final Project Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Institute",
+        "given": "Desert Research"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-09"
+    ],
+    "title": [
+      "Groundwater Resources Sustainability: Modeling Evaluation for the Naval Air Weapons Station, China Lake, California"
+    ],
+    "container-title": [
+      "Prepared by DRI Nevada System of Higher Education"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Services",
+        "given": "Ecological Research"
+      }
+    ],
+    "date": [
+      "1991",
+      "1991-10"
+    ],
+    "title": [
+      "Elements of a Habitat Management Plan for the Mohave Tui Chub at the China Lake Naval Weapons Center Relative to the City of Ridgecrest’s Wastewater Reclamation Project"
+    ],
+    "container-title": [
+      "Document provided by Stephan Bork of the Indian Wells Valley Technical Advisory Committee"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Environmental Science"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-05"
+    ],
+    "title": [
+      "City of Ridgecrest General Plan Update, Draft Environmental Impact Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "GSP §## from California Code of Regulations (CCR"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California Code of Regulations; Title 23"
+    ],
+    "container-title": [
+      "Waters; Division 2. Department of Water Resources; Chapter 1.5. Groundwater Management; Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Plumlee",
+        "given": "Megan H."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Costs of Advanced Treatment in Water Reclamation"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "485–95"
+    ],
+    "date": [
+      "2014-09"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ozone: Science & Engineering: The Journal of the International Ozone Association"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-10"
+    ],
+    "title": [
+      "Wastewater Treatment Plant Facility Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the City of Ridgecrest"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "R.M.C."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-01"
+    ],
+    "title": [
+      "Draft Indian Wells Valley Groundwater Basin Salt and Nutrient Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "State Water Resources Control"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Investigation on the Feasibility of Developing Uniform Water Recycling Criteria for Direct Potable Reuse"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Tetra Tech E.M."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-07"
+    ],
+    "title": [
+      "Basewide Hydrogeologic Characterization Summary Report: Naval Air Weapons Station, China Lake, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the Department of the Navy"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-01"
+    ],
+    "title": [
+      "Indian Wells Valley Resource Opportunity Plan, Water Availability and Conservation Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for Kern County Planning and Community Development Department"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "TriEcoTt – a joint venture of TriEco LLC and Tetra Tech EM Inc."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Final Technical Justification for Beneficial Use Changes for Groundwater in Salt Wells Valley and Shallow Groundwater in Eastern Indian Wells Valley"
+    ],
+    "note": [
+      "Prepared for the Department of the Navy. February 2013."
+    ],
+    "type": null
+  }
+]

@@ -1,0 +1,6755 @@
+[
+  {
+    "author": [
+      {
+        "family": "Waterboards",
+        "given": "California"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "Irrigated Lands Regulatory Program (ILRP)."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/"
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Consensus Building Institute"
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Tehama County Flood Control and Water Conservation District Groundwater Sustainability Agency"
+    ],
+    "container-title": [
+      "Stakeholder Communications and Engagement Plan CV-SALTS"
+    ],
+    "url": [
+      "https://www.cvsalinity.org/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Sacramento Valley GPS Survey of the Sacramento Valley Subsidence Network"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Basin Boundary Assessment Tool"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/bbat/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Well Completion Report Map Application"
+    ],
+    "url": [
+      "https://dwr.maps.arcgis.com/apps/webappviewer/index.html",
+      "https://www.casgem.water.ca.gov/OSS/"
+    ],
+    "container-title": [
+      "DWR, 2020. CASGEM Online System"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Association",
+        "given": "Northern California Water"
+      }
+    ],
+    "date": [
+      "2006",
+      "2009-03",
+      "2029"
+    ],
+    "title": [
+      "Sacramento Valley Integrated Regional Water Management Plan"
+    ],
+    "url": [
+      "https://norcalwater.org/efficient-water-management/efficient-water-managementregional-sustainability/regional-planning/irwmp/",
+      "https://www.co.tehama.ca.us/images/stories/planning/2009-"
+    ],
+    "publisher": [
+      "PMC"
+    ],
+    "note": [
+      "Tehama County General Plan Update 2009-2029."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bailey",
+        "given": "E.H."
+      },
+      {
+        "family": "Blake",
+        "given": "M.C."
+      },
+      {
+        "family": "Jones",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "1970"
+    ],
+    "title": [
+      "On-land Mesozoic oceanic crust in California coast ranges"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 700-C:C70-C81"
+    ],
+    "url": [
+      "https://books.google.com/books?hl=en&lr=&id=mwQlAQAAIAAJ&oi=fnd&pg=SL3-PA70&dq=On"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      },
+      {
+        "family": "V",
+        "given": "Fram"
+      },
+      {
+        "family": "M.S."
+      },
+      {
+        "family": "Belitz",
+        "given": "Kenneth"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Status of groundwater quality in the Southern, Middle, and Northern Sacramento Valley study units, 2005–08—California GAMA Priority Basin Project: U.S"
+    ],
+    "volume": [
+      "2011–5002"
+    ],
+    "pages": [
+      "120"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bertucci",
+        "given": "P.F."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Petrology and provenance of the Stony Creek Formation"
+    ],
+    "location": [
+      "northwestern Sacramento Valley, California. Concord, CA"
+    ],
+    "publisher": [
+      "Chevron U.S.A. Exploration Department"
+    ],
+    "pages": [
+      "1–22"
+    ],
+    "url": [
+      "http://archives.datapages.com/data/pac_sepm/048/048001/pdfs/1.htm"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Blake",
+        "given": "M.C."
+      },
+      {
+        "family": "Harwood",
+        "given": "D.S."
+      },
+      {
+        "family": "Helley",
+        "given": "E.J."
+      },
+      {
+        "family": "Irwin",
+        "given": "W.P."
+      },
+      {
+        "family": "Jayko",
+        "given": "A.S."
+      },
+      {
+        "family": "Jones.1999",
+        "given": "D.L."
+      }
+    ],
+    "title": [
+      "Geologic Map of the Red Bluff 30' X 60' Quadrangle, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Miscellaneous Investigations Series Map I-2542, scale 1:100000.https://pubs.usgs.gov/imap/2542/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Lower Tuscan Aquifer Monitoring, Recharge, and Data Management Project"
+    ],
+    "url": [
+      "https://www.buttecounty.net/Portals/26/Tuscan/LTAFinalReport.pdf",
+      "https://wildlife.ca.gov/Data/BIOS"
+    ],
+    "container-title": [
+      "California Department of Fish and Wildlife, 2015, Biographic Information and Observation System"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2003, Tehama County Groundwater Inventory, Pre-Publication Draft"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-03"
+    ],
+    "title": [
+      "Groundwater Protection Section, GAMA Program Domestic Well Project"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/gama/docs/tehama/tehama_summary_report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources",
+      "Geology of the"
+    ],
+    "date": [
+      "2014"
+    ],
+    "location": [
+      "Northern Sacramento Valley"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://cawaterlibrary.net/wp-content/uploads/2017/05/Geology-of-the-Northern-Sacramento-Valley.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017",
+      "2002"
+    ],
+    "title": [
+      "GPS Survey of the Sacramento Valley Subsidence Network.http://www.yolowra.org/documents/2017_GPS_Survey_of_the_Sacramento_Valley_Subsiden ce_Network.pdf California Geological Survey",
+      "California Geomorphic Provinces"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "4"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Note"
+    ]
+  },
+  {
+    "url": [
+      "https://www.contracosta.ca.gov/DocumentCenter/View/34134/CGS-2002-California-Geomorphic-ProvincesNote-36-PDF",
+      "https://water.ca.gov/Programs/Groundwater-Management/Groundwater-Elevation-Monitoring--CASGEM",
+      "https://cdec.water.ca.gov/"
+    ],
+    "title": [
+      "California Department of Water Resources, California Statewide Groundwater Elevation Monitoring (CASGEM"
+    ],
+    "container-title": [
+      "California Department of Water Resources, California Data Exchange Center (CDEC",
+      "Program"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "California State Water Resources Control Board, GeoTracker"
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Clynne",
+        "given": "M.A."
+      },
+      {
+        "family": "Muffler",
+        "given": "L.J.P."
+      }
+    ],
+    "title": [
+      "Geologic map of Lassen Volcanic National Park and vicinity, California: U.S"
+    ],
+    "volume": [
+      "2899",
+      1
+    ],
+    "pages": [
+      "50,000"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sim/2899/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Map"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "WR",
+        "given": "Dickinson"
+      },
+      {
+        "family": "Rich",
+        "given": "E.I."
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "Petrologic intervals and petrofabrics in the Great Valley sequence"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "volume": [
+      "83"
+    ],
+    "url": [
+      "https://pubs.geoscienceworld.org/gsa/gsabulletin/article-abstract/83/10/3007/7369/Petrologic-Intervals-and-Petrofacies-in-the-Great?redirectedFrom=fulltext",
+      "https://maps.conservation.ca.gov/doggr/wellfinder/#openModal/-118.94276/37.11133/6"
+    ],
+    "note": [
+      "DOGGR Well Finder."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America bulletin"
+    ],
+    "issue": [
+      "10"
+    ],
+    "pages": [
+      "3007–3024"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ely",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "An Evaluation of Aquifer Characteristics Within the Tuscan Formation"
+    ],
+    "location": [
+      "Northeastern Sacramento Valley, Tehama County, California [Master’s Thesis"
+    ],
+    "publisher": [
+      "CSU, Chico"
+    ],
+    "pages": [
+      "292"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Garrison",
+        "given": "Lowell E."
+      }
+    ],
+    "title": [
+      "The Marysville (Sutter) Buttes"
+    ],
+    "container-title": [
+      "Sutter County",
+      "Division of Mines and Geology Bulletin"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "California"
+    ],
+    "volume": [
+      "181"
+    ],
+    "date": [
+      "1962"
+    ],
+    "pages": [
+      "69–72"
+    ],
+    "url": [
+      "http://pubs.geothermal-library.org/lib/grc/1021051.pdf"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Gonzalez",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Stratal Geometries of Tuscan Deposits In Big Chico Creek Canyon Outcrops And In The Subsurface Underlying Chico"
+    ],
+    "location": [
+      "California [Master’s Thesis"
+    ],
+    "publisher": [
+      "CSU, Chico"
+    ],
+    "pages": [
+      "125"
+    ],
+    "type": "book"
+  },
+  {
+    "url": [
+      "https://www.csuchico.edu/bccer/_assets/documents/research-docs/tuscan-geology-11-30-2014-marisol-gonzalez.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harwood",
+        "given": "D.S."
+      },
+      {
+        "family": "Helley",
+        "given": "E.J."
+      },
+      {
+        "family": "Doukas",
+        "given": "M.P."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Geologic Map of the Chico Monocline and Northeastern Part of the Sacramento Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Miscellaneous Investigations Series Map I-1238, scale"
+    ],
+    "volume": [
+      "1"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/i1238"
+    ],
+    "issue": [
+      "62"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Helley",
+        "given": "E."
+      },
+      {
+        "family": "Harwood",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Geologic map of the late Cenozoic deposits of the Sacramento Valley and northern Sierran foothills"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geological Survey Miscellaneous Field Studies Map MF-1790: 24 pp., 5 sheets, scale 1:62,500."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/mf1790"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "EJ",
+        "given": "Helley"
+      },
+      {
+        "family": "Jaworowski",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "The Red Bluff pediment, a datum plane for locating Quaternary structures in the"
+    ],
+    "location": [
+      "Sacramento Valley, California. Washington, DC"
+    ],
+    "publisher": [
+      "U.S. Government Printing Office. U.S"
+    ],
+    "type": "book"
+  },
+  {
+    "volume": [
+      "1628"
+    ],
+    "pages": [
+      "13"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/bul/1628/report.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "RV",
+        "given": "Ingersoll"
+      },
+      {
+        "family": "Dickinson",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Great Valley Group (Sequence",
+      "Upper Mesozoic Franciscan rocks and Great Valley Sequence, Central Coast ranges, California"
+    ],
+    "location": [
+      "Sacramento Valley, California",
+      "Pacific Section, Los Angeles, CA"
+    ],
+    "editor": [
+      {
+        "family": "Frizzell",
+        "given": "V."
+      }
+    ],
+    "publisher": [
+      "Society of Economic Paleontologists and Minerologists"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "url": [
+      "http://archives.datapages.com/data/pac_sepm/033/033001/pdfs/1.htm"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "J.",
+        "given": "Howard"
+      },
+      {
+        "family": "T.",
+        "given": "Keeler-Wolf"
+      },
+      {
+        "family": "K.",
+        "given": "Davis-Fadtke"
+      },
+      {
+        "family": "R.",
+        "given": "Hull"
+      },
+      {
+        "family": "A",
+        "given": "Lyons"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater dependent ecosystems in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "DE",
+        "given": "Marchand"
+      },
+      {
+        "family": "Allwardt",
+        "given": "A."
+      },
+      {
+        "family": "Office",
+        "given": "Government Printing"
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Late Cenozoic stratigraphic units, northeastern San Joaquin Valley, California",
+      "U.S"
+    ],
+    "location": [
+      "Washington"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "volume": [
+      "1470"
+    ],
+    "pages": [
+      "70"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/b1470"
+    ],
+    "producer": [
+      {
+        "family": "O'Geen",
+        "given": "A."
+      },
+      {
+        "family": "Saal",
+        "given": "M."
+      },
+      {
+        "family": "Dahlke",
+        "given": "H."
+      },
+      {
+        "family": "Doll",
+        "given": "D."
+      },
+      {
+        "family": "Elkins",
+        "given": "R."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      },
+      {
+        "family": "Fogg",
+        "given": "G."
+      },
+      {
+        "family": "Harter",
+        "given": "T."
+      },
+      {
+        "family": "Hopmans",
+        "given": "J."
+      },
+      {
+        "family": "Ingels",
+        "given": "C."
+      }
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Bulletin"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Niederholzer",
+        "given": "F."
+      },
+      {
+        "family": "Sandoval",
+        "given": "S."
+      },
+      {
+        "family": "Verdegaal",
+        "given": "P."
+      },
+      {
+        "family": "Walkinshaw",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Soil suitability index identifies potential areas for groundwater banking on agricultural lands"
+    ],
+    "volume": [
+      "69"
+    ],
+    "url": [
+      "http://calag.ucanr.edu/Archive/?article=ca.v069n02p75"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Agriculture"
+    ],
+    "issue": [
+      "2"
+    ],
+    "pages": [
+      "75–84"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ojakangas",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Cretaceous sedimentation, Sacramento Valley, California"
+    ],
+    "volume": [
+      "79"
+    ],
+    "url": [
+      "https://pubs.geoscienceworld.org/gsa/gsabulletin/articleabstract/79/8/973/6386/Cretaceous-Sedimentation-Sacramento-Valley?redirectedFrom=fulltext"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America Bulletin"
+    ],
+    "issue": [
+      "8"
+    ],
+    "pages": [
+      "973–1008"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Olmstead",
+        "given": "F.H."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1961",
+      "1497"
+    ],
+    "title": [
+      "Geologic features and ground-water storage capacity of the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "pages": [
+      "241"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/1497/report.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "title": [
+      "United States Geological Survey, 1974, Base and Thickness of the Post-Eocene Continental Deposits in the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/1973/0045/report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Redwine",
+        "given": "L.E."
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "The Tertiary Princeton submarine valley system beneath the Sacramento Valley, California"
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Los Angeles"
+    ],
+    "genre": [
+      "unpublished Ph.D. thesis."
+    ],
+    "pages": [
+      "480"
+    ],
+    "url": [
+      "http://archives.datapages.com/data/pacific/data/069/069001/53_ps0690053.htm"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Science Division"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Soil survey manual",
+      "USDA Handbook 18"
+    ],
+    "editor": [
+      {
+        "family": "Ditzler",
+        "given": "C."
+      },
+      {
+        "family": "Scheffe",
+        "given": "K."
+      },
+      {
+        "family": "Monger",
+        "given": "H.C."
+      }
+    ],
+    "publisher": [
+      "Government Printing Office"
+    ],
+    "location": [
+      "Washington, D.C"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/scientists/?cid=nrcs142p2_054262"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) -2,300 37,000"
+    ],
+    "pages": [
+      "–40,000 –19,000 –20,000 –40,000 –40,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 8,600 31,000"
+    ],
+    "pages": [
+      "–39,000 –22,000 –13,000 –31,000 –71,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 15,000 39,000"
+    ],
+    "pages": [
+      "–38,000 –24,000 –10,000 –15,000 –86,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "volume": [
+      "AN) 54,000 66,000",
+      "C) 3,000 37,000",
+      "W) 67,000 86,000",
+      "W) 39,000 69,000 -56,000 -14,000 -23,000 19,000 34,000",
+      "W) 31,000 61,000",
+      "W) 48,000 110,000",
+      "W) 24,000 58,000"
+    ],
+    "pages": [
+      "–41,000 –16,000 –13,000 54,000 –32,000",
+      "–42,000 –21,000 –14,000 –33,000 –65,000",
+      "–47,000 –13,000 –17,000 80,000 15,000",
+      "–60,000 –14,000 –24,000 –2,000 32,000",
+      "–58,000 –8,000 –24,000 67,000 99,000",
+      "–65,000 –9,400 –27,000 –15,000 84,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 11,000 59,000",
+      "D) 14,000 51,000"
+    ],
+    "pages": [
+      "–62,000 –9,100 –25,000 –21,000 63,000",
+      "–3,300 42,000 –53,000 –14,000 –23,000 –46,000 17,000 2002",
+      "–50,000 –16,000 –21,000 –17,000 –530"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "AN) 43,000 69,000"
+    ],
+    "pages": [
+      "–53,000 –9,900 –21,000 33,000 32,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2004"
+    ],
+    "volume": [
+      "BN) 21,000 65,000"
+    ],
+    "pages": [
+      "–59,000 –13,000 –23,000 –4,700 28,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "AN) 17,000 68,000",
+      "W) 52,000 83,000",
+      "D) -3,000 37,000",
+      "C) 9,800 41,000",
+      "D) 22,000 34,000"
+    ],
+    "pages": [
+      "–52,000 –8,600 –21,000 8,100 36,000",
+      "–61,000 –9,000 –25,000 44,000 80,000",
+      "–65,000 –13,000 –23,000 –62,000 18,000",
+      "–57,000 –17,000 –18,000 –38,000 –20,000",
+      "–55,000 –16,000 –13,000 –24,000 –45,000"
+    ],
+    "date": [
+      "2006",
+      "2007",
+      "2008",
+      "2009"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010",
+      "2011"
+    ],
+    "volume": [
+      "BN) 38,000 62,000",
+      "W) 58,000 67,000"
+    ],
+    "pages": [
+      "–55,000 –13,000 –13,000 22,000 –22,000",
+      "–61,000 –9,500 –17,000 41,000 19,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2012"
+    ],
+    "volume": [
+      "BN) 14,000 36,000",
+      "D) 23,000 41,000",
+      "C) 15,000 23,000",
+      "C) 25,000 37,000"
+    ],
+    "pages": [
+      "–64,000 –15,000 –17,000 –41,000 –22,000",
+      "–63,000 –21,000 –12,000 –28,000 –50,000",
+      "–60,000 –28,000 –6,400 –51,000 –100,000",
+      "–57,000 –35,000 –4,200 –30,000 –130,000"
+    ],
+    "date": [
+      "2013",
+      "2014",
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2016"
+    ],
+    "volume": [
+      "BN) 62,000 46,000",
+      "W) 92,000 76,000"
+    ],
+    "pages": [
+      "–63,000 –23,000 –4,100 23,000 –110,000",
+      "–73,000 –17,000 –8,700 73,000 –36,000"
+    ],
+    "date": [
+      "2017"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2018"
+    ],
+    "volume": [
+      "BN) 37,000 30,000"
+    ],
+    "pages": [
+      "–78,000 –24,000 –7,800 –38,000"
+    ],
+    "note": [
+      "-74,000 Average"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2022"
+    ],
+    "volume": [
+      "W) 71,000 74,000"
+    ],
+    "pages": [
+      "–100,000 –17,000 –12,000"
+    ],
+    "date": [
+      "19,000 19,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2023"
+    ],
+    "volume": [
+      "W) 57,000 66,000"
+    ],
+    "pages": [
+      "–96,000 –18,000 –9,000 –310 19,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2024"
+    ],
+    "volume": [
+      "W) 54,000 66,000"
+    ],
+    "pages": [
+      "–93,000 –17,000 –9,500 180 19,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2025"
+    ],
+    "volume": [
+      "BN) 32,000 31,000"
+    ],
+    "pages": [
+      "–90,000 –22,000 –13,000 –55,000 –37,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2026"
+    ],
+    "volume": [
+      "AN) 60,000 67,000"
+    ],
+    "pages": [
+      "–83,000 –17,000 –14,000 20,000 –17,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2027"
+    ],
+    "volume": [
+      "W) 76,000 77,000"
+    ],
+    "pages": [
+      "–87,000 –14,000 –11,000 43,000 26,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2028"
+    ],
+    "volume": [
+      "W) 50,000 50,000",
+      "C) 21,000 37,000",
+      "C) 20,000 23,000"
+    ],
+    "pages": [
+      "–91,000 –16,000 –11,000 –17,000 9,800",
+      "–85,000 –24,000 –14,000 –57,000 –48,000",
+      "–79,000 –29,000 –15,000 –66,000 –110,000"
+    ],
+    "date": [
+      "2029",
+      "2030"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2031"
+    ],
+    "volume": [
+      "AN) 73,000 67,000"
+    ],
+    "pages": [
+      "–77,000 –19,000 –11,000 41,000 –72,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2032"
+    ],
+    "volume": [
+      "BN) 39,000 30,000"
+    ],
+    "pages": [
+      "–76,000 –21,000 –5,200 –30,000 –100,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2033"
+    ],
+    "volume": [
+      "AN) 56,000 51,000",
+      "D) 43,000 46,000"
+    ],
+    "pages": [
+      "–76,000 –17,000 –5,300 12,000 –90,000",
+      "–78,000 –23,000 –5,300 –14,000 –100,000"
+    ],
+    "date": [
+      "2034"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2035"
+    ],
+    "volume": [
+      "W) 94,000 74,000"
+    ],
+    "pages": [
+      "–84,000 –15,000 –5,100 65,000 –39,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2036"
+    ],
+    "volume": [
+      "W) 75,000 98,000"
+    ],
+    "pages": [
+      "–88,000 –10,000 –5,700 66,000 27,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2037"
+    ],
+    "volume": [
+      "W) 49,000 68,000",
+      "D) 25,000 48,000"
+    ],
+    "pages": [
+      "–94,000 –17,000 –8,100 –5,900 21,000",
+      "–91,000 –20,000 –13,000 –47,000 –26,000"
+    ],
+    "date": [
+      "2038"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2039"
+    ],
+    "volume": [
+      "W) 59,000 64,000",
+      "D) 20,000 38,000",
+      "C) 22,000 28,000",
+      "D) 39,000 30,000",
+      "C) 33,000 33,000",
+      "C) 38,000 32,000",
+      "C) 48,000 36,000"
+    ],
+    "pages": [
+      "–88,000 –17,000 –16,000 9,400 –16,000",
+      "–82,000 –19,000 –14,000 –49,000 –66,000",
+      "–79,000 –24,000 –12,000 –54,000 –120,000",
+      "–81,000 –22,000 –10,000 –33,000 –150,000",
+      "–77,000 –25,000 –5,700 –34,000 –190,000",
+      "–74,000 –25,000 –3,200 –26,000 –210,000",
+      "–75,000 –25,000 –2,300 –14,000 –230,000"
+    ],
+    "date": [
+      "2040",
+      "2041",
+      "2042",
+      "2043",
+      "2044",
+      "2045"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2046"
+    ],
+    "volume": [
+      "AN) 93,000 63,000",
+      "C) 36,000 33,000"
+    ],
+    "pages": [
+      "–77,000 –20,000 –1,400 62,000 –160,000",
+      "–78,000 –25,000 –1,000 –32,000 –200,000"
+    ],
+    "date": [
+      "2047"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2048"
+    ],
+    "volume": [
+      "W) 110,000 81,000"
+    ],
+    "pages": [
+      "–82,000 –18,000 –1,900 91,000 –110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2049"
+    ],
+    "volume": [
+      "W) 77,000 63,000"
+    ],
+    "pages": [
+      "–91,000 –20,000 –2,100 26,000 –80,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2050"
+    ],
+    "volume": [
+      "W) 66,000 54,000"
+    ],
+    "pages": [
+      "–96,000 –18,000 –3,200 2,600 –77,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2051"
+    ],
+    "volume": [
+      "W) 86,000 97,000"
+    ],
+    "pages": [
+      "–92,000 –11,000 –6,000 73,000 –3,600"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2052"
+    ],
+    "volume": [
+      "W) 58,000 52,000"
+    ],
+    "pages": [
+      "–99,000 –16,000 –7,600 –14,000 –18,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2053"
+    ],
+    "volume": [
+      "AN) 43,000 53,000",
+      "D) 25,000 38,000",
+      "D) 42,000 45,000"
+    ],
+    "pages": [
+      "–94,000 –14,000 –11,000 –19,000 –37,000",
+      "–85,000 –20,000 –13,000 –46,000 –83,000",
+      "–82,000 –23,000 –12,000 –20,000 –100,000"
+    ],
+    "date": [
+      "2054",
+      "2055"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2056"
+    ],
+    "volume": [
+      "AN) 76,000 63,000"
+    ],
+    "pages": [
+      "–85,000 –16,000 –8,600 36,000 –67,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "BN) 51,000 60,000"
+    ],
+    "pages": [
+      "–90,000 –19,000 –6,200 –2,700 –70,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2058"
+    ],
+    "volume": [
+      "AN) 47,000 62,000"
+    ],
+    "pages": [
+      "–79,000 –13,000 –6,800 12,000 –57,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2059"
+    ],
+    "volume": [
+      "W) 84,000 76,000",
+      "D) 22,000 32,000",
+      "C) 35,000 37,000",
+      "D) 47,000 32,000"
+    ],
+    "pages": [
+      "–87,000 –14,000 –8,600 51,000 –6,900",
+      "–92,000 –19,000 –8,600 –62,000 –69,000",
+      "–84,000 –27,000 –12,000 –41,000 –110,000",
+      "–82,000 –23,000 –9,900 –25,000 –140,000"
+    ],
+    "date": [
+      "2060",
+      "2061",
+      "2062"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2063"
+    ],
+    "volume": [
+      "BN) 65,000 57,000"
+    ],
+    "pages": [
+      "–80,000 –17,000 –5,800 25,000 –110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "volume": [
+      "W) 87,000 61,000"
+    ],
+    "pages": [
+      "–85,000 –14,000 –3,600 47,000 –63,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "volume": [
+      "BN) 39,000 31,000",
+      "D) 46,000 39,000",
+      "C) 36,000 23,000",
+      "C) 47,000 37,000"
+    ],
+    "pages": [
+      "–88,000 –21,000 –3,800 –41,000 –100,000",
+      "–86,000 –28,000 –6,100 –29,000 –130,000",
+      "–85,000 –31,000 –6,100 –55,000 –190,000",
+      "–82,000 –39,000 –3,800 –33,000 –220,000"
+    ],
+    "date": [
+      "2066",
+      "2067",
+      "2068"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2069"
+    ],
+    "volume": [
+      "BN) 80,000 45,000"
+    ],
+    "pages": [
+      "–82,000 –26,000 –1,800 20,000 –200,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "volume": [
+      "W) 120,000 74,000"
+    ],
+    "pages": [
+      "–90,000 –20,000 –940 85,000 –120,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2071"
+    ],
+    "volume": [
+      "BN) 59,000 28,000"
+    ],
+    "pages": [
+      "–95,000 –25,000 –870 –32,000 –150,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2072"
+    ],
+    "volume": [
+      "W) 92,000 71,000"
+    ],
+    "pages": [
+      "–90,000 –18,000 –2,700 56,000 –93,000"
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Flows Pumping Change Change"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "2022"
+    ],
+    "volume": [
+      "W) 73,000 74,000"
+    ],
+    "pages": [
+      "–110,000 –18,000 –8,300 18,000 18,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2023"
+    ],
+    "volume": [
+      "W) 59,000 65,000"
+    ],
+    "pages": [
+      "–100,000 –19,000 –12,000 –1,100 16,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2024"
+    ],
+    "volume": [
+      "W) 57,000 66,000"
+    ],
+    "pages": [
+      "–96,000 –18,000 –13,000 –200 16,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2025"
+    ],
+    "volume": [
+      "BN) 34,000 31,000"
+    ],
+    "pages": [
+      "–94,000 –23,000 –9,500 –56,000 –40,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2026"
+    ],
+    "volume": [
+      "AN) 62,000 66,000"
+    ],
+    "pages": [
+      "–87,000 –17,000 –8,900 20,000 –20,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2027"
+    ],
+    "volume": [
+      "W) 79,000 77,000"
+    ],
+    "pages": [
+      "–89,000 –14,000 –13,000 44,000 23,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2028"
+    ],
+    "volume": [
+      "W) 53,000 50,000",
+      "C) 24,000 37,000",
+      "C) 23,000 22,000"
+    ],
+    "pages": [
+      "–94,000 –16,000 –14,000 –16,000 7,000",
+      "–89,000 –25,000 –10,000 –58,000 –51,000",
+      "–84,000 –29,000 –4,100 –68,000 –120,000"
+    ],
+    "date": [
+      "2029",
+      "2030"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2031"
+    ],
+    "volume": [
+      "AN) 76,000 66,000"
+    ],
+    "pages": [
+      "–81,000 –20,000 –4,100 42,000 –77,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2032"
+    ],
+    "volume": [
+      "BN) 42,000 30,000"
+    ],
+    "pages": [
+      "–80,000 –22,000 –4,200 –30,000 –110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2033"
+    ],
+    "volume": [
+      "AN) 59,000 51,000",
+      "D) 46,000 46,000"
+    ],
+    "pages": [
+      "–80,000 –18,000 –4,000 12,000 –95,000",
+      "–81,000 –24,000 –4,400 –14,000 –110,000"
+    ],
+    "date": [
+      "2034"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2035"
+    ],
+    "volume": [
+      "W) 98,000 73,000"
+    ],
+    "pages": [
+      "–87,000 –16,000 –6,500 65,000 –44,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2036"
+    ],
+    "volume": [
+      "W) 79,000 97,000"
+    ],
+    "pages": [
+      "–90,000 –11,000 –12,000 67,000 23,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2037"
+    ],
+    "volume": [
+      "W) 52,000 67,000",
+      "D) 28,000 48,000"
+    ],
+    "pages": [
+      "–97,000 –17,000 –15,000 –5,200 18,000",
+      "–95,000 –20,000 –12,000 –47,000 –29,000"
+    ],
+    "date": [
+      "2038"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2039"
+    ],
+    "volume": [
+      "W) 62,000 64,000",
+      "D) 23,000 37,000",
+      "C) 25,000 28,000",
+      "D) 43,000 29,000",
+      "C) 36,000 33,000",
+      "C) 41,000 32,000",
+      "C) 51,000 35,000"
+    ],
+    "pages": [
+      "–92,000 –18,000 –11,000 9,300 –20,000",
+      "–86,000 –20,000 –8,600 –50,000 –70,000",
+      "–83,000 –25,000 –4,400 –55,000 –120,000",
+      "–86,000 –22,000 –2,400 –34,000 –160,000",
+      "–81,000 –26,000 –1,600 –35,000 –190,000",
+      "–78,000 –25,000 –920 –27,000 –220,000",
+      "–79,000 –25,000 –670 –14,000 –240,000"
+    ],
+    "date": [
+      "2040",
+      "2041",
+      "2042",
+      "2043",
+      "2044",
+      "2045"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2046"
+    ],
+    "volume": [
+      "AN) 97,000 63,000",
+      "C) 39,000 33,000"
+    ],
+    "pages": [
+      "–80,000 –20,000 –1,300 63,000 –170,000",
+      "–81,000 –25,000 –1,400 –32,000 –200,000"
+    ],
+    "date": [
+      "2047"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2048"
+    ],
+    "volume": [
+      "W) 110,000 81,000"
+    ],
+    "pages": [
+      "–85,000 –18,000 –2,500 92,000 –110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2049"
+    ],
+    "volume": [
+      "W) 81,000 62,000"
+    ],
+    "pages": [
+      "–94,000 –21,000 –4,600 27,000 –85,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2050"
+    ],
+    "volume": [
+      "W) 70,000 53,000"
+    ],
+    "pages": [
+      "–99,000 –19,000 –6,000 3,100 –82,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2051"
+    ],
+    "volume": [
+      "W) 90,000 96,000"
+    ],
+    "pages": [
+      "–95,000 –11,000 –9,200 75,000 –7,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2052"
+    ],
+    "volume": [
+      "W) 62,000 51,000"
+    ],
+    "pages": [
+      "–100,000 –17,000 –12,000 –13,000 –20,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2053"
+    ],
+    "volume": [
+      "AN) 46,000 53,000",
+      "D) 28,000 38,000",
+      "D) 46,000 45,000"
+    ],
+    "pages": [
+      "–97,000 –15,000 –10,000 –19,000 –39,000",
+      "–88,000 –21,000 –7,200 –47,000 –86,000",
+      "–86,000 –24,000 –4,900 –21,000 –110,000"
+    ],
+    "date": [
+      "2054",
+      "2055"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2056"
+    ],
+    "volume": [
+      "AN) 80,000 63,000"
+    ],
+    "pages": [
+      "–89,000 –17,000 –5,300 36,000 –71,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "BN) 55,000 59,000"
+    ],
+    "pages": [
+      "–94,000 –20,000 –7,000 –2,700 –73,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2058"
+    ],
+    "volume": [
+      "AN) 50,000 61,000"
+    ],
+    "pages": [
+      "–82,000 –14,000 –6,900 13,000 –61,000"
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Flows Pumping Change Change"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "2059"
+    ],
+    "volume": [
+      "W) 88,000 76,000",
+      "D) 25,000 32,000",
+      "C) 38,000 37,000",
+      "D) 50,000 32,000"
+    ],
+    "pages": [
+      "–90,000 –15,000 –11,000 52,000 –9,100",
+      "–95,000 –20,000 –8,500 –63,000 –72,000",
+      "–88,000 –28,000 –4,500 –42,000 –110,000",
+      "–87,000 –23,000 –2,800 –26,000 –140,000"
+    ],
+    "date": [
+      "2060",
+      "2061",
+      "2062"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2063"
+    ],
+    "volume": [
+      "BN) 68,000 57,000"
+    ],
+    "pages": [
+      "–83,000 –18,000 –3,000 25,000 –110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "volume": [
+      "W) 91,000 61,000"
+    ],
+    "pages": [
+      "–88,000 –15,000 –4,800 48,000 –67,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "volume": [
+      "BN) 42,000 31,000",
+      "D) 49,000 39,000",
+      "C) 39,000 23,000",
+      "C) 50,000 37,000"
+    ],
+    "pages": [
+      "–92,000 –22,000 –4,800 –41,000 –110,000",
+      "–91,000 –29,000 –3,000 –31,000 –140,000",
+      "–91,000 –31,000 –1,200 –57,000 –200,000",
+      "–86,000 –39,000 –620 –35,000 –230,000"
+    ],
+    "date": [
+      "2066",
+      "2067",
+      "2068"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2069"
+    ],
+    "volume": [
+      "BN) 83,000 45,000"
+    ],
+    "pages": [
+      "–86,000 –26,000 –570 20,000 –210,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "volume": [
+      "W) 120,000 74,000"
+    ],
+    "pages": [
+      "–93,000 –21,000 –2,000 87,000 –130,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bailey",
+        "given": "E.H."
+      },
+      {
+        "family": "Blake",
+        "given": "M.C."
+      },
+      {
+        "family": "Jones",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "1970"
+    ],
+    "title": [
+      "On-land Mesozoic oceanic crust in California coast ranges"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 700-C:C70-C81"
+    ],
+    "url": [
+      "https://books.google.com/books?hl=en&lr=&id=mwQlAQAAIAAJ&oi=fnd&pg=SL3-PA70&dq=Onland+Mesozoic+oceanic+crust+in+California+coast+ranges&ots=KFmxOU0dfe&si=-6g6JwC7hGvNlZKexz7JHPzC8A#v=onepage&q=Onland%20Mesozoic%20oceanic%20crust%20in%20Calif"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      },
+      {
+        "family": "V",
+        "given": "Fram"
+      },
+      {
+        "family": "M.S."
+      },
+      {
+        "family": "Belitz",
+        "given": "Kenneth"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Status of groundwater quality in the Southern, Middle"
+    ],
+    "location": [
+      "and Northern Sacramento Valley study units, 2005-08"
+    ],
+    "publisher": [
+      "California GAMA Priority Basin Project"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "genre": [
+      "Scientific Investigations Report 2011-5002"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Bertucci",
+        "given": "P.F."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Petrology and provenance of the Stony Creek Formation"
+    ],
+    "location": [
+      "northwestern Sacramento Valley, California. Concord, CA"
+    ],
+    "publisher": [
+      "Chevron U.S.A. Exploration Department"
+    ],
+    "pages": [
+      "1–22"
+    ],
+    "url": [
+      "http://archives.datapages.com/data/pac_sepm/048/048001/pdfs/1.htm"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Blake",
+        "given": "M.C."
+      },
+      {
+        "family": "Harwood",
+        "given": "D.S."
+      },
+      {
+        "family": "Helley",
+        "given": "E.J."
+      },
+      {
+        "family": "Irwin",
+        "given": "W.P."
+      },
+      {
+        "family": "Jayko",
+        "given": "A.S."
+      },
+      {
+        "family": "Jones.1999",
+        "given": "D.L."
+      }
+    ],
+    "title": [
+      "Geologic Map of the Red Bluff 30' X 60' Quadrangle, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Miscellaneous Investigations Series Map I-2542, scale 1:100000.https://pubs.usgs.gov/imap/2542/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Lower Tuscan Aquifer Monitoring, Recharge, and Data Management Project"
+    ],
+    "url": [
+      "https://www.buttecounty.net/Portals/26/Tuscan/LTAFinalReport.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Lower Mill Creek Watershed Project Conjunctive Use Study"
+    ],
+    "date": [
+      "2008"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/wpcontent/uploads/2017/11/lower_mill_creek_watershed_conjunctive_use_project__2008_.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Geology of the"
+    ],
+    "date": [
+      "2014"
+    ],
+    "location": [
+      "Northern Sacramento Valley"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://cawaterlibrary.net/wp-content/uploads/2017/05/Geology-of-the-Northern-Sacramento-Valley.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "date": [
+      "2021"
+    ],
+    "note": [
+      "California Data Exchange Center (CDEC)."
+    ],
+    "url": [
+      "https://cdec.water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "California Statewide Groundwater Elevation Monitoring (CASGEM"
+    ],
+    "genre": [
+      "Program."
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Groundwater-Elevation-Monitoring--CASGEM"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Groundwater Ambient Monitoring and Assessment Program (GAMA"
+    ],
+    "url": [
+      "https://gamagroundwater.waterboards.ca.gov/gama/gamamap/public/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater Information System"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "The Water Data Library"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://wdl.water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "SVSim: Sacramento Valley Groundwater-Surface Water Simulation Model"
+    ],
+    "date": [
+      "2021",
+      "2020"
+    ],
+    "volume": [
+      "5"
+    ],
+    "note": [
+      "Available online:"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/svsim."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Downloaded May"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2021"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/crop-mapping-2018"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Crop Mapping"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "California Geological"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "California Geomorphic Provinces"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "4"
+    ],
+    "url": [
+      "https://www.contracosta.ca.gov/DocumentCenter/View/34134/CGS-2002-California-Geomorphic-ProvincesNote-36-PDF"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Note"
+    ]
+  },
+  {
+    "title": [
+      "California State Water Resources Control Board"
+    ],
+    "date": [
+      "2021"
+    ],
+    "note": [
+      "GeoTracker."
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Waterboards",
+        "given": "California"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "Irrigated Lands Regulatory Program (ILRP)."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Clemmens",
+        "given": "A.J."
+      },
+      {
+        "family": "Burt",
+        "given": "C.M."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Accuracy of irrigation efficiency estimates"
+    ],
+    "volume": [
+      "123"
+    ],
+    "pages": [
+      "443–453"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. and Drain. Engng"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Clynne",
+        "given": "M.A."
+      },
+      {
+        "family": "Muffler",
+        "given": "L.J.P."
+      }
+    ],
+    "title": [
+      "Geologic map of Lassen Volcanic National Park and vicinity, California: U.S"
+    ],
+    "volume": [
+      "2899",
+      1
+    ],
+    "pages": [
+      "50,000"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sim/2899/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Map"
+    ]
+  },
+  {
+    "publisher": [
+      "Consensus Building Institute"
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Tehama County Flood Control and Water Conservation District Groundwater Sustainability Agency"
+    ],
+    "container-title": [
+      "Stakeholder Communications and Engagement Plan CV-SALTS"
+    ],
+    "url": [
+      "https://www.cvsalinity.org/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Basin Boundary Assessment Tool"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/bbat/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Well Completion Report Map Application"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/showcase/wellcompletion-report-map-app"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "CASGEM Online System"
+    ],
+    "url": [
+      "https://www.casgem.water.ca.gov/OSS/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ely",
+        "given": "K.E."
+      },
+      {
+        "family": "Garrison",
+        "given": "Lowell E."
+      }
+    ],
+    "date": [
+      "1994",
+      "1962"
+    ],
+    "title": [
+      "An Evaluation of Aquifer Characteristics Within The Tuscan Formation, Northeastern Sacramento Valley, Tehama County",
+      "The Marysville (Sutter) Buttes"
+    ],
+    "location": [
+      "California [Master’s Thesis",
+      "Sutter County, California"
+    ],
+    "publisher": [
+      "CSU, Chico",
+      "California"
+    ],
+    "pages": [
+      "292",
+      "69–72"
+    ],
+    "volume": [
+      "181"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Division of Mines and Geology Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Gonzalez",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Stratal Geometries of Tuscan Deposits In Big Chico Creek Canyon Outcrops And In The Subsurface Underlying Chico"
+    ],
+    "location": [
+      "California [Master’s Thesis"
+    ],
+    "publisher": [
+      "CSU, Chico"
+    ],
+    "pages": [
+      "125"
+    ],
+    "type": "book"
+  },
+  {
+    "url": [
+      "https://www.csuchico.edu/bccer/_assets/documents/research-docs/tuscan-geology-11-30-2014-marisol-gonzalez.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harwood",
+        "given": "D.S."
+      },
+      {
+        "family": "Helley",
+        "given": "E.J."
+      },
+      {
+        "family": "Doukas",
+        "given": "M.P."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Geologic Map of the Chico Monocline and Northeastern Part of the Sacramento Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Miscellaneous Investigations Series Map I-1238, scale"
+    ],
+    "volume": [
+      "1"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/i1238"
+    ],
+    "issue": [
+      "62"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "EJ",
+        "given": "Helley"
+      },
+      {
+        "family": "Jaworowski",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "The Red Bluff pediment, a datum plane for locating Quaternary structures in the"
+    ],
+    "location": [
+      "Sacramento Valley, California. Washington, DC"
+    ],
+    "publisher": [
+      "U.S. Government Printing Office. U.S"
+    ],
+    "type": "book"
+  },
+  {
+    "volume": [
+      "1628"
+    ],
+    "pages": [
+      "13"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/bul/1628/report.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Helley",
+        "given": "E."
+      },
+      {
+        "family": "Harwood",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Geologic map of the late Cenozoic deposits of the Sacramento Valley and northern Sierran foothills"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geological Survey Miscellaneous Field Studies Map MF-1790: 24 pp., 5 sheets, scale 1:62,500."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/mf1790"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "RV",
+        "given": "Ingersoll"
+      },
+      {
+        "family": "Dickinson",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Great Valley Group (Sequence",
+      "Upper Mesozoic Franciscan rocks and Great Valley Sequence, Central Coast ranges, California"
+    ],
+    "location": [
+      "Sacramento Valley, California",
+      "Pacific Section, Los Angeles, CA"
+    ],
+    "editor": [
+      {
+        "family": "Frizzell",
+        "given": "V."
+      }
+    ],
+    "publisher": [
+      "Society of Economic Paleontologists and Minerologists"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "url": [
+      "http://archives.datapages.com/data/pac_sepm/033/033001/pdfs/1.htm"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "J.",
+        "given": "Howard"
+      },
+      {
+        "family": "T.",
+        "given": "Keeler-Wolf"
+      },
+      {
+        "family": "K.",
+        "given": "Davis-Fadtke"
+      },
+      {
+        "family": "R.",
+        "given": "Hull"
+      },
+      {
+        "family": "A",
+        "given": "Lyons"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater dependent ecosystems in California"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "Kirk R."
+      },
+      {
+        "family": "Biswas",
+        "given": "Tanushree"
+      },
+      {
+        "family": "Rohde",
+        "given": "Melissa M."
+      },
+      {
+        "family": "Schuetzenmeister",
+        "given": "Falk"
+      },
+      {
+        "family": "Rindlaub",
+        "given": "Nathaniel"
+      },
+      {
+        "family": "Housman",
+        "given": "Ian"
+      },
+      {
+        "family": "Howard",
+        "given": "Jeanette K."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "GDE Pulse: Taking the Pulse of Groundwater Dependent Ecosystems with Satellite Data"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://gde.codefornature.org."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "DE",
+        "given": "Marchand"
+      },
+      {
+        "family": "Allwardt",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Late Cenozoic stratigraphic units, northeastern San Joaquin Valley",
+      "Government Printing Office"
+    ],
+    "location": [
+      "California. Washington"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "volume": [
+      "1470"
+    ],
+    "pages": [
+      "70"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/b1470"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Bulletin"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "O'Geen",
+        "given": "A."
+      },
+      {
+        "family": "Saal",
+        "given": "M."
+      },
+      {
+        "family": "Dahlke",
+        "given": "H."
+      },
+      {
+        "family": "Doll",
+        "given": "D."
+      },
+      {
+        "family": "Elkins",
+        "given": "R."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      },
+      {
+        "family": "Fogg",
+        "given": "G."
+      },
+      {
+        "family": "Harter",
+        "given": "T."
+      },
+      {
+        "family": "Hopmans",
+        "given": "J."
+      },
+      {
+        "family": "Ingels",
+        "given": "C."
+      },
+      {
+        "family": "Niederholzer",
+        "given": "F."
+      },
+      {
+        "family": "Sandoval",
+        "given": "S."
+      },
+      {
+        "family": "Verdegaal",
+        "given": "P."
+      },
+      {
+        "family": "Walkinshaw",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Soil suitability index identifies potential areas for groundwater banking on agricultural lands"
+    ],
+    "volume": [
+      "69"
+    ],
+    "url": [
+      "http://calag.ucanr.edu/Archive/?article=ca.v069n02p75"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Agriculture"
+    ],
+    "issue": [
+      "2"
+    ],
+    "pages": [
+      "75–84"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Olmstead",
+        "given": "F.H."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1961",
+      "1497"
+    ],
+    "title": [
+      "Geologic features and ground-water storage capacity of the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "pages": [
+      "241"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/1497/report.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "title": [
+      "United States Geological Survey, 1974, Base and Thickness of the Post-Eocene Continental Deposits in the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/1973/0045/report.pdf",
+      "https://tehamartpa.org/wpcontent/uploads/2020/06/2009-2029-Tehama-County-General-Plan-r1.pdf"
+    ],
+    "publisher": [
+      "PMC"
+    ],
+    "date": [
+      "2009-03"
+    ],
+    "note": [
+      "Tehama County General Plan Update 2009-2029."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Sanden"
+      },
+      {
+        "others": true
+      },
+      {
+        "family": "Sanden",
+        "given": "B.L."
+      },
+      {
+        "family": "Prichard",
+        "given": "T.L."
+      },
+      {
+        "family": "Fulton",
+        "given": "A.E."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Assessing And Improving Water Penetration",
+      "Pistachio Production Manual"
+    ],
+    "editor": [
+      {
+        "family": "Ferguson",
+        "given": "L."
+      },
+      {
+        "family": "Haviland",
+        "given": "D.R."
+      }
+    ],
+    "genre": [
+      "Publication 3545."
+    ],
+    "publisher": [
+      "University of California Agriculture and Natural Resources (UCANR) Publications"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Science Division"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Soil survey manual",
+      "USDA Handbook 18"
+    ],
+    "editor": [
+      {
+        "family": "Ditzler",
+        "given": "C."
+      },
+      {
+        "family": "Scheffe",
+        "given": "K."
+      },
+      {
+        "family": "Monger",
+        "given": "H.C."
+      }
+    ],
+    "publisher": [
+      "Government Printing Office"
+    ],
+    "location": [
+      "Washington, D.C"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/scientists/?cid=nrcs142p2_054262"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "USDA SSURGO Database"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_053627"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Tehama County Flood Control and Water Conservation District"
+    ],
+    "date": [
+      "2012"
+    ],
+    "note": [
+      "Coordinated AB 3030"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Groundwater Management Plan 2012."
+    ],
+    "url": [
+      "https://tehamacountywater.org/wpcontent/uploads/2020/09/ab3030-groundwater-management-plan.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Well Completion Reports Dataset"
+    ],
+    "note": [
+      "retrieved from data.cnra.ca.gov (https://data.cnra.ca.gov/dataset/well-completion-reports) on 08/01/2020."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Data"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "DAC Mapping Tool"
+    ],
+    "note": [
+      "retrieved from https://gis.water.ca.gov/app/dacs/ on 6/15/2021."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Data"
+    ]
+  },
+  {
+    "title": [
+      "Tehama County Assessor’s Office",
+      "GIS of Parcels with Land Use Attributes"
+    ],
+    "date": [
+      "2021"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Environmental Health",
+        "given": "Tehama County Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-05"
+    ],
+    "title": [
+      "Well Permits Tabular Dataset"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Provided to LSCE in"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Water System Boundaries"
+    ],
+    "note": [
+      "Retrieved from https://www.waterboards.ca.gov/resources/data_databases/ on 01/15/2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Public Water System Wells"
+    ],
+    "note": [
+      "Retrieved from https://www.waterboards.ca.gov/gama/ on 1/15/2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06"
+    ],
+    "title": [
+      "Fish & Wildlife Groundwater Planning Considerations"
+    ],
+    "pages": [
+      "28"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/document/fish-wildlifegroundwater-planning-considerations/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Fish and Wildlife, Groundwater Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Letter from Craig Altare (DWR) to Taylor Blakslee (Cuyama Basin GSA"
+    ],
+    "note": [
+      "re. Cuyama Valley - 2020 Groundwater Sustainability Plan. Available at"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/portal/gsp/assessments/32"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Smith",
+        "given": "Erin"
+      }
+    ],
+    "title": [
+      "Los Molinos Subbasin SGMA Point of Contact"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "location": [
+      "Erin.Smith@water.ca.gov"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Well Nest Name: 34N Well Names: Upper: 25N01W34N002M; Lower: 25N01W34N003M Subbasin: Los Molinos Screens Depth"
+    ],
+    "note": [
+      "ft bgs): Upper: 207-217; Lower: 625-680"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Huntington",
+        "given": "Justin"
+      },
+      {
+        "family": "McGwire",
+        "given": "Kenneth"
+      },
+      {
+        "family": "Morton",
+        "given": "Charles"
+      },
+      {
+        "family": "Snyder",
+        "given": "Keirith"
+      },
+      {
+        "family": "Peterson",
+        "given": "Sarah"
+      },
+      {
+        "family": "Erickson",
+        "given": "Tyler"
+      },
+      {
+        "family": "Niswonger",
+        "given": "Richard"
+      },
+      {
+        "family": "Carroll",
+        "given": "Rosemary"
+      },
+      {
+        "family": "Smith",
+        "given": "Guy"
+      },
+      {
+        "family": "Allen",
+        "given": "Richard"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Assessing the Role of Climate and Resource Management on Groundwater Dependent Ecosystem Changes in Arid Environments with the Landsat Archive"
+    ],
+    "url": [
+      "https://doi.org/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Remote Sensing of Environment"
+    ],
+    "doi": [
+      "10.1016/j.rse.2016.07.004."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "J.",
+        "given": "Howard"
+      },
+      {
+        "family": "T.",
+        "given": "Keeler-Wolf"
+      },
+      {
+        "family": "K.",
+        "given": "Davis-Fadtke"
+      },
+      {
+        "family": "R.",
+        "given": "Hull"
+      },
+      {
+        "family": "A",
+        "given": "Lyons"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater dependent ecosystems in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Assessing integrity of weather data for use in reference evapotranspiration estimation"
+    ],
+    "volume": [
+      "122"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. And Drain. Engrg., ASCE"
+    ],
+    "issue": [
+      "2"
+    ],
+    "pages": [
+      "97–106"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Howell",
+        "given": "T.A."
+      },
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Evapotranspiration Information Reporting: I"
+    ],
+    "volume": [
+      "98"
+    ],
+    "pages": [
+      "899–920"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Factors Governing Measurement Accuracy. Agricultural Water Management"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Tasumi",
+        "given": "M."
+      },
+      {
+        "family": "Trezza",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1998",
+      "2007"
+    ],
+    "title": [
+      "Crop Evapotranspiration: Guidelines for computing crop water requirements",
+      "Satellite-based energy balance for mapping evapotranspiration with internalized calibration (METRIC)—Model"
+    ],
+    "container-title": [
+      "Irrig. And Drain. Paper 56, Food and Agriculture Organization of the United Nations",
+      "J. Irrig. and Drain. Engng"
+    ],
+    "volume": [
+      "Rome",
+      "133"
+    ],
+    "pages": [
+      "300",
+      "380–394"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Tasumi",
+        "given": "M."
+      },
+      {
+        "family": "Morse",
+        "given": "A."
+      },
+      {
+        "family": "Trezza",
+        "given": "R."
+      },
+      {
+        "family": "Wright",
+        "given": "J.L."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Kramber",
+        "given": "W."
+      },
+      {
+        "family": "Lorite",
+        "given": "I."
+      },
+      {
+        "family": "Robison",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Satellite-based energy balance for mapping evapotranspiration with internalized calibration (METRIC)—Applications"
+    ],
+    "volume": [
+      "133"
+    ],
+    "pages": [
+      "395–406"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. and Drain. Engng"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "A.",
+        "given": "Walter I."
+      },
+      {
+        "family": "Elliot",
+        "given": "R."
+      },
+      {
+        "family": "Howell",
+        "given": "T."
+      },
+      {
+        "family": "Itenfisu",
+        "given": "D."
+      },
+      {
+        "family": "Jensen",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "The ASCE Standardized Reference Evapotranspiration Equation"
+    ],
+    "publisher": [
+      "Publication, American Society of Civil Engineers"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Civil Engineers",
+        "given": "American Society",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2005"
+    ],
+    "title": [
+      "Evaporation, Evapotranspiration, and Irrigation Water Requirements"
+    ],
+    "edition": [
+      "Manual 70. Second"
+    ],
+    "editor": [
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      }
+    ],
+    "container-title": [
+      "Am. Soc. Civ"
+    ],
+    "publisher": [
+      "Engrs",
+      "American Society of Civil Engineers Environmental and Water Resources Institute (ASCE-EWRI"
+    ],
+    "pages": [
+      "744"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "equation",
+        "given": "The A.S.C.E.",
+        "particle": "standardized reference evapotranspiration"
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Walter",
+        "given": "I.A."
+      },
+      {
+        "family": "Elliott",
+        "given": "R.L."
+      },
+      {
+        "family": "Howell",
+        "given": "T.A."
+      },
+      {
+        "family": "Itenfisu",
+        "given": "D."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Snyder",
+        "given": "R.L."
+      }
+    ],
+    "container-title": [
+      "Task Committee on Standardization of Reference Evapotranspiration of EWRI"
+    ],
+    "location": [
+      "Reston, VA. Anderson, M.P",
+      "Applied Groundwater Modeling"
+    ],
+    "date": [
+      "2002"
+    ],
+    "publisher": [
+      "Simulation of Flow and Advective Transport, Academic Press"
+    ],
+    "pages": [
+      "381"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      },
+      {
+        "family": "Hunt",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Applied Groundwater Modeling: Simulation of Flow and Advective Transport"
+    ],
+    "publisher": [
+      "Academic Press"
+    ],
+    "pages": [
+      "630"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "A.S.T.M."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Standard guide for calibrating a groundwater flow model application D5981-96(2008"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Society of Testing and Materials, ASTM International"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bastiaanssen",
+        "given": "W.G.M."
+      },
+      {
+        "family": "Noordman",
+        "given": "E.J.M."
+      },
+      {
+        "family": "Pelgrum",
+        "given": "H."
+      },
+      {
+        "family": "Davids",
+        "given": "G."
+      },
+      {
+        "family": "Thoreson",
+        "given": "B.P."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "SEBAL Model with Remotely Sensed Data to Improve Water Resources Management under Actual Field Conditions"
+    ],
+    "volume": [
+      "131"
+    ],
+    "pages": [
+      "85–93"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. Drain. Eng"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      },
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "DWR Technical Memorandum: Development and Calibration the California Central Valley Groundwater-Surface Water Simulation Model (C2VSim"
+    ],
+    "genre": [
+      "Version 3.02-CG, Version 1.1,"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Modeling"
+    ],
+    "volume": [
+      "5"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "BMP"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "2020"
+    ],
+    "title": [
+      "Resource Guide: DWR-Provided Climate Change Data and Guidance for Use During Groundwater Sustainability Plan Development.California Department of Water Resources (DWR"
+    ],
+    "location": [
+      "Sacramento Valley"
+    ],
+    "note": [
+      "Groundwater-Surface Water Simulation Model (SVSim) Fact Sheet."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Sacramento Valley Groundwater-Surface Water Simulation Model (SVSim) Model Files"
+    ],
+    "note": [
+      "Available online:"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/svsim/resource/46293077-f21b-47ab-8ad3-e58574d2aa44"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Central Valley Groundwater-Surface Water Simulation Model – Fine Grid (C2VSimFG Version 1.0) Model Files"
+    ],
+    "note": [
+      "Available online:"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/c2vsimfg-version-1-0"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      },
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "DWR Technical Memorandum: Theoretical Documentation for the Integrated Water Flow Model (IWFM-2015"
+    ],
+    "genre": [
+      "Revision 630,"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "M.C."
+      },
+      {
+        "family": "Tiedman",
+        "given": "C.R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Effective groundwater model calibration: with analysis of data, sensitivities, predictions, and uncertainty"
+    ],
+    "publisher": [
+      "Wiley Inter-science"
+    ],
+    "location": [
+      "Hoboken"
+    ],
+    "pages": [
+      "455"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Murray-Darling Basin Commission (MDBC",
+      "Groundwater Flow Modelling Guideline"
+    ],
+    "date": [
+      "2001-01"
+    ],
+    "note": [
+      "Report prepared by Aquaterra."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Computational Science",
+        "given": "Northwest Alliance",
+        "particle": "for"
+      },
+      {
+        "given": "Engineering"
+      },
+      {
+        "family": "O'Geen",
+        "given": "A."
+      },
+      {
+        "family": "Saal",
+        "given": "M."
+      },
+      {
+        "family": "Dahlke",
+        "given": "H."
+      },
+      {
+        "family": "Doll",
+        "given": "D."
+      },
+      {
+        "family": "Elkins",
+        "given": "R."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      },
+      {
+        "family": "Fogg",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "PRISM Climate Data"
+    ],
+    "note": [
+      "Available online:",
+      "Harter T, Hopmans J, Ingels C,"
+    ],
+    "url": [
+      "https://prism.oregonstate.edu/."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Niederholzer",
+        "given": "F."
+      },
+      {
+        "family": "Solis",
+        "given": "S."
+      },
+      {
+        "family": "Verdegaal",
+        "given": "P."
+      },
+      {
+        "family": "Walkinshaw",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Soil suitability index identifies potential areas for groundwater banking on agricultural lands"
+    ],
+    "volume": [
+      "69"
+    ],
+    "doi": [
+      "10.3733/ca.v069n02p75."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Cal Ag"
+    ],
+    "issue": [
+      "2"
+    ],
+    "pages": [
+      "75–84"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Thoreson",
+        "given": "B."
+      },
+      {
+        "family": "Clark",
+        "given": "B."
+      },
+      {
+        "family": "Soppe",
+        "given": "R."
+      },
+      {
+        "family": "Keller",
+        "given": "A."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Eckhardt",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Comparison of Evapotranspiration Estimates from Remote Sensing (SEBAL), Water Balance, and Crop Coefficient Approaches"
+    ],
+    "container-title": [
+      "Proceedings of the 2009 World Environmental & Water Resources Congress"
+    ],
+    "publisher": [
+      "American Society of Civil Engineers Environmental and Water Resources Institute"
+    ],
+    "location": [
+      "Kansa City, MO"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "note": [
+      "Water Year (Type) Antelope Corning Vina Total Bluff 1990 (C"
+    ],
+    "volume": [
+      "3,800",
+      "C) 3,000",
+      "C) 4,100",
+      "C) 3,500",
+      "W) 4,600",
+      "W) 3,200",
+      "W) 1,400",
+      "W) 3,600",
+      "W) 1,400",
+      "AN) 1,700 -10,000 3,100",
+      "D) 2,800",
+      "2003",
+      "AN) 4,900",
+      "W) 3,500",
+      "C) 1,200",
+      "D) 1,300",
+      "BN) 3,700",
+      "W) 2,900",
+      "W) 1,500"
+    ],
+    "pages": [
+      "–3,600 5,400 –48,000 –42,000",
+      "–930 2,800 –46,000 –41,000",
+      "690 630 –45,000 –40,000",
+      "6,000 480 –2,200 –47,000 –43,000",
+      "–770 1,800 –49,000 –44,000",
+      "–2,200 –830 –51,000 –49,000",
+      "–5,300 –580 –56,000 –58,000",
+      "–7,700 900 –57,000 –62,000",
+      "–8,800 1,300 –56,000 –60,000",
+      "–11,000 1,300 –58,000 –67,000",
+      "–59,000 –64,000",
+      "–8,200 5,800 –55,000 –55,000",
+      "–59,000 –62,000",
+      "–6,500 5,200 –57,000 –54,000",
+      "–9,100 2,900 –60,000 –63,000",
+      "260 –9,500 4,200 –62,000 –67,000",
+      "–6,700 4,400 –58,000 –60,000",
+      "–3,600 2,400 –58,000 –57,000",
+      "–3,400 –6 –57,000 –57,000",
+      "–5,000 –1,900 –59,000 –63,000 2012 240 –6,400 –34 –60,000 –66,000 2013 –660 –3,800 –320 –60,000 –65,000",
+      "–1,800 –1,300 –600 –58,000 –62,000 2015 –180 1,800 –4,400 –57,000 –59,000 2016 1,100 1,500 –8,200 –59,000 –65,000",
+      "–2,700 –10,000 –63,000 –75,000"
+    ],
+    "date": [
+      "1991",
+      "1992",
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999",
+      "2000",
+      "2001",
+      "2002",
+      "2005",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2014",
+      "2017"
+    ],
+    "issue": [
+      "AN"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Table 21. Los Molinos Subbasin Historical Groundwater Extractions (acre-feet) Groundwater Uptake Total Water Year (Type) Groundwater Pumping 1990 (C"
+    ],
+    "pages": [
+      "–19,000 –20,000 –39,000",
+      "–22,000 –13,000 –35,000",
+      "–24,000 –10,000 –34,000",
+      "–16,000 –13,000 –29,000",
+      "–21,000 –14,000 –35,000",
+      "–13,000 –17,000 –30,000",
+      "–14,000 –23,000 –37,000",
+      "–14,000 –24,000 –38,000",
+      "–8,000 –24,000 –32,000",
+      "–24,000 –7,800 –31,800"
+    ],
+    "date": [
+      "1991",
+      "1992",
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "note": [
+      "W) -9,400 -27,000 -36,400 2000 (AN) -9,100 -25,000 -34,100 2001 (D) -14,000 -23,000 -37,000 2002 (D) -16,000 -21,000 -37,000 2003 (AN) -9,900 -21,000 -30,900 2004 (BN) -13,000 -23,000 -36,000 2005 (AN) -8,600 -21,000 -29,600 2006 (W) -9,000 -25,000 -34,000 2007 (D) -13,000 -23,000 -36,000 2008 (C) -17,000 -18,000 -35,000 2009 (D) -16,000 -13,000 -29,000 2010 (BN) -13,000 -13,000 -26,000 2011 (W) -9,500 -17,000 -26,500 2012 (BN) -15,000 -17,000 -32,000 2013 (D) -21,000 -12,000 -33,000 2014 (C) -28,000 -6,400 -34,400 2015 (C) -35,000 -4,200 -39,200 2016 (BN) -23,000 -4,100 -27,100 2017 (W) -17,000 -8,700 -25,700 2018 (BN"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Average"
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "pages": [
+      "–16,000 –17,000 –33,000"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Aquifer Aquifer"
+    ],
+    "location": [
+      "Change Change"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "pages": [
+      "–25,000 –3,200 –40,000 –40,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "pages": [
+      "–21,000 –3,400 –31,000 –71,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "pages": [
+      "–9,000 –1,600 –15,000 –86,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "AN) 48,000 6,400 54,000"
+    ],
+    "pages": [
+      "–32,000",
+      "–28,000 –2,800 –33,000 –65,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 59,000 6,800 80,000"
+    ],
+    "pages": [
+      "15,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 4,100 1,700 19,000 34,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "pages": [
+      "–8,000 –860 –2,000 32,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 46,000 5,000 67,000"
+    ],
+    "pages": [
+      "99,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "pages": [
+      "–22,000 –1,500 –15,000 84,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–12,000 –2,200 –21,000 63,000 2001",
+      "–7,300 –1,300 –17,000 –530"
+    ],
+    "note": [
+      "D) -33,000 -5,000 -46,000 17,000 2002 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "AN) 24,000 3,100 33,000 32,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2004"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–1,300 580 –4,700 28,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "note": [
+      "AN) 5,600 200 8,100 36,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "note": [
+      "W) 25,000 3,800 44,000 80,000 2007 (D) -47,000 -6,100 -62,000 18,000 2008 (C) -24,000 -4,100 -38,000 -20,000 2009 (D"
+    ],
+    "pages": [
+      "–14,000 –2,500 –24,000 –45,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "BN) 20,000 2,600 22,000"
+    ],
+    "pages": [
+      "–22,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2012"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–33,000 –3,700 –41,000 –22,000",
+      "–17,000 –3,000 –28,000 –50,000 2014",
+      "–14,000 –1,900 –30,000 –130,000"
+    ],
+    "date": [
+      "2013"
+    ],
+    "note": [
+      "C) -33,000 -5,300 -51,000 -100,000 2015 (C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2016"
+    ],
+    "volume": [
+      "BN) 22,000 3,100 23,000"
+    ],
+    "pages": [
+      "–110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2017"
+    ],
+    "volume": [
+      "W) 50,000 7,600 73,000"
+    ],
+    "pages": [
+      "–36,000"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Water Year (Type) Red Bluff Antelope Corning Vina Total 2022 (BN"
+    ],
+    "pages": [
+      "–6,700 –16,000 –14,000 –69,000 –110,000",
+      "–2,900 –11,000 –11,000 –73,000 –99,000",
+      "–1,800 –9,200 –8,500 –75,000 –95,000",
+      "–4,000 –7,300 –6,800 –74,000 –92,000",
+      "–610 –4,900 –7,300 –73,000 –85,000",
+      "820 –7,100 –7,600 –75,000 –89,000",
+      "–760 –8,800 –6,000 –78,000 –93,000",
+      "–1,500 –6,300 –4,200 –75,000 –87,000",
+      "–3,300 –1,600 –4,500 –71,000 –81,000",
+      "–290 –9,700 –71,000 –79,000",
+      "510 –850 –6,500 –71,000 –78,000",
+      "–260 –7,400 –72,000 –78,000",
+      "–1,300 –6,300 –74,000 –80,000",
+      "–2,800 –9,300 –76,000 –86,000",
+      "–6,400 –7,700 –80,000 –90,000",
+      "–9,400 –5,100 –83,000 –96,000",
+      "270 –8,800 –2,400 –82,000 –93,000",
+      "–5 780 –6,000 –78,000 –83,000",
+      "710 2,700 –5,300 –77,000 –79,000",
+      "–6,200 –75,000 –76,000",
+      "–8,900 –75,000 –77,000",
+      "–12,000 –77,000 –79,000",
+      "–6,900 –78,000 –80,000",
+      "–10,000 –79,000 –84,000",
+      "–2,300 –9,600 –85,000 –93,000 2050 850 –4,900 –7,700 –86,000 –98,000",
+      "–6,000 –6,900 –85,000 –94,000",
+      "–9,100 –5,800 –88,000 –100,000",
+      "–7,500 –4,000 –86,000 –96,000 2054 2,500 –5,200 –1,200 –83,000 –87,000",
+      "–3,000 –2,700 –81,000 –84,000",
+      "–2,600 –5,900 –82,000 –87,000 2057 2,500 –3,700 –6,300 –85,000 –92,000 2058 5,400 –3,100 –2,600 –81,000 –81,000",
+      "–6,100 –4,400 –84,000 –90,000",
+      "110 –6,500 –2,600 –85,000 –94,000"
+    ],
+    "date": [
+      "2023",
+      "2024",
+      "2025",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030",
+      "2031",
+      "2032",
+      "2033",
+      "2034",
+      "2035",
+      "2036",
+      "2037",
+      "2038",
+      "2039",
+      "2043",
+      "2044",
+      "2045",
+      "2046",
+      "2047",
+      "2048",
+      "2049",
+      "2051",
+      "2052",
+      "2053",
+      "2055",
+      "2056",
+      "2059",
+      "2060"
+    ],
+    "volume": [
+      "C) 1,600",
+      "BN) 1,500",
+      "AN) 1,800",
+      "D) 2,300",
+      "W) 3,700",
+      "W) 1,500",
+      "2040",
+      "C) 1,200 4,500",
+      "C) 1,900 5,400",
+      "C) 5,400 5,000",
+      "AN) 2,200 3,100",
+      "C) 4,400 1,300",
+      "W) 3,300",
+      "W) 3,800",
+      "W) 1,800",
+      "W) 1,500",
+      "D) 2,600",
+      "D) 3,500",
+      "AN) 4,600"
+    ],
+    "issue": [
+      "W"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Water Year (Type) Red Bluff Antelope Corning Vina Total 2061 (D",
+      "BN) 2,600 1,600 -16,000 -80,000 -92,000 2071 (W"
+    ],
+    "pages": [
+      "680 –3,100 –2,700 –81,000 –86,000",
+      "120 –150 –5,300 –79,000 –84,000",
+      "110 –7,400 –78,000 –82,000",
+      "–1,700 –8,500 –80,000 –87,000",
+      "–57 –3,400 –6,100 –81,000 –90,000",
+      "–8,600 –77,000 –87,000",
+      "–13,000 –74,000 –84,000 2069 280 6,100 –15,000 –76,000 –84,000 2070",
+      "–3,400 200 –14,000 –80,000 –97,000 2072 480 –290 –13,000 –79,000 –92,000"
+    ],
+    "date": [
+      "2062",
+      "2063",
+      "2064",
+      "2065",
+      "2066",
+      "2068"
+    ],
+    "volume": [
+      "D) 3,500",
+      "BN) 3,300",
+      "2067",
+      "C) -2,000 5,700"
+    ],
+    "issue": [
+      "D"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Water Year (Type) Groundwater Pumping Groundwater Uptake Total 2022 (W) -17,000 -9,500 -27,000 2023 (W) -18,000 -13,000 -31,000 2024 (W) -17,000 -14,000 -31,000 2025 (BN) -22,000 -11,000 -32,000 2026 (AN) -17,000 -11,000 -27,000 2027 (W) -14,000 -14,000 -28,000 2028 (W) -16,000 -15,000 -30,000 2029 (C) -24,000 -11,000 -35,000 2030 (C) -29,000 -5,200 -34,000 2031 (AN) -19,000 -5,300 -25,000 2032 (BN) -21,000 -5,300 -27,000 2033 (AN) -17,000 -5,100 -23,000 2034 (D) -23,000 -5,700 -29,000 2035 (W) -15,000 -8,100 -23,000 2036 (W) -10,000 -13,000 -23,000 2037 (W) -17,000 -16,000 -33,000 2038 (D) -20,000 -14,000 -34,000 2039 (W) -17,000 -12,000 -30,000 2040 (D) -19,000 -10,000 -29,000 2041 (C) -24,000 -5,700 -30,000 2042 (D) -22,000 -3,200 -25,000 2043 (C) -25,000 -2,300 -28,000 2044 (C) -25,000 -1,400 -26,000 2045 (C) -25,000 -1,000 -26,000 2046 (AN) -20,000 -1,900 -22,000 2047 (C) -25,000 -2,100 -27,000 2048 (W) -18,000 -3,200 -21,000 2049 (W) -20,000 -6,000 -26,000 2050 (W) -18,000 -7,600 -26,000 2051 (W) -11,000 -11,000 -21,000 2052 (W) -16,000 -13,000 -29,000 2053 (AN) -14,000 -12,000 -26,000 2054 (D) -20,000 -8,600 -29,000 2055 (D) -23,000 -6,200 -29,000 2056 (AN) -16,000 -6,800 -23,000 2057 (BN) -19,000 -8,600 -28,000 2058 (AN) -13,000 -8,600 -21,000 2059 (W"
+    ],
+    "pages": [
+      "–14,000 –12,000 –27,000"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Water Year (Type) Groundwater Pumping Groundwater Uptake Total 2060 (D) -19,000 -9,900 -29,000 2061 (C) -27,000 -5,800 -33,000 2062 (D) -23,000 -3,600 -26,000 2063 (BN) -17,000 -3,800 -21,000 2064 (W) -14,000 -6,100 -20,000 2065 (BN) -21,000 -6,100 -27,000 2066 (D) -28,000 -3,800 -32,000 2067 (C) -31,000 -1,800 -33,000 2068 (C) -39,000 -940 -40,000 2069 (BN) -26,000 -870 -27,000 2070 (W) -20,000 -2,700 -23,000 2071 (BN) -25,000 -2,500 -28,000 2072 (W"
+    ],
+    "pages": [
+      "–18,000 –3,500 –22,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Average"
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "pages": [
+      "–20,000 –7,300 –27,000"
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Change Change"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2022"
+    ],
+    "volume": [
+      "BN) 9,100 9,800"
+    ],
+    "pages": [
+      "–110,000 –100,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2023"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–2,300 2,000 –99,000 –96,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2024"
+    ],
+    "volume": [
+      "W) -980 1,200"
+    ],
+    "pages": [
+      "–95,000 –93,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2025"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–36,000 –20,000 –92,000 –90,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2026"
+    ],
+    "volume": [
+      "BN) 13,000 7,100"
+    ],
+    "pages": [
+      "–85,000 –83,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "AN) 26,000 17,000"
+    ],
+    "pages": [
+      "–89,000 –87,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2028"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–11,000 –5,200 –93,000 –91,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2029"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–35,000 –22,000 –87,000 –85,000",
+      "–40,000 –26,000 –81,000 –79,000",
+      "–79,000 –77,000"
+    ],
+    "date": [
+      "2030",
+      "2031"
+    ],
+    "volume": [
+      "C) 27,000 15,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2032"
+    ],
+    "container-title": [
+      "AN"
+    ],
+    "pages": [
+      "–19,000 –11,000 –78,000 –76,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2033"
+    ],
+    "volume": [
+      "BN) 8,300 3,600"
+    ],
+    "pages": [
+      "–78,000 –76,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2034"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–8,600 –5,200 –80,000 –78,000",
+      "–86,000 –84,000"
+    ],
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "D) 40,000 24,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2036"
+    ],
+    "volume": [
+      "W) 41,000 24,000"
+    ],
+    "pages": [
+      "–90,000 –88,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2037"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–4,300 –1,500 –96,000 –94,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2038"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–29,000 –18,000 –93,000 –91,000",
+      "–90,000 –88,000"
+    ],
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "D) 6,600 2,800"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2040"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–30,000 –19,000 –84,000 –82,000",
+      "–33,000 –21,000 –81,000 –79,000",
+      "–20,000 –13,000 –83,000 –81,000",
+      "–7,700 –5,900 –77,000 –75,000",
+      "–79,000 –77,000"
+    ],
+    "date": [
+      "2041",
+      "2042",
+      "2043",
+      "2046"
+    ],
+    "volume": [
+      "D) -21,000 -14,000 -79,000",
+      "C) 39,000 23,000"
+    ],
+    "note": [
+      "-77,000 2044 (C) -15,000 -11,000 -76,000 -74,000 2045 (C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2047"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–19,000 –13,000 –80,000 –78,000",
+      "–84,000 –82,000"
+    ],
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "C) 57,000 34,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2049"
+    ],
+    "volume": [
+      "W) 16,000 10,000"
+    ],
+    "pages": [
+      "–93,000 –91,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2050"
+    ],
+    "pages": [
+      "880 1,700 –98,000 –96,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2051"
+    ],
+    "volume": [
+      "W) 46,000"
+    ],
+    "pages": [
+      "27,000 –94,000 –92,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2052"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–11,000 –2,900 –100,000 –99,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2053"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–11,000 –7,600 –96,000 –94,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2054"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–29,000 –18,000 –87,000 –85,000",
+      "–12,000 –7,600 –84,000 –82,000",
+      "–87,000 –85,000"
+    ],
+    "date": [
+      "2055",
+      "2056"
+    ],
+    "volume": [
+      "D) 22,000 13,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2057"
+    ],
+    "container-title": [
+      "AN"
+    ],
+    "pages": [
+      "–1,800 –880 –92,000 –90,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2058"
+    ],
+    "title": [
+      "BN) 8,900 3,400 -81,000 -79,000 Total Total Annual Water Year (Type) Upper Aquifer Lower Aquifer Cumulative"
+    ],
+    "location": [
+      "Change Change"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2059"
+    ],
+    "volume": [
+      "AN) 30,000 21,000"
+    ],
+    "pages": [
+      "–90,000 –87,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2060"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–39,000 –23,000 –94,000 –92,000",
+      "–25,000 –16,000 –86,000 –84,000 2062 –16,000 –9,700 –84,000 –82,000",
+      "–82,000 –80,000"
+    ],
+    "date": [
+      "2061",
+      "2063"
+    ],
+    "volume": [
+      "D) 17,000 8,300"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "volume": [
+      "BN) 28,000 19,000"
+    ],
+    "pages": [
+      "–87,000 –85,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–26,000 –15,000 –90,000 –88,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2066"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–17,000 –12,000 –88,000 –86,000",
+      "–34,000 –22,000 –87,000 –85,000 2068 –20,000 –14,000 –84,000 –82,000",
+      "–84,000 –82,000"
+    ],
+    "date": [
+      "2067",
+      "2069"
+    ],
+    "volume": [
+      "C) 13,000 6,500"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "volume": [
+      "BN) 53,000 32,000"
+    ],
+    "pages": [
+      "–92,000 –90,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2071"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–20,000 –11,000 –97,000 –95,000"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Red Water Year (Type) Antelope Corning Vina Total Bluff 2022 (W"
+    ],
+    "pages": [
+      "–9,200 –16,000 –15,000 –68,000 –110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2023"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–5,300 –11,000 –12,000 –73,000 –100,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2024"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–4,200 –9,200 –9,600 –75,000 –98,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2025"
+    ],
+    "author": [
+      {
+        "given": "B.N."
+      }
+    ],
+    "pages": [
+      "–6,900 –7,200 –8,200 –74,000 –96,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2026"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–3,200 –4,800 –8,700 –72,000 –89,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2027"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–1,500 –6,800 –8,800 –74,000 –92,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2028"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–3,200 –8,700 –7,300 –77,000 –96,000",
+      "–4,400 –6,200 –5,700 –75,000 –91,000",
+      "–7,200 –1,600 –6,300 –71,000 –86,000"
+    ],
+    "date": [
+      "2029",
+      "2030"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2031"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–1,200 53 –11,000 –70,000 –83,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2032"
+    ],
+    "author": [
+      {
+        "given": "B.N."
+      }
+    ],
+    "pages": [
+      "–2,600 –520 –8,100 –71,000 –82,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2033"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–1,400 65 –9,000 –72,000 –82,000",
+      "–1,100 –970 –7,800 –73,000 –83,000"
+    ],
+    "date": [
+      "2034"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2035"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–240 –2,500 –11,000 –75,000 –89,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2036"
+    ],
+    "volume": [
+      "W) 1,800"
+    ],
+    "pages": [
+      "–6,100 –9,000 –79,000 –92,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2037"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–630 –9,300 –6,300 –83,000 –99,000",
+      "–2,400 –8,800 –3,800 –82,000 –97,000"
+    ],
+    "date": [
+      "2038"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2039"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–1,300 –6,500 –4,800 –81,000 –94,000",
+      "–830 –4,800 –2,600 –80,000 –88,000",
+      "–2,300 –1,800 –3,300 –78,000 –85,000",
+      "–3,600 820 –7,900 –77,000 –88,000",
+      "–7,200 –76,000 –83,000 2044 –2,400 4,900 –8,100 –75,000 –80,000 2045 –1,700 5,800 –11,000 –75,000 –81,000"
+    ],
+    "date": [
+      "2040",
+      "2041",
+      "2042",
+      "2043"
+    ],
+    "volume": [
+      "C) -2,800 3,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2046"
+    ],
+    "volume": [
+      "AN) 2,600 5,600",
+      "C) -970 3,700"
+    ],
+    "pages": [
+      "–14,000 –76,000 –82,000",
+      "–8,600 –78,000 –83,000"
+    ],
+    "date": [
+      "2047"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2048"
+    ],
+    "volume": [
+      "W) 1,900 1,900"
+    ],
+    "pages": [
+      "–12,000 –78,000 –87,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2049"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "770 –1,900 –11,000 –84,000 –96,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2050"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–1,700 –4,600 –9,200 –86,000 –100,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2051"
+    ],
+    "volume": [
+      "W) 1,800"
+    ],
+    "pages": [
+      "–5,700 –8,300 –85,000 –97,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2052"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–350 –8,800 –7,100 –87,000 –100,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2053"
+    ],
+    "container-title": [
+      "AN"
+    ],
+    "pages": [
+      "–940 –7,400 –5,400 –86,000 –99,000",
+      "–180 –5,100 –2,600 –82,000 –90,000",
+      "–330 –2,900 –4,200 –81,000 –88,000"
+    ],
+    "date": [
+      "2054",
+      "2055"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2056"
+    ],
+    "pages": [
+      "800 –2,500 –7,500 –81,000 –91,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2057"
+    ],
+    "author": [
+      {
+        "given": "B.N."
+      }
+    ],
+    "pages": [
+      "–270 –3,600 –7,800 –84,000 –96,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2058"
+    ],
+    "volume": [
+      "AN) 3,100"
+    ],
+    "pages": [
+      "–2,900 –4,000 –81,000 –84,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2059"
+    ],
+    "volume": [
+      "W) 2,300"
+    ],
+    "pages": [
+      "–5,800 –5,900 –83,000 –93,000"
+    ],
+    "location": [
+      "Red"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Water Year (Type) Antelope Corning Vina Total Bluff 2060 (D"
+    ],
+    "pages": [
+      "–2,800 –6,400 –4,100 –84,000 –98,000",
+      "–2,500 –3,100 –4,400 –81,000 –91,000",
+      "–3,400 –76 –7,100 –78,000 –89,000",
+      "620 450 –9,000 –77,000 –85,000",
+      "840 –1,400 –10,000 –79,000 –90,000",
+      "–760 –8,100 –79,000 –93,000",
+      "–11,000 –76,000 –93,000",
+      "–15,000 –74,000 –88,000",
+      "–3,200 6,600 –17,000 –75,000 –88,000 2070 –230 2,200 –18,000 –79,000 –95,000 2071 –7,000 560 –16,000 –79,000 –100,000 2072 –2,400 200 –15,000 –79,000 –96,000"
+    ],
+    "date": [
+      "2061",
+      "2062",
+      "2063",
+      "2064",
+      "2065",
+      "2067",
+      "2068"
+    ],
+    "volume": [
+      "2066",
+      "C) -8,200 2,100",
+      "C) -6,000 5,900"
+    ],
+    "container-title": [
+      "2069 (BN"
+    ],
+    "issue": [
+      "D"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "note": [
+      "Table 65. Los Molinos Subbasin Projected (Future Land Use) Groundwater Extractions (acre-feet) Groundwater Uptake Total Water Year (Type) Groundwater Pumping 2022 (W) -18,000 -8,300 -26,000 2023 (W) -19,000 -12,000 -30,000 2024 (W) -18,000 -13,000 -31,000 2025 (BN) -23,000 -9,500 -32,000 2026 (AN) -17,000 -8,900 -26,000 2027 (W) -14,000 -13,000 -27,000 2028 (W) -16,000 -14,000 -30,000 2029 (C) -25,000 -10,000 -35,000 2030 (C) -29,000 -4,100 -33,000 2031 (AN) -20,000 -4,100 -24,000 2032 (BN) -22,000 -4,200 -26,000 2033 (AN) -18,000 -4,000 -22,000 2034 (D) -24,000 -4,400 -29,000 2035 (W) -16,000 -6,500 -23,000 2036 (W) -11,000 -12,000 -22,000 2037 (W) -17,000 -15,000 -32,000 2038 (D) -20,000 -12,000 -33,000 2039 (W) -18,000 -11,000 -29,000 2040 (D) -20,000 -8,600 -29,000 2041 (C) -25,000 -4,400 -29,000 2042 (D) -22,000 -2,400 -24,000 2043 (C) -26,000 -1,600 -27,000 2044 (C) -25,000 -920 -26,000 2045 (C) -25,000 -670 -26,000 2046 (AN) -20,000 -1,300 -22,000 2047 (C) -25,000 -1,400 -26,000 2048 (W) -18,000 -2,500 -20,000 2049 (W) -21,000 -4,600 -26,000 2050 (W) -19,000 -6,000 -25,000 2051 (W) -11,000 -9,200 -20,000 2052 (W) -17,000 -12,000 -29,000 2053 (AN) -15,000 -10,000 -25,000 2054 (D) -21,000 -7,200 -28,000 2055 (D) -24,000 -4,900 -29,000 2056 (AN) -17,000 -5,300 -22,000 2057 (BN) -20,000 -7,000 -27,000 2058 (AN) -14,000 -6,900 -21,000 2059 (W) -15,000 -11,000 -25,000 Groundwater Uptake Total Water Year (Type) Groundwater Pumping"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2060"
+    ],
+    "author": [
+      {
+        "given": "D."
+      }
+    ],
+    "pages": [
+      "–20,000 –8,500 –28,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2061"
+    ],
+    "author": [
+      {
+        "given": "C."
+      }
+    ],
+    "pages": [
+      "–28,000 –4,500 –32,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2062"
+    ],
+    "author": [
+      {
+        "given": "D."
+      }
+    ],
+    "pages": [
+      "–23,000 –2,800 –26,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2063"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–18,000 –3,000 –21,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–15,000 –4,800 –20,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "author": [
+      {
+        "given": "B.N."
+      }
+    ],
+    "pages": [
+      "–22,000 –4,800 –26,000",
+      "–39,000 –620 –40,000"
+    ],
+    "date": [
+      "2066"
+    ],
+    "note": [
+      "D) -29,000 -3,000 -32,000 2067 (C) -31,000 -1,200 -33,000 2068 (C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2069"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–26,000 –570 –26,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–21,000 –2,000 –23,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2071"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–25,000 –1,700 –27,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2072"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "title": [
+      "-19,000 -2,600 -21,000 -6,100 -27,000 Average"
+    ],
+    "date": [
+      "2022"
+    ],
+    "pages": [
+      "–21,000"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Water Year (Type) Cumulative Change Change 2022 (W) 8,600 9,100 18,000 18,000 2023 (W) -2,700 1,600 -1,100 16,000 2024 (W) -1,000 840 -200 16,000 2025 (BN) -36,000 -20,000 -56,000 -40,000 2026 (AN) 13,000 6,900 20,000 -20,000 2027 (W) 26,000 17,000 44,000 23,000 2028 (W) -11,000 -5,100 -16,000 7,000 2029 (C",
+      "W) 41,000 25,000 65,000 -44,000 2036 (W) 42,000 25,000 67,000 23,000 2037 (W) -3,900 -1,300 -5,200 18,000 2038 (D",
+      "C) -16,000 -11,000 -27,000 -220,000 2045 (C) -8,100 -6,300 -14,000 -240,000 2046 (AN) 40,000 23,000 63,000 -170,000 2047 (C) -19,000 -13,000 -32,000 -200,000 2048 (W) 58,000 34,000 92,000 -110,000 2049 (W) 17,000 11,000 27,000 -85,000 2050 (W) 1,200 1,900 3,100 -82,000 2051 (W) 47,000 28,000 75,000 -7,000 2052 (W) -10,000 -2,600 -13,000 -20,000 2053 (AN) -11,000 -7,600 -19,000 -39,000 2054 (D) -29,000 -18,000 -47,000 -86,000 2055 (D",
+      "AN) 22,000 13,000 36,000 -71,000 2057 (BN",
+      "AN) 9,100 3,500 13,000 -61,000 Upper Aquifer Lower Aquifer Total Total Annual Water Year (Type) Cumulative Change Change"
+    ],
+    "pages": [
+      "–36,000 –23,000 –58,000 –51,000",
+      "–41,000 –26,000 –68,000 –120,000",
+      "–77,000",
+      "–19,000 –11,000 –30,000 –110,000",
+      "–95,000",
+      "–8,600 –5,200 –14,000 –110,000",
+      "–29,000 –18,000 –47,000 –29,000",
+      "–21,000 –14,000 –35,000 –190,000 2044",
+      "–13,000 –7,900 –21,000 –110,000 2056",
+      "–1,800 –900 –2,700 –73,000 2058"
+    ],
+    "date": [
+      "2030",
+      "2031",
+      "2033",
+      "2034",
+      "2035",
+      "2039"
+    ],
+    "volume": [
+      "AN) 27,000 15,000 42,000",
+      "AN) 8,300 3,600 12,000",
+      "2040"
+    ],
+    "container-title": [
+      "2032 (BN"
+    ],
+    "issue": [
+      "D"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "2059"
+    ],
+    "volume": [
+      "W) 30,000 21,000 52,000"
+    ],
+    "pages": [
+      "–9,100",
+      "–39,000 –24,000 –63,000 –72,000 2061",
+      "–16,000 –10,000 –26,000 –140,000"
+    ],
+    "date": [
+      "2060"
+    ],
+    "note": [
+      "C) -26,000 -17,000 -42,000 -110,000 2062 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2063"
+    ],
+    "volume": [
+      "BN) 17,000 8,400 25,000"
+    ],
+    "pages": [
+      "–110,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "volume": [
+      "W) 29,000 19,000 48,000"
+    ],
+    "pages": [
+      "–67,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–26,000 –15,000 –41,000 –110,000",
+      "–18,000 –12,000 –31,000 –140,000 2067",
+      "–21,000 –15,000 –35,000 –230,000"
+    ],
+    "date": [
+      "2066"
+    ],
+    "note": [
+      "C) -35,000 -22,000 -57,000 -200,000 2068 (C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2069"
+    ],
+    "volume": [
+      "BN) 13,000 6,300 20,000"
+    ],
+    "pages": [
+      "–210,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "volume": [
+      "W) 54,000 33,000 87,000"
+    ],
+    "pages": [
+      "–130,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2071"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–21,000 –11,000 –32,000 –160,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Water Year (Type) Red Bluff Antelope Corning Vina Total 2022 (W"
+    ],
+    "pages": [
+      "–11,000 –16,000 –17,000 –69,000 –110,000",
+      "–6,900 –11,000 –14,000 –74,000 –110,000",
+      "–5,800 –9,500 –12,000 –76,000 –100,000",
+      "–8,900 –7,400 –10,000 –74,000 –100,000",
+      "–4,800 –4,200 –10,000 –72,000 –92,000",
+      "–2,500 –6,100 –10,000 –74,000 –93,000",
+      "–4,300 –7,500 –8,900 –77,000 –97,000",
+      "–5,400 –5,100 –8,000 –74,000 –93,000",
+      "–8,900 –760 –8,700 –71,000 –90,000",
+      "–3,100 930 –13,000 –70,000 –86,000",
+      "–4,200 900 –10,000 –70,000 –83,000",
+      "–3,000 1,500 –12,000 –71,000 –85,000",
+      "–2,700 330 –10,000 –73,000 –86,000",
+      "–1,600 –1,600 –14,000 –75,000 –92,000",
+      "610 –5,300 –10,000 –79,000 –94,000",
+      "–1,800 –8,500 –8,600 –82,000 –100,000",
+      "–11,000 –77,000 –92,000",
+      "–9,700 –76,000 –87,000",
+      "–11,000 –75,000 –84,000",
+      "–3,700 6,900 –14,000 –75,000 –85,000",
+      "830 6,600 –16,000 –76,000 –85,000",
+      "–11,000 –77,000 –85,000 2048 110 3,100 –15,000 –78,000 –89,000 2049 –760 –890 –14,000 –84,000 –99,000 2050 –3,800 –4,400 –12,000 –86,000 –110,000 2051 –17 –5,000 –10,000 –84,000 –99,000 2052 –1,500 –7,200 –8,900 –86,000 –100,000",
+      "–2,200 –5,700 –7,800 –85,000 –100,000 2054 –1,500 –3,500 –5,400 –82,000 –92,000 2055 –2,000 –1,600 –6,800 –81,000 –91,000 2056 –570 –1,600 –10,000 –81,000 –94,000 2057 –1,500 –2,900 –10,000 –84,000 –99,000",
+      "–2,500 –6,500 –81,000 –89,000",
+      "810 –5,600 –7,900 –83,000 –96,000"
+    ],
+    "date": [
+      "2023",
+      "2024",
+      "2025",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030",
+      "2034",
+      "2035",
+      "2036",
+      "2037",
+      "2038",
+      "2043",
+      "2044",
+      "2045",
+      "2046",
+      "2047",
+      "2058",
+      "2059"
+    ],
+    "container-title": [
+      "2031 (AN",
+      "2032 (BN",
+      "2033 (AN",
+      "2053 (AN"
+    ],
+    "volume": [
+      "2039",
+      "C) -4,800 3,800",
+      "C) -4,600 6,000",
+      "C) -3,000 5,100",
+      "AN) 1,600"
+    ],
+    "issue": [
+      "W"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "note": [
+      "Water Year (Type) Red Bluff Antelope Corning Vina Total 2060 (D"
+    ],
+    "pages": [
+      "–4,200 –5,800 –6,500 –85,000 –100,000",
+      "–4,000 –2,800 –7,400 –81,000 –95,000",
+      "–5,500 88 –9,900 –79,000 –94,000",
+      "–1,200 690 –12,000 –78,000 –90,000",
+      "–960 –1,400 –12,000 –80,000 –95,000",
+      "–58 –10,000 –79,000 –97,000",
+      "–13,000 –76,000 –96,000",
+      "–18,000 –73,000 –92,000",
+      "–5,000 7,900 –20,000 –74,000 –91,000",
+      "–20,000 –78,000 –97,000 2071 –9,500 1,500 –19,000 –79,000 –110,000 2072 –4,200 1,500 –18,000 –78,000 –99,000"
+    ],
+    "date": [
+      "2061",
+      "2062",
+      "2064",
+      "2065",
+      "2067",
+      "2068",
+      "2070"
+    ],
+    "container-title": [
+      "2063 (BN",
+      "2069 (BN"
+    ],
+    "volume": [
+      "2066",
+      "C) -10,000 3,100",
+      "C) -7,900 6,900",
+      "W) -2,100 3,200"
+    ],
+    "issue": [
+      "D"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "note": [
+      "Water Year (Type) Pumping Uptake 2022 (W) -21,000 -7,500 -28,000 2023 (W) -22,000 -11,000 -34,000 2024 (W) -22,000 -13,000 -34,000 2025 (BN) -27,000 -8,800 -35,000 2026 (AN) -22,000 -7,400 -29,000 2027 (W) -17,000 -11,000 -28,000 2028 (W) -21,000 -12,000 -33,000 2029 (C) -29,000 -8,600 -38,000 2030 (C) -34,000 -3,400 -38,000 2031 (AN) -24,000 -3,200 -27,000 2032 (BN) -26,000 -3,100 -29,000 2033 (AN) -22,000 -3,000 -25,000 2034 (D) -28,000 -3,400 -32,000 2035 (W) -20,000 -5,100 -25,000 2036 (W) -14,000 -11,000 -25,000 2037 (W) -21,000 -14,000 -35,000 2038 (D) -25,000 -11,000 -36,000 2039 (W) -23,000 -9,300 -32,000 2040 (D) -25,000 -7,400 -32,000 2041 (C) -29,000 -3,500 -32,000 2042 (D) -25,000 -1,800 -27,000 2043 (C) -29,000 -1,200 -31,000 2044 (C) -29,000 -660 -30,000 2045 (C) -30,000 -480 -30,000 2046 (AN) -24,000 -830 -25,000 2047 (C) -28,000 -820 -29,000 2048 (W) -22,000 -1,700 -23,000 2049 (W) -26,000 -3,600 -29,000 2050 (W) -24,000 -4,800 -29,000 2051 (W) -15,000 -7,400 -22,000 2052 (W) -22,000 -9,200 -31,000 2053 (AN) -20,000 -7,100 -27,000 2054 (D) -26,000 -5,100 -31,000 2055 (D) -28,000 -3,700 -32,000 2056 (AN) -20,000 -4,100 -24,000 2057 (BN) -24,000 -5,700 -30,000 2058 (AN) -17,000 -5,800 -23,000 2059 (W) -18,000 -9,500 -27,000 Groundwater Groundwater Total Water Year (Type) Pumping Uptake"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2060"
+    ],
+    "author": [
+      {
+        "given": "D."
+      }
+    ],
+    "pages": [
+      "–23,000 –7,400 –30,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2061"
+    ],
+    "author": [
+      {
+        "given": "C."
+      }
+    ],
+    "pages": [
+      "–32,000 –4,100 –36,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2062"
+    ],
+    "author": [
+      {
+        "given": "D."
+      }
+    ],
+    "pages": [
+      "–27,000 –2,500 –30,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2063"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–20,000 –2,500 –23,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–17,000 –4,100 –22,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "author": [
+      {
+        "given": "B.N."
+      }
+    ],
+    "pages": [
+      "–26,000 –4,000 –30,000",
+      "–44,000 –430 –44,000"
+    ],
+    "date": [
+      "2066"
+    ],
+    "note": [
+      "D) -33,000 -2,400 -36,000 2067 (C) -36,000 -800 -36,000 2068 (C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2069"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–31,000 –400 –31,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–24,000 –1,400 –26,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2071"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–29,000 –1,100 –30,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2072"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–22,000 –1,900 –24,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Average"
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "pages": [
+      "–25,000 –5,100 –30,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2026"
+    ],
+    "volume": [
+      "AN) 7,500 3,000 10,000"
+    ],
+    "pages": [
+      "–36,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2028"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–15,000 –7,700 –22,000 –9,600",
+      "–30,000 –19,000 –49,000 –59,000",
+      "–43,000 –28,000 –70,000 –130,000"
+    ],
+    "date": [
+      "2029",
+      "2030"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2031"
+    ],
+    "volume": [
+      "AN) 22,000 11,000 33,000"
+    ],
+    "pages": [
+      "–96,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2032"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–18,000 –11,000 –29,000 –130,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2033"
+    ],
+    "volume": [
+      "AN) 9,000 3,900 13,000"
+    ],
+    "pages": [
+      "–110,000",
+      "–7,900 –4,300 –12,000 –120,000"
+    ],
+    "date": [
+      "2034"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2035"
+    ],
+    "volume": [
+      "W) 43,000 26,000 69,000"
+    ],
+    "pages": [
+      "–55,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2036"
+    ],
+    "volume": [
+      "W) 37,000 22,000 58,000 3,300"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2037"
+    ],
+    "note": [
+      "W) 400 1,600 2,000 5,300 2038 (D"
+    ],
+    "pages": [
+      "–29,000 –17,000 –46,000 –41,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2039"
+    ],
+    "note": [
+      "W) 9,200 4,400 14,000 -28,000 2040 (D",
+      "-170,000 2043 (C) -23,000 -15,000 -38,000 -200,000 2044 (C) -17,000 -12,000 -29,000 -230,000 2045 (C"
+    ],
+    "pages": [
+      "–31,000 –19,000 –50,000 –78,000",
+      "–36,000 –23,000 –59,000 –140,000",
+      "–8,500 –6,600 –15,000 –250,000"
+    ],
+    "date": [
+      "2041",
+      "2042"
+    ],
+    "volume": [
+      "D) -18,000 -12,000 -31,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2046"
+    ],
+    "note": [
+      "AN) 35,000 20,000 55,000 -190,000 2047 (C"
+    ],
+    "pages": [
+      "–18,000 –12,000 –30,000 –220,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2048"
+    ],
+    "volume": [
+      "W) 57,000 34,000 91,000"
+    ],
+    "pages": [
+      "–130,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2049"
+    ],
+    "volume": [
+      "W) 21,000 14,000 35,000"
+    ],
+    "pages": [
+      "–99,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2050"
+    ],
+    "volume": [
+      "W) 2,800 3,500 6,400"
+    ],
+    "pages": [
+      "–92,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2051"
+    ],
+    "volume": [
+      "W) 41,000 24,000 65,000"
+    ],
+    "pages": [
+      "–27,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2052"
+    ],
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "pages": [
+      "–12,000 –4,300 –16,000 –43,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2053"
+    ],
+    "author": [
+      {
+        "given": "A.N."
+      }
+    ],
+    "pages": [
+      "–9,400 –6,300 –16,000 –59,000",
+      "–26,000 –16,000 –43,000 –100,000",
+      "–12,000 –6,900 –19,000 –120,000"
+    ],
+    "date": [
+      "2054",
+      "2055"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2056"
+    ],
+    "volume": [
+      "AN) 23,000 14,000 36,000"
+    ],
+    "pages": [
+      "–84,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "BN) 1,400 1,500 2,900"
+    ],
+    "pages": [
+      "–81,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2058"
+    ],
+    "title": [
+      "AN) 7,100 2,900 10,000 -71,000 Upper Aquifer Lower Aquifer Total Total Annual Water Year (Type"
+    ],
+    "location": [
+      "Cumulative Change Change"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2059"
+    ],
+    "volume": [
+      "W) 32,000 22,000 54,000"
+    ],
+    "pages": [
+      "–17,000",
+      "–37,000 –22,000 –59,000 –77,000 2061",
+      "–19,000 –12,000 –32,000 –150,000"
+    ],
+    "date": [
+      "2060"
+    ],
+    "note": [
+      "C) -23,000 -14,000 -37,000 -110,000 2062 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2063"
+    ],
+    "volume": [
+      "BN) 16,000 8,400 25,000"
+    ],
+    "pages": [
+      "–120,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2064"
+    ],
+    "volume": [
+      "W) 27,000 18,000 45,000"
+    ],
+    "pages": [
+      "–76,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2065"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–28,000 –16,000 –44,000 –120,000",
+      "–19,000 –13,000 –31,000 –150,000 2067",
+      "–22,000 –15,000 –37,000 –250,000"
+    ],
+    "date": [
+      "2066"
+    ],
+    "note": [
+      "C) -36,000 -24,000 -60,000 -210,000 2068 (C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2069"
+    ],
+    "volume": [
+      "BN) 13,000 6,100 19,000"
+    ],
+    "pages": [
+      "–230,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2070"
+    ],
+    "volume": [
+      "W) 53,000 33,000 85,000"
+    ],
+    "pages": [
+      "–140,000"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2071"
+    ],
+    "container-title": [
+      "BN"
+    ],
+    "pages": [
+      "–21,000 –12,000 –32,000 –170,000"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "LM-2U",
+        "given": "Water Level Spring Water Level Trend"
+      }
+    ],
+    "note": [
+      "SWN: 25N02W09G001M Well Depth (ft): 60; Screens (ft bgs):"
+    ],
+    "pages": [
+      "40 – 60"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "MO = SP 2042 DTW + 5 ft Aquifer: Upper; Well Type: Domestic"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "LM-3U",
+        "given": "Water Level Spring Water Level Trend"
+      }
+    ],
+    "note": [
+      "SWN: 25N01W32P001M Well Depth (ft): 330; Screens (ft bgs):"
+    ],
+    "pages": [
+      "209 – 256"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "MO = SP"
+      }
+    ],
+    "date": [
+      "2042"
+    ],
+    "title": [
+      "DTW + 5 ft Aquifer: Upper; Well Type: Monitoring"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "LM-4U",
+        "given": "Water Level Spring Water Level Trend"
+      }
+    ],
+    "note": [
+      "SWN: 24N02W12P001M Well Depth (ft): 370; Screens (ft bgs):"
+    ],
+    "pages": [
+      "165 – 360"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "MO = SP"
+      }
+    ],
+    "date": [
+      "2042"
+    ],
+    "title": [
+      "DTW + 5 ft Aquifer: Upper; Well Type: Monitoring"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "LM-5U",
+        "given": "Water Level Spring Water Level Trend"
+      }
+    ],
+    "note": [
+      "SWN: 24N02W25G001M Well Depth (ft): 256; Screens (ft bgs):"
+    ],
+    "pages": [
+      "108 – 256"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "MO = SP 2042 DTW + 5 ft Aquifer: Upper; Well Type: Irrigation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "LM-7L",
+        "given": "Water Level Spring Water Level Trend"
+      }
+    ],
+    "note": [
+      "SWN: 24N02W12P002M Well Depth (ft): 870; Screens (ft bgs):"
+    ],
+    "pages": [
+      "760 – 850"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "MO = SP"
+      }
+    ],
+    "date": [
+      "2042"
+    ],
+    "title": [
+      "DTW + 5 ft Aquifer: Lower; Well Type: Monitoring"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "LM-8L",
+        "given": "Water Level Spring Water Level Trend"
+      }
+    ],
+    "note": [
+      "SWN: 25N01W34N003M Well Depth (ft): 743; Screens (ft bgs):"
+    ],
+    "pages": [
+      "625 – 680"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "MO = SP"
+      }
+    ],
+    "date": [
+      "2042"
+    ],
+    "title": [
+      "DTW + 5 ft Aquifer: Lower; Well Type: Monitoring"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "public",
+        "given": "D.W.R."
+      },
+      {
+        "family": "agencies",
+        "particle": "other"
+      }
+    ],
+    "title": [
+      "Coordination and Continue coordination and information sharing among agencies in Tehama County and Development of Public Data Multi-Agency / with agencies in neighboring subbasins. Coordination would include holding regular public All Portals – Ongoing Jurisdictions meetings, attending meetings in neighboring subbasin, coordination with land use planning Coordination and entities, and fostering relationships with relevant agencies and organizations"
+    ],
+    "container-title": [
+      "Information Sharing Coordination and Development of Public Data Multi-Agency / Continue and improve sharing of contaminant data across organizations, including data to All Portals – Data Sharing for Jurisdictions track and monitor contaminant plumes. Monitoring Contaminant Plumes"
+    ],
+    "type": "chapter"
+  }
+]

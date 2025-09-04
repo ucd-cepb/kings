@@ -1,0 +1,4500 @@
+[
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hutchinson",
+        "given": "C.B."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Appraisal of Ground-Water Resources in the San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 80-750."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "StreamStats: Streamflow Statistics and Spatial Analysis Tools for Water-Resources Applications"
+    ],
+    "note": [
+      "Available at",
+      "Accessed June 9, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/mission-areas/waterresources/science/streamstats-streamflow-statistics-and-spatial-analysis-tools?qtscience_center_objects=0#qt-science_center_objects."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Press",
+        "given": "Associated"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Vandenberg Air Force Base to Be Renamed Space Force Base"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 2, 2021."
+    ],
+    "url": [
+      "https://www.usnews.com/news/best-states/california/articles/2021-05-14/vandenberg-air-force-base-to-be-renamed-as-space-force-base."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. News & World Report website"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Bethel"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Los Alamos Community Services District Water Facilities Planning Study"
+    ],
+    "publisher": [
+      "Prepared by Bethel Engineering"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "RWQCB",
+        "given": "Central Coast"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Total Maximum Daily Loads for Nitrate in Streams of the San Antonio Creek Watershed"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "note": [
+      "Prepared by the Central Coast Regional Water Quality Control Board."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bureau",
+        "given": "Census"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Census U.S. Gazetteer Files – Places – California. Published by the U.S"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://www2.census.gov/geo/docs/mapsdata/data/gazetteer/2010_place_list_06.txt."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Census Bureau"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Santa Barbara County Integrated Regional Water Management Plan, Update 2019"
+    ],
+    "container-title": [
+      "Prepared for the Santa Barbara County IRWM Cooperating Partners"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Bulletin 118 Description for 3-014 San Antonio Creek Valley. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Muir",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Geology and Ground-Water of San Antonio Creek Valley, Santa Barbara County, California"
+    ],
+    "volume": [
+      "1664"
+    ],
+    "pages": [
+      "53"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Agricultural Order No. R3-2017-0002, a Conditional Waiver of Waste Discharge Requirements for Discharges from Irrigated Lands"
+    ],
+    "publisher": [
+      "Central Coast Regional Water Quality Control Board"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Central Coast Basin. Prepared by the Regional Water Quality Control Board, Central Coast Region, State Water Resources Control Board, and California Environmental Protection Agency"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.A.B.G.S.A."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Re: San Antonio Basin Groundwater Sustainability Agency Notice of Non-Material Change to GSA Notification"
+    ],
+    "note": [
+      "May 28, 2020, Letter from the San Antonio Basin Groundwater Sustainability Agency (SABGSA) Executive Director."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Los Alamos Community Plan. Prepared by the Santa Barbara County Planning and Development Department"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "A.E.C.O.M."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Biological Assessment, Potential Effects to California Red-legged Frog, El Segundo Blue Butterfly, Tidewater Goby, Unarmored Threespine Stickleback, and Beach Layia, Vandenberg Dunes Golf Courses Project"
+    ],
+    "publisher": [
+      "Vandenberg Air Force Base"
+    ],
+    "location": [
+      "Santa Barbara County"
+    ],
+    "note": [
+      "September 25."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Foundation",
+        "given": "Arroyo Seco"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "The Arroyo Chub"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 3, 2021."
+    ],
+    "url": [
+      "https://www.arroyoseco.org/arroyochub.htm."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Battany",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-04-22"
+    ],
+    "title": [
+      "An Initial Estimate of a Water Duty Factor for Field-Grown CBD Hemp in the Paso Robles Area. The University of California, working in cooperation with San Luis Obispo County and the U.S"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Agriculture"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Finance",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2021-05"
+    ],
+    "title": [
+      "E-5 Population and Housing Estimates for Cities, Counties and the State — January 1, 2011-2021"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Public Health",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Nitrate Fact Sheet. Available at California State Water Resources Control Board website"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/Nitrate.html."
+    ],
+    "note": [
+      "Accessed August 5, 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Carlson",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06"
+    ],
+    "title": [
+      "Investigation of Pervasive Clay Layers and Their Effect on Groundwater Flow Using Electrical Resistivity Tomography in the San Antonio Groundwater Basin"
+    ],
+    "location": [
+      "San Luis Obispo"
+    ],
+    "publisher": [
+      "California Polytechnic State University"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2013",
+      "2013"
+    ],
+    "title": [
+      "La Graciosa Thistle (Cirsium scariosum var. loncholepis). Prepared by the California Department of Fish and Wildlife (CDFW"
+    ],
+    "volume": [
+      "23"
+    ],
+    "note": [
+      "Available at",
+      "Accessed May 11, 2021)."
+    ],
+    "url": [
+      "https://wildlife.ca.gov/Conservation/Plants/Endangered/Cirsium-scariosum-var-loncholepis."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Updated September"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "County of Santa Barbara Public Works Department. No date."
+      }
+    ],
+    "title": [
+      "Daily Rainfall Data"
+    ],
+    "note": [
+      "Available at",
+      "Accessed September 1, 2020."
+    ],
+    "url": [
+      "https://www.countyofsb.org/pwd/dailyrainfall.sbc."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.R.C.D."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-12"
+    ],
+    "title": [
+      "San Antonio Creek Coordinated Resource Management Plan. Prepared for the Central Coast Regional Water Quality Control Board"
+    ],
+    "container-title": [
+      "Prepared by the Cachuma Resource Conservation District (CRCD"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "T."
+      },
+      {
+        "family": "Landon",
+        "given": "M."
+      },
+      {
+        "family": "Bennett",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Prioritization of Oil and Gas Fields for Regional Groundwater Monitoring Based on Preliminary Assessment of Petroleum Resource Development and Proximity to California’s Groundwater Resources"
+    ],
+    "genre": [
+      "Scientific Investigation Report 2018-5065."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Ehrenspeck",
+        "given": "H.E."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Geologic Map of the Casmalia and Orcutt Quadrangles"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "note": [
+      "1:24,000. Dibblee Foundation Map DF-24. Dibblee Geological Foundation."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Ehrenspeck",
+        "given": "H.E."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Geologic Map of the Zaca Creek Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "note": [
+      "1:24,000. Dibblee Foundation Map DF-45. Dibblee Geological Foundation."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Ehrenspeck",
+        "given": "H.E."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Geologic Map of the Los Alamos Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "note": [
+      "1:24,000. Dibblee Foundation Map DF-46. Dibblee Geological Foundation."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Ehrenspeck",
+        "given": "H.E."
+      },
+      {
+        "family": "Bartlett",
+        "given": "W.L."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Geologic Map of the Sisquoc Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "note": [
+      "1:24,000. Dibblee Foundation Map DF-53. Dibblee Geological Foundation."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.O.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "California Department of Conservation (DOC"
+    ],
+    "container-title": [
+      "CalGEM, Well Finder"
+    ],
+    "note": [
+      "Retrieved from California Department of Conservation website:",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.conservation.ca.gov/calgem/Pages/WellFinder.aspx."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Driscoll",
+        "given": "F.G."
+      }
+    ],
+    "title": [
+      "Groundwater and Wells, Second Edition"
+    ],
+    "publisher": [
+      "Saint Paul, Minnesota; Johnson Screens"
+    ],
+    "date": [
+      "1986"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Water Resources of the Arroyo Grande – Nipomo Mesa Area"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Southern District Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "California’s Groundwater, Working Toward Sustainability: Bulletin 118, Central Coast Hydrologic Region, San Antonio Creek Valley Groundwater Basin"
+    ],
+    "note": [
+      "Prepared by California Department of Water Resources (DWR)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Water Budget"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Modeling"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "3-014 San Antonio Creek Valley Basin Boundaries. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020-09"
+    ],
+    "title": [
+      "SGMA Data Viewer"
+    ],
+    "note": [
+      "Retrieved from California Department of Water Resources, SGMA Portal:",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "E.P.A."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Title 40, Chapter I, Subchapter D, Part 141. Control of Lead and Copper"
+    ],
+    "note": [
+      "56 Federal Register 26548, June 7, 1991. Prepared by the U.S. Environmental Protection Agency (EPA). Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.ecfr.gov/cgi-bin/text-idx?SID=9c5415b2fe8eb76878a169c14454171"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "E.P.A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Edition of the Drinking Water Standards and Health Advisories Tables. EPA 822-F-18-001. Prepared by the U.S"
+    ],
+    "publisher": [
+      "Environmental Protection Agency, Office of Water"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L."
+      },
+      {
+        "family": "Flint",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2014",
+      "2017-05"
+    ],
+    "title": [
+      "California Basin Characterization Model: A Dataset of Historical and Future Hydrologic Response to Climate Change"
+    ],
+    "volume": [
+      "1"
+    ],
+    "note": [
+      "U.S. Geological Survey Data Release:"
+    ],
+    "url": [
+      "https://doi.org/10.5066/F76T0JPB."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Version"
+    ],
+    "issue": [
+      "1"
+    ],
+    "doi": [
+      "10.5066/F76T0JPB."
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "G.A.M.A."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Groundwater Ambient Monitoring and Assessment (GAMA) Program County-Specific Data Download for County of Santa Barbara"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 26, 2021."
+    ],
+    "url": [
+      "https://gamagroundwater.waterboards.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Gorelick",
+        "given": "N."
+      },
+      {
+        "family": "Hancher",
+        "given": "M."
+      },
+      {
+        "family": "Dixon",
+        "given": "M."
+      },
+      {
+        "family": "Ilyushchenko",
+        "given": "S."
+      },
+      {
+        "family": "Thau",
+        "given": "D."
+      },
+      {
+        "family": "Moore",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-12-01"
+    ],
+    "title": [
+      "Google Earth Engine: Planetary-scale Geospatial Analysis for Everyone"
+    ],
+    "volume": [
+      "202"
+    ],
+    "pages": [
+      "3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Remote Sens. Environ"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hamman",
+        "given": "J.J."
+      },
+      {
+        "family": "Nijssen",
+        "given": "B."
+      },
+      {
+        "family": "Bohn",
+        "given": "T.J."
+      },
+      {
+        "family": "Gergel",
+        "given": "D.R."
+      },
+      {
+        "family": "Mao",
+        "given": "Y."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "The Variable Infiltration Capacity Model Version 5 (VIC-5): Infrastructure Improvements for New Applications and Reproducibility"
+    ],
+    "volume": [
+      "11"
+    ],
+    "pages": [
+      "3481–96,"
+    ],
+    "url": [
+      "https://doi.org/10.5194/gmd-11-3481-2018."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geosci. Model Dev"
+    ],
+    "doi": [
+      "10.5194/gmd-11-3481-2018."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "B."
+      },
+      {
+        "family": "Grattan",
+        "given": "S."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Agriculture Salinity and Drainage. Division of Agriculture and Natural Resources Publication 3375"
+    ],
+    "publisher": [
+      "University of California Irrigation Program, University of California"
+    ],
+    "location": [
+      "Davis"
+    ],
+    "note": [
+      "Revised 2006."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "Hegewisch",
+        "given": "K."
+      },
+      {
+        "family": "Daudert",
+        "given": "B."
+      },
+      {
+        "family": "Morton",
+        "given": "C."
+      },
+      {
+        "family": "Abatzoglou",
+        "given": "J."
+      },
+      {
+        "family": "McEvoy",
+        "given": "D."
+      },
+      {
+        "family": "Erickson",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Climate Engine: Cloud Computing of Climate and Remote Sensing Data for Advanced Natural Resource Monitoring and Process Understanding"
+    ],
+    "volume": [
+      "98"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "http://journals.ametsoc.org/doi/abs/10.1175/BAMS-D-15-00324.1."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bull Amer Meteor"
+    ],
+    "issue": [
+      "11"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hutchinson",
+        "given": "C.B."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Appraisal of Ground-Water Resources in the San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 80-750."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Katherman Exploration Co.",
+        "given": "L.L.C."
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-11"
+    ],
+    "title": [
+      "Water Well Drilling Project, Hunter Four Deer Ranch, Los Alamos Area, Santa Barbara County, CA"
+    ],
+    "volume": [
+      "LLC"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Katherman Exploration Company"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "K.",
+        "given": "Klausmeyer"
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater Dependent Ecosystems in California: Methods Report"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Kofron",
+        "given": "C.P."
+      },
+      {
+        "family": "Langford",
+        "given": "J."
+      },
+      {
+        "family": "Skinner",
+        "given": "M.K."
+      },
+      {
+        "family": "Rutherford",
+        "given": "C."
+      },
+      {
+        "family": "Darst",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-09-18"
+    ],
+    "title": [
+      "Status of Endangered La Graciosa Thistle Cirsium scariosum var. loncholepis (Asteraceae) in Coastal Southern California"
+    ],
+    "volume": [
+      "118"
+    ],
+    "pages": [
+      "111–38"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin, Southern California Academy of Sciences"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://doi.org/10.3160/0038-3872-118.2.111."
+    ],
+    "doi": [
+      "10.3160/0038-3872-118.2.111."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.S.D."
+      }
+    ],
+    "date": [
+      "2005",
+      "2005"
+    ],
+    "title": [
+      "Water Well Drilling Log, Well #4. Los Alamos Community Services District"
+    ],
+    "volume": [
+      "30"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Record dated March"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.S.D."
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-11-18"
+    ],
+    "title": [
+      "State of California Well Completion Report, Well 5"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Los Alamos Community Services District"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.S.D."
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-12-13"
+    ],
+    "title": [
+      "Well Construction and Testing Report for St. Joseph Street Well #5, Los Alamos Community Services District, Santa Barbara County"
+    ],
+    "container-title": [
+      "Prepared by Cleath & Associates. Prepared for Los Alamos Community Services District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.S.D."
+      }
+    ],
+    "date": [
+      "2010",
+      "2010"
+    ],
+    "title": [
+      "State of California Well Completion Report, Well #3A"
+    ],
+    "volume": [
+      "19"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Los Alamos Community Services District. Record dated September"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.S.D."
+      }
+    ],
+    "date": [
+      "2011",
+      "2017-08"
+    ],
+    "title": [
+      "Los Alamos Community Service District, Sewer System Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Revised"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.S.D."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Electric Gamma Ray Temperature Log, Reamed Borehole"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated November"
+    ]
+  },
+  {
+    "title": [
+      "Prepared by Filipponi and Thompson Drilling for boredata"
+    ],
+    "publisher": [
+      "Prepared for Los Alamos Community Services District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Lewis",
+        "given": "D.C."
+      },
+      {
+        "family": "Burgy",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "The Relationships Between Oak Tree Roots and Groundwater in Fractured Rock as Determined by Tritium Tracing"
+    ],
+    "volume": [
+      "69"
+    ],
+    "pages": [
+      "2579–88"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Geophys. Res"
+    ],
+    "issue": [
+      "12"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Liang",
+        "given": "X."
+      },
+      {
+        "family": "Lettenmaier",
+        "given": "D.P."
+      },
+      {
+        "family": "Wood",
+        "given": "E.F."
+      },
+      {
+        "family": "Burges",
+        "given": "S.J."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "A Simple Hydrologically Based Model of Land Surface Water and Energy Fluxes for General Circulation Models"
+    ],
+    "volume": [
+      "99"
+    ],
+    "pages": [
+      "14415–28,"
+    ],
+    "doi": [
+      "10.1029/94JD00483."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Geophys. Res"
+    ],
+    "issue": [
+      "D7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mallory",
+        "given": "M.J."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Potential Effects of Increased Ground-Water Pumpage on"
+    ],
+    "location": [
+      "Barka Slough, San Antonio Creek Valley, Santa Barbara County, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water Resources Investigations Report 80-95."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Mann",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Concepts in Ground Water Management"
+    ],
+    "publisher": [
+      "American Water Works Association"
+    ],
+    "volume": [
+      "60"
+    ],
+    "pages": [
+      "1336–44"
+    ],
+    "issue": [
+      "12"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "ManTech"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Wetlands and Riparian Habitats Management Plan, Vandenberg Air Force Base, California. Prepared for 30th Space Wing Asset Management Flight, Vandenberg Air Force Base"
+    ],
+    "container-title": [
+      "Prepared by ManTech SRS Technologies, Inc"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Development and Calibration of a Two-Dimensional Digital Model for the Analysis of the Ground-Water Flow System in the San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 84-4340."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Maxar"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Base maps for California"
+    ],
+    "publisher": [
+      "Provided by Maxar Imagery"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Meridian"
+      }
+    ],
+    "date": [
+      "2012",
+      "2012-06"
+    ],
+    "title": [
+      "City of Solvang Water System Master Plan Update Environmental Impact Report"
+    ],
+    "volume": [
+      "LLC"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Meridian Consultants"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Muir",
+        "given": "K.S."
+      }
+    ],
+    "date": [
+      "1964",
+      "1664"
+    ],
+    "title": [
+      "Geology and Ground-Water of San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "NASA",
+        "given": "J.P.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "container-title": [
+      "Provided by the National Aeronautics and Space Administration Jet Propulsion Laboratory (NASA JPL"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "A.",
+        "given": "O.’Geen"
+      },
+      {
+        "family": "Saal",
+        "given": "M."
+      },
+      {
+        "family": "Dahlke",
+        "given": "H."
+      },
+      {
+        "family": "Doll",
+        "given": "D."
+      },
+      {
+        "family": "Elkins",
+        "given": "R."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      },
+      {
+        "family": "Fogg",
+        "given": "G."
+      },
+      {
+        "family": "Harter",
+        "given": "T."
+      },
+      {
+        "family": "Hopmans",
+        "given": "J."
+      },
+      {
+        "family": "Ingels",
+        "given": "C."
+      },
+      {
+        "family": "Niederholzer",
+        "given": "F."
+      },
+      {
+        "family": "Sandoval",
+        "given": "S.S."
+      },
+      {
+        "family": "Verdegaal",
+        "given": "P."
+      },
+      {
+        "family": "Walkinshaw",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Soil Suitability Index Identifies Potential Areas for Groundwater Banking on Agricultural Lands"
+    ],
+    "volume": [
+      "69"
+    ],
+    "pages": [
+      "75–84"
+    ],
+    "url": [
+      "https://doi.org/10.3733/ca.v069n02p75."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Calif Agr"
+    ],
+    "issue": [
+      "2"
+    ],
+    "doi": [
+      "10.3733/ca.v069n02p75."
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Seapy",
+        "given": "B."
+      },
+      {
+        "family": "Rogers",
+        "given": "R."
+      },
+      {
+        "family": "Castañeda",
+        "given": "X."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A Compendium of California’s Threatened and Endangered Species for Sustainable Groundwater Management"
+    ],
+    "container-title": [
+      "Published by The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "container-title": [
+      "Published by The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "date",
+        "given": "S.A.G.B.I.No"
+      }
+    ],
+    "title": [
+      "Soil Agricultural Groundwater Banking Index. Provided by the California Soil Resource Lab at University of California (UC) Davis and the UC Agricultural and Natural Resources Department"
+    ],
+    "note": [
+      "Available at",
+      "Accessed September 1, 2020."
+    ],
+    "url": [
+      "https://casoilresource.lawr.ucdavis.edu/sagbi/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-04-01"
+    ],
+    "title": [
+      "Agricultural Commissioner, Weights and Measures Department"
+    ],
+    "note": [
+      "Retrieved January 22, 2021, from Santa Barbara County:"
+    ],
+    "url": [
+      "https://cosantabarbara.app.box.com/s/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.C.A.G."
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-08"
+    ],
+    "title": [
+      "Regional Growth Forecast 2005-2040. Prepared by the Santa Barbara County Association of Governments"
+    ],
+    "url": [
+      "http://www.sbcag.org/uploads/2/4/5/4/24540302/regionalgrowthforecastcomplete"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sweetkind",
+        "given": "D."
+      },
+      {
+        "family": "Tennyson",
+        "given": "M."
+      },
+      {
+        "family": "Langenheim",
+        "given": "V."
+      },
+      {
+        "family": "Shumaker",
+        "given": "L."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Digital Tabulation of Stratigraphic Data from Oil and Gas Wells in the Santa Maria Basin and Surrounding Area"
+    ],
+    "location": [
+      "Central California Coast"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 2010-1129."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Swift",
+        "given": "C.C."
+      },
+      {
+        "family": "Duangsitti",
+        "given": "P."
+      },
+      {
+        "family": "Clemente",
+        "given": "C."
+      },
+      {
+        "family": "Hasserd",
+        "given": "K."
+      },
+      {
+        "family": "Valle",
+        "given": "L."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Final Report: Biology and Distribution of the Tidewater Goby, Eucyclogobius newberryi, on Vandenberg Air Force Base, Santa Barbara County, California. Published under Cooperative Agreement 1445-007-94-8129 between U.S"
+    ],
+    "publisher": [
+      "National Biological Services",
+      "and Loyola Marymount University"
+    ],
+    "location": [
+      "San Simeon, California",
+      "Los Angeles, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Division of Water Rights Final Environmental Impact Report, Consideration of Modifications to the U.S. Bureau of Reclamation’s Water Right Permits 11308 and 11310 (Applications 11331 and 11332) to Protect Public Trust Values and Downstream Water Rights on the Santa Ynez River below Bradbury Dam (Cachuma Reservoir"
+    ],
+    "note": [
+      "State Clearinghouse #1999051051. Prepared by the State Water Resources Control Board. December 2011."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-10"
+    ],
+    "title": [
+      "Groundwater Information Sheet - Salinity. Prepared by the California State Water Resources Control Board Division of Water Quality Groundwater Ambient Monitoring & Assessment (GAMA"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-10"
+    ],
+    "title": [
+      "Groundwater Information Sheet - Arsenic. Prepared by the California State Water Resources Control Board Division of Water Quality Groundwater Ambient Monitoring & Assessment (GAMA"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2018",
+      "2017-10"
+    ],
+    "title": [
+      "Secondary Drinking Water Standards. Prepared by the California State Water Resources Control Board Division of Water Quality Groundwater Ambient Monitoring & Assessment (GAMA"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Central Coastal Basin. Prepared by the California State Water Resources Control Board Division of Water Quality"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Geotracker. Retrieved from California State Water Resources Control Board website"
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/."
+    ],
+    "note": [
+      "Accessed August 5, 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "MCLs, DLRs, PHGs, for Regulated Drinking Water Contaminants. Prepared by the California State Water Resources Control Board"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "August"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.Y.R.W.C.D."
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-06"
+    ],
+    "title": [
+      "Groundwater Production Information and Instructions Pamphlet. Prepared by the Sant Ynez River Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Tech",
+        "given": "Tetra"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Assessment of Groundwater Availability on the Santa Ynez Chumash Reservation"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "container-title": [
+      "Prepared by The Nature Conservancy (TNC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater Resource Hub: GDE Rooting Depths Database"
+    ],
+    "note": [
+      "Prepared by The Nature Conservancy (TNC). Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/gde-rootingdepths-database-for-gdes/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-03-23"
+    ],
+    "title": [
+      "InSar Data Accuracy for California Groundwater Basins, CGPS Data Comparative Analysis, January 2015 to September 2019"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the California Department of Water Resources"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "ALTAMIRA",
+        "given": "T.R.E."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-03"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.N.A.V.C.O."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "UNAVCO Instrumentation Networks Map"
+    ],
+    "note": [
+      "Retrieved September 29, 2020, from UNAVCO website:"
+    ],
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/map/map.html."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "given": "U.N.A.V.C.O."
+      }
+    ],
+    "date": [
+      "2020-09"
+    ],
+    "title": [
+      "ORES - Overview | Station Page"
+    ],
+    "note": [
+      "Retrieved from UNAVCO website:",
+      "Accessed August 5, 2021)."
+    ],
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/status/nota/overview/ORES."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Chapter 7, “Hydrologic Soil Groups” in National Engineering Handbook, Part 630 Hydrology"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture, Natural Resources Conservation Service"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Vegetation Descriptions, South Coast and Montane Ecological Province"
+    ],
+    "genre": [
+      "CALVEG Zone 7."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Prepared by the United States Department of Agriculture (USDA"
+    ],
+    "date": [
+      "2009-03-30"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Forest Service"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Web Soil Survey"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed July 20, 2020."
+    ],
+    "url": [
+      "https://websoilsurvey.nrcs.usda.gov/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "ECOS Environmental Conservation Online System, Southwestern willow flycatcher (Empidonax traillii extimus). U.S. Fish and Wildlife Service"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 3, 2021."
+    ],
+    "url": [
+      "https://ecos.fws.gov/ecp/species/6749."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "ECOS Environmental Conservation Online System, Least Bell's vireo (Vireo bellii pusillus). U.S. Fish and Wildlife Service"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 3, 2021."
+    ],
+    "url": [
+      "https://ecos.fws.gov/ecp/species/5945."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "IPaC Information for Planning and Consultation. U.S. Fish and Wildlife Service"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 3, 2021."
+    ],
+    "url": [
+      "https://ecos.fws.gov/ipac/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "ECOS Environmental Conservation Online System, Steelhead (Oncorhynchus (=Salmo) mykiss). U.S. Fish and Wildlife Service"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 3, 2021."
+    ],
+    "url": [
+      "https://ecos.fws.gov/ecp/species/1007."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "StreamStats: Streamflow Statistics and Spatial Analysis Tools for Water-Resources Applications"
+    ],
+    "note": [
+      "Available at the U.S. Geological Survey website:",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/missionareas/water-resources/science/streamstats-streamflow-statistics-and-spatial-analysis-tools?qtscience_center_objects=0#qt-science_center_objects."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "literal": "USGS. 2020b."
+      }
+    ],
+    "title": [
+      "The National Map, Data Download and Visualization Services. NHDPlus High Resolution Data Model v1.0. Provided by the U.S"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/media/files/nhdplus-high-resolution-data-model-v10."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "San Antonio Creek Geohydrologic Framework Model. Prepared by the U.S"
+    ],
+    "note": [
+      "Geological Survey (USGS). Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/san-antonio-creek/san-antonio-creekgeologic-hydrologic-model.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "California Water Science Center, Sustainable Groundwater, Interconnected Surface-Water Depletion"
+    ],
+    "note": [
+      "Retrieved from USGS website:",
+      "Accessed August 5, 2020."
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/sustainable-groundwatermanagement/interconnected-surface-water-depletion.html."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "literal": "USGS. 2020e."
+      }
+    ],
+    "title": [
+      "San Antonio Creek Valley Groundwater Basin Land Use Spatial Data"
+    ],
+    "volume": [
+      "27"
+    ],
+    "date": [
+      "2020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Surface-Water Data for the Nation. National Water Information System, U.S"
+    ],
+    "note": [
+      "Geologic Survey (USGS). Available at",
+      "Accessed September 1, 2020."
+    ],
+    "url": [
+      "https://waterdata.usgs.gov/nwis/sw."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "USGS. 2020g."
+      }
+    ],
+    "title": [
+      "Locations of Springs and Seeps. Data package provided by U.S"
+    ],
+    "note": [
+      "Geologic Survey (USGS)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "San Antonio Creek Groundwater Availability Study: Hydrogeologic Characterization and Integrated Hydrologic Model"
+    ],
+    "note": [
+      "Presented at the March 19, 2021, San Antonio Creek Communication Meeting. Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/san-antonio-creek/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "USGS. 2021b. NAS –"
+      }
+    ],
+    "title": [
+      "Nonindigenous Aquatic Species. Gila orcuttii (Arroyo Chub"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 3, 2021."
+    ],
+    "url": [
+      "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=28195."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "V.A.F.B."
+      }
+    ],
+    "date": [
+      "2020",
+      "1964"
+    ],
+    "title": [
+      "Vandenberg AFB – San Antonio Wells – Production"
+    ],
+    "note": [
+      "Prepared by Vandenberg Air Force Base (VAFB)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "L.",
+        "given": "Woolfenden"
+      },
+      {
+        "family": "Engott",
+        "given": "J.A."
+      },
+      {
+        "family": "Larsen",
+        "given": "J.D."
+      },
+      {
+        "family": "Cromwell",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Preliminary Simulation of Groundwater and Surface-Water Resources of the San Antonio Creek Valley Watershed, Santa Barbara County, California. Groundwater Availability and Use Assessments"
+    ],
+    "container-title": [
+      "Groundwater Availability and Use Assessments. Prepared in Cooperation with Santa Barbara County Water Agency and Vandenberg Air Force Base. Prepared by the U.S. Geological Survey"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "A.E.C.O.M."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Biological Assessment, Potential Effects to California Red-legged Frog, El Segundo Blue Butterfly, Tidewater Goby, Unarmored Threespine Stickleback, and Beach Layia, Vandenberg Dunes Golf Courses Project"
+    ],
+    "publisher": [
+      "Vandenberg Air Force Base"
+    ],
+    "location": [
+      "Santa Barbara County"
+    ],
+    "note": [
+      "September 25."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "3-014 San Antonio Creek Valley Basin Boundaries. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: DRAFT Sustainable Management Criteria"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "ManTech"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-03"
+    ],
+    "title": [
+      "Wetlands and Riparian Habitats Management Plan – Vandenberg Air Force Base, California"
+    ],
+    "container-title": [
+      "Prepared by ManTech SRS Technologies"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Development and Calibration of a Two-Dimensional Digital Model for the Analysis of the Ground-Water Flow System in the San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 84-4340."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Maxar"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Base maps for California"
+    ],
+    "publisher": [
+      "Provided by Maxar Imagery"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2019",
+      "July"
+    ],
+    "title": [
+      "Identifying GDEs under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Central Coastal Basin",
+      "Edition"
+    ],
+    "container-title": [
+      "California Environmental Protection Agency"
+    ],
+    "publisher": [
+      "Central Coast Regional Water Quality Control Board"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Code of Regulations, Title 22"
+    ],
+    "volume": [
+      "16"
+    ],
+    "publisher": [
+      "California State Water Resources Control Board"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "The National Map, Data Download and Visualization Services. NHDPlus High Resolution Data Model v1.0. Provided by the U.S"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/media/files/nhdplus-high-resolution-data-model-v10."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "T.A."
+      },
+      {
+        "family": "Landon",
+        "given": "M.K."
+      },
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Prioritization of Oil and Gas Fields for Regional Groundwater Monitoring Based on Preliminary Assessment of Petroleum Resource Development and Proximity to California's Groundwater Resources"
+    ],
+    "genre": [
+      "Scientific Investigation Report 2018-5065."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater – Monitoring Protocols, Standards, and Sites"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater – Monitoring Networks and Identification of Data Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "San Antonio Creek Valley Groundwater Basin Bulletin 118 Update 2016. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "3-014 San Antonio Creek Valley Basin Boundaries. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "E.P.A."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Guidance on Systematic Planning Using the Data Quality Objective Process"
+    ],
+    "container-title": [
+      "Prepared by the U.S. Environmental Protection Agency"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Maxar"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Base maps for California"
+    ],
+    "publisher": [
+      "Provided by Maxar Imagery"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Central Coastal Basin"
+    ],
+    "publisher": [
+      "June"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Proposed General Waste Discharge Requirements for Discharges from Irrigated Lands"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for using the TNC Dataset"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Nature Conservancy"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "National Field Manual for the Collection of Water Quality Data"
+    ],
+    "publisher": [
+      "U.S. Geological Survey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Measuring Water Levels by Use of an Electric Tape"
+    ],
+    "publisher": [
+      "U.S. Geological Survey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Geohydrologic Framework Model: Section Locations and Sections"
+    ],
+    "publisher": [
+      "U.S. Geological Survey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "literal": "USGS. 2020b."
+      }
+    ],
+    "title": [
+      "The National Map, Data Download and Visualization Services. NHDPlus High Resolution Data Model v1.0. Provided by the U.S"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/media/files/nhdplus-high-resolution-data-model-v10."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "San Antonio Creek Water Availability"
+    ],
+    "note": [
+      "U.S. Geological Survey (USGS). Available at",
+      "Accessed May 3, 2021."
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/san-antonio-creek/san-antonio-creek-water-quality.html."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.I.P.C."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Arundo Donax Distribution and Impact Report"
+    ],
+    "publisher": [
+      "California Invasive Plant Council"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Monitoring Networks and Identification of Data Gaps Best Management Practices"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "The Final State Water Project Delivery Capability"
+    ],
+    "genre": [
+      "Report 2019,"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "I.S.U."
+      }
+    ],
+    "date": [
+      "2012",
+      "2012-01"
+    ],
+    "title": [
+      "Rainwater Catchment from a High Tunnel for Irrigation Use"
+    ],
+    "publisher": [
+      "Iowa State University Cooperative Extension"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Update of the Integrated Regional Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-04-01"
+    ],
+    "title": [
+      "Agricultural Commissioner, Weights and Measures Department"
+    ],
+    "note": [
+      "Retrieved January 22, 2021, from Santa Barbara County:"
+    ],
+    "url": [
+      "https://cosantabarbara.app.box.com/s/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.Y.R.W.C.D."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Groundwater Production Information and Instructions Pamphlet"
+    ],
+    "publisher": [
+      "Santa Ynez River Water Conservation District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Nature Conservancy"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "T.W.R.I."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Potential Water Savings in Irrigated Agriculture in the Lower Rio Grande Basin of Texas"
+    ],
+    "publisher": [
+      "Texas Water Resources Institute"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.A.F."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Consistency Determination for the Vandenberg Dunes Golf Courses Project, U.S"
+    ],
+    "publisher": [
+      "Department of the Air Force"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Implementation Grants Proposal Solicitation Package. Prepared by the California Natural Resources Agency Department of Water Resources Division of Regional Assistance (DWR"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 19, 2021."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Work-With-Us/Grants-And-Loans/Sustainable-Groundwater/Files/Prop-68_psp_final_2020_ay20.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Froend",
+        "given": "R."
+      },
+      {
+        "family": "Sommer",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Phreatophytic vegetation response to climatic and abstraction-induced groundwater drawdown: Examples of long-term spatial and temporal variability in community response"
+    ],
+    "volume": [
+      "36"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecological Engineering"
+    ],
+    "issue": [
+      "1191"
+    ]
+  },
+  {
+    "title": [
+      "The Nature Conservancy (TNC",
+      "Identifying GDEs Under SGMA. Best Practices for using the NC Dataset"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "E.",
+        "given": "Naumburg"
+      },
+      {
+        "family": "R.",
+        "given": "Mata-Gonzalez"
+      },
+      {
+        "family": "R.G.",
+        "given": "Hunter"
+      },
+      {
+        "family": "T.",
+        "given": "McLendon"
+      },
+      {
+        "family": "D.W",
+        "given": "Martin"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Phreatophytic vegetation and groundwater fluctuations: a review of current research and application of ecosystem response modeling with an emphasis on great basin vegetation"
+    ],
+    "volume": [
+      "35"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environment Management"
+    ],
+    "issue": [
+      "6"
+    ],
+    "pages": [
+      "726–40"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "United States"
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Information for Planning and Consultation"
+    ],
+    "note": [
+      "Accessed: October 13, 2021. Available at:"
+    ],
+    "url": [
+      "https://ecos.fws.gov/ipac/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "United States Geologic"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "San Antonio Creek Water Availability"
+    ],
+    "note": [
+      "Accessed: October 13, 2021. Available at:"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/san-antonio-creek/sanantonio-creek-surface-water.html"
+    ],
+    "type": null
+  },
+  {
+    "editor": [
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Jones",
+        "given": "D.R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Land subsidence in the United States: U.S"
+    ],
+    "volume": [
+      "1182"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/circ/circ1182/#pdf)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "October 26"
+    ],
+    "title": [
+      "DRAFT San Antonio Creek Valley Basin Groundwater Sustainability Plan, prepared for San Antonio Basin Groundwater Sustainability Agency"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hoffmann",
+        "given": "Jörn"
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Wilson",
+        "given": "Alicia M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "MODFLOW-2000 Ground-Water Model—User Guide to the Subsidence and Aquifer-System Compaction (SUB) Package, U.S"
+    ],
+    "publisher": [
+      "Geological Survey Ground-Water Resources Program"
+    ],
+    "genre": [
+      "Open-File Report 03-233."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Holtz",
+        "given": "R.D."
+      },
+      {
+        "family": "Kovacs",
+        "given": "W.D."
+      },
+      {
+        "family": "Sheahan",
+        "given": "T.C."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "An Introduction to Geotechnical Engineering"
+    ],
+    "editor": [
+      {
+        "given": "Second"
+      }
+    ],
+    "container-title": [
+      "Pearson Education Inc"
+    ],
+    "location": [
+      "Upper Saddle River, NJ"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Lowe",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Subsidence in Sedimentary Basins Due to Groundwater Withdrawal for Geothermal Energy Development"
+    ],
+    "volume": [
+      "601"
+    ],
+    "url": [
+      "https://ugspub.nr.utah.gov/publications/open_file_reports/OFR-601.pdf)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Utah Geological Survey Open-File Report"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Guidebook to Studies of Land Subsidence Due to Ground-Water Withdrawal (https://wwwrcamnl.wr.usgs.gov/rgws/Unesco/), prepared for the International Hydrological Programme"
+    ],
+    "genre": [
+      "Working Group 8.4.,"
+    ],
+    "publisher": [
+      "United Nations Educational, Scientific and Cultural Organization (UNESCO"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Areas of Land Subsidence in California"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/land_subsidence/california-subsidence-areas.html,"
+    ],
+    "note": [
+      "accessed February 23."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "No",
+        "given": "Filing"
+      }
+    ],
+    "title": [
+      "COMPANY Filipponi and Thompson Drilling"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Permanent Datum: Ground Level Elev.: Ft"
+    ],
+    "location": [
+      "Elevs"
+    ],
+    "publisher": [
+      "K.B. Ft"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Log Measured From: Ground Level 0 Ft"
+    ],
+    "note": [
+      ", Drilling Measured From: Kelly Bushing G.L. Ft."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Perm. Datum D.F. Ft"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Hutchinson"
+      },
+      {
+        "family": "Muir",
+        "given": "K.S."
+      }
+    ],
+    "date": [
+      "1980",
+      "1964"
+    ],
+    "title": [
+      "References"
+    ],
+    "publisher": [
+      "Geology and Ground Water of San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hutchinson",
+        "given": "C.B."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Appraisal of Ground-Water Resources in the San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California , August"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Development and Calibration of a Two-Dimensional Digital Model for the Analysis of the Ground-Water Flow System in the San Antonio Creek"
+    ],
+    "location": [
+      "Valley, Santa Barbara County, California , August"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Driscoll",
+        "given": "F.G."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Groundwater and Wells, Second Edition, A comprehensive study of groundwater and the technologies used to locate, extract"
+    ],
+    "note": [
+      "treat, and protect this resource ."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Baseflow Discharge to Barka Slough in Acre-Feet per Year (AFY) Transmissivity Calculation from Alluvial Pumping Data"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hutchinson",
+        "given": "C.B."
+      },
+      {
+        "family": "August. Muir",
+        "given": "K.S."
+      }
+    ],
+    "date": [
+      "1980",
+      "1964"
+    ],
+    "title": [
+      "Appraisal of Ground-Water Resources in the San Antonio Creek Valley"
+    ],
+    "location": [
+      "Santa Barbara County, California",
+      "Santa Barbara County, California"
+    ],
+    "publisher": [
+      "Geology and Ground Water of San Antonio Creek Valley"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Driscoll",
+        "given": "F.G."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Groundwater and Wells, Second Edition, A comprehensive study of groundwater and the technologies used to locate, extract, treat, and protect this resource"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Vertical Flux Groundwater Discharge to Barka Slough in Acre-Feet per Year (AFY) Hydraulic Gradient Calculation from Nested Wells 16C2 and 16C4"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Alley",
+        "given": "W.M."
+      },
+      {
+        "family": "Reilly",
+        "given": "T.E."
+      },
+      {
+        "family": "Franke",
+        "given": "O.L."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Sustainability of ground-water resources"
+    ],
+    "container-title": [
+      "US Geological Survey Circular 1186"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dietsch",
+        "given": "B.J."
+      },
+      {
+        "family": "Wehmeyer",
+        "given": "L.L."
+      }
+    ],
+    "date": [
+      "2012",
+      "2012"
+    ],
+    "title": [
+      "Simulation of streamflow, evapotranspiration, and groundwater recharge in the middle Nueces River watershed, south Texas, 1961–2008: U.S"
+    ],
+    "pages": [
+      "37"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ehtiat",
+        "given": "M."
+      },
+      {
+        "family": "Mousavi",
+        "given": "S.Jamshid"
+      },
+      {
+        "family": "Vaghefi",
+        "given": "Saeed A."
+      },
+      {
+        "family": "Ghaheri",
+        "given": "Abbas"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Analysis of recharge conceptualization in inverse groundwater modeling"
+    ],
+    "volume": [
+      "61"
+    ],
+    "pages": [
+      "2789–280"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrological Sciences Journal"
+    ],
+    "issue": [
+      "15"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Flint",
+        "given": "A.L."
+      },
+      {
+        "family": "Stern",
+        "given": "M.A."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "The basin characterization model—A regional water balance software package: U.S"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "85 ,"
+    ],
+    "url": [
+      "https://doi.org/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "L.B.G.-Guyton"
+      },
+      {
+        "family": "Consultants",
+        "given": "Aqua Terra"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "HSPF recharge models for the San Antonio Segment of the Balcones Fault Zone Edwards Aquifer"
+    ],
+    "note": [
+      "Prepared for the Edwards Aquifer Authority"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sidler",
+        "given": "R."
+      },
+      {
+        "family": "Wang",
+        "given": "X."
+      },
+      {
+        "family": "Zhang",
+        "given": "Z.P."
+      }
+    ],
+    "date": [
+      "2003",
+      "1999"
+    ],
+    "title": [
+      "Kriging and Conditional Geostatistical Simulation Based on Scale-Invariant Covariance Models, Institute Of Geophysics Department Of Earth Science",
+      "A comparison of conditional simulation, kriging and trend surface analysis for soil heavy metal pollution pattern analysis"
+    ],
+    "publisher": [
+      "Swiss Federal Institute of Technology, Zurich"
+    ],
+    "pages": [
+      "84",
+      "73–89,"
+    ],
+    "volume": [
+      "34"
+    ],
+    "doi": [
+      "10.1080/10934529909376824"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Environmental Science and Health, Part A"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "volume": [
+      "14"
+    ],
+    "pages": [
+      "–12,400 –25,100"
+    ],
+    "issue": [
+      "4"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "43,100 18,000"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "volume": [
+      "9",
+      "0 10 2,300 1 3,600 190 3,230 11,600 110 15,100 6,600 1,300 0 23,000"
+    ],
+    "pages": [
+      "200 500 600",
+      "–19,400 –1,400"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "400 600 1,400 0 10 2,400 1 4,800 190 3,370 12,000 110 15,700 6,500 1,100 0 23,300 –18,500 –19,900"
+    ],
+    "issue": [
+      "4"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "volume": [
+      "15"
+    ],
+    "pages": [
+      "–6,200 –26,100"
+    ],
+    "issue": [
+      "9"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "11"
+    ],
+    "pages": [
+      "700 800 2,200 0 10 2,500 1 6,200 210 3,140 12,700 120 16,200 6,500 1,000 0 23,700 –17,500 –43,600"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "15"
+    ],
+    "pages": [
+      "210 3,250 13,000 120 16,600 6,500 1,000 0 24,100 –16,200 –59,800"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "8"
+    ],
+    "pages": [
+      "10 500 200 0 10 2,600 1 3,300 220 3,080 13,200 130 16,600 6,500 800 0 23,900 –20,600 –80,400"
+    ],
+    "issue": [
+      "2"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "8"
+    ],
+    "pages": [
+      "20 500 200 0 10 2,700 1 3,400 220 3,410 13,400 130 17,200 6,500 600 0 24,300 –20,900 –101,300"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "16"
+    ],
+    "pages": [
+      "230 3,240 13,600 130 17,200 6,400 4,500 0 28,100 –18,100 –119,400"
+    ],
+    "issue": [
+      "5"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "230 3,240 13,900 130 17,500 6,600 4,000 0 28,100 –2,900 –122,300"
+    ],
+    "issue": [
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "230 2,840 14,100 140 17,300 6,600 3,300 0 27,200 10,500 –111,800"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "13"
+    ],
+    "pages": [
+      "230 2,860 14,300 140 17,500 6,500 1,100 0 25,100 –18,700 –130,500"
+    ],
+    "issue": [
+      "4"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "29"
+    ],
+    "pages": [
+      "240 2,690 14,600 140 17,700 6,500 1,800 0 26,000 28,100 –102,400"
+    ],
+    "issue": [
+      "2"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "15"
+    ],
+    "pages": [
+      "–16,700 –119,100"
+    ],
+    "issue": [
+      "5"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "13"
+    ],
+    "pages": [
+      "–13,100 –132,200"
+    ],
+    "publisher": [
+      "Historical Water Budget"
+    ],
+    "issue": [
+      "2"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "260 1,130 16,200 140 17,700 6,400 300 0 24,400 36,500 –95,700"
+    ],
+    "issue": [
+      "2"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "16"
+    ],
+    "pages": [
+      "300 410 16,900 140 17,800 6,300 1,600 0 25,700 –6,700 –102,400"
+    ],
+    "issue": [
+      "2"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "320 840 17,700 150 19,000 6,600 4,500 0 30,100 –9,200 –111,600"
+    ],
+    "issue": [
+      "5"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "310 640 18,400 150 19,500 6,500 4,800 0 30,800 –4,800 –116,400"
+    ],
+    "issue": [
+      "3"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "volume": [
+      "7"
+    ],
+    "pages": [
+      "20 500 400 0 20 3,800 1 4,700 340 460 19,100 150 20,100 6,500 1,200 0 27,800 –23,100 –139,500"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "volume": [
+      "14"
+    ],
+    "pages": [
+      "320 410 19,800 150 20,700 6,500 1,200 0 28,400 –18,700 –158,200"
+    ],
+    "issue": [
+      "8"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "370 460 20,500 150 21,500 6,600 900 0 29,000 –20,600 –178,800"
+    ],
+    "issue": [
+      "4"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "28"
+    ],
+    "pages": [
+      "350 430 21,200 150 22,100 6,500 5,100 0 33,700 7,400 –171,400"
+    ],
+    "issue": [
+      "3"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "350 340 21,900 150 22,700 6,500 4,400 0 33,600 –15,000 –186,400"
+    ],
+    "issue": [
+      "3"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "300 100 0 20 4,400 1 4,800 360 340 21,900 150 22,800 6,500 400 0 29,700 –24,900 –211,300"
+    ],
+    "issue": [
+      "3"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "–16,000 –227,300"
+    ],
+    "issue": [
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "200 700 800 0 20 4,400 1 6,100 350 1,420 22,000 160 23,900 6,500 1,100 0 31,500 –25,400 –252,700"
+    ],
+    "issue": [
+      "5"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "–11,900 –264,600"
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "21"
+    ],
+    "pages": [
+      "300 590 22,000 160 23,100 6,400 700 0 30,200 16,700 –247,900"
+    ],
+    "issue": [
+      "7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "310 300 22,000 160 22,800 6,500 1,100 0 30,400 –23,400 –271,300"
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "100 400 300 0 20 4,400 1 5,200 320 430 22,000 160 22,900 6,600 400 0 29,900 –24,700 –296,000"
+    ],
+    "issue": [
+      "3"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "10 400 200 0 20 4,400 1 5,000 320 1,800 22,000 160 24,300 6,600 400 0 31,300 –26,300 –322,300"
+    ],
+    "issue": [
+      "2"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "volume": [
+      "7"
+    ],
+    "pages": [
+      "10 400 200 0 20 4,400 1 5,000 250 1,720 22,000 160 24,100 6,700 600 0 31,400 –26,400 –348,700"
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Inorganic Aluminum Erosion of natural deposits; residue from some surface water treatment processes Antimony Discharge from petroleum refineries; fire retardants; ceramics; electronics; solder Arsenic Erosion of natural deposits; runoff from orchards; glass and electronics production wastes Asbestos Internal corrosion of asbestos cement water mains; erosion of natural deposits Barium Discharges of oil drilling wastes and from metal refineries; erosion of natural deposits"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Beryllium Discharge from metal refineries, coal-burning factories, and electrical, aerospace, and defense industries Cadmium Internal corrosion of galvanized pipes; erosion of natural deposits; discharge from electroplating and industrial chemical factories, and metal refineries; runoff from waste batteries and paints Chromium Discharge from steel and pulp mills and chrome plating; erosion of natural deposits Copper Internal corrosion of household plumbing systems; erosion of natural deposits; leaching from wood preservatives Cyanide Discharge from steel/metal, plastic and fertilizer factories Fluoride Erosion of natural deposits"
+    ],
+    "note": [
+      "water additive that promotes strong teeth; discharge from fertilizer and aluminum factories Lead Internal corrosion of household water plumbing systems; discharges from industrial manufacturers; erosion of natural deposits"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "a"
+      }
+    ],
+    "title": [
+      "Monitoring and recordkeeping necessary to submit complete and accurate reports, including the ACF, Total Nitrogen Applied (TNA) report, and INMP Summary report. b. Planning and management practice implementation and assessment that results in compliance with the fertilizer nitrogen application limits in Table C.1-2 and the nitrogen discharge targets and limits in Table C.1-3. c. Descriptions of all irrigation, nutrient"
+    ],
+    "note": [
+      "and salinity management practices implemented and assessed on the ranch. d. When INMP certification is required, e.g., as a follow-up action or as a consequence for not meeting the quantifiable milestones and time schedules below, the INMP certification shall include the following:"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "21."
+    ],
+    "title": [
+      "Dischargers who apply more fertilizer nitrogen (AFER) than the fertilizer nitrogen application limits in Table C.1-2 to any specific crop and who are able to demonstrate compliance with the final nitrogen discharge limits"
+    ],
+    "note": [
+      "as shown in Table C.1-3, are exempt from the fertilizer nitrogen application limit."
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Proposed General Waste Discharge -27- Order No. R3-2021-0040"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Requirements for Discharges from April XX, 2021 Irrigated Lands"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "25."
+    ],
+    "title": [
+      "The initial 2027 nitrogen discharge limits, as shown in Table C.1-3 will be reevaluated based on Discharger reported nitrogen applied and removed data, new science, and management practice implementation and assessment before becoming effective"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "29."
+    ],
+    "title": [
+      "The INMP Summary report contains the same nitrogen application information as the TNA report, plus additional information related to nitrogen removed and irrigation management"
+    ],
+    "container-title": [
+      "Therefore, the INMP Summary report satisfies the Proposed General Waste Discharge -29"
+    ],
+    "note": [
+      "Order No. R3-2021-0040"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Requirements for Discharges from April XX, 2021 Irrigated Lands"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Part 2, Section C.2. Third-Party Alternative Compliance Pathway for Groundwater Protection"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "a"
+      }
+    ],
+    "title": [
+      "Are not subject to fertilizer nitrogen application limits in Table C.1-2, which are enforceable by the Central Coast Water Board. b. Are not subject to nitrogen discharge limits in Table C.1-3, which are enforceable by the Central Coast Water Board. c. Are subject to targets, which if exceeded result in consequences outlined in this Part 2, Section C.2. d. Are not subject to ranch-level groundwater discharge monitoring and reporting"
+    ],
+    "note": [
+      "e. Are generally provided more time to achieve fertilizer nitrogen application targets and nitrogen discharge targets, relative to non-participating dischargers."
+    ],
+    "type": null
+  }
+]

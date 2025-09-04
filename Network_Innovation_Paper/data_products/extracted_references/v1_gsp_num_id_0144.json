@@ -1,0 +1,1073 @@
+[
+  {
+    "date": [
+      "2019-04-01"
+    ],
+    "publisher": [
+      "Project Kickoff Meeting"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "2020-07-30"
+    ],
+    "volume": [
+
+    ],
+    "author": [
+      {
+        "literal": "-"
+      }
+    ],
+    "title": [
+      "Building a shared vision for a \"sustainable Arlington Basin"
+    ],
+    "issue": [
+      "op No. 1"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020-08-27"
+    ],
+    "note": [
+      "Workshop No. 2 - Getting to sustainability"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021-04-07"
+    ],
+    "note": [
+      "Virtual Workshop No. 3 - Review of draft sustainability goals"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021-11-23"
+    ],
+    "note": [
+      "Virtual Workshop No. 4 - Project and management actions 2.6 References (§354.4(b)"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.B.S.A."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Recomputation of Ambient Water Quality in the Santa Ana River Watershed for the Period 1996 to 2015"
+    ],
+    "container-title": [
+      "Prepared for the Santa Ana Watershed Project Authority Bain Monitoring Program Task Force"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources",
+      "California’s Ground Water"
+    ],
+    "date": [
+      "2003"
+    ],
+    "genre": [
+      "Bulletin 118-03."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Eckis",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1934"
+    ],
+    "title": [
+      "South Coastal Basin Investigation. California Department of Public Works, Division of Water Resources"
+    ],
+    "volume": [
+      "45"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Jones"
+      },
+      {
+        "given": "Stokes"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "City of Riverside Public Utilities Department Recycled Water Program Draft Program Environmental Impact Report"
+    ],
+    "publisher": [
+      "Prepared for City of Riverside Public Utilities Department. Prepared by Jones and Stokes"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Kennedy"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Western Municipal Water District Integrated Regional Water Management Plan 2008 Update"
+    ],
+    "publisher": [
+      "Prepared for Western Municipal Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Metropolitan (Metropolitan Water District of Southern California",
+      "Integrated Water Resources Plan 2004 Update"
+    ],
+    "date": [
+      "2004"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Report"
+    ],
+    "issue": [
+      "1236"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Integrated Water Resources Plan 2015 Update"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Report"
+    ],
+    "issue": [
+      "1518"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Morton",
+        "given": "D.M."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Preliminary Digital Geological Map of the 30’x60’ Santa Ana Quadrangle, Southern California, Version 2.0"
+    ],
+    "genre": [
+      "USGS Open File Report 99-172."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Orange"
+      }
+    ],
+    "title": [
+      "City of Chino et al.). 1969"
+    ],
+    "volume": [
+
+    ],
+    "date": [
+      "April 17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "County of Orange Superior Court"
+    ],
+    "issue": [
+      "117628"
+    ]
+  },
+  {
+    "title": [
+      "RWQCB (Santa Ana Regional Water Quality Control Board",
+      "The Water Quality Control Plan for the Santa Ana Basin"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "SCAG (Southern California Association of Governments",
+      "Land use shapefiles"
+    ],
+    "date": [
+      "2005"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Western (Western Municipal Water District of Riverside County v. East San Bernardino County Water District et al.). 1969"
+    ],
+    "volume": [
+
+    ],
+    "date": [
+      "April 17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "County of Riverside Superior Court"
+    ],
+    "issue": [
+      "78426"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Wildermuth"
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Feasibility Study for the Expansion of the Arlington Desalter System, Task 1 Report: Arlington Basin Groundwater Flow Model"
+    ],
+    "note": [
+      "Prepared for Western Municipal Water District."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Wildermuth"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Recomputation of Ambient Water Quality in the Santa Ana River Watershed for the Period 1990 to 2009"
+    ],
+    "container-title": [
+      "Final Technical Memorandum. Prepared for Santa Ana Watershed Project Authority Basin Monitoring Program Task Force"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.R.I.M.E."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Riverside-Arlington Groundwater Flow Model (RAGFM) Model Development and Scenarios"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.R.I.M.E."
+      },
+      {
+        "given": "Western"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "publisher": [
+      "Arlington Basin Groundwater Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "3.5"
+    ],
+    "author": [
+      {
+        "literal": "References (§354.4(b)) Bordelon, Mark."
+      }
+    ],
+    "date": [
+      "2012",
+      "March"
+    ],
+    "title": [
+      "Geologic Overview of Southern California Mountain Ranges"
+    ],
+    "url": [
+      "https://olliuci.files.wordpress.com/2012/03/uci-talk-geology-of-socal-mountains-3-19-12.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Powerpoint"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.G.S."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "California Geomorphic Provinces"
+    ],
+    "volume": [
+      "36"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Conservation. Note"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.G.S."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "CGS Special Report 217 (Revised). Geologic Compilation of Quaternary Surficial Deposits in"
+    ],
+    "location": [
+      "Southern California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater Management, Monitoring, and Mitigation Plan. Code of Federal Regulations, Title 21"
+    ],
+    "volume": [
+      "110"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Chapter"
+    ],
+    "issue": [
+      "a"
+    ]
+  },
+  {
+    "title": [
+      "CIMIS (California Irrigation Management Information System"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "44 U.C. Riverside."
+    ],
+    "url": [
+      "https://cimis.water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "DWR (State of California Department of Public Works, Division of Water Resources",
+      "South Coastal Basin Investigation – Geology and Ground Water Storage Capacity of Valley Fill"
+    ],
+    "date": [
+      "1934"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ],
+    "issue": [
+      "45"
+    ]
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources",
+      "California’s Ground Water"
+    ],
+    "date": [
+      "2003"
+    ],
+    "genre": [
+      "Bulletin 118-03."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dogrul",
+        "given": "E.C."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Soil Moisture Routing and Agricultural Demand Computation in IWFM Demand Calculator"
+    ],
+    "volume": [
+      "1"
+    ],
+    "publisher": [
+      "Hydrology Development Unit, Modeling Support Branch, Bay-Delta Office, California Department of Water Resources"
+    ],
+    "issue": [
+      "0)"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Eckis",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1934"
+    ],
+    "title": [
+      "South Coastal Basin Investigation. California Department of Public Works, Division of Water Resources"
+    ],
+    "volume": [
+      "45"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "EnviroStor"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Department of Toxic Substances Control. EnviroStor Database Results for Arlington Basin"
+    ],
+    "url": [
+      "http://www.envirostor.dtsc.ca.gov."
+    ],
+    "note": [
+      "Accessed September 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "EnviroStor"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Upper Santa Ana River Integrated Model"
+    ],
+    "note": [
+      "TM No. 3: Model Calibration. Draft. Prepared for San Bernardino Valley Municipal Water District, dated June 29."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "EnviroStor"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Upper Santa Ana River Integrated Model TM No. 4: Major Assumptions of Predictive Scenarios"
+    ],
+    "note": [
+      "Prepared for San Bernardino Valley Municipal Water District, dated December 14."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Draft"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "EnviroStor"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Upper Santa Ana River Integrated Model TM No. 5a: Predictive Scenario Results – Part 1"
+    ],
+    "note": [
+      "Draft. Prepared for San Bernardino Valley Municipal Water District, dated January 31."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "EnviroStor"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Upper Santa Ana River Integrated Model TM No. 5b: Predictive Scenario Results – Part 2"
+    ],
+    "note": [
+      "Draft. Prepared for San Bernardino Valley Municipal Water District, dated June 28."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "GeoTracker"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California State Water Control Board. GeoTracker Database results for Arlington Basin"
+    ],
+    "url": [
+      "http://www.geotracker.swrcb.ca.gov/map."
+    ],
+    "note": [
+      "Accessed September 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Johnson",
+        "given": "A.I."
+      }
+    ],
+    "date": [
+      "1967"
+    ],
+    "title": [
+      "Specific Yield – Compilation of Specific Yields for Various Materials"
+    ],
+    "container-title": [
+      "United States Geological Survey Water‐Supply Paper 1662‐D. U.S. Department of the Interior, U.S. Geological Survey, in cooperation with the California Department of Water Resources, United States Government Printing Office"
+    ],
+    "location": [
+      "Washington"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Jones"
+      },
+      {
+        "given": "Stokes"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "City of Riverside Public Utilities Department Recycled Water Program Draft Program Environmental Impact Report"
+    ],
+    "publisher": [
+      "Prepared for City of Riverside Public Utilities Department. Prepared by Jones and Stokes"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Kennedy"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Western Municipal Water District Integrated Regional Water Management Plan 2008 Update"
+    ],
+    "publisher": [
+      "Prepared for Western Municipal Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Larsen",
+        "given": "E.S."
+      },
+      {
+        "family": "Gottfried",
+        "given": "D.J."
+      },
+      {
+        "family": "Jaffe",
+        "given": "H.W."
+      },
+      {
+        "family": "Waring",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1958",
+      "1070"
+    ],
+    "title": [
+      "Lead-Alpha Ages of the Mesozoic Batholiths of Western North America"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "United States Geological Survey. Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Land Subsidence from Ground-Water Pumping"
+    ],
+    "container-title": [
+      "U.S. Geological Survey"
+    ],
+    "url": [
+      "https://geochange.er.usgs.gov/sw/changes/anthropogenic/subside/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Metropolitan (Metropolitan Water District of Southern California",
+      "Integrated Water Resources Plan 2004 Update"
+    ],
+    "date": [
+      "2004"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Report"
+    ],
+    "issue": [
+      "1236"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Integrated Water Resources Plan 2015 Update"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Report"
+    ],
+    "issue": [
+      "1518"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Morton",
+        "given": "D.M."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Preliminary Digital Geological Map of the 30’x60’ Santa Ana Quadrangle, Southern California, Version 2.0"
+    ],
+    "genre": [
+      "USGS Open File Report 99-172."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Morton",
+        "given": "D.M."
+      },
+      {
+        "family": "Miller",
+        "given": "F.K."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Geologic map of the San Bernardino and Santa Ana 30’x60’ quadrangles, California"
+    ],
+    "container-title": [
+      "USGS Open File Report OF-2006-1217"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Orange"
+      }
+    ],
+    "title": [
+      "City of Chino et al.). 1969"
+    ],
+    "volume": [
+
+    ],
+    "date": [
+      "April 17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "County of Orange Superior Court"
+    ],
+    "issue": [
+      "117628"
+    ]
+  },
+  {
+    "title": [
+      "RWQCB (Santa Ana Regional Water Quality Control Board",
+      "The Water Quality Control Plan for the Santa Ana Basin"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "SCAG (Southern California Association of Governments",
+      "Land use shapefiles"
+    ],
+    "date": [
+      "2005"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Western (Western Municipal Water District of Riverside County v. East San Bernardino County Water District et al.). 1969"
+    ],
+    "volume": [
+
+    ],
+    "date": [
+      "April 17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "County of Riverside Superior Court"
+    ],
+    "issue": [
+      "78426"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Wildermuth"
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Feasibility Study for the Expansion of the Arlington Desalter System, Task 1 Report: Arlington Basin Groundwater Flow Model"
+    ],
+    "note": [
+      "Prepared for Western Municipal Water District."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.R.I.M.E."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Riverside-Arlington Groundwater Flow Model (RAGFM) Model Development and Scenarios"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.R.I.M.E."
+      },
+      {
+        "given": "Western"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "publisher": [
+      "Arlington Basin Groundwater Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "WRCC (Western Regional Climate Center",
+      "Riverside Citrus Experiment Station"
+    ],
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://wrcc.dri.edu/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.B.S.A."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Recomputation of Ambient Water Quality in the Santa Ana River Watershed for the Period 1996 to 2015"
+    ],
+    "container-title": [
+      "Prepared for the Santa Ana Watershed Protection Authority Basin Management Program Task Force under contract to CDM Smith"
+    ],
+    "note": [
+      "dated September 22."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Resource Guide: DWR-Provided Climate Change Data and Guidance for Use During Groundwater Sustainability Plan Development"
+    ],
+    "note": [
+      "Dated July."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Eckis",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1934"
+    ],
+    "title": [
+      "South Coastal Basin Investigation. California Department of Public Works, Division of Water Resources"
+    ],
+    "volume": [
+      "45"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "G.E.O.S.C.I.E.N.C.E."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Upper Santa Ana River Integrated Model –Summary Report"
+    ],
+    "note": [
+      "Prepared for San Bernardino Valley Municipal Water District, dated September."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "RWQCB (Santa Ana Regional Water Quality Control Board",
+      "The Water Quality Control Plan for the Santa Ana Basin"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.C.R."
+      }
+    ],
+    "title": [
+      "Title 22, Social Security, Chapter 15, Domestic Water Quality and Monitoring"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "SAWPA (Santa Ana Watershed Project Authority",
+      "Recomputation of Ambient Water Quality for the Period 1999"
+    ],
+    "date": [
+      "2020",
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "ArlingtonMunicipal Basin GSPWater | wmwd.com/ArlingtonBasinGSP District | wmwd.com Target Stakeholder Audiences ECONOMIC DEVELOPMENT"
+    ],
+    "container-title": [
+      "LAND USE. Jurupa Community Services District; Rubidoux Community Riverside County Planning Department; Riverside Local Services District Agency Formation Commission"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": "HUMAN RIGHTS TO WATER. URBAN / AGRICULTURE WATER USERS. Pechanga Cultural Resources City of Corona; City of Norco; City of Rialto; City of Riverside Public Utilities; Elsinore Valley Municipal Water District; Elsinore Valley Municipal Water District; Elsinore Valley Municipal Water INTEGRATED WATER MANAGEMENT."
+      }
+    ],
+    "title": [
+      "Bureau of Reclamation; District; Home Gardens County Water District; Inland Empire California Department of Water Resources; Chino Basin Watermaster; Utilities Agency; Inland Empire Utilities Agency; Riverside Riverside County Flood Control and Water Conservation District"
+    ],
+    "location": [
+      "Highland Water Company; San Bernardino County; San Bernardino Santa",
+      "Santa"
+    ],
+    "container-title": [
+      "Ana Regional Water Quality Control Board Valley Municipal Water District"
+    ],
+    "note": [
+      "Ana River Water Co.; Temescal Valley Water District; West Valley Water District"
+    ],
+    "type": "chapter"
+  }
+]
