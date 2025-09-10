@@ -1,0 +1,52 @@
+---
+title: "testy testy"
+author: 
+   - name: Elise Zufall
+   - affiliation: '1'
+   
+   - name: Tyler Scott
+   - affiliation: '1'
+
+affiliations:
+   - index: 1
+   - name: University of California, Davis Department of Environmental Science and Policy
+
+date: 23 October 2024
+bibliography: paper.bib
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+
+• Network extraction: textnet_extract(), which generates a graph database from parsed text based upon tags and dependency relations
+
+• Disambiguation: tools for cleaning, recoding, and aggregating node and edge attributes, such as the find_acronyms() function, which can be paired with the disambiguation() function to identify acronyms in the text and replace them with the full entity name.
+
+• Exploration: the export_to_network() function for exporting the graph database to igraph and network objects, top_features() for viewing node and edge attributes, and combine_networks() for aggregating multiple document-based graphs based on common nodes.
+
+## Example 
+ document, along with verb attributes imported from *VerbNet* [@kipper-schuler_verbnet_2006].
+ 
+ ackage [@pedersen_ggraph_2024] 
+ 
+ h or network object from the textnet_extract output is included in the package as the function export_to_network(). It returns a list that contains the igraph or network itself as the first element, and an attribute table as the second element. Functions from the *sna* [@butts_sna_2024], *igraph* [@csardi_igraph_2024], and *network* packages [@butts_network_2023] are invoked to create a network attribute table of common network-level attributes; see package documen
+
+- doc_id, a unique ID for each page
+- sentence_id, a unique ID for each sentence
+- token_id, a unique ID for each token
+- token, the token, generally a word, represented as a string
+- lemma, the canonical or dictionary form of the token
+- pos, a code referring to the token's part of speech, defined according to [Universal Dependencies](http://universaldependencies.org/u/pos/) [@nivre_universal_2017].
+- tag, a code referring to the token's part of speech, according to [Penn Treebank](https://catalog.ldc.upenn.edu/docs/LDC99T42/) [@marcus_treebank-3_1999]. 
+- head_token_id, a numeric ID referring to the token_id of the head token of the current row's token
+- dep_rel, the dependency label according to [ClearNLP Dependency](https://github.com/clir/clearnlp-guidelines/blob/master/md/specifications/dependency_labels.md) labels [@choi_clearnlp_2024]
+- entity, the entity type category defined by [OntoNotes 5.0](https://catalog.ldc.upenn.edu/docs/LDC2013T19/OntoNotes-Release-5.0.pdf) [@weischedel_ontonotes_2012]. This is represented as as string, ending in "_B" if it is the first token in the entity or "_I" otherwise).
+
+as the output conforms to spaCy tagging standards: Universal Dependencies tags for the "pos" part-of-speech column [@nivre_universal_2017], and Penn Treebank tags for the "tags" column [@marcus_treebank-3_1999]. The textnet_extract function expects the parsed table to follow specific conventions. First, a row must be included for each token. The column names expected by textnet_extract are:
+
+## References

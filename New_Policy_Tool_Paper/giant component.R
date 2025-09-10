@@ -7,6 +7,7 @@
 
 # Library
 library(ggplot2)
+library(plotly)
 library(corrplot)
 library(igraph)
 library(statnet)
@@ -24,9 +25,9 @@ library(lavaan)
 
 ############################## import the network #########################
 ################### isolated graph #########################
-file_paths <- list.files(path = "/Users/wendysong/Documents/Davis/PhD research/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-output_folder <- "/Users/wendysong/Documents/Davis/PhD research/network_policy/graphs/Giant component/"
+output_folder <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/graphs/giant_component"
 
 
 for (i in 1:length(file_paths)) {
@@ -117,9 +118,9 @@ for (i in 1:length(file_paths)) {
 #num_nodes, num_edges, avg_degree, avg_path_length, 
 #centralization, transitivity(local, global), modularity
 
-file_paths <- list.files(path = "/Users/wendysong/Documents/Davis/PhD research/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-output_folder_statistics <- "/Users/wendysong/Documents/Davis/PhD research/network_policy/"
+output_folder_statistics <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_statistics/"
 output_csv_path <- paste0(output_folder_statistics, "network_statistics_GC.csv")
 merged_dataset_path <- paste0(output_folder_statistics, "merged_dataset_GC.csv")
 
@@ -184,7 +185,8 @@ for (i in 1:length(file_paths)) {
   # Modularity (weighted)
   wtc <- cluster_walktrap(g, weights = E(g)$weight)
   modularity <- modularity(wtc)
-  
+ 
+
   # sum
   network_stats <- data.frame(
     gsp_id = gsp_id,
@@ -202,18 +204,69 @@ for (i in 1:length(file_paths)) {
   all_network_stats <- rbind(all_network_stats, network_stats)
 }
 
+
+## Core-Periphery fitting score
+
+CP_score_unweighted_all <- data.frame()
+for (i in 1:length(file_paths)) {
+   
+   file_name <- basename(file_paths[i])
+   graph_title <- paste("Graph", gsub(".RDS", "", file_name))
+
+   file_name <- basename(file_paths[i])
+   gsp_id <- as.numeric(stringr::str_extract(file_name, "\\d+"))
+   
+   data <- readRDS(file_paths[i])
+   nodes <- data$nodelist
+   edges <- data$edgelist
+   
+   # drop isolated node
+   edge_list_filtered <- edges[, c("source", "target")]
+   
+   nodelist_filtered <- nodes[, c("entity_name", "entity_type", "num_appearances"), drop = FALSE]
+   colnames(nodelist_filtered)[colnames(nodelist_filtered) == "entity_name"] <- "name"
+   
+   # non-isolated   
+   na_edges <- edge_list_filtered[is.na(edge_list_filtered$source) | is.na(edge_list_filtered$target), ]
+   edge_list_filtered <- na.omit(edge_list_filtered)
+   
+   all_nodes <- unique(c(edge_list_filtered$source, edge_list_filtered$target))
+   nodelist_filtered <- nodelist_filtered[nodelist_filtered$name %in% all_nodes, ]
+   
+   g <- graph_from_data_frame(d = edge_list_filtered, vertices = nodelist_filtered, directed = TRUE)
+   
+   components <- igraph::components(g, mode = "weak")
+   giant_component_id <- which.max(components$csize)
+   vertex_ids <- V(g)[components$membership == giant_component_id]
+   g <- igraph::induced_subgraph(g, vertex_ids)
+   
+
+   cp_fit <- core_periphery(g)
+   cp_fit_score <- cp_fit$corr
+   
+   CP_score_unweighted <- data.frame(
+      gsp_id = gsp_id,
+      cp_fit_score = cp_fit_score
+   )
+   
+   CP_score_unweighted_all <- rbind(CP_score_unweighted_all, CP_score_unweighted)
+}
+
+all_network_stats <- merge(all_network_stats, CP_score_unweighted_all, by = "gsp_id", all.x = TRUE)
+
+
 # Write the combined network statistics as CSV
 write.csv(all_network_stats, file = output_csv_path, row.names = FALSE, append = TRUE)
 
 
 # ------------------------ merge with policy instrument ----------------------------
-policy_data <- read.csv("/Users/wendysong/Documents/Davis/PhD research/policy_by_plan.csv")
+policy_data <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/policy_by_plan.csv")
 policy_data[, 2:6] <- lapply(policy_data[, 2:6], function(x) ifelse(x == 2, 1, ifelse(x == 1, 0.5, 0)))
 # ???????? consider trading as saperate, pending
 policy_data$policy_index <- rowSums(policy_data[, 2:6])
 policy_data$maybe_total <- rowSums(policy_data[, 2:6] == 0.5)
 
-network_statistics <- read.csv("/Users/wendysong/Documents/Davis/PhD research/network_policy/network_statistics_GC.csv") 
+network_statistics <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_statistics/network_statistics_GC.csv") 
 merged_dataset <- merge(network_statistics, policy_data, by = "gsp_id", all.x = TRUE)
 print(names(merged_dataset))       
 write.csv(merged_dataset, file = merged_dataset_path, row.names = FALSE, append = TRUE)
@@ -248,7 +301,22 @@ data <- data_meta %>%
     Efficiency.Incentives = ifelse(Efficiency.Incentives == 0.5, 0, Efficiency.Incentives)
   )
 
-
+# instrument_type
+data <- data %>%
+   mutate(
+      instrument_type = case_when(
+         (Allocations == 1 | Pumping.Restrictions == 1) & 
+            (Taxes.Fees == 1 | Efficiency.Incentives == 1) ~ 3,
+         (Allocations == 1 | Pumping.Restrictions == 1) ~ 1,
+         (Taxes.Fees == 1 | Efficiency.Incentives == 1) ~ 2,
+         TRUE ~ 0
+      ),
+      instrument_type = factor(
+         instrument_type,
+         levels = c(0, 1, 2, 3),
+         labels = c("None", "Regulatory", "Market", "Both")
+      )
+   )
 
 
 
@@ -282,7 +350,7 @@ ggplot(cor_melt, aes(x = Var1, y = Var2, fill = value)) +
 clustering_vars <- data %>%
   select(num_nodes, num_edges, avg_degree, 
          avg_path_length, degree_centralization, 
-         transitivity_global, transitivity_local, 
+         transitivity_global, 
          modularity)
 clustering_vars_scaled <- scale(clustering_vars)
 dist_matrix <- dist(clustering_vars_scaled)
@@ -301,7 +369,7 @@ sil_width <- sapply(2:10, function(k) {
 plot(2:10, sil_width, type = "b", xlab = "Number of Clusters", ylab = "Silhouette Width", main = "Silhouette Method")
 
 # selected #of cluster
-num_clusters <- 5 # try 3-5 clusters non-signifcant in regression
+num_clusters <-   # try 3-5 clusters non-signifcant in regression
 clusters <- cutree(hclust_result, k = num_clusters)
 data$cluster <- as.factor(clusters)
 cluster_summary <- data %>%
@@ -340,7 +408,7 @@ lapply(models, summary)
 # ------------------------- probably not, no significant -----------------------
 
 ###### ----------------- PCA
-pca_result <- prcomp(clustering_vars, scale = TRUE)
+pca_result <- prcomp(clustering_vars, scale = TRUE) 
 
 # Add PCA scores to the data
 data$PC1 <- pca_result$x[, 1]
@@ -349,9 +417,33 @@ data$PC3 <- pca_result$x[, 3]
 
 
 # 2D plot
-ggplot(data, aes(x = PC1, y = PC2, color = as.factor(cluster))) +
+ggplot(data, aes(x = PC1, y = PC2, color = as.factor(instrument_type))) +
   geom_point(size = 3) +
   labs(title = "Clusters in 2D PCA Space", x = "PC1", y = "PC2", color = "Cluster")
+
+# 3D plot
+fig <- plot_ly(
+   data = data,
+   x = ~PC1,
+   y = ~PC2,
+   z = ~PC3,
+   color = ~instrument_type, 
+   colors = "Set2",
+   type = "scatter3d",
+   mode = "markers",
+   marker = list(size = 4)
+)
+
+fig <- fig %>% layout(
+   title = "3D PCA Scatterplot for GC",
+   scene = list(
+      xaxis = list(title = "PC1"),
+      yaxis = list(title = "PC2"),
+      zaxis = list(title = "PC3")
+   )
+)
+
+fig
 
 # PCA Correlation
 pca_scores <- pca_result$x
@@ -418,8 +510,78 @@ summary(fit, fit.measures = TRUE, standardized = TRUE)
 
 
 
+## demo on CP fitting score using netUtils
+file_path <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts/0127.rds"
+demo <- readRDS(file_path)
+
+nodes <- demo$nodelist
+edges <- demo$edgelist
+
+edge_list_filtered <- edges[, c("source", "target")]
+
+nodelist_filtered <- nodes[, c("entity_name", "entity_type", "num_appearances"), drop = FALSE]
+colnames(nodelist_filtered)[colnames(nodelist_filtered) == "entity_name"] <- "name"
+
+# non-isolated   
+na_edges <- edge_list_filtered[is.na(edge_list_filtered$source) | is.na(edge_list_filtered$target), ]
+edge_list_filtered <- na.omit(edge_list_filtered)
+
+all_nodes <- unique(c(edge_list_filtered$source, edge_list_filtered$target))
+nodelist_filtered <- nodelist_filtered[nodelist_filtered$name %in% all_nodes, ]
+
+g <- graph_from_data_frame(d = edge_list_filtered, vertices = nodelist_filtered, directed = TRUE)
+
+components <- igraph::components(g, mode = "weak")
+giant_component_id <- which.max(components$csize)
+vertex_ids <- V(g)[components$membership == giant_component_id]
+g <- igraph::induced_subgraph(g, vertex_ids)
+
+cp_fit <- core_periphery(g)
+cp_fit$corr
+
+# visualization
+V(g)$core_periphery <- as.factor(cp_fit$vec)  # Core = 1, Periphery = 0
+V(g)$color <- ifelse(V(g)$core_periphery == 1, "red", "blue")
+plot(g, vertex.size = 5, vertex.label = NA,  
+     main = "Core-Periphery Network Structure", 
+     vertex.color = V(g)$color)
+
+plot(g, 
+     vertex.label = NA,          
+     vertex.color = V(g)$color,  
+     vertex.size = 3,    
+     vertex.frame.color = NA,  
+     edge.width = E(g)$weight,
+     edge.arrow.size = 0.05,     
+     edge.curved = 0.1,         
+     edge.color = "gray",       
+     edge.width = 0.5,           
+     main = graph_title) 
+
+legend("topleft", 
+       legend = c("Core", "Periphery"), 
+       col = c("red", "blue"),  
+       pch = 19,                
+       pt.cex = 1,              
+       cex = 0.8,
+       text.width = 0.5,
+       bty = "n")             
 
 
+# scatterplot cp_fit_score: non-isolated vs. GC
+data_nonisolated <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_statistics/network_statistics_nonisolated.csv")
+data_gc <- read.csv("New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_statistics/network_statistics_GC.csv")
+scatter_data <- data.frame(
+   cp_fit_nonisolated = data_nonisolated$cp_fit_score,
+   cp_fit_gc = data_gc$cp_fit_score
+)
 
-
-
+ggplot(scatter_data, aes(x = cp_fit_nonisolated, y = cp_fit_gc)) +
+   geom_point(color = "steelblue", size = 2) +
+   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray") +
+   labs(
+      title = "cp_fit_score: Non-Isolated vs GC",
+      x = "cp_fit_score (Non-Isolated)",
+      y = "cp_fit_score (GC)"
+   ) +
+   theme_minimal()
