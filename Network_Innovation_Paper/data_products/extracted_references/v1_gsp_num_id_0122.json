@@ -1,0 +1,4522 @@
+[
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "C 75,641 44,693 7,262 17,675 2,705 1,697 0 1,609 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "volume": [
+      "D 64,784 41,851 6,267 10,371 2,508 2,414 0 1,374 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "BN 61,476 40,921 5,522 8,547 2,590 2,824 0 1,072 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "W 83,170 50,954 7,538 15,999 2,982 4,931 0"
+    ],
+    "pages": [
+      "767 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "BN 70,841 45,975 6,331 11,346 3,207 3,403 0"
+    ],
+    "pages": [
+      "580 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "D 63,748 38,799 6,863 10,301 2,905 4,353 0"
+    ],
+    "pages": [
+      "527 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "C 53,557 34,190 4,146 9,322 2,386 3,286 0"
+    ],
+    "pages": [
+      "226 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "volume": [
+      "C 50,435 32,525 6,493 5,584 2,652 2,932 0"
+    ],
+    "pages": [
+      "248 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "BN 62,559 30,164 5,031 5,039 3,123 5,139"
+    ],
+    "pages": [
+      "4,455 300 9,308"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "W 72,638 35,054 7,497 3,436 3,238 5,795"
+    ],
+    "pages": [
+      "5,465 921 11,234"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "volume": [
+      "BN 68,576 30,084 6,101 4,318 3,898 4,638 8,954 2,892"
+    ],
+    "pages": [
+      "7,691"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 23, Division 2, Chapter 1.5, Subchapter 2 Groundwater Sustainability Plans"
+    ],
+    "date": [
+      "2016"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/document/california-code-of-regulationstitle-23-waters-division-2-department-of-water-resources-chapter-1-5-groundwater-managementsubchapter-2-groundwater-sustainability-plans/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "container-title": [
+      "2019a. 2019 Basin Prioritization"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "California Water Well Standards"
+    ],
+    "date": [
+      "1990"
+    ],
+    "note": [
+      "DWR Bulletin 74-90 (Supplement to Bulletin 74-81)."
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "DAC Mapping Tool"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/dacs/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Basin Prioritization"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Central Valley Regional Water Quality Control Board (CVRWQCB",
+      "Water Quality Control Plan for the Sacramento and San Joaquin Rivers"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/basin_plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Council",
+        "given": "Delta Stewardship"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "The Delta Plan"
+    ],
+    "url": [
+      "https://deltacouncil.ca.gov/pdf/delta-plan.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Farr",
+        "given": "Tom G."
+      },
+      {
+        "family": "Jones",
+        "given": "Cathleen E."
+      },
+      {
+        "family": "Liu",
+        "given": "Zhen"
+      }
+    ],
+    "title": [
+      "Jet Propulsion Laboratory, California Institute of Technology JPL"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Progress Report: Subsidence in the Central Valley, California. 2016."
+    ],
+    "url": [
+      "https://cawaterlibrary.net/wp-content/uploads/2017/05/JPL-subsidence-report-final-for-publicdec-2016.pdf"
+    ],
+    "type": "report"
+  },
+  {
+    "container-title": [
+      "Natural Communities Commonly Associated with Groundwater Dataset (NCCAG"
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "J.",
+        "given": "Howard"
+      },
+      {
+        "family": "T.",
+        "given": "Keeler-Wolf"
+      },
+      {
+        "family": "K.",
+        "given": "Davis-Fadtke"
+      },
+      {
+        "family": "R.",
+        "given": "Hull"
+      },
+      {
+        "family": "A",
+        "given": "Lyons"
+      }
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater Dependent Ecosystems in California"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/natural-communities-commonly-associated-with-groundwater"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "San Joaquin County Multi-Species Habitat Conservation and Open Space Plan"
+    ],
+    "date": [
+      "2000",
+      "2000-11-14"
+    ],
+    "publisher": [
+      "San Joaquin County of Government"
+    ],
+    "url": [
+      "https://www.sjcog.org/DocumentCenter/View/5/Habitat-Planpdf?bidId="
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "Michelle"
+      },
+      {
+        "family": "Brandt",
+        "given": "Justin"
+      },
+      {
+        "family": "Solt",
+        "given": "Mike"
+      }
+    ],
+    "date": [
+      "2013",
+      "2003"
+    ],
+    "title": [
+      "Land subsidence along the Delta-Mendota Canal in the northern part of the San Joaquin Valley",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "volume": [
+      "2013–5142"
+    ],
+    "pages": [
+      "87 ,"
+    ],
+    "note": [
+      ":"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2013/5142/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Bartow"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Maps showing Tertiary stratigraphy and structure of the Northern San Joaquin Valley, California"
+    ],
+    "note": [
+      "United States Geological Survey (USGS)."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/mf1761"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Berkstresser",
+        "given": "C.F.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1973",
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground-Water -- Approximately 3,000 micromhos -- in the Sacramento Valley and Sacramento-San Joaquin Delta, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Resource Inv"
+    ],
+    "pages": [
+      "40–73"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wri7340"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bertoldi",
+        "given": "G."
+      },
+      {
+        "family": "Johnston",
+        "given": "R."
+      },
+      {
+        "family": "Evenson",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Groundwater in the Central Valley, California - A Summary Report"
+    ],
+    "genre": [
+      "USGS Professional Paper 1401-A."
+    ],
+    "url": [
+      "https://doi.org/10.3133/pp1401A."
+    ],
+    "doi": [
+      "10.3133/pp1401A."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Burow",
+        "given": "Karen R."
+      },
+      {
+        "family": "Shelton",
+        "given": "Jennifer L."
+      },
+      {
+        "family": "Hevesi",
+        "given": "Joseph A."
+      },
+      {
+        "family": "Weissmann",
+        "given": "Gary S."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Hydrologic Characterization of the Modesto Area, San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "Preliminary Draft. U.S. Geological Survey. Water-Resources Investigation Report. Prepared in cooperation with Modesto Irrigation District"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/sir20045232"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Burow",
+        "given": "Karen R."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "San Joaquin Valley Groundwater Basin Tracy Subbasin"
+    ],
+    "volume": [
+      "118"
+    ],
+    "note": [
+      "Last updated 1/20/06."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2003-Basin-Descriptions/5_022_15_TracySubbasin.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California’s Groundwater, Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "G.H.",
+        "given": "Davis"
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959",
+      "1959"
+    ],
+    "title": [
+      "Ground water conditions and storage capacity in the San Joaquin Valley, California"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "287"
+    ],
+    "url": [
+      "https://doi.org/10.3133/wsp1469."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "issue": [
+      "1469"
+    ],
+    "doi": [
+      "10.3133/wsp1469."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "G.E.I."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "publisher": [
+      "Tracy Regional Groundwater Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hotchkiss",
+        "given": "W.R."
+      },
+      {
+        "family": "Balding",
+        "given": "G.O."
+      }
+    ],
+    "date": [
+      "1971",
+      "1971"
+    ],
+    "title": [
+      "Geology, hydrology, and water quality of the Tracy-Dos Palos area, San Joaquin Valley, California"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr72169"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey. Open-File Report. Hotchkiss and Balding"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Padre"
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "personnel communication with Mike Burke regarding aquifer testing at City of Tracy Well 8"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Ground-Water Basin of the Central Valley, California, with Texture Maps and Sections"
+    ],
+    "container-title": [
+      "USGS Professional Paper 1401-C"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/pp1401C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "title": [
+      "Natural Resources Conservation Service (SSURGO",
+      "United States Department of Agriculture. Soil Survey Geographic Database"
+    ],
+    "date": [
+      "2019",
+      "2021-03"
+    ],
+    "url": [
+      "https:",
+      "https://icons.codefornature.org/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Wagner",
+        "given": "D.L."
+      },
+      {
+        "family": "Bortugno",
+        "given": "E.J."
+      },
+      {
+        "family": "Mc Junkin",
+        "given": "R.D."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geologic Map of the San Francisco – San Jose Quadrangle"
+    ],
+    "note": [
+      "Regional Geologic Map No. 5A, 1:250,000 scale."
+    ],
+    "url": [
+      "https://www.conservation.ca.gov/cgs/maps-data/rgm"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Northern & Central Delta-Mendota Region Groundwater Sustainability Plan"
+    ],
+    "url": [
+      "http://deltamendota.org/wpcontent/uploads/2019/11/Final_Draft_GSP_Nov19/RevExecSum_Nov19_Final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Atwater",
+        "given": "B.F."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Geologic Maps of the Sacramento-San Joaquin Delta, California, U.S"
+    ],
+    "container-title": [
+      "Geological Survey, Miscellaneous Field Studies Map MF"
+    ],
+    "pages": [
+      "– 1401"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/mf1401"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Burow",
+        "given": "Karen R."
+      },
+      {
+        "family": "Shelton",
+        "given": "Jennifer L."
+      },
+      {
+        "family": "Hevesi",
+        "given": "Joseph A."
+      },
+      {
+        "family": "Weissmann",
+        "given": "Gary S."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Hydrologic Characterization of the Modesto Area, San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "Preliminary Draft. U.S. Geological Survey. Water-Resources Investigation Report 2004-5232. Prepared in cooperation with Modesto Irrigation District"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/sir20045232"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR). 1995"
+    ],
+    "location": [
+      "Sacramento Delta San Joaquin Atlas"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "San Joaquin Valley Groundwater Basin Tracy Subbasin"
+    ],
+    "volume": [
+      "118"
+    ],
+    "note": [
+      "Last updated 1/20/06."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2003-Basin-Descriptions/5_022_15_TracySubbasin.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California’s Groundwater, Bulletin"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "SGMA Data Viewer"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "California’s Groundwater Update 2020, Bulletin 118. CalGW Online datasets, water level trend data"
+    ],
+    "note": [
+      "Groundwater Level Estimated Trends Dashboard (arcgis.com)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Title 23, Excerpts of Divisions 2, 3, and 5 Applicable to the Administration of Water Rights and SGMA"
+    ],
+    "genre": [
+      "Waters."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/laws_regulations/docs/wrregs.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California State Water Resources Control Board (State Water Board",
+      "SAFER Workshop 2020",
+      "Jet Propulsion Laboratory (JPL"
+    ],
+    "date": [
+      "2020",
+      "2016"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/safer/calendar.html",
+      "https://data.cnra.ca.gov/dataset/tre-altamira-insar-subsidence"
+    ],
+    "author": [
+      {
+        "family": "Farr",
+        "given": "Tom G."
+      },
+      {
+        "family": "Jones",
+        "given": "Cathleen E."
+      },
+      {
+        "family": "Liu",
+        "given": "Zhen"
+      }
+    ],
+    "container-title": [
+      "California Institute of Technology (CIT). 2016. Progress Report: Subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G."
+      },
+      {
+        "family": "Green",
+        "given": "J."
+      },
+      {
+        "family": "Olmsted",
+        "given": "F."
+      },
+      {
+        "family": "Brown",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground-Water Conditions and Storage Capacity in the San Joaquin Valley California"
+    ],
+    "genre": [
+      "USGS."
+    ],
+    "url": [
+      "https://doi.org/10.3133/wsp1469"
+    ],
+    "doi": [
+      "10.3133/wsp1469"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Deverel",
+        "given": "S.J."
+      },
+      {
+        "family": "Rojstaczer",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Subsidence of agricultural lands in the Sacramento-San Joaquin Delta, California: Role of aqueous and gaseous carbon fluxes"
+    ],
+    "volume": [
+      "32"
+    ],
+    "url": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/96WR01338"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Research"
+    ],
+    "issue": [
+      "8"
+    ],
+    "pages": [
+      "2359–2367"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Deverel",
+        "given": "Steven J."
+      },
+      {
+        "family": "Leighton",
+        "given": "David A."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Historic, Recent, and Future Subsidence, Sacramento-San Joaquin Delta"
+    ],
+    "location": [
+      "California, USA. San"
+    ],
+    "volume": [
+      "8"
+    ],
+    "url": [
+      "https://escholarship.org/uc/item/7xd4x0xw"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Francisco Estuary and Watershed Science"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "G.E.I."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "publisher": [
+      "Tracy Regional Groundwater Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "John A."
+      },
+      {
+        "family": "Metzger",
+        "given": "Loren F."
+      },
+      {
+        "family": "McPherson",
+        "given": "Kelly R."
+      },
+      {
+        "family": "Everett",
+        "given": "Rhett R."
+      },
+      {
+        "family": "Bennett",
+        "given": "George L."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Sources of High-Chloride Water to Wells, Eastern San Joaquin Ground-Water Subbasin, California"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/of/2006/1309/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Land",
+        "given": "I.Q."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014",
+      "2017"
+    ],
+    "title": [
+      "Draft Report",
+      "Statewide Land Use Mapping"
+    ],
+    "volume": [
+      "7"
+    ],
+    "url": [
+      "https://map.dfg.ca.gov/metadata/ds2677.html"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "June"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "W.C.",
+        "given": "Mendenhall"
+      },
+      {
+        "family": "Dole",
+        "given": "R.B."
+      },
+      {
+        "family": "Stabler",
+        "given": "Herman"
+      }
+    ],
+    "date": [
+      "1916"
+    ],
+    "title": [
+      "Groundwater in the San Joaquin Valley, California"
+    ],
+    "genre": [
+      "USGS Water-Supply Paper 398."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/0398/report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Padre"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Personal communication with Mike Burke regarding aquifer testing at City of Tracy Well 8"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Shlemon",
+        "given": "R.J."
+      },
+      {
+        "family": "Begg",
+        "given": "E.L."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Late Quaternary Evolution of the Sacramento-San Joaquin Delta, California in Suggate"
+    ],
+    "editor": [
+      {
+        "given": "R.P."
+      },
+      {
+        "family": "Cressel",
+        "given": "M.M."
+      }
+    ],
+    "container-title": [
+      "Quaternary Studies, Bulletin 13, The Royal Society of New Zealand"
+    ],
+    "location": [
+      "Wellington, New Zealand"
+    ],
+    "pages": [
+      "259– 266"
+    ],
+    "url": [
+      "https://www.researchgate.net/publication/298432349_Late_Quaternary_evolution_of_the_Sacra"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "Michelle"
+      },
+      {
+        "family": "Brandt",
+        "given": "Justin"
+      },
+      {
+        "family": "Solt",
+        "given": "Mike"
+      }
+    ],
+    "date": [
+      "2013",
+      "2003"
+    ],
+    "title": [
+      "Land subsidence along the Delta-Mendota Canal in the northern part of the San Joaquin Valley",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "volume": [
+      "2013–5142"
+    ],
+    "pages": [
+      "87 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20135142"
+    ],
+    "isbn": [
+      "2328-0328"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20135142"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Strathouse",
+        "given": "S."
+      },
+      {
+        "family": "Sposito",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "1980",
+      "1980-08"
+    ],
+    "title": [
+      "Geologic nitrogen in soils may pose hazard"
+    ],
+    "url": [
+      "http://calag.ucanr.edu/archive/?type=pdf&article=ca.v034n08p20"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Calif Agriculture"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sullivan",
+        "given": "P.J."
+      },
+      {
+        "family": "Sposito",
+        "given": "G."
+      },
+      {
+        "family": "Strathouse",
+        "given": "S.M."
+      },
+      {
+        "family": "Hansen",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Geologic nitrogen and the occurrence of high nitrate soils in western San Joaquin Valley, California"
+    ],
+    "volume": [
+      "47"
+    ],
+    "pages": [
+      "15–49"
+    ],
+    "url": [
+      "http://hilgardia.ucanr.edu/fileaccess.cfm?article=152819&p=WXIALI",
+      "https://www.watereducation.org/sites/main/files/file-attachments/2019annualreport.pdf"
+    ],
+    "note": [
+      "Water Education Foundation. 2019. 2019 Annual Report."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hilgardia"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Northern & Central Delta-Mendota Region Groundwater Sustainability Plan"
+    ],
+    "url": [
+      "http://deltamendota.org/wpcontent/uploads/2019/11/Final_Draft_GSP_Nov19/RevExecSum_Nov19_Final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources, (DWR"
+    ],
+    "volume": [
+      "14"
+    ],
+    "date": [
+      "2021"
+    ],
+    "publisher": [
+      "California Data Exchange Center"
+    ],
+    "url": [
+      "https://cdec.water.ca.gov/reportapp/javareports?name=WSIHIST"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Access July"
+    ]
+  },
+  {
+    "title": [
+      "California State Water Resources Control Board (State Water Board",
+      "Statement of Policy with Respect to Maintaining High Quality of Waters in California"
+    ],
+    "date": [
+      "1968"
+    ],
+    "volume": [
+
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/board_decisions/adopted_orders/resolutions/1968/rs68_016.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Resolution"
+    ],
+    "issue": [
+      "68-16"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "A Compilation of Water Quality Goals"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Central Valley Region Regional Water Quality Control Board (CVRWQCB",
+      "Water Quality Control Plan for the Sacramento and San Joaquin Rivers"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/basin_plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Northern & Central Delta-Mendota Region GSP"
+    ],
+    "url": [
+      "http://deltamendota.org/wpcontent/uploads/2019/11/Final_Draft_GSP_Nov19/RevExecSum_Nov19_Final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Society",
+        "given": "California Native Plant"
+      },
+      {
+        "family": "Program",
+        "given": "Rare Plant"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-06"
+    ],
+    "title": [
+      "Inventory of Rare and Endangered Plants of California"
+    ],
+    "edition": [
+      "online"
+    ],
+    "pages": [
+      "8–03 0 39"
+    ],
+    "note": [
+      "Website",
+      "accessed 26"
+    ],
+    "url": [
+      "http://www.rareplants.cnps.org"
+    ],
+    "container-title": [
+      "Search the Inventory Information Contributors Questions and Comments Simple Search About the Inventory The Calflora Database rareplants@cnps.org Advanced Search About the Rare Plant Program The California Lichen Society Glossary CNPS Home Page California Natural Diversity Database About CNPS The Jepson Flora Project Join CNPS The Consortium of California Herbaria CalPhotos"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1981"
+    ],
+    "volume": [
+      "31,543 140,890 2,127 59,435 1,117 14,978 26,282 55,711 297 332,379 117,066 163,607 12,107 60,040"
+    ],
+    "pages": [
+      "28,159 377 381,355 –48,977 184,126"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "volume": [
+      "50,635 216,428 11,522 49,967 ‐37 14,829 24,696 54,667 301 423,007 90,853 126,923 12,530 56,127"
+    ],
+    "pages": [
+      "27,463 272 314,168 108,840 292,966"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "volume": [
+      "34,747 241,927 51,371 50,755 ‐168 19,395 26,618 54,802 491 479,938 112,260 115,414 11,273 55,515"
+    ],
+    "pages": [
+      "25,605 268 320,335 159,604 452,569"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "volume": [
+      "20,390 160,875 7,936 57,577 82 19,629 34,534 57,195 445 358,661 147,781 169,745 12,318 59,254"
+    ],
+    "pages": [
+      "28,275 272 417,645 –58,984 393,585"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "volume": [
+      "26,990 152,892 2,003 59,410 25 19,108 32,509 59,488 485 352,910 130,325 158,696 13,091 59,591 30,044"
+    ],
+    "pages": [
+      "296 392,044 –39,134 354,451"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "volume": [
+      "39,895 193,362 8,999 54,015 ‐74 17,830 29,792 60,366 465 404,649 113,104 140,314 13,167 57,594"
+    ],
+    "pages": [
+      "29,730 282 354,191 50,458 404,910"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "23,021 135,243 2,508 59,488 70 18,622 30,028 61,730 691 331,400 134,247 150,646 12,793 60,257 30,604"
+    ],
+    "pages": [
+      "177 388,725 –57,324 347,585"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "25,440 134,756 1,639 58,774 211 23,136 27,559 64,720 1,069 337,305 120,262 190,392 13,918 61,764 32,834"
+    ],
+    "pages": [
+      "160 419,331 –82,027 265,559"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "30,305 141,711 1,468 58,680 606 24,365 24,305 61,616 1,166 344,223 108,656 159,541 10,763 68,690 31,342"
+    ],
+    "pages": [
+      "175 379,167 –34,944 230,615"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "29,105 140,480 1,321 56,322 1,398 22,788 23,394 57,619 1,045 333,473 108,713 152,404 10,092 74,267 30,719"
+    ],
+    "pages": [
+      "209 376,404 –42,931 187,683"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "40,872 146,984 1,333 43,015 3,781 23,512 25,311 51,118 1,388 337,314 120,997 173,739 13,973 77,881"
+    ],
+    "pages": [
+      "29,950 137 416,678 –79,364 108,320"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "39,752 157,811 1,505 41,693 2,785 22,654 23,696 45,845 1,147 336,888 106,094 163,521 10,940 73,864"
+    ],
+    "pages": [
+      "26,938 64 381,421 –44,533 63,787"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "53,480 220,183 14,442 58,662 2,183 21,190 23,095 44,597 925 438,757 90,560 167,281 12,742 78,088"
+    ],
+    "pages": [
+      "25,434 285 374,391 64,366 128,153"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "32,098 171,207 2,597 59,773 4,754 21,719 23,364 45,853 1,013 362,379 105,091 207,721 15,299 78,484"
+    ],
+    "pages": [
+      "26,268 155 433,018 –70,639 57,514"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "63,271 234,320 21,004 64,517 433 21,382 22,007 44,666 1,064 472,665 83,627 130,279 18,118 77,364"
+    ],
+    "pages": [
+      "24,611 322 334,321 138,344 195,857"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "37,238 189,587 21,591 61,726 ‐31 22,461 24,497 50,616 1,156 408,842 118,612 151,994 16,524 71,051"
+    ],
+    "pages": [
+      "25,746 367 384,292 24,550 220,407"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "44,788 193,053 2,763 59,392 ‐13 22,032 25,466 51,218 1,072 399,770 119,711 150,819 15,350 71,087"
+    ],
+    "pages": [
+      "25,840 284 383,090 16,680 237,086"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "50,499 223,738 33,087 48,695 ‐111 21,425 24,445 50,430 1,076 453,283 97,190 156,293 13,360 65,271"
+    ],
+    "pages": [
+      "24,264 309 356,688 96,596 333,682"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "28,850 166,461 6,096 53,852 48 19,626 26,798 51,986 980 354,697 121,813 179,778 12,007 64,447"
+    ],
+    "pages": [
+      "26,177 313 404,536 –49,839 283,843"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "36,720 166,321 5,590 61,260 22 18,498 27,265 53,800 766 370,241 111,831 177,579 11,264 60,988"
+    ],
+    "pages": [
+      "29,206 495 391,362 –21,121 262,723"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "34,316 147,584 3,490 61,255 51 17,059 25,432 54,959 653 344,798 105,883 179,482 10,763 60,827 30,679"
+    ],
+    "pages": [
+      "592 388,226 –43,427 219,295"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "volume": [
+      "30,626 147,827 1,999 67,629 64 17,254 23,166 57,839 597 347,001 103,767 170,795 10,147 65,184 33,028"
+    ],
+    "pages": [
+      "721 383,641 –36,640 182,655"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "volume": [
+      "38,683 163,923 2,136 95,638 ‐21 15,865 21,931 63,930 465 402,549 96,267 150,058 9,506 66,648 37,947 1,063 361,489"
+    ],
+    "pages": [
+      "41,059 223,715"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "38,344 171,871 1,825 73,271 9 14,483 21,519 70,745 428 392,494 99,987 148,698 10,488 70,738 40,431 1,178 371,520 20,974"
+    ],
+    "pages": [
+      "244,688"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "54,766 206,514 2,058 55,664 ‐51 13,831 20,639 62,837 516 416,773 84,094 160,150 10,079 71,208 34,873"
+    ],
+    "pages": [
+      "683 361,086 55,687 300,375"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "52,900 185,563 1,648 56,531 ‐22 14,455 21,511 60,981 631 394,197 88,902 188,258 8,737 66,698"
+    ],
+    "pages": [
+      "35,058 681 388,333 5,864 306,239"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "volume": [
+      "29,336 148,033 1,260 54,941 701 16,746 22,613 56,535 871 331,036 105,313 251,670 9,454 65,926 34,767"
+    ],
+    "pages": [
+      "494 467,623 –136,588 169,651"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "39,908 156,818 1,218 48,964 398 18,996 21,253 50,071 811 338,438 99,097 176,484 10,411 67,934 33,251"
+    ],
+    "pages": [
+      "305 387,482 –49,044 120,607"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "volume": [
+      "36,551 137,440 1,084 47,591 558 21,692 20,236 44,026 768 309,945 94,167 155,826 9,745 64,679 31,342"
+    ],
+    "pages": [
+      "250 356,008 –46,063 74,544"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "48,209 212,545 1,047 169,713 ‐25 20,284 18,825 74,259 495 545,352 93,138 124,571 10,986 68,292 57,372 2,293 356,652"
+    ],
+    "pages": [
+      "188,699 263,243"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "64,064 253,079 2,037 152,911 ‐196 18,383 19,346 92,569 227 602,420 74,637 158,258 11,472 68,342 64,017 2,537 379,263"
+    ],
+    "pages": [
+      "223,157 486,401"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "27,025 169,885 1,121 69,275 122 20,874 23,711 79,232 420 391,665 119,767 250,230 10,943 61,777 52,733 1,323 496,774"
+    ],
+    "pages": [
+      "–105,109 381,292"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "36,049",
+      "354,564 108,352 196,893 10,610 58,298"
+    ],
+    "pages": [
+      "161,181 941 47,815 36 22,652 21,184 64,118 587",
+      "43,920 580 418,652 –64,088 317,204"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Inflow (AF) Outflow (AF"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "58,633 180,334 6,458",
+      "61,079 157,770 22,350 56,705 8,243 24,006 20,186"
+    ],
+    "pages": [
+      "74,015 608 23,075 23,427 60,303 486 427,338 93,446 199,549 10,158 74,157 44,251 971",
+      "55,585 590 406,515 87,837 233,761 7,585 61,108 49,424 864 440,580 –34,065 –34,065"
+    ],
+    "title": [
+      "422,532 Subsidence (inflow‐ Subsurface East Subsurface Eastern Subsurface Delta Subsurface East Subsurface Eastern Subsurface Delta Change in Storage Cumulative Change in Water Year Streams In Deep Percolation Small Watersheds In Diversion Recharge outflow"
+    ],
+    "container-title": [
+      "Contra Costa San Joaquin Mendota Subsurface Other TOTAL IN Streams Out Pumping Contra Costa San Joaquin Mendota Subsurface Other TOTAL OUT (AF) Storage (AF",
+      "AVERAGES"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "50,897 162,393 649 55,340 2,739 23,351 20,806 54,864 572 371,610 84,761 185,697 7,938 63,759"
+    ],
+    "pages": [
+      "46,541 646 389,341 –17,730 –51,795"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "volume": [
+      "89,709 208,168 4,977 49,110 1,116 20,294 25,556 46,207 588 445,725 73,320 176,468 9,844 69,479 39,399"
+    ],
+    "pages": [
+      "406 368,915 76,810 25,015"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "41,984 145,116 1,721 47,734 1,645 21,142 21,953 42,415 576 324,285 100,481 192,824 10,086 66,267 35,234"
+    ],
+    "pages": [
+      "349 405,242 –80,957 –55,942"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "70,826 248 629,455 87,129 160,841 11,451 71,010 59,270 2,528 392,229"
+    ],
+    "pages": [
+      "237,227 181,285"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "43,143 163,757 1,700 152,760 1,007 23,334 23,345 91,834 113 500,992 104,712 234,421 10,530 67,946 66,604 2,712 486,926 14,066 195,351"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "46,438 143,402 1,128 68,867 2,302 25,913 22,293 81,663 307 392,314 95,280 233,036 8,763 69,261 56,074 1,447 463,862"
+    ],
+    "pages": [
+      "–71,548 123,803"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "50,353 147,026 951 47,391 2,731 26,453 21,963 66,310 498 363,677 89,781 211,886 7,958 71,222"
+    ],
+    "pages": [
+      "47,098 691 428,636 –64,959 58,844"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "79,350 169,984 1,086 42,722 1,273 23,888 23,158 55,145 476 397,082 74,535 210,807 7,908 75,209"
+    ],
+    "pages": [
+      "43,655 415 412,528 –15,446 43,398"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "79,930 197,984 2,041 49,302 5 20,544 23,651 47,945 424 421,826 77,996 177,028 9,817 79,326 39,504"
+    ],
+    "pages": [
+      "378 384,049 37,777 81,175"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "39,862 145,694 1,487 55,806 1,620 22,352 21,484 50,470 486 339,261 104,296 254,054 8,251 73,896 37,927"
+    ],
+    "pages": [
+      "720 479,144 –139,883 –58,708"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "84,412 187,762 1,870 55,373 38 20,659 24,357 46,652 584 421,707 76,082 177,568 9,711 76,106"
+    ],
+    "pages": [
+      "33,622 605 373,693 48,013 –10,695"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "53,353 165,045 1,470 49,212 337 20,616 22,675 41,782 597 355,088 101,202 185,311 10,858 73,333 30,832"
+    ],
+    "pages": [
+      "378 401,913 –46,825 –57,520"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "87,557 202,705 1,394 47,727 849 19,590 24,654 36,949 612 422,037 69,328 184,657 11,030 73,931"
+    ],
+    "pages": [
+      "28,075 303 367,324 54,713 –2,807"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "37,735 162,429 1,153 168,849 386 21,861 23,441 67,546 305 483,705 109,097 217,579 10,866 67,467 53,956 2,456 461,422"
+    ],
+    "pages": [
+      "22,283 19,476"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "87,099 228,853 15,410 153,221 ‐192 20,957 26,642 89,172 149 621,311 75,667 178,570 10,903 76,235 60,503 2,625 404,503"
+    ],
+    "pages": [
+      "216,808 236,284"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "51,344 169,868 2,717 69,534 30 21,419 25,247 79,107 337 419,602 104,135 211,585 10,784 73,056 51,170 1,362 452,092"
+    ],
+    "pages": [
+      "–32,490 203,794"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "54,873 168,298 2,922 48,113 4 22,574 24,096 64,071 497 385,448 101,148 188,619 10,051 71,884"
+    ],
+    "pages": [
+      "42,720 623 415,045 –29,596 174,198"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "55,710 136,608 1,383 42,848 112 23,701 21,578 54,567 503 337,009 83,136 232,693 8,637 70,801"
+    ],
+    "pages": [
+      "41,535 358 437,159 –100,150 74,048"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "74,912 201,388 2,151 49,384 87 21,861 24,062 47,461 486 421,791 81,922 193,790 9,187 77,864 38,848"
+    ],
+    "pages": [
+      "299 401,910 19,880 93,928"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "56,901 179,023 2,413 56,733 10 22,685 23,188 48,704 579 390,236 95,567 224,299 8,239 75,174"
+    ],
+    "pages": [
+      "36,362 608 440,249 –50,013 43,915"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2037"
+    ],
+    "volume": [
+      "69,111 168,096 3,440 55,359 ‐20 22,454 23,608 46,614 655 389,317 83,940 188,892 9,217 71,694 32,953"
+    ],
+    "pages": [
+      "531 387,226 2,091 46,006"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2038"
+    ],
+    "volume": [
+      "43,331 137,684 1,380 49,186 89 23,906 21,513 43,305 710 321,104 102,707 209,001 9,805 69,760 31,136"
+    ],
+    "pages": [
+      "326 422,735 –101,631 –55,625"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "47,049 123,392 1,143 44,465 5,380 27,117 20,656 39,695 716 309,613 91,217 243,312 8,566 69,953"
+    ],
+    "pages": [
+      "29,636 279 442,962 –133,349 –188,974"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "88,281 209,414 3,361 169,585 511 23,543 25,159 68,429 373 588,658 69,378 176,558 8,925 74,195 53,807 2,436 385,299 203,359"
+    ],
+    "pages": [
+      "14,385"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "61,258 190,575 2,976 153,307 ‐20 22,933 24,672 89,609 188 545,497 93,414 211,075 10,071 77,186 61,708 2,602 456,056 89,440 103,826"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "83,064 205,695 14,763 69,377 ‐132 21,249 25,293 79,580 348 499,236 70,908 171,551 10,389 81,232 50,223 1,367 385,670"
+    ],
+    "pages": [
+      "113,567 217,393"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "50,971 153,136 2,474 48,239 70 21,876 23,151 65,289 516 365,720 96,969 215,722 10,186 76,648"
+    ],
+    "pages": [
+      "43,353 626 443,503 –77,783 139,610"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "74,447 236,041 11,828 42,547 ‐141 20,827 25,365 54,303 491 465,708 80,547 156,021 11,666 77,675"
+    ],
+    "pages": [
+      "39,219 342 365,470 100,238 239,848"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "53,265 264,823 51,644 49,238 ‐129 23,414 23,300 47,329 510 513,395 99,364 148,961 12,501 78,950 34,773"
+    ],
+    "pages": [
+      "264 374,813 138,582 378,430"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "32,446 161,761 8,177 56,881 136 25,812 24,552 51,701 594 362,059 130,174 259,917 10,563 70,457"
+    ],
+    "pages": [
+      "37,222 639 508,972 –146,912 231,518"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "46,918 155,204 2,217 55,519 28 25,893 21,501 51,064 716 359,059 102,566 194,729 10,187 69,074 36,694"
+    ],
+    "pages": [
+      "504 413,754 –54,695 176,823"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "69,884 219,921 9,189 49,054 ‐97 23,678 24,797 45,428 732 442,585 90,261 165,536 12,387 74,520 33,279"
+    ],
+    "pages": [
+      "299 376,282 66,303 243,125"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "33,676 146,756 2,676 47,789 126 24,247 23,767 41,965 733 321,735 121,302 209,158 12,144 69,411 32,114"
+    ],
+    "pages": [
+      "248 444,378 –122,643 120,483"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "42,504 168,932 1,788 169,710 12 26,049 22,044 73,026 375 504,440 102,253 209,891 10,950 69,323 58,768 2,348 453,531"
+    ],
+    "pages": [
+      "50,909 171,391"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "46,856 165,141 1,600 153,251 ‐17 26,468 22,249 93,279 201 509,029 95,135 200,649 10,472 75,821 65,528 2,613 450,218"
+    ],
+    "pages": [
+      "58,810 230,202"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "46,444 159,961 1,438 69,399 50 26,212 22,473 82,302 379 408,659 95,173 202,418 9,783 80,830 54,445 1,387 444,036"
+    ],
+    "pages": [
+      "–35,377 194,825"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "59,528 158,913 1,437 48,099 81 26,527 23,604 67,054 550 385,793 103,976 204,086 8,954 84,366"
+    ],
+    "pages": [
+      "46,011 646 448,039 –62,246 132,579"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "57,642 169,622 1,597 42,706 68 24,964 22,379 56,634 517 376,129 88,590 199,318 8,963 82,869"
+    ],
+    "pages": [
+      "42,948 383 423,070 –46,941 85,638"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "79,990 223,527 14,523 49,285 ‐51 22,114 23,443 51,017 490 464,339 69,026 185,546 9,377 88,715 39,283"
+    ],
+    "pages": [
+      "343 392,290 72,048 157,686"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "36,831 147,069 2,670 56,761 95 23,298 21,779 52,821 551 341,875 106,102 238,681 7,941 80,917 38,423"
+    ],
+    "pages": [
+      "679 472,743 –130,868 26,818"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "90,793 224,264 21,068 55,295"
+    ],
+    "pages": [
+      "–154 21,845 24,441 49,035 646 487,234 65,973 165,661 9,938 84,360 33,920 577 360,429 126,805 153,623"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "52,753 210,261 21,648 49,157 ‐47 20,902 25,177 45,760 693 426,304 102,872 186,965 11,560 76,032 31,398"
+    ],
+    "pages": [
+      "360 409,186 17,118 170,741"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "55,493 185,645 2,813 47,799 50 22,262 24,592 41,024 692 380,371 112,582 210,579 11,744 71,655"
+    ],
+    "pages": [
+      "30,711 267 437,537 –57,167 113,575"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "71,446 259,435 33,131 169,412 ‐245 22,779 24,984 74,440 368 655,750 86,852 151,751 12,930 71,886 55,905 2,401 381,724"
+    ],
+    "pages": [
+      "274,026 387,600"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "38,171 192,124 6,136 153,248 ‐20 22,452 24,908 97,179 183 534,381 124,456 191,285 13,642 72,390 65,940 2,627 470,339"
+    ],
+    "pages": [
+      "64,042 451,643"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2062"
+    ],
+    "volume": [
+      "49,169 176,245 5,625 69,457 2 23,208 24,790 85,199 350 434,044 112,752 189,086 12,264 73,724 55,947 1,376 445,149"
+    ],
+    "pages": [
+      "–11,105 440,537"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2063"
+    ],
+    "volume": [
+      "42,471 158,888 3,521 48,138 64 23,553 23,415 69,670 505 370,226 107,455 202,548 11,330 73,554",
+      "65,375 176,342 6,458 73,972 1,552 23,707 24,599"
+    ],
+    "pages": [
+      "48,046 631 443,563 –73,337",
+      "58,720 516 431,242 85,610 221,393 9,381 69,507 43,400 963"
+    ],
+    "title": [
+      "367,200 Inflow (AF) Outflow (AF"
+    ],
+    "container-title": [
+      "430,254 Subsidence (inflow‐ Subsurface East Subsurface Eastern Subsurface Delta Subsurface East Subsurface Eastern Subsurface Delta Change in Storage Cumulative Change in Water Year Streams In Deep Percolation Small Watersheds In Diversion Recharge outflow) Contra Costa San Joaquin Mendota Subsurface Other TOTAL IN Streams Out Pumping Contra Costa San Joaquin Mendota Subsurface Other TOTAL OUT",
+      "AVERAGES"
+    ],
+    "note": [
+      "AF) Storage (AF"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "61,659 155,637 22,350 56,794 11,363 24,313 20,366 55,437 600 408,519 87,128 254,112 7,349 60,470"
+    ],
+    "pages": [
+      "49,831 865 459,755 –51,235 –51,235"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "52,441 156,413 649 55,429 5,069 24,272 20,990 54,644 602 370,508 82,741 210,235 7,537 62,137"
+    ],
+    "pages": [
+      "46,977 645 410,271 –39,763 –90,998"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "volume": [
+      "93,284 198,326 4,977 49,202 2,224 21,268 25,868 45,883 616 441,646 70,196 187,441 9,084 67,643 39,818"
+    ],
+    "pages": [
+      "413 374,594 67,053 –23,946"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "44,748 141,457 1,721 47,827 3,928 22,309 22,245 42,061 621 326,917 96,139 215,946 9,085 63,742 35,792"
+    ],
+    "pages": [
+      "352 421,056 –94,139 –118,085"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "79,818 245,921 13,460"
+    ],
+    "pages": [
+      "169,654 497 20,898 25,984 69,856 276 626,364 82,395 182,100 10,790 68,016 59,521 2,529 405,352 221,012 102,927"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "46,738 162,220 1,698 152,372 1,990 24,399 24,075 90,266 141 503,898 99,220 255,733 9,783 64,623 66,598 2,698 498,657 5,241 108,169"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "50,548 140,700 1,129 68,413 6,265 26,979 23,248 80,545 343 398,171 89,094 259,601 8,053 66,100 56,107 1,452 480,407"
+    ],
+    "pages": [
+      "–82,236 25,933"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "54,901"
+    ],
+    "pages": [
+      "141,651 951 46,936 7,937 27,526 22,866 65,180 527 368,473 83,540 234,254 7,263 68,141 47,032 696 440,927 –72,454 –46,521"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "85,560 164,914 1,086 42,810 3,696 25,095 24,252 54,273 520 402,206 68,764 234,783 7,266 71,461"
+    ],
+    "pages": [
+      "43,554 412 426,240 –24,034 –70,555"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "87,434 192,914 2,041 49,396 2,329 21,529 24,684 47,200 474 428,001 71,736 200,477 8,675 75,462 39,205"
+    ],
+    "pages": [
+      "370 395,926 32,076 –38,480"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "44,537 143,776 1,488 55,190 5,069 23,623 22,374 49,626 533 346,215 96,469 282,721 7,389 69,567 37,593"
+    ],
+    "pages": [
+      "713 494,451 –148,236 –186,716"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "92,760 179,472 1,871 55,469 531 21,604 25,679 45,553 612 423,551 70,323 194,067 8,418 72,106 33,343"
+    ],
+    "pages": [
+      "600 378,858 44,693 –142,023"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "60,006 163,340 1,471 49,098 1,817 21,748 23,736 40,950 638 362,804 93,027 214,806 9,802 68,647 30,637"
+    ],
+    "pages": [
+      "395 417,314 –54,509 –196,533"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "96,660 196,153 1,395 47,825 2,506 20,344 25,982 35,767 647 427,277 62,564 205,236 10,153 70,127"
+    ],
+    "pages": [
+      "27,707 324 376,111 51,166 –145,367"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "42,990 158,393 1,153 168,044 944 22,803 24,541 65,522 315 484,706 100,000 240,325 10,070 63,089 53,260 2,452 469,196 15,510"
+    ],
+    "pages": [
+      "–129,856"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "96,326 220,492 15,396 153,307 ‐158 21,932 28,422 87,346 182 623,244 68,237 202,810 9,763 71,803 59,870 2,656 415,138 208,106"
+    ],
+    "pages": [
+      "78,250"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "57,881 170,638 2,713 69,620 30 21,994 26,546 77,725 350 427,497 95,506 232,162 9,826 68,704 50,559 1,369 458,126"
+    ],
+    "pages": [
+      "–30,629 47,621"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "60,868 165,545 2,914 48,210 6 23,026 25,369 62,749 513 389,200 92,759 207,819 9,109 67,701"
+    ],
+    "pages": [
+      "42,136 622 420,145 –30,945 16,676"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "62,579 132,768 1,382"
+    ],
+    "pages": [
+      "42,933 406 24,185 23,035 53,288 534 341,111 75,217 251,849 8,028 66,433 40,873 348 442,748 –101,637 –84,961"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "83,850 196,780 2,148 49,466 1,395 22,420 25,650 46,102 528 428,339 74,725 217,861 8,482 72,325"
+    ],
+    "pages": [
+      "37,825 293 411,511 16,828 –68,133"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "63,653 178,982 2,411 56,824 22 23,304 24,485 47,336 602 397,619 87,363 248,211 7,902 70,240"
+    ],
+    "pages": [
+      "35,324 601 449,642 –52,024 –120,157"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2037"
+    ],
+    "volume": [
+      "76,301 163,057 3,433 55,447 ‐29 22,853 24,979 44,981 681 391,703 77,220 204,072 8,731 66,971 31,997"
+    ],
+    "pages": [
+      "523 389,515 2,188 –117,969"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2038"
+    ],
+    "volume": [
+      "49,407 131,348 1,379"
+    ],
+    "pages": [
+      "48,818 450 24,825 22,744 41,888 745 321,605 93,590 230,937 9,013 64,465 30,262 315 428,583 –106,977 –224,946"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "52,093 119,617 1,142 42,733 16,594 28,170 22,079 38,026 736 321,191 81,069 283,373 7,781 64,369"
+    ],
+    "pages": [
+      "28,663 277 465,532 –144,341 –369,287"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "98,754 199,848 3,360 169,673 2,246 24,963 27,167 66,424 409 592,843 62,533 201,081 8,142 68,552 52,630 2,400 395,338 197,505"
+    ],
+    "pages": [
+      "–171,782"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "69,604 186,002 2,977 153,395 ‐13 23,626 26,364 87,554 237 549,743 85,002 231,194 9,327 71,224 60,695"
+    ],
+    "pages": [
+      "2,635 460,077 89,666 –82,115"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "92,611 203,158 14,759 69,466 ‐140 21,666 27,027 77,726 361 506,636 63,387 188,625 9,766 75,342 49,269 1,361 387,751 118,885"
+    ],
+    "pages": [
+      "36,770"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "57,629 153,641 2,475 48,328 79 22,382 24,399 63,546 534 373,013 88,047 238,598 9,272 71,375"
+    ],
+    "pages": [
+      "42,368 613 450,273 –77,260 –40,490"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "84,682 232,846 11,845 42,633 ‐140 21,181 26,923 53,010 519 473,498 71,250 175,132 10,993 72,726 38,270"
+    ],
+    "pages": [
+      "328 368,698 104,800 64,309"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "60,877 271,840 51,654 49,324 ‐142 23,777 24,825 45,718 540 528,412 89,838 167,655 11,902 75,566 33,786"
+    ],
+    "pages": [
+      "251 378,998 149,414 213,723"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "37,054 158,328 8,182 56,967 148 26,164 25,572 49,923 638 362,977 120,940 286,119 10,055 65,813"
+    ],
+    "pages": [
+      "36,068 626 519,621 –156,644 57,079"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "52,580 148,463 2,217 55,610 24 26,006 22,599 49,114 725 357,338 94,346 210,995 9,466 64,102 35,337"
+    ],
+    "pages": [
+      "493 414,738 –57,400 –321"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "79,057 210,740 9,174 49,138 ‐94 24,114 26,268 43,571 767 442,734 81,018 185,011 12,009 68,990 31,961"
+    ],
+    "pages": [
+      "289 379,277 63,457 63,135"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "38,892 145,600 2,675"
+    ],
+    "pages": [
+      "47,876 132 24,732 24,744 40,143 766 325,561 111,925 232,563 11,359 64,121 30,823 242 451,033 –125,472 –62,337"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "49,004 161,268 1,788 169,842 19 26,633 23,329 70,380 411 502,674 93,243 231,619 10,203 64,137 57,212 2,341 458,754"
+    ],
+    "pages": [
+      "43,920 –18,417"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "53,699 160,655 1,600 153,380"
+    ],
+    "pages": [
+      "–14 27,028 23,435 90,565 246 510,595 86,431 221,813 9,401 70,268 64,075 2,563 454,550 56,046 37,629"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "54,188 155,339 1,438 69,543 84 26,770 23,589 80,472 406 411,828 85,346 226,212 8,617 74,986 53,172 1,361 449,694"
+    ],
+    "pages": [
+      "–37,865 –236"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "68,295 156,561 1,437"
+    ],
+    "pages": [
+      "47,069 210 27,172 24,763 65,227 588 391,322 94,217 236,084 7,918 78,443 44,676 626 461,964 –70,642 –70,878"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "66,260 164,734 1,596"
+    ],
+    "pages": [
+      "42,790 135 25,914 23,645 54,872 564 380,511 79,429 223,565 7,698 76,183 41,577 363 428,815 –48,305 –119,183"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "90,977 220,524 14,525"
+    ],
+    "pages": [
+      "49,374 231 22,586 24,840 49,596 541 473,194 59,785 207,396 8,458 82,193 37,991 320 396,143 77,051 –42,132"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "43,123 145,817 2,668"
+    ],
+    "pages": [
+      "56,854 127 23,892 22,895 50,980 590 346,947 96,765 259,378 7,225 75,029 36,962 658 476,017 –129,070 –171,202"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "102,647 217,851 21,081 55,381 ‐154 22,013 25,931 46,841 664 492,255 57,657 182,189 9,123 79,176 32,357"
+    ],
+    "pages": [
+      "562 361,063 131,193 –40,009"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "59,676 212,128 21,638 49,252 ‐46 21,189 26,432 43,516 730 434,514 93,846 206,799 11,090 70,986"
+    ],
+    "pages": [
+      "29,986 346 413,054 21,460 –18,549"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "62,637 182,592 2,813 47,887 39 22,741 25,947 39,059 736 384,451 102,813 227,419 11,390 66,863"
+    ],
+    "pages": [
+      "29,375 253 438,113 –53,662 –72,212"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "80,766 254,240 33,135 169,504 ‐246 23,119 26,375 71,670 383 658,947 77,115 170,323 12,622 67,026 54,295 2,399 383,781"
+    ],
+    "pages": [
+      "275,166 202,955"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "43,453 190,546 6,143 153,344 ‐23 22,384 25,885 94,421 207 536,361 114,727 210,308 12,893 66,909 64,186 2,597 471,620"
+    ],
+    "pages": [
+      "64,741 267,695"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2062"
+    ],
+    "volume": [
+      "55,729 173,240 5,649 69,552 10 23,274 25,891 82,731 354 436,429 102,911 212,495 11,239 67,969 54,331 1,361 450,305"
+    ],
+    "pages": [
+      "–13,877 253,819"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2063"
+    ],
+    "volume": [
+      "48,224 156,568 3,526 48,222 66 23,509 24,395 67,441 513 372,466 98,047 222,613 10,430 67,789"
+    ],
+    "pages": [
+      "46,355 619 445,853 –73,387 180,431"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "LEGEND",
+        "given": "S.A.N.J.O.A.Q.U.I.N.V.A.L.L.E.Y.R.I.V.E.R.I.N.D.E.X."
+      }
+    ],
+    "title": [
+      "Water Year Type Wet"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "01/01/2002 01/01/2003 01/01/2004 01/01/2005 01/01/2006 01/01/2007 01/01/2008 01/01/2009 01/01/2010 01/01/2011 01/01/2012 01/01/2013 01/01/2014"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "01/01/2002 01/01/2003 01/01/2004 01/01/2005 01/01/2006 01/01/2007 01/01/2008 01/01/2009 01/01/2010 01/01/2011 01/01/2012 01/01/2013 01/01/2014"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "09/01/1988 05/01/1989 01/01/1990 09/01/1990 05/01/1991 01/01/1992 09/01/1992 05/01/1993 01/01/1994 09/01/1994 05/01/1995 01/01/1996 09/01/1996 05/01/1997 01/01/1998 09/01/1998 05/01/1999 3910015-005 TDS"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "10/01/1996 09/01/1997 08/01/1998 07/01/1999 06/01/2000 05/01/2001 04/01/2002 03/01/2003 02/01/2004 01/01/2005 12/01/2005 11/01/2006 10/01/2007 09/01/2008 08/01/2009 07/01/2010 3910702-006 TDS"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "12/01/1988 03/01/1990 06/01/1991 09/01/1992 12/01/1993 03/01/1995 06/01/1996 09/01/1997 12/01/1998 03/01/2000 06/01/2001 09/01/2002 12/01/2003 03/01/2005 06/01/2006 09/01/2007 3910011-003 TDS"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "07/01/1996 06/01/1997 05/01/1998 04/01/1999 03/01/2000 02/01/2001 01/01/2002 12/01/2002 11/01/2003 10/01/2004 09/01/2005 08/01/2006 07/01/2007 06/01/2008 05/01/2009 04/01/2010 3910011-018 TDS"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "01/01/2004 01/01/2005 01/01/2006 01/01/2007 01/01/2008 01/01/2009 01/01/2010 01/01/2011 01/01/2012 01/01/2013 01/01/2014 01/01/2015 01/01/2016 01/01/2017 01/01/2018 01/01/2019 01/01/2020 AGC100012333-SJCDW00032 NITRATE"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "01/01/2002 01/01/2003 01/01/2004 01/01/2005 01/01/2006 01/01/2007 01/01/2008 01/01/2009 01/01/2010 01/01/2011 01/01/2012 01/01/2013 01/01/2014 01/01/2015 01/01/2016 01/01/2017 01/01/2018 AGC100012333-SJCDW00034 NITRATE"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988-09-08 1991-01-24 1993-03-15 1993-06-09 1996-01-23 1996-04-19 1996-07-16 1996-10-15 1999-04-29 2000-04-18 2001-04-10 2002-05-22 2003-05-07 2004-04-05"
+    ],
+    "note": [
+      "2004-05-03 2005-04-04 2005-05-16 2006-04-17 2007-04-02 2008-04-07 3910015-005 NITRATE 2009-04-06 2010-04-05 2011-04-04 2012-04-02 2013-04-01 2014-04-01 2015-04-07 MT MO"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "09/01/1997 08/01/1998 07/01/1999 06/01/2000 05/01/2001 04/01/2002 03/01/2003 02/01/2004 01/01/2005 12/01/2005 11/01/2006 10/01/2007 09/01/2008 08/01/2009 07/01/2010 06/01/2011 05/01/2012 04/01/2013 3910702-006 NITRATE"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "03/01/1990 06/01/1991 09/01/1992 12/01/1993 03/01/1995 06/01/1996 09/01/1997 12/01/1998 03/01/2000 06/01/2001 09/01/2002 12/01/2003 03/01/2005 06/01/2006 09/01/2007 12/01/2008 03/01/2010 3910011-003 NITRATE"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "06/01/1997 05/01/1998 04/01/1999 03/01/2000 02/01/2001 01/01/2002 12/01/2002 11/01/2003 10/01/2004 09/01/2005 08/01/2006 07/01/2007 06/01/2008 05/01/2009 04/01/2010 03/01/2011 02/01/2012 3910011-018 NITRATE"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "01/01/2002 01/01/2003 01/01/2004 01/01/2005 01/01/2006 01/01/2007 01/01/2008 01/01/2009 01/01/2010 01/01/2011 01/01/2012 01/01/2013 01/01/2014 01/01/2015 01/01/2016 01/01/2017 01/01/2018 AGC100012333-SJCDW00032 Boron"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "01/01/2004 01/01/2005 01/01/2006 01/01/2007 01/01/2008 01/01/2009 01/01/2010 01/01/2011 01/01/2012 01/01/2013 01/01/2014 01/01/2015 01/01/2016 01/01/2017 01/01/2018 AGC100012333-SJCDW00034 Boron"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "04/01/1996 03/01/1997 02/01/1998 01/01/1999 12/01/1999 11/01/2000 10/01/2001 09/01/2002 08/01/2003 07/01/2004 06/01/2005 05/01/2006 04/01/2007 03/01/2008 02/01/2009 01/01/2010 12/01/2010 11/01/2011 3910015-005 Boron"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "11/01/2000 09/01/2001 07/01/2002 05/01/2003 03/01/2004 01/01/2005 11/01/2005 09/01/2006 07/01/2007 05/01/2008 03/01/2009 01/01/2010 11/01/2010 09/01/2011 07/01/2012 3910702-006 Boron"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "11/01/2001 07/01/2002 03/01/2003 11/01/2003 07/01/2004 03/01/2005 11/01/2005 07/01/2006 03/01/2007 11/01/2007 07/01/2008 03/01/2009 11/01/2009 07/01/2010 03/01/2011 11/01/2011 07/01/2012 3910011-003 Boron"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "03/01/2003 11/01/2003 07/01/2004 03/01/2005 11/01/2005 07/01/2006 03/01/2007 11/01/2007 07/01/2008 03/01/2009 11/01/2009 07/01/2010 03/01/2011 11/01/2011 07/01/2012 3910011-018 Boron"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "WHEREAS",
+        "given": "in August"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "the California Legislature passed, and in"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "September 2014 the Governor signed, legislation creating the Sustainable Groundwater Management Act (\" SGMA\") to provide local groundwater sustainability agencies with the authority and technical and financial assistance necessary to sustainably manage groundwater"
+    ],
+    "note": [
+      " Wat. Code, § 10720, ( d)); and"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "WHEREAS, in October 2018, the DWR approved a jurisdictional Basin"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "WHEREAS, on September 24, 2019, the GSAs executed a Memorandum of Agreement for the purpose of developing a GSP and coordinating sustainable groundwater management in the Tracy Subbasin ( Wat"
+    ],
+    "volume": [
+      "10723. 6"
+    ],
+    "note": [
+      "i)); and"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Code"
+    ]
+  },
+  {
+    "title": [
+      "GSAs: Banta- Carbona Irrigation District GSA City of Tracy GSA Byron- Bethany Irrigation District GSA San Joaquin County GSA City of Lathrop GSA Stewart Tract GSA a, r"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "email",
+        "given": "Via"
+      },
+      {
+        "family": "Alameda",
+        "given": "U.S.",
+        "particle": "mail"
+      }
+    ],
+    "publisher": [
+      "County City of Lathrop City of Tracy San Joaquin County"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "City of Tracy was formed as a GSA on February 2"
+    ],
+    "date": [
+      "2016"
+    ],
+    "publisher": [
+      "by City Council"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "per Resolution 2016- 026, for the purposes of sustainably managing groundwater in the Tracy Subbasin, within its jurisdictional boundaries, pursuant to the requirements of SGMA; and"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The foregoing Resolution 2021- 092 was adopted by the Tracy City Council on the"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021-07"
+    ],
+    "note": [
+      "by the following vote:"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019-07"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "title": [
+      "NC Dataset Online Viewer: https://gis.water.ca.gov/app/NCDatasetViewer/ 2 California Department of Water Resources (DWR",
+      "Summary of the “Natural Communities Commonly Associated with Groundwater"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Statewide-Reports/Natural-Communities-Dataset-Summary-Document.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dataset and Online Web Viewer"
+    ]
+  },
+  {
+    "citation-number": [
+      "3"
+    ],
+    "title": [
+      "For more details on the mapping methods, refer to",
+      "Mapping Indicators of Groundwater Dependent Ecosystems in California: Methods Report"
+    ],
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at:",
+      "4 “Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6"
+    ],
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Water Budget Best Management Practice"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/sgm/pdfs/BMP_Water_Budget_Final_2016-12-23.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Residential Greywater Irrigation Systems in California: An Evaluation of Soil and Water Quality, User Satisfaction, and Installation Costs Greywater Action in collaboration with"
+    ],
+    "publisher": [
+      "City of Santa Rosa and Ecology Action of"
+    ],
+    "location": [
+      "Santa Cruz"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Census",
+        "given": "Bay Area"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Cities and Towns.\"Accessed on 10/5/2012 from <http://www.bayareacensus.ca.gov/cities/cities.htm >"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Al-Hamaiedeh",
+        "given": "H.D."
+      },
+      {
+        "family": "Bino",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Effect of treated grey water reuse in irrigation on soil and plants"
+    ],
+    "volume": [
+      "256"
+    ],
+    "pages": [
+      "115–119"
+    ],
+    "doi": [
+      "10.1016/j.desal.2010.02.004"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Desalination"
+    ],
+    "issue": [
+      "1-3"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Alfiya",
+        "given": "Y."
+      },
+      {
+        "family": "Damti",
+        "given": "O."
+      },
+      {
+        "family": "Stoler-Katz",
+        "given": "A."
+      },
+      {
+        "family": "Zoubi",
+        "given": "A."
+      },
+      {
+        "family": "Shaviv",
+        "given": "A."
+      },
+      {
+        "family": "E",
+        "given": "Friedler"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Potential impacts of on-site greywater reuse in landscape irrigation"
+    ],
+    "volume": [
+      "65"
+    ],
+    "pages": [
+      "757–764"
+    ],
+    "doi": [
+      "10.2166/wst.2012.903"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Science & Technology"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Undated",
+        "given": "American Rivers"
+      }
+    ],
+    "title": [
+      "Health Risks of Sewage"
+    ],
+    "note": [
+      "Accessed on 11/5/2012 from www.americanrivers.org"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "R."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Monitoring Graywater Use: Three Case Studies in California"
+    ],
+    "url": [
+      "http://oasisdesign.net/greywater/SBebmudGWstudy.htm."
+    ],
+    "note": [
+      "Accessed Jan 2010."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Birks",
+        "given": "R."
+      },
+      {
+        "family": "Colbourne",
+        "given": "J."
+      },
+      {
+        "family": "Hills",
+        "given": "S."
+      },
+      {
+        "family": "Hobson",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Microbiological Water Quality in a Large In-building Water Recycling Facility"
+    ],
+    "volume": [
+      "50"
+    ],
+    "pages": [
+      "165"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Wat. Sci. Tech"
+    ],
+    "issue": [
+      "23"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brady",
+        "given": "N."
+      },
+      {
+        "family": "Weil",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "The Nature and Properties of Soil"
+    ],
+    "publisher": [
+      "Prentice Hall"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Building Standards Commission",
+      "California Plumbing Code Title 24, Part 5, Chapter 16A"
+    ],
+    "date": [
+      "2010"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Casanova",
+        "given": "L.M."
+      },
+      {
+        "family": "Little",
+        "given": "V."
+      },
+      {
+        "family": "Frye",
+        "given": "R.J."
+      },
+      {
+        "family": "Gerba",
+        "given": "C.P."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "A Survey of the Microbial Quality of Recycled Household Graywater"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "1313–1319"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "JAWRA Journal of the American Water Resources Association"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Los Angeles",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Graywater Pilot Project - Final Report"
+    ],
+    "publisher": [
+      "Office of Water Reclamation"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Cohen",
+        "given": "Y."
+      }
+    ],
+    "date": [
+      "2009",
+      "2009"
+    ],
+    "title": [
+      "Graywater- A potential source of water",
+      "UCLA Institute of Environment and Sustainability"
+    ],
+    "genre": [
+      "Southern California Environmental Report Card,"
+    ],
+    "note": [
+      "Retrieved October 12, 2012 from"
+    ],
+    "url": [
+      "http://www.ioe.ucla.edu/reportcard/article.asp?parentid=4870"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Costello",
+        "given": "L."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Abiotic Disorders of Landscape Plants: A Diagnostic Guide"
+    ],
+    "publisher": [
+      "University of California Agriculture and Natural Resources. Publication"
+    ],
+    "pages": [
+      "3420"
+    ],
+    "date": [
+      "2003"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Duttle",
+        "given": "M."
+      },
+      {
+        "family": "Friedler",
+        "given": "E."
+      }
+    ],
+    "title": [
+      "Safe Use of Household Greywater Guide M-106 Revised by Marsha Duttle, Extension Research Assistant College of Agriculture, Consumer and Environmental Sciences New Mexico State University",
+      "Quality of individual domestic greywater streams and its implication for on-site treatment and reuse possibilities"
+    ],
+    "note": [
+      "Retrieved on 11/5/2012 from"
+    ],
+    "url": [
+      "http://aces.nmsu.edu/pubs/_m/m-106.html"
+    ],
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "25"
+    ],
+    "pages": [
+      "997–1008"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environ Technol"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Plumbers",
+        "given": "Green"
+      }
+    ],
+    "title": [
+      "Undated"
+    ],
+    "note": [
+      "Accessed on November 9th, 2012 from"
+    ],
+    "url": [
+      "http://greenplumbers.com.au/grey-wateruse-washing-agents"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Gross",
+        "given": "A."
+      },
+      {
+        "family": "Azulai",
+        "given": "N."
+      },
+      {
+        "family": "Oron",
+        "given": "G."
+      },
+      {
+        "family": "Ronen",
+        "given": "Z."
+      },
+      {
+        "family": "Arnold",
+        "given": "M."
+      },
+      {
+        "family": "Nejidat",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Environmental impact and health risks associated with greywater irrigation: a case study, 52"
+    ],
+    "container-title": [
+      "IWA Publishing, Alliance House 12 Residential Greywater Irrigation Systems in California. Greywater Action Caxton Street London SW 1 H 0 QS UK"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Grattan",
+        "given": "Stephen"
+      },
+      {
+        "given": "E."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Irrigation Water Salinity and Crop Production Publication 8066 University of California Davis Agriculture and Natural Resources Howard",
+      "Laundry Greywater Potential Impact on Toowoomba Soils- Final Report"
+    ],
+    "date": [
+      "2005"
+    ],
+    "publisher": [
+      "Landloch and NCEA. Darling Heights",
+      "National Centre for engineering in Agriculture Publication"
+    ],
+    "location": [
+      "Queensland, Australia"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Kim",
+        "given": "J."
+      },
+      {
+        "family": "Song",
+        "given": "I."
+      },
+      {
+        "family": "Oh",
+        "given": "H."
+      },
+      {
+        "family": "Jong",
+        "given": "J."
+      },
+      {
+        "family": "Park",
+        "given": "J."
+      },
+      {
+        "family": "Choung",
+        "given": "Y."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "A laboratory-scale graywater treatment system based on a membrane filtration and oxidation process — characteristics of graywater from a residential complex"
+    ],
+    "volume": [
+      "238"
+    ],
+    "pages": [
+      "347–357"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Desalination"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Little"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Residential Graywater Use: The Good, the Bad, The Healthy"
+    ],
+    "publisher": [
+      "Water Conservation Alliance of Southern Arizona"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ludwig",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Reasons to Allow Simple Graywater Systems that Meet Standards, Without Requiring a Permit. Prepared for the California Building Standards Commission"
+    ],
+    "note": [
+      "Accessed on November 10, 2012 from www.oasisdesign.net/greywater/law/california/BSChandout.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Misra",
+        "given": "R."
+      },
+      {
+        "family": "Patel",
+        "given": "J.H."
+      },
+      {
+        "family": "Baxi",
+        "given": "V.R."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Reuse potential of laundry greywater for irrigation based on growth, water and nutrient use of tomato"
+    ],
+    "volume": [
+      "386"
+    ],
+    "pages": [
+      "95–102"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Misra",
+        "given": "R.K."
+      },
+      {
+        "family": "Sivongxay",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Reuse of laundry greywater as affected by its interaction with saturated soil"
+    ],
+    "volume": [
+      "366"
+    ],
+    "pages": [
+      "55–61"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ottoson",
+        "given": "J."
+      },
+      {
+        "family": "Stenstrom",
+        "given": "T.A."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Faecal contamination of greywater and associated microbial risks"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "645–655"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Research"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Pettygrove"
+      },
+      {
+        "given": "Asano"
+      }
+    ],
+    "date": [
+      "1985",
+      "1994"
+    ],
+    "title": [
+      "Irrigation with reclaimed municipal wastewater-- A guidance manual. Water Quality for Agriculture"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Agriculture and Consumer Protection"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Pinto",
+        "given": "U."
+      },
+      {
+        "family": "Maheshwari",
+        "given": "B.L."
+      },
+      {
+        "family": "Grewal",
+        "given": "H.S."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Effects of greywater irrigation on plant growth, water use and soil properties"
+    ],
+    "volume": [
+      "54,(2010"
+    ],
+    "pages": [
+      "429–435"
+    ],
+    "url": [
+      "http://dx.doi.org/10.1016/j.resconrec.2009.09.007"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Resources, Conservation and Recycling"
+    ],
+    "doi": [
+      "10.1016/j.resconrec.2009.09.007"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sheikh",
+        "given": "Bahman"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Whitepaper on Graywater"
+    ],
+    "note": [
+      "Retrieved Nov. 1, 2012 from"
+    ],
+    "url": [
+      "http://www.awwa.org/files/Resources/Waterwiser/references/PDFs/GraywaterFinal%20Report2010.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Travis",
+        "given": "M.J."
+      },
+      {
+        "family": "Wiel-Shafran",
+        "given": "A."
+      },
+      {
+        "family": "Weisbrod",
+        "given": "N."
+      },
+      {
+        "family": "Adar",
+        "given": "E."
+      },
+      {
+        "family": "Gross",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Greywater reuse for irrigation: Effect on soil properties"
+    ],
+    "volume": [
+      "408"
+    ],
+    "pages": [
+      "2501–2508"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Science of The Total Environment"
+    ],
+    "issue": [
+      "12"
+    ]
+  },
+  {
+    "title": [
+      "Western Regional Climate Center"
+    ],
+    "note": [
+      "Accessed on Aug 13, 2012.<http://www.wrcc.dri.edu/>"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Winward",
+        "given": "G."
+      },
+      {
+        "family": "Avery",
+        "given": "L."
+      },
+      {
+        "family": "Frazer-Williams",
+        "given": "R."
+      },
+      {
+        "family": "Pidou",
+        "given": "M."
+      },
+      {
+        "family": "Jeffrey",
+        "given": "P."
+      },
+      {
+        "family": "Stephenson",
+        "given": "T."
+      },
+      {
+        "family": "Jefferson",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "A study of the microbial quality of grey water and an evaluation of treatment technologies for reuse"
+    ],
+    "volume": [
+      "32"
+    ],
+    "pages": [
+      "187–197"
+    ],
+    "url": [
+      "http://dx.doi.org/10.1016/j.ecoleng.2007.11.001"
+    ],
+    "note": [
+      "September 9, 2021 Matt Zidar San Joaquin County 1810 E. Hazelton Avenue Stockton, CA 95201"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecological Engineering"
+    ],
+    "doi": [
+      "10.1016/j.ecoleng.2007.11.001"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Re"
+      }
+    ],
+    "title": [
+      "Northern and Central Delta‐Mendota Groundwater Sustainability Agency (GSA"
+    ],
+    "container-title": [
+      "Management Committees Comments on the Draft Tracy Subbasin Groundwater Sustainability Plan Dear Mr. Zidar"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "email",
+        "given": "Via"
+      },
+      {
+        "family": "mail",
+        "given": "U.S."
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "SGMA requires a GSA manage groundwater in all basins designated by the Department of Water Resources (“DWR\") as a medium or high priority, including the Tracy Subbasin (designated basin number 5-22.15); WHEREAS, in order to exercise the authority granted by SGMA, a local agency may decide to become a GSA; WHEREAS, the Byron-Bethany Irrigation District"
+    ],
+    "note": [
+      "BBID or District) is a local agency as defined by SGMA;"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "WHEREAS, the District subsequently transmitted notice of its intent to become a GSA consistent with Resolution No. 2017-5 to DWR, and following the required notice, became the GSA for the areas of the Tracy Subbasin within the District boundaries in Contra Costa and San Joaquin Counties, and both within and outside the District boundaries in Alameda County"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "WHEREAS, on September 24, 2019, the GSAs executed a Memorandum of Agreement for the purpose of developing a GSP and coordinating sustainable groundwater management in the Tracy Subbasin (Wat"
+    ],
+    "volume": [
+      "10723"
+    ],
+    "pages": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Code"
+    ],
+    "issue": [
+      "6(i))"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "WHEREAS",
+        "given": "in August"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "the California Legislature passed, and in"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "September 2014 the Governor signed, legislation creating the Sustainable Groundwater Management Act (\" SGMA\") to provide local groundwater sustainability agencies with the authority and technical and financial assistance necessary to sustainably manage groundwater"
+    ],
+    "note": [
+      " Wat. Code, § 10720, ( d)); and"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "WHEREAS, in October 2018, the DWR approved a jurisdictional Basin"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "WHEREAS, on September 24, 2019, the GSAs executed a Memorandum of Agreement for the purpose of developing a GSP and coordinating sustainable groundwater management in the Tracy Subbasin ( Wat"
+    ],
+    "volume": [
+      "10723. 6"
+    ],
+    "note": [
+      "i)); and"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Code"
+    ]
+  },
+  {
+    "title": [
+      "GSAs: Banta- Carbona Irrigation District GSA City of Tracy GSA Byron- Bethany Irrigation District GSA San Joaquin County GSA City of Lathrop GSA Stewart Tract GSA a, r"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "City of Tracy was formed as a GSA on February 2"
+    ],
+    "date": [
+      "2016"
+    ],
+    "publisher": [
+      "by City Council"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "per Resolution 2016- 026, for the purposes of sustainably managing groundwater in the Tracy Subbasin, within its jurisdictional boundaries, pursuant to the requirements of SGMA; and"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The foregoing Resolution 2021- 092 was adopted by the Tracy City Council on the"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021-07"
+    ],
+    "note": [
+      "by the following vote:"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "email",
+        "given": "Via"
+      },
+      {
+        "family": "Alameda",
+        "given": "U.S.",
+        "particle": "mail"
+      }
+    ],
+    "publisher": [
+      "County City of Lathrop City of Tracy San Joaquin County"
+    ],
+    "type": "book"
+  },
+  {
+    "container-title": [
+      "Groundwater Sustainability Agencies GSP Adoption Resolutions BEFORE THE BOARD OF SUPERVISORS OF THE COUNTY OF SAN JOAQUIN STATE OF CALIFORNIA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "the California Legislature passed and the Governor signed"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Senate Bills 1168 and 1319, and Assembly Bill 1739, known collectively as the Sustainable Groundwater Management Act of 2014 (SGMA); and, WHEREAS, SGMA requires all high-and medium-priority groundwater basins, as designated by the California Department of Water Resources (DWR) to form new sustainability agencies and complete a Groundwater Sustainability Plan"
+    ],
+    "note": [
+      "GSP) by January 31, 2022; and,"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "WHEREAS, the GSP was collaboratively developed with input from the six GSAs, as well as input from members of the public provided through monthly meetings"
+    ],
+    "note": [
+      "public workshops, and public comment period; and,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "WHEREAS",
+        "given": "in August"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "the California Legislature passed, and in"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "September 2014 the Governor signed, legislation creating the Sustainable Groundwater Management Act (\" SGMA\") to provide local groundwater sustainability agencies with the authority and technical and financial assistance necessary to sustainably manage groundwater"
+    ],
+    "note": [
+      " Wat. Code, § 10720, ( d)); and"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "WHEREAS, in October 2018, the DWR approved a jurisdictional Basin"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "WHEREAS",
+        "given": "on August"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "the GSAs released the Notice of Intent to Adopt the GSP to cities and counties in the plan area pursuant to Water Code section 10728"
+    ],
+    "note": [
+      "4; and"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "WHEREAS, the GSAs developed the draft Tracy Subbasin GSP and released the draft Tracy Subbasin GSP for a 30- day public comment period on August 9, 2021; WHEREAS, the GSAs reviewed and responded to comments on the Tracy Subbasin GSP"
+    ],
+    "note": [
+      "and WHEREAS, the GSAs released the final Tracy Subbasin GSP on November 1,"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2021"
+    ],
+    "title": [
+      "which has been posted to the City' s website at the following link",
+      "us/ publicworks/ page/ sustainable- groundwatermanagement ; and WHEREAS, on September 24, 2019, the GSAs executed a Memorandum of Agreement for the purpose of developing a GSP and coordinating sustainable groundwater management in the Tracy Subbasin ( Wat"
+    ],
+    "url": [
+      "https://"
+    ],
+    "author": [
+      {
+        "family": "ca",
+        "particle": "ci. lathrop."
+      }
+    ],
+    "volume": [
+      "10723. 6"
+    ],
+    "note": [
+      "i)); and"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Code"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "WHEREAS",
+        "given": "by approving Amendment No"
+      }
+    ],
+    "title": [
+      "1 to the Memorandum of Agreement, the City of Lathrop is approving the new cost allocation methodology for long- term costs associated with SGMA compliance and GSP implementation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "SGMA requires a GSA manage groundwater in all basins designated by the Department of Water Resources (“DWR\") as a medium or high priority, including the Tracy Subbasin"
+    ],
+    "note": [
+      "designated basin number 5-22.15); WHEREAS, on March 21, 2017, the Board of Directors of Byron Bethany Irrigation District (BBID or District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Resolution No",
+        "particle": "adopted"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "thereby deciding to become the GSA for the areas of the Tracy Subbasin"
+    ],
+    "note": [
+      "Subbasin No. 5-22.15"
+    ],
+    "container-title": [
+      "within the District boundaries in Contra Costa and San Joaquin Counties, and both within and outside the District boundaries in Alameda County"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "BBID has coordinated with the other GSAs in the Tracy Subbasin to develop a single, coordinated GSP for the Tracy Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "Approves and adopts the final Tracy Subbasin GSP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Geyer",
+        "given": "Kelley"
+      },
+      {
+        "family": "RESOLUTION",
+        "given": "Deputy Secretary"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "pages": [
+      "172"
+    ],
+    "type": null
+  }
+]

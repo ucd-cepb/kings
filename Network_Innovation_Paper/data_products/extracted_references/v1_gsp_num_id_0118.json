@@ -1,0 +1,6307 @@
+[
+  {
+    "author": [
+      {
+        "family": "Cost Engineering",
+        "given": "I.",
+        "particle": "Association for the Advancement of"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "note": [
+      "ACE International Recommended PracticeNo. 17R‐97; Cost Estimate Classification System; TCM Framework: 7.3 ‐ Cost Estimating and Budgeting."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hydrologics",
+        "given": "Balance"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Hydrology and Geology Assessment of the Pismo Creek Watershed"
+    ],
+    "location": [
+      "San Luis Obispo County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow depletion by wells: understanding and managing the effects of groundwater pumping on streamflow"
+    ],
+    "publisher": [
+      "United States Geological Survey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Baseflow Data Compilation and GIS Analysis in San Luis Obispo Creek Watershed"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Blaney"
+      }
+    ],
+    "date": [
+      "1933"
+    ],
+    "title": [
+      "Ventura County Investigation"
+    ],
+    "volume": [
+
+    ],
+    "publisher": [
+      "California Deparment of Public Works, Division of Water Resources"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ],
+    "issue": [
+      "46"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Blaney"
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Utilization of the Water of the Santa Ynez River Basin in Southern Santa Barbara County California, United Stated Deparment of Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Boyle"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "City of San Luis Obispo Groundwater Basin Evaluation"
+    ],
+    "publisher": [
+      "January"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Forestry",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "family": "Protection",
+        "given": "Fire"
+      },
+      {
+        "family": "Carollo",
+        "given": "C.A."
+      }
+    ],
+    "date": [
+      "2015",
+      "2012"
+    ],
+    "title": [
+      "Fire and Resource Assessment Program (FRAP) FVEG [ESRI File Geodatabase"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "publisher": [
+      "San Luis Obispo County Master Water Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "CDFW",
+        "given": "C.D."
+      },
+      {
+        "family": "CDFW",
+        "given": "C.D."
+      },
+      {
+        "family": "CDFW",
+        "given": "C.D."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-12",
+      "2019"
+    ],
+    "title": [
+      "California Natural Diversity Database (CNDDB",
+      "List of California Sensitive Natural Communities"
+    ],
+    "note": [
+      "Retrieved November 2019, from",
+      "Retrieved December 2019, from",
+      "Special Vascular Plants, Bryophytes, and Lichens List. Quarterly publication."
+    ],
+    "url": [
+      "http://www.dfg.ca.gov/whdab/html/cnddb.html",
+      "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=153609&inline"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Vegetation Classification and Mapping Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.I.M.S."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Station 52, San Luis Obispo - Central Coast Valleys"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "San Luis Obispo",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Water Use Factors"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "San Luis Obispo",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Water Resources Status Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "San Luis Obispo",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "2015 Urban Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "San Luis Obispo",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "General Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Cleath"
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Well Construction and Testing Report for Lewis Lane #4"
+    ],
+    "location": [
+      "Edna Valley, San"
+    ],
+    "note": [
+      "Luis Obispo County. Prepared for Southern California Water Company. July."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Cleath"
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Well Construction and Testing Report for Water Supply and Irrigation Wells, City of San Luis Obispo, Hayashi Irrigation Wells and Highway 101 Water Supply Well"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Edna Valley Water System Groundwater Study"
+    ],
+    "publisher": [
+      "Prepared for Golden State Water Company. May"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Flow Analysis, Recycled Water Recharge Project"
+    ],
+    "publisher": [
+      "San Luis Valley Subarea, San Luis Obispo Valley Groundwater Basin"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Geophysical Survey of Bedrock Divide Between San Luis Valley and Edna Valley"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Summary of Drilling,. Testing, and Destruction of the Golden State Water Company Country Club Test Well, Edna Road System, 6110"
+    ],
+    "publisher": [
+      "Lewis Lane",
+      "Prepared for Golden State Water Company. June"
+    ],
+    "location": [
+      "San Luis Obispo, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Summary of Exploration and Testing, 5061 Hacienda Avenue"
+    ],
+    "location": [
+      "San Luis Obispo, California"
+    ],
+    "publisher": [
+      "Prepared for Golden State Water Company. February"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Exploration and Testing, Blodgett parcel, Whiskey Run Lane, Country Club Area"
+    ],
+    "location": [
+      "San Luis Obispo, California"
+    ],
+    "publisher": [
+      "Prepared for Golden State Water Company. July"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "San Luis Obispo",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "note": [
+      "San Luis Obispo County Integrated Regional Water Management Plan (IRWMP)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservation",
+        "given": "Creek Lands"
+      }
+    ],
+    "date": [
+      "2019",
+      "2015"
+    ],
+    "title": [
+      "San Luis Obispo County Low Flow Monitoring Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "CSLRCD",
+        "given": "C.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Mitigated Negative Declaration/Initial Study Edna Valley Groundwater Basin Recharge and Steehead Habitat Enhancement Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Geologic Map of the Lopez Mountain Quadrangle, San Luis Obispo County, California"
+    ],
+    "publisher": [
+      "Dibble Geology Center Map"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Geologic Map of the San Luis Obispo Quadrangle, San Luis Obispo County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      ". Dibble Geology Center Map."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Geologic Map of the Arroyo Grande NE Quadrangle, San Luis Obispo County, California"
+    ],
+    "publisher": [
+      "Dibble Geology Center Map"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Geologic Map of the Pismo Beach Quadrangle, San Luis Obispo County, California"
+    ],
+    "publisher": [
+      "Dibblee Geology Center Map"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "San Luis Obispo County Investigation"
+    ],
+    "volume": [
+
+    ],
+    "publisher": [
+      "California Department of Water Resources (DWR). May"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "State Water Resources Board Bulletin"
+    ],
+    "issue": [
+      "18. "
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1964",
+      "1959"
+    ],
+    "title": [
+      "San Luis Obispo and Santa Barbara Counties Land and Water Use Survey"
+    ],
+    "note": [
+      ". California Department of Water Resources (DWR)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1987",
+      "1985"
+    ],
+    "title": [
+      "Southern Central Coast Land Use Survey",
+      "Morro Bay South 54-30 and San Luis Obispo 54-31 Survey Maps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "South Central Coast Land Use Survey"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "San Luis-Edna Valley Groundwater Basin Study"
+    ],
+    "genre": [
+      "Draft Report. ."
+    ],
+    "publisher": [
+      "California Department of Water Resources (DWR"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Water Resources of the Arroyo Grande"
+    ],
+    "location": [
+      "Nipomo Mesa Area"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "California’s Groundwater: Bulletin 118 – Update 2003, Groundwater Basin Descriptions"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      },
+      {
+        "family": "DWR",
+        "particle": "from gis.water.ca.gov"
+      }
+    ],
+    "date": [
+      "2014",
+      "2015"
+    ],
+    "title": [
+      "DWR Atlas - Aglricultural Lang Use and Irrigated Areas",
+      "Consumptive Use Program Plus (CUP+"
+    ],
+    "note": [
+      "Retrieved 2019,"
+    ],
+    "container-title": [
+      "Model, in California Water Plan Update 2013"
+    ],
+    "volume": [
+      "4"
+    ],
+    "publisher": [
+      "Reference Guide, Developed by DWR and UC Davis"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater Monitoring Networks and Identification of Data Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California's Groundwater: Bulletin 118 - Interim Update 2016, Working Towards Sustainability"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      },
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Statewide Crop Mapping Datasets",
+      "Water Budget Best Management Practices for the Sustainable Management of Groundwater"
+    ],
+    "note": [
+      "Retrieved from"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/statewidecrop-mapping"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Natural Communities Commonly Associated with Groundwater (NCCAG) Dataset"
+    ],
+    "note": [
+      "Retrieved from"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/NCDatasetViewer/sitedocs/#"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization - Process and Results Document"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "DWR",
+        "given": "C.D."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "Delivery Capability Report and Studies"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "eBird"
+      }
+    ],
+    "date": [
+      "2017",
+      "2018",
+      "2008"
+    ],
+    "title": [
+      "eBird: An online database of bird distribution and abundance",
+      "2018 Edition of the Drinking Water Standards and Health Advisory Tables"
+    ],
+    "note": [
+      "Retrieved December 2019, from",
+      "Water Sense Factsheet - Indoor Water Use in the United States, EPA-832-F-06-004."
+    ],
+    "url": [
+      "http://www.ebird.org"
+    ],
+    "container-title": [
+      "Environmental Protection Agency (EPA",
+      "EPA. EPA"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "E.S.A."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Hydrologic Investigation, Edna Valley Well Location Study"
+    ],
+    "publisher": [
+      "September"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "West",
+        "given": "Fugro"
+      },
+      {
+        "given": "Cleath"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Paso Robles Groudnwater Study, Final Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "G.E.I."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "San Luis Region Integrated Regional Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "San Luis Obispo Valley Basin Characterization and Monitoring Well Installation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "G.S.W.C."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Staged Mandatory Conservation and Rationing Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hall",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Geology of the Arroyo Grande Quadrangle, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Division of Mines and Geology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hall",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Geologic map of the San Luis Obispo"
+    ],
+    "location": [
+      "San Simeon Region, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "I.T.R.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Official Cal Poly Precipitation Data, Cal Poly/NOAA Station Rain Gage"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Johnson",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "1967"
+    ],
+    "title": [
+      "Specific Yield - Compilation of Specific Yield for Various Materials, U.S"
+    ],
+    "container-title": [
+      "Geological Survey Water-Supply Paper 1662-D, prepared in cooperation with the California Deparment of Water Resources"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K.J.-W.-F."
+      },
+      {
+        "family": "Lewis",
+        "given": "D.C."
+      }
+    ],
+    "date": [
+      "2018",
+      "1964"
+    ],
+    "title": [
+      "Mapping indicators of groundwater dependent ecosystems in California",
+      "The relationship between oak tree roots and groundwater in fractured rock as determined by tritium testing"
+    ],
+    "note": [
+      "Retrieved from"
+    ],
+    "url": [
+      "https://data.ca.gov/dataset/natural-communities-commonly-associated-groundwater"
+    ],
+    "pages": [
+      "2,579–2,588"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ]
+  },
+  {
+    "container-title": [
+      "NAIP (National Agricultural Imagery Program"
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "National Geospatial Data Asset (NGDA) NAIP Imagery"
+    ],
+    "publisher": [
+      "USDA-FSA-APFO Aerial Photography Field Office"
+    ],
+    "location": [
+      "Salt Lake City, UT"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "South-Central California Steelhead Recovery Plan"
+    ],
+    "publisher": [
+      "West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Q.P.S."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "DRAFT Background Study South San Luis Obispo Groundwater PCE Plume"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corporation",
+        "given": "Questa Engineering"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "San Luis Obispo Creek Watershed Calibration Study"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Regional Water Quality Control Board, Central Coast Region",
+      "Water Quality Control Plan for the Central Coast Basin"
+    ],
+    "date": [
+      "2017"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Robinson"
+      }
+    ],
+    "date": [
+      "1958",
+      "1423"
+    ],
+    "title": [
+      "Phreatophytes"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A compendium of California’s threatened and endangered species for sustainable groundwater management"
+    ],
+    "location": [
+      "San Francisco"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Rosenberg",
+        "given": "L."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Potential Aquifer Recharge Areas: Monterey County, California"
+    ],
+    "publisher": [
+      "Monterey County Planning Department"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "San Luis Obispo County Deparment of Agriculture/Weights and Measures",
+      "Crop Surveys for San Luis Obispo Valley Groundwater Basin 2013-2018"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Public Works",
+        "given": "San Luis Obispo County Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2005",
+      "2005"
+    ],
+    "title": [
+      "Water Years 2001-02 and 2002-03 Hydrologic Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Public Works",
+        "given": "San Luis Obispo County Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "Andrews Street Bridge Stream Flow Gage 745."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Public Works",
+        "given": "San Luis Obispo County Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Gas Company Rain Sensor 3099"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "San Luis Obispo County Engineering Department",
+      "Hydrologic & Climatological Data, Seasons of"
+    ],
+    "date": [
+      "1974",
+      "1970"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "San Luis Obispo County Flood Control and Water Conservation District"
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "2019 Integrated Regional Water Management Plan."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.L.O.C.F.C.W.C.D."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "CASGEM Monitoring Plan for High and Medium Priority Groundwater Basins in the San Luis Obispo County Flood Control & Water Conservation District"
+    ],
+    "publisher": [
+      "September. San Luis Obispo Flood Control & Water Conservation District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "San Luis Obispo County Regional Instream Flow Assessment"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Percolation Zone Study of Pilot-Study Groundwater Basins in San Luis Obispo County"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "September"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Pismo Instream Flow Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater-Dependent Ecosystems in the San Luis Obispo Valley Groundwater Basin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Ernest Righetti & Sons Application 28883, Decision 1627"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "T.E.A.M."
+      },
+      {
+        "given": "Management"
+      }
+    ],
+    "date": [
+      "2000",
+      "July"
+    ],
+    "title": [
+      "Groundwater Yield Analysis"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      },
+      {
+        "family": "Extension",
+        "given": "U.C.Davis Cooperative"
+      }
+    ],
+    "date": [
+      "2019",
+      "2015"
+    ],
+    "title": [
+      "Freshwater species list for San Luis Obispo Valley Groundwater Basin",
+      "Soil Suitability Index Identifies Potential Areas for Groundwater Banking on Agricultural Lands"
+    ],
+    "note": [
+      "Retrieved from"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/environmental-surface-waterbeneficiaries"
+    ],
+    "volume": [
+      "69, Number 2"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Agriculture"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.R.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Final Investigation Report: San Luis Obispo PCE Groundwater Plume"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.R.S."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Investigation Report: San Luis Obispo PCE Groundwater Plume"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.B.R."
+      }
+    ],
+    "date": [
+      "1955"
+    ],
+    "title": [
+      "Reconnaissance Report San Luis Obispo County Basin"
+    ],
+    "location": [
+      "California",
+      "Region 2, Sacramento"
+    ],
+    "publisher": [
+      ". U.S. Bureau of Reclamation"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A.-N.R.C.S."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Soil Survey Geographic Database (SSURGO). U.S"
+    ],
+    "container-title": [
+      "Department of Agriculture (USDA) Natural Resources Conservation Service (NRCS"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "National Wetlands Inventory website"
+    ],
+    "note": [
+      "Retrieved from"
+    ],
+    "url": [
+      "http://www.fws.gov/wetlands/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Quaternary Fault and Fold Database for the Nation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Valentine",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1999",
+      "1997-03"
+    ],
+    "title": [
+      "Use of InSAR to Identify Land Surface Displacement Caused by Aquifer-System Compaction in the Paso Robles Area, San Luis Obispo County"
+    ],
+    "location": [
+      "California"
+    ],
+    "genre": [
+      "Open File Report 00-447."
+    ],
+    "publisher": [
+      "United States Geological Survey"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "Wallace"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "publisher": [
+      "Policy Considerations for Groundwater Sustainability Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "W.S.C."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Salinas and Whale Rock Reserviors Safe Annual Yield TM"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Yeh"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Subsidence Evaluation San Luis Obispo Valley Groundwater Basin Characterization Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Amlin",
+        "given": "N.M."
+      },
+      {
+        "family": "Rood",
+        "given": "S.B."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Comparative tolerances of riparian willows and cottonwoods to water-table decline"
+    ],
+    "volume": [
+      "22"
+    ],
+    "pages": [
+      "348–346"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Wetlands"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "AmphibiaWeb"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Taricha torosa. Information on amphibian biology and conservation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "Berkeley, California. http://amphibiaweb.org/cgi/amphib_query?where-genus=Taricha&wherespecies=torosa&account=amphibiawe Ashton, D. T., A. J. Lind, and K. E. Schlick."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Western pond turtle (Clemmys marmorata). Natural history"
+    ],
+    "publisher": [
+      "USDA Forest Service, Pacific Southwest Research Station, Redwood Sciences Laboratory"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hydrologics",
+        "given": "Balance"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Hydrology and Geology Assessment of Pismo Creek Watershed, San Luis Obispo County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Baldassarre",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Ducks, geese, and swans of North America"
+    ],
+    "publisher": [
+      "JHU Press"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow depletion by wells: understanding and managing the effects of groundwater pumping on streamflow"
+    ],
+    "location": [
+      "Reston, VA"
+    ],
+    "publisher": [
+      "US Geological Survey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Beedy",
+        "given": "E.C."
+      },
+      {
+        "family": "Hamilton",
+        "given": "W.J."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Tricolored blackbird status update and management guidelines"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Fish and Game, Bird and Mammal Conservation Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Beedy",
+        "given": "E.C."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008"
+    ],
+    "title": [
+      "Tricolored blackbird (Agelaius tricolor",
+      "California Bird Species of Special Concern: A ranked assessment of species, subspecies, and distinct populations of birds of immediate conservation concern in California"
+    ],
+    "editor": [
+      {
+        "family": "Shuford",
+        "given": "W.D."
+      },
+      {
+        "family": "Gardali",
+        "given": "T."
+      }
+    ],
+    "volume": [
+      "1"
+    ],
+    "location": [
+      "Western Field Ornithologists, Camarillo, California",
+      "Sacramento"
+    ],
+    "publisher": [
+      "and California Department of Fish and Game"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Studies of Western Birds"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Beedy",
+        "given": "E.C."
+      },
+      {
+        "family": "Deuel",
+        "given": "B.E."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008"
+    ],
+    "title": [
+      "Redhead (Aythya americana",
+      "California Bird Species of Special Concern: A ranked assessment of species, subspecies, and distinct populations of birds of immediate conservation concern in California"
+    ],
+    "editor": [
+      {
+        "family": "Shuford",
+        "given": "W.D."
+      },
+      {
+        "family": "Gardali",
+        "given": "T."
+      }
+    ],
+    "volume": [
+      "1"
+    ],
+    "location": [
+      "Western Field Ornithologists, Camarillo, California",
+      "Sacramento"
+    ],
+    "publisher": [
+      "and California Department of Fish and Game"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Studies of Western Birds"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Beedy",
+        "given": "E.C."
+      },
+      {
+        "family": "Deuel",
+        "given": "B.E."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008"
+    ],
+    "title": [
+      "Redhead (Aythya americana",
+      "California Bird Species of Special Concern: A ranked assessment of species, subspecies, and distinct populations of birds of immediate conservation concern in California"
+    ],
+    "editor": [
+      {
+        "family": "Shuford",
+        "given": "W.D."
+      },
+      {
+        "family": "Gardali",
+        "given": "T."
+      }
+    ],
+    "volume": [
+      "1"
+    ],
+    "location": [
+      "Western Field Ornithologists, Camarillo, California",
+      "Sacramento"
+    ],
+    "publisher": [
+      "and California Department of Fish and Game"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Studies of Western Birds"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Canadell",
+        "given": "J."
+      },
+      {
+        "family": "Jackson",
+        "given": "R.B."
+      },
+      {
+        "family": "Ehleringer",
+        "given": "J.R."
+      },
+      {
+        "family": "Mooney",
+        "given": "H.A."
+      },
+      {
+        "family": "Sala",
+        "given": "O.E."
+      },
+      {
+        "family": "Schulze",
+        "given": "E.-D."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Maximum rooting depth of vegetation types at the global scale"
+    ],
+    "volume": [
+      "108"
+    ],
+    "pages": [
+      "583–595"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Oecologia"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Behnke",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Native trout of western North America"
+    ],
+    "publisher": [
+      "American Fisheries Society"
+    ],
+    "location": [
+      "Bethesda, Maryland. Stillwater Sciences"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bellrose",
+        "given": "F.C."
+      },
+      {
+        "family": "Kortright",
+        "given": "F.H."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Ducks, geese and swans of North America"
+    ],
+    "location": [
+      "Harrisburg"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Baseflow Data Compilation and GIS Analysis in San Luis Obispo Creek Watershed"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bettelheim",
+        "given": "M.P."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "The western pond turtle, Clemmys marmorata. A natural history of the species"
+    ],
+    "publisher": [
+      "Privately published"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Forestry",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "family": "Protection",
+        "given": "Fire"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Fire and Resource Assessment Program (FRAP) FVEG [ESRI File Geodatabase"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CDFW (California Department of Fish and Wildlife). 2019a"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Special Vascular Plants, Bryophytes, and Lichens List. Quarterly publication"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "California Natural Diversity Database (CNDDB"
+    ],
+    "note": [
+      "Rarefind Version 5."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Internet Application"
+    ],
+    "publisher": [
+      "CDFW"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "url": [
+      "http://www.dfg.ca.gov/whdab/html/cnddb.html"
+    ],
+    "note": [
+      "accessed November 2019]."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "List of California Sensitive Natural Communities"
+    ],
+    "container-title": [
+      "Vegetation Classification and Mapping Program, California Department of Fish and Game"
+    ],
+    "location": [
+      "Sacramento, California. December"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=153609&inline"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.N.P.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Inventory of Rare and Endangered Plants of California"
+    ],
+    "edition": [
+      "online"
+    ],
+    "pages": [
+      "8–03 0 39"
+    ],
+    "publisher": [
+      "California Native Plant Society"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "url": [
+      "http://www.rareplants.cnps.org/"
+    ],
+    "note": [
+      "Accessed October 2020]."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Cook",
+        "given": "L.F."
+      },
+      {
+        "family": "Toft",
+        "given": "C.A."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Dynamics of extinction: population decline in the colonially nesting tricolored blackbird Agelaius tricolor"
+    ],
+    "volume": [
+      "15"
+    ],
+    "pages": [
+      "73–88"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bird Conservation International"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Cooper",
+        "given": "William Skinner"
+      }
+    ],
+    "date": [
+      "1922"
+    ],
+    "title": [
+      "The broad-sclerophyll vegetation of California: An ecological study of the chaparral and its related communities"
+    ],
+    "volume": [
+
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "publisher": [
+      "The Carnegie Institution of Washington"
+    ],
+    "pages": [
+      "145"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Publ"
+    ],
+    "issue": [
+      "319"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Crase",
+        "given": "F.T."
+      },
+      {
+        "family": "Dehaven",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Food of nestling tricolored blackbirds"
+    ],
+    "volume": [
+      "79"
+    ],
+    "pages": [
+      "265–269"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Condor"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Conservation",
+        "given": "Creek Lands"
+      }
+    ],
+    "date": [
+      "2019",
+      "2015"
+    ],
+    "title": [
+      "San Luis Obispo County Low Flow Monitoring Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Crump",
+        "given": "D.E.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Western pond turtle (Clemmys marmorata pallida) nesting behavior and habitat use"
+    ],
+    "genre": [
+      "Master’s thesis."
+    ],
+    "publisher": [
+      "San Jose State University"
+    ],
+    "location": [
+      "San Jose, CA"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Natural communities commonly associated with groundwater database",
+      "An online database of bird distribution and abundance"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/NCDatasetViewer/#",
+      "eBird:",
+      "http://www.ebird.org."
+    ],
+    "note": [
+      "accessed December 2019. eBird. 2017.",
+      "Available:",
+      "Accessed: Date [e.g., December 2019]). Stillwater Sciences"
+    ],
+    "genre": [
+      "[web application]. eBird,"
+    ],
+    "publisher": [
+      "Cornell Lab of Ornithology"
+    ],
+    "location": [
+      "Ithaca, New York"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "given": "F.G.D.C."
+      },
+      {
+        "given": "Fish"
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      },
+      {
+        "family": "Washington",
+        "given": "D.C.Fellers"
+      },
+      {
+        "family": "M.",
+        "given": "G."
+      },
+      {
+        "family": "Launer",
+        "given": "A.E."
+      },
+      {
+        "family": "Rathbun",
+        "given": "G."
+      },
+      {
+        "family": "Bobzien",
+        "given": "S."
+      },
+      {
+        "family": "Alvarez",
+        "given": "J."
+      },
+      {
+        "family": "Sterner",
+        "given": "D."
+      },
+      {
+        "family": "Seymour",
+        "given": "R.B."
+      },
+      {
+        "family": "Westphal",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2013",
+      "2013",
+      "2001"
+    ],
+    "title": [
+      "Classification of wetlands and deepwater habitats of the United States",
+      "Second Edition. Wetlands Subcommittee, Federal Geographic Data Committee and U.S",
+      "Overwintering tadpoles in the California red-legged frogs (Rana aurora draytonii"
+    ],
+    "volume": [
+      "32"
+    ],
+    "pages": [
+      "156–157"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Herpetological Review"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Gamradt",
+        "given": "S.C."
+      },
+      {
+        "family": "Kats",
+        "given": "L.B."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Impact of chaparral wildfire-induced sedimentation on oviposition of stream-breeding California newts (Taricha torosa"
+    ],
+    "volume": [
+      "110"
+    ],
+    "pages": [
+      "546–549"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Oecologia"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hallock",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Sacramento River system salmon and steelhead problems and enhancement opportunities"
+    ],
+    "container-title": [
+      "A report to the California Advisory Committee on Salmon and Steelhead Trout"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Holland",
+        "given": "D.C."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "The western pond turtle: habitat and history"
+    ],
+    "genre": [
+      "Final Report."
+    ],
+    "publisher": [
+      "U.S. Department of Energy"
+    ],
+    "location": [
+      "Bonneville Power Administration, Portland, Oregon"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Jennings",
+        "given": "M.R."
+      },
+      {
+        "family": "Hayes",
+        "given": "M.P."
+      },
+      {
+        "family": "Holland",
+        "given": "D.C."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "A petition to the U.S. Fish and Wildlife Service to place the California red-legged frog (Rana aurora draytonii) and the western pond turtle (Clemmys marmorata) on the list of endangered and threatened wildlife and plants"
+    ],
+    "note": [
+      "Letter to M. Plenert, Regional Director, U.S. Fish and Wildlife Service, Region 1,"
+    ],
+    "location": [
+      "Portland, Oregon"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Jennings",
+        "given": "M.R."
+      },
+      {
+        "family": "Hayes",
+        "given": "M.P."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Amphibian and reptile species of special concern in California. Final Report. Prepared by California Academy of Sciences, Department of Herpetology"
+    ],
+    "publisher": [
+      "San Francisco and Portland State University, Department of Biology"
+    ],
+    "location": [
+      "Portland, Oregon"
+    ],
+    "note": [
+      "for California Department of Fish and Game, Inland Fisheries Division, Rancho Cordova."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Kirk",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "First confirmed breeding record of the Least Bittern in Inyo County, California"
+    ],
+    "volume": [
+      "26"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "W. Birds"
+    ],
+    "pages": [
+      "165–166"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping indicators of groundwater dependent ecosystems in California"
+    ],
+    "url": [
+      "https://data.ca.gov/dataset/natural-communities-commonly-associated-groundwater"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mahoney",
+        "given": "J.M."
+      },
+      {
+        "family": "Rood",
+        "given": "S.B."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Streamflow requirements for cottonwood seedling recruitment - an integrative model"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "634–645"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Wetlands"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Meehan",
+        "given": "W.R."
+      },
+      {
+        "family": "Bjornn",
+        "given": "T.C."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Salmonid distributions and life histories",
+      "Influences of forest and rangeland management on salmonid fishes and their habitats"
+    ],
+    "genre": [
+      "Pages 47-82"
+    ],
+    "editor": [
+      {
+        "family": "Meehan",
+        "given": "W.R."
+      }
+    ],
+    "volume": [
+
+    ],
+    "location": [
+      "Bethesda, Maryland"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Fisheries Society Special Publication"
+    ],
+    "issue": [
+      "19"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Meese",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Results of the 2017 Tricolored Blackbird Statewide Survey"
+    ],
+    "container-title": [
+      "Calif. Dept. of Fish and Wildlife, Wildlife Branch, Nongame Wildlife Program Report 2017-04"
+    ],
+    "location": [
+      "Sacramento, CA",
+      "Stillwater Sciences"
+    ],
+    "pages": [
+      "27"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Morey",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "California newt Taricha torosa. Pages 14-15"
+    ],
+    "editor": [
+      {
+        "family": "Zeiner",
+        "given": "D.C."
+      },
+      {
+        "family": "W. F. Laudenslayer",
+        "given": "K.E.Mayer",
+        "suffix": "Jr."
+      },
+      {
+        "family": "White",
+        "given": "M."
+      }
+    ],
+    "container-title": [
+      "California's wildlife",
+      "Amphibians and reptiles. California Statewide Habitat Relationships System. California Department of Fish and Game"
+    ],
+    "volume": [
+      "I"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "N.M.F.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "South-Central California Steelhead Recovery Plan"
+    ],
+    "publisher": [
+      "Prepared by NMFS, West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Pierson",
+        "given": "E.D."
+      },
+      {
+        "family": "Rainey",
+        "given": "W.E."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Bats",
+      "Wildlife and rare plant ecology of eastern Merced County’s vernal pool grasslands"
+    ],
+    "genre": [
+      "Pages 385–400"
+    ],
+    "editor": [
+      {
+        "family": "Vollmar",
+        "given": "J.E."
+      }
+    ],
+    "publisher": [
+      "Vollmar Consulting"
+    ],
+    "location": [
+      "Berkeley, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Plumb",
+        "given": "Tim R."
+      }
+    ],
+    "date": [
+      "1980",
+      "1979 June 26-28"
+    ],
+    "title": [
+      "Response of oaks to fire"
+    ],
+    "editor": [
+      {
+        "family": "Plumb",
+        "given": "Timothy R."
+      }
+    ],
+    "container-title": [
+      "technical coordinator. Proceedings of the symposium on the ecology, management, and utilization of California oaks"
+    ],
+    "location": [
+      "Claremont",
+      "Berkeley, CA",
+      "Forest Service, Pacific"
+    ],
+    "publisher": [
+      "CA. Gen",
+      "U.S. Department of Agriculture"
+    ],
+    "genre": [
+      "Tech. Rep. PSW-44."
+    ],
+    "note": [
+      "Southwest Forest and Range Experiment Station: 202-215."
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Poole",
+        "given": "A.F."
+      },
+      {
+        "family": "Lowther",
+        "given": "P.E."
+      },
+      {
+        "family": "Gibbs",
+        "given": "J.P."
+      },
+      {
+        "family": "Reid",
+        "given": "F.A."
+      },
+      {
+        "family": "Melvin",
+        "given": "S.M."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Least Bittern (Ixobrychus exilis), version 1.0"
+    ],
+    "container-title": [
+      "Birds of the World"
+    ],
+    "editor": [
+      {
+        "family": "Poole",
+        "given": "A.F."
+      }
+    ],
+    "publisher": [
+      "Cornell Lab of Ornithology"
+    ],
+    "location": [
+      "Ithaca, NY, USA"
+    ],
+    "url": [
+      "https://doi.org/10.2173/bow.leabit.01"
+    ],
+    "doi": [
+      "10.2173/bow.leabit.01"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Reese",
+        "given": "D.A."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Comparative demography and habitat use of western pond turtles in northern California: the effects of damming and related alterations"
+    ],
+    "note": [
+      "Unpublished doctoral dissertation."
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Berkeley"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Reese",
+        "given": "D.A."
+      },
+      {
+        "family": "Welsh",
+        "given": "H.H."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Habitat use by western pond turtles in the Trinity River, California"
+    ],
+    "volume": [
+      "62"
+    ],
+    "pages": [
+      "842–853"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Wildlife Management"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Seapy",
+        "given": "B."
+      },
+      {
+        "family": "Rogers",
+        "given": "R."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Castañeda",
+        "given": "X."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A compendium of California’s threatened and endangered species for sustainable groundwater management"
+    ],
+    "container-title": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Rood",
+        "given": "S.B."
+      },
+      {
+        "family": "Mahoney",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Collapse of riparian poplar forests downstream from dams in western prairies: probable causes and prospects for mitigation"
+    ],
+    "volume": [
+      "14"
+    ],
+    "pages": [
+      "451–464"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Management"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Segelquist",
+        "given": "C.A."
+      },
+      {
+        "family": "Scott",
+        "given": "M.L."
+      },
+      {
+        "family": "Auble",
+        "given": "G.T."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Establishment of Populus deltoides under simulated alluvial groundwater decline"
+    ],
+    "volume": [
+      "130"
+    ],
+    "pages": [
+      "274–285"
+    ],
+    "location": [
+      "Stillwater Sciences"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The American Midland Naturalist"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Shaffer",
+        "given": "H.B."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Survival of pond turtles in modified waterways: how can it work, and why does it matter? Western Pond Turtle Workshop: ecology and conservation. 16 April"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "publisher": [
+      "The Wildlife Society, San Francisco Bay Area Chapter"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Shafroth",
+        "given": "P.B."
+      },
+      {
+        "family": "Stromberg",
+        "given": "J.C."
+      },
+      {
+        "family": "Patten",
+        "given": "D.T."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Riparian vegetation response to altered disturbance and stress regimes"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "107–123"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecological Applications"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Shapovalov",
+        "given": "L."
+      },
+      {
+        "family": "Taft",
+        "given": "A.C."
+      },
+      {
+        "family": "Shirvell",
+        "given": "C.S."
+      }
+    ],
+    "date": [
+      "1954",
+      "1990"
+    ],
+    "title": [
+      "The life histories of the steelhead rainbow trout (Salmo gairdnerii) and silver salmon (Oncorhynchus kisutch) with special reference to Waddell Creek, California, and recommendations regarding their management",
+      "Role of instream rootwads as juvenile coho salmon (Oncorhynchus kisutch) and steelhead trout (O. mykiss) cover habitat under varying instream flows"
+    ],
+    "volume": [
+      "47"
+    ],
+    "pages": [
+      "373"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Calif. Dept. Fish and Game, Fish Bull",
+      "Can. J. Aquat. Sci"
+    ],
+    "issue": [
+      "98",
+      "852-861"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Skalos",
+        "given": "D."
+      },
+      {
+        "family": "Weaver",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Preliminary 2019 California Waterfowl Breeding Population Survey Report"
+    ],
+    "container-title": [
+      "California Department of Fish and Wildlife (CDFW"
+    ],
+    "publisher": [
+      "Wildlife Branch/Waterfowl Program"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Spinks",
+        "given": "P.Q."
+      },
+      {
+        "family": "Pauly",
+        "given": "G.B."
+      },
+      {
+        "family": "Crayon",
+        "given": "J.J."
+      },
+      {
+        "family": "Shaffer",
+        "given": "H.B."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Survival of the western pond turtle (Emys marmorata) in an urban California environment"
+    ],
+    "volume": [
+      "113"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Biological Conservation"
+    ],
+    "pages": [
+      "257–267"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Trenham",
+        "given": "P.C."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Demography, migration, and metapopulation structure of pond breeding salamanders"
+    ],
+    "genre": [
+      "Ph.D. dissertation."
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Davis, California"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Recovery plan for the California red-legged frog (Rana aurora draytonii"
+    ],
+    "publisher": [
+      "U.S. Fish and Wildlife Service"
+    ],
+    "location": [
+      "Portland, Oregon"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "National Wetlands Inventory website. U.S. Department of the Interior, Fish and Wildlife Service"
+    ],
+    "location": [
+      "Washington, D.C. http"
+    ],
+    "publisher": [
+      "//www.fws.gov/wetlands/ Stillwater Sciences"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Vaghti",
+        "given": "M.G."
+      },
+      {
+        "family": "Greco",
+        "given": "S.E."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Riparian vegetation of the Great Valley"
+    ],
+    "genre": [
+      "Pages 425–455"
+    ],
+    "editor": [
+      {
+        "family": "Barbour",
+        "given": "M.G."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Shoenherr",
+        "given": "A.A."
+      }
+    ],
+    "container-title": [
+      "Terrestrial Vegetation of California"
+    ],
+    "edition": [
+      "Third"
+    ],
+    "publisher": [
+      "University of California Press"
+    ],
+    "location": [
+      "Berkeley"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Weller",
+        "given": "M.W."
+      }
+    ],
+    "date": [
+      "1961"
+    ],
+    "title": [
+      "Breeding biology of the Least Bittern"
+    ],
+    "pages": [
+      "11–35"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Wilson Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Wilson",
+        "given": "C.R."
+      },
+      {
+        "family": "Meese",
+        "given": "R.J."
+      },
+      {
+        "family": "Wyckoff",
+        "given": "A.C."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Breeding chronology, movements, and life history observations of Tricolored Blackbirds in the California Central Coast"
+    ],
+    "volume": [
+      "102"
+    ],
+    "pages": [
+      "162–174"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Fish and Game"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Woodin",
+        "given": "M.C."
+      },
+      {
+        "family": "Michot",
+        "given": "T.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Redhead (Aythya americana), version 1.0"
+    ],
+    "container-title": [
+      "Birds of the World"
+    ],
+    "editor": [
+      {
+        "family": "Poole",
+        "given": "A.F."
+      },
+      {
+        "family": "Gill",
+        "given": "F.B."
+      }
+    ],
+    "publisher": [
+      "Cornell Lab of Ornithology"
+    ],
+    "location": [
+      "Ithaca, NY, USA"
+    ],
+    "url": [
+      "https://doi.org/10.2173/bow.redhea.01"
+    ],
+    "doi": [
+      "10.2173/bow.redhea.01"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Gardner",
+        "given": "M.A."
+      },
+      {
+        "family": "Morton",
+        "given": "C.G."
+      },
+      {
+        "family": "Huntington",
+        "given": "J.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Henson",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Input data processing tools for the integrated hydrologic model GSFLOW"
+    ],
+    "volume": [
+      "v. 109"
+    ],
+    "pages": [
+      "41–53 ,"
+    ],
+    "url": [
+      "https://www.sciencedirect.com/science/article/pii/S1364815217311908."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Modelling & Software"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hunt",
+        "given": "R.J."
+      },
+      {
+        "family": "Walker",
+        "given": "J.F."
+      },
+      {
+        "family": "Selbig",
+        "given": "W.R."
+      },
+      {
+        "family": "Westenbroek",
+        "given": "S.M."
+      },
+      {
+        "family": "Regan",
+        "given": "R.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Simulation of climatechange effects on streamflow, lake water budgets, and stream temperature using GSFLOW and SNTEMP, Trout Lake Watershed"
+    ],
+    "location": [
+      "Wisconsin"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Scientific"
+    ],
+    "genre": [
+      "Investigations Report 2013–5159,"
+    ],
+    "pages": [
+      "118 ,"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/sir/2013/5159/."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Regan",
+        "given": "R.S."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "GSFLOW-Coupled Ground-water and Surface-water FLOW model based on the integration of the Precipitation-Runoff Modeling System (PRMS) and the Modular Ground-Water Flow Model (MODFLOW-2005): U.S"
+    ],
+    "volume": [
+      "6-D1"
+    ],
+    "pages": [
+      "240 ,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/tm6d1/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Regan",
+        "given": "R.S."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Markstrom",
+        "given": "S.L."
+      },
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Documentation of a restart option for the U.S. Geological Survey coupled groundwater and surface-water flow (GSFLOW) model: U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "19 ,"
+    ],
+    "url": [
+      "https://dx.doi.org/10.3133/tm6D3."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. D3"
+    ],
+    "doi": [
+      "10.3133/tm6D3."
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "title": [
+      "May 18, 2017.Guidance for Determining Applicability of the USGS GSFLOW and OWHM Models for Hydrologic Simulation and Analysis"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corp",
+        "given": "Boyle Engineering"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Final Report Groundwater Basin Evaluation"
+    ],
+    "publisher": [
+      "City of San Luis Obispo"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath-Harris"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Flow Analysis Recycled Water Recharge Project San Luis Valley Sub-Area San Luis Obispo Valley Groundwater Basin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Draft San Luis-Edna Valley Groundwater Basin Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "San Luis Obispo County Investigation"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Environmental Systems Research Institute (ESRI",
+      "ESRI Grid Format"
+    ],
+    "date": [
+      "2013"
+    ],
+    "publisher": [
+      "ArcGIS Desktop Help"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Gardner",
+        "given": "M.A."
+      },
+      {
+        "family": "Morton",
+        "given": "C.G."
+      },
+      {
+        "family": "Huntington",
+        "given": "J.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Henson",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Input data processing tools for the integrated hydrologic model GSFLOW"
+    ],
+    "volume": [
+      "109"
+    ],
+    "pages": [
+      "41–53"
+    ],
+    "doi": [
+      "10.1016/j.envsoft.2018.07.020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environ. Model. Software"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "San Luis Obispo Valley Basin Characterization and Monitoring Well Installation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Selection of Appropriate Modeling Software For Development of SLO Basin Integrates SW/GW Model"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hay",
+        "given": "L."
+      },
+      {
+        "family": "Umemoto",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Multiple-Objective Stepwise Calibration Using Luca. U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 2006-1323,"
+    ],
+    "pages": [
+      "25"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Homer",
+        "given": "C.H."
+      },
+      {
+        "family": "Fry",
+        "given": "J.A."
+      },
+      {
+        "family": "Barnes",
+        "given": "C.A."
+      }
+    ],
+    "date": [
+      "2012",
+      "2012"
+    ],
+    "title": [
+      "The National Land Cover Database, U.S"
+    ],
+    "pages": [
+      "4"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Fact Sheet"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "King",
+        "given": "G."
+      },
+      {
+        "family": "Tana",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Santa Cruz Mid-County Basin Groundwater Flow Model: Precipitation-Runoff Modeling System Setup (Task 2"
+    ],
+    "publisher": [
+      "Hydrometrics WRI"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Jensen",
+        "given": "M."
+      },
+      {
+        "family": "Haise",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Estimation evapotranspiration from solar radiation"
+    ],
+    "volume": [
+      "89"
+    ],
+    "pages": [
+      "15–41"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. Drain. Div"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.N.D.F.I.R.E."
+      }
+    ],
+    "date": [
+      "2019-08-30"
+    ],
+    "url": [
+      "https://www.landfire.gov/vegetation.php."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Laniak",
+        "given": "G.F."
+      },
+      {
+        "family": "Olchin",
+        "given": "G."
+      },
+      {
+        "family": "Goodall",
+        "given": "J."
+      },
+      {
+        "family": "Vionov",
+        "given": "A."
+      },
+      {
+        "family": "Hill",
+        "given": "M."
+      },
+      {
+        "family": "Glynn",
+        "given": "P."
+      },
+      {
+        "family": "Peckham",
+        "given": "S."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Integrated environmental modeling: a vision and roadmap for the future"
+    ],
+    "volume": [
+      "39"
+    ],
+    "pages": [
+      "3–23"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environ. Model. Software"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Regan",
+        "given": "R.S."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      }
+    ],
+    "date": [
+      "2008",
+      "2005"
+    ],
+    "title": [
+      "GSFLOW-Coupled Ground-water and Surface-water FLOW model based on the integration of the Precipitation-Runoff Modeling System (PRMS) and the Modular Ground-Water Flow Model",
+      "U.S"
+    ],
+    "volume": [
+      "6-D1"
+    ],
+    "pages": [
+      "240"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "citation-number": [
+      "2/27/2020"
+    ],
+    "title": [
+      "39 SLO Basin Groundwater Sustainability Plan Surface Water/Groundwater Modeling Approach Technical Memorandum",
+      "PRMS-IV, the Precipitation-Runoff Modeling System, Version 4"
+    ],
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S."
+      },
+      {
+        "family": "Regan",
+        "given": "R."
+      },
+      {
+        "family": "Hay",
+        "given": "L."
+      },
+      {
+        "family": "Viger",
+        "given": "R."
+      },
+      {
+        "family": "Webb",
+        "given": "R."
+      },
+      {
+        "family": "Payn",
+        "given": "R."
+      },
+      {
+        "family": "LaFontaine",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "158"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. B7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S."
+      },
+      {
+        "family": "Regan",
+        "given": "R."
+      },
+      {
+        "family": "Hay",
+        "given": "L."
+      },
+      {
+        "family": "Viger",
+        "given": "R."
+      },
+      {
+        "family": "Webb",
+        "given": "R."
+      },
+      {
+        "family": "Payn",
+        "given": "R."
+      },
+      {
+        "family": "LaFontaine",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "PRMS-IV, the Precipitation -Runoff Modeling System, Version 4: Updated Tables from Version 4.0.3 to Version 5.0.0. U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "158"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. B7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "N.A.C.S.E."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "30-Year Normals"
+    ],
+    "note": [
+      "Retrieved from PRISM Climate Data:"
+    ],
+    "url": [
+      "http://www.prism.oregonstate.edu/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dataset",
+        "given": "National Elevation"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "Retrieved from The National Map:"
+    ],
+    "url": [
+      "http://nationalmap.gov/elevation.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dataset",
+        "given": "National Hydrography"
+      }
+    ],
+    "date": [
+      "2002 - 2016"
+    ],
+    "title": [
+      "U.S. Geological Survey"
+    ],
+    "location": [
+      "Reston, Virginia"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corp",
+        "given": "Questa Engineering"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "San Luis Obispo Creek Watershed Hydrology and Hydraulic Model Calibration Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2019-08-30"
+    ],
+    "title": [
+      "Natural Resources Conservation Service. United States Department of Agriculture, U.S"
+    ],
+    "note": [
+      "General Soil Map (STATSGO2), Available online at"
+    ],
+    "url": [
+      "https://sdmdataaccess.sc.egov.usda.gov."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2019-08-30"
+    ],
+    "title": [
+      "Natural Resources Conservation Service"
+    ],
+    "note": [
+      "United States Department of Agriculture, Soil Survey Geographic (SSURGO) Database, Available online at"
+    ],
+    "url": [
+      "https://sdmdataaccess.sc.egov.usda.gov."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Element",
+        "given": "Weather"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "note": [
+      "Retrieved from Weather Element:"
+    ],
+    "url": [
+      "http://weatherelement.com/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Woolfenden",
+        "given": "L."
+      },
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Simulation of Groundwater and Surface-Water Resources of the Santa Rosa Plain Watershed, Sonoma County, California"
+    ],
+    "volume": [
+      "2014-5052"
+    ],
+    "pages": [
+      "258 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20145052."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20145052."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "D5981/5981M‐18",
+        "given": "A.S.T.M.Designation"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Standard Guide for Calibrating a Groundwater Flow Model Application"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corp",
+        "given": "Boyle Engineering"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Final Report Groundwater Basin Evaluation"
+    ],
+    "publisher": [
+      "City of San Luis Obispo"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Carr",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Orthogonal regression: A teaching perspective"
+    ],
+    "volume": [
+      "43"
+    ],
+    "pages": [
+      "134–10"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "International Journal of Mathematical Education in Science and Technology"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.C.S.E."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Central Coast Salmon Enhancement Rating Curves"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Geologists",
+        "given": "Cleath‐Harris"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Flow Analysis Recycled Water Recharge Project San Luis Valley Sub‐Area San Luis Obispo Valley Groundwater Basin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Draft San Luis‐Edna Valley Groundwater Basin Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "San Luis Obispo County Investigation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Donigian",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Watershed Model Calibration And Validation: The HSPF Experience"
+    ],
+    "publisher": [
+      "AQUA TERRA Consultants Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "Environmental"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "User’s Manual for Groundwater Vistas"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Environmental Systems Research Institute (ESRI",
+      "ESRI Grid Format"
+    ],
+    "date": [
+      "2013"
+    ],
+    "publisher": [
+      "ArcGIS Desktop Help"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Gardner",
+        "given": "M.A."
+      },
+      {
+        "family": "Morton",
+        "given": "C.G."
+      },
+      {
+        "family": "Huntington",
+        "given": "J.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Henson",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Input data processing tools for the integrated hydrologic model GSFLOW"
+    ],
+    "volume": [
+      "109"
+    ],
+    "pages": [
+      "41–53"
+    ],
+    "doi": [
+      "10.1016/j.envsoft.2018.07.020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environ. Model. Software"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Gilroy",
+        "given": "E."
+      },
+      {
+        "family": "Archfield",
+        "given": "S."
+      },
+      {
+        "family": "Ryberg",
+        "given": "K."
+      },
+      {
+        "family": "Hirsch",
+        "given": "R."
+      },
+      {
+        "family": "Helsel",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Statistical methods in water resources: U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "458"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods. USGS, Book"
+    ],
+    "issue": [
+      "apter A3"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "San Luis Obispo Valley Basin Characterization and Monitoring Well Installation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Selection of Appropriate Modeling Software For Development of SLO Basin Integrates SW/GW Model"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hay",
+        "given": "L."
+      },
+      {
+        "family": "Umemoto",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Multiple‐Objective Stepwise Calibration Using Luca. U.S"
+    ],
+    "genre": [
+      "Geological Survey Open‐File Report 2006‐1323,"
+    ],
+    "pages": [
+      "25"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Homer",
+        "given": "C.H."
+      },
+      {
+        "family": "Fry",
+        "given": "J.A."
+      },
+      {
+        "family": "Barnes",
+        "given": "C.A."
+      }
+    ],
+    "date": [
+      "2012",
+      "2012"
+    ],
+    "title": [
+      "The National Land Cover Database, U.S"
+    ],
+    "pages": [
+      "4"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Fact Sheet"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hunt",
+        "given": "S.L.O.Basin Groundwater Sustainability Plan Surface Water/Groundwater Modeling Approach Technical Memorandum"
+      },
+      {
+        "family": "R.",
+        "given": "Walker"
+      },
+      {
+        "family": "J.",
+        "given": "Selbig"
+      },
+      {
+        "family": "W.",
+        "given": "Westenbroek"
+      },
+      {
+        "family": "S."
+      },
+      {
+        "family": "Regan",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Simulation of climate‐change effects on streamflow, lake water budgets, and stream temperature using GSFLOW and SNTEMP, Trout Lake Watershed, Wisconsin"
+    ],
+    "genre": [
+      "U.S. Geological Survey Scientific Investigations Report 2013‐5159,"
+    ],
+    "pages": [
+      "118"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "King",
+        "given": "G."
+      },
+      {
+        "family": "Tana",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Santa Cruz Mid‐County Basin Groundwater Flow Model: Precipitation‐Runoff Modeling System Setup (Task 2"
+    ],
+    "publisher": [
+      "Hydrometrics WRI"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Jensen",
+        "given": "M."
+      },
+      {
+        "family": "Haise",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Estimation evapotranspiration from solar radiation"
+    ],
+    "volume": [
+      "89"
+    ],
+    "pages": [
+      "15–41"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. Drain. Div"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.N.D.F.I.R.E."
+      }
+    ],
+    "date": [
+      "2019-08-30"
+    ],
+    "url": [
+      "https://www.landfire.gov/vegetation.php."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Laniak",
+        "given": "G.F."
+      },
+      {
+        "family": "Olchin",
+        "given": "G."
+      },
+      {
+        "family": "Goodall",
+        "given": "J."
+      },
+      {
+        "family": "Vionov",
+        "given": "A."
+      },
+      {
+        "family": "Hill",
+        "given": "M."
+      },
+      {
+        "family": "Glynn",
+        "given": "P."
+      },
+      {
+        "family": "Peckham",
+        "given": "S."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Integrated environmental modeling: a vision and roadmap for the future"
+    ],
+    "volume": [
+      "39"
+    ],
+    "pages": [
+      "3–23"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environ. Model. Software"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Levin",
+        "given": "R."
+      },
+      {
+        "family": "Bohonak",
+        "given": "A."
+      },
+      {
+        "family": "Friedman",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "When are two pieces better than one: Fitting and testing OLS and RMA regressions"
+    ],
+    "volume": [
+      "34"
+    ],
+    "pages": [
+      "306 – 316"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmetrics"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Regan",
+        "given": "R.S."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      }
+    ],
+    "date": [
+      "2008",
+      "2005"
+    ],
+    "title": [
+      "GSFLOW‐Coupled Ground‐water and Surface‐water FLOW model based on the integration of the Precipitation‐Runoff Modeling System (PRMS) and the Modular Ground‐Water Flow Model",
+      "U.S"
+    ],
+    "volume": [
+      "6‐D1"
+    ],
+    "pages": [
+      "240"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S."
+      },
+      {
+        "family": "Regan",
+        "given": "R."
+      },
+      {
+        "family": "Hay",
+        "given": "L."
+      },
+      {
+        "family": "Viger",
+        "given": "R."
+      },
+      {
+        "family": "Webb",
+        "given": "R."
+      },
+      {
+        "family": "Payn",
+        "given": "R."
+      },
+      {
+        "family": "LaFontaine",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "PRMS‐IV, the Precipitation‐Runoff Modeling System, Version 4. U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "158"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. B7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S."
+      },
+      {
+        "family": "Regan",
+        "given": "R."
+      },
+      {
+        "family": "Hay",
+        "given": "L."
+      },
+      {
+        "family": "Viger",
+        "given": "R."
+      },
+      {
+        "family": "Webb",
+        "given": "R."
+      },
+      {
+        "family": "Payn",
+        "given": "R."
+      },
+      {
+        "family": "LaFontaine",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "PRMS‐IV, the Precipitation ‐Runoff Modeling System, Version 4: Updated Tables from Version 4.0.3 to Version 5.0.0. U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "158"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. B7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "N.A.C.S.E."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "30‐Year Normals"
+    ],
+    "note": [
+      "Retrieved from PRISM Climate Data:"
+    ],
+    "url": [
+      "http://www.prism.oregonstate.edu/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dataset",
+        "given": "National Elevation"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "Retrieved from The National Map:"
+    ],
+    "url": [
+      "http://nationalmap.gov/elevation.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dataset",
+        "given": "National Hydrography"
+      }
+    ],
+    "date": [
+      "2002 ‐ 2016"
+    ],
+    "title": [
+      "U.S. Geological Survey"
+    ],
+    "location": [
+      "Reston, Virginia"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "N.O.A.A."
+      }
+    ],
+    "date": [
+      "2020-01"
+    ],
+    "title": [
+      "Retrieved from NOAA California Nevada River Forecast Center"
+    ],
+    "url": [
+      "https://www.cnrfc.noaa.gov/storm_summaries/oct2009storm.php"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corp",
+        "given": "Questa Engineering"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "San Luis Obispo Creek Watershed Hydrology and Hydraulic Model Calibration Study"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7/19/2021"
+    ],
+    "title": [
+      "72 SLO Basin Groundwater Sustainability Plan Surface Water/Groundwater Modeling Approach Technical Memorandum Soil Survey Staff",
+      "Natural Resources Conservation Service"
+    ],
+    "date": [
+      "2019-08-30"
+    ],
+    "container-title": [
+      "United States Department of Agriculture, U.S. General Soil Map (STATSGO2"
+    ],
+    "note": [
+      "Available online at"
+    ],
+    "url": [
+      "https://sdmdataaccess.sc.egov.usda.gov."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2019-08-30"
+    ],
+    "title": [
+      "Natural Resources Conservation Service"
+    ],
+    "note": [
+      "United States Department of Agriculture, Soil Survey Geographic (SSURGO) Database, Available online at"
+    ],
+    "url": [
+      "https://sdmdataaccess.sc.egov.usda.gov."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Spitz"
+      },
+      {
+        "given": "Moreno"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "A Practical Guide to Groundwater and Solute Transport Modeling"
+    ],
+    "location": [
+      "New York"
+    ],
+    "publisher": [
+      "John Wiley & sons, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Element",
+        "given": "Weather"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "note": [
+      "Retrieved from Weather Element:"
+    ],
+    "url": [
+      "http://weatherelement.com/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Woolfenden",
+        "given": "L."
+      },
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Simulation of Groundwater and Surface‐Water Resources of the Santa Rosa Plain Watershed, Sonoma County, California"
+    ],
+    "volume": [
+      "2014‐5052"
+    ],
+    "pages": [
+      "258 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20145052."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20145052."
+    ]
+  },
+  {
+    "title": [
+      "Procedures for obtaining and reporting water level data for the SLO Basin Groundwater Monitoring Program are based on a review of the following documents"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "California",
+        "given": "State",
+        "particle": "of"
+      },
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Protocols"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Standards, and Sites"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "California",
+        "given": "State",
+        "particle": "of"
+      },
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-10-02"
+    ],
+    "title": [
+      "Addendum to December 2010 Groundwater Elevation Monitoring Guidelines for the Department of Water Resources"
+    ],
+    "container-title": [
+      "California Statewide Groundwater Elevation Monitoring (CASGEM) Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "California",
+        "given": "State",
+        "particle": "of"
+      },
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-12"
+    ],
+    "title": [
+      "Groundwater Elevation Monitoring Guidelines, prepared for use in the California Statewide Groundwater Elevation Monitoring"
+    ],
+    "genre": [
+      "(CASGEM) program,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater Technical Procedures of the U.S. Geological Survey, Techniques and Methods 1‐A1, compiled by William L"
+    ],
+    "publisher": [
+      "Cunningham and Charles W. Schalk"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "National Handbook of Recommended Methods for Water‐Data Acquisition, a Unites States contribution to the International Hydrological Program"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "San Luis Obispo Creek and Pismo Creek: Steelhead Recovery"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "To address the identified threats to threatened steelhead in the San Luis Obispo Creek and Pismo Creek watersheds NMFS’ South-Central California Steelhead Recovery Plan identifies a number of recovery actions targeting surface diversions and groundwater extraction"
+    ],
+    "genre": [
+      "(NMFS 2013, Table 8-1."
+    ],
+    "publisher": [
+      "Recovery Actions Glossary"
+    ],
+    "pages": [
+      "8–7 – 8–8"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "SLO-SCCCS-6.1 Develop and implement groundwater monitoring and management program. Develop and implement groundwater monitoring program to guide management of groundwater extractions to ensure surface flows provide essential support for all O. mykiss life history stages, including adult and juvenile O. mykiss spawning, incubation and rearing habitats"
+    ],
+    "genre": [
+      "Table 12-12."
+    ],
+    "publisher": [
+      "South-Central California Steelhead DPS Recovery Action Table for San Luis Obispo Creek"
+    ],
+    "pages": [
+      "12–58"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Pis-SCCCS-6.1 Develop and implement groundwater monitoring and management program. Develop and implement groundwater monitoring program to guide management of groundwater extractions to ensure surface flows provide essential support for all O. mykiss life history stages, including adult and juvenile O. mykiss spawning, incubation and rearing habitats"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Brunke",
+        "given": "M."
+      },
+      {
+        "family": "Gosner",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "The Ecological Significance of Exchange Processes between Rivers and Groundwater"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Freshwater Biology"
+    ],
+    "issue": [
+      "1977"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow depletion by wells—Understanding and managing the effects of groundwater pumping on streamflow: U.S"
+    ],
+    "volume": [
+      "1376"
+    ],
+    "pages": [
+      "84"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/circ/1376/)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.H."
+      },
+      {
+        "family": "Fish",
+        "given": "H."
+      },
+      {
+        "family": "Pope",
+        "given": "J."
+      },
+      {
+        "family": "Holt",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Spatial patterning of habitat for Oncorhynchus mykiss in a system of intermittent and perennial stream"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "92–105"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecology of Freshwater Fishes"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brunner",
+        "given": "P."
+      },
+      {
+        "family": "Cook",
+        "given": "P."
+      },
+      {
+        "family": "Simmons",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Disconnected surface water and groundwater: from theory to practice"
+    ],
+    "volume": [
+      "49"
+    ],
+    "pages": [
+      "460–467"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ground Water"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Fish and Wildlife",
+      "Fish & Wildlife Groundwater Planning Considerations"
+    ],
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "38"
+    ],
+    "pages": [
+
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=170185&inline"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-05"
+    ],
+    "title": [
+      "SGMA Basin Prioritization Process and Results"
+    ],
+    "pages": [
+      "48"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Basin-Prioritization/Files/2018-SGMA-Basin-Prioritization-Process-and-Results-Document.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "California’s Groundwater: Working Towards Sustainability. Bulletin 118 Interim Update 2016"
+    ],
+    "volume": [
+      "22"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/bulletin118/docs/Bulletin_118_Interim_Up"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "December"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.B.E.C."
+      },
+      {
+        "given": "Podlech"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Santa Clara River Estuary Habitat Restoration and Enhancement Feasibility Study"
+    ],
+    "container-title": [
+      "California Department of Fish and Wildlife Fisheries Grant Restoration Grant Program Agreement #1350015"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "P.G.",
+        "given": "Cook"
+      },
+      {
+        "family": "Brunner",
+        "given": "P."
+      },
+      {
+        "family": "Simmons",
+        "given": "C.T."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "What is a disconnected stream?"
+    ],
+    "container-title": [
+      "Groundwater 2010, The Challenges of sustainable management"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Croyle",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Analysis of Baseflow Trends Related to Upland Groundwater Pumping for Las Garzas, San Clemente, Porter, and San Jose Creeks"
+    ],
+    "genre": [
+      "Master’s Thesis."
+    ],
+    "publisher": [
+      "California State University"
+    ],
+    "location": [
+      "Monterey Bay"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Statistical analysis of the impact of groundwater pumping on low-flow hydrology"
+    ],
+    "volume": [
+      "32"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of American Association"
+    ],
+    "issue": [
+      "4"
+    ],
+    "pages": [
+      "733–744"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Glasser",
+        "given": "S."
+      },
+      {
+        "family": "Gauthier-Warinner",
+        "given": "J."
+      },
+      {
+        "family": "Gurrieri",
+        "given": "J."
+      },
+      {
+        "family": "Kelly",
+        "given": "J."
+      },
+      {
+        "family": "Tucci",
+        "given": "P."
+      },
+      {
+        "family": "Summers",
+        "given": "P."
+      },
+      {
+        "family": "Wireman",
+        "given": "M."
+      },
+      {
+        "family": "McCormack",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Technical Guide to Managing Groundwater Resources"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture"
+    ],
+    "pages": [
+      "–881"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Ground-Water Hydrology"
+    ],
+    "container-title": [
+      "U.S. Geological Survey. Water Supply Paper 2220"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hebert",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Impacts to Anadromous Fish Through Groundwater Extraction"
+    ],
+    "volume": [
+      "366"
+    ],
+    "publisher": [
+      "University of San Francisco"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Master’s Project and Capstone"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mercer",
+        "given": "J.W."
+      },
+      {
+        "family": "Faust",
+        "given": "C.R."
+      }
+    ],
+    "date": [
+      "1980",
+      "1980"
+    ],
+    "title": [
+      "Ground-Water Modeling: An Overview"
+    ],
+    "volume": [
+      "18"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "South-Central/Southern California Coast Steelhead Recovery Planning Domain. 5-Year Review: Summary and Evaluation. Southern California Coast Steelhead District Population segment National Marine Fisheries Service"
+    ],
+    "publisher": [
+      "West Coast Region. California Coastal Office"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "South-Central California Coast Steelhead Recovery Plan"
+    ],
+    "publisher": [
+      "National Marine Fisheries Service, West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Quinn",
+        "given": "T.P."
+      },
+      {
+        "family": "Sophocleous",
+        "given": "M."
+      }
+    ],
+    "title": [
+      "2185. The behavior and ecology of pacific salmon and trout",
+      "Interactions between Groundwater and Surface Water: The State of the Science"
+    ],
+    "publisher": [
+      "American Fisheries Society/University of Washington Press"
+    ],
+    "pages": [
+      "547",
+      "52–67"
+    ],
+    "date": [
+      "2002",
+      "2002"
+    ],
+    "volume": [
+      "10"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Assessing Instream Flows in the Pismo Creek Watershed"
+    ],
+    "publisher": [
+      "Prepared for Central Coast Salmon Enhancement"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act. Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "City of San Luis Obispo"
+    ],
+    "note": [
+      "Public Utilities, 879 Morro Street, San Luis Obispo, CA, 93401‐2710, 805.781.7215, slocity.org"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Re: NOAA’s National Marine Fisheries Service comments on the May 6, 2021, draft Groundwater Sustainability Plan for the San Luis Obispo Valley Groundwater Basin Dear Mr"
+    ],
+    "location": [
+      "Diodati"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "NMFS appreciates the opportunity to provide the enclosed comments on the draft Chapter 8. If you have a question regarding this letter or enclosure, please contact Mr. Mark H. Capelli in our Santa Barbara Office (805) 963-6478 or mark.capelli@noaa.gov, or Mr. Andres Ticlavilca in our Santa Rosa Office (707-575-6054) andres.ticlavilca@noaa.gov. Sincerely, Anthony P"
+    ],
+    "publisher": [
+      "Spina Chief, Southern California Branch California Coastal Office"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Brunke",
+        "given": "M."
+      },
+      {
+        "family": "Gosner",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "The Ecological Significance of Exchange Processes between Rivers and Groundwater"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Freshwater Biology"
+    ],
+    "issue": [
+      "1977"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2012",
+      "1376"
+    ],
+    "title": [
+      "Streamflow depletion by wells—Understanding and managing the effects of groundwater pumping on streamflow: U.S"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/circ/1376/)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.H."
+      },
+      {
+        "family": "Fish",
+        "given": "H."
+      },
+      {
+        "family": "Pope",
+        "given": "J."
+      },
+      {
+        "family": "Holt",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Spatial patterning of habitat for Oncorhynchus mykiss in a system of intermittent and perennial stream"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "92–105"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecology of Freshwater Fishes"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brunner",
+        "given": "P."
+      },
+      {
+        "family": "Cook",
+        "given": "P."
+      },
+      {
+        "family": "Simmons",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Disconnected surface water and groundwater: from theory to practice"
+    ],
+    "volume": [
+      "49"
+    ],
+    "pages": [
+      "460–467"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ground Water"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Fish and Wildlife",
+      "Fish & Wildlife Groundwater Planning Considerations"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=170185&inline"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "South-Central California Steelhead Recovery Plan. California Coastal Area Office"
+    ],
+    "location": [
+      "Long Beach, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sophocleous",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2002",
+      "2002"
+    ],
+    "title": [
+      "Interactions between Groundwater and Surface Science"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "52–67"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Belin",
+        "given": "Alleta"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guide to Compliance with California’s Sustainable Groundwater Management Act"
+    ],
+    "location": [
+      "Stanford",
+      "Stanford, CA"
+    ],
+    "publisher": [
+      "Water in the West"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservation",
+        "given": "Creek Lands"
+      }
+    ],
+    "date": [
+      "2019",
+      "2016"
+    ],
+    "title": [
+      "Upper San Luis Obispo Creek Instream Flow Monitoring Report"
+    ],
+    "note": [
+      "Report to WCB Streamflow Enhancement Program (Grant #2016041"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservation",
+        "given": "Creek Lands"
+      }
+    ],
+    "date": [
+      "2020",
+      "2016"
+    ],
+    "title": [
+      "San Luis Obispo County Low Flow Monitoring Report (2015-2018"
+    ],
+    "container-title": [
+      "Report to WCB Streamflow Enhancement Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "San Luis Obispo County regional instream flow assessment. Prepared by Stillwater Sciences, Morro Bay, California for Coastal San Luis Resource Conservation District"
+    ],
+    "location": [
+      "Morro Bay, California"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Allan Cooper’s comments on draft Chapters 9 and 10 of the GSP submitted to the SLO City Council on July 20, 2021: The Current Water Crisis Will Negatively Impact Paso Robles, Atascadero and Templeton - But Not the City of San Luis Obispo"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow depletion by wells—Understanding and managing the effects of groundwater pumping on streamflow: U.S"
+    ],
+    "volume": [
+      "1376"
+    ],
+    "pages": [
+      "84"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/circ/1376/)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Statewide Drought Response: Stressor Monitoring"
+    ],
+    "genre": [
+      "Summary Report 2014-2017."
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=168170&inline"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Wildlife"
+      },
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06",
+      "2013"
+    ],
+    "title": [
+      "Fish & Wildlife Groundwater Planning Considerations. California Department of Fish and Wildlife, Groundwater Program",
+      "South-Central California Coast Steelhead Recovery Plan"
+    ],
+    "pages": [
+      "28"
+    ],
+    "publisher": [
+      "West Coast Region, California Coastal Area Office"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "2021-09-19"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "San Luis Obispo Valley Groundwater Basin Groundwater Sustainability Agencies"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "author": [
+      {
+        "family": "Howard",
+        "given": "J.K."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Patterns of Freshwater Species Richness, Endemism, and Vulnerability in California"
+    ],
+    "volume": [
+      "11"
+    ],
+    "note": [
+      "Available at:",
+      "3 Science for Conservation:"
+    ],
+    "url": [
+      "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130710",
+      "https://www.wildlife.ca.gov/data/BIOS",
+      "https://www.scienceforconservation.org/products/california-freshwater-speciesdatabase"
+    ],
+    "container-title": [
+      "2 California Department of Fish and Wildlife BIOS",
+      "PLoSONE"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "7"
+    ]
+  },
+  {
+    "title": [
+      "Egretta thula Snowy Egret Egretta thula Snowy Egret"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019-07"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "title": [
+      "NC Dataset Online Viewer: https://gis.water.ca.gov/app/NCDatasetViewer/ 2 California Department of Water Resources (DWR",
+      "Summary of the “Natural Communities Commonly Associated with Groundwater"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Statewide-Reports/Natural-Communities-Dataset-Summary-Document.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dataset and Online Web Viewer"
+    ]
+  },
+  {
+    "citation-number": [
+      "3"
+    ],
+    "title": [
+      "For more details on the mapping methods, refer to",
+      "Mapping Indicators of Groundwater Dependent Ecosystems in California: Methods Report"
+    ],
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at:",
+      "4 “Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6"
+    ],
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Water Budget Best Management Practice"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/sgm/pdfs/BMP_Water_Budget_Final_2016-12-23.pdf"
+    ],
+    "type": null
+  }
+]

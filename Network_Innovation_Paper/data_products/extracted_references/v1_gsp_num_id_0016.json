@@ -1,0 +1,6700 @@
+[
+  {
+    "citation-number": [
+      "2-67c"
+    ],
+    "container-title": [
+      "UWCD Model Particle Tracks, Hueneme Aquifer, Reduction With Projects Simulation – 12,800 AFY Groundwater Production in the LAS",
+      "UWCD Model Particle Tracks, Basal Fox Canyon Aquifer, Reduction With Projects Simulation – 12,800 AFY Groundwater Production in the LAS",
+      "27,200 AFY Groundwater Production in the UAS",
+      "UWCD Model Particle Tracks, Hueneme Aquifer, Reduction Without Projects Simulation 1 – 11,600 AFY Groundwater Production in the LAS",
+      "11,600 AFY Groundwater Production in the LAS ................ 2-285 2-68e UWCD Model Particle Tracks, Basal Fox Canyon Aquifer, Reduction Without Projects Simulation 1 – 11,600 AFY Groundwater Production in the LAS",
+      "Oxnard Subbasin Management Areas",
+      "Minimum Thresholds and Groundwater Elevation Contours in the Oxnard Aquifer"
+    ],
+    "pages": [
+      "2–273 2–67",
+      "2–275 2–67",
+      "2–277 2–68",
+      "2–281 2–68",
+      "2–283 2–68",
+      "2–287 2–69",
+      "2–289 3–1"
+    ],
+    "title": [
+      "UWCD Model Particle Tracks, Upper Fox Canyon Aquifer, Reduction With Projects Simulation – 12,800 AFY Groundwater Production in the LAS",
+      "UWCD Model Particle Tracks, Oxnard Aquifer, Reduction Without Projects Simulation 1 – 27,200 AFY Groundwater Production in the UAS ............................. 2-279 2-68b UWCD Model Particle Tracks, Mugu Aquifer, Reduction Without Projects Simulation 1",
+      "UWCD Model Particle Tracks, Upper Fox Canyon Aquifer, Reduction Without Projects Simulation 1"
+    ],
+    "note": [
+      "October 2–29, 2015 ......................................................................................... 3-33 3-2 Minimum Thresholds and Groundwater Elevation Contours in the Mugu Aquifer, October 2–29, 2015 ......................................................................................... 3-35 3-3 Minimum Thresholds and Groundwater Elevation Contours in the Hueneme Aquifer, October 2–29, 2015 ......................................................................................... 3-37 3-4 Minimum Thresholds and Groundwater Elevation Contours in the Fox Canyon Aquifer, October 2–29, 2015 ............................................................................ 3-39 3-5 Minimum Thresholds and Groundwater Elevation Contours in the Grimes Canyon Aquifer, October 2–29, 2015 ............................................................................ 3-41"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-10"
+    ],
+    "title": [
+      "Los Angeles Basin Stormwater Conservation Study: Task 3.1. Development of Climate-Adjusted Hydrologic Model Inputs"
+    ],
+    "container-title": [
+      "U.S. Department of the Interior, Technical Service Center, Bureau of Reclamation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "CIMIS (California Irrigation Management Information System",
+      "Historical climate data provided for the Oxnard weather station"
+    ],
+    "date": [
+      "2018"
+    ],
+    "container-title": [
+      "data]. California Irrigation Management Information System"
+    ],
+    "note": [
+      "Accessed 12 Dec. 2018."
+    ],
+    "url": [
+      "http://wwwcimis.water.ca.gov/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Camarillo",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-08"
+    ],
+    "title": [
+      "Urban Water Management Plan for the City of Camarillo"
+    ],
+    "container-title": [
+      "Final Draft. Prepared by Water Systems Consulting Inc"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Oxnard",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-10"
+    ],
+    "title": [
+      "General Plan Goals and Policies"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Oxnard",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015",
+      "2016-07-01"
+    ],
+    "title": [
+      "City of Oxnard 2015 Urban Water Management Plan"
+    ],
+    "container-title": [
+      "Prepared by MNS Engineers Inc"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Oxnard",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "2016a"
+    ],
+    "date": [
+      "2016"
+    ],
+    "url": [
+      "https://www.oxnard.org/wp-content/uploads/2016/10/October-Project-List.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Planning Division Quarterly Projects List. Updated October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Oxnard",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-07"
+    ],
+    "title": [
+      "Salt and Nutrient Management Plan (SNMP) for the Oxnard Plain and Pleasant Valley Basins – Preliminary Draft"
+    ],
+    "container-title": [
+      "Prepared by Hydrometrics WRI and Carollo"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Port Hueneme",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Fact Sheet"
+    ],
+    "note": [
+      "Accessed on October 25, 2016."
+    ],
+    "url": [
+      "http://www.ci.port-hueneme.ca.us/index.aspx?nid=919."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Port Hueneme",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-08"
+    ],
+    "title": [
+      "City of Port Hueneme 2015 Urban Water Management Plan"
+    ],
+    "container-title": [
+      "Final. Prepared by Water Consultancy"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-06"
+    ],
+    "title": [
+      "Urban Water Management Plan for the City of Ventura"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final. Prepared by Kennedy/Jenks Consultants"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.M.W.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-06"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final. Prepared by Black and Veatch"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Ventura County, California – Code of Ordinances. Division 4, Chapter 8, Article 1, Section 4813 – Well Permits"
+    ],
+    "volume": [
+      "27"
+    ],
+    "note": [
+      "Accessed November 14, 2016."
+    ],
+    "url": [
+      "https://www.municode.com/library/ca/ventura_county/codes/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "September"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.W.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Agricultural Water Management Plan"
+    ],
+    "volume": [
+      "10"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted March"
+    ]
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources). 2016a",
+      "Interim Update"
+    ],
+    "volume": [
+      "118"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Accessed May 29, 2019, 2016."
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Bulletin-118."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California’s Groundwater, Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Approved Groundwater Sustainability Plan Emergency Regulations"
+    ],
+    "volume": [
+      "18"
+    ],
+    "note": [
+      "Accessed November 14, 2016."
+    ],
+    "url": [
+      "http://water.ca.gov/groundwater/sgm/pdfs/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-03"
+    ],
+    "title": [
+      "Urban Water Management Plans Guidebook for Urban Water Suppliers"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-01"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2018 Basin Prioritization Process and Results"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-10-26"
+    ],
+    "title": [
+      "Ordinance No. 8.4. An Ordinance to Amend the Fox Canyon Groundwater Management Agency Ordinance Code Relating to Annual Efficiency Extraction Allocations"
+    ],
+    "genre": [
+      "Resolution 2011-04."
+    ],
+    "note": [
+      "Accessed October 2017."
+    ],
+    "url": [
+      "http://www.fcgma.org/images/ordinances_legislation/Ord_8.4_AMENDS_-_"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Organizational Chart"
+    ],
+    "container-title": [
+      "Fox Canyon Groundwater Management Agency, About"
+    ],
+    "note": [
+      "Accessed May 29, 2019."
+    ],
+    "url": [
+      "http://www.fcgma.org/about-fcgma/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Board of Directors"
+    ],
+    "container-title": [
+      "Fox Canyon Groundwater Management Agency, About"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Accessed May 29, 2019."
+    ],
+    "url": [
+      "http://www.fcgma.org/about-fcgma/board-of-directors."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Ordinances and Legislation"
+    ],
+    "note": [
+      "Accessed May 29, 2019."
+    ],
+    "url": [
+      "http://www.fcgma.org/public-documents/ordinances-legislation."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Fox Canyon Groundwater Management Agency Boundary"
+    ],
+    "genre": [
+      "[Map.]"
+    ],
+    "url": [
+      "http://www.fcgma.org/charts-maps/fcgma-boundary."
+    ],
+    "note": [
+      "Accessed June 20, 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "FCGMA",
+        "given": "U.W.C.D."
+      },
+      {
+        "given": "C.M.W.D."
+      }
+    ],
+    "title": [
+      "United Water Conservation District, and Calleguas Municipal Water District"
+    ],
+    "container-title": [
+      "2007. 2007 Update to the Groundwater Management Agency Groundwater Management Plan"
+    ],
+    "date": [
+      "2007-05"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Koczot",
+        "given": "K.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of Ground-Water/Surface-Water Flow in the Santa Clara–Calleguas Ground-Water Basin, Ventura County, California. U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 02-4136."
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "publisher": [
+      "U.S. Geological Survey"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-06"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "P.H.W.A."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-08"
+    ],
+    "title": [
+      "Port Hueneme Water Agency 2015 Urban Water Management Plan"
+    ],
+    "container-title": [
+      "Final. Prepared by Water Consultancy"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "N.B.V.C."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-09"
+    ],
+    "title": [
+      "Naval Base Ventura County Joint Land Use Study"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Matrix Design Group"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.C.A.G."
+      }
+    ],
+    "date": [
+      "2005",
+      "1993"
+    ],
+    "title": [
+      "land_use_scag_2005.lpk"
+    ],
+    "container-title": [
+      "GIS Data: Land Use Data [1990"
+    ],
+    "note": [
+      "Accessed October 20, 2016."
+    ],
+    "url": [
+      "http://gisdata.scag.ca.gov/SitePages/GIS%20Library.aspx."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.C.A.G."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-04"
+    ],
+    "title": [
+      "2016–2040 Regional Transportation Plan/ Sustainable Communities Strategy"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Appendix: Demographics and Growth Forecast. Adopted"
+    ]
+  },
+  {
+    "title": [
+      "SWRCB (State Water Resources Control Board"
+    ],
+    "date": [
+      "1956",
+      "1953-04"
+    ],
+    "note": [
+      "Bulletin No. 12: Ventura County Investigation Volume I."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bureau",
+        "given": "U.S.Census"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Census"
+    ],
+    "genre": [
+      "[GIS data]."
+    ],
+    "note": [
+      "Accessed October 2016."
+    ],
+    "url": [
+      "http://www.census.gov/geo/maps-data/."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "UWCD (United Water Conservation District",
+      "Groundwater and Surface Water Conditions Report – 2013"
+    ],
+    "date": [
+      "2014"
+    ],
+    "genre": [
+      "UWCD Open-File Report 2014-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-06-28"
+    ],
+    "title": [
+      "Urban Water Management Plan for the Oxnard–Hueneme System"
+    ],
+    "location": [
+      "Westlake Village, California"
+    ],
+    "publisher": [
+      "MNS Engineering"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-09-07"
+    ],
+    "title": [
+      "Administrative Draft Multiple Species Habitat Plan. United Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.F.B."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Ventura County’s 2015 Crop & Livestock Report"
+    ],
+    "volume": [
+      "13"
+    ],
+    "note": [
+      "Accessed January 15, 2018."
+    ],
+    "url": [
+      "http://www.farmbureauvc.com/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "December"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.P.D."
+      }
+    ],
+    "date": [
+      "2005",
+      "2005-06-22"
+    ],
+    "title": [
+      "Final Subsequent Environmental Impact Report for Focused General Plan Update and Related Amendments to the Non-Coastal Zoning Ordinance and Zone Change ZN05-0008"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.P.D."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015"
+    ],
+    "title": [
+      "Ventura County General Plan: Goals Policies and Programs"
+    ],
+    "volume": [
+      "20"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Amended October"
+    ]
+  },
+  {
+    "title": [
+      "VCWPD (Ventura County Watershed Protection District",
+      "Inventory of Public and Private Water Purveyors in Ventura County"
+    ],
+    "date": [
+      "2006",
+      "2006-03"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.W.P.D."
+      }
+    ],
+    "date": [
+      "2009",
+      "2009-08-19"
+    ],
+    "title": [
+      "Calleguas Creek IWPP Phase II Management Strategy Study"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by CH2MHill"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.W.P.D."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-04"
+    ],
+    "title": [
+      "Lower Santa Clara River Salt and Nutrient Management Plan"
+    ],
+    "container-title": [
+      "Prepared by Larry Walker Associates, Carollo, Hydrometrics WRI, Rincon Consulting, and Dr"
+    ],
+    "publisher": [
+      "Norm Brown"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.W.P.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "VCWPD Mapped Reaches” [shapefile dataset]. Provided by Richard Mendez (VCWPD) to Dudek"
+    ],
+    "volume": [
+      "17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "August"
+    ]
+  },
+  {
+    "title": [
+      "Program/Project Program Agency Program Description Parameter Conjunctive Use Program? Multi-Basin Program Source Link Rose and Ferro UWCD Diversion of Santa Clara River Water to former mining — Yes — UWCD"
+    ],
+    "date": [
+      "2014"
+    ],
+    "note": [
+      "Groundwater and"
+    ],
+    "url": [
+      "http://www.unitedwater.org/images/stories/reports/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Spreading Grounds pits for the recharge of groundwater. Surface Water Conditions Report – GW-Conditions-Reports/2013%20GW%20and%20SW 2013",
+      "%20FINAL.pdf El Rio Spreading UWCD Diversion of Santa Clara River flows to spreading — Yes — UWCD"
+    ],
+    "volume": [
+      "20Conditions%20Report%20(UWCD%202014"
+    ],
+    "pages": [
+      "2014–12 6"
+    ],
+    "date": [
+      "2014"
+    ],
+    "note": [
+      "Groundwater and"
+    ],
+    "url": [
+      "http://www.unitedwater.org/images/stories/reports/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "UWCD Open-File Report"
+    ]
+  },
+  {
+    "title": [
+      "Grounds grounds recharging both the UAS and LAS. Surface Water Conditions Report – GW-Conditions-Reports/2013%20GW%20and%20SW 2013",
+      "%20FINAL.pdf Pleasant Valley UWCD Water diverted from Santa Clara River is provided to the — Yes Oxnard Subbasin and UWCD"
+    ],
+    "volume": [
+      "20Conditions%20Report%20(UWCD%202014"
+    ],
+    "pages": [
+      "2014–12 5"
+    ],
+    "date": [
+      "2014"
+    ],
+    "note": [
+      "Groundwater and"
+    ],
+    "url": [
+      "http://www.unitedwater.org/images/stories/reports/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "UWCD Open-File Report"
+    ]
+  },
+  {
+    "title": [
+      "Pipeline PVCWD via a pipeline that terminates at the Pleasant PVB Surface Water Conditions Report"
+    ],
+    "pages": [
+      "– – 2013 20 20 20"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bohannon",
+        "given": "R.G."
+      },
+      {
+        "family": "Howell",
+        "given": "D.G."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Kinematic Evolution of the Junction of the San Andreas, Garlock, and Big Pine Faults, California"
+    ],
+    "volume": [
+      "10"
+    ],
+    "url": [
+      "https://doi.org/10.1130/0091-7613(1982)10"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geology"
+    ],
+    "pages": [
+      "358–363"
+    ],
+    "doi": [
+      "10.1130/0091-7613(1982)10"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.C.C."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Ormond Beach Wetlands Restoration Project"
+    ],
+    "note": [
+      "Accessed April 2017."
+    ],
+    "url": [
+      "http://scc.ca.gov/2010/01/07/ormond-beach-wetlands-restoration-project/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California Natural Diversity Database (CNDDB"
+    ],
+    "volume": [
+      "3"
+    ],
+    "edition": [
+      "Commercial Subscription"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "publisher": [
+      "CDFW, Biogeographic Data Branch"
+    ],
+    "note": [
+      "Accessed October 2016."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Rarefind"
+    ],
+    "issue": [
+      "1.1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.G.S."
+      }
+    ],
+    "date": [
+      "2002",
+      "2002-12"
+    ],
+    "title": [
+      "Note 36: California Geomorphic Provinces"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Revised"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-03"
+    ],
+    "title": [
+      "City of Ventura Special Studies: Estuary Subwatershed Study Assessment of the Physical and Biological Condition of the Santa Clara River Estuary, Ventura County, California. Final Synthesis Report"
+    ],
+    "publisher": [
+      "Prepared by Stillwater Sciences",
+      "California for City of Ventura"
+    ],
+    "location": [
+      "Berkeley",
+      "California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater data collected by Stillwater Sciences in support of City of Ventura Special Studies compiled from Bailard Landfill monitoring program"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12-22"
+    ],
+    "title": [
+      "Shapefile data of oil fields in Ventura County"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Oil Fields.shp"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Densmore",
+        "given": "J.N."
+      }
+    ],
+    "date": [
+      "1996",
+      "1989"
+    ],
+    "title": [
+      "Lithologic and ground-water data for monitoring wells in the Santa Clara-Calleguas ground-water basin, Ventura County",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 96-120."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "DeVecchio",
+        "given": "D.E."
+      },
+      {
+        "family": "Heermance",
+        "given": "R.V."
+      },
+      {
+        "family": "Fuchs",
+        "given": "M."
+      },
+      {
+        "family": "Owen",
+        "given": "L.A."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Climate-Controlled Landscape Evolution in the Western Transverse Ranges, California: Insights from Quaternary Geochronology of the Saugus Formation and Strath Terrace Flights"
+    ],
+    "volume": [
+      "4"
+    ],
+    "pages": [
+      "110–130"
+    ],
+    "url": [
+      "https://doi.org/10.1130/L176.1."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Lithosphere"
+    ],
+    "issue": [
+      "2"
+    ],
+    "doi": [
+      "10.1130/L176.1."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "DeVecchio",
+        "given": "D.E."
+      },
+      {
+        "family": "Keller",
+        "given": "E.A."
+      },
+      {
+        "family": "Fuchs",
+        "given": "M."
+      },
+      {
+        "family": "Owen",
+        "given": "L.A."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Late Pleistocene Structural Evolution of the Camarillo Fold Belt: Implications for Lateral Fault Growth and Seismic Hazard in Southern California"
+    ],
+    "volume": [
+      "4"
+    ],
+    "pages": [
+      "91–109"
+    ],
+    "url": [
+      "https://doi.org/10.1130/L136.1."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Lithosphere"
+    ],
+    "issue": [
+      "2"
+    ],
+    "doi": [
+      "10.1130/L136.1."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "DeVecchio",
+        "given": "D.E."
+      },
+      {
+        "family": "Keller",
+        "given": "E.A."
+      },
+      {
+        "family": "Owen",
+        "given": "L.A."
+      },
+      {
+        "family": "Fuchs",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Earthquake Hazard of the Camarillo Fold Belt: An Analysis of the Unstudied Fold Belt in Southern California Hot Zone"
+    ],
+    "container-title": [
+      "Final. U.S. Geological Survey/National Earthquake Hazards Reduction Program Award"
+    ],
+    "volume": [
+
+    ],
+    "issue": [
+      "QGR0040"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Wiest",
+        "given": "R.J.M.",
+        "particle": "De"
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Ghyben–Herzberg Theory"
+    ],
+    "container-title": [
+      "Encyclopedia of Hydrology and Water Resources"
+    ],
+    "editor": [
+      {
+        "family": "Herschy",
+        "given": "R.W."
+      },
+      {
+        "family": "Fairbridge",
+        "given": "R.W."
+      }
+    ],
+    "collection-title": [
+      "Encyclopedia of Earth Science series"
+    ],
+    "location": [
+      "Dordrecht, Netherlands"
+    ],
+    "publisher": [
+      "Springer"
+    ],
+    "note": [
+      "Accessed January 17, 2018."
+    ],
+    "url": [
+      "https://link.springer.com/referenceworkentry/10.1007%2F1-4020-4513-1_104."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Geologic Map of the Moorpark Quadrangle, Ventura County: Santa Barbara California"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dibblee Geological Foundation” [map"
+    ],
+    "issue": [
+      "24"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Geologic Map of the Simi Quadrangle, Ventura County: Santa Barbara California"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dibblee Geological Foundation” [map"
+    ],
+    "issue": [
+      "24"
+    ]
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources). 1965"
+    ],
+    "volume": [
+
+    ],
+    "container-title": [
+      "Seawater Intrusion Oxnard Plain of Ventura County",
+      "Bulletin"
+    ],
+    "date": [
+      "1965-10"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "63-1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1968",
+      "1968-08"
+    ],
+    "title": [
+      "Bulletin No. 74-9: Well Water Standards, Ventura County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1971",
+      "1971-09"
+    ],
+    "title": [
+      "Bulletin No. 63-4: Sea-Water Intrusion: Aquitards in the Coastal Ground Water Basin of Oxnard Plain, Ventura County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2006",
+      "2006"
+    ],
+    "title": [
+      "California’s Groundwater Bulletin 118: Santa Clara River Valley Groundwater Basin, Oxnard Subbasin"
+    ],
+    "volume": [
+      "20"
+    ],
+    "note": [
+      "Accessed October 2016."
+    ],
+    "url": [
+      "http://www.water.ca.gov/pubs/groundwater/bulletin_118/basindescriptions/4-4.02.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Last updated January"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Bulletin 118 Interim Update 2016: California’s Groundwater—Working Toward Sustainability"
+    ],
+    "volume": [
+      "22"
+    ],
+    "url": [
+      "www.water.ca.gov/groundwater/bulletin118/index.cfm."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "December"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Eberhart-Phillips",
+        "given": "D."
+      },
+      {
+        "family": "Lisowski",
+        "given": "M."
+      },
+      {
+        "family": "Zoback",
+        "given": "M.D."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Crustal Strain near the Big Bend of the San Andreas Fault: Analysis of the Los Padres–Tehachapi Trilateration Networks, California"
+    ],
+    "volume": [
+      "95"
+    ],
+    "pages": [
+      "1139–1153"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ],
+    "issue": [
+      "B2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "E.S.A."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-04"
+    ],
+    "title": [
+      "McGrath State Beach Natural Resources Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for California Department of Parks and Recreation"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Farr",
+        "given": "T.G."
+      },
+      {
+        "family": "Jones",
+        "given": "C.E."
+      },
+      {
+        "family": "Liu",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Progress Report: Subsidence in California, March 2015–September 2016"
+    ],
+    "publisher": [
+      "California Institute of Technology, Jet Propulsion Laboratory"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "FCGMA (Fox Canyon Groundwater Management Agency"
+    ],
+    "date": [
+      "1985"
+    ],
+    "publisher": [
+      "Groundwater Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-05"
+    ],
+    "title": [
+      "Update to the Fox Canyon Groundwater Management Agency Groundwater Management Plan"
+    ],
+    "container-title": [
+      "Prepared by FCGMA, United Water Conservation District, and Calleguas Municipal Water District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-12-04"
+    ],
+    "title": [
+      "Water Elevation Maps, 1972–2012, Adopted by the FCGMA Board"
+    ],
+    "container-title": [
+      "Item 7, FCGMA Board Meeting"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Annual Report for Calendar Year 2015"
+    ],
+    "publisher": [
+      "Prepared by FCGMA"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Basin Management Objectives Report Card"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-08-29"
+    ],
+    "title": [
+      "Full Agenda Package: Special Board Meeting of August 29, 2018"
+    ],
+    "container-title": [
+      "Meeting agenda, minutes, and preliminary project descriptions for GSPs currently in progress"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Feigl",
+        "given": "K.L."
+      },
+      {
+        "family": "Agnew",
+        "given": "D.C."
+      },
+      {
+        "family": "Bock",
+        "given": "Y."
+      },
+      {
+        "family": "Dong",
+        "given": "D."
+      },
+      {
+        "family": "Donnellan",
+        "given": "A."
+      },
+      {
+        "family": "Hager",
+        "given": "B.H."
+      },
+      {
+        "family": "Herring",
+        "given": "T.A."
+      },
+      {
+        "family": "Jackson",
+        "given": "D.D."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Space Geodetic Measurement of Crustal Deformation in Central and Southern California, 1984–1992"
+    ],
+    "volume": [
+      "98"
+    ],
+    "pages": [
+      "21677–21712"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ],
+    "issue": [
+      "B12"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Network",
+        "given": "GreenInfo"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California Protected Areas Data Portal"
+    ],
+    "note": [
+      "Accessed August 8, 2017."
+    ],
+    "url": [
+      "http://www.calands.org/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hadley",
+        "given": "D."
+      },
+      {
+        "family": "Kanamori",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Seismic Structure of the Transverse Ranges, California"
+    ],
+    "volume": [
+      "88"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America Bulletin"
+    ],
+    "pages": [
+      "1469–1478"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Koczot",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of Ground-Water/Surface-Water Flow in the Santa Clara–Calleguas Ground-Water Basin, Ventura County, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water Resources Investigation Report 2002-4136"
+    ],
+    "type": "chapter"
+  },
+  {
+    "collection-title": [
+      "Hopkins (Hopkins Groundwater Consultants Inc"
+    ],
+    "date": [
+      "2013",
+      "2013-10"
+    ],
+    "title": [
+      "Preliminary Hydrogeological Study: Anterra Energy Services, Inc"
+    ],
+    "container-title": [
+      "Fluid Disposal Wells, Injection Well Construction and Injection Practices Review"
+    ],
+    "publisher": [
+      "Prepared for the City of Oxnard"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Hopkins",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Oxnard Plain and Vicinity Aquifer Properties Data Request"
+    ],
+    "note": [
+      "Email from C. Hopkins (Hopkins Groundwater Consultants Inc.) to M. Naftaly (Dudek). October 18, 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Huftile",
+        "given": "G.J."
+      },
+      {
+        "family": "Yeats",
+        "given": "R.S."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Convergence Rates across a Displacement Transfer Zone in Western Transverse Ranges, Ventura Basin, California"
+    ],
+    "volume": [
+      "100"
+    ],
+    "pages": [
+      "2043–2067"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ],
+    "issue": [
+      "B2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1991",
+      "July 22-26, 1991"
+    ],
+    "title": [
+      "Chloride Sources in a California Coastal Aquifer"
+    ],
+    "container-title": [
+      "American Society of Civil Engineers Symposium on Groundwater in the Pacific Rim",
+      "Proceedings"
+    ],
+    "location": [
+      "Honolulu, Hawaii"
+    ],
+    "pages": [
+      "71–77"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1996",
+      "June 23–28"
+    ],
+    "title": [
+      "Use of 18O and D to Define Seawater Intrusion"
+    ],
+    "container-title": [
+      "North American Water Congress"
+    ],
+    "location": [
+      "Anaheim, California",
+      "Proceedings"
+    ],
+    "editor": [
+      {
+        "family": "Bathala",
+        "given": "C.T."
+      }
+    ],
+    "publisher": [
+      "New York American Society of Civil Engineers"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      },
+      {
+        "family": "Christensen",
+        "given": "A.H."
+      },
+      {
+        "family": "Newhouse",
+        "given": "M.W."
+      },
+      {
+        "family": "Smith",
+        "given": "G.A."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Temporal Changes in the Vertical Distribution of Flow and Chloride in Deep Wells"
+    ],
+    "volume": [
+      "43"
+    ],
+    "pages": [
+      "531–544"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Jakes",
+        "given": "M.C."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Surface and Subsurface Geology of the Camarillo and Las Posas Hills Area: Ventura County, California"
+    ],
+    "genre": [
+      "Master’s thesis;"
+    ],
+    "publisher": [
+      "Oregon State University"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Kew",
+        "given": "W.S."
+      }
+    ],
+    "date": [
+      "1924"
+    ],
+    "title": [
+      "Geology and Oil Resources of a Part of Los Angeles and Ventura Counties California"
+    ],
+    "container-title": [
+      "United States Geological Survey Bulletin 753"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Chapter 3: Water Quality Objectives"
+    ],
+    "container-title": [
+      "Water Quality Control Plan: Los Angeles Region Basin Plan for the Coastal Watersheds of Los Angeles and Ventura Counties"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2013-04-19"
+    ],
+    "note": [
+      "Accessed February 20, 2017."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Marshall",
+        "given": "S.T."
+      },
+      {
+        "family": "Cooke",
+        "given": "M.L."
+      },
+      {
+        "family": "Owen",
+        "given": "A.E."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Effects of Nonplanar Fault Topology and Mechanical Interaction on Fault-Slip Distributions in the Ventura Basin, California"
+    ],
+    "volume": [
+      "98"
+    ],
+    "pages": [
+      "1113–1127"
+    ],
+    "url": [
+      "https://doi.org/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin of the Seismological Society of America"
+    ],
+    "issue": [
+      "3"
+    ],
+    "doi": [
+      "10.1785/0120070159."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mukae",
+        "given": "M.M."
+      },
+      {
+        "family": "Turner",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Geologic Formations, Structures and History in the Santa Clara–Calleguas Area"
+    ],
+    "container-title": [
+      "Compilation of Technical Information Records for the Ventura County Cooperative Investigation",
+      "Prepared by the Ventura County Public Works Agency Flood Control and Drainage Department for the California Department of Water Resources"
+    ],
+    "volume": [
+      "I"
+    ],
+    "pages": [
+      "1–28"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Nicholson",
+        "given": "C."
+      },
+      {
+        "family": "Sorlien",
+        "given": "C.C."
+      },
+      {
+        "family": "Atwater",
+        "given": "T."
+      },
+      {
+        "family": "Crowell",
+        "given": "J.C."
+      },
+      {
+        "family": "Luyendyk",
+        "given": "B.P."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Microplate Capture, Rotation of the Western Transverse Ranges, and Initiation of the San Andreas Transform as a Low-Angle Fault System"
+    ],
+    "volume": [
+      "22"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geology"
+    ],
+    "pages": [
+      "491–495"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Rockwell",
+        "given": "T.K."
+      },
+      {
+        "family": "Keller",
+        "given": "E.A."
+      },
+      {
+        "family": "Dembroff",
+        "given": "G.R."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Quaternary Rate of Folding of the Ventura Avenue Anticline, Western Transverse Ranges, Southern California"
+    ],
+    "volume": [
+      "100"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Society of America Bulletin"
+    ],
+    "pages": [
+      "850–858"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.F.E.I."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Historical Ecology of the Lower Santa Clara River, Ventura River, and Oxnard Plain: An Analysis of Terrestrial, Riverine, and Coastal Habitats"
+    ],
+    "container-title": [
+      "SFEI Publication No. 641. A report of SFEI’s Historical Ecology Program prepared for the State Coastal Conservancy"
+    ],
+    "location": [
+      "Oakland, California"
+    ],
+    "publisher": [
+      "San Francisco Estuary Institute"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "SWRCB (State Water Resources Control Board"
+    ],
+    "date": [
+      "1956",
+      "1953-04"
+    ],
+    "note": [
+      "Bulletin No. 12: Ventura County Investigation Volume I."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2004",
+      "2004"
+    ],
+    "note": [
+      "Resolution No."
+    ],
+    "title": [
+      "Adoption of the Water Quality Control Policy (Policy) for Developing California’s Clean Water Act Section 303(d"
+    ],
+    "publisher": [
+      "List"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Turner",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Aquifer Delineation in the Oxnard–Calleguas Area, Ventura County"
+    ],
+    "container-title": [
+      "Compilation of Technical Information Records for the Ventura County Cooperative Investigation",
+      "Prepared by the Ventura County Public Works Agency Flood Control and Drainage Department for the California Department of Water Resources"
+    ],
+    "volume": [
+      "I"
+    ],
+    "pages": [
+      "1–45"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Turner",
+        "given": "J.M."
+      },
+      {
+        "family": "Mukae",
+        "given": "M.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Effective Base of Fresh Water Reservoir in the Oxnard–Calleguas Area"
+    ],
+    "container-title": [
+      "Compilation of Technical Information Records for the Ventura County Cooperative Investigation",
+      "Prepared by the Ventura County Public Works Agency Flood Control and Drainage Department for the California Department of Water Resources"
+    ],
+    "volume": [
+      "I"
+    ],
+    "pages": [
+      "1–15"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Web Soil Survey. USDA Natural Resources Conservation Service, Soil Survey Staff"
+    ],
+    "note": [
+      "Accessed January 2019."
+    ],
+    "url": [
+      "http://websoilsurvey.nrcs.usda.gov/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "National Wetlands Inventory"
+    ],
+    "note": [
+      "Accessed August 2016. fws.gov/wetlands/NWI/index.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Endangered Species Program",
+      "Critical Habitat Polygons and Lines"
+    ],
+    "url": [
+      "https://ecos.fws.gov/ecp/report/table/critical-habitat.html"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "ECOS Joint Development Team"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "A Study of Seawater Intrusion Using Direct-Current Soundings in the Southeastern Part of the Oxnard Plain, California"
+    ],
+    "genre": [
+      "USGS Open-File Report 93-524."
+    ],
+    "note": [
+      "Prepared by A.A.R. Zohdy, P. Martin, and R.J. Bisdorf."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Seawater Intrusion in a Coastal California Aquifer"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Fact Sheet"
+    ],
+    "pages": [
+      "125–96"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "UWCD (United Water Conservation District",
+      "Surface and Groundwater Conditions Report"
+    ],
+    "date": [
+      "1999",
+      "1998-07"
+    ],
+    "publisher": [
+      "Water Year"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-04"
+    ],
+    "title": [
+      "Mugu Seawater/Saline Water Intrusion Monitoring Program: AB303 Grant"
+    ],
+    "volume": [
+
+    ],
+    "editor": [
+      {
+        "family": "P. Dal Pozzo",
+        "given": "Prepared",
+        "particle": "by"
+      },
+      {
+        "family": "Detmer",
+        "given": "D."
+      },
+      {
+        "family": "Turner",
+        "given": "K."
+      }
+    ],
+    "source": [
+      "Groundwater Resources Department)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Agreement"
+    ],
+    "issue": [
+      "4600004100. Exhibit U41"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-07"
+    ],
+    "title": [
+      "Nitrate Observations in the Oxnard Forebay and Vicinity, 1995–2006"
+    ],
+    "editor": [
+      {
+        "family": "D. Detmer",
+        "given": "Prepared",
+        "particle": "by"
+      }
+    ],
+    "location": [
+      "Santa Paula, California"
+    ],
+    "publisher": [
+      "UWCD"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-10"
+    ],
+    "title": [
+      "Oxnard Plain Time Domain Electromagnetic Study for Saline Intrusion"
+    ],
+    "genre": [
+      "UWCD Open-File Report 2010-003."
+    ],
+    "publisher": [
+      "Prepared by UWCD, Groundwater Resources Department"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-05"
+    ],
+    "title": [
+      "Groundwater and Surface Water Conditions Report – 2013"
+    ],
+    "genre": [
+      "United Water Conservation District Open-File Report 2014-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-10"
+    ],
+    "title": [
+      "Saline Intrusion Update, Oxnard Plain and Pleasant Valley Basins"
+    ],
+    "genre": [
+      "United Water Conservation District Open-File Report 2016-04."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "United Water Conservation District Multiple Species Habitat Conservation Plan Study: Effects of Freeman Diversion on Riparian Vegetation in the Santa Clara River. Prepared by Stillwater Sciences"
+    ],
+    "location": [
+      "Berkeley",
+      "Santa Paula, California"
+    ],
+    "publisher": [
+      "California for United Water Conservation District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Technical Advisory Group: UWCD Groundwater Model"
+    ],
+    "container-title": [
+      "Presentation by J. Sun (UWCD) to the Fox Canyon Groundwater Management Agency Technical Advisory Group"
+    ],
+    "volume": [
+      "December 16"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-04"
+    ],
+    "title": [
+      "Preliminary Evaluation of Impacts of Potential Groundwater Sustainability Indicators on Future Groundwater Extraction Rates – Oxnard Plain and Pleasant Valley Groundwater Basins"
+    ],
+    "genre": [
+      "Open-File Report 2017-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Addendum to Preliminary Evaluation of Impacts of Potential Groundwater Sustainability Indicators on Future Groundwater Extraction Rates – Oxnard Plain and Pleasant Valley Groundwater Basins"
+    ],
+    "genre": [
+      "Open-File Report 2017-02a."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "V.C.W.P.D."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Groundwater Section Annual Report. VCWPD, Water and Environmental Resources Division"
+    ],
+    "note": [
+      "Accessed August 8, 2017."
+    ],
+    "url": [
+      "http://pwaportal.ventura.org/WPD/docs/Groundwater-Resources/2013-Groundwater-Section-Annual-Report-Final_Web.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Weber",
+        "given": "F.H."
+      },
+      {
+        "family": "Kiessling",
+        "given": "E.W."
+      }
+    ],
+    "date": [
+      "1976",
+      "1976-07"
+    ],
+    "title": [
+      "General Features of Seismic Hazards of Ventura County, California"
+    ],
+    "container-title": [
+      "Seismic Hazards Study of Ventura County, California. Prepared by the California Division of Mines and Geology in cooperation with the County of Ventura. Adopted 1975"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "WRA (WRA Environmental Consultants",
+      "Final Biological Assessment Ormond Beach"
+    ],
+    "date": [
+      "2007"
+    ],
+    "location": [
+      "Oxnard, Ventura County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Yeats",
+        "given": "R.S."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Late Quaternary Slip Rate on the Oak Ridge Fault, Transverse Ranges, California: Implications for Seismic Risk"
+    ],
+    "volume": [
+      "93"
+    ],
+    "pages": [
+      "12137–12149"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ],
+    "issue": [
+      "B10"
+    ]
+  },
+  {
+    "citation-number": [
+      "23"
+    ],
+    "title": [
+      "CCR (California Code of Regulations), Section 354.28(c)(5). Definition of the minimum threshold for land subsidence"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Potential for Future Land Subsidence in California"
+    ],
+    "note": [
+      "Accessed February 2017."
+    ],
+    "url": [
+      "http://www.water.ca.gov/groundwater/docs/Summary_of_Recent_Historical_Potential_S"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Map of Basin Boundary Modifications",
+      "Edits"
+    ],
+    "volume": [
+      "118 Basins"
+    ],
+    "genre": [
+      "[GIS layer]."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/bbat/."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Koczot",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of Ground-Water/Surface-Water Flow in the Santa Clara-Calleguas Ground-Water Basin, Ventura County, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water Resources Investigation Report 2002-4136"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1991",
+      "July 22–26, 1991"
+    ],
+    "title": [
+      "Chloride Sources in a California Coastal Aquifer"
+    ],
+    "container-title": [
+      "American Society of Civil Engineers Symposium on Groundwater in the Pacific Rim"
+    ],
+    "pages": [
+      "71–77"
+    ],
+    "location": [
+      "Honolulu"
+    ],
+    "publisher": [
+      "American Society of Civil Engineers. Proceedings"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1996",
+      "June 23–28, 1996"
+    ],
+    "title": [
+      "Use of 18O and D to Define Seawater Intrusion"
+    ],
+    "container-title": [
+      "North American Water Congress"
+    ],
+    "editor": [
+      {
+        "family": "Bathala",
+        "given": "C.T."
+      }
+    ],
+    "location": [
+      "Anaheim, California"
+    ],
+    "publisher": [
+      "New York American Society of Civil Engineers. Proceedings"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-07"
+    ],
+    "title": [
+      "Nitrate Observations in the Oxnard Forebay and Vicinity, 1995–2006"
+    ],
+    "editor": [
+      {
+        "family": "D. Detmer",
+        "given": "Prepared",
+        "particle": "by"
+      }
+    ],
+    "location": [
+      "Santa Paula, California"
+    ],
+    "publisher": [
+      "UWCD"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-10"
+    ],
+    "title": [
+      "Saline Intrusion Update, Oxnard Plain and Pleasant Valley Basins"
+    ],
+    "genre": [
+      "United Water Conservation District Open-File Report 2016-04."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Shapefile data of wells in Ventura County. Ventura_County_Wells_ 08_17_2016.shp. Attachment to an email from Jeff Dorrington"
+    ],
+    "volume": [
+      "17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "August"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-12"
+    ],
+    "title": [
+      "Department of Water Resources Groundwater Elevation Monitoring Guidelines"
+    ],
+    "url": [
+      "http://www.water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Protocols, Standards, and Sites"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Networks and Identification of Data Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Bulletin 118 Interim Update 2016: California’s Groundwater—Working Toward Sustainability"
+    ],
+    "volume": [
+      "22"
+    ],
+    "url": [
+      "www.water.ca.gov/groundwater/bulletin118/index.cfm."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "December"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-05"
+    ],
+    "title": [
+      "Update to the Fox Canyon Groundwater Management Agency Groundwater Management Plan"
+    ],
+    "container-title": [
+      "Prepared by FCGMA, United Water Conservation District, and Calleguas Municipal Water District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-05-25"
+    ],
+    "title": [
+      "Minutes of the Fox Canyon Groundwater Management Agency regular Board meeting held Wednesday"
+    ],
+    "note": [
+      "Accessed November 2017."
+    ],
+    "url": [
+      "http://www.fcgma.org/public-documents/board-of-directors-meetings."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "Fox Canyon Groundwater Management Agency Advanced Metering Infrastructure (AMI) Ordinance"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted February"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Isherwood",
+        "given": "J.D."
+      },
+      {
+        "family": "Pillsbury",
+        "given": "A.F."
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "Shallow Ground Water and Tile Drainage in the Oxnard Plain"
+    ],
+    "volume": [
+      "39"
+    ],
+    "pages": [
+      "1101–1110"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Eos"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Lithologic and Ground-Water Data for Monitoring Wells in the Santa Clara–Calleguas Ground-Water Basin, Ventura County, California, 1989–95"
+    ],
+    "container-title": [
+      "USGS Open-File Report 96-120. Prepared by J.N. Densmore in cooperation with the United Water Conservation District"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "publisher": [
+      "USGS"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-10"
+    ],
+    "title": [
+      "Saline Intrusion Update, Oxnard Plain and Pleasant Valley Basins"
+    ],
+    "genre": [
+      "United Water Conservation District Open-File Report 2016-04."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "VCWPD (Ventura County Watershed Protection District"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Ventura County Stream Gauge Locations – Figure 4-7."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "Full Agenda Package: Special Board Meeting of August 29, 2018.” Meeting agenda, minutes, and preliminary project descriptions for GSPs currently in progress"
+    ],
+    "volume": [
+      "29"
+    ],
+    "note": [
+      "Accessed May 10, 2019."
+    ],
+    "url": [
+      "https://ventura.granicus.com/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "August"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Rules and Regulations Phase 2 (Extended Water Market Pilot Program"
+    ],
+    "note": [
+      "Accessed May 15, 2019."
+    ],
+    "url": [
+      "http://www.fcgma.org/images/WMPilot-RulesRegs-Phase2ext.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "F",
+        "given": "Honorable Board Chair Eugene"
+      }
+    ],
+    "title": [
+      "West and Members of the Board of Directors Fox Canyon Groundwater Management Agency 800 South Victoria Avenue Ventura, CA 93009-1610"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Re: City of Oxnard Comments on",
+      "Draft Groundwater Sustainability Plans for the Oxnard Subbasin and Pleasant Valley Basin"
+    ],
+    "date": [
+      "2019-07"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "implementation of the management action as required by SGMA regulations"
+    ],
+    "volume": [
+      "354"
+    ],
+    "pages": [
+      "5–16–17",
+      "5–6"
+    ],
+    "note": [
+      "b)(8). 4 Oxnard Subbasin GSP,",
+      "5 Cal. Code Regs., tit. 23, § 354.44, subd. (b)(3)."
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Cal. Code Regs., tit"
+    ],
+    "issue": [
+      "44"
+    ]
+  },
+  {
+    "citation-number": [
+      "7"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "5–16",
+      "5–6"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "8"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "5–14",
+      "5–4"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "note": [
+      "9 Wat. Code, § 10721, subd. (v)."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "12"
+    ],
+    "author": [
+      {
+        "family": "See",
+        "given": "eg"
+      },
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "2–31"
+    ],
+    "note": [
+      "“The longterm increase in"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "15"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "5–6",
+      "2–47"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "16"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "5–8",
+      "2–47"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Club",
+        "given": "Rotary"
+      }
+    ],
+    "title": [
+      "The Daily Independent",
+      "20 See Orange County Water District Groundwater Management Plan, 2015 Update; West Basin Municipal Water District, Seawater Barriers, available at: <https://www.westbasin.org/water-supplies-groundwater/seawater-barriers>"
+    ],
+    "date": [
+      "2019-07-27"
+    ],
+    "note": [
+      "available at:",
+      "22 Oxnard Subbasin GSP,"
+    ],
+    "url": [
+      "https://www.ridgecrestca.com/news/20190727/banking-water-for-ladwp-kicinskitalks-groundwater-with-rotary-club"
+    ],
+    "container-title": [
+      "21 Oxnard Subbasin GSP"
+    ],
+    "pages": [
+      "5–17",
+      "5–3",
+      "5–18"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Subbasin GSP and 58 times in the Pleasant Valley Basin GSP"
+    ],
+    "note": [
+      "25 See, e.g., Cal. Code Regs., tit. 23, §§ 354.38, subd. (a), 354.44, subd. (d)."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "28"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "3–14",
+      "3–15–16"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "29"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "3–14",
+      "3–16"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "30"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "–5",
+      "–6"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "32"
+    ],
+    "author": [
+      {
+        "family": "GSP",
+        "given": "Oxnard Subbasin"
+      }
+    ],
+    "pages": [
+      "1–9",
+      "1–9"
+    ],
+    "publisher": [
+      "Pleasant Valley Basin GSP"
+    ],
+    "note": [
+      "33 Wat. Code, § 10723, subd. (c)(3)."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "34"
+    ],
+    "title": [
+      "Cal"
+    ],
+    "volume": [
+      "354"
+    ],
+    "pages": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Code Regs., tit"
+    ],
+    "issue": [
+      "8"
+    ]
+  },
+  {
+    "citation-number": [
+      "37"
+    ],
+    "title": [
+      "City of Oxnard 2030 General Plan Program Environmental Report"
+    ],
+    "pages": [
+      "1"
+    ],
+    "note": [
+      "attached hereto as Exhibit A)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Appx. B"
+    ]
+  },
+  {
+    "citation-number": [
+      "38"
+    ],
+    "title": [
+      "Found in the correlating FCGMA allocation ordinance, which has not yet"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "at"
+    ],
+    "url": [
+      "https://www.oxnard.org/wp-content/uploads/2017/06/Oxnard-2030-General-"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Plan-Amend-062017-SMpdf>"
+      }
+    ],
+    "title": [
+      "Goals CD-3.3, CD-4.2, CD-7.1 and CD-9.2, respectively"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "41"
+    ],
+    "title": [
+      "City of Oxnard California 2030 General Plan Goals and Policies"
+    ],
+    "location": [
+      "Goals CD"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Mailing Address: Fox Canyon Groundwater Management Agency 800 South Victoria Avenue Ventura, California 93009-1610 Website"
+    ],
+    "url": [
+      "www.FCGMA.org"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Alley",
+        "given": "W.M."
+      }
+    ],
+    "date": [
+      "1996",
+      "1996-04-24"
+    ],
+    "title": [
+      "Office of Ground Water Technical Memorandum No"
+    ],
+    "container-title": [
+      "96.04, Subject: Publications—Policy on Documenting the Use of Ground-Water Simulation in Project Reports"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      },
+      {
+        "family": "Hunt",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Applied Groundwater Modeling: Simulation of Flow and Advective Transport"
+    ],
+    "edition": [
+      "Second"
+    ],
+    "publisher": [
+      "Elsevier",
+      "UK"
+    ],
+    "location": [
+      "London"
+    ],
+    "pages": [
+      "564"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bachman",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Northern Pleasant Valley Desalter Groundwater Analysis and Modeling: Report to Desalter Working Group"
+    ],
+    "note": [
+      "prepared for Ventura County Water Works District #1."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Beller",
+        "given": "E.E."
+      },
+      {
+        "family": "Grossinger",
+        "given": "R.M."
+      },
+      {
+        "family": "Salomon",
+        "given": "M.N."
+      },
+      {
+        "family": "Dark",
+        "given": "S.J."
+      },
+      {
+        "family": "Stein",
+        "given": "E.D."
+      },
+      {
+        "family": "Orr",
+        "given": "B.K."
+      },
+      {
+        "family": "Downs",
+        "given": "P.W."
+      },
+      {
+        "family": "Longcore",
+        "given": "T.R."
+      },
+      {
+        "family": "Coffman",
+        "given": "G.C."
+      },
+      {
+        "family": "Whipple",
+        "given": "A.A."
+      },
+      {
+        "family": "Askevold",
+        "given": "R.A."
+      },
+      {
+        "family": "Stanford",
+        "given": "B."
+      },
+      {
+        "family": "Beagle",
+        "given": "J.R."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Historical Ecology of the Lower Santa Clara River, Ventura River, and Oxnard Plain: An Analysis of Terrestrial, Riverine, and Coastal Habitats, prepared for the State Coastal Conservancy, a report of SFEI’s Historical Ecology Program"
+    ],
+    "genre": [
+      "SFEI Publication #641,"
+    ],
+    "publisher": [
+      "San Francisco Estuary Institute"
+    ],
+    "location": [
+      "Oakland"
+    ],
+    "note": [
+      "CA (report and GIS layers are available on SFEI’s website, at:"
+    ],
+    "url": [
+      "www.sfei.org/projects/VenturaHE)."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Burton",
+        "given": "C.A."
+      },
+      {
+        "family": "Montrella",
+        "given": "J."
+      },
+      {
+        "family": "Landon",
+        "given": "M.K."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Status and understanding of groundwater quality in the Santa Clara River Valley, 2007—California GAMA Priority Basin Project: U.S"
+    ],
+    "volume": [
+      "2011–5052"
+    ],
+    "pages": [
+      "86"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "Seawater intrusion: aquitards in the coastal ground water basin of Oxnard Plain, Ventura County"
+    ],
+    "volume": [
+      "63-4"
+    ],
+    "pages": [
+      "567"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Water Resources Bulletin"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 1975a, Bulletin 118-75: California's Ground Water, dated September"
+    ],
+    "date": [
+      "1975"
+    ],
+    "pages": [
+      "135"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 1975b, Compilation of Technical Information Records for the Ventura County Cooperative Investigation"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Water Resources"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1980",
+      "1980-01"
+    ],
+    "title": [
+      "Bulletin 118-80: Ground Water Basins in California: A Report to the Legislature in Response to Water Code Section 12924"
+    ],
+    "pages": [
+      "73"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2003",
+      "2003"
+    ],
+    "title": [
+      "Bulletin 118 - Update 2003: California's Groundwater, dated October"
+    ],
+    "pages": [
+      "222"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Future Land Subsidence in California"
+    ],
+    "pages": [
+      "13"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Division of Water Resources"
+    ],
+    "date": [
+      "1933"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "–",
+      "200"
+    ],
+    "publisher": [
+      "Ventura County Investigation"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ],
+    "issue": [
+      "46"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Stephens",
+        "given": "Daniel B."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Fox Canyon Groundwater Management Agency Groundwater Balance Study, Ventura County"
+    ],
+    "location": [
+      "California"
+    ],
+    "pages": [
+      "35"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stephens",
+        "given": "Daniel B."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Santa Paula Basin Hydrogeologic Characterization and Safe Yield Study"
+    ],
+    "publisher": [
+      "Ventura County"
+    ],
+    "location": [
+      "California"
+    ],
+    "pages": [
+      "81"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Preliminary Draft (Subject to Change) Groundwater Sustainability Plan for the Oxnard Subbasin"
+    ],
+    "pages": [
+      "430"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Preliminary Draft (Subject to Change) Groundwater Sustainability Plan for the Pleasant Valley Basin"
+    ],
+    "pages": [
+      "294"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Preliminary Draft (Subject to Change) Groundwater Sustainability Plan for the Las Posas Valley Basin"
+    ],
+    "pages": [
+      "352"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Edmonston",
+        "given": "A.D."
+      }
+    ],
+    "date": [
+      "1956"
+    ],
+    "title": [
+      "State Water Resources"
+    ],
+    "volume": [
+
+    ],
+    "note": [
+      "Ventura County Investigation, original prepared 1953, revised in October 1956."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Board Bulletin"
+    ],
+    "issue": [
+      "12"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Flint",
+        "given": "A.L."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Regional Analysis of Ground-Water Recharge: U.S"
+    ],
+    "container-title": [
+      "Geological Survey Professional Paper 1703-B"
+    ],
+    "pages": [
+      "60"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Fox Canyon Groundwater Management Agency, 2015, Calendar Year 2014 Annual Report"
+    ],
+    "pages": [
+      "65"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "Fox Canyon Groundwater Management"
+      }
+    ],
+    "title": [
+      "United Water Conservation District, and Calleguas Municipal Water District, 2007"
+    ],
+    "container-title": [
+      "2007 Update to the Fox Canyon Groundwater Management Agency Management Plan"
+    ],
+    "pages": [
+      "88"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Freeman",
+        "given": "V.M."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "People-Land-Water: Santa Clara River Valley and Oxnard Plain"
+    ],
+    "publisher": [
+      "Ventura County",
+      "Morrison"
+    ],
+    "location": [
+      "California, Lorrin L"
+    ],
+    "pages": [
+      "227"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "West",
+        "given": "Fugro"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Calendar Year 1995 Annual Report, Mound Groundwater Basin, Ventura County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "unpublished consultant’s report prepared for City of San Buenaventura, January."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Geotechnical"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "Hydrogeologic Investigation of the Mound Groundwater Basin for the City of"
+    ],
+    "location": [
+      "San Buenaventura, California"
+    ],
+    "note": [
+      "unpublished consultant’s report prepared for City of San Buenaventura."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Grunsky",
+        "given": "C.E."
+      }
+    ],
+    "date": [
+      "1915"
+    ],
+    "title": [
+      "Discussion: Run-off from Rainfall and Other Data"
+    ],
+    "container-title": [
+      "Transactions of the American Society of Civil Engineers"
+    ],
+    "volume": [
+      "LXXIX"
+    ],
+    "pages": [
+      "1165–1167"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "1994",
+      "November 18-19, 1992"
+    ],
+    "title": [
+      "Land subsidence in the Oxnard Plain of the Santa Clara-Calleguas basin, Ventura County, California",
+      "Abstracts and summary, U.S"
+    ],
+    "editor": [
+      {
+        "family": "Prince",
+        "given": "K.R."
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "container-title": [
+      "U.S. Geological Survey Subsidence Interest Group Conference, Edwards Air Force Base"
+    ],
+    "location": [
+      "Antelope Valley, California"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 94-532,"
+    ],
+    "pages": [
+      "32–34"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/of/1994/ofr94-532)."
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T.Martin"
+      },
+      {
+        "family": "P.",
+        "given": "Koczot"
+      },
+      {
+        "given": "K.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of ground-water/surface water flow in the Santa Clara-Calleguas ground-water basin, Ventura County, California, U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 02-4136,"
+    ],
+    "volume": [
+      "214p"
+    ],
+    "url": [
+      "https://pubs.er.usgs/usgspubs/wri/"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Hasan",
+        "given": "A.A."
+      },
+      {
+        "family": "Kleinecke",
+        "given": "D.C."
+      },
+      {
+        "family": "Johanson",
+        "given": "S.J."
+      },
+      {
+        "family": "Pierchala",
+        "given": "C.E."
+      }
+    ],
+    "date": [
+      "1974",
+      "1974-08"
+    ],
+    "title": [
+      "Mathematical Modeling of Water Quality for Water Resources Management",
+      "Development of the Ground Water Quality Model, California Department of Water Resources, Southern District"
+    ],
+    "volume": [
+      "1"
+    ],
+    "genre": [
+      "District Report,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Groundwater Hydrology, U.S"
+    ],
+    "volume": [
+      "2220"
+    ],
+    "pages": [
+      "78"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Water-Supply Paper"
+    ]
+  },
+  {
+    "location": [
+      "Highland Economics, LLC"
+    ],
+    "date": [
+      "2017",
+      "2017-07"
+    ],
+    "title": [
+      "Socioeconomic Importance of Freeman Diversion Water to Ventura County"
+    ],
+    "pages": [
+      "81"
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Hopkins Groundwater Consultants, Inc"
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Preliminary Hydrogeologic Study: Northeast Pleasant Valley Basin Surface Water and Groundwater Study"
+    ],
+    "note": [
+      "Somis, California, prepared for Calleguas Municipal Water District."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hsieh",
+        "given": "P.A."
+      },
+      {
+        "family": "Freckleton",
+        "given": "J.R."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Documentation of a Computer Program to Simulate Horizontal-Flow Barriers Using the U.S. Geological Survey’s Modular Three-Dimensional Finite-Difference Ground-Water Flow Model, U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 92-477."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Geoscience",
+        "given": "Intera"
+      },
+      {
+        "family": "Solutions",
+        "given": "Engineering"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Flow Model of the East and South Las Posas Sub-Basins"
+    ],
+    "publisher": [
+      "Preliminary Draft Report"
+    ],
+    "pages": [
+      "208"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Training",
+        "given": "Irrigation"
+      },
+      {
+        "family": "Center",
+        "given": "Research"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Evaluation of Strengths and Weaknesses of the Existing FCGMA IE Program and Specific Suggestions for Improvement, Final Task 2.2"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Isherwood",
+        "given": "J.D."
+      },
+      {
+        "family": "Pillsbury",
+        "given": "A.F."
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "Shallow Ground Water and Tile Drainage in the Oxnard Plain"
+    ],
+    "container-title": [
+      "Transactions of the American Geophysical Union"
+    ],
+    "volume": [
+      "39"
+    ],
+    "pages": [
+      "1101–1110"
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Source movement and age of groundwater in a coastal California aquifer, U.S"
+    ],
+    "volume": [
+      "126-96"
+    ],
+    "pages": [
+      "4"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey, Fact Sheet"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      },
+      {
+        "family": "Michel",
+        "given": "R.L."
+      },
+      {
+        "family": "Martin",
+        "given": "Peter"
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "3H and 14C as Tracers of Groundwater Recharge"
+    ],
+    "container-title": [
+      "Engman, Ted, Saving a threatened resource—In Search of Solutions: American Society of Civil Engineers, IR Division/ASCE"
+    ],
+    "pages": [
+      "122–127"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Jamison",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1928",
+      "1927-07-31"
+    ],
+    "title": [
+      "Ventura County Investigation—Report for the Period August 20"
+    ],
+    "publisher": [
+      "California Division of Water Rights"
+    ],
+    "pages": [
+      "228"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Mann",
+        "given": "John F.",
+        "suffix": "Jr."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "A Plan for Groundwater Management—United Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Jordan",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "notes from conversation between Denton “Bill"
+    ],
+    "note": [
+      "Jordan (tile-drain installer from Fowler, CA) and Dan Detmer (supervising hydrogeologist at United Water Conservation District), May."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Joseph",
+        "given": "T."
+      },
+      {
+        "family": "Godwin",
+        "given": "T."
+      },
+      {
+        "family": "McManus",
+        "given": "D."
+      },
+      {
+        "family": "Nordberg",
+        "given": "M."
+      },
+      {
+        "family": "Shannon",
+        "given": "H."
+      },
+      {
+        "family": "Springhorn",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Modeling BMP"
+    ],
+    "pages": [
+      "43"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Documentation of a Computer Program to Simulate Aquifer-System Compaction Using the Modular Finite-Difference Ground-Water Flow Model, U.S"
+    ],
+    "container-title": [
+      "Geological Survey Techniques of Water-Resources Investigations, Book 6, Chapter A2"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Li",
+        "given": "Y."
+      },
+      {
+        "family": "Neuman",
+        "given": "S.P."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Flow to a Well in a Five-Layer System with Application to the Oxnard Basin"
+    ],
+    "container-title": [
+      "Ground Water"
+    ],
+    "volume": [
+      "45"
+    ],
+    "pages": [
+      "672–682"
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Luis",
+        "given": "S."
+      },
+      {
+        "family": "Schulmeyer",
+        "given": "P."
+      },
+      {
+        "family": "Sheets",
+        "given": "R."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "LeFrancois",
+        "given": "M."
+      },
+      {
+        "family": "Bean",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "container-title": [
+      "NGWA White Paper—Uncertainty in Modeling, dated October 4"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "McDonald",
+        "given": "M.G."
+      },
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "A Modular Three-Dimensional Finite-Difference Ground-Water Flow Model, Techniques of Water-Resources Investigations of the U.S"
+    ],
+    "note": [
+      "Book 6, Chapter A1."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mukae",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "General Geology and Groundwater Occurrence within Calleguas Municipal Water District Service Area"
+    ],
+    "note": [
+      "Progress Report No. 9. Prepared for Metropolitan Water District of Southern California."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Mukae",
+        "given": "M."
+      },
+      {
+        "family": "Turner",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Ventura County Water Resources Management Study-Geologic Formations, Structures and History in the Santa Clara Calleguas Area, January"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Neuman",
+        "given": "S.P."
+      },
+      {
+        "family": "Witherspoon",
+        "given": "P.A."
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "Field Determination of the Hydraulic Properties of Leaky Multiple Aquifer Systems"
+    ],
+    "container-title": [
+      "Water Resources Research 8"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "1284–1298"
+    ],
+    "issue": [
+      "5"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      },
+      {
+        "family": "Ibarki",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "MODFLOW-NWT, A Newton formulation for MODFLOW-2005: U.S"
+    ],
+    "volume": [
+      "6-A37"
+    ],
+    "pages": [
+      "44"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Panday",
+        "given": "S."
+      },
+      {
+        "family": "Langevin",
+        "given": "C.D."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Ibaraki",
+        "given": "Motomu"
+      },
+      {
+        "family": "Hughes",
+        "given": "J.D."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "MODFLOW-USG Version 1: An Unstructured Grid Version of MODFLOW for Simulating Groundwater Flow and Tightly Coupled Processes Using a Control Volume Finite-Difference Formulation: U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "66"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. A45"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Peel",
+        "given": "M.C."
+      },
+      {
+        "family": "Finlayson",
+        "given": "B.L."
+      },
+      {
+        "family": "McMahon",
+        "given": "T.A."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Updated World Map of the Köppen-Geiger Climate Classification"
+    ],
+    "container-title": [
+      "Hydrology and Earth System Sciences"
+    ],
+    "volume": [
+      "11"
+    ],
+    "pages": [
+      "1633–1644"
+    ],
+    "issue": [
+      "5"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Land Subsidence Due to Withdrawal of Fluids"
+    ],
+    "container-title": [
+      "Geological Society of America, Reviews in Engineering Geology -II"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Porcello",
+        "given": "J."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      },
+      {
+        "family": "Rumbaugh",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Peer review team evaluation of UWCD groundwater flow model for the Oxnard Plain, Oxnard Forebay, and Pleasant Valley basins"
+    ],
+    "note": [
+      "Ventura County, California) [Draft Interim Memorandum], dated June 30, 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Porcello",
+        "given": "J."
+      },
+      {
+        "family": "Rumbaugh",
+        "given": "J."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2018",
+      "2016"
+    ],
+    "title": [
+      "Expert Panel Review of Version 1.0 of the Ventura Regional Groundwater Flow Model (VRGWFM"
+    ],
+    "note": [
+      "Ventura County, California), Memorandum dated June 26,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Predmore",
+        "given": "Steven K."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Use Of A Geographic Information System to Identify Abandoned Wells: U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 93-147."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Documentation of a Computer Program to Simulate Stream-Aquifer Relations Using a Modular, Finite-Difference, Ground-Water Flow Model, U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 88-729."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Reichard",
+        "given": "E.G."
+      },
+      {
+        "family": "Crawford",
+        "given": "S.M."
+      },
+      {
+        "family": "Paybins",
+        "given": "K.S."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Land",
+        "given": "M."
+      },
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of Surface-Water/Ground-Water Interactions in the"
+    ],
+    "location": [
+      "Santa Clara River Valley, Ventura County, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 98-4208,"
+    ],
+    "note": [
+      "Prepared in Cooperation with United Water Conservation District, 58 p."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Reilly",
+        "given": "T.E."
+      },
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Guidelines for Evaluating Ground-Water Flow Models"
+    ],
+    "genre": [
+      "USGS Scientific Investigations Report 2004-5038,"
+    ],
+    "pages": [
+      "37"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Santos",
+        "given": "F.L."
+      },
+      {
+        "family": "Hawkins",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Generalized Mediterranean Annual Water Yield Model: Grunsky’s Equation and Long-Term Average Temperature"
+    ],
+    "volume": [
+      "16"
+    ],
+    "pages": [
+      "874–879"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrologic Engineering"
+    ],
+    "issue": [
+      "11"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Smith",
+        "given": "W."
+      },
+      {
+        "family": "William Smith",
+        "particle": "conversation between"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "LLP, representing Oxnard Drainage District #1"
+    ],
+    "note": [
+      "and Dan Detmer (supervising hydrogeologist at United Water Conservation District), May."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stamos",
+        "given": "C.L."
+      },
+      {
+        "family": "Predmore",
+        "given": "S.K."
+      },
+      {
+        "family": "Zohdy",
+        "given": "A.A.R."
+      }
+    ],
+    "date": [
+      "1992",
+      "August 2-6, 1992"
+    ],
+    "title": [
+      "Use of D-C resistivity to map saline ground water"
+    ],
+    "container-title": [
+      "American Society of Civil Engineers National Conference, Water Forum 1992"
+    ],
+    "location": [
+      "Baltimore, Maryland"
+    ],
+    "volume": [
+      "Proceedings"
+    ],
+    "pages": [
+      "80–85"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "State Water Resources Control Board Division of Water Rights",
+      "Oxnard Plain Groundwater Study"
+    ],
+    "date": [
+      "1979"
+    ],
+    "volume": [
+      "2100"
+    ],
+    "pages": [
+      "68"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Code Section"
+    ]
+  },
+  {
+    "title": [
+      "State Water Resources Control Board Division of Water Rights, 2012, Amended Permit for Diversion and Use of Water, Permit 20952"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Draft Report, City of Ventura Special Studies—Phase 3: Assessment of the Physical and Biological Conditions of the"
+    ],
+    "location": [
+      "Santa Clara River Estuary, Ventura County, California"
+    ],
+    "pages": [
+      "304"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stonestrom",
+        "given": "D.A."
+      },
+      {
+        "family": "Harrill",
+        "given": "J.R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Ground-Water Recharge in the Arid and Semiarid Southwestern United States—Climatic and Geologic Framework: U.S"
+    ],
+    "container-title": [
+      "Geological Survey Professional Paper 1703-A"
+    ],
+    "pages": [
+      "27"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sylvester",
+        "given": "A.G."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Aseismic Growth of Ventura Avenue Anticline (1978 to 1997): Evidence of an Elastic Strain Release in Ventura Basin, Southern California, from Precise Leveling"
+    ],
+    "volume": [
+      "78"
+    ],
+    "pages": [
+      "156–157"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transactions of the American Geophysical Union"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sylvester",
+        "given": "A.G."
+      },
+      {
+        "family": "Brown",
+        "given": "G.C."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Santa Barbara and Ventura Basins; Tectonics, Structure, Sedimentation, Oilfields along an East-West Transect: Coast Geological Society Guidebook 64"
+    ],
+    "location": [
+      "Ventura, California"
+    ],
+    "pages": [
+      "167"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sun",
+        "given": "R.J."
+      },
+      {
+        "family": "Johnston",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1994",
+      "1994"
+    ],
+    "title": [
+      "Regional Aquifer-System Analysis Program of the U.S"
+    ],
+    "container-title": [
+      "Geological Survey, 1978-1992: U.S. Geological Survey Circular 1099"
+    ],
+    "pages": [
+      "126"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Turner",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Aquifer delineation in the Oxnard-Calleguas area, Ventura County"
+    ],
+    "container-title": [
+      "Compilation of Technical Information Records for the Ventura County Cooperative Investigation: California Department of Water Resources"
+    ],
+    "pages": [
+      "28"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Turner",
+        "given": "K.M."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Annual Evapotranspiration of Native Vegetation in a Mediterranean-Type Climate"
+    ],
+    "volume": [
+      "27"
+    ],
+    "pages": [
+      "1–6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Bulletin"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2012",
+      "2012-06-11"
+    ],
+    "title": [
+      "Hydrogeologic Assessment of the Mound Basin, United Water Conservation District Open-File",
+      "Update"
+    ],
+    "genre": [
+      "Report 2012-01,"
+    ],
+    "pages": [
+      "25"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-06"
+    ],
+    "title": [
+      "Technical Memorandum: Infiltration Potential of Precipitation Falling on Developed Lands and the Fate of Applied Groundwater within UWCD"
+    ],
+    "pages": [
+      "20"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Groundwater and Surface Water Conditions Report - 2013, United Water Conservation District Open-File"
+    ],
+    "genre": [
+      "Report 2014-02,"
+    ],
+    "pages": [
+      "96"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Saline Intrusion Update, Oxnard Plain and Pleasant Valley Basins, United Water Conservation District Open-File Report 2016-04"
+    ],
+    "pages": [
+      "120"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United Water Conservation District, 2017a, Groundwater and Surface Water Conditions Report -2015, United Water Conservation District Open-File Report 2017-01"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United Water Conservation District, 2017b, Preliminary Evaluation of Impacts of Potential Groundwater Sustainability Indicators on Future Groundwater Extraction Rates – Oxnard Plain and Pleasant Valley Groundwater Basins, United Water Conservation District"
+    ],
+    "genre": [
+      "Open-File Report 2017-02,"
+    ],
+    "pages": [
+      "68"
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "United Water Conservation District, 2017c"
+    ],
+    "container-title": [
+      "Summary: UWCD Groundwater Flow Model Technical Workshop at FCGMA Special Meeting"
+    ],
+    "date": [
+      "2017-03-24"
+    ],
+    "pages": [
+      "3"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "United Water Conservation District, 2017d, Summary: United’s Groundwater Flow Model – “Pleasant Valley Workshop"
+    ],
+    "container-title": [
+      "at FCGMA Special Meeting"
+    ],
+    "date": [
+      "2017-04-27"
+    ],
+    "pages": [
+      "4"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "Ventura County Office of the Agricultural Commissioner, 2016, 2015 Ventura County Crop and Livestock Report"
+    ],
+    "date": [
+      "2016-12"
+    ],
+    "pages": [
+      "20"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Ventura County Public Works Agency (Flood Control and Water Resources Department",
+      "Fox Canyon Groundwater Management Agency Planning Study, Task 86-3, Groundwater Management Plan for the Fox Canyon Groundwater Management Agency, dated September"
+    ],
+    "date": [
+      "1985",
+      "1985"
+    ],
+    "pages": [
+      "54"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Weber",
+        "given": "F.H."
+      },
+      {
+        "family": "Kiessling",
+        "given": "E.W."
+      },
+      {
+        "family": "Sprotte",
+        "given": "E.C."
+      },
+      {
+        "family": "Johnson",
+        "given": "J.A."
+      },
+      {
+        "family": "Sherburne",
+        "given": "R.W."
+      },
+      {
+        "family": "Cleveland",
+        "given": "G.B."
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "Seismic hazards study of Ventura County, California: California Department of Conservation"
+    ],
+    "volume": [
+      "76-5"
+    ],
+    "pages": [
+      "396 , 3 3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Division of Mines and Geology Open-File Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Yeats",
+        "given": "R.S."
+      },
+      {
+        "family": "Clark",
+        "given": "M.N."
+      },
+      {
+        "family": "Keller",
+        "given": "E.A."
+      },
+      {
+        "family": "Rockwell",
+        "given": "T.K."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Active Fault Hazard in Southern California: Ground Rupture Versus Seismic Shaking: Geol"
+    ],
+    "volume": [
+      "1, v. 92"
+    ],
+    "pages": [
+      "189–196"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Soc. America Bull, Part"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Inflow",
+        "given": "Conejo Conejo Conejo Conejo Conejo Conejo Conejo Conejo Conejo Conejo Conejo Conejo Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Creek Diversion Year"
+      }
+    ],
+    "note": [
+      "cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft) Inflow (cfs) (acre-ft"
+    ],
+    "date": [
+      "1985"
+    ],
+    "pages": [
+      "24 2 – 26 1 – 21 3 – 14 5 – 14 1 – 12 8 – 14 1 – 14 0 – 14 8 – 15 6 – 44 4 – 21 4 –1986 49 1 – 108 5 – 87 6 – 28 7 – 21 3 – 18 8 – 16 8 – 16 0 – 20 1 – 16 6 – 32 4 – 14 5 –1987 25 7 – 22 5 – 21 2 – 16 0 – 15 0 – 14 1 – 14 2 – 15 0 – 13 4 – 38 4 – 26 4 – 56 7 –1988 44 2 – 33 3 – 20 7 – 28 5 – 14 9 – 15 7 – 14 3 – 13 5 – 16 3 – 16 7 – 16 5 – 46 9 –1989 21 7 – 45 6 – 24 1 – 17 4 – 16 3 – 16 2 – 15 0 – 16 2 – 18 6 – 20 6 – 18 0 – 17 5 –1990 43 1 – 28 7 – 14 5 – 15 3 – 13 7 – 12 5 – 11 6 – 12 2 – 11 7 – 13 2 – 17 8 – 15 4 –1991 18 2 – 36 3 – 115 0 – 17 9 – 12 3 – 12 2 – 10 6 – 10 3 – 11 9 – 13 9 – 10 2 – 65 4 –1992 42 3 – 333 2 – 147 1 – 31 9 – 23 5 – 21 7 – 15 7 – 15 8 – 15 7 – 21 4 – 16 5 – 60 9 –1993 303 6 – 281 5 – 80 5 – 34 1 – 24 9 – 21 0 – 19 4 – 18 5 – 17 1 – 23 2 – 24 3 – 33 0 –1994 20 6 – 59 8 – 37 1 – 18 9 – 16 4 – 15 1 – 14 5 – 14 0 – 19 1 – 17 1 – 18 7 – 20 3 –1995 326 6 – 40 0 – 147 9 – 43 4 – 32 5 – 27 8 – 20 1 – 17 9 – 19 1 – 19 2 – 18 8 – 40 7 –1996 33 5 – 66 6 – 31 1 – 21 7 – 17 2 – 16 6 – 13 4 – 17 7 – 16 6 – 26 4 – 37 7 – 82 1 –1997 73 1 – 23 9 – 17 4 – 16 0 – 13 7 – 14 6 – 17 5 – 18 4 – 18 3 – 20 5 – 44 4 – 100 2 –1998 52 5 – 437 3 – 86 9 – 56 7 – 45 8 – 29 7 – 25 5 – 22 5 – 23 3 – 20 9 – 26 6 – 27 4 –1999 30 5 – 31 0 – 39 1 – 29 4 – 19 8 – 18 2 – 15 2 – 15 7 – 18 6 – 16 2 – 22 8 – 17 3 –2000 22 6 – 58 4 – 34 0 – 41 4 – 21 6 – 19 5 – 17 2 – 15 4 – 14 7 – 19 3 – 16 8 – 19 5 –2001 57 0 – 84 4 – 118 1 – 32 3 – 23 6 – 20 1 – 20 1 – 17 8 – 18 0 – 19 5 – 32 6 – 25 0 –"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Adams",
+        "given": "B.M."
+      },
+      {
+        "family": "Ebeida",
+        "given": "M.S."
+      },
+      {
+        "family": "Eldred",
+        "given": "M.S."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2018",
+      "2014-07"
+    ],
+    "title": [
+      "Dakota, A Multilevel Parallel Object-Oriented Framework for Design Optimization, Parameter Estimation, Uncertainty Quantification, and Sensitivity Analysis: Version 6.9 Reference Manual"
+    ],
+    "pages": [
+      "2014–5015,"
+    ],
+    "note": [
+      "Updated November 13, 2018."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Sandia National Laboratories"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.M.W.D."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.M.W.D."
+      }
+    ],
+    "date": [
+      "2012",
+      "2012-01-15"
+    ],
+    "title": [
+      "Phase I Study: Surface Flow and Groundwater Recharge in Arroyo Las Posas"
+    ],
+    "publisher": [
+      "Prepared by Larry Walker Associates"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ciriello",
+        "given": "V."
+      },
+      {
+        "family": "Federico",
+        "given": "V.",
+        "particle": "Di"
+      },
+      {
+        "family": "Riva",
+        "given": "M."
+      },
+      {
+        "family": "Cadini",
+        "given": "F."
+      },
+      {
+        "family": "Sanctis",
+        "given": "J.",
+        "particle": "De"
+      },
+      {
+        "family": "Zio",
+        "given": "E."
+      },
+      {
+        "family": "Guadagnini",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Polynomial chaos expansion for global sensitivity analysis applied to a model of radionuclide migration in a randomly heterogeneous aquifer"
+    ],
+    "volume": [
+      "27"
+    ],
+    "pages": [
+      "945–954"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Stochastic Environmental Research and Risk Assessment"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dentz",
+        "given": "M."
+      },
+      {
+        "family": "Tartakovsky",
+        "given": "D.M."
+      },
+      {
+        "family": "Abarca",
+        "given": "E."
+      },
+      {
+        "family": "Guadagnini",
+        "given": "A."
+      },
+      {
+        "family": "Sanchez-Vila",
+        "given": "X."
+      },
+      {
+        "family": "Carrera",
+        "given": "J."
+      }
+    ],
+    "title": [
+      "Variable density flow in porous media (2006"
+    ],
+    "volume": [
+      "561"
+    ],
+    "pages": [
+      "209–235"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Fluid Mechanics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Vigna",
+        "given": "F.",
+        "particle": "La"
+      },
+      {
+        "family": "Hill",
+        "given": "M.C."
+      },
+      {
+        "family": "Rossetto",
+        "given": "R."
+      },
+      {
+        "family": "Mazza",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Parameterization, sensitivity analysis, and inversion: an investigation using groundwater modeling of the surface-mined Tivoli-Guidonia basin (Metropolitan City of Rome, Italy"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "1423–1441"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Razavi",
+        "given": "S."
+      },
+      {
+        "family": "Gupta",
+        "given": "H.V."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "What do we mean by sensitivity analysis? The need for comprehensive characterization of “global” sensitivity in Earth and Environmental systems models"
+    ],
+    "volume": [
+      "51"
+    ],
+    "pages": [
+      "3070–3092"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Research"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Saltelli",
+        "given": "A."
+      },
+      {
+        "family": "Ratto",
+        "given": "M."
+      },
+      {
+        "family": "Andres",
+        "given": "T."
+      },
+      {
+        "family": "Campolongo",
+        "given": "F."
+      },
+      {
+        "family": "Cariboni",
+        "given": "J."
+      },
+      {
+        "family": "Gatelli",
+        "given": "D."
+      },
+      {
+        "family": "Saisana",
+        "given": "M."
+      },
+      {
+        "family": "Tarantola",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Global Sensitivity Analysis: The Primer"
+    ],
+    "publisher": [
+      "Wiley"
+    ],
+    "location": [
+      "Chichester, England"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Song",
+        "given": "X."
+      },
+      {
+        "family": "Zhang",
+        "given": "J."
+      },
+      {
+        "family": "Zhan",
+        "given": "C."
+      },
+      {
+        "family": "Xuan",
+        "given": "Y."
+      },
+      {
+        "family": "Ye",
+        "given": "M."
+      },
+      {
+        "family": "Xu",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Global sensitivity analysis in hydrological modeling: Review of concepts, methods, theoretical framework, and applications"
+    ],
+    "volume": [
+      "523"
+    ],
+    "pages": [
+      "739–757"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-07"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model and Updated Hydrogeologic Conceptual Mode: Oxnard Plain, Oxnard Forebay, Pleasant Valley, West Las Posas, and Mound Groundwater Basins"
+    ],
+    "genre": [
+      "Open File Report (OFR) 2018-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Welter",
+        "given": "D.E."
+      },
+      {
+        "family": "White",
+        "given": "J.T."
+      },
+      {
+        "family": "Hunt",
+        "given": "R.J."
+      },
+      {
+        "family": "Doherty",
+        "given": "J.E."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Approaches in highly parameterized inversion — PEST++ Version 3, a Parameter ESTimation and uncertainty analysis software suite optimized for large environmental models: U.S"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "54 ,"
+    ],
+    "doi": [
+      "10.3133/tm7C12."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ],
+    "issue": [
+      "ap. C12"
+    ]
+  },
+  {
+    "title": [
+      "plover and California least tern (WRA, 2007) (see Worksheet 2 for an ecological inventory of Ormond Beach GDE). The biological significance of the area is recognized by all 14 federal and state resource agencies participating in the Southern California Wetlands Recovery Project and the County of Ventura and the City of Oxnard"
+    ],
+    "note": [
+      "CCC, 2017). RWQCB beneficial uses include WILD, RARE, WET, and EST."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "American Bird"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "The American Bird Conservancy Guide to the 500 Most Important Bird Areas in the United States"
+    ],
+    "publisher": [
+      "Random House"
+    ],
+    "location": [
+      "New York"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Beller",
+        "given": "E.E."
+      },
+      {
+        "family": "Grossinger",
+        "given": "R.M."
+      },
+      {
+        "family": "Salomon",
+        "given": "M.N."
+      },
+      {
+        "family": "Dark",
+        "given": "S.J."
+      },
+      {
+        "family": "Stein",
+        "given": "E.D."
+      },
+      {
+        "family": "Orr",
+        "given": "B.K."
+      },
+      {
+        "family": "Downs",
+        "given": "P.W."
+      },
+      {
+        "family": "Longcore",
+        "given": "T.R."
+      },
+      {
+        "family": "Coffman",
+        "given": "G.C."
+      },
+      {
+        "family": "Whipple",
+        "given": "A.A."
+      },
+      {
+        "family": "Askevold",
+        "given": "R.A."
+      },
+      {
+        "family": "Stanford",
+        "given": "B."
+      },
+      {
+        "family": "Beagle",
+        "given": "J.R."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Historical ecology of the lower Santa Clara River, Ventura River, and Oxnard Plain: an analysis of terrestrial, riverine, and coastal habitats"
+    ],
+    "container-title": [
+      "Prepared for the State Coastal Conservancy. A report of SFEI’s Historical Ecology Program, SFEI Publication #641"
+    ],
+    "publisher": [
+      "San Francisco Estuary Institute"
+    ],
+    "location": [
+      "Oakland, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Briggs",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1995",
+      "1993"
+    ],
+    "title": [
+      "Evaluating degraded riparian ecosystems to determine the potential effectiveness of revegetation",
+      "October 19-21; Las Vegas, NV"
+    ],
+    "container-title": [
+      "Proceedings: Wildland Shrub and Arid Land Restoration Symposium"
+    ],
+    "genre": [
+      "Gen. Tech. Rep. INT-GTR-315."
+    ],
+    "location": [
+      "Ogden, UT",
+      "Forest Service"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture",
+      "Intermountain Research Station"
+    ],
+    "pages": [
+      "384"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "California Coastal"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Santa Clara River Parkway. Digital vegetation map managed through the California Vegetation Classification and Mapping Program (VegCAMP"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "California Coastal"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Ormond Beach Wetland Restoration Project webpage"
+    ],
+    "url": [
+      "http://scc.ca.gov/2010/01/07/ormond-beach-wetlands-restorationproject/."
+    ],
+    "note": [
+      "Accessed April 2017."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board Los Angeles Region (RWQCB"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Trash Total Maximum Daily Load for Revolon Slough and Beardsley Wash in the Calleguas Creek Watershed"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board Los Angeles Region (RWQCB"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Calleguas Creek Watershed webpage:"
+    ],
+    "url": [
+      "http://www.waterboards.ca.gov/losangeles/water_issues/programs/regional_progra"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Plan",
+        "given": "Calleguas Creek Watershed Management"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "note": [
+      "Calleguas Creek Watershed Management Plan, Phase I Report."
+    ],
+    "url": [
+      "http://www.calleguas.com/images/docsdocuments-reports/vol1.pdf"
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "Tony Chen, Ventura County Watershed Protection District",
+      "Personal communication with Kim Loeb"
+    ],
+    "date": [
+      "2017"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Environmental Science"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "McGrath State Beach Natural Resources Management Plan"
+    ],
+    "publisher": [
+      "Prepared for California Department of Parks and Recreation. April"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Williams",
+        "given": "Philip"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Ormond Beach Wetland Restoration Feasibility Plan: Hydrologic and Geomorphic Conditions Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Addressing Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "City of Ventura special studies: Estuary Subwatershed Study assessment of the physical and biological condition of the Santa Clara River Estuary, Ventura County, California. Final Synthesis Report"
+    ],
+    "publisher": [
+      "Prepared by Stillwater Sciences",
+      "California for City of Ventura"
+    ],
+    "location": [
+      "Berkeley",
+      "California. March"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "United Water Conservation District Multiple Species Habitat Conservation Plan Study: Effects of Freeman Diversion on Riparian Vegetation in the Santa Clara River. Prepared by Stillwater Sciences"
+    ],
+    "location": [
+      "Berkeley",
+      "Santa Paula, California"
+    ],
+    "publisher": [
+      "California for United Water Conservation District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater data collected by Stillwater Sciences in support of City of Ventura Special Studies or compiled from Bailard Landfill monitoring program"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Tetra Tech E.M."
+      },
+      {
+        "family": "Group",
+        "given": "Sullivan Consulting"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Final Remedial Investigation for Groundwater, Naval Base Ventura County, Point Mugu Site"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "Prepared for Department of the Navy. November."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Potential Groundwater Dependent Ecosystems for the Fox Canyon Groundwater Management Agency, Version 0.3.1"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "W.R.A.Environmental"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Final Biological Assessment Ormond Beach"
+    ],
+    "location": [
+      "Oxnard, Ventura County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "U.S.Naval Base Ventura"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Vegetation Classification and Mapping, Naval Base Ventura County, Point Mugu, California. Digital vegetation map managed through VegCAMP"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "v2"
+    ],
+    "location": [
+      "California Wetlands"
+    ],
+    "note": [
+      "Accessed May 2016."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "National Wetlands Inventory"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "U.S.Forest"
+      }
+    ],
+    "date": [
+      "2014",
+      "2002"
+    ],
+    "publisher": [
+      "Existing Vegetation South Coast"
+    ],
+    "volume": [
+      "v2"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "MeClellan",
+        "given": "E.S.R.I.File Geodatabase]"
+      },
+      {
+        "family": "June",
+        "given": "C.A.Accessed"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "* Relevant environmental beneficial uses listed in Bulletin 118 (2003 update)—Appendix E"
+    ],
+    "container-title": [
+      "Sources: California Department of Fish & Wildlife (CDFW). 2016. California Natural Diversity Database (CNDDB), Rarefind"
+    ],
+    "volume": [
+      "3"
+    ],
+    "issue": [
+      "1.1"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "literal": "Heritage section, CDFW, Sacramento."
+      }
+    ],
+    "title": [
+      "Last accessed October"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "CPAD",
+        "given": "Greeninfo Network"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California Protected Area Network, 2016b"
+    ],
+    "location": [
+      "Oakland, California"
+    ],
+    "url": [
+      "http://www.calands.org/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "NWI",
+        "given": "U.S.Fish"
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "v2"
+    ],
+    "location": [
+      "California Wetlands"
+    ],
+    "note": [
+      "Accessed May 2016."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "National Wetlands Inventory"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "CH",
+        "given": "U.S.Fish"
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "title": [
+      "Endangered Species Program, ECOS Joint Development Team",
+      "Critical Habitat Polygons and Lines"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Accessed from"
+    ],
+    "url": [
+      "https://ecos.fws.gov/ecp/report/table/critical-habitat.html"
+    ],
+    "container-title": [
+      "December 2016. iGDE: The Nature Conservancy, Califorina Department of Fish and Wildlife, California Department of Water Resources. 2018. Potential Groundwater Dependent Ecosystems Database"
+    ],
+    "volume": [
+      "0"
+    ],
+    "issue": [
+      "3"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "W.R.A.Environmental"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Final Biological Assessment Ormond Beach"
+    ],
+    "location": [
+      "Oxnard, Ventura County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Environmental Science"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "McGrath State Beach Natural Resources Management Plan"
+    ],
+    "publisher": [
+      "Prepared for California Department of Parks and Recreation. April"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dellith",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Personal Communication. Email exchange regarding presence of least Bell’s vireo in Revolon Slough"
+    ],
+    "volume": [
+      "30"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "June"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.U.D.E.K."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-01"
+    ],
+    "title": [
+      "Approach for GSP Modeling of Future Conditions in the Oxnard Subbasin, Pleasant Valley Basin, and Las Posas Valley Basin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-04"
+    ],
+    "title": [
+      "Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources"
+    ],
+    "container-title": [
+      "2018b, The State Water Project Final Delivery Capability Report 2017"
+    ],
+    "date": [
+      "2018-03"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "F.C.G.M.A."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07",
+      "2016-09"
+    ],
+    "title": [
+      "Groundwater Sustainability Plan (GSP",
+      "R2 Resource Consultants, 2016, Riverine effects analysis of Freeman Diversion flow releases on steelhead and Pacific lamprey"
+    ],
+    "note": [
+      "Last accessed 07 November 2019:"
+    ],
+    "url": [
+      "http://www.fcgma.org/groundwater-sustainability-plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Attachment A, model documentation report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2012",
+      "2012-06"
+    ],
+    "title": [
+      "Santa Felicia Water Release Plan, United Water Conservation District"
+    ],
+    "note": [
+      "Last accessed 07 November 2019:",
+      "pdf UWCD (United Water Conservation District), 2018a, Ventura Regional Groundwater Flow Model and Updated Hydrogeologic Conceptual Model: Oxnard Plain, Oxnard Forebay, Pleasant Valley, West Las Posas, and Mound Basins, United Water Conservation District Open-File Report 2018-02, July. Last accessed 07 November 2019:"
+    ],
+    "url": [
+      "https://www.unitedwater.org/images/stories/Resource-Conservation/Santa-Felicia-Dam/FERC/water_release_plan/Final_Santa_Felicia_Water_Release_Plan_June_2012.",
+      "https://www.unitedwater.org/reports-5/groundwater-conditions"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.W.C.D."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "United Water Conservation Multiple Species Habitat Conservation Plan"
+    ],
+    "volume": [
+      "7"
+    ],
+    "note": [
+      "Last accessed 07 November 2019:"
+    ],
+    "url": [
+      "https://www.unitedwater.org/resource-conservation-3/habitat-conservation-plan/hcp-associated-documents"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Administrative Draft. September"
+    ]
+  }
+]

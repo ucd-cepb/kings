@@ -1,0 +1,5255 @@
+[
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.A."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Applied Groundwater Modeling, Simulation of Flow and Advective Transport"
+    ],
+    "publisher": [
+      "Academic Press"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Availability of the Central Valley Aquifer, California"
+    ],
+    "container-title": [
+      "USGS Professional Paper 1766"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Technical Memorandum – Estimate of Future Friant Division Supplies for use in Groundwater Sustainability Plans"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "G.S.I."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Draft Subsidence Monitoring Program – Tule River/Friant-Kern Canal Water Bank, Deer Creek/Friant-Kern Canal Water Bank"
+    ],
+    "note": [
+      "Prepared for Homer LLC. Dated November 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Boyce",
+        "given": "S."
+      },
+      {
+        "family": "Schmid",
+        "given": "W."
+      },
+      {
+        "family": "Hughes",
+        "given": "J.D."
+      },
+      {
+        "family": "Mehl",
+        "given": "S.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Maddock",
+        "given": "T."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "One-Water Hydrologic Flow Model (MODFLOW-OHWM"
+    ],
+    "container-title": [
+      "USGS Techniques and Methods"
+    ],
+    "pages": [
+      "6– 51"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hoffman",
+        "given": "J."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Wilson",
+        "given": "A.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "MODFLOW-2000 Ground Water Model, Users Guide to the Subsidence and Aquifer System Compaction (SUB) Package"
+    ],
+    "genre": [
+      "USGS Open-File Report 03-233."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1980. U.S. Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Land Subsidence due to Ground-Water Withdrawal Tulare-Wasco Area California"
+    ],
+    "container-title": [
+      "USGS Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "given": "Scalmanini"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California"
+    ],
+    "container-title": [
+      "Prepared in Cooperation with the California Water Foundation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "McDonald",
+        "given": "M.G."
+      },
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "A Modular Three-Dimensional Finite-Difference Ground-Water Flow Model: in Techniques of Water-Resources Investigations of the United States Geological Survey; Book 6 Modeling Techniques"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "T.H.&Co"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "Draft Detailed Analysis of Land Subsidence Along the Friant-Kern Canal in the Tule Subbasin. Prepared for the Tule Subbasin Technical Advisory Committee"
+    ],
+    "volume": [
+      "24"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated May"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "T.H.&Co"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-01"
+    ],
+    "title": [
+      "Groundwater Flow Model of the Tule Subbasin. Prepared for the Tule Subbasin Technical Advisory Committee"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "title": [
+      "Model-Simulated Land Subsidence Along Friant-Kern Canal for Historical (1986-2017) Water Budget Zone Combinations"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-01-26"
+    ],
+    "title": [
+      "– Notice of Public Hearing posted with regards to ETGSA resolving to become an exclusive GSA within the Tule Subbasin •"
+    ],
+    "volume": [
+      "2"
+    ],
+    "pages": [
+      "2017 –"
+    ],
+    "note": [
+      "Executive Committee First Meeting"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "February"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "February"
+      }
+    ],
+    "volume": [
+      "9 and 16"
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "– Notice of Public Hearing posted in Porterville Recorder regarding Authority resolving to become an exclusive GSA within the Tule Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-02-23"
+    ],
+    "title": [
+      "– Application for Stakeholder Committee members is approved by the Board and solicitation begins for applicants"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-02-23"
+    ],
+    "title": [
+      "– Public hearing held regarding subject of Authority resolving to become an exclusive GSA within the Tule Subbasin • February 23, 2017"
+    ],
+    "container-title": [
+      "ETGSA, via Resolution No. 1-2017, resolves to become a GSA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2017-02-28"
+    ],
+    "title": [
+      "– Letter dated February 28 sent to DWR indicating that ETGSA resolved to become a GSA"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-03-03"
+    ],
+    "title": [
+      "– ETGSA uploads documents to DWR SGMA Portal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-03-08"
+    ],
+    "title": [
+      "– Notice of ETGSA’s resolve to become a GSA is “posted"
+    ],
+    "note": [
+      "on SGMA portal"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "April"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "– ETGSA advertises in Tulare County Farm Bureau Monthly Newspaper to solicit Stakeholder Committee applicants"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-04-25"
+    ],
+    "title": [
+      "– ETGSA advertises in Porterville Recorder to solicit Stakeholder Committee members • June 6, 2017 – ETGSA becomes an exclusive GSA"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "Phase 2: GSP Preparation and Submission || Mid-2017 through Mid-2019"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2017-06-15"
+    ],
+    "title": [
+      "– Board of Directors appoints and officially forms Stakeholder Committee"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-06-19"
+    ],
+    "title": [
+      "– ETGSA submits its initial Notice to Develop a Plan to DWR"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-07-21"
+    ],
+    "title": [
+      "– Notice to Develop a Plan is uploaded to DWR SGMA Website"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• September 14, 2017 – First Stakeholder Committee meeting held"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "August"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "- ETGSA advertises with Tulare County Farm Bureau Newspaper to invite growers to presentation on potential management actions"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017-08-03"
+    ],
+    "title": [
+      "– ETGSA hosts event with Tulare County Farm Bureau to discuss potential management actions related to groundwater sharing and allocations"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "August"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "– ETGSA contact info appears in Tulare County Farm Bureau monthly newspaper"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018-08-14"
+    ],
+    "title": [
+      "– Tulare County Farm Bureau weekly newsletter invites stakeholders to join ETGSA Interested Parties List"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018-08-14"
+    ],
+    "title": [
+      "– Digital Interested Parties List sign-up added to ETGSA website"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018-08-14"
+    ],
+    "title": [
+      "– Digital Stakeholder Survey added to ETGSA website"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018-08-21"
+    ],
+    "title": [
+      "– Tulare County Farm Bureau weekly newsletter invites stakeholders to join ETGSA Interested Parties List"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018-09-06"
+    ],
+    "title": [
+      "– Draft Communication & Engagement Plan (“CEP”) is reviewed by ETGSA Board of Directors and recommended for review by Executive Committee, Stakeholder Committee, and interested members of the public; Board agrees to Timeline on Draft GSP Creation; Board approves Policy Points for consideration and general process and timeline for the Policy Points"
+    ],
+    "note": [
+      "consideration by the Committees and members of the public"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "23"
+    ],
+    "author": [
+      {
+        "family": "Regs",
+        "given": "Cal Code"
+      }
+    ],
+    "title": [
+      "§ 354.4 General Information. Each Plan shall include the following general information: (b) A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The following documents and resources are referenced throughout this GSP, or were otherwise relied upon by the Agency in the development of this GSP"
+    ],
+    "container-title": [
+      "• DWR Well Completion Report Map Application",
+      "8623b37 • DWR Natural Communities Dataset Viewer"
+    ],
+    "url": [
+      "https://dwr.maps.arcgis.com/apps/webappviewer/index.html?id=181078580a214c0986e2da28f",
+      "https://gis.water.ca.gov/app/NCDatasetViewer/"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "• DWR Bulletin 118, California’s Groundwater, Update 2003"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "• Surface Water Monitoring Plan, Tule Basin Water Quality Coalition"
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• City of Porterville Urban Water Management Plan Update"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Tulare Lake Basin Plan 3rd Edition, Central Valley Regional Water Quality Control Board, 2018 • Tulare County General Plan 2030 Update • City of Porterville 2030 General Plan • Porterville Area Community Plan 2015 • Terra Bella Community Plan 2015 Update • Ducor Community Plan 2015 Update • Hydrogeological Conceptual Model and Water Budget of the Tule Subbasin"
+    ],
+    "volume": [
+      "Volumes 1-2"
+    ],
+    "publisher": [
+      "Thomas Harder & Co"
+    ],
+    "date": [
+      "2017-08-01"
+    ],
+    "note": [
+      "Prepared for Tule Subbasin MOU Group."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Tulare County General Plan Update, Phase 1 - Water Supply Evaluation • Groundwater Management Plan Update"
+    ],
+    "date": [
+      "2012"
+    ],
+    "note": [
+      "4-Creeks Inc, May 2012. Prepared for Deer Creek & Tule River Authority."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Basin",
+        "given": "Tule River"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-06",
+      "2018"
+    ],
+    "title": [
+      "Integrated Regional Water Management Plan - Draft, 4-Creeks Inc",
+      "• Kern-Tulare Water District Groundwater Evaluation and Management Plan, Kern-Tulare Water District"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Kern-Tulare Water District Groundwater Sustainability Plan, Kern-Tulare Water District"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• East Porterville Water Supply"
+    ],
+    "publisher": [
+      "Project Feasibility Study"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "From",
+        "given": "Anona Dutton"
+      },
+      {
+        "family": "P.G.",
+        "given": "CHg"
+      },
+      {
+        "family": "Environment",
+        "given": "E.K.I."
+      },
+      {
+        "given": "Water"
+      }
+    ],
+    "title": [
+      "Inc"
+    ],
+    "publisher": [
+      "EKI) Christopher Heppner"
+    ],
+    "location": [
+      "Ph.D., P.G., EKI"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "Eastern Tule Groundwater Sustainability Agency, Tule Subbasin, Sustainable Groundwater Management Act Groundwater Sustainability Plan"
+    ],
+    "date": [
+      "2019-09-01"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "title": [
+      "Delano‐Earlimart Irrigation District Groundwater Sustainability Agency, Tule Subbasin, Sustainable Groundwater Management Act Groundwater Sustainability Plan"
+    ],
+    "date": [
+      "2019-11-15"
+    ],
+    "volume": [
+
+    ],
+    "issue": [
+      "ion.2"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "title": [
+      "Alpaugh Groundwater Sustainability Agency, Groundwater Sustainability Plan"
+    ],
+    "publisher": [
+      "DRAFT"
+    ],
+    "date": [
+      "2019-10-03"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "Lower Tule River Irrigation District Groundwater Sustainability Agency, Tule Subbasin"
+    ],
+    "container-title": [
+      "Sustainable Groundwater Management Act Groundwater Sustainability Plan"
+    ],
+    "date": [
+      "2019-09-04"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "ETGSA Draft GSP_19.10.2.pdf",
+      "0.1‐DEIDGSA Draft GSP (Full Document)_11.15.19_Rev1.pdf"
+    ],
+    "note": [
+      "obtained from",
+      "obtained from https://deid.org/gsa/ on 12/11/2019. “Alpaugh_GSP_2019 DRAFT with appendices.pdf” obtained from https://alpaughgsa.com/ on 11/11/2019. “LTRID GSA Draft GSP_10.2.19.pdf” obtained from http://www.ltrid.org/sgma/#gsp on 11/7/2019."
+    ],
+    "url": [
+      "https://easterntulegsa.com/gsp/"
+    ],
+    "date": [
+      "on 10/22/2019"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "GSP PUBLIC DRAFT MASTER B‐3 REVISIONS_FINAL_120419.pdf"
+    ],
+    "note": [
+      "obtained from https://tcwater.org/ on 12/11/2019. “TCWA‐GSP‐Addendum‐No.‐1.pdf” obtained from https://tcwater.org/ on 11/7/2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "The California Water Plan Update 1998"
+    ],
+    "volume": [
+      "160-98"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "publisher": [
+      "November.2003"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Water Resources Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "California State Water Project Atlas"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-10"
+    ],
+    "title": [
+      "California’s Groundwater"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "California’s Groundwater"
+    ],
+    "volume": [
+      "118-Interim 216"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Energy"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "California Energy Demand 2014-2024 Final Forecast Volume 1: Statewide Electricity Demand, End-User Natural Gas, Demand, and Energy Efficiency"
+    ],
+    "note": [
+      "Staff report. CEC-200-2013-004-V1-CMF. January. Available at:"
+    ],
+    "url": [
+      "http://energy.ca.gov/2013publications/CEC-200-2013-004/CEC-200-2013-004-V1-CMF.PDF"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Environmental Quality",
+        "given": "Council",
+        "particle": "on"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Principles, Requirements and Guidelines for Water and Land Related Resources Implementation Studies"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2016",
+      "November"
+    ],
+    "title": [
+      "Water Storage Investment Program Technical Reference"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "title": [
+      "See California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Groundwater Basin of the Central Valley, California with Texture maps and Sections"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 1401-C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Program",
+        "given": "San Joaquin River Restoration"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Funding Constrained Framework for Implementation"
+    ],
+    "publisher": [
+      "May"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "San Joaquin River Restoration Settlement Act (SJRRS"
+    ],
+    "pages": [
+      "111–11"
+    ],
+    "date": [
+      "2006"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Public Law"
+    ]
+  },
+  {
+    "title": [
+      "Uniform Administrative Requirements, Cost Principles, and Audit Requirements for Federal Awards (2 CFR 200) U.S"
+    ],
+    "date": [
+      "2007",
+      "2010"
+    ],
+    "note": [
+      "2007 Census of Agriculture County Profile: Tulare County, California. Available:",
+      "Accessed June 29,"
+    ],
+    "url": [
+      "http://www.agcensus.usda.gov/Publications/2007/Online_Highlights/County_Profiles/Cal"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Agriculture"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Interior",
+        "given": "U.S.Department",
+        "particle": "of the"
+      }
+    ],
+    "title": [
+      "Bureau of Reclamation (Reclamation",
+      "Reclamation Technical Memorandum 661, Analysis and Description of Capacity Tests in Large Concrete-Lined"
+    ],
+    "date": [
+      "1964",
+      "1964-04"
+    ],
+    "location": [
+      "Canals"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Interior",
+        "given": "U.S.Department",
+        "particle": "of the"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Friant-Kern Canal Capacity Restoration Feasibility Study"
+    ],
+    "publisher": [
+      "Draft Feasibility Report. June"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Interior",
+        "given": "U.S.Department",
+        "particle": "of the"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Water and Related Resources Feasibility Studies. Directives and Standards"
+    ],
+    "genre": [
+      "CMP 09-02."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "Domestic Well Densities: Research to develop the CWC Vulnerability Tool draft as of August 6, 2019"
+    ],
+    "note": [
+      "The dataset excludes private wells located in areas served by community water systems, based on the Water Boundary Tool (WBT)."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "note": [
+      "Disadvantaged community data: downloaded on August 6, 2019 from the DAC Mapping Tool:"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/dacs/."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "note": [
+      "Community Water System data: downloaded on August 6, 2019 from Tracking California:"
+    ],
+    "url": [
+      "https://trackingcalifornia.org/water/map-viewer."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "Representative Monitoring Site wells for groundwater quality are from Table 5-8 in draftEastern Tule GSA GSP"
+    ],
+    "note": [
+      "- Public Review Draft dated September 2019."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "RMS wells in Figure 5-1 from the draft GSP are not used due to information discrepeancy with Table 5-8. Two RMS wells are identified in Table 5-8 but could not be located ude to missing well information in the draft GSP"
+    ],
+    "note": [
+      "Delano-Earlimart Irrigation District Groundwater Sustainability Agency 14181 Avenue 24 Delano, Ca 93215"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "note": [
+      "Unpublished Land and Water Use Data."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "San Joaquin District"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "genre": [
+      "Well completion report files."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Internal computer spreadsheet for 1990 normal computation of net water demand used in preparation of DWR Bulletin 160-93"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Lines of Equal Elevation of Water in Wells, Unconfined Aquifer. 1:253,440 scale map sheet"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      },
+      {
+        "family": "Gordon",
+        "given": "G.V."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Geology, Hydrology, and Quality of Water in the Hanford-Visalia Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground Water Conditions and Storage Capacity in the San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Water Supply Paper No"
+    ],
+    "volume": [
+      "1469"
+    ],
+    "pages": [
+      "287"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Fujii",
+        "given": "Rodger"
+      },
+      {
+        "family": "Swain",
+        "given": "Walter C."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Arial Distribution of Selected Trace Elements, Salinity, and major Ions in Shallow Ground Water, Tulare Basin, Southern San Joaquin Valley"
+    ],
+    "genre": [
+      "USGS water Resources Investigation Report 95-4048."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Hilton",
+        "given": "G.S."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Geology, Hydrology, and Quality of Water in the Terra Bella-Lost Hills Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1980. USGS Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Vink",
+        "given": "Daniel"
+      },
+      {
+        "family": "Pixley",
+        "given": "General Manger"
+      },
+      {
+        "family": "I.D",
+        "given": "Lower Tule River"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Response to DWR questionnaire"
+    ],
+    "note": [
+      "February 21 and March 13."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "Alex K."
+      },
+      {
+        "family": "Prudic",
+        "given": "David E."
+      },
+      {
+        "family": "Swain",
+        "given": "Lindsay A."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Groundwater flow in the Central Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Professional Paper 1401-D"
+    ],
+    "pages": [
+      "127"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Bulletin 160-93"
+    ],
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Water Plan Update"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Bulletin 118-80"
+    ],
+    "publisher": [
+      "Ground Water Subbasins in California"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "note": [
+      "Unpublished Land and Water Use Data."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "San Joaquin District"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "genre": [
+      "Well completion report files."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Internal computer spreadsheet for 1990 normal computation of net water demand used in preparation of DWR Bulletin 160-93"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Lines of Equal Elevation of Water in Wells, Unconfined Aquifer. 1:253,440 scale map sheet"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      },
+      {
+        "family": "Gordon",
+        "given": "G.V."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Geology, Hydrology, and Quality of Water in the Hanford-Visalia Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground Water Conditions and Storage Capacity in the San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Water Supply Paper No"
+    ],
+    "volume": [
+      "1469"
+    ],
+    "pages": [
+      "287"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Fujii",
+        "given": "Rodger"
+      },
+      {
+        "family": "Swain",
+        "given": "Walter C."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Arial Distribution of Selected Trace Elements, Salinity, and major Ions in Shallow Ground Water, Tulare Basin, Southern San Joaquin Valley"
+    ],
+    "genre": [
+      "USGS water Resources Investigation Report 95-4048."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Hilton",
+        "given": "G.S."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Geology, Hydrology, and Quality of Water in the Terra Bella-Lost Hills Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1980. USGS Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Vink",
+        "given": "Daniel"
+      },
+      {
+        "family": "Pixley",
+        "given": "General Manger"
+      },
+      {
+        "family": "I.D",
+        "given": "Lower Tule River"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Response to DWR questionnaire"
+    ],
+    "note": [
+      "February 21 and March 13."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "Alex K."
+      },
+      {
+        "family": "Prudic",
+        "given": "David E."
+      },
+      {
+        "family": "Swain",
+        "given": "Lindsay A."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Groundwater flow in the Central Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Professional Paper 1401-D"
+    ],
+    "pages": [
+      "127"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Bulletin 160-93"
+    ],
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Water Plan Update"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Bulletin 118-80"
+    ],
+    "publisher": [
+      "Ground Water Subbasins in California"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "note": [
+      "Unpublished Land and Water Use Data."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "San Joaquin District"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "genre": [
+      "Well completion report files."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Internal computer spreadsheet for 1990 normal computation of net water demand used in preparation of DWR Bulletin 160-93"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Lines of Equal Elevation of Water in Wells, Unconfined Aquifer. 1:253,440 scale map sheet"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      },
+      {
+        "family": "Gordon",
+        "given": "G.V."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Geology, Hydrology, and Quality of Water in the Hanford-Visalia Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground Water Conditions and Storage Capacity in the San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Water Supply Paper No"
+    ],
+    "volume": [
+      "1469"
+    ],
+    "pages": [
+      "287"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Fujii",
+        "given": "Rodger"
+      },
+      {
+        "family": "Swain",
+        "given": "Walter C."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Arial Distribution of Selected Trace Elements, Salinity, and major Ions in Shallow Ground Water, Tulare Basin, Southern San Joaquin Valley"
+    ],
+    "genre": [
+      "USGS water Resources Investigation Report 95-4048."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Hilton",
+        "given": "G.S."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Geology, Hydrology, and Quality of Water in the Terra Bella-Lost Hills Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1980. USGS Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Vink",
+        "given": "Daniel"
+      },
+      {
+        "family": "Pixley",
+        "given": "General Manger"
+      },
+      {
+        "family": "I.D",
+        "given": "Lower Tule River"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Response to DWR questionnaire"
+    ],
+    "note": [
+      "February 21 and March 13."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "Alex K."
+      },
+      {
+        "family": "Prudic",
+        "given": "David E."
+      },
+      {
+        "family": "Swain",
+        "given": "Lindsay A."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Groundwater flow in the Central Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Professional Paper 1401-D"
+    ],
+    "pages": [
+      "127"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Bulletin 160-93"
+    ],
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Water Plan Update"
+    ]
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Bulletin 118-80"
+    ],
+    "publisher": [
+      "Ground Water Subbasins in California"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "23"
+    ],
+    "author": [
+      {
+        "family": "Regs",
+        "given": "Cal Code"
+      }
+    ],
+    "title": [
+      "§ 354.4 General Information. Each Plan shall include the following general information: (b) A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The following documents and resources are referenced throughout this GSP, or were otherwise relied upon by the Agency in the development of this GSP"
+    ],
+    "container-title": [
+      "• DWR Well Completion Report Map Application",
+      "8623b37 • DWR Natural Communities Dataset Viewer"
+    ],
+    "url": [
+      "https://dwr.maps.arcgis.com/apps/webappviewer/index.html?id=181078580a214c0986e2da28f",
+      "https://gis.water.ca.gov/app/NCDatasetViewer/"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "• DWR Bulletin 118, California’s Groundwater, Update 2003"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "• Surface Water Monitoring Plan, Tule Basin Water Quality Coalition"
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• City of Porterville Urban Water Management Plan Update"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Tulare Lake Basin Plan 3rd Edition, Central Valley Regional Water Quality Control Board, 2018 • Tulare County General Plan 2030 Update • City of Porterville 2030 General Plan • Porterville Area Community Plan 2015 • Terra Bella Community Plan 2015 Update • Ducor Community Plan 2015 Update • Hydrogeological Conceptual Model and Water Budget of the Tule Subbasin"
+    ],
+    "volume": [
+      "Volumes 1-2"
+    ],
+    "publisher": [
+      "Thomas Harder & Co"
+    ],
+    "date": [
+      "2017-08-01"
+    ],
+    "note": [
+      "Prepared for Tule Subbasin MOU Group."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Tulare County General Plan Update, Phase 1 - Water Supply Evaluation • Groundwater Management Plan Update"
+    ],
+    "date": [
+      "2012"
+    ],
+    "note": [
+      "4-Creeks Inc, May 2012. Prepared for Deer Creek & Tule River Authority."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Basin",
+        "given": "Tule River"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-06",
+      "2018"
+    ],
+    "title": [
+      "Integrated Regional Water Management Plan - Draft, 4-Creeks Inc",
+      "• Kern-Tulare Water District Groundwater Evaluation and Management Plan, Kern-Tulare Water District"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Kern-Tulare Water District Groundwater Sustainability Plan, Kern-Tulare Water District"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• East Porterville Water Supply"
+    ],
+    "publisher": [
+      "Project Feasibility Study"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "• Tule Basin Management Zone Early Action Plan, Attachment F to the Preliminary Management Zone Proposal, Tule Basin Management Zone"
+    ],
+    "date": [
+      "2021"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figures 2-1 Regional Map 2-2 Tule Subbasin Area 2-3 Jurisdictional Areas 2-4 Geology and Cross Section Locations 2-5 Conceptual Cross Section A-A’ 2-6 Conceptual Cross Section B-B’ 2-7 Surface Water Features in the Tule Subbasin 2-8 Soil Map of the Tule Subbasin 2-9 Favorable Areas for Recharge 2-10 Upper Aquifer Hydraulic Conductivity 2-11 Lower Aquifer Hydraulic Conductivity 2-12 Upper Aquifer Specific Yield 2-13 Lower Aquifer Storage Properties 2-14a Arsenic Concentrations 2-14b"
+    ],
+    "note": [
+      "Nitrate as N Concentrations 2-14c Hexavalent Chromium Concentrations 2-14d Dibromochloropropane (DBCP) Concentrations 2-14e 1,2,3-Trichloropropane (TCP) Concentrations 2-14f Tetrachloroethene (PCE",
+      "Active Cleanup Sites in the Tule Subbasin 2-17 Spring 2017 Upper Aquifer Groundwater Elevation Contour Map"
+    ],
+    "source": [
+      "Concentrations 2-14g Chloride Concentrations 2-14h Total Dissolved Solids Concentrations 2-14i Perchlorate Concentrations 2-15a Chloride Concentrations 2-15b Sodium Concentrations 2-15c Total Dissolved Solids Concentrations 2-16"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Upper Aquifer Groundwater Elevation Contour Map"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Lower Aquifer Groundwater Elevation Contour Map 2-20 Upper Aquifer Groundwater Level Hydrographs 2-21 Lower Aquifer Groundwater Level Hydrographs 2-22 Comparison of Upper Aquifer and Lower Aquifer Groundwater Levels 2-23 Cumulative Change in Groundwater Storage"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2-24"
+    ],
+    "title": [
+      "Land Subsidence in the Tule Subbasin"
+    ],
+    "date": [
+      "1987"
+    ],
+    "pages": [
+      "– 2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2-25"
+    ],
+    "title": [
+      "Land Subsidence in the Tule Subbasin – 2007 – 2011 2-26 Depth to Groundwater and Areas of Potential Groundwater Dependent Ecosystems 2-27 Isohyetal Map 2-28 Historical Annual Precipitation – Porterville Station 2-29 Correlation of Deer Creek and White River Monthly Streamflow 2-30 Applied Water to Irrigated Agriculture by Source 2-31 Tule Groundwater Subbasin Historical Crop Patterns 2-32 Distribution Plot of Sustainable Yield Uncertainty 2-33 Tule Subbasin GSA Management and Monitoring Areas 2-34 Groundwater Level Monitoring Network 2-35 Groundwater Quality Monitoring Network 2-36 Land Subsidence Monitoring Network"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Final 2016 Bulletin 118 Groundwater Basin Boundaries shapefile"
+    ],
+    "url": [
+      "http://www.water.ca.gov/groundwater/sgm/basin_boundaries.cfm"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Energy"
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-05"
+    ],
+    "title": [
+      "PIER Project Report: Estimating Irrigation Water Use for California Agriculture: 1950s to Present"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "California Regional Water Quality Control"
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-03"
+    ],
+    "title": [
+      "Order No. R5-2008-0034 Waste Discharge Requirements for City of Porterville Wastewater Treatment Facility Tulare County"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "California State Water Resources Control"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Resolution 2017-0048 Approving an Amendment to the Water Quality Control Plan for the Tulare Lake Basin to Remove the Municipal and Domestic Supply (MUN) and Agricultural Supply (AGR) Beneficial Uses from Groundwater within a Designated Horizontal and Vertical Portion of the Tulare Lake Bed"
+    ],
+    "volume": [
+      "6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted September"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Porterville",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-08"
+    ],
+    "title": [
+      "Draft Urban Water Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      }
+    ],
+    "date": [
+      "1972",
+      "1999"
+    ],
+    "title": [
+      "Subsurface Geology of the Late Tertiary and Quaternary Water-Bearing Deposits of the Southern Part of the"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmsted",
+        "given": "F.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground-Water Conditions and Storage Capacity of the San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "USGS Water-Supply Paper 1469"
+    ],
+    "pages": [
+      "287"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Availability of the Central Valley Aquifer, California"
+    ],
+    "container-title": [
+      "USGS Professional Paper 1766"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Applied Hydrogeology"
+    ],
+    "edition": [
+      "3rd"
+    ],
+    "publisher": [
+      "Macmillan College Publishing"
+    ],
+    "location": [
+      "New York"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Technical Memorandum: Estimate of Future Friant Division Supplies for Use in Groundwater Sustainability Plans"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Frink",
+        "given": "J.W."
+      },
+      {
+        "family": "Kues",
+        "given": "H.A."
+      }
+    ],
+    "date": [
+      "1954"
+    ],
+    "title": [
+      "Corcoran Clay – A Pleistocene Lacustrine Deposit in San Joaquin Valley, California"
+    ],
+    "volume": [
+      "38"
+    ],
+    "pages": [
+      "2357 – 2371"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Association of Petroleum Geologists Bulletin"
+    ],
+    "issue": [
+      "11"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1980. U.S. Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "I.T.R.C."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-01"
+    ],
+    "title": [
+      "California Crop and Soil Evapotranspiration for Water Balances and Irrigation Scheduling/Design"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "ITRC"
+    ],
+    "issue": [
+      "03-001"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Kern-Tulare Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Monitoring Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Leenhouts",
+        "given": "J.M."
+      },
+      {
+        "family": "Stromberg",
+        "given": "J.C."
+      },
+      {
+        "family": "R.L",
+        "given": "Scott"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Hydrologic Requirements of and Consumptive Ground-Water Use by Riparian Vegetation along the San Pedro River, Arizona"
+    ],
+    "genre": [
+      "USGS Scientific Investigations Report 2005-5163."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Land Subsidence Due to Ground-Water Withdrawal Tulare-Wasco Area California"
+    ],
+    "container-title": [
+      "USGS Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "given": "Scalmanini"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California"
+    ],
+    "container-title": [
+      "Prepared in Cooperation with the California Water Foundation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground Water in the San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Hydrologic Investigations Atlas HA-489"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Planert",
+        "given": "M."
+      },
+      {
+        "family": "Williams",
+        "given": "J.S."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Ground Water Atlas of the United States, Segment 1 –California and Nevada"
+    ],
+    "publisher": [
+      "USGS Hydrologic Investigations Atlas"
+    ],
+    "pages": [
+      "730–"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Conditions within the City of Porterville Urban Area Boundary"
+    ],
+    "note": [
+      "Prepared for the City of Porterville, dated October 2009."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-07"
+    ],
+    "title": [
+      "Groundwater Conditions in the Angiola Area. Prepared for the Angiola Water District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Hydrogeologic Conceptual Model and Groundwater Conditions for the Tri-County WA GSP"
+    ],
+    "note": [
+      "Prepared for Tri-County Water Authority. Dated September 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Theis",
+        "given": "C.V."
+      },
+      {
+        "family": "Brown",
+        "given": "R.H."
+      },
+      {
+        "family": "Myer",
+        "given": "R.R."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Estimating the Transmissivity of a Water-table Aquifer from the Specific Capacity of a Well"
+    ],
+    "container-title": [
+      "USGS Water Supply Paper 1536-1"
+    ],
+    "pages": [
+      "331–336"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Hydrogeological Conceptual Model and Water Budget of the Tule Subbasin"
+    ],
+    "publisher": [
+      "Prepared for the Tule Subbasin MOU Group"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater Flow Model of the Tule Subbasin"
+    ],
+    "publisher": [
+      "Prepared for the Tule Subbasin MOU Group"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Eastern Tule Groundwater Sustainability Agency, Land Subsidence Monitoring Plan. Prepared for the Eastern Tule Groundwater Sustainability Agency"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Tule Basin Water Quality Coalition",
+      "Groundwater Quality Trend Monitoring Work Plan"
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "volume": [
+      "6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated January"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Association",
+        "given": "Tule River"
+      }
+    ],
+    "date": [
+      "1966",
+      "1966-06-16"
+    ],
+    "title": [
+      "Tule River Water Diversion Schedule and Storage Agreement"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated February"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "A.K."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Swain",
+        "given": "L.A."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Ground-Water Flow in the Central Valley, California"
+    ],
+    "container-title": [
+      "USGS Professional Paper 1401-D"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Applied Groundwater Modeling, Simulation of Flow and Advective Transport"
+    ],
+    "publisher": [
+      "Academic Press"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "A.S.T.M."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Standard Guide for Application of a Groundwater Flow Model to a Site-Specific Problem"
+    ],
+    "volume": [
+      "D"
+    ],
+    "pages": [
+      "5447–93"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "ASTM Standard"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boyce",
+        "given": "S.E."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Ferguson",
+        "given": "I."
+      },
+      {
+        "family": "Henson",
+        "given": "W."
+      },
+      {
+        "family": "Schmid",
+        "given": "W."
+      },
+      {
+        "family": "Reimann",
+        "given": "T."
+      },
+      {
+        "family": "Mehl",
+        "given": "S.M."
+      },
+      {
+        "family": "Earll",
+        "given": "M.M."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "One-Water Hydrologic Flow Model—MODFLOW OWHM, version 2"
+    ],
+    "url": [
+      "https://doi.org/10.5066/P9CZM46C."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey"
+    ],
+    "doi": [
+      "10.5066/P9CZM46C."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boyce",
+        "given": "S.E."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Ferguson",
+        "given": "I."
+      },
+      {
+        "family": "Schmid",
+        "given": "W."
+      },
+      {
+        "family": "Henson",
+        "given": "W."
+      },
+      {
+        "family": "Reimann",
+        "given": "T."
+      },
+      {
+        "family": "Mehl",
+        "given": "S.M."
+      },
+      {
+        "family": "Earll",
+        "given": "M.M."
+      },
+      {
+        "family": "Review",
+        "given": "In"
+      }
+    ],
+    "title": [
+      "One-Water Hydrologic Flow Model: A MODFLOW Based Conjunctive Use and Integrated Hydrologic Flow Model"
+    ],
+    "volume": [
+      "6-AXX"
+    ],
+    "pages": [
+      "576"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2003"
+    ],
+    "date": [
+      "2003"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California’s Groundwater. Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "December"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater; Modeling BMP"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Sustainable Groundwater Management Program"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources Climate"
+    ],
+    "publisher": [
+      "Change Technical Advisory Group"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Perspectives and Guidance for Climate Change Analysis"
+    ],
+    "publisher": [
+      "DWR Technical Information Record"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Energy"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Estimating Irrigation Water Use for California Agriculture: 1950s to Present"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Energy Commission, Public Interest Energy Research Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-11"
+    ],
+    "title": [
+      "Technical Reference – Water Storage Investment Program"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Doherty",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Ground Water Model Calibration Using Pilot Points and Regularization"
+    ],
+    "volume": [
+      "41"
+    ],
+    "pages": [
+      "170–177"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Doherty",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Calibration and Uncertainty Analysis for Complex Environmental Models"
+    ],
+    "publisher": [
+      "Watermark Numerical Computing"
+    ],
+    "location": [
+      "Brisbane, Australia"
+    ],
+    "note": [
+      "ISBN: 978-0-9943786-0-6."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Flow Model of the Tule Subbasin"
+    ],
+    "date": [
+      "2020-01"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Availability of the Central Valley Aquifer, California"
+    ],
+    "container-title": [
+      "USGS Professional Paper 1766"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Freeze",
+        "given": "R.A."
+      },
+      {
+        "family": "Cherry",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "publisher": [
+      "Groundwater. Prentice Hall"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Technical Memorandum – Estimate of Future Friant Division Supplies for use in Groundwater Sustainability Plans"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Frink",
+        "given": "J.W."
+      },
+      {
+        "family": "Kues",
+        "given": "H.A."
+      }
+    ],
+    "date": [
+      "1954"
+    ],
+    "title": [
+      "Corcoran Clay – A Pleistocene Lacustrine Deposit in San Joaquin Valley, California"
+    ],
+    "volume": [
+      "38"
+    ],
+    "pages": [
+      "2357 – 2371"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Association of Petroleum Geologists Bulletin"
+    ],
+    "issue": [
+      "11"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Gianni",
+        "given": "G."
+      },
+      {
+        "family": "Doherty",
+        "given": "J."
+      },
+      {
+        "family": "Brunner",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Conceptualization and Calibration of Anisotropic Alluvial Systems: Pitfalls and Biases"
+    ],
+    "volume": [
+      "57"
+    ],
+    "pages": [
+      "409–419"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "3"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Boyce",
+        "given": "S.E."
+      },
+      {
+        "family": "Schmid",
+        "given": "Wolfgang"
+      },
+      {
+        "family": "Hughes",
+        "given": "J.D."
+      },
+      {
+        "family": "Mehl",
+        "given": "S.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Maddock",
+        "given": "Thomas",
+        "suffix": "III"
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "One-Water Hydrologic Flow Model (MODFLOW-OWHM): U.S"
+    ],
+    "volume": [
+      "6–A51"
+    ],
+    "pages": [
+      "120"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "Mary C."
+      },
+      {
+        "family": "Tiedeman",
+        "given": "Claire R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Effective Groundwater Model Calibration, with Analysis of Data, Sensitivities, Predictions, and Uncertainty"
+    ],
+    "publisher": [
+      "Wiley-Interscience"
+    ],
+    "location": [
+      "New Jersey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1980. U.S. Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "I.T.R.C."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-01"
+    ],
+    "title": [
+      "California Crop and Soil Evapotranspiration for Water Balances and Irrigation Scheduling/Design"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "ITRC"
+    ],
+    "issue": [
+      "03-001"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Land Subsidence due to Ground-Water Withdrawal Tulare-Wasco Area California"
+    ],
+    "container-title": [
+      "USGS Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "given": "Scalmanini"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California"
+    ],
+    "container-title": [
+      "Prepared in Cooperation with the California Water Foundation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Neuman",
+        "given": "S.P."
+      },
+      {
+        "family": "Walter",
+        "given": "G.R."
+      },
+      {
+        "family": "Bentley",
+        "given": "H.W."
+      },
+      {
+        "family": "Ward",
+        "given": "J.J."
+      },
+      {
+        "family": "Gonzalez",
+        "given": "D.D."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Determination of horizontal aquifer anisotropy with three wells"
+    ],
+    "volume": [
+      "22"
+    ],
+    "pages": [
+      "66–72"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ruud",
+        "given": "N."
+      },
+      {
+        "family": "Harter",
+        "given": "T."
+      },
+      {
+        "family": "Naugle",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "A Conjunctive Use Model for the Tule Groundwater Sub-basin Area in the"
+    ],
+    "location": [
+      "Southern Eastern San Joaquin Valley, California"
+    ],
+    "note": [
+      "Prepared for the U.S. Bureau of Reclamation."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Flow Model of the Tule Subbasin"
+    ],
+    "date": [
+      "2020-01"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Schmid",
+        "given": "W."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "The Farm Process Version 2 (FMP2) for MODFLOW-2005 – Modifications and Upgrades to FMP1"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Techniques in Water Resources Investigations, Book 6"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "102"
+    ],
+    "issue": [
+      "apter A32"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Hydrogeological Conceptual Model and Groundwater Conditions for the Tri-County WA GSP (Draft"
+    ],
+    "publisher": [
+      "Prepared for Tri-County Water Authority"
+    ],
+    "location": [
+      "Corcoran, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Hydraulic and Mechanical Properties Affecting Ground-Water Flow and Aquifer- System Compaction, San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Open-File Report 01-35. Prepared in cooperation with the U.S"
+    ],
+    "publisher": [
+      "Bureau of Reclamation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "T.H.&Co"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-01-09"
+    ],
+    "title": [
+      "Analysis of the Hydrogeological Condition of the Tule Subbasin. Prepared for Spaletta Law PC and Lower Tule River Irrigation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "T.H.&Co"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Technical Memorandum – Part II: Provide Support to Develop a Groundwater Flow Model"
+    ],
+    "publisher": [
+      "Prepared for Tule Subbasin MOU Group"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.H.&Co"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Hydrogeological Conceptual Model and Water Budget of the Tule Subbasin"
+    ],
+    "publisher": [
+      "Prepared for the Tule Subbasin MOU Group"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.H.&Co"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-01"
+    ],
+    "title": [
+      "Tule Subbasin Setting. Prepared for the Tule Subbasin Technical Advisory Committee"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "T.R.A."
+      }
+    ],
+    "date": [
+      "2018",
+      "2019"
+    ],
+    "title": [
+      "Annual Report 2018 Water Year"
+    ],
+    "volume": [
+      "10"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated April"
+    ]
+  },
+  {
+    "citation-number": [
+      "22S/23E-25"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "E.-15 Angiola"
+      }
+    ],
+    "date": [
+      "1880"
+    ],
+    "note": [
+      "N/A N/A 57 23,160 54 2,3 C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-25"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "E.-25 Angiola"
+      }
+    ],
+    "title": [
+      "1879532 6434581 2015 N/A N/A 9 N/A N/A N/A N/A"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-23"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "E.-26 Angiola"
+      }
+    ],
+    "title": [
+      "1881019 6424628 2015 N/A N/A 19 N/A N/A N/A N/A"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-23"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "E.-27 Angiola"
+      }
+    ],
+    "title": [
+      "1883431 6428305 2015 N/A N/A 14 N/A N/A N/A N/A"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-25"
+    ],
+    "title": [
+      "G25 Angiola W.D",
+      "N/A N/A 16 4,560 19 1,2 C"
+    ],
+    "date": [
+      "1875"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-25"
+    ],
+    "title": [
+      "G25 Angiola W.D",
+      "N/A N/A 28.9 8,230 34.3 1,2 C"
+    ],
+    "date": [
+      "1875"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-25F1"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "E.-13 Angiola"
+      }
+    ],
+    "date": [
+      "1878"
+    ],
+    "title": [
+      "N/A N/A 54 N/A N/A 3 L"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-25F1"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "E.-13 Angiola"
+      }
+    ],
+    "date": [
+      "1878",
+      "1880",
+      "1880"
+    ],
+    "title": [
+      "N/A N/A 33 9,260 8 3 L 22S/23E-26 E-16 Angiola W.D",
+      "N/A N/A 42 17,250 39 2,3 C 22S/23E-26 E-16 Angiola W.D. 1880723 6429293 2007 N/A N/A 33 9,490 22 2,3 C 22S/23E-26 E-18 Angiola W.D",
+      "N/A N/A"
+    ],
+    "volume": [
+      "36 14,840 42 3 L"
+    ],
+    "pages": [
+      "22 23 –26"
+    ],
+    "note": [
+      "E-18 Angiola W.D. 1880789 6426889 2007 N/A N/A 31 8,920 25 3 L 22S/23E-27 G11 Angiola W.D. 1877992 6421183 1997 N/A N/A 60 24,430 49 1 U 22S/23E-27 G11 Angiola W.D. 1877992 6421183 2007 N/A N/A 50 14,190 28 1 U 22S/23E-27 G14 Angiola W.D. 1875835 6419974 1997 N/A N/A 4.4 1,250 13 1 U"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-27F1"
+    ],
+    "title": [
+      "W6 Angiola W.D. 1878271 6420551 2002 N/A N/A 7.6 2,170 10 1,2 C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-27F1"
+    ],
+    "author": [
+      {
+        "family": "W.D",
+        "given": "W6 Angiola"
+      }
+    ],
+    "date": [
+      "1878",
+      "1880",
+      "2010"
+    ],
+    "title": [
+      "N/A N/A 6.1 1,740 8.3 1,2 C 22S/23E-28 G2 (new) Angiola W.D",
+      "N/A N/A 12 3,530 17 1,2 C 22S/23E-28 G20 Angiola W.D. 1878490 6416188 1997 N/A N/A 15 6,150 10 1,2,3 C 22S/23E-28 G20 Angiola W.D. 1878490 6416188 2007 N/A N/A",
+      "N/A N/A 3.6 1,030 4.9 1 U 22S/23E-28 G24 Angiola W.D"
+    ],
+    "volume": [
+      "11 3,130 5 1,2,3 C 22S/23E-28 G23 Angiola W.D. 1882036 6416141"
+    ],
+    "note": [
+      "1880147 6416158 2010 N/A N/A 7.1 2,020 10 1,2 C 22S/23E-28 G29 Angiola W.D. 1878490 6416188 2010 N/A N/A 15 6,190 17 3 L 22S/23E-27 G30 Angiola W.D. 1876132 6420248 2015 N/A N/A 13 N/A N/A N/A N/A"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-28A1"
+    ],
+    "title": [
+      "G3 Angiola W.D"
+    ],
+    "note": [
+      "1880729 6417584 2007 N/A N/A 10 2,820 9 1,2 C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-28A1"
+    ],
+    "title": [
+      "G3 Angiola W.D",
+      "N/A N/A 10 2,960 10 1,2 C"
+    ],
+    "date": [
+      "1880"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-28J1"
+    ],
+    "title": [
+      "G5 Angiola W.D"
+    ],
+    "note": [
+      "1878153 6418746 2007 N/A N/A 9 1,250 4 1,2 C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "22S/23E-28J1"
+    ],
+    "title": [
+      "G5 Angiola W.D",
+      "N/A N/A 18 5,100 17 1,2 C"
+    ],
+    "date": [
+      "1878"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The analysis presented herein is based on the best available data and background reports at the time of preparation. Sources of data used for this analysis include the following: • Geographic Information System (GIS) shapefiles of hydrologic and water infrastructure from local agencies (e.g. Lower Tule River Irrigation District, Saucelito Irrigation District, etc"
+    ],
+    "container-title": [
+      "• GIS shapefile of railroads from the California Department of Transportation (CalTrans). • GIS shapefile of bridges from the United States Department of Transportation, National Bridge Inventory • AMEC Foster Wheeler"
+    ],
+    "date": [
+      "2017"
+    ],
+    "genre": [
+      "Ground Subsidence Study Report,"
+    ],
+    "publisher": [
+      "Corcoran Subsidence Bowl"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "note": [
+      "Prepared for California High Speed Rail Authority • GIS shapefiles of Flood Insurance Rate Maps (FIRMs) from the Federal Emergency Management Agency (FEMA), National Flood Insurance Program (NFIP)."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Smith",
+        "given": "R."
+      },
+      {
+        "family": "Knight",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Modeling Land Subsidence Using InSAR and Airborne Electromagnetic Data"
+    ],
+    "volume": [
+      "55"
+    ],
+    "pages": [
+      "2801–2819 11"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Research"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Lees",
+        "given": "M."
+      },
+      {
+        "family": "Knight",
+        "given": "R."
+      },
+      {
+        "family": "Smith",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Development and Application of a 1D Compaction Model to Understand 65 Years of Subsidence in the San Joaquin Valley"
+    ],
+    "volume": [
+      "58"
+    ],
+    "pages": [
+      "2021 031390"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Research"
+    ]
+  },
+  {
+    "location": [
+      "Note"
+    ],
+    "publisher": [
+      "From Thomas Harder & Co"
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater Flow Model of the Tule Subbasin. Prepared for the Tule Subbasin MOU Group"
+    ],
+    "container-title": [
+      "July 2022 DWR Comments -Subsidence in the Tule Subbasin"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Tule Subbasin Technical Advisory Committee"
+    ],
+    "date": [
+      "2022-07"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Lake Deposits from California Geological Survey Geologic Atlas of California Map No. 002 1:250,000 scale, Compiled by A.R"
+    ],
+    "date": [
+      "1964"
+    ],
+    "note": [
+      "and Geologic Atlas of California Map No. 005, Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community 1:250,000 scale, Compiled by: R.A. Matthews and J.L. Burnett"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Smith"
+    ]
+  },
+  {
+    "title": [
+      "On April 26, 2017 the KGA (JPA) elected to become a GSA and was formed for the purpose of: 1. Coordinating groundwater management programs and activities; 2. Identifying and addressing issues pertaining to sustainable groundwater management; and 3. Estabishing a framework for local groundwater management The 12 member agencies in the KGA are: 1. Cawelo Water District 2. City of Shafter 3. Kern County Water Agency – Pioneer Project 4"
+    ],
+    "container-title": [
+      "Kern-Tulare Water District 5. Kern Water Bank Authority 6. North Kern Water Storage District 7. Rosedale-Rio Bravo Water Storage District 8. Semitropic Water Storage District 9. Shafter-Wasco Irrigation District 10"
+    ],
+    "location": [
+      "Southern San"
+    ],
+    "note": [
+      "Joaquin Municipal Utility District 11. West Kern Water District 12. Westside District Water Authority"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "In 2013, the District began semi-monthly measurements on monitoring well 24S27E32M1M, located 3⁄4 mile east of Richgrove near the center of the District. This well is an inactive irrigation well penetrated to the Santa Margarita Formation. Figure 2-20 is a hydrograph of these measurements from August 2013 to present which demonstrates the seasonal change in groundwater elevations"
+    ],
+    "note": [
+      "As shown in Figure 2-20, groundwater levels in the Santa Margarita Formation experience seasonal fluctuations of 50-110 feet."
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "0 13,998 4,339 7,602 2,056 7,091 13,018 0"
+    ],
+    "pages": [
+      "–5,928"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "0 7,668 2,988 7,602 -866 7,091 8,965 0"
+    ],
+    "pages": [
+      "–7,802"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "0 7,995 2,997 7,602 -3,470 7,091 8,990 0"
+    ],
+    "pages": [
+      "–9,701"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "0 6,643 2,690 7,602 -7,120 7,091 8,070 0"
+    ],
+    "pages": [
+      "–10,680"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "0 7,528 6,704 7,602 -13,898 7,091 20,113 0"
+    ],
+    "pages": [
+      "–23,703"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "volume": [
+      "0 6,468 7,907 7,602 -22,940 7,091 23,720 0"
+    ],
+    "pages": [
+      "–40,332"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "0 9,195 4,960 7,602 -26,307 7,091 14,880 0"
+    ],
+    "pages": [
+      "–48,122"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "0 11,992 3,482 7,602 -25,400 7,091 10,446 0"
+    ],
+    "pages": [
+      "–51,477"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "GROUNDWATER LEVEL MEASUREMENTS Measured by"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "7"
+    ],
+    "pages": [
+      "502 5 502 5 33 8"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "8"
+    ],
+    "pages": [
+      "496 0 496 0 40 3"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "488 4 488 4 47 9"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "484 8 484 8 51 5"
+    ],
+    "issue": [
+      "15"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "536",
+      "12"
+    ],
+    "date": [
+      "2016"
+    ],
+    "pages": [
+      "486 2 486 2 50 1"
+    ],
+    "issue": [
+      "3",
+      "40"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "483 4 483 4 52 9"
+    ],
+    "issue": [
+      "00"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "491 4 491 4 44 9"
+    ],
+    "issue": [
+      "38"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "489 3 489 3 47 0"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "11"
+    ],
+    "pages": [
+      "498 4 498 4 37 9"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "502 8 502 8 33 5"
+    ],
+    "issue": [
+      "00"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "11"
+    ],
+    "pages": [
+      "513 2 513 2 23 1"
+    ],
+    "issue": [
+      "15"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "524 5 524 5 11 8"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "539 8 539 8 –3 5"
+    ],
+    "issue": [
+      "25"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "543 7 543 7 –7 4"
+    ],
+    "issue": [
+      "05"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "–9 0"
+    ],
+    "issue": [
+      "00"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "–10 0"
+    ],
+    "issue": [
+      "20"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "546 5 546 5 –10 2"
+    ],
+    "issue": [
+      "45"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "–6 0"
+    ],
+    "issue": [
+      "00"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "532 0 532 0 4 3"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "24 27 32 1 536 3 536 3 10 14",
+      "531 0 531 5 31"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10"
+    ],
+    "issue": [
+      "20"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "12"
+    ],
+    "pages": [
+      "520 3 520 3 16 0"
+    ],
+    "issue": [
+      "05"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "24 27 32 1 536 3 536 3 11 14",
+      "513 5 513 5 22 81"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "12"
+    ],
+    "issue": [
+      "10"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "507 0 507 0 29 3"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "24 27 32 1 536 3 536 3 12 15",
+      "503 9 503 9 32 41"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "9"
+    ],
+    "issue": [
+      "35"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The District has made significant progress on implementation of the Project. Below is a summary of what has been completed:  An updated Waste Discharge Requirements (WDR) Order No. R5-2019-0043 from the Regional Water Quality Control Board (Regional Board) that includes Guzman Reservoir was adopted in June 2019"
+    ],
+    "container-title": [
+      "The District received a construction permit by the Department of Water Resources, Division of Safety of Dams in September of 2019"
+    ],
+    "note": [
+      "Construction of the reservoir will begin in January 2020 and be completed in June 2020."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      " An EIR for the Project was completed in 2016 to fulfill current CEQA requirements"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      " A 401 permit from the State Water Resources Control Board, a 404 permit from the U.S. Corps of Engineers, and a 1600 permit from the California Department of Fish and Wildlife are required for the pipeline and were received in"
+    ],
+    "date": [
+      "2019-06"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      " A WDR will need to be acquired from the Regional Board and is projected to be obtained in late 2020"
+    ],
+    "location": [
+      "Timeline"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bartow",
+        "given": "Alan J."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "The Cenozoic Evolution of the San Joaquin Valley"
+    ],
+    "container-title": [
+      "United States Geological Survey Professional Paper 1501"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Corporation",
+        "given": "Boyle Engineering"
+      }
+    ],
+    "date": [
+      "1974"
+    ],
+    "title": [
+      "Final Environmental Impact Report of Proposed Irrigation and Distributions System for Kern-Tulare Water District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survery",
+        "given": "California Geological"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Geologic Map of California"
+    ],
+    "url": [
+      "http://maps.conservation.ca.gov/cgs/DataViewer.html."
+    ],
+    "note": [
+      "Accessed March 12, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Irrigation Management Information System (CIMIS). Shafter Monthly Report (Station 5). CA Department of Water Resources"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed October 25, 2018."
+    ],
+    "url": [
+      "https://cimis.water.ca.gov."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Cornerstone"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Engineering Report, Investigation of Rainfall Gauge Data Proximate to Groundwater Recharge Areas Impacting the Kern-Tulare Water District within Kern County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Britannica",
+        "given": "Encyclopedia"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed May 2018."
+    ],
+    "url": [
+      "https://www.britannica.com/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Farr",
+        "given": "T.G."
+      },
+      {
+        "family": "Jones",
+        "given": "C."
+      },
+      {
+        "family": "Liu",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Progress report: Subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California"
+    ],
+    "note": [
+      "Submitted to California Department of Water Resources."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Gillespie",
+        "given": "J.M."
+      },
+      {
+        "family": "Dalke",
+        "given": "S.C."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Analysis of Groundwater Resources for Kern-Tulare Water District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hilton",
+        "given": "G.S."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      },
+      {
+        "family": "Kunkel",
+        "given": "F."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Geology, Hydrology and Quality of Water in the Terra Bella-Lost Hills Area"
+    ],
+    "note": [
+      "Open File Report 63-47."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U. S. Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Howes",
+        "given": "D.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "1993-2016 ITRC-METRIC ETc for Kern County"
+    ],
+    "container-title": [
+      "Irrigation Training and Research Center (ITRC"
+    ],
+    "publisher": [
+      "California Polytechnic State University"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Irrigation Training and Research Center (ITRC). California Evapotranspiration Data"
+    ],
+    "publisher": [
+      "California Polytechnic State University"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed November 16, 2018."
+    ],
+    "url": [
+      "http://www.itrc.org/etdata/index.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Kennedy"
+      },
+      {
+        "family": "Consultants",
+        "given": "Jenks"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Water Quality Assessment Report, Kern County 19.98 Zoning Ordinance EIR"
+    ],
+    "container-title": [
+      "In. Draft Environmental Impact Report"
+    ],
+    "publisher": [
+      "Kern County Planning and Community Development Department"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Kern-Tulare Water"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Groundwater Monitoring Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Land Subsidence due to Ground-Water Withdrawal Tulare-Wasco Area California"
+    ],
+    "container-title": [
+      "U. S. Geological Survey: Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California"
+    ],
+    "note": [
+      "Submitted to California Department of Water Resources."
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "Natural Resources Conservation Service (NRCS). National Cooperative Soil Survey STATSGO2 Database - Web Soil Survey. United States Department of Agriculture (USDA"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed October 25, 2018."
+    ],
+    "url": [
+      "http://websoilsurvey.nrcs.usda.gov/."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Group",
+        "given": "Pritchard Engineering"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Groundwater Management Plan Delano-Earlimart Irrigation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Reynolds",
+        "given": "H.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1955"
+    ],
+    "genre": [
+      "Geology Report,"
+    ],
+    "publisher": [
+      "Ground Water Resources of the Richgrove Area"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "EA-09-121: Poso Creek Integrated Regional Water Management Plan: 25-Year Groundwater Banking"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transfer, and Exchange Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Quaternary Fault and Fold Database for the United States"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Retrieved from",
+      "Accessed October 17, 2018."
+    ],
+    "url": [
+      "https://earthquake.usgs.gov/hazards/qfaults/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "The San Joaquin-Tulare Basins NAWQA Study Unit Description"
+    ],
+    "note": [
+      "Retrieved from USGS website:",
+      "Accessed October 25, 2018."
+    ],
+    "url": [
+      "http://ca.water.usgs.gov/sanj_nawqa/sanj.html."
+    ],
+    "type": "webpage"
+  },
+  {
+    "title": [
+      "Western Regional Climate Center. Cooperative Climatological Data Summaries"
+    ],
+    "note": [
+      "Retrieved from",
+      "Accessed October 25, 2018."
+    ],
+    "url": [
+      "https://wrcc.dri.edu/summary/Climsmsca.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Winsauer",
+        "given": "W.O."
+      },
+      {
+        "family": "Sherin",
+        "given": "H.M."
+      },
+      {
+        "family": "Masson",
+        "given": "P.H."
+      },
+      {
+        "family": "Williams",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1952"
+    ],
+    "title": [
+      "Resistivity of brine-saturated sands in relation to pore geometry"
+    ],
+    "volume": [
+      "V. 36"
+    ],
+    "pages": [
+      "253–277"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Association of Petroleum Geologists: Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "W.Z.I."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Aquifer Exemption Study: Race Track Hill Area/Edison Field, Pyramid Hill Sands and Vedder Formations, Kern County, CA"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Division of Oil Gas and Geothermal Resources"
+    ],
+    "issue": [
+      "apter 1"
+    ]
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "Land use for the study area"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "note": [
+      "Evapotranspiration (ET) for the study area."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "title": [
+      "Precipitation and runoff for the study area"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "Surface water supplies for the District"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "title": [
+      "Deliveries to irrigation and banking for the District"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "50,139 11,739 6,263 48,751 39,441 9,454"
+    ],
+    "pages": [
+      "48,895 529"
+    ],
+    "title": [
+      "9,966 Average (A) Annual values from Table A2-6. (B) Annual values from Table A2-9. (C) Annual values from Table A2-11"
+    ],
+    "note": [
+      "D) Calculated as (A – C) ÷ 90% irrigation efficiency. (E) Annual values from Table A2-16. (F) Annual values from Table A2-19. (G) Calculated as (E + F). (H) Annual values from Table A2-22. (I) Calculated as (B + G – A – H"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "title": [
+      "1922-2004 from Stiner modeling for pre-settlement; 2005-2017 are actual allocations from USBR Water Allocations history"
+    ],
+    "url": [
+      "https://www.usbr.gov/mp/cvo/vungvari/water_allocations_historical.pdf",
+      "https://www.usbr.gov/mp/cvo/vungvari/water_allocations_historical.pdf"
+    ],
+    "note": [
+      "2) 1922-2004 from Stiner modeling for pre-settlement; 2005-2017 are actual allocations from USBR Water Allocations history:"
+    ],
+    "publisher": [
+      "From Ron Eid & Paul Fujitani Data"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4"
+    ],
+    "author": [
+      {
+        "family": "Notebook",
+        "given": "From Mavens"
+      }
+    ],
+    "url": [
+      "https://mavensnotebook.com/2018/04/05/ca-water-commission-article-21-water-explained/#jp-carousel-7455",
+      "https://www.usbr.gov/mp/cvo/vungvari/water_allocations_historical.pdf",
+      "https://www.usbr.gov/mp/cvo/vungvari/water_allocations_historical.pdf",
+      "https://www.usbr.gov/mp/cvo/vungvari/water_allocations_historical.pdf"
+    ],
+    "title": [
+      "5) 1922-1977 from Arvin-Edison/ Met Water Storage and exchange program EIR 1978-2017 from USBR Water Allocations history",
+      "6) 1977-1998 assumed same as SOD; 1999-2017 are actual Cross Valley deliveries (7) 1922-2004 from Stiner modeling for post-settlement; 2005-2017 are actual allocations from USBR Water Allocations history"
+    ],
+    "note": [
+      "8) 1922-2004 from Stiner modeling for post-settlement; 2005-2017 are actual allocations from USBR Water Allocations history:"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Extraction Capacity = 9,000 AF Spreading Capacity = 50,000 AF Maximum Account Balance = 40,000 AF Current Account Balance"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "= 30,384 AF"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Extraction Capacity = 2,000 AF Spreading Capacity = 10,000 AF Maximum Account Balance = 15,000 AF Current Account Balance"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "= 7,666 AF"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The District has identified the following Actions as a means to accomplish groundwater sustainability: 1. Modify District Pricing Structure 2"
+    ],
+    "note": [
+      "Construct CRC Pipeline - Produced Water Project 3. Construct In-District Surface Storage"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "A summary of results for each model run is shown below in Table A3-7"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "0 0 -5,000 18,411 0 0 -4,415 25,005 0 0 0 0 0"
+    ],
+    "pages": [
+      "–9,415 43,416 9,415 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "65,837 12,877 0 30,000 52,960 31,938 0 40,000 21,022 7,500 0 3,750 52,315 0 73,750 0"
+    ],
+    "pages": [
+      "13,522"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "0 0 -5,000 25,000 0 0 -9,000 31,000 0 0 -2,000 1,750 0"
+    ],
+    "pages": [
+      "–16,000 57,750 16,000 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "0 0 -5,000 20,000 0 0 -9,000 22,000 0 0 -1,750 0 0"
+    ],
+    "pages": [
+      "–15,750 42,000 15,750 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "0 0 -5,000 15,000 0 0 -9,000 13,000 0 0 0 0 0"
+    ],
+    "pages": [
+      "–14,000 28,000 14,000 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "volume": [
+      "0 0 -5,000 10,000 0 0 -6,025 6,975 0 0 0 0 0"
+    ],
+    "pages": [
+      "–11,025 16,975 11,025 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "volume": [
+      "0 0 -5,000 5,000 0 0 -3,933 3,042 0 0 0 0 0"
+    ],
+    "pages": [
+      "–8,933 8,042 8,933 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "19,013 15,000 0 18,500 4,013 4,013 0 4,926 0 0 0 0 19,013 0 23,426 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "64,103 12,778 0 30,000 51,326 50,000 0 28,401 1,326 1,326 0 663 64,103 0 59,063 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "61,918 0 0 30,000 61,918 24,707 0 40,000 37,211 7,169 0 4,247 31,875 0 74,247 0 30,042"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "volume": [
+      "0 0 -5,000 25,000 0 0 -5,047 34,953 0 0 0 4,247 0 -10,047 64,200 10,047 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "0 0 -5,000 20,000 0 0 -7,119 27,835 0 0 0 4,247 0 -12,119 52,082 12,119 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "volume": [
+      "0 0 -5,000 15,000 0 0 -9,000 18,835 0 0 -2,000 2,247 0 -16,000 36,082 16,000 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "3,615 3,615 0 18,254 0 0 0 18,835 0 0 0 2,247 3,615 0 39,335 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "24,207 13,052 0 30,000 11,155 11,155 0 24,072 0 0 0 2,247 24,207 0 56,319 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "0 0 -5,000 25,000 0 0 -9,000 15,072 0 0 -208 2,039 0"
+    ],
+    "pages": [
+      "–14,208 42,111 14,208 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "0 0 -5,000 20,000 0 0 -9,000 6,072 0 0"
+    ],
+    "pages": [
+      "–2,000 39 0 –16,000 26,111 16,000 0"
+    ],
+    "type": null
+  }
+]

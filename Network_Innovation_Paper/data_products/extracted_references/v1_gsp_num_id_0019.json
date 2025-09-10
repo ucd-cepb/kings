@@ -1,0 +1,5842 @@
+[
+  {
+    "citation-number": [
+      "§354.4"
+    ],
+    "author": [
+      {
+        "family": "Information",
+        "given": "General"
+      }
+    ],
+    "title": [
+      "b) Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Burton",
+        "given": "C.A."
+      },
+      {
+        "family": "Montrella",
+        "given": "J."
+      },
+      {
+        "family": "Landon",
+        "given": "M.K."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Status and understanding of groundwater quality in the Santa Clara River Valley, 2007—California GAMA Priority Basin Project: U.S"
+    ],
+    "volume": [
+      "2011–5052"
+    ],
+    "pages": [
+      "86"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Conservation",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Farmland Mapping and Monitoring Program Web Site"
+    ],
+    "url": [
+      "https://www.conservation.ca.gov/dlrp/fmmp/Pages/Index.aspx)."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Natural Resources Agency",
+      "Natural Communities Commonly Associated with Groundwater data portal"
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/natural-communities-commonlyassociated-with-groundwater)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Foundation",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2014",
+      "April"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California"
+    ],
+    "publisher": [
+      "California Water Foundation Subsidence Resources Group"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Casitas Municipal Water"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "note": [
+      "Adopted by the Board of Directors June 23."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Oxnard",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "City of Oxnard 2030 General Plan Map"
+    ],
+    "note": [
+      "Prepared by Salvador Mancha. Revised September 11."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "2005 Ventura General Plan"
+    ],
+    "note": [
+      "Adopted August 8. Resolution Nos2005-072 and 2005-073. Available at:"
+    ],
+    "url": [
+      "https://www.cityofventura.ca.gov/DocumentCenter/View/1805/2005-Ventura-General-Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Ventura County 2040 General Plan"
+    ],
+    "note": [
+      "Adopted September 15. Available at"
+    ],
+    "url": [
+      "https://vc2040.org/review/documents."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stephens",
+        "given": "Daniel B."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Santa Paula Basin Hydrogeologic Characterization and Safe Yield Study"
+    ],
+    "publisher": [
+      "Ventura County"
+    ],
+    "location": [
+      "California, May"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Department of Toxic Substances Control (DTSC",
+      "California. Envirostor mapping website"
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "Available at www.envirostor.dtsc.ca.gov."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "volume": [
+
+    ],
+    "publisher": [
+      "Water Quality and Water Quality Problems, Ventura County, February"
+    ],
+    "issue": [
+      "75"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2010",
+      "December"
+    ],
+    "title": [
+      "California Statewide Groundwater Elevation Monitoring (CASGEM) Program Procedures for Monitoring Entity Reporting"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Future Land Subsidence in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "December"
+    ],
+    "title": [
+      "Guidance Document for the Sustainable Management of Groundwater, Groundwater Sustainability Plan (GSP) Annotated Outline"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the Sustainable Groundwater Management Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "December"
+    ],
+    "title": [
+      "BMP 1, Best Management Practices for the Sustainable Management of Groundwater—Monitoring Protocols, Standards"
+    ],
+    "publisher": [
+      "and Sites BMP"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "December"
+    ],
+    "title": [
+      "BMP 2, Best Management Practices for the Sustainable Management of Groundwater—Monitoring Networks and Identification of Data Gaps BMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "BMP 6, Best Management Practices for Sustainable Management Criteria DRAFT"
+    ],
+    "volume": [
+      "6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "November"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "July"
+    ],
+    "title": [
+      "Guidance Document for the Sustainable Management of Groundwater Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization—Process and Results"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "SGMA Data Viewer Web-based geographic information system (GIS) viewer"
+    ],
+    "note": [
+      "Available at (https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021",
+      "2020-12-22"
+    ],
+    "title": [
+      "California's Groundwater"
+    ],
+    "volume": [
+      "118"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act Water Year Type Dataset Development Report"
+    ],
+    "note": [
+      "January (dataset available at"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/sgma-water-yeartype-dataset)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Geologic Map of the Ventura and Pitas Point Quadrangles, Ventura County, California"
+    ],
+    "editor": [
+      {
+        "family": "Ehrenspeck",
+        "given": "Helmut E."
+      }
+    ],
+    "container-title": [
+      "published in cooperation with California Dpartment of Conservation, Division of Mines and Geology; and U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Geologic Map of the Saticoy Quadrangle, Ventura County, California"
+    ],
+    "editor": [
+      {
+        "family": "Helmut",
+        "given": "E."
+      }
+    ],
+    "container-title": [
+      "Ehrenspeck, published in cooperation with California Dpartment of Conservation, Division of Mines and Geology; and U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Driscoll",
+        "given": "F.G."
+      }
+    ],
+    "date": [
+      "1986",
+      "1089"
+    ],
+    "title": [
+      "Groundwater and Wells"
+    ],
+    "edition": [
+      "2nd"
+    ],
+    "publisher": [
+      "Johnson Division, St Paul"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2019",
+      "December"
+    ],
+    "title": [
+      "Groundwater Sustainability Plan for the Oxnard Subbasin to the Fox Canyon Groundwater Management Agency"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "West",
+        "given": "Fugro"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Calendar Year 1995 Annual Report, Mound Groundwater Basin, Ventura County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "unpublished consultant’s report prepared for City of San Buenaventura, January."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Geotechnical"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "Hydrogeologic Investigation of the Mound Groundwater Basin for the City of"
+    ],
+    "location": [
+      "San Buenaventura, California"
+    ],
+    "note": [
+      "unpublished consultant’s report prepared for City of San Buenaventura."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Greene",
+        "given": "Gary H."
+      },
+      {
+        "family": "Wolf",
+        "given": "Steve C."
+      },
+      {
+        "family": "Blom",
+        "given": "Ken G."
+      }
+    ],
+    "date": [
+      "1978"
+    ],
+    "title": [
+      "The Marine Geology of the Eastern Santa Barbara Channel with Particular Emphasis on the Ground Water Basins Offshore from the Oxnard, Plain"
+    ],
+    "location": [
+      "Southern California, U.S"
+    ],
+    "note": [
+      "Geological Survey Open-File Report 78-305."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Gutierrez",
+        "given": "C."
+      },
+      {
+        "family": "Siang",
+        "given": "S."
+      },
+      {
+        "family": "Clahan",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Geologic Map of the East Half Santa Barbara 30’ x 60"
+    ],
+    "location": [
+      "Quadrangle, California, California Geological Survey, January"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Koczot",
+        "given": "K.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of ground-water/surface water flow in the Santa Clara-Calleguas ground-water basin, Ventura County, California, U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 02-4136,"
+    ],
+    "volume": [
+      "214p"
+    ],
+    "url": [
+      "https://pubs.er.usgs/usgspubs/wri/"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Ground-Water Hydrology—U.S"
+    ],
+    "container-title": [
+      "Geological Survey Water-Supply Paper 2220"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hevesi",
+        "given": "J.A."
+      },
+      {
+        "family": "Johnson",
+        "given": "T.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Estimating Spatially and Temporally Varying Recharge and Runoff from Precipitation and Urban Irrigation in the Los Angeles Basin"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Scientific Investigations Report"
+    ],
+    "pages": [
+      "192 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20165068."
+    ],
+    "doi": [
+      "10.3133/sir20165068."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hopkins",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Explanation of the Texas Water Development Board groundwater level monitoring program and water-level measuring manual"
+    ],
+    "pages": [
+      "–52"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Hopkins Groundwater Consultants, Inc"
+    ],
+    "location": [
+      "Hopkins"
+    ],
+    "date": [
+      "2009"
+    ],
+    "note": [
+      "Mound Well No. 2 Siting Study, Ventura, California."
+    ],
+    "publisher": [
+      "Prepared for City of San Buenaventura"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Preliminary Hydrogeological Study—Phase 3 Santa Clara River Estuary Groundwater Special Study"
+    ],
+    "note": [
+      "Ventura, California, prepared for City of San Buenaventura, February."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Final Draft Preliminary Hydrogeological Study—Mound Basin Groundwater Conditions and Perennial Yield Study, prepared for City of"
+    ],
+    "location": [
+      "San Buenaventura, March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Isherwood",
+        "given": "J.D."
+      },
+      {
+        "family": "Pillsbury",
+        "given": "A.F."
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "Shallow Ground Water and Tile Drainage in the Oxnard Plain"
+    ],
+    "container-title": [
+      "Transactions of the American Geophysical Union"
+    ],
+    "volume": [
+      "39"
+    ],
+    "pages": [
+      "1101–1110"
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Mann",
+        "given": "John F.",
+        "suffix": "Jr."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "A Plan for Groundwater Management—United Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Kennedy/Jenks"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Urban Water Management Plan for the City of Ventura-Ventura Water, June"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Kennedy/Jenks"
+      }
+    ],
+    "date": [
+      "2016",
+      "June"
+    ],
+    "title": [
+      "2015 Urban Water Management Plan for"
+    ],
+    "publisher": [
+      "City of Ventura"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Kennedy/Jenks"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Urban Water Management Plan for"
+    ],
+    "publisher": [
+      "City of Ventura, May"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Kennedy/Jenks"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Water Shortage Event Contingency Plan, April"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "J.",
+        "given": "Howard"
+      },
+      {
+        "family": "T.",
+        "given": "Keeler-Wolf"
+      },
+      {
+        "family": "K.",
+        "given": "Davis-Fadtke"
+      },
+      {
+        "family": "R.",
+        "given": "Hull"
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater Dependent Ecosystems in"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "Methods Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "McDonald",
+        "given": "M.G."
+      },
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "A modular three-dimensional finite-difference groundwater flow model, U.S"
+    ],
+    "source": [
+      "Geological Survey Techniques of Water-Resources Investigations 06-A1."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mukae",
+        "given": "M."
+      },
+      {
+        "family": "Turner",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Ventura County Water Resources Management Study-Geologic Formations, Structures and History in the Santa Clara Calleguas Area, January"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "Natural Resource Conservation"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "United States Department of Agriculture, Soils Online Database"
+    ],
+    "url": [
+      "https://websoilsurvey.sc.egov.usda.gov/App/WebSoilSurvey.aspx)"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Paso Robles Groundwater Sustainability Agency (Paso Robles GSA",
+      "Paso Robles Subbasin Groundwater Sustainability Plan"
+    ],
+    "date": [
+      "2020",
+      "January 31"
+    ],
+    "container-title": [
+      "Prepared for: Paso Robles Subbasin Cooperative Committee and the Groundwater Sustainability Agencies"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Pollock",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "User guide for MODPATH Version 7 -- A particle-tracking model for MODFLOW: U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 2016-1086,"
+    ],
+    "pages": [
+      "35 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/ofr20161086."
+    ],
+    "doi": [
+      "10.3133/ofr20161086."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "Regional Water Quality Control Board –Los Angeles District (RWQCB –LA",
+      "Basin Plan for the Coastal Watersheds of Los Angeles and Ventura Counties"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Papadopulos",
+        "given": "S.S."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Mound Basin Water Quality and Isotope Study, Ventura County, California, prepared for the Mound Basin Groundwater Sustainability Agency, February"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Space",
+        "given": "Save Open"
+      },
+      {
+        "family": "Resources",
+        "given": "Agricultural"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "SOAR Voter Initiatives: Measure to Extend From 2020 through 2050 the Requirement That Changes to County's General Plan Land Use Designations, Goals and Policies for Open Space, Agricultural, and Rural Lands in the Unincorporated Area Be Approved By a Vote of the People"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://www.soarvc.org/wp-content/uploads/2016/09/Ventura-County-Initiatives.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J."
+      },
+      {
+        "family": "Solt",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2013",
+      "2003"
+    ],
+    "title": [
+      "Land subsidence along the Delta-Mendota Canal in the northern part of the San Joaquin Valley",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "volume": [
+      "2013–5142"
+    ],
+    "pages": [
+      "87"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20135142)"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20135142)"
+    ]
+  },
+  {
+    "title": [
+      "Southern California Association of Governments"
+    ],
+    "container-title": [
+      "2008. SCAG GIS Open Data Portal"
+    ],
+    "url": [
+      "http://gisdatascag.opendata.arcgis.com/)"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "State Water Resources Control Board (SWRCB"
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "GeoTracker mapping site available at"
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "City of Ventura Special Studies, Estuary Subwatershed Study Assessment of the Physical and Biological Condition of the Santa Clara River Estuary, Ventura County, California, Amended Final Report"
+    ],
+    "publisher": [
+      "Prepared for City of Ventura. September"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      },
+      {
+        "family": "A.G."
+      },
+      {
+        "family": "Brown",
+        "given": "G.C."
+      }
+    ],
+    "date": [
+      "2018",
+      "1988"
+    ],
+    "title": [
+      "Final Report, City of Ventura Special Studies—Phase 3: Assessment of the Physical and Biological Conditions of the Santa Clara River Estuary, Ventura County, California, dated February 2018.Sylvester",
+      "Santa Barbara and Ventura Basins; Tectonics, Structure, Sedimentation, Oilfields along an East-West Transect: Coast Geological Society Guidebook 64"
+    ],
+    "location": [
+      "Ventura, California"
+    ],
+    "pages": [
+      "167"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sylvester",
+        "given": "A.G."
+      },
+      {
+        "family": "Brown",
+        "given": "G.C."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Santa Barbara and Ventura Basins; Tectonics, Structure, Sedimentation, Oilfields along an East-West Transect: Coast Geological Society Guidebook 64"
+    ],
+    "location": [
+      "Ventura, California"
+    ],
+    "pages": [
+      "167"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act—Guidance for Preparing Groundwater Sustainability Plans, January"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2019",
+      "July"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater Resource Hub: GDE Rooting Depths Database"
+    ],
+    "note": [
+      "Available for download at"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/gde-rooting-depths-database-for-gdes/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "March 23"
+    ],
+    "title": [
+      "InSAR Data Accuracy for California Groundwater Basins, CGPS Data Comparative Analysis, January 2015 to September 2019"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for California Department of Water Resources"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Altamira",
+        "given": "T.R.E."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "InSAR Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Turner",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Aquifer delineation in the Oxnard-Calleguas area, Ventura County"
+    ],
+    "container-title": [
+      "Compilation of Technical Information Records for the Ventura County Cooperative Investigation: California Department of Water Resources"
+    ],
+    "pages": [
+      "28"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.N.A.V.C.O."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "VNCO Station Page"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/status/nota/overview/vnco."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS",
+      "Geologic Map of the Oxnard 7.5’ Quadrangle"
+    ],
+    "date": [
+      "1949"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geologic Map of the Ventura 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1967"
+    ],
+    "title": [
+      "Geologic Map of the Saticoy 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Koczot",
+        "given": "K.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of ground-water/surface water flow in the Santa Clara-Calleguas groundwater basin, Ventura County, California",
+      "U.S"
+    ],
+    "genre": [
+      "Prepared by",
+      "Geological Survey Water-Resources Investigations Report 02-4136,"
+    ],
+    "volume": [
+      "214p"
+    ],
+    "url": [
+      "https://pubs.er.usgs/usgspubs/wri/"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Geologic Map of the Oxnard 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Geologic Map of the Ventura 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Geologic Map of the Saticoy 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United Water Conservation District (United",
+      "Hydrogeologic Assessment of the Mound Basin, United Water Conservation District Open-File Report 2012-01"
+    ],
+    "date": [
+      "2012"
+    ],
+    "location": [
+      "May"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2013",
+      "2013-06"
+    ],
+    "title": [
+      "Technical Memorandum: Infiltration Potential of Precipitation Falling on Developed Lands and the Fate of Applied Groundwater within UWCD"
+    ],
+    "pages": [
+      "20"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Santa Paula Basin Annual Report"
+    ],
+    "container-title": [
+      "United Water Conservation District Professional Paper 2017-01"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Groundwater and Surface Water Conditions Report - 2015, United Water Conservation District Open-File Report 2017-01"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2018",
+      "July"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model and Updated Hydrogeologic Conceptual Model: Oxnard Plain, Oxnard Forebay, Pleasant Valley, West Las Posas, and Mound Basins, United Water Conservation District"
+    ],
+    "genre": [
+      "Open-File Report 2018-02,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Santa Paula-Mound-Forebay Basin Boundary TDEM Geophysical Survey, United Water Conservation District Open-File Report 2020-01"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model Expansion and Updated Hydrogeologic Conceptual Model: Santa Paula, Fillmore, and Piru Groundwater Basins"
+    ],
+    "note": [
+      "United Water Conservation District Open-File Report 2021-01."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2021",
+      "April"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model 2016-2019 Validation: Piru"
+    ],
+    "location": [
+      "Fillmore, Santa Paula, Mound, Oxnard"
+    ],
+    "publisher": [
+      "Pleasant Valley, and West Las Posas Valley Basins, United Water Conservation"
+    ],
+    "genre": [
+      "District Open-File Report 2021-02,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Technical Memorandum—Implementation of Groundwater Model Inputs for Simulations in Support of Groundwater Sustainability Plan Development by the Mound, Fillmore, and Piru Groundwater Sustainability Agencies"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Ventura County Watershed Protection"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Ventura County Resilient Coastal Adaptation Project Sea Level Rise Vulnerability Assessment, Appendix A-1"
+    ],
+    "note": [
+      "Available at:",
+      "pdf December 14, 2018"
+    ],
+    "url": [
+      "https://docs.vcrma.org/images/pdf/planning/programs/vcrcap/Appendix_A_SectorMaps_Part1."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Map Atlas and Sector Profile Results"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Ventura County Watershed Protection"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Web-based Hydrologic Data Server (Hydrodata"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://www.vcwatershed.net/hydrodata/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Ventura"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Spreadsheet titled “Historical Water Production in Acre-Feet – with Corrections and Rounded"
+    ],
+    "note": [
+      "provided by Jennifer Tribo (Ventura Water) via e-mail on March 3,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Ventura"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Comprehensive Water Resources Report—FINAL Report, April"
+    ],
+    "container-title": [
+      "Watershed Coalition of Ventura County"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura County",
+        "given": "Watersheds Coalition",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "IRWM (Integrated Regional Water Management) Plan. Adopted in 2014. Amended in 2019. Available at"
+    ],
+    "url": [
+      "http://wcvc.ventura.org/IRWMP/2019IRWMP.htm."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Weber",
+        "given": "F.H."
+      },
+      {
+        "family": "Kiessling",
+        "given": "E.W."
+      },
+      {
+        "family": "Sprotte",
+        "given": "E.C."
+      },
+      {
+        "family": "Johnson",
+        "given": "J.A."
+      },
+      {
+        "family": "Sherburne",
+        "given": "R.W."
+      },
+      {
+        "family": "Cleveland",
+        "given": "G.B."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Seismic hazards study of Ventura County, California: California Department of Conservation"
+    ],
+    "volume": [
+      "76-5"
+    ],
+    "pages": [
+      "396 , 3 3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Division of Mines and Geology Open-File Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Yeats",
+        "given": "R.S."
+      },
+      {
+        "family": "Clark",
+        "given": "M.N."
+      },
+      {
+        "family": "Keller",
+        "given": "E.A."
+      },
+      {
+        "family": "Rockwell",
+        "given": "T.K."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Active Fault Hazard in Southern California: Ground Rupture Versus Seismic Shaking: Geol"
+    ],
+    "volume": [
+      "1, v. 92"
+    ],
+    "pages": [
+      "189–196"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Soc. America Bull, Part"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Yerkes",
+        "given": "R.F."
+      },
+      {
+        "family": "Sarna-Wojcicki",
+        "given": "A.M."
+      },
+      {
+        "family": "Joie",
+        "given": "K.R.",
+        "particle": "La"
+      }
+    ],
+    "date": [
+      "1987",
+      "1339"
+    ],
+    "title": [
+      "Recent Reverse Faulting in the Transverse Ranges"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "203"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Figure 3.1-10 Offshore Geologic Conditions Influencing Potential for Seawater Intrusion. Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-11 Map of Groundwater Recharge and Discharge Areas in Mound Basin. Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-12 Maximum TDS Concentrations Detected in Mugu Aquifer during 2017. Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-13 Maximum Sulfate Concentrations Detected in Mugu Aquifer during",
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-14 Maximum Chloride Concentrations Detected in Mugu Aquifer during 2017"
+    ],
+    "date": [
+      "2017"
+    ],
+    "container-title": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-15 Maximum Nitrate Concentrations Detected in Mugu Aquifer during 2017. Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-16 Maximum TDS Concentrations Detected in Hueneme Aquifer during 2017. Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-17 Maximum Sulfate Concentrations Detected in Hueneme Aquifer during 2017"
+    ],
+    "note": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.1-18 Maximum Chloride Concentrations Detected in Hueneme Aquifer during 2017."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-01 Water Level Elevation in Mugu Aquifer"
+    ],
+    "date": [
+      "2012"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-02 Water Level Elevation in Mugu Aquifer"
+    ],
+    "date": [
+      "2012"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-03 Water Level Elevation in Hueneme Aquifer"
+    ],
+    "date": [
+      "2012"
+    ],
+    "publisher": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Figure 3.2-04 Water Level Elevation in Hueneme Aquifer",
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-05 Water Level Elevation in Mugu Aquifer",
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-06 Water Level Elevation in Mugu Aquifer",
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-07 Water Level Elevation in Hueneme Aquifer, Spring 2019"
+    ],
+    "date": [
+      "2012",
+      "2019",
+      "2019"
+    ],
+    "container-title": [
+      "Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-08 Water Level Elevation in Hueneme Aquifer, Fall 2019. Mound Basin Groundwater Sustainability Agency Groundwater Sustainability Plan Figure 3.2-09 Generalized Conceptual Groundwater Flow Paths in Principal Aquifers"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "25.15 Above Average Above Normal 157,512"
+    ],
+    "volume": [
+      "6,814 12,828 4,706"
+    ],
+    "pages": [
+      "–158,857 –4,036 –15,606 –235 –4,470 244 –30 182,103 –183,234 –1,131"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "1,170 2,202 6,229"
+    ],
+    "pages": [
+      "–3,044 –622 –2,750 –311 –5,918 363 0 11,251 –12,645 –1,394"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "5,646 5,740"
+    ],
+    "pages": [
+      "–26,229 –1,872 –6,772 –287 –5,453 221 –6 39,468 –40,619 –1,152"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "1,403 1,403 2,642 6,780"
+    ],
+    "pages": [
+      "–2,805 –1,081 –2,964 –339 –6,441 527 –4 12,755 –13,634 –879"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "5.62 Below Average Critical 1,577"
+    ],
+    "pages": [
+      "569 1,070 4,217 –2,901 –578 –1,061 –211 –4,006 217 0 7,650 –8,757 –1,107"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "16.92 Near Average Dry"
+    ],
+    "volume": [
+      "79,289 4,182 7,873 2,162"
+    ],
+    "pages": [
+      "–80,387 –3,029 –9,026 –108 –2,054 –112 –23 93,506 –94,740 –1,233"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Above Average Wet 251,991 5,276"
+    ],
+    "pages": [
+      "9,932 768 –252,632 –4,035 –11,173 –38 –730 –896 –26 267,967 –269,530 –1,562"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "28.76 Above Average Wet"
+    ],
+    "volume": [
+      "831,337 7,969 15,001 1,607"
+    ],
+    "pages": [
+      "–830,609 –5,115 –17,854 –80 –1,526 –2,402 –40 855,913 –857,627 –1,714"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "11.68 Near Average Above Normal 48,785"
+    ],
+    "volume": [
+      "2,507 4,719 3,440"
+    ],
+    "pages": [
+      "–50,028 –1,468 –5,757 –172 –3,268 844 –9 60,294 –60,702 –408"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "31.72 Above Average Wet"
+    ],
+    "volume": [
+      "427,824 8,915 16,783 1,126"
+    ],
+    "pages": [
+      "–428,589 –5,808 –19,890 –56 –1,070 –1,500 –8 454,648 –456,921 –2,273"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "12.79 Near Average Above Normal 56,652"
+    ],
+    "volume": [
+      "2,862 5,387 3,005"
+    ],
+    "pages": [
+      "–58,198 –1,981 –6,267 –150 –2,855 923 –11 68,828 –69,462 –634"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "14.75 Near Average Below Normal"
+    ],
+    "volume": [
+      "79,380 3,488 6,567 4,855"
+    ],
+    "pages": [
+      "–81,048 –2,762 –7,293 –243 –4,612 431 –15 94,721 –95,973 –1,251"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "42.54 Above Average Wet"
+    ],
+    "volume": [
+      "671,093 12,375 23,296 2,972"
+    ],
+    "pages": [
+      "–671,626 –7,531 –28,140 –149 –2,823 –2,148 142 709,878 –712,417 –2,539"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "10.33 Below Average Wet"
+    ],
+    "volume": [
+      "35,400 2,075 3,906 4,806"
+    ],
+    "pages": [
+      "–36,943 –984 –4,997 –240 –4,566 819 –2 47,005 –47,731 –726"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "title": [
+      "17.11 Near Average Dry"
+    ],
+    "volume": [
+      "53,289 4,243 7,987 3,985"
+    ],
+    "pages": [
+      "–55,147 –2,619 –9,612 –199 –3,786 915 –18 70,420 –71,381 –961"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2001"
+    ],
+    "title": [
+      "22.79 Above Average Above Normal"
+    ],
+    "volume": [
+      "151,353 6,059 11,407 4,297"
+    ],
+    "pages": [
+      "–153,137 –4,021 –13,445 –215 –4,082 172 –29 173,288 –174,928 –1,641"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2002"
+    ],
+    "title": [
+      "6.41 Below Average Critical 1,001"
+    ],
+    "pages": [
+      "821 1,546 4,867 –3,002 –690 –1,677 –243 –4,623 375 –3 8,611 –10,239 –1,628"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Near Average Below Normal 50,124"
+    ],
+    "volume": [
+      "4,847 9,125 3,354"
+    ],
+    "pages": [
+      "–51,683 –3,446 –10,527 –168 –3,187 987 –20 68,438 –69,030 –593"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2004"
+    ],
+    "title": [
+      "10.73 Below Average Below Normal 27,751"
+    ],
+    "volume": [
+      "2,203 4,147 4,666"
+    ],
+    "pages": [
+      "–29,289 –1,549 –4,801 –233 –4,433 842 –8 39,609 –40,312 –703"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "title": [
+      "34.64 Above Average Wet 1,024,362 9,849 18,540 4,859"
+    ],
+    "pages": [
+      "–1,024,403 –7,132 –21,258 –243 –4,616 –2,934 –55 1,057,610 –1,060,640 –3,030"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "title": [
+      "16.64 Near Average Wet"
+    ],
+    "volume": [
+      "151,093 4,093 7,704 3,686"
+    ],
+    "pages": [
+      "–152,133 –2,671 –9,126 –184 –3,502 –3 –12 166,576 –167,631 –1,055"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2007"
+    ],
+    "title": [
+      "5.75 Below Average Critical 1,867"
+    ],
+    "pages": [
+      "610 1,149 4,575 –3,728 –331 –1,428 –229 –4,346 511 0 8,711 –10,062 –1,351"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2008"
+    ],
+    "title": [
+      "12.77 Near Average Critical 151,068"
+    ],
+    "volume": [
+      "2,855 5,375 3,864"
+    ],
+    "pages": [
+      "–152,501 –2,646 –5,583 –193 –3,671 266 –17 163,429 –164,613 –1,184"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "title": [
+      "9.32 Below Average Below Normal"
+    ],
+    "volume": [
+      "25,903 1,752 3,298 3,659"
+    ],
+    "pages": [
+      "–27,394 –1,404 –3,645 –183 –3,476 856 –5 35,468 –36,107 –639"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "16.82 Near Average Above Normal 91,609"
+    ],
+    "volume": [
+      "4,150 7,813 4,093"
+    ],
+    "pages": [
+      "–92,623 –2,992 –8,971 –205 –3,888 299 –15 107,964 –108,694 –729"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Above Average Wet"
+    ],
+    "volume": [
+      "161,886 5,071 9,547 4,160"
+    ],
+    "pages": [
+      "–162,851 –3,555 –11,062 –208 –3,952 –161 –21 180,664 –181,811 –1,148"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2012"
+    ],
+    "title": [
+      "9.49 Below Average Below Normal"
+    ],
+    "volume": [
+      "10,630 1,806 3,400 3,203"
+    ],
+    "pages": [
+      "–11,917 –806 –4,401 –160 –3,043 451 0 19,490 –20,326 –836"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2013"
+    ],
+    "title": [
+      "5.80 Below Average Critical 34"
+    ],
+    "pages": [
+      "626 1,179 4,133 –1,445 –483 –1,322 –207 –3,927 298 0 6,270 –7,384 –1,114"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "6.14 Below Average Critical 18,733"
+    ],
+    "pages": [
+      "735 1,383 3,482 –19,991 –703 –1,416 –174 –3,308 259 –3 24,592 –25,595 –1,003"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2015"
+    ],
+    "title": [
+      "9.15 Below Average Critical 2,391"
+    ],
+    "volume": [
+      "1,697 3,196 3,311"
+    ],
+    "pages": [
+      "–3,543 –819 –4,074 –166 –3,145 156 –3 10,750 –11,750 –999"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "volume": [
+      "UWMP 4,848"
+    ],
+    "pages": [
+      "–1,152 –19"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "genre": [
+      "UWMP 2,634"
+    ],
+    "pages": [
+      "–1,959 –43"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "genre": [
+      "UWMP 2,188"
+    ],
+    "pages": [
+      "–3,553 –62"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "genre": [
+      "UWMP 2,716"
+    ],
+    "pages": [
+      "–3,025 –53"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Average"
+      }
+    ],
+    "date": [
+      "2022",
+      "2096"
+    ],
+    "volume": [
+      "3,202 2,558"
+    ],
+    "pages": [
+      "–774 –7,827 –12 1,309 11 3,651 3,051 –5,101 13,879 –13,812 –68"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Natural Diversity Data Base (CNDDB"
+    ],
+    "url": [
+      "https://www.wildlife.ca.gov/data/cnddb)"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Comment Letter for the Proposed Groundwater Sustainability Plan for the Oxnard Basin dated May 15, 2020"
+    ],
+    "publisher": [
+      "National Marine Fisheries Service, West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Estuary Sub Watershed Study Assessment of the Physical and Biological Condition of the Santa Clara River Estuary, Ventura County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "Amended Final Report. September 2011.Prepared for the City of Ventura."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Memorandum–Draft Assessment of Groundwater Dependent Ecosystems for the Oxnard Subbasin Groundwater Sustainability Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.L."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow Depletion of Well – Understanding and Managing the Effects of Groundwater Pumping on Streamflow"
+    ],
+    "note": [
+      "United State Geological Survey Circular 1376."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Beighley",
+        "given": "R.E."
+      },
+      {
+        "family": "Dunne",
+        "given": "T."
+      },
+      {
+        "family": "Melack",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Impacts of Climate Variability and Land Use Alterations on Frequency Distributions of Terrestrial Runoff, Loading to Coastal Waters in Southern California"
+    ],
+    "volume": [
+      "49"
+    ],
+    "pages": [
+      "62–74"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of the American Water Resources Association"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "A",
+        "given": "Belin"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guide to Compliance with California Sustainable Groundwater Management Act: How to avoid the “undesirable result” of “significant and unreasonable adverse impacts on surface waters”"
+    ],
+    "publisher": [
+      "Stanford University"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Beller",
+        "given": "E.E."
+      },
+      {
+        "family": "Grossinger",
+        "given": "R.M."
+      },
+      {
+        "family": "Salomon",
+        "given": "M."
+      },
+      {
+        "family": "Dark",
+        "given": "S."
+      },
+      {
+        "family": "Stein",
+        "given": "E."
+      },
+      {
+        "family": "Orr",
+        "given": "B.K."
+      },
+      {
+        "family": "Downs",
+        "given": "P.W."
+      },
+      {
+        "family": "Longcore",
+        "given": "T."
+      },
+      {
+        "family": "Coffman",
+        "given": "G."
+      },
+      {
+        "family": "Whipple",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Historical Ecology of the lower Santa Clara River, Ventura River, and Oxnard Plain: an analysis of terrestrial, riverine, and coastal habitats"
+    ],
+    "note": [
+      "SFEI Contribution No. 641. SFEI: Oakland."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bond",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Importance of Estuarine Rearing to Central California Steelhead (Oncorhynchus mykiss) Growth and Marine Survival"
+    ],
+    "genre": [
+      "Master’s Thesis."
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Santa Cruz"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.H."
+      },
+      {
+        "family": "Fish",
+        "given": "H."
+      },
+      {
+        "family": "Pope",
+        "given": "J."
+      },
+      {
+        "family": "Holt",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Spatial patterning of habitat for Oncorhynchus mykiss in a system of intermittent and perennial stream"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "92–105"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecology of Freshwater Fishes"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.A."
+      },
+      {
+        "family": "Goslin",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Potential Steelhead Over-Summering Habitat in the South-Central/Southern California Recovery Domain: Maps Based on the Envelope Method"
+    ],
+    "publisher": [
+      "NOAA Technical Memorandum NMFS-SWFSC TM-391"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D."
+      },
+      {
+        "family": "Adams",
+        "given": "P."
+      },
+      {
+        "family": "Anderson",
+        "given": "E."
+      },
+      {
+        "family": "Fusaro",
+        "given": "C."
+      },
+      {
+        "family": "Keller",
+        "given": "E."
+      },
+      {
+        "family": "Kelley",
+        "given": "E."
+      },
+      {
+        "family": "Lentsch",
+        "given": "L."
+      },
+      {
+        "family": "Nielsen",
+        "given": "J."
+      },
+      {
+        "family": "Perry",
+        "given": "K."
+      },
+      {
+        "family": "Regan",
+        "given": "H."
+      },
+      {
+        "family": "Smith",
+        "given": "J."
+      },
+      {
+        "family": "Swift",
+        "given": "C."
+      },
+      {
+        "family": "Thompson",
+        "given": "L."
+      },
+      {
+        "family": "Watson",
+        "given": "F."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Steelhead of the South-Central/Southern"
+    ],
+    "location": [
+      "California Coast"
+    ],
+    "publisher": [
+      "Population Characterization for Recovery Planning. NOAA Technical Memorandum NMFS-SWFSC TM-394"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Brunke",
+        "given": "M."
+      },
+      {
+        "family": "Gosner",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "The Ecological Significance of Exchange Processes between Rivers and Groundwater"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Freshwater Biology"
+    ],
+    "issue": [
+      "1977"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-08-17"
+    ],
+    "title": [
+      "Letter to Mound Basin Groundwater Sustainability Agency. Re: Preliminary Draft Mound Basin Groundwater Sustainability Plan"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Fish and Wildlife",
+      "Fish & Wildlife Groundwater Planning Considerations"
+    ],
+    "date": [
+      "2019"
+    ],
+    "publisher": [
+      "State of California. Natural Resources Agency"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Bulletin 118"
+    ],
+    "location": [
+      "California Groundwater"
+    ],
+    "publisher": [
+      "Working Towards Sustainability, and Interim Update"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board, Los Angeles Region. 20119. Los Angeles Region Basin Plan for the Coastal Watersheds of Los Angeles and Ventura Counties"
+    ],
+    "note": [
+      "Updated 2019"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Capelli",
+        "given": "M.H."
+      },
+      {
+        "family": "Stanley",
+        "given": "S.J."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Preserving Riparian Vegetation Along California’s South Central Coast"
+    ],
+    "editor": [
+      {
+        "family": "Warner",
+        "given": "R.E."
+      },
+      {
+        "family": "Hendrix",
+        "given": "K.M."
+      }
+    ],
+    "container-title": [
+      "California Riparian Systems: Ecology, Conservation, and Productive Management"
+    ],
+    "pages": [
+      "673–686"
+    ],
+    "publisher": [
+      "University of California Press"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Capelli",
+        "given": "M.H."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Memo to Elis Asarian, Keir Associates. Re: South-Central and Southern California Estuarine Estimates"
+    ],
+    "publisher": [
+      "National Marine Fisheries Service, California Coastal Office"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "CBEC",
+        "given": "Inc W.R.A."
+      },
+      {
+        "given": "Inc"
+      },
+      {
+        "family": "Podlech",
+        "given": "Mike"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Santa Clara River Estuary Habitat Restoration and Enhancement Feasibility Study"
+    ],
+    "container-title": [
+      "Existing Conditions Technical Report. CEBEC Project # 14-1023. Prepared for Wishtoyo Foundation and Wishtoyo Foundation’s Ventura CoastKeeper Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Croyle",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Analysis of Baseflow Trends Related to Upland Groundwater Pumping for Ls Garzas, San Clemente, Potrero, and San Jose Creeks"
+    ],
+    "genre": [
+      "Master’s Thesis."
+    ],
+    "publisher": [
+      "California State University"
+    ],
+    "location": [
+      "Monterey Bay"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Dudley",
+        "given": "T."
+      },
+      {
+        "given": "Cole"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Preliminary Comparison of Transpirational Water Use by Arundo donax and Replacement Riparian Vegetation Types in California"
+    ],
+    "note": [
+      "Report for Madero County Resource Conservation District."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Erman",
+        "given": "D.C."
+      },
+      {
+        "family": "Hawthorne",
+        "given": "V.M."
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "The quantitative importance of an intermittent stream in the spawning of rainbow trout"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "675–681"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transactions of the American Fisheries Society"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Faber",
+        "given": "P.M."
+      },
+      {
+        "family": "Keller",
+        "given": "E."
+      },
+      {
+        "family": "Sands",
+        "given": "A."
+      },
+      {
+        "family": "Massey",
+        "given": "B.M."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "The Ecology of Riparian Habitats of the Southern California Coastal Region: A Community Profile"
+    ],
+    "genre": [
+      "Biological Report 85(7.27)."
+    ],
+    "note": [
+      "Prepared for the U.S. Fish and Wildlife Service. September 1989."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Feng",
+        "given": "D."
+      },
+      {
+        "family": "Beighley",
+        "given": "E."
+      },
+      {
+        "family": "Raoufi",
+        "given": "R."
+      },
+      {
+        "family": "Melack",
+        "given": "J.M."
+      },
+      {
+        "family": "Zhao",
+        "given": "Y."
+      },
+      {
+        "family": "Iacobellis",
+        "given": "S."
+      },
+      {
+        "family": "Cayan",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "153"
+    ],
+    "pages": [
+      "199–218"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Climate Change"
+    ],
+    "issue": [
+      "2019"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Statistical analysis of the impact of groundwater pumping on low-flow hydrology"
+    ],
+    "volume": [
+      "32"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of American Association"
+    ],
+    "issue": [
+      "4"
+    ],
+    "pages": [
+      "733–744"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Glasser",
+        "given": "S."
+      },
+      {
+        "family": "Gauthier-Warinner",
+        "given": "J."
+      },
+      {
+        "family": "Gurrieri",
+        "given": "J."
+      },
+      {
+        "family": "Kelly",
+        "given": "J."
+      },
+      {
+        "family": "Tucci",
+        "given": "P."
+      },
+      {
+        "family": "Summers",
+        "given": "P."
+      },
+      {
+        "family": "Wireman",
+        "given": "M."
+      },
+      {
+        "family": "McCormack",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Technical Guide to Managing Groundwater Resources"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture"
+    ],
+    "pages": [
+      "–881"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Grossinger",
+        "given": "R.M."
+      },
+      {
+        "family": "Stein",
+        "given": "E.D."
+      },
+      {
+        "family": "Cayce",
+        "given": "K.N."
+      },
+      {
+        "family": "Askevold",
+        "given": "R.A."
+      },
+      {
+        "family": "Dark",
+        "given": "S."
+      },
+      {
+        "family": "Whipple",
+        "given": "A.A."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Historical Wetlands of the Southern California Coast: An Atlas of U.S. Coast Survey T-Sheets, 1851-1889"
+    ],
+    "location": [
+      "San"
+    ],
+    "note": [
+      "Francisco Estuary Institute Contribution No. 586 and Southern California Coastal Water Research Project Technical Report No. 589."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Gudmundsson",
+        "given": "L."
+      },
+      {
+        "family": "Boulange",
+        "given": "J."
+      },
+      {
+        "family": "Do",
+        "given": "H.X."
+      },
+      {
+        "family": "Gosling",
+        "given": "S.N."
+      },
+      {
+        "family": "Grillakis",
+        "given": "M.G."
+      },
+      {
+        "family": "Koutroulis",
+        "given": "A.G."
+      },
+      {
+        "family": "Leonard",
+        "given": "M."
+      },
+      {
+        "family": "Liu",
+        "given": "J."
+      },
+      {
+        "family": "Schmied",
+        "given": "H.M."
+      },
+      {
+        "family": "Papadimitriou",
+        "given": "L."
+      },
+      {
+        "family": "Pokhrel",
+        "given": "Y."
+      },
+      {
+        "family": "Seneviratne",
+        "given": "S.I."
+      },
+      {
+        "family": "Satoh",
+        "given": "Y."
+      },
+      {
+        "family": "Thiery",
+        "given": "W."
+      },
+      {
+        "family": "Westra",
+        "given": "S."
+      },
+      {
+        "family": "Zhang",
+        "given": "X."
+      },
+      {
+        "family": "Zhao",
+        "given": "F."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Globally observed trends in mean and extreme river flow attributed to climate change"
+    ],
+    "volume": [
+      "371"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Science"
+    ],
+    "pages": [
+      "1159–1162"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hayes",
+        "given": "S.A."
+      },
+      {
+        "family": "Bond",
+        "given": "M.H."
+      },
+      {
+        "family": "Hanson",
+        "given": "C.V."
+      },
+      {
+        "family": "Freund",
+        "given": "E.V."
+      },
+      {
+        "family": "Smith",
+        "given": "J.J."
+      },
+      {
+        "family": "Anderson",
+        "given": "E.C."
+      },
+      {
+        "family": "Ammann",
+        "given": "A.J."
+      },
+      {
+        "family": "McFarland",
+        "given": "R.B."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Steelhead growth in a small Central California watershed: upstream and downstream estuarine rearing patterns"
+    ],
+    "volume": [
+      "137"
+    ],
+    "pages": [
+      "114–128"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transactions of the American Fisheries Society"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Ground-Water Hydrology"
+    ],
+    "container-title": [
+      "U.S. Geological Survey. Water Supply Paper 2220"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hebert",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Impacts to Anadromous Fish through Groundwater Extraction"
+    ],
+    "volume": [
+      "366"
+    ],
+    "publisher": [
+      "University of San Francisco"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Master’s Project and Capstone"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Hunt"
+      },
+      {
+        "family": "Services",
+        "given": "Associates Biological Consulting"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Southern California Coast Steelhead Recovery Planning Area Conservation Action Planning (CAP) Workbooks Threats Assessment"
+    ],
+    "note": [
+      "Prepared for the National Marine Fisheries Service, Southwest Region, Protected Resources Division."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Jasechko",
+        "given": "S.H.Seybold"
+      },
+      {
+        "family": "Perrone",
+        "given": "D."
+      },
+      {
+        "family": "Fan",
+        "given": "Y."
+      },
+      {
+        "family": "Kirchner",
+        "given": "J.W."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Widespread Potential loss of streamflow into underling aquifers across the USA"
+    ],
+    "volume": [
+      "591"
+    ],
+    "pages": [
+      "391–397"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Nature"
+    ],
+    "issue": [
+      "6535"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Kelley",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Information Synthesis and Priorities Regarding Steelhead Trout (Oncorhynchus mykiss) on the Santa Clara River. Prepare for the Nature Conservancy"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Kelley",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-08"
+    ],
+    "title": [
+      "Steelhead Trout Smolt Survival in the Santa Clara and Santa Ynez River Estuaries"
+    ],
+    "container-title": [
+      "Prepared for the California Department of Fish and Game Fisheries Restoration Grant Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Keir"
+      },
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Fifty-Five South-Central/Southern California Steelhead DPS Conservation Action Planning (CAP) Workbooks"
+    ],
+    "medium": [
+      "(DVD)."
+    ],
+    "type": "motion_picture"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-02-01"
+    ],
+    "title": [
+      "Comment letter to Fillmore and Piru Basins Groundwater Management Sustainability Agency"
+    ],
+    "container-title": [
+      "Re: Draft Technical Memorandum – Assessment of Groundwater Dependent Ecosystems for the Fillmore and Piru Basins Groundwater Management Sustainability Plan"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2020",
+      "2017-03-21"
+    ],
+    "title": [
+      "Comment Letter to Fox Canyon Groundwater Management Agency"
+    ],
+    "container-title": [
+      "Re: Preliminary Draft Groundwater Sustainability Plan for the Oxnard Subbasin"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "South-Central/Southern California Coast Steelhead Recovery Planning Domain. 5-Year Review: Summary and Evaluation. Southern California Coast Steelhead District Population segment National Marine Fisheries Service"
+    ],
+    "publisher": [
+      "West Coast Region. California Coastal Office"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Southern California Steelhead Recovery Plan"
+    ],
+    "publisher": [
+      "National Marine Fisheries Service, West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-07-23"
+    ],
+    "title": [
+      "Biological Opinion for the Vern Freeman Diversion Dam"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-05-05"
+    ],
+    "title": [
+      "Biological Opinion for the Santa Felicia Hydroelectric Project"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Reid",
+        "given": "Stewart B."
+      }
+    ],
+    "date": [
+      "2015",
+      "2014"
+    ],
+    "title": [
+      "Assessment of occupancy and potential habitat for Pacific Lamprey (Entosphenus tridentatus) in the"
+    ],
+    "location": [
+      "Santa Clara River drainage"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Prepared for the United Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sophocleous",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2002",
+      "2002"
+    ],
+    "title": [
+      "Interactions between Groundwater and Surface Water: The State of the Science"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "52–67"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Papadopulos",
+        "given": "S.S."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Mound Basin Water Quality and Isotope Study, Ventura County, California, prepared for the Mound Basin Groundwater Sustainability Agency, February"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stein",
+        "given": "E.D."
+      },
+      {
+        "family": "Cayce",
+        "given": "K."
+      },
+      {
+        "family": "Salomon",
+        "given": "M."
+      },
+      {
+        "family": "Bram",
+        "given": "D.L."
+      },
+      {
+        "family": "Mello",
+        "given": "D.",
+        "particle": "De"
+      },
+      {
+        "family": "Grossinger",
+        "given": "R."
+      },
+      {
+        "family": "Dark",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Wetlands of the Southern California Coast – Historical Extent and Change Over Time"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Southern California Coastal Water Research Project, San Francisco Estuary Institute, California State University, Northridge Center for Geographical Studies"
+    ],
+    "container-title": [
+      "Southern California Coastal Water Research Project Technical Report No"
+    ],
+    "note": [
+      "826 and San Francisco Estuary Institute Report No. 720."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2005",
+      "2005-08"
+    ],
+    "title": [
+      "Santa Clara River Parkway Floodplain Restoration Feasibility Study: Assessment of Geomorphic Processes"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the California Coastal Conservancy"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-10"
+    ],
+    "title": [
+      "Santa Clara River Parkway Floodplain Restoration Feasibility Study. Focal Species Analysis and Habitat Characterization for the Lower Santa Clara River and Major Tributaries, Ventura County, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the California Coastal Conservancy"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-08"
+    ],
+    "title": [
+      "Assessment of Geomorphic Processes for the Santa Clara River Watershed, Ventura and Los Angeles Counties, California"
+    ],
+    "genre": [
+      "Final Report"
+    ],
+    "note": [
+      "Prepared for the California Coastal Conservancy."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Geomorphic Assessment of the Santa Clara River Watershed, Synthesis of the Lower and Upper Watersheds, Ventura and Los Angeles Counties, California. Prepared for Ventura County Watershed Protection District"
+    ],
+    "publisher": [
+      "Los Angeles County Department of Public Works, and U.S. Army Corps of Engineers"
+    ],
+    "location": [
+      "Los Angeles District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Estuary Subwatershed Study Assessment of the Physical and Biological Condition of the"
+    ],
+    "location": [
+      "Santa Clara River Estuary, Ventura County, California"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Amended Final Report",
+      "Prepared for the City of Ventura"
+    ],
+    "date": [
+      "2011-09"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Draft Report, City of Ventura Special Studies—Phase 3: Assessment of the Physical and Biological Conditions of the"
+    ],
+    "location": [
+      "Santa Clara River Estuary, Ventura County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stover",
+        "given": "J.E.E.A.Keller"
+      },
+      {
+        "family": "Dudley",
+        "given": "T.L."
+      },
+      {
+        "family": "Langendoen.2018",
+        "given": "E.J."
+      },
+      {
+        "family": "Swift",
+        "given": "C.C."
+      },
+      {
+        "family": "Hagland",
+        "given": "T.R."
+      },
+      {
+        "family": "Ruiz",
+        "given": "M."
+      },
+      {
+        "family": "Fisher",
+        "given": "Robert N."
+      }
+    ],
+    "title": [
+      "Fluvial Geomorphology, Root Distribution, and Tensile Strength of the Invasive Giant Reed, Arundo Donax and its Role on Stream Bank Stability in the Santa Clara River, Southern California",
+      "The Status and Distribution of the Freshwater Fishes of Southern California"
+    ],
+    "volume": [
+      "8",
+      "92"
+    ],
+    "date": [
+      "1993"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geosciences",
+      "Bulletin of the Southern California Academy of Sciences"
+    ],
+    "issue": [
+      "304",
+      "3"
+    ],
+    "pages": [
+      "1–30",
+      "101–167"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act"
+    ],
+    "publisher": [
+      "Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Technical Memorandum – Draft Assessment of Groundwater Dependent Ecosystems for the Oxnard Subbasin Groundwater Sustainability Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act"
+    ],
+    "publisher": [
+      "Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Enhancing Water Supply through Invasive Plan Removal: A Literature Review of Evapotranspiration Studies of Arundo Donax"
+    ],
+    "publisher": [
+      "California Groundwater Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater Resource Hub: GDE Rooting Depths Database"
+    ],
+    "note": [
+      "Available for download at"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgmatools/gde-rooting-depths-database-for-gdes/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Coast"
+      }
+    ],
+    "date": [
+      "1855"
+    ],
+    "title": [
+      "Map of Part of the Coast of California from San Buenaventura southward to River Santa Clara"
+    ],
+    "translator": [
+      {
+        "family": "W. M. Johnson",
+        "given": "Surveyed",
+        "particle": "by"
+      }
+    ],
+    "note": [
+      "Register 683. Coastal Topographic Sheet T-683."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Coast"
+      }
+    ],
+    "date": [
+      "1855"
+    ],
+    "title": [
+      "Map of Part of the Coast of California from Santa Clara River southward to Port Hueneme"
+    ],
+    "translator": [
+      {
+        "family": "W. M. Johnson",
+        "given": "Surveyed",
+        "particle": "by"
+      }
+    ],
+    "note": [
+      "Register 576. Coastal Topographic Sheet T-576."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model and Updated Hydrogeologic Conceptual Model: Oxnard Plain, Oxnard Forebay, Pleasant Valley, West Las Posas, and Mound Basins"
+    ],
+    "note": [
+      "United Water Conservation District Open-File Report 2018-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model Expansion and Updated Hydrogeologic Conceptual Model: Santa Paula, Fillmore, and Piru Groundwater Basins"
+    ],
+    "note": [
+      "United Water Conservation District Open-File Report 2021-01, (month)."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model 2016-2019 Validation: Piru"
+    ],
+    "location": [
+      "Fillmore, Santa Paula, Mound, Oxnard, Pleasant Valley"
+    ],
+    "publisher": [
+      "and West Las Posas Valley Basins"
+    ],
+    "note": [
+      "United Water Conservation District Open-File Report 2021-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "United Water Conservation"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Technical Memorandum—Implementation of Groundwater Model Inputs for Simulations in Support of Groundwater Sustainability Plan Development by the Mound, Fillmore, and Piru Groundwater Sustainability Agency"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "volume": [
+
+    ],
+    "publisher": [
+      "Water Quality and Water Quality Problems, Ventura County, February"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ],
+    "issue": [
+      "75"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "West",
+        "given": "Fugro"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Calendar Year 1995 Annual Report, Mound Groundwater Basin, Ventura County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "unpublished consultant’s report prepared for City of San Buenaventura, January."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Geotechnical"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "Hydrogeologic Investigation of the Mound Groundwater Basin for the City of"
+    ],
+    "location": [
+      "San Buenaventura, California"
+    ],
+    "note": [
+      "unpublished consultant’s report prepared for City of San Buenaventura."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Gutierrez",
+        "given": "C."
+      },
+      {
+        "family": "Siang",
+        "given": "S."
+      },
+      {
+        "family": "Clahan",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Geologic Map of the East Half Santa Barbara 30’ x 60"
+    ],
+    "location": [
+      "Quadrangle, California, California Geological Survey, January"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Koczot",
+        "given": "K.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Simulation of ground-water/surface water flow in the Santa Clara-Calleguas ground-water basin, Ventura County, California, U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 02-4136,"
+    ],
+    "volume": [
+      "214p"
+    ],
+    "url": [
+      "https://pubs.er.usgs/usgspubs/wri/"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Ground-Water Hydrology—U.S"
+    ],
+    "container-title": [
+      "Geological Survey Water-Supply Paper 2220"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Hopkins Groundwater Consultants, Inc",
+      "Preliminary Hydrogeological Study—Phase 3 Santa Clara River Estuary Groundwater Special Study"
+    ],
+    "location": [
+      "Hopkins"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Ventura, California, prepared for City of San Buenaventura, February."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Final Draft Preliminary Hydrogeological Study—Mound Basin Groundwater Conditions and Perennial Yield Study, prepared for City of"
+    ],
+    "location": [
+      "San Buenaventura, March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mann",
+        "given": "John F.",
+        "suffix": "Jr."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "A Plan for Groundwater Management—United Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Papadopulos",
+        "given": "S.S."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Mound Basin Water Quality and Isotope Study, Ventura County, California, prepared for the Mound Basin Groundwater Sustainability Agency, February"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-02"
+    ],
+    "title": [
+      "Final Report, City of Ventura Special Studies—Phase 3: Assessment of the Physical and Biological Conditions of the"
+    ],
+    "location": [
+      "Santa Clara River Estuary, Ventura County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Geologic Map of the Onxard 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Geologic Map of the Ventura 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Geologic Map of the Saticoy 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United Water Conservation District (United",
+      "Hydrogeologic Assessment of the Mound Basin, United Water Conservation District Open-File Report 2012-01"
+    ],
+    "date": [
+      "2012"
+    ],
+    "location": [
+      "May"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Ventura Regional Groundwater Flow Model Expansion and Updated Hydrogeologic Conceptual Model: Santa Paula, Fillmore, and Piru Groundwater Basins"
+    ],
+    "note": [
+      "United Water Conservation District Open-File Report 2021-01."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Buth",
+        "given": "D.G."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Genetic affinities of freshwater populations of Gasterosteus aculeatus with special reference to Gasterosteus aculeatus williamsoni"
+    ],
+    "genre": [
+      "Final Report,"
+    ],
+    "publisher": [
+      "U.S. Forest Service Job Order"
+    ],
+    "pages": [
+      "40–91 5–0–974"
+    ],
+    "location": [
+      "Pasadena, CA"
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "California Natural Resources Agency (CNRA",
+      "Natural Communities Commonly Associated with Groundwater data portal"
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/natural-communities-commonlyassociated-with-groundwater)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Calflora"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Information on wild California plants for conservation, education, and appreciation"
+    ],
+    "location": [
+      "Berkeley, CA"
+    ],
+    "note": [
+      "Updated online and accessed via:"
+    ],
+    "url": [
+      "www.calflora.org."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Wildlife"
+      }
+    ],
+    "title": [
+      "2021a, California Natural Diversity Database (CNDDB"
+    ],
+    "note": [
+      "Updated online and access via:"
+    ],
+    "url": [
+      "https://apps.wildlife.ca.gov/rarefind/view/RareFind.aspx."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Rarefind V"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "2021b, Special Animals List. Biogeographic Data Branch, California Natural Diversity Database"
+    ],
+    "date": [
+      "2021-02"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "2021c, California Sensitive Natural Communities List"
+    ],
+    "date": [
+      "2021-08"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Biogeographic Data Branch, California Natural Diversity Database"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "2021d, Vegetation Classification and Mapping Program (VegCAMP"
+    ],
+    "note": [
+      "Updated online and accessed via:"
+    ],
+    "url": [
+      "https://wildlife.ca.gov/Data/VegCAMP"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "2021e, Special Vascular Plants, Bryophytes, and Lichens List"
+    ],
+    "date": [
+      "2021-01"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Biogeographic Data Branch, California Natural Diversity Database"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Society",
+        "given": "California Native Plant"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "A Manual of California Vegetation. Prepared by Sawyer et al"
+    ],
+    "edition": [
+      "2nd"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://vegetation.cnps.org/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Society",
+        "given": "California Native Plant"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Inventory of Rare and Endangered Plants"
+    ],
+    "genre": [
+      "V.7-08c-Interim 8-22-02."
+    ],
+    "note": [
+      "Updated online and accessed via:"
+    ],
+    "url": [
+      "www.rareplants.cnps.org."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Ventura",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "City of San Buenaventura Historic Landmarks, Districts, And Points of Interest"
+    ],
+    "note": [
+      "Point of Interest Number 60, Allesandro Lagoon. Available at"
+    ],
+    "url": [
+      "https://map.cityofventura.net/docs/historic/60.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ornithology",
+        "given": "Cornell Lab",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "2021a, eBird: An online database of bird distribution and abundance"
+    ],
+    "genre": [
+      "[web application]. eBird,"
+    ],
+    "location": [
+      "Ithaca, New York"
+    ],
+    "note": [
+      "Updated online and access via:"
+    ],
+    "url": [
+      "http://www.ebird.org."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Ornithology",
+        "given": "Cornell Lab",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "All About Birds"
+    ],
+    "note": [
+      "Updated online and accessed at:"
+    ],
+    "url": [
+      "https://www.allaboutbirds.org/."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Online Guide"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dagit",
+        "given": "R."
+      },
+      {
+        "family": "Booth",
+        "given": "M.T."
+      },
+      {
+        "family": "Gomez",
+        "given": "M."
+      },
+      {
+        "family": "Hovey",
+        "given": "T."
+      },
+      {
+        "family": "Howard",
+        "given": "S."
+      },
+      {
+        "family": "Lewis",
+        "given": "S.D."
+      },
+      {
+        "family": "Jacobson",
+        "given": "S."
+      },
+      {
+        "family": "Larson",
+        "given": "M."
+      },
+      {
+        "family": "McCanne",
+        "given": "D."
+      },
+      {
+        "family": "Robinson",
+        "given": "T.H."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Occurrences of Steelhead Trout (Oncorhynchus mykiss) in Southern California 1994-2018"
+    ],
+    "volume": [
+      "106"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Fish and Wildlife"
+    ],
+    "issue": [
+      "1"
+    ],
+    "pages": [
+      "39–58"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Geologic Map of the Ventura and Pitas Point Quadrangles, Ventura County, California"
+    ],
+    "editor": [
+      {
+        "family": "Ehrenspeck",
+        "given": "Helmut E."
+      }
+    ],
+    "container-title": [
+      "published in cooperation with California Department of Conservation, Division of Mines and Geology; and U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Geologic Map of the Saticoy Quadrangle, Ventura County, California"
+    ],
+    "editor": [
+      {
+        "family": "Helmut",
+        "given": "E."
+      }
+    ],
+    "container-title": [
+      "Ehrenspeck, published in cooperation with California Department of Conservation, Division of Mines and Geology; and U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Giessow",
+        "given": "J."
+      },
+      {
+        "family": "J",
+        "given": "Cassanova"
+      },
+      {
+        "family": "Leclerc",
+        "given": "R."
+      },
+      {
+        "family": "MacArthur",
+        "given": "R."
+      },
+      {
+        "family": "Fleming",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Arundo donax (giant reed"
+    ],
+    "note": [
+      "Submitted to the State Water Resources Control Board. Submitted by the California Invasive Plant Council (Cal-IPC)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Distribution and Impact Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Grossinger",
+        "given": "R."
+      },
+      {
+        "family": "Stein",
+        "given": "E."
+      },
+      {
+        "family": "Cayce",
+        "given": "K."
+      },
+      {
+        "family": "Askevold",
+        "given": "R."
+      },
+      {
+        "family": "Dark",
+        "given": "S."
+      },
+      {
+        "family": "Whipple",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Historical Wetlands of the Southern California Coast: An Atlas of U.S"
+    ],
+    "container-title": [
+      "Coast Survey T-sheets, 1851-1889, San Francisco Estuary Institute Contribution #586 and Southern California Coastal Water Research Project Technical Report #589"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Gutierrez",
+        "given": "C."
+      },
+      {
+        "family": "Tan",
+        "given": "S."
+      },
+      {
+        "family": "Clahan",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Geologic Map of the East Half Santa Barbara 30’ x 60"
+    ],
+    "location": [
+      "Quadrangle, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hall",
+        "given": "L.S."
+      },
+      {
+        "family": "Orr",
+        "given": "B.K."
+      },
+      {
+        "family": "Hatten",
+        "given": "J.R."
+      },
+      {
+        "family": "Lambert",
+        "given": "A."
+      },
+      {
+        "family": "Dudley",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-03-26"
+    ],
+    "title": [
+      "Final Report: Southwestern Willow Flycatcher (Empidonax traillii extimus) and Western Yellow-billed Cuckoo (Coccyzus americanus occidentalis) surveys and habitat availability modeling on the"
+    ],
+    "location": [
+      "Santa Clara River, California"
+    ],
+    "note": [
+      "Submitted to the California Department of Fish and Wildlife."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "J.",
+        "given": "Howard"
+      },
+      {
+        "family": "T.",
+        "given": "Keeler-Wolf"
+      },
+      {
+        "family": "K.",
+        "given": "Davis-Fadtke"
+      },
+      {
+        "family": "R.",
+        "given": "Hull"
+      },
+      {
+        "family": "A",
+        "given": "Lyons"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping Indicators of Groundwater dependent ecosystems in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Labinger",
+        "given": "Z."
+      },
+      {
+        "family": "Greaves",
+        "given": "J."
+      },
+      {
+        "family": "Gervirtz",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Avian Populations on the Santa Clara River in 2005 and 2006. An Evaluation and Monitoring Tool for Habitat Restoration"
+    ],
+    "container-title": [
+      "Prepared for the Santa Clara River Trustee Council. Ventura County and Los Angeles County"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Oceanic",
+        "given": "National"
+      },
+      {
+        "family": "Administration",
+        "given": "Atmospheric"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "note": [
+      "Critical Habitat Designations, Maps, and GIS Data. Available at"
+    ],
+    "url": [
+      "https://www.fisheries.noaa.gov/national/endangered-speciesconservation/critical-habitat."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Southern California Steelhead Recovery Plan. Southwest Region, Protected Resources Division"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Environmental",
+        "given": "Nautilus"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Comprehensive Analysis of Enhancements and Impacts Associated with Discharge of Treated Effluent from the Ventura Water Reclamation Facility to the Santa Clara River Estuary"
+    ],
+    "publisher": [
+      "Prepared for the City of San Buenaventura Ventura Water Reclamation Facility"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Puckett",
+        "given": "L.K."
+      },
+      {
+        "family": "Villa",
+        "given": "N.A."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Santa Clara River Steelhead Study"
+    ],
+    "publisher": [
+      "California Department of Fish and Game"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Richmond",
+        "given": "J."
+      },
+      {
+        "family": "Fisher",
+        "given": "R."
+      },
+      {
+        "family": "Backlin",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Loss of dendritic connectivity in southern California’s urban riverscape facilitates decline of an endemic freshwater fish"
+    ],
+    "volume": [
+      "27"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Molecular Ecology"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Seapy",
+        "given": "B."
+      },
+      {
+        "family": "Rogers",
+        "given": "R."
+      },
+      {
+        "family": "Castañeda",
+        "given": "X."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A compendium of California’s threatened and endangered species for sustainable groundwater management"
+    ],
+    "container-title": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Council",
+        "given": "Santa Clara River Trustee"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Santa Clara River Watershed Amphibian and Macroinvertebrate Bioassessment Project"
+    ],
+    "container-title": [
+      "Prepared by The Wishtoyo Foundation in association with South Coast Wildlands"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Papadopulos",
+        "given": "S.S."
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Mound Basin Water Quality and Isotope Study, Ventura County, California, prepared for the Mound Basin Groundwater Sustainability Agency, February"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "Stillwater"
+      }
+    ],
+    "date": [
+      "2011",
+      "September"
+    ],
+    "title": [
+      "City of Ventura Special Studies: Estuary Subwatershed Study Assessment of the Physical and Biological Condition of the Santa Clara River Estuary, Ventura County"
+    ],
+    "genre": [
+      "California—Amended Final Report,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Swift",
+        "given": "C."
+      },
+      {
+        "family": "Howard",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Current Status and Distribution of the Pacific Lamprey South of Point Conception"
+    ],
+    "location": [
+      "Coastal Southern California, USA"
+    ],
+    "publisher": [
+      "American Fisheries Society Symposium"
+    ],
+    "volume": [
+      "72"
+    ],
+    "pages": [
+      "269–278"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act—Guidance for Preparing Groundwater Sustainability Plans, January"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Unarmored threespine stickleback recovery plan (revised"
+    ],
+    "publisher": [
+      "U.S. Fish Wild. Ser"
+    ],
+    "location": [
+      "Portland, OR"
+    ],
+    "pages": [
+      "80"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      },
+      {
+        "given": "Portland"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Recovery Plan for the Tidewater Goby (Eucyclogobius newberryi"
+    ],
+    "volume": [
+      "vi +"
+    ],
+    "pages": [
+      "199"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Oregon"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Draft Recovery Plan for the Santa Ana sucker",
+      "Pacific Southwest Region"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "note": [
+      "v + 61 pp.United States Geological Survey (USGS), 1903, Topographic Map of the Santa Paula 7.5’ Quadrangle."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Critical Habitat Portal"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://services.arcgis.com/QVENGdaPbd4LUkLV/ArcGIS/rest/services/USFWS_Critical_Habitat/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS",
+      "Topographic Map of the Santa Paula 7.5’ Quadrangle"
+    ],
+    "date": [
+      "1903"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1904"
+    ],
+    "title": [
+      "Topographic Map of the Ventura 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1904"
+    ],
+    "title": [
+      "Topographic Map of the Hueneme 15’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1949",
+      "1967"
+    ],
+    "title": [
+      "Topographic Map of the Oxnard 7.5’ Quadrangle"
+    ],
+    "edition": [
+      "Photo revised in"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Topographic Map of the Ventura 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "1967"
+    ],
+    "title": [
+      "Topographic Map of the Saticoy 7.5’ Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United Water Conservation District (United",
+      "Ventura Regional Groundwater Flow Model and Updated Hydrogeologic Conceptual Model: Oxnard Plain, Oxnard Forebay, Pleasant Valley, West Las Posas, and Mound Basins, United Water Conservation"
+    ],
+    "date": [
+      "2018",
+      "July"
+    ],
+    "genre": [
+      "District Open-File Report 2018-02,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+
+    ],
+    "date": [
+      "2020",
+      "July"
+    ],
+    "title": [
+      "telephone communication with John Lindquist, Senior Hydrogeologist"
+    ],
+    "publisher": [
+      "Xerces Society"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Western Monarch Count. Overwintering Site Map"
+    ],
+    "note": [
+      "Updated online and available at:"
+    ],
+    "url": [
+      "https://www.westernmonarchcount.org/find-an-overwinterinH-site-near-you/"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "WRA",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Biological Resources Technical Report. Santa Clara River Estuary Habitat Restoration Project"
+    ],
+    "location": [
+      "Oxnard, Ventura County, California"
+    ],
+    "note": [
+      "Prepared for Wishtoyo Foundation."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Society",
+        "given": "Xerces"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Western Monarch Count. Find an Overwintering Site Map"
+    ],
+    "note": [
+      "Updated online and available at:"
+    ],
+    "url": [
+      "https://www.westernmonarchcount.org/find-an-overwinterinH-site-near-you/"
+    ],
+    "type": "webpage"
+  },
+  {
+    "citation-number": [
+      "02N22W09L04S"
+    ],
+    "container-title": [
+      "Hueneme"
+    ],
+    "pages": [
+      "–206 94 83 2000 24 10 –142 85"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "02N22W10N03S"
+    ],
+    "title": [
+      "Hueneme -45.02 83"
+    ],
+    "date": [
+      "2000"
+    ],
+    "pages": [
+      "24 10 –98 25"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "02N22W17Q05S"
+    ],
+    "container-title": [
+      "Hueneme"
+    ],
+    "pages": [
+      "–269 52 83 2000 24 10 –205 42"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "02N22W07M01S"
+    ],
+    "author": [
+      {
+        "given": "Hueneme"
+      }
+    ],
+    "date": [
+      "1041"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "–977 27"
+    ],
+    "issue": [
+      "10"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "02N22W17M02S"
+    ],
+    "title": [
+      "Hueneme -345.08 83 2000 24.10 -280.99 02N22W20E01S Hueneme -273.97 83 2000 24.10 -209.87 02N23W13K03S Hueneme -711.48 83 2000 24.10 -647.39 02N23W13K04S Hueneme"
+    ],
+    "pages": [
+      "–703 22 83 2000 24 10 –639 12",
+      "–824 31 83 2000 24 10 –760 21"
+    ],
+    "container-title": [
+      "02N23W15J01S Hueneme"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "02N23W24G01S"
+    ],
+    "container-title": [
+      "Hueneme"
+    ],
+    "pages": [
+      "–552 57 83 2000 24 10 –488 48"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "02N22W08G01S"
+    ],
+    "title": [
+      "Mugu -107.88 60"
+    ],
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "33"
+    ],
+    "pages": [
+      "–34 55",
+      "–57 21 60 2000 33 33 16 12"
+    ],
+    "container-title": [
+      "02N22W08P01S Mugu"
+    ],
+    "issue": [
+      "33"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "02N22W07M02S"
+    ],
+    "title": [
+      "Mugu -414.68 60"
+    ],
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "33"
+    ],
+    "pages": [
+      "–341 34",
+      "–262 96 60 2000 33 33 –189 62"
+    ],
+    "container-title": [
+      "02N22W07P01S Mugu"
+    ],
+    "issue": [
+      "33"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "02N22W19M04S"
+    ],
+    "title": [
+      "Mugu -212.99 60"
+    ],
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "33"
+    ],
+    "pages": [
+      "–139 66",
+      "–454 22 60 2000 33 33 –380 88"
+    ],
+    "container-title": [
+      "02N23W15J02S Mugu"
+    ],
+    "issue": [
+      "33"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "If the General Site ID or any field in the streamflow data needs to be corrected, then go back to the Excel template in Step 1, edit the information, and repeat Steps 1"
+    ],
+    "pages": [
+      "– 4"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "Run the “append_IMPORT_to_Staging” query. Click “Yes” to confirm. This adds the source data from the “wq_source_data” table to the “import_water_quality” table"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "title": [
+      "Run the “update_import_water_quality_rpt_unit_for_PH” query. Click “Yes” to confirm. This assigns the unit S.U. to the PH laboratory analytes"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "title": [
+      "Open the “Exclusions_import_water_quality” table. If the table is not empty, then delete all records in it. After making sure that it is empty, close the table"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "15."
+    ],
+    "title": [
+      "Run the “check_import_water_quality_results_not_loaded” query to see which new data were not added to the master “dt_results” table"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "If the location or any field in the pumping data needs to be corrected, then go back to the Excel template in Step 1, edit the information, and repeat Steps 1"
+    ],
+    "pages": [
+      "– 4"
+    ],
+    "type": null
+  }
+]

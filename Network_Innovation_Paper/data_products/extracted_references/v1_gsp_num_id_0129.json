@@ -1,0 +1,6105 @@
+[
+  {
+    "author": [
+      {
+        "given": "A.C.O.E."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Ballona Creek and Tributaries, Los Angeles County Drainage Area"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bawden",
+        "given": "Gerald"
+      }
+    ],
+    "date": [
+      "2003",
+      "November 27-29, 2001"
+    ],
+    "title": [
+      "Separating Ground-Water and Hydrocarbon-Induced Surface Deformation from Geodetic Tectonic Contraction Measurements Across Metropolitan Los Angeles, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Subsidence Interest Group Conference, Proceedings of the Technical Meeting"
+    ],
+    "location": [
+      "Galveston, Texas"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Potential for Future Land Subsidence in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Guidance Document for the Sustainable Management of Groundwater: Groundwater Sustainability Plan Annotated Outline"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Guidance Document for the Sustainable Management of Groundwater: Preparation Checklist for GSP Submittal"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization: Process and Results"
+    ],
+    "note": [
+      "excel spreadsheet). Downloaded from:",
+      "Accessed February 2020."
+    ],
+    "url": [
+      "https://water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act: Water Quality Frequently Asked Questions"
+    ],
+    "note": [
+      "Downloaded from:",
+      "Accessed January 2021."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "October"
+    ]
+  },
+  {
+    "title": [
+      "SMBGSA has been discussing the development of a GSP since 2016. Public meetings in which the participants discussed SGMA, the SMBGSA, or took action on the GSP are listed below: • May 2, 2017"
+    ],
+    "container-title": [
+      "LADWP Board Meeting • May 9, 2017 – City of Santa Monica Council Meeting • May 23, 2017 – County of Los Angeles Board of Supervisors Meeting •"
+    ],
+    "note": [
+      "May 30, 2017 – City of Culver City Council Meeting • June 13, 2017 – City of Beverly Hills Council Meeting • July 23, 2019 – City of Santa Monica Council Meeting • December 19, 2019 – SMBGSA Public Workshop"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "Mountain-Front Areal from Urban Total Santa Monica To Ballona Hollywood Central Coast Net Flow to Groundwater Total Storage Year Water Year Type Recharge2 Recharge3 Irrigation Recharge Mountains Creek Basin Basin Basin the Ocean Extractions Outflow (Acre-Feet)1 1985 Dry 2,800"
+    ],
+    "pages": [
+      "400 900 4,100 1,900 100 –200 –400 1,400 –1,000 9,000 11,000 –6,900"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "volume": [
+      "Wet 6,600 1,500 3,200 11,300"
+    ],
+    "pages": [
+      "2,700 100 –100 –400 1,400 –1,000 9,200 11,900 –500"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Below Normal 1,300"
+    ],
+    "pages": [
+      "200 600 2,100 900 0 –300 –400 1,300 –1,300 8,800 9,100 –7,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "2,500"
+    ],
+    "pages": [
+      "400 900 3,700 900 0 –200 –400 1,000 –1,600 9,000 8,700 –4,900"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "2,300"
+    ],
+    "pages": [
+      "400 800 3,500 600 0 –200 –400 1,100 –1,600 7,800 7,300 –3,800"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "pages": [
+      "400 100 300 700 100 0 –300 –400 1,500 –1,200 5,000 4,700 –4,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "3,500"
+    ],
+    "pages": [
+      "400 700 4,600 300 0 –200 –300 1,500 –1,100 5,600 5,800 –1,200"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Critical"
+    ]
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "Wet 9,400 1,900 3,400 14,700 2,100 0 0 -400 1,600 -1,300 8,000 10,000"
+    ],
+    "pages": [
+      "4,800"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "Wet 14,200 6,100 6,200 26,500"
+    ],
+    "pages": [
+      "4,800 100 100 –500 1,000 –1,200 9,400 13,700 12,800"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Above Normal 1,900"
+    ],
+    "volume": [
+      "400 1,300 3,700 1,900 0"
+    ],
+    "pages": [
+      "–200 –500 500 –1,400 9,400 9,700 –6,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "Wet 11,100 4,100 6,500 21,700 4,400 100 0"
+    ],
+    "pages": [
+      "–500 400 –1,100 10,000 13,200 8,500"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "3,900"
+    ],
+    "pages": [
+      "900 2,300 7,100 2,500 100 –200 –500 1,200 –800 5,700 8,000 –1,000"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "6,800 1,900 3,800 12,400 3,100"
+    ],
+    "pages": [
+      "200 –100 –500 1,800 0 2,900 7,300 5,200"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "Wet 13,800 6,700 8,400 28,900 6,000 1,400"
+    ],
+    "pages": [
+      "100 –700 2,000 700 2,700 12,100 16,700"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Above Normal 1,400"
+    ],
+    "pages": [
+      "400 1,500 3,400 2,900 900 –200 –600 2,500 600 3,000 9,100 –5,700"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "3,600"
+    ],
+    "pages": [
+      "700 1,700 6,000 2,200 800 –200 –500 2,500 600 3,300 8,700 –2,600"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2001"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "6,700 1,600 3,400 11,600 3,000"
+    ],
+    "pages": [
+      "900 –100 –500 2,500 700 3,200 9,700 2,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "pages": [
+      "700 100 600 1,400 1,200 700 –200 –500 2,900 700 2,300 7,100 –5,600"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "2,000 400 1,200 3,600 900 700 –200 –500 2,900 800 1,400 6,100 –2,500"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2004"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "2,600 400 1,000 4,100 600 700 –200 –400 2,900 900 1,100 5,600 –1,500"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "Wet 13,400 5,900 6,900 26,200 4,600 1,800 100 -500 3,000 1,200 2,200 12,400"
+    ],
+    "pages": [
+      "13,900"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "Wet 3,300 600 1,600 5,500 2,200 1,000"
+    ],
+    "pages": [
+      "–100 –400 2,700 900 2,000 8,400 –2,800"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "pages": [
+      "400 100 400 900 800 700 –200 –300 2,600 700 2,300 6,600 –5,700"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "4,600"
+    ],
+    "pages": [
+      "600 900 6,200 1,300 700 –100 –300 2,700 700 2,400 7,400 –1,300"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Critical"
+    ]
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "volume": [
+      "1,900"
+    ],
+    "pages": [
+      "300 800 2,900 600 600 –200 –300 3,000 700 2,400 6,800 –3,900"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Above Normal 5,000"
+    ],
+    "pages": [
+      "800 2,000 7,900 1,200 600 0 –300 2,900 500 3,600 8,500 –600"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "Wet 4,600 1,200 2,900 8,800"
+    ],
+    "pages": [
+      "1,400 500 100 –400 1,800 –100 8,300 11,600 –2,800"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "Robert J."
+      },
+      {
+        "family": "Anderson",
+        "given": "Ray G."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "21st Century California Drought Risk Linked to Model Fidelity of the El Nino Teleconnection"
+    ],
+    "doi": [
+      "10.1038/s41612-018-0032-x"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Climate and Atmospheric Science"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Borchers",
+        "given": "J.W."
+      },
+      {
+        "family": "Carpenter",
+        "given": "M."
+      },
+      {
+        "family": "Grabert",
+        "given": "V.K."
+      },
+      {
+        "family": "Dalgish",
+        "given": "B."
+      },
+      {
+        "family": "Cannon",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-04"
+    ],
+    "title": [
+      "Land subsidence from groundwater use in California. Prepared by Luhdorff and Scalmanini Consulting Engineers with support by California Water Foundation"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CalGEM (California Geologic Energy Management Division",
+      "Well finder"
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "Accessed December 9, 2020."
+    ],
+    "url": [
+      "https://maps.conservation.ca.gov/doggr/wellfinder/#openModal"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Game"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Ballona Wetlands Restoration Project"
+    ],
+    "note": [
+      "State Clearinghouse No. 2012071090. Prepared by ESA. December 2019. Accessed July 8, 2020."
+    ],
+    "url": [
+      "https://wildlife.ca.gov/Regions/5/Ballona-EIR"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Impact Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.A.W.C."
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-06"
+    ],
+    "title": [
+      "2020 Urban Water Management Plan, California American Water Southern Division – Los Angeles County District"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Water Systems Consulting"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.A.W.C."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Annual Water Quality Report"
+    ],
+    "publisher": [
+      "Baldwin Hills"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Cayan",
+        "given": "Daniel R.Tapash Das"
+      },
+      {
+        "family": "Pierce",
+        "given": "David W."
+      },
+      {
+        "family": "Barnett",
+        "given": "Tim P."
+      },
+      {
+        "family": "Tyree",
+        "given": "Mary"
+      },
+      {
+        "family": "Gershunov",
+        "given": "Alexander"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Future Dryness in the Southwest US and the Hydrology of the Early 21st Century Drought"
+    ],
+    "container-title": [
+      "Proceedings of the National Academy of Sciences"
+    ],
+    "doi": [
+      "10.1073/pnas.0912391107."
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "container-title": [
+      "CIMIS (California Irrigation Management Information System). 1999. Reference Evapotranspiration Zones Map"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Accessed June 15, 2020."
+    ],
+    "url": [
+      "https://cimis.water.ca.gov/Content/pdf/CimisRefEvapZones.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Los Angeles",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "L.A. CEQA Thresholds Guide: Your Resource for Preparing CEQA Analyses in Los Angeles"
+    ],
+    "url": [
+      "https://planning.lacity.org/eir/CrossroadsHwd/deir/files/references/A07.pdf."
+    ],
+    "note": [
+      "Accessed: February 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1966",
+      "1966-01-18"
+    ],
+    "title": [
+      "Proposed Water Wells at Marine and 16th Streets (Marine Street Park) Santa Monica"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Unpublished City Memorandum"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1968",
+      "1968-09"
+    ],
+    "title": [
+      "Revised Groundwater Geology and New Water Well Sites for the City of Santa Monica"
+    ],
+    "location": [
+      "Prepared By"
+    ],
+    "publisher": [
+      "T.L. Bailey"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-01-01"
+    ],
+    "title": [
+      "Charnock Annual Groundwater Monitoring Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sub-Basin",
+        "given": "Charnock"
+      }
+    ],
+    "title": [
+      "Los Angeles, California"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ENVIRON International Corporation"
+    ],
+    "date": [
+      "2007-07"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-10"
+    ],
+    "title": [
+      "Olympic Wellfield Groundwater Monitoring Report"
+    ],
+    "container-title": [
+      "Third Quarter 2011"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ICF International"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-02"
+    ],
+    "title": [
+      "Conceptual Groundwater Basin Model and Assessment of Available Groundwater Supplies Santa Monica Groundwater Basin. Prepared by Richard C"
+    ],
+    "publisher": [
+      "Slade and Associates for The City of Santa Monica"
+    ],
+    "location": [
+      "Los Angeles County, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-08"
+    ],
+    "title": [
+      "California Statewide Groundwater Elevation Monitoring (CASGEM) Monitoring Plan for Department of Water Resources Groundwater Subbasin 4-11.01 The Santa Monica Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Olympic Wellfield Site Conceptual Model City of Santa Monica"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "October. Prepared by ICF International."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "2015 City of Santa Monica Urban Water Management Plan"
+    ],
+    "note": [
+      "Prepared by: SA Associates Consulting Engineers (SA). June 2016"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017",
+      "2010-07-06"
+    ],
+    "title": [
+      "City of Santa Monica General Plan Land Use and Circulation Element"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12"
+    ],
+    "title": [
+      "Sustainable Water Master Plan Update"
+    ],
+    "publisher": [
+      "City of Santa Monica"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-05"
+    ],
+    "title": [
+      "Technical Memorandum: Recommended Revised Groundwater Monitoring Schedule for the Charnock Regional Monitoring Wells, Charnock Sub-Basin; Los Angeles California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by: Ramboll"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-01-07"
+    ],
+    "title": [
+      "Early Warning Groundwater Quality Monitoring Report, Charnock Wellfield Restoration Project"
+    ],
+    "container-title": [
+      "Prepared by Advisian Americas for The City of Santa Monica"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-10"
+    ],
+    "title": [
+      "Olympic Wellfield Groundwater Monitoring Report, Third Quarter 2020"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ICF International"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-06",
+      "2020-07"
+    ],
+    "title": [
+      "Charnock Annual Groundwater Monitoring Report",
+      "Prepared by: Ramboll"
+    ],
+    "genre": [
+      "(January –"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-05"
+    ],
+    "title": [
+      "Antidegradation Study"
+    ],
+    "container-title": [
+      "Prepared by: Stantec Consulting Services Inc. and ICF"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Los Angeles",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1987",
+      "1987-11"
+    ],
+    "title": [
+      "County of Los Angeles Environmental Document Reporting Procedures and Guidelines"
+    ],
+    "url": [
+      "https://planning.lacounty.gov/assets/upl/general/LAC_CEQA_Guidelines_1.pdf"
+    ],
+    "note": [
+      "Accessed February 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Los Angeles",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Los Angeles County Flood Control System Webmap"
+    ],
+    "url": [
+      "https://apps.gis.lacounty.gov/"
+    ],
+    "note": [
+      "Accessed September 2020."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.S.P."
+      }
+    ],
+    "date": [
+      "1992",
+      "1992-03"
+    ],
+    "publisher": [
+      "Will Rogers State Historic Park General Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Oil",
+        "given": "Division",
+        "particle": "of"
+      },
+      {
+        "family": "Gas"
+      },
+      {
+        "family": "Resources",
+        "given": "Geothermal"
+      }
+    ],
+    "date": [
+      "1992",
+      "1992"
+    ],
+    "volume": [
+      "II"
+    ],
+    "container-title": [
+      "– Southern, Central Coastal, and Offshore California Oil and Gas Fields",
+      "California Oil & Gas Fields"
+    ],
+    "pages": [
+      "–1"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Dolan",
+        "given": "James"
+      },
+      {
+        "family": "Sieh",
+        "given": "Kerry"
+      },
+      {
+        "family": "Rockwell",
+        "given": "Thomas Geological Society of America"
+      }
+    ],
+    "date": [
+      "2000",
+      "2000-10"
+    ],
+    "title": [
+      "Late Quaternary activity and seismic potential of the Santa Monica fault system, Los Angeles, California"
+    ],
+    "volume": [
+      "112"
+    ],
+    "pages": [
+      "1559–1581"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "GSA Bulletin"
+    ],
+    "issue": [
+      "10"
+    ]
+  },
+  {
+    "title": [
+      "DPH (Los Angeles County Environmental Health Division",
+      "Requirements and Procedures for Private Residential and Commercial Water Wells"
+    ],
+    "date": [
+      "2020"
+    ],
+    "container-title": [
+      "Los Angeles County Environmental Health Division, Drinking Water Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1961"
+    ],
+    "title": [
+      "Planned Utilization of the Ground Water Basins of the Coastal Plain of Los Angeles County"
+    ],
+    "volume": [
+      "104"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Appendix A, Ground Water Geology. Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1981"
+    ],
+    "title": [
+      "Water Well Standards (Bulletins 74-81 and 74-90 combined"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/"
+    ],
+    "note": [
+      "Accessed: February 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "California’s Groundwater, Bulletin 118"
+    ],
+    "publisher": [
+      "Coastal Plain of Los Angeles Groundwater Basin"
+    ],
+    "location": [
+      "Santa Monica Basin"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Potential for Future Land Subsidence in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater–Water Budget BMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater–Monitoring Protocols, Standards, and Sites BMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-07"
+    ],
+    "title": [
+      "Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-04"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Process and Results"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-08"
+    ],
+    "title": [
+      "Urban Water Management Plan Guidebook 2020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Draft"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-01"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act Water Year Type Dataset Development Report"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Draft"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "GeoTrans",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2005",
+      "2005"
+    ],
+    "title": [
+      "Charnock Groundwater Modeling Technical Memorandum to the Charnock Engineering Committee (CEC"
+    ],
+    "volume": [
+      "2"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Information Review (Groundwater Modeling Subtask"
+    ],
+    "issue": [
+      "vember 7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Ingersoll",
+        "given": "R.V."
+      },
+      {
+        "family": "Rumelhart",
+        "given": "P.E."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Three-Stage Evolution of the Los Angeles Basin, Southern California"
+    ],
+    "volume": [
+      "27"
+    ],
+    "pages": [
+      "593–596"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geology v"
+    ],
+    "issue": [
+      "7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      },
+      {
+        "family": "Reichard",
+        "given": "E.G."
+      },
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Seawater Intrusion in Aquifers Underlying the Oxnard Plain, Ventura County, California"
+    ],
+    "container-title": [
+      "Proceedings of the 21st Biennial Ground Water Conference"
+    ],
+    "editor": [
+      {
+        "family": "DeVries",
+        "given": "J.J."
+      },
+      {
+        "family": "Woled",
+        "given": "J."
+      }
+    ],
+    "note": [
+      "Water Resources Center Report No. 95."
+    ],
+    "publisher": [
+      "University of California Davis"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Kennedy",
+        "given": "B.L."
+      },
+      {
+        "family": "Patten",
+        "given": "J.R."
+      },
+      {
+        "family": "Alexander",
+        "given": "L.J."
+      },
+      {
+        "family": "Keller",
+        "given": "S.H."
+      }
+    ],
+    "date": [
+      "1965",
+      "1965-08"
+    ],
+    "title": [
+      "Joint Report on the Water Supply in Charnock Groundwater Basin to City Council, City of Santa Monica and Board of Directors, Southern California Water Company"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.C.D.P.W."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Urban Water Management Plan for the Los Angeles County Waterworks District 29"
+    ],
+    "location": [
+      "Malibu"
+    ],
+    "publisher": [
+      "and the Marina del Rey Water System. February"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "LACDRP (County of Los Angeles Department of Regional Planning",
+      "Los Angeles County General Plan"
+    ],
+    "date": [
+      "2015",
+      "2015"
+    ],
+    "volume": [
+      "6"
+    ],
+    "url": [
+      "https://planning.lacounty.gov/generalplan/generalplan."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-12"
+    ],
+    "title": [
+      "Feasibility Report for the Development of Groundwater Resources in the Santa Monica and Hollywood Basins"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by: Kennedy/Jenks Consultants"
+    ]
+  },
+  {
+    "title": [
+      "LADWP (Los Angeles Department of Water and Power) 2016"
+    ],
+    "date": [
+      "2015-06"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Urban Water Management Plan"
+    ]
+  },
+  {
+    "title": [
+      "LADWP (Los Angeles Department of Water and Power",
+      "Operation NEXT"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://www.ladwp.com/"
+    ],
+    "note": [
+      "Accessed January 29, 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Manson",
+        "given": "Steven"
+      },
+      {
+        "family": "Schroeder",
+        "given": "Jonathan"
+      },
+      {
+        "family": "Riper",
+        "given": "David",
+        "particle": "Van"
+      },
+      {
+        "family": "Kugler",
+        "given": "Tracy"
+      },
+      {
+        "family": "Ruggles",
+        "given": "Steven"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "IPUMS National Historical Geographic Information System: Version 15.0. Census Blocks for 1990 and 2000"
+    ],
+    "location": [
+      "Minneapolis, MN"
+    ],
+    "publisher": [
+      "IPUMS"
+    ],
+    "url": [
+      "http://doi.org/10.18128/D050.V15.0"
+    ],
+    "doi": [
+      "10.18128/D050.V15.0"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Services",
+        "given": "M.A.R.R.S."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "Revised Aerially Deposited Lead Survey and Limited Site Investigation Report, Potrero Canyon Park. Prepared by: Ninyo & Moore"
+    ],
+    "volume": [
+      "2"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://documents.geotracker.waterboards.ca.gov/regulators/deliverable_documents/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "August"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.D."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Groundwater Assessment Study: A Status Report on the Use of Groundwater in the Service Area of the Metropolitan Water District of Southern California"
+    ],
+    "note": [
+      "Report Number 1308. September."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "MWD (Metropolitan Water District of Southern California",
+      "MWD Urban Water Management Plan"
+    ],
+    "date": [
+      "2021",
+      "2021-06"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      },
+      {
+        "family": "Siade",
+        "given": "A.J."
+      },
+      {
+        "family": "Reichard",
+        "given": "E.G."
+      },
+      {
+        "family": "Ponti",
+        "given": "D.J."
+      },
+      {
+        "family": "Canales",
+        "given": "A.G."
+      },
+      {
+        "family": "Johnson",
+        "given": "T.A."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Stratigraphic Controls on Seawater Intrusion and Implications for Groundwater Management, Dominguez Gap area of Los Angeles"
+    ],
+    "location": [
+      "California, USA"
+    ],
+    "note": [
+      "Hydrogeology Journal. DOI 10.1007/s10040-009-0481-8."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Playa Capital Company",
+        "given": "L.L.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Third Quarter 2020 Groundwater Monitoring and Remediation System Progress Report"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "CDM Smith. November"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Robinson",
+        "given": "T.W."
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "Phreatophytes"
+    ],
+    "container-title": [
+      "United States Department of the Interior, Geological Survey Water-Supply Paper 1423"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "RWQCB (Los Angeles Regional Water Quality Control Board",
+      "California Regional Water Quality Control Board Los Angeles Region Executive Officer’s Report"
+    ],
+    "date": [
+      "2002",
+      "2002-08"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dennis A. Dickerson, Executive Officer"
+    ]
+  },
+  {
+    "title": [
+      "RWQCB (Los Angeles Regional Water Quality Control Board",
+      "Fact Sheet Waste Discharge Requirements for Playa Capital Company LLC"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Order No. R4-2018-0087. NPDES No. CAG914001, CI-6839, Series No. 049."
+    ],
+    "publisher": [
+      "Playa Vista Site"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "RWQCB (Los Angeles Regional Water Quality Control Board",
+      "Basin Plan for the Coastal Watersheds of Los Angeles and Ventura Counties, Chapter 3: Water Quality Objectives"
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "volume": [
+      "6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.C.A.G."
+      }
+    ],
+    "date": [
+      "2016",
+      "2020"
+    ],
+    "title": [
+      "General Plan Land Use - Los Angeles"
+    ],
+    "url": [
+      "https://services5.arcgis.com/YzWImMY4GtDcMxOx/arcgis/rest/services/Los_Angeles_PL_SCAG/"
+    ],
+    "container-title": [
+      "FeatureServer. GIS FILE"
+    ],
+    "note": [
+      "Accessed November 3,"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.C.A.G."
+      }
+    ],
+    "date": [
+      "2018",
+      "2021"
+    ],
+    "title": [
+      "U.S"
+    ],
+    "container-title": [
+      "Census Blocks in SCAG. https://gisdatascag.opendata.arcgis.com/datasets/756139d1fabd439782c05ec7637b3187_0. GIS FILE Accessed January 17"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.C.A.G."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Demographics and Growth Forecast Technical Report"
+    ],
+    "volume": [
+      "3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted September"
+    ]
+  },
+  {
+    "title": [
+      "USACE (United States Army Corps of Engineers",
+      "Ballona Creek and Tributaries, Los Angeles County Drainage Area"
+    ],
+    "date": [
+      "1982"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "USACE (United States Army Corps of Engineers / California Department of Fish and Wildlife) 2017"
+    ],
+    "container-title": [
+      "Ballona Wetlands Restoration Project: Draft Environmental Impact Statement/Environmental Impact Report"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ESA. September"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "USEPA (United States Environmental Protection Agency",
+      "Ballona Creek Wetlands Total Maximum Daily Loads for Sediment and Invasive Exotic Vegetation"
+    ],
+    "date": [
+      "2012"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Geology, Hydrology, and Chemical Character of Ground Water in the Torrance-Santa Monica Area, California"
+    ],
+    "date": [
+      "1959",
+      "1461"
+    ],
+    "publisher": [
+      "Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Geology of Los Angeles Basin – an Introduction"
+    ],
+    "date": [
+      "1965"
+    ],
+    "genre": [
+      "Professional Paper 420-A."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Geohydrology, Geochemistry, and Ground-Water Simulation-Optimization of the Central and West Coast Basins, Los Angeles County, California"
+    ],
+    "date": [
+      "2003"
+    ],
+    "genre": [
+      "Water-Resources Investigations Report 03-4065."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Streamflow Depletion by Wells – Understanding and Managing the Effects of Groundwater Pumping on Streamflow"
+    ],
+    "date": [
+      "2012",
+      "1376"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Circular"
+    ]
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Estimating Spatially and Temporally Varying Recharge and Runoff from Precipitation and Urban Irrigation in the Los Angeles Basin, California"
+    ],
+    "date": [
+      "2016"
+    ],
+    "genre": [
+      "Scientific Investigations Report 2016–5068."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Development of a Groundwater-Simulation Model in the Los Angeles Coastal Plain, Los Angeles County, California"
+    ],
+    "date": [
+      "2021"
+    ],
+    "genre": [
+      "Scientific Investigations Report 2021–5088."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "VA (United States Department of Veterans Affairs",
+      "Greater Los Angeles Campus Draft Master Plan"
+    ],
+    "date": [
+      "2016",
+      "2016-01-28"
+    ],
+    "url": [
+      "https://www.losangeles.va.gov/masterplan/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Screen Interval (s) Sustainability Indicator(s)b RMP Casing Name Groundwater Monitoring Programa (ft bgs"
+    ],
+    "volume": [
+      "300—380"
+    ],
+    "container-title": [
+      "DDW 151—250 Seawater Intrusion Santa Monica No. 3 DDW 210—270; Seawater Intrusion",
+      "Monitored Santa Monica"
+    ],
+    "pages": [
+      "410–430 490–530"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "note": [
+      "Santa Monica No. 4 DDW 200—410; Seawater Intrusion 470—540 Charnock No. 16 DDW 230—390 Seawater Intrusion Charnock No. 18 DDW 240—455 Seawater Intrusion Charnock No. 19 DDW 200—450 Seawater Intrusion Charnock No. 20 DDW 242—295; Seawater Intrusion"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "No",
+        "given": "Charnock"
+      },
+      {
+        "literal": "Production Silverado X X X — — — X —Charnock No."
+      },
+      {
+        "literal": "Production Silverado X X X — — — X —Charnock No."
+      },
+      {
+        "literal": "Production Silverado X X X — — — X —Charnock No."
+      },
+      {
+        "literal": "Production Silverado X X X — — — X —Charnock No."
+      },
+      {
+        "family": "X",
+        "given": "Production Silverado X.X."
+      },
+      {
+        "literal": "Monitoring Shallow X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X — — — X RMW-4A"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X — — — X RMW-5"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X — — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Lower Silverado X X — X — — — X RMW-9 —"
+      },
+      {
+        "literal": "X — X X — — X RMW-10"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X X — — X RMW-11 —"
+      },
+      {
+        "literal": "X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X — — — X RMW-13 —"
+      },
+      {
+        "literal": "X — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Lower Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X — — — X RMW-29"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X X —"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X X —"
+      },
+      {
+        "literal": "Monitoring Shallow X — — X X —"
+      }
+    ],
+    "volume": [
+      "13",
+      "16",
+      "18",
+      "19",
+      "20"
+    ],
+    "pages": [
+      "– 34 016885 –118 425",
+      "– 34 017516 –118 4253",
+      "– 34 0162 –118 4272",
+      "– 34 016106 –118 425",
+      "– 34 015744 –118 4261",
+      "– – – –1 – 34 015603 –118 4266",
+      "– – – –2 – 34 01787 –118 4251",
+      "– – – –3 – 34 017278 –118 4246",
+      "– – – –4 – 34 016559 –118 4246",
+      "– – – –3 – 34 018273 –118 4257",
+      "– 34 018345 –118 4255",
+      "– 34 013338 –118 4188",
+      "– – – –6 – 34 013459 –118 4189",
+      "– – – –7 – 34 013265 –118 4187",
+      "– – – –8 – 34 014672 –118 4236",
+      "– 34 014634 –118 4236",
+      "– – –12 – 34 013877 –118 4204",
+      "– – – –14 – 34 015865 –118 4233",
+      "– – – –15 – 34 015888 –118 4233",
+      "– – – –16 – 34 015796 –118 4232",
+      "– – – –17 – 34 016479 –118 4238",
+      "– – – –18 – 34 016511 –118 4238",
+      "– – – –19 – 34 012876 –118 4196",
+      "– – –20 – 34 012901 –118 4196",
+      "– – –21 – 34 014182 –118 422",
+      "– – – –22 – 34 014204 –118 422",
+      "– – –23 – 34 015106 –118 4213",
+      "– – – –24 – 34 015082 –118 4213",
+      "– – – –25 – 34 012208 –118 4198",
+      "– – – –27 – 34 015215 –118 4228",
+      "– – – –28 – 34 016025 –118 4222",
+      "– 34 016007 –118 4222",
+      "– –",
+      "– 34 015773 –118 4207",
+      "– – – –31 – 34 015796 –118 4207",
+      "– – – – – – –32 – 34 014539 –118 426",
+      "– – – – – – –33 – 34 014515 –118 426",
+      "– – – – – – –48 – 34 01448 –118 4208",
+      "– – – – – –49 – 34 014447 –118 4208",
+      "– – – – –50 – 34 01513 –118 4202",
+      "– – – – –51 – 34 015106 –118 4202",
+      "– – – – – – –52 – 34 014589 –118 4186",
+      "– – – – – –53 – 34 014566 –118 4186",
+      "– – – – – – –54 – 34 013109",
+      "– – – –55 – 34 013085",
+      "– – – –56 – 34 012325 –118 4224",
+      "– – – – – –57 – 34 012336 –118 4224",
+      "– – – – – –58 – 34 01306 –118 4235",
+      "– – – – – – –59 – 34 013079 –118 4235",
+      "– – – – – – –4 – 34 017975 –118 4135",
+      "– – – –5 – 34 017954 –118 4135",
+      "– – – –6 – 34 026662 –118 4214",
+      "– – –7 – 34 026641 –118 4214",
+      "– – –8 – 34 015028 –118 4168",
+      "– – –9 – 34 015055 –118 4169",
+      "– –"
+    ],
+    "title": [
+      "34.014609 -118.4236 Monitoring Upper Silverado X",
+      "34.013918 -118.4204 Monitoring Upper Silverado X",
+      "34.015245 -118.4228 Monitoring Upper Silverado X"
+    ],
+    "container-title": [
+      "X Table 3-5. GSP Monitoring Network Wells Groundwater Monitoring Networks Monitoring Program Charnock Charnock State Well Identification Regional Early Common Well Name (SWID) Latitude Longitude Well Use Aquifer Elevation Quality Production Monitoring Warning Olympic DDW CASGEM RMW-30",
+      "Monitoring Shallow X",
+      "Monitoring Upper Silverado X",
+      "Monitoring Shallow X",
+      "Monitoring Shallow X",
+      "Monitoring Shallow X",
+      "Monitoring Upper Silverado X X",
+      "Monitoring Shallow X",
+      "Monitoring Upper Silverado X",
+      "Monitoring Shallow X",
+      "Monitoring Upper Silverado X",
+      "Monitoring Shallow X"
+    ],
+    "editor": [
+      {
+        "literal": "Monitoring Upper Silverado X X — X"
+      },
+      {
+        "literal": "Monitoring Upper Silverado X X — X"
+      }
+    ],
+    "note": [
+      "-118.4224 Monitoring Upper Silverado X X — X X",
+      "-118.4224 Monitoring Shallow X — — X X",
+      "Monitoring Shallow X — — X X",
+      "Monitoring Upper Silverado X X — X X",
+      "Monitoring Upper Silverado X X — X X"
+    ],
+    "type": "chapter"
+  },
+  {
+    "container-title": [
+      "Existing Groundwater Monitoring Frequency Groundwater Monitoring Method State Well Common Well Name Identification (SWID) Latitude Longitude Well Use Aquifer Elevation Quality Production Elevation Quality Production Arcadia Wellfield Santa Monica",
+      "Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Charnock No",
+      "Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Charnock No",
+      "Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Charnock No",
+      "Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow",
+      "Monitoring Shallow Semiannual",
+      "Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow",
+      "Monitoring Shallow Semiannual",
+      "Monitoring Shallow Semiannual",
+      "Monitoring Shallow Semiannual",
+      "Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow",
+      "Monitoring Shallow Semiannual"
+    ],
+    "volume": [
+      "34",
+      "34",
+      "34",
+      "13",
+      "16",
+      "18",
+      "19",
+      "20"
+    ],
+    "title": [
+      "-118.4996 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Santa Monica No",
+      "-118.4941 Monitoring Silverado Quarterly — — — Dedicated Pump Totalizer Arcadia No",
+      "-118.4663 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Arcadia No",
+      "-118.4662 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Charnock Wellfield Charnock No",
+      "-118.425 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Charnock No",
+      "-118.4261 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer MW-1 — 34.015603 -118.4266 Monitoring Shallow Semiannual Annual — Sounder — —MW-2 — 34.01787 -118.4251 Monitoring Shallow Semiannual Annual — Sounder — —MW-3 — 34.017278 -118.4246 Monitoring Shallow Semiannual — — Sounder — —MW-4 — 34.016559 -118.4246 Monitoring Shallow Semiannual — — Sounder — —RMW-3 — 34.018273 -118.4257 Monitoring Upper Silverado Semiannual Annual — Sounder Purge and low flow —RMW-4A — 34.018345 -118.4255 Monitoring Shallow Semiannual — — Sounder — —RMW-5 — 34.013338 -118.4188 Monitoring Upper Silverado Semiannual — — Sounder — —RMW-6 — 34.013459 -118.4189 Monitoring Upper Silverado Semiannual Annual — Sounder Purge and low flow —RMW-7 — 34.013265 -118.4187 Monitoring Shallow Semiannual — — Sounder — —RMW-8 — 34.014672 -118.4236 Monitoring Lower Silverado Semiannual Every 3 Years — Sounder Purge and low flow —RMW-9 — 34.014609 -118.4236 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-10 — 34.014634 -118.4236 Monitoring Shallow Semiannual — — Sounder — —RMW-11 — 34.013918 -118.4204 Monitoring Upper Silverado Semiannual Annual — Sounder Purge and low flow RMW-12 — 34.013877 -118.4204 Monitoring Shallow Semiannual — — Sounder — —RMW-13 — 34.015245 -118.4228 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-14 — 34.015865 -118.4233 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-15 — 34.015888 -118.4233 Monitoring Lower Silverado Semiannual Every 3 Years — Sounder Purge and low flow —RMW-16A — 34.015796 -118.4232 Monitoring Shallow Semiannual — — Sounder — —RMW-17 — 34.016479 -118.4238 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-18 — 34.016511 -118.4238 Monitoring Shallow Semiannual — — Sounder — —RMW-19 — 34.012876 -118.4196 Monitoring Upper Silverado Semiannual Annual — Sounder Purge and low flow —RMW-20 — 34.012901 -118.4196 Monitoring Shallow Semiannual",
+      "-118.4207 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-31 — 34.015796 -118.4207 Monitoring Shallow Semiannual — — Sounder — —Table 3-8. GSP Monitoring Schedule Existing Groundwater Monitoring Frequency Groundwater Monitoring Method State Well"
+    ],
+    "pages": [
+      "– 34 016885 –118 425",
+      "– 34 017516 –118 4253",
+      "– 34 0162 –118 4272",
+      "– 34 016106",
+      "– 34 015744",
+      "– – – –21 – 34 014182 –118 422",
+      "– –22 – 34 014204 –118 422",
+      "– – – – –23 – 34 015106 –118 4213",
+      "– –24 – 34 015082 –118 4213",
+      "– – – – –25 – 34 012208 –118 4198",
+      "– – – – –27 – 34 015215 –118 4228",
+      "– – – – –28 – 34 016025 –118 4222",
+      "– –29 – 34 016007 –118 4222",
+      "– – – – –30 – 34 015773"
+    ],
+    "issue": [
+      "1 01S15W31E001S 34.043148",
+      "049807",
+      "043656",
+      "043472"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Identification",
+        "given": "Common Well Name"
+      }
+    ],
+    "title": [
+      "Latitude Longitude Well Use Aquifer Elevation Quality Production Elevation Quality Production RMW-32 — 34.014539 -118.426 Monitoring Upper Silverado Semiannual — — Sounder — —RMW-33 — 34.014515 -118.426 Monitoring Shallow Semiannual — — Sounder — —RMW-48 — 34.01448 -118.4208 Monitoring Shallow Semiannual — — Sounder — —RMW-49 — 34.014447 -118.4208 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-50 — 34.01513 -118.4202 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-51 — 34.015106 -118.4202 Monitoring Shallow Semiannual — — Sounder — —RMW-52 — 34.014589 -118.4186 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-53 — 34.014566 -118.4186 Monitoring Shallow Semiannual — — Sounder — —RMW-54 — 34.013109 -118.4224 Monitoring Upper Silverado Semiannual Semiannual — Sounder Purge and low flow —RMW-55 — 34.013085 -118.4224 Monitoring Shallow Semiannual — — Sounder — —RMW-56 — 34.012325 -118.4224 Monitoring Upper Silverado Semiannual — — Sounder — —RMW-57 — 34.012336 -118.4224 Monitoring Shallow Semiannual — — Sounder — —RMW-58 — 34.01306 -118.4235 Monitoring Upper Silverado Semiannual — — Sounder — —RMW-59 — 34.013079 -118.4235 Monitoring Shallow Semiannual — — Sounder — —RPZ-4 — 34.017975 -118.4135 Monitoring Shallow Semiannual — — Sounder — —RPZ-5 — 34.017954 -118.4135 Monitoring Upper Silverado Semiannual Every 3 Years — Sounder Purge and low flow —RPZ-6 — 34.026662 -118.4214 Monitoring Upper Silverado Semiannual Every 3 Years — Sounder Purge and low flow —RPZ-7 — 34.026641 -118.4214 Monitoring Shallow Semiannual — — Sounder — —RPZ-8 — 34.015028 -118.4168 Monitoring Upper Silverado Semiannual Every 3 Years — Sounder Purge and low flow —RPZ-9 — 34.015055 -118.4169 Monitoring Shallow Semiannual — — Sounder — —Olympic Wellfield Santa Monica",
+      "-118.4602 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer Santa Monica No",
+      "-118.4634 Production Silverado Monthly Monthly Monthly Steel tape Dedicated Pump Totalizer GW-30-3 — 34.028401 -118.4648 Monitoring C Quarterly Quarterly — Sounder Installed dedicated —sampling pump GW-30-5 — 34.028401 -118.4648 Monitoring C Quarterly — — Sounder — —GW-30-6 — 34.028401 -118.4648 Monitoring B Quarterly — — Sounder — —KMW-12 — 34.028048 -118.468 Monitoring C Quarterly Quarterly — Sounder Bailer —MW-11 — 34.028829 -118.4674 Monitoring B Quarterly Quarterly — Sounder Installed dedicated —sampling pump OB-1 — 34.028011 -118.4666 Monitoring C Quarterly Quarterly — Sounder Bailer —OB-2 — 34.029887 -118.4701 Monitoring C"
+    ],
+    "volume": [
+      "34"
+    ],
+    "note": [
+      "Sounder Installed dedicated —sampling pump OB-3 — 34.031466 -118.4679 Monitoring C Quarterly Quarterly — Sounder Installed dedicated —sampling pump OB-4 — 34.030364 -118.471 Monitoring B Quarterly Quarterly — Sounder Installed dedicated —sampling pump OB-5 — 34.031798 -118.4731 Monitoring B Quarterly Quarterly — Sounder Installed dedicated —sampling pump OB-6C — 34.028051 -118.4737 Monitoring C",
+      "Sounder Installed dedicated —sampling pump OB-7 — 34.03143 -118.468 Monitoring B Quarterly Quarterly — Sounder Installed dedicated —sampling pump Table 3-8. GSP Monitoring Schedule Existing Groundwater Monitoring Frequency Groundwater Monitoring Method State Well Common Well Name Identification (SWID) Latitude Longitude Well Use Aquifer Elevation Quality Production Elevation Quality Production OB-8 — 34.030603 -118.4662 Monitoring B Quarterly Quarterly — Sounder Installed dedicated —sampling pump OB-9B — 34.030458 -118.4635 Monitoring B Quarterly — — Sounder — —"
+    ],
+    "pages": [
+      "– – – – – – –6 – 34 028051 –118 4737"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Quarterly Quarterly",
+      "Monitoring C Quarterly Quarterly"
+    ],
+    "issue": [
+      "3 02S15W04C002S 34.031121",
+      "03044"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-01-01"
+    ],
+    "title": [
+      "Charnock Annual Groundwater Monitoring Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sub-Basin",
+        "given": "Charnock"
+      }
+    ],
+    "title": [
+      "Los Angeles, California"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ENVIRON International Corporation"
+    ],
+    "date": [
+      "2007-07"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-02"
+    ],
+    "title": [
+      "Conceptual Groundwater Basin Model and Assessment of Available Groundwater Supplies Santa Monica Groundwater Basin. Prepared by Richard C"
+    ],
+    "publisher": [
+      "Slade and Associates for The City of Santa Monica"
+    ],
+    "location": [
+      "Los Angeles County, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Olympic Wellfield Site Conceptual Model City of Santa Monica"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "October. Prepared by ICF International."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12"
+    ],
+    "title": [
+      "Sustainable Water Master Plan Update"
+    ],
+    "publisher": [
+      "City of Santa Monica"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-01-07"
+    ],
+    "title": [
+      "Early Warning Groundwater Quality Monitoring Report, Charnock Wellfield Restoration Project"
+    ],
+    "container-title": [
+      "Prepared by Advisian Americas for The City of Santa Monica"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020",
+      "2020-06"
+    ],
+    "title": [
+      "Annual Water Quality Report",
+      "City of Santa Monica"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Resources Division"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-06",
+      "2020-07"
+    ],
+    "title": [
+      "Charnock Annual Groundwater Monitoring Report",
+      "Prepared by: Ramboll"
+    ],
+    "genre": [
+      "(January –"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-10"
+    ],
+    "title": [
+      "Olympic Wellfield Groundwater Monitoring Report, Third Quarter 2020"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ICF International"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources",
+      "Department of Water Resources Groundwater Elevation Monitoring Guidelines"
+    ],
+    "date": [
+      "2010",
+      "2010-12"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Potential for Future Land Subsidence in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Protocols, Standards, and Sites"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Networks and Identification of Data Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Playa Capital Company",
+        "given": "L.L.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Third Quarter 2020 Groundwater Monitoring and Remediation System Progress Report"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "CDM Smith. November"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems Under the Sustainable Groundwater Management Act"
+    ],
+    "container-title": [
+      "Guidance for Preparing Sustainability Plans. The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "publisher": [
+      "January"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "RWQCB (Los Angeles Regional Water Quality Control Board",
+      "Basin Plan for the Coastal Watersheds of Los Angeles and Ventura Counties, Chapter 3: Water Quality Objectives"
+    ],
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/"
+    ],
+    "note": [
+      "Accessed: May 6, 2019."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "USGS (United States Geological Survey",
+      "Development of a Groundwater-Simulation Model in the Los Angeles Coastal Plain, Los Angeles County"
+    ],
+    "date": [
+      "2021",
+      "2020-03-09"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "Draft Documentation"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "23"
+    ],
+    "title": [
+      "CCR (California Code of Regulations) 356.2 Annual Reports"
+    ],
+    "container-title": [
+      "Subchapter 2"
+    ],
+    "publisher": [
+      "Groundwater Sustainability Plans"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-01-01"
+    ],
+    "title": [
+      "Charnock Annual Groundwater Monitoring Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sub-Basin",
+        "given": "Charnock"
+      }
+    ],
+    "title": [
+      "Los Angeles, California"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ENVIRON International Corporation"
+    ],
+    "date": [
+      "2007-07"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-10"
+    ],
+    "title": [
+      "Olympic Wellfield Groundwater Monitoring Report"
+    ],
+    "container-title": [
+      "Third Quarter 2011"
+    ],
+    "location": [
+      "Prepared by"
+    ],
+    "publisher": [
+      "ICF International"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-41"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-43"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-44"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-45"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-62"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-64"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-84"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Groundwater Elevation (ft. msl) Groundwater Elevation (ft. msl"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-96"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-97"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-102"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-111"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-116"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-128"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-129"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-130"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-133"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-145"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Aug-2001"
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-156"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-161"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-164"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Aug-2001"
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-185"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-186"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-188"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-189"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-205"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-215"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-237"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Apr-2006"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct-2007"
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-258"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-264"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-274"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-275"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-276"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Groundwater Elevation (ft. msl) Groundwater Elevation (ft. msl"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Feb-2004"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Feb-2004"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Feb-2004"
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-309"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-311"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-319"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-324"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-326"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-328"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-335"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-337"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-341"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E - Groundwater Elevation Hydrographs E-342"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-344"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2005-07"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-364"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-368"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-373"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-378"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Groundwater Elevation (ft. msl) Groundwater Elevation (ft. msl"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-386"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2002-06"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004-06"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002-06"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004-06"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-469"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2002-03"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-473"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin Appendix E"
+    ],
+    "container-title": [
+      "Groundwater Elevation Hydrographs E-480"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1999-07"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the Santa Monica Groundwater Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The DWR climate change datasets include two future climate period conditions: one 2030 (near future) and three 2070 scenarios (late future). The latter consists of the central tendency of the ensemble of the general circulation models (GCMs), drier with extreme warming"
+    ],
+    "date": [
+      "2070"
+    ],
+    "note": [
+      "DEW) conditions and wetter with moderate warming (2070 WMW) conditions."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dolan",
+        "given": "J.F."
+      },
+      {
+        "family": "Pratt",
+        "given": "T.L."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "High-resolution seismic reflection profiling of the Santa Monica fault zone, west Los Angeles, California"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "2051–2054"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysical Research Letters"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hevesi",
+        "given": "J.A."
+      },
+      {
+        "family": "Johnson",
+        "given": "T.D."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Estimating spatially and temporally varying recharge and runoff from precipitation and urban irrigation in the Los Angeles Basin"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Scientific Investigations Report"
+    ],
+    "volume": [
+      "5068"
+    ],
+    "pages": [
+      "192 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20165068."
+    ],
+    "doi": [
+      "10.3133/sir20165068."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Paulinski",
+        "given": "S."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Martin",
+        "given": "D."
+      },
+      {
+        "family": "Johnson",
+        "given": "T."
+      },
+      {
+        "family": "Faunt",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-03-09"
+    ],
+    "title": [
+      "Development of a Groundwater-Simulation Model in the Los Angeles Coastal Plain, Los Angeles County"
+    ],
+    "location": [
+      "California, Chapter D"
+    ],
+    "publisher": [
+      "Development of a Groundwater-Simulation Model and Future Water-Management Scenarios, Draft Documentation"
+    ],
+    "type": "book"
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "10/23/2007"
+    ],
+    "title": [
+      "Ballona Aquifer Western 102 0.1 U 1U C-128 33.971511 -118.421209 1/22/2008 Western 106 0.1 U 1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "4/17/2008"
+    ],
+    "title": [
+      "Western 104 0.1 U 1.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "7/21/2008"
+    ],
+    "title": [
+      "Western 107 0.1 U 1U C-128 33.971511 -118.421209 10/23/2008 Western 160 0.1 U 2.3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "2/9/2009 Western 94.4 0.099 U 1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "4/15/2009 Western 111 0.043 J 2.1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "10/22/2009 Western 119 0.029 J 1.29"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "1/21/2010 Western 69.9 0.056 J 22.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "5/19/2010 Western 150 0.061 J 8.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "7/15/2010 Western 112 0.1 U 1.27"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "11/1/2010"
+    ],
+    "title": [
+      "Western 109 0.1 U 1.88"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "1/27/2011 Western 122 0.018 J 1.09"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209",
+      "116 0 117 6 18"
+    ],
+    "date": [
+      "4/15/2011"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "10/27/2011 Western 116 0.07 J 1.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209",
+      "130 0 19 2 94"
+    ],
+    "date": [
+      "1/23/2012"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "4/26/2012 Western 122 0.1 U 2.41"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "8/1/2012"
+    ],
+    "genre": [
+      "Western 124 0.1 UJ 8.81"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "10/31/2012 Western 169 0.1 U 1.38"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "1/31/2013 Western 124 0.1 U 7.37"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209",
+      "121 0 16 3 9"
+    ],
+    "date": [
+      "4/23/2013"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "8/1/2013 Western 119 0.1 U 2.88"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "11/22/2013 Western 95.3 0.12 3.31"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "2/7/2014 Western 127 0.1 U 3.65"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "4/23/2014 Western 117 0.1 U 1.22"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "11/10/2014 Western 130 0.1 U 1.1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "1/21/2015 Western 130 0.1 U 1.1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "5/11/2015 Western 150 0.1 U 2.7"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "7/29/2015"
+    ],
+    "title": [
+      "Western 150 0.027 J 0.94 J C-128 33.971511 -118.421209 10/28/2015 Western 160 0.1 U 0.77 J C-128 33.971511 -118.421209 2/1/2016 Western 160 0.1 U 1.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "5/3/2016 Western 160 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209",
+      "–128 33 971511 –118 421209",
+      "150 0 1 1 1"
+    ],
+    "date": [
+      "8/2/2016",
+      "5/11/2017"
+    ],
+    "title": [
+      "Western 140 0.1 U 0.77 J C-128 33.971511 -118.421209 11/2/2016 Western --- 0.1 U 0.84 J C-128 33.971511 -118.421209 2/1/2017 Western 150 0.1 U 0.85 J"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "11/2/2017"
+    ],
+    "title": [
+      "Western 150 0.1 U 0.87 J C-128 33.971511 -118.421209 5/24/2018 Western 150 0.1 U 1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–128 33 971511 –118 421209"
+    ],
+    "date": [
+      "11/16/2018"
+    ],
+    "title": [
+      "Western 140 0.1 U 0.88 J C-128 33.971511 -118.421209 5/9/2019 Western 130 0.1 U 0.64 J"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–132 33 972208 –118 423360",
+      "–132 33 972208 –118 423360"
+    ],
+    "date": [
+      "5/5/2015"
+    ],
+    "title": [
+      "Western 180 0.1 U 0.29 J C-132 33.972208 -118.423360 7/28/2015 Western 170 0.1 U 1U C-132 33.972208 -118.423360 10/20/2015 Western 160 0.1 U 0.68 J C-132 33.972208 -118.423360 1/19/2016 Western 180 0.1 U 1U C-132 33.972208 -118.423360 7/26/2016 Western 180 0.1 U 1U C-132 33.972208 -118.423360 11/4/2016 Western --- 0.1 U 1U C-132 33.972208 -118.423360 1/25/2017 Western 160 0.1 U 0.27 J C-132 33.972208 -118.423360 5/2/2017 Western 160 0.1 U 1U C-132 33.972208 -118.423360 10/31/2017 Western 170 0.1 U 1U C-132 33.972208 -118.423360 5/21/2018 Western 170 0.1 U 0.38 J C-132 33.972208 -118.423360 11/6/2018 Western 170 0.19 1U C-132 33.972208 -118.423360 5/6/2019 Western 150 0.1 U 1U"
+    ],
+    "note": [
+      "10/22/2019 Western 160 0.1 U 1U C-132 33.972208 -118.423360 11/10/2020 Western 140 0.1 U 0.31 J C-132 33.972208 -118.423360 11/10/2020 Western 140 0.1 U 0.38 J C-133 33.972939 -118.422381 11/14/2003 Western 200 0.11 U 2.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "2/18/2004"
+    ],
+    "title": [
+      "Western 180 0.11 U 0.5 U C-133 33.972939 -118.422381 5/20/2004 Western 210 0.11 U 1.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "8/20/2004 Western 210 0.11 U 0.95"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381",
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "10/22/2004",
+      "2/23/2006"
+    ],
+    "title": [
+      "Western 200 0.11 U 0.5 U C-133 33.972939 -118.422381 2/25/2005 Western 207 0.1 U 1U C-133 33.972939 -118.422381 5/9/2005 Western 208 0.1 U 1U C-133 33.972939 -118.422381 8/15/2005 Western 195 0.1 U 0.6 J C-133 33.972939 -118.422381 10/24/2005 Western 206 0.1 U 1U"
+    ],
+    "note": [
+      "Western 206 0.1 U 5.5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "5/22/2006 Western 217 0.1 U 12.8"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "8/7/2006 Western 231 0.08 J 29.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "11/9/2006 Western 209 0.1 U 9.1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "4/25/2007 Western 204 0.1 U 5.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "8/1/2007 Western 210 0.1 U 1.3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "10/23/2007 Western 203 0.1 U 4.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "1/18/2008 Western 203 0.1 U 8.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "4/15/2008 Western 193 0.1 U 1.1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "7/15/2008"
+    ],
+    "title": [
+      "Western 193 0.1 U 1U C-133 33.972939 -118.422381 10/23/2008 Western 304 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "2/5/2009 Western 172 0.034 J 12"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "4/16/2009 Western 248 0.045 J 3.6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "10/20/2009 Western 203 0.023 J 13.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "1/21/2010 Western 188 0.1 U 22.8"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "5/18/2010 Western 192 0.027 J 12.7"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–133 33 972939 –118 422381"
+    ],
+    "date": [
+      "7/13/2010 Western 191 0.1 U 12.3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "5/5/2016 Western 160 0.1 U 1.8"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "7/28/2016 Western 160 0.1 U 2.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "11/9/2016"
+    ],
+    "title": [
+      "Western --- 0.1 U 1.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "2/2/2017 Western 150 0.1 U 9.3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "4/13/2017"
+    ],
+    "title": [
+      "Western 150 0.1 U 0.98 J C-134 33.973175 -118.421249 11/7/2017 Western 160 0.1 U 9.8"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "5/23/2018 Western 160 0.1 U 2.6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "11/19/2018"
+    ],
+    "title": [
+      "Western 150 0.1 U 5.1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "5/13/2019 Western 160 0.1 U 3.6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "11/25/2019 Western 140 0.1 U 1.6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–134 33 973175 –118 421249"
+    ],
+    "date": [
+      "11/24/2020 Western 130 0.1 U 1.5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "2/2/2015 Western 130 0.1 U 2.5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "7/29/2015"
+    ],
+    "title": [
+      "Western 120 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "10/20/2015 Western 130 0.1 U 1.3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "1/19/2016 Western 140 0.1 U 1.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "5/3/2016 Western 140 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "7/26/2016"
+    ],
+    "title": [
+      "Western 140 0.1 U 0.64 J C-135 33.972427 -118.421757 11/4/2016 Western --- 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "1/30/2017 Western 130 0.1 U 2.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–135 33 972427 –118 421757"
+    ],
+    "date": [
+      "4/14/2017 Western 150 0.1 U 1.6"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 1/31/2018 Ballona Aquifer Western 150 0.1 U 1.3"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 5/14/2018 Western 150 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 5/14/2018 Western 140 0.1 U 0.86 J C-185ba 33.972739 -118.420538 7/30/2018 Western 140 0.1 U 0.85 J C-185ba 33.972739 -118.420538 11/9/2018 Western 150 0.1 U 1.1"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 11/9/2018 Western 150 0.1 U 1.1"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 1/23/2019 Western 160 0.1 U 1.1"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 5/1/2019 Western 130 0.1 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 5/1/2019 Western 130 0.1 U 1.6"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 7/18/2019 Western 130 0.1 U 0.76 J C-185ba 33.972739 -118.420538 11/27/2019 Western 130 0.1 UJ 7.4"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-185ba"
+    ],
+    "title": [
+      "33.972739 -118.420538 11/24/2020 Western 130 0.1 U 3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–186 33 973369 –118 420711"
+    ],
+    "date": [
+      "2/6/2018 Western 380 0.1 U 5.6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–186 33 973369 –118 420711"
+    ],
+    "date": [
+      "5/23/2018"
+    ],
+    "volume": [
+      "0"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–186 33 973369 –118 420711"
+    ],
+    "date": [
+      "8/1/2018 Western 350 0.1 U 2.4"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-186ba"
+    ],
+    "title": [
+      "33.973369 -118.420711 11/15/2018 Western 300 0.1 U 1.3"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-186ba"
+    ],
+    "title": [
+      "33.973369 -118.420711 1/28/2019 Western 300 0.1 U 0.73 J C-186ba 33.973369 -118.420711 5/2/2019 Western 290 0.1 U 2.5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–186 33 973369 –118 420711"
+    ],
+    "date": [
+      "7/18/2019 Western 260 0.1 U 21"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-186ba"
+    ],
+    "title": [
+      "33.973369 -118.420711 11/27/2019 Western 220 0.1 UJ 2.8"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-186ba"
+    ],
+    "title": [
+      "33.973369 -118.420711 11/24/2020 Western 220 0.1 U 1.5"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "C-190ba"
+    ],
+    "title": [
+      "33.972861 -118.422269 5/21/2018 Western 170 0.1 U 0.96 J C-190ba 33.972861 -118.422269 7/26/2018 Western 160 0.1 U 1U C-190ba 33.972861 -118.422269 11/8/2018 Western 170 0.1 U 1U C-190ba 33.972861 -118.422269 4/30/2019 Western 160 0.1 U 0.86 J C-190ba 33.972861 -118.422269 4/30/2019 Western 160 0.1 U 1U C-190ba 33.972861 -118.422269 11/21/2019 Western 160 0.1 U 1U"
+    ],
+    "pages": [
+      "–190 33 972861 –118 422269"
+    ],
+    "note": [
+      "11/16/2020 Western 160 0.1 U 0.29 J"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992",
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "9/15/2003"
+    ],
+    "title": [
+      "Western 160 0.11 U 0.5 U C-92 33.972538 -118.423992 11/12/2003 Western 180 0.11 U 0.5 U C-92 33.972538 -118.423992 2/16/2004 Western 200 0.11 U 0.5 U C-92 33.972538 -118.423992 5/20/2004 Western 180 0.11 U 0.5 U C-92 33.972538 -118.423992 8/25/2004 Western 190 0.11 U 0.5 U C-92 33.972538 -118.423992 10/19/2004 Western 190 0.11 U 0.5 U C-92 33.972538 -118.423992 2/23/2005 Western 193 0.1 U 1U"
+    ],
+    "note": [
+      "5/2/2005 Western 201 0.1 U 1U C-92 33.972538 -118.423992 8/12/2005 Western 192 0.1 U 1U"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "10/26/2011 Western 154 0.07 J 10.5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992",
+      "134 0 12 6 84"
+    ],
+    "date": [
+      "1/19/2012"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "4/18/2012 Western 171 0.1 U 6.89"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "7/25/2012 Western 180 0.07 J 11.3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "10/15/2012 Western 159 0.07 J 10.6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "1/28/2013 Western 148 0.1 U 3.56"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992",
+      "264 0 26 3 56"
+    ],
+    "date": [
+      "4/18/2013"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992",
+      "–118 423992"
+    ],
+    "date": [
+      "7/22/2013"
+    ],
+    "title": [
+      "Western 130 0.1 U 0.4 J C-92 33.972538 -118.423992 10/24/2013 Western 148 0.1 U 1U C-92 33.972538 -118.423992 2/5/2014 Western 133 0.1 U 1U C-92 33.972538 -118.423992 4/9/2014 Western 126 0.1 U 1U C-92 33.972538 -118.423992 7/28/2014 Western 126 0.1 U 1U C-92 33.972538 -118.423992 11/4/2014 Western"
+    ],
+    "volume": [
+      "0"
+    ],
+    "note": [
+      "1/21/2015 Western 150 0.1 U 0.26 J C-92 33.972538 -118.423992 1/21/2015 Western 150 0.1 U 0.35 J C-92 33.972538 -118.423992 4/23/2015 Western 160 0.1 U 0.47 J C-92 33.972538 -118.423992 4/23/2015 Western 160 0.1 U 0.82 J C-92 33.972538 -118.423992 7/23/2015 Western 140 0.1 U 2.1"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–92 33 972538 –118 423992",
+      "–92 33 972538 –118 423992"
+    ],
+    "date": [
+      "7/23/2015"
+    ],
+    "title": [
+      "Western 140 0.1 U 1U C-92 33.972538 -118.423992 10/26/2015 Western 160 0.1 U 1U C-92 33.972538 -118.423992 10/26/2015 Western 160 0.1 U 1U C-92 33.972538 -118.423992 1/18/2016 Western 160 0.1 U 0.7 J C-92 33.972538 -118.423992 1/18/2016 Western 160 0.1 U 0.74 J C-92 33.972538 -118.423992 4/25/2016 Western 160 0.1 U 0.36 J C-92 33.972538 -118.423992 4/25/2016 Western 150 0.1 U 0.4 J C-92 33.972538 -118.423992 7/25/2016 Western 160 0.1 U 1U C-92 33.972538 -118.423992 7/25/2016 Western 160 0.1 U 1U C-92 33.972538 -118.423992 10/25/2016 Western 160 0.1 U 0.84 J C-92 33.972538 -118.423992 10/25/2016 Western 160 0.1 U 0.82 J C-92 33.972538 -118.423992 1/26/2017 Western 150 0.1 U 0.38 J C-92 33.972538 -118.423992 1/26/2017 Western 150 0.1 U 0.36 J C-92 33.972538 -118.423992 4/27/2017 Western 160 0.1 U 1U C-92 33.972538 -118.423992 4/27/2017 Western 150 0.1 U 1U C-92 33.972538 -118.423992 11/1/2017 Western 150 0.1 U 1U C-92 33.972538 -118.423992 11/1/2017 Western 150 0.1 U 1U C-92 33.972538 -118.423992 5/14/2018 Western 150 0.1 U 0.31 J C-92 33.972538 -118.423992 5/14/2018 Western 150 0.1 U 0.35 J C-92 33.972538 -118.423992 11/12/2018 Western 160 0.1 U 1U"
+    ],
+    "note": [
+      "11/12/2018 Western 160 0.1 U 1U C-92 33.972538 -118.423992 5/6/2019 Western 150 0.1 U 1U C-92 33.972538 -118.423992 5/6/2019 Western 130 0.1 UJ 1U C-92 33.972538 -118.423992 11/21/2019 Western 120 0.1 U 1U C-92 33.972538 -118.423992 11/16/2020 Western 130 0.1 U 0.28 J C-96 33.972496 -118.422264 9/19/2003 Western 200 0.11 U 2.8"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–96 33 972496 –118 422264"
+    ],
+    "date": [
+      "11/12/2003 Western 210 0.22 U 2.2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–96 33 972496 –118 422264"
+    ],
+    "date": [
+      "11/12/2003 Western 210 0.22 U 3.9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–96 33 972496 –118 422264"
+    ],
+    "date": [
+      "2/16/2004 Western 220 0.11 U 1.4"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Aquifer",
+        "given": "Silverado"
+      }
+    ],
+    "pages": [
+      "–122 33 972884 –118 421089 1 21 2015 – 230 0 1"
+    ],
+    "note": [
+      "U 0.64 J"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–122 33 972884 –118 421089 5 8 2015 – 230 0 1 0 33 –122 33 972884 –118 421089 7 30 2015 – 220 0 1 0 3 –122 33 972884 –118 421089 10 23 2015 – 230 0 1 0 28 –122 33 972884 –118 421089 1 21 2016 – 220 0 1 0 41 –122 33 972884 –118 421089 5 2 2016 – 230 0 1 1 –122 33 972884 –118 421089 7 25 2016 – 220 0 1 0 56 –122 33 972884 –118 421089 11 7 2016 – – 0 1 1 –122 33 972884 –118 421089 1 25 2017 – 210 0 1",
+      "– 220 0 1 0 32 –122 33 972884 –118 421089 7 19 2017 – 210",
+      "–118 421089 11 8 2017 – 220",
+      "–118 421089 2 1 2018 – 220 0 1",
+      "–122 33 972884 –118 421089 5 22 2018 – 220 0 1 1 –122 33 972884 –118 421089 8 2 2018 – 220 0 1 1 –122 33 972884 –118 421089 11 13 2018 – 220 0 1 1 –122 33 972884 –118 421089 1 23 2019 – 220 0 1 1 –122 33 972884 –118 421089 5 8 2019 – 220 0 1 1 –122 33 972884 –118 421089 7 24 2019 – 210 0 1 1 –122 33 972884 –118 421089 11 25 2019 – 210 0 1 1 –122 33 972884 –118 421089 11 24 2020 – 200 0 1 1 –123 33 973846 –118 421527 1 30 2015 – 190 0 1"
+    ],
+    "date": [
+      "U 0.61 J C-122 33.972884 -118.421089 5/3/2017"
+    ],
+    "volume": [
+      "0",
+      "0"
+    ],
+    "note": [
+      "U 0.35 J",
+      "U 1"
+    ],
+    "issue": [
+      "1",
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 30 2015 – 190 0 1",
+      "– 200 0 1",
+      "–118 421527 5 4 2015 – 180 0 1",
+      "–123 33 973846 –118 421527 7 23 2015 – 170 0 1 2 3"
+    ],
+    "date": [
+      "U 0.96 J C-123 33.973846 -118.421527 5/4/2015"
+    ],
+    "volume": [
+      "0"
+    ],
+    "note": [
+      "U 0.65 J"
+    ],
+    "issue": [
+      "35"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 7 23 2015 – 170 0 1 1 5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 10 28 2015 – 190 0 1 12"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 10 28 2015 – 190 0 1"
+    ],
+    "note": [
+      "U 1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 26 2016 – 190 0 1",
+      "– 180 0 1",
+      "– 190",
+      "–118 421527 4 28 2016 – 190 0 1",
+      "–123 33 973846 –118 421527 7 28 2016 – 210 0 1 2 9"
+    ],
+    "date": [
+      "U 0.88 J C-123 33.973846 -118.421527 1/26/2016",
+      "U 0.86 J C-123 33.973846 -118.421527 4/28/2016"
+    ],
+    "volume": [
+      "0"
+    ],
+    "note": [
+      "U 0.84 J"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 7 28 2016 – 210 0 1"
+    ],
+    "note": [
+      "U 3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 3 2016 – 210 0 1 1 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 3 2016 – 210 0 1 1 9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 26 2017 – 210 0 1 3 3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 26 2017 – 210 0 1 3 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 4 13 2017 – 190 0 1 1 –123 33 973846 –118 421527 4 13 2017 – 190 0 1 1 –123 33 973846 –118 421527 7 14 2017 – 190 0 1",
+      "–118 421527 7 14 2017 – 190 0 1"
+    ],
+    "volume": [
+      "0"
+    ],
+    "container-title": [
+      "U 0.55 J Table G-1. Playa Vista Propery Water Quality Data Map and Plot Sulfate Chloride Nitrate as Nitrogen"
+    ],
+    "issue": [
+      "55"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Concentration",
+        "given": "Well Name Latitude Longitude Sample Date Area Concentration"
+      }
+    ],
+    "note": [
+      "mg/L) Concentration (mg/L) Designation (mg/L) C-123 33.973846 -118.421527 11/7/2017 Ballona --- Aquifer 280 0.2 U 34"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 7 2017 – 280 0 2 34"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 30 2018 – 230 0 55 3 4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 30 2018 – 230 0 1 3 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 5 21 2018 – 220 0 1 3 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 5 21 2018 – 220 0 1 2 9"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 8 1 2018 – 210 0 1 6 1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 8 1 2018 – 210 0 1 5 7"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 6 2018 – 220 0 1 3 4"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 6 2018 – 220 0 1 4 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 28 2019 – 200 0 1 5 3"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 1 28 2019 – 190 0 1 5 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 5 2 2019 – 200 0 1",
+      "–118 421527 7 18 2019 – 170 0 076 1 8"
+    ],
+    "volume": [
+      "0"
+    ],
+    "issue": [
+      "57"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 7 18 2019 – 170 0 066 1 8"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 13 2019 – 200 0 1 2 5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 13 2019 – 210 0 1 2 5"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–123 33 973846 –118 421527 11 5 2020 – 210 0 025 11"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–124 33 972576 –118 422140 1 30 2015 – 180 0 1",
+      "– 190 0 028",
+      "–118 422140 8 3 2015 – 180 0 1",
+      "–124 33 972576 –118 422140 10 27 2015 – 180 0 1"
+    ],
+    "date": [
+      "U 0.45 J C-124 33.972576 -118.422140 4/28/2015"
+    ],
+    "volume": [
+      "0"
+    ],
+    "note": [
+      "U 0.72 J",
+      "U 1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J"
+    ],
+    "issue": [
+      "43"
+    ]
+  },
+  {
+    "pages": [
+      "–124 33 972576 –118 422140 1 26 2016 – 200 0 1 1 2"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–124 33 972576 –118 422140 4 25 2016 – 170 0 1 0 96 –124 33 972576 –118 422140 7 26 2016 – 180 0 1 1 –124 33 972576 –118 422140 11 8 2016 – – 0 1 0 76 –124 33 972576 –118 422140 1 26 2017 – 170 0 1 0 41 –124 33 972576 –118 422140 4 12 2017 – 170 0 1 1 –124 33 972576 –118 422140 7 14 2017 – 170 0 1",
+      "– 170 0 1 0 38 –124 33 972576 –118 422140 1 25 2018 – 170 0 064 1 –124 33 972576 –118 422140 5 18 2018 – 170 0 1",
+      "– 170 0 1 1 –124 33 972576 –118 422140 11 14 2018 – 170 0 1 1 –124 33 972576 –118 422140 1 22 2019 – 170 0 1 1 –124 33 972576 –118 422140 4 30 2019 – 170",
+      "–118 422140 7 17 2019 – 170",
+      "–118 422140 10 22 2019 – 180 0 1 1 –124 33 972576 –118 422140 11 10 2020 – 160 0 1 1 –136 33 973081 –118 422748 2 4 2015 – 180 0 1",
+      "–136 33 973081 –118 422748 5 8 2015 – 170 0 1 1 –136 33 973081 –118 422748 7 29 2015 – 170 0 1 1 –136 33 973081 –118 422748 10 27 2015 – 160 0 1 1 –136 33 973081 –118 422748 1 21 2016 – 180 0 1 1 –136 33 973081 –118 422748 5 2 2016 – 150 0 1 1 –136 33 973081 –118 422748 7 25 2016 – 180 0 1 1 –136 33 973081 –118 422748 11 8 2016 – – 0 1 1 –136 33 973081 –118 422748 1 30 2017 – 180 0 1"
+    ],
+    "date": [
+      "U 0.59 J C-124 33.972576 -118.422140 11/6/2017",
+      "U 0.35 J C-124 33.972576 -118.422140 7/31/2018"
+    ],
+    "volume": [
+      "0",
+      "0"
+    ],
+    "note": [
+      "U 0.34 J",
+      "U 0.4 J Table G-1. Playa Vista Propery Water Quality Data Map and Plot Sulfate Chloride Nitrate as Nitrogen"
+    ],
+    "issue": [
+      "1",
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Concentration",
+        "given": "Well Name Latitude Longitude Sample Date Area Concentration"
+      }
+    ],
+    "note": [
+      "mg/L) Concentration (mg/L) Designation (mg/L"
+    ],
+    "pages": [
+      "–136 33 973081 –118 422748",
+      "–136 33 973081 –118 422748 7 18 2017 – 170 0 1",
+      "– 170 0 1",
+      "– 170 0 12 1 –136 33 973081 –118 422748 5 22 2018 – 180 0 1 1 –136 33 973081 –118 422748 8 2 2018 – 170",
+      "–118 422748 11 14 2018 – 180 0 049 1 –136 33 973081 –118 422748 1 22 2019 – 150 0 1 1 –136 33 973081 –118 422748 5 7 2019 – 170 0 1 1 –136 33 973081 –118 422748 7 17 2019 – 140 0 1 1 –136 33 973081 –118 422748 11 7 2019 – 160 0 1 1 –136 33 973081 –118 422748 11 12 2020 – 140 0 1 1 –170 33 980537 –118 410318 10 26 2015 – 450 0 1 450"
+    ],
+    "date": [
+      "5/9/2017",
+      "U 0.31 J C-136 33.973081 -118.422748 10/31/2017",
+      "U 0.37 J C-136 33.973081 -118.422748 1/29/2018"
+    ],
+    "title": [
+      "Ballona --- Aquifer 190 0.1 U 1U"
+    ],
+    "volume": [
+      "0"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–170 33 980537 –118 410318 10 26 2016 – 450 0 1 430"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–171 33 976766 –118 412210 11 13 2015 – 170 0 1 180"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–171 33 976766 –118 412210 10 28 2016 – 190 0 1 190"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–172 33 978263 –118 411531 10 23 2015 – 310 0 1 390"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–172 33 978263 –118 411531 10 27 2016 – 310 0 1 410"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–173 33 978868 –118 407556 11 6 2015 – 530 0 1 490"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–173 33 978868 –118 407556 10 17 2016 – 80 0 1 660"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–174 33 980795 –118 407416 11 13 2015 – 460 0 1 740"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–174 33 980795 –118 407416 11 13 2015 – 440 0 1 670"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–174 33 980795 –118 407416 11 14 2016 – 460 0 1 690"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 7 31 2013 – 218 0 1 211"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 10 30 2013 – 209 – 221"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 1 27 2014 – 243 0 1 241"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 10 24 2014 – 240 0 1 240"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 10 29 2015 – 220 0 1 250"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 11 1 2016 – 230 0 1 240"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 10 30 2017 – 210 0 1 210"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 10 18 2018 – 210 0 1 200"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 01 33 975066 –118 414539 12 3 2019 – 230 0 1 220"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 7 11 2013 – 211 0 1 52 7"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 10 30 2013 – 155 – 59 6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 1 27 2014 – 178 0 1 64 6"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 10 28 2014 – 220 0 1 150"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 11 10 2015 – – 0 1 150"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 10 31 2016 – 210 0 1 170"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 10 30 2017 – 200 0 1 140"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 11 8 2018 – 200 0 1 140"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "2– 02 33 976466 –118 415486 11 8 2019 – 180 0 1 140 – 33 969234 –118 424291 11 12 2020 – 100"
+    ],
+    "title": [
+      "0.1 U 3.2 Notes: --- = Not analyzed J = Estimated result; concentration was below the reporting limit but above the detection limit U = Sample concentration below the detection limit shown Source: Playa Capital Company 2020"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "author": [
+      {
+        "family": "Gelo",
+        "given": "K.K."
+      },
+      {
+        "family": "Howard",
+        "given": "K."
+      }
+    ],
+    "title": [
+      "Intensive groundwater use in urban areas: the case of megacities"
+    ],
+    "container-title": [
+      "Intensive Use of Groundwater: Challenges and Opportunities"
+    ],
+    "publisher": [
+      "CRC Press"
+    ],
+    "date": [
+      "2002"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "Howard",
+        "given": "K.W.F."
+      }
+    ],
+    "title": [
+      "Sustainable cities and the groundwater governance challenge"
+    ],
+    "volume": [
+      "73"
+    ],
+    "doi": [
+      "10.1007/s12665-014-3370-y"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Earth Sciences"
+    ],
+    "date": [
+      "2015"
+    ],
+    "issue": [
+      "6"
+    ],
+    "pages": [
+      "2543–2554"
+    ]
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "author": [
+      {
+        "family": "Takizawa",
+        "given": "S."
+      }
+    ],
+    "title": [
+      "Groundwater use and management in urban areas"
+    ],
+    "editor": [
+      {
+        "family": "Takizawa",
+        "given": "S."
+      }
+    ],
+    "container-title": [
+      "Groundwater Management in Asian Cities"
+    ],
+    "volume": [
+      "2"
+    ],
+    "location": [
+      "Springer Japan"
+    ],
+    "date": [
+      "2008"
+    ],
+    "note": [
+      "Accessed November 18, 2012."
+    ],
+    "url": [
+      "http://www.springerlink.com/index/10.1007/978-4-431-78399-2_1"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "Choy",
+        "given": "J."
+      },
+      {
+        "family": "McGhee",
+        "given": "G."
+      }
+    ],
+    "title": [
+      "Groundwater: ignore it, and it might go away"
+    ],
+    "date": [
+      "2014"
+    ],
+    "url": [
+      "https://waterinthewest.stanford.edu/groundwater/overview/"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "family": "Porse",
+        "given": "E."
+      },
+      {
+        "family": "Glickfeld",
+        "given": "M."
+      },
+      {
+        "family": "Mertan",
+        "given": "K."
+      },
+      {
+        "family": "Pincetl",
+        "given": "S."
+      }
+    ],
+    "title": [
+      "Pumping for the masses: evolution of groundwater management in metropolitan Los Angeles"
+    ],
+    "volume": [
+      "August 7"
+    ],
+    "date": [
+      "2015"
+    ],
+    "doi": [
+      "10.1007/s10708-015-9664-0"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "GeoJournal"
+    ]
+  },
+  {
+    "citation-number": [
+      "6."
+    ],
+    "author": [
+      {
+        "family": "Chappelle",
+        "given": "C."
+      },
+      {
+        "family": "Hanak",
+        "given": "E."
+      },
+      {
+        "family": "Harter",
+        "given": "T."
+      }
+    ],
+    "title": [
+      "Groundwater in California"
+    ],
+    "publisher": [
+      "Public Policy Institute of California"
+    ],
+    "date": [
+      "2017"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "family": "Federico",
+        "given": "F."
+      },
+      {
+        "family": "Youngdahl",
+        "given": "A."
+      },
+      {
+        "family": "Subramanian",
+        "given": "S."
+      },
+      {
+        "family": "Rauser",
+        "given": "C."
+      },
+      {
+        "family": "Gold",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "Environmental Report Card for Los Angeles County Update"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "UCLA Institute of the Environment and Sustainability"
+    ]
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "author": [
+      {
+        "family": "Manago",
+        "given": "K.F."
+      },
+      {
+        "family": "Hogue",
+        "given": "T.S."
+      }
+    ],
+    "title": [
+      "Urban streamflow response to imported water and water conservation policies in Los Angeles, California"
+    ],
+    "volume": [
+      "53"
+    ],
+    "doi": [
+      "10.1111/1752-1688.12515"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "JAWRA Journal of the American Water Resources Association"
+    ],
+    "date": [
+      "2017"
+    ],
+    "issue": [
+      "3"
+    ],
+    "pages": [
+      "626–640"
+    ]
+  },
+  {
+    "citation-number": [
+      "9."
+    ],
+    "author": [
+      {
+        "family": "Porse",
+        "given": "E."
+      },
+      {
+        "family": "Mika",
+        "given": "K.B."
+      },
+      {
+        "family": "Litvak",
+        "given": "E."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Systems analysis and optimization of local water supplies in Los Angeles"
+    ],
+    "volume": [
+      "143"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Water Resources Planning and Management"
+    ],
+    "date": [
+      "2017"
+    ],
+    "issue": [
+      "9"
+    ]
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "family": "Pincetl",
+        "given": "S."
+      },
+      {
+        "family": "Porse",
+        "given": "E."
+      },
+      {
+        "family": "Cheng",
+        "given": "D."
+      }
+    ],
+    "title": [
+      "Fragmented flows: water supply in Los Angeles County"
+    ],
+    "volume": [
+      "12"
+    ],
+    "date": [
+      "2016"
+    ],
+    "doi": [
+      "10.1007/s00267-016-0707-1"
+    ],
+    "pages": [
+      "45"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Management. May"
+    ]
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "author": [
+      {
+        "family": "Santa Monica",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Sustainable Water Master Plan"
+    ],
+    "publisher": [
+      "City of Santa Monica"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "12."
+    ],
+    "author": [
+      {
+        "family": "Culver City. Measure CW",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://www.culvercity.org/City-Hall/Reportspolicies-local-laws/Measure-CW"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "13."
+    ],
+    "author": [
+      {
+        "family": "Office",
+        "given": "L.A.City Mayor’s"
+      }
+    ],
+    "title": [
+      "L.A.s Green New Deal: Sustainable Plan (PLAn) for the City of Los Angeles"
+    ],
+    "publisher": [
+      "City of Los Angeles"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "14."
+    ],
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "title": [
+      "California Drywell Guidance Research and Recommendations"
+    ],
+    "note": [
+      "Contract Number: 17-083-250)."
+    ],
+    "publisher": [
+      "California State Water Resources Control Board"
+    ],
+    "date": [
+      "2020"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "15."
+    ],
+    "title": [
+      "County of Los Angeles"
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://safecleanwaterla.org/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "LA County’s Safe Clean Water Program"
+    ]
+  },
+  {
+    "citation-number": [
+      "16."
+    ],
+    "author": [
+      {
+        "family": "Group",
+        "given": "S.M.B.Jurisdicional"
+      }
+    ],
+    "volume": [
+      "2 and 3"
+    ],
+    "location": [
+      "Santa"
+    ],
+    "title": [
+      "Monica Bay Jurisdictional Group 2 and 3 Enhanced Watershed Management Program. Prepared by City of Los Angeles, Los Angeles County Flood Control District"
+    ],
+    "publisher": [
+      "County of Los Angeles, City of Santa Monica, City of El Segundo"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "17."
+    ],
+    "author": [
+      {
+        "family": "Group",
+        "given": "Ballona Creek Watershed Management"
+      }
+    ],
+    "title": [
+      "Ballona Creek Enhanced Watershed Management Program. Prepared for City of Los Angeles, Los Angeles County Flood Control District, County of Los Angeles"
+    ],
+    "publisher": [
+      "City of Santa Monica, City of Beverly Hills, City of Culver City, City of Inglewood, City of West Hollywood"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "18."
+    ],
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "title": [
+      "Stormwater Capture Master Plan. Prepared by Geosyntec and TreePeople for the LA Department of Water and Power"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "19."
+    ],
+    "author": [
+      {
+        "family": "Beverly Hills",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Stormwater Compliance Capital Improvement Program Master Plan. Project Concepts for Stormwater Compliance"
+    ],
+    "publisher": [
+      "Prepared by Black & Veatch, Prepared for City of Beverly Hills"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "20."
+    ],
+    "author": [
+      {
+        "family": "Gold",
+        "given": "M."
+      },
+      {
+        "family": "Hogue",
+        "given": "T."
+      },
+      {
+        "family": "Pincetl",
+        "given": "S."
+      },
+      {
+        "family": "Mika",
+        "given": "K."
+      },
+      {
+        "family": "Radavich",
+        "given": "K."
+      }
+    ],
+    "title": [
+      "Los Angeles Sustainable Water Project: Ballona Creek Watershed"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "UCLA Institute of the Environment and Sustainability"
+    ]
+  },
+  {
+    "citation-number": [
+      "21."
+    ],
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "title": [
+      "Regulations Related to Recycled Water: Revisions to Title 17 and Title 22 of the California Water Code Effective October 1, 2018"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/lawbook/r"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California State Water Resources Control Board"
+    ]
+  },
+  {
+    "citation-number": [
+      "22."
+    ],
+    "author": [
+      {
+        "family": "Judgment",
+        "given": "C.B./W.C.B.Amended"
+      }
+    ],
+    "title": [
+      "Central and West Basin Water Replenishment District v"
+    ],
+    "note": [
+      "Charles E. Adams et al.: Third Amended Judgment. Superior Court of the State of California, Los Angeles County. 2013."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "23."
+    ],
+    "author": [
+      {
+        "family": "Coe",
+        "given": "J.J."
+      }
+    ],
+    "title": [
+      "Conjunctive use—advantages, constraints, and examples"
+    ],
+    "volume": [
+      "116"
+    ],
+    "doi": [
+      "10.1061/(ASCE)0733-9437(1990)116:3(427)"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Irrigation and Drainage Engineering"
+    ],
+    "date": [
+      "1990"
+    ],
+    "issue": [
+      "3"
+    ],
+    "pages": [
+      "427–443"
+    ]
+  },
+  {
+    "citation-number": [
+      "24."
+    ],
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "title": [
+      "Draft Urban Water Management Plan"
+    ],
+    "date": [
+      "2020"
+    ],
+    "pages": [
+      "46"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Los Angeles Department of Water and Power"
+    ]
+  },
+  {
+    "citation-number": [
+      "25."
+    ],
+    "title": [
+      "Office of the Governor of California. Executive Order B37-16: Making Conservation a California Way of Life"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "26."
+    ],
+    "title": [
+      "Office of the Governor of California"
+    ],
+    "pages": [
+      "40–17"
+    ],
+    "date": [
+      "2017"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Executive Order"
+    ]
+  },
+  {
+    "citation-number": [
+      "27."
+    ],
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "title": [
+      "WUE Data Portal, Water Loss Audit Reports"
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://wuedata.water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "28."
+    ],
+    "author": [
+      {
+        "family": "Sharp",
+        "given": "J."
+      }
+    ],
+    "title": [
+      "The impacts of urbanization on groundwater systems and recharge"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Aqua Mundi"
+    ],
+    "date": [
+      "2010"
+    ],
+    "issue": [
+      "3"
+    ]
+  },
+  {
+    "citation-number": [
+      "29."
+    ],
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Los Angeles Department of Water and Power"
+    ]
+  },
+  {
+    "citation-number": [
+      "30."
+    ],
+    "author": [
+      {
+        "family": "Rieckermann",
+        "given": "J."
+      },
+      {
+        "family": "Bareš",
+        "given": "V."
+      },
+      {
+        "family": "Kracht",
+        "given": "O."
+      },
+      {
+        "family": "Braun",
+        "given": "D."
+      },
+      {
+        "family": "Gujer",
+        "given": "W."
+      }
+    ],
+    "title": [
+      "Estimating sewer leakage from continuous tracer experiments"
+    ],
+    "volume": [
+      "41"
+    ],
+    "doi": [
+      "10.1016/j.watres.2007.01.024"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Research"
+    ],
+    "date": [
+      "2007"
+    ],
+    "issue": [
+      "9"
+    ],
+    "pages": [
+      "1960–1972"
+    ]
+  },
+  {
+    "citation-number": [
+      "31."
+    ],
+    "author": [
+      {
+        "family": "Wurbs",
+        "given": "R.A."
+      },
+      {
+        "family": "James",
+        "given": "W.P."
+      }
+    ],
+    "title": [
+      "Water Resources Engineering"
+    ],
+    "publisher": [
+      "Prentice Hall"
+    ],
+    "date": [
+      "2002"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "32."
+    ],
+    "author": [
+      {
+        "family": "Thornton",
+        "given": "J."
+      },
+      {
+        "family": "Sturm",
+        "given": "R."
+      },
+      {
+        "family": "Kunkel",
+        "given": "G.A."
+      }
+    ],
+    "title": [
+      "Water Loss Control"
+    ],
+    "edition": [
+      "2nd"
+    ],
+    "publisher": [
+      "McGraw-Hill"
+    ],
+    "date": [
+      "2008"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "33."
+    ],
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Kennedy Jenks"
+      }
+    ],
+    "title": [
+      "Feasibility Report for Development of Groundwater Resources in the Santa Monica and Hollywood Basins"
+    ],
+    "volume": [
+      "2011"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the Los Angeles Department of Water and Power"
+    ],
+    "pages": [
+      "2–26"
+    ]
+  },
+  {
+    "citation-number": [
+      "34."
+    ],
+    "author": [
+      {
+        "family": "Slade",
+        "given": "Richard"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "title": [
+      "Hydrogeologic Feasibility Study and Preliminary Design Report for Development of Shallow Groundwater Near Water Treatment Plan"
+    ],
+    "publisher": [
+      "Prepared for the Public Works Department City of Beverly Hills"
+    ],
+    "date": [
+      "2009"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "35."
+    ],
+    "author": [
+      {
+        "given": "S.M.B.N.E.P."
+      }
+    ],
+    "title": [
+      "Santa Monica Bay National Estuary Program Semi-Annual Report",
+      "Prepared for the United States Environmental Protection Agency"
+    ],
+    "date": [
+      "2020-04-01",
+      "2020"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "36."
+    ],
+    "author": [
+      {
+        "given": "O.W.P."
+      }
+    ],
+    "title": [
+      "Stormwater Resource Plan for the American River Basin"
+    ],
+    "container-title": [
+      "Office of Water Programs, Sacramento State University, on behalf of regional American River Basin Stakeholders"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "37."
+    ],
+    "author": [
+      {
+        "family": "Diringer",
+        "given": "S."
+      },
+      {
+        "family": "Cooley",
+        "given": "H."
+      },
+      {
+        "family": "Shimabuki",
+        "given": "M."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Incorporating Multiple Benefits into Water Projects: A Guide for Water Managers"
+    ],
+    "volume": [
+      "2020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Pacific Institute"
+    ],
+    "issue": [
+      "46"
+    ]
+  },
+  {
+    "citation-number": [
+      "38."
+    ],
+    "author": [
+      {
+        "family": "Escriva-Bou",
+        "given": "A."
+      },
+      {
+        "family": "Lund",
+        "given": "Pulido-Velazquez",
+        "suffix": "JR"
+      },
+      {
+        "given": "M."
+      }
+    ],
+    "title": [
+      "Modeling residential water and related energy, carbon footprint and costs in California"
+    ],
+    "volume": [
+      "50"
+    ],
+    "doi": [
+      "10.1016/j.envsci.2015.03.005"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Science & Policy"
+    ],
+    "date": [
+      "2015"
+    ],
+    "pages": [
+      "270–281"
+    ]
+  },
+  {
+    "citation-number": [
+      "39."
+    ],
+    "author": [
+      {
+        "family": "Escriva-Bou",
+        "given": "A."
+      },
+      {
+        "family": "Lund",
+        "given": "Pulido-Velazquez",
+        "suffix": "JR"
+      },
+      {
+        "family": "M",
+        "given": "Hui"
+      },
+      {
+        "family": "R",
+        "given": "Medellín-Azuara"
+      },
+      {
+        "given": "J."
+      }
+    ],
+    "title": [
+      "Developing a water-energy-GHG emissions modeling framework: Insights from an application to California’s water system"
+    ],
+    "volume": [
+      "109"
+    ],
+    "doi": [
+      "10.1016/j.envsoft.2018.07.011"
+    ],
+    "pages": [
+      "47"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Modelling & Software"
+    ],
+    "date": [
+      "2018"
+    ],
+    "issue": [
+      "54-65"
+    ]
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan for the H-47"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "40."
+    ],
+    "author": [
+      {
+        "family": "Porse",
+        "given": "E.C."
+      },
+      {
+        "family": "Mika",
+        "given": "K.B."
+      },
+      {
+        "family": "Escriva-Bou",
+        "given": "A."
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Energy use for urban water management by utilities and households in Los Angeles"
+    ],
+    "volume": [
+      "2"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Research Communications"
+    ],
+    "date": [
+      "2020"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "citation-number": [
+      "41."
+    ],
+    "author": [
+      {
+        "family": "Foundation",
+        "given": "WateReuse"
+      }
+    ],
+    "title": [
+      "Framework for Direct Potable Reuse"
+    ],
+    "date": [
+      "2015"
+    ],
+    "url": [
+      "https://watereuse.org/watereuseresearch/framework-for-direct-potable-reuse/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Environment Federation, National Water Research Institute"
+    ]
+  }
+]

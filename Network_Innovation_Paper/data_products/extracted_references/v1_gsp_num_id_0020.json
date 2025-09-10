@@ -1,0 +1,5028 @@
+[
+  {
+    "author": [
+      {
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "3,500 11,000 9,500 28,000 24,000 4,000 80,000 15,000 0 39,000 23,000 77,000 3,000"
+    ],
+    "pages": [
+      "2,000 1,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "12,000 8,500 13,500 24,000 25,000 6,000 89,000 11,000 0 34,000 24,000 69,000 20,000 19,000"
+    ],
+    "pages": [
+      "1,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "8,000 6,500 7,500 17,000 23,000 3,500 65,500 7,000 0 29,000 21,000 57,000 8,500"
+    ],
+    "pages": [
+      "6,500 2,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "volume": [
+      "500 7,500 5,000 29,000 20,000 3,500 65,500 26,000 0 35,000 20,000 81,000 (15,500) (15,500) 0"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "14,500 6,000 11,500 15,000 26,000 9,000 82,000 7,000 0 33,000 25,000 65,000 17,000 16,000"
+    ],
+    "pages": [
+      "1,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "D 24,000 300,000 4,300 33,000 360,000 36,000 260,000 40,000 19,000 1,600 360,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "W 23,000 1,700,000 7,200 31,000 1,800,000 35,000 1,600,000 48,000 26,000 3,200"
+    ],
+    "pages": [
+      "1,800,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "volume": [
+      "N 7,600 960,000 4,100 34,000 1,000,000 26,000 930,000 35,000 20,000 1,800"
+    ],
+    "pages": [
+      "1,000,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "W 21,000 1,400,000 5,200 37,000 1,500,000 33,000 1,400,000 44,000 21,000"
+    ],
+    "pages": [
+      "–450 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "D 14,000 480,000 5,300 37,000 540,000 33,000 460,000 34,000 14,000"
+    ],
+    "pages": [
+      "–2,100 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "W 21,000 1,400,000 4,500 37,000 1,400,000 37,000 1,300,000 40,000 21,000 2,100"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "W 29,000 1,300,000 5,400 37,000 1,400,000 37,000 1,300,000 47,000 14,000 0 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "N 11,000 1,100,000 6,500 34,000 1,100,000 29,000 1,100,000 34,000"
+    ],
+    "pages": [
+      "17,000 500 1,100,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "D 13,000 480,000 6,000 37,000 540,000 33,000 460,000 31,000 13,000"
+    ],
+    "pages": [
+      "–2,500 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "W 22,000 1,400,000 5,100 37,000 1,500,000 36,000 1,400,000 41,000 20,000 2,100"
+    ],
+    "pages": [
+      "1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "D 12,000 480,000 5,600 36,000 540,000 31,000 460,000 33,000 12,000"
+    ],
+    "pages": [
+      "–2,100 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "D 14,000 520,000 5,600 36,000 580,000 34,000 490,000 33,000 19,000"
+    ],
+    "pages": [
+      "700 580,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "D 13,000 480,000 6,000 37,000 530,000 33,000 450,000 35,000 17,000"
+    ],
+    "pages": [
+      "–700 530,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "D 13,000 520,000 5,500 36,000 570,000 33,000 480,000 35,000"
+    ],
+    "pages": [
+      "22,000 700 570,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "SC 15,000 480,000 5,400 36,000 530,000 31,000 450,000 40,000 19,000"
+    ],
+    "pages": [
+      "–700 530,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "SC 19,000 500,000 5,300 36,000 560,000 32,000 460,000 42,000 21,000 0 560,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "W 25,000 1,400,000 5,600 37,000 1,400,000 35,000 1,300,000 50,000 26,000 2,100"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "D 15,000 480,000 5,700 36,000 540,000 34,000 450,000 36,000 17,000"
+    ],
+    "pages": [
+      "–2,100 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "W 26,000 1,400,000 4,700 37,000 1,400,000 36,000 1,300,000 49,000 24,000 2,100"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "W 17,000 1,300,000 5,500 37,000 1,400,000 31,000 1,300,000 43,000 17,000 0 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "W 21,000 1,400,000 7,200 37,000 1,500,000 32,000 1,400,000 46,000 18,000 0 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "N 19,000 970,000 5,400 34,000 1,000,000 32,000 950,000 35,000 14,000 0 1,000,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "D 19,000 560,000 5,900 37,000 620,000 37,000 540,000 30,000 14,000"
+    ],
+    "pages": [
+      "–1,600 620,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "D 13,000 540,000 6,500 36,000 600,000 32,000 510,000 33,000 18,000"
+    ],
+    "pages": [
+      "2,100 600,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "N 17,000 810,000 5,400 34,000 860,000 33,000 780,000 36,000 14,000"
+    ],
+    "pages": [
+      "–900 860,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "D 11,000 650,000 6,600 36,000 710,000 30,000 630,000 34,000 19,000"
+    ],
+    "pages": [
+      "–2,100 710,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "W 30,000 1,400,000 4,800 37,000 1,500,000 40,000 1,400,000 45,000 23,000 3,400"
+    ],
+    "pages": [
+      "1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "W 22,000 1,100,000 4,600 37,000 1,200,000 35,000 1,100,000 40,000 11,000"
+    ],
+    "pages": [
+      "–1,100 1,200,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "D 8,500 670,000 6,500 36,000 720,000 31,000 650,000 30,000 16,000"
+    ],
+    "pages": [
+      "–2,300 720,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "D 13,000 560,000 6,800 36,000 620,000 30,000 530,000 37,000 21,000 3,000"
+    ],
+    "pages": [
+      "620,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "N 12,000 810,000 6,300 34,000 860,000 31,000 780,000 36,000 15,000"
+    ],
+    "pages": [
+      "–900 860,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "N 21,000 1,200,000 5,200 34,000 1,300,000 33,000 1,100,000 42,000"
+    ],
+    "pages": [
+      "25,000 500 1,300,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "W 27,000 1,400,000 4,700 37,000 1,500,000 37,000 1,400,000 45,000 21,000"
+    ],
+    "pages": [
+      "–1,100 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "D 13,000 360,000 5,900 36,000 420,000 35,000 350,000 31,000 7,700"
+    ],
+    "pages": [
+      "–5,700 420,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "D 11,000 560,000 6,700 37,000 620,000 30,000 530,000 36,000 22,000 5,100"
+    ],
+    "pages": [
+      "620,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "SC 7,800 580,000 6,600 36,000 630,000 31,000 540,000 33,000"
+    ],
+    "pages": [
+      "23,000 500 630,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "SC 9,500 380,000 6,500 36,000 430,000 29,000 350,000 37,000 13,000"
+    ],
+    "pages": [
+      "–5,500 430,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "D 24,000 540,000 5,500 36,000 610,000 37,000 500,000 43,000 25,000 5,100"
+    ],
+    "pages": [
+      "610,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "W 23,000 1,400,000 6,000 37,000 1,500,000 34,000 1,400,000 49,000 28,000 3,000"
+    ],
+    "pages": [
+      "1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "W 18,000 1,200,000 6,300 37,000 1,200,000 36,000 1,100,000 42,000 14,000"
+    ],
+    "pages": [
+      "–1,600 1,200,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "N 12,000 1,100,000 7,500 34,000 1,200,000 31,000 1,100,000 36,000"
+    ],
+    "pages": [
+      "23,000 500 1,200,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "W 16,000 1,500,000 5,200 37,000 1,500,000 31,000 1,400,000 41,000 23,000"
+    ],
+    "pages": [
+      "–1,600 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "D 18,000 360,000 6,000 37,000 420,000 34,000 350,000 36,000 7,500"
+    ],
+    "pages": [
+      "–5,300 420,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "W 24,000 1,400,000 5,300 37,000 1,500,000 36,000 1,400,000 43,000 23,000 7,600"
+    ],
+    "pages": [
+      "1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2062"
+    ],
+    "volume": [
+      "N 18,000 740,000 6,000 34,000 800,000 33,000 720,000 37,000 9,300"
+    ],
+    "pages": [
+      "–700 800,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2064"
+    ],
+    "volume": [
+      "D 12,000 590,000 6,600 37,000 650,000 33,000 570,000 30,000"
+    ],
+    "pages": [
+      "18,000 500 650,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2065"
+    ],
+    "volume": [
+      "N 23,000 810,000 5,200 34,000 870,000 36,000 780,000 39,000 13,000"
+    ],
+    "pages": [
+      "–900 870,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2066"
+    ],
+    "volume": [
+      "W 14,000 1,500,000 5,700 37,000 1,500,000 33,000 1,400,000 36,000 21,000 0 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2067"
+    ],
+    "volume": [
+      "W 16,000 1,500,000 5,500 37,000 1,500,000 35,000 1,400,000 35,000 18,000"
+    ],
+    "pages": [
+      "–450 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2068"
+    ],
+    "volume": [
+      "D 16,000 400,000 6,100 37,000 460,000 33,000 390,000 35,000 8,000"
+    ],
+    "pages": [
+      "–6,000 460,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2069"
+    ],
+    "volume": [
+      "D 10,000 540,000 6,800 36,000 600,000 32,000 510,000 32,000 19,000 4,400"
+    ],
+    "pages": [
+      "600,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "D 24,000 300,000 4,300 33,000 360,000 36,000 260,000 40,000 19,000 1,600 360,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "W 23,000 1,700,000 7,200 31,000 1,800,000 35,000 1,600,000 48,000 26,000 3,200"
+    ],
+    "pages": [
+      "1,800,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "volume": [
+      "N 7,700 1,000,000 4,100 28,000 1,100,000 30,000 980,000 20,000 21,000 1,900"
+    ],
+    "pages": [
+      "1,100,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "W 21,000 1,300,000 5,200 28,000 1,400,000 34,000 1,300,000 18,000 16,000"
+    ],
+    "pages": [
+      "–400 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "D 15,000 560,000 5,300 28,000 610,000 34,000 540,000 14,000 16,000"
+    ],
+    "pages": [
+      "–1,300 610,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "W 21,000 1,400,000 4,500 28,000 1,400,000 38,000 1,300,000 18,000 18,000 1,600"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "W 29,000 1,400,000 5,400 28,000 1,500,000 37,000 1,400,000 14,000"
+    ],
+    "pages": [
+      "13,000 100 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "N 11,000 970,000 6,500 28,000 1,000,000 31,000 960,000 13,000 12,000 0 1,000,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "D 14,000 550,000 6,000 26,000 600,000 33,000 540,000 11,000 14,000"
+    ],
+    "pages": [
+      "–1,700 600,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "W 23,000 1,400,000 5,100 28,000 1,400,000 37,000 1,300,000 15,000 16,000 1,300"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "D 13,000 510,000 5,600 28,000 550,000 32,000 500,000 12,000 13,000"
+    ],
+    "pages": [
+      "–1,300 550,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "D 14,000 490,000 5,600 28,000 540,000 35,000 470,000 14,000 15,000"
+    ],
+    "pages": [
+      "–800 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "D 14,000 530,000 6,000 28,000 570,000 33,000 500,000 15,000 19,000 1,000"
+    ],
+    "pages": [
+      "570,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "D 13,000 510,000 5,500 28,000 560,000 34,000 490,000 17,000 19,000"
+    ],
+    "pages": [
+      "–300 560,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "SC 17,000 510,000 5,400 23,000 550,000 30,000 490,000 17,000 20,000 0 550,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "SC 19,000 490,000 5,300 21,000 530,000 28,000 470,000 18,000 18,000"
+    ],
+    "pages": [
+      "–800 530,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "W 26,000 1,400,000 5,600 26,000 1,400,000 33,000 1,300,000 20,000 25,000 2,100"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "D 15,000 500,000 5,700 28,000 550,000 35,000 490,000 16,000 17,000"
+    ],
+    "pages": [
+      "–1,300 550,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "W 27,000 1,400,000 4,700 28,000 1,400,000 36,000 1,300,000 19,000 20,000 1,300"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "W 17,000 1,300,000 5,500 28,000 1,400,000 32,000 1,300,000 17,000"
+    ],
+    "pages": [
+      "15,000 50 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "W 22,000 1,400,000 7,200 26,000 1,500,000 32,000 1,400,000 15,000 15,000 0 1,500,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "N 19,000 970,000 5,400 28,000 1,000,000 34,000 970,000 9,400 11,000 0 1,000,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "D 20,000 570,000 5,900 28,000 620,000 38,000 570,000 6,800 12,000"
+    ],
+    "pages": [
+      "–1,700 620,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "D 14,000 510,000 6,500 26,000 560,000 31,000 500,000 12,000 15,000"
+    ],
+    "pages": [
+      "–50 560,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "N 18,000 1,000,000 5,400 28,000 1,100,000 36,000 1,000,000 15,000 18,000 1,700"
+    ],
+    "pages": [
+      "1,100,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "D 12,000 490,000 6,600 26,000 540,000 30,000 480,000 12,000 13,000"
+    ],
+    "pages": [
+      "–2,500 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "W 31,000 1,400,000 4,800 26,000 1,400,000 40,000 1,400,000 16,000 19,000 2,100"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "W 22,000 1,400,000 4,600 26,000 1,400,000 36,000 1,300,000 14,000"
+    ],
+    "pages": [
+      "14,000 50 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "D 9,000 510,000 6,500 21,000 550,000 27,000 500,000 11,000 13,000"
+    ],
+    "pages": [
+      "–1,300 550,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "D 13,000 480,000 6,800 22,000 520,000 25,000 470,000 14,000 15,000"
+    ],
+    "pages": [
+      "–850 520,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "N 12,000 1,000,000 6,300 26,000 1,100,000 32,000 1,000,000 18,000 22,000 2,500"
+    ],
+    "pages": [
+      "1,100,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "N 22,000 1,000,000 5,200 28,000 1,100,000 35,000 1,000,000 17,000 18,000 0 1,100,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "W 27,000 1,300,000 4,700 25,000 1,400,000 36,000 1,300,000 15,000 15,000"
+    ],
+    "pages": [
+      "–400 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "D 13,000 480,000 5,900 21,000 520,000 30,000 470,000 12,000 12,000"
+    ],
+    "pages": [
+      "–2,000 520,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "D 11,000 520,000 6,700 20,000 560,000 27,000 500,000 15,000"
+    ],
+    "pages": [
+      "18,000 700 560,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "SC 7,900 510,000 6,600 25,000 550,000 29,000 490,000 16,000 19,000 1,100"
+    ],
+    "pages": [
+      "550,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "SC 9,500 490,000 6,500 25,000 530,000 24,000 470,000 17,000 20,000"
+    ],
+    "pages": [
+      "–1,100 530,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "D 25,000 460,000 5,500 26,000 520,000 36,000 450,000 18,000 19,000"
+    ],
+    "pages": [
+      "–800 520,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "W 27,000 1,300,000 6,000 28,000 1,400,000 35,000 1,300,000 20,000 25,000 2,100"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "W 18,000 1,300,000 6,300 28,000 1,400,000 36,000 1,300,000 18,000 19,000"
+    ],
+    "pages": [
+      "–50 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "N 13,000 1,000,000 7,500 26,000 1,000,000 33,000 970,000 16,000"
+    ],
+    "pages": [
+      "18,000 500 1,000,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "W 15,000 1,300,000 5,200 28,000 1,400,000 31,000 1,300,000 16,000 16,000"
+    ],
+    "pages": [
+      "–350 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "D 17,000 490,000 6,000 28,000 540,000 33,000 490,000 12,000 13,000"
+    ],
+    "pages": [
+      "–1,300 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "W 25,000 1,400,000 5,300 28,000 1,400,000 37,000 1,400,000 16,000 17,000 1,600"
+    ],
+    "pages": [
+      "1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2064"
+    ],
+    "volume": [
+      "D 11,000 500,000 6,600 26,000 540,000 31,000 490,000 9,700 13,000"
+    ],
+    "pages": [
+      "–1,700 540,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2065"
+    ],
+    "volume": [
+      "N 24,000 1,000,000 5,200 28,000 1,100,000 38,000 1,000,000 15,000 17,000 1,700"
+    ],
+    "pages": [
+      "1,100,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2066"
+    ],
+    "volume": [
+      "W 14,000 1,300,000 5,700 26,000 1,400,000 32,000 1,300,000 14,000 15,000"
+    ],
+    "pages": [
+      "–400 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2067"
+    ],
+    "volume": [
+      "W 16,000 1,400,000 5,500 28,000 1,400,000 36,000 1,300,000 13,000"
+    ],
+    "pages": [
+      "13,000 50 1,400,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2068"
+    ],
+    "volume": [
+      "D 17,000 520,000 6,100 23,000 570,000 31,000 510,000 12,000 12,000"
+    ],
+    "pages": [
+      "–200 570,000"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2069"
+    ],
+    "volume": [
+      "D 10,000 490,000 6,800 21,000 530,000 26,000 470,000 16,000 16,000"
+    ],
+    "pages": [
+      "–1,100 530,000"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1998",
+      "1998"
+    ],
+    "title": [
+      "Crop evapotranspiration - Guidelines for computing crop water requirements"
+    ],
+    "container-title": [
+      "FAO Irrigation and drainage paper 56. FAO - Food and Agriculture Organization of the United Nations"
+    ],
+    "location": [
+      "Rome"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bartow",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Revisions in the Tertiary stratigraphy of the east flank of the Diablo Range"
+    ],
+    "location": [
+      "Central California"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Land use survey – California land and water use, Fresno County"
+    ],
+    "date": [
+      "2000"
+    ],
+    "url": [
+      "http://www.water.ca.gov/landwateruse/lusrvymain.cfm"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Land use survey – California land and water use, Eastern Fresno County"
+    ],
+    "url": [
+      "http://www.water.ca.gov/landwateruse/lusrvymain.cfm"
+    ],
+    "note": [
+      "California Department of Water Resources (DWR) Climate Change Technical Advisory Group (CCTAG)."
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Perspectives and Guidance for Climate Change Analysis"
+    ],
+    "url": [
+      "http://www.water.ca.gov/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "August"
+    ]
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board Central Valley Region (Regional Board",
+      "Water Quality Control Plan for the Tulare Lake Basin Second Edition"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Regional Water Quality Control Board Central Valley Region (Regional Board"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Cleanup and Abatement Order R5-2018-0033."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      }
+    ],
+    "date": [
+      "1972",
+      "1999"
+    ],
+    "title": [
+      "Subsurface geology of the late Tertiary and Quaternary water-bearing deposits of the southern part of the San Joaquin"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "pages": [
+      "29"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959",
+      "1469"
+    ],
+    "title": [
+      "Ground Water Conditions and Storage Capacity in the San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "US Geological Survey Water Supply Paper No"
+    ],
+    "pages": [
+      "287"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Fresno"
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Policy Document: General Plan Update"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Fresno"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "publisher": [
+      "General Plan Annual Progress Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hotchkiss",
+        "given": "W.R."
+      },
+      {
+        "family": "Balding",
+        "given": "G.O."
+      }
+    ],
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "Geology, hydrology and water quality of the Tracy-Dos Palos area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Open-File Report"
+    ],
+    "pages": [
+      "107"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "Kenneth D."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Semi-Annual Groundwater Monitoring for Former Spreckels Sugar Mendota Factory (July-December, 2018"
+    ],
+    "location": [
+      "Fresno, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Association",
+        "given": "Kings River Water"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Agreement to Divert Available Water from the Kings River Channel"
+    ],
+    "location": [
+      "Fresno, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Land",
+        "given": "I.Q."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Agricultural Land Use Data Sets"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "url": [
+      "https://www.landiq.com/"
+    ],
+    "type": null
+  },
+  {
+    "editor": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      },
+      {
+        "family": "Schmidt",
+        "given": "Kenneth D."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Results of 1999 Test Pumping Program for Mendota Pool Group Wells. Prepared for San Joaquin River Exchange Contractors Water Authority, Newhall Land Farming Company, and Mendota Pool Group"
+    ],
+    "location": [
+      "Woodland, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Maas",
+        "given": "E.V."
+      },
+      {
+        "family": "Baligar",
+        "given": "B.V."
+      },
+      {
+        "family": "Duncan",
+        "given": "R.R."
+      },
+      {
+        "family": "Yohe",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Testing crops for salinity tolerance"
+    ],
+    "container-title": [
+      "Proc. Workshop on Adaptation of Plants to Soil Stresses"
+    ],
+    "volume": [
+      "p (Vol. 234"
+    ],
+    "pages": [
+      "247"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Miller",
+        "given": "R.E."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "Geology of the compacting deposits in the Los Banos-Kettleman City subsidence area, California"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Professional Papaer"
+    ],
+    "issue": [
+      "497-E"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of fresh ground water (approximately 3,000 micromhos) in the San Joaquin"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Hydrologic Investigations Atlas HA-489"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the fresh ground-water basin of the Central Valley, California, with texture maps and sections"
+    ],
+    "container-title": [
+      "Professional Paper 1401-C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Snyder",
+        "given": "R.L."
+      },
+      {
+        "family": "Orang",
+        "given": "M."
+      },
+      {
+        "family": "Bali",
+        "given": "K."
+      },
+      {
+        "family": "Eching",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Basic Irrigation Sceduling (BIS"
+    ],
+    "publisher": [
+      "University of California, Davis"
+    ],
+    "pages": [
+      "10"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Snyder",
+        "given": "R.L."
+      },
+      {
+        "family": "Bali",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-12-02"
+    ],
+    "title": [
+      "Irrigation scheduling of alfalfa using evapotranspiration"
+    ],
+    "container-title": [
+      "Proceedings, 2008 California Alfalfa & Forage Symposium and Western Seed Conference"
+    ],
+    "location": [
+      "San Diego, CA"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "given": "A.E.C.O.M."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater Management Plan for the Northern Agencies in the Delta-Mendota Canal Service Area"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/lgagrant/docs/applications/City%20of%20Patterson%20(201209870076"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      ")/Att03_LGA12_CityofPatterson_GWMP_2of2.pdf."
+    ],
+    "note": [
+      "Accessed on"
+    ],
+    "date": [
+      "2018-07-25"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Belitz",
+        "given": "K."
+      },
+      {
+        "family": "Heimes",
+        "given": "F.J."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Character and Evolution of Ground-Water flow System in the Central Part of the Western San Joaquin Valley, California"
+    ],
+    "container-title": [
+      "USGS WaterSupply Paper 2348"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bertoldi",
+        "given": "G.L."
+      },
+      {
+        "family": "Johnston",
+        "given": "R.H."
+      },
+      {
+        "family": "Evenson",
+        "given": "K.D."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Ground water in the"
+    ],
+    "location": [
+      "Central Valley, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "–"
+      }
+    ],
+    "title": [
+      "A Summary Report"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 1401-A"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Borchers",
+        "given": "J.W."
+      },
+      {
+        "family": "Carpenter",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014-04"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/waterplan/docs/cwpu2013/Final/vol4/groundwater/13Land_Subsidence_"
+    ],
+    "note": [
+      "Accessed on October 1, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Assembly",
+        "given": "California"
+      },
+      {
+        "family": "No",
+        "given": "Assembly Bill"
+      }
+    ],
+    "date": [
+      "2014",
+      "1471",
+      "2014-08"
+    ],
+    "title": [
+      "Water Quality, Supply, and Infrastructure Improvements Act of 2014"
+    ],
+    "container-title": [
+      "Approved by Governor, filed with Secretary of State in"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Conservation, California Geologic Survey. Various dates. Faults shapefiles"
+    ],
+    "url": [
+      "https://maps.conservation.ca.gov/cgs/#datalist."
+    ],
+    "note": [
+      "Accessed on June 19, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Fish and Wildlife",
+      "California Lakes shapefile"
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://www.wildlife.ca.gov/Data/GIS/Clearinghouse."
+    ],
+    "note": [
+      "Accessed on August 2, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Fish and Wildlife",
+      "California Streams shapefile"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://www.wildlife.ca.gov/Data/GIS/Clearinghouse."
+    ],
+    "note": [
+      "Accessed on August 2, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "San Joaquin Valley Drainage Investigation –San Joaquin Master Drain"
+    ],
+    "date": [
+      "1965"
+    ],
+    "publisher": [
+      "Department of Water Resources Bulletin No.127"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Water Well Standards: State of California"
+    ],
+    "date": [
+      "1981"
+    ],
+    "genre": [
+      "Bulletin 74-81."
+    ],
+    "url": [
+      "https://www.water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Wells/Files/Bulletin-74-81-Water-Well-Standards-State-of-California-December-"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1981?"
+    ],
+    "note": [
+      "Accessed on August 2, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR). 1991"
+    ],
+    "volume": [
+      "74-90"
+    ],
+    "url": [
+      "https://www.water.ca.gov/LegacyFiles/pubs/groundwater/water_well_standards__bulletin_74-"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Well Standards, Bulletin"
+    ]
+  },
+  {
+    "citation-number": [
+      "90_/ca_well_standards_bulletin74-90_1991.pdf."
+    ],
+    "note": [
+      "Accessed on August 2, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "The California Water Plan Update"
+    ],
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "Volumes 1 and 2"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "California’s Groundwater Bulletin 118 –Update 2003"
+    ],
+    "date": [
+      "2003"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/Statewide-Reports/Bulletin_118_Update_2003.pdf."
+    ],
+    "note": [
+      "Accessed on July 9, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "San Joaquin Valley Groundwater Basin Delta-Mendota Subbasin"
+    ],
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "118"
+    ],
+    "url": [
+      "http://www.water.ca.gov/pubs/groundwater/bulletin_118/basindescriptions/5-22.07.pdf."
+    ],
+    "note": [
+      "Accessed on July 9, 2018."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "DWR Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010"
+    ],
+    "title": [
+      "Lines of Equal Elevation of Water in Wells, Unconfined Aquifer"
+    ],
+    "location": [
+      "San Joaquin Valley"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/pubs/groundwater/lines_of_equal_elevation_of_water_in_wells_unconfi"
+    ],
+    "note": [
+      "Accessed on August 29, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "California Statewide Groundwater Elevation Monitoring (CASGEM) database"
+    ],
+    "date": [
+      "2009"
+    ],
+    "url": [
+      "https://www.casgem.water.ca.gov."
+    ],
+    "note": [
+      "Accessed on various dates."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Water Districts shapefile"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://data.cnra.ca.gov/dataset/water-districts."
+    ],
+    "note": [
+      "Accessed on March 31, 2016."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "date": [
+      "2017-06"
+    ],
+    "publisher": [
+      "California Aqueduct Subsidence Study"
+    ],
+    "type": "book"
+  },
+  {
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/docs/Aqueduct_Subsidence_Study-FINAL-2017.pdf."
+    ],
+    "note": [
+      "Accessed on October 1, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "DRAFT Best Management Practices for the Sustainable Management of Groundwater: Sustainable Management Criteria BMP"
+    ],
+    "date": [
+      "2017"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Management-Criteria-DRAFTpdf"
+      }
+    ],
+    "note": [
+      "Accessed on June 21, 2019."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Evaluation of the Effect of Subsidence on Flow Capacity in the Chowchilla and Eastside Bypasses, and Reach 4A of the San Joaquin River"
+    ],
+    "date": [
+      "2018-05"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Received via personal communication with Alexis R"
+    ],
+    "note": [
+      "Phillips-Dowell (DWR) on September 11,"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Water Data Library database"
+    ],
+    "date": [
+      "2018-07"
+    ],
+    "url": [
+      "http://wdl.water.ca.gov/waterdatalibrary/."
+    ],
+    "note": [
+      "Accessed on various dates."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR). 2018a"
+    ],
+    "publisher": [
+      "Disadvantaged Communities Mapping Tool"
+    ],
+    "type": "book"
+  },
+  {
+    "url": [
+      "https://gis.water.ca.gov/app/dacs/."
+    ],
+    "note": [
+      "Accessed on"
+    ],
+    "date": [
+      "2017-07-17"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Economically Distressed Areas Mapping Tool"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/edas/."
+    ],
+    "note": [
+      "Accessed on July 17, 2017."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "container-title": [
+      "2018c. Natural Communities Commonly Associated with Groundwater (NCCAG) dataset"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/NCDatasetViewer/#."
+    ],
+    "note": [
+      "Accessed on August 13, 2018."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "CA Bulletin 118 Groundwater Basins shapefile"
+    ],
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/ca-bulletin-118-groundwater-basins."
+    ],
+    "note": [
+      "Accessed on May 10, 2019."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Natural Resources Agency"
+    ],
+    "date": [
+      "2018-06"
+    ],
+    "publisher": [
+      "NASA JPL InSAR Subsidence Data"
+    ],
+    "type": "book"
+  },
+  {
+    "url": [
+      "https://data.cnra.ca.gov/dataset/nasa-jpl-insar-subsidence."
+    ],
+    "note": [
+      "Accessed on August 2, 2019."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California State Water Resources Control Board (SWRCB",
+      "San Joaquin Valley Interagency Drainage Program Environmental Assessment – Phase I. Prepared for the California State Water Resources Control Board by Environmental Impact Planning Corporation"
+    ],
+    "date": [
+      "1977"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Caltrans"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "California National Highway System shapefile"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "http://www.dot.ca.gov/hq/tsip/gis/datalibrary/Metadata/NHS.html."
+    ],
+    "note": [
+      "Accessed on May 20, 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corwin",
+        "given": "D.L."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Field-scale monitoring of the long-term impact and sustainability of drainage water reuse on the west side of California’s San Joaquin Valley"
+    ],
+    "volume": [
+      "14"
+    ],
+    "pages": [
+      "1576"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Environmental Monitoring"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      }
+    ],
+    "date": [
+      "1972",
+      "1999"
+    ],
+    "title": [
+      "Subsurface geology of the Late Tertiary and Quarternary water-bearing deposits of the southern part of the"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      }
+    ],
+    "date": [
+      "1957"
+    ],
+    "title": [
+      "Ground-water conditions in the Mendota- Huron Area Fresno and Kings Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "U.S. Geological Survey Water Supply Paper No. 1360-G."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmstead",
+        "given": "S.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground water conditions and storage capacity in the San Joaquin Valley, California"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "287"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "issue": [
+      "1469"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Mack",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Use of ground-water reservoirs for storage of surface water in the San Joaquin Valley California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper 1618"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "East Stanislaus Regional Water Management"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "East Stanislaus Region Integrated Regional Water Management Plan Update – Public Draft"
+    ],
+    "url": [
+      "http://www.eaststanirwm.org/documents/2017-esirwmppublicdraft.pdf."
+    ],
+    "note": [
+      "Accessed on July 26, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Farr",
+        "given": "Tom G."
+      },
+      {
+        "family": "Jones",
+        "given": "Cathleen E."
+      },
+      {
+        "family": "Lieu",
+        "given": "Zhen"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Progress Report: Subsidence in"
+    ],
+    "location": [
+      "California, March"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015",
+      "2016-09"
+    ],
+    "pages": [
+      "–"
+    ],
+    "title": [
+      "Jet Propulsion Laboratory"
+    ],
+    "publisher": [
+      "California Institute of Technology"
+    ],
+    "type": "book"
+  },
+  {
+    "url": [
+      "https://water.ca.gov/LegacyFiles/waterconditions/docs/2017/JPL%20subsidence%20report%20final%20f"
+    ],
+    "note": [
+      "Accessed on November 29, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Farrar",
+        "given": "C.D."
+      },
+      {
+        "family": "Bertoldi",
+        "given": "G.L."
+      }
+    ],
+    "date": [
+      "1988",
+      "v"
+    ],
+    "title": [
+      "Region 4, Central Valley and Pacific Coast Ranges"
+    ],
+    "editor": [
+      {
+        "family": "Back",
+        "given": "William"
+      },
+      {
+        "family": "Rosenshein",
+        "given": "J.S."
+      },
+      {
+        "family": "Seaber",
+        "given": "P.R."
+      }
+    ],
+    "container-title": [
+      "Hydrogeology"
+    ],
+    "location": [
+      "Boulder, Colorado"
+    ],
+    "publisher": [
+      "Geological Society of America, Geology of North America"
+    ],
+    "pages": [
+      "–2, 59–67"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      },
+      {
+        "family": "Schmid",
+        "given": "W."
+      },
+      {
+        "family": "Predmore",
+        "given": "S."
+      },
+      {
+        "family": "Rewis",
+        "given": "D.L."
+      },
+      {
+        "family": "McPherson",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater availability of the Central Valley Aquifer, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 1766"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/pp/1766/."
+    ],
+    "note": [
+      "Accessed on August 29, 2018."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Belitz.",
+        "given": "K."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Development of a three-dimensional model of sedimentary texture in valley-fill deposits of Central Valley"
+    ],
+    "location": [
+      "California, USA"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "625"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey, Hydrogeology Journal"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Traum",
+        "given": "J."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Water availability and land subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "url": [
+      "https://link.springer.com/content/pdf/10.1007%2Fs10040-015-1339-x.pdf."
+    ],
+    "note": [
+      "Accessed on October 10, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fio",
+        "given": "J.L."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Calculation of a water budget and delineation of contributing sources to drainflows in the Western San Joaquin Valley, California"
+    ],
+    "genre": [
+      "U.S. Geological Survey, Open-File Report 94-45."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Foss",
+        "given": "F.D."
+      },
+      {
+        "family": "Blaisdell",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Stratigraphy of the West Side Southern San Joaquin Valley"
+    ],
+    "url": [
+      "http://www.sanjoaquingeologicalsociety.org/wp-content/abstracts/1968_Foss_Blaisdell.pdf."
+    ],
+    "note": [
+      "Accessed on July 9, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "San Joaquin Valley, California—Largest human alteration of the Earth’s surface"
+    ],
+    "editor": [
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Jones",
+        "given": "D.R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "container-title": [
+      "Land Subsidence in the United States: U.S. Geological Survey Circular 1182"
+    ],
+    "pages": [
+      "23–34"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Jones",
+        "given": "D.R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Land subsidence in the United States"
+    ],
+    "volume": [
+      "1182"
+    ],
+    "pages": [
+      "175"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hotchkiss",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1972"
+    ],
+    "title": [
+      "Generalized subsurface geology of water-bearing deposits"
+    ],
+    "location": [
+      "northern San Joaquin Valley, California"
+    ],
+    "url": [
+      "https://doi.org/10.3133/ofr73119."
+    ],
+    "note": [
+      "Accessed on October 24, 2018."
+    ],
+    "doi": [
+      "10.3133/ofr73119."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hotchkiss",
+        "given": "W.R."
+      },
+      {
+        "family": "Balding",
+        "given": "G.O."
+      }
+    ],
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "hydrology, and water quality of the Tracy-Dos Palo area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 72-169."
+    ],
+    "pages": [
+      "107"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley, California, as of 1983"
+    ],
+    "volume": [
+      "85–4196"
+    ],
+    "pages": [
+      "50"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Water Resources Investigations Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "R.L.",
+        "given": "Ireland"
+      },
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Riley",
+        "given": "F.S."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley, California, as of 1980"
+    ],
+    "volume": [
+      "437-I"
+    ],
+    "pages": [
+      "93"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Professional Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Jacob",
+        "given": "C.E."
+      }
+    ],
+    "date": [
+      "1940"
+    ],
+    "title": [
+      "On the flow of water in an elastic artesian aquifer"
+    ],
+    "volume": [
+      "2"
+    ],
+    "pages": [
+      "574–586"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Geophysical Union Trans., pt"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Jennings",
+        "given": "C.W."
+      },
+      {
+        "family": "Strand",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "1958"
+    ],
+    "title": [
+      "Geological Atlas of California"
+    ],
+    "location": [
+      "Santa Cruz Quadrangle"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Geological Survey"
+    ],
+    "volume": [
+      1
+    ],
+    "pages": [
+      "250,000"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geologic Atlas of California Map"
+    ],
+    "issue": [
+      "020"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mendenhall",
+        "given": "W.C."
+      },
+      {
+        "family": "Dole",
+        "given": "R.B."
+      },
+      {
+        "family": "Stabler",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "1916"
+    ],
+    "title": [
+      "Ground water in the San Joaquin Valley, California"
+    ],
+    "volume": [
+      "398"
+    ],
+    "pages": [
+      "310"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "State of California Well Completion Report"
+    ],
+    "note": [
+      "Well No. E0132267. Received via personal communication on October 12, 2018."
+    ],
+    "type": "personal_communication"
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "Madera Regional Water Management"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Madera Integrated Regional Water Management Plan – Final Draft"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/irwm/grants/docs/PlanReviewProcess/Madera_IRWMP/Madera%20IR"
+    ],
+    "note": [
+      "Accessed on July 26, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "McBain"
+      },
+      {
+        "family": "Trush",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "San Joaquin River Restoration Study Background Report, prepared for Friant Water Users Authority"
+    ],
+    "location": [
+      "Lindsay, CA"
+    ],
+    "collection-title": [
+      "and Natural Resources Defense Council"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/waterrights/water_issues/programs/bay_delta/bay_delta_plan/water_qual"
+    ],
+    "note": [
+      "Accessed on October 1, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mosley",
+        "given": "J."
+      }
+    ],
+    "title": [
+      "Natural Resources Specialist/GIS Coordinator, Bureau of Indian Affairs Pacific Region"
+    ],
+    "genre": [
+      "Personal Communication on"
+    ],
+    "date": [
+      "2017-01-26"
+    ],
+    "type": "personal_communication"
+  },
+  {
+    "container-title": [
+      "National Resources Conservation Service (NRCS"
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Part 630 Hydrology National Engineering Handbook, Chapter 7 Hydrologic Soil Groups"
+    ],
+    "url": [
+      "http://www.waterboards.ca.gov/water_issues/programs/water_quality_goals/search.shtml."
+    ],
+    "note": [
+      "Accessed on August 13, 2018."
+    ],
+    "type": "chapter"
+  },
+  {
+    "container-title": [
+      "Natural Resources Conservation Service (NRCS"
+    ],
+    "date": [
+      "2015"
+    ],
+    "publisher": [
+      "Soil Survey Manual"
+    ],
+    "type": "chapter"
+  },
+  {
+    "url": [
+      "http://www.nrcs.usda.gov/wps/portal/nrcs/detail//?cid=nrcs142p2_054253."
+    ],
+    "note": [
+      "Accessed on August 13, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ogden",
+        "given": "G.R."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Agricultural Land Use and Wildlife in the San Joaquin Valley, 1769-1930: An Overview"
+    ],
+    "container-title": [
+      "SOLO Heritage Research. San Joaquin Valley Drainage Program, U.S. Department of Interior"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of fresh groundwater (approximately 2,000 micromhos) in the San Joaquin"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Hydrologic Investigations Atlas HA-489"
+    ],
+    "note": [
+      "1 sheet, scale"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1:500,000."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/of/1971/0223/plate-1.pdf."
+    ],
+    "note": [
+      "Accessed on October 25, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Pugh",
+        "given": "A.G."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley, California, as of 1972: U.S"
+    ],
+    "volume": [
+      "437"
+    ],
+    "pages": [
+      "78"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Professional Paper"
+    ],
+    "issue": [
+      ""
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "url": [
+      "https://www.scienceforconservation.org/assets/downloads/GDEsUnderSGMA.pdf."
+    ],
+    "note": [
+      "Accessed on October 1, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Program",
+        "given": "San Joaquin River Restoration"
+      }
+    ],
+    "title": [
+      "Subsidence monitoring database"
+    ],
+    "url": [
+      "http://www.restoresjr.net/science/subsidence-monitoring/."
+    ],
+    "note": [
+      "Accessed on September 13, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K.D."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Groundwater Flows in the San Joaquin River Exchange Contractors Service Area"
+    ],
+    "publisher": [
+      "Prepared for SJREC"
+    ],
+    "location": [
+      "Los Banos, California"
+    ],
+    "pages": [
+      "46"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K.D."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Groundwater Conditions in and near the Central California Irrigation District"
+    ],
+    "location": [
+      "Los Banos, California"
+    ],
+    "pages": [
+      "89"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "K.D."
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2015-09"
+    ],
+    "title": [
+      "Groundwater Overdraft in the Delta-Mendota Subbasin"
+    ],
+    "location": [
+      "Fresno, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J."
+      },
+      {
+        "family": "Solt",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2013",
+      "2003"
+    ],
+    "title": [
+      "Land subsidence along the Delta-Mendota Canal in the northern part of the San Joaquin Valley",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "volume": [
+      "2013-5142"
+    ],
+    "pages": [
+      "87 ,"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20135142."
+    ],
+    "note": [
+      "Accessed on September 28, 2018."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20135142."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      }
+    ],
+    "date": [
+      "2015",
+      "2007"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley"
+    ],
+    "location": [
+      "California, USA"
+    ],
+    "url": [
+      "https://www.proc-iahs.net/372/23/2015/piahs-372-23-2015.pdf."
+    ],
+    "note": [
+      "Accessed on October 10, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "California",
+        "given": "State",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Senior Water Rights Curtailed in Delta"
+    ],
+    "editor": [
+      {
+        "family": "Joaquin",
+        "given": "San"
+      },
+      {
+        "family": "Watersheds",
+        "given": "Sacramento"
+      }
+    ],
+    "url": [
+      "http://www.drought.ca.gov/topstory/top-story-37.html."
+    ],
+    "note": [
+      "Accessed on April 2, 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Strathouse",
+        "given": "S.M."
+      },
+      {
+        "family": "Sposito",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "1980",
+      "1980-08"
+    ],
+    "title": [
+      "Geologic nitrogen may pose hazard"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Agriculture"
+    ]
+  },
+  {
+    "title": [
+      "Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Web Soil Survey"
+    ],
+    "url": [
+      "https://websoilsurvey.nrcs.usda.gov/."
+    ],
+    "note": [
+      "Accessed on"
+    ],
+    "date": [
+      "2018-06-19"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sullivan",
+        "given": "P.J."
+      },
+      {
+        "family": "Sposito",
+        "given": "G."
+      },
+      {
+        "family": "Strathouse",
+        "given": "S.M."
+      },
+      {
+        "family": "Hansen",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Geologic nitrogen and the occurrence of high nitrate soils in western San Joaquin Valley, California"
+    ],
+    "volume": [
+      "47"
+    ],
+    "pages": [
+      "15–49"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hilgardia"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Swanson",
+        "given": "A.A."
+      }
+    ],
+    "date": [
+      "1998",
+      "October 4–5, 1995"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley, updated to 1995",
+      "Land subsidence case studies and current research"
+    ],
+    "editor": [
+      {
+        "family": "Borchers",
+        "given": "J.W."
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Dr. Joseph F. Poland Symposium on Land Subsidence",
+      "Association of Engineering Geologists, Special Publication"
+    ],
+    "location": [
+      "Sacramento, Calif"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "75–79"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "8"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Groundwater and Stream Interaction in California’s Central Valley: Insights for Sustainable Groundwater Management"
+    ],
+    "url": [
+      "https://www.scienceforconservation.org/assets/downloads/GroundwaterStreamInteraction_2016.pdf."
+    ],
+    "note": [
+      "Accessed on October 1, 2018."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Identifying Environmental Surface Water Users - Freshwater Species List for Each Groundwater Basin dataset"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/gdetools/environmental-surface-water-beneficiaries/."
+    ],
+    "note": [
+      "Accessed on June 20, 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.N.A.V.C.O."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "UNAVCO’s Monitoring Network Map database"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/map/map.html#/."
+    ],
+    "note": [
+      "Accessed on August 10, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United State Bureau of Reclamation (USBR",
+      "USBR computed full natural flows from 1906-2002"
+    ],
+    "date": [
+      "2002"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "United States Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Delta-Mendota Canal Non-Project Water Pump-in Program Monitoring Plan"
+    ],
+    "url": [
+      "https://www.usbr.gov/mp/nepa/includes/documentShow.php?Doc_ID=32784."
+    ],
+    "note": [
+      "Accessed on October 25, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Census Bureau"
+    ],
+    "date": [
+      "2017"
+    ],
+    "publisher": [
+      "Population Estimates Program. www.census.gov/quickfacts"
+    ],
+    "type": "book"
+  },
+  {
+    "note": [
+      "Accessed on November 16,"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS",
+      "Water resources data for California, 1910-2000 for various gaging stations within the San Joaquin Valley"
+    ],
+    "date": [
+      "2000"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS",
+      "Central Valley Spatial Database, Corcoran Clay Depth, Extent, and Thickness shapefiles"
+    ],
+    "date": [
+      "2012"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/central-valley/central-valley-spatialdatabase.html."
+    ],
+    "note": [
+      "Accessed on August 13, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS), California Water Science Center (CWSC"
+    ],
+    "date": [
+      "2017-03-20"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Canal",
+        "given": "Delta-Mendota"
+      }
+    ],
+    "title": [
+      "Evaluation of Groundwater Conditions & Land Subsidence"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/central-valley/delta-mendota-canal.html."
+    ],
+    "note": [
+      "Accessed on October 1, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS",
+      "National Elevation Dataset, Ground Surface Elevation shapefile"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://viewer.nationalmap.gov/advanced-viewer/."
+    ],
+    "note": [
+      "Accessed on June 19, 2018."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS). n.d"
+    ],
+    "url": [
+      "https://viewer.nationalmap.gov/basic/?basemap=b1&category=nhd&title=NHD%20View."
+    ],
+    "note": [
+      "Accessed on August 13, 2018."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "National Hydrograph Dataset"
+    ]
+  },
+  {
+    "title": [
+      "University of California, Davis (UCD) Department of Agriculture and Natural Resources"
+    ],
+    "container-title": [
+      "n.d. Soil Resource Lab. Soil Agricultural Groundwater Banking Index (SAGBI"
+    ],
+    "url": [
+      "https://casoilresource.lawr.ucdavis.edu/sagbi/."
+    ],
+    "note": [
+      "Accessed on April 20, 2018."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Wagner",
+        "given": "D.L."
+      },
+      {
+        "family": "Bortugno",
+        "given": "E.J."
+      },
+      {
+        "family": "Mc Junkin",
+        "given": "R.D."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geologic Map of the San Francisco – San Jose Quadrangle"
+    ],
+    "volume": [
+      1
+    ],
+    "pages": [
+      "250,000"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Geological Survey, Regional Geologic Map"
+    ],
+    "issue": [
+      "5A"
+    ]
+  },
+  {
+    "title": [
+      "Delta-Mendota SGMA invite you to learn why your local agencies are developing groundwater sustainability plans for the future of our groundwater. Please come to one of following workshops: •",
+      "6:00pm Patterson City Hall 1 Plaza Circle • Los Banos: Tue., May 21, 4:00 – 6:00pm College Greens Building 1815 Scripps Drive •"
+    ],
+    "location": [
+      "Patterson",
+      "Santa Nella"
+    ],
+    "publisher": [
+      "Mon",
+      "Wed"
+    ],
+    "date": [
+      "May 20",
+      "May 22"
+    ],
+    "volume": [
+      "4",
+      "6"
+    ],
+    "pages": [
+      "–",
+      "–"
+    ],
+    "note": [
+      "8:30pm Romero Elem. School 13500 Luis Ave. • Mendota: Thu., May 23, 6:00 – 8:00pm Mendota Library 1246 Belmont Ave."
+    ],
+    "issue": [
+      "00",
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Patterson"
+      }
+    ],
+    "title": [
+      "Lun.,20 de Mayo , 4–6pm Ayuntamiento de Patterson 1 Plaza Circle -Los"
+    ],
+    "location": [
+      "Banos"
+    ],
+    "publisher": [
+      "Mar"
+    ],
+    "note": [
+      "21 de May, 4–6pm College Greens Building 1815 Scripps Dr."
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Santa Nella"
+    ],
+    "publisher": [
+      "Mie"
+    ],
+    "title": [
+      "22 de Mayo, 6:30–8:30pm Escuela Pri"
+    ],
+    "note": [
+      "Romero 13500 Luis Ave."
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Mendota"
+    ],
+    "publisher": [
+      "Jue"
+    ],
+    "title": [
+      "23 de Mayo, 6–8pm Biblioteca de Mendota 1246 Belmont Ave"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Additional Resources: The Sustainable Groundwater Management Act, www.deltamendota.org/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Delta-Mendota SGMA invite you to learn why your local agencies are developing groundwater sustainability plans for the future of our groundwater. Please come to one of following workshops: •",
+      "6:00pm Patterson City Hall 1 Plaza Circle • Los Banos: Tue., May 21, 4:00 – 6:00pm College Greens Building 1815 Scripps Drive •"
+    ],
+    "location": [
+      "Patterson",
+      "Santa Nella"
+    ],
+    "publisher": [
+      "Mon",
+      "Wed"
+    ],
+    "date": [
+      "May 20",
+      "May 22"
+    ],
+    "volume": [
+      "4",
+      "6"
+    ],
+    "pages": [
+      "–",
+      "–"
+    ],
+    "note": [
+      "8:30pm Romero Elem. School 13500 Luis Ave. • Mendota: Thu., May 23, 6:00 – 8:00pm Mendota Library 1246 Belmont Ave."
+    ],
+    "issue": [
+      "00",
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Patterson"
+      }
+    ],
+    "title": [
+      "Lun.,20 de Mayo , 4–6pm Ayuntamiento de Patterson 1 Plaza Circle -Los"
+    ],
+    "location": [
+      "Banos"
+    ],
+    "publisher": [
+      "Mar"
+    ],
+    "note": [
+      "21 de May, 4–6pm College Greens Building 1815 Scripps Dr."
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Santa Nella"
+    ],
+    "publisher": [
+      "Mie"
+    ],
+    "title": [
+      "22 de Mayo, 6:30–8:30pm Escuela Pri"
+    ],
+    "note": [
+      "Romero 13500 Luis Ave."
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Mendota"
+    ],
+    "publisher": [
+      "Jue"
+    ],
+    "title": [
+      "23 de Mayo, 6–8pm Biblioteca de Mendota 1246 Belmont Ave"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Additional Resources: The Sustainable Groundwater Management Act, www.deltamendota.org/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Level Data and Contour Mapping"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "title": [
+      "Each GSP Group determined the historic rate of subsidence in their respective Plan area using the following data sources and period of record. The subsidence rates were combined using a ‘sum-of-the-parts’ methodology to develop an understanding of subsidence in the Subbasin. a. Aliso Water District GSP: United States Bureau of Reclamation (USBR) San Joaquin River Restoration Program (SJRRP) 2011-2017. b. Farmers Water District GSP: United States Geological Survey (USGS) and University-NAVSTAR Consortium (UNAVCO) 2004-2017"
+    ],
+    "container-title": [
+      "c. Fresno Management Areas A & B GSP: USGS and UNAVCO 2004-2017. d. Grassland GSP: USBR 2011-2017",
+      "Northern & Central Delta-Mendota GSP (without Tranquillity Irrigation District): USBR’s Delta-Mendota Canal subsidence surveys interpolated from 1984 to 2014 (Pools 3 through 18) as well as the Department of Water Resources 2017 CA Aqueduct Subsidence Study. f. Northern & Central Delta-Mendota GSP (Tranquillity Irrigation District): Tranquillity Irrigation District’s (TRID) local subsidence data from 2014 to 2018. g. San Joaquin River Exchange Contractors GSP: USBR’s SJRRP subsidence monitoring network, USBR’s Delta-Mendota Canal subsidence survey data, USGS continuous monitoring sites"
+    ],
+    "editor": [
+      {
+        "family": "Ken D. Schmidt",
+        "particle": "with"
+      },
+      {
+        "family": "e",
+        "given": "Associates",
+        "particle": "edits."
+      }
+    ],
+    "note": [
+      "including extensometers and CPGS sites), and local surveying data for years 2003-2012, 2013, and 2014-2018."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Workshop Summary Delta-Mendota Subbasin Spring 2019 Coordinated SGMA Workshops"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Delta-Mendota SGMA invite you to learn why your local agencies are developing groundwater sustainability plans for the future of our groundwater. Please come to one of following workshops: •",
+      "6:00pm Patterson City Hall 1 Plaza Circle • Los Banos: Tue., May 21, 4:00 – 6:00pm College Greens Building 1815 Scripps Drive •"
+    ],
+    "location": [
+      "Patterson",
+      "Santa Nella"
+    ],
+    "publisher": [
+      "Mon",
+      "Wed"
+    ],
+    "date": [
+      "May 20",
+      "May 22"
+    ],
+    "volume": [
+      "4",
+      "6"
+    ],
+    "pages": [
+      "–",
+      "–"
+    ],
+    "note": [
+      "8:30pm Romero Elem. School 13500 Luis Ave. • Mendota: Thu., May 23, 6:00 – 8:00pm Mendota Library 1246 Belmont Ave."
+    ],
+    "issue": [
+      "00",
+      "30"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Patterson"
+      }
+    ],
+    "title": [
+      "Lun.,20 de Mayo , 4–6pm Ayuntamiento de Patterson 1 Plaza Circle -Los"
+    ],
+    "location": [
+      "Banos"
+    ],
+    "publisher": [
+      "Mar"
+    ],
+    "note": [
+      "21 de May, 4–6pm College Greens Building 1815 Scripps Dr."
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Santa Nella"
+    ],
+    "publisher": [
+      "Mie"
+    ],
+    "title": [
+      "22 de Mayo, 6:30–8:30pm Escuela Pri"
+    ],
+    "note": [
+      "Romero 13500 Luis Ave."
+    ],
+    "type": null
+  },
+  {
+    "location": [
+      "Mendota"
+    ],
+    "publisher": [
+      "Jue"
+    ],
+    "title": [
+      "23 de Mayo, 6–8pm Biblioteca de Mendota 1246 Belmont Ave"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Additional Resources: The Sustainable Groundwater Management Act, www.deltamendota.org/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Organization Name Organization Type Fresno County Farm Bureau Agriculture Merced County Farm Bureau Agriculture North Grassland Wildlife Foundation Agriculture Patterson Apricot Fiesta Agriculture Stanislaus County Farm Bureau Agriculture Asociación de Charros La Internacional del Valle de"
+    ],
+    "publisher": [
+      "Patterson Business Adobe Valley Ranch Business Gustine Chamber of Commerce Business Los Banos Chamber of Commerce Business Patterson-Westley Chamber of Commerce Business"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "The area surrounding the well will be kept clear of brush, debris, and waste materials"
+    ],
+    "genre": [
+      "FRESNO COUNTY DEPARTMENT OF PUBLIC HEALTH ENVIRONMENTAL HEALTH DIVISION P.O. Box 11867,"
+    ],
+    "location": [
+      "Fresno, California"
+    ],
+    "note": [
+      "93775 Tel: (559) 600-3357 FAX: (559) 600-7629 WELL DESTRUCTION REQUIREMENTS"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "All well destructions shall be performed according to Part III, Sections 20-23, Bulletin 74-81 and 74-90"
+    ],
+    "genre": [
+      "[WSO Section 3]."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "Impervious Sealing Materials. Approved imperious materials include neat cement, sand-cement grout, concrete, and betonite clay"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "State Highway",
+        "given": "American Association",
+        "particle": "of"
+      },
+      {
+        "family": "Officials",
+        "given": "Transportation"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Standard specifications for transportation materials and methods of sampling and testing"
+    ],
+    "edition": [
+      "24th"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "American Society for Testing and Materials (ASTM",
+      "Standard classification of soils for engineering purposes"
+    ],
+    "date": [
+      "2005"
+    ],
+    "genre": [
+      "ASTM Standard D2487-00."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Cowardin",
+        "given": "L.M."
+      },
+      {
+        "family": "Carter",
+        "given": "V."
+      },
+      {
+        "family": "Golet",
+        "given": "F.C."
+      },
+      {
+        "family": "LaRoe",
+        "given": "E.T."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Classification of wetlands and deep-water habitats of the United States"
+    ],
+    "container-title": [
+      "U.S. Fish and Wildlife Service FWS/OBS-79/31"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Register",
+        "given": "Federal"
+      }
+    ],
+    "date": [
+      "1994-07-13"
+    ],
+    "title": [
+      "Changes in hydric soils of the United States"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Register",
+        "given": "Federal"
+      }
+    ],
+    "title": [
+      "September 18",
+      "Hydric soils of the United States"
+    ],
+    "date": [
+      "2002"
+    ],
+    "type": null
+  },
+  {
+    "editor": [
+      {
+        "family": "Hurt",
+        "given": "G.W."
+      },
+      {
+        "family": "Vasilas",
+        "given": "L.M."
+      }
+    ],
+    "container-title": [
+      "Version 6.0"
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Field indicators of hydric soils in the United States"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Council",
+        "given": "National Research"
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Wetlands: Characteristics and boundaries"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey Division"
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Soil survey manual"
+    ],
+    "container-title": [
+      "Soil Conservation Service. U.S. Department of Agriculture Handbook 18"
+    ],
+    "url": [
+      "http://www.nrcs.usda.gov/wps/portal/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Soil taxonomy: A basic system of soil classification for making and interpreting soil surveys"
+    ],
+    "edition": [
+      "2nd"
+    ],
+    "container-title": [
+      "Natural Resources Conservation Service, U.S. Department of Agriculture Handbook 436"
+    ],
+    "url": [
+      "http://"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Keys to soil taxonomy"
+    ],
+    "edition": [
+      "11th"
+    ],
+    "container-title": [
+      "U.S. Department of Agriculture, Natural Resources Conservation Service"
+    ],
+    "url": [
+      "http://"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Tiner",
+        "given": "R.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Wetlands of Delaware"
+    ],
+    "container-title": [
+      "U.S. Fish and Wildlife Service and Delaware Department of Natural Resources and Environmental Control, Wetlands Section"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "United States Army Corps of Engineers, Environmental Laboratory",
+      "Corps of Engineers wetlands delineation manual"
+    ],
+    "date": [
+      "1987"
+    ],
+    "genre": [
+      "Waterways Experiment Station Technical Report Y-87-1."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "United States Department of Agriculture, Natural Resources Conservation Service. National forestry manual",
+      "United States Department of Agriculture, Natural Resources Conservation Service"
+    ],
+    "url": [
+      "http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/",
+      "http://www.nrcs.usda.gov/wps/portal/nrcs/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "National range and pasture handbook"
+    ]
+  },
+  {
+    "title": [
+      "United States Department of Agriculture, Natural Resources Conservation Service. National soil survey handbook, title 430-VI",
+      "nrcs/detail/soils/scientists/?cid=nrcs142p2_054242 United States Department of Agriculture, Natural Resources Conservation Service",
+      "Land resource regions and major land resource areas of the United States, the Caribbean, and the Pacific Basin"
+    ],
+    "url": [
+      "http://www.nrcs.usda.gov/wps/portal/",
+      "http://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/soils/?"
+    ],
+    "date": [
+      "2006"
+    ],
+    "container-title": [
+      "U.S. Department of Agriculture Handbook 296"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "United States Department of Agriculture, Soil Conservation Service",
+      "Land capability classification"
+    ],
+    "date": [
+      "1961"
+    ],
+    "container-title": [
+      "U.S. Department of Agriculture Handbook 210"
+    ],
+    "url": [
+      "http://"
+    ],
+    "type": "chapter"
+  },
+  {
+    "container-title": [
+      "SUB Subsidence Package UPW Upstream Weighting Package USBR United States Bureau of Reclamation USGS United States Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1998",
+      "1998"
+    ],
+    "title": [
+      "Crop evapotranspiration - Guidelines for computing crop water requirements"
+    ],
+    "container-title": [
+      "FAO Irrigation and drainage paper 56. FAO - Food and Agriculture Organization of the United Nations"
+    ],
+    "location": [
+      "Rome"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Applied Groundwater Modeling: Simulation of Flow and Advective Transport"
+    ],
+    "publisher": [
+      "Academic Press"
+    ],
+    "pages": [
+      "381"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Belitz",
+        "given": "K."
+      },
+      {
+        "family": "Phillips",
+        "given": "S.P."
+      },
+      {
+        "family": "Gronberg",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Numerical Simulation of groundwater flow in the central part of the western San Joaquin"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "US Geological Survey Water Supply Paper"
+    ],
+    "volume": [
+      "2396"
+    ],
+    "pages": [
+      "69"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2016 and 2017, Best Management Practices and Guidance Documents"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources, Land IQ Statewide Crop Mapping"
+    ],
+    "date": [
+      "2014"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/CADWRLandUseViewer/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources, Land Use Surveys https://water.ca.gov/Programs/Water-Use-And-Efficiency/Land-And-Water-Use/Land-Use-Surveys California Department of Water Resources",
+      "Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development California Irrigation Management Information System, California Department of Water Resources"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://cimis.water.ca.gov/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      },
+      {
+        "family": "Gordon",
+        "given": "G.V."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Geology, Hydrology, and quality of water in the Hanford-Visalia area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Open-File Report"
+    ],
+    "pages": [
+      "170"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Croft",
+        "given": "M.G."
+      }
+    ],
+    "date": [
+      "1972",
+      "1999"
+    ],
+    "title": [
+      "Subsurface geology of the late Tertiary and Quaternary water-bearing deposits of the San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "pages": [
+      "29"
+    ],
+    "type": "book"
+  },
+  {
+    "editor": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      }
+    ],
+    "date": [
+      "2009",
+      "1766"
+    ],
+    "title": [
+      "Groundwater Availability of the Central Valley Aquifer"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "225"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "M.C."
+      },
+      {
+        "family": "Tiedman",
+        "given": "C.R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Effective groundwater model calibration: with analysis of data, sensitivities, predictions, and uncertainty"
+    ],
+    "publisher": [
+      "Wiley Inter-science"
+    ],
+    "location": [
+      "Hoboken"
+    ],
+    "pages": [
+      "455"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Schmidt",
+        "given": "Kenneth D."
+      },
+      {
+        "given": "Associates"
+      },
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Long-term Impacts of transfer pumping by the Mendota Pool Group: Prepared for San Joaquin River Exchange Contractors Water Authority"
+    ],
+    "volume": [
+      "60"
+    ],
+    "pages": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Newhall Land and Farming Company, and Mendota Pool Group"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Fresno County Draft Groundwater Sustainability Plan"
+    ],
+    "publisher": [
+      "Prepared for County of Fresno"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "Hydrogeologic Technical Analysis - Mendota Pool Group Exchange Program EIS/EIR, Prepared for Westlands Water District, United States Bureau of Reclamation and Mendota Pool Group (Appendix E of USBR and WWD"
+    ],
+    "note": [
+      "Mendota Pool Group 20-Year Exchange Program, Draft Environmental Impact Statement/Environmental Impact Report)."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "National Oceanic and Atmospheric Administration, National Center for Environmental Information"
+    ],
+    "container-title": [
+      "Climate Data"
+    ],
+    "url": [
+      "https://www.ncdc.noaa.gov/cdo-web/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Panday",
+        "given": "Sorab"
+      },
+      {
+        "family": "Ibaraki",
+        "given": "Motomu"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "MODFLOW-NWT, A Newton formulation for MODFLOW-2005: U.S"
+    ],
+    "volume": [
+      "6-A37"
+    ],
+    "pages": [
+      "44"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Poeter",
+        "given": "E.P."
+      },
+      {
+        "family": "M.C.",
+        "given": "Hill"
+      },
+      {
+        "family": "Lu",
+        "given": "D."
+      },
+      {
+        "family": "Tiedeman",
+        "given": "C.R."
+      },
+      {
+        "family": "Mehl",
+        "given": "Steffen"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "UCODE_2014, With New Capabilities to Define Parameters Unique to Predictions, Calculate Weights Using Simulated Values, Estimate Parameters with SVD, Evaluate Uncertainty with MCMC"
+    ],
+    "note": [
+      "and more: Integrated Groundwater Modeling Center Report Number GWMI 2014-02."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Snyder",
+        "given": "R.L."
+      },
+      {
+        "family": "Bali",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008-12-02"
+    ],
+    "title": [
+      "Irrigation scheduling of alfalfa using evapotranspiration"
+    ],
+    "container-title": [
+      "Proceedings, 2008 California Alfalfa & Forage Symposium and Western Seed Conference"
+    ],
+    "location": [
+      "San Diego, CA"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Snyder",
+        "given": "R.L."
+      },
+      {
+        "family": "Orang",
+        "given": "M."
+      },
+      {
+        "family": "Bali",
+        "given": "K."
+      },
+      {
+        "family": "Eching",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Basic Irrigation Scheduling (BIS"
+    ],
+    "publisher": [
+      "University of California, Davis"
+    ],
+    "pages": [
+      "10"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Interior",
+        "given": "U.S.Department",
+        "particle": "of the"
+      }
+    ],
+    "title": [
+      "Bureau of Reclamation and Westlands Water District",
+      "Mendota Pool Group 20-Year Exchange Program"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Draft Environmental Impact Statement/Environmental Impact Report"
+    ]
+  },
+  {
+    "title": [
+      "United States Department of Agriculture, National Agricultural Statistics Service crop spatial data"
+    ],
+    "url": [
+      "https://www.nass.usda.gov/Research_and_Science/"
+    ],
+    "type": null
+  }
+]

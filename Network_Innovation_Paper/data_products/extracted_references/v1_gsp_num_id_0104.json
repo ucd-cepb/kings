@@ -1,0 +1,8420 @@
+[
+  {
+    "citation-number": [
+      "4-14"
+    ],
+    "title": [
+      "Predicted Hydraulic Heads and Management Action Tiers at USGS 6th Street #4 Well in the Calimesa Management Area ......................................................................................................................... 4-55 4-15 Predicted Volume in Storage by the Future Baseline and Future Baseline with Climate Change I and II Scenarios and Drought Buffer in the Western Heights Management Area ........ 4-57 4-16 Predicted Simulated Hydraulic Heads and Management Action Tiers at WHWC-02A in the Western Heights Management Area ............................................................................................................. 4-59 4-17 Predicted Simulated Hydraulic Heads and Management Action Tiers at WHWC-10 in the Western Heights Management Area ............................................................................................................. 4-61 4-18 Predicted Simulated Hydraulic Heads and Management Action Tiers at WHWC-11 in the Western Heights Management Area"
+    ],
+    "pages": [
+      "4–63 4–19",
+      "4–65 4–20",
+      "4–67 4–21",
+      "4–69 4–22"
+    ],
+    "container-title": [
+      "Predicted Simulated Hydraulic Heads and Management Action Tiers at WHWC-12 in the Western Heights Management Area",
+      "Predicted Simulated Hydraulic Heads and Management Action Tiers at WHWC-14 in the Western Heights Management Area",
+      "Predicted Simulated Hydraulic Heads and Management Action Tiers at USGS Dunlap #2 Well in the Western Heights Management Area"
+    ],
+    "note": [
+      "Predicted Simulated Hydraulic Heads and Management Action Tiers at USGS Dunlap #4 Well in the Western Heights Management Area ............................................................................................................. 4-71"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Calimesa",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014"
+    ],
+    "title": [
+      "City of Calimesa 2014 General Plan"
+    ],
+    "container-title": [
+      "Prepared by the City of Calimesa General Plan Advisory Committee and PMC. Adopted on August 4"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Redlands",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "City of Redlands General Plan 2035"
+    ],
+    "note": [
+      "Prepared by Dyett & Bhatia. Adopted December 5, 2017."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Redlands",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "City of Redlands Water Shortage Contingency Plan"
+    ],
+    "note": [
+      "Adopted by Resolution No. 8225. Prepared by Water Systems Consulting Inc. June 2021."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Yucaipa",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-04"
+    ],
+    "title": [
+      "City of Yucaipa General Plan. Prepared by Placeworks"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Riverside",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "County of Riverside General Plan"
+    ],
+    "url": [
+      "https://planning.rctlma.org/General-Plan-Zoning"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Riverside",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "The Pass Area Plan"
+    ],
+    "url": [
+      "https://planning.rctlma.org/General-Plan-Zoning/General-Plan."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "San Bernardino",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "County of San Bernardino 2007 General Plan. Prepared for County of San Bernardino Land Use Services Division"
+    ],
+    "note": [
+      "Prepared by URS. Adopted March 13, 2007. (Amended April 24, 2014, and 2017)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Basin Boundary Assessment Tool"
+    ],
+    "note": [
+      "Accessed October 2021."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/bbat/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Statewide Crop Mapping 2016"
+    ],
+    "genre": [
+      "[online portal]."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act Basin Prioritization Dashboard"
+    ],
+    "note": [
+      "Accessed January 18, 2019."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/bp-dashboard/final/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-03"
+    ],
+    "title": [
+      "Urban Water Management Plan Guidebook 2020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final. DWR, Division of Regional Assistance, Water Use Efficiency Branch"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Disadvantaged Communities Mapping Tool"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/dacs/."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "GSSI (Geoscience Support Services Inc",
+      "Determination of the Usable Capacity and Safe Yield for Each Sub-basin within the Yucaipa Basin Area. Prepared for San Bernardino Valley Municipal Water District in Partnership with City of Redlands, San Gorgonio Pass Water Agency"
+    ],
+    "date": [
+      "2014",
+      "2014-04-17"
+    ],
+    "publisher": [
+      "South Mesa Water Company, Western Heights Water Company, City of Yucaipa, and Yucaipa Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "R.M.C."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-01"
+    ],
+    "title": [
+      "Upper Santa Ana River Watershed Integrated Regional Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "RWQCB",
+        "given": "Santa Ana"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-04-25"
+    ],
+    "title": [
+      "Resolution No. R8-2014-0005 – Resolution Amending the Water Quality Control Plan for the Santa Ana River Basin to Incorporate Updates Related to the Salt Management Plan for the Santa Ana Region"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.V.M.W.D."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-03"
+    ],
+    "title": [
+      "Change in Groundwater Storage for the San Bernardino, Rialto-Colton and Yucaipa Basin Areas"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by SBVMWD"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.G.P.W.A."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-01"
+    ],
+    "title": [
+      "San Gorgonio Pass Water Agency Annual Report on Water Conditions Reporting Period Calendar Year 2018"
+    ],
+    "publisher": [
+      "Prepared by San Gorgonio Pass Water Agency"
+    ],
+    "location": [
+      "Beaumont, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Mesa",
+        "given": "South"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021"
+    ],
+    "title": [
+      "Water Shortage Contingency Plan. Prepared by Water Systems Consulting for South Mesa Water Company"
+    ],
+    "volume": [
+      "18"
+    ],
+    "url": [
+      "https://southmesawater.com"
+    ],
+    "pages": [
+      "– –"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "June"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bureau",
+        "given": "U.S.Census"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Facts regarding Calimesa"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "Accessed July 30, 2020."
+    ],
+    "url": [
+      "https://www.census.gov/quickfacts/fact/table/calimesacitycalifornia,US/PST045219."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.W.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019"
+    ],
+    "title": [
+      "Memorandum on WHWC Growth Projection"
+    ],
+    "volume": [
+      "24"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "October"
+    ]
+  },
+  {
+    "note": [
+      "WSC (Water Systems Consulting Inc.). 2018."
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "San Bernardino Valley Regional Urban Water Management Plan. Prepared for San Bernardino Valley Municipal Water District et al"
+    ],
+    "container-title": [
+      "Prepared by Water Systems Consulting Inc. Amended June 2017. Errata Incorporated April 2018"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.S.C."
+      },
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-06"
+    ],
+    "title": [
+      "Upper Santa Ana River Watershed Integrated Regional Urban Water Management Plan. Prepared for San Bernardino Valley Municipal Water District et al"
+    ],
+    "container-title": [
+      "by Water Systems Consulting Inc. and Woodard & Curran"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Y.V.W.D."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "A Strategic Plan for a Sustainable Future – The Integration and Preservation of Resources"
+    ],
+    "note": [
+      "Adopted by the YVWD Board of Directors on August 20, 2008."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Y.V.W.D."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "url": [
+      "https://www.yvwd.dst.ca.us/home/showdocument?id=154."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Y.V.W.D."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015"
+    ],
+    "title": [
+      "Salinity and Nutrient Management Plan for the Beaumont Management Zone, San Timoteo Management Zone and the Yucaipa Management Zone"
+    ],
+    "volume": [
+      "29"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Yucaipa Valley Water District. October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Y.V.W.D."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Water Shortage Contingency Plan. Prepared by Yucaipa Valley Water District"
+    ],
+    "note": [
+      "Adopted as Resolution No. 2021-38 by the Yucaipa Valley Water District Board of Directors on June 22, 2021."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "North Bench Management Area 2. Calimesa Management Area 3. Western Heights Management Area 4"
+    ],
+    "location": [
+      "San Timoteo Management Area"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "A.C.O.E."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Corpscon, Version 6.x, Technical Documentation and Operating Instructions"
+    ],
+    "container-title": [
+      "Prepared by the ACOE Engineer Research and Development Center, Topographic Engineering"
+    ],
+    "location": [
+      "Center, Alexandria, Virginia",
+      "August"
+    ],
+    "pages": [
+      "22315–3864"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Applied Groundwater Modeling Simulation of Flow and Advective Transport"
+    ],
+    "location": [
+      "San Diego"
+    ],
+    "publisher": [
+      "Academic Press Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Apex"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Remedial Action Plan – Northern Area, Sorenson Engineering Incorporated, 32032 Dunlap Boulevard"
+    ],
+    "location": [
+      "Yucaipa, California, CAO"
+    ],
+    "pages": [
+      "87–90"
+    ],
+    "note": [
+      "Prepared for Loeb and Loeb, LLP, 10100 Santa Monica Boulevard, Los Angeles, California. Prepared by Apex, 299 West Hillcrest Drive Suite 302, Thousand Oaks, California. June 5."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Apex"
+      }
+    ],
+    "date": [
+      "2020",
+      "July 15"
+    ],
+    "title": [
+      "Sorenson Engineering, Inc., Semi-Annual Monitoring and Status Report, First Half 2020. Prepared by Apex Companies, LLC, 299 West Hillcrest Drive Suite 302"
+    ],
+    "location": [
+      "Thousand Oaks, California"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CalGEM (California Geologic Energy Management Division",
+      "Well finder"
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "Accessed September 6, 2020."
+    ],
+    "url": [
+      "https://maps.conservation.ca.gov/doggr/wellfinder/#openModal/-118.94276/37.12009/6."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "CH2MHill."
+    ],
+    "date": [
+      "2003",
+      "2003"
+    ],
+    "title": [
+      "San Diego River System Conceptual Groundwater Management Plan. Prepared for the City of San Diego"
+    ],
+    "volume": [
+      "29"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May"
+    ]
+  },
+  {
+    "title": [
+      "CNRA (California Natural Resources Agency",
+      "TRE ALTAMIRA InSAR Subsidence Data"
+    ],
+    "date": [
+      "2021"
+    ],
+    "genre": [
+      "[online dataset]."
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/tre-altamira-insar-subsidence."
+    ],
+    "type": "webpage"
+  },
+  {
+    "editor": [
+      {
+        "family": "Cromwell",
+        "given": "G."
+      },
+      {
+        "family": "Alzraiee",
+        "given": "A.H."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Hydrology of the Yucaipa Groundwater Subbasin—Characterization and Integrated Numerical Model, San Bernardino and Riverside Counties, California"
+    ],
+    "genre": [
+      "U.S. Geological Survey Scientific Investigations Report 2021–5118."
+    ],
+    "url": [
+      "https://doi.org/"
+    ],
+    "doi": [
+      "10.3133/sir20215118."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Cromwell",
+        "given": "G."
+      },
+      {
+        "family": "Engott",
+        "given": "J.A."
+      },
+      {
+        "family": "Alzraiee",
+        "given": "A.H."
+      },
+      {
+        "family": "Stamos",
+        "given": "C.L."
+      },
+      {
+        "family": "Mendez",
+        "given": "G.O."
+      },
+      {
+        "family": "Dick",
+        "given": "M.C."
+      },
+      {
+        "family": "Bond",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Hydrogeologic Characterization of the Yucaipa Groundwater Subbasin"
+    ],
+    "container-title": [
+      "Chapter A in Hydrology of the Yucaipa Groundwater Subbasin—Characterization and Integrated Numerical Model"
+    ],
+    "location": [
+      "San Bernardino and Riverside Counties, California, USA"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Scientific Investigations Report 2021–5118–A,"
+    ],
+    "pages": [
+      "157"
+    ],
+    "url": [
+      "https://doi.org/10.3133/sir20215118A."
+    ],
+    "doi": [
+      "10.3133/sir20215118A."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Cromwell",
+        "given": "G."
+      },
+      {
+        "family": "Matti",
+        "given": "J.C."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Geology and Hydrogeology of the Yucaipa Groundwater Subbasin, San Bernardino and Riverside Counties"
+    ],
+    "location": [
+      "California, USA"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Scientific"
+    ],
+    "genre": [
+      "Investigations Report 2021-5129."
+    ],
+    "url": [
+      "https://doi.org/10.3133/sir20215129."
+    ],
+    "doi": [
+      "10.3133/sir20215129."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Cunningham",
+        "given": "W.L."
+      },
+      {
+        "family": "Schalk",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater Technical Procedures of the U"
+    ],
+    "container-title": [
+      "S. Geological Survey. U.S. Geological Survey Techniques and Methods"
+    ],
+    "pages": [
+      "1– 1"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Deutsch",
+        "given": "C.V."
+      },
+      {
+        "family": "Journel",
+        "given": "A.G."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "GSLIB Geostatistical Software Library and User’s Guide"
+    ],
+    "edition": [
+      "Second"
+    ],
+    "publisher": [
+      "Oxford University Press"
+    ],
+    "location": [
+      "New York"
+    ],
+    "pages": [
+      "369"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "DTSC (California Department of Toxic Substances Control",
+      "EnviroStor website"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://www.envirostor.dtsc.ca.gov/public/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dutcher",
+        "given": "L.C."
+      },
+      {
+        "family": "Fenzel",
+        "given": "F.W."
+      }
+    ],
+    "date": [
+      "1972",
+      "1972-02-09"
+    ],
+    "title": [
+      "Ground-Water Outflow, San Timoteo-Smiley Heights Area, Upper Santa Ana Valley, Southern California 1927 through 1968"
+    ],
+    "container-title": [
+      "Prepared in Cooperation with the San Bernardino County Flood Control District. Open File Report"
+    ],
+    "pages": [
+      "72–97"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Natural Communities Data Viewer, CaDWR Sustainable Groundwater Management"
+    ],
+    "note": [
+      "Accessed November 11, 2020."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "genre": [
+      "Personal communication re:"
+    ],
+    "publisher": [
+      "Crafton Hills Reservoir"
+    ],
+    "type": "personal_communication"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "SGMA Data Viewer Land Subsidence"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Frey"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-09-19"
+    ],
+    "title": [
+      "Post Remediation Soil Vapor Survey, Confirmation Soil Boring, and Request for No Further Action"
+    ],
+    "volume": [
+      "34253"
+    ],
+    "location": [
+      "Yucaipa Boulevard, Yucaipa, California"
+    ],
+    "container-title": [
+      "92399, RWQCB Case #083603375T, Global ID",
+      "Former J and J Texaco"
+    ],
+    "pages": [
+      "0607100543"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Fryer",
+        "given": "Janet L."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Sambucus racemosa"
+    ],
+    "container-title": [
+      "Fire Effects Information System [Online]. U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station, Fire Sciences Laboratory (Producer"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Accessed July 20, 2020."
+    ],
+    "url": [
+      "https://www.fs.fed.us/database/feis/plants/shrub/samrac/all.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geo-Logic"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-04-23"
+    ],
+    "title": [
+      "Remedial Action Plan for Enhanced Bioremediation for the Yucaipa Disposal Site, San Bernardino County. Prepared for the California Regional Water Quality Control Board Santa Ana Region Land Disposal Section & DoD Section"
+    ],
+    "publisher": [
+      "Prepared by San Bernardino County Department of Public Works"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Geo-Logic"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Project Status Update In Situ Bioremediation of VOCs Yucaipa Disposal Site. Prepared for County of San Bernardino Solid Waste Management Division"
+    ],
+    "volume": [
+      "15"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "June"
+    ]
+  },
+  {
+    "title": [
+      "GSSI (Geoscience Support Services Inc",
+      "Determination of the Usable Capacity and Safe Yield for Each Sub-basin within the Yucaipa Basin Area. Prepared for San Bernardino Valley Municipal Water District in Partnership with City of Redlands, San Gorgonio Pass Water Agency"
+    ],
+    "date": [
+      "2014",
+      "2014-04-17"
+    ],
+    "publisher": [
+      "South Mesa Water Company, Western Heights Water Company, City of Yucaipa, and Yucaipa Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "G.S.S.I."
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-05-28"
+    ],
+    "title": [
+      "Calculation of the Volume of Groundwater Storage for Yucaipa Basin and Subbasins"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for San Bernardino Valley Municipal Water District"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Henson",
+        "given": "R.W."
+      },
+      {
+        "family": "Medina",
+        "given": "R.L."
+      },
+      {
+        "family": "Mayers",
+        "given": "C.L."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Regan",
+        "given": "R.S."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "CRT – Cascade Routing Tool to Define and Visualize Flow Paths for Grid-Based Watershed Models"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Techniques and Methods"
+    ],
+    "pages": [
+      "6– 2"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "Kirk R."
+      },
+      {
+        "family": "Biswas",
+        "given": "Tanushree"
+      },
+      {
+        "family": "Rohde",
+        "given": "Melissa M."
+      },
+      {
+        "family": "Schuetzenmeister",
+        "given": "Falk"
+      },
+      {
+        "family": "Rindlaub",
+        "given": "Nathaniel"
+      },
+      {
+        "family": "Housman",
+        "given": "Ian"
+      },
+      {
+        "family": "Howard",
+        "given": "Jeanette K."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "GDE Pulse: Taking the Pulse of Groundwater Dependent Ecosystems with Satellite Data"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "url": [
+      "https://gde.codefornature.org."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Lite",
+        "given": "S.J."
+      },
+      {
+        "family": "Stromberg",
+        "given": "J.C."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Surface Water and Ground-Water Thresholds for Maintaining Populus-Salix Forests, San Pedro River, Arizona"
+    ],
+    "volume": [
+      "125"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Biological Conservation"
+    ],
+    "pages": [
+      "153–167"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Markstrom",
+        "given": "S.L."
+      },
+      {
+        "family": "Regan",
+        "given": "R.S."
+      },
+      {
+        "family": "Hay",
+        "given": "L.E."
+      },
+      {
+        "family": "Viger",
+        "given": "R.J."
+      },
+      {
+        "family": "Webb",
+        "given": "R.M.T."
+      },
+      {
+        "family": "Payn",
+        "given": "R.A."
+      },
+      {
+        "family": "LaFontaine",
+        "given": "J.H."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "PRMS-IV, The Precipitation-Runoff Modeling System, Version 4"
+    ],
+    "note": [
+      "Book 6, Chapter B7."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/tm6B7."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U. S. Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Matti",
+        "given": "J.C."
+      },
+      {
+        "family": "Morton",
+        "given": "D.M."
+      },
+      {
+        "family": "Cox",
+        "given": "B.F."
+      },
+      {
+        "family": "Carson",
+        "given": "S.E."
+      },
+      {
+        "family": "Yetter",
+        "given": "T.J."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Geologic Map and Digital Database of the Yucaipa 7.5′ Quadrangle, San Bernardino and Riverside Counties, California, Version 1.0. U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 03-301,"
+    ],
+    "publisher": [
+      "Summary Pamphlet"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr03301."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Matti",
+        "given": "J.C."
+      },
+      {
+        "family": "Morton",
+        "given": "D.M."
+      },
+      {
+        "family": "Langenheim",
+        "given": "V.E."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Geologic and Geophysical Maps of the El Casco 7.5′ Quadrangle, Riverside County, Southern California, with Accompanying Geologic-Map Database"
+    ],
+    "genre": [
+      "U.S. Geological Survey Open-File Report 2010–1274,"
+    ],
+    "note": [
+      "3 sheets, scale 1:24,000."
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/ofr20101274."
+    ],
+    "doi": [
+      "10.3133/ofr20101274."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Mendez",
+        "given": "G.O."
+      },
+      {
+        "family": "Anders",
+        "given": "R."
+      },
+      {
+        "family": "McPherson",
+        "given": "K.R."
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2018",
+      "1974-11-01"
+    ],
+    "title": [
+      "Geologic, hydrologic, and water-quality data from multiple-well monitoring sites in the Bunker Hill and Yucaipa Groundwater Subbasins",
+      "U.S"
+    ],
+    "location": [
+      "San Bernardino County, California"
+    ],
+    "volume": [
+      "1096"
+    ],
+    "url": [
+      "https://doi.org/10.3133/ds1096."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Data Series"
+    ],
+    "doi": [
+      "10.3133/ds1096."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mendez",
+        "given": "G.O."
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      },
+      {
+        "family": "Burton",
+        "given": "C.A."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Surface-Water and Ground-Water Quality in the Yucaipa Area, San Bernardino and Riverside Counties, California 1996–98: U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 00-4269."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/wri004269/pdf/wrir004269.pdf."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Mendez",
+        "given": "G.O."
+      },
+      {
+        "family": "Langenheim",
+        "given": "V.E."
+      },
+      {
+        "family": "Morita",
+        "given": "Andrew"
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Geologic Structure of the Yucaipa Area Inferred from Gravity Data, San Bernardino and Riverside Counties, California"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 2016-1127."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr20161127."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U. S"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Moreland",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1970",
+      "1970-08-07"
+    ],
+    "title": [
+      "Artificial Recharge, Yucaipa, California. Prepared in Cooperation with the San Bernardino Valley Municipal Water District"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/of/1970/0232/report.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U. S. Geological Survey Open-File Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Rewis",
+        "given": "D.L."
+      },
+      {
+        "family": "Christensen",
+        "given": "A.H."
+      },
+      {
+        "family": "Matti",
+        "given": "J."
+      },
+      {
+        "family": "Hevesi",
+        "given": "J.A."
+      },
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Geology, Ground-Water Hydrology, Geochemistry, and Ground-Water Simulation of the Beaumont and Banning Storage Units, San Gorgonio Pass Area"
+    ],
+    "location": [
+      "Riverside County, California"
+    ],
+    "note": [
+      "U.S. Geological Survey Scientific Investigations Report 2006-5026."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2006/5026/."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Resolution No"
+    ],
+    "container-title": [
+      "R8-2004-0001: Resolution Amending the Water Quality Control Plan for the Santa Ana River Basin to Incorporate an Updated total Dissolved Solids (TDS) and Nitrogen Management Plan for the Santa Ana Region"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/santaana/board_decisions/adopted_orders/orders/2004/04_001.pdf."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019",
+      "1995"
+    ],
+    "title": [
+      "Water Quality Control Plan, Santa Ana River Basin (8"
+    ],
+    "volume": [
+      "24"
+    ],
+    "note": [
+      "Updated June 2019 to include approved amendments."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/santaana/water_issues/programs/basin_plan/."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "January"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Response to Post Remediation Soil Vapor Survey, Confirmation Soil Boring, and Request for No Further Action at Former J and J Texaco Service Station Located at 34253"
+    ],
+    "location": [
+      "Yucaipa Boulevard, Yucaipa, California"
+    ],
+    "note": [
+      "92399 (Global ID #T0605901817). November 14, 2019."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2020",
+      "0605-04-14"
+    ],
+    "title": [
+      "60-Day Notification – Request for Comments on Proposed Closure of Remedial Activities for Former J and J Texaco Service Station Located at 34253 Yucaipa Boulevard"
+    ],
+    "location": [
+      "Yucaipa, California"
+    ],
+    "volume": [
+      "92399"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.C.F.C.D."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Personal communication re: accuracy of measuring flow at the five SBCFCD stream gauging stations outside of peak flow events"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.C.F.C.D."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Water Resources.” Online data for floodplain management, flood warning information, and hydrology expertise"
+    ],
+    "url": [
+      "http://cms.sbcounty.gov/dpw/FloodControl/WaterResources.aspx."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.V.M.W.D."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Personal communication re: lack of recorded leakage from"
+    ],
+    "location": [
+      "Yucaipa Lakes"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Steinberg",
+        "given": "P.D."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Quercus agrifolia"
+    ],
+    "container-title": [
+      "Fire Effects Information System [Online]. U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station, Fire Sciences Laboratory (Producer"
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Accessed May 18, 2020."
+    ],
+    "url": [
+      "https://www.fs.fed.us"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stromberg",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Root Patterns and Hydrogeomorphic Niches of Riparian Plants in the American Southwest"
+    ],
+    "volume": [
+      "94"
+    ],
+    "pages": [
+      "1–9"
+    ],
+    "location": [
+      "Appendix B"
+    ],
+    "publisher": [
+      "Rooting Data for Shrubs and Trees"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Arid Environments"
+    ],
+    "issue": [
+      "2013"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "2014 and 2016 California Integrated Report (Clean Water Act Sections 303(d) List / 305(b) Report"
+    ],
+    "volume": [
+      "6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "GeoTracker website"
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Taylor",
+        "given": "J.L."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Populus fremontii"
+    ],
+    "container-title": [
+      "Fire Effects Information System [Online]. U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station, Fire Sciences Laboratory (Producer"
+    ],
+    "note": [
+      "Accessed July 20, 2020."
+    ],
+    "url": [
+      "https://www.fs.fed.us/database/feis/plants/tree/popfre/all.html."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA: Best Practices for Using the NC Dataset"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "SGMA Tools: Plant Rooting Depth Database"
+    ],
+    "note": [
+      "Accessed July 23, 2020."
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/gde-rooting-depths-database-for-gdes/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Umari",
+        "given": "A.M."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      },
+      {
+        "family": "Shroeder",
+        "given": "R.A."
+      },
+      {
+        "family": "Duell",
+        "given": "L.F.W."
+      },
+      {
+        "family": "Fay",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Potential for Ground-Water Contamination from Movement of Wastewater through the Unsaturated Zone, Upper Mojave River Basin"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "U.S. Geological Survey Water Resources Investigations, Report 93-4137."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "U.R.S."
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-11"
+    ],
+    "title": [
+      "Supplemental Environmental Assessment to the Programmatic Environmental Assessment (PEA) for Typical Recurring Actions Resulting from Flood, Earthquake, Fire, Rain, and Wind Disasters in California as Proposed by the Federal Emergency Management Agency"
+    ],
+    "publisher": [
+      "City of Yucaipa, Wildwood Creek Flood Mitigation Detention Basin Project"
+    ],
+    "pages": [
+      "– – –2005–036"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.S."
+      }
+    ],
+    "title": [
+      "Department of Agriculture Forest Service",
+      "Fire Effects Information System"
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "note": [
+      "Accessed May 18,"
+    ],
+    "pages": [
+      "– – – –"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.A."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "How Much Water Does Golf Use and Where Does It Come From?” In Golf’s Use of Water: A Solution to a More Sustainable Game"
+    ],
+    "note": [
+      "a Water Summit presented by USGA on November 6 and 7, 2012."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "n.d",
+        "given": "U.S.G.S."
+      }
+    ],
+    "title": [
+      "Areas of Land Subsidence in California"
+    ],
+    "note": [
+      "Accessed August 21, 2020."
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/land_subsidence/california-subsidence-areas.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "USGS Water Data for California"
+    ],
+    "container-title": [
+      "USGS National Water Information System (NWIS"
+    ],
+    "note": [
+      "web application]."
+    ],
+    "type": "chapter"
+  },
+  {
+    "note": [
+      "Accessed November 14, 2018."
+    ],
+    "url": [
+      "https://waterdata.usgs.gov/ca/nwis."
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "WSC (Water Systems Consulting Inc.). 2018."
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "San Bernardino Valley Regional Urban Water Management Plan"
+    ],
+    "container-title": [
+      "Prepared by Water Systems Consulting Inc. for San Bernardino Valley Municipal Water District et al. Amended June 2017. Errata Incorporated April 2018"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Y.V.W.D."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "A Strategic Plan for a Sustainable Future – The Integration and Preservation of Resources"
+    ],
+    "note": [
+      "Adopted by the YVWD Board of Directors on August 20, 2008."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Y.V.W.D."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "publisher": [
+      "Prepared by Yucaipa Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "container-title": [
+      "SOURCE: Source: USDA 2020 FIGURE"
+    ],
+    "pages": [
+      "2–13"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "DWR (California Department of Water Resources",
+      "Department of Water Resources Groundwater Elevation Monitoring Guidelines"
+    ],
+    "date": [
+      "2010",
+      "2010-12"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Potential for Future Land Subsidence in California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Networks and Identification of Data Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Protocols, Standards, and Sites"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019",
+      "1995-01-24"
+    ],
+    "title": [
+      "Water Quality Control Plan, Santa Ana River Basin (8"
+    ],
+    "note": [
+      "Updated June 2019 to include approved amendments."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/santaana"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "B."
+      },
+      {
+        "given": "C."
+      },
+      {
+        "given": "D."
+      }
+    ],
+    "title": [
+      "DWR\" means the California Department of Water Resources",
+      "GSA\" means a Groundwater Sustainability Agency, as defined by SGMA",
+      "GSP\" means a Groundwater Sustainability Plan, as defined by SGMA"
+    ],
+    "note": [
+      "or \"MOA\" refers to this Memorandum of Agreement."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "E. \"Memorandum of Agreement\""
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "H."
+      }
+    ],
+    "title": [
+      "YUCAIPA-GSA\" refers to the Yucaipa Sub-basin GSA formed under this MOA"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Yucaipa Sub-basin MOA Page 21 of 21"
+    ],
+    "pages": [
+      "801–0 3 – 3088672"
+    ],
+    "note": [
+      "l RESOLUTION NO. 2017-18"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "No",
+        "given": "Adopt Resolution"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "approving the Memorandum of Agreement to form a Groundwater Sustainability Agency for the Yucaipa sub-basin with the Cities of Calimesa and Redlands; the South Mesa Water Company; the South Mountain Water Company; the Western Heights Water Company; the Yucaipa Valley Water District; the San Bernardino Valley Municipal Water District; and the San Gorgonio Pass Water Agency"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fenn",
+        "given": "David L."
+      }
+    ],
+    "note": [
+      "at San Gorgonio Pass Water Agency Approved on May 23, 2018"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1954"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1955"
+    ],
+    "title": [
+      "12.74 84% Below Normal 21.89 89%"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1956"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1957"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1958"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1959"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1960"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1961"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1962"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1963"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1964"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1965"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1966"
+    ],
+    "note": [
+      "Above Normal 31.05 127% Above Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1967"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Normal 9.72 9.71 83% Below Normal 20.20 82%"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1969"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1970"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1971"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1972"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "18.16 120% Above Normal 14.96 14.76 127% Above Normal 33.31 136%"
+    ],
+    "location": [
+      "Above Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1974"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "16.84 112% Above Normal 10.36 9.29 84% Below Normal 22.73 93%"
+    ],
+    "location": [
+      "Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1976"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1977"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1978"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Above Normal 18.67 16.77 152% Wet 33.77 138% Above Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1980"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1981"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Above Normal 14.90 14.46 126% Above Normal 33.37 136% Above Normal 28.00 154% Wet"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Critically Dry 18.80 77% Below Normal 15.90 88%"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "note": [
+      "Below Normal 22.02 90% Below Normal 20.70 114% Above Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "location": [
+      "Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "note": [
+      "Below Normal 5.75 32% Critically Dry"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "location": [
+      "Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "location": [
+      "Below Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "17.52 116% Above Normal 13.95 13.34 117% Above Normal 26.92 110% Normal 26.55 146%"
+    ],
+    "location": [
+      "Above Normal"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Above Normal 14.58 14.96 126% Above Normal 30.78 126% Above Normal 27.72 153% Wet"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "DRAFT Appendix 2-A."
+      }
+    ],
+    "title": [
+      "Annual Precipitation and Water Year-Type at San Bernardino County Flood Control District Climate Stations in the Yucaipa Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "DRAFT Appendix 2-A."
+      }
+    ],
+    "title": [
+      "Annual Precipitation and Water Year-Type at San Bernardino County Flood Control District Climate Stations in the Yucaipa Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1965"
+    ],
+    "volume": [
+      "0 26,761 2,340 740 8,980 3,281 0 1,925 13 14,940 2,199 9,899 0 7 29,385"
+    ],
+    "pages": [
+      "6,511 269 47 2,732 1,455 13,036",
+      "–2,624 –2,624"
+    ],
+    "issue": [
+      "rmal 9,416 2,101 2,209 2,023"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1966"
+    ],
+    "volume": [
+      "10,441 2,101 5,153 2,115",
+      "46 2,791 1,596 13,243 0 30,938 2,697 741 8,954 3,464 0 1,958 14 15,132 2,629 11,609 31 9 32,108"
+    ],
+    "pages": [
+      "6,449 248",
+      "–1,169 –3,794"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1967"
+    ],
+    "volume": [
+      "Wet 10,656 2,101 4,957 2,212",
+      "0 31,122 2,399 760 8,944 3,516 0 1,954 13 15,187 2,792"
+    ],
+    "pages": [
+      "6,382 234 44 2,832 1,705 13,409",
+      "11,057 36 10 31,481 –359 –4,153"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1968"
+    ],
+    "volume": [
+      "43 2,861 1,837 13,581 0 28,541 2,611 774 8,974 3,356 0 1,945 13 15,063 2,422 11,106 16 8 31,225"
+    ],
+    "pages": [
+      "6,379 229",
+      "–2,684 –6,837"
+    ],
+    "issue": [
+      "rmal 9,688 2,107 3,166 2,232"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1969"
+    ],
+    "volume": [
+      "Wet 12,421 2,101 11,878 2,251 6,300 209 43 3,016 2,374 14,193 0 40,593 2,821 766 8,872 3,650 0 2,072 15 15,375 3,967"
+    ],
+    "pages": [
+      "9,658 127 11 31,959 8,634 1,796"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1970"
+    ],
+    "volume": [
+      "10,341 2,515 4,557 2,148 6,313 185 41 3,187 2,298 14,172 0 31,585 2,925 737 8,958 3,490 0 2,072 17 15,275 3,018"
+    ],
+    "pages": [
+      "9,861 111 11 31,200 385 2,181"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1971"
+    ],
+    "volume": [
+      "10,382 2,439 4,088 2,204 6,327 174 41 3,075 2,453 14,275 0 31,184 2,774 733 8,981 3,512 0 2,059 18 15,303 3,038"
+    ],
+    "pages": [
+      "9,849 142 10 31,117 67 2,248"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1972"
+    ],
+    "volume": [
+      "10,002 2,446 3,302 2,223 6,356 169 41 3,016 2,295 14,100 0 29,850 3,004 747 9,018 3,494 0 2,019 21 15,299 2,783 10,818"
+    ],
+    "pages": [
+      "156 8 32,068 –2,218 29"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1973"
+    ],
+    "volume": [
+      "10,912 2,439 5,141 2,197",
+      "0 32,373 2,478 746 9,003 3,665 0 2,019 20 15,452 3,391 10,411"
+    ],
+    "pages": [
+      "6,286 165 41 2,951 2,241 13,881",
+      "217 10 31,960 413 442"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1974"
+    ],
+    "volume": [
+      "10,663 2,392 4,457 2,128 6,267 161 40 3,036 2,070 13,701 0 31,214 2,888 736 9,001 3,688 0 2,007 20 15,453 3,109"
+    ],
+    "pages": [
+      "11,484 206 10 33,150 –1,936 –1,494"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1975"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "133 9 31,299 –1,894 –3,388"
+    ],
+    "issue": [
+      "rmal 10,059 2,571 3,316 1,975 6,263 157 39 3,005 2,021 13,459 0 29,405 2,546 718 9,009 3,640 0 1,977 19 15,362 2,748 10,501"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1976"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "–726 –4,114"
+    ],
+    "issue": [
+      "rmal 10,530 2,641 4,050 1,820 6,282 156 39 2,958 2,077 13,334 0 30,556 2,662 701 9,020 3,709 0 1,961 18 15,410 2,747 10,366 88 8 31,282"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1977"
+    ],
+    "volume": [
+      "10,098 2,634 4,238 1,720 6,246 160 39 2,929 2,093 13,187 0 30,158 2,753 687 9,020 3,632 0 1,956 19 15,313 2,716"
+    ],
+    "pages": [
+      "9,906 100 9 30,798 –640 –4,754"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1978"
+    ],
+    "volume": [
+      "Wet 13,296 2,634 16,145 1,883 6,210 158 38 3,311 2,517 14,118 0 46,193 3,137 695 8,931 3,896 0 2,205 19 15,747 4,909 10,002"
+    ],
+    "pages": [
+      "220 14 34,030 12,163 7,409"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1979"
+    ],
+    "volume": [
+      "12,654 2,634 9,423 1,845",
+      "35 3,642 2,618 14,530 0 39,242 3,072 698 9,016 3,967 0 2,296 23 16,001 4,675"
+    ],
+    "pages": [
+      "6,251 139",
+      "9,764 267 18 33,797 5,445 12,854"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1980"
+    ],
+    "volume": [
+      "Wet 15,176 3,278 15,677 1,580 6,351 126 34 3,958 3,033 15,081 0 49,212 3,550"
+    ],
+    "pages": [
+      "654 9,010 4,017 0 2,485 25 16,191 6,449 10,075 332 20 36,616 12,596 25,450"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1981"
+    ],
+    "volume": [
+      "12,933 3,483 6,838 1,187 6,413 119 32 4,029 2,842 14,623 0 37,877 3,860 612 9,083 3,853 0"
+    ],
+    "pages": [
+      "2,419 27 15,993 4,774 10,198 286 17 35,129 2,748 28,198"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "volume": [
+      "13,988 3,483",
+      "33 3,823 2,987 14,340 0 40,355 3,152 592 9,079 4,104 0 2,370 30 16,176 5,490"
+    ],
+    "pages": [
+      "8,545 927 6,452 119",
+      "8,880 299 19 34,017 6,338 34,536"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "volume": [
+      "Wet 14,684 3,483",
+      "31 3,857 2,913 14,163 0 43,486 3,110 598 9,100 4,248 0"
+    ],
+    "pages": [
+      "11,157 788 6,457 116",
+      "2,427 29 16,402 6,184 8,353 332 22 34,405 9,081 43,617"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "volume": [
+      "12,179 3,492"
+    ],
+    "pages": [
+      "6,583 684 6,475 108 29 3,978 2,581 13,855 0 36,110 4,117 597 9,184 4,005 0 2,429 27 16,243 4,257 10,278 279 18 35,191 918 44,535"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "volume": [
+      "12,335 5,337",
+      "29 3,861 2,555 13,668 0 37,615 3,874"
+    ],
+    "pages": [
+      "6,275 652 6,467 102",
+      "601 9,162 4,081 0 2,402 27 16,274 4,297 10,533 268 18 35,264 2,351 46,886"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "5,568 513 6,459 98 29 3,741 2,505 13,346 0 36,898 3,857 685 9,176 4,042 0 2,343 26 16,272 4,106 9,823 257 19 34,333 2,564 49,450"
+    ],
+    "issue": [
+      "rmal 12,023 5,961"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "11,289 5,961",
+      "30 3,640 2,385 13,020 0 34,439 3,878 698 9,179 4,037 0 2,299 24 16,237 3,593"
+    ],
+    "pages": [
+      "4,170 438 6,430 96",
+      "9,987 230 19 33,945 494 49,944"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "11,108 5,978 3,721",
+      "30 3,533 2,304 12,778 0 33,584 3,738 762 9,198 4,057 0 2,260 23 16,300 3,459 10,857"
+    ],
+    "pages": [
+      "400 6,411 99",
+      "218 21 34,593 –1,008 48,936"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "10,602 5,961 3,336",
+      "30 3,433 2,122 12,448 0 32,347 3,885"
+    ],
+    "pages": [
+      "382 6,375 106",
+      "818 9,166 4,004 0 2,215 22 16,225 3,142 11,266 194 20 34,733 –2,385 46,551"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "10,285",
+      "31 3,349 1,953 12,280 0 26,796 3,689 822 9,156 3,914 0 2,170"
+    ],
+    "pages": [
+      "2,208 2,023 442 6,391 114",
+      "21 16,082 2,891 11,626 172 19 34,479 –7,683 38,868"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "11,275",
+      "31 3,334 1,959 12,531 0 30,426 3,628 683 9,084 4,031 0 2,186 19 16,003 3,403"
+    ],
+    "pages": [
+      "942 5,677 654 6,429 124",
+      "11,657 198 16 34,906 –4,480 34,387"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "11,389",
+      "31 3,430 1,986 12,871 0 31,116 3,662 656 9,131 4,083 0 2,243 18 16,131 3,596"
+    ],
+    "pages": [
+      "945 5,911 832 6,464 127",
+      "11,743 235 16 35,383 –4,267 30,120"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "Wet 14,133 1,173"
+    ],
+    "pages": [
+      "17,007 954 6,483 128 29 3,879 2,434 13,907 0 46,221 3,989 683 9,037 4,126 0 2,487 22 16,355 5,707 11,481 302 21 37,854 8,367 38,488"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "12,201 1,195",
+      "28 4,023 2,454 14,139 0 33,177 3,815 697 9,147 4,145 0 2,490 19 16,499 4,233"
+    ],
+    "pages": [
+      "5,643 964 6,561 109",
+      "11,947 279 20 36,794 –3,617 34,871"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "Wet 15,315 1,489"
+    ],
+    "pages": [
+      "12,358 936 6,618 111 27 4,046 2,873 14,612 0 43,774 3,876 724 9,088 4,227 0 2,566 22 16,627 6,814 11,870 354 22 39,562 4,212 39,083"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "13,062 1,592"
+    ],
+    "pages": [
+      "5,069 975 6,722 97 25 4,114 2,530 14,464 0 34,188 4,352 700 9,211 4,195 0 2,531 21 16,658 5,069 12,841 330 17 39,268 –5,080 34,002"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "12,896 1,588 5,442 1,086 6,768 88 25 3,966 2,470 14,404 0 34,329 4,141 709 9,183 4,231 0 2,489 22 16,634 4,894"
+    ],
+    "pages": [
+      "13,184 305 16 39,174 –4,845 29,157"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "Wet 15,355 1,588 12,254 1,227"
+    ],
+    "pages": [
+      "6,777 85 25 4,036 2,743 14,893 0 44,089 3,465 696 9,137 4,464 0 2,568 23 16,888 6,870 12,511 347 22 40,102 3,987 33,144"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "12,540 1,588 4,722 1,275 6,784 79 24 4,131 2,404 14,696 0 33,546 3,976 699 9,227 4,338 0 2,537 21 16,823 4,719"
+    ],
+    "pages": [
+      "14,065 315 18 39,917 –6,371 26,774"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "12,304 1,868 4,044 1,409 6,867 79 26 4,011 2,425 14,817 0 33,032 4,176 727 9,260 4,276 0 2,505"
+    ],
+    "pages": [
+      "21 16,790 4,279 14,988 299 15 40,546 –7,514 19,259"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "12,246 1,955 3,666 1,241 6,840 84 27 3,836 2,417 14,445 0 32,312 3,699 800 9,221 4,358 0 2,437 20 16,838 4,338"
+    ],
+    "pages": [
+      "14,330 297 15 39,516 –7,204 12,055"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "volume": [
+      "10,896 1,955 2,245 1,135 6,864 90 29 3,747 2,206 14,071 36 29,202 3,864 955 9,234 4,126 0 2,373 21 16,710 3,400"
+    ],
+    "pages": [
+      "15,346 235 12 39,566 –10,364 1,691"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "volume": [
+      "11,589 1,955 3,589 1,219 6,847 98 29 3,606 2,133 13,932 691 31,757 3,435 946 9,206 4,294 0 2,344 20 16,809 3,722"
+    ],
+    "pages": [
+      "14,513 242 19 38,740 –6,983 –5,292"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "10,939 1,961 2,926 1,212 6,849 106 30 3,581 1,988 13,767 624 30,216 3,649 1,224 9,233 4,155 0 2,323 17 16,952 3,316"
+    ],
+    "pages": [
+      "14,215 215 19 38,367 –8,151 –13,443"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "Wet 13,561 2,831 11,620 1,205 6,795 106 30 3,757 2,257 14,150 135 42,297 3,483 1,173 9,112 4,413 0 2,442 19 17,159 5,250"
+    ],
+    "pages": [
+      "13,561 276 19 39,747 2,550 –10,894"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "11,309 3,126 4,449 1,193 6,807 90 29 3,894 2,152 14,164 17 33,065 3,685 1,290 9,203 4,248 0 2,435 17 17,193 3,628"
+    ],
+    "pages": [
+      "13,478 239 13 38,237 –5,172 –16,065"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "volume": [
+      "10,581 3,126 2,745 1,218 6,866 84 29 3,741 2,284 14,221 4 30,677 3,823 1,604 9,220 4,102 0 2,382 17 17,326 3,132"
+    ],
+    "pages": [
+      "13,166 199 10 37,656 –6,979 –23,044"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "11,395 218 17 35,858 –2,693 –25,737"
+    ],
+    "issue": [
+      "rmal 11,284 3,135 4,099 1,234 6,877 85 29 3,580 2,292 14,098 551 33,166 3,664 1,148 9,226 4,276 0 2,343 17 17,010 3,554"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "11,112 3,126 4,005 1,251 6,825 84 29 3,482 2,096 13,768 1,337 33,349 3,769 831 9,200 4,214 0 2,284 17 16,547 3,503 10,171"
+    ],
+    "pages": [
+      "215 38 34,243 –895 –26,632"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "12,416 3,787 6,687 1,222 6,752 79 28 3,465 1,985 13,532 3,549 39,971 3,635"
+    ],
+    "pages": [
+      "810 9,165 4,322 0 2,274 18 16,591 4,528 10,400 236 112 35,502 4,470 –22,162"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "Wet 12,924 4,009 8,383 1,161"
+    ],
+    "pages": [
+      "6,708 66 27 3,523 2,000 13,487 3,071 41,875 3,740 791 9,145 4,482 0 2,304 17 16,738 4,892 9,839 254 128 35,591 6,283 –15,879"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "11,403 4,020 4,835 1,101 6,720 52 26 3,584 1,886 13,369 2,936 36,564 4,066 812 9,227 4,356 1 2,301 16 16,712 3,864 10,174"
+    ],
+    "pages": [
+      "209 98 35,123 1,441 –14,438"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "11,089 4,009 4,164 1,051 6,724 44 25 3,491 2,030 13,366 2,170 34,799 3,806 900 9,190 4,441 1 2,263 16 16,810 3,562 10,341"
+    ],
+    "pages": [
+      "182 79 34,781 18 –14,420"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "10,633 4,009 3,544 1,013 6,731 41 25 3,398 2,005 13,212 521 31,920 3,767 1,068 9,199 4,340 1 2,222 16 16,846 3,127"
+    ],
+    "pages": [
+      "11,897 176 29 35,840 –3,920 –18,340"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "Wet 8,555 1,965"
+    ],
+    "pages": [
+      "2,383 69 12,972 588 13,561"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Below Normal 8,362"
+    ],
+    "pages": [
+      "2,037 2,542 12 12,953 525 13,478"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Critically Dry 7,821 2,151 2,765"
+    ],
+    "pages": [
+      "– 12,738 428 13,166"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "pages": [
+      "– 11,008 387 11,395"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Below Normal 5,692 2,148 1,964"
+    ],
+    "pages": [
+      "– 9,805 366 10,171"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Above Normal 6,205 1,934 1,873"
+    ],
+    "pages": [
+      "– 10,012 388 10,400"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "Wet 5,685 1,826 1,946"
+    ],
+    "pages": [
+      "– 9,458 381 9,839"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "pages": [
+      "– 9,822 352 10,174"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "pages": [
+      "– 10,004 338 10,341"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "7,227 2,023"
+    ],
+    "pages": [
+      "2,114 210 11,574 323 11,897"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "10,576 4,020 3,647"
+    ],
+    "pages": [
+      "996 6,700 39 26 3,223 1,751 12,735 6 30,985"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "11,119 4,009 3,705",
+      "21 3,200 1,574 12,287 2,139 33,260 3,429 1,068 9,160 4,488 1 2,114 16 16,846 3,534 10,563"
+    ],
+    "pages": [
+      "891 6,574 27",
+      "139 106 34,617 –1,357 –1,357"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "11,256 4,020",
+      "21 3,127 1,721 12,362 2,139 33,939 3,457 1,088 9,186 4,559 1 2,099 16 16,949 3,679 10,555"
+    ],
+    "pages": [
+      "4,161 893 6,573 26",
+      "153 120 34,912 –973 –2,330"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "11,381 4,009",
+      "22 3,069 1,682 12,226 2,139 34,443 3,337 1,102 9,154 4,576 1 2,080 17 16,929 3,760 10,557"
+    ],
+    "pages": [
+      "4,687 889 6,540 24",
+      "150 118 34,852 –409 –2,739"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "12,253 4,009",
+      "21 3,155 1,757 12,380 2,139 39,050 3,894 1,120 9,110 4,698 1 2,126 19 17,074 4,319 10,586"
+    ],
+    "pages": [
+      "8,268 897 6,527 22",
+      "188 119 36,180 2,869 131"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "12,601 4,009",
+      "20 3,233 1,797 12,446 2,139 39,418 3,532 1,142 9,110 4,798 1 2,154 19 17,224 4,602 10,600"
+    ],
+    "pages": [
+      "8,223 877 6,500 18",
+      "192 123 36,273 3,145 3,276"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "11,731 4,020 5,605 864 6,531 16 20 3,287 1,852 12,570 2,139 36,065 3,911 1,179 9,178 4,659 1 2,167 17 17,201 4,097 10,580"
+    ],
+    "pages": [
+      "191 119 36,101 –36 3,240"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "14,806 4,009",
+      "18 3,494 2,405 13,317 2,139 50,193 4,268 1,204 9,072 4,788 1 2,313 20 17,398 6,641 10,632"
+    ],
+    "pages": [
+      "15,922 864 6,521 14",
+      "191 126 39,256 10,936 14,177"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "12,928 4,009",
+      "17 3,691 2,308 13,346 2,139 39,258 4,552 1,212 9,165 4,835 2 2,332 20 17,565 5,294 10,619"
+    ],
+    "pages": [
+      "6,836 818 6,502 10",
+      "192 123 38,345 913 15,090"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "13,302 4,009 6,429 807 6,527 9 18 3,566 2,394 13,321 2,139 39,200 4,373 1,297 9,190 4,889 1 2,287 22 17,687 5,505 10,614"
+    ],
+    "pages": [
+      "192 124 38,495 705 15,795"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "12,384 4,020",
+      "19 3,498 2,267 13,169 2,139 36,614 4,589 1,368 9,227 4,809 1 2,255 22 17,682 4,762 10,603"
+    ],
+    "pages": [
+      "4,901 800 6,575 10",
+      "192 118 37,946 –1,332 14,463"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "13,775 4,009",
+      "20 3,440 2,337 13,129 2,139 40,975 3,888 1,427 9,181 5,024 1 2,262 23 17,918 5,942 10,630"
+    ],
+    "pages": [
+      "7,923 796 6,526 11",
+      "192 126 38,696 2,279 16,742"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "13,039 4,009",
+      "20 3,509 2,112 12,959 2,139 39,094 4,476 1,466 9,178 4,914 1 2,266 23 17,849 5,345 10,633"
+    ],
+    "pages": [
+      "6,948 793 6,514 11",
+      "192 123 38,618 475 17,217"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "12,531 4,009 5,242 782 6,488 10 21 3,480 2,058 12,839 2,139 36,760 3,932 1,515 9,201 4,976 1 2,253 21 17,968 4,863 10,617"
+    ],
+    "pages": [
+      "192 124 37,695 –935 16,282"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "12,807 4,020",
+      "22 3,426 2,087 12,854 2,139 37,755 4,044 1,539 9,213 4,922 1 2,236 21 17,933 4,857 10,612"
+    ],
+    "pages": [
+      "5,934 777 6,532 11",
+      "192 122 37,760 –5 16,277"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "12,687 4,009",
+      "22 3,399 2,146 12,855 2,139 38,178 4,390 1,558 9,198 4,935 1 2,233 22 17,947 4,934 10,616"
+    ],
+    "pages": [
+      "6,488 780 6,497 11",
+      "192 125 38,204 –26 16,250"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "16,306 4,009 20,771 793 6,500 10 19 3,829 2,645 13,796 2,139 57,022 4,944 1,562 9,109 4,944 2 2,478 24 18,120 8,567 10,656"
+    ],
+    "pages": [
+      "192 133 42,612 14,410 30,661"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "16,645 4,009 13,198 732 6,439 6 15 4,143 2,638 13,974 2,139 49,965 5,061 1,561 9,170 5,144 4 2,598 23 18,500 8,965 10,657"
+    ],
+    "pages": [
+      "192 139 43,513 6,452 37,112"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "18,647 4,020 18,833 733 6,530 6 15 4,425 3,042 14,750 2,139 58,389 5,916 1,668 9,184 5,217 5 2,749 23 18,845 11,184 10,659"
+    ],
+    "pages": [
+      "192 143 46,939 11,450 48,562"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2037"
+    ],
+    "volume": [
+      "17,040 4,009 7,761 678 6,554 6 15 4,441 2,818 14,511 2,139 45,461 6,310 1,716 9,234 5,315 3 2,674 22 18,965 9,150 10,630"
+    ],
+    "pages": [
+      "192 135 45,381 79 48,642"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2038"
+    ],
+    "volume": [
+      "17,748 4,009 9,711 668 6,583 6 18 4,221 3,000 14,496 2,139 48,104 5,089 1,839 9,227 5,290 2 2,598 24 18,980 10,011 10,647"
+    ],
+    "pages": [
+      "192 141 45,059 3,044 51,686"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "18,164 4,009 13,277 672 6,640 6 18 4,272 3,007 14,614 2,139 52,204 5,181 1,924 9,178 5,299 2 2,663 25 19,092 11,186 10,663"
+    ],
+    "pages": [
+      "192 150 46,465 5,739 57,425"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "15,910 4,020 7,992 649 6,640 6 17 4,341 2,619 14,272 2,139 44,333 6,392 1,990 9,275 5,307 2 2,657 22 19,254 8,643 10,644"
+    ],
+    "pages": [
+      "192 137 45,262 –928 56,497"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "15,544 4,009 6,661 640 6,628 7 20 4,193 2,581 14,069 2,139 42,423 5,568 2,048 9,310 5,248 2 2,583 24 19,214 7,880 10,636"
+    ],
+    "pages": [
+      "192 131 43,621 –1,198 55,299"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "15,227 4,009 5,659 645 6,635 6 23 4,063 2,563 13,936 2,139 40,970 5,383 2,065 9,355 5,346 2 2,522 23 19,313 7,276 10,624"
+    ],
+    "pages": [
+      "192 127 42,916 –1,946 53,353"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "14,169 4,009 4,511 647 6,623 6 24 3,925 2,435 13,661 2,139 38,489 5,130 2,079 9,371 5,291 2 2,461 24 19,227 6,320 10,612"
+    ],
+    "pages": [
+      "192 125 41,607 –3,118 50,235"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "13,612 4,020 4,634 657 6,630 6 25 3,813 2,369 13,501 2,139 37,907 4,824 2,065 9,386 5,285 2 2,422 24 19,183 5,805 10,609"
+    ],
+    "pages": [
+      "192 124 40,738 –2,831 47,404"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "12,613 4,009 4,203 666 6,608 6 26 3,712 2,167 13,186 2,139 36,150 4,877 2,044 9,354 5,116 2 2,385 23 18,924 5,032 10,605"
+    ],
+    "pages": [
+      "192 120 39,749 –3,600 43,804"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "12,063 4,009 3,357 679 6,620 7 27 3,617 1,994 12,944 2,139 34,513 4,586 2,027 9,344 5,113 2 2,338 22 18,846 4,440 10,597"
+    ],
+    "pages": [
+      "192 120 38,781 –4,268 39,536"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "13,045 4,009 7,889 703 6,645 9 27 3,579 2,012 12,976 2,139 40,058 4,639 1,985 9,272 5,094 2 2,348 20 18,721 5,171 10,620"
+    ],
+    "pages": [
+      "192 122 39,465 593 40,129"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "13,469 4,020 8,722 717 6,644 9 25 3,677 2,056 13,129 2,139 41,479 4,804 1,950 9,299 5,094 2 2,400 20 18,765 5,652 10,638"
+    ],
+    "pages": [
+      "192 124 40,176 1,303 41,432"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "16,117 4,009 20,186 719 6,662 7 21 4,121 2,504 14,034 2,139 56,486 5,544 1,910 9,211 5,120 2 2,640 24 18,908 8,621 10,655"
+    ],
+    "pages": [
+      "192 133 44,053 12,433 53,865"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "15,057 4,009 7,825 676 6,661 6 18 4,200 2,555 14,117 2,139 43,147 5,298 1,870 9,296 5,345 2 2,609 19 19,139 7,296 10,640"
+    ],
+    "pages": [
+      "192 134 42,699 448 54,313"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "17,364 4,009 15,080 688 6,699 6 19 4,225 2,980 14,617 2,139 53,209 5,404 1,952 9,237 5,310 2 2,656 23 19,180 10,033 10,657"
+    ],
+    "pages": [
+      "192 141 45,607 7,602 61,914"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "15,428 4,020 7,471 652 6,730 6 19 4,257 2,613 14,277 2,139 43,336 6,107 1,984 9,336 5,305 2 2,613 20 19,259 7,838 10,629"
+    ],
+    "pages": [
+      "192 130 44,157 –821 61,093"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "15,118 4,009 7,625 655 6,732 7 21 4,103 2,545 14,062 2,139 42,954 5,758 2,075 9,330 5,246 2 2,556 22 19,231 7,493 10,633"
+    ],
+    "pages": [
+      "192 127 43,434 –480 60,614"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "17,239 4,009 14,971 668 6,755 6 21 4,174 2,862 14,485 2,139 52,843 4,955 2,110 9,260 5,312 2 2,639 24 19,347 10,078 10,656"
+    ],
+    "pages": [
+      "192 144 45,371 7,472 68,085"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "15,011 4,009 6,458 645 6,734 6 20 4,253 2,465 14,122 2,139 41,740 5,644 2,124 9,323 5,388 2 2,605 21 19,462 7,692 10,626"
+    ],
+    "pages": [
+      "192 137 43,753 –2,014 66,072"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "14,730 4,020 6,041 647 6,789 7 23 4,115 2,466 14,046 2,139 40,976 5,846 2,166 9,407 5,387 2 2,548 21 19,531 6,783 10,614"
+    ],
+    "pages": [
+      "192 126 43,093 –2,116 63,955"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "14,518 4,009 5,559 647 6,748 6 25 3,940 2,483 13,849 2,139 40,074 5,131 2,187 9,372 5,344 2 2,477 21 19,403 6,730 10,625"
+    ],
+    "pages": [
+      "192 127 42,209 –2,135 61,821"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "12,801 4,009 3,545 657 6,745 6 26 3,841 2,237 13,512 2,139 36,006 5,290 2,183 9,406 5,251 2 2,414 22 19,278 5,168 10,606"
+    ],
+    "pages": [
+      "192 120 40,654 –4,648 57,173"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "13,513 4,009 5,957 672 6,732 6 27 3,706 2,218 13,361 2,139 38,979 4,735 2,157 9,345 5,282 2 2,397 22 19,204 5,677 10,618"
+    ],
+    "pages": [
+      "192 125 40,551 –1,572 55,601"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "12,683 4,020 4,733 691 6,742 7 27 3,684 2,052 13,203 2,139 36,778 4,978 2,138 9,393 5,200 2 2,373 21 19,126 4,968 10,614"
+    ],
+    "pages": [
+      "192 120 39,998 –3,220 52,381"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "15,279 4,009 14,869 706 6,711 7 25 3,853 2,383 13,685 2,139 49,982 4,890 2,099 9,249 5,149 2 2,496 22 19,017 7,701 10,653"
+    ],
+    "pages": [
+      "192 133 42,586 7,396 59,777"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2062"
+    ],
+    "volume": [
+      "13,283 4,009 5,883 668 6,689 6 23 3,971 2,199 13,555 2,139 38,870 5,162 2,046 9,354 5,354 2 2,485 19 19,260 5,555 10,618"
+    ],
+    "pages": [
+      "192 127 40,914 –2,044 57,733"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2063"
+    ],
+    "volume": [
+      "12,297 4,009 4,024 679 6,746 6 25 3,831 2,281 13,569 2,139 36,039 5,202 2,057 9,382 5,184 1 2,420 19 19,063 4,659 10,601"
+    ],
+    "pages": [
+      "192 118 39,835 –3,796 53,936"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2064"
+    ],
+    "volume": [
+      "12,631 4,020 4,594 686 6,783 6 27 3,668 2,294 13,466 2,139 36,851 4,824 2,069 9,373 5,110 1 2,365 19 18,937 4,976 10,597"
+    ],
+    "pages": [
+      "192 120 39,646 –2,796 51,140"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2065"
+    ],
+    "volume": [
+      "12,281 4,009 4,197 703 6,777 8 28 3,571 2,113 13,199 2,139 35,825 4,800 2,058 9,347 5,096 1 2,311 21 18,834 4,624 10,600"
+    ],
+    "pages": [
+      "192 118 39,168 –3,343 47,798"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2066"
+    ],
+    "volume": [
+      "12,952 4,009 7,026 723 6,751 9 28 3,536 2,002 13,049 2,139 39,175 4,418 2,043 9,299 5,103 1 2,301 21 18,768 5,122 10,633"
+    ],
+    "pages": [
+      "192 122 39,256 –81 47,717"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2067"
+    ],
+    "volume": [
+      "13,458 4,009 8,366 721 6,729 9 26 3,592 2,022 13,100 2,139 41,072 4,488 2,036 9,274 5,105 1 2,326 21 18,762 5,597 10,646"
+    ],
+    "pages": [
+      "192 127 39,812 1,259 48,976"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2068"
+    ],
+    "volume": [
+      "12,170 4,020 4,298 717 6,741 8 26 3,655 1,918 13,065 2,139 35,692 4,734 2,019 9,355 5,181 1 2,320 19 18,895 4,460 10,609"
+    ],
+    "pages": [
+      "192 120 39,010 –3,318 45,658"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2069"
+    ],
+    "volume": [
+      "11,722 4,009 3,765 729 6,770 8 27 3,551 2,060 13,145 2,139 34,779 4,394 2,001 9,313 5,054 1 2,279 18 18,665 4,150 10,596"
+    ],
+    "pages": [
+      "190 117 38,112 –3,333 42,326"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "11,333 4,009 3,902",
+      "21 3,204 1,569 12,292 2,139 33,676 3,684 1,068 9,161 4,451 1 2,114 16 16,811 3,497 10,563"
+    ],
+    "pages": [
+      "891 6,581 27",
+      "136 103 34,794 –1,118 –1,118"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "11,178 4,020",
+      "21 3,150 1,739 12,400 2,139 34,298 3,820 1,088 9,175 4,555 1 2,106 17 16,941 3,617 10,555"
+    ],
+    "pages": [
+      "4,560 894 6,571 26",
+      "153 117 35,203 –905 –2,024"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "11,168 4,009",
+      "22 3,091 1,678 12,250 2,139 34,125 3,645 1,103 9,161 4,460 1 2,089 16 16,830 3,596 10,555"
+    ],
+    "pages": [
+      "4,559 888 6,547 24",
+      "145 114 34,884 –759 –2,783"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "12,035 4,009",
+      "21 3,152 1,741 12,360 2,139 38,225 4,074 1,122 9,115 4,638 1 2,120 19 17,016 4,127 10,577"
+    ],
+    "pages": [
+      "7,682 892 6,531 23",
+      "185 115 36,094 2,132 –651"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "12,396 4,009",
+      "20 3,218 1,798 12,445 2,139 39,032 3,765 1,140 9,116 4,692 1 2,147 19 17,115 4,380 10,588"
+    ],
+    "pages": [
+      "8,043 880 6,510 19",
+      "190 119 36,157 2,875 2,224"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "11,481 4,020",
+      "20 3,271 1,840 12,555 2,139 35,642 4,137 1,174 9,181 4,531 1 2,155 17 17,058 3,887 10,575"
+    ],
+    "pages": [
+      "5,447 867 6,541 17",
+      "189 115 35,962 –320 1,904"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "14,291 4,009",
+      "19 3,453 2,324 13,203 2,139 48,698 4,467 1,205 9,070 4,693 1 2,290 20 17,278 6,120 10,621"
+    ],
+    "pages": [
+      "15,055 867 6,526 15",
+      "188 121 38,794 9,904 11,808"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "12,388 4,009",
+      "17 3,628 2,230 13,235 2,139 38,081 4,769 1,212 9,158 4,680 1 2,303 20 17,375 4,780 10,612"
+    ],
+    "pages": [
+      "6,309 826 6,523 11",
+      "192 118 37,845 235 12,043"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "12,422 4,009",
+      "18 3,505 2,381 13,289 2,139 38,003 4,570 1,281 9,179 4,712 1 2,259 22 17,454 4,783 10,605"
+    ],
+    "pages": [
+      "6,143 817 6,558 10",
+      "192 118 37,722 281 12,324"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "11,721 4,020",
+      "20 3,423 2,233 13,104 2,139 35,480 4,673 1,360 9,212 4,638 1 2,219 22 17,451 4,202 10,594"
+    ],
+    "pages": [
+      "4,495 812 6,605 11",
+      "192 112 37,226 –1,746 10,578"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "12,976 4,009",
+      "21 3,335 2,247 12,974 2,139 38,842 3,965 1,410 9,166 4,882 1 2,202 22 17,683 5,164 10,623"
+    ],
+    "pages": [
+      "6,744 809 6,550 12",
+      "192 120 37,747 1,095 11,674"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "12,378 4,009",
+      "21 3,370 2,005 12,770 2,139 37,807 4,535 1,448 9,158 4,759 1 2,205 23 17,594 4,683 10,616"
+    ],
+    "pages": [
+      "6,510 813 6,549 13",
+      "192 117 37,738 69 11,742"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "11,838 4,009",
+      "21 3,350 1,917 12,630 2,139 35,355 4,018 1,487 9,178 4,755 1 2,183 21 17,625 4,249 10,596"
+    ],
+    "pages": [
+      "4,740 803 6,526 13",
+      "192 118 36,797 –1,441 10,301"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "12,392 4,020",
+      "22 3,295 1,924 12,610 2,139 36,877 4,084 1,513 9,182 4,748 1 2,162 21 17,627 4,300 10,586"
+    ],
+    "pages": [
+      "5,716 801 6,556 13",
+      "192 116 36,905 –28 10,273"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "12,067 4,009",
+      "22 3,297 2,015 12,667 2,139 37,432 4,518 1,530 9,162 4,750 1 2,176 20 17,640 4,408 10,593"
+    ],
+    "pages": [
+      "6,550 806 6,514 13",
+      "192 119 37,471 –38 10,235"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "15,581 4,009 19,261",
+      "19 3,669 2,480 13,488 2,139 54,478 4,923 1,529 9,090 4,835 2 2,400 23 17,878 7,614 10,645"
+    ],
+    "pages": [
+      "818 6,490 12",
+      "192 126 41,378 13,100 23,335"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "15,451 4,009 11,336 758 6,406 6 16 3,959 2,586 13,731 2,139 46,666 4,994 1,520 9,165 5,022 3 2,494 22 18,227 7,599 10,652"
+    ],
+    "pages": [
+      "192 130 41,794 4,873 28,207"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "17,238 4,020 16,588 761 6,477 6 16 4,162 2,877 14,299 2,139 54,284 5,799 1,608 9,193 5,034 3 2,611 23 18,472 9,216 10,653"
+    ],
+    "pages": [
+      "192 131 44,463 9,820 38,028"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2037"
+    ],
+    "volume": [
+      "15,688 4,009 7,170 702 6,473 6 16 4,192 2,629 14,017 2,139 43,024 6,136 1,674 9,268 5,016 2 2,547 22 18,528 7,572 10,624"
+    ],
+    "pages": [
+      "192 124 43,176 –153 37,875"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2038"
+    ],
+    "volume": [
+      "16,632 4,009 8,361 694 6,503 6 19 3,997 2,804 14,023 2,139 45,165 5,001 1,775 9,255 5,159 2 2,488 24 18,702 8,383 10,640"
+    ],
+    "pages": [
+      "192 129 43,047 2,118 39,993"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "17,515 4,009 11,890 695 6,517 6 19 4,012 2,882 14,132 2,139 49,686 5,190 1,853 9,219 5,273 2 2,520 26 18,894 9,710 10,663"
+    ],
+    "pages": [
+      "192 138 44,787 4,899 44,892"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "15,094 4,020 7,564 677 6,522 7 18 4,090 2,527 13,841 2,139 42,658 6,294 1,887 9,349 5,125 2 2,529 23 18,916 7,351 10,639"
+    ],
+    "pages": [
+      "192 126 43,517 –859 44,032"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "14,462 4,009 6,271 667 6,518 6 21 3,961 2,449 13,623 2,139 40,504 5,422 1,947 9,335 5,098 2 2,475 24 18,880 6,556 10,626"
+    ],
+    "pages": [
+      "192 122 41,797 –1,293 42,739"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "13,927 4,009 5,091 667 6,553 6 23 3,841 2,454 13,545 2,139 38,711 5,315 1,974 9,348 5,095 2 2,413 23 18,854 5,989 10,616"
+    ],
+    "pages": [
+      "192 119 41,084 –2,372 40,367"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "13,097 4,009 4,330 678 6,578 6 24 3,737 2,361 13,385 2,139 36,960 5,122 1,979 9,346 5,070 2 2,361 23 18,780 5,291 10,608"
+    ],
+    "pages": [
+      "192 118 40,111 –3,150 37,216"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "12,632 4,020 4,092 688 6,603 7 25 3,628 2,267 13,219 2,139 36,102 4,860 1,985 9,362 5,031 2 2,335 23 18,737 4,860 10,603"
+    ],
+    "pages": [
+      "192 117 39,369 –3,267 33,949"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "11,934 4,009 3,890 701 6,608 9 26 3,526 2,045 12,915 2,139 34,887 4,779 1,974 9,318 4,928 2 2,290 22 18,534 4,324 10,599"
+    ],
+    "pages": [
+      "192 114 38,542 –3,655 30,294"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "11,415 4,009 3,314",
+      "3,433 1,857 12,662 2,139 33,540 4,548 1,942 9,301 4,844 2 2,241 21 18,351 3,844 10,587"
+    ],
+    "pages": [
+      "719 6,616 11 27",
+      "189 114 37,632 –4,092 26,202"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "12,356 4,009",
+      "3,391 1,852 12,637 2,139 38,413 4,562 1,926 9,228 4,867 2 2,247 20 18,290 4,467 10,592"
+    ],
+    "pages": [
+      "7,271 739 6,617 12 27",
+      "184 115 38,210 202 26,404"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "12,649 4,020",
+      "25 3,461 1,892 12,781 2,139 39,245 4,770 1,898 9,259 4,920 2 2,287 19 18,386 4,772 10,617"
+    ],
+    "pages": [
+      "7,655 755 6,635 12",
+      "192 117 38,853 391 26,795"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "15,508 4,009 19,111 765 6,611 10 21 3,874 2,287 13,568 2,139 54,336 5,359 1,853 9,166 4,980 2 2,508 23 18,532 7,532 10,651"
+    ],
+    "pages": [
+      "192 125 42,391 11,944 38,740"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "13,764 4,009 7,509 715 6,578 6 19 3,994 2,428 13,739 2,139 41,161 5,220 1,821 9,273 5,094 2 2,499 19 18,708 5,950 10,630"
+    ],
+    "pages": [
+      "192 125 40,825 336 39,076"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "16,138 4,009 12,230 719 6,607 6 20 3,964 2,766 14,083 2,139 48,599 5,344 1,897 9,226 5,084 2 2,530 22 18,760 8,208 10,651"
+    ],
+    "pages": [
+      "192 129 43,284 5,315 44,390"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "14,323 4,020 6,511 691 6,621 6 20 3,967 2,511 13,816 2,139 40,809 5,766 1,922 9,340 5,078 2 2,484 20 18,846 6,454 10,623"
+    ],
+    "pages": [
+      "192 120 42,002 –1,193 43,198"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "14,116 4,009 7,486 695 6,627 6 22 3,859 2,479 13,688 2,139 41,438 5,504 1,970 9,312 5,052 2 2,444 22 18,801 6,305 10,629"
+    ],
+    "pages": [
+      "192 118 41,550 –112 43,086"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "16,470 4,009 14,193 703 6,629 6 21 3,930 2,749 14,039 2,139 50,851 4,917 2,015 9,254 5,185 2 2,521 23 19,000 8,658 10,654"
+    ],
+    "pages": [
+      "192 133 43,555 7,295 50,381"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "14,034 4,009 6,353 672 6,597 6 20 4,031 2,408 13,735 2,139 40,270 5,650 2,035 9,366 5,216 2 2,493 21 19,132 6,295 10,624"
+    ],
+    "pages": [
+      "192 126 42,019 –1,749 48,632"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "13,639 4,020 5,679 676 6,660 7 23 3,900 2,357 13,623 2,139 39,101 5,622 2,083 9,389 5,116 2 2,455 21 19,066 5,683 10,611"
+    ],
+    "pages": [
+      "192 118 41,292 –2,191 46,441"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "13,602 4,009 5,450 677 6,647 6 24 3,756 2,400 13,511 2,139 38,711 5,047 2,104 9,346 5,139 2 2,396 21 19,008 5,783 10,616"
+    ],
+    "pages": [
+      "192 120 40,767 –2,056 44,385"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "11,997 4,009 3,529 690 6,674 7 26 3,675 2,167 13,239 2,139 34,913 5,325 2,100 9,371 4,958 2 2,337 22 18,790 4,448 10,605"
+    ],
+    "pages": [
+      "192 113 39,473 –4,560 39,825"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "12,722 4,009 5,333 703 6,678 8 27 3,538 2,084 13,038 2,139 37,242 4,803 2,085 9,325 5,070 1 2,310 21 18,812 4,766 10,605"
+    ],
+    "pages": [
+      "192 117 39,295 –2,054 37,772"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "11,973 4,020",
+      "3,506 1,942 12,915 2,139 35,558 4,947 2,063 9,352 4,945 1 2,286 21 18,668 4,258 10,603"
+    ],
+    "pages": [
+      "4,511 726 6,704 10 27",
+      "192 113 38,781 –3,223 34,548"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "14,564 4,009",
+      "25 3,620 2,220 13,262 2,139 47,102 4,835 2,049 9,237 5,093 1 2,378 22 18,781 6,465 10,645"
+    ],
+    "pages": [
+      "13,127 745 6,642 10",
+      "192 124 41,042 6,060 40,608"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2062"
+    ],
+    "volume": [
+      "12,461 4,009 5,412 710 6,624 7 24 3,748 2,008 13,121 2,139 37,142 5,123 2,006 9,315 5,021 1 2,370 19 18,732 4,733 10,615"
+    ],
+    "pages": [
+      "192 118 39,514 –2,371 38,236"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2063"
+    ],
+    "volume": [
+      "11,391 4,009 3,727 718 6,693 7 25 3,618 2,101 13,161 2,139 34,427 5,104 2,015 9,319 4,816 1 2,310 19 18,481 3,881 10,599"
+    ],
+    "pages": [
+      "188 111 38,364 –3,936 34,300"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2064"
+    ],
+    "volume": [
+      "11,866 4,020 4,276 733 6,743 9 27 3,483 2,179 13,174 2,139 35,475 4,662 2,012 9,307 4,950 1 2,272 19 18,562 4,142 10,595"
+    ],
+    "pages": [
+      "191 113 38,264 –2,790 31,510"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2065"
+    ],
+    "volume": [
+      "11,604 4,009 3,969",
+      "3,387 1,983 12,885 2,139 34,607 4,637 2,003 9,279 4,860 1 2,216 20 18,380 3,934 10,589"
+    ],
+    "pages": [
+      "743 6,734 11 27",
+      "191 111 37,843 –3,237 28,274"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2066"
+    ],
+    "volume": [
+      "12,372 4,009",
+      "3,344 1,899 12,732 2,139 37,727 4,321 1,993 9,235 4,879 1 2,200 22 18,330 4,458 10,605"
+    ],
+    "pages": [
+      "6,476 756 6,693 12 27",
+      "191 116 38,021 –294 27,980"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2067"
+    ],
+    "volume": [
+      "12,985 4,009",
+      "26 3,407 1,912 12,791 2,139 40,177 4,494 1,965 9,216 4,940 1 2,226 22 18,370 4,935 10,629"
+    ],
+    "pages": [
+      "8,252 761 6,674 12",
+      "192 120 38,741 1,436 29,416"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2068"
+    ],
+    "volume": [
+      "11,494 4,020",
+      "25 3,463 1,772 12,721 2,139 34,684 4,711 1,957 9,291 4,827 1 2,218 19 18,313 3,891 10,594"
+    ],
+    "pages": [
+      "4,308 758 6,692 11",
+      "190 113 37,812 –3,128 26,287"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2069"
+    ],
+    "volume": [
+      "11,340 4,009 3,784",
+      "3,373 1,934 12,818 2,139 34,089 4,256 1,951 9,241 4,860 1 2,178 17 18,248 3,718 10,576"
+    ],
+    "pages": [
+      "764 6,710 11 27",
+      "173 112 37,083 –2,993 23,294"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "11,195 4,009 3,839",
+      "21 3,209 1,558 11,407 2,139 33,480 3,984 1,070 9,164 4,363 1 2,114 16 3,367 10,562"
+    ],
+    "pages": [
+      "891 6,592 27",
+      "131 100 34,871 –1,390 –1,390"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "10,994 4,020",
+      "21 3,151 1,729 11,504 2,139 34,045 4,101 1,090 9,178 4,461 1 2,106 16 3,466 10,551"
+    ],
+    "pages": [
+      "4,494 894 6,577 26",
+      "145 112 35,227 –1,181 –2,572"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "10,823 4,009 3,982",
+      "3,090 1,650 11,347 2,139 33,189 3,936 1,099 9,162 4,326 1 2,082 16 3,341 10,549"
+    ],
+    "pages": [
+      "888 6,560 25 22",
+      "132 109 34,753 –1,564 –4,135"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "11,708 4,009",
+      "22 3,111 1,703 11,396 2,139 37,129 4,221 1,116 9,118 4,533 1 2,092 19 3,834 10,563"
+    ],
+    "pages": [
+      "6,983 893 6,536 24",
+      "173 110 35,780 1,349 –2,786"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "11,996 4,009",
+      "22 3,148 1,727 11,429 2,139 37,562 3,979 1,141 9,117 4,555 1 2,105 20 4,027 10,574"
+    ],
+    "pages": [
+      "7,106 883 6,512 21",
+      "181 113 35,813 1,750 –1,037"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2024"
+    ],
+    "volume": [
+      "11,050 4,020",
+      "21 3,188 1,719 11,485 2,139 34,497 4,280 1,168 9,176 4,377 1 2,104 17 3,521 10,565"
+    ],
+    "pages": [
+      "4,928 874 6,538 19",
+      "168 109 35,486 –989 –2,025"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2025"
+    ],
+    "volume": [
+      "13,393 4,009",
+      "20 3,322 2,116 12,000 2,139 45,783 4,522 1,190 9,061 4,568 1 2,215 20 5,226 10,602"
+    ],
+    "pages": [
+      "13,363 878 6,525 17",
+      "172 114 37,692 8,091 6,066"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "volume": [
+      "11,545 4,009",
+      "19 3,483 2,048 12,111 2,139 36,407 4,815 1,188 9,142 4,469 1 2,230 19 4,018 10,592"
+    ],
+    "pages": [
+      "5,755 847 6,547 14",
+      "192 110 36,776 –368 5,697"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2027"
+    ],
+    "volume": [
+      "11,458 4,009",
+      "20 3,372 2,207 12,196 2,139 36,147 4,544 1,255 9,154 4,500 1 2,193 20 3,967 10,587"
+    ],
+    "pages": [
+      "5,504 840 6,585 13",
+      "192 111 36,523 –376 5,321"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2028"
+    ],
+    "volume": [
+      "10,959 4,020 3,891",
+      "21 3,290 2,081 12,030 2,139 33,878 4,566 1,319 9,186 4,417 1 2,150 21 3,559 10,578"
+    ],
+    "pages": [
+      "840 6,623 14",
+      "188 106 36,091 –2,213 3,108"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2029"
+    ],
+    "volume": [
+      "12,036 4,009",
+      "3,184 2,097 11,884 2,139 36,456 3,910 1,355 9,145 4,632 1 2,121 20 4,292 10,590"
+    ],
+    "pages": [
+      "5,549 839 6,565 15 22",
+      "191 114 36,371 85 3,194"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2030"
+    ],
+    "volume": [
+      "11,669 4,009 5,687 841 6,554 16 22 3,202 1,849 11,644 2,139 35,990 4,480 1,404 9,128 4,562 1 2,109 22 3,992 10,587"
+    ],
+    "pages": [
+      "192 110 36,588 –598 2,595"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2031"
+    ],
+    "volume": [
+      "10,989 4,009 3,950 846 6,535 16 23 3,169 1,725 11,467 2,139 33,400 4,051 1,416 9,150 4,449 1 2,079 20 3,537 10,565"
+    ],
+    "pages": [
+      "184 111 35,562 –2,162 433"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2032"
+    ],
+    "volume": [
+      "11,754 4,020 5,077 839 6,534 16 24 3,109 1,709 11,392 2,139 35,221 4,056 1,449 9,141 4,531 1 2,061 20 3,674 10,555"
+    ],
+    "pages": [
+      "164 109 35,761 –540 –106"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2033"
+    ],
+    "volume": [
+      "11,235 4,009",
+      "23 3,111 1,818 11,469 2,139 35,880 4,445 1,462 9,119 4,505 1 2,073 19 3,691 10,561"
+    ],
+    "pages": [
+      "6,183 845 6,500 17",
+      "184 113 36,172 –292 –398"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2034"
+    ],
+    "volume": [
+      "14,384 4,009",
+      "21 3,401 2,228 12,114 2,139 50,270 4,737 1,456 9,060 4,679 1 2,274 20 6,226 10,621"
+    ],
+    "pages": [
+      "16,767 857 6,449 15",
+      "188 118 39,380 10,890 10,492"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2035"
+    ],
+    "volume": [
+      "13,938 4,009",
+      "18 3,652 2,333 12,392 2,139 42,803 4,802 1,450 9,125 4,797 2 2,336 21 6,037 10,645"
+    ],
+    "pages": [
+      "9,525 801 6,380 10",
+      "192 121 39,528 3,275 13,767"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2036"
+    ],
+    "volume": [
+      "15,500 4,020 14,073 814 6,458 8 17 3,822 2,737 13,042 2,139 49,589 5,568 1,517 9,145 4,781 2"
+    ],
+    "pages": [
+      "2,435 26 7,308 10,646 192 120 41,741 7,848 21,615"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2037"
+    ],
+    "volume": [
+      "13,841 4,009 7,058 762 6,452 6 17 3,876 2,469 12,821 2,139 40,630 5,835 1,560 9,199 4,669 2 2,404 23 5,941 10,614"
+    ],
+    "pages": [
+      "192 114 40,553 77 21,692"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2038"
+    ],
+    "volume": [
+      "15,276 4,009 7,815 749 6,501 6 19 3,717 2,633 12,876 2,139 42,863 5,003 1,650 9,185 4,860 1 2,358 24 6,883 10,621"
+    ],
+    "pages": [
+      "192 119 40,899 1,964 23,656"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2039"
+    ],
+    "volume": [
+      "16,655 4,009 11,322 751 6,473 7 19 3,745 2,794 13,038 2,139 47,915 5,135 1,730 9,188 5,068 2"
+    ],
+    "pages": [
+      "2,384 27 8,401 10,654 192 128 42,909 5,006 28,662"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2040"
+    ],
+    "volume": [
+      "13,859 4,020 7,046 725 6,470 6 19 3,839 2,476 12,810 2,139 40,599 6,048 1,766 9,308 4,773 2 2,397"
+    ],
+    "pages": [
+      "25 6,161 10,620 192 116 41,408 –809 27,853"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2041"
+    ],
+    "volume": [
+      "13,120 4,009 5,546 718 6,483 6 21 3,716 2,396 12,622 2,139 38,154 5,316 1,819 9,274 4,826 2 2,347 23 5,339 10,606"
+    ],
+    "pages": [
+      "192 113 39,857 –1,703 26,150"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2042"
+    ],
+    "volume": [
+      "12,695 4,009 4,747 717 6,541 7 23 3,611 2,388 12,569 2,139 36,876 5,222 1,860 9,274 4,746 2 2,296 23 4,938 10,598"
+    ],
+    "pages": [
+      "192 112 39,262 –2,386 23,764"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2043"
+    ],
+    "volume": [
+      "11,973 4,009 3,964 726 6,578 9 24 3,507 2,304 12,422 2,139 35,233 5,078 1,866 9,267 4,701 2 2,252 24 4,367 10,592"
+    ],
+    "pages": [
+      "192 111 38,450 –3,217 20,547"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2044"
+    ],
+    "volume": [
+      "11,685 4,020 3,687",
+      "25 3,426 2,133 12,202 2,139 34,475 4,750 1,878 9,285 4,653 2 2,222 23 4,053 10,587"
+    ],
+    "pages": [
+      "741 6,607 11",
+      "192 110 37,754 –3,280 17,267"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2045"
+    ],
+    "volume": [
+      "11,172 4,009 3,435",
+      "26 3,315 1,895 11,842 2,139 33,354 4,643 1,873 9,241 4,617 2 2,173 21 3,654 10,574"
+    ],
+    "pages": [
+      "757 6,594 12",
+      "188 107 37,094 –3,740 13,527"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2046"
+    ],
+    "volume": [
+      "10,811 4,009 3,111",
+      "3,222 1,703 11,558 2,139 32,397 4,422 1,859 9,224 4,530 2 2,124 21 3,339 10,556"
+    ],
+    "pages": [
+      "768 6,594 14 27",
+      "166 107 36,350 –3,953 9,574"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2047"
+    ],
+    "volume": [
+      "11,694 4,009",
+      "3,166 1,688 11,468 2,139 36,337 4,352 1,831 9,158 4,628 2 2,124 22 3,860 10,558"
+    ],
+    "pages": [
+      "6,241 786 6,572 15 27",
+      "165 109 36,809 –472 9,102"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2048"
+    ],
+    "volume": [
+      "11,939 4,020",
+      "26 3,218 1,724 11,559 2,139 37,318 4,603 1,820 9,198 4,667 2 2,146 22 4,052 10,579"
+    ],
+    "pages": [
+      "6,858 803 6,575 16",
+      "188 110 37,386 –67 9,035"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2049"
+    ],
+    "volume": [
+      "14,675 4,009",
+      "22 3,600 2,067 12,225 2,139 51,575 5,156 1,778 9,101 4,750 2 2,362"
+    ],
+    "pages": [
+      "17,715 812 6,522 14",
+      "25 6,402 10,629 191 117 40,513 11,062 20,097"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2050"
+    ],
+    "volume": [
+      "12,510 4,009 6,848 755 6,503 8 20 3,746 2,170 12,446 2,139 38,708 5,161 1,750 9,197 4,728 2 2,366 19 4,831 10,612"
+    ],
+    "pages": [
+      "192 116 38,971 –264 19,833"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2051"
+    ],
+    "volume": [
+      "14,706 4,009 11,268 763 6,551 7 20 3,681 2,641 12,901 2,139 45,786 5,257 1,809 9,160 4,853 2 2,397 22 6,614 10,636"
+    ],
+    "pages": [
+      "192 119 41,061 4,725 24,558"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2052"
+    ],
+    "volume": [
+      "13,029 4,020 6,060 743 6,594 7 21 3,720 2,443 12,785 2,139 38,777 5,610 1,826 9,255 4,771 1 2,371 21 5,284 10,612"
+    ],
+    "pages": [
+      "192 113 40,057 –1,280 23,278"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2053"
+    ],
+    "volume": [
+      "12,890 4,009 6,466 742 6,596 7 22 3,604 2,398 12,627 2,139 38,872 5,368 1,865 9,223 4,766 1 2,322 22 5,175 10,610"
+    ],
+    "pages": [
+      "192 111 39,655 –783 22,495"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2054"
+    ],
+    "volume": [
+      "15,156 4,009 11,652 750 6,573 8 22 3,637 2,621 12,861 2,139 46,567 4,810 1,903 9,194 4,928 1 2,376 23 7,041 10,644"
+    ],
+    "pages": [
+      "192 123 41,237 5,330 27,825"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2055"
+    ],
+    "volume": [
+      "12,527 4,009 5,918 729 6,550 7 21 3,721 2,300 12,599 2,139 37,921 5,483 1,921 9,279 4,752 1 2,358 21 5,040 10,612"
+    ],
+    "pages": [
+      "192 116 39,776 –1,855 25,970"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2056"
+    ],
+    "volume": [
+      "12,104 4,020 5,152 726 6,611 7 23 3,614 2,284 12,540 2,139 36,681 5,371 1,978 9,289 4,754 1 2,318 21 4,456 10,597"
+    ],
+    "pages": [
+      "192 110 39,087 –2,406 23,564"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2057"
+    ],
+    "volume": [
+      "12,264 4,009 5,478 730 6,616 9 24 3,485 2,327 12,462 2,139 37,082 4,881 1,983 9,247 4,843 1 2,267 21 4,556 10,597"
+    ],
+    "pages": [
+      "192 113 38,701 –1,619 21,945"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2058"
+    ],
+    "volume": [
+      "11,049 4,009 3,391 739 6,648 10 25 3,423 2,074 12,181 2,139 33,509 5,132 2,021 9,265 4,555 1 2,210 22 3,655 10,590"
+    ],
+    "pages": [
+      "191 106 37,749 –4,240 17,705"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2059"
+    ],
+    "volume": [
+      "11,768 4,009",
+      "3,314 1,945 11,934 2,139 35,142 4,675 2,001 9,238 4,665 1 2,184 21 3,908 10,585"
+    ],
+    "pages": [
+      "4,535 757 6,636 12 27",
+      "191 110 37,579 –2,437 15,269"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2060"
+    ],
+    "volume": [
+      "11,154 4,020 3,769",
+      "3,265 1,784 11,740 2,139 33,592 4,730 1,987 9,260 4,560 1 2,147 21 3,555 10,572"
+    ],
+    "pages": [
+      "769 6,650 14 27",
+      "188 105 37,129 –3,537 11,732"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2061"
+    ],
+    "volume": [
+      "13,319 4,009 10,979",
+      "26 3,316 2,001 11,927 2,139 43,165 4,677 1,958 9,163 4,820 1 2,215 23 5,119 10,609"
+    ],
+    "pages": [
+      "792 6,570 14",
+      "191 115 38,890 4,275 16,007"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2062"
+    ],
+    "volume": [
+      "11,394 4,009",
+      "24 3,427 1,789 11,829 2,139 34,898 4,907 1,925 9,215 4,568 1 2,205 20 3,835 10,589"
+    ],
+    "pages": [
+      "4,762 765 6,577 12",
+      "191 110 37,565 –2,667 13,340"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2063"
+    ],
+    "volume": [
+      "10,540 4,009 3,482",
+      "25 3,322 1,827 11,820 2,139 32,762 4,788 1,929 9,207 4,459 1 2,157 19 3,184 10,565"
+    ],
+    "pages": [
+      "772 6,633 12",
+      "153 104 36,565 –3,802 9,538"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2064"
+    ],
+    "volume": [
+      "11,054 4,020 3,755",
+      "3,216 1,962 11,872 2,139 33,624 4,394 1,918 9,214 4,570 1 2,131 19 3,437 10,559"
+    ],
+    "pages": [
+      "783 6,654 14 27",
+      "152 106 36,502 –2,878 6,660"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2065"
+    ],
+    "volume": [
+      "10,773 4,009 3,241",
+      "3,139 1,808 11,626 2,139 32,582 4,401 1,905 9,186 4,456 1 2,082 19 3,293 10,551"
+    ],
+    "pages": [
+      "793 6,637 15 27",
+      "152 104 36,149 –3,568 3,092"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2066"
+    ],
+    "volume": [
+      "11,545 4,009",
+      "3,083 1,731 11,452 2,139 35,253 4,161 1,892 9,141 4,573 1 2,055 22 3,692 10,555"
+    ],
+    "pages": [
+      "5,310 799 6,594 16 27",
+      "169 108 36,369 –1,116 1,975"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2067"
+    ],
+    "volume": [
+      "12,087 4,009",
+      "26 3,123 1,734 11,460 2,139 37,540 4,310 1,883 9,134 4,648 1 2,067 24 4,011 10,573"
+    ],
+    "pages": [
+      "7,040 805 6,561 16",
+      "184 111 36,947 594 2,569"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2068"
+    ],
+    "volume": [
+      "10,608 4,020 3,781 808 6,589 16 26 3,155 1,543 11,329 2,139 32,686 4,521 1,862 9,193 4,419 1 2,057 20 3,191 10,562"
+    ],
+    "pages": [
+      "155 105 36,085 –3,400 –830"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2069"
+    ],
+    "volume": [
+      "10,557 4,009 3,195",
+      "3,081 1,588 11,280 2,139 31,993 4,063 1,846 9,154 4,440 1 2,013 17 3,106 10,548"
+    ],
+    "pages": [
+      "812 6,569 16 27",
+      "106 105 35,399 –3,406 –4,237"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "12,295 4,012",
+      "23 3,393 2,053 12,039 2,139 37,776 4,731 1,659 9,188 4,630 1 2,211 21 4,538 10,589"
+    ],
+    "pages": [
+      "6,496 795 6,558 13",
+      "180 112 37,859 –83 11,589"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Average"
+    ]
+  },
+  {
+    "title": [
+      "Bench MA Hills MA Hills MA Annual Cumulative"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1965"
+    ],
+    "pages": [
+      "0 72 80 335 11 0 733",
+      "60 148 208 0 2,855 –1,550 –1,550"
+    ],
+    "volume": [
+      "73 1,152 1,305 1 2,646 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1966"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "72 251 343 10 0 731",
+      "45 148 194 0 2,943 –1,438 –2,988"
+    ],
+    "volume": [
+      "96 1,181 1,505 8 2,741 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1967"
+    ],
+    "volume": [
+      "Wet 0",
+      "10 2,315 0 0 0 0"
+    ],
+    "pages": [
+      "72 260 332 10 0 708 119 1,169 1,502",
+      "45 151 195 0 2,520 –1,018 –4,007"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1968"
+    ],
+    "pages": [
+      "0 73 199 332 10 0 685 141 1,167 1,440",
+      "46 156 202 0 2,782 –1,342 –5,349"
+    ],
+    "volume": [
+      "0 2,580 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1969"
+    ],
+    "volume": [
+      "Wet 1",
+      "16 1,986 0 0 0 0"
+    ],
+    "pages": [
+      "72 692 341 10 0 690 176 1,217 1,982",
+      "43 162 205 0 2,208 –225 –5,575"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1970"
+    ],
+    "pages": [
+      "321 360 333 9 0 710 172 1,225 1,906",
+      "38 169 208 0 2,396 –490 –6,064"
+    ],
+    "volume": [
+      "2 2,186 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "202 235 334 9 0 716 150",
+      "29 171 200 0 2,460 –814 –6,879"
+    ],
+    "volume": [
+      "1,209 1,646 2 2,259 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1972"
+    ],
+    "volume": [
+      "0",
+      "1 2,831 0 0 0 0"
+    ],
+    "pages": [
+      "202 168 338 9 0 706 139 1,192 1,562",
+      "24 171 195 0 3,026 –1,464 –8,343"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "202 153 338 9 0 686 135",
+      "20 170 190 0 2,575 –1,052 –9,394"
+    ],
+    "volume": [
+      "1,168 1,523 4 2,381 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1974"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "202 220 316 9 0 718 136",
+      "19 170 189 0 2,670 –1,068 –10,462"
+    ],
+    "volume": [
+      "1,180 1,602 8 2,473 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1975"
+    ],
+    "pages": [
+      "0 204 179 294 9 0 737 135 1,174 1,557",
+      "27 170 197 0 2,523 –966 –11,429"
+    ],
+    "volume": [
+      "0 2,326 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1976"
+    ],
+    "pages": [
+      "0 207 205 289 9 0 753 135 1,186 1,597",
+      "30 171 201 0 2,556 –959 –12,388"
+    ],
+    "volume": [
+      "4 2,351 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "206 190 299 8 0 768 135 1,211 1,607",
+      "27 171 199 0 2,418 –811 –13,198"
+    ],
+    "volume": [
+      "6 2,214 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1978"
+    ],
+    "volume": [
+      "Wet 1",
+      "17 2,382 0 1 0 0"
+    ],
+    "pages": [
+      "206 789 296 8 0 786 169 1,260 2,256",
+      "38 172 211 0 2,612 –356 –13,554"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "206 489 289 8 0 828 178 1,304 1,999",
+      "43 178 221 0 2,646 –648 –14,202"
+    ],
+    "volume": [
+      "15 2,410 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1980"
+    ],
+    "volume": [
+      "Wet 1",
+      "17 2,267 0 0 0 0"
+    ],
+    "pages": [
+      "76 738 286 8 0 866 188 1,349 2,164",
+      "48 181 229 0 2,514 –350 –14,552"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1981"
+    ],
+    "pages": [
+      "32 482 284 8 0 900 173 1,365 1,880",
+      "50 184 234 0 2,470 –590 –15,142"
+    ],
+    "volume": [
+      "0 2,236 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "container-title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "32 384 286 8 0 926 159 1,379 1,795",
+      "41 182 223 0 2,356 –561 –15,703"
+    ],
+    "volume": [
+      "12 2,121 0 0 0 0"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "volume": [
+      "Wet 1",
+      "16 1,957 0 0 0 0"
+    ],
+    "pages": [
+      "32 464 277 8 0 938 178 1,400 1,897",
+      "39 183 222 0 2,195 –298 –16,001"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "pages": [
+      "32 353 276 8 0 982 173 1,439 1,824",
+      "45 186 232 0 2,661 –837 –16,838"
+    ],
+    "volume": [
+      "0 2,429 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "50 280 284",
+      "45 185 229 0 2,762 –975 –17,813"
+    ],
+    "volume": [
+      "8 0 1,010 155 1,456 1,787 0 2,533 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "pages": [
+      "0 56 215 290",
+      "39 183 222 0 2,848 –1,074 –18,887"
+    ],
+    "volume": [
+      "8 0 1,056 150 1,503 1,774 0 2,626 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "pages": [
+      "56 190 294",
+      "32 181 214 0 2,674 –894 –19,780"
+    ],
+    "volume": [
+      "7 0 1,086 147 1,535 1,781 0 2,460 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "56 164 294",
+      "29 181 210 0 2,801 –1,029 –20,809"
+    ],
+    "volume": [
+      "7 0 1,105 146 1,552 1,772 0 2,591 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "56 136 296",
+      "28 179 208 0 2,848 –1,094 –21,903"
+    ],
+    "volume": [
+      "7 0 1,122 137 1,562 1,754 0 2,641 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "pages": [
+      "158 130 298",
+      "33 177 210 0 3,136 –1,263 –23,167"
+    ],
+    "volume": [
+      "7 0 1,146 133 1,584 1,873 0 2,926 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "192 273 297",
+      "32 176 209 0 2,838 –796 –23,963"
+    ],
+    "volume": [
+      "7 0 1,131 141 1,576 2,042 5 2,624 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "193 340 290",
+      "37 178 215 0 2,704 –614 –24,576"
+    ],
+    "volume": [
+      "7 0 1,109 151 1,557 2,090 12 2,476 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "Wet 1",
+      "7 0 1,097 207 1,594 2,961 17 2,616 0 1 0 0"
+    ],
+    "pages": [
+      "411 954 283",
+      "53 182 235 0 2,868 92 –24,484"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Below Normal 0"
+    ],
+    "pages": [
+      "432 509 293",
+      "68 190 259 0 3,054 –487 –24,971"
+    ],
+    "volume": [
+      "7 0 1,132 195 1,627 2,568 0 2,795 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "Wet 1",
+      "17 2,733 0 1 0 0"
+    ],
+    "pages": [
+      "561 672 299 7 0 1,114 185 1,605 2,839",
+      "58 191 249 0 2,999 –160 –25,131"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "pages": [
+      "606 455 290",
+      "60 193 254 0 3,117 –499 –25,630"
+    ],
+    "volume": [
+      "7 0 1,088 172 1,557 2,618 0 2,863 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "604 350 289",
+      "64 189 253 0 3,138 –672 –26,302"
+    ],
+    "volume": [
+      "7 0 1,070 147 1,512 2,467 9 2,876 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "Wet 1",
+      "15 3,228 0 0 0 0"
+    ],
+    "pages": [
+      "604 528 279 7 0 1,066 175 1,527 2,660",
+      "71 188 259 0 3,502 –842 –27,144"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "pages": [
+      "604 396 277",
+      "85 192 278 0 3,120 –584 –27,728"
+    ],
+    "volume": [
+      "7 0 1,073 179 1,536 2,536 0 2,842 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "pages": [
+      "640 298 283",
+      "77 190 268 0 2,771 –345 –28,073"
+    ],
+    "volume": [
+      "7 0 1,051 148 1,488 2,426 0 2,503 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "pages": [
+      "649 266 258",
+      "91 186 278 0 2,637 –279 –28,352"
+    ],
+    "volume": [
+      "7 0 1,037 141 1,442 2,358 0 2,359 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Critically Dry 0"
+    ],
+    "pages": [
+      "649 226 249",
+      "100 184 284 0 2,751 –462 –28,814"
+    ],
+    "volume": [
+      "7 0 1,023 135 1,414 2,289 0 2,466 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "649 224 245",
+      "106 182 288 0 2,631 –365 –29,180"
+    ],
+    "volume": [
+      "7 0 1,003 138 1,393 2,266 4 2,340 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "pages": [
+      "651 205 243 7 0 988 140 1,377 2,233",
+      "108 182 291 0 2,676 –443 –29,622"
+    ],
+    "volume": [
+      "0 2,386 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "Wet 1",
+      "14 2,380 0 0 0 0"
+    ],
+    "pages": [
+      "456 500 237 7 0 988 180 1,412 2,369",
+      "116 183 300 0 2,694 –326 –29,948"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "0",
+      "0 2,537 0 0 0 0"
+    ],
+    "pages": [
+      "391 340 236 7 0 979 182 1,403 2,134",
+      "123 189 312 0 2,848 –714 –30,662"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Critically Dry 0"
+    ],
+    "pages": [
+      "391 219 242 6 0 986 153",
+      "125 188 313 0 3,072 –1,074 –31,736"
+    ],
+    "volume": [
+      "1,388 1,998 0 2,759 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "pages": [
+      "0 392 219 245 6 0 997 148 1,395 2,006",
+      "129 186 315 0 2,771 –765 –32,501"
+    ],
+    "volume": [
+      "0 2,456 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "0",
+      "1,377 1,978 0 1,961 0 0 0 0"
+    ],
+    "pages": [
+      "391 210 245 6 0 980 146",
+      "123 184 307 0 2,268 –290 –32,791"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Above Normal 0"
+    ],
+    "pages": [
+      "400 316 245 6 0 963 156 1,370 2,087",
+      "120 184 303 0 2,177 –90 –32,881"
+    ],
+    "volume": [
+      "3 1,870 0 0 0 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "Wet 1",
+      "5 1,943 0 0 0 0"
+    ],
+    "pages": [
+      "403 419 246 6 0 949 174 1,376 2,198",
+      "118 186 304 0 2,251 –52 –32,934"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "0",
+      "0 2,089 0 0 0 0"
+    ],
+    "pages": [
+      "404 342 250 6 0 958 158 1,372 2,119",
+      "122 188 310 0 2,398 –280 –33,214"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "0",
+      "0 2,077 0 0 0 0"
+    ],
+    "pages": [
+      "403 261 255 6 0 978 144 1,383 2,047",
+      "126 185 311 0 2,389 –342 –33,555"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "0",
+      "0 2,110 0 0 0 0"
+    ],
+    "pages": [
+      "403 212 259 6 0 974 138 1,377 1,991",
+      "125 183 308 0 2,418 –426",
+      "293 335 286 7 64 0 937 153 1,384 2,011 5 2,443 0 0 0 0 64 179 243 0 2,691 –680"
+    ],
+    "title": [
+      "-33,981 Historical Average 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1966"
+    ],
+    "volume": [
+      "2,400 1,992 3,456 0 1,596",
+      "0 4,885 12,733 1,377 3,049"
+    ],
+    "pages": [
+      "35 2,568 242 429 17",
+      "31 2,371 14 0 1,940 272 14 2,101 343 4,685 6 11,518 1,215 823"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1967"
+    ],
+    "volume": [
+      "Wet 2,533 1,992 3,160 0 1,705",
+      "0 5,017 12,702 1,145 2,845 36"
+    ],
+    "pages": [
+      "34 2,603 228 433 14",
+      "2,512 13 0 1,937 296 13 2,167 332 4,757 6 11,301 1,401 2,225"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1968"
+    ],
+    "volume": [
+      "0 5,151 10,889 1,294 3,026 16"
+    ],
+    "pages": [
+      "34 2,610 223 434 14",
+      "2,242 13 0 1,927 307 13 2,210 332 4,802 5 11,385 –496 1,729"
+    ],
+    "issue": [
+      "rmal 2,045 1,997 1,695 0 1,837"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1969"
+    ],
+    "volume": [
+      "Wet 3,943 1,992 7,782 0 2,374",
+      "0 5,795 19,511 1,450 3,048"
+    ],
+    "pages": [
+      "33 2,745 203 426 14",
+      "127 3,564 15 0 2,047 337 15 2,247 341 5,001 8 13,197 6,314 8,043"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1970"
+    ],
+    "volume": [
+      "1,992 2,294 0 2,298",
+      "0 5,836 12,602 1,459 2,905"
+    ],
+    "pages": [
+      "32 2,848 180 464 13",
+      "111 2,820 17 0 2,051 373 9 2,260 333 5,044 7 12,346 256 8,299"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1971"
+    ],
+    "volume": [
+      "2,629 1,991 2,122 0 2,453",
+      "0 5,851 12,592 1,375"
+    ],
+    "pages": [
+      "32 2,727 168 456 14",
+      "2,544 142 2,826 18 0 2,037 389 11 2,292 334 5,082 7 11,975 617 8,916"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1972"
+    ],
+    "volume": [
+      "1,996 1,574 0 2,295",
+      "0 5,658 11,620 1,543 2,597"
+    ],
+    "pages": [
+      "32 2,702 163 452 15",
+      "156 2,602 21 0 2,000 403 12 2,361 338 5,135 5 12,038 –418 8,498"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1973"
+    ],
+    "volume": [
+      "3,131 1,991 3,300 0 2,241",
+      "0 5,543 13,964 1,265 3,133"
+    ],
+    "pages": [
+      "32 2,660 159 433 18",
+      "217 3,117 20 0 1,999 414 15 2,392 338 5,177 6 12,914 1,049 9,547"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1974"
+    ],
+    "volume": [
+      "2,755 1,991 2,425 0 2,070",
+      "0 5,457 12,628 1,466 4,030"
+    ],
+    "pages": [
+      "31 2,754 155 434 14",
+      "206 2,851 20 0 1,987 429 15 2,387 316 5,155 6 13,715 –1,086 8,461"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1975"
+    ],
+    "volume": [
+      "0 5,386 11,276 1,220 3,326"
+    ],
+    "pages": [
+      "31 2,731 151 439 14",
+      "133 2,523 19 0 1,959 440 14 2,339 294 5,065 6 12,273 –997 7,463"
+    ],
+    "issue": [
+      "rmal 2,380 2,008 1,501 0 2,021"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1976"
+    ],
+    "volume": [
+      "0 5,387 11,984 1,282 3,257"
+    ],
+    "pages": [
+      "31 2,678 150 436 15",
+      "88 2,490 18 0 1,942 442 15 2,295 289 5,001 5 12,123 –138 7,325"
+    ],
+    "issue": [
+      "rmal 2,546 2,020 2,031 0 2,077"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1977"
+    ],
+    "volume": [
+      "2,436 2,015 2,199 0 2,093",
+      "0 5,385 12,035 1,269 3,075"
+    ],
+    "pages": [
+      "31 2,659 154 434 15",
+      "100 2,505 19 0 1,936 427 16 2,266 299 4,963 6 11,918 118 7,443"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1978"
+    ],
+    "volume": [
+      "Wet 4,728 2,015 10,722 0 2,517 30 3,024",
+      "1 6,191 23,656 1,676 2,739"
+    ],
+    "pages": [
+      "152 454 13",
+      "220 4,464 19 0 2,173 433 13 2,370 296 5,304 10 14,413 9,243 16,686"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1979"
+    ],
+    "volume": [
+      "4,251 2,015 5,736 0",
+      "0 6,561 18,562 1,606 2,621"
+    ],
+    "pages": [
+      "2,618 27 3,267 133 502 14",
+      "267 4,350 23 0 2,268 485 6 2,494 289 5,565 12 14,421 4,142 20,828"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1980"
+    ],
+    "volume": [
+      "Wet 6,368 1,096 9,452 0 3,033",
+      "0 7,293 24,209 1,946 2,985"
+    ],
+    "pages": [
+      "25 3,558 121 540 15",
+      "332 6,004 25 0 2,445 517 6 2,626 286 5,905 13 17,184 7,025 27,853"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1981"
+    ],
+    "volume": [
+      "4,625",
+      "0 7,145 14,975 1,980 3,148"
+    ],
+    "pages": [
+      "783 2,421 0 2,842 24 3,571 113 574 20",
+      "286 4,537 27 0 2,383 529 7 2,639 284 5,869 11 15,832 –858 26,995"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "volume": [
+      "5,447",
+      "0 7,099 17,544 1,570 2,579"
+    ],
+    "pages": [
+      "783 4,215 0 2,987 25 3,395 113 561 19",
+      "299 5,135 30 0 2,334 527 8 2,637 286 5,822 11 15,416 2,128 29,123"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "volume": [
+      "Wet 5,952",
+      "0 7,147 20,336 1,491 2,178"
+    ],
+    "pages": [
+      "783 6,453 0 2,913 24 3,475 110 604 21",
+      "332 5,790 29 0 2,388 545 8 2,729 277 5,976 13 15,781 4,555 33,679"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "volume": [
+      "3,832",
+      "0 6,919 14,498 1,964 2,287"
+    ],
+    "pages": [
+      "786 2,961 0 2,581 22 3,589 102 603 23",
+      "279 4,004 27 0 2,392 575 8 2,858 276 6,137 10 14,680 –182 33,496"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "volume": [
+      "4,068 1,102 2,597 0",
+      "0 6,761 14,528 1,852 2,233"
+    ],
+    "pages": [
+      "2,555 22 3,480 96 583 24",
+      "268 4,014 27 0 2,362 583 9 2,913 284 6,179 9 14,554 –27 33,470"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "volume": [
+      "0 6,617 13,674 1,754 2,337"
+    ],
+    "pages": [
+      "2,505 22 3,393 91 581 25",
+      "257 3,815 26 0 2,306 592 9 2,864 290 6,087 8 14,258 –584 32,885"
+    ],
+    "issue": [
+      "rmal 3,841 1,209 2,007 0"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "3,192 1,209 1,376 0",
+      "0 6,406 12,182 1,637 2,255"
+    ],
+    "pages": [
+      "2,385 22 3,308 90 576 24",
+      "230 3,287 24 0 2,263 596 8 2,817 294 6,003 7 13,419 –1,237 31,649"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "3,007 1,212 1,387 0",
+      "0 6,240 11,846 1,499 2,366"
+    ],
+    "pages": [
+      "2,304 23 3,223 93 572 25",
+      "218 3,132 23 0 2,224 590 8 2,817 294 5,957 6 13,178 –1,333 30,316"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "2,612 1,209 1,289 0",
+      "0 5,964 11,074 1,576 2,653"
+    ],
+    "pages": [
+      "2,122 23 3,137 100 558 24",
+      "194 2,831 22 0 2,180 569 8 2,781 296 5,856 5 13,116 –2,042 28,274"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "2,390",
+      "0 5,724 9,726 1,429 2,926"
+    ],
+    "pages": [
+      "852 760 0 1,953 23 3,065 108 553 22",
+      "172 2,607 21 0 2,140 549 7 2,773 298 5,789 5 12,928 –3,202 25,072"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "3,110",
+      "0 5,726 13,400 1,533 3,343"
+    ],
+    "pages": [
+      "732 3,831 0 1,959 24 3,066 118 539 22",
+      "198 3,032 19 0 2,158 524 9 2,783 297 5,790 5 13,902 –502 24,569"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "3,166",
+      "0 5,870 13,652 1,613 3,575"
+    ],
+    "pages": [
+      "734 3,882 0 1,986 24 3,174 121 546 20",
+      "235 3,268 18 0 2,216 518 7 2,770 290 5,820 7 14,518 –866 23,704"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "Wet 5,274",
+      "1 6,780 24,119 1,935 3,095"
+    ],
+    "pages": [
+      "733 11,331 0 2,434 22 3,597 122 585 18",
+      "302 5,152 22 0 2,451 514 6 2,796 283 6,072 11 16,567 7,552 31,255"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "3,709",
+      "0 6,859 14,012 1,724 3,164"
+    ],
+    "pages": [
+      "733 2,711 0 2,454 20 3,651 103 610 20",
+      "279 3,953 19 0 2,458 544 6 2,801 293 6,121 10 15,252 –1,239 30,016"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "Wet 6,562",
+      "1 7,301 22,845 1,948 2,793"
+    ],
+    "pages": [
+      "895 8,087 0 2,873 20 3,685 105 597 21",
+      "354 6,340 22 0 2,533 544 7 2,882 299 6,287 12 17,732 5,113 35,129"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "4,661",
+      "0 7,009 15,141 2,191 3,056"
+    ],
+    "pages": [
+      "952 2,519 0 2,530 19 3,733 91 614 23",
+      "330 4,825 21 0 2,503 591 7 3,000 290 6,412 9 16,822 –1,680 33,449"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "4,618",
+      "0 6,781 15,518 2,103 3,322"
+    ],
+    "pages": [
+      "950 3,170 0 2,470 19 3,601 82 587 24",
+      "305 4,609 22 0 2,460 611 7 3,037 289 6,426 8 16,773 –1,255 32,194"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "Wet 6,527",
+      "0 7,169 22,704 1,762 3,279"
+    ],
+    "pages": [
+      "950 8,059 0 2,743 18 3,692 79 614 22",
+      "347 6,395 23 0 2,532 633 7 3,063 279 6,537 12 18,331 4,373 36,567"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "4,078",
+      "0 6,895 13,850 1,918 4,203"
+    ],
+    "pages": [
+      "950 1,928 0 2,404 18 3,756 73 623 22",
+      "315 4,450 21 0 2,511 663 7 3,072 277 6,552 10 17,447 –3,597 32,971"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "3,974 1,193 1,696 0",
+      "0 6,759 13,622 2,062 5,509"
+    ],
+    "pages": [
+      "2,425 19 3,620 73 599 23",
+      "299 4,026 21 0 2,474 650 7 3,002 283 6,438 8 18,341 –4,718 28,252"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "3,940 1,271 1,731 0 2,417",
+      "0 6,594 13,536 1,804 5,252"
+    ],
+    "pages": [
+      "20 3,475 78 580 24",
+      "297 4,050 20 0 2,411 620 7 2,838 258 6,155 8 17,566 –4,030 24,223"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "volume": [
+      "2,801",
+      "0 6,312 11,168 1,817 5,560"
+    ],
+    "pages": [
+      "1,271 747 36 2,206 22 3,412 83 567 22",
+      "235 3,178 21 0 2,349 601 7 2,704 249 5,930 6 16,727 –5,560 18,663"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Critically Dry"
+    ]
+  },
+  {
+    "date": [
+      "2003"
+    ],
+    "volume": [
+      "3,302 1,271",
+      "0 6,128 13,558 1,633 5,117"
+    ],
+    "pages": [
+      "2,166 691 2,133 23 3,298 92 558 23",
+      "242 3,423 20 0 2,319 576 7 2,563 245 5,730 13 16,158 –2,600 16,063"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "1,274",
+      "0 5,970 12,232 1,774 5,443"
+    ],
+    "pages": [
+      "1,562 624 1,988 24 3,285 100 552 21",
+      "215 3,072 17 0 2,299 559 6 2,441 243 5,565 15 16,083 –3,851 12,211"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "Wet 4,813 2,339",
+      "0 6,430 21,765 1,819 5,426"
+    ],
+    "pages": [
+      "8,047 135 2,257 23 3,471 100 560 19",
+      "276 4,773 19 0 2,408 566 6 2,367 237 5,605 12 17,912 3,853 16,064"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "2,942 2,700",
+      "0 6,413 14,184 1,795 5,187"
+    ],
+    "pages": [
+      "2,113 17 2,152 22 3,555 84 582 18",
+      "239 3,373 17 0 2,411 611 6 2,347 236 5,628 8 16,230 –2,046 14,019"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "volume": [
+      "2,484 2,700 1,115 4",
+      "0 6,366 12,669 1,866 4,999"
+    ],
+    "pages": [
+      "2,284 22 3,393 77 568 22",
+      "199 2,918 17 0 2,359 620 7 2,303 242 5,548 6 15,535 –2,866 11,153"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Critically Dry"
+    ]
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "0 6,223 14,664 1,886 3,967"
+    ],
+    "pages": [
+      "2,101 551 2,292 23 3,250 79 558 22",
+      "218 3,289 17 0 2,319 615 7 2,285 245 5,488 12 14,859 –195 10,958"
+    ],
+    "issue": [
+      "rmal 3,082 2,707"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "2,989 2,700 2,290 1,337",
+      "0 5,937 15,252 1,957 3,679"
+    ],
+    "pages": [
+      "2,096 22 3,178 78 546 17",
+      "215 3,252 17 0 2,262 625 6 2,273 245 5,430 33 14,566 686 11,644"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "4,099 3,347 4,485 3,549",
+      "16 0 5,809 21,289 1,954 3,956"
+    ],
+    "pages": [
+      "1,985 22 3,187 73 526",
+      "236 4,187 18 0 2,253 666 8 2,291 245 5,482 107 15,921 5,367 17,011"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "Wet 4,414 3,565 5,436 3,071",
+      "0 5,885 22,371 2,041 3,737"
+    ],
+    "pages": [
+      "2,000 21 3,254 60 536 14",
+      "254 4,513 17 0 2,282 738 6 2,472 246 5,761 122 16,428 5,943 22,954"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "3,216 3,575 2,564 2,936",
+      "0 5,799 18,091 2,154 3,806 209 3,622 16 0 2,280"
+    ],
+    "pages": [
+      "1,886 20 3,291 45 544 13",
+      "809 6 2,683 250 6,045 93 15,929 2,161 25,115"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "3,191",
+      "0 5,831 16,741 2,041 3,530 182 3,312 16 0 2,242"
+    ],
+    "pages": [
+      "38 537 17",
+      "847 6 2,828 255 6,195 75 15,334 1,407 26,522"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "2,634 3,565",
+      "16 0 5,703 13,964 1,933 4,560"
+    ],
+    "pages": [
+      "1,541 521 2,005 18 3,100 35 529",
+      "176 2,899 16 0 2,204 867 6 2,996 259 6,348 25 15,941 –1,977 24,545"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "Water Year Water Year Type Subsurface Inflows Subsurface Outflows Stream Return Total GW Discharge to GW Discharge Precipitation Recharge From From San ET GW Production Total Outflows Annual Cumulative Leakage Flows From From North From Beaumont From San Inflows Streams To North To Western To Beaumont To San Timoteo To San to Surface Western Timoteo Subtotal To Yucaipa Hills Subtotal Yucaipa Hills Bench Basin Timoteo MA Bench Heigths Basin Subbasin Timoteo MA Heights subbasin 1965 Normal",
+      "1988 Below Normal",
+      "1989 Below Normal",
+      "1991 Above Normal"
+    ],
+    "pages": [
+      "419 36 798 222 2,088 60 1,660 11 322 4,363 5,616 132 3,814 30 15 14 733 565 34 524 1,885 1 5,862 –246 –246",
+      "427 36 1,157 223 2,101 45 1,754 16 313 4,451 6,071 146 4,915 31 18 17 731 568 42 525 1,901 1 6,994 –923 –1,170",
+      "441 36 1,193 230 2,167 45 1,855 17 268 4,581 6,251 143 5,326 35 17 14 708 588 46 522 1,896 1 7,401 –1,151 –2,320",
+      "422 36 1,095 251 2,210 46 1,878 14 256 4,655 6,208 153 5,173 33 18 14 685 604 47 505 1,874 1 7,234 –1,026 –3,346",
+      "442 36 2,328 271 2,247 43 1,915 28 247 4,751 7,556 161 4,341 40 25 14 690 601 56 515 1,902 1 6,445 1,111 –2,235",
+      "456 199 1,589 339 2,260 38 1,822 15 224 4,698 6,941 184 4,574 39 21 13 710 578 56 497 1,875 2 6,674 267 –1,969",
+      "441 244 1,494 348 2,292 29 1,875 12 250 4,806 6,984 175 4,866 38 21 14 716 576 54 482 1,863 2 6,943 40 –1,928",
+      "396 244 1,368 315 2,361 24 1,896 11 261 4,867 6,877 179 5,207 33 20 15 706 589 53 473 1,855 2 7,275 –399 –2,327",
+      "420 244 1,492 292 2,392 20 1,875 11 267 4,856 7,012 152 4,705 38 20 18 686 588 47 461 1,820 2 6,717 295 –2,032",
+      "416 197 1,525 282 2,387 19 1,812 12 262 4,774 6,912 169 4,794 36 20 14 718 578 51 460 1,842 1 6,842 70 –1,963",
+      "397 354 1,452 275 2,339 27 1,660 12 258 4,571 6,774 152 4,659 36 17 14 737 559 48 459 1,835 1 6,684 90 –1,872",
+      "368 410 1,511 281 2,295 30 1,506 11 276 4,399 6,688 157 4,572 34 19 15 753 542 48 457 1,834 1 6,598 90 –1,782",
+      "388 409 1,644 270 2,266 27 1,410 11 274 4,257 6,698 163 4,427 36 20 15 768 527 50 456 1,835 1 6,463 236 –1,546",
+      "425 409 3,497 288 2,370 38 1,591 79 215 4,581 8,912 186 4,660 45 33 13 786 535 64 454 1,886 2 6,778 2,134 588",
+      "454 409 2,754 375 2,494 43 1,540 34 195 4,681 8,298 200 4,519 54 29 14 828 541 61 458 1,930",
+      "459 2,085 4,319 400 2,626 48 1,292 24 184 4,574 11,437 248 4,500 61 40 15 866 501 70 506 1,999 4 6,811 4,626 6,806",
+      "458 2,639 50 908 12 173 4,240 10,830 291 4,544 53 36 20 900 459 62 512 1,990",
+      "454 2,640 3,493 428 2,637 41 646 9 194 3,954 10,541 262 3,952 55 36 19 926 435 59 521 1,997",
+      "450 2,640 3,759 382 2,729 39 521 8 165 3,843 10,693 322 4,025 63 39 21 938 433 64 538 2,034",
+      "456 2,648 2,943 389 2,858 45 426 8 158 3,885 9,931 498 5,413 52 37 23 982 423 63 557 2,084",
+      "450 4,128 3,089 381 2,913 45 398 7 176 3,919 11,587 519 5,645 50 40 24 1,010 418 60 577 2,129",
+      "449 4,630 3,071 349 2,864 39 269 6 167 3,694 11,844 561 4,740 69 37 25 1,056 493 58 607",
+      "106 36 25 1,105 547 51 664 2,427",
+      "790 5,811 104 35 24 1,122 594 54 681 2,509 13 9,226 955 33,675",
+      "734 5,601 92 29 22 1,146 591 46 681 2,516",
+      "632 5,512 72 27 22 1,131 448 45 656 2,330 8 8,554 –3,281 27,467",
+      "446 17 1,291 257 2,770 37 604 7 246 3,920 5,674 592 5,536 57 27 20 1,109 423 50 641 2,270 6 8,461 –2,787",
+      "452 27 3,138 281 2,796 53 752 31 225 4,138 7,756 582 5,611 72 36 18 1,097 456 57 672 2,336 7 8,608 –853",
+      "455 28 2,025 372 2,801 68 746 10 266 4,264 6,771 525 5,834 43 33 20 1,132 477 51 615 2,329 7 8,738 –1,967",
+      "453 31 2,676 361 2,882 58 708 15 283 4,307 7,468 461 6,186 49 33 21 1,114 512 61 600 2,342 7 9,045 –1,577",
+      "458 32 1,725 381 3,000 60 742 10 308 4,502 6,718 448 6,770 27 28 23 1,088 495 58 570 2,262 6 9,513 –2,795 17,488",
+      "455 32 1,561 365 3,037 64 837 9 350 4,661 6,709 383 6,831 22 29 24 1,070 509 53 547 2,232 5 9,473 –2,763 14,724",
+      "453 32 2,779 344 3,063 71 980 16 334 4,808 8,073 330 5,854 32 36 22 1,066 501 58 544 2,228 5 8,450 –377 14,347",
+      "459 32 2,017 375 3,072 85 1,026 11 331 4,901 7,409 352 6,871 29 26 22 1,073 510 55 518 2,205 5 9,462 –2,053 12,294",
+      "457 33 1,742 391 3,002 77 1,145 9 378 5,003 7,236 358 6,830 21 31 23 1,051 541 54 501 2,201 4 9,415 –2,179 10,115",
+      "455 34 1,391 361 2,838 91 972 9 380 4,650 6,530 312 6,578 21 26 24 1,037 618 51 485 2,242 4 9,156 –2,626 7,489",
+      "455 34 1,044 335 2,704 100 863 9 408 4,419 5,951 293 7,175 19 24 22 1,023 776 47 476 2,367 3 9,857 –3,906 3,584",
+      "454 34 902 308 2,563 106 941 10 431 4,358 5,747 258 6,910 22 25 23 1,003 770 45 464 2,331 2 9,523 –3,777 –193",
+      "453 34 911 296 2,441 108 929 10 432 4,217 5,615 236 6,242 19 24 21 988 1,053 48 452 2,586 2 9,085 –3,470 –3,663",
+      "451 35 2,106 286 2,367 116 936 22 412 4,139 6,730 217 5,711 29 34 19 988 1,010 58 456 2,564 2 8,522 –1,792 –5,454",
+      "457 35 1,628 339 2,347 123 920 15 406 4,150 6,271 203 5,751 23 25 18 979 1,135 53 430 2,639 3 8,619 –2,348 –7,802",
+      "455 35 1,153 348 2,303 125 932 12 451 4,172 5,815 193 5,407 19 24 22 986 1,455 54 411 2,952 2 8,573 –2,758 –10,560",
+      "455 35 1,513 330 2,285 129 944 12 458 4,157 6,160 185 4,972 22 24 22 997 1,002 51 400 2,495 2 7,676 –1,516 –12,076",
+      "453 35 1,268 304 2,273 123 959 12 445 4,117 5,873 186 4,532 25 22 17 980 689 49 392 2,147 2 6,892 –1,019 –13,095",
+      "453 39 1,439 278 2,291 120 933 16 424 4,062 5,993 163 4,574 27 22 16 963 669 52 392 2,115 2 6,882 –889 –13,984",
+      "454 41 1,866 270 2,472 118 884 21 398 4,162 6,522 171 4,159 30 22 14 949 652 54 395 2,086 2 6,447 74 –13,910",
+      "458 41 1,620 293 2,683 122 823 16 383 4,319 6,437 187 4,279 29 20 13 958 674 49 385 2,101 2 6,598 –161 –14,070",
+      "450 41 1,469 301 2,828 126 763 15 391 4,423 6,383 173 4,734 27 21 17 978 763 50 380 2,208 2 7,143 –761 –14,831",
+      "434 41 1,567 298 2,996 125 721 15 399 4,554 6,596 169 5,227 24 19 16 974 931 51 375 2,365 1 7,786 –1,191 –16,021",
+      "442 812 1,918 320 2,586 64 1,035 14 290 4,310 7,481 314 5,276 42 27 19 937 620 53 510 2,165 4 7,802 –320"
+    ],
+    "date": [
+      "1966",
+      "1967",
+      "1968",
+      "1969",
+      "1970",
+      "1971",
+      "1972",
+      "1973",
+      "1974",
+      "1975",
+      "1976",
+      "1977",
+      "1978",
+      "1979",
+      "1980",
+      "1981",
+      "1982",
+      "1983",
+      "1984",
+      "1985",
+      "1986",
+      "1987",
+      "1990",
+      "1992",
+      "1993",
+      "1994",
+      "1995",
+      "1996",
+      "1997",
+      "1998",
+      "1999",
+      "2000",
+      "2001",
+      "2002",
+      "2003",
+      "2004",
+      "2005",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "publisher": [
+      "Above Normal",
+      "Below Normal",
+      "Above Normal",
+      "Below Normal",
+      "Below Normal",
+      "Above Normal",
+      "Above Normal",
+      "Below Normal",
+      "Above Normal",
+      "Below Normal",
+      "Above Normal",
+      "Critically Dry",
+      "Above Normal",
+      "Below Normal",
+      "Critically Dry",
+      "Below Normal",
+      "Above Normal",
+      "Historical Average"
+    ],
+    "volume": [
+      "458 2,640 3,492",
+      "2,274 9 7,653 4,191 28,572",
+      "Dry 449 4,630 2,354 332 2,817 32 206 5 156 3,549 10,981 693 5,172 94 36 24 1,086 494 56 636 2,332 10 8,301 2,681 31,252",
+      "446 4,642 1,937 310 2,817 29 175 5 152 3,488 10,513 736 5,764",
+      "12 9,045 1,467 32,720",
+      "433 4,630 1,694 296 2,781 28 162 4 153 3,425 10,182",
+      "Dry 417 1,180 933 284 2,773 33 222 5 181 3,497 6,028",
+      "12 8,955 -2,927 30,748",
+      "433 17 1,074 268 2,783 32 428 6 231 3,748 5,272"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1965"
+    ],
+    "pages": [
+      "7,169 1 77 363 5,753 6 148 524 6,794 14,041 1,115 962 163 175 8,933 3,042 73 11 12,236 2 14,477 –436 –436"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1966"
+    ],
+    "volume": [
+      "7,614 1"
+    ],
+    "pages": [
+      "289 361 5,708 6 148 525 6,748 14,652 1,166 904 228 173 8,898 3,192 96 16 12,376 2 14,675 –23 –459"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1967"
+    ],
+    "volume": [
+      "Wet 7,681 1"
+    ],
+    "pages": [
+      "344 356 5,681 6 151 522 6,717 14,742 1,101 571 246 172 8,886 3,220 119 17 12,414 2 14,334 408 –51"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1968"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "176 354 5,689 6 156 505 6,710 14,107 1,164 327 147 170 8,914 3,049 141 14 12,288 1 13,928 179 129"
+    ],
+    "issue": [
+      "rmal 7,220 1"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1969"
+    ],
+    "volume": [
+      "Wet 8,035 1 1,076"
+    ],
+    "pages": [
+      "336 5,627 6 162 515 6,647 15,759 1,193 283 363 164 8,801 3,313 176 28 12,483 2 14,324 1,434 1,563"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1970"
+    ],
+    "volume": [
+      "7,405 3"
+    ],
+    "pages": [
+      "315 326 5,624 6 169 497 6,622 14,345 1,280 195 159 159 8,893 3,117 172 15 12,356 2 13,992 352 1,915"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1971"
+    ],
+    "volume": [
+      "7,313 3"
+    ],
+    "pages": [
+      "237 330 5,621 6 171 482 6,609 14,161 1,222 181 175 157 8,916 3,123 150 12 12,358 2 13,938 223 2,139"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1972"
+    ],
+    "volume": [
+      "7,215 3"
+    ],
+    "pages": [
+      "191 327 5,643 6 171 473 6,620 14,029 1,281 185 148 158 8,952 3,091 139 11 12,351 2 13,966 63 2,201"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1973"
+    ],
+    "volume": [
+      "7,361 3"
+    ],
+    "pages": [
+      "196 321 5,586 6 170 461 6,544 14,104 1,058 191 237 158 8,941 3,251 135 11 12,495 3 13,984 120 2,322"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1974"
+    ],
+    "volume": [
+      "7,491 3"
+    ],
+    "pages": [
+      "288 316 5,571 6 170 460 6,523 14,306 1,246 187 221 158 8,935 3,259 136 12 12,501 2 14,157 149 2,470"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1975"
+    ],
+    "pages": [
+      "7,281 4 184 314 5,565 6 170 459 6,515 13,984 1,173 189 189 158 8,947 3,200 135 12 12,452 2 14,005 –21 2,450"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1976"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "304 314 5,569 6 171 457 6,517 14,442 1,219 187 223 160 8,958 3,267 135 11 12,530 2 14,161 281 2,731"
+    ],
+    "issue": [
+      "rmal 7,616 5"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1977"
+    ],
+    "volume": [
+      "7,273 5"
+    ],
+    "pages": [
+      "205 311 5,539 6 171 456 6,483 13,966 1,315 190 176 160 8,954 3,205 135 11 12,465 2 14,148 –182 2,548"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Below Normal"
+    ]
+  },
+  {
+    "date": [
+      "1978"
+    ],
+    "volume": [
+      "Wet 8,141 5 1,137"
+    ],
+    "pages": [
+      "292 5,540 6 172 454 6,465 15,748 1,257 222 400 160 8,854 3,463 169 79 12,725 3 14,606 1,142 3,690"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Above Normal 7,949 5"
+    ],
+    "pages": [
+      "445 305 5,554 6 178 458 6,500 14,898 1,251 214 271 157 8,950 3,482 178 34 12,801 3 14,540 358 4,048"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1980"
+    ],
+    "genre": [
+      "Wet 8,348"
+    ],
+    "pages": [
+      "21 1,167 288 5,626 6 181 506 6,606 16,142 1,340 323 384 153 8,933 3,500 188 24 12,799 3 14,848 1,294 5,342"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1981"
+    ],
+    "volume": [
+      "7,850"
+    ],
+    "pages": [
+      "26 443 280 5,666 6 184 512 6,647 14,966 1,588 269 184 153 9,014 3,323 173 12 12,675 2 14,718 248 5,590"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1982"
+    ],
+    "genre": [
+      "Above Normal 8,086"
+    ],
+    "pages": [
+      "26 454 281 5,697 6 182 521 6,687 15,254 1,308 228 300 157 9,013 3,577 159 9 12,914 3 14,753 501 6,091"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1983"
+    ],
+    "genre": [
+      "Wet 8,281"
+    ],
+    "pages": [
+      "26 481 268 5,688 6 183 538 6,684 15,472 1,281 192 331 165 9,028 3,703 178 8 13,082 4 14,889 582 6,673"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1984"
+    ],
+    "volume": [
+      "7,892"
+    ],
+    "pages": [
+      "27 325 257 5,715 6 186 557 6,722 14,965 1,655 149 201 174 9,113 3,430 173 8 12,898 2 14,906 59 6,733"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1985"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "7,817 57 309 255 5,708 6 185 577 6,730 14,913 1,503 122 233 183 9,093 3,498 155 7 12,936 3 14,797 115 6,848"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "pages": [
+      "7,733 67 274 245 5,711 6 183 607 6,751 14,825 1,542 120 222 192 9,109 3,450 150 6 12,907 3 14,793 31 6,879"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "7,648",
+      "5 12,911 3 14,773"
+    ],
+    "pages": [
+      "67 250 232 5,698 6 181 636 6,753 14,717 1,547 100 212 204 9,115 3,441 147",
+      "–56 6,823"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1988"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "7,656 67 233 224 5,688 6 181 664 6,763 14,720 1,503 135 221 215 9,138 3,468 146",
+      "–114 6,709"
+    ],
+    "volume": [
+      "5 12,972 3 14,833"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1989"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "7,556 67 218 220 5,664 6 179 681 6,750 14,590 1,519 161 208 224 9,104 3,435 137 4 12,905 2 14,795 –204 6,505"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "7,478"
+    ],
+    "pages": [
+      "17 201 220 5,658 6 177 681 6,742 14,438 1,525 173 193 232 9,102 3,364 133 5 12,835 2 14,728 –290 6,215"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "7,731 1"
+    ],
+    "pages": [
+      "499 226 5,660 6 176 656 6,725 14,955 1,457 179 299 234 9,030 3,507 141 6 12,918 3 14,856 99 6,314"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "7,777 1",
+      "7 13,029 3 14,903"
+    ],
+    "pages": [
+      "398 228 5,673 6 178 641 6,726 14,902 1,446 156 270 233 9,074 3,564 151",
+      "–1 6,313"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "Wet 8,406 2 1,584"
+    ],
+    "pages": [
+      "202 5,672 6 182 672 6,734 16,726 1,454 158 482 227 8,974 3,612 207 31 13,051 4 15,150 1,576 7,889"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "genre": [
+      "Below Normal 8,037"
+    ],
+    "pages": [
+      "2 398 218 5,685 6 190 615 6,715 15,151 1,567 154 237 219 9,090 3,601 195 10 13,115 3 15,075 76 7,966"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "genre": [
+      "Wet 8,299"
+    ],
+    "pages": [
+      "2 924 228 5,739 6 191 600 6,764 15,988 1,450 158 425 212 9,020 3,683 185 15 13,115 4 15,152 836 8,802"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "7,943 2"
+    ],
+    "pages": [
+      "371 233 5,800 6 193 570 6,802 15,117 1,713 152 217 206 9,145 3,604 172 10 13,137 3 15,222 –106 8,696"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "7,823 2",
+      "9 13,097 3 15,164"
+    ],
+    "pages": [
+      "361 250 5,831 6 189 547 6,823 15,009 1,645 155 264 200 9,123 3,619 147",
+      "–155 8,541"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "genre": [
+      "Wet 8,374"
+    ],
+    "pages": [
+      "2 888 246 5,828 6 188 544 6,813 16,076 1,358 150 443 195 9,072 3,831 175 16 13,288 4 15,244 832 9,373"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "8,003 2"
+    ],
+    "pages": [
+      "382 248 5,830 6 192 518 6,795 15,182 1,707 149 240 189 9,165 3,675 179 11 13,220 3 15,319 –137 9,236"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "7,872 2",
+      "9 13,168 3 15,304"
+    ],
+    "pages": [
+      "307 264 5,890 6 190 501 6,852 15,033 1,756 146 232 186 9,199 3,627 148",
+      "–271 8,965"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "7,851 2",
+      "9 13,232 3 15,227"
+    ],
+    "pages": [
+      "277 269 5,880 6 186 485 6,827 14,957 1,582 141 268 182 9,163 3,738 141",
+      "–270 8,695"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Critically Dry 7,640 2"
+    ],
+    "pages": [
+      "228 273 5,889 6 184 476 6,828 14,697 1,754 144 203 179 9,180 3,526 135",
+      "–436 8,259"
+    ],
+    "volume": [
+      "9 13,029 3 15,133"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "container-title": [
+      "Above Normal 7,834"
+    ],
+    "pages": [
+      "2 297 278 5,857 6 182 464 6,787 14,920 1,540 146 277 176 9,154 3,717 138 10 13,195 3 15,161 –241 8,018"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "7,683 2"
+    ],
+    "pages": [
+      "248 283 5,864 6 182 452 6,788 14,721 1,639 145 226 171 9,178 3,596 140 10 13,096 3 15,109 –388 7,630"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "genre": [
+      "Wet 8,296"
+    ],
+    "pages": [
+      "1 967 269 5,823 6 183 456 6,738 16,002 1,433 44 447 163 9,048 3,846 180 22 13,259 4 15,188 814 8,444"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "7,910 1"
+    ],
+    "pages": [
+      "368 272 5,819 6 189 430 6,716 14,995 1,687 4 232 155 9,144 3,637 182 15 13,133 3 15,059 –64 8,380"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Critically Dry 7,641"
+    ],
+    "volume": [
+      "1"
+    ],
+    "pages": [
+      "258 286 5,846 6 188 411 6,737 14,637 1,764 0 195 149 9,160 3,482 153 12 12,956 2 14,918 –281 8,099"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "266 290 5,861 6 186 400 6,744 14,757 1,594 0 244 146 9,168 3,661 148 12 13,134 3 14,975 –217 7,882"
+    ],
+    "issue": [
+      "rmal 7,747 1"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "volume": [
+      "7,670 1"
+    ],
+    "pages": [
+      "237 292 5,835 6 184 392 6,708 14,617 1,625 0 226 143 9,145 3,589 146 12 13,035 3 14,888 –272 7,610"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "7,863 1"
+    ],
+    "pages": [
+      "447 289 5,803 6 184 392 6,674 14,986 1,514 0 314 141 9,105 3,657 156 16 13,074 3 14,905 81 7,691"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ]
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "Wet 8,056 1"
+    ],
+    "pages": [
+      "663 277 5,774 6 186 395 6,638 15,358 1,523 0 349 139 9,085 3,744 174 21 13,163 4 15,039 319 8,010"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2012"
+    ],
+    "volume": [
+      "7,729 1"
+    ],
+    "pages": [
+      "309 278 5,794 6 188 385 6,651 14,690 1,725 0 212 138 9,172 3,547 158 16 13,030 3 14,970 –280 7,730"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "volume": [
+      "7,652 1"
+    ],
+    "pages": [
+      "246 288 5,797 6 185 380 6,656 14,555 1,593 0 224 136 9,134 3,594 144 15 13,022 3 14,842 –287 7,444"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "volume": [
+      "7,565 1"
+    ],
+    "pages": [
+      "224 292 5,803 6 183 375 6,659 14,450 1,666 0 203 136 9,142 3,474 138 15 12,905 2 14,776 –326",
+      "11 419 280 5,721 6 179 510 6,695 14,895 1,451 183 255 175 9,047 3,472 153 14 12,861 3 14,753 142"
+    ],
+    "note": [
+      "7,117 Historical Average 7,770"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "USGS SIR 2021-5118: Hydrology of the Yucaipa Groundwater Subbasin - Characterization and"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "State of California Edmund G"
+    ],
+    "publisher": [
+      "Brown Jr"
+    ],
+    "location": [
+      "Governor"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Deputy Directors Gary Bardini Integrated Water Management William Croyle Statewide Emergency Preparedness and Security Mark Anderson State Water Project John Pacheco (Acting) California Energy Resources Scheduling Kathie Kishaba Business Operations Taryn Ravazzini"
+    ],
+    "note": [
+      "Special Initiatives Division of Integrated Regional Water Management Arthur Hinojosa Jr., Chief Prepared under the direction of: David Gutierrez, Sustainable Groundwater Management Program Manager"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Juricich",
+        "given": "Rich"
+      }
+    ],
+    "title": [
+      "Sustainable Groundwater Management Branch"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "With assistance from: DWR Region Office Staff December 2016 Groundwater Monitoring Protocols, Standards, and Sites BMP"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "author": [
+      {
+        "given": "Objective"
+      }
+    ],
+    "title": [
+      "A brief description of how and where monitoring protocols are required under SGMA and the overall objective of this BMP"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "given": "Use"
+      },
+      {
+        "given": "Limitations"
+      }
+    ],
+    "title": [
+      "A brief description of the use and limitations of this BMP"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "title": [
+      "Monitoring Protocol Fundamentals. A description of the general approach and background of groundwater monitoring protocols"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "Relationship of Monitoring Protocols to other BMPs. A description of how this BMP is connected with other BMPS"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "family": "Assistance",
+        "given": "Technical"
+      }
+    ],
+    "title": [
+      "Technical content providing guidance for regulatory sections"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6."
+    ],
+    "author": [
+      {
+        "family": "Definitions",
+        "given": "Key"
+      }
+    ],
+    "title": [
+      "Descriptions of definitions identified in the GSP Regulations or SGMA"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "family": "Materials",
+        "given": "Related"
+      }
+    ],
+    "title": [
+      "References and other materials that provide supporting information related to the development of Groundwater Monitoring Protocols"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Luhdorff",
+        "given": "C.A.S.E.S.T.U.D.I.E.S."
+      },
+      {
+        "family": "Scalmanini Consulting Engineers",
+        "given": "J.W.Borchers"
+      },
+      {
+        "family": "Carpenter",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-04"
+    ],
+    "title": [
+      "Land Subsidence from Groundwater Use in California. Full Report of Findings prepared for California Water Foundation"
+    ],
+    "pages": [
+      "151"
+    ],
+    "url": [
+      "http://ca.water.usgs.gov/land_subsidence/california-subsidence-cause-effect.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Traum",
+        "given": "J."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      }
+    ],
+    "date": [
+      "2015",
+      "2016"
+    ],
+    "title": [
+      "Water availability and land subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "publisher": [
+      "Hydrogeol J"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "675"
+    ],
+    "doi": [
+      "10.1007/s10040-015-1339-x."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/701605"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      },
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Ireland",
+        "given": "R.L."
+      },
+      {
+        "family": "Pugh",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Land subsidence in the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, as of 1972; US Geological Survey Professional Paper 437-H; prepared in cooperation with the California Department of Water Resources"
+    ],
+    "pages": [
+      "87"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/pp/0437h/report.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      },
+      {
+        "family": "Solt",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Land subsidence along the Delta-Mendota Canal in the northern part of the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California, 2003-10; USGS Scientific Investigations Report 2013-5142, prepared in cooperation with U.S. Bureau of Reclamation and the San Luis and Delta-Mendota Water Authority"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/sir20135142"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      },
+      {
+        "family": "Solt",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014",
+      "1993"
+    ],
+    "title": [
+      "Land subsidence, groundwater levels, and geology in the",
+      "U.S"
+    ],
+    "location": [
+      "Coachella Valley, California"
+    ],
+    "volume": [
+      "2014–5075"
+    ],
+    "pages": [
+      "62"
+    ],
+    "url": [
+      "http://dx.doi.org/10.3133/sir20145075."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey, Scientific Investigations Report"
+    ],
+    "doi": [
+      "10.3133/sir20145075."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Barcelona",
+        "given": "M.J."
+      },
+      {
+        "family": "Gibb",
+        "given": "J.P."
+      },
+      {
+        "family": "Helfrich",
+        "given": "J.A."
+      },
+      {
+        "given": "EEGraske"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Practical Guide for Ground-Water Sampling"
+    ],
+    "publisher": [
+      "Illinois State Water Survey"
+    ],
+    "location": [
+      "Champaign, Illinois"
+    ],
+    "pages": [
+      "103"
+    ],
+    "url": [
+      "www.orau.org/ptp/PTP%20Library/library/epa/samplings/pracgw.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Buchanan",
+        "given": "T.J."
+      },
+      {
+        "family": "Somers",
+        "given": "W.P."
+      }
+    ],
+    "date": [
+      "1969"
+    ],
+    "title": [
+      "Discharge measurements at gaging stations; techniques of water-resources investigations of the United States Geologic Survey chapter A8"
+    ],
+    "location": [
+      "Washington D.C"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/twri/twri3a8/html/pdf.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Cunningham",
+        "given": "W.L."
+      },
+      {
+        "family": "Schalk",
+        "given": "C.W."
+      },
+      {
+        "given": "comps"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater technical procedures of the U.S"
+    ],
+    "container-title": [
+      "Geological Survey: U.S. Geological Survey Techniques and Methods"
+    ],
+    "pages": [
+      "1– 1"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/1a1/pdf/tm1-a1.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Groundwater elevation monitoring guidelines"
+    ],
+    "url": [
+      "http://www.water.ca.gov/groundwater/casgem/pdfs/CASGEM%20DWR%20GW%20Gu"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "Holmes, R.R. Jr., P.J. Terrio, M.A. Harris, and P.C. Mills"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Introduction to field methods for hydrologic and environmental studies"
+    ],
+    "genre": [
+      "open-file report 01-50,"
+    ],
+    "publisher": [
+      "USGS"
+    ],
+    "location": [
+      "Urbana, Illinois"
+    ],
+    "pages": [
+      "241"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr0150"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Puls",
+        "given": "R.W."
+      },
+      {
+        "family": "Barcelona",
+        "given": "M.J."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "note": [
+      "Low-Flow (Minimal Drawdown) Ground-Water Sampling Procedures; US EPA, Ground Water Issue EPA/540/S-95/504."
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/lwflw2a.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rantz",
+        "given": "S.E."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Measurement and computation of streamflow; U.S. Geological Survey, Water Supply Paper 2175"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/wsp/wsp2175/#table"
+    ],
+    "note": [
+      "Subcommittee on Ground Water of the Advisory Committee on Water Information,"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "A national framework for ground-water monitoring in the United States"
+    ],
+    "url": [
+      "http://acwi.gov/sogw/ngwmn_framework_report_july2013.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Vail",
+        "given": "J."
+      },
+      {
+        "family": "France",
+        "given": "D."
+      },
+      {
+        "family": "Lewis",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Operating Procedure: Groundwater Sampling SESDPROC-301-R3"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Resolutions by Yucaipa GSA Member Agencies to Adopt the GSP Resolution No. 2021-01 by Western Heights Water Company Resolution No. 2021-70 by Yucaipa Valley Water District Resolution No"
+    ],
+    "container-title": [
+      "1142 by San Bernardino Valley Municipal Water District RESOLUTION NO. 1142 RESOLUTION OF THE BOARD OF DIRECTORS OF THE SAN BERNARDINO VALLEY MUNICIPAL WATER DISTRICT AS A MEMBER OF THE YUCAIPA SUSTAINABILITY GROUNDWATER MANAGEMENT AGENCY TO ADOPT THE GROUNDWATER SUSTAINABILITY PLAN FOR THE YUCA IPA SUBBASIN"
+    ],
+    "note": [
+      "BASIN NO. 8-002.07"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "date": [
+      "2014-09-16"
+    ],
+    "title": [
+      "Governor Jerry Brown signed into law Senate"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Bills 1168 and 1319, and Assembly Bill 1739, collectively known as the Sustainable Groundwater Management Act (\"SGMA\"), codified in certain provisions of the California Government Code, including commencing with Section 65350.5, and codified in Part 2.74 of Division 6 of the California Water Code, commencing with Section 10720, and amending other provisions of the California Government Code and California Water Code"
+    ],
+    "note": [
+      "and, WHEREAS, SGMA went into effect on January 1, 2015; and,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "SGMA includes several un-codified findings by the California Legislature, including the determination that the people of the state have a primary interest in the protection, management, and reasonable beneficial use of the water resources of the state, both surface and underground, and that the integrated management of the state's water resources is essential to meeting its water management goals; and, WHEREAS, the Yucaipa Subbasin (“SUBBASIN”) is identified by the California Department of Water Resources Bulletin 118 as Sub-basin No. 8-002.07 of the Upper Santa Ana Valley Groundwater Basin, and is designated by the California Department of Water Resources (“DWR”) as a high-priority basin; and, WHEREAS, California Water Code Section 10720.7 requires the SUBBASIN, as a high-priority basin that is not designated by DWR as being subject to critical conditions of overdraft"
+    ],
+    "note": [
+      "to be managed by a Groundwater Sustainability Plan (\"GSP\") by January 31, 2022; and, WHEREAS, South Mesa Water Company (\"SOUTH MESA\"), South Mountain Water"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Company"
+      }
+    ],
+    "title": [
+      "Western Heights Water Company (\"WHWC\") and Yucaipa Valley Water District (\"YVWD\"), herein collectively referred to as the “WATER PURVEYORS\"; and the City of Calimesa (“CALIMESA”), the City of Redlands (\"REDLANDS\") and the City of Yucaipa (\"YUCAIPA\"), herein collectively referred to as the MUNICIPALITIES\"; and the San Bernardino Valley Municipal Water District (\"SBVMWD\") and the San Gorgonio Pass Water Agency"
+    ],
+    "note": [
+      "\"SGPWA\"), herein collectively referred to as the \"REGIONALS”, entered into a Memorandum of Agreement (“MOA”) in June 2017 to form a GSA called the Yucaipa Sustainability Groundwater Management Agency (“YUCAIPA-SGMA”), and,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "CALIMESA submitted a written Notice of Withdrawal dated November 19, 2018 and the Yucaipa-SGMA subsequently acknowledged the withdrawal of"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CALIMESA from the Yucaipa-SGMA at the January 23"
+    ],
+    "container-title": [
+      "2019 YUCAIPA-SGMA Board meeting, and"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "WHEREAS, the REGIONALS are State Water Contractors, and have the rights and duties of such, including for the delivery of State Water Project Water within the SUBBASIN; and, WHEREAS, the PARTIES have worked with local stakeholders and interested parties in the SUBBASIN that are not PARTIES in YUCAIPA-SGMA to carry out the policy, purposes, and requirements of SGMA in the SUBBASIN; and"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "WHEREAS, due to the COVID-19 pandemic and Executive Order N-29-20 that suspended the requirement to hold public meetings at physical locations"
+    ],
+    "note": [
+      "the YUCAIPA-SGMA held online public meetings and provided details in the public notices informing the public how to participate in the online meetings; and,"
+    ],
+    "type": "webpage"
+  },
+  {
+    "title": [
+      "WHEREAS, the YUCAIPA-SGMA announced a community engagement meeting (i.e., public hearing) for November 16, 2021, as required by Water Code section 10728.4 for the purposes of considering public comments before adopting a GSP for the SUBBASIN; and"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "title": [
+      "The San Bernardino Valley Municipal Water District hereby authorizes the adoption of the GSP for the SUBBASIN and directs the YUCAIPA-SGMA to file the GSP"
+    ],
+    "note": [
+      "with DWR no later than January 31, 2022, as required by SGMA."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "title": [
+      "The General Manager and Agency Counsel are hereby authorized and directed to take such other and further actions as may be necessary or appropriate to implement the intent and purposes of this resolution"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Kielhold",
+        "given": "Paul R."
+      }
+    ],
+    "title": [
+      "President ATTEST: _____________________________"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dyer",
+        "given": "Heather P."
+      }
+    ],
+    "title": [
+      "Secretary Resolution by"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "SGMA went into effect on"
+    ],
+    "date": [
+      "2015-01-01"
+    ],
+    "genre": [
+      "and,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "California Water Code Section 10720.7 requires the SUBBASIN, as a highpriority basin that is not designated by DWR as being subject to critical conditions of overdraft, to be managed by a Groundwater Sustainability Plan (\"GSP\") by January 31, 2022; and, WHEREAS, South Mesa Water Company (\"SOUTH MESA\"), South Mountain Water Company (\"SOUTH MOUNTAIN\"), Western Heights Water Company (\"WHWC\") and Yucaipa Valley Water District (\"YVWD\"), herein collectively referred to as the “WATER PURVEYORS\"; and the City of Calimesa (“CALIMESA”"
+    ],
+    "note": [
+      "the City of Redlands (\"REDLANDS\") and the City of Yucaipa (\"YUCAIPA\"), herein collectively referred to as the MUNICIPALITIES\"; and the San Bernardino Valley Municipal Water District (\"SBVMWD\") and the San Gorgonio Pass Water Agency (\"SGPWA\"), herein collectively referred to as the \"REGIONALS”, entered into a"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Memorandum of Agreement (“MOA”) in June 2017 to form a GSA called the Yucaipa Groundwater Sustainability Agency"
+    ],
+    "note": [
+      "“YUCAIPA GSA”), and,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "W.H.E.R.E.A.S."
+      }
+    ],
+    "title": [
+      "The County of Riverside (\"RIVERSIDE\") and the County of San Bernardino (\"SAN BERNARDINO\"), collectively referred to as the \"COUNTIES,\" are stakeholders but not PARTIES in the YUCAIPA GSA"
+    ],
+    "note": [
+      "and, WHEREAS, CALIMESA submitted a written Notice of Withdrawal dated November 19, 2018 and the Yucaipa GSA subsequently acknowledged the withdrawal of CALIMESA from the"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Yucaipa GSA at the January 23"
+    ],
+    "container-title": [
+      "2019 YUCAIPA GSA Board meeting, and"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "WHEREAS",
+        "given": "the W.A.T.E.R.P.U.R.V.E.Y.O.R.S."
+      }
+    ],
+    "title": [
+      "including the MUTUALS, produce groundwater and provide water service within the SUBBASIN, and it is the PARTIES’ shared intent to provide for management-level participation by the MUTUALS in the GSA as set forth in the MOA; and, WHEREAS, the REGIONALS are State Water Contractors, and have the rights and duties of such, including for the delivery of State Water Project Water within the SUBBASIN; and WHEREAS, the PARTIES have worked with local stakeholders and interested parties in the SUBBASIN that are not PARTIES in YUCAIPA GSA to carry out the policy, purposes, and requirements of SGMA in the SUBBASIN; and, WHEREAS, the YUCAIPA GSA has developed a GSP for the SUBBASIN as required by SGMA"
+    ],
+    "note": [
+      "and, WHEREAS, the YUCAIPA GSA has provided the public notices required by Water Code section 10727.8, including a Public Outreach and Engagement Plan, informing the public on how to participate in the development of the GSP; and,"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "WHEREAS, the GSP for the Subbasin contains all the elements required by Water Code sections 10727.2 and 10727.4; and"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "The above Recitals are true and correct and incorporated herein by this reference"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Secretary",
+        "given": "Board of Directors Resolution No"
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "note": [
+      "by South Mountain Water Company Resolution No. 2022-02 by San Gorgonio Pass Water Agency Resolution No. 2022-03 by"
+    ],
+    "type": null
+  }
+]

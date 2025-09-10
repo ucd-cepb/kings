@@ -1,0 +1,695 @@
+[
+  {
+    "citation-number": [
+      "2-11"
+    ],
+    "title": [
+      "Groundwater Quality - Arsenic Concentrations 2-12 Active Clean Up Sites within the Bear Valley Basin 2-13 Bear Valley Basin West"
+    ],
+    "note": [
+      "Spring 2019 Groundwater Elevation Contour Map"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2-14"
+    ],
+    "title": [
+      "Bear Valley Basin East - Spring 2019 Groundwater Elevation Contour Map"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2-15"
+    ],
+    "title": [
+      "Bear Valley Basin West - Fall 2019 Groundwater Elevation Contour Map"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Final 2018 Bulletin 118 Groundwater Basin Boundaries shapefile"
+    ],
+    "url": [
+      "http://www.water.ca.gov/groundwater/sgm/basin_boundaries.cfm",
+      "http://geotracker.waterboards.ca.gov/."
+    ],
+    "container-title": [
+      "California State Water Resources Control Board (SWRCB) Geotracker"
+    ],
+    "note": [
+      "accessed in November 2019."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Applied Hydrogeology"
+    ],
+    "edition": [
+      "3rd"
+    ],
+    "publisher": [
+      "Macmillan College Publishing"
+    ],
+    "location": [
+      "New York"
+    ],
+    "type": "book"
+  },
+  {
+    "editor": [
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Martin",
+        "given": "P."
+      }
+    ],
+    "title": [
+      "with contributions by",
+      "Geohydrology of Big"
+    ],
+    "author": [
+      {
+        "family": "Brandt",
+        "given": "J."
+      },
+      {
+        "family": "A.H.",
+        "given": "Christensen"
+      },
+      {
+        "family": "A.L.",
+        "given": "Flint"
+      },
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Hevesi.",
+        "given": "J.A.Jachens"
+      },
+      {
+        "family": "R.",
+        "given": "Kulongoski"
+      },
+      {
+        "family": "J.T.",
+        "given": "Martin"
+      },
+      {
+        "family": "Peter"
+      },
+      {
+        "family": "Sneed",
+        "given": "Michelle"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "location": [
+      "Bear Valley, California"
+    ],
+    "container-title": [
+      "Phase 1—Geologic Framework, Recharge, and Preliminary Assessment of the Source and Age of Groundwater. USGS Scientific Investigations Report 2012-5100"
+    ],
+    "pages": [
+      "112"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Geohydrologic Characteristics and Artificial Recharge Potential of the Sand Canyon Area"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated December 1990."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "1999",
+      "1999-07-13"
+    ],
+    "title": [
+      "Re-Evaluation of Maximum Perennial Yield in the Baldwin Lake Watershed. Prepared for BBCCSD"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2000",
+      "2000"
+    ],
+    "title": [
+      "Results of Drilling, Construction, Testing and Pump Design for BBCCSD"
+    ],
+    "note": [
+      "Well No. 3B. Prepared for BBCCSD. Dated October 23,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Re-Evaluation of Maximum Perennial Yield – Big Bear Lake Watershed and a Portion of the Baldwin Lake Watershed"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated August 24, 2001."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "note": [
+      "Well 8 (Palomino Site) Results of Drilling, Construction, Testing, and Pump Design. Prepared for BBCCSD. Dated August 21, 2003."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Well 9 (Greenway Park Site) Results of Drilling, Construction, Testing, and Pump Design"
+    ],
+    "note": [
+      "Prepared for BBCCSD. Dated November 20, 2003."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Well 10 (Booster Station Site) Results of Drilling, Construction, Testing, and Pump Design"
+    ],
+    "note": [
+      "Prepared for BBCCSD. Dated December 9, 2003."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Summary of Drilling and Testing at Four Test Drilling Sites – Big Bear Lake Watershed"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated August 8, 2003."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Geohydrologic Evaluation of Artificial Recharge Potential in the Big"
+    ],
+    "location": [
+      "Bear Valley, California"
+    ],
+    "note": [
+      "Prepared for BBARWA. Dated October 1, 2004."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2004",
+      "2004-07-22"
+    ],
+    "title": [
+      "Recommended Casing, Screen, and Filter Pack Design – Canvasback Production Well"
+    ],
+    "container-title": [
+      "Letter to Gerry Gruber of BBLDWP dated"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Geohydrologic Evaluation of the Maximum Perennial Yield of the Lake Williams Area, Baldwin Lake Watershed"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated January 27, 2004."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Results of Drilling and Testing – Big Bear Valley Ground Water Exploration Program - 2004"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated July 8, 2005."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Geoscience"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Technical Memorandum – Perennial Yield Update for the City of Big Bear Lake Department of Water and Power Service Area"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated February 2, 2006."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Johnson",
+        "given": "Theodore Arthur"
+      }
+    ],
+    "date": [
+      "1994",
+      "1994-04-28"
+    ],
+    "title": [
+      "Hydrogeologic Evaluation for Wetlands Restoration And Maintenance, Southeast Baldwin Lake, San Bernardino Mountains, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Master’ s Thesis"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "LeRoy Crandall And"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Re-Evaluation of Sustained Ground Water Yields, Big Bear Lake Watershed"
+    ],
+    "location": [
+      "San Bernardino County, California"
+    ],
+    "note": [
+      "Prepared for the City of Big Bear Lake."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "LeRoy Crandall And"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Re-evaluation of Sustained Yields, Baldwin Lake Watershed"
+    ],
+    "note": [
+      "Job No. E-86043-D. Prepared for the Big Bear City Community Services District."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Miller",
+        "given": "F.K."
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Reverse-Fault System Bounding the North Side of the San Bernardino Mountains"
+    ],
+    "container-title": [
+      "Recent Reverse Faulting in the Transverse Ranges, California. USGS Professional Paper 1339"
+    ],
+    "pages": [
+      "83–95"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Miller",
+        "given": "F.K."
+      }
+    ],
+    "date": [
+      "2004",
+      "Version 1.0"
+    ],
+    "title": [
+      "Preliminary Geologic Map of the Big Bear City 7.5’ Quadrangle"
+    ],
+    "location": [
+      "San Bernardino County, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Open File"
+    ],
+    "genre": [
+      "Report 2004-1193,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Planert",
+        "given": "M."
+      },
+      {
+        "family": "Williams",
+        "given": "J.S."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Ground Water Atlas of the United States, Segment 1 –California and Nevada"
+    ],
+    "publisher": [
+      "USGS Hydrologic Investigations Atlas"
+    ],
+    "pages": [
+      "730–"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Barto",
+        "given": "Ron"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1988",
+      "1988"
+    ],
+    "title": [
+      "Hydrogeological Evaluation of Hamilton Ranch Property"
+    ],
+    "location": [
+      "Erwin Lake, California"
+    ],
+    "note": [
+      "Prepared for Hamilton Ranch. Dated October 21,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sadler",
+        "given": "P.M."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Geology of the San Bernardino Mountains"
+    ],
+    "genre": [
+      "Report 82-18LA."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Division of Mines and Geology Open File"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Theis",
+        "given": "C.V."
+      },
+      {
+        "family": "Brown",
+        "given": "R.H."
+      },
+      {
+        "family": "Myer",
+        "given": "R.R."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Estimating the Transmissivity of a Water-table Aquifer from the Specific Capacity of a Well"
+    ],
+    "container-title": [
+      "USGS Water Supply Paper 1536-1"
+    ],
+    "pages": [
+      "331–336"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010"
+    ],
+    "title": [
+      "Technical Memorandum. Perennial Yield Update – Division and North Shore Hydrologic Subunits"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated March 24,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010"
+    ],
+    "title": [
+      "Analysis of Potential Groundwater Resources in the Upper Arrastre Creek Drainage"
+    ],
+    "note": [
+      "Prepared for BBLDWP. Dated June 30,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Draft Shay Pond Area Hydrogeologic Assessment for the Unarmored Threespine Stickelback Fish. Prepare for the California Department of Fish and Wildlife"
+    ],
+    "volume": [
+      "31"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated August"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Sand Canyon Recharge Evaluation. Technical Memorandum Prepared for Water Systems Consulting"
+    ],
+    "volume": [
+      "29"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated November"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harder",
+        "given": "Thomas"
+      },
+      {
+        "given": "Co"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Technical Memorandum. Analysis of the Hydrologic Connection Between Groundwater Pumped by the City of Big Bear Lake Department of Water Division Wells and Surface Water in Big Bear Lake"
+    ],
+    "volume": [
+      "16"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepare for BBLDWP. Dated March"
+    ]
+  }
+]
