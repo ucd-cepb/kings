@@ -109,9 +109,7 @@ jaccard_values <- jac_ordered[edge_list]
 set.edge.attribute(jac_net,"jaccard",jaccard_values)
 
 
-quantile(get.edge.attribute(ref_net,'cosim'),0.9)
-quantile(get.edge.attribute(kn_net,'cosim'),0.9)
-quantile(get.edge.attribute(jac_net,'jaccard'),0.9)
+
 
 
 
