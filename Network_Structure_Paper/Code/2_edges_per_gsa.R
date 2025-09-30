@@ -152,9 +152,11 @@ cat("Total unique edge types:", length(all_edge_columns), "\n")
 
 
 # Melt the data for ggplot
-melted_master <- melt(master_gsa_edges, id.vars = c("gsa", "gsp_id")) %>% 
+melted_master <- melt(master_gsa_edges, id.vars = c("gsa", "gsp_id")) %>%
+   arrange(desc(value)) %>% 
    mutate(value = ifelse(is.na(value), 0, value)) %>% 
-   mutate(value = ifelse(value > 0, 1, 0)) # binary presence/absence
+   mutate(value = ifelse(value > 0, 1, 0)) %>%  # binary presence/absence
+   tibble()
 # Plot heatmap
 ggplot(melted_master, aes(x = variable, y = gsa, fill = value)) +
    geom_tile() +
