@@ -12,8 +12,9 @@ library(tidycensus)
 library(ellmer)
 library(dotenv)
 
+getwd()
 
-load_dot_env('.env')
+load_dot_env('../../.env')
 setwd(Sys.getenv('WD'))
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"),
