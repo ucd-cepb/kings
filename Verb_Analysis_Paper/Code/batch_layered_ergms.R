@@ -13,8 +13,8 @@ total_cores <- parallel::detectCores()
 # Set parallelization parameters
 # parallel_models: number of models to fit simultaneously (outer parallelization)
 # threads_per_model: number of threads each ERGM model uses (inner parallelization)
-parallel_models <- 4      # Adjust this value
-threads_per_model <- 24   # Adjust this value
+parallel_models <- 15     # Adjust this value
+threads_per_model <- 16   # Adjust this value
 
 # Validate that we don't exceed available cores
 total_cores_requested <- parallel_models * threads_per_model
