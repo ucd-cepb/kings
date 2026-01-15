@@ -28,7 +28,8 @@ MCMC_BASE_SAMPLESIZE <- 50e3
 MCMC_BASE_INTERVAL   <- 2500
 
 # Directory for incremental saves (prevents losing progress on crash)
-INCREMENTAL_SAVE_DIR <- "data/Verb_Analysis_Paper/incremental_fits"
+# Use absolute path so parallel workers can find it
+INCREMENTAL_SAVE_DIR <- file.path(getwd(), "data/Verb_Analysis_Paper/incremental_fits")
 
 # ============================================================================
 # NESTED PARALLELIZATION CONFIGURATION
@@ -85,6 +86,14 @@ save_incremental <- function(fit, model_type, index) {
    if(!dir.exists(INCREMENTAL_SAVE_DIR)) dir.create(INCREMENTAL_SAVE_DIR, recursive = TRUE)
    fname <- file.path(INCREMENTAL_SAVE_DIR, sprintf("%s_%03d.RDS", model_type, index))
    saveRDS(fit, fname)
+}
+
+# Log progress to a file (visible from main process)
+log_progress <- function(model_type, index, message) {
+   if(!dir.exists(INCREMENTAL_SAVE_DIR)) dir.create(INCREMENTAL_SAVE_DIR, recursive = TRUE)
+   logfile <- file.path(INCREMENTAL_SAVE_DIR, "progress.log")
+   line <- sprintf("[%s] %s model %d: %s\n", Sys.time(), model_type, index, message)
+   cat(line, file = logfile, append = TRUE)
 }
 
 # Load any incremental saves and merge into results list
@@ -216,13 +225,13 @@ if(all(sapply(m0s,class)=='ergm')){
          # Export config to workers
          clusterExport(cl, c("MAIN_METHOD", "MCMC_SCALE_FACTOR", "MCMC_BASE_BURNIN",
                             "MCMC_BASE_SAMPLESIZE", "MCMC_BASE_INTERVAL",
-                            "get_mcmc_params", "save_incremental", "INCREMENTAL_SAVE_DIR"))
+                            "get_mcmc_params", "save_incremental", "log_progress", "INCREMENTAL_SAVE_DIR"))
 
          # Fit models in parallel
          results <- foreach(k = models_to_fit,
                            .packages = c('statnet', 'ergm.multi'),
                            .errorhandling = 'pass') %dopar% {
-            cat(sprintf("Fitting model %d (m0)\n", k))
+            log_progress("m0", k, "STARTED")
 
             # Define formula for this model
             f0_local <- layered_nets[[k]] ~
@@ -234,7 +243,7 @@ if(all(sapply(m0s,class)=='ergm')){
 
             tryCatch({
                # Stage 1: Fit with MPLE to get initial values
-               cat(sprintf("  Model %d: Stage 1 - MPLE fit\n", k))
+               log_progress("m0", k, "Stage 1 - MPLE fit")
                control_mple = control.ergm(
                   parallel = threads_per_model,
                   main.method = 'MPLE',
@@ -243,7 +252,7 @@ if(all(sapply(m0s,class)=='ergm')){
                mple_fit <- ergm(f0_local, control = control_mple)
 
                # Stage 2: Fit with configured method using MPLE coefficients as init
-               cat(sprintf("  Model %d: Stage 2 - %s fit\n", k, MAIN_METHOD))
+               log_progress("m0", k, sprintf("Stage 2 - %s fit", MAIN_METHOD))
                control_main = control.ergm(
                   parallel = threads_per_model,
                   main.method = MAIN_METHOD,
@@ -257,12 +266,12 @@ if(all(sapply(m0s,class)=='ergm')){
 
                # Save incrementally
                save_incremental(fit, "m0", k)
+               log_progress("m0", k, "COMPLETE")
 
-               cat(sprintf("  Model %d: Complete\n", k))
                return(fit)
             },
             error = function(e) {
-               cat(sprintf("Error in model %d: %s\n", k, e$message))
+               log_progress("m0", k, sprintf("ERROR: %s", e$message))
                return(NULL)
             })
          }
@@ -368,13 +377,13 @@ if(all(sapply(m1s,class)=='ergm')){
          # Export config and m0s (for warm-starting) to workers
          clusterExport(cl, c("MAIN_METHOD", "MCMC_SCALE_FACTOR", "MCMC_BASE_BURNIN",
                             "MCMC_BASE_SAMPLESIZE", "MCMC_BASE_INTERVAL",
-                            "get_mcmc_params", "save_incremental", "INCREMENTAL_SAVE_DIR", "m0s"))
+                            "get_mcmc_params", "save_incremental", "log_progress", "INCREMENTAL_SAVE_DIR", "m0s"))
 
          # Fit models in parallel
          results <- foreach(k = models_to_fit,
                            .packages = c('statnet', 'ergm.multi'),
                            .errorhandling = 'pass') %dopar% {
-            cat(sprintf("Fitting model %d (m1)\n", k))
+            log_progress("m1", k, "STARTED")
 
             # Define formulas for this model
             f0_local <- layered_nets[[k]] ~
@@ -391,8 +400,9 @@ if(all(sapply(m1s,class)=='ergm')){
             # Warm-start: use m0 coefficients if available, else use MPLE
             if(!is.null(m0s[[k]]) && inherits(m0s[[k]], "ergm")) {
                init_vals <- unname(c(coef(m0s[[k]]), 0, 0))  # m0 has 3 terms, m1 adds 2
-               cat(sprintf("  Model %d: Warm-starting from m0 coefficients\n", k))
+               log_progress("m1", k, "Warm-starting from m0")
             } else {
+               log_progress("m1", k, "MPLE init (m0 not available)")
                control_mple = control.ergm(
                   parallel = threads_per_model,
                   main.method = 'MPLE',
@@ -400,11 +410,10 @@ if(all(sapply(m1s,class)=='ergm')){
                )
                mple_fit <- ergm(f1_local, control = control_mple)
                init_vals <- coef(mple_fit)
-               cat(sprintf("  Model %d: Using MPLE initialization (m0 not available)\n", k))
             }
 
             tryCatch({
-               cat(sprintf("  Model %d: Fitting with %s\n", k, MAIN_METHOD))
+               log_progress("m1", k, sprintf("Fitting with %s", MAIN_METHOD))
                control_main = control.ergm(
                   parallel = threads_per_model,
                   main.method = MAIN_METHOD,
@@ -418,12 +427,12 @@ if(all(sapply(m1s,class)=='ergm')){
 
                # Save incrementally
                save_incremental(fit, "m1", k)
+               log_progress("m1", k, "COMPLETE")
 
-               cat(sprintf("  Model %d: Complete\n", k))
                return(fit)
             },
             error = function(e) {
-               cat(sprintf("Error in model %d: %s\n", k, e$message))
+               log_progress("m1", k, sprintf("ERROR: %s", e$message))
                return(NULL)
             })
          }
@@ -531,13 +540,13 @@ if(all(sapply(m2s,class)=='ergm')){
          # Export config and m1s (for warm-starting) to workers
          clusterExport(cl, c("MAIN_METHOD", "MCMC_SCALE_FACTOR", "MCMC_BASE_BURNIN",
                             "MCMC_BASE_SAMPLESIZE", "MCMC_BASE_INTERVAL",
-                            "get_mcmc_params", "save_incremental", "INCREMENTAL_SAVE_DIR", "m1s"))
+                            "get_mcmc_params", "save_incremental", "log_progress", "INCREMENTAL_SAVE_DIR", "m1s"))
 
          # Fit models in parallel
          results <- foreach(k = models_to_fit,
                            .packages = c('statnet', 'ergm.multi'),
                            .errorhandling = 'pass') %dopar% {
-            cat(sprintf("Fitting model %d (m2)\n", k))
+            log_progress("m2", k, "STARTED")
 
             # Define formulas for this model
             f0_local <- layered_nets[[k]] ~
@@ -558,8 +567,9 @@ if(all(sapply(m2s,class)=='ergm')){
             # Warm-start: use m1 coefficients if available, else use MPLE
             if(!is.null(m1s[[k]]) && inherits(m1s[[k]], "ergm")) {
                init_vals <- unname(c(coef(m1s[[k]]), 0, 0))  # m1 has 5 terms, m2 adds 2
-               cat(sprintf("  Model %d: Warm-starting from m1 coefficients\n", k))
+               log_progress("m2", k, "Warm-starting from m1")
             } else {
+               log_progress("m2", k, "MPLE init (m1 not available)")
                control_mple = control.ergm(
                   parallel = threads_per_model,
                   main.method = 'MPLE',
@@ -567,11 +577,10 @@ if(all(sapply(m2s,class)=='ergm')){
                )
                mple_fit <- ergm(f2_local, control = control_mple)
                init_vals <- coef(mple_fit)
-               cat(sprintf("  Model %d: Using MPLE initialization (m1 not available)\n", k))
             }
 
             tryCatch({
-               cat(sprintf("  Model %d: Fitting with %s\n", k, MAIN_METHOD))
+               log_progress("m2", k, sprintf("Fitting with %s", MAIN_METHOD))
                control_main = control.ergm(
                   parallel = threads_per_model,
                   main.method = MAIN_METHOD,
@@ -585,12 +594,12 @@ if(all(sapply(m2s,class)=='ergm')){
 
                # Save incrementally
                save_incremental(fit, "m2", k)
+               log_progress("m2", k, "COMPLETE")
 
-               cat(sprintf("  Model %d: Complete\n", k))
                return(fit)
             },
             error = function(e) {
-               cat(sprintf("Error in model %d: %s\n", k, e$message))
+               log_progress("m2", k, sprintf("ERROR: %s", e$message))
                return(NULL)
             })
          }
