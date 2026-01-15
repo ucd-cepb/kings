@@ -322,7 +322,7 @@ if(all(sapply(m1s,class)=='ergm')){
 
          # Warm-start from m0 if available
          if(!is.null(m0s[[k]]) && inherits(m0s[[k]], "ergm")) {
-            init_vals <- c(coef(m0s[[k]]), 0, 0)
+            init_vals <- unname(c(coef(m0s[[k]]), 0, 0))
             cat("Warm-starting from m0 coefficients:\n")
             print(coef(m0s[[k]]))
          } else {
@@ -390,7 +390,7 @@ if(all(sapply(m1s,class)=='ergm')){
 
             # Warm-start: use m0 coefficients if available, else use MPLE
             if(!is.null(m0s[[k]]) && inherits(m0s[[k]], "ergm")) {
-               init_vals <- c(coef(m0s[[k]]), 0, 0)  # m0 has 3 terms, m1 adds 2
+               init_vals <- unname(c(coef(m0s[[k]]), 0, 0))  # m0 has 3 terms, m1 adds 2
                cat(sprintf("  Model %d: Warm-starting from m0 coefficients\n", k))
             } else {
                control_mple = control.ergm(
@@ -485,7 +485,7 @@ if(all(sapply(m2s,class)=='ergm')){
 
          # Warm-start from m1 if available
          if(!is.null(m1s[[k]]) && inherits(m1s[[k]], "ergm")) {
-            init_vals <- c(coef(m1s[[k]]), 0, 0)
+            init_vals <- unname(c(coef(m1s[[k]]), 0, 0))
             cat("Warm-starting from m1 coefficients:\n")
             print(coef(m1s[[k]]))
          } else {
@@ -557,7 +557,7 @@ if(all(sapply(m2s,class)=='ergm')){
 
             # Warm-start: use m1 coefficients if available, else use MPLE
             if(!is.null(m1s[[k]]) && inherits(m1s[[k]], "ergm")) {
-               init_vals <- c(coef(m1s[[k]]), 0, 0)  # m1 has 5 terms, m2 adds 2
+               init_vals <- unname(c(coef(m1s[[k]]), 0, 0))  # m1 has 5 terms, m2 adds 2
                cat(sprintf("  Model %d: Warm-starting from m1 coefficients\n", k))
             } else {
                control_mple = control.ergm(
