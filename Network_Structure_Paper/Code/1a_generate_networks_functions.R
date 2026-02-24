@@ -14,7 +14,7 @@ library(dotenv)
 
 getwd()
 
-load_dot_env('../../.env')
+load_dot_env()
 setwd(Sys.getenv('WD'))
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"),
@@ -497,8 +497,7 @@ tag_nodes_second <- function(nl, gsp_id, batch_size = 20) {
       # Define the type structure for structured extraction
       type_entity_classification <- type_object(
          name = type_string("The name of the entity being classified, always written in snake_case and copied exactly from the document without removing or changing any characters."),
-         type_string = type_enum(paste("The entity type classification. If in doubt, classify as Nonsense.", tag_definitions),
-                                c( "Local_Gov", "State_Gov", "Federal_Gov", "District", "Basin", 
+         type_string = type_enum(c( "Local_Gov", "State_Gov", "Federal_Gov", "District", "Basin", 
                                   "Natural_Feature", "Infrastructure", "Group", "Technical", 
                                   "Water_Project", "Reference", "Geographic_Unit", "Legal", 
                                   "Data_System", "Nonsense", "Person", "NGO", "Company"))
@@ -507,7 +506,7 @@ tag_nodes_second <- function(nl, gsp_id, batch_size = 20) {
       # Use ellmer parallel_chat_structured to process batch
       tryCatch({
          chat <- ellmer::chat_openai(system_prompt = 'You are an expert in categorizing entities from groundwater sustainability plans.',
-                                     model='gpt-4.1-mini')
+                                     model='gpt-5-mini')
          
          response <- ellmer::parallel_chat_structured(
             chat,
