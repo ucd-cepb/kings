@@ -3,6 +3,7 @@ library(ggraph)
 library(igraph)
 library(tidyverse)
 library(migraph)
+library(quanteda)
 
 load_dot_env()
 
@@ -93,23 +94,23 @@ net_stats <- function(network_graph, gsp_id) {
    gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa') #add in deafult
    gsa_ins <- c(which(V(network_graph)$name %in% gsa_names2))
    
-   #distance to gsa(s)
-   dists <- data.frame(matrix(ncol = length(gsa_ins), 
-                              nrow = vcount(network_graph)))
-   colnames(dists) <- paste0('X', gsa_ins)
-   
-   for (i in gsa_ins){
-      dist <- distances(network_graph, 
-                        to=i,
-                        mode = 'in',
-                        weights=NA)
-      dist[is.infinite(dist)] <- NA # replace infinite distance with NA
-      dist[is.nan(dist)] <- NA # replace NA with NA
-      dists[[paste0('X', i)]] <- dist
-   }
-   
-   colnames(dists) <- V(network_graph)$name[gsa_ins]
-   leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
+   # #distance to gsa(s)
+   # dists <- data.frame(matrix(ncol = length(gsa_ins), 
+   #                            nrow = vcount(network_graph)))
+   # colnames(dists) <- paste0('X', gsa_ins)
+   # 
+   # for (i in gsa_ins){
+   #    dist <- distances(network_graph, 
+   #                      to=i,
+   #                      mode = 'in',
+   #                      weights=NA)
+   #    dist[is.infinite(dist)] <- NA # replace infinite distance with NA
+   #    dist[is.nan(dist)] <- NA # replace NA with NA
+   #    dists[[paste0('X', i)]] <- dist
+   # }
+   # 
+   # colnames(dists) <- V(network_graph)$name[gsa_ins]
+   # leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
    
    #distance to gsa(s) WEIGHTED
    dists_w <- data.frame(matrix(ncol = length(gsa_ins), 
@@ -129,37 +130,31 @@ net_stats <- function(network_graph, gsp_id) {
    colnames(dists_w) <- V(network_graph)$name[gsa_ins]
    leader_dist_min_w <- apply(dists_w, 1, min, na.rm = TRUE)
    
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_min',
-                                    value = ifelse(is.infinite(leader_dist_min), 
-                                                   NA, 
-                                                   leader_dist_min))
+   # network_graph <- set_vertex_attr(network_graph,
+   #                                  'leader_dist_min',
+   #                                  value = ifelse(is.infinite(leader_dist_min), 
+   #                                                 NA, 
+   #                                                 leader_dist_min))
+   # 
+   # network_graph <- set_vertex_attr(network_graph,
+   #                                  'leader_dist_min_w',
+   #                                  value = ifelse(is.infinite(leader_dist_min_w), 
+   #                                                 NA, 
+   #                                                 leader_dist_min_w))
+   # 
+   # network_graph <- set_vertex_attr(network_graph,
+   #                                  'leader_dist_min_nona',
+   #                                  value = ifelse(is.infinite(leader_dist_min), 
+   #                                                 diameter(network_graph), 
+   #                                                 leader_dist_min))
    
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_min_w',
-                                    value = ifelse(is.infinite(leader_dist_min_w), 
-                                                   NA, 
-                                                   leader_dist_min_w))
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_min_nona',
-                                    value = ifelse(is.infinite(leader_dist_min), 
-                                                   diameter(network_graph), 
-                                                   leader_dist_min))
-   
-   leader_dist_min_w_nona <- ifelse(is.infinite(leader_dist_min_w), 
-                                    diameter(network_graph), 
+   leader_dist_min_w_nona <- ifelse(is.infinite(leader_dist_min_w),
+                                    diameter(network_graph),
                                     leader_dist_min_w)
-   
-   leader_dist_min_w_nona_norm <- (leader_dist_min_w_nona - min(leader_dist_min_w_nona, na.rm = TRUE)) / (max(leader_dist_min_w_nona, na.rm = TRUE) - min(leader_dist_min_w_nona, na.rm = TRUE))
-   
+
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_min_w_nona',
                                     value = leader_dist_min_w_nona)
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_min_w_nona_norm',
-                                    value = leader_dist_min_w_nona_norm)
    
    network_graph <- set_vertex_attr(network_graph,
                                     'GSA',
@@ -180,15 +175,10 @@ net_stats <- function(network_graph, gsp_id) {
    
    in_w <- ifelse(is.nan(in_w), 0, in_w)
    
-   in_w_norm <- (in_w - min(in_w, na.rm = TRUE)) / (max(in_w, na.rm = TRUE) - min(in_w, na.rm = TRUE))
-   
    network_graph <- set_vertex_attr(network_graph,
                                     'in_w',
                                     value = in_w)
    
-   network_graph <- set_vertex_attr(network_graph,
-                                    'in_w_norm',
-                                    value = in_w_norm)
    
    network_graph <- set_vertex_attr(network_graph,
                                     'out',
@@ -201,33 +191,39 @@ net_stats <- function(network_graph, gsp_id) {
    
    out_w <- ifelse(is.nan(out_w), 0, out_w)
    
-   out_w_norm <- (out_w - min(out_w, na.rm = TRUE)) / (max(out_w, na.rm = TRUE) - min(out_w, na.rm = TRUE))
-   
+
    network_graph <- set_vertex_attr(network_graph,
                                     'out_w',
                                     value = out_w)
    
-   network_graph <- set_vertex_attr(network_graph,
-                                    'out_w_norm',
-                                    value = out_w_norm)
+
    
    network_graph <- set_vertex_attr(network_graph,
                                     'deg',
                                     value = node_deg(network_graph, 
                                                      direction = 'all'))
-   network_graph <- set_vertex_attr(network_graph,
-                                    'eig',
-                                    value = node_eigenvector(network_graph))
-   
-   network_graph <- set_vertex_attr(network_graph, 
-                                    'pr',
-                                    value = igraph::page_rank(network_graph,
-                                                              weights = NA)$vector)  
+   deg_w <- node_deg(network_graph, 
+                      direction = 'all',
+                      alpha=1)
+   deg_w <- ifelse(is.nan(deg_w), 0, deg_w)
    
    network_graph <- set_vertex_attr(network_graph,
-                                    'pr_w',
-                                    value = igraph::page_rank(network_graph,
-                                                              weights = V(network_graph)$weight)$vector)
+                                    'deg_w',
+                                    value = deg_w)
+   
+   # network_graph <- set_vertex_attr(network_graph,
+   #                                  'eig',
+   #                                  value = node_eigenvector(network_graph))
+   # 
+   # network_graph <- set_vertex_attr(network_graph, 
+   #                                  'pr',
+   #                                  value = igraph::page_rank(network_graph,
+   #                                                            weights = NA)$vector)  
+   # 
+   # network_graph <- set_vertex_attr(network_graph,
+   #                                  'pr_w',
+   #                                  value = igraph::page_rank(network_graph,
+   #                                                            weights = V(network_graph)$weight)$vector)
    
    
    
@@ -248,7 +244,7 @@ for (g in seq_along(gsp_ids)) {
    # Save graph
    saveRDS(object = graph_stats, 
            file = paste0(Sys.getenv("BOX_PATH"), 
-                         "/EJ_Paper/cleaned_extracts_DACified/", 
+                         "/EJ_Paper/cleaned_extracts_2026/", 
                          extract_list[g]))
    
    print(paste0("Finished ", gsp_id))
@@ -261,45 +257,3 @@ neti <- 15
 net <- net_stats(network_graph = readRDS(paste0(network_fp, "/",extract_list[neti])),
                    gsp_id = gsp_ids[neti])
 df <- tibble(igraph::as_data_frame(net, what='vertices'))
-
-gsast<- gsa_gsp %>% 
-   filter(GSP_ID == gsp_ids[neti]) %>% 
-   pull(GSA_IDs) %>% 
-   str_split(",") %>% 
-   unlist() %>% 
-   as.integer() 
-
-gsa_names %>%
-   filter(GSA_ID %in% gsast) %>% 
-   select(GSA_ID, GSA_Name)
-
-df %>% 
-   filter(str_detect(name, "groundwater_sustainability_agency")|
-             str_detect(name, "gsa")) %>% 
-   select(name, GSA, deg) %>% 
-   print(n=Inf)
-
-dfm1 <- df %>% 
-   filter(str_detect(name, "groundwater_sustainability_agency")|
-             str_detect(name, "gsa")) %>% 
-   pull(name) %>% 
-   str_replace_all("_", " ") %>%
-   corpus() %>% 
-   tokens() %>%
-   tokens_compound(pattern = phrase(c('groundwater sustainability agency',
-                                      'board of directors'))) %>% 
-   dfm()
-
-dfm2 <- gsa_names %>%
-   filter(GSA_ID %in% gsast) %>% 
-   pull(GSA_Name) %>% 
-   str_replace_all("_", " ") %>%
-   corpus() %>% 
-   tokens() %>% 
-   tokens_compound(pattern = phrase('groundwater sustainability agency')) %>% 
-   dfm()
-
-textstat_simil(dfm1, dfm2,
-               method='dice',
-               min_simil = 0.8)
-gsa_names %>% filter(GSA_ID %in% gsast)

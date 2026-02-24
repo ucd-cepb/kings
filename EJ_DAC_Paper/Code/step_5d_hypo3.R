@@ -40,7 +40,6 @@ lead_mod_3 <- glm(leader_dist_min_w_nona ~ DAC+
                   family=poisson,
                   data = all_place_nodes)
 
-
 lead_mod_4 <- glm(leader_dist_min_w_nona ~ MHI_log+
                      per_latino+
                      POP_log+
@@ -48,62 +47,9 @@ lead_mod_4 <- glm(leader_dist_min_w_nona ~ MHI_log+
                   family=poisson,
                   data = all_place_nodes)
 
-stargazer(in_1, in_2, out_1, out_2, type='text')
+# stargazer(in_1, in_2, out_1, out_2, type='text')
 
 stargazer(lead_mod_3, lead_mod_4, type='text')
 
 stargazer(lead_mod_3, lead_mod_4, 
           type='html', out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist.html')
-
-
-# lead_mod_1 <- glm(leader_dist_min ~ MHI_std+
-#                      POP_std+
-#                      incorporated+
-#                      per_latino,
-#                   family=poisson,
-#                   data = all_place_nodes)
-# 
-# 
-# lead_mod_2 <- glm(leader_dist_min ~ DAC+
-#                      per_latino+
-#                      POP_std+
-#                      incorporated,
-#                   family=poisson,
-#                   data = all_place_nodes)
-# 
-# lead_mod_3 <- glm(leader_dist_min_w ~ MHI_std+
-#                      POP_std+
-#                      incorporated+
-#                      per_latino,
-#                   family=poisson,
-#                   data = all_place_nodes)
-# 
-# 
-# lead_mod_4 <- glm(leader_dist_min_w ~ DAC+
-#                      per_latino+
-#                      POP_std+
-#                      incorporated,
-#                   family=poisson,
-#                   data = all_place_nodes)
-# 
-# stargazer(lead_mod_1, lead_mod_2, lead_mod_3, lead_mod_4, type='text')
-# 
-# stargazer(lead_mod_1, lead_mod_2, lead_mod_3, lead_mod_4, 
-#           type='html', out = 'EJ_DAC_Paper/Out/mods/3a_leader_net.html')
-
-
-# lead_mod_1 <- glm(leader_dist_min_nona ~ MHI_std+
-#                      POP_std+
-#                      incorporated+
-#                      per_latino,
-#                   family=poisson,
-#                   data = all_place_nodes)
-# 
-# 
-# lead_mod_2 <- glm(leader_dist_min_nona ~ DAC+
-#                      per_latino+
-#                      POP_std+
-#                      incorporated,
-#                   family=poisson,
-#                   data = all_place_nodes)
-

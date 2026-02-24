@@ -8,7 +8,7 @@ library(ggpubr)
 
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_2026")
 extract_list <- list.files(network_fp)
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
@@ -50,49 +50,22 @@ in_2 <- glm(`in_w` ~ MHI_log+
 
 stargazer(in_1, in_2, type='text')
 
+# just normal degree hypothesis test
+
+deg_1 <- glm(`deg_w` ~ DAC+
+               POP_log+
+               incorporated+
+               per_latino,
+            family=poisson,
+            data = all_place_nodes)
+
+deg_2 <- glm(`deg_w` ~ MHI_log+
+               POP_log+
+               incorporated+
+               per_latino,
+            family=poisson,
+            data = all_place_nodes)
+
+stargazer(deg_1, deg_2, type='text')
+
 stargazer(in_1, in_2, type='html', out = 'EJ_DAC_Paper/Out/mods/h2a_influence_indegree.html')
-# 
-# dac_stat <- exp(summary(in_1)$coefficients[2,1]); print(dac_stat)
-# mhi_stat <- exp(summary(in_2)$coefficients[2,1])*3.31; print(mhi_stat)
-# 
-# in_a <- glm(admin_in ~ DAC+
-#                POP_std+
-#                incorporated+
-#                per_latino,
-#             family=poisson,
-#             data = all_place_nodes)
-# 
-# 
-# in_b <- glm(basin_plan_in ~ DAC+
-#                POP_std+
-#                incorporated+
-#                per_latino,
-#             family=poisson,
-#             data = all_place_nodes)
-# 
-# in_c <- glm(sust_criteria_in ~ DAC+
-#                POP_std+
-#                incorporated+
-#                per_latino,
-#             family=poisson,
-#             data = all_place_nodes)
-# 
-# in_d <- glm(monitoring_networks_in ~ DAC+
-#                POP_std+
-#                incorporated+
-#                per_latino,
-#             family=poisson,
-#             data = all_place_nodes)
-# 
-# in_e <- glm(projects_mgmt_actions_in ~ DAC+
-#                POP_std+
-#                incorporated+
-#                per_latino,
-#             family=poisson,
-#             data = all_place_nodes)
-# 
-# stargazer(in_1, in_a, in_b, in_c, in_d, in_e, type='text')
-# 
-# stargazer(in_1, in_a, in_b, in_c, in_d, in_e, type='html', out = 'EJ_DAC_Paper/Out/mods/1b_recognition_by_section.html')
-# 
-# 
