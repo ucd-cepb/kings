@@ -579,6 +579,28 @@ gpe_summary <- combined_gpe_core %>%
 
 write_csv(gpe_summary, file.path(output_dir, "core_GPE_name_summary.csv"))
 
+# For Aaron, all node with entity
+
+core_node_full_list <- list()
+
+for (file in csv_files) {
+   df <- read_csv(file, show_col_types = FALSE)
+   gsp_id <- tools::file_path_sans_ext(basename(file))
+   
+   df_core <- df %>% filter(core == 1)
+   
+   if (nrow(df_core) > 0) {
+      df_core <- df_core %>% mutate(gsp_id = gsp_id)
+      core_node_full_list[[gsp_id]] <- df_core
+   }
+}
+
+all_core_nodes_full <- bind_rows(core_node_full_list)
+
+write_csv(all_core_nodes_full,
+          file.path(output_dir, "core_nodes_full_list.csv"))
+
+
 ## Reassign GPE and NA to proper label
 
 

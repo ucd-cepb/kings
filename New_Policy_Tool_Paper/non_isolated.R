@@ -47,7 +47,7 @@ library(stats)
 
 ############################## import the network #########################
 ################### isolated graph #########################
-file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
 # try on box/git 
 output_folder <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/graphs/non_isolated"
@@ -132,9 +132,9 @@ for (i in 1:length(file_paths)) {
 #num_nodes, num_edges, avg_degree, avg_path_length, 
 #centralization, transitivity(local, global), modularity
 
-file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-output_folder_statistics <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_statistics/"
+output_folder_statistics <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/"
 output_csv_path <- paste0(output_folder_statistics, "network_statistics_nonisolated.csv")
 #output_csv_path_CP <- paste0(output_folder_statistics, "network_statistics_isolated_CP.csv")
 merged_dataset_path <- paste0(output_folder_statistics, "merged_dataset_nonisolated.csv")
@@ -218,8 +218,7 @@ for (i in 1:length(file_paths)) {
    
    file_name <- basename(file_paths[i])
    graph_title <- paste("Graph", gsub(".RDS", "", file_name))
-   output_file <- file.path(output_folder, paste0( gsub(".RDS$", "", file_name), ".png"))
-   
+
    file_name <- basename(file_paths[i])
    gsp_id <- as.numeric(stringr::str_extract(file_name, "\\d+"))
    
@@ -256,8 +255,15 @@ for (i in 1:length(file_paths)) {
 all_network_stats <- merge(all_network_stats, CP_score_unweighted_all, by = "gsp_id", all.x = TRUE)
 
 summary(all_network_stats$cp_fit_score)
+
 # Write the combined network statistics to CSV
-write.csv(all_network_stats, file = output_csv_path, row.names = FALSE, append = TRUE)
+write.csv(all_network_stats, file = output_csv_path, row.names = FALSE)
+
+
+
+
+
+
 
 
 ## plot distribution on modularity and cp_fit_score 
@@ -638,7 +644,7 @@ summary(fit, fit.measures = TRUE, standardized = TRUE)
 
 
 ## demo on CP fitting score using netUtils
-file_path <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts/0127.rds"
+file_path <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts/0042.rds"
 demo <- readRDS(file_path)
 
 nodes <- demo$nodelist
@@ -661,9 +667,27 @@ g <- graph_from_data_frame(d = edge_list_filtered, vertices = nodelist_filtered,
 cp_fit <- core_periphery(g)
 cp_fit$corr
 
+
 # visualization
 V(g)$core_periphery <- as.factor(cp_fit$vec)  # Core = 1, Periphery = 0
 V(g)$color <- ifelse(V(g)$core_periphery == 1, "red", "blue")
+
+mod_score <- 0.565
+cp_score <- round(cp_fit$corr, 3)
+
+target_node <- "groundwater_sustainability_agency"
+V(g)$label <- NA
+V(g)$label.cex <- 0.6
+V(g)$size <- 3
+
+if (target_node %in% V(g)$name) {
+   V(g)[target_node]$size <- 8
+   V(g)[target_node]$label <- target_node
+   V(g)[target_node]$label.color <- "black"
+   V(g)[target_node]$label.cex <- 0.7
+   V(g)[target_node]$color <- "orange"  # Override color to highlight
+}
+
 plot(g, vertex.size = 5, vertex.label = NA,  
      main = "Core-Periphery Network Structure", 
      vertex.color = V(g)$color)
@@ -678,17 +702,19 @@ plot(g,
      edge.curved = 0.1,         
      edge.color = "gray",       
      edge.width = 0.5,           
-     main = graph_title) 
+     main = "gsp 42") 
 
 legend("topleft", 
-       legend = c("Core", "Periphery"), 
-       col = c("red", "blue"),  
+       legend = c("Core", "Periphery", "GSA (core)"), 
+       col = c("red", "blue", "orange"),  
        pch = 19,                
        pt.cex = 1,              
        cex = 0.8,
        text.width = 0.5,
        bty = "n")             
  
+mtext(sprintf("CP fitting score = %.3f", cp_score), side = 3, line = -1, adj = 1, cex = 0.8)
+mtext(sprintf("Modularity = %.3f", mod_score), side = 3, line = -2, adj = 1, cex = 0.8)
 
 # 5/1 regression of SES on cp_fit_score
 SES_vars <- c(

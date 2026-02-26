@@ -25,7 +25,7 @@ library(lavaan)
 
 ############################## import the network #########################
 ################### isolated graph #########################
-file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
 output_folder <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/graphs/giant_component"
 
@@ -118,9 +118,9 @@ for (i in 1:length(file_paths)) {
 #num_nodes, num_edges, avg_degree, avg_path_length, 
 #centralization, transitivity(local, global), modularity
 
-file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts", pattern = "*.RDS", full.names = TRUE)
+file_paths <- list.files(path = "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts", pattern = "*.RDS", full.names = TRUE)
 file_paths <- file_paths[!grepl("0089.RDS|0053.RDS", file_paths)]
-output_folder_statistics <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/network_statistics/"
+output_folder_statistics <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/"
 output_csv_path <- paste0(output_folder_statistics, "network_statistics_GC.csv")
 merged_dataset_path <- paste0(output_folder_statistics, "merged_dataset_GC.csv")
 
@@ -511,7 +511,7 @@ summary(fit, fit.measures = TRUE, standardized = TRUE)
 
 
 ## demo on CP fitting score using netUtils
-file_path <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_extracts/0127.rds"
+file_path <- "New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper/wendysong/cleaned_unfiltered_extracts/0127.rds"
 demo <- readRDS(file_path)
 
 nodes <- demo$nodelist
