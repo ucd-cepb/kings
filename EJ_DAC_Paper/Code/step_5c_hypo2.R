@@ -78,15 +78,3 @@ stargazer(out_tagged_1, out_agency_1, type = 'text',
 cat("\n=== Out-degree: Tagged vs Agency (MHI) ===\n")
 stargazer(out_tagged_2, out_agency_2, type = 'text',
           column.labels = c("Tagged", "Agency"))
-
-# --- Save HTML tables ---
-# Individual mode tables
-stargazer(out_tagged_1, out_tagged_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h2b_influence_outdegree_tagged.html')
-stargazer(out_agency_1, out_agency_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h2b_influence_outdegree_agency.html')
-
-# Comparison table (tagged vs agency side-by-side)
-stargazer(out_tagged_1, out_agency_1, out_tagged_2, out_agency_2, type = 'html',
-          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-          out = 'EJ_DAC_Paper/Out/mods/h2b_influence_outdegree_comparison.html')

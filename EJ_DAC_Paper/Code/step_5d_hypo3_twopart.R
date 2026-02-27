@@ -7,7 +7,7 @@
 #   Part A: Does DAC predict whether a place is reachable from GSA?
 #           (Logistic GLM)
 #   Part B: Among reachable places, does DAC predict distance to GSA?
-#           (Poisson + Negative Binomial GLM)
+#           (Poisson GLM)
 # Runs both tagged and agency modes.
 
 library(dotenv)
@@ -53,32 +53,17 @@ load_place_nodes <- function(data_dir) {
    return(all_place_nodes)
 }
 
-# --- Load both ---
-cat("Loading tagged network place nodes...\n")
 tagged_places <- load_place_nodes(data_dirs[["tagged"]])
-cat("  N =", nrow(tagged_places), "\n")
 
-cat("Loading agency network place nodes...\n")
 agency_places <- load_place_nodes(data_dirs[["agency"]])
-cat("  N =", nrow(agency_places), "\n")
 
-# --- Descriptives ---
-cat("\n=== Reachability descriptives ===\n")
-cat("Tagged:  ",
-    sum(tagged_places$reachable, na.rm = TRUE), "reachable /",
-    nrow(tagged_places), "total (",
-    round(mean(tagged_places$reachable, na.rm = TRUE) * 100, 1), "%)\n")
-cat("Agency:  ",
-    sum(agency_places$reachable, na.rm = TRUE), "reachable /",
-    nrow(agency_places), "total (",
-    round(mean(agency_places$reachable, na.rm = TRUE) * 100, 1), "%)\n")
 
 cat("\nTagged reachability by DAC:\n")
 tagged_places %>%
    group_by(DAC) %>%
    summarise(n = n(),
              reachable = sum(reachable, na.rm = TRUE),
-             pct = round(mean(reachable, na.rm = TRUE) * 100, 1)) %>%
+             pct = round(mean(reachable/n, na.rm = TRUE) * 100, 1)) %>%
    print()
 
 cat("\nAgency reachability by DAC:\n")
@@ -86,7 +71,7 @@ agency_places %>%
    group_by(DAC) %>%
    summarise(n = n(),
              reachable = sum(reachable, na.rm = TRUE),
-             pct = round(mean(reachable, na.rm = TRUE) * 100, 1)) %>%
+             pct = round(mean(reachable/n, na.rm = TRUE) * 100, 1)) %>%
    print()
 
 # ============================================================================
@@ -116,18 +101,9 @@ cat("\n=== Reachability: Tagged vs Agency (MHI) ===\n")
 stargazer(reach_tagged_2, reach_agency_2, type = 'text',
           column.labels = c("Tagged", "Agency"))
 
-# --- Save HTML ---
-stargazer(reach_tagged_1, reach_tagged_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_reachability_tagged.html')
-stargazer(reach_agency_1, reach_agency_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_reachability_agency.html')
-stargazer(reach_tagged_1, reach_agency_1, reach_tagged_2, reach_agency_2,
-          type = 'html',
-          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-          out = 'EJ_DAC_Paper/Out/mods/h3_reachability_comparison.html')
 
 # ============================================================================
-# PART B: Leader distance conditional on reachable (Poisson + NB)
+# PART B: Leader distance conditional on reachable (Poisson )
 # ============================================================================
 
 cat("\n=== PART B: Leader distance | reachable ===\n")
@@ -155,25 +131,6 @@ dist_agency_pois_1 <- glm(leader_dist ~ DAC + POP_log + incorporated + per_latin
 dist_agency_pois_2 <- glm(leader_dist ~ MHI_log + per_latino + POP_log + incorporated,
                            family = poisson, data = agency_reachable)
 
-# --- Negative Binomial models ---
-dist_tagged_nb_1 <- glm.nb(leader_dist ~ DAC + POP_log + incorporated + per_latino,
-                            data = tagged_reachable)
-dist_tagged_nb_2 <- glm.nb(leader_dist ~ MHI_log + per_latino + POP_log + incorporated,
-                            data = tagged_reachable)
-
-dist_agency_nb_1 <- glm.nb(leader_dist ~ DAC + POP_log + incorporated + per_latino,
-                            data = agency_reachable)
-dist_agency_nb_2 <- glm.nb(leader_dist ~ MHI_log + per_latino + POP_log + incorporated,
-                            data = agency_reachable)
-
-# --- Overdispersion check ---
-cat("\n=== Overdispersion check (residual deviance / df) ===\n")
-cat("Tagged Poisson (DAC):  ",
-    round(dist_tagged_pois_1$deviance / dist_tagged_pois_1$df.residual, 2), "\n")
-cat("Agency Poisson (DAC):  ",
-    round(dist_agency_pois_1$deviance / dist_agency_pois_1$df.residual, 2), "\n")
-cat("(Values >> 1 indicate overdispersion; NB is preferred)\n")
-
 # --- Print Poisson ---
 cat("\n=== Leader distance (Poisson): Tagged vs Agency (DAC) ===\n")
 stargazer(dist_tagged_pois_1, dist_agency_pois_1, type = 'text',
@@ -183,41 +140,3 @@ cat("\n=== Leader distance (Poisson): Tagged vs Agency (MHI) ===\n")
 stargazer(dist_tagged_pois_2, dist_agency_pois_2, type = 'text',
           column.labels = c("Tagged", "Agency"))
 
-# --- Print NB ---
-cat("\n=== Leader distance (NB): Tagged vs Agency (DAC) ===\n")
-stargazer(dist_tagged_nb_1, dist_agency_nb_1, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
-cat("\n=== Leader distance (NB): Tagged vs Agency (MHI) ===\n")
-stargazer(dist_tagged_nb_2, dist_agency_nb_2, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
-# --- Save HTML ---
-# Part B: Poisson
-stargazer(dist_tagged_pois_1, dist_tagged_pois_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_poisson_tagged.html')
-stargazer(dist_agency_pois_1, dist_agency_pois_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_poisson_agency.html')
-stargazer(dist_tagged_pois_1, dist_agency_pois_1,
-          dist_tagged_pois_2, dist_agency_pois_2,
-          type = 'html',
-          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_poisson_comparison.html')
-
-# Part B: Negative Binomial
-stargazer(dist_tagged_nb_1, dist_tagged_nb_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_nb_tagged.html')
-stargazer(dist_agency_nb_1, dist_agency_nb_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_nb_agency.html')
-stargazer(dist_tagged_nb_1, dist_agency_nb_1,
-          dist_tagged_nb_2, dist_agency_nb_2,
-          type = 'html',
-          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_nb_comparison.html')
-
-# --- Poisson vs NB comparison (tagged, DAC spec) ---
-stargazer(dist_tagged_pois_1, dist_tagged_nb_1,
-          dist_agency_pois_1, dist_agency_nb_1,
-          type = 'html',
-          column.labels = c("Poisson", "NB", "Poisson", "NB"),
-          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_poisson_vs_nb.html')

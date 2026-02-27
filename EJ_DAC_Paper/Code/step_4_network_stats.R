@@ -7,7 +7,7 @@
 # CONFIGURATION - Must match the mode used in step_3
 # ============================================================================
 
-network_mode <- "agency"   # Options: "original", "tagged", "agency"
+network_mode <- "tagged"   # Options: "original", "tagged", "agency"
 
 # ============================================================================
 
@@ -101,34 +101,32 @@ net_stats <- function(network_graph, gsp_id) {
    gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa')
    gsa_ins <- c(which(V(network_graph)$name %in% gsa_names2))
 
-   #distance to gsa(s) - WEIGHTED, directed (legacy measure)
-   dists_w <- data.frame(matrix(ncol = length(gsa_ins),
+   #distance to gsa(s) - undirected w/ ceiling
+   dists <- data.frame(matrix(ncol = length(gsa_ins),
                               nrow = vcount(network_graph)))
-   colnames(dists_w) <- paste0('X', gsa_ins)
+   colnames(dists) <- paste0('X', gsa_ins)
 
    for (i in gsa_ins){
-      dist_w <- distances(network_graph,
+      dist <- distances(network_graph,
                         to=i,
-                        mode = 'in',
-                        weights=E(network_graph)$weight
+                        mode = 'all'
                         )
-      dist_w[is.infinite(dist_w)] <- NA
-      dist_w[is.nan(dist_w)] <- NA
-      dists_w[[paste0('X', i)]] <- dist_w
+      dists[[paste0('X', i)]] <- dist
    }
 
-   colnames(dists_w) <- V(network_graph)$name[gsa_ins]
-   leader_dist_min_w <- apply(dists_w, 1, min, na.rm = TRUE)
-
-   leader_dist_min_w_nona <- ifelse(is.infinite(leader_dist_min_w),
-                                    diameter(network_graph, directed=FALSE),
-                                    leader_dist_min_w)
+   colnames(dists) <- V(network_graph)$name[gsa_ins]
+   
+   leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
+   
+   leader_dist_nona <- ifelse(is.infinite(leader_dist_min),
+                              diameter(network_graph),
+                               leader_dist_min)
 
    network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_min_w_nona',
-                                    value = leader_dist_min_w_nona)
+                                    'leader_dist_nona',
+                                    value = leader_dist_nona)
 
-   #distance to gsa(s) - UNWEIGHTED, undirected
+   #distance to gsa(s) - UNWEIGHTED, UNDIRECTED, no ceiling
    dists_uw <- data.frame(matrix(ncol = length(gsa_ins),
                                  nrow = vcount(network_graph)))
    colnames(dists_uw) <- paste0('X', gsa_ins)

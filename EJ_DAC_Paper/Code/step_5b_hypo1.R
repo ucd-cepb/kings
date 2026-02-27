@@ -97,22 +97,3 @@ stargazer(deg_tagged_1, deg_agency_1, type = 'text',
 cat("\n=== Total degree: Tagged vs Agency (MHI) ===\n")
 stargazer(deg_tagged_2, deg_agency_2, type = 'text',
           column.labels = c("Tagged", "Agency"))
-
-# --- Save HTML tables ---
-# Individual mode tables
-stargazer(in_tagged_1, in_tagged_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h2a_influence_indegree_tagged.html')
-stargazer(in_agency_1, in_agency_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h2a_influence_indegree_agency.html')
-stargazer(deg_tagged_1, deg_tagged_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h2a_influence_degree_tagged.html')
-stargazer(deg_agency_1, deg_agency_2, type = 'html',
-          out = 'EJ_DAC_Paper/Out/mods/h2a_influence_degree_agency.html')
-
-# Comparison tables (tagged vs agency side-by-side)
-stargazer(in_tagged_1, in_agency_1, in_tagged_2, in_agency_2, type = 'html',
-          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-          out = 'EJ_DAC_Paper/Out/mods/h2a_influence_indegree_comparison.html')
-stargazer(deg_tagged_1, deg_agency_1, deg_tagged_2, deg_agency_2, type = 'html',
-          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-          out = 'EJ_DAC_Paper/Out/mods/h2a_influence_degree_comparison.html')
