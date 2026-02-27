@@ -1,9 +1,9 @@
 Variable,Mean,SD,Median
-MHI,69351.683,30381.453,65500
-Population,42327.471,192848.004,5435
-DAC,0.505,0.5,1
-Incorporated,0.425,0.495,0
-% Latino,45.333,29.853,40.1
-Indegree,3.52,6.122,1
-Outdegree,2.518,6.307,0
-Leader Distance,8.766,7.348,5.5
+MHI,68304.313,26669.14,65312.5
+Population,59612.586,245619.957,7861
+DAC,0.502,0.501,1
+Incorporated,0.565,0.497,1
+% Latino,46.405,29.552,42.3
+Indegree,3.162,4.344,2
+Outdegree,2.465,5.437,1
+Leader Distance,6.82,6.05,4

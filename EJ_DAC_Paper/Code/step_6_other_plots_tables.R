@@ -10,10 +10,28 @@ library(skimr)
 library(plotly)
 library(RColorBrewer)
 
+# ============================================================================
+# CONFIGURATION - Must match the mode used in step_3 and step_4
+# ============================================================================
+
+network_mode <- "agency"   # Options: "original", "tagged", "agency"
+
+# ============================================================================
 load_dot_env()
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_DACified")
+# --- Directory mapping ---
+data_dirs <- list(
+   original = "/EJ_Paper/cleaned_extracts_DACified",
+   tagged   = "/EJ_Paper/cleaned_extracts_tagged",
+   agency   = "/EJ_Paper/cleaned_extracts_agency"
+)
+
+# --- Output file suffix ---
+mode_suffix <- if (network_mode == "original") "" else paste0("_", network_mode)
+
+network_fp <- paste0(Sys.getenv("BOX_PATH"), data_dirs[[network_mode]])
 extract_list <- list.files(network_fp)
+
 place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
 
 gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
@@ -26,16 +44,19 @@ for (g in seq_along(gsp_ids)) {
    gsp_id <- paste0("gsp_",gsp_ids[g])
    
    nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
-   place_nodes <- nodes %>% 
+   place_nodes <- nodes %>%
+      mutate(across(any_of(c('deg', 'pr', 'pr_w', 'alpha', 'in', 'out', 'eig', 'gsp_id')),
+                    as.numeric)) %>%
       mutate(
          MHI_log = log(MHI),
          POP_log = log(POP),
          is_place = ifelse(is.na(GEOID20), 0, 1)
-      ) %>% 
-      filter(is_place == 1) 
+      ) %>%
+      filter(is_place == 1)
    
    all_place_nodes <- rbind(all_place_nodes, place_nodes)
 }
+
 
 all_places <- bind_rows(place_existance) %>% 
    mutate(DAC = as.factor(DAC),

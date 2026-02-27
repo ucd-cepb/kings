@@ -63,50 +63,14 @@ kable(results, align = c("l", "c", "c", "c"), format = "html",
 ::: {.fragment}
 Note: Original mode still includes isolates; Tagged and Agency modes drop isolates.
 :::
+
 ## Leader Distance Reversal
 The most striking change is in leader distance:
+
 | | Original | Tagged (no isolates) | Agency (no isolates) |
 |---|---|---|---|
 | DAC | **+0.081\*\*** (farther) | **0.008** (NS) | **-0.117\*\*** (closer) |
+
 - In the original network (with isolates), DAC places appeared farther from GSA leadership
 - Removing isolates alone eliminates the effect --- the signal was driven by isolated places assigned to the network diameter
 - In the agency-only network, DAC places are actually **closer** to GSA nodes
-- This suggests GSAs may specifically engage DAC places through direct social connections, even as those places exercise less outgoing influence
-## H0: Place Existence in the Network
-```{r h0_comparison, echo=FALSE}
-h0_results <- tibble::tribble(
-  ~"Version",  ~"Question",                                    ~"DAC Coeff",  ~"Sig",    ~"N",
-  "H0a",       "Does place appear in the unmodified network?", "0.196",       "NS",      "829",
-  "H0b",       "Does place appear in the agency network?",     "0.172",       "NS",      "829"
-)
-kable(h0_results, align = c("l", "l", "c", "c", "c"), format = "html",
-      caption = "H0: Binomial GLM (exists ~ DAC + incorporated + POP_log + per_latino)") %>%
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed"))
-```
-- Neither version finds DAC status predicts plan appearance
-- **Incorporation** is the dominant predictor in both (1.519*** and 1.967***)
-- The agency network shows a stronger incorporation effect --- unincorporated places are even less likely to have social actor connections
-## The Case for Agency + No Isolates
-This specification is preferable on both **theoretical** and **empirical** grounds:
-**Theoretical:**
-- Our hypotheses are about political influence among social actors, not textual co-occurrence with geographic features
-- Isolates with zero social connections are not informative about the degree of influence a place exercises
-**Empirical:**
-- Reveals that the DAC disadvantage is specifically in **exercising** influence (out-degree), not receiving it
-- Uncovers the leader distance reversal --- a finding invisible in the noisy unfiltered network
-- The out-degree result is more robust: it survives the most conservative network specification
-## Summary
-```{r summary_table, echo=FALSE}
-summary_tbl <- tibble::tribble(
-  ~"Hypothesis",     ~"Unfiltered",            ~"Agency (preferred)",
-  "H0: Existence",   "NS",                     "NS",
-  "H1: In-degree",   "Significant (artifact)", "NS --- driven by non-agency edges",
-  "H2: Out-degree",  "Significant",            "Significant --- robust finding",
-  "H3: Degree",      "Significant",            "Weakly significant (p<0.05)",
-  "H4: Leader dist", "DAC farther (+)",         "DAC closer (-) --- reversal"
-)
-kable(summary_tbl, align = c("l", "c", "c"), format = "html") %>%
-  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed")) %>%
-  column_spec(3, bold = TRUE)
-```
-**Bottom line:** DAC communities are not absent from governance networks, but they exercise significantly less outgoing influence on other social actors. The in-degree and leader distance results from the unfiltered network were artifacts of non-agency noise.
