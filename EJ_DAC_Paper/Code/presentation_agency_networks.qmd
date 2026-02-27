@@ -1,0 +1,139 @@
+---
+title: "Agency-Filtered Networks: Updated EJ Hypotheses"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+---
+
+<style>
+.reveal .slides {
+  font-size: 24px;
+}
+.sig { color: #d32f2f; font-weight: bold; }
+.ns { color: #757575; }
+</style>
+
+## Motivation: Why Filter to Agency Nodes?
+
+- The original networks include **all entities** extracted from GSP text: rivers, basins, legal codes, technical plans, data systems, etc.
+- An edge like *"Fresno mentions the Kings River"* is treated the same as *"Fresno collaborates with Tulare County"*
+- Only the latter reflects **political influence** --- the core construct for EJ hypotheses
+- **Agency filtering** restricts networks to social actors capable of exercising political or organizational agency
+
+## Agency Node Types {.scrollable}
+
+```{r agency_types, echo=FALSE}
+library(knitr)
+library(kableExtra)
+library(tibble)
+
+types <- tibble::tribble(
+  ~"Kept (Agency)", ~"Removed (Non-Agency)",
+  "Local_GSA",      "Basin",
+  "Other_GSA",      "Natural_Feature",
+  "District",       "Infrastructure",
+  "Local_Gov",      "Technical",
+  "State_Gov",      "Water_Project",
+  "Federal_Gov",    "Reference",
+  "City",           "Geographic_Unit",
+  "County",         "Legal",
+  "Group",          "Data_System",
+  "NGO",            "Nonsense",
+  "Company",        "",
+  "Person",         ""
+)
+
+kable(types, align = "c", format = "html") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+## Example Network: Before & After
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![All Entity Types](../Out/example_network_tagged.png){width=100%}
+:::
+
+::: {.column width="50%"}
+![Agency Nodes Only](../Out/example_network_agency.png){width=100%}
+:::
+
+::::
+
+::: {.notes}
+Note the removal of green (natural features/basins), grey (technical/reference), and purple (infrastructure/water projects) nodes.
+The remaining network represents the social actor relationships embedded in the GSP text.
+:::
+
+## Degree vs In-degree/Out-degree (Tagged Network)
+
+Using the **unfiltered tagged network**, comparing different centrality measures:
+
+```{r degree_comparison, echo=FALSE}
+deg_compare <- tibble::tribble(
+  ~"Measure",     ~"DAC Coefficient", ~"Std. Error", ~"Significance",
+  "In-degree",    "-0.174",           "(0.052)",     "***",
+  "Out-degree",   "-0.318",           "(0.063)",     "***",
+  "Total degree", "-0.231",           "(0.040)",     "***"
+)
+
+kable(deg_compare, align = c("l", "c", "c", "c"), format = "html",
+      caption = "DAC coefficients from Poisson GLM (tagged network)") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+- **Out-degree** (exercising influence) shows the **strongest** DAC penalty
+- **In-degree** (receiving influence) shows a **weaker** penalty
+- **Total degree** averages them --- losing the directed distinction
+- Directed measures are more informative for the EJ argument
+
+## Unfiltered vs Agency-Filtered: DAC Coefficients {.scrollable}
+
+```{r mode_comparison, echo=FALSE}
+results <- tibble::tribble(
+  ~"Hypothesis",    ~"Original",                ~"Tagged",                  ~"Agency",
+  "In-degree",      "-0.170***",                "-0.174***",                "0.048 (NS)",
+  "Out-degree",     "-0.312***",                "-0.318***",                "-0.240***",
+  "Total degree",   "---",                      "-0.231***",                "-0.074 (NS)",
+  "Leader distance", "0.081**",                 "0.102***",                 "-0.018 (NS)"
+)
+
+kable(results, align = c("l", "c", "c", "c"), format = "html",
+      caption = "DAC coefficients across network modes (Poisson GLM)") %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(4, bold = TRUE)
+```
+
+## What Changed with Agency Filtering?
+
+- **Out-degree survives** ($\beta$ = -0.240***): DAC places exercise less influence on other social actors even after removing non-agency noise
+- **In-degree collapses** ($\beta$ = 0.048, NS): The original in-degree signal was driven by edges to/from non-agency entities (ecological/technical mentions)
+- **Total degree collapses** ($\beta$ = -0.074, NS): Dominated by the now-null in-degree component
+- **Leader distance collapses** ($\beta$ = -0.018, NS): Shortest paths from GSA to places in the unfiltered network ran through non-agency intermediaries (basins, technical documents)
+
+## H0 Revisited: H0a vs H0b
+
+**H0a** (current): Does DAC predict appearance in the *unmodified* network?
+
+- DAC = 0.203 (NS) --- DAC status does not predict plan appearance
+- But: a place can appear just by being mentioned alongside a river or basin
+
+**H0b** (new): Does DAC predict appearance in the *agency-filtered* network (isolates dropped)?
+
+- A place might exist in the full network but have **zero social connections**
+- H0b tests the more meaningful question: are DAC places **socially connected** in the governance network?
+- Isolates dropped = places with no edges to other agency nodes are coded as absent
+
+::: {.callout-note}
+H0b results will be generated by `step_5a_hypo0b.R` and added here.
+:::
+
+## Discussion & Next Steps
+
+1. The **agency filter** is a theoretically motivated robustness check that separates social influence from textual co-occurrence
+2. The key surviving finding: **DAC places exercise less outgoing influence** on other social actors (out-degree)
+3. Previous in-degree and leader distance results were inflated by non-agency edges
+4. **H0b** provides a more meaningful baseline test of DAC representation in the social network
+5. Next: Run `step_5a_hypo0b.R` and incorporate results into the H0b slide
