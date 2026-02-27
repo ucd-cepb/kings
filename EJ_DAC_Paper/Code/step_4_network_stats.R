@@ -145,9 +145,15 @@ net_stats <- function(network_graph, gsp_id) {
    colnames(dists_uw) <- V(network_graph)$name[gsa_ins]
    leader_dist_min <- apply(dists_uw, 1, min, na.rm = TRUE)
 
-   leader_dist <- ifelse(is.infinite(leader_dist_min),
-                         diameter(network_graph, directed = FALSE, weights = NA),
-                         leader_dist_min)
+   # Reachable flag: 1 if finite path to any GSA exists, 0 otherwise
+   reachable <- ifelse(is.infinite(leader_dist_min), 0, 1)
+
+   # leader_dist: raw shortest path distance (NA if unreachable)
+   leader_dist <- ifelse(is.infinite(leader_dist_min), NA, leader_dist_min)
+
+   network_graph <- set_vertex_attr(network_graph,
+                                    'reachable',
+                                    value = reachable)
 
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist',
