@@ -39,6 +39,7 @@ load_place_nodes <- function(data_dir) {
          mutate(
             MHI_log = log(MHI),
             POP_log = log(POP),
+            Basin_Subb = as.factor(Basin_Subb),
             is_place = ifelse(is.na(GEOID20), 0, 1)
          ) %>%
          filter(is_place == 1)
@@ -61,13 +62,13 @@ cat("  N =", nrow(agency_places), "\n")
 # --- Tagged models ---
 lead_tagged_3 <- glm(leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino,
                       family = poisson, data = tagged_places)
-lead_tagged_4 <- glm(leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated,
+lead_tagged_4 <- glm(leader_dist_min_w_nona ~ MHI_log + POP_log + incorporated + per_latino,
                       family = poisson, data = tagged_places)
 
 # --- Agency models ---
 lead_agency_3 <- glm(leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino,
                       family = poisson, data = agency_places)
-lead_agency_4 <- glm(leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated,
+lead_agency_4 <- glm(leader_dist_min_w_nona ~ MHI_log + POP_log + incorporated + per_latino,,
                       family = poisson, data = agency_places)
 
 # --- Print comparison tables ---
