@@ -2,9 +2,12 @@
 # Hypothesis 3: Distance to Leadership (GSA)
 # Tests whether DAC places are farther from GSA leadership.
 # Runs both tagged and agency modes and outputs comparison tables.
+# Two distance measures:
+#   - leader_dist: unweighted, undirected (preferred)
+#   - leader_dist_min_w_nona: weighted, directed (legacy)
 # Models: Poisson GLM
-#   - leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino
-#   - leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated
+#   - leader_dist ~ DAC + POP_log + incorporated + per_latino
+#   - leader_dist ~ MHI_log + per_latino + POP_log + incorporated
 
 library(dotenv)
 library(tidyverse)
@@ -58,35 +61,70 @@ cat("Loading agency network place nodes...\n")
 agency_places <- load_place_nodes(data_dirs[["agency"]])
 cat("  N =", nrow(agency_places), "\n")
 
+# ============================================================================
+# leader_dist: unweighted, undirected (preferred)
+# ============================================================================
+
 # --- Tagged models ---
-lead_tagged_3 <- glm(leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino,
+lead_tagged_1 <- glm(leader_dist ~ DAC + POP_log + incorporated + per_latino,
                       family = poisson, data = tagged_places)
-lead_tagged_4 <- glm(leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated,
+lead_tagged_2 <- glm(leader_dist ~ MHI_log + per_latino + POP_log + incorporated,
                       family = poisson, data = tagged_places)
 
 # --- Agency models ---
-lead_agency_3 <- glm(leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino,
+lead_agency_1 <- glm(leader_dist ~ DAC + POP_log + incorporated + per_latino,
                       family = poisson, data = agency_places)
-lead_agency_4 <- glm(leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated,
+lead_agency_2 <- glm(leader_dist ~ MHI_log + per_latino + POP_log + incorporated,
                       family = poisson, data = agency_places)
 
-# --- Print comparison tables ---
-cat("\n=== Leader distance: Tagged vs Agency (DAC) ===\n")
-stargazer(lead_tagged_3, lead_agency_3, type = 'text',
+# --- Print ---
+cat("\n=== Leader distance (unweighted): Tagged vs Agency (DAC) ===\n")
+stargazer(lead_tagged_1, lead_agency_1, type = 'text',
           column.labels = c("Tagged", "Agency"))
 
-cat("\n=== Leader distance: Tagged vs Agency (MHI) ===\n")
-stargazer(lead_tagged_4, lead_agency_4, type = 'text',
+cat("\n=== Leader distance (unweighted): Tagged vs Agency (MHI) ===\n")
+stargazer(lead_tagged_2, lead_agency_2, type = 'text',
           column.labels = c("Tagged", "Agency"))
 
-# --- Save HTML tables ---
-# Individual mode tables
-stargazer(lead_tagged_3, lead_tagged_4, type = 'html',
+# --- Save HTML ---
+stargazer(lead_tagged_1, lead_tagged_2, type = 'html',
           out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_tagged.html')
-stargazer(lead_agency_3, lead_agency_4, type = 'html',
+stargazer(lead_agency_1, lead_agency_2, type = 'html',
           out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_agency.html')
-
-# Comparison table (tagged vs agency side-by-side)
-stargazer(lead_tagged_3, lead_agency_3, lead_tagged_4, lead_agency_4, type = 'html',
+stargazer(lead_tagged_1, lead_agency_1, lead_tagged_2, lead_agency_2, type = 'html',
           column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
           out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_comparison.html')
+
+# ============================================================================
+# leader_dist_min_w_nona: weighted, directed (legacy)
+# ============================================================================
+
+# --- Tagged models ---
+lead_w_tagged_1 <- glm(leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino,
+                        family = poisson, data = tagged_places)
+lead_w_tagged_2 <- glm(leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated,
+                        family = poisson, data = tagged_places)
+
+# --- Agency models ---
+lead_w_agency_1 <- glm(leader_dist_min_w_nona ~ DAC + POP_log + incorporated + per_latino,
+                        family = poisson, data = agency_places)
+lead_w_agency_2 <- glm(leader_dist_min_w_nona ~ MHI_log + per_latino + POP_log + incorporated,
+                        family = poisson, data = agency_places)
+
+# --- Print ---
+cat("\n=== Leader distance (weighted, legacy): Tagged vs Agency (DAC) ===\n")
+stargazer(lead_w_tagged_1, lead_w_agency_1, type = 'text',
+          column.labels = c("Tagged", "Agency"))
+
+cat("\n=== Leader distance (weighted, legacy): Tagged vs Agency (MHI) ===\n")
+stargazer(lead_w_tagged_2, lead_w_agency_2, type = 'text',
+          column.labels = c("Tagged", "Agency"))
+
+# --- Save HTML ---
+stargazer(lead_w_tagged_1, lead_w_tagged_2, type = 'html',
+          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_weighted_tagged.html')
+stargazer(lead_w_agency_1, lead_w_agency_2, type = 'html',
+          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_weighted_agency.html')
+stargazer(lead_w_tagged_1, lead_w_agency_1, lead_w_tagged_2, lead_w_agency_2, type = 'html',
+          column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
+          out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_weighted_comparison.html')
