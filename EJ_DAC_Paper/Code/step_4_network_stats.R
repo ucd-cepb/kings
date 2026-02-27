@@ -101,7 +101,7 @@ net_stats <- function(network_graph, gsp_id) {
    gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa')
    gsa_ins <- c(which(V(network_graph)$name %in% gsa_names2))
 
-   #distance to gsa(s) WEIGHTED
+   #distance to gsa(s) - WEIGHTED, directed (legacy measure)
    dists_w <- data.frame(matrix(ncol = length(gsa_ins),
                               nrow = vcount(network_graph)))
    colnames(dists_w) <- paste0('X', gsa_ins)
@@ -110,7 +110,8 @@ net_stats <- function(network_graph, gsp_id) {
       dist_w <- distances(network_graph,
                         to=i,
                         mode = 'in',
-                        weights=E(network_graph)$weight)
+                        weights=E(network_graph)$weight
+                        )
       dist_w[is.infinite(dist_w)] <- NA
       dist_w[is.nan(dist_w)] <- NA
       dists_w[[paste0('X', i)]] <- dist_w
@@ -120,12 +121,37 @@ net_stats <- function(network_graph, gsp_id) {
    leader_dist_min_w <- apply(dists_w, 1, min, na.rm = TRUE)
 
    leader_dist_min_w_nona <- ifelse(is.infinite(leader_dist_min_w),
-                                    diameter(network_graph),
+                                    diameter(network_graph, directed=FALSE),
                                     leader_dist_min_w)
 
    network_graph <- set_vertex_attr(network_graph,
                                     'leader_dist_min_w_nona',
                                     value = leader_dist_min_w_nona)
+
+   #distance to gsa(s) - UNWEIGHTED, undirected
+   dists_uw <- data.frame(matrix(ncol = length(gsa_ins),
+                                 nrow = vcount(network_graph)))
+   colnames(dists_uw) <- paste0('X', gsa_ins)
+
+   for (i in gsa_ins){
+      d <- distances(network_graph,
+                     to = i,
+                     mode = 'all')
+      d[is.infinite(d)] <- NA
+      d[is.nan(d)] <- NA
+      dists_uw[[paste0('X', i)]] <- d
+   }
+
+   colnames(dists_uw) <- V(network_graph)$name[gsa_ins]
+   leader_dist_min <- apply(dists_uw, 1, min, na.rm = TRUE)
+
+   leader_dist <- ifelse(is.infinite(leader_dist_min),
+                         diameter(network_graph, directed = FALSE, weights = NA),
+                         leader_dist_min)
+
+   network_graph <- set_vertex_attr(network_graph,
+                                    'leader_dist',
+                                    value = leader_dist)
 
    network_graph <- set_vertex_attr(network_graph,
                                     'GSA',
