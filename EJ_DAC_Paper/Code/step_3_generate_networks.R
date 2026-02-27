@@ -396,12 +396,6 @@ net_graph <- function(networklist, gsp_id) {
                                                            projects_mgmt_actions = "sum",
                                                            "ignore"))
 
-   # Remove isolates (nodes with no edges) from all network modes
-   isolates <- which(igraph::degree(network_graph, mode = "all") == 0)
-   if (length(isolates) > 0) {
-      network_graph <- igraph::delete_vertices(network_graph, isolates)
-   }
-
    return(network_graph)
 }
 
