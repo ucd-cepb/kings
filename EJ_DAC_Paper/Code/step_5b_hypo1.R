@@ -11,7 +11,7 @@
 # CONFIGURATION - Must match the mode used in step_3 and step_4
 # ============================================================================
 
-network_mode <- "tagged"   # Options: "original", "tagged", "agency"
+network_mode <- "agency"   # Options: "original", "tagged", "agency"
 
 # ============================================================================
 

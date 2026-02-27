@@ -9,7 +9,7 @@
 # CONFIGURATION - Must match the mode used in step_3 and step_4
 # ============================================================================
 
-network_mode <- "tagged"   # Options: "original", "tagged", "agency"
+network_mode <- "agency"   # Options: "original", "tagged", "agency"
 
 # ============================================================================
 
@@ -60,6 +60,8 @@ for (g in seq_along(gsp_ids)) {
 
    all_place_nodes <- rbind(all_place_nodes, place_nodes)
 }
+
+hist(all_place_nodes$leader_dist_min_w_nona)
 
 lead_mod_3 <- glm(leader_dist_min_w_nona ~ DAC +
                      POP_log +

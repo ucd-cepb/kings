@@ -13,11 +13,11 @@ load_dot_env()
 
 # --- Pick a GSP to visualize ---
 # Choose a mid-sized network with a good mix of agency and non-agency nodes
-example_gsp <- "0042.RDS"
+example_gsp <- "0150.RDS"
 
 # --- Load networks ---
-tagged_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/processed_networks_tagged/")
-agency_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/processed_networks_agency/")
+tagged_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_tagged/")
+agency_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_agency/")
 
 net_tagged <- readRDS(paste0(tagged_fp, example_gsp))
 net_agency <- readRDS(paste0(agency_fp, example_gsp))
@@ -70,7 +70,7 @@ plot_graph <- function(igraph_obj, title = NULL) {
     geom_edge_link(aes(edge_alpha = weight), show.legend = FALSE) +
     geom_node_point(
       aes(color = entity_type, fill = entity_type,
-          shape = entity_type, size = degree),
+          shape = entity_type, size = deg),
       stroke = 1.2
     ) +
     scale_color_manual(values = node_type_colors, breaks = node_type_levels,
@@ -99,22 +99,5 @@ p_tagged <- plot_graph(net_tagged, title = paste0("GSP ", gsp_label, ": All Enti
 set.seed(42)
 p_agency <- plot_graph(net_agency, title = paste0("GSP ", gsp_label, ": Agency Nodes Only"))
 
-# --- Save ---
-ggsave(p_tagged,
-       filename = "EJ_DAC_Paper/Out/example_network_tagged.png",
-       width = 12, height = 12, dpi = 300)
-
-ggsave(p_agency,
-       filename = "EJ_DAC_Paper/Out/example_network_agency.png",
-       width = 12, height = 12, dpi = 300)
-
-cat("Saved example_network_tagged.png and example_network_agency.png\n")
-
-# --- Print summary stats ---
-cat("\nTagged network:\n")
-cat("  Nodes:", vcount(net_tagged), "\n")
-cat("  Edges:", ecount(net_tagged), "\n")
-
-cat("\nAgency network:\n")
-cat("  Nodes:", vcount(net_agency), "\n")
-cat("  Edges:", ecount(net_agency), "\n")
+p_tagged
+p_agency
