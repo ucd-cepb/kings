@@ -42,7 +42,8 @@ load_place_nodes <- function(data_dir) {
          mutate(
             MHI_log = log(MHI),
             POP_log = log(POP),
-            is_place = ifelse(is.na(GEOID20), 0, 1)
+            is_place = ifelse(is.na(GEOID20), 0, 1),
+            gsp_id = as.factor(gsp_ids[g])
          ) %>%
          filter(is_place == 1)
 
@@ -69,15 +70,6 @@ lead_w_agency_2 <- glm(leader_dist_nona ~ MHI_log + per_latino + POP_log + incor
                         family = poisson, data = agency_places)
 
 # --- Print ---
-stargazer(lead_w_tagged_1, lead_w_tagged_2, type = 'text')
+stargazer(lead_w_tagged_1, lead_w_tagged_2, lead_w_agency_1, lead_w_agency_2, type = 'text',
+          column.labels = c("Tagged", "Tagged", "Agency", "Agency"))
 
-stargazer(lead_w_agency_1, lead_w_agency_2, type = 'text')
-
-# --- Save HTML ---
-# stargazer(lead_w_tagged_1, lead_w_tagged_2, type = 'html',
-#           out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_weighted_tagged.html')
-# stargazer(lead_w_agency_1, lead_w_agency_2, type = 'html',
-#           out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_weighted_agency.html')
-# stargazer(lead_w_tagged_1, lead_w_agency_1, lead_w_tagged_2, lead_w_agency_2, type = 'html',
-#           column.labels = c("Tagged", "Agency", "Tagged", "Agency"),
-#           out = 'EJ_DAC_Paper/Out/mods/h3_leaderdist_weighted_comparison.html')

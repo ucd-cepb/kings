@@ -71,10 +71,5 @@ out_agency_2 <- glm(`out_w` ~ MHI_log + POP_log + incorporated + per_latino,
                      family = poisson, data = agency_places)
 
 # --- Print comparison tables ---
-cat("\n=== Out-degree: Tagged vs Agency (DAC) ===\n")
-stargazer(out_tagged_1, out_agency_1, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
-cat("\n=== Out-degree: Tagged vs Agency (MHI) ===\n")
-stargazer(out_tagged_2, out_agency_2, type = 'text',
-          column.labels = c("Tagged", "Agency"))
+stargazer(out_tagged_1, out_tagged_2, out_agency_1, out_agency_2, type = 'text',
+          column.labels = c("Tagged","Tagged", "Agency",  "Agency"))

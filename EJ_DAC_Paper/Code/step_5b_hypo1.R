@@ -82,18 +82,8 @@ deg_agency_2 <- glm(`deg_w` ~ MHI_log + POP_log + incorporated + per_latino,
                      family = poisson, data = agency_places)
 
 # --- Print comparison tables ---
-cat("\n=== In-degree: Tagged vs Agency (DAC) ===\n")
-stargazer(in_tagged_1, in_agency_1, type = 'text',
-          column.labels = c("Tagged", "Agency"))
+stargazer(in_tagged_1, in_tagged_2, in_agency_1, in_agency_2, type = 'text',
+          column.labels = c("Tagged (DAC)", "Tagged (MHI)", "Agency (DAC)", "Agency (MHI)"))
 
-cat("\n=== In-degree: Tagged vs Agency (MHI) ===\n")
-stargazer(in_tagged_2, in_agency_2, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
-cat("\n=== Total degree: Tagged vs Agency (DAC) ===\n")
-stargazer(deg_tagged_1, deg_agency_1, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
-cat("\n=== Total degree: Tagged vs Agency (MHI) ===\n")
-stargazer(deg_tagged_2, deg_agency_2, type = 'text',
-          column.labels = c("Tagged", "Agency"))
+stargazer(deg_tagged_1, deg_tagged_2, deg_agency_1, deg_agency_2, type = 'text',
+          column.labels = c("Tagged (DAC)", "Tagged (MHI)", "Agency (DAC)", "Agency (MHI)"))

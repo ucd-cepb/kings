@@ -93,13 +93,8 @@ reach_agency_2 <- glm(reachable ~ MHI_log + per_latino + POP_log + incorporated,
                        family = binomial, data = agency_places)
 
 # --- Print ---
-cat("\n=== Reachability: Tagged vs Agency (DAC) ===\n")
-stargazer(reach_tagged_1, reach_agency_1, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
-cat("\n=== Reachability: Tagged vs Agency (MHI) ===\n")
-stargazer(reach_tagged_2, reach_agency_2, type = 'text',
-          column.labels = c("Tagged", "Agency"))
+stargazer(reach_tagged_1, reach_tagged_2, reach_agency_1, reach_agency_2, type = 'text',
+          column.labels = c("Tagged (DAC)", "Tagged (MHI)", "Agency (DAC)", "Agency (MHI)"))
 
 
 # ============================================================================
@@ -131,12 +126,8 @@ dist_agency_pois_1 <- glm(leader_dist ~ DAC + POP_log + incorporated + per_latin
 dist_agency_pois_2 <- glm(leader_dist ~ MHI_log + per_latino + POP_log + incorporated,
                            family = poisson, data = agency_reachable)
 
-# --- Print Poisson ---
-cat("\n=== Leader distance (Poisson): Tagged vs Agency (DAC) ===\n")
-stargazer(dist_tagged_pois_1, dist_agency_pois_1, type = 'text',
-          column.labels = c("Tagged", "Agency"))
+stargazer(dist_tagged_pois_1, dist_tagged_pois_2, type = 'text',
+          column.labels = c("Tagged (DAC)", "Tagged (MHI)"))
 
-cat("\n=== Leader distance (Poisson): Tagged vs Agency (MHI) ===\n")
-stargazer(dist_tagged_pois_2, dist_agency_pois_2, type = 'text',
-          column.labels = c("Tagged", "Agency"))
-
+stargazer(dist_agency_pois_1, dist_agency_pois_2, type = 'text',
+          column.labels = c("Agency (DAC)", "Agency (MHI)"))
