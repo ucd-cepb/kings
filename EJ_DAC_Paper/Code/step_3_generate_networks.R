@@ -8,7 +8,7 @@
 # CONFIGURATION - Change this to switch between network modes
 # ============================================================================
 
-network_mode <- "agency"   # Options: "original", "tagged", "agency"
+network_mode <- "tagged"   # Options: "original", "tagged", "agency"
 
 # Entity types considered to have agency (social actors)
 agency_types <- c("Local_GSA", "Other_GSA", "District", "Local_Gov",
@@ -58,9 +58,7 @@ page_features <- tibble(readRDS(pages_fp)) %>%
    filter(is_comment == FALSE & is_reference == FALSE) %>%
    mutate(original_page_num = as.numeric(page_num),
           page_num = ave(1:nrow(.), gsp_id, FUN = seq_along)) %>%
-   select(c("gsp_id", "page_num", "admin", "basin_plan",
-            "sust_criteria", "monitoring_networks",
-            "projects_mgmt_actions", "is_comment", "is_reference", "original_page_num"))
+   dplyr::select(c("gsp_id", "page_num"))
 
 # verb-based edgelist
 edge_fp <- paste0(Sys.getenv("BOX_PATH"), "/Verb_Analysis_Paper/edgelist_with_verb_meta")
@@ -68,14 +66,14 @@ ve <- readRDS(edge_fp) %>%
    as_tibble() %>%
    filter(!is.na(source) & !is.na(target)) %>%
    filter(head_verb_lemma %in% wl) %>%
-   select(-c(2:10)) %>%
+   dplyr::select(-c(2:10)) %>%
    mutate(GSP_ID = as.numeric(gsp_id),
           page_num = as.numeric(stringr::str_remove(stringr::str_remove(doc_sent_verb,
                                                                         ".*pdf"),
                                                     "_.*"))) %>%
-   select(-c(gsp_id, doc_sent_verb)) %>%
-   select(source, target, GSP_ID, doc_sent_parent, everything()) %>%
-   select(-c(24:124))
+   dplyr::select(-c(gsp_id, doc_sent_verb)) %>%
+   dplyr::select(source, target, GSP_ID, doc_sent_parent, everything()) %>%
+   dplyr::select(-c(24:124))
 
 ve_w_sections <- ve %>%
    left_join(page_features, by = c("GSP_ID" = "gsp_id",
@@ -87,12 +85,12 @@ if (network_mode %in% c("tagged", "agency")) {
    # Entity type lookups (pre-computed, avoids LLM API calls)
    entity_lookup_raw <- read.csv("Network_Structure_Paper/Out/all_nodes_raw.csv") %>%
       tibble() %>%
-      select(name, entity_type, AI_TAGGED, gsp_id) %>%
+      dplyr::select(name, entity_type, AI_TAGGED, gsp_id) %>%
       filter(!is.na(entity_type))
 
    entity_lookup_agg <- read.csv("Network_Structure_Paper/Out/all_nodes_cleaned.csv") %>%
       tibble() %>%
-      select(name, entity_type, AI_TAGGED) %>%
+      dplyr::select(name, entity_type, AI_TAGGED) %>%
       filter(!is.na(entity_type))
 
    # GSA names for rule-based tagging fallback
@@ -106,7 +104,7 @@ if (network_mode %in% c("tagged", "agency")) {
       tibble() %>%
       mutate(Abbr = tolower(Abbr)) %>%
       rename(govsci_agency = Agency, govsci_level = State) %>%
-      select(-X)
+      dplyr::select(-X)
    govsci_dict2 <- govsci_dict1 %>%
       filter(str_detect(govsci_agency, "united_states")) %>%
       mutate(govsci_agency = str_replace(govsci_agency, "united_states", "us"))
@@ -128,7 +126,7 @@ if (network_mode %in% c("tagged", "agency")) {
                 NAME = str_remove(NAME, " city, california"),
                 NAME = str_remove(NAME, " town, california"),
                 NAME = str_replace_all(NAME, " ", "_")) %>%
-         select(NAME) %>% distinct()
+         dplyr::select(NAME) %>% distinct()
       saveRDS(ca_places1, ca_places_fp)
    }
    ca_places2 <- ca_places1 %>% mutate(NAME = paste("city_of", NAME, sep = "_"))
@@ -144,7 +142,7 @@ if (network_mode %in% c("tagged", "agency")) {
          mutate(NAME = tolower(NAME),
                 NAME = str_remove(NAME, " county, california"),
                 NAME = str_replace_all(NAME, " ", "_")) %>%
-         select(NAME) %>% distinct()
+         dplyr::select(NAME) %>% distinct()
       saveRDS(ca_counties1, ca_counties_fp)
    }
    ca_counties2 <- ca_counties1 %>% mutate(NAME = paste(NAME, "county", sep = "_"))
@@ -225,7 +223,7 @@ if (network_mode %in% c("tagged", "agency")) {
          left_join(govsci_by_abbr, by = join_by(entity_name == Abbr)) %>%
          mutate(govsci_level = coalesce(govsci_level.x, govsci_level.y)) %>%
          mutate(govsci_level = ifelse(is.na(govsci_level), "not_gov", tolower(govsci_level))) %>%
-         select(-c("Abbr", "govsci_agency", "govsci_level.x", "govsci_level.y"))
+         dplyr::select(-c("Abbr", "govsci_agency", "govsci_level.x", "govsci_level.y"))
 
       nl <- nl %>%
          mutate(
@@ -266,7 +264,7 @@ if (network_mode %in% c("tagged", "agency")) {
                TECHNICAL == 1 ~ "Technical", DISTRICT2 == 1 ~ "District",
                TRUE ~ NA_character_)
          ) %>%
-         select(-c(CITY, COUNTY, BASIN, NATURAL_FEATURE, INFRASTRUCTURE,
+         dplyr::select(-c(CITY, COUNTY, BASIN, NATURAL_FEATURE, INFRASTRUCTURE,
                    OTHER_GSA, LOCAL_GOV, STATE_GOV, FEDERAL_GOV,
                    GROUP, DATA, WATER_PROJECT, REFERENCE, OTHER_GSA2,
                    DISTRICT, DISTRICT2, GEO_UNIT, LEGAL, TECHNICAL,
@@ -288,7 +286,7 @@ net_process_original <- function(file, gsp_id) {
 
    nl <- nl %>%
       left_join(places_gsp, by = join_by(entity_name == NAME20)) %>%
-      select(-c(entity_type, num_appearances))
+      dplyr::select(-c(entity_type, num_appearances))
 
    el <- ve_w_sections %>%
       filter(GSP_ID == gsp_id) %>%
@@ -302,19 +300,19 @@ net_process_original <- function(file, gsp_id) {
 # net_process: tagged/agency mode (entity_type + place/DAC + optional filter)
 # ============================================================================
 
-net_process_tagged <- function(file, gsp_id, agency_only = FALSE) {
+net_process_tagged <- function(file, gsp_id, remove_nonsense = TRUE, agency_only = FALSE) {
    temp <- readRDS(file)
    nl <- tibble(temp$nodelist) %>%
       mutate(entity_name = str_remove(entity_name, "_s$"),
              entity_name = str_replace(entity_name, "_s_", "s_")) %>%
-      select(-entity_type) %>%
+      dplyr::select(-entity_type) %>%
       group_by(entity_name) %>%
       summarise(num_appearances = sum(num_appearances), .groups = "drop")
 
    # Step 1: Per-GSP lookup
    gsp_lookup <- entity_lookup_raw %>%
       filter(gsp_id == !!gsp_id) %>%
-      select(name, entity_type, AI_TAGGED) %>%
+      dplyr::select(name, entity_type, AI_TAGGED) %>%
       distinct(name, .keep_all = TRUE)
    nl <- nl %>%
       left_join(gsp_lookup, by = c("entity_name" = "name"))
@@ -327,37 +325,41 @@ net_process_tagged <- function(file, gsp_id, agency_only = FALSE) {
          left_join(agg_match, by = c("entity_name" = "name"), suffix = c("", "_agg")) %>%
          mutate(entity_type = coalesce(entity_type, entity_type_agg),
                 AI_TAGGED = coalesce(AI_TAGGED, AI_TAGGED_agg)) %>%
-         select(-c(entity_type_agg, AI_TAGGED_agg))
+         dplyr::select(-c(entity_type_agg, AI_TAGGED_agg))
    }
 
    # Step 3: Rule-based tagging fallback
    still_untagged_names <- nl %>% filter(is.na(entity_type)) %>% pull(entity_name)
    if (length(still_untagged_names) > 0) {
       untagged_nl <- nl %>% filter(entity_name %in% still_untagged_names) %>%
-         select(entity_name, num_appearances)
+         dplyr::select(entity_name, num_appearances)
       rule_tagged <- tag_nodes_first(untagged_nl, gsp_id) %>%
-         select(entity_name, entity_type_rule = entity_type) %>%
+         dplyr::select(entity_name, entity_type_rule = entity_type) %>%
          distinct(entity_name, .keep_all = TRUE)
       nl <- nl %>%
          left_join(rule_tagged, by = "entity_name") %>%
          mutate(entity_type = coalesce(entity_type, entity_type_rule)) %>%
-         select(-entity_type_rule)
+         dplyr::select(-entity_type_rule)
    }
 
    if (!"AI_TAGGED" %in% colnames(nl)) nl$AI_TAGGED <- 0
    nl <- nl %>% mutate(AI_TAGGED = replace_na(AI_TAGGED, 0))
-
-   # Step 4: Agency filter (before place merge so edges are filtered correctly)
+   
+   # Step 4: Other filter
+   if (remove_nonsense) {
+      nl <- nl %>% filter(entity_type != "Nonsense")
+   }
+   # Step 5: Agency filter (before place merge so edges are filtered correctly)
    if (agency_only) {
       nl <- nl %>% filter(entity_type %in% agency_types)
    }
 
-   # Step 5: Merge place/DAC demographics
+   # Step 6: Merge place/DAC demographics
    places_gsp <- all_places %>% filter(GSP_ID == gsp_id)
    nl <- nl %>%
       left_join(places_gsp, by = join_by(entity_name == NAME20))
 
-   # Step 6: Build edgelist (with name cleaning + filter to nodelist)
+   # Step 7: Build edgelist (with name cleaning + filter to nodelist)
    el <- ve_w_sections %>%
       filter(GSP_ID == gsp_id) %>%
       mutate(source = str_remove(source, "_s$"),
