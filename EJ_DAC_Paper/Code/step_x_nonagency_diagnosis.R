@@ -95,7 +95,7 @@ for (g in seq_along(gsp_ids_tagged)) {
       gsp_id   = gsp_ids_tagged[g],
       is_place = ifelse(is.na(GEOID20), 0, 1)
     )
-  all_nodes_tagged <- bind_rows(all_nodes_tagged, nodes)
+  all_nodes_tagged <- rbind(all_nodes_tagged, nodes)
 }
 
 node_type_summary <- all_nodes_tagged %>%
@@ -108,7 +108,6 @@ node_type_summary <- all_nodes_tagged %>%
 
 cat("\n=== NODE APPEARANCES BY ENTITY TYPE (all tagged networks) ===\n")
 print(node_type_summary, n = Inf)
-write_csv(node_type_summary, paste0(out_dir, "diag_node_type_counts.csv"))
 
 # ============================================================================
 # SECTION 2: Neighbor analysis — what types of nodes are DAC/non-DAC places
@@ -200,7 +199,6 @@ neighbor_agency_summary <- place_neighbor_types %>%
 
 cat("\n=== AGENCY vs NON-AGENCY EDGE SHARE BY DAC STATUS AND DIRECTION ===\n")
 print(neighbor_agency_summary %>% select(DAC_label, direction, agency_label, n_edges, total_edges, pct))
-write_csv(neighbor_agency_summary, paste0(out_dir, "diag_neighbor_agency_split.csv"))
 
 # ============================================================================
 # SECTION 4: Non-agency neighbor types by DAC status and direction
@@ -217,7 +215,6 @@ nonagency_type_summary <- place_neighbor_types %>%
 
 cat("\n=== TOP NON-AGENCY NEIGHBOR TYPES BY DAC STATUS AND DIRECTION ===\n")
 print(nonagency_type_summary %>% group_by(DAC_label, direction) %>% slice_head(n = 6), n = Inf)
-write_csv(nonagency_type_summary, paste0(out_dir, "diag_nonagency_neighbor_types.csv"))
 
 # Agency neighbor type breakdown (excluding City-to-City / place-to-place)
 agency_type_summary <- place_neighbor_types %>%
@@ -231,7 +228,7 @@ agency_type_summary <- place_neighbor_types %>%
 
 cat("\n=== AGENCY NEIGHBOR TYPES (excl. City/County) BY DAC STATUS ===\n")
 print(agency_type_summary, n = Inf)
-write_csv(agency_type_summary, paste0(out_dir, "diag_agency_neighbor_types.csv"))
+
 
 # ============================================================================
 # SECTION 5: Degree loss — compare tagged vs agency network metrics for places
@@ -304,7 +301,6 @@ degree_loss_summary <- degree_comparison %>%
 
 cat("\n=== DEGREE LOSS SUMMARY: TAGGED vs AGENCY NETWORKS ===\n")
 print(as.data.frame(t(degree_loss_summary)), row.names = TRUE)
-write_csv(degree_loss_summary, paste0(out_dir, "diag_degree_loss_summary.csv"))
 
 # ============================================================================
 # SECTION 6: Isolate analysis — who becomes isolated when non-agency nodes removed?
@@ -330,7 +326,6 @@ isolate_status <- degree_comparison %>%
 
 cat("\n=== ISOLATE STATUS BY DAC STATUS ===\n")
 print(isolate_status)
-write_csv(isolate_status, paste0(out_dir, "diag_isolate_status.csv"))
 
 # ============================================================================
 # VISUALIZATIONS
@@ -361,7 +356,9 @@ p1 <- ggplot(p1_data, aes(x = DAC_label, y = pct, fill = agency_label)) +
   theme_minimal(base_size = 12) +
   theme(legend.position = "bottom")
 
-ggsave(paste0(out_dir, "diag_p1_agency_edge_share.png"), p1, width = 7, height = 5)
+p1
+
+# ggsave(paste0(out_dir, "diag_p1_agency_edge_share.png"), p1, width = 7, height = 5)
 
 # --- PLOT 2: Non-agency neighbor types by DAC status and direction ---
 
@@ -390,7 +387,9 @@ p2 <- nonagency_type_summary %>%
   theme_minimal(base_size = 12) +
   theme(legend.position = "bottom")
 
-ggsave(paste0(out_dir, "diag_p2_nonagency_types.png"), p2, width = 10, height = 5)
+p2
+
+# ggsave(paste0(out_dir, "diag_p2_nonagency_types.png"), p2, width = 10, height = 5)
 
 # --- PLOT 3: Mean degree comparison (tagged vs agency) by DAC status ---
 
@@ -418,7 +417,9 @@ p3 <- ggplot(p3_data,
   theme_minimal(base_size = 12) +
   theme(legend.position = "bottom")
 
-ggsave(paste0(out_dir, "diag_p3_degree_comparison.png"), p3, width = 8, height = 5)
+p3
+
+# ggsave(paste0(out_dir, "diag_p3_degree_comparison.png"), p3, width = 8, height = 5)
 
 # --- PLOT 4: Degree loss magnitude by DAC status ---
 
@@ -446,7 +447,9 @@ p4 <- ggplot(p4_data, aes(x = DAC_label, y = value, fill = DAC_label)) +
   theme_minimal(base_size = 12) +
   theme(legend.position = "none")
 
-ggsave(paste0(out_dir, "diag_p4_degree_loss.png"), p4, width = 7, height = 6)
+p4
+
+# ggsave(paste0(out_dir, "diag_p4_degree_loss.png"), p4, width = 7, height = 6)
 
 # --- PLOT 5: Full entity type breakdown (in + out combined) for DAC vs non-DAC ---
 
@@ -490,7 +493,9 @@ p5 <- ggplot(p5_data, aes(x = entity_type, y = pct, fill = DAC_label)) +
   theme_minimal(base_size = 12) +
   theme(legend.position = "bottom")
 
-ggsave(paste0(out_dir, "diag_p5_all_neighbor_types.png"), p5, width = 9, height = 6)
+p5
+
+# ggsave(paste0(out_dir, "diag_p5_all_neighbor_types.png"), p5, width = 9, height = 6)
 
 # --- PLOT 6: Leader distance comparison ---
 
@@ -515,7 +520,9 @@ p6 <- ggplot(p6_data, aes(x = network_lab, y = mean_ld, fill = DAC_label,
   theme_minimal(base_size = 12) +
   theme(legend.position = "bottom")
 
-ggsave(paste0(out_dir, "diag_p6_leader_dist_comparison.png"), p6, width = 6, height = 5)
+p6
+
+# ggsave(paste0(out_dir, "diag_p6_leader_dist_comparison.png"), p6, width = 6, height = 5)
 
 # --- PANEL SUMMARY: key plots combined ---
 
