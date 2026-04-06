@@ -18,7 +18,7 @@ m0s <- vector(mode = "list", length = 117)
 m1s <- vector(mode = "list", length = 117)
 m2s <- vector(mode = "list", length = 117)
 
-for(k in 1:length(layered_nets)){
+for(k in 112:length(layered_nets)){
    #mnet <- ergm.multi::combine_networks(net_list,blockID.vattr = 'layer')
    
    control = control.ergm(main.method = "Stochastic-Approximation",MPLE.maxit = 1e3,MPLE.covariance.sim.burnin = 500,
@@ -62,13 +62,24 @@ saveRDS(m2s, "sample_of_fullmodels.RDS")
 saveRDS(m1s, "sample_of_m1_models.RDS")
 saveRDS(m0s, "sample_of_m0_models.RDS")
 
+sample_of_full_models <- readRDS("sample_of_fullmodels.RDS")
+m2s_load <- vector(mode = "list", length = 117)
+m2s_load[[1]] <- sample_of_full_models[[1]]
+m2s_load[[2]] <- sample_of_full_models[[2]]
+m2s_load[[3]] <- sample_of_full_models[[3]]
+
+for(j in 4:117){
+   m2s_load[[j]] <- readRDS(paste0("m2models_",gspids[j],".RDS"))
+}
+
+
 conflist <- vector(mode = "list", length = 3)
 library(data.table)
-for(k in 1:3){
-   conftable <- data.frame(confint(sample_of_fullmodels[[k]]))
+for(k in 1:117){
+   conftable <- data.frame(confint(m2s_load[[k]]))
    conflist[[k]] <- data.frame(
-      term = names(sample_of_fullmodels[[k]]$coefficients),
-      coefficients = sample_of_fullmodels[[k]]$coefficients, 
+      term = names(m2s_load[[k]]$coefficients),
+      coefficients = m2s_load[[k]]$coefficients, 
               low_CI_bound = conftable$X2.5..,
               high_CI_bound = conftable$X97.5..,
               gspid = gspids[k])
@@ -77,6 +88,51 @@ for(k in 1:3){
    
 }
 fullconflist <- rbindlist(conflist)
+library(ggplot2)
+
+fig_a <- fullconflist[fullconflist$term %in% 
+                         c("L(info&(money|neither))~edges" ,
+                           "L(money&(info|neither))~edges")]
+#sort by coefficient
+fig_a <- fig_a %>% arrange(coefficients)
+#get index
+fig_a <- fig_a %>% group_by(term) %>% mutate(
+   index = row_number()
+)
+#count outliers
+outliers <- fig_a %>% filter(abs(coefficients) >= 100)
+#remove outliers with coefficient > |100|
+fig_a <- fig_a %>% filter(abs(coefficients) < 20)
+g <- ggplot(fig_a, aes(x = index, y = coefficients)) + 
+   geom_point(aes(shape = term, color = term)) + scale_shape_manual(values = c(1, 19)) + 
+   geom_errorbar(aes(ymin = low_CI_bound, ymax = high_CI_bound, color = term), width = 0.1) + labs(title = "Reciprocity") + theme_bw() + geom_hline(yintercept = 0) + scale_color_manual(values = c("#1155CC", "#B45F06"))  + theme(legend.position = "bottom")
+ggsave(paste0("figure_a.png"), width = 5, height = 6.5, units = "in", g)
+
+figawide <- pivot_wider(fig_a, id_cols = gspid, names_from = term, values_from = coefficients)
+ggplot(figawide, aes(x = `L(money&(info|neither))~edges`, y = `L(info&(money|neither))~edges`)) + geom_point() + theme_classic()
+
+figbwide <- pivot_wider(fig_b, id_cols = gspid, names_from = term, values_from = coefficients)
+ggplot(figbwide, aes(x = `GWESP: base money`, y = `GWESP: base info`)) + geom_point() + theme_classic()
+
+fullconflist$term <- case_when(fullconflist$term == "L(pth=(money|neither|info),bse=info,inord=FALSE)~gwesp.fixed.1" ~ "GWESP: base info", 
+    fullconflist$term == "L(pth=(info|neither|money),bse=money,inord=FALSE)~gwesp.fixed.1" ~ "GWESP: base money",   .default = fullconflist$term)
+
+fig_b <- fullconflist[fullconflist$term %in%    c("GWESP: base info" ,  "GWESP: base money")]
+#sort by coefficient
+fig_b <- fig_b %>% arrange(coefficients)
+#get index
+fig_b <- fig_b %>% group_by(term) %>% mutate(   index = row_number()
+)
+#count outliers
+outliers_b <- fig_b %>% filter(abs(coefficients) >= 100)
+
+#remove outliers with coefficient > |100|
+fig_b <- fig_b %>% filter(abs(coefficients) < 10)
+
+g <- ggplot(fig_b, aes(x = index, y = coefficients)) + 
+   geom_point(aes(shape = term, color = term)) + scale_shape_manual(values = c(1, 19)) + 
+   geom_errorbar(aes(ymin = low_CI_bound, ymax = high_CI_bound, color = term), width = 0.1) + labs(title = "GWESP") + theme_classic() + geom_hline(yintercept = 0) + scale_color_manual(values = c("#1155CC", "#B45F06")) + theme(legend.position = "bottom")
+ggsave(paste0("figure_b.png"), width = 5, height = 6.5, units = "in", g)
 
 library(ggplot2)
 for(j in 1:length(unique(fullconflist$term))){

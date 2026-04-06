@@ -11,6 +11,20 @@ edgesnodes <- list.files(path = filekey[filekey$var_name=="disambiged_unfiltered
 gspids <- stringr::str_extract(edgesnodes,'[0-9]{1,}')
 gspids <- gspids[!gspids%in% c("0053", "0089")]
 parsed <- vector(mode = "list", length = length(gspids))
+
+indivnets <- vector(mode = "list", length = 119)
+for(i in 1:length(indivnets)){
+   indivnets[[i]] <- readRDS(edgesnodes[i])
+}
+
+indivnets_sm <- indivnets[c(1:38, 40:67, 69:119)]
+nets <- vector(mode = "list", length = 117)
+for(i in 1:length(gspids)){
+   nets[[i]] <- readRDS(paste0("data/Text_Gov_Network_Methods_Paper/full_directed_graphs/", "full_directed_graph_", gspids[i]))
+}
+
+infonets <- 
+
 for(i in 1:length(gspids)){
    parsed[[i]] <- readRDS(paste0(filekey[filekey$var_name=="parsed_files_govnetpaper",]$filepath,
                             gspids[i]))
@@ -20,6 +34,7 @@ for(i in 1:length(gspids)){
 flow_attr <- vector(mode = "list", length = length(gspids))
 
 for(i in 1:length(parsed)){
+   print(i)
    parsed[[i]]$doc_sent <- paste0(parsed[[i]]$doc_id, "_", parsed[[i]]$sentence_id)
    parsed[[i]]$nexttoken <- c(parsed[[i]]$token[2:length(parsed[[i]]$token)], NA)
    flow_attr[[i]] <- parsed[[i]] |> group_by(doc_sent) |> summarize(
@@ -497,8 +512,8 @@ supernetwork <- set.edge.attribute(supernetwork, name = "is_manag",
 supernetwork <- igraph::set.edge.attribute(supernetwork, "between", value = igraph::edge_betweenness(supernetwork))
 supernetwork <- igraph::set.vertex.attribute(supernetwork, "Vbetween", value = igraph::betweenness(supernetwork))
 
-mean(edgeframe$between[edgeframe$info_flow==T])
-mean(edgeframe$between[edgeframe$money_flow==T])
+mean(edgeframe$between[edgeframe$info_flow==T], na.rm=T)
+mean(edgeframe$between[edgeframe$money_flow==T], na.rm=T)
 
 install.packages("ggpubr")
 library("ggpubr")

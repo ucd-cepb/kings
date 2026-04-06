@@ -48,3 +48,30 @@ for(i in 1:length(layered_nets)){
 
 View(summdf)
 saveRDS(summdf, "data/Verb_Analysis_Paper/reciprocal_edge_summary_by_plan.RDS")
+
+summdf <- readRDS("data/Verb_Analysis_Paper/reciprocal_edge_summary_by_plan.RDS")
+
+
+
+summarydf <- setNames(data.frame(matrix(ncol = 3, nrow = 117)), c("info","money", "other"))
+for(i in 1:length(layered_nets)){
+   vert_ids_to_names <- network::get.vertex.attribute(layered_nets[[i]], "vertex.names")
+   
+   my_edgelist <- network::as.edgelist(layered_nets[[i]], attrname = c("is_money", "is_info", "head_verb_lemma", "xcomp_verb"), output = "tibble")
+   my_layers <- get.vertex.attribute(layered_nets[[i]], ".LayerName")
+   my_edgelist <- my_edgelist %>% mutate(
+      Layer_tail = my_layers[.tail],
+      Layer_head = my_layers[.head],
+      tailname = vert_ids_to_names[.tail],
+      headname = vert_ids_to_names[.head]
+      
+   )
+   summarydf$info[i] <- sum(my_edgelist$Layer_head=="info")
+   summarydf$money[i] <- sum(my_edgelist$Layer_head=="money")
+   summarydf$other[i] <- sum(my_edgelist$Layer_head=="neither")
+}
+
+summarylong <- pivot_longer(summarydf, cols = c(names(summarydf)))
+summarylongnoother <- summarylong %>% filter(name != "other")
+ggplot(summarylong, aes(x = name, y = value)) + geom_boxplot()+labs(x = "Edge Type", y = "Number of Edges Per Network") + theme_bw()
+
