@@ -16,10 +16,8 @@ library(sjPlot)
 load_dot_env()
 
 # --- Directory mapping ---
-data_dirs <- list(
-   tagged   = "/EJ_Paper/cleaned_extracts_tagged",
-   agency   = "/EJ_Paper/cleaned_extracts_agency"
-)
+
+data_dir <- "/EJ_Paper/cleaned_extracts_tagged"
 
 # --- Helper: load place nodes from a network directory ---
 load_place_nodes <- function(data_dir) {
@@ -50,26 +48,20 @@ load_place_nodes <- function(data_dir) {
 }
 
 # --- Load both ---
-cat("Loading tagged network place nodes...\n")
-tagged_places <- load_place_nodes(data_dirs[["tagged"]])
-cat("  N =", nrow(tagged_places), "\n")
-
-cat("Loading agency network place nodes...\n")
-agency_places <- load_place_nodes(data_dirs[["agency"]])
-cat("  N =", nrow(agency_places), "\n")
+tagged_places <- load_place_nodes(data_dir)
 
 # --- Tagged models ---
+in_tagged_1 <- glm(`in_w` ~ DAC + POP_log + incorporated + per_latino,
+                   family = poisson, data = tagged_places)
+
+in_tagged_2 <- glm(`in_w` ~ MHI_log + POP_log + incorporated + per_latino,
+                    family = poisson, data = tagged_places)
+
 out_tagged_1 <- glm(`out_w` ~ DAC + POP_log + incorporated + per_latino,
                      family = poisson, data = tagged_places)
 out_tagged_2 <- glm(`out_w` ~ MHI_log + POP_log + incorporated + per_latino,
                      family = poisson, data = tagged_places)
 
-# --- Agency models ---
-out_agency_1 <- glm(`out_w` ~ DAC + POP_log + incorporated + per_latino,
-                     family = poisson, data = agency_places)
-out_agency_2 <- glm(`out_w` ~ MHI_log + POP_log + incorporated + per_latino,
-                     family = poisson, data = agency_places)
-
 # --- Print comparison tables ---
-stargazer(out_tagged_1, out_tagged_2, out_agency_1, out_agency_2, type = 'text',
-          column.labels = c("Tagged","Tagged", "Agency",  "Agency"))
+stargazer(in_tagged_1, in_tagged_2, out_tagged_1, out_tagged_2,  type = 'text',
+          column.labels = c("IN DAC","In MHI", "OUT DAC",  "OUT MHI"))

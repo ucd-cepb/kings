@@ -1,10 +1,7 @@
 # step_5b_hypo1.R
-# Hypothesis 1: Network Influence (In-degree / Total degree)
+# Hypothesis 2: Network Influence (Total degree)
 # Tests whether places receive more/less influence based on DAC status.
-# Runs both tagged and agency modes and outputs comparison tables.
 # Models: Poisson GLM
-#   - in_w ~ DAC + POP_log + incorporated + per_latino
-#   - in_w ~ MHI_log + POP_log + incorporated + per_latino
 #   - deg_w ~ DAC + POP_log + incorporated + per_latino
 #   - deg_w ~ MHI_log + POP_log + incorporated + per_latino
 
@@ -18,11 +15,11 @@ library(ggpubr)
 
 load_dot_env()
 
-# --- Directory mapping ---
 data_dirs <- list(
    tagged   = "/EJ_Paper/cleaned_extracts_tagged",
    agency   = "/EJ_Paper/cleaned_extracts_agency"
 )
+
 
 # --- Helper: load place nodes from a network directory ---
 load_place_nodes <- function(data_dir) {
@@ -52,38 +49,26 @@ load_place_nodes <- function(data_dir) {
    return(all_place_nodes)
 }
 
-# --- Load both ---
-cat("Loading tagged network place nodes...\n")
 tagged_places <- load_place_nodes(data_dirs[["tagged"]])
-cat("  N =", nrow(tagged_places), "\n")
 
-cat("Loading agency network place nodes...\n")
 agency_places <- load_place_nodes(data_dirs[["agency"]])
-cat("  N =", nrow(agency_places), "\n")
 
-# --- Tagged models ---
-in_tagged_1 <- glm(`in_w` ~ DAC + POP_log + incorporated + per_latino,
-                    family = poisson, data = tagged_places)
-in_tagged_2 <- glm(`in_w` ~ MHI_log + POP_log + incorporated + per_latino,
-                    family = poisson, data = tagged_places)
-deg_tagged_1 <- glm(`deg_w` ~ DAC + POP_log + incorporated + per_latino,
+
+deg_1 <- glm(`deg_w` ~ DAC + POP_log + incorporated + per_latino,
                      family = poisson, data = tagged_places)
-deg_tagged_2 <- glm(`deg_w` ~ MHI_log + POP_log + incorporated + per_latino,
+deg_2 <- glm(`deg_w` ~ MHI_log + POP_log + incorporated + per_latino,
                      family = poisson, data = tagged_places)
 
-# --- Agency models ---
-in_agency_1 <- glm(`in_w` ~ DAC + POP_log + incorporated + per_latino,
-                    family = poisson, data = agency_places)
-in_agency_2 <- glm(`in_w` ~ MHI_log + POP_log + incorporated + per_latino,
-                    family = poisson, data = agency_places)
+stargazer(deg_1, deg_2, type = 'text')
+
+stargazer(deg_1, deg_2, type='html', out = 'EJ_DAC_Paper/Out/mods/h2_degree.html')
+
+
 deg_agency_1 <- glm(`deg_w` ~ DAC + POP_log + incorporated + per_latino,
-                     family = poisson, data = agency_places)
+                    family = poisson, data = agency_places)
 deg_agency_2 <- glm(`deg_w` ~ MHI_log + POP_log + incorporated + per_latino,
-                     family = poisson, data = agency_places)
+                    family = poisson, data = agency_places)
 
-# --- Print comparison tables ---
-stargazer(in_tagged_1, in_tagged_2, in_agency_1, in_agency_2, type = 'text',
-          column.labels = c("Tagged (DAC)", "Tagged (MHI)", "Agency (DAC)", "Agency (MHI)"))
+stargazer(deg_agency_1, deg_agency_2, type = 'text')
 
-stargazer(deg_tagged_1, deg_tagged_2, deg_agency_1, deg_agency_2, type = 'text',
-          column.labels = c("Tagged (DAC)", "Tagged (MHI)", "Agency (DAC)", "Agency (MHI)"))
+stargazer(deg_agency_1, deg_agency_2, type='html', out = 'EJ_DAC_Paper/Out/mods/h2_degree_agency.html')
