@@ -86,29 +86,38 @@ all_nodes %>%
    arrange(desc(count))
 
 # prevelence of node types
-node_types <- all_nodes%>%
+node_types <- all_nodes %>%
    select(name, entity_type) %>%
-   unique () %>% 
+   unique() %>% 
    count(entity_type) %>%
    mutate(pct = n / sum(n) * 100) %>%
    select(entity_type, pct) %>%
-   arrange(desc(pct)) %>% 
-   round(2)
+   arrange(desc(pct)) 
+
+# same node shows up multiple times with different node types
+all_nodes %>% 
+   group_by(name) %>% 
+   summarize(num_types = n_distinct(entity_type)) %>% 
+   filter(num_types > 2) %>% 
+   arrange(desc(num_types))
+
+all_nodes %>% 
+   filter(name == 'district_board_meetings') %>% 
+   select(name, num_appearances, entity_type, AI_TAGGED)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # data summary table 
 # table 2=3 in section 3.3
 
-all_place_nodes %>% 
-   select( MHI, POP, DAC, incorporated, per_latino, in_w, out_w, leader_dist_min_w_nona) %>%
+data_summary <- all_place_nodes %>% 
+   select( MHI, POP, DAC, incorporated, per_latino, deg_w, leader_dist_nona) %>%
    rename("MHI" = MHI,
           "Population" = POP,
           "DAC" = DAC,
           "% Latino" = per_latino,
           "Incorporated" = incorporated,
-          "Indegree" = in_w,
-          "Outdegree" = out_w,
-          "Leader Distance" = leader_dist_min_w_nona) %>%
+          "Degree" = deg_w,
+          "Leader Distance" = leader_dist_nona) %>%
    skim() %>% tibble() %>% 
    select(-c(skim_type, n_missing, complete_rate, numeric.hist,
              numeric.p0,  numeric.p25, numeric.p75, numeric.p100
@@ -117,9 +126,7 @@ all_place_nodes %>%
           "Mean" = numeric.mean,
           "SD" = numeric.sd,
           "Median" = numeric.p50) %>% 
-   mutate(across(where(is.numeric), ~ round(.x, 3))) %>%   
-   write_csv("EJ_DAC_Paper/Out/data_summary.csv")
-
+   mutate(across(where(is.numeric), ~ round(.x, 2))) 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # PLOT - FIGURE 2 in RESULTS
