@@ -170,21 +170,14 @@ plots <- list(
                      y_label = "Exists (Binary)"), 
    
    create_model_plot(x_var = "MHI_log", 
-                     y_var = "in_w", 
+                     y_var = "deg_w", 
                      data = all_place_nodes, 
                      family = 'poisson',
                      x_label = "ln(MHI)", 
-                     y_label = "Indegree"),
+                     y_label = "Degree"),
    
    create_model_plot(x_var = "MHI_log", 
-                     y_var = "out_w", 
-                     data = all_place_nodes, 
-                     family = 'poisson',
-                     x_label = "ln(MHI)", 
-                     y_label = "Outdegree"),
-   
-   create_model_plot(x_var = "MHI_log", 
-                     y_var = "leader_dist_min_w_nona", 
+                     y_var = "leader_dist_nona", 
                      data = all_place_nodes, 
                      family = 'poisson',
                      x_label = "ln(MHI)", 
@@ -197,8 +190,8 @@ for (plot in plots) {
 }
 
 
-results_plot <- ggarrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], 
-                          nrow = 2, ncol = 2, common.legend = TRUE, legend = "bottom",
+results_plot <- ggarrange(plots[[1]], plots[[2]], plots[[3]], 
+                          nrow = 1, ncol = 3, common.legend = TRUE, legend = "bottom",
                           labels = "AUTO"); results_plot
 
-ggsave('EJ_DAC_Paper/Out/results_plot.png', results_plot, width = 7, height = 6)
+ggsave('EJ_DAC_Paper/Out/results_plot.png', results_plot, width = 10, height = 4)
