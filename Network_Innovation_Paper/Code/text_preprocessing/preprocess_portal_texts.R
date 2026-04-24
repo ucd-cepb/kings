@@ -76,7 +76,7 @@ main <- function(text_files = NULL) {
   
   # File discovery if not provided
   if (is.null(text_files)) {
-    text_files <- list.files('Multipurpose_Files/portal_files/', 
+    text_files <- list.files('data/Multipurpose_Files/portal_files/',
                             pattern = 'txt$', full.names = TRUE)
   }
   
@@ -102,7 +102,7 @@ main <- function(text_files = NULL) {
   gc()
   
   # Load metadata
-  page_info <- readRDS("Multipurpose_Files/gsp_docs_w_meta")
+  page_info <- readRDS("data/Multipurpose_Files/gsp_docs_w_meta")
   page_info <- page_info[,.(gsp_id, page_num, admin, basin_plan, sust_criteria, 
                             monitoring_networks, projects_mgmt_actions, is_comment, is_reference)]
   

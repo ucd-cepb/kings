@@ -3,7 +3,7 @@ library(coop)
 library(data.table)
 
 bad <- c('0053','0089')
-meta <- readRDS('Multipurpose_Files/gsp_docs_w_meta')
+meta <- readRDS('data/Multipurpose_Files/gsp_docs_w_meta')
 meta <- meta |> dplyr::select(-page_num,-text)
 meta <- meta[!duplicated(meta$gsp_id),]
 meta$Republican_Vote_Share <- as.numeric(meta$Republican_Vote_Share)
@@ -123,7 +123,7 @@ basin_ids$gsp_id <- formatC(basin_ids$gsp_id,width = 4,flag= '0')
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
 # Read the GSP shapefile
-gsp_bounds <- st_read("Multipurpose_Files/GSP_Submitted")
+gsp_bounds <- st_read("data/Multipurpose_Files/GSP_Submitted")
 gsp_bounds <- sf::st_make_valid(gsp_bounds)
 gsp_bounds$GSP.ID <- formatC(as.numeric(gsp_bounds$GSP.ID),width = 4,flag = '0')
 #gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP.ID), width = 4, flag = '0')
