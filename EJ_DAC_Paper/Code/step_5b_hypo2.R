@@ -13,6 +13,7 @@ library(migraph)
 library(sjPlot)
 library(ggpubr)
 
+setwd("/Users/ajguerra/Documents/projects/kings")
 load_dot_env()
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_2026")

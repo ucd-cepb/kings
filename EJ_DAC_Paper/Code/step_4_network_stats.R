@@ -8,6 +8,7 @@ library(tidyverse)
 library(migraph)
 library(quanteda)
 
+setwd("/Users/ajguerra/Documents/projects/kings")
 load_dot_env()
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/processed_networks/")

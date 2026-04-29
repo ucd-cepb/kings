@@ -10,6 +10,7 @@ library(migraph)
 library(data.table)
 library(stringr)
 
+setwd("/Users/ajguerra/Documents/projects/kings")
 load_dot_env()
 
 out_dir <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/processed_networks/")
