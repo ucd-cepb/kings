@@ -1,15 +1,5 @@
 # step_4_network_stats.R
-# Calculates node-level statistics for networks.
-# Unified script: set network_mode to select input/output directories.
-# Same statistics calculated regardless of mode.
-
-# ============================================================================
-# CONFIGURATION - Must match the mode used in step_3
-# ============================================================================
-
-network_mode <- "tagged"   # Options: "original", "tagged", "agency"
-
-# ============================================================================
+# Calculates node-level statistics for processed networks.
 
 library(dotenv)
 library(ggraph)
@@ -20,25 +10,9 @@ library(quanteda)
 
 load_dot_env()
 
-# --- Directory mapping ---
-in_dirs <- list(
-   original = "/EJ_Paper/processed_networks/",
-   tagged   = "/EJ_Paper/processed_networks_tagged/",
-   agency   = "/EJ_Paper/processed_networks_agency/"
-)
-out_dirs <- list(
-   original = "/EJ_Paper/cleaned_extracts_2026/",
-   tagged   = "/EJ_Paper/cleaned_extracts_tagged/",
-   agency   = "/EJ_Paper/cleaned_extracts_agency/"
-)
-
-network_fp <- paste0(Sys.getenv("BOX_PATH"), in_dirs[[network_mode]])
-out_dir <- paste0(Sys.getenv("BOX_PATH"), out_dirs[[network_mode]])
+network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/processed_networks/")
+out_dir <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_2026/")
 if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
-
-cat("Running in mode:", network_mode, "\n")
-cat("Input directory:", network_fp, "\n")
-cat("Output directory:", out_dir, "\n")
 
 extract_list <- list.files(network_fp)
 gsp_ids <- as.numeric(gsub("^0+", "", gsub("\\.RDS", "", extract_list)))
@@ -115,9 +89,9 @@ net_stats <- function(network_graph, gsp_id) {
    }
 
    colnames(dists) <- V(network_graph)$name[gsa_ins]
-   
+
    leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
-   
+
    leader_dist_nona <- ifelse(is.infinite(leader_dist_min),
                               diameter(network_graph),
                                leader_dist_min)
