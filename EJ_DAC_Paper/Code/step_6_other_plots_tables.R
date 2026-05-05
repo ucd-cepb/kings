@@ -111,7 +111,7 @@ plots <- list(
                      data = all_places,
                      family = 'binomial',
                      x_label = "ln(MHI)",
-                     y_label = "Exists (Binary)"),
+                     y_label = "Included (Binary)"),
 
    create_model_plot(x_var = "MHI_log",
                      y_var = "deg_w",
