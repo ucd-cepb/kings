@@ -10,11 +10,9 @@
 library(arrow)
 library(stringr)
 
-# === Flags ===
-CLOBBER <- FALSE   # re-clean already-processed files
-TESTING <- FALSE   # restrict to first 5 files
+source("core_code/_config.R")   # provides CLOBBER, TESTING, TESTING_N, filekey, fk()
 
-# === Thresholds ===
+# === Step2-local thresholds ===
 # Tuned on the tijuana/IRWM corpus — review against a kings sample after
 # the first run. Set any threshold above to 1 (or MAX_CHARACTERS to Inf)
 # to disable that filter.
@@ -23,9 +21,8 @@ NUMERIC_DENSITY_MAX    <- 0.25   # tables, data appendices
 WHITESPACE_DENSITY_MAX <- 0.75   # figures, maps
 MAX_CHARACTERS         <- 20000L # oversized map/image pages
 
-filekey <- read.csv("filekey.csv")
-raw_dir   <- filekey[filekey$var_name == "plan_txts_raw_core",   ]$filepath
-clean_dir <- filekey[filekey$var_name == "plan_txts_clean_core", ]$filepath
+raw_dir   <- fk("plan_txts_raw_core")
+clean_dir <- fk("plan_txts_clean_core")
 dir.create(clean_dir, recursive = TRUE, showWarnings = FALSE)
 
 clean_pages <- function(df) {
@@ -50,7 +47,7 @@ clean_pages <- function(df) {
 files <- list.files(raw_dir, pattern = "\\.txt$", full.names = TRUE)
 cat(sprintf("Files in %s: %d\n", basename(raw_dir), length(files)))
 if (TESTING) {
-  files <- head(files, 5L)
+  files <- head(files, TESTING_N)
   cat(sprintf("TESTING mode: processing %d file(s)\n", length(files)))
 }
 
@@ -77,7 +74,7 @@ for (raw_path in files) {
 
   if (is.null(res)) { failed <- failed + 1L; next }
 
-  arrow::write_parquet(res$df, out_path)
+  atomic_write(out_path, function(p) arrow::write_parquet(res$df, p))
   total <- nrow(res$df)
   pct   <- if (total > 0L) round(100 * res$n_blanked / total) else 0L
   message(sprintf("  %s: %d pages, %d blanked (%d%%) -> %s",

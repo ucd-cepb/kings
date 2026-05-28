@@ -34,6 +34,12 @@
 #   - drop edges/nodes whose entity name has fewer than 2 a-z letters
 #     (filters out punctuation-only or single-letter tokens). The letter
 #     check is skipped on a NA side — it only fires on real strings.
+#   - dedup nodelist by canonical entity_name (step4 may emit multiple rows
+#     with the same canonical when several originals collapsed via
+#     disambiguate). Required for graph_from_data_frame's unique-vertex
+#     contract. The surviving row carries one raw_entity_name as a vertex
+#     attribute (sample of the pre-disambig surface form); the dict files
+#     are the authoritative source for the full canonical→aliases mapping.
 #
 # Stem convention: file stems carry the plan-version prefix (e.g. v1_0007).
 # Each (version, GSP) pair gets its own pair of igraph outputs.
@@ -42,14 +48,11 @@ library(igraph)
 library(stringr)
 library(data.table)
 
-# === Flags ===
-CLOBBER <- FALSE  # set TRUE to rebuild graphs even if outputs already exist
+source("core_code/_config.R")   # provides CLOBBER, filekey, fk()
 
-filekey <- read.csv("filekey.csv")
-
-disambig_dir   <- filekey[filekey$var_name == "disambiged_extracts_core",        ]$filepath
-multiplex_dir  <- filekey[filekey$var_name == "multiplex_directed_graphs_core",  ]$filepath
-uniplex_dir    <- filekey[filekey$var_name == "uniplex_weighted_graphs_core",    ]$filepath
+disambig_dir   <- fk("disambiged_extracts_core")
+multiplex_dir  <- fk("multiplex_directed_graphs_core")
+uniplex_dir    <- fk("uniplex_weighted_graphs_core")
 
 dir.create(multiplex_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(uniplex_dir,   recursive = TRUE, showWarnings = FALSE)
@@ -91,14 +94,23 @@ build_graphs <- function(edgenodelist) {
   edgelist[, c("esletters", "etletters") := NULL]
   nodelist[, nletters := NULL]
 
+  # Dedup nodelist by canonical entity_name so graph_from_data_frame has
+  # unique vertex IDs. Step4 may emit multiple rows with the same canonical
+  # name (different originals collapsed by disambiguate). unique(by=) keeps
+  # the first occurrence; raw_entity_name on that row reflects one example
+  # of the observed pre-disambig surface form for the vertex. To recover
+  # the full alias set for a canonical, consult the dict files.
+  n_nodes_pre_dedup <- nrow(nodelist)
+  nodelist <- unique(nodelist, by = "entity_name")
+
   message(sprintf(
     "    edges: %d in, %d after NA filter, %d after letter filter (dropped %d, %.0f%%)",
     n_edges_in, n_after_doubleNA, nrow(edgelist),
     n_edges_in - nrow(edgelist),
     100 * (n_edges_in - nrow(edgelist)) / max(n_edges_in, 1)))
   message(sprintf(
-    "    nodes: %d in, %d after letter filter (dropped %d, %.0f%%)",
-    n_nodes_in, nrow(nodelist),
+    "    nodes: %d in, %d after letter filter, %d after canonical dedup (dropped %d, %.0f%%)",
+    n_nodes_in, n_nodes_pre_dedup, nrow(nodelist),
     n_nodes_in - nrow(nodelist),
     100 * (n_nodes_in - nrow(nodelist)) / max(n_nodes_in, 1)))
 
@@ -153,8 +165,8 @@ for (f in disambig_files) {
 
   if (is.null(res)) { failed <- failed + 1L; next }
 
-  saveRDS(res$multiplex, multiplex_path)
-  saveRDS(res$uniplex,   uniplex_path)
+  atomic_saveRDS(res$multiplex, multiplex_path)
+  atomic_saveRDS(res$uniplex,   uniplex_path)
   message(sprintf("  -> %d vertices, %d multiplex edges, %d uniplex edges",
                   igraph::vcount(res$multiplex),
                   igraph::ecount(res$multiplex),

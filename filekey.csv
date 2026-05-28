@@ -55,8 +55,6 @@ gsp_web_vars_planevolutionpaper,data/Plan_Evolution_Papers/portal_files/gsp_web_
 gsp_web_vars_repaired_ejpaper,data/EJ_Paper/gsp_web_vars_,
 gsp_web_vars_repaired_stmpaper,data/Structural_Topic_Model_Paper/web_repaired_,
 gsp_web_vars_stmpaper,data/Structural_Topic_Model_Paper/gsp_web_vars_,
-gsp0089_salvage_postprocess,data/archive_large_files/gsp_0089_salvage_attempts/cleaned_plainrepair_0089,
-gsp0089_salvage_preprocessed,data/archive_large_files/gsp_0089_salvage_attempts/gsp_num_id_0089_word_from_plaintext.pdf,
 heldout,data/Structural_Topic_Model_Paper/intermediate_files/heldout,
 k_diag_allmodels_stmpaper,data/Structural_Topic_Model_Paper/intermediate_files/k_all,
 k_diag_figures,data/Structural_Topic_Model_Paper/figures,
@@ -108,12 +106,6 @@ verbtype_dummies_for_edgelist,data/Verb_Analysis_Paper/verb_type_dummies_for_edg
 visualize_topics_grouped_function,Structural_Topic_Model_Paper/Code/utils/visualize_topics_grouped.R,
 web_data_repair_script,Structural_Topic_Model_Paper/Code/utils/web_data_repair.R,
 weighted_nets_ejpaper,data/EJ_Paper/weighted_graphs/to_weighted_graph_,
-govscicleaning_ej_script,EJ_Paper/Code/utils/govscicleaning.R,
-generate_proper_names_phrasetest,Generate_Phrases_Test/Code/utils/generate_proper_names.R,
-cleaned_pdfs_for_phrasetest,data/PhraseTest/cleaned_pdfs,
-parsed_files_phrasetest,data/PhraseTest/parsed_,
-nondisambiged_extracts_phrasetest,data/PhraseTest/nondisambig_original_network_extracts/,
-proper_name_rawfiles,data/Multipurpose_Files,
 network_properties_folder_verbnetpaper,data/Verb_Analysis_Paper,
 weighted_nets_govnetpaper,data/Text_Gov_Network_Methods_Paper/weighted_directed_graphs/to_weighted_graph_,
 uniplex_weighted_graphs_core,data/core_data/igraph_objects/uniplex_weighted_graphs,"Uniplex weighted igraph objects (multiplex collapsed via igraph::simplify, weight = count of merged edges) — written by step5_build_igraphs.R"
@@ -149,12 +141,13 @@ bruno_data,Policy_Instruments_Paper/Data/policy_instruments_bruno.csv,
 bruno_folder,data/Policy_Instruments_Paper/Bruno_Data_Raw,
 core_data_source_pdfs,data/core_data/source_pdfs,"Master copy of original GSP PDFs (read by step1)"
 plan_txts_raw_core,data/core_data/plan_txts_raw,"Per-GSP TSVs (page<TAB>text) produced by step1_pdf_reader_cleaner.R"
+plan_txts_raw_pages_core,data/core_data/plan_txts_raw_pages,"Per-GSP RDS of the raw pdftools::pdf_text() output (character vector, one element per page, newlines and multi-space gaps PRESERVED). Written by step1 alongside the cleaned TSV; consumed by step4's find_acronyms(table_text=) path so the acronym-table front-matter pages parse correctly."
 plan_txts_clean_core,data/core_data/plan_txts_clean,"Per-GSP parquet files with non-prose pages blanked by step2 density heuristics"
-core_data_parsed_plans,data/core_data/parsed_plans/parsed_,"spaCy parsed output prefix (step2). Files: parsed_<gsp_id>"
+core_data_parsed_plans,data/core_data/parsed_plans/parsed_,"spaCy parsed output prefix (step3). parse_text_trf writes parsed_<gsp_id>.parquet at this prefix (auto-appends .parquet via duckdb)."
 core_data_textnet_objects,data/core_data/textnet_objects,"Root folder for textnet_extract RDS objects (nondisambig, disambig). Each is a list with $edgelist + $nodelist."
 core_data_igraph_objects,data/core_data/igraph_objects,"Root folder for igraph network objects (multiplex_directed_graphs/, uniplex_weighted_graphs/) built by step5_build_igraphs.R"
 audit_csv_core,data/core_data/pipeline_audit.csv,"Cross-stage retention audit CSV written by step_audit_pipeline.R"
-pipeline_run_logs,data/core_data/run_logs,"Timestamped run logs from core_code/run_pipeline.sh (one file per pipeline invocation)"
+pipeline_run_logs,core_code/logs,"Timestamped run logs from core_code/run_pipeline.sh (one file per pipeline invocation)"
 nondisambiged_extracts_core,data/core_data/textnet_objects/nondisambig/,"Per-GSP textnet_extract RDS objects from step3 (parse_text_trf + entity ruler). Lists with $edgelist + $nodelist."
 water_entity_dictionary,core_code/dicts/water_entity_dictionary.csv,"Curated CA water-entity dictionary (state/federal/water districts/tribes/NGOs)"
 water_infrastructure_dictionary,core_code/dicts/water_infrastructure_dictionary.csv,"Curated CA water-infrastructure dictionary (dams/canals/aqueducts/plants)"

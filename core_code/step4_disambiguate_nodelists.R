@@ -15,23 +15,29 @@
 #   plan_txts_clean_core/<stem>.parquet     (from step2)
 #       used only to mine per-GSP acronyms via find_acronyms()
 #   gsa_table_core                          (agency_tbl)
-#   water_{entity,infrastructure,bodies,gsa}_dictionary CSVs
-#   gov_entities_dict_core                  (federal+CA+local Agency<->Abbr dict)
+#   CORE_DICT_KEYS (from _config.R)         (all alias-bearing dicts:
+#                                            4 water + ca_utilities +
+#                                            gov_entities)
 #
 # Outputs:
 #   disambiged_extracts_core/<stem>.RDS     (textnet_extract object with
-#                                            entity names canonicalized)
+#                                            entity names canonicalized;
+#                                            nodelist gains raw_entity_name
+#                                            preserving the pre-disambig form)
 #
 # Pipeline order:
 #   1. Build a per-GSP disambiguation dictionary `customdt[[m]]` by stacking:
 #        - per-GSP acronyms (acrons) found in the cleaned text
-#        - GovSci abbreviations (govscitbl_mini)
-#        - global water alias->canonical pairs (global_dict)
+#        - global alias->canonical pairs (global_dict) from every CORE
+#          dictionary (schema-aware: handles all_names AND Agency/Abbr)
 #        - per-GSP GSA nicknames (agency_nicknames) — collapses specific GSA
 #          names to the generic "Groundwater_Sustainability_Agency/Agencies"
 #          reference (self-reference / coreference within the plan).
+#      Self-mappings (from == to) are filtered out — a dict row only
+#      contributes if it links an alias to a different canonical.
 #      Resolve any duplicate `from` keys so disambiguate() has a clean map.
-#   2. For each GSP, read step3's tabular extract, normalize the
+#   2. For each GSP, read step3's tabular extract, snapshot the pre-
+#      disambig nodelist entity_name as raw_entity_name, normalize the
 #      entity-name columns through clean_entities() so they match the
 #      customdt surface form (closes a textnet_extract concatenator vs.
 #      clean_entities punctuation-drift gap), run disambiguate() on the
@@ -58,59 +64,22 @@ library(data.table)
 library(textNet)
 library(arrow)
 
-# === Flags ===
-CLOBBER <- FALSE   # set TRUE to re-disambiguate even if an output RDS exists
+source("core_code/_config.R")   # provides CLOBBER, filekey, fk()
 
-# === Per-GSP override: combined GSAs ============================================
-# A few GSPs cover multiple GSAs that the agency website lists separately but
-# that the plan documents treat as a single combined entity. For these stems
-# we replace the agency_nicknames rows with a hand-curated GSA list, so the
-# "Agency"/"Agencies" generic mention in the plan collapses to the right set
-# of named GSAs.
-#
-# Key is the file stem (e.g. "v1_0042"), so the override applies to a specific
-# (plan version, GSP number) pair — v1 and v2 of the same GSP can differ if
-# the signatory list changed between submissions.
-#
-# Previously this was an `if (m %in% c(38, 39))` index-based check, which
-# broke when filename ordering changed (plan-version prefixes shifted every
-# GSP's position in the sorted list).
-#
-# TODO: fill in the actual stems for the Yuba combined GSP (and any others
-# that need the same treatment). With this list empty, the override is a
-# no-op — which is correct-but-conservative until the right stems are known.
-combined_gsa_overrides <- list(
-  # "v1_0052" = c("City_of_Marysville_GSA",
-  #               "Cordua_Irrigation_District_GSA",
-  #               "Yuba_Water_Agency_GSA"),
-  # "v2_0053" = c("City_of_Marysville_GSA",
-  #               "Cordua_Irrigation_District_GSA",
-  #               "Yuba_Water_Agency_GSA")
-)
-
-filekey <- read.csv("filekey.csv")
+# Note: a per-stem "combined-GSA override" mechanism used to live here for
+# GSPs (e.g. Yuba) where the website-listed GSAs need to be collapsed to a
+# hand-curated combined list. It was never populated in this repo. If/when
+# you need to re-add it, attach a per-stem hook in Section 4's customdt
+# assembly — see git history for the previous scaffold.
 
 # Ensure output destinations exist before any saveRDS call.
-dir.create(filekey[filekey$var_name=="disambiged_extracts_core",]$filepath,
+dir.create(fk("disambiged_extracts_core"),
            recursive = TRUE, showWarnings = FALSE)
 
-###Section 1: Government-entities dictionary####
-# Load the natural-format snapshot built by build_gov_entities_dict.R and
-# apply textNet::clean_entities() normalization at load time, matching what
-# Section 3b does for the water dicts and what step3's spaCy parse produces
-# for entity text. dedupe collapses rows that differ only in formatting
-# (e.g. "Cal-Am" and "Cal Am" both -> "Cal_Am").
-govscitbl <- read.csv(filekey[filekey$var_name=="gov_entities_dict_core",]$filepath,
-                      stringsAsFactors = FALSE, na.strings = "")
-setDT(govscitbl)
-govscitbl[, State  := clean_entities(State,  remove_nums = TRUE)]
-govscitbl[, Agency := clean_entities(Agency, remove_nums = TRUE)]
-govscitbl[, Abbr   := clean_entities(Abbr,   remove_nums = TRUE)]
-govscitbl <- unique(govscitbl)
-###Section 2: GSAs####
+###Section 1: GSAs####
 # Per-GSP textnet_extract RDS files produced by step3 (parse_text_trf +
 # entity ruler), with $edgelist + $nodelist as data.tables.
-edges_and_nodes <- sort(list.files(path = filekey[filekey$var_name=="nondisambiged_extracts_core",]$filepath, full.names = T))
+edges_and_nodes <- sort(list.files(path = fk("nondisambiged_extracts_core"), full.names = TRUE))
 # gspids is the full filesystem stem (e.g. v1_0007) so it round-trips with
 # the parquet / RDS paths written by step1 and step2. The v1/v2 prefix is
 # the *plan version* (submission/revision of the GSP document), NOT a
@@ -121,56 +90,56 @@ edges_and_nodes <- sort(list.files(path = filekey[filekey$var_name=="nondisambig
 gspids   <- stringr::str_remove(basename(edges_and_nodes), "\\.RDS$")
 gsp_nums <- stringr::str_extract(gspids, "[0-9]+$")
 
-agency_tbl <- readRDS(filekey[filekey$var_name=="gsa_table_core",]$filepath)
+agency_tbl <- readRDS(fk("gsa_table_core"))
 agency_tbl <- agency_tbl[!is.na(gsp_id),]
 #change hyphens and spaces to underscores, to match spacy parse formatting
 agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
    stringr::str_replace_all(w,"-|\\s","_"))
-#initialize empty dt
-agency_nicknames <- setDT(list("name"=rep(vector(mode="list",length(edges_and_nodes)*2)),
-                               "nickname"=rep(NA_character_,length(edges_and_nodes)*2)))
-for(m in 1:length(edges_and_nodes)){
-   #remove parentheses
-   agency_rows <- agency_tbl[gsp_id==gsp_nums[m]]
-   if(nrow(agency_rows) == 0L){
-      warning("No agency_tbl entry for GSP ", gsp_nums[m],
-              " (", gspids[m], "); leaving agency_nicknames rows empty")
-      next
-   }
-   agency_names <- agency_rows$name_gsas[[1]]
-   agency_names <- unlist(lapply(agency_names, function(b) str_split(b,"\\(")[[1]][1]))
-   #clean entities so they are same format as spacy tokens
-   agency_names <- clean_entities(agency_names, remove_nums=T)
-   # mult_gsas is a per-GSP flag; force scalar and default to FALSE if missing
-   plural <- agency_rows$mult_gsas[1]
-   if(is.na(plural)) plural <- FALSE
 
-   if(isTRUE(plural)){
-      agency_abbr <- c("Groundwater_Sustainability_Agencies","Agencies")
-   }else{
-      agency_abbr <- c("Groundwater_Sustainability_Agency","Agency")
+# Build a 2-row (to, from) table mapping the per-GSP GSA name list to the
+# generic "Agency"/"Agencies" tokens used in the plan text. Returns NULL
+# when agency_tbl has no entry for the GSP — those GSPs simply contribute
+# no nickname rows to customdt downstream.
+build_nicknames_for_gsp <- function(stem, gsp_num) {
+   rows <- agency_tbl[gsp_id == gsp_num]
+   if (nrow(rows) == 0L) {
+      warning("No agency_tbl entry for GSP ", gsp_num, " (", stem, "); skipping nicknames")
+      return(NULL)
    }
-   agency_nicknames[m*2-1, (colnames(agency_nicknames)):= list(agency_names, agency_abbr[1])]
-   agency_nicknames[m*2, (colnames(agency_nicknames)):= list(agency_names, agency_abbr[2])]
+   agency_names <- rows$name_gsas[[1]]
+   # strip trailing parenthetical disambiguators before clean_entities()
+   agency_names <- unlist(lapply(agency_names, function(b) str_split(b, "\\(")[[1]][1]))
+   agency_names <- clean_entities(agency_names, remove_nums = TRUE)
 
-   # Combined-GSA override keyed on stem (plan version + GSP number), not
-   # loop index — see combined_gsa_overrides definition near the top.
-   if(gspids[m] %in% names(combined_gsa_overrides)){
-      override_names <- combined_gsa_overrides[[gspids[m]]]
-      agency_nicknames[(m*2-1):(m*2)]$name <- list(override_names, override_names)
-      agency_nicknames[(m*2-1)]$nickname <- "Groundwater_Sustainability_Agencies"
-      agency_nicknames[(m*2)]$nickname    <- "Agencies"
-   }
+   plural <- isTRUE(rows$mult_gsas[1])
+   abbr   <- if (plural) c("Groundwater_Sustainability_Agencies", "Agencies")
+             else        c("Groundwater_Sustainability_Agency",   "Agency")
+
+   data.table(to = list(agency_names, agency_names),
+              from = abbr)
 }
 
-###Section 3: Acronyms####
-# Mine doc-local acronyms from each GSP's cleaned text, prepend the generic
-# GSA/GSP seed (so those always resolve regardless of whether they were
-# defined in-doc), dedupe by acronym, and rename columns to (to, from) for
-# the customdt rbind below. Single pass per GSP.
-clean_dir <- filekey[filekey$var_name=="plan_txts_clean_core",]$filepath
-acrons    <- vector(mode="list", length=length(edges_and_nodes))
-gsa_seed  <- data.table(
+# Named list keyed by stem (e.g. "v1_0007") so Section 4 can look these up
+# without integer arithmetic. NULL entries for GSPs without an agency_tbl row.
+agency_nicknames <- setNames(
+   Map(build_nicknames_for_gsp, gspids, gsp_nums),
+   gspids
+)
+
+###Section 2: Acronyms####
+# Mine doc-local acronyms from each GSP via two complementary sources:
+#   - parenthetical defs ("Long Form (ACR)") from the step2 cleaned text
+#   - acronym-table front-matter pages from the step1 raw RDS (newlines and
+#     multi-space gaps preserved — required by find_acronyms' table_text
+#     parser to find the "ACR    Long Form" row format).
+# Prepend the generic GSA/GSP seed (so those four SGMA-vocabulary terms
+# always resolve regardless of whether the plan defined them), dedupe by
+# acronym (gsa_seed wins on ties because it's first in the rbind), and
+# rename to (to, from) for the customdt rbind in Section 4.
+clean_dir     <- fk("plan_txts_clean_core")
+raw_pages_dir <- fk("plan_txts_raw_pages_core")
+acrons        <- vector(mode="list", length=length(edges_and_nodes))
+gsa_seed      <- data.table(
    name    = c("Groundwater_Sustainability_Agencies",
                "Groundwater_Sustainability_Agency",
                "Groundwater_Sustainability_Plan",
@@ -178,68 +147,108 @@ gsa_seed  <- data.table(
    acronym = c("GSAs","GSA","GSP","GSPs"))
 
 for(m in seq_along(edges_and_nodes)){
-   parquet_path <- file.path(clean_dir, paste0(gspids[m], ".parquet"))
+   parquet_path   <- file.path(clean_dir,     paste0(gspids[m], ".parquet"))
+   raw_pages_path <- file.path(raw_pages_dir, paste0(gspids[m], ".RDS"))
    if(!file.exists(parquet_path)){
       warning("Missing cleaned parquet for GSP ", gspids[m], ": ", parquet_path)
       mined <- data.table(name=character(0), acronym=character(0))
    } else {
       pdftxt_m <- arrow::read_parquet(parquet_path)$text
       pdftxt_m <- pdftxt_m[!is.na(pdftxt_m) & nchar(pdftxt_m) > 0]
-      mined <- find_acronyms(pdftxt_m)
+      # Raw pages enable find_acronyms' acronym-table front-matter parser.
+      # Backwards-compat: if the RDS doesn't exist (pre-raw-pages step1 run),
+      # skip the table_text path with a one-time warning per GSP rather than
+      # forcing a step1 rerun.
+      table_text <- if (file.exists(raw_pages_path)) {
+         readRDS(raw_pages_path)
+      } else {
+         warning("Missing raw-pages RDS for GSP ", gspids[m],
+                 " — find_acronyms running without table_text path. ",
+                 "Re-run step1 to populate ", raw_pages_path, ".")
+         NULL
+      }
+      mined <- find_acronyms(pdftxt_m, table_text = table_text)
       mined$name    <- clean_entities(mined$name)
       mined$acronym <- clean_entities(mined$acronym)
    }
    acrons[[m]] <- unique(rbind(gsa_seed, mined), by="acronym")
    setnames(acrons[[m]], c("to","from"))
 }
-###Section 3b: Global water dictionaries####
-# Curated CA water-entity/infrastructure/water-bodies/GSA CSVs (sources live
-# in core_code/dicts/). Each row's all_names is a |-delimited list: first
-# token is canonical, the rest are aliases. Build (to=canonical, from=alias)
-# rows; canonical aliases itself too so disambiguate() leaves it intact.
-dict_csvs <- c(filekey[filekey$var_name == "water_entity_dictionary",         ]$filepath,
-               filekey[filekey$var_name == "water_infrastructure_dictionary", ]$filepath,
-               filekey[filekey$var_name == "water_bodies_dictionary",         ]$filepath,
-               filekey[filekey$var_name == "water_gsa_dictionary",            ]$filepath)
-global_dict <- rbindlist(lapply(dict_csvs, function(f) {
-   if(!file.exists(f)) { warning("Missing dictionary: ", f); return(NULL) }
+###Section 3: Global disambiguation dictionary####
+# CORE_DICT_KEYS is the canonical list defined in _config.R; step3 reads
+# the same list, so both steps stay in sync. The builder below handles
+# both schemas:
+#   - all_names  (pipe-delimited: first token canonical, rest are aliases)
+#       used by water_entity, water_infrastructure, water_bodies,
+#       water_gsa, ca_utilities
+#   - Agency/Abbr columns  (one alias per row)
+#       used by gov_entities_dict_core
+# A dictionary row only contributes to disambiguation if it links an
+# alias to a *different* canonical (from != to). Self-mappings and
+# single-name rows are filtered out because they tell disambiguate()
+# nothing it doesn't already know.
+load_alias_pairs <- function(f) {
+   if (!file.exists(f)) { warning("Missing dictionary: ", f); return(NULL) }
    d <- read.csv(f, stringsAsFactors = FALSE)
-   rbindlist(lapply(d$all_names, function(s) {
-      parts <- strsplit(s, "|", fixed = TRUE)[[1]]
-      if(length(parts) < 1L) return(NULL)
-      canonical <- clean_entities(parts[1], remove_nums = TRUE)
-      aliases   <- clean_entities(parts,    remove_nums = TRUE)  # incl. canonical
+   if ("all_names" %in% names(d)) {
+      rbindlist(lapply(d$all_names, function(s) {
+         parts <- strsplit(s, "|", fixed = TRUE)[[1]]
+         if (length(parts) < 2L) return(NULL)   # canonical only, no alias
+         canonical <- clean_entities(parts[1],  remove_nums = TRUE)
+         aliases   <- clean_entities(parts[-1], remove_nums = TRUE)
+         data.table(to = canonical, from = aliases)
+      }))
+   } else if (all(c("Agency", "Abbr") %in% names(d))) {
+      canonical <- clean_entities(d$Agency, remove_nums = TRUE)
+      aliases   <- clean_entities(d$Abbr,   remove_nums = TRUE)
       data.table(to = canonical, from = aliases)
-   }))
-}))
-global_dict <- unique(global_dict[nchar(to) > 0 & nchar(from) > 0])
+   } else {
+      warning("Unknown dictionary schema (", f,
+              "): expected 'all_names' or Agency+Abbr")
+      NULL
+   }
+}
+
+dict_csvs   <- vapply(CORE_DICT_KEYS, fk, character(1))
+global_dict <- rbindlist(lapply(dict_csvs, load_alias_pairs))
+global_dict <- unique(global_dict[
+   !is.na(to) & !is.na(from) &
+   nchar(to) > 0 & nchar(from) > 0 &
+   to != from
+])
 
 ###Section 4: Build customdt + resolve duplicates####
-# Stack the four (to, from) source tables into one per-GSP disambiguation
+# Stack the three (to, from) source tables into one per-GSP disambiguation
 # map and resolve any duplicated `from` keys so disambiguate() has a clean
-# 1:1 alias-to-canonical mapping.
+# 1:1 alias-to-canonical mapping. Sources:
+#   - acrons[[m]]          : per-GSP doc-mined acronyms (Section 2)
+#   - global_dict          : alias→canonical pairs from every CORE dict
+#                            (Section 3, schema-aware, self-mappings filtered)
+#   - agency_nicknames[[stem]] : per-GSP GSA name list → "Agency"/"Agencies"
+#                                generic (Section 1)
+# acrons[[m]] was renamed to (to, from) at build time in Section 2.
+# agency_nicknames is already a per-stem named list of (to, from) tables.
 
-govscitbl_mini <- govscitbl[!is.na(Abbr) & nchar(Abbr)>0, c("Agency","Abbr")]
-names(govscitbl_mini)    <- c("to","from")
-names(agency_nicknames)  <- c("to","from")   # global object — rename once, not per-iteration
-# acrons[[m]] was already renamed to (to, from) at build time in Section 3.
+# Empty (to, from) table to substitute for GSPs that had no agency_tbl row.
+empty_nicks <- data.table(to = list(), from = character())
 
 customdt <- vector(mode="list",length=length(edges_and_nodes))
 for(m in seq_along(edges_and_nodes)){
-   customdt[[m]] <- rbind(acrons[[m]], govscitbl_mini, global_dict)
+   customdt[[m]] <- rbind(acrons[[m]], global_dict)
    customdt[[m]] <- unique(customdt[[m]])
-   # NB: this vector is sized to (current customdt rows + the 2 agency_nicknames
-   # rows we're about to rbind in). If the agency_nicknames pre-allocation ever
-   # changes from "2 rows per GSP", update both this and the rbind below.
-   match_partial_entity <- rep(c(T,F), c(nrow(customdt[[m]]),nrow(agency_nicknames[(m*2-1):(m*2)])))
-   customdt[[m]] <- rbind(customdt[[m]],agency_nicknames[(m*2-1):(m*2)])
+
+   nicks_m <- agency_nicknames[[ gspids[m] ]]
+   if (is.null(nicks_m)) nicks_m <- empty_nicks
+
+   match_partial_entity <- rep(c(TRUE, FALSE), c(nrow(customdt[[m]]), nrow(nicks_m)))
+   customdt[[m]] <- rbind(customdt[[m]], nicks_m)
    customdt[[m]]$match_partial_entity <- match_partial_entity
    rm(match_partial_entity)
    fromgroups <- table(customdt[[m]]$from)
-   # Collisions can come from any combination of the four sources stacked
-   # into customdt[[m]] (acrons + govscitbl + global_dict + agency_nicknames),
-   # so the same `from` key can map to 2, 3, or more `to` values. The
-   # resolution loop below handles the multi-way case.
+   # Collisions can come from any combination of the three sources stacked
+   # into customdt[[m]] (acrons + global_dict + agency_nicknames), so the
+   # same `from` key can map to 2, 3, or more `to` values. The resolution
+   # loop below handles the multi-way case.
    fromgroups <- fromgroups[fromgroups>1]
 
    if(length(fromgroups) > 0){
@@ -265,32 +274,55 @@ for(m in seq_along(edges_and_nodes)){
    }
 }
 ###Section 5: Apply disambiguation####
-# For each GSP: read the step3 textnet_extract, normalize the entity-name
-# columns through clean_entities() so they're in the same surface form as
-# the customdt map, then run disambiguate() and save.
+# For each GSP: read the step3 textnet_extract, snapshot the original
+# entity_name as raw_entity_name on the nodelist (for crosswalk/debugging),
+# normalize the entity-name columns through clean_entities() so they're in
+# the same surface form as the customdt map, then run disambiguate() and
+# save.
 #
 # The normalization pass exists because textnet_extract's concatenator and
 # clean_entities() drift on punctuation: a hyphen, ampersand, or apostrophe
 # can survive the spaCy + concatenator path on one side but get rewritten on
 # the dict side. Running both through clean_entities() guarantees they meet
 # in the same surface form before disambiguate() does its lookups.
-disambig_dir <- filekey[filekey$var_name=="disambiged_extracts_core",]$filepath
-for(m in 1:length(edges_and_nodes)){
+#
+# raw_entity_name carries the pre-normalization spaCy surface form through
+# disambiguation untouched (disambiguate() only rewrites entity_name on the
+# nodelist and source/target on the edgelist). step5 dedups nodelist rows
+# whose canonical entity_name collides; whichever raw lands on the surviving
+# row becomes that vertex's raw attribute. To reverse-engineer all the
+# aliases that mapped to a given canonical, consult the dict files — they're
+# the authoritative source of the canonical→aliases relationship.
+#
+# should not drop "us" from custom list, or from nodelist/edgelist. however,
+# if it doesn't match "us" on the first pass we drop "us" from the
+# nodelist/edgelist and try again to match with the custom list.
+try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
+
+disambig_dir <- fk("disambiged_extracts_core")
+for(m in seq_along(edges_and_nodes)){
    out_path <- file.path(disambig_dir, paste0(gspids[m], ".RDS"))
    if(!CLOBBER && file.exists(out_path)){
       next
    }
    message("[", m, "/", length(edges_and_nodes), "] ", gspids[m])
-   #should not drop "us" from custom list, or from nodelist/edgelist. however, if it doesn't match "us" on
-   #drop "us" from the nodelist/edgelist and try again to match with the custom list
-   try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
-   edgenodelist <- readRDS(edges_and_nodes[m])
-   # Normalize entity-name columns so they match the customdt surface form.
-   edgenodelist$edgelist$source     <- clean_entities(edgenodelist$edgelist$source)
-   edgenodelist$edgelist$target     <- clean_entities(edgenodelist$edgelist$target)
-   edgenodelist$nodelist$entity_name <- clean_entities(edgenodelist$nodelist$entity_name)
-   edgenodelist <- disambiguate(from=customdt[[m]]$from, to=customdt[[m]]$to,
-                                    match_partial_entity=customdt[[m]]$match_partial_entity, textnet_extract = edgenodelist, try_drop = try_drop)
-   saveRDS(edgenodelist, out_path)
+   tryCatch({
+      edgenodelist <- readRDS(edges_and_nodes[m])
+      # Snapshot the raw spaCy surface form BEFORE any normalization, so
+      # downstream consumers can crosswalk canonical -> observed alias.
+      edgenodelist$nodelist$raw_entity_name <- edgenodelist$nodelist$entity_name
+      # Normalize entity-name columns so they match the customdt surface form.
+      edgenodelist$edgelist$source      <- clean_entities(edgenodelist$edgelist$source)
+      edgenodelist$edgelist$target      <- clean_entities(edgenodelist$edgelist$target)
+      edgenodelist$nodelist$entity_name <- clean_entities(edgenodelist$nodelist$entity_name)
+      edgenodelist <- disambiguate(from = customdt[[m]]$from,
+                                   to   = customdt[[m]]$to,
+                                   match_partial_entity = customdt[[m]]$match_partial_entity,
+                                   textnet_extract = edgenodelist,
+                                   try_drop = try_drop)
+      atomic_saveRDS(edgenodelist, out_path)
+   }, error = function(e) {
+      message(sprintf("  ERROR (%s): %s -- continuing", gspids[m], conditionMessage(e)))
+   })
 }
 

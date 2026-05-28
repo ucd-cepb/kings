@@ -8,10 +8,20 @@
 #   ./core_code/run_pipeline.sh                    # all five steps + audit
 #   ./core_code/run_pipeline.sh step3 step4        # subset (run in given order)
 #   ./core_code/run_pipeline.sh --no-audit         # skip the audit at the end
+#   ./core_code/run_pipeline.sh --clobber          # force CLOBBER=TRUE in every step
+#   ./core_code/run_pipeline.sh --testing          # TESTING=TRUE (first TESTING_N files)
 #
 # Each step is invoked as `Rscript core_code/<step>.R` and inherits CWD
-# from the wrapper. Pre-existing CLOBBER/TESTING flags in each script are
-# honored (set them in-script before running).
+# and environment from the wrapper. Flags become env vars consumed by
+# core_code/_config.R. The full env-var set (all optional, all have
+# defaults — see core_code/_config.R for the values):
+#   CORE_CLOBBER          (set by --clobber)
+#   CORE_TESTING          (set by --testing)
+#   CORE_TESTING_N        (no flag — export directly)
+#   CORE_MIN_PAGE_CHARS   (no flag — export directly)
+#   CORE_PARSE_WORKERS    (no flag — export directly)
+#   CORE_SPACY_ENV        (no flag — export directly)
+# You can export any of these before invoking the wrapper or a single Rscript.
 
 set -euo pipefail
 
@@ -31,8 +41,10 @@ STEPS=()
 for arg in "$@"; do
   case "$arg" in
     --no-audit) RUN_AUDIT=0 ;;
+    --clobber)  export CORE_CLOBBER=1 ;;
+    --testing)  export CORE_TESTING=1 ;;
     -h|--help)
-      sed -n '2,15p' "$0" | sed 's/^# *//'
+      sed -n '2,20p' "$0" | sed 's/^# *//'
       exit 0
       ;;
     *) STEPS+=("$arg") ;;
@@ -43,7 +55,14 @@ if [ ${#STEPS[@]} -eq 0 ]; then
 fi
 
 # === Log file path from filekey ===
-LOG_DIR=$(awk -F, '$1=="pipeline_run_logs"{print $2}' filekey.csv)
+# Use python's csv module so quoted/multi-comma description fields don't
+# trip up the parse (awk -F, breaks on the 3rd column when it's quoted).
+LOG_DIR=$(python3 -c '
+import csv, sys
+for row in csv.reader(open("filekey.csv")):
+    if row and row[0] == "pipeline_run_logs":
+        print(row[1]); break
+') || true
 if [ -z "$LOG_DIR" ]; then
   echo "ERROR: 'pipeline_run_logs' row not found in filekey.csv" >&2
   exit 1
@@ -55,9 +74,11 @@ LOG="${LOG_DIR}/run_${TS}.log"
 # === Run ===
 {
   echo "=== Pipeline run started $(date) ==="
-  echo "Steps: ${STEPS[*]}"
-  [ "$RUN_AUDIT" -eq 1 ] && echo "Audit:  yes (${AUDIT_STEP})" || echo "Audit:  no"
-  echo "Log:    $LOG"
+  echo "Steps:   ${STEPS[*]}"
+  [ "$RUN_AUDIT" -eq 1 ] && echo "Audit:   yes (${AUDIT_STEP})" || echo "Audit:   no"
+  echo "Clobber: ${CORE_CLOBBER:-0}"
+  echo "Testing: ${CORE_TESTING:-0}"
+  echo "Log:     $LOG"
   echo
 } | tee "$LOG"
 

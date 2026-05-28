@@ -9,7 +9,7 @@ flowchart TD
     PDFs[source_pdfs/<br/>v1_0007.pdf, v2_0007.pdf, ...]
 
     subgraph step1[step1_pdf_reader_cleaner.R]
-        S1[pdftools + tesseract OCR fallback]
+        S1[pdftools + per-page OCR repair<br/>(eng_words dict checks each page;<br/>broken-font pages re-OCR'd)]
     end
     subgraph step2[step2_clean_text_pages.R]
         S2[density heuristics<br/>punct / numeric / whitespace / max_chars]
@@ -49,10 +49,10 @@ flowchart TD
 
 | step | reads | writes | what it does |
 |---|---|---|---|
-| **step1** `pdf_reader_cleaner` | `source_pdfs/<stem>.pdf` | `plan_txts_raw_core/<stem>.txt` | poppler text extraction; OCR fallback for image-only PDFs. Output is a per-page TSV (`page \t text`). |
+| **step1** `pdf_reader_cleaner` | `source_pdfs/<stem>.pdf`<br/>`eng_words.rda` | `plan_txts_raw_core/<stem>.txt` | poppler text extraction with two-tier OCR fallback. **Whole-document OCR** when poppler returns empty pages (scanned PDFs). **Per-page OCR repair** for PDFs with broken ToUnicode CMaps (subsetted CID fonts from macOS Quartz produce constant-shifted glyph-index garbage that displays fine but extracts as nonsense — known offenders: 0012, 0021, 0048, 0089, 0129, 0134). Each page is scored against `eng_words`; pages below `ENG_RATIO_MIN` (default 0.30) with at least `MIN_ALPHA_TOKENS` (default 20) are re-extracted via `pdf_ocr_text(pdf, pages = chunk)` in batches of `OCR_BATCH_SIZE` (default 50) to amortize the PDF-open + tesseract-init cost. A batch that errors falls back to per-page OCR within that chunk so one bad page can't take out the others. Output is a per-page TSV (`page \t text`). |
 | **step2** `clean_text_pages` | `plan_txts_raw_core/<stem>.txt` | `plan_txts_clean_core/<stem>.parquet` | blank out non-prose pages (TOCs, figures, references, oversized maps) via four density thresholds: punct, numeric, whitespace, max characters. Row count preserved so downstream can still align with original PDF pages. |
 | **step3** `parse_and_extract` | `plan_txts_clean_core/<stem>.parquet`<br/>+ water_* dictionaries | `core_data_parsed_plans/parsed_<stem>.parquet`<br/>`nondisambiged_extracts_core/<stem>.RDS` | spaCy transformer parse via `textNet::parse_text_trf`. Entity ruler is built from the multi-word terms in the four water dicts (single-token aliases skipped; they're caught in step4). `textnet_extract()` produces a list with `$edgelist` + `$nodelist` data.tables. |
-| **step4** `disambiguate_nodelists` | `nondisambiged_extracts_core/<stem>.RDS`<br/>`plan_txts_clean_core/<stem>.parquet` (acronym mining)<br/>`gsa_table_core` (agency_nicknames)<br/>all 6 dictionaries (`gov_entities`, 4× `water_*`, `ca_utilities`) | `disambiged_extracts_core/<stem>.RDS` | builds a per-GSP `customdt` alias→canonical map by stacking 4 sources, resolves duplicate `from` keys ("longest `to` wins"), runs `clean_entities()` over the extract and over every dict source so both sides converge to the same surface form, then `textNet::disambiguate()` rewrites entity names. |
+| **step4** `disambiguate_nodelists` | `nondisambiged_extracts_core/<stem>.RDS`<br/>`plan_txts_clean_core/<stem>.parquet` (acronym mining)<br/>`gsa_table_core` (agency_nicknames)<br/>all 6 dictionaries (`gov_entities`, 4× `water_*`, `ca_utilities`) | `disambiged_extracts_core/<stem>.RDS` | builds a per-GSP `customdt` alias→canonical map by stacking 4 sources: per-doc acronyms, govsci abbreviations, global water dicts, and the GSP's own agency-nickname rows (looked up by file stem from a named list — no integer arithmetic). Resolves duplicate `from` keys ("longest `to` wins"), runs `clean_entities()` over the extract and over every dict source so both sides converge to the same surface form, then `textNet::disambiguate()` rewrites entity names. |
 | **step5** `build_igraphs` | `disambiged_extracts_core/<stem>.RDS` | `igraph_objects/multiplex_directed_graphs/<stem>.RDS`<br/>`igraph_objects/uniplex_weighted_graphs/<stem>.RDS` | filters incomplete edges and <2-a-z-letter noise, then `graph_from_data_frame()` produces the multiplex (one edge per SVO triple) and `igraph::simplify(weight="sum")` produces the uniplex weighted variant. |
 | **step_audit_pipeline** | step1/2/3 outputs | `pipeline_audit.csv` + console summary | cross-stage retention audit. Reports file-level status, page retention totals, low-yield documents. |
 
@@ -118,17 +118,31 @@ exec('\n'.join(''.join(c['source']) if isinstance(c['source'], list) else c['sou
 
 ## Filekey contract
 
-All filesystem paths used by the pipeline come from `../filekey.csv`. Each step does:
+All filesystem paths used by the pipeline come from `../filekey.csv`. Each step sources `_config.R` at the top, which loads `filekey` once, validates that every `var_name` is unique, and exposes a tiny lookup helper:
 
 ```r
-filekey <- read.csv("filekey.csv")
-some_path <- filekey[filekey$var_name == "<some_var>", ]$filepath
+source("core_code/_config.R")   # also defines CLOBBER, TESTING, MIN_PAGE_CHARS
+
+some_path <- fk("some_var")     # errors if the key is missing
 ```
 
-The core pipeline owns the `*_core` var-name namespace; legacy `*_govnetpaper` and `*_stmpaper` rows in the same file are kept for paper-specific code that lives outside `core_code/`. Don't repoint those rows at core paths — the right move is to add a new `*_core` row and update only the core script that reads it.
+The core pipeline owns the `*_core` var-name namespace.
+
+## Shared config (`_config.R`)
+
+Cross-step settings live in `core_code/_config.R` so a single change rolls through the pipeline. Override from the shell:
+
+| Env var               | R variable        | Default | Used by                                  |
+|---|---|---|---|
+| `CORE_CLOBBER=1`      | `CLOBBER`         | `FALSE` | every step (re-run even if output exists) |
+| `CORE_TESTING=1`      | `TESTING`         | `FALSE` | step2, step3                              |
+| `CORE_TESTING_N=10`   | `TESTING_N`       | `5`     | step2, step3                              |
+| `CORE_MIN_PAGE_CHARS` | `MIN_PAGE_CHARS`  | `200`   | step3 (filter), step_audit (report)       |
+
+`run_pipeline.sh --clobber` and `run_pipeline.sh --testing` set the env vars for you. Per-step tunables that no other step needs (step1's `ENG_RATIO_MIN`, step2's density thresholds) stay local to their step.
 
 ## What lives outside core_code
 
 The following deliberately do *not* live in this directory:
-- Per-paper analysis scripts (Network_Innovation_Paper, EJ_DAC_Paper, Structural_Topic_Model_Paper, etc.) — they consume core outputs but their analytical choices are paper-specific.
-- Downstream graph analysis (ERGMs, centrality, supernetwork construction, plotting). Those used to live alongside step 4–6 but were factored out so core_code is purely the document-to-graph pipeline.
+- Per-paper analysis scripts. they consume core outputs but their analytical choices are paper-specific. For a specific analysis, the preferred workflow is to copy the most up-to-date data into a paper-specific data subdirectory and then proceed with that (the point is to isolate a static version for paper-specific reproducibility)
+- Downstream graph analysis (ERGMs, centrality, supernetwork construction, plotting). core_code is purely the document-to-graph pipeline.
