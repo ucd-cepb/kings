@@ -19,6 +19,7 @@ dacs_2018_files,data/Structural_Topic_Model_Paper/spatial_files/dacs_2018,
 dictionary_folder,data/Multipurpose_Files,
 disambiged_extracts_ejpaper,data/EJ_Paper/cleaned_extracts_withdacsandejphrases,textnet_extract objects that have been through the disambiguate function procedure for the Text_Gov_Network_Methods paper are found in data/EJ_Paper/cleaned_extracts_textgov_paper_version
 disambiged_extracts_govnetpaper,data/Text_Gov_Network_Methods_Paper/cleaned_extracts,textnet_extract objects that have been through the disambiguate function procedure for the Text_Gov_Network_Methods paper
+disambiged_extracts_core,data/core_data/textnet_objects/disambig,textnet_extract objects that have been through the disambiguate function procedure (core pipeline)
 edgelist_w_meta,data/Verb_Analysis_Paper/edgelist_with_verb_meta,edgelist merged with verb metadata
 edgelist_w_v_class,data/Verb_Analysis_Paper/edgelist_with_verb_class,
 effect_table_condensed_csvs_stmpaper,data/Structural_Topic_Model_Paper/intermediate_files/eftblskinny_topic_,
@@ -32,6 +33,7 @@ finalmodelfits_stmpaper,data/Structural_Topic_Model_Paper/mdl/model_,
 folder_containing_webrepair,data/Structural_Topic_Model_Paper,
 full_directed_graphs_ejpaper,data/EJ_Paper/full_directed_graphs/full_directed_graph_,
 full_directed_graphs_govnetpaper,data/Text_Gov_Network_Methods_Paper/full_directed_graphs/full_directed_graph_,"Full (multiplex, with isolates) directed graphs including GPEs ORGs and PEOPLE"
+multiplex_directed_graphs_core,data/core_data/igraph_objects/multiplex_directed_graphs,"Multiplex directed igraph objects (one edge per SVO triple, multi-edges preserved) — written by step5_build_igraphs.R"
 generate_proper_names_fn_ejpaper,EJ_Paper/Code/utils/generate_proper_names.R,
 generate_proper_names_function,Text_Gov_Network_Methods_Paper/Code/utils/generate_proper_names.R,
 generate_proper_names_phrasetest,Generate_Phrases_Test/Code/utils/generate_proper_names.R,
@@ -114,6 +116,7 @@ nondisambiged_extracts_phrasetest,data/PhraseTest/nondisambig_original_network_e
 proper_name_rawfiles,data/Multipurpose_Files,
 network_properties_folder_verbnetpaper,data/Verb_Analysis_Paper,
 weighted_nets_govnetpaper,data/Text_Gov_Network_Methods_Paper/weighted_directed_graphs/to_weighted_graph_,
+uniplex_weighted_graphs_core,data/core_data/igraph_objects/uniplex_weighted_graphs,"Uniplex weighted igraph objects (multiplex collapsed via igraph::simplify, weight = count of merged edges) — written by step5_build_igraphs.R"
 govsci_tbl_clean,data/Multipurpose_Files/govsci_tbl_clean,
 vector_of_GSAs,data/Multipurpose_Files/vector_of_GSAs.RDS,
 psj_govnetpaper_figures,data/Text_Gov_Network_Methods_Paper/figures,
@@ -144,3 +147,19 @@ node_org_tags, /Multpurpose_Files/Dictionaries/googlesheets_dt_complete.csv,
 disambiged_unfiltered_extracts_instrumentpaper,data/Supernetwork_Paper/cleaned_unfiltered_extracts,
 bruno_data,Policy_Instruments_Paper/Data/policy_instruments_bruno.csv,
 bruno_folder,data/Policy_Instruments_Paper/Bruno_Data_Raw,
+core_data_source_pdfs,data/core_data/source_pdfs,"Master copy of original GSP PDFs (read by step1)"
+plan_txts_raw_core,data/core_data/plan_txts_raw,"Per-GSP TSVs (page<TAB>text) produced by step1_pdf_reader_cleaner.R"
+plan_txts_clean_core,data/core_data/plan_txts_clean,"Per-GSP parquet files with non-prose pages blanked by step2 density heuristics"
+core_data_parsed_plans,data/core_data/parsed_plans/parsed_,"spaCy parsed output prefix (step2). Files: parsed_<gsp_id>"
+core_data_textnet_objects,data/core_data/textnet_objects,"Root folder for textnet_extract RDS objects (nondisambig, disambig). Each is a list with $edgelist + $nodelist."
+core_data_igraph_objects,data/core_data/igraph_objects,"Root folder for igraph network objects (multiplex_directed_graphs/, uniplex_weighted_graphs/) built by step5_build_igraphs.R"
+audit_csv_core,data/core_data/pipeline_audit.csv,"Cross-stage retention audit CSV written by step_audit_pipeline.R"
+pipeline_run_logs,data/core_data/run_logs,"Timestamped run logs from core_code/run_pipeline.sh (one file per pipeline invocation)"
+nondisambiged_extracts_core,data/core_data/textnet_objects/nondisambig/,"Per-GSP textnet_extract RDS objects from step3 (parse_text_trf + entity ruler). Lists with $edgelist + $nodelist."
+water_entity_dictionary,core_code/dicts/water_entity_dictionary.csv,"Curated CA water-entity dictionary (state/federal/water districts/tribes/NGOs)"
+water_infrastructure_dictionary,core_code/dicts/water_infrastructure_dictionary.csv,"Curated CA water-infrastructure dictionary (dams/canals/aqueducts/plants)"
+water_bodies_dictionary,core_code/dicts/water_bodies_dictionary.csv,"Curated CA water-bodies dictionary (rivers/lakes/basins/aquifers)"
+water_gsa_dictionary,core_code/dicts/water_gsa_dictionary.csv,"Curated CA GSA dictionary (GSAs + irrigation/water storage districts not in water_entity)"
+ca_utilities_dictionary,core_code/dicts/ca_utilities_dictionary.csv,"Curated CA water and electric utilities (IOUs, POUs, JPAs, hydro-operating irrigation districts). Built by build_ca_utilities_dictionary.ipynb. Deduped against water_entity/water_gsa/water_infrastructure/water_bodies."
+gsa_table_core,core_code/dicts/GSA_Table_20230824.RDS,"Per-GSP agency-table snapshot (originally web_repaired_*). Used by step4 to build agency_nicknames. Keyed on gsp_id (bare numeric); columns include name_gsas (list) and mult_gsas (bool)."
+gov_entities_dict_core,core_code/dicts/gov_entities_dict.csv,"Government-entity Agency<->Abbr dictionary (federal + California + local). Built by core_code/dicts/build_gov_entities_dict.ipynb. Used by step4 to build the govscitbl_mini alias map. Columns: State, Agency, Abbr."
