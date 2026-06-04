@@ -26,14 +26,23 @@
 #
 # Pre-graph filtering applied to every extract (kept here, not in step4,
 # because these filters are graph-construction prep — they discard rows
-# that would otherwise produce malformed vertices/edges):
-#   - drop edges where BOTH $source and $target are NA (truly broken).
-#     Half-NA edges (one resolved, one missing) are KEPT — they're
-#     informative as "this entity was the source of something" even if
-#     the counterparty wasn't extracted.
+# that would otherwise produce malformed vertices/edges. The textnet_extract
+# RDS from step4 is the source of truth and is not modified):
+#   - drop edges where source OR target is NA. igraph::graph_from_data_frame()
+#     rejects any NA in the edge endpoints, and a half-NA edge isn't really
+#     traversable in graph terms (you can't follow it to a counterparty).
+#     The textnet_extract object on disk still carries half-NA edges for any
+#     downstream analysis that wants them; this is purely a graph-shape
+#     filter. Isolate vertices (nodes that lose all their edges to this
+#     filter) are kept in the graph as isolates — see the no-edge-participation
+#     filter on nodelist below.
 #   - drop edges/nodes whose entity name has fewer than 2 a-z letters
-#     (filters out punctuation-only or single-letter tokens). The letter
-#     check is skipped on a NA side — it only fires on real strings.
+#     (filters out punctuation-only or single-letter tokens).
+#   - drop nodelist rows where entity_name is NA (graph_from_data_frame
+#     requires non-NA vertex ids).
+#   - keep ALL remaining nodelist rows as vertices, even those that don't
+#     appear in any edge — they show up as isolates in the graph. This is
+#     deliberate: a vertex set is the entity list, not the edge endpoints.
 #   - dedup nodelist by canonical entity_name (step4 may emit multiple rows
 #     with the same canonical when several originals collapsed via
 #     disambiguate). Required for graph_from_data_frame's unique-vertex
@@ -41,8 +50,11 @@
 #     attribute (sample of the pre-disambig surface form); the dict files
 #     are the authoritative source for the full canonical→aliases mapping.
 #
-# Stem convention: file stems carry the plan-version prefix (e.g. v1_0007).
-# Each (version, GSP) pair gets its own pair of igraph outputs.
+# Stem convention: stems come from step1 and are gspDocId strings under
+# the new step0 convention (each document has its own unique stem). Each
+# stem maps 1:1 to one document and produces one pair of multiplex /
+# uniplex igraph outputs. Plan-family lookup (which submission, which
+# plan) is mediated by source_pdfs/plan_family_manifest.csv.
 
 library(igraph)
 library(stringr)
@@ -76,21 +88,21 @@ build_graphs <- function(edgenodelist) {
   n_edges_in <- nrow(edgelist)
   n_nodes_in <- nrow(nodelist)
 
-  # Drop only fully-NA edges; keep half-NA (informative anchor + unresolved other side)
-  edgelist <- edgelist[!(is.na(source) & is.na(target))]
-  n_after_doubleNA <- nrow(edgelist)
+  # Drop any edge with a NA endpoint — graph_from_data_frame rejects NAs in
+  # source/target, and a half-NA edge can't be represented in the graph
+  # (no second endpoint to connect to). The textnet_extract RDS still holds
+  # these rows for non-graph analyses; this filter only narrows the rows we
+  # feed to igraph.
+  edgelist <- edgelist[!is.na(source) & !is.na(target)]
+  n_after_NA <- nrow(edgelist)
 
-  # Drop edges/nodes whose entity name has <2 a-z letters. NA sides are
-  # ignored — they pass the letter check (the previous filter already
-  # decided whether they're worth keeping).
+  # Drop edges/nodes whose entity name has <2 a-z letters (punctuation-only
+  # or single-letter tokens).
   edgelist[, esletters := str_remove_all(source,       "[^a-z_]")]
   edgelist[, etletters := str_remove_all(target,       "[^a-z_]")]
   nodelist[, nletters  := str_remove_all(entity_name,  "[^a-z_]")]
-  nodelist <- nodelist[nchar(nletters) > 1L]
-  edgelist <- edgelist[
-    (is.na(source) | nchar(esletters) > 1L) &
-    (is.na(target) | nchar(etletters) > 1L)
-  ]
+  edgelist <- edgelist[nchar(esletters) > 1L & nchar(etletters) > 1L]
+  nodelist <- nodelist[!is.na(entity_name) & nchar(nletters) > 1L]
   edgelist[, c("esletters", "etletters") := NULL]
   nodelist[, nletters := NULL]
 
@@ -99,13 +111,15 @@ build_graphs <- function(edgenodelist) {
   # name (different originals collapsed by disambiguate). unique(by=) keeps
   # the first occurrence; raw_entity_name on that row reflects one example
   # of the observed pre-disambig surface form for the vertex. To recover
-  # the full alias set for a canonical, consult the dict files.
+  # the full alias set for a canonical, consult the dict files. All
+  # remaining vertices are passed to graph_from_data_frame, including those
+  # that no longer appear in any edge — they become isolates.
   n_nodes_pre_dedup <- nrow(nodelist)
   nodelist <- unique(nodelist, by = "entity_name")
 
   message(sprintf(
     "    edges: %d in, %d after NA filter, %d after letter filter (dropped %d, %.0f%%)",
-    n_edges_in, n_after_doubleNA, nrow(edgelist),
+    n_edges_in, n_after_NA, nrow(edgelist),
     n_edges_in - nrow(edgelist),
     100 * (n_edges_in - nrow(edgelist)) / max(n_edges_in, 1)))
   message(sprintf(

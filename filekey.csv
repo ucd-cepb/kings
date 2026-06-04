@@ -140,6 +140,7 @@ disambiged_unfiltered_extracts_instrumentpaper,data/Supernetwork_Paper/cleaned_u
 bruno_data,Policy_Instruments_Paper/Data/policy_instruments_bruno.csv,
 bruno_folder,data/Policy_Instruments_Paper/Bruno_Data_Raw,
 core_data_source_pdfs,data/core_data/source_pdfs,"Master copy of original GSP PDFs (read by step1)"
+core_data_source_elements,data/core_data/source_elements,"Per-doc Elements Guide xlsx files paralleling source_pdfs. One xlsx per plan PDF, named gsp_doc_id_<plan_doc_id>_elements.xlsx (the *plan*'s docId so the elements file is trivially associable with its plan). The source URL may be either /portal/service/gspdocument/download/<elements_doc_id> or the dynamic /portal/service/gsp/exportdata?gspId=N — the manifest's elements_url column carries the actual URL."
 plan_txts_raw_core,data/core_data/plan_txts_raw,"Per-GSP TSVs (page<TAB>text) produced by step1_pdf_reader_cleaner.R"
 plan_txts_raw_pages_core,data/core_data/plan_txts_raw_pages,"Per-GSP RDS of the raw pdftools::pdf_text() output (character vector, one element per page, newlines and multi-space gaps PRESERVED). Written by step1 alongside the cleaned TSV; consumed by step4's find_acronyms(table_text=) path so the acronym-table front-matter pages parse correctly."
 plan_txts_clean_core,data/core_data/plan_txts_clean,"Per-GSP parquet files with non-prose pages blanked by step2 density heuristics"

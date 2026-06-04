@@ -10,6 +10,17 @@
 #   ./core_code/run_pipeline.sh --no-audit         # skip the audit at the end
 #   ./core_code/run_pipeline.sh --clobber          # force CLOBBER=TRUE in every step
 #   ./core_code/run_pipeline.sh --testing          # TESTING=TRUE (first TESTING_N files)
+#   ./core_code/run_pipeline.sh --with-step0       # prepend step0 (portal refresh
+#                                                  # + download) before step1..5
+#
+# Steps run sequentially: each one must finish before the next starts, so
+# you can "queue up" later steps by listing them on the command line:
+#   ./core_code/run_pipeline.sh --with-step0       # step0 -> step1..5 -> audit
+#   ./core_code/run_pipeline.sh step4 step5        # step4 then step5 (skip earlier)
+#
+# To detach from the terminal so the queue keeps running after you log out:
+#   nohup ./core_code/run_pipeline.sh --with-step0 &
+#   tail -f $(ls -t data/core_data/pipeline_run_logs/run_*.log | head -1)
 #
 # Each step is invoked as `Rscript core_code/<step>.R` and inherits CWD
 # and environment from the wrapper. Flags become env vars consumed by
@@ -35,16 +46,18 @@ DEFAULT_STEPS=(
 )
 AUDIT_STEP="step_audit_pipeline"
 RUN_AUDIT=1
+WITH_STEP0=0
 
 # === Arg parsing ===
 STEPS=()
 for arg in "$@"; do
   case "$arg" in
-    --no-audit) RUN_AUDIT=0 ;;
-    --clobber)  export CORE_CLOBBER=1 ;;
-    --testing)  export CORE_TESTING=1 ;;
+    --no-audit)   RUN_AUDIT=0 ;;
+    --clobber)    export CORE_CLOBBER=1 ;;
+    --testing)    export CORE_TESTING=1 ;;
+    --with-step0) WITH_STEP0=1 ;;
     -h|--help)
-      sed -n '2,20p' "$0" | sed 's/^# *//'
+      sed -n '2,30p' "$0" | sed 's/^# *//'
       exit 0
       ;;
     *) STEPS+=("$arg") ;;
@@ -52,6 +65,10 @@ for arg in "$@"; do
 done
 if [ ${#STEPS[@]} -eq 0 ]; then
   STEPS=("${DEFAULT_STEPS[@]}")
+fi
+# Prepend step0 if requested. (Idempotent: only added if not already in the list.)
+if [ "$WITH_STEP0" -eq 1 ] && [[ ! " ${STEPS[*]} " =~ " step0_download_from_sgma " ]]; then
+  STEPS=(step0_download_from_sgma "${STEPS[@]}")
 fi
 
 # === Log file path from filekey ===

@@ -6,14 +6,16 @@
 #   plan_txts_raw_pages_core/<stem>.RDS  : raw pdftools::pdf_text() output as
 #                                          a character vector (one element per
 #                                          page, newlines and multi-space gaps
-#                                          PRESERVED). Used by step4's
-#                                          find_acronyms(table_text=) so the
-#                                          acronym-table front-matter pages
-#                                          parse correctly.
+#                                          PRESERVED). Consumed by step4's
+#                                          extract_front_matter_acronyms()
+#                                          path so the acronym-table front-
+#                                          matter pages parse correctly.
 #
 # Uses pdftools (poppler) for text extraction with tesseract OCR fallback
-# for scanned/image-only PDFs. Replaces the legacy monolithic
-# cleaned_pdfs RDS with per-file TSVs keyed on the plan-version-prefixed stem.
+# for scanned/image-only PDFs. The filename stem comes from the source PDF
+# basename: gsp_doc_id_<gspDocId>.pdf -> stem "<gspDocId>". Plan-family
+# lookups (gspId, canonical_gspId, version, ...) are mediated by
+# core_data/source_pdfs/plan_family_manifest.csv, written by step0.
 #
 # The non-prose page filtering (TOCs, figures, references, etc.) is now
 # handled by step2_clean_text_pages.R via density heuristics, so the
@@ -202,18 +204,25 @@ converted <- skipped <- failed <- 0L
 
 for (pdf_path in pdfs) {
   fname    <- basename(pdf_path)
-  # Preserve the plan-version prefix (v1, v2, ... refer to successive
-  # submissions/revisions of the GSP itself — NOT to pipeline versions) and
-  # the zero-padded numeric GSP id.
-  # e.g. v1_gsp_num_id_0007.pdf -> v1_0007
+  # Filename convention (from step0): gsp_doc_id_<gspDocId>.pdf.
+  # We extract the trailing digits as the stem (= gspDocId). Plan-family
+  # lookups (gspId, canonical_gspId, version, ...) are done via
+  # core_data/source_pdfs/plan_family_manifest.csv, not from the filename.
+  #
+  # We also tolerate older filename forms — `(v<N>_)?gsp_num_id_<NNNN>.pdf` —
+  # that may still be on disk during the legacy-to-docId transition; for
+  # those, the stem is the same trailing-digit string, but the digits
+  # represent a gspId rather than a gspDocId. The migration script
+  # (migrate_pdf_naming.R) deletes legacy files before step0 re-downloads
+  # them under the new convention, so this fallback is a transient courtesy.
   vsn      <- stringr::str_extract(fname, "^v[0-9]+")
-  gsp_id   <- stringr::str_extract(fname, "[0-9]+(?=\\.pdf$)")
-  if (is.na(gsp_id)) {
+  trailing <- stringr::str_extract(fname, "[0-9]+(?=\\.pdf$)")
+  if (is.na(trailing)) {
     message("Skipping (no numeric id): ", fname)
     skipped <- skipped + 1L
     next
   }
-  stem           <- if (!is.na(vsn)) paste(vsn, gsp_id, sep = "_") else gsp_id
+  stem           <- if (!is.na(vsn)) paste(vsn, trailing, sep = "_") else trailing
   out_path       <- file.path(raw_dir,       paste0(stem, ".txt"))
   raw_pages_path <- file.path(raw_pages_dir, paste0(stem, ".RDS"))
 

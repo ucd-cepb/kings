@@ -33,32 +33,65 @@ if (is.na(ret_path) || !nzchar(ret_path)) {
 }
 message("Using spaCy env: ", ret_path)
 
-# === Load cleaned text ===
-clean_dir <- fk("plan_txts_clean_core")
-files <- list.files(clean_dir, pattern = "\\.parquet$", full.names = TRUE)
+# === Enumerate inputs / outputs (no I/O yet) ===
+# Build the list of clean-text parquet inputs and the corresponding
+# nondisambig RDS output paths, then derive todo_idx (indices that still
+# need work) via a single vectorized file.exists() on the outputs. Reading
+# parquet text only happens inside the `if (length(todo_idx) > 0L)` block
+# below, so a rerun on a mostly-finished pipeline skips parquet reads
+# for already-extracted GSPs.
+clean_dir   <- fk("plan_txts_clean_core")
+files       <- list.files(clean_dir, pattern = "\\.parquet$", full.names = TRUE)
+gsp_ids     <- str_remove(basename(files), "\\.parquet$")
+names(files) <- gsp_ids
 
-texts <- lapply(files, function(f) {
-  tmp <- arrow::read_parquet(f)$text
-  tmp <- str_replace_all(tmp, "\\n", " ")
-  tmp[!is.na(tmp) & nchar(tmp) > MIN_PAGE_CHARS]   # drop short / blanked pages
-})
-names(texts) <- str_remove(basename(files), "\\.parquet$")  # bare gsp_id
+extract_dir <- fk("nondisambiged_extracts_core")
+dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
 
-# Drop GSPs with no usable pages so the file/text vectors stay aligned
-empty <- vapply(texts, length, integer(1)) == 0L
-if (any(empty)) {
-  message("Dropping ", sum(empty), " GSP(s) with no usable text >",
-          MIN_PAGE_CHARS, " chars: ",
-          paste(names(texts)[empty], collapse = ", "))
-  files <- files[!empty]
-  texts <- texts[!empty]
+extract_paths <- file.path(extract_dir, paste0(gsp_ids, ".RDS"))
+
+# Vectorized file.exists — one syscall batch, microseconds total.
+if (CLOBBER) {
+  todo_idx <- seq_along(gsp_ids)
+} else {
+  todo_idx <- which(!file.exists(extract_paths))
+  n_skipped <- length(gsp_ids) - length(todo_idx)
+  if (n_skipped > 0L) {
+    message("Skipping ", n_skipped, " GSP(s) with existing extracts ",
+            "(set CORE_CLOBBER=1 to reparse).")
+  }
 }
 
 if (TESTING) {
-  n <- min(TESTING_N, length(files))
-  message("TESTING mode: using ", n, " of ", length(files), " GSP(s)")
-  files <- files[seq_len(n)]
-  texts <- texts[seq_len(n)]
+  n <- min(TESTING_N, length(todo_idx))
+  message("TESTING mode: using ", n, " of ", length(todo_idx), " todo GSP(s)")
+  todo_idx <- todo_idx[seq_len(n)]
+}
+
+if (length(todo_idx) == 0L) {
+  message("Nothing to do; all extracts already present.")
+  files <- files[integer(0)]
+  texts <- list()
+} else {
+  # Only read parquets for the todo subset.
+  todo_files <- files[todo_idx]
+  texts <- lapply(todo_files, function(f) {
+    tmp <- arrow::read_parquet(f)$text
+    tmp <- str_replace_all(tmp, "\\n", " ")
+    tmp[!is.na(tmp) & nchar(tmp) > MIN_PAGE_CHARS]   # drop short / blanked pages
+  })
+  names(texts) <- names(todo_files)
+
+  # Drop GSPs with no usable pages so the file/text vectors stay aligned.
+  empty <- vapply(texts, length, integer(1)) == 0L
+  if (any(empty)) {
+    message("Dropping ", sum(empty), " GSP(s) with no usable text >",
+            MIN_PAGE_CHARS, " chars: ",
+            paste(names(texts)[empty], collapse = ", "))
+    todo_files <- todo_files[!empty]
+    texts      <- texts[!empty]
+  }
+  files <- todo_files
 }
 
 # === Entity ruler from all core dictionaries ===
@@ -115,23 +148,30 @@ parsed_stem <- fk("core_data_parsed_plans")  # "data/core_data/parsed_plans/pars
 dir.create(dirname(parsed_stem), recursive = TRUE, showWarnings = FALSE)
 parse_fileloc <- paste0(parsed_stem, names(texts), ".parquet")
 
-extract_dir <- fk("nondisambiged_extracts_core")
-dir.create(extract_dir, recursive = TRUE, showWarnings = FALSE)
-
 # === Parse ===
 # parse_text_trf writes one parquet file per GSP to parse_fileloc[m].
 # The loop below reads each one back via arrow::read_parquet — the on-disk
 # file is the source of truth, so the function's return value is ignored.
-textNet::parse_text_trf(
-  ret_path,
-  text_list             = texts,
-  parsed_filenames      = parse_fileloc,
-  overwrite             = CLOBBER,   # textNet param name is "overwrite"
-  entity_ruler_patterns = dict_ents,
-  overwrite_ents        = TRUE,
-  ruler_position        = "after",
-  custom_entities       = list(PARTIES = parties)
-)
+# Wrap in invisible() — parse_text_trf returns the full list of parsed
+# data frames; without invisible() R auto-prints all of them to the console
+# (a screenful per GSP). The on-disk parquets written to parse_fileloc[]
+# are the source of truth; the in-memory return value is unused here.
+#
+# We only feed parse_text_trf the GSPs in the todo subset (texts was already
+# trimmed to todo_idx above), so it never even has to look at the already-
+# extracted GSPs' parquets. Skip the call entirely when nothing's queued.
+if (length(texts) > 0L) {
+  invisible(textNet::parse_text_trf(
+    ret_path,
+    text_list             = texts,
+    parsed_filenames      = parse_fileloc,
+    overwrite             = CLOBBER,   # textNet param name is "overwrite"
+    entity_ruler_patterns = dict_ents,
+    overwrite_ents        = TRUE,
+    ruler_position        = "after",
+    custom_entities       = list(PARTIES = parties)
+  ))
+}
 
 # === Extract per-GSP networks ===
 # Broader than the legacy ORG/GPE/PERSON set: keep dict + pattern hits and all
@@ -141,16 +181,14 @@ keptentities <- c("PERSON", "NORP", "FAC",
                   "EVENT", "WORK_OF_ART", "LAW", "LANGUAGE",
                   "PARTIES", "CUSTOM", "DICT", "PATTERN")
 
+# `texts` already only contains GSPs that need extraction (todo_idx subset),
+# so the per-iteration file.exists skip check is gone. Defensive parse-file
+# existence check stays — it can still be missing if parse_text_trf above
+# errored on this specific GSP.
 for (m in seq_along(texts)) {
   gsp_id       <- names(texts)[m]
   parse_file   <- parse_fileloc[m]
   extract_file <- file.path(extract_dir, paste0(gsp_id, ".RDS"))
-
-  if (!CLOBBER && file.exists(extract_file)) {
-    message(sprintf("[%d/%d] %s — extract exists, skipping",
-                    m, length(texts), gsp_id))
-    next
-  }
 
   if (!file.exists(parse_file)) {
     message(sprintf("[%d/%d] %s — parse file missing (%s); skipping",

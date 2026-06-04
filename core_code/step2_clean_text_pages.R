@@ -5,7 +5,6 @@
 #
 # Pages failing any threshold have their text set to "" but rows are kept,
 # so downstream code can still match output back to the original PDF pages.
-# Port of tijuana/code/_01_preprocessing/cleaningtxt.py.
 
 library(arrow)
 library(stringr)
@@ -13,8 +12,7 @@ library(stringr)
 source("core_code/_config.R")   # provides CLOBBER, TESTING, TESTING_N, filekey, fk()
 
 # === Step2-local thresholds ===
-# Tuned on the tijuana/IRWM corpus — review against a kings sample after
-# the first run. Set any threshold above to 1 (or MAX_CHARACTERS to Inf)
+# Set any threshold above to 1 (or MAX_CHARACTERS to Inf)
 # to disable that filter.
 PUNCT_DENSITY_MAX      <- 0.10   # reference lists, TOCs
 NUMERIC_DENSITY_MAX    <- 0.25   # tables, data appendices

@@ -1,7 +1,8 @@
 # _config.R — shared configuration for the core pipeline.
-# Sourced at the top of every step{1..5}_*.R and step_audit_pipeline.R.
-# Centralizes flags and tunables that more than one step depends on, so
-# the steps stay consistent and a single change rolls through the pipeline.
+# Sourced by step0, step{1..5}_*.R, step_audit_pipeline.R, and
+# migrate_pdf_naming.R. Centralizes flags and tunables that more than one
+# step depends on, so the steps stay consistent and a single change rolls
+# through the pipeline.
 #
 # Usage in a step script:
 #   source("core_code/_config.R")
@@ -41,9 +42,9 @@ TESTING_N <- .env_int("CORE_TESTING_N", 5L)
 
 # === Shared thresholds ======================================================
 # MIN_PAGE_CHARS: a "usable" page must have more than this many characters
-# after step2's cleaning. Used by step3 (filters pages before parsing) and
-# step_audit_pipeline (reports usable-page counts). Must stay in sync across
-# both — that's why it lives here, not in the individual scripts.
+# after step2's cleaning. Currently consumed only by step3 (filters pages
+# before parsing). Lives here so the threshold is a single tunable knob
+# any other step can pick up if needed.
 MIN_PAGE_CHARS <- .env_int("CORE_MIN_PAGE_CHARS", 200L)
 
 # PARSE_WORKERS: number of parallel workers passed as `cl` to
@@ -57,12 +58,10 @@ PARSE_WORKERS <- .env_int("CORE_PARSE_WORKERS", 4L)
 # Edit here, both steps pick it up.
 #
 # Schema note: the four water dicts and ca_utilities share the `all_names`
-# pipe-delimited schema. gov_entities_dict has (State, Agency, Abbr)
-# columns. step3's load_dict_terms() handles both. step4 loads gov_entities
-# separately as `govscitbl` in Section 1; its global_dict path silently
-# no-ops on the Agency/Abbr schema (no `all_names` column to iterate), so
-# listing gov_entities here is harmless — it just doesn't contribute to
-# step4's global_dict (it still feeds step4 via govscitbl).
+# pipe-delimited schema. gov_entities_dict_core has (State, Agency, Abbr)
+# columns instead. Both step3's load_dict_terms() and step4's
+# load_alias_pairs() detect the schema at load time and handle either
+# form — see the schema branches in each loader.
 CORE_DICT_KEYS <- c("water_entity_dictionary",
                     "water_infrastructure_dictionary",
                     "water_bodies_dictionary",
