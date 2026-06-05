@@ -1,0 +1,268 @@
+all_names,entity_type,notes
+Groundwater Sustainability Agency|GSA,sgma_concept,generic
+Groundwater Sustainability Agencies|GSAs,sgma_concept,generic plural
+Groundwater Sustainability Plan|GSP,sgma_concept,generic
+Groundwater Sustainability Plans|GSPs,sgma_concept,generic plural
+Sustainable Groundwater Management Act|SGMA,sgma_concept,2014 statute
+DWR Bulletin 118|Bulletin 118,sgma_concept,basin priority designations
+Alameda County Water District GSA|Alameda County Water District,gsa,SANTA CLARA VALLEY - NILES CONE
+Aliso Water District GSA|Aliso Water District,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Alpaugh GSA|Alpaugh,gsa,SAN JOAQUIN VALLEY - TULE
+Amador County Groundwater Management Authority GSA|Amador County Groundwater Management Authority,gsa,SAN JOAQUIN VALLEY - COSUMNES
+Arroyo Santa Rosa Valley Basin GSA|Arroyo Santa Rosa Valley Basin,gsa,ARROYO SANTA ROSA VALLEY
+Arroyo Seco GSA|Arroyo Seco|Arroyo Seco GSA - 1,gsa,SALINAS VALLEY - FOREBAY AQUIFER
+Arvin GSA|Arvin,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Atascadero Basin GSA|Atascadero Basin,gsa,SALINAS VALLEY - ATASCADERO AREA
+Banta-Carbona Irrigation District GSA|Banta-Carbona Irrigation District,gsa,SAN JOAQUIN VALLEY - TRACY
+Bear Valley Basin GSA|Bear Valley Basin,gsa,BEAR VALLEY
+Bedford-Coldwater Subbasin GSA|Bedford-Coldwater Subbasin,gsa,ELSINORE - BEDFORD-COLDWATER
+Big Valley GSA|Big Valley,gsa,BIG VALLEY
+Biggs-West Gridley Water District GSA|Biggs-West Gridley Water District,gsa,SACRAMENTO VALLEY - BUTTE
+Buena Vista Water Storage District GSA|Buena Vista Water Storage District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Butte Water District GSA|Butte Water District|Butte Water District GSA - Butte|Butte Water District GSA - Sutter,gsa,SACRAMENTO VALLEY - BUTTE; SACRAMENTO VALLEY - SUTTER
+Byron-Bethany Irrigation District GSA|Byron-Bethany Irrigation District|Byron-Bethany Irrigation District GSA - East Contra Costa|Byron-Bethany Irrigation District GSA - Tracy,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA; SAN JOAQUIN VALLEY - TRACY
+Camrosa Water District GSA|Camrosa Water District|Camrosa Water District GSA - Los Posas Valley|Camrosa Water District GSA - Oxnard|Camrosa Water District GSA - Pleasant Valley,gsa,LAS POSAS VALLEY; PLEASANT VALLEY; SANTA CLARA RIVER VALLEY - OXNARD
+Carpinteria GSA|Carpinteria,gsa,CARPINTERIA
+Castac Basin GSA|Castac Basin,gsa,CASTAC LAKE VALLEY
+Cawelo Water District GSA|Cawelo Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Central Delta Water Agency GSA|Central Delta Water Agency,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Central Delta-Mendota GSA|Central Delta-Mendota,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Central Kings GSA|Central Kings,gsa,SAN JOAQUIN VALLEY - KINGS
+Central San Joaquin Water Conservation District GSA|Central San Joaquin Water Conservation District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Chowchilla Water District GSA|Chowchilla Water District,gsa,SAN JOAQUIN VALLEY - CHOWCHILLA
+City of Antioch GSA|City of Antioch,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA
+City of Arroyo Grande GSA|City of Arroyo Grande,gsa,SANTA MARIA RIVER VALLEY - ARROYO GRANDE
+City of Biggs GSA|City of Biggs,gsa,SACRAMENTO VALLEY - BUTTE
+City of Brentwood GSA|City of Brentwood,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA
+City of Coalinga GSA|City of Coalinga,gsa,SAN JOAQUIN VALLEY - PLEASANT VALLEY
+City of Dos Palos GSA|City of Dos Palos,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Firebaugh GSA|City of Firebaugh,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Galt GSA|City of Galt,gsa,SAN JOAQUIN VALLEY - COSUMNES
+City of Gridley GSA|City of Gridley,gsa,SACRAMENTO VALLEY - BUTTE
+City of Gustine GSA|City of Gustine,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Hayward GSA|City of Hayward,gsa,SANTA CLARA VALLEY - EAST BAY PLAIN
+City of La Habra GSA|City of La Habra,gsa,COASTAL PLAIN OF ORANGE COUNTY
+City of Lakeport GSA|City of Lakeport,gsa,SCOTTS VALLEY
+City of Lathrop GSA|City of Lathrop,gsa,SAN JOAQUIN VALLEY - TRACY
+City of Live Oak GSA|City of Live Oak,gsa,SACRAMENTO VALLEY - SUTTER
+City of Lodi GSA|City of Lodi,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+City of Los Banos GSA|City of Los Banos,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Madera GSA|City of Madera,gsa,SAN JOAQUIN VALLEY - MADERA
+City of Manteca GSA|City of Manteca,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+City of Marina GSA|City of Marina,gsa,SALINAS VALLEY - 180/400 FOOT AQUIFER
+City of Marysville GSA|City of Marysville,gsa,SACRAMENTO VALLEY - NORTH YUBA
+City of Mendota GSA|City of Mendota,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Newman GSA|City of Newman,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Paso Robles GSA|City of Paso Robles,gsa,SALINAS VALLEY - PASO ROBLES AREA
+City of Patterson GSA|City of Patterson,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+City of Pomona GSA|City of Pomona,gsa,UPPER SANTA ANA VALLEY - CHINO
+City of San Luis Obispo GSA|City of San Luis Obispo,gsa,SAN LUIS OBISPO VALLEY
+City of Stockton GSA|City of Stockton,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+City of Tracy GSA|City of Tracy,gsa,SAN JOAQUIN VALLEY - TRACY
+City of Tulelake GSA|City of Tulelake,gsa,KLAMATH RIVER VALLEY - TULELAKE
+City of Vacaville GSA|City of Vacaville,gsa,SACRAMENTO VALLEY - SOLANO
+City of Yuba City GSA|City of Yuba City,gsa,SACRAMENTO VALLEY - SUTTER
+Clay Water District GSA|Clay Water District,gsa,SAN JOAQUIN VALLEY - COSUMNES
+Coachella Valley Water District GSA|Coachella Valley Water District|Coachella Valley Water District GSA - Indio|Coachella Valley Water District GSA - Mission Creek,gsa,COACHELLA VALLEY - INDIO; COACHELLA VALLEY - MISSION CREEK
+Coachella Water Authority GSA|Coachella Water Authority,gsa,COACHELLA VALLEY - INDIO
+Colusa Groundwater Authority GSA|Colusa Groundwater Authority|Colusa Groundwater Authority GSA - Butte|Colusa Groundwater Authority GSA - Colusa,gsa,SACRAMENTO VALLEY - BUTTE; SACRAMENTO VALLEY - COLUSA
+Cordua Irrigation District GSA|Cordua Irrigation District,gsa,SACRAMENTO VALLEY - NORTH YUBA
+Corning Subbasin GSA|Corning Subbasin,gsa,SACRAMENTO VALLEY - CORNING
+County of Butte GSA|County of Butte|County of Butte GSA - Butte 1|County of Butte GSA - Butte 2,gsa,SACRAMENTO VALLEY - BUTTE
+County of Contra Costa GSA|County of Contra Costa,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA
+County of Del Norte GSA|County of Del Norte,gsa,SMITH RIVER PLAIN
+County of Fresno GSA|County of Fresno|County of Fresno GSA - Delta-Mendota Management Area A|County of Fresno GSA - Delta-Mendota Management Area B|County of Fresno GSA - Pleasant Valley|County of Fresno GSA - Westside,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA; SAN JOAQUIN VALLEY - PLEASANT VALLEY; SAN JOAQUIN VALLEY - WESTSIDE
+County of Glenn GSA|County of Glenn|County of Glenn GSA - Butte|County of Glenn GSA - Colusa|County of Glenn GSA - Corning,gsa,SACRAMENTO VALLEY - BUTTE; SACRAMENTO VALLEY - COLUSA; SACRAMENTO VALLEY - CORNING
+County of Humboldt GSA|County of Humboldt,gsa,EEL RIVER VALLEY
+County of Imperial GSA|County of Imperial|County of Imperial GSA - Amos Valley|County of Imperial GSA - Arroyo Seco Valley|County of Imperial GSA - Chuckwalla Valley|County of Imperial GSA - Coyote Wells Valley|County of Imperial GSA - Davies Valley|County of Imperial GSA - East Salton Sea|County of Imperial GSA - Imperial Valley|County of Imperial GSA - Ocotillo Wells|County of Imperial GSA - Ocotillo-Clark Valley|County of Imperial GSA - Ogilby Valley|County of Imperial GSA - Palo Verde Mesa|County of Imperial GSA - Palo Verde Valley|County of Imperial GSA - Vallecito-Carrizo Valley|County of Imperial GSA - West Salton Sea|County of Imperial GSA - Yuma Valley,gsa,AMOS VALLEY; ARROYO SECO VALLEY; BORREGO VALLEY - OCOTILLO WELLS; CHUCKWALLA VALLEY; COYOTE WELLS VALLEY; DAVIES VALLEY; EAST SALTON SEA; IMPERIAL VALLEY; OCOTILLO-CLARK VALLEY; OGILBY VALLEY; PALO VERDE MESA; PALO VERDE VALLEY; VALLECITO-CARRIZO VALLEY; WEST SALTON SEA; YUMA VALLEY
+County of Lassen GSA|County of Lassen,gsa,BIG VALLEY
+County of Madera GSA|County of Madera|County of Madera GSA - Chowchilla|County of Madera GSA - Delta-Mendota|County of Madera GSA - Madera,gsa,SAN JOAQUIN VALLEY - CHOWCHILLA; SAN JOAQUIN VALLEY - DELTA-MENDOTA; SAN JOAQUIN VALLEY - MADERA
+County of Merced GSA|County of Merced|County of Merced GSA - Chowchilla|County of Merced GSA - Delta-Mendota,gsa,SAN JOAQUIN VALLEY - CHOWCHILLA; SAN JOAQUIN VALLEY - DELTA-MENDOTA
+County of Modoc GSA|County of Modoc|County of Modoc GSA - Big Valley|County of Modoc GSA - Tulelake,gsa,BIG VALLEY; KLAMATH RIVER VALLEY - TULELAKE
+County of Mono GSA|County of Mono|County of Mono GSA - Fish Slough|County of Mono GSA - Long Valley|County of Mono GSA - Owens Valley,gsa,LONG VALLEY; OWENS VALLEY - FISH SLOUGH; OWENS VALLEY - OWENS VALLEY
+County of Monterey GSA|County of Monterey,gsa,SALINAS VALLEY - 180/400 FOOT AQUIFER
+County of Napa GSA|County of Napa,gsa,NAPA-SONOMA VALLEY - NAPA VALLEY
+County of Plumas GSA|County of Plumas,gsa,SIERRA VALLEY - SIERRA VALLEY
+County of Sacramento GSA|County of Sacramento|County of Sacramento GSA - South American,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+County of San Joaquin GSA|County of San Joaquin|County of San Joaquin GSA - Eastern San Joaquin 1|County of San Joaquin GSA - Eastern San Joaquin 2|County of San Joaquin GSA - Tracy,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN; SAN JOAQUIN VALLEY - TRACY
+County of San Luis Obispo GSA|County of San Luis Obispo|County of San Luis Obispo GSA - Los Osos Fringe Areas|County of San Luis Obispo GSA - Paso Robles Area|County of San Luis Obispo GSA - San Luis Obispo Valley|County of San Luis Obispo GSA - Santa Maria Basin Fringe Areas,gsa,"LOS OSOS VALLEY - WARDEN CREEK; SALINAS VALLEY - PASO ROBLES AREA; SAN LUIS OBISPO VALLEY; SANTA MARIA RIVER VALLEY - ARROYO GRANDE, SANTA MARIA RIVER VALLEY - SANTA MARIA"
+County of Santa Cruz GSA|County of Santa Cruz|County of Santa Cruz GSA - Purisima Highlands|County of Santa Cruz GSA - West Santa Cruz Terrace,gsa,CORRALITOS - PURISIMA HIGHLANDS; WEST SANTA CRUZ TERRACE
+County of Siskiyou GSA|County of Siskiyou,gsa,KLAMATH RIVER VALLEY - TULELAKE
+County of Sutter GSA|County of Sutter|County of Sutter GSA - North American|County of Sutter GSA - Sutter,gsa,SACRAMENTO VALLEY - NORTH AMERICAN; SACRAMENTO VALLEY - SUTTER
+County of Tulare GSA|County of Tulare|County of Tulare GSA - Tule,gsa,SAN JOAQUIN VALLEY - TULE
+County of Tuolumne GSA|County of Tuolumne,gsa,SAN JOAQUIN VALLEY - MODESTO
+County of Ventura GSA|County of Ventura|County of Ventura GSA - Las Posas Valley Basin Outlying Areas|County of Ventura GSA - Oxnard Basin Outlying Areas|County of Ventura GSA - Pleasant Valley Basin Outlying Areas|County of Ventura GSA - Santa Paula Basin Outlying Areas,gsa,LAS POSAS VALLEY; PLEASANT VALLEY; SANTA CLARA RIVER VALLEY - OXNARD; SANTA CLARA RIVER VALLEY - SANTA PAULA
+Cuyama Basin GSA|Cuyama Basin,gsa,CUYAMA VALLEY
+DM-II GSA|DM-II,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Delano-Earlimart Irrigation District GSA|Delano-Earlimart Irrigation District,gsa,SAN JOAQUIN VALLEY - TULE
+Desert Water Agency GSA|Desert Water Agency|Desert Water Agency GSA - Non-Statutory Area - Indio|Desert Water Agency GSA - Non-Statutory Area - Mission Creek|Desert Water Agency GSA - Statutory Area - Indio|Desert Water Agency GSA - Statutory Area - Mission Creek|Desert Water Agency GSA - Statutory Area - San Gorgonio Pass,gsa,COACHELLA VALLEY - INDIO; COACHELLA VALLEY - MISSION CREEK; COACHELLA VALLEY - SAN GORGONIO PASS
+Diablo Water District GSA|Diablo Water District,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA
+Discovery Bay Community Services District GSA|Discovery Bay Community Services District,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA
+East Acton GSA|East Acton,gsa,ANTELOPE VALLEY
+East Bay Municipal Utility District GSA|East Bay Municipal Utility District,gsa,SANTA CLARA VALLEY - EAST BAY PLAIN
+East Contra Costa Irrigation District GSA|East Contra Costa Irrigation District,gsa,SAN JOAQUIN VALLEY - EAST CONTRA COSTA
+East Kaweah GSA|East Kaweah,gsa,SAN JOAQUIN VALLEY - KAWEAH
+East Turlock Subbasin GSA|East Turlock Subbasin,gsa,SAN JOAQUIN VALLEY - TURLOCK
+Eastern Tule GSA|Eastern Tule,gsa,SAN JOAQUIN VALLEY - TULE
+Eastside San Joaquin GSA|Eastside San Joaquin,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+El Dorado County Water Agency GSA|El Dorado County Water Agency,gsa,TAHOE VALLEY - TAHOE SOUTH
+El Rico GSA|El Rico,gsa,SAN JOAQUIN VALLEY - TULARE LAKE
+Elsinore Valley GSA|Elsinore Valley,gsa,ELSINORE - ELSINORE VALLEY
+Enterprise-Anderson GSA|Enterprise-Anderson|Enterprise-Anderson GSA - Anderson|Enterprise-Anderson GSA - Enterprise,gsa,REDDING AREA - ANDERSON; REDDING AREA - ENTERPRISE
+Estrella-El Pomar-Creston Water District GSA|Estrella-El Pomar-Creston Water District,gsa,SALINAS VALLEY - PASO ROBLES AREA
+Farmers Water District GSA|Farmers Water District,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Fillmore and Piru Basins GSA|Fillmore and Piru Basins|Fillmore and Piru Basins GSA - Fillmore|Fillmore and Piru Basins GSA - Piru,gsa,SANTA CLARA RIVER VALLEY - FILLMORE; SANTA CLARA RIVER VALLEY - PIRU
+Fox Canyon Groundwater Management Agency GSA|Fox Canyon Groundwater Management Agency|Fox Canyon Groundwater Management Agency GSA - Arroyo Santa Rosa|Fox Canyon Groundwater Management Agency GSA - Las Posas Valley|Fox Canyon Groundwater Management Agency GSA - Oxnard|Fox Canyon Groundwater Management Agency GSA - Pleasant Valley,gsa,ARROYO SANTA ROSA VALLEY; LAS POSAS VALLEY; PLEASANT VALLEY; SANTA CLARA RIVER VALLEY - OXNARD
+Franklin Drainage District GSA|Franklin Drainage District,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Galt Irrigation District GSA|Galt Irrigation District,gsa,SAN JOAQUIN VALLEY - COSUMNES
+Glenn Groundwater Authority GSA|Glenn Groundwater Authority,gsa,SACRAMENTO VALLEY - COLUSA
+Grasslands GSA|Grasslands,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Gravelly Ford Water District GSA|Gravelly Ford Water District,gsa,SAN JOAQUIN VALLEY - MADERA
+Greater Kaweah GSA|Greater Kaweah,gsa,SAN JOAQUIN VALLEY - KAWEAH
+Greenfield County Water District GSA|Greenfield County Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Henry Miller Water District GSA|Henry Miller Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Heritage Ranch Community Services District,gsa,
+Imperial Irrigation District GSA|Imperial Irrigation District|Imperial Irrigation District GSA - Amos Valley|Imperial Irrigation District GSA - Coyote Wells Valley|Imperial Irrigation District GSA - East Salton Sea|Imperial Irrigation District GSA - Imperial Valley|Imperial Irrigation District GSA - Ocotillo Wells|Imperial Irrigation District GSA - Ocotillo-Clark Valley|Imperial Irrigation District GSA - Ogilby Valley|Imperial Irrigation District GSA - West Salton Sea,gsa,AMOS VALLEY; BORREGO VALLEY - OCOTILLO WELLS; COYOTE WELLS VALLEY; EAST SALTON SEA; IMPERIAL VALLEY; OCOTILLO-CLARK VALLEY; OGILBY VALLEY; WEST SALTON SEA
+Indian Wells Valley Groundwater Authority GSA|Indian Wells Valley Groundwater Authority,gsa,INDIAN WELLS VALLEY
+Indio Water Authority GSA|Indio Water Authority|Indio Water Authority GSA - Desert Hot Springs|Indio Water Authority GSA - Indio,gsa,COACHELLA VALLEY - DESERT HOT SPRINGS; COACHELLA VALLEY - INDIO
+James GSA|James,gsa,SAN JOAQUIN VALLEY - KINGS
+Kern Non-Districted Land Authority GSA|Kern Non-Districted Land Authority,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Kern River GSA|Kern River,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Kern Water Bank GSA|Kern Water Bank,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Kern-Tulare Water District GSA|Kern-Tulare Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY; SAN JOAQUIN VALLEY - TULE
+Kings River East GSA|Kings River East,gsa,SAN JOAQUIN VALLEY - KINGS
+Leona Valley GSA|Leona Valley,gsa,ANTELOPE VALLEY
+Linden County Water District GSA|Linden County Water District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Lockeford Community Service District GSA|Lockeford Community Service District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Los Angeles GSA|Los Angeles,gsa,SAN FERNANDO VALLEY
+Lower Tule River Irrigation District GSA|Lower Tule River Irrigation District,gsa,SAN JOAQUIN VALLEY - TULE
+Madera Irrigation District GSA|Madera Irrigation District,gsa,SAN JOAQUIN VALLEY - MADERA
+Madera Water District GSA|Madera Water District,gsa,SAN JOAQUIN VALLEY - MADERA
+Marina Coast Water District GSA|Marina Coast Water District|Marina Coast Water District GSA - 180/400 Foot Aquifer|Marina Coast Water District GSA - Monterey,gsa,SALINAS VALLEY - 180/400 FOOT AQUIFER; SALINAS VALLEY - MONTEREY
+McMullin Area GSA|McMullin Area,gsa,SAN JOAQUIN VALLEY - KINGS
+Merced Irrigation-Urban GSA|Merced Irrigation-Urban,gsa,SAN JOAQUIN VALLEY - MERCED
+Merced Subbasin GSA|Merced Subbasin,gsa,SAN JOAQUIN VALLEY - MERCED
+Mid-Kaweah GSA|Mid-Kaweah,gsa,SAN JOAQUIN VALLEY - KAWEAH
+Mid-Kings River GSA|Mid-Kings River,gsa,SAN JOAQUIN VALLEY - TULARE LAKE
+Mission Springs Water District GSA|Mission Springs Water District|Mission Springs Water District GSA - Indio|Mission Springs Water District GSA - Mission Creek,gsa,COACHELLA VALLEY - INDIO; COACHELLA VALLEY - MISSION CREEK
+Mono County Tri-Valley Groundwater Management District GSA|Mono County Tri-Valley Groundwater Management District|Mono County Tri-Valley Groundwater Management District GSA - Fis|Mono County Tri-Valley Groundwater Management District GSA - Owe,gsa,OWENS VALLEY - FISH SLOUGH; OWENS VALLEY - OWENS VALLEY
+Montecito Groundwater Basin GSA|Montecito Groundwater Basin,gsa,MONTECITO
+Monterey Peninsula Water Management District GSA|Monterey Peninsula Water Management District,gsa,CARMEL VALLEY
+Mound Basin GSA|Mound Basin,gsa,SANTA CLARA RIVER VALLEY - MOUND
+New Stone Water District GSA|New Stone Water District,gsa,SAN JOAQUIN VALLEY - MADERA
+North Fork Kings GSA|North Fork Kings,gsa,SAN JOAQUIN VALLEY - KINGS
+North Kern Water Storage District GSA|North Kern Water Storage District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+North Kings GSA|North Kings,gsa,SAN JOAQUIN VALLEY - KINGS
+North San Joaquin Water Conservation District GSA|North San Joaquin Water Conservation District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Northwestern Delta-Mendota GSA|Northwestern Delta-Mendota,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Oakdale Irrigation District GSA|Oakdale Irrigation District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Ojai Basin Groundwater Management Agency GSA|Ojai Basin Groundwater Management Agency,gsa,OJAI VALLEY
+Olcese Water District GSA|Olcese Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Omochumne-Hartnell Water District GSA|Omochumne-Hartnell Water District|Omochumne-Hartnell Water District GSA - Cosumnes|Omochumne-Hartnell Water District GSA - South American,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN; SAN JOAQUIN VALLEY - COSUMNES
+Oro Loma Water District GSA|Oro Loma Water District,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Owens Valley Groundwater Authority GSA|Owens Valley Groundwater Authority|Owens Valley Groundwater Authority GSA - Fish Slough|Owens Valley Groundwater Authority GSA - Owens Valley,gsa,OWENS VALLEY - FISH SLOUGH; OWENS VALLEY - OWENS VALLEY
+Pajaro Valley Water Management Agency GSA|Pajaro Valley Water Management Agency,gsa,CORRALITOS - PAJARO VALLEY
+Patterson Irrigation District GSA|Patterson Irrigation District,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Petaluma Valley GSA|Petaluma Valley,gsa,PETALUMA VALLEY
+Pioneer GSA|Pioneer,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Pixley Irrigation District GSA|Pixley Irrigation District,gsa,SAN JOAQUIN VALLEY - TULE
+Pleasant Valley GSA|Pleasant Valley,gsa,SAN JOAQUIN VALLEY - PLEASANT VALLEY
+Porterville Irrigation District Groundwater Sustainability Agenc,gsa,SAN JOAQUIN VALLEY - TULE
+Reclamation District No. 1001 GSA|Reclamation District No. 1001,gsa,SACRAMENTO VALLEY - NORTH AMERICAN
+Reclamation District No. 1002 GSA|Reclamation District No. 1002,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Reclamation District No. 1004 GSA|Reclamation District No. 1004|Reclamation District No. 1004 GSA - Butte 1|Reclamation District No. 1004 GSA - Butte 2|Reclamation District No. 1004 GSA - Colusa,gsa,SACRAMENTO VALLEY - BUTTE; SACRAMENTO VALLEY - COLUSA
+Reclamation District No. 1500 GSA|Reclamation District No. 1500,gsa,SACRAMENTO VALLEY - SUTTER
+Reclamation District No. 1660 GSA|Reclamation District No. 1660,gsa,SACRAMENTO VALLEY - SUTTER
+Reclamation District No. 2106 GSA|Reclamation District No. 2106,gsa,SACRAMENTO VALLEY - BUTTE
+Reclamation District No. 2110 GSA|Reclamation District No. 2110,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Reclamation District No. 349 GSA|Reclamation District No. 349,gsa,SACRAMENTO VALLEY - SOLANO
+Reclamation District No. 369 GSA|Reclamation District No. 369,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Reclamation District No. 501 GSA|Reclamation District No. 501,gsa,SACRAMENTO VALLEY - SOLANO
+Reclamation District No. 551 GSA|Reclamation District No. 551,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Reclamation District No. 70 GSA|Reclamation District No. 70,gsa,SACRAMENTO VALLEY - SUTTER
+Reclamation District No. 744 GSA|Reclamation District No. 744,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Reclamation District No. 813 GSA|Reclamation District No. 813,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Richvale Irrigation District GSA|Richvale Irrigation District,gsa,SACRAMENTO VALLEY - BUTTE
+Rock Creek Reclamation District GSA|Rock Creek Reclamation District,gsa,SACRAMENTO VALLEY - VINA
+Root Creek Water District GSA|Root Creek Water District,gsa,SAN JOAQUIN VALLEY - MADERA
+Rosedale-Rio Bravo Water Storage District GSA|Rosedale-Rio Bravo Water Storage District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Sacramento Central Groundwater Authority GSA|Sacramento Central Groundwater Authority|Sacramento Central Groundwater Authority GSA - 1,gsa,SACRAMENTO VALLEY - SOUTH AMERICAN
+Sacramento County GSA|Sacramento County|Sacramento County GSA - Cosumnes|Sacramento County GSA - Solano,gsa,SACRAMENTO VALLEY - SOLANO; SAN JOAQUIN VALLEY - COSUMNES
+Sacramento Groundwater Authority GSA|Sacramento Groundwater Authority,gsa,SACRAMENTO VALLEY - NORTH AMERICAN
+Salinas Valley Basin GSA|Salinas Valley Basin|Salinas Valley Basin GSA - 180/400 Foot Aquifer|Salinas Valley Basin GSA - East Side Aquifer|Salinas Valley Basin GSA - Forebay Aquifer|Salinas Valley Basin GSA - Langley Area|Salinas Valley Basin GSA - Monterey|Salinas Valley Basin GSA - Upper Valley Aquifer,gsa,SALINAS VALLEY - 180/400 FOOT AQUIFER; SALINAS VALLEY - EAST SIDE AQUIFER; SALINAS VALLEY - FOREBAY AQUIFER; SALINAS VALLEY - LANGLEY AREA; SALINAS VALLEY - MONTEREY; SALINAS VALLEY - UPPER VALLEY AQUIFER
+San Antonio Basin GSA|San Antonio Basin,gsa,SAN ANTONIO CREEK VALLEY
+San Benito County Water District GSA|San Benito County Water District,gsa,GILROY-HOLLISTER VALLEY - NORTH SAN BENITO
+San Diego River Valley GSA|San Diego River Valley,gsa,SAN DIEGO RIVER VALLEY
+San Francisco Public Utilities Commission GSA|San Francisco Public Utilities Commission|San Francisco Public Utilities Commission GSA - Downtown|San Francisco Public Utilities Commission GSA - Islais Valley|San Francisco Public Utilities Commission GSA - Lobos|San Francisco Public Utilities Commission GSA - Marina|San Francisco Public Utilities Commission GSA - South San Franci|San Francisco Public Utilities Commission GSA - Visitacion Valle|San Francisco Public Utilities Commission GSA - Westside,gsa,DOWNTOWN; ISLAIS VALLEY; LOBOS; MARINA; SOUTH SAN FRANCISCO; VISITACION VALLEY; WESTSIDE
+San Gorgonio Pass GSA|San Gorgonio Pass,gsa,COACHELLA VALLEY - SAN GORGONIO PASS
+San Joaquin River Exchange Contractors GSA|San Joaquin River Exchange Contractors,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+San Miguel Community Services District GSA|San Miguel Community Services District,gsa,SALINAS VALLEY - PASO ROBLES AREA
+San Pasqual Valley GSA|San Pasqual Valley,gsa,SAN PASQUAL VALLEY
+San Timoteo Subbasin GSA|San Timoteo Subbasin,gsa,UPPER SANTA ANA VALLEY - SAN TIMOTEO
+Santa Clara Valley Water District GSA|Santa Clara Valley Water District|Santa Clara Valley Water District GSA - Llagas Area|Santa Clara Valley Water District GSA - North San Benito|Santa Clara Valley Water District GSA - Santa Clara,gsa,GILROY-HOLLISTER VALLEY - LLAGAS AREA; GILROY-HOLLISTER VALLEY - NORTH SAN BENITO; SANTA CLARA VALLEY - SANTA CLARA
+Santa Clarita Valley GSA|Santa Clarita Valley,gsa,SANTA CLARA RIVER VALLEY - SANTA CLARA RIVER VALLEY EAST
+Santa Cruz Mid-County Groundwater Agency GSA|Santa Cruz Mid-County Groundwater Agency,gsa,SANTA CRUZ MID-COUNTY
+Santa Margarita Groundwater Agency GSA|Santa Margarita Groundwater Agency,gsa,SANTA MARGARITA
+Santa Monica Basin GSA|Santa Monica Basin,gsa,COASTAL PLAIN OF LOS ANGELES - SANTA MONICA
+Santa Rosa Plain GSA|Santa Rosa Plain,gsa,SANTA ROSA VALLEY - SANTA ROSA PLAIN
+Santa Ynez River Valley Basin Central Management Area GSA|Santa Ynez River Valley Basin Central Management Area,gsa,SANTA YNEZ RIVER VALLEY
+Santa Ynez River Valley Basin Eastern Management Area GSA|Santa Ynez River Valley Basin Eastern Management Area,gsa,SANTA YNEZ RIVER VALLEY
+Santa Ynez River Valley Basin Western Management Area GSA|Santa Ynez River Valley Basin Western Management Area,gsa,SANTA YNEZ RIVER VALLEY
+Saucelito Irrigation District Groundwater Sustainability Agency,gsa,SAN JOAQUIN VALLEY - TULE
+Semitropic Water Storage District GSA|Semitropic Water Storage District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Shafter-Wasco Irrigation District GSA|Shafter-Wasco Irrigation District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Shandon-San Juan GSA|Shandon-San Juan,gsa,SALINAS VALLEY - PASO ROBLES AREA
+Sierra Valley Groundwater Management District GSA|Sierra Valley Groundwater Management District,gsa,SIERRA VALLEY - SIERRA VALLEY
+Siskiyou County Flood Control and Water Conservation District GS,gsa,BUTTE VALLEY; SCOTT RIVER VALLEY; SHASTA VALLEY
+Sloughhouse Resource Conservation District GSA|Sloughhouse Resource Conservation District|Sloughhouse Resource Conservation District GSA - Cosumnes,gsa,SAN JOAQUIN VALLEY - COSUMNES
+Solano Irrigation District GSA|Solano Irrigation District,gsa,SACRAMENTO VALLEY - SOLANO
+Solano Subbasin GSA|Solano Subbasin,gsa,SACRAMENTO VALLEY - SOLANO
+Sonoma Valley GSA|Sonoma Valley,gsa,NAPA-SONOMA VALLEY - SONOMA VALLEY
+South Delta Water Agency GSA|South Delta Water Agency,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+South Fork Kings GSA|South Fork Kings,gsa,SAN JOAQUIN VALLEY - TULARE LAKE
+South Kings GSA|South Kings,gsa,SAN JOAQUIN VALLEY - KINGS
+South San Joaquin GSA|South San Joaquin,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+South Sutter Water District GSA|South Sutter Water District,gsa,SACRAMENTO VALLEY - NORTH AMERICAN
+South Tahoe Public Utility District GSA|South Tahoe Public Utility District,gsa,TAHOE VALLEY - TAHOE SOUTH
+Southern San Joaquin Municipal Utility District - GSA|Southern San Joaquin Municipal Utility District -,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Southwest Kings GSA|Southwest Kings,gsa,SAN JOAQUIN VALLEY - TULARE LAKE
+Spadra Basin GSA|Spadra Basin,gsa,SAN GABRIEL VALLEY
+Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA|Stanislaus and Tuolumne Rivers Groundwater Basin Association,gsa,SAN JOAQUIN VALLEY - MODESTO
+Stewart Tract GSA|Stewart Tract,gsa,SAN JOAQUIN VALLEY - TRACY
+Stockton East Water District GSA|Stockton East Water District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Sutter Community Service District GSA|Sutter Community Service District,gsa,SACRAMENTO VALLEY - SUTTER
+Sutter Extension Water District GSA|Sutter Extension Water District,gsa,SACRAMENTO VALLEY - SUTTER
+Tea Pot Dome Water District,gsa,SAN JOAQUIN VALLEY - TULE
+Tehama County Flood Control and Water Conservation District GSA|Tehama County Flood Control and Water Conservation District,gsa,REDDING AREA - BOWMAN; REDDING AREA - SOUTH BATTLE CREEK; SACRAMENTO VALLEY - ANTELOPE; SACRAMENTO VALLEY - BEND; SACRAMENTO VALLEY - CORNING; SACRAMENTO VALLEY - LOS MOLINOS; SACRAMENTO VALLEY - RED BLUFF
+Tejon-Castac Water District GSA|Tejon-Castac Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Temescal Subbasin GSA|Temescal Subbasin,gsa,UPPER SANTA ANA VALLEY - TEMESCAL
+Terra Bella Irrigation District Groundwater Sustainability Agenc,gsa,SAN JOAQUIN VALLEY - TULE
+Tri-County Water Authority GSA|Tri-County Water Authority|Tri-County Water Authority GSA - Tulare Lake|Tri-County Water Authority GSA - Tule,gsa,SAN JOAQUIN VALLEY - TULARE LAKE; SAN JOAQUIN VALLEY - TULE
+Triangle T Water District GSA|Triangle T Water District,gsa,SAN JOAQUIN VALLEY - CHOWCHILLA
+Tule East GSA JPA,gsa,SAN JOAQUIN VALLEY - TULE
+Tulelake Irrigation District GSA|Tulelake Irrigation District,gsa,KLAMATH RIVER VALLEY - TULELAKE
+Turner Island Water District GSA|Turner Island Water District|Turner Island Water District GSA - Delta-Mendota|Turner Island Water District GSA - Merced,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA; SAN JOAQUIN VALLEY - MERCED
+Ukiah Valley Basin GSA|Ukiah Valley Basin,gsa,UKIAH VALLEY
+Upper San Luis Rey Groundwater Management Authority GSA|Upper San Luis Rey Groundwater Management Authority,gsa,SAN LUIS REY VALLEY - UPPER SAN LUIS REY VALLEY
+Upper Ventura River Groundwater Agency GSA|Upper Ventura River Groundwater Agency,gsa,VENTURA RIVER VALLEY - UPPER VENTURA RIVER
+Vandalia Water District,gsa,SAN JOAQUIN VALLEY - TULE
+Verbenia GSA|Verbenia,gsa,COACHELLA VALLEY - SAN GORGONIO PASS
+Vina GSA|Vina,gsa,SACRAMENTO VALLEY - VINA
+West Kern Water District GSA|West Kern Water District,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+West Placer GSA|West Placer,gsa,SACRAMENTO VALLEY - NORTH AMERICAN
+West San Jacinto GSA|West San Jacinto,gsa,SAN JACINTO
+West Stanislaus Irrigation District GSA|West Stanislaus Irrigation District,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+West Turlock Subbasin GSA|West Turlock Subbasin,gsa,SAN JOAQUIN VALLEY - TURLOCK
+Western Canal Water District GSA|Western Canal Water District,gsa,SACRAMENTO VALLEY - BUTTE
+Western Municipal Water District GSA|Western Municipal Water District|Western Municipal Water District GSA - Riverside-Arlington,gsa,UPPER SANTA ANA VALLEY - RIVERSIDE-ARLINGTON
+Westlands Water District GSA|Westlands Water District,gsa,SAN JOAQUIN VALLEY - WESTSIDE
+Westside District Water Authority GSA|Westside District Water Authority,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+Wheeler Ridge-Maricopa GSA|Wheeler Ridge-Maricopa,gsa,SAN JOAQUIN VALLEY - KERN COUNTY
+White Wolf GSA|White Wolf,gsa,SAN JOAQUIN VALLEY - WHITE WOLF
+Widren Water District GSA|Widren Water District,gsa,SAN JOAQUIN VALLEY - DELTA-MENDOTA
+Woodbridge Irrigation District GSA|Woodbridge Irrigation District,gsa,SAN JOAQUIN VALLEY - EASTERN SAN JOAQUIN
+Wyandotte Creek GSA|Wyandotte Creek,gsa,SACRAMENTO VALLEY - WYANDOTTE CREEK
+Yolo Subbasin GSA|Yolo Subbasin,gsa,SACRAMENTO VALLEY - YOLO
+Yuba Water Agency GSA|Yuba Water Agency|Yuba Water Agency GSA - North Yuba|Yuba Water Agency GSA - South Yuba,gsa,SACRAMENTO VALLEY - NORTH YUBA; SACRAMENTO VALLEY - SOUTH YUBA
+Yucaipa Basin GSA|Yucaipa Basin,gsa,UPPER SANTA ANA VALLEY - YUCAIPA
+Zone 7 Water Agency GSA|Zone 7 Water Agency|Zone 7 Water Agency GSA - Exclusive Portion|Zone 7 Water Agency GSA - Non-Exclusive Portion,gsa,LIVERMORE VALLEY

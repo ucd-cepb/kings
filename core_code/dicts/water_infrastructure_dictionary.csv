@@ -1,0 +1,241 @@
+all_names,infra_type,operator,notes
+Oroville Dam|Lake Oroville Dam,dam,DWR,tallest dam in US; on Feather River
+San Luis Dam|San Luis Reservoir Dam,dam,DWR/USBR,off-stream storage; joint SWP/CVP
+Castaic Dam|Castaic Lake Dam,dam,DWR,SWP terminal reservoir
+Perris Dam|Lake Perris Dam,dam,DWR,SWP terminal reservoir
+Pyramid Dam|Pyramid Lake Dam,dam,DWR,SWP on Piru Creek
+Silverwood Lake Dam|Cedar Springs Dam,dam,DWR,SWP in San Bernardino County
+Thermalito Diversion Dam,dam,DWR,on Feather River
+Shasta Dam|Shasta Lake Dam,dam,USBR,CVP; on Sacramento River
+Keswick Dam,dam,USBR,CVP re-regulation dam below Shasta
+Folsom Dam|Folsom Lake Dam,dam,USBR/Army Corps,CVP; on American River
+Nimbus Dam,dam,USBR,CVP re-regulation dam below Folsom
+Trinity Dam|Clair Engle Lake Dam,dam,USBR,CVP; trans-basin diversion to Sacramento
+Whiskeytown Dam|Whiskeytown Lake Dam,dam,USBR,CVP
+New Melones Dam|New Melones Lake Dam,dam,Army Corps/USBR,CVP; on Stanislaus River
+Friant Dam|Millerton Lake Dam,dam,USBR,CVP; on San Joaquin River
+Pine Flat Dam|Pine Flat Lake Dam,dam,Army Corps,on Kings River
+Terminus Dam|Lake Kaweah Dam,dam,Army Corps,on Kaweah River
+Success Dam|Lake Success Dam,dam,Army Corps,on Tule River
+Isabella Dam|Lake Isabella Dam,dam,Army Corps,on Kern River
+Hetch Hetchy Dam|O'Shaughnessy Dam,dam,SFPUC,on Tuolumne River in Yosemite
+New Don Pedro Dam|Don Pedro Reservoir Dam,dam,TID/MID,on Tuolumne River
+New Exchequer Dam|Lake McClure Dam,dam,MID,on Merced River
+New Bullards Bar Dam|Englebright Lake Dam,dam,NID,on Yuba River
+Pardee Dam|Pardee Reservoir Dam,dam,EBMUD,on Mokelumne River
+Camanche Dam|Camanche Reservoir Dam,dam,EBMUD,on Mokelumne River
+Calaveras Dam,dam,SFPUC,on Calaveras Creek
+Crystal Springs Dam|Lower Crystal Springs Reservoir,dam,SFPUC,
+Anderson Dam|Anderson Reservoir Dam,dam,Santa Clara Valley Water,on Coyote Creek
+Chesbro Dam|Chesbro Reservoir,dam,Santa Clara Valley Water,
+Coyote Dam|Coyote Reservoir Dam,dam,Santa Clara Valley Water,
+Lexington Dam|Lexington Reservoir Dam,dam,Santa Clara Valley Water,
+Cachuma Dam|Lake Cachuma Dam|Bradbury Dam,dam,USBR/COMB,on Santa Ynez River
+Gibraltar Dam|Gibraltar Reservoir,dam,City of Santa Barbara,on Santa Ynez River
+Diamond Valley Lake Dam|Eastside Reservoir Dam,dam,MWD,off-stream storage
+Hoover Dam|Boulder Dam,dam,USBR,on Colorado River; Nevada/Arizona border
+Parker Dam,dam,USBR,on Colorado River; creates Lake Havasu
+Prado Dam|Prado Flood Control Basin,dam,Army Corps,on Santa Ana River
+Warm Springs Dam|Lake Sonoma Dam,dam,Army Corps/SCWA,"on Dry Creek, Sonoma County"
+Coyote Valley Dam|Lake Mendocino Dam,dam,Army Corps,on East Fork Russian River
+Monticello Dam|Lake Berryessa Dam,dam,USBR,on Putah Creek
+Stony Gorge Dam|East Park Dam,dam,USBR,on Stony Creek
+Black Butte Dam,dam,Army Corps,on Stony Creek
+Englebright Dam,dam,Army Corps,on Yuba River
+Buchanan Dam|H.V. Eastman Lake,dam,Army Corps,on Chowchilla River
+Hensley Dam|Hensley Lake,dam,Army Corps,on Fresno River
+California Aqueduct|SWP California Aqueduct,canal,DWR,"main SWP conveyance, Sacramento-San Diego"
+North Bay Aqueduct|NBA,canal,DWR,SWP branch to Napa/Solano counties
+South Bay Aqueduct|SBA,canal,DWR,SWP branch to Alameda/Santa Clara counties
+Coastal Branch Aqueduct|Coastal Branch,canal,DWR,SWP branch to San Luis Obispo/Santa Barbara
+East Branch Extension,canal,DWR,SWP extension in San Bernardino County
+Delta-Mendota Canal|DMC,canal,USBR,CVP west-side delivery
+Friant-Kern Canal|FKC,canal,USBR,CVP delivery from Friant Dam south
+Madera Canal,canal,USBR,CVP delivery from Friant Dam north
+Tehama-Colusa Canal|TC Canal,canal,USBR,CVP north-valley delivery
+Corning Canal,canal,USBR,CVP branch off Tehama-Colusa Canal
+Sacramento Canals Unit,canal,USBR,CVP
+Cross Valley Canal,canal,KCWA,connects CVP to Kern County
+Los Angeles Aqueduct|LAA|First Los Angeles Aqueduct|Second Los Angeles Aqueduct,canal,LADWP,Owens Valley to Los Angeles
+Colorado River Aqueduct|CRA,canal,MWD,Colorado River to Southern California
+Hetch Hetchy Aqueduct,canal,SFPUC,Tuolumne River to San Francisco
+Mokelumne Aqueduct,canal,EBMUD,Mokelumne River to East Bay
+Tuolumne River Regional Water System,canal,TID/MID,
+All-American Canal,canal,USBR/IID,Colorado River to Imperial Valley
+Coachella Canal,canal,USBR/CVWD,Colorado River to Coachella Valley
+Kern River Canal,canal,Kern County agencies,
+Kings River Canal,canal,KRCD,
+Redwood Valley County Water District Pipeline,canal,Redwood Valley CWD,
+Harvey O. Banks Pumping Plant|Banks Pumping Plant|SWP Delta Pumping Plant,pumping_plant,DWR,SWP Delta export
+C.W. Bill Jones Pumping Plant|Tracy Pumping Plant|CVP Delta Pumping Plant,pumping_plant,USBR,CVP Delta export; formerly Tracy
+Clifton Court Forebay,reservoir,DWR,SWP pre-pumping holding reservoir
+Edmonston Pumping Plant,pumping_plant,DWR,SWP; highest single-lift pump in world
+Devil Canyon Powerplant,pumping_plant,DWR,SWP
+Dos Amigos Pumping Plant,pumping_plant,USBR,CVP
+O'Neill Forebay,reservoir,DWR/USBR,joint SWP/CVP forebay at San Luis
+Regional Water Quality Control Plant|Palo Alto Regional Water Quality Control Plant,wastewater_treatment,City of Palo Alto,
+Sacramento Regional County Sanitation District|Sacramento Regional Wastewater Treatment Plant|SRCSD,wastewater_treatment,SRCSD,
+City of Los Angeles Hyperion Water Reclamation Plant|Hyperion Treatment Plant,wastewater_treatment,LADWP/LA Sanitation,
+Donald C. Tillman Water Reclamation Plant|Tillman Water Reclamation Plant,wastewater_treatment,LA Sanitation,
+Terminal Island Water Reclamation Plant,wastewater_treatment,LA Sanitation,
+San Jose-Santa Clara Regional Wastewater Facility,wastewater_treatment,City of San Jose,
+East Bay Dischargers Authority|EBDA,wastewater_treatment,EBDA,
+Central Contra Costa Sanitary District|Central San,wastewater_treatment,Central San,
+Dublin San Ramon Services District|DSRSD,wastewater_treatment,DSRSD,
+Los Coyotes Water Reclamation Plant,water_treatment,LA County,
+Metropolitan Water District Weymouth Treatment Plant|F.E. Weymouth Water Treatment Plant,water_treatment,MWD,
+Metropolitan Water District Skinner Treatment Plant|Robert B. Diemer Treatment Plant,water_treatment,MWD,
+Freeport Regional Water Authority|FRWA,water_treatment,FRWA,Sacramento region
+R.C. Dillon Water Treatment Plant,water_treatment,EBMUD,
+Mokelumne Aqueduct Water Treatment Plant,water_treatment,EBMUD,
+Silicon Valley Advanced Water Purification Center|SVAWPC,water_treatment,Santa Clara Valley Water/SBVWSD,indirect potable reuse
+Orange County Water District Groundwater Replenishment System|GWRS,water_treatment,OCWD,largest water purification system for potable reuse
+West Basin Water Recycling Program,water_treatment,West Basin MWD,
+Sacramento Weir|Sacramento Bypass Weir,flood_control,Army Corps/State,flood bypass
+Fremont Weir,flood_control,Army Corps/State,flood bypass into Yolo Bypass
+Yolo Bypass,flood_control,DWR/YCFCWCD,major flood bypass west of Sacramento
+Sutter Bypass,flood_control,State,Sacramento Valley flood bypass
+Sacramento Flood Control Project,flood_control,Army Corps,
+American River Flood Control Project,flood_control,Army Corps/SAFCA,
+Folsom Dam Modification Project,flood_control,Army Corps/USBR,raises spillway capacity
+Natomas Levee Improvement Program|NLIP,flood_control,SAFCA,
+Santa Ana River Mainstem Project,flood_control,Army Corps,
+Prado Basin Sediment Management,flood_control,Army Corps,
+Los Angeles River Revitalization,flood_control,Army Corps/City of LA,
+San Gabriel River Watershed,flood_control,Army Corps/LA County,
+Coyote Creek Flood Bypass,flood_control,Santa Clara Valley Water,
+Kern Water Bank|KWB|Kern Water Bank Authority|KWBA,groundwater_bank,KWBA,largest groundwater bank in CA
+Semitropic Groundwater Storage Bank|Semitropic Banking Project|Semitropic Water Bank,groundwater_bank,Semitropic WSD,Kern County subbasin
+Arvin-Edison Water Storage Program|Arvin-Edison Banking|Arvin-Edison Groundwater Storage,groundwater_bank,Arvin-Edison WSD,Kern County subbasin
+Rosedale-Rio Bravo Groundwater Banking|Rosedale-Rio Bravo Banking Program,groundwater_bank,Rosedale-Rio Bravo WSD,Kern County subbasin
+North Kern Banking Program|North Kern Water Bank,groundwater_bank,North Kern WSD,Kern County subbasin
+Pioneer Project|Pioneer Groundwater Banking,groundwater_bank,KCWA,Kern County subbasin
+Berrenda Mesa Water Bank|Berrenda Mesa Banking,groundwater_bank,Berrenda Mesa WD,Kern County subbasin
+Buena Vista Banking Program,groundwater_bank,Buena Vista WSD,Kern County subbasin
+Madera Ranch Groundwater Bank|Madera Ranch Water Bank,groundwater_bank,private/contracted,Madera subbasin
+City of Bakersfield 2800 Acres Recharge Project|2800 Acres Recharge Facility,groundwater_bank,City of Bakersfield,Kern County subbasin
+James Bypass Recharge|James Bypass,recharge_basin,KRCD/James ID,Kings subbasin recharge channel
+Stockdale West Recharge Basin,recharge_basin,Kern agencies,Kern County subbasin
+Tulare Lake Bed Recharge|Tulare Lake Recharge Project,recharge_basin,Tulare Lake Subbasin GSAs,Tulare Lake subbasin
+Antelope Valley Water Bank|AVEK Water Bank,groundwater_bank,AVEK,Antelope Valley subbasin
+Chino Basin Desalter|Chino Basin Desalter Authority|CDA,water_treatment,Chino Basin Watermaster,groundwater desalination
+Sites Reservoir|Sites Reservoir Project,reservoir,Sites Project Authority,proposed Sacramento Valley off-stream storage
+Los Vaqueros Reservoir|Los Vaqueros Reservoir Expansion,reservoir,CCWD,off-stream storage; expansion planned
+Indian Valley Reservoir|Indian Valley Dam,dam,Yolo County FCWCD,on North Fork Cache Creek
+Spicer Meadow Reservoir|New Spicer Meadow Dam,dam,Calaveras County WD/Northern California Power Agency,Stanislaus headwaters
+Salt Springs Reservoir|Salt Springs Dam,dam,PG&E,Mokelumne River system
+Lower Bear River Reservoir|Lower Bear Reservoir,reservoir,PG&E,Mokelumne River system
+Lake Almanor|Lake Almanor Dam|Canyon Dam,dam,PG&E,Feather River headwaters
+Lake Davis|Grizzly Valley Dam,dam,DWR,Middle Fork Feather River
+Cherry Lake Dam|Cherry Valley Dam,dam,SFPUC,Hetch Hetchy system
+Lake Eleanor Dam,dam,SFPUC,Hetch Hetchy system
+Moccasin Dam|Moccasin Reservoir,dam,SFPUC,Hetch Hetchy system
+Bouquet Reservoir|Bouquet Canyon Dam,dam,LADWP,LAA emergency storage
+Tulloch Dam|Tulloch Reservoir,dam,Oakdale ID/SSJID,Stanislaus River
+Goodwin Dam|Goodwin Diversion Dam,dam,USBR/Oakdale ID/SSJID,Stanislaus River diversion
+Beardsley Dam|Beardsley Reservoir,dam,Oakdale ID/SSJID,Middle Fork Stanislaus
+Donnells Dam|Donnells Reservoir,dam,Oakdale ID/SSJID,Middle Fork Stanislaus
+McSwain Dam|Lake McSwain,dam,MID,Merced River afterbay
+Twitchell Dam|Twitchell Reservoir,dam,Santa Maria Valley WCD,Cuyama River
+Lopez Dam|Lopez Lake,dam,SLO County FCWCD,Arroyo Grande Creek
+Salinas Dam|Santa Margarita Lake,dam,Army Corps/SLO County,Salinas River
+Lake Henshaw|Henshaw Dam,dam,Vista ID,San Luis Rey River
+Hodges Dam|Lake Hodges,dam,City of San Diego,San Dieguito River
+Sutherland Dam|Sutherland Reservoir,dam,City of San Diego,Santa Ysabel Creek
+El Capitan Dam|El Capitan Reservoir,dam,City of San Diego,San Diego River
+San Vicente Dam|San Vicente Reservoir,dam,City of San Diego,raised 2012; emergency storage
+Sweetwater Dam|Sweetwater Reservoir,dam,Sweetwater Authority,Sweetwater River
+Lower Otay Dam|Lower Otay Reservoir,dam,City of San Diego,Otay River
+Vail Dam|Vail Lake,dam,Rancho California WD,Temecula Creek
+Big Tujunga Dam,dam,LA County,Big Tujunga Creek; flood control
+Pacoima Dam|Pacoima Reservoir,dam,LA County,Pacoima Wash flood control
+Devil's Gate Dam|Devils Gate Dam,dam,LA County,Arroyo Seco
+Hansen Dam,dam,Army Corps/LA County,Tujunga Wash flood control
+Cogswell Dam|Cogswell Reservoir,dam,LA County,West Fork San Gabriel River
+Morris Dam|Morris Reservoir,dam,LA County/MWD,San Gabriel River
+San Gabriel Dam|San Gabriel Reservoir,dam,LA County,San Gabriel River
+Vasona Dam|Vasona Reservoir,dam,Santa Clara Valley Water,Los Gatos Creek
+Calero Dam|Calero Reservoir,dam,Santa Clara Valley Water,Calero Creek
+Stevens Creek Dam|Stevens Creek Reservoir,dam,Santa Clara Valley Water,Stevens Creek
+Almaden Dam|Almaden Reservoir,dam,Santa Clara Valley Water,Alamitos Creek
+Guadalupe Dam|Guadalupe Reservoir,dam,Santa Clara Valley Water,Guadalupe River
+Uvas Dam|Uvas Reservoir,dam,Santa Clara Valley Water,Uvas Creek
+Newell Creek Dam|Loch Lomond Reservoir Dam,dam,City of Santa Cruz,Newell Creek
+Scott Dam|Lake Pillsbury,dam,PG&E,Eel River; removal in progress
+Cape Horn Dam|Van Arsdale Reservoir,dam,PG&E,Eel River; Potter Valley Project
+Spaulding Dam|Lake Spaulding,dam,PG&E,Yuba River system
+Bowman Dam|Bowman Lake,dam,NID,Canyon Creek
+Jackson Meadows Dam|Jackson Meadows Reservoir,dam,NID,Middle Yuba River
+Scotts Flat Dam|Scotts Flat Reservoir,dam,NID,Deer Creek
+Lake Wildwood Dam,dam,Lake Wildwood Association,Deer Creek
+Combie Dam|Lake Combie,dam,NID,Bear River
+Auburn Dam|Auburn Dam Site,dam,USBR (deauthorized),American River; not built
+Camp Far West Dam|Camp Far West Reservoir,dam,South Sutter WD,Bear River
+East Branch California Aqueduct|East Branch SWP|California Aqueduct East Branch,canal,DWR,SWP branch from A.D. Edmonston east toward Silverwood/Perris
+West Branch California Aqueduct|West Branch SWP|California Aqueduct West Branch,canal,DWR,SWP branch to Pyramid/Castaic
+Folsom-South Canal|Folsom South Canal,canal,USBR,CVP; delivers Folsom water south
+Putah South Canal,canal,Solano County Water Agency,Putah Diversion Dam delivery
+Contra Costa Canal|CCC|Contra Costa Canal Project,canal,USBR/CCWD,CVP first unit; Rock Slough intake
+Auburn-Folsom South Unit,canal,USBR,CVP unit including Folsom South Canal
+Delta Cross Channel|DCC|Walnut Grove Cross Channel,control_structure,USBR,Sacramento River-to-central Delta gates
+Suisun Marsh Salinity Control Gates|Roaring River Distribution System,control_structure,DWR,Suisun Marsh salinity control
+Eastside Bypass|East Side Bypass,flood_control,USBR/Lower San Joaquin Levee District,San Joaquin flood bypass
+Mariposa Bypass,flood_control,USBR/Lower San Joaquin Levee District,San Joaquin flood bypass
+Fresno Slough|James Bypass,flood_control,KRCD,Kings River flood release to San Joaquin
+Mendota Pool,control_structure,USBR,Confluence of CVP DMC and San Joaquin
+Old River|Old River Barriers,control_structure,DWR,South Delta channel; temporary barriers
+Middle River,control_structure,DWR,South Delta channel
+San Felipe Division|San Felipe Project,canal,USBR,CVP delivery to Santa Clara/San Benito
+Pacheco Conduit|San Felipe Pipeline,canal,USBR/Santa Clara Valley Water,San Felipe Division
+Santa Clara Conduit,canal,Santa Clara Valley Water,San Felipe Division
+Hollister Conduit,canal,San Benito County WD,San Felipe Division
+South County Pipeline,canal,Santa Clara Valley Water,south Santa Clara County
+North Marin Aqueduct|NMA,canal,North Marin WD,Russian River-to-Novato
+San Diego Aqueduct|San Diego Aqueduct First Pipeline,canal,MWD/SDCWA,MWD delivery to San Diego County
+Second San Diego Aqueduct|Second SDA,canal,MWD/SDCWA,parallel pipeline
+Pacheco Pumping Plant,pumping_plant,USBR,San Felipe Division pump
+Tehachapi Crossing|Tehachapi Tunnels,control_structure,DWR,SWP crossing the Tehachapis
+Buena Vista Pumping Plant,pumping_plant,DWR,SWP California Aqueduct
+Wheeler Ridge Pumping Plant,pumping_plant,DWR,SWP California Aqueduct
+Wind Gap Pumping Plant,pumping_plant,DWR,SWP California Aqueduct
+A.D. Edmonston Pumping Plant,pumping_plant,DWR,alt name for Edmonston Pumping Plant
+Pearblossom Pumping Plant,pumping_plant,DWR,SWP East Branch
+Las Perillas Pumping Plant,pumping_plant,DWR,SWP Coastal Branch
+Polonio Pass Pumping Plant,pumping_plant,DWR,SWP Coastal Branch
+Badger Hill Pumping Plant,pumping_plant,DWR,SWP Coastal Branch
+Devil's Den Pumping Plant,pumping_plant,DWR,SWP Coastal Branch
+Bluestone Pumping Plant,pumping_plant,DWR,SWP Coastal Branch
+Mojave Siphon Power Plant,pumping_plant,DWR,SWP East Branch recovery
+Hyatt Pumping-Generating Plant|Hyatt Powerplant,pumping_plant,DWR,Oroville underground powerhouse
+Thermalito Pumping-Generating Plant|Thermalito Power Plant,pumping_plant,DWR,Oroville complex
+Gianelli Pumping-Generating Plant|William R. Gianelli Pumping Plant,pumping_plant,DWR/USBR,San Luis Reservoir pump-back
+Pleasant Valley Pumping Plant,pumping_plant,USBR,CVP Coalinga Canal
+O'Neill Pumping-Generating Plant,pumping_plant,USBR,CVP at O'Neill Forebay
+Pure Water San Diego|Pure Water Program,water_treatment,City of San Diego,potable reuse program
+Pure Water Monterey,water_treatment,Monterey One Water,advanced treatment for IPR
+Pure Water Soquel,water_treatment,Soquel Creek WD,advanced treatment for IPR
+Pure Water Southern California|Regional Recycled Water Program,water_treatment,MWD/LA Sanitation,proposed large-scale IPR
+Edward C. Little Water Recycling Facility|Edward C. Little WRF,water_treatment,West Basin MWD,advanced recycled water
+Michelson Water Recycling Plant|Michelson WRP,water_treatment,IRWD,Irvine Ranch recycled water
+Joint Water Pollution Control Plant|JWPCP|Carson Treatment Plant,wastewater_treatment,LA County Sanitation Districts,largest CA wastewater plant
+Carson Regional Water Recycling Plant,water_treatment,Sanitation Districts of LA County,
+San Antonio Spreading Grounds,spreading_ground,LA County DPW,San Gabriel Valley recharge
+Rio Hondo Spreading Grounds,spreading_ground,LA County DPW,Central Basin recharge
+Santa Ana River Spreading Grounds,spreading_ground,OCWD,Orange County recharge
+San Gabriel Spreading Grounds,spreading_ground,LA County DPW,Central Basin recharge
+Whittier Narrows Reservoir|Whittier Narrows Spreading Grounds,spreading_ground,Army Corps/LA County,flood control + recharge
+Carlsbad Desalination Plant|Claude Lewis Carlsbad Desalination Plant,desalination,Poseidon Water/SDCWA,largest seawater desal in US
+Santa Barbara Desalination Plant|Charles E. Meyer Desalination Plant,desalination,City of Santa Barbara,seawater desalination
+Doheny Ocean Desalination Project,desalination,South Coast Water District,proposed seawater desal
+Monterey Bay Desalination Project,desalination,California American Water,proposed seawater desal
+Tisdale Weir,flood_control,Army Corps/State,Sacramento River weir to Sutter Bypass
+Moulton Weir,flood_control,Army Corps/State,Sacramento River weir to Butte Basin
+Colusa Weir,flood_control,Army Corps/State,Sacramento River weir to Butte Basin
+Knights Landing Outfall Gates|Knights Landing Weir,flood_control,State,Colusa Basin Drain outlet
+Tisdale Bypass,flood_control,Army Corps/State,Sutter Bypass tributary
+Paradise Cut,flood_control,Army Corps/State,San Joaquin flood bypass
+Cosumnes River Floodplain,flood_control,Various,natural floodplain restoration
+Lower San Joaquin Floodway,flood_control,Lower SJ Levee District,bypass system
+South Sacramento County Streams Project,flood_control,Army Corps/Sacramento County,
+West Sacramento Levee Project,flood_control,Army Corps/West Sacramento,
+Marysville Ring Levee,flood_control,Army Corps,Yuba County
