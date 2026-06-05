@@ -373,14 +373,22 @@ json_tbl[, canonical_gspId  := chain$canonical_gspId]
 json_tbl[, gspId_padded     := pad4(gspId)]
 json_tbl[, fromGspId_padded := pad4(fromGspId)]
 json_tbl[, canonical_gspId  := pad4(canonical_gspId)]
-for (col in c("basin", "localId", "displayStatus")) {
+for (col in c("basin", "localId", "displayStatus", "gsas", "gsaIds")) {
   if (!(col %in% names(json_tbl))) json_tbl[, (col) := NA_character_]
 }
-lineage <- unique(json_tbl[, .(gspId        = gspId_padded,
+# JSON's `gsas` separator is comma-space; normalize to ";" for the manifest
+# so a GSA name that happens to contain a comma can't fracture the field.
+# `gsaIds` already uses commas with simple integers — keep as-is.
+json_tbl[, gsa_names_json := ifelse(is.na(gsas) | !nzchar(gsas), NA_character_,
+                                    gsub(",\\s*", ";", gsas, perl = TRUE))]
+json_tbl[, gsa_ids_json   := ifelse(is.na(gsaIds) | !nzchar(gsaIds), NA_character_,
+                                    gsub("\\s+", "", gsaIds, perl = TRUE))]
+lineage <- unique(json_tbl[, .(gspId          = gspId_padded,
                                canonical_gspId,
-                               fromGspId    = fromGspId_padded,
+                               fromGspId      = fromGspId_padded,
                                version_json,
-                               basin, localId, displayStatus)])
+                               basin, localId, displayStatus,
+                               gsa_ids_json, gsa_names_json)])
 
 # ── TEST MODE: scrape one preview page and dump results ────────────────────
 # STEP0_TEST_GSP_ID=7 Rscript core_code/step0_download_from_sgma.R
@@ -427,6 +435,15 @@ fresh[, out_basename := sprintf("gsp_doc_id_%s.pdf", gspDocId)]
 fresh[, url          := paste0(PORTAL_DL_URL, gspDocId)]
 fresh[, first_seen   := ts_now]
 fresh[, last_seen    := ts_now]
+
+# GSA fields: prefer JSON (authoritative, populated for every record we've
+# seen) over the preview-scrape values (some pages — withdrawn / older
+# GSPs — render the GSA list under HTML that the preview scraper doesn't
+# match, leaving gsa_ids/gsa_names NA). Fall back to the scraped value
+# only when JSON has nothing.
+fresh[, gsa_ids   := ifelse(!is.na(gsa_ids_json)   & nzchar(gsa_ids_json),   gsa_ids_json,   gsa_ids)]
+fresh[, gsa_names := ifelse(!is.na(gsa_names_json) & nzchar(gsa_names_json), gsa_names_json, gsa_names)]
+
 fresh <- fresh[, .(out_basename, gspDocId, gspId, canonical_gspId,
                    version, fromGspId, plan_section,
                    submitted_date, posted_date, comment_end_date,

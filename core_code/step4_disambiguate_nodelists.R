@@ -17,7 +17,12 @@
 #   plan_txts_raw_pages_core/<stem>.RDS     (from step1)
 #       used to mine per-GSP front-matter acronym tables via
 #       extract_front_matter_acronyms()
-#   gsa_table_core                          (agency_tbl)
+#   core_data_source_pdfs/plan_family_manifest.csv (from step0)
+#       per-docId metadata. Provides gsa_ids (portal GSA IDs) for each
+#       gspDocId stem, used to build agency_nicknames.
+#   sgma_gsa_full_core                      (from scrape_gsa_orgmembers.ipynb)
+#       canonical GSA_ID -> GSA_Name lookup. Joined to the manifest's
+#       gsa_ids to produce per-GSP agency nickname lists.
 #   CORE_DICT_KEYS (from _config.R)         (all alias-bearing dicts:
 #                                            4 water + ca_utilities +
 #                                            gov_entities)
@@ -46,17 +51,11 @@
 #      clean_entities punctuation-drift gap), run disambiguate() on the
 #      $edgelist / $nodelist, save the rewritten extract.
 #
-# Stem convention: step1 produces stems from the PDF filename. Two
-# conventions coexist during the legacy-to-new transition:
-#   (a) Legacy: v<N>_gsp_num_id_<NNNN>.pdf -> stem "v<N>_<NNNN>" (e.g.
-#       "v1_0007"). v1/v2 indicate successive submissions of the same plan;
-#       NNNN is the parent's gspId.
-#   (b) New (from step0): gsp_num_id_<NNNN>.pdf -> stem "<NNNN>" (e.g.
-#       "0007"). NNNN is the row's own globally-unique portal gspId; version
-#       semantics live in core_data_source_pdfs/plan_family_manifest.csv.
-# Either way, `gsp_nums <- str_extract(gspids, "[0-9]+$")` gives the bare
-# zero-padded numeric id used to join per-GSP metadata (agency_tbl) that
-# keys on the GSP number alone.
+# Stem convention: step1 produces stems from the PDF filename. Under the
+# step0 docId convention the stem IS the gspDocId (e.g. "8591"), and the
+# manifest carries per-docId metadata including the list of responsible
+# GSA portal IDs (`gsa_ids`). Older legacy stems (v<N>_<NNNN>) still parse
+# but won't have a manifest row, so they get NULL agency_nicknames.
 
 library(stringr)
 library(data.table)
@@ -106,33 +105,32 @@ dir.create(fk("disambiged_extracts_core"),
 edges_and_nodes <- sort(list.files(path = fk("nondisambiged_extracts_core"), full.names = TRUE))
 
 # Under the docId-based naming convention from step0, each stem is a
-# gspDocId (e.g. "8591" or "11703"). The agency_tbl we join against is
-# keyed by zero-padded gspId ("0007"), NOT gspDocId — so we have to
-# translate via plan_family_manifest.csv. The manifest is keyed on
-# gspDocId and carries the corresponding gspId (and canonical_gspId,
-# version, fromGspId, ...) as columns.
+# gspDocId (e.g. "8591" or "11703"). Per-GSP GSA membership comes from
+# the manifest (plan_family_manifest.csv), which carries `gsa_ids` (comma-
+# separated portal GSA IDs) per docId; the GSA-name lookup itself comes
+# from sgma_gsa_full.csv (GSA_ID -> GSA_Name). build_nicknames_for_gsp()
+# below joins the two to produce per-GSP agency_nicknames.
 #
 # stems  : the file stems (gspDocId strings) — these label every downstream
 #          artifact and the iteration is keyed on them.
-# gsp_nums : the per-stem gspId, zero-padded to 4 chars, for the
-#            agency_tbl join. NA for stems not in the manifest.
 gspids <- stringr::str_remove(basename(edges_and_nodes), "\\.RDS$")
 
 manifest_path <- file.path(fk("core_data_source_pdfs"),
                            "plan_family_manifest.csv")
 if (!file.exists(manifest_path)) {
    stop("plan_family_manifest.csv not found at ", manifest_path,
-        ". Run core_code/step0_download_from_sgma.R (or ",
-        "core_code/migrate_pdf_naming.R) first so this script can ",
-        "translate gspDocId stems to gspId for the agency_tbl join.")
+        ". Run core_code/step0_download_from_sgma.R first so this script ",
+        "can look up each docId's GSA membership.")
 }
 .manifest <- data.table::fread(manifest_path,
-                               colClasses = list(character = c("gspDocId", "gspId")))
-# manifest$gspId is already stored as a 4-digit padded string (step0 / migrate
-# normalize it on write). Use it directly as the agency_tbl join key.
-.docid_to_gspid <- setNames(.manifest$gspId, as.character(.manifest$gspDocId))
-gsp_nums <- unname(.docid_to_gspid[gspids])
-.missing_in_manifest <- is.na(gsp_nums)
+                               colClasses = list(character = c("gspDocId", "gspId",
+                                                               "gsa_ids", "gsa_names")))
+# manifest$gspId is already stored as a 4-digit padded string (step0
+# normalizes it on write). Stems with no matching manifest row will get
+# NULL agency_nicknames downstream.
+.docid_to_manifest_row <- setNames(seq_len(nrow(.manifest)),
+                                   as.character(.manifest$gspDocId))
+.missing_in_manifest <- !(gspids %in% names(.docid_to_manifest_row))
 if (any(.missing_in_manifest)) {
    warning(sum(.missing_in_manifest),
            " RDS stem(s) not found in plan_family_manifest.csv — ",
@@ -161,28 +159,55 @@ if (length(todo_idx) == 0L) {
    message("Nothing to do; all disambiguated extracts already present.")
 }
 
-agency_tbl <- readRDS(fk("gsa_table_core"))
-agency_tbl <- agency_tbl[!is.na(gsp_id),]
-#change hyphens and spaces to underscores, to match spacy parse formatting
-agency_tbl$name_gsas <- lapply(agency_tbl$name_gsas, function(w)
-   stringr::str_replace_all(w,"-|\\s","_"))
+# GSA metadata table (built by core_code/metadata_generators/scrape_gsa_orgmembers.ipynb).
+# Keyed by GSA_ID (int); GSA_Name is the canonical agency name (no parenthetical
+# suffixes — those are stripped at the i03 source). Lookup is GSA_ID -> GSA_Name.
+gsa_meta_path <- fk("sgma_gsa_full_core")
+if (!file.exists(gsa_meta_path)) {
+   stop("sgma_gsa_full.csv not found at ", gsa_meta_path,
+        ". Run core_code/metadata_generators/scrape_gsa_orgmembers.ipynb ",
+        "first to build the GSA metadata table.")
+}
+gsa_meta <- data.table::fread(gsa_meta_path,
+                              colClasses = list(character = c("GSA_ID", "GSA_Name")))
+.gsa_id_to_name <- setNames(gsa_meta$GSA_Name, as.character(gsa_meta$GSA_ID))
 
 # Build a 2-row (to, from) table mapping the per-GSP GSA name list to the
 # generic "Agency"/"Agencies" tokens used in the plan text. Returns NULL
-# when agency_tbl has no entry for the GSP — those GSPs simply contribute
-# no nickname rows to customdt downstream.
-build_nicknames_for_gsp <- function(stem, gsp_num) {
-   rows <- agency_tbl[gsp_id == gsp_num]
-   if (nrow(rows) == 0L) {
-      warning("No agency_tbl entry for GSP ", gsp_num, " (", stem, "); skipping nicknames")
+# when the manifest has no row for this docId, or no gsa_ids on the row,
+# or none of the gsa_ids match the GSA metadata table.
+build_nicknames_for_gsp <- function(stem) {
+   row_idx <- .docid_to_manifest_row[[stem]]
+   if (is.null(row_idx) || is.na(row_idx)) {
+      return(NULL)   # already warned above
+   }
+   gsa_id_str <- .manifest$gsa_ids[row_idx]
+   if (is.na(gsa_id_str) || !nzchar(gsa_id_str)) {
+      warning("No gsa_ids in manifest for docId ", stem, "; skipping nicknames")
       return(NULL)
    }
-   agency_names <- rows$name_gsas[[1]]
-   # strip trailing parenthetical disambiguators before clean_entities()
+   ids <- trimws(strsplit(gsa_id_str, ",", fixed = TRUE)[[1]])
+   ids <- ids[nzchar(ids)]
+   agency_names <- unname(.gsa_id_to_name[ids])
+   missing <- is.na(agency_names) | !nzchar(agency_names)
+   if (any(missing)) {
+      warning("GSA_ID(s) not found in sgma_gsa_full for docId ", stem, ": ",
+              paste(ids[missing], collapse = ","))
+   }
+   agency_names <- agency_names[!missing]
+   if (length(agency_names) == 0L) return(NULL)
+
+   # Normalize to the spaCy concatenated entity surface form: hyphens and
+   # whitespace -> underscore, then clean_entities() to drop punctuation
+   # and trailing 's. i03 GSA_Name doesn't carry "(Exclusive)" / "(Limited)"
+   # parentheticals, but defend against any that slip in.
+   agency_names <- stringr::str_replace_all(agency_names, "-|\\s", "_")
    agency_names <- unlist(lapply(agency_names, function(b) str_split(b, "\\(")[[1]][1]))
    agency_names <- clean_entities(agency_names, remove_nums = TRUE)
+   agency_names <- agency_names[nzchar(agency_names)]
+   if (length(agency_names) == 0L) return(NULL)
 
-   plural <- isTRUE(rows$mult_gsas[1])
+   plural <- length(agency_names) > 1L
    abbr   <- if (plural) c("Groundwater_Sustainability_Agencies", "Agencies")
              else        c("Groundwater_Sustainability_Agency",   "Agency")
 
@@ -190,15 +215,11 @@ build_nicknames_for_gsp <- function(stem, gsp_num) {
               from = abbr)
 }
 
-# Named list keyed by filename stem (gspDocId string under the new
-# convention; legacy stems also accepted). Section 4 looks these up by
-# stem to attach the right nicknames to each per-GSP customdt. NULL
-# entries for stems whose gspId couldn't be resolved via the manifest
-# or that have no agency_tbl row.
-agency_nicknames <- setNames(
-   Map(build_nicknames_for_gsp, gspids, gsp_nums),
-   gspids
-)
+# Named list keyed by filename stem (gspDocId string). Section 4 looks
+# these up by stem to attach the right nicknames to each per-GSP customdt.
+# NULL entries for stems whose docId has no manifest row, no gsa_ids, or
+# no matching GSA metadata.
+agency_nicknames <- setNames(lapply(gspids, build_nicknames_for_gsp), gspids)
 
 ###Section 2: Acronyms####
 # Mine doc-local acronyms from each GSP via two complementary sources,
@@ -233,7 +254,9 @@ gsa_seed      <- data.table(
 # Only mine acronyms for GSPs that still need disambiguation. Indices
 # outside todo_idx leave acrons[[m]] as NULL — those slots are never
 # read again because Section 4 / 5 iterate the same todo_idx.
+message("== Section 2: mining acronyms for ", length(todo_idx), " GSP(s) ==")
 for(m in todo_idx){
+   message("  [acrons ", match(m, todo_idx), "/", length(todo_idx), "] ", gspids[m])
    parquet_path   <- file.path(clean_dir,     paste0(gspids[m], ".parquet"))
    raw_pages_path <- file.path(raw_pages_dir, paste0(gspids[m], ".RDS"))
    if(!file.exists(parquet_path)){
@@ -268,6 +291,7 @@ for(m in todo_idx){
    acrons[[m]] <- unique(rbind(gsa_seed, mined), by="acronym")
    setnames(acrons[[m]], c("to","from"))
 }
+message("== Section 3: building global dictionary ==")
 ###Section 3: Global disambiguation dictionary####
 # CORE_DICT_KEYS is the canonical list defined in _config.R; step3 reads
 # the same list, so both steps stay in sync. The builder below handles
@@ -288,9 +312,9 @@ for(m in todo_idx){
 # the spaces have to stay on disk. But the nodelist that step4 disambiguates
 # uses spaCy's concatenated form (spaces & hyphens → underscores), so we
 # convert here before clean_entities() so canonicals and aliases meet the
-# nodelist in the same surface form. Same rule step4 Section 1 already
-# applies to agency_tbl$name_gsas. Idempotent — re-applying to an already-
-# underscored name is a no-op.
+# nodelist in the same surface form. Same rule step4 Section 1 applies to
+# GSA_Name when building agency_nicknames. Idempotent — re-applying to an
+# already-underscored name is a no-op.
 to_concat <- function(x) stringr::str_replace_all(x, "-|\\s", "_")
 
 load_alias_pairs <- function(f) {
@@ -335,12 +359,15 @@ global_dict <- unique(global_dict[
 # acrons[[m]] was renamed to (to, from) at build time in Section 2.
 # agency_nicknames is already a per-stem named list of (to, from) tables.
 
-# Empty (to, from) table to substitute for GSPs that had no agency_tbl row.
+# Empty (to, from) table to substitute for GSPs that had no manifest row
+# or whose gsa_ids didn't match anything in sgma_gsa_full.
 empty_nicks <- data.table(to = list(), from = character())
 
+message("== Section 4: building per-GSP customdt for ", length(todo_idx), " GSP(s) ==")
 customdt <- vector(mode="list",length=length(edges_and_nodes))
 # Same todo_idx as Section 2 — only build customdt for the GSPs that need it.
 for(m in todo_idx){
+   message("  [customdt ", match(m, todo_idx), "/", length(todo_idx), "] ", gspids[m])
    customdt[[m]] <- rbind(acrons[[m]], global_dict)
    customdt[[m]] <- unique(customdt[[m]])
 
@@ -367,7 +394,15 @@ for(m in todo_idx){
       for(k in seq_along(fromgroups)){
          dup_from <- names(fromgroups)[k]
          tos      <- customdt[[m]][from==dup_from]$to
-         keepto   <- tos[order(-nchar(tos))][1]
+         # `to` is a list-column whenever any agency_nicknames row was
+         # rbind'd into customdt, so nchar(tos) would error on a list.
+         # Measure each candidate's length list-safely (longest surface
+         # form = most specific canonical wins), preserving the plain-
+         # character behavior on the common single-string case.
+         to_len   <- vapply(tos,
+                            function(x) max(nchar(as.character(unlist(x))), 0L),
+                            numeric(1))
+         keepto   <- tos[order(-to_len)][1]
          makefrom <- setdiff(tos, keepto)
          match_partial <- !(FALSE %in% customdt[[m]][from %in% dup_from]$match_partial_entity)
          customdt[[m]] <- customdt[[m]][!(from %in% dup_from)]
@@ -405,6 +440,8 @@ for(m in todo_idx){
 # if it doesn't match "us" on the first pass we drop "us" from the
 # nodelist/edgelist and try again to match with the custom list.
 try_drop <- "^US_|^U_S_|^United_States_|^UnitedStates_"
+
+message("== Section 5: applying disambiguation to ", length(todo_idx), " GSP(s) ==")
 
 # disambig_dir / out_paths_all already computed up front; iterate todo_idx.
 # The per-iteration file.exists check is gone — todo_idx already excluded
