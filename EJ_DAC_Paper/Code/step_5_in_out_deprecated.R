@@ -17,7 +17,7 @@ load_dot_env()
 
 # --- Directory mapping ---
 
-data_dir <- "/EJ_Paper/cleaned_extracts_tagged"
+data_dir <- "/EJ_Paper/cleaned_extracts_2026"
 
 # --- Helper: load place nodes from a network directory ---
 load_place_nodes <- function(data_dir) {

@@ -3,7 +3,6 @@ library(stargazer)
 library(dotenv)
 library(sjPlot)
 
-setwd("/Users/ajguerra/Documents/projects/kings")
 load_dot_env()
 
 place_existance <- readRDS("EJ_DAC_Paper/Data/place_existance.RDS")
