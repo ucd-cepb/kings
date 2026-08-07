@@ -1,0 +1,186 @@
+gsp_doc_id,gsp_id,canonical_gsp_id,version,plan_section,submitted_date,from_gsp_id,gsa_ids,gsa_names,basin,out_basename,doc_rank
+944,0007,7,1,original,01/17/2020,,23,Aliso Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_944.pdf,1
+8770,0007,7,1,resubmitted,07/20/2022,,23,Aliso Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_8770.pdf,2
+1979,0008,8,1,original,01/23/2020,,40,Westlands Water District GSA,5-022.09 WESTSIDE,gsp_doc_id_1979.pdf,1
+8785,0008,8,1,resubmitted,07/18/2022,,40,Westlands Water District GSA,5-022.09 WESTSIDE,gsp_doc_id_8785.pdf,2
+386,0009,9,1,original,01/28/2020,,"311,223,219",Merced Irrigation-Urban GSA;Turner Island Water District GSA - Merced;Merced Subbasin GSA,5-022.04 MERCED,gsp_doc_id_386.pdf,1
+8897,0009,9,1,resubmitted,07/26/2022,,"311,223,219",Merced Irrigation-Urban GSA;Turner Island Water District GSA - Merced;Merced Subbasin GSA,5-022.04 MERCED,gsp_doc_id_8897.pdf,2
+3166,0011,11,1,original,01/30/2020,,24,Santa Cruz Mid-County Groundwater Agency GSA,3-001 SANTA CRUZ MID-COUNTY,gsp_doc_id_3166.pdf,1
+2256,0012,12,1,original,01/29/2020,,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_2256.pdf,1
+9211,0012,12,1,resubmitted,07/27/2022,,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_9211.pdf,2
+4342,0013,13,1,original,01/23/2020,,"214,301,66,206,237,302,17,13,23,360,269,271,71,67,57,70,30,298,308,62,231,10,220",Northwestern Delta-Mendota GSA (Exclusive);DM-II GSA (Exclusive);City of Patterson GSA (Exclusive);Central Delta-Mendota GSA (Exclusive);Widren Water District GSA (Exclusive);Oro Loma Water District GSA (Exclusive);Patterson Irrigation District GSA (Exclusive);West Stanislaus Irrigation District GSA (Exclusive);link,5-022.07 DELTA-MENDOTA,gsp_doc_id_4342.pdf,1
+8708,0013,13,1,resubmitted,07/20/2022,,"214,301,66,206,237,302,17,13,23,360,269,271,71,67,57,70,30,298,308,62,231,10,220",Northwestern Delta-Mendota GSA (Exclusive);DM-II GSA (Exclusive);City of Patterson GSA (Exclusive);Central Delta-Mendota GSA (Exclusive);Widren Water District GSA (Exclusive);Oro Loma Water District GSA (Exclusive);Patterson Irrigation District GSA (Exclusive);West Stanislaus Irrigation District GSA (Exclusive);link,5-022.07 DELTA-MENDOTA,gsp_doc_id_8708.pdf,2
+1147,0014,14,1,original,01/23/2020,,30,Farmers Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_1147.pdf,1
+8858,0014,14,1,resubmitted,07/20/2022,,30,Farmers Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_8858.pdf,2
+458,0015,15,1,original,01/23/2020,,"220,231,71,10,57,67,360,269,271,70",Turner Island Water District GSA - Delta-Mendota;County of Merced GSA - Delta-Mendota;City of Los Banos GSA;San Joaquin River Exchange Contractors GSA;City of Newman GSA;City of Mendota GSA;City of Dos Palos GSA;City of Firebaugh GSA;City of Gustine GSA;County of Madera GSA - Delta-Mendota,5-022.07 DELTA-MENDOTA,gsp_doc_id_458.pdf,1
+8825,0015,15,1,resubmitted,07/20/2022,,"220,231,71,10,57,67,360,269,271,70",Turner Island Water District GSA - Delta-Mendota;County of Merced GSA - Delta-Mendota;City of Los Banos GSA;San Joaquin River Exchange Contractors GSA;City of Newman GSA;City of Mendota GSA;City of Dos Palos GSA;City of Firebaugh GSA;City of Gustine GSA;County of Madera GSA - Delta-Mendota,5-022.07 DELTA-MENDOTA,gsp_doc_id_8825.pdf,2
+614,0016,16,1,original,01/13/2020,,433,Fox Canyon Groundwater Management Agency GSA - Oxnard,4-004.02 OXNARD,gsp_doc_id_614.pdf,1
+469,0017,17,1,original,01/13/2020,,432,Fox Canyon Groundwater Management Agency GSA - Pleasant Valley,4-006 PLEASANT VALLEY,gsp_doc_id_469.pdf,1
+468,0018,18,1,original,01/13/2020,,163,Fox Canyon Groundwater Management Agency GSA - Las Posas Valley,4-008 LAS POSAS VALLEY,gsp_doc_id_468.pdf,1
+4922,0019,19,1,original,12/31/2021,,354,Mound Basin GSA,4-004.03 MOUND,gsp_doc_id_4922.pdf,1
+1384,0020,20,1,original,01/23/2020,,"298,308",County of Fresno GSA - Delta-Mendota Management Area A;County of Fresno GSA - Delta-Mendota Management Area B,5-022.07 DELTA-MENDOTA,gsp_doc_id_1384.pdf,1
+8797,0020,20,1,resubmitted,07/20/2022,,"298,308",County of Fresno GSA - Delta-Mendota Management Area A;County of Fresno GSA - Delta-Mendota Management Area B,5-022.07 DELTA-MENDOTA,gsp_doc_id_8797.pdf,2
+3164,0021,21,1,original,01/31/2020,,"47,41,19,69",City of Madera GSA;Madera Water District GSA;Madera Irrigation District GSA;County of Madera GSA - Madera,5-022.06 MADERA,gsp_doc_id_3164.pdf,1
+9631,0021,21,1,resubmitted,03/21/2023,,"47,41,19,69",City of Madera GSA;Madera Water District GSA;Madera Irrigation District GSA;County of Madera GSA - Madera,5-022.06 MADERA,gsp_doc_id_9631.pdf,2
+3848,0022,22,1,original,01/28/2020,,211,Central Kings GSA,5-022.08 KINGS,gsp_doc_id_3848.pdf,1
+9121,0022,22,1,resubmitted,07/27/2022,,211,Central Kings GSA,5-022.08 KINGS,gsp_doc_id_9121.pdf,2
+2704,0023,23,1,original,01/28/2020,,18,Kings River East GSA,5-022.08 KINGS,gsp_doc_id_2704.pdf,1
+9155,0023,23,1,resubmitted,07/28/2022,,18,Kings River East GSA,5-022.08 KINGS,gsp_doc_id_9155.pdf,2
+2664,0024,24,1,original,01/28/2020,,65,North Kings GSA,5-022.08 KINGS,gsp_doc_id_2664.pdf,1
+9144,0024,24,1,resubmitted,07/28/2022,,65,North Kings GSA,5-022.08 KINGS,gsp_doc_id_9144.pdf,2
+2564,0025,25,1,original,01/28/2020,,187,North Fork Kings GSA,5-022.08 KINGS,gsp_doc_id_2564.pdf,1
+9139,0025,25,1,resubmitted,07/27/2022,,187,North Fork Kings GSA,5-022.08 KINGS,gsp_doc_id_9139.pdf,2
+2149,0026,26,1,original,01/28/2020,,317,South Kings GSA,5-022.08 KINGS,gsp_doc_id_2149.pdf,1
+9136,0026,26,1,resubmitted,07/27/2022,,317,South Kings GSA,5-022.08 KINGS,gsp_doc_id_9136.pdf,2
+3168,0028,28,1,original,01/28/2020,,266,McMullin Area GSA,5-022.08 KINGS,gsp_doc_id_3168.pdf,1
+9152,0028,28,1,resubmitted,07/27/2022,,266,McMullin Area GSA,5-022.08 KINGS,gsp_doc_id_9152.pdf,2
+3862,0029,29,1,original,01/23/2020,,"184,461,487",Marina Coast Water District GSA - 180/400 Foot Aquifer;Salinas Valley Basin GSA - 180/400 Foot Aquifer;County of Monterey GSA,3-004.01 180/400 FOOT AQUIFER,gsp_doc_id_3862.pdf,1
+3303,0030,30,1,original,01/31/2020,,281,Greater Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_3303.pdf,1
+9110,0030,30,1,resubmitted,07/27/2022,,281,Greater Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_9110.pdf,2
+2655,0031,31,1,original,01/28/2020,,12,James GSA,5-022.08 KINGS,gsp_doc_id_2655.pdf,1
+9921,0031,31,1,resubmitted,07/27/2022,,12,James GSA,5-022.08 KINGS,gsp_doc_id_9921.pdf,2
+2669,0032,32,1,original,01/28/2020,,327,Cuyama Basin GSA,3-013 CUYAMA VALLEY,gsp_doc_id_2669.pdf,1
+8757,0032,32,1,resubmitted,07/18/2022,,327,Cuyama Basin GSA,3-013 CUYAMA VALLEY,gsp_doc_id_8757.pdf,2
+2847,0035,35,1,original,01/30/2020,,"56,72,322,319",San Miguel Community Services District GSA;City of Paso Robles GSA;County of San Luis Obispo GSA - Paso Robles Area;Shandon-San Juan GSA,3-004.06 PASO ROBLES AREA,gsp_doc_id_2847.pdf,1
+8626,0035,35,1,resubmitted,07/19/2022,,"56,72,322,319",San Miguel Community Services District GSA;City of Paso Robles GSA;County of San Luis Obispo GSA - Paso Robles Area;Shandon-San Juan GSA,3-004.06 PASO ROBLES AREA,gsp_doc_id_8626.pdf,2
+2162,0036,36,1,original,01/30/2020,,"277,39,188,306,326",Semitropic Water Storage District GSA;West Kern Water District GSA;Pioneer GSA;Kern Non-Districted Land Authority GSA;Cawelo Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_2162.pdf,1
+9203,0036,36,1,resubmitted,07/27/2022,,"277,39,188,306,326",Semitropic Water Storage District GSA;West Kern Water District GSA;Pioneer GSA;Kern Non-Districted Land Authority GSA;Cawelo Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_9203.pdf,2
+2994,0037,37,1,original,01/29/2020,,254,Henry Miller Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_2994.pdf,1
+9188,0037,37,1,resubmitted,07/27/2022,,254,Henry Miller Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_9188.pdf,2
+1407,0038,38,1,original,01/23/2020,,"231,62",County of Merced GSA - Delta-Mendota;Grasslands GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_1407.pdf,1
+8791,0038,38,1,resubmitted,07/20/2022,,"231,62",County of Merced GSA - Delta-Mendota;Grasslands GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_8791.pdf,2
+2810,0042,42,1,original,01/29/2020,,"411,222,73,226,358",Tri-County Water Authority GSA - Tulare Lake;South Fork Kings GSA;Mid-Kings River GSA;Southwest Kings GSA;El Rico GSA,5-022.12 TULARE LAKE,gsp_doc_id_2810.pdf,1
+9241,0042,42,1,resubmitted,07/27/2022,,"411,222,73,226,358",Tri-County Water Authority GSA - Tulare Lake;South Fork Kings GSA;Mid-Kings River GSA;Southwest Kings GSA;El Rico GSA,5-022.12 TULARE LAKE,gsp_doc_id_9241.pdf,2
+3712,0043,43,1,original,01/29/2020,,"","",5-022.13 TULE,gsp_doc_id_3712.pdf,1
+9090,0043,43,1,resubmitted,07/27/2022,,"","",5-022.13 TULE,gsp_doc_id_9090.pdf,2
+1516,0044,44,1,original,01/22/2020,,196,Olcese Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_1516.pdf,1
+9064,0044,44,1,resubmitted,07/27/2022,,196,Olcese Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_9064.pdf,2
+2772,0045,45,1,original,01/28/2020,,33,Root Creek Water District GSA,5-022.06 MADERA,gsp_doc_id_2772.pdf,1
+9607,0045,45,1,resubmitted,03/21/2023,,33,Root Creek Water District GSA,5-022.06 MADERA,gsp_doc_id_9607.pdf,2
+2509,0047,47,1,original,01/29/2020,,"137,152,116,91,288,142,140,189,208,201,159,249,389,151,99,228",City of Stockton GSA;City of Lodi GSA;Stockton East Water District GSA;City of Manteca GSA;Eastside San Joaquin GSA;County of San Joaquin GSA - Eastern San Joaquin 1;Lockeford Community Service District GSA;Central San Joaquin Water Conservation District GSA;South Delta Water Agency GSA;Central Delta Water Agency GSA;North San Joaquin Water Conservation District GSA;South San Joaquin GSA;County of San Joaquin GSA - Eastern San Joaquin 2;Woodbridge Irrigation District GSA;Linden County Water District GSA;Oakdale Irrigation District GSA,5-022.01 EASTERN SAN JOAQUIN,gsp_doc_id_2509.pdf,1
+8901,0047,47,1,resubmitted,07/27/2022,,"137,152,116,91,288,142,140,189,208,201,159,249,389,151,99,228",City of Stockton GSA;City of Lodi GSA;Stockton East Water District GSA;City of Manteca GSA;Eastside San Joaquin GSA;County of San Joaquin GSA - Eastern San Joaquin 1;Lockeford Community Service District GSA;Central San Joaquin Water Conservation District GSA;South Delta Water Agency GSA;Central Delta Water Agency GSA;North San Joaquin Water Conservation District GSA;South San Joaquin GSA;County of San Joaquin GSA - Eastern San Joaquin 2;Woodbridge Irrigation District GSA;Linden County Water District GSA;Oakdale Irrigation District GSA,5-022.01 EASTERN SAN JOAQUIN,gsp_doc_id_8901.pdf,2
+3713,0048,48,1,original,01/23/2020,,25,Alpaugh GSA,5-022.13 TULE,gsp_doc_id_3713.pdf,1
+9115,0048,48,1,resubmitted,07/27/2022,,25,Alpaugh GSA,5-022.13 TULE,gsp_doc_id_9115.pdf,2
+2710,0049,49,1,original,01/28/2020,,59,New Stone Water District GSA,5-022.06 MADERA,gsp_doc_id_2710.pdf,1
+9617,0049,49,1,resubmitted,03/21/2023,,59,New Stone Water District GSA,5-022.06 MADERA,gsp_doc_id_9617.pdf,2
+2842,0050,50,1,original,01/31/2020,,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_2842.pdf,1
+9093,0050,50,1,resubmitted,07/27/2022,,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_9093.pdf,2
+3162,0051,51,1,original,01/30/2020,,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_3162.pdf,1
+9238,0051,51,1,resubmitted,08/01/2022,,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_9238.pdf,2
+1683,0052,52,1,original,01/31/2020,,106,Yuba Water Agency GSA - South Yuba,5-021.61 SOUTH YUBA,gsp_doc_id_1683.pdf,1
+1682,0053,53,1,original,01/31/2020,,"133,413,111",City of Marysville GSA;Yuba Water Agency GSA - North Yuba;Cordua Irrigation District GSA,5-021.60 NORTH YUBA,gsp_doc_id_1682.pdf,1
+2384,0054,54,1,original,01/28/2020,,"22,20",Greenfield County Water District GSA;Kern River GSA,5-022.14 KERN COUNTY,gsp_doc_id_2384.pdf,1
+9034,0054,54,1,resubmitted,07/29/2022,,"22,20",Greenfield County Water District GSA;Kern River GSA,5-022.14 KERN COUNTY,gsp_doc_id_9034.pdf,2
+4306,0056,56,1,original,01/28/2020,,42,Lower Tule River Irrigation District GSA,5-022.13 TULE,gsp_doc_id_4306.pdf,1
+9024,0056,56,1,resubmitted,07/27/2022,,42,Lower Tule River Irrigation District GSA,5-022.13 TULE,gsp_doc_id_9024.pdf,2
+3718,0057,57,1,original,01/30/2020,,490,Tri-County Water Authority GSA - Tule,5-022.13 TULE,gsp_doc_id_3718.pdf,1
+9230,0057,57,1,resubmitted,07/27/2022,,490,Tri-County Water Authority GSA - Tule,5-022.13 TULE,gsp_doc_id_9230.pdf,2
+2672,0058,58,1,original,01/29/2020,,314,East Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_2672.pdf,1
+9106,0058,58,1,resubmitted,07/27/2022,,314,East Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_9106.pdf,2
+3301,0059,59,1,original,01/31/2020,,35,Indian Wells Valley Groundwater Authority GSA,6-054 INDIAN WELLS VALLEY,gsp_doc_id_3301.pdf,1
+2840,0061,61,1,original,01/30/2020,,34,Gravelly Ford Water District GSA,5-022.06 MADERA,gsp_doc_id_2840.pdf,1
+9625,0061,61,1,resubmitted,03/21/2023,,34,Gravelly Ford Water District GSA,5-022.06 MADERA,gsp_doc_id_9625.pdf,2
+3715,0063,63,1,original,01/30/2020,,29,Delano-Earlimart Irrigation District GSA,5-022.13 TULE,gsp_doc_id_3715.pdf,1
+9219,0063,63,1,resubmitted,07/27/2022,,29,Delano-Earlimart Irrigation District GSA,5-022.13 TULE,gsp_doc_id_9219.pdf,2
+3714,0065,65,1,original,01/30/2020,,43,Pixley Irrigation District GSA,5-022.13 TULE,gsp_doc_id_3714.pdf,1
+9021,0065,65,1,resubmitted,07/27/2022,,43,Pixley Irrigation District GSA,5-022.13 TULE,gsp_doc_id_9021.pdf,2
+4356,0067,67,1,original,11/04/2020,,400,Castac Basin GSA,5-029 CASTAC LAKE VALLEY,gsp_doc_id_4356.pdf,1
+7993,0070,70,1,original,01/31/2022,,493,County of Humboldt GSA,1-010 EEL RIVER VALLEY,gsp_doc_id_7993.pdf,1
+4539,0071,71,1,original,11/17/2021,,28,West San Jacinto GSA,8-005 SAN JACINTO,gsp_doc_id_4539.pdf,1
+6325,0072,72,1,original,01/26/2022,,468,Fillmore and Piru Basins GSA - Piru,4-004.06 PIRU,gsp_doc_id_6325.pdf,1
+10230,0072,72,1,resubmitted,07/15/2024,,468,Fillmore and Piru Basins GSA - Piru,4-004.06 PIRU,gsp_doc_id_10230.pdf,2
+6324,0073,73,1,original,01/26/2022,,339,Fillmore and Piru Basins GSA - Fillmore,4-004.05 FILLMORE,gsp_doc_id_6324.pdf,1
+10248,0073,73,1,resubmitted,07/16/2024,,339,Fillmore and Piru Basins GSA - Fillmore,4-004.05 FILLMORE,gsp_doc_id_10248.pdf,2
+5005,0074,74,1,original,01/03/2022,,338,Santa Margarita Groundwater Agency GSA,3-027 SANTA MARGARITA,gsp_doc_id_5005.pdf,1
+7827,0075,75,1,original,01/28/2022,,370,San Pasqual Valley GSA,9-010 SAN PASQUAL VALLEY,gsp_doc_id_7827.pdf,1
+7813,0076,76,1,original,01/31/2022,,359,Upper San Luis Rey Groundwater Management Authority GSA,9-007.01 UPPER SAN LUIS REY VALLEY,gsp_doc_id_7813.pdf,1
+6135,0077,77,1,original,01/24/2022,,248,Upper Ventura River Groundwater Agency GSA,4-003.01 UPPER VENTURA RIVER,gsp_doc_id_6135.pdf,1
+5607,0078,78,1,original,01/18/2022,,5,Santa Ynez River Valley Basin Western Management Area GSA,3-015 SANTA YNEZ RIVER VALLEY,gsp_doc_id_5607.pdf,1
+5606,0079,79,1,original,01/18/2022,,11,Santa Ynez River Valley Basin Central Management Area GSA,3-015 SANTA YNEZ RIVER VALLEY,gsp_doc_id_5606.pdf,1
+5975,0080,80,1,original,01/19/2022,,273,Santa Ynez River Valley Basin Eastern Management Area GSA,3-015 SANTA YNEZ RIVER VALLEY,gsp_doc_id_5975.pdf,1
+7701,0081,81,1,original,01/27/2022,,260,Temescal Subbasin GSA,8-002.09 TEMESCAL,gsp_doc_id_7701.pdf,1
+6110,0082,82,1,original,01/20/2022,,287,Enterprise-Anderson GSA - Enterprise,5-006.04 ENTERPRISE,gsp_doc_id_6110.pdf,1
+6111,0083,83,1,original,01/20/2022,,464,Enterprise-Anderson GSA - Anderson,5-006.03 ANDERSON,gsp_doc_id_6111.pdf,1
+7195,0084,84,1,original,01/28/2022,,342,Ukiah Valley Basin GSA,1-052 UKIAH VALLEY,gsp_doc_id_7195.pdf,1
+8058,0085,85,1,original,01/31/2022,,"192,300",Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA;County of Tuolumne GSA,5-022.02 MODESTO,gsp_doc_id_8058.pdf,1
+10202,0085,85,1,resubmitted,07/12/2024,,"192,300",Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA;County of Tuolumne GSA,5-022.02 MODESTO,gsp_doc_id_10202.pdf,2
+6450,0086,86,1,original,01/28/2022,,"178,409",Rock Creek Reclamation District GSA;Vina GSA,5-021.57 VINA,gsp_doc_id_6450.pdf,1
+8197,0087,87,1,original,01/21/2022,,290,San Antonio Basin GSA,3-014 SAN ANTONIO CREEK VALLEY,gsp_doc_id_8197.pdf,1
+7652,0088,88,1,original,01/28/2022,,457,Siskiyou County Flood Control and Water Conservation District GSA - Butte Valley,1-003 BUTTE VALLEY,gsp_doc_id_7652.pdf,1
+10224,0088,88,1,resubmitted,07/12/2024,,457,Siskiyou County Flood Control and Water Conservation District GSA - Butte Valley,1-003 BUTTE VALLEY,gsp_doc_id_10224.pdf,2
+6317,0089,89,1,original,01/28/2022,,253,Siskiyou County Flood Control and Water Conservation District GSA - Scott River,1-005 SCOTT RIVER VALLEY,gsp_doc_id_6317.pdf,1
+6461,0090,90,1,original,01/28/2022,,456,Siskiyou County Flood Control and Water Conservation District GSA - Shasta,1-004 SHASTA VALLEY,gsp_doc_id_6461.pdf,1
+7188,0091,91,1,original,01/26/2022,,"104,200",East Bay Municipal Utility District GSA;City of Hayward GSA,2-009.04 EAST BAY PLAIN,gsp_doc_id_7188.pdf,1
+6881,0092,92,1,original,01/28/2022,,"369,323",Glenn Groundwater Authority GSA;Colusa Groundwater Authority GSA - Colusa,5-021.52 COLUSA,gsp_doc_id_6881.pdf,1
+10061,0092,92,1,resubmitted,04/22/2024,,"369,323",Glenn Groundwater Authority GSA;Colusa Groundwater Authority GSA - Colusa,5-021.52 COLUSA,gsp_doc_id_10061.pdf,2
+4918,0093,93,1,original,01/12/2022,,267,Bedford-Coldwater Subbasin GSA,8-004.02 BEDFORD-COLDWATER,gsp_doc_id_4918.pdf,1
+5221,0094,94,1,original,01/28/2022,,"390,418",Corning Subbasin GSA;Tehama County Flood Control and Water Conservation District GSA - Corning,5-021.51 CORNING,gsp_doc_id_5221.pdf,1
+10079,0094,94,1,resubmitted,04/22/2024,,"390,418",Corning Subbasin GSA;Tehama County Flood Control and Water Conservation District GSA - Corning,5-021.51 CORNING,gsp_doc_id_10079.pdf,2
+5806,0095,95,1,original,01/27/2022,,"240,232",County of Lassen GSA;County of Modoc GSA - Big Valley,5-004 BIG VALLEY,gsp_doc_id_5806.pdf,1
+10050,0095,95,1,resubmitted,04/22/2024,,"240,232",County of Lassen GSA;County of Modoc GSA - Big Valley,5-004 BIG VALLEY,gsp_doc_id_10050.pdf,2
+7793,0096,96,1,original,01/28/2022,,217,Yolo Subbasin GSA,5-021.67 YOLO,gsp_doc_id_7793.pdf,1
+8090,0097,97,1,original,01/31/2022,,"258,256,280,236",Tulelake Irrigation District GSA;County of Siskiyou GSA;City of Tulelake GSA;County of Modoc GSA - Tulelake,1-002.01 TULELAKE,gsp_doc_id_8090.pdf,1
+10268,0097,97,1,resubmitted,07/16/2024,,"258,256,280,236",Tulelake Irrigation District GSA;County of Siskiyou GSA;City of Tulelake GSA;County of Modoc GSA - Tulelake,1-002.01 TULELAKE,gsp_doc_id_10268.pdf,2
+6291,0098,98,1,original,01/28/2022,,"120,112,128,173,117,195,417,467,415,416,251,122,138",Western Canal Water District GSA;Richvale Irrigation District GSA;City of Gridley GSA;City of Biggs GSA;Biggs-West Gridley Water District GSA;Reclamation District No. 2106 GSA;Butte Water District GSA - Butte;Colusa Groundwater Authority GSA - Butte;County of Glenn GSA - Butte;Reclamation District No. 1004 GSA - Butte 1;County of Butte GSA - Butte 2;County of Butte GSA - Butte 1;Reclamation District No. 1004 GSA - Butte 2,5-021.70 BUTTE,gsp_doc_id_6291.pdf,1
+6455,0099,99,1,original,01/28/2022,,406,Wyandotte Creek GSA,5-021.69 WYANDOTTE CREEK,gsp_doc_id_6455.pdf,1
+6197,0100,100,1,original,01/24/2022,,"118,233,209,247,454",Sacramento Groundwater Authority GSA;South Sutter Water District GSA;West Placer GSA;Reclamation District No. 1001 GSA;County of Sutter GSA - North American,5-021.64 NORTH AMERICAN,gsp_doc_id_6197.pdf,1
+7411,0101,101,1,original,01/29/2022,,263,Sonoma Valley GSA,2-002.02 SONOMA VALLEY,gsp_doc_id_7411.pdf,1
+5091,0103,103,1,original,01/26/2022,,403,Owens Valley Groundwater Authority GSA - Owens Valley,6-012.01 OWENS VALLEY,gsp_doc_id_5091.pdf,1
+7680,0104,104,1,original,01/27/2022,,349,Yucaipa Basin GSA (Exclusive),8-002.07 YUCAIPA,gsp_doc_id_7680.pdf,1
+5099,0105,105,1,original,01/12/2022,,"89,345",San Benito County Water District GSA;Santa Clara Valley Water District GSA - North San Benito,3-003.05 NORTH SAN BENITO,gsp_doc_id_5099.pdf,1
+5232,0106,106,1,original,01/27/2022,,"155,97,182,193,312,160,496",Omochumne-Hartnell Water District GSA - Cosumnes;Galt Irrigation District GSA;Clay Water District GSA;Amador County Groundwater Management Authority GSA;City of Galt GSA;Sloughhouse Resource Conservation District GSA - Cosumnes;Sacramento County GSA - Cosumnes,5-022.16 COSUMNES,gsp_doc_id_5232.pdf,1
+7762,0110,110,1,original,01/28/2022,,"225,238",West Turlock Subbasin GSA;East Turlock Subbasin GSA,5-022.03 TURLOCK,gsp_doc_id_7762.pdf,1
+10217,0110,110,1,resubmitted,07/12/2024,,"225,238",West Turlock Subbasin GSA;East Turlock Subbasin GSA,5-022.03 TURLOCK,gsp_doc_id_10217.pdf,2
+6252,0111,111,1,original,01/27/2022,,"295,366,387,378,376,377,364,373,156,147",County of Sacramento GSA - South American;Reclamation District No. 551 GSA;Franklin Drainage District GSA;Reclamation District No. 369 GSA;Reclamation District No. 744 GSA;Reclamation District No. 813 GSA;Reclamation District No. 2110 GSA;Reclamation District No. 1002 GSA;Omochumne-Hartnell Water District GSA - South American;Sacramento Central Groundwater Authority GSA - 1,5-021.65 SOUTH AMERICAN,gsp_doc_id_6252.pdf,1
+7787,0112,112,1,original,01/28/2022,,"114,121,320,239,321,136,119,264,218",Sutter Community Service District GSA;Sutter Extension Water District GSA;Reclamation District No. 70 GSA;Reclamation District No. 1500 GSA;Reclamation District No. 1660 GSA;City of Live Oak GSA;Butte Water District GSA - Sutter;City of Yuba City GSA;County of Sutter GSA - Sutter,5-021.62 SUTTER,gsp_doc_id_7787.pdf,1
+6290,0113,113,1,original,01/24/2022,,268,Salinas Valley Basin GSA - Langley Area,3-004.09 LANGLEY AREA,gsp_doc_id_6290.pdf,1
+6533,0114,114,1,original,01/24/2022,,460,Salinas Valley Basin GSA - East Side Aquifer,3-004.02 EAST SIDE AQUIFER,gsp_doc_id_6533.pdf,1
+6260,0115,115,1,original,01/24/2022,,459,Salinas Valley Basin GSA - Upper Valley Aquifer,3-004.05 UPPER VALLEY AQUIFER,gsp_doc_id_6260.pdf,1
+6527,0116,116,1,original,01/24/2022,,"261,462",Arroyo Seco GSA - 1;Salinas Valley Basin GSA - Forebay Aquifer,3-004.04 FOREBAY AQUIFER,gsp_doc_id_6527.pdf,1
+7741,0117,117,1,original,01/27/2022,,"180,272,340,384,385,497",Solano Irrigation District GSA;City of Vacaville GSA;Solano Subbasin GSA;Reclamation District No. 501 GSA;Reclamation District No. 349 GSA;Sacramento County GSA - Solano,5-021.66 SOLANO,gsp_doc_id_7741.pdf,1
+6428,0118,118,1,original,01/26/2022,,"336,329",County of San Luis Obispo GSA - San Luis Obispo Valley;City of San Luis Obispo GSA,3-009 SAN LUIS OBISPO VALLEY,gsp_doc_id_6428.pdf,1
+7521,0119,119,1,original,01/26/2022,,21,Elsinore Valley GSA,8-004.01 ELSINORE VALLEY,gsp_doc_id_7521.pdf,1
+6617,0120,120,1,original,01/25/2022,,"259,289,265,252,224,299,463",County of Contra Costa GSA;Diablo Water District GSA;Discovery Bay Community Services District GSA;East Contra Costa Irrigation District GSA;City of Brentwood GSA;City of Antioch GSA;Byron-Bethany Irrigation District GSA - East Contra Costa,5-022.19 EAST CONTRA COSTA,gsp_doc_id_6617.pdf,1
+6097,0121,121,1,original,01/25/2022,,"330,262,450",Verbenia GSA;San Gorgonio Pass GSA;Desert Water Agency GSA - Statutory Area - San Gorgonio Pass,7-021.04 SAN GORGONIO PASS,gsp_doc_id_6097.pdf,1
+7514,0122,122,1,original,01/28/2022,,"157,183,149,286,343,146",City of Tracy GSA;City of Lathrop GSA;Banta-Carbona Irrigation District GSA;Byron-Bethany Irrigation District GSA - Tracy;Stewart Tract GSA;County of San Joaquin GSA - Tracy,5-022.15 TRACY,gsp_doc_id_7514.pdf,1
+7769,0123,123,1,original,01/28/2022,,244,White Wolf GSA,5-022.18 WHITE WOLF,gsp_doc_id_7769.pdf,1
+8062,0124,124,1,original,01/31/2022,,488,County of Napa GSA,2-002.01 NAPA VALLEY,gsp_doc_id_8062.pdf,1
+7517,0125,125,1,original,01/28/2022,,"227,234",Sierra Valley Groundwater Management District GSA;County of Plumas GSA,5-012.01 SIERRA VALLEY,gsp_doc_id_7517.pdf,1
+7696,0127,127,1,original,01/31/2022,,480,Big Valley GSA,5-015 BIG VALLEY,gsp_doc_id_7696.pdf,1
+7894,0128,128,1,original,01/28/2022,,"50,458",Marina Coast Water District GSA - Monterey;Salinas Valley Basin GSA - Monterey,3-004.10 MONTEREY,gsp_doc_id_7894.pdf,1
+6073,0129,129,1,original,01/27/2022,,337,Santa Monica Basin GSA,4-011.01 SANTA MONICA,gsp_doc_id_6073.pdf,1
+7953,0130,130,1,original,01/31/2022,,162,Ojai Basin Groundwater Management Agency GSA,4-002 OJAI VALLEY,gsp_doc_id_7953.pdf,1
+6529,0131,131,1,original,01/24/2022,,315,Santa Clarita Valley GSA,4-004.07 SANTA CLARA RIVER VALLEY EAST,gsp_doc_id_6529.pdf,1
+9300,0132,132,1,original,01/29/2022,,350,Petaluma Valley GSA,2-001 PETALUMA VALLEY,gsp_doc_id_9300.pdf,1
+7964,0133,133,1,original,01/30/2022,,296,Atascadero Basin GSA,3-004.11 ATASCADERO AREA,gsp_doc_id_7964.pdf,1
+8072,0134,134,1,original,01/31/2022,,422,Tehama County Flood Control and Water Conservation District GSA - Antelope,5-021.54 ANTELOPE,gsp_doc_id_8072.pdf,1
+10082,0134,134,1,resubmitted,04/22/2024,,422,Tehama County Flood Control and Water Conservation District GSA - Antelope,5-021.54 ANTELOPE,gsp_doc_id_10082.pdf,2
+7442,0136,136,1,original,01/29/2022,,331,Santa Rosa Plain GSA,1-055.01 SANTA ROSA PLAIN,gsp_doc_id_7442.pdf,1
+8078,0137,137,1,original,01/31/2022,,124,Tehama County Flood Control and Water Conservation District GSA - Bowman,5-006.01 BOWMAN,gsp_doc_id_8078.pdf,1
+8630,0138,138,1,original,06/29/2022,,328,Bear Valley Basin GSA,8-009 BEAR VALLEY,gsp_doc_id_8630.pdf,1
+8085,0139,139,1,original,01/31/2022,,420,Tehama County Flood Control and Water Conservation District GSA - Los Molinos,5-021.56 LOS MOLINOS,gsp_doc_id_8085.pdf,1
+10064,0139,139,1,resubmitted,04/22/2024,,420,Tehama County Flood Control and Water Conservation District GSA - Los Molinos,5-021.56 LOS MOLINOS,gsp_doc_id_10064.pdf,2
+8089,0140,140,1,original,01/31/2022,,419,Tehama County Flood Control and Water Conservation District GSA - Red Bluff,5-021.50 RED BLUFF,gsp_doc_id_8089.pdf,1
+10066,0140,140,1,resubmitted,04/22/2024,,419,Tehama County Flood Control and Water Conservation District GSA - Red Bluff,5-021.50 RED BLUFF,gsp_doc_id_10066.pdf,2
+8634,0144,144,1,original,05/17/2022,,275,Western Municipal Water District GSA - Riverside-Arlington,8-002.03 RIVERSIDE-ARLINGTON,gsp_doc_id_8634.pdf,1
+8203,0145,145,1,original,04/04/2022,,"190,408,410",Pleasant Valley GSA;County of Fresno GSA - Pleasant Valley;City of Coalinga GSA,5-022.10 PLEASANT VALLEY,gsp_doc_id_8203.pdf,1
+10265,0145,145,1,resubmitted,07/16/2024,,"190,408,410",Pleasant Valley GSA;County of Fresno GSA - Pleasant Valley;City of Coalinga GSA,5-022.10 PLEASANT VALLEY,gsp_doc_id_10265.pdf,2
+8591,0149,149,1,original,07/26/2022,,212,Spadra Basin GSA,4-013 SAN GABRIEL VALLEY,gsp_doc_id_8591.pdf,1
+11674,0149,149,1,resubmitted,11/26/2025,,212,Spadra Basin GSA,4-013 SAN GABRIEL VALLEY,gsp_doc_id_11674.pdf,2
+9056,0150,150,1,original,06/20/2022,,"482,481,484",Tejon-Castac Water District GSA;Arvin GSA;Wheeler Ridge-Maricopa GSA,5-022.14 KERN COUNTY,gsp_doc_id_9056.pdf,1
+8969,0150,150,1,resubmitted,07/27/2022,,"482,481,484",Tejon-Castac Water District GSA;Arvin GSA;Wheeler Ridge-Maricopa GSA,5-022.14 KERN COUNTY,gsp_doc_id_8969.pdf,2
+9704,0155,155,1,original,06/22/2023,,404,Montecito Groundwater Basin GSA,3-049 MONTECITO,gsp_doc_id_9704.pdf,1
+9918,0156,156,1,original,06/28/2023,,"434,49",Fox Canyon Groundwater Management Agency GSA - Arroyo Santa Rosa Valley;Arroyo Santa Rosa Valley Basin GSA,4-007 ARROYO SANTA ROSA VALLEY,gsp_doc_id_9918.pdf,1
+10029,0157,157,1,original,02/13/2024,,491,Carpinteria GSA,3-018 CARPINTERIA,gsp_doc_id_10029.pdf,1
+11395,0160,12,2,original,07/14/2025,12,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_11395.pdf,1
+11703,0164,50,2,original,01/13/2026,50,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11703.pdf,1
+11777,0165,50,2,original,01/13/2026,50,281,Greater Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11777.pdf,1
+11822,0166,50,2,original,01/13/2026,50,314,East Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11822.pdf,1
+11894,0167,150,2,original,01/15/2026,150,"507,514,482,39,22,188,306,326,20,481,508,515,484,523",Shafter-Wasco Irrigation District GSA;Southern San Joaquin Municipal Utility District - GSA;Tejon-Castac Water District GSA;West Kern Water District GSA;Greenfield County Water District GSA;Pioneer GSA;Kern Non-Districted Land Authority GSA;Cawelo Water District GSA;Kern River GSA;Arvin GSA;North Kern Water Storage District GSA;Rosedale-Rio Bravo Water Storage District GSA;Wheeler Ridge-Maricopa GSA;Kern Water Bank GSA,5-022.14 KERN COUNTY,gsp_doc_id_11894.pdf,1
+11866,0168,150,2,original,01/15/2026,150,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11866.pdf,1
+11840,0169,150,2,original,01/15/2026,150,254,Henry Miller Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11840.pdf,1
+11853,0170,150,2,original,01/15/2026,150,517,Kern-Tulare Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11853.pdf,1
+11904,0171,150,2,original,01/15/2026,150,196,Olcese Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11904.pdf,1
+11827,0172,150,2,original,01/15/2026,150,277,Semitropic Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11827.pdf,1
+11781,0173,150,2,original,01/15/2026,150,506,Westside District Water Authority GSA,5-022.14 KERN COUNTY,gsp_doc_id_11781.pdf,1
+11932,0174,7,2,original,05/28/2026,7,"17,220,13,231,30,23,66,71,302,237,10,57,62,67,360,206,214,269,271,301,70,298,308",Patterson Irrigation District GSA;Turner Island Water District GSA - Delta-Mendota;West Stanislaus Irrigation District GSA;County of Merced GSA - Delta-Mendota;Farmers Water District GSA;Aliso Water District GSA;City of Patterson GSA;City of Los Banos GSA;Oro Loma Water District GSA;Widren Water District GSA;San Joaquin River Exchange Contractors GSA;City of Newman GSA;Grasslands GSA;City of Mendota GSA;City of Dos Palos GSA;Central Delta-Mendota GSA;Northwestern Delta-Mendota GSA;City of Firebaugh GSA;City of Gustine GSA;DM-II GSA;County of Madera GSA - Delta-Mendota;County of Fresno GSA - Delta-Mendota Management Area A;County of Fresno GSA - Delta-Mendota Management Area B,5-022.07 DELTA-MENDOTA,gsp_doc_id_11932.pdf,1

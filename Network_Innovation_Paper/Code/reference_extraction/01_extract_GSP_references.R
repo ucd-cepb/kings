@@ -9,8 +9,11 @@ library(pbapply)
 
 CLOBBER = F ### don't do this unless you want it to run for a very long time
 
-doc_loc <- 'data/Multipurpose_Files/portal_files/'
-js_loc <- 'Network_Innovation_Paper/data_products/extracted_references/'
+source("Network_Innovation_Paper/Code/_paths.R")
+# Source PDFs. Core names them gsp_doc_id_<stem>.pdf (not v*_gsp_num_id_*.pdf);
+# join back to the legacy gsp_id via data_products/id_crosswalk.csv if needed.
+doc_loc <- core_pdfs()
+js_loc <- nip_product('extracted_references/')
 if(!dir.exists(js_loc)){dir.create(js_loc, recursive = TRUE)}
 fls <- list.files(doc_loc,full.names=T,pattern = 'pdf$|PDF$')
 

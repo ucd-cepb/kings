@@ -3,18 +3,19 @@ library(coop)
 library(data.table)
 
 bad <- c('0053','0089')
-meta <- readRDS('data/Multipurpose_Files/gsp_docs_w_meta')
-meta <- meta |> dplyr::select(-page_num,-text)
+source("Network_Innovation_Paper/Code/_paths.R")
+# Paper-owned political/economic covariates (NOT core; see inputs/README.md).
+meta <- fread(nip_input('gsp_covariates.csv'), colClasses = c(gsp_id = 'character'))
 meta <- meta[!duplicated(meta$gsp_id),]
 meta$Republican_Vote_Share <- as.numeric(meta$Republican_Vote_Share)
 meta$Agr_Share_Of_GDP <- as.numeric(meta$Agr_Share_Of_GDP)
 
 
-gs_edge <- fread('Network_Innovation_Paper/data_products/all_gsa_edges.csv')
+gs_edge <- fread(nip_product('all_gsa_edges.csv'))
 gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
 gs_melt <- melt(gs_edge,id.vars = c('gsp_id','gsa'))
 
-dict <- fread('Network_Innovation_Paper/data_products/node_dictionary.csv')
+dict <- fread(nip_product('node_dictionary.csv'))
 dict <- dict |> filter(entity_type %in% c('City','Company','County','District','Federal_Gov','Local_Gov','Local_GSA','NGO','Other_GSA','State_Gov','Group'))
 company_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='Company'],]
 ngo_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='NGO'],]
@@ -41,7 +42,7 @@ gsp_company_mat <- tcrossprod(company_mat)
 
 
 ##### make reference similarity network #####
-ref_dyads <- readRDS('Network_Innovation_Paper/data_products/gsp_reference_pairs.rds')
+ref_dyads <- readRDS(nip_product('gsp_reference_pairs.rds'))
 ref_dyads <- ref_dyads[grepl('^v1',V2),]
 ref_dyads$V1 <- str_extract(ref_dyads$V1,'[0-9]{4}')
 ref_dyads$V2 <- str_extract(ref_dyads$V2,'[0-9]{4}')
@@ -60,7 +61,7 @@ set.edge.attribute(ref_net, "cosim", cosim_values)
 
 
 #### make knowledge graph similarity network ####
-knowledge_df <- read.csv('Network_Innovation_Paper/data_products/triple_similarity.csv')
+knowledge_df <- read.csv(nip_product('triple_similarity.csv'))
 knowledge_df <- data.table(knowledge_df)
 # Get all unique nodes
 all_nodes <- unique(c(knowledge_df$X, knowledge_df$X.1))
@@ -89,7 +90,7 @@ edge_list <- as.edgelist(kn_net)
 cosim_values <- kmat_ordered[edge_list]
 set.edge.attribute(kn_net, "cosim", cosim_values)
 
-jac_dyads <- readRDS('Network_Innovation_Paper/data_products/project_jaccard_results/project_section_jaccard_scores_20250903.rds')
+jac_dyads <- readRDS(nip_product('project_jaccard_results/project_section_jaccard_scores_20250903.rds'))
 #jac_dyads <- jac_dyads[grepl('^v1',b)&grepl('^v1',a),]
 #jac_dyads$a <- str_extract(jac_dyads$a,'[0-9]{4}')
 #jac_dyads$b <- str_extract(jac_dyads$b,'[0-9]{4}')
@@ -118,12 +119,12 @@ set.edge.attribute(jac_net,"jaccard",jaccard_values)
 library(sf) 
 library(spdep)
 # Read the CSV file containing basin ids
-basin_ids <- fread('EJ_DAC_Paper/Data/gsp_basin_ids.csv')
+basin_ids <- fread(nip_input('gsp_basin_ids.csv'))
 basin_ids$gsp_id <- formatC(basin_ids$gsp_id,width = 4,flag= '0')
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
 # Read the GSP shapefile
-gsp_bounds <- st_read("data/Multipurpose_Files/GSP_Submitted")
+gsp_bounds <- st_read(nip_input("GSP_Submitted"))
 gsp_bounds <- sf::st_make_valid(gsp_bounds)
 gsp_bounds$GSP.ID <- formatC(as.numeric(gsp_bounds$GSP.ID),width = 4,flag = '0')
 #gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP.ID), width = 4, flag = '0')
@@ -225,7 +226,7 @@ ergm::search.ergmTerms(keywords = 'valued')
 
 
 
-gsp <- <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
+gsp <- readRDS(nip_product('page_metadata.RDS'))
 
 
 

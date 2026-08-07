@@ -7,20 +7,26 @@ library(statnet)
 
 library(ggthemes)  # Added for theme_map()
 
-# Read the scores data
-score_dt <- readRDS('Network_Innovation_Paper/data_products/score_results/portal_page_scores_20250512.rds')
-score_dt <- score_dt[str_remove(a,'\\.txt.*') != str_remove(b,'\\.txt.*'),]
-score_dt$a_file <- str_remove(score_dt$a,'\\.txt.*')
-score_dt$b_file <- str_remove(score_dt$b,'\\.txt.*')
-score_dt$a_version <- str_extract(score_dt$a_file,'^v[1-9]')
-score_dt$b_version <- str_extract(score_dt$b_file,'^v[1-9]')
-# Extract page numbers from the numeric suffix of 'a' and 'b' items
-score_dt$a_page_num <- as.numeric(str_extract(score_dt$a, "\\d+$"))
-score_dt$b_page_num <- as.numeric(str_extract(score_dt$b, "\\d+$"))
+# Core corpus + id-crosswalk helpers. Page-score entity keys are now
+# '<gspDocId>_<page_num>' (see hash_and_compare_pages.R); the legacy
+# v*_gsp_num_id_*.txt naming is gone. Recover gsp_id/version via the crosswalk.
+source("Network_Innovation_Paper/Code/_corpus.R")
+cw <- load_id_crosswalk()
 
-# Extract gsp_id from the last 4 digits of a_file and b_file
-score_dt$a_gsp_id <- str_extract(score_dt$a_file, "[0-9]{4}$")
-score_dt$b_gsp_id <- str_extract(score_dt$b_file, "[0-9]{4}$")
+# Read the scores data (newest regenerated file)
+score_dt <- readRDS(latest_page_scores())
+score_dt <- score_dt[str_remove(a,'_[0-9]+$') != str_remove(b,'_[0-9]+$'),]
+score_dt$a_file <- str_remove(score_dt$a,'_[0-9]+$')   # gspDocId stem
+score_dt$b_file <- str_remove(score_dt$b,'_[0-9]+$')
+# Extract page numbers from the numeric suffix of 'a' and 'b' items
+score_dt$a_page_num <- as.numeric(str_extract(score_dt$a, "[0-9]+$"))
+score_dt$b_page_num <- as.numeric(str_extract(score_dt$b, "[0-9]+$"))
+
+# Recover legacy 4-digit gsp_id + version from the crosswalk (keyed on gspDocId)
+score_dt$a_gsp_id  <- cw$gsp_id[match(score_dt$a_file, cw$gsp_doc_id)]
+score_dt$b_gsp_id  <- cw$gsp_id[match(score_dt$b_file, cw$gsp_doc_id)]
+score_dt$a_version <- cw$version[match(score_dt$a_file, cw$gsp_doc_id)]
+score_dt$b_version <- cw$version[match(score_dt$b_file, cw$gsp_doc_id)]
 
 
 documents <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
@@ -34,7 +40,8 @@ score_dt <- merge(score_dt,documents[,c('gsp_id','page_num',columns_to_merge),wi
 setnames(score_dt,columns_to_merge,paste0('b_',columns_to_merge))
 
 # Read the CSV file containing basin ids
-basin_ids <- fread('EJ_DAC_Paper/Data/gsp_basin_ids.csv')
+source("Network_Innovation_Paper/Code/_paths.R")
+basin_ids <- fread(nip_input('gsp_basin_ids.csv'))
 # Convert a_file and b_file to character vectors to ensure compatibility with data.table join
 score_dt$a_file <- as.character(score_dt$a_file)
 score_dt$b_file <- as.character(score_dt$b_file)
@@ -44,7 +51,7 @@ score_dt$b_file <- as.character(score_dt$b_file)
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
 # Read the GSP shapefile
-gsp_bounds <- st_read("data/Multipurpose_Files/GSP_Submitted")
+gsp_bounds <- st_read(nip_input("GSP_Submitted"))
 gsp_bounds <- sf::st_make_valid(gsp_bounds)
 # Make sure GSP.ID is formatted correctly with 4 digits
 gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP.ID), width = 4, flag = '0')
@@ -71,11 +78,15 @@ shared_300_total[, min_page := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = c(
 shared_300_total$plus300_ratio <- shared_300_total$N/shared_300_total$min_page
 
 
-shared_v1 <- shared_300_total[a_version == 'v1' & b_version == 'v1']
-# Get list of files for network vertices
-flist <- list.files('data/Multipurpose_Files/portal_files/', pattern = 'txt')
-flist <- str_remove(flist, '\\.txt')
-flist_v1 <- flist[grepl('^v1', flist)]  
+# One document per plan. Default = the original/earliest submission (reproduces
+# the legacy '^v1' selection); set NIP_DOC_SELECT=latest to use the resubmitted
+# doc where one exists. Filter on the gspDocId stem, not the manifest `version`
+# field (which is an unrelated adoption-cycle axis — see select_plan_docs()).
+sel_docs <- select_plan_docs(cw)$gsp_doc_id
+shared_v1 <- shared_300_total[a_file %in% sel_docs & b_file %in% sel_docs]
+# Network vertices = the selected-doc gspDocId stems of the core parquet corpus.
+flist <- str_remove(list.files(core_txt_clean(), pattern = '\\.parquet$'), '\\.parquet$')
+flist_v1 <- flist[flist %in% sel_docs]
 # Initialize the network
 netV1 <- network.initialize(n = length(flist_v1),directed = FALSE)
 netV1 %v% 'vertex.names' <- flist_v1
@@ -89,8 +100,8 @@ add.edges(netV1,
           tail = match(shared_v1$b_file, netV1 %v% 'vertex.names'))
 
 # Create spatial attributes for vertices
-# First, extract GSP IDs from file names
-vertex_gsp_ids <- str_extract(netV1 %v% 'vertex.names', '[0-9]{4}$')
+# Recover the 4-digit gsp_id for each gspDocId vertex via the crosswalk.
+vertex_gsp_ids <- cw$gsp_id[match(netV1 %v% 'vertex.names', cw$gsp_doc_id)]
 
 # Match these with the formatted GSP.ID in the spatial data
 point_indices <- match(vertex_gsp_ids, result_points$gsp_id)

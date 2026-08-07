@@ -70,7 +70,8 @@ cleanText <- function(text, cut_prop = CONFIG$cut_prop,
 }
 
 # ----- Main Process -----
-documents <- readRDS('data/Multipurpose_Files/gsp_docs_w_meta')
+source("Network_Innovation_Paper/Code/_paths.R")
+documents <- readRDS(nip_product('page_metadata.RDS'))
 project_docs <- documents[projects_mgmt_actions == TRUE,]
 # Clean text on per-page basis before concatenating
 project_docs$text_cleaned <- cleanText(project_docs$text)

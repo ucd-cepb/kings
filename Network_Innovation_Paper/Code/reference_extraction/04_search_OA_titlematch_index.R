@@ -98,7 +98,6 @@ saveRDS(results,'Network_Innovation_Paper/data_products/gsp_solr_OA_matches.rds'
 system('solr stop')
 #### roughly, scores > 11 seem to be pretty good
 
-#rw<-readRDS('ria_analysis/input/raw_references.rds')
 #rw[grepl('dam removal on the elwha river',tolower(rw$title)),]
 #openalexR::oa_query(entity = 'works',search = 'large-scale dam removal on the elwha river channel and floodplain geomorphic change')
 # 

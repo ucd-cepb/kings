@@ -190,7 +190,8 @@ disambiguate_firm <- function(firm_name) {
 
 # Read GSP documents with metadata
 bad <- c('0053','0089')
-meta <- readRDS('data/Multipurpose_Files/gsp_docs_w_meta')
+source("Network_Innovation_Paper/Code/_paths.R")
+meta <- readRDS(nip_product('page_metadata.RDS'))
 meta <- meta[!meta$gsp_id %in% bad, ]
 
 cat(sprintf("Loaded GSP documents: %d rows\n", nrow(meta)))
