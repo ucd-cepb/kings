@@ -23,9 +23,17 @@ suppressMessages({
 })
 
 CLASSIFIER_CONFIG <- list(
-  # Any current Anthropic model id. Sonnet balances quality/cost for ~90k names;
-  # switch to a Haiku id for cheaper bulk runs.
-  model         = Sys.getenv("NIP_CLASSIFIER_MODEL", "claude-sonnet-5"),
+  # Any current Anthropic model id. Haiku is the default: this is a bulk 22-way
+  # classification of short names against a controlled vocabulary (few-shot +
+  # spaCy/frequency hints), not a reasoning task, so Haiku's quality is ample at
+  # ~1/4 the cost of Sonnet for ~90k names. Override with NIP_CLASSIFIER_MODEL
+  # (e.g. claude-sonnet-5) to spend more on the ambiguous label distinctions.
+  # NOTE ON CACHING: the system prompt is cache-tagged below, but Haiku 4.5's
+  # minimum cacheable prefix is 4096 tokens and this prompt is ~1.9k, so the
+  # cache silently no-ops on Haiku (verified). It DOES fire on Sonnet/Opus,
+  # which have a lower (1024/512) floor -- so the tag pays off only if you
+  # override the model to one of those.
+  model         = Sys.getenv("NIP_CLASSIFIER_MODEL", "claude-haiku-4-5"),
   api_url       = "https://api.anthropic.com/v1/messages",
   api_version   = "2023-06-01",
   key_env       = "ANTHROPIC_API_KEY",
@@ -134,7 +142,15 @@ ENTITY_TYPES <- c(
   body <- list(
     model = CLASSIFIER_CONFIG$model,
     max_tokens = CLASSIFIER_CONFIG$max_tokens,
-    system = .system_prompt(),
+    # Structured system block with an ephemeral cache breakpoint: the prompt is
+    # byte-identical across all batches, so on caching-capable models (Sonnet/
+    # Opus) every batch after the first reads it at ~0.1x instead of full price
+    # (~60% of input tokens). Inert on Haiku 4.5 (below its 4096-token floor).
+    system = list(list(
+      type = "text",
+      text = .system_prompt(),
+      cache_control = list(type = "ephemeral")
+    )),
     messages = list(list(role = "user", content = user))
   )
   resp <- request(CLASSIFIER_CONFIG$api_url) |>

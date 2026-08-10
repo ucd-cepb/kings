@@ -1,0 +1,17 @@
+2026-08-07 13:41:04 [INFO] Using 8 cores for processing 
+2026-08-07 13:41:04 [INFO] Loading preprocessed page metadata 
+2026-08-07 13:41:05 [INFO] Loaded 101619 pages from 132 GSP documents 
+2026-08-07 13:41:05 [INFO] Memory usage: 0.00024 MB 
+2026-08-07 13:41:05 [INFO] Creating text reuse corpus 
+2026-08-07 13:43:34 [INFO] Memory usage: 0.0023 MB 
+2026-08-07 13:43:34 [INFO] Splitting corpus and applying LSH 
+2026-08-07 13:44:43 [INFO] Processing any failed LSH operations 
+2026-08-07 13:44:43 [INFO] Combining buckets and finding candidates 
+2026-08-07 13:44:54 [INFO] Found 311183 candidate pairs 
+2026-08-07 13:44:56 [INFO] Memory usage: 0.0028 MB 
+2026-08-07 13:44:56 [INFO] Scoring candidate pairs 
+2026-08-07 14:26:16 [INFO] Combining and filtering results 
+2026-08-07 14:26:16 [INFO] Found 311124 significant matches with score >= 50 
+2026-08-07 14:26:16 [INFO] Saving results 
+2026-08-07 14:26:16 [INFO] Results saved to Network_Innovation_Paper/data_products/score_results/portal_page_scores_20260807.rds 
+2026-08-07 14:26:16 [INFO] Process completed successfully 
