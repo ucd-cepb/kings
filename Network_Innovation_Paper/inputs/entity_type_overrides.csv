@@ -1,0 +1,80 @@
+pattern,entity_type,match,notes
+woodard_curran,Consultant,regex,catches i_woodard_curran and woodard_curran_provost_pritchard fragments
+luhdorff,Consultant,regex,LSCE variants incl davids_engineering_luhdorff
+scalmanini,Consultant,regex,LSCE variants
+provost_pri,Consultant,regex,provost_pritchard and misspelling provost_prichard and pumpage_ fragment
+dudek,Consultant,regex,
+fugro,Consultant,regex,fugro fugro_west fugro_consultants
+kennedy_jenks,Consultant,regex,
+gsi_water_solutions,Consultant,regex,
+geosyntec,Consultant,regex,geosyntec_consultants geosyntec_brown
+hydrometrics,Consultant,regex,
+larry_walker_associates,Consultant,regex,not bare larry_walker (that appears in larry_walker_study report refs)
+west_yost,Consultant,regex,
+wood_rodgers,Consultant,regex,
+brown_and_caldwell,Consultant,regex,
+carollo,Consultant,regex,carollo_engineers
+stantec,Consultant,regex,
+aecom,Consultant,regex,geoscience_aecom variants
+rmc_water,Consultant,regex,rmc_water_and_environment
+davids_engineering,Consultant,regex,currently mislabeled District
+jacobs_engineering,Consultant,regex,
+balance_hydrologics,Consultant,regex,
+ramboll,Consultant,regex,
+rincon_consultants,Consultant,regex,require _consultants; bare rincon is a place
+montgomery_associates,Consultant,exact,
+montgomery_engineers,Consultant,exact,
+james_m_montgomery_consulting_engineers,Consultant,exact,
+montgomery,Consultant,exact,bare token currently Nonsense; exact only to avoid place/surname collisions
+todd_groundwater,Consultant,exact,exact only; regex would grab the KCWA join fragment
+eki,Consultant,exact,short acronym; exact only
+gei,Consultant,exact,short acronym; exact only (data_management_system_hosting_gei stays Data_System)
+kearns_west,Consultant,exact,facilitation/consulting firm
+provost,Consultant,exact,bare token currently Nonsense
+pritchard,Consultant,exact,bare token currently Nonsense
+woodard,Consultant,exact,bare token currently Nonsense
+nature_conservancy,NGO,regex,catches _notes _figure n_a_ tmdl_ fragments
+environmental_defense_fund,NGO,regex,catches considered_ and _t10000 fragments
+sierra_club,NGO,regex,delta/mineral_king/sacramento group variants and san_francisco_
+clean_water_action,NGO,regex,
+freshwater_trust,NGO,regex,
+community_water_center,NGO,regex,
+local_government_commission,NGO,regex,currently mislabeled Group
+natural_resources_defense_council,NGO,regex,currently mislabeled Group
+audubon_society,NGO,regex,national/morro_coast/sacramento chapters; avoids ndvi_audubon Technical string
+river_partners,NGO,regex,canonical GSP-relevant NGO (future-proof)
+point_blue,NGO,regex,point_blue_conservation_science (future-proof)
+defenders_of_wildlife,NGO,regex,future-proof
+earthjustice,NGO,regex,future-proof
+california_trout,NGO,regex,future-proof
+planning_and_conservation_league,NGO,regex,future-proof
+trout_unlimited,NGO,exact,exact so the deer_creek instream-flow project stays Water_Project
+projects_trout_unlimited,NGO,exact,
+ducks_unlimited,NGO,exact,exact so ducks_unlimited_wetland_inventory stays Data_System
+american_rivers,NGO,exact,exact so american_rivers_total_outflow gauge stays Natural_Feature
+american_rivers_sacramento,NGO,exact,
+nrdc,NGO,exact,
+clean_water_fund,NGO,exact,
+audubon,NGO,exact,
+audubon_california,NGO,exact,currently mislabeled State_Gov
+institute_for_fisheries_resources,NGO,exact,advocacy/research nonprofit
+university_of_,Research,regex,UC campuses out-of-state universities and OCR-misspelled univ_of_califor
+uc_davis,Research,regex,
+state_university,Research,regex,CSU/other state universities (stanislaus sacramento humboldt channel_islands)
+csu_,Research,regex,csu_fresno_foundation
+cal_poly,Research,regex,cal_poly and cal_poly_itrc variants
+pacific_institute,Research,regex,water policy think tank (future-proof)
+public_policy_institute,Research,regex,PPIC
+research_center,Research,regex,ITRC and other university research centers
+research_institute,Research,regex,desert_research_institute national_water_research_institute
+cooperative_extension,Research,regex,UC Cooperative Extension outreach/research
+ucla,Research,exact,
+ppic,Research,exact,
+stanford,Research,exact,exact so stanford_vina_irrigation_dam stays Infrastructure
+stanford_university,Research,exact,
+leland_stanford_junior_university,Research,exact,
+energy_resources_engineering_stanford_university,Research,exact,
+scripps_institution_of_oceanography,Research,exact,exact so scripps_orbit GPS array stays Infrastructure
+national_academy_of_sciences,Research,exact,
+la_sierra_university,Research,exact,
+university_ag_extension,Research,exact,
