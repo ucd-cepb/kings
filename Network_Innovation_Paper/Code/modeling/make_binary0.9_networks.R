@@ -17,44 +17,20 @@ gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
 gs_edge <- gs_edge[!gsp_id %in% bad,]
 gs_melt <- melt(gs_edge,id.vars = c('gsp_id','gsa'))
 
+source("Network_Innovation_Paper/Code/_entity_groups.R")
 dict <- fread(nip_product('node_dictionary.csv'))
-#dict <- dict |> filter(entity_type %in% c('Company','NGO','Group','Local_Gov'))
 
-social_ents <- c('Local_Gov','Federal_Gov','District','Company','State_Gov','County','City','Local_GSA','Person','Group','Other_GSA','NGO')
+gs_melt <- gs_melt[variable != 'inter_agency',]
 
-company_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='Company'],]
-ngo_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='NGO'],]
-person_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='Person'],]
-
-gs_melt <- gs_melt[variable!='inter_agency',]
-all_ents_df <- dcast(gs_melt[gs_melt$variable %in% dict$name[dict$entity_type %in% social_ents],],gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-all_ents_mat <- as.matrix(all_ents_df[,-1])
-rownames(all_ents_mat) <- all_ents_df$gsp_id
-all_ents_mat <- all_ents_mat[,{colSums(all_ents_mat>0)/nrow(all_ents_mat)}<.10]
-gsp_all_ents_mat <- tcrossprod(all_ents_mat)
-
-
-
-{ncol(person_mat) + ncol(ngo_mat) + ncol(company_mat)}/ncol(all_ents_mat)
-
-
-person_df <- dcast(person_melt,gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-person_mat <- as.matrix(person_df[,-1])
-rownames(person_mat) <- person_df$gsp_id
-person_mat <- person_mat[,{colSums(person_mat>0)/nrow(person_mat)}<.10]
-gsp_person_mat <- tcrossprod(person_mat)
-
-ngo_df <- dcast(ngo_melt,gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-ngo_mat <- as.matrix(ngo_df[,-1])
-rownames(ngo_mat) <- ngo_df$gsp_id
-ngo_mat <- ngo_mat[,{colSums(ngo_mat>0)/nrow(ngo_mat)}<.10]
-gsp_ngo_mat <- tcrossprod(ngo_mat)
-
-company_df <- dcast(company_melt,gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-company_mat <- as.matrix(company_df[,-1])
-rownames(company_mat) <- company_df$gsp_id
-company_mat <- company_mat[,{colSums(company_mat>0)/nrow(company_mat)}<.10]
-gsp_company_mat <- tcrossprod(company_mat)
+# Entity co-mention structure, keyed to the semantic entity types:
+#   generic    = all institutional actors (spaCy ORG + GPE + NORP, junk-pruned)
+#   consultant / research / ngo = the three focal subnetworks, each on its own
+#   crn        = the 4th "grouped" run: the three focal types pooled
+gsp_generic_mat    <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'institutional'))
+gsp_consultant_mat <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'Consultant'))
+gsp_research_mat   <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'Research'))
+gsp_ngo_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'NGO'))
+gsp_crn_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'consultant_research_ngo'))
 
 ##### make reference similarity network #####
 ref_dyads <- readRDS(nip_product('gsp_reference_pairs.rds'))
@@ -148,20 +124,26 @@ jac_nb <- neighbors_matrix[network.vertex.names(jac_net),network.vertex.names(ja
 
 
 
-ref_companyentities <- gsp_company_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
-ref_ngoentities <- gsp_ngo_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
-ref_personentities <- gsp_person_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
-ref_totalentities <- gsp_all_ents_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
+ref_genericentities    <- align_gsp_matrix(gsp_generic_mat,    network.vertex.names(ref_net))
+ref_consultantentities <- align_gsp_matrix(gsp_consultant_mat, network.vertex.names(ref_net))
+ref_researchentities   <- align_gsp_matrix(gsp_research_mat,   network.vertex.names(ref_net))
+ref_ngoentities        <- align_gsp_matrix(gsp_ngo_mat,        network.vertex.names(ref_net))
+ref_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.names(ref_net))
+ref_totalentities      <- ref_genericentities
 
-kn_companyentities <- gsp_company_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
-kn_ngoentities <- gsp_ngo_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
-kn_personentities <- gsp_person_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
-kn_totalentities <- gsp_all_ents_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
+kn_genericentities    <- align_gsp_matrix(gsp_generic_mat,    network.vertex.names(kn_net))
+kn_consultantentities <- align_gsp_matrix(gsp_consultant_mat, network.vertex.names(kn_net))
+kn_researchentities   <- align_gsp_matrix(gsp_research_mat,   network.vertex.names(kn_net))
+kn_ngoentities        <- align_gsp_matrix(gsp_ngo_mat,        network.vertex.names(kn_net))
+kn_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.names(kn_net))
+kn_totalentities      <- kn_genericentities
 
-jac_companyentities <- gsp_company_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
-jac_ngoentities <- gsp_ngo_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
-jac_personentities <- gsp_person_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
-jac_totalentities <- gsp_all_ents_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
+jac_genericentities    <- align_gsp_matrix(gsp_generic_mat,    network.vertex.names(jac_net))
+jac_consultantentities <- align_gsp_matrix(gsp_consultant_mat, network.vertex.names(jac_net))
+jac_researchentities   <- align_gsp_matrix(gsp_research_mat,   network.vertex.names(jac_net))
+jac_ngoentities        <- align_gsp_matrix(gsp_ngo_mat,        network.vertex.names(jac_net))
+jac_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.names(jac_net))
+jac_totalentities      <- jac_genericentities
 
 
 ref_net %v% 'joint_agency' <- meta$exante_collab[match(network.vertex.names(ref_net),meta$gsp_id)]
@@ -193,7 +175,7 @@ sapply(list.vertex.attributes(jac_net),function(x) table(jac_net %v% x))[vclass!
 
 
 isSymmetric(jac_totalentities)
-lapply(list(jac_totalentities,jac_companyentities,jac_ngoentities,jac_personentities),function(x) summary(c(x[upper.tri(x)])))
+lapply(list(jac_totalentities,jac_consultantentities,jac_researchentities,jac_ngoentities,jac_crnentities),function(x) summary(c(x[upper.tri(x)])))
 
 
 mlabs <- c("Text of management actions",
@@ -326,41 +308,44 @@ texreg::htmlreg(list(mod1_jc_net,mod1_kn_net,mod1_ref_net),
 
 
 
+# Model 2 (disaggregated focal subnetworks): the three focal entity types entered
+# separately -- consultant, research, ngo. (Each *_<type>entities matrix is
+# already aligned to its network's vertex order, so no re-subsetting is needed.)
 m2_ref_priors <- c(colMeans(mod0_ref_net$Theta),rep(0,9))
 m2_ref_sigma <-diag(10,length(m2_ref_priors))
-mod2_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) + 
+mod2_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
                          nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
-                         edgecov(ref_nb[network.vertex.names(ref_net),network.vertex.names(ref_net)]) + 
-                         edgecov(ref_companyentities[network.vertex.names(ref_net),network.vertex.names(ref_net)]) +
-                         edgecov(ref_ngoentities[network.vertex.names(ref_net),network.vertex.names(ref_net)]) +
-                         edgecov(ref_personentities[network.vertex.names(ref_net),network.vertex.names(ref_net)]), 
-                      offset.coef = log(network.density(ref_net)), 
+                         edgecov(ref_nb) +
+                         edgecov(ref_consultantentities) +
+                         edgecov(ref_researchentities) +
+                         edgecov(ref_ngoentities),
+                      offset.coef = log(network.density(ref_net)),
                       prior.mean = m2_ref_priors,
                       prior.sigma = m2_ref_sigma,
                       main.iters = 1e3,nchains = 10,burn.in = 1e3)
 
 m2_kn_priors <- c(colMeans(mod0_kn_net$Theta),rep(0,9))
-m2_kn_sigma <-diag(10,length(m2_kn_priors))   
-mod2_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) + 
+m2_kn_sigma <-diag(10,length(m2_kn_priors))
+mod2_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
                         nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
-                        edgecov(ref_nb[network.vertex.names(kn_net),network.vertex.names(kn_net)]) + 
-                        edgecov(ref_companyentities[network.vertex.names(kn_net),network.vertex.names(kn_net)]) +
-                        edgecov(ref_ngoentities[network.vertex.names(kn_net),network.vertex.names(kn_net)]) +
-                        edgecov(ref_personentities[network.vertex.names(kn_net),network.vertex.names(kn_net)]), 
-                     offset.coef = log(network.density(kn_net)), 
+                        edgecov(kn_nb) +
+                        edgecov(kn_consultantentities) +
+                        edgecov(kn_researchentities) +
+                        edgecov(kn_ngoentities),
+                     offset.coef = log(network.density(kn_net)),
                      prior.mean = m2_kn_priors,
                      prior.sigma = m2_kn_sigma,
                      main.iters = 1e3,nchains = 10,burn.in = 1e3)
 
 m2_jc_priors <- c(colMeans(mod0_jc_net$Theta),rep(0,9))
-m2_jc_sigma <-diag(10,length(m2_jc_priors))   
-mod2_jc_net <- bergm(jac_net ~offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) + 
+m2_jc_sigma <-diag(10,length(m2_jc_priors))
+mod2_jc_net <- bergm(jac_net ~offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
                         nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
-                        edgecov(jac_nb[network.vertex.names(jac_net),network.vertex.names(jac_net)]) + 
-                        edgecov(jac_companyentities[network.vertex.names(jac_net),network.vertex.names(jac_net)]) +
-                        edgecov(jac_ngoentities[network.vertex.names(jac_net),network.vertex.names(jac_net)]) +
-                        edgecov(jac_personentities[network.vertex.names(jac_net),network.vertex.names(jac_net)]), 
-                     offset.coef = log(network.density(jac_net)), 
+                        edgecov(jac_nb) +
+                        edgecov(jac_consultantentities) +
+                        edgecov(jac_researchentities) +
+                        edgecov(jac_ngoentities),
+                     offset.coef = log(network.density(jac_net)),
                      prior.mean = m2_jc_priors,
                      prior.sigma = m2_jc_sigma,
                      main.iters = 1e3,nchains = 10,burn.in = 1e3)
@@ -378,7 +363,7 @@ setnames(m2_dt,c('V2','V4'),c('Coef','mean'))
 m2_dt$Coef <-rep(c("edges (fixed)","twopath","gwdegree(decay = 1)","gwdsp(decay = 0.5)",
                     "Mult-GSA GSP","Low/v. low priority","medium priority","Repub. vote share %",
                     "Agr. % of local GDP",
-                    "Neighbor","Shared firm weight","Shared NGO weight","Shared persons weight"),3)
+                    "Neighbor","Shared consultant weight","Shared research weight","Shared NGO weight"),3)
                
 #m2_dt$V2 <- str_remove(m2_dt$V2,'\\[.+\\]')
 #m2_dt$V2 <- str_replace(m2_dt$V2,'edgecov\\.[a-z]{1,}_nb','neighbors')
@@ -412,11 +397,52 @@ texreg::htmlreg(list( mod2_jc_net, mod2_kn_net,mod2_ref_net),
                 custom.coef.names = c("edges (fixed)","twopath","gwdegree(decay = 1)","gwdsp(decay = 0.5)",
                                       "Mult-GSA GSP","Low/v. low priority","medium priority","Repub. vote share %",
                                       "Agr. % of local GDP",
-                                      "Neighbor","Shared firm weight","Shared NGO weight","Shared persons weight",
-                                      "Neighbor","Shared firm weight","Shared NGO weight","Shared persons weight",
-                                      "Neighbor","Shared firm weight","Shared NGO weight","Shared persons weight"),
+                                      "Neighbor","Shared consultant weight","Shared research weight","Shared NGO weight",
+                                      "Neighbor","Shared consultant weight","Shared research weight","Shared NGO weight",
+                                      "Neighbor","Shared consultant weight","Shared research weight","Shared NGO weight"),
                 custom.model.names = mlabs,custom.note = '*0 not within 95% credible interval\n**^2 is due to cross-product calculation',
                 file = 'Network_Innovation_Paper/data_products/mod2_html.html',single.row = T)
+
+# =====================================================================
+# Model 3 (grouped focal subnetworks): the 4th run -- consultant, research and
+# NGO POOLED into a single "focal external entities" edge covariate (crn).
+# =====================================================================
+m3_ref_priors <- c(colMeans(mod0_ref_net$Theta),rep(0,7))
+m3_ref_sigma  <- diag(10,length(m3_ref_priors))
+mod3_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
+                        nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        edgecov(ref_nb) + edgecov(ref_crnentities),
+                      offset.coef = log(network.density(ref_net)),
+                      prior.mean = m3_ref_priors, prior.sigma = m3_ref_sigma,
+                      main.iters = 1e3,nchains = 10,burn.in = 1e3)
+
+m3_kn_priors <- c(colMeans(mod0_kn_net$Theta),rep(0,7))
+m3_kn_sigma  <- diag(10,length(m3_kn_priors))
+mod3_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
+                       nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       edgecov(kn_nb) + edgecov(kn_crnentities),
+                     offset.coef = log(network.density(kn_net)),
+                     prior.mean = m3_kn_priors, prior.sigma = m3_kn_sigma,
+                     main.iters = 1e3,nchains = 10,burn.in = 1e3)
+
+m3_jc_priors <- c(colMeans(mod0_jc_net$Theta),rep(0,7))
+m3_jc_sigma  <- diag(10,length(m3_jc_priors))
+mod3_jc_net <- bergm(jac_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
+                       nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       edgecov(jac_nb) + edgecov(jac_crnentities),
+                     offset.coef = log(network.density(jac_net)),
+                     prior.mean = m3_jc_priors, prior.sigma = m3_jc_sigma,
+                     main.iters = 1e3,nchains = 10,burn.in = 1e3)
+
+texreg::htmlreg(list(mod3_jc_net,mod3_kn_net,mod3_ref_net),
+                custom.coef.names = c("edges (fixed)","twopath","gwdegree(decay = 1)","gwdsp(decay = 0.5)",
+                                      "Mult-GSA GSP","Low/v. low priority","medium priority","Repub. vote share %",
+                                      "Agr. % of local GDP",
+                                      "Neighbor","Shared consultant/research/NGO weight",
+                                      "Neighbor","Shared consultant/research/NGO weight",
+                                      "Neighbor","Shared consultant/research/NGO weight"),
+                custom.model.names = mlabs,custom.note = '*0 not within 95% credible interval\n**^2 is due to cross-product calculation',
+                file = 'Network_Innovation_Paper/data_products/mod3_html.html',single.row = T)
 
 
 

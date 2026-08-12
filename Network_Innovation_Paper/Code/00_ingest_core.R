@@ -38,7 +38,8 @@ source(file.path(.this_dir, "classify_entities.R"))
 # ---- config ------------------------------------------------------------------
 INGEST <- list(
   clobber  = toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES"),
-  gsa_type = "Local_GSA"                            # semantic type flagged as a GSA
+  gsa_type = "GSA"                                  # semantic type flagged as a GSA
+                                                    # (v2 merged Local_GSA/Other_GSA -> GSA)
 )
 
 .skip <- function(path) {

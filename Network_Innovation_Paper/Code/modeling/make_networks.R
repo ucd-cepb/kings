@@ -15,30 +15,20 @@ gs_edge <- fread(nip_product('all_gsa_edges.csv'))
 gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
 gs_melt <- melt(gs_edge,id.vars = c('gsp_id','gsa'))
 
+source("Network_Innovation_Paper/Code/_entity_groups.R")
 dict <- fread(nip_product('node_dictionary.csv'))
-dict <- dict |> filter(entity_type %in% c('City','Company','County','District','Federal_Gov','Local_Gov','Local_GSA','NGO','Other_GSA','State_Gov','Group'))
-company_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='Company'],]
-ngo_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='NGO'],]
-group_melt <- gs_melt[gs_melt$variable %in% dict$name[dict$entity_type=='Group'],]
 
-group_df <- dcast(group_melt,gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-group_mat <- as.matrix(group_df[,-1])
-rownames(group_mat) <- group_df$gsp_id
-group_mat <- group_mat[,{colSums(group_mat>0)/nrow(group_mat)}<.10]
-gsp_group_mat <- tcrossprod(group_mat)
+gs_melt <- gs_melt[variable != 'inter_agency',]
 
-
-ngo_df <- dcast(ngo_melt,gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-ngo_mat <- as.matrix(ngo_df[,-1])
-rownames(ngo_mat) <- ngo_df$gsp_id
-ngo_mat <- ngo_mat[,{colSums(ngo_mat>0)/nrow(ngo_mat)}<.10]
-gsp_ngo_mat <- tcrossprod(ngo_mat)
-
-company_df <- dcast(company_melt,gsp_id ~ variable, value.var = 'value',fun.aggregate = sum,na.rm = T,fill = 0)
-company_mat <- as.matrix(company_df[,-1])
-rownames(company_mat) <- company_df$gsp_id
-company_mat <- company_mat[,{colSums(company_mat>0)/nrow(company_mat)}<.10]
-gsp_company_mat <- tcrossprod(company_mat)
+# Entity co-mention structure, keyed to the semantic entity types:
+#   generic    = all institutional actors (spaCy ORG + GPE + NORP, junk-pruned)
+#   consultant / research / ngo = the three focal subnetworks, each on its own
+#   crn        = the 4th "grouped" run: the three focal types pooled
+gsp_generic_mat    <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'institutional'))
+gsp_consultant_mat <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'Consultant'))
+gsp_research_mat   <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'Research'))
+gsp_ngo_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'NGO'))
+gsp_crn_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'consultant_research_ngo'))
 
 
 ##### make reference similarity network #####
@@ -142,20 +132,26 @@ jac_nb <- neighbors_matrix[network.vertex.names(jac_net),network.vertex.names(ja
 
 
 
-ref_companyentities <- gsp_company_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
-ref_ngoentities <- gsp_ngo_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
-ref_groupentities <- gsp_group_mat[network.vertex.names(ref_net),network.vertex.names(ref_net)]
-ref_totalentities <- ref_companyentities + ref_ngoentities + ref_groupentities 
+ref_genericentities    <- align_gsp_matrix(gsp_generic_mat,    network.vertex.names(ref_net))
+ref_consultantentities <- align_gsp_matrix(gsp_consultant_mat, network.vertex.names(ref_net))
+ref_researchentities   <- align_gsp_matrix(gsp_research_mat,   network.vertex.names(ref_net))
+ref_ngoentities        <- align_gsp_matrix(gsp_ngo_mat,        network.vertex.names(ref_net))
+ref_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.names(ref_net))
+ref_totalentities      <- ref_genericentities
 
-kn_companyentities <- gsp_company_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
-kn_ngoentities <- gsp_ngo_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
-kn_groupentities <- gsp_group_mat[network.vertex.names(kn_net),network.vertex.names(kn_net)]
-kn_totalentities <- kn_companyentities + kn_ngoentities + kn_groupentities 
+kn_genericentities    <- align_gsp_matrix(gsp_generic_mat,    network.vertex.names(kn_net))
+kn_consultantentities <- align_gsp_matrix(gsp_consultant_mat, network.vertex.names(kn_net))
+kn_researchentities   <- align_gsp_matrix(gsp_research_mat,   network.vertex.names(kn_net))
+kn_ngoentities        <- align_gsp_matrix(gsp_ngo_mat,        network.vertex.names(kn_net))
+kn_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.names(kn_net))
+kn_totalentities      <- kn_genericentities
 
-jac_companyentities <- gsp_company_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
-jac_ngoentities <- gsp_ngo_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
-jac_groupentities <- gsp_group_mat[network.vertex.names(jac_net),network.vertex.names(jac_net)]
-jac_totalentities <- jac_companyentities + jac_ngoentities + jac_groupentities 
+jac_genericentities    <- align_gsp_matrix(gsp_generic_mat,    network.vertex.names(jac_net))
+jac_consultantentities <- align_gsp_matrix(gsp_consultant_mat, network.vertex.names(jac_net))
+jac_researchentities   <- align_gsp_matrix(gsp_research_mat,   network.vertex.names(jac_net))
+jac_ngoentities        <- align_gsp_matrix(gsp_ngo_mat,        network.vertex.names(jac_net))
+jac_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.names(jac_net))
+jac_totalentities      <- jac_genericentities
 
 
 ref_net %v% 'joint_agency' <- meta$exante_collab[match(network.vertex.names(ref_net),meta$gsp_id)]
@@ -191,9 +187,9 @@ mod1_kn_net <- ergm(kn_net ~ sum + transitiveweights(),response = 'cosim',refere
 mod1_jc_net <- ergm(jac_net ~ sum + transitiveweights(),response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
 
 dir.create( 'Network_Innovation_Paper/data_products/rds_placeholders/')
-saveRDS(list(ref_net,ref_nb,ref_totalentities,ref_companyentities,ref_groupentities,ref_ngoentities),file = 'Network_Innovation_Paper/data_products/rds_placeholders/ref_object.rds')
-saveRDS(list(jac_net,jac_nb,jac_totalentities,jac_companyentities,jac_groupentities,jac_ngoentities),file = 'Network_Innovation_Paper/data_products/rds_placeholders/jac_object.rds')
-saveRDS(list(kn_net,kn_nb,kn_totalentities,kn_companyentities,kn_groupentities,kn_ngoentities),file = 'Network_Innovation_Paper/data_products/rds_placeholders/kn_object.rds')
+saveRDS(list(ref_net,ref_nb,ref_totalentities,ref_consultantentities,ref_researchentities,ref_ngoentities,ref_crnentities),file = 'Network_Innovation_Paper/data_products/rds_placeholders/ref_object.rds')
+saveRDS(list(jac_net,jac_nb,jac_totalentities,jac_consultantentities,jac_researchentities,jac_ngoentities,jac_crnentities),file = 'Network_Innovation_Paper/data_products/rds_placeholders/jac_object.rds')
+saveRDS(list(kn_net,kn_nb,kn_totalentities,kn_consultantentities,kn_researchentities,kn_ngoentities,kn_crnentities),file = 'Network_Innovation_Paper/data_products/rds_placeholders/kn_object.rds')
 
 
 mod1_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') + 
@@ -202,12 +198,36 @@ mod1_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') +
 mod1_kn_net <- ergm(kn_net ~ sum + triangles + nodefactor('mult_gsa') + 
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') + 
                        edgecov(kn_nb) + edgecov(kn_totalentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(kn_net,'cosim')), 1),estimate = 'CD',,control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod1_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') + 
+mod1_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') +
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(jac_nb) +  edgecov(jac_totalentities), response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
 
+# Model 2 (disaggregated focal subnetworks): consultant, research and ngo entered separately.
+mod2_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') +
+                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        edgecov(ref_nb) + edgecov(ref_consultantentities) + edgecov(ref_researchentities) + edgecov(ref_ngoentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(ref_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
+mod2_kn_net <- ergm(kn_net ~ sum + triangles + nodefactor('mult_gsa') +
+                       nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       edgecov(kn_nb) + edgecov(kn_consultantentities) + edgecov(kn_researchentities) + edgecov(kn_ngoentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(kn_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
+mod2_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') +
+                       nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       edgecov(jac_nb) + edgecov(jac_consultantentities) + edgecov(jac_researchentities) + edgecov(jac_ngoentities),response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
+
+# Model 3 (grouped focal subnetworks -- the 4th run): consultant+research+ngo pooled (crn).
+mod3_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') +
+                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        edgecov(ref_nb) + edgecov(ref_crnentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(ref_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
+mod3_kn_net <- ergm(kn_net ~ sum + triangles + nodefactor('mult_gsa') +
+                       nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       edgecov(kn_nb) + edgecov(kn_crnentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(kn_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
+mod3_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') +
+                       nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       edgecov(jac_nb) + edgecov(jac_crnentities),response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
+
 library(texreg)
 texreg::screenreg(list(mod1_ref_net,mod1_kn_net,mod1_jc_net),custom.model.names = c('references','knowledge.triples','5-grams'))
+texreg::screenreg(list(mod2_ref_net,mod2_kn_net,mod2_jc_net),custom.model.names = c('references','knowledge.triples','5-grams'))
+texreg::screenreg(list(mod3_ref_net,mod3_kn_net,mod3_jc_net),custom.model.names = c('references','knowledge.triples','5-grams'))
 
 
 summary(mod1_jc_net)
