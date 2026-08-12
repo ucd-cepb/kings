@@ -41,7 +41,12 @@ if (file.exists(sample_file)) {
   cat(sprintf("Eval sample (frozen): %d names across %d categories\n",
               nrow(samp), samp[, uniqueN(entity_type)]))
 } else {
-  d <- fread(nip_product("node_dictionary.csv"))
+  # Gold = the FROZEN human seed (see comment above), and it must be the same
+  # source .build_examples() samples from so the few-shot names held out below
+  # actually match what the prompt used. Fall back to the product only if no
+  # seed exists yet (first run).
+  seed_f <- nip_input("node_dictionary_seed.csv")
+  d <- fread(if (file.exists(seed_f)) seed_f else nip_product("node_dictionary.csv"))
   d[, entity_type := .remap_labels(entity_type)]  # fold legacy splits (Local/Other_GSA -> GSA)
   d <- d[entity_type %in% ENTITY_TYPES & !is.na(name) & nzchar(name)]
   # Reproduce the few-shot example names so we can hold them out of the eval set.

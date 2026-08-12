@@ -72,13 +72,19 @@ entity_names <- function(dict, group) {
 #' @return numeric gsp x gsp matrix (rownames/colnames = gsp_id); if no entity
 #'   survives filtering, a 0 x 0 matrix (callers should guard).
 build_shared_entity_matrix <- function(gs_melt, names, prevalence_max = 0.10) {
+  # Prevalence is a share of ALL plans, so take the denominator from the full
+  # gs_melt before subsetting. Using nrow(mat) instead would divide by only the
+  # plans that mention this group's entities, making the threshold far stricter
+  # for sparse focal subnetworks (Consultant/Research/NGO) and dropping exactly
+  # the most-shared focal entities.
+  n_plans <- length(unique(gs_melt$gsp_id))
   sub <- gs_melt[gs_melt$variable %in% names, ]
   if (!nrow(sub)) return(matrix(numeric(0), 0, 0))
   df  <- dcast(sub, gsp_id ~ variable, value.var = "value",
                fun.aggregate = sum, na.rm = TRUE, fill = 0)
   mat <- as.matrix(df[, -1, with = FALSE])
   rownames(mat) <- df$gsp_id
-  keep <- (colSums(mat > 0) / nrow(mat)) < prevalence_max
+  keep <- (colSums(mat > 0) / n_plans) < prevalence_max
   mat  <- mat[, keep, drop = FALSE]
   tcrossprod(mat)
 }

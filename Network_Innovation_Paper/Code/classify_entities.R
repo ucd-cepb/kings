@@ -116,7 +116,12 @@ LABEL_REMAP <- c(Local_GSA = "GSA", Other_GSA = "GSA")
 # ---- Few-shot examples from prior hand labels --------------------------------
 # Sampled deterministically (fixed seed) so the prompt is stable across runs.
 .build_examples <- function(per_cat = CLASSIFIER_CONFIG$examples_per_category) {
-  f <- nip_product("node_dictionary.csv")
+  # Draw few-shot examples from the FROZEN human seed, never the regenerated
+  # node_dictionary.csv -- sampling the classifier's own past output would seed
+  # its future prompts, a feedback loop that drifts off the hand labels. Fall
+  # back to the product only on a first run, before the seed has been written.
+  f <- nip_input("node_dictionary_seed.csv")
+  if (!file.exists(f)) f <- nip_product("node_dictionary.csv")
   if (!file.exists(f)) return(character(0))
   d <- fread(f)
   d[, entity_type := .remap_labels(entity_type)]

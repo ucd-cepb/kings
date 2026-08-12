@@ -40,9 +40,9 @@ Rebuild order:
 
 Related, run independently of the page chain:
 
-- `hash_and_compare_projects.R` / `compare_project_sections.R` — same idea restricted to the *projects & management actions* pages (one concatenated doc per plan; direct pairwise / Jaccard 10-grams).
-- `compare_sections.R` — Jaccard dissimilarity between document sections defined by the metadata section flags.
-- `analyze_dissimilarity.R` — post-hoc exploration of a section-dissimilarity result set.
+- `compare_project_sections.R` — restricts the same idea to the *projects & management actions* pages (one concatenated doc per plan; Jaccard 10-grams) → `project_section_jaccard_scores_<date>.rds`, a `modeling/*` input. (The older `hash_and_compare_projects.R` variant is retired — see `unused/`.)
+
+Section-level and "total"-map exploration live in `exploratory/` (below).
 
 ## `reference_extraction/`
 
@@ -65,19 +65,20 @@ Subject–predicate–object ("knowledge triple") extraction and similarity.
 > Note: these scripts predate the core-parquet refactor and still reference the
 > older `page_metadata.csv` / `^v1`-style layout; adapt paths before re-running.
 
-## `tag_consultants/`
+## `exploratory/`
 
-Identify/disambiguate consulting & law firms mentioned in the plans, via a
-curated firm dictionary. Three variants at different granularity:
+One-off / interactive analysis scripts that read the current products but aren't
+in the pipeline (no `run_all.R` stage, no downstream consumer). See
+[`exploratory/README.md`](exploratory/README.md): `compare_sections.R`,
+`analyze_dissimilarity.R`, `map_similarity_total.R`.
 
-- `consultant_extract.R` — full version.
-- `consultant_extract_simple.R` — operates on the `all_gsa_edges` data.
-- `consultant_extract_raw.R` — operates on raw GSP document text.
+## `unused/`
 
-## `tag_preparers/`
-
-- `extract_participating_entities.ipynb` — pull preparer / participating-entity
-  tags (Python notebook).
+Deprecated / dead-end scripts, retired from the pipeline (nothing runs, sources,
+or reads their outputs). See [`unused/README.md`](unused/README.md). Currently:
+the old heuristic `tag_consultants/` (superseded by the `classify_entities.R`
+semantic types) and `tag_preparers/` notebook, plus
+`hash_and_compare_projects.R` (superseded by `compare_project_sections.R`).
 
 ## `modeling/`
 

@@ -29,8 +29,8 @@ data/core_data ─┐
                 ├─►  Code/00_ingest_core.R  ─►  data_products/{id_crosswalk, node_dictionary, all_gsa_edges}
 inputs/ ────────┘                                        │
                                                          ▼
-   Code/{reference_extraction, text_reuse, knowledge_tree,      ┌─► data_products/{gsp_reference_pairs,
-         tag_consultants, tag_preparers}  ──────────────────────┤     triple_similarity, project_jaccard, …}
+   Code/{reference_extraction, text_reuse,                      ┌─► data_products/{gsp_reference_pairs,
+         knowledge_tree}  ──────────────────────────────────────┤     triple_similarity, project_jaccard, …}
                                                                 ▼
                                           Code/modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
 ```
@@ -74,9 +74,9 @@ Rscript Network_Innovation_Paper/Code/00_ingest_core.R      # CLOBBER=TRUE to re
 | `text_preprocessing/` | Build `page_metadata.RDS` from the core clean-text corpus (first step of the page-similarity rebuild). |
 | `text_reuse/` | Page/section text-similarity + spatial adjacency. |
 | `knowledge_tree/` | Knowledge-triple extraction & similarity. |
-| `tag_consultants/` | Consulting-firm tagging. |
-| `tag_preparers/` | Preparer-entity tagging. |
 | `modeling/` | Build networks & fit ERGMs (analysis endpoint). |
+| `exploratory/` | One-off / interactive analysis scripts, not in the pipeline (see `Code/exploratory/README.md`). |
+| `unused/` | Deprecated / dead-end scripts, retired from the pipeline (see `Code/unused/README.md`). |
 
 ## Regenerating the page-similarity products from current core
 
