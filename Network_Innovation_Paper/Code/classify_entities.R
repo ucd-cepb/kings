@@ -1,11 +1,15 @@
 #' LLM entity-type classifier (Claude API)
 #'
 #' The core NER pipeline tags entities with spaCy categories (ORG/LOC/GPE/...),
-#' which are NOT the semantic entity types the modeling scripts need
-#' (Local_GSA / Company / NGO / Group / District / ...). Historically those
-#' semantic labels were a hand-coded spreadsheet with no reproducible generator.
-#' This module regenerates them from current core naming by classifying each
-#' unique entity name with Claude, few-shot-prompted from the prior hand labels.
+#' which are NOT the semantic entity types the modeling scripts need. Downstream
+#' (see _entity_groups.R) only ever asks two things of a label: (1) is this a real
+#' institutional actor at all (the noise gate), and (2) is it one of the three
+#' focal org types (Consultant / Research / NGO) or a GSA. So the vocabulary is
+#' exactly those distinctions -- six mutually-exclusive leaves -- and nothing
+#' finer. Historically the semantic labels were a hand-coded spreadsheet with no
+#' reproducible generator; this module regenerates them from current core naming
+#' by classifying each unique entity name with Claude, few-shot-prompted from the
+#' prior hand labels (the legacy 23-way seed is folded into the six via LABEL_REMAP).
 #'
 #' Design:
 #'   - Deterministic re-runs: every (name -> type) is cached; only unseen names
@@ -23,7 +27,7 @@ suppressMessages({
 })
 
 CLASSIFIER_CONFIG <- list(
-  # Any current Anthropic model id. Haiku is the default: this is a bulk 21-way
+  # Any current Anthropic model id. Haiku is the default: this is a bulk 6-way
   # classification of short names against a controlled vocabulary (few-shot +
   # spaCy/frequency hints), not a reasoning task, so Haiku's quality is ample at
   # ~1/4 the cost of Sonnet for ~90k names. Override with NIP_CLASSIFIER_MODEL
@@ -40,28 +44,49 @@ CLASSIFIER_CONFIG <- list(
   key_file      = path.expand("~/Documents/Github/anthropic_key_kings"),
   batch_size    = 60,
   max_tokens    = 4096,
-  max_retries   = 4,       # network/5xx/429 backoff retries per request
+  max_retries   = 6,       # network/5xx/429 backoff retries per request
+  req_timeout   = 120,     # hard per-request cap (s): a hung/slow connection
+                           # fails fast and is retried, instead of stalling ~600s
+                           # on curl's low-speed timeout and killing the whole run
   cache_path    = NULL,    # set by 00_ingest_core.R; defaults below if NULL
   overrides_path = NULL,   # paper-local name->type gazetteer; defaults below if NULL
   examples_per_category = 4
 )
 
-# The controlled vocabulary. Any label outside this set is coerced to "Nonsense".
-# v2 (2026-08-10): Local_GSA + Other_GSA merged to GSA. Evaluation showed the
-# split was unlearnable from the string (Other_GSA recall 0.03 -- the model sent
-# 24/30 to Local_GSA because they ARE specific named GSAs; the human split was
-# noise). "Is this the plan's own GSA" is a name-join against the GSA roster,
-# not an LLM guess. See eval_classifier.R.
+# The controlled vocabulary. Any label outside this set is coerced to
+# "Non_institutional". v3 (2026-08-12): collapsed from the legacy 23-way taxonomy
+# to the six leaves downstream actually consumes (see _entity_groups.R). Two axes,
+# one label: the NOISE GATE (institutional vs Non_institutional) and, within
+# institutional, the FOCAL type (GSA / Consultant / Research / NGO) or the generic
+# residual (Institutional_other). "Institutional" is the SUPERSET of the first
+# five leaves -- it is a grouping in _entity_groups.R, never a label here.
+# Institutional_other is the leftover institutional leaf (city, county, district,
+# state/federal/local government body, company, stakeholder committee), i.e. a
+# real actor that is not a GSA, consulting firm, research institution, or advocacy
+# nonprofit. The prior v2 finding still holds: "is this the plan's own GSA" is a
+# name-join against the GSA roster, not an LLM guess. See eval_classifier.R.
 ENTITY_TYPES <- c(
-  "GSA","Local_Gov","State_Gov","Federal_Gov",
-  "City","County","District","Company","Consultant","NGO","Research","Group","Person",
-  "Basin","Natural_Feature","Geographic_Unit","Infrastructure",
-  "Water_Project","Data_System","Legal","Reference","Technical","Nonsense"
+  "GSA", "Consultant", "Research", "NGO", "Institutional_other", "Non_institutional"
 )
 
 # Legacy human labels -> current vocabulary. Applied when reading the prior-label
-# dictionary (few-shot source and eval gold) so historical splits fold in.
-LABEL_REMAP <- c(Local_GSA = "GSA", Other_GSA = "GSA")
+# dictionary (few-shot source and eval gold) so the frozen 23-way seed folds into
+# the six leaves. GSA/Consultant/Research/NGO are identity mappings (omitted).
+LABEL_REMAP <- c(
+  Local_GSA = "GSA", Other_GSA = "GSA",
+  # generic institutional actors -> the residual institutional leaf
+  Local_Gov = "Institutional_other", State_Gov = "Institutional_other",
+  Federal_Gov = "Institutional_other", City = "Institutional_other",
+  County = "Institutional_other", District = "Institutional_other",
+  Company = "Institutional_other", Group = "Institutional_other",
+  # everything the gate excludes -> non-institutional
+  Person = "Non_institutional", Basin = "Non_institutional",
+  Natural_Feature = "Non_institutional", Geographic_Unit = "Non_institutional",
+  Infrastructure = "Non_institutional", Water_Project = "Non_institutional",
+  Data_System = "Non_institutional", Legal = "Non_institutional",
+  Reference = "Non_institutional", Technical = "Non_institutional",
+  Nonsense = "Non_institutional"
+)
 .remap_labels <- function(x) {
   x <- as.character(x)
   hit <- x %in% names(LABEL_REMAP)
@@ -69,34 +94,20 @@ LABEL_REMAP <- c(Local_GSA = "GSA", Other_GSA = "GSA")
   x
 }
 
-# Definitions carry an explicit decision rule and, for the categories that
-# evaluation showed leak, a negative boundary (what to route elsewhere). The
-# trap pairs surfaced by the confusion matrix: City vs Local_Gov, Legal vs
-# Water_Project, Technical vs Data_System/Reference, Group vs Local_Gov/Legal.
+# Six leaves on two axes: the noise gate (institutional vs Non_institutional) and,
+# within institutional, the focal type or the generic residual. Definitions carry
+# an explicit decision rule and, for the org types that historically leaked, a
+# negative boundary (what to route elsewhere). The live trap pairs are now only
+# Consultant vs Institutional_other(company) and Research vs NGO vs Consultant --
+# the many fine non-institutional splits collapse into one leaf, so most of the
+# old confusion surface is gone by construction.
 .type_guidance <- paste(
-  "GSA: a Groundwater Sustainability Agency -- named or generic. The name ends in gsa or contains groundwater_sustainability_agency. Do NOT sub-split by how specific it is.",
-  "Local_Gov: a city/county GOVERNMENT BODY or concept that is not a bare place name (city_council, board_of_supervisors, county departments, 'local_agencies'). A bare city name -> City; a bare county name -> County.",
-  "State_Gov: California state agencies, departments, boards, commissions.",
-  "Federal_Gov: United States federal agencies or bodies.",
-  "City: a named city or municipality (paso_robles, city_of_san_luis_obispo). Use City even when the city acts as a government.",
-  "County: a named county.",
-  "District: a special district -- water/irrigation/flood-control/conservation/utility. Names often end in _district, _wd, _id, _cwd, or are district acronyms.",
-  "Company: a private for-profit business that is NOT primarily an engineering/consulting/technical-services firm -- agricultural operations, land or water companies, investor-owned utilities organized as companies, technology or data vendors. A firm hired to study or write the plan (engineering, hydrogeology, consulting) -> Consultant.",
-  "Consultant: a private engineering, hydrogeology, environmental, or technical-services CONSULTING firm -- the contractors that prepare GSPs (woodard_curran, dudek, luhdorff_and_scalmanini_consulting_engineers, gsi_water_solutions, montgomery_associates, provost_pritchard). Names often contain _consultants, _engineers, _associates, or _consulting. A non-consulting for-profit business -> Company; a university or research lab -> Research.",
-  "NGO: a non-governmental, non-profit ADVOCACY, conservation, or membership organization (nature_conservancy, environmental_defense_fund, sierra_club, audubon, trout_unlimited). A university/research lab/policy institute -> Research; a stakeholder committee -> Group; a government body -> a *_Gov type.",
-  "Research: a university, college, university cooperative-extension program, research laboratory, research center, or policy research institute / think tank (uc_davis, stanford_university, cal_poly, public_policy_institute, desert_research_institute). A government research agency (usgs, usbr) -> its *_Gov type; a private consulting firm -> Consultant; an advocacy nonprofit -> NGO; a community-college or school DISTRICT (name ends in ..._college_district) is a governance body, not a research institution -> District; a college/university root with OCR garbage or stray tokens appended (e.g. ..._max_expansion_fixed) -> Nonsense.",
-  "Group: a stakeholder/advisory COMMITTEE, coalition, working group, or advisory board -- not an operating agency and not a legal instrument. An operating agency -> District/State_Gov/GSA; an agreement/MOU -> Legal; a board_of_supervisors -> Local_Gov.",
-  "Person: an individual human, including a bare surname (trussell, chung).",
-  "Basin: a groundwater basin or subbasin.",
-  "Natural_Feature: rivers, creeks, lakes, aquifers, watersheds, natural features.",
-  "Geographic_Unit: an administrative/management area or region that is not a basin, city, county, or natural feature (management_zone_6, planning_area, subregion).",
-  "Infrastructure: dams, canals, wells, pipelines, treatment plants, physical works.",
-  "Water_Project: a named on-the-ground project, program, or management ACTION (recharge project, restoration program). Not a law -> Legal; not a model/database -> Data_System.",
-  "Data_System: a database, monitoring network/system, or NUMERICAL MODEL (names with _model, modflow, iwfm, cvhm, monitoring_network, _database, information_system).",
-  "Legal: a law, statute, code, regulation, ordinance, legal agreement/MOU, settlement, or citation to one. A physical project or program -> Water_Project.",
-  "Reference: a document/citation reference -- reports, memoranda, plan sections, tables, figures, appendices (technical_memorandum, chapter_3, table_5).",
-  "Technical: a technical concept, measurement, parameter, or jargon that is not an organization, place, document, model, or project (specific_yield, hydraulic_conductivity). A model -> Data_System; a document -> Reference; an action/program -> Water_Project.",
-  "Nonsense: OCR garbage, fragments, or strings that are not meaningful entities. Do NOT use Nonsense for a plausible surname (-> Person) or a real short acronym.",
+  "GSA: a Groundwater Sustainability Agency -- named or generic. The name ends in _gsa or contains groundwater_sustainability_agency. Do NOT sub-split by how specific it is. (Institutional.)",
+  "Consultant: a private engineering, hydrogeology, environmental, or technical-services CONSULTING firm -- the contractors hired to study or write GSPs (woodard_curran, dudek, luhdorff_and_scalmanini_consulting_engineers, gsi_water_solutions, montgomery_associates, provost_pritchard). Names often contain _consultants, _engineers, _associates, or _consulting. A university or research lab -> Research; any OTHER institution (a non-consulting company, agency, district, city, county, or committee) -> Institutional_other. (Institutional.)",
+  "Research: a university, college, cooperative-extension program, research laboratory, research center, or policy research institute / think tank (uc_davis, stanford_university, cal_poly, public_policy_institute, desert_research_institute). A government research agency (usgs, usbr) -> Institutional_other; a private consulting firm -> Consultant; an advocacy nonprofit -> NGO; a community-college or school DISTRICT (name ends in ..._college_district) is a governance body -> Institutional_other; a university root with OCR garbage or stray tokens appended -> Non_institutional. (Institutional.)",
+  "NGO: a non-governmental, non-profit ADVOCACY, conservation, or membership organization (nature_conservancy, environmental_defense_fund, sierra_club, audubon, trout_unlimited). A university/research lab/policy institute -> Research; a government body or a stakeholder committee -> Institutional_other. (Institutional.)",
+  "Institutional_other: any real organization, government body, or place-acting-as-government that is NOT one of the four types above -- named cities and counties, special/water/irrigation/flood-control districts, California state agencies/boards/commissions, United States federal agencies, city/county government bodies (city_council, board_of_supervisors, county departments), private non-consulting companies (agricultural operations, land/water companies, investor-owned utilities, data/tech vendors), and stakeholder committees/coalitions/advisory boards. Use this for every institutional actor that is not a GSA, consulting firm, research institution, or advocacy nonprofit.",
+  "Non_institutional: NOT an institution. Includes an individual person or bare surname; a groundwater basin or subbasin; a natural feature (river, creek, lake, aquifer, watershed); an administrative/management region that is not a city or county (management_zone_6, planning_area, subregion); physical infrastructure (dam, canal, well, pipeline, treatment plant); a named project/program/management action; a database, monitoring network, or numerical model (modflow, iwfm, cvhm); a law, code, regulation, ordinance, agreement/MOU, or citation to one; a document/report/memo/table/figure/appendix reference; a bare technical concept, measurement, or parameter (specific_yield, hydraulic_conductivity); and OCR garbage or meaningless fragments. A named city or county is NOT here -> Institutional_other.",
   sep = "\n"
 )
 
@@ -158,12 +169,13 @@ LABEL_REMAP <- c(Local_GSA = "GSA", Other_GSA = "GSA")
     "Rules:\n",
     "- Names are lowercased with underscores for spaces (e.g. aliso_water_district_gsa).\n",
     "- An entity may carry a parenthetical hint: its spaCy NER tag and frequency, ",
-    "e.g. (GPE, n=12). Use the tag as a strong prior -- GPE/LOC -> a place type ",
-    "(City/County/Basin/Natural_Feature/Geographic_Unit); PERSON -> Person; ORG -> an ",
-    "organization type (GSA/District/Company/NGO/State_Gov/Federal_Gov/Local_Gov/Group) ",
-    "-- but override it when the name clearly says otherwise.\n",
+    "e.g. (GPE, n=12). Use the tag as a strong prior -- a named city/county place ",
+    "(GPE) -> Institutional_other, but a basin/natural-feature/region place -> ",
+    "Non_institutional; PERSON -> Non_institutional; ORG -> an institution ",
+    "(GSA/Consultant/Research/NGO/Institutional_other) -- but override it when the ",
+    "name clearly says otherwise.\n",
     "- Return the SINGLE best-fitting type from the allowed list, verbatim.\n",
-    "- If a string is not a meaningful entity (fragment, OCR error), use Nonsense.\n\n",
+    "- If a string is not a meaningful entity (fragment, OCR error), use Non_institutional.\n\n",
     "Example labels (from prior human coding):\n", .build_examples(), "\n",
     .NEW_CATEGORY_EXAMPLES
   )
@@ -186,7 +198,7 @@ LABEL_REMAP <- c(Local_GSA = "GSA", Other_GSA = "GSA")
   }, character(1))
   user <- paste0(
     "Classify each numbered entity. Respond with ONLY a JSON object mapping ",
-    "each number (as a string) to one allowed type, e.g. {\"1\":\"City\"}.\n\n",
+    "each number (as a string) to one allowed type, e.g. {\"1\":\"GSA\"}.\n\n",
     paste(lines, collapse = "\n")
   )
   body <- list(
@@ -208,8 +220,14 @@ LABEL_REMAP <- c(Local_GSA = "GSA", Other_GSA = "GSA")
                 `anthropic-version` = CLASSIFIER_CONFIG$api_version,
                 `content-type` = "application/json") |>
     req_body_json(body) |>
+    # Hard per-request cap so a stalled connection errors quickly and is retried,
+    # rather than hanging on curl's ~600s low-speed timeout.
+    req_timeout(CLASSIFIER_CONFIG$req_timeout) |>
+    # Retry transient HTTP statuses AND transport failures (timeouts/resets): a
+    # single slow request should never abort a 1500-batch run.
     req_retry(max_tries = CLASSIFIER_CONFIG$max_retries,
-              is_transient = function(r) resp_status(r) %in% c(429, 500, 502, 503, 529)) |>
+              is_transient = function(r) resp_status(r) %in% c(429, 500, 502, 503, 529),
+              retry_on_failure = TRUE) |>
     req_perform()
   # Concatenate all text-type content blocks (models may emit a leading
   # non-text block, e.g. extended "thinking", before the answer).
@@ -316,7 +334,7 @@ classify_entities <- function(names, hints = NULL) {
       nb <- batches[[b]]
       hb <- if (!is.null(hint_map)) unname(hint_map[nb]) else NULL
       res <- .classify_batch(nb, hb, key)
-      res[is.na(res)] <- "Nonsense"           # unreturned/parse-failures default
+      res[is.na(res)] <- "Non_institutional"  # unreturned/parse-failures default
       cache <- rbind(cache, data.table(name = nb, entity_type = res))
       # persist incrementally so a mid-run failure loses nothing
       fwrite(unique(cache, by = "name"), cache_path)
@@ -327,7 +345,7 @@ classify_entities <- function(names, hints = NULL) {
   }
 
   out <- merge(data.table(name = names), cache, by = "name", all.x = TRUE, sort = FALSE)
-  out[is.na(entity_type), entity_type := "Nonsense"]
+  out[is.na(entity_type), entity_type := "Non_institutional"]
 
   # Apply gazetteer LAST so it wins over both the cache and the LLM. Recomputed on
   # out$name (order-independent); overrides are never persisted to the cache.

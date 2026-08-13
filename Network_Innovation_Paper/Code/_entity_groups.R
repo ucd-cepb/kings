@@ -2,13 +2,15 @@
 #' the modeling scripts (make_networks / make_valued_networks / make_binary0.9).
 #'
 #' Every entity name in node_dictionary.csv carries ONE semantic type from the
-#' 23-way controlled vocabulary in classify_entities.R. Two label systems exist
-#' per name: the coarse spaCy NER tag (ORG/GPE/NORP/LOC/FAC/...) carried in core,
-#' and this cleaned semantic type. The semantic taxonomy is exhaustive and
-#' partitions into institutional vs non-institutional, so the "all institutional"
-#' (ORG + GPE + NORP, junk-pruned, water utilities/agencies rescued, water
-#' features/infrastructure removed) set is exactly INSTITUTIONAL_TYPES below --
-#' the raw spaCy gate is redundant to it.
+#' 6-way controlled vocabulary in classify_entities.R (GSA, Consultant, Research,
+#' NGO, Institutional_other, Non_institutional). Those six sit on two axes: a
+#' NOISE GATE (institutional vs Non_institutional) and, within institutional, the
+#' focal type or the generic residual. `Institutional` is the SUPERSET of the five
+#' non-Non_institutional leaves -- it is the grouping defined here, not a label.
+#' The vocabulary is exhaustive, so the "all institutional" set (spaCy ORG u GPE u
+#' NORP, junk-pruned, water utilities/agencies rescued, water features/
+#' infrastructure removed) is exactly INSTITUTIONAL_TYPES below -- the raw spaCy
+#' gate is redundant to it.
 #'
 #' Groupings (see build_shared_entity_matrix() for how they become gsp x gsp
 #' shared-entity matrices):
@@ -18,19 +20,14 @@
 
 # --- semantic-type groupings --------------------------------------------------
 
-# All institutional actors = spaCy ORG u GPE u NORP after the classifier prunes
-# junk and rescues mis-tagged institutions. Excludes Person (spaCy PERSON) and
-# the non-institutional types (Basin, Natural_Feature, Geographic_Unit,
-# Infrastructure, Water_Project, Data_System, Legal, Reference, Technical,
-# Nonsense).
+# All institutional actors = every leaf except Non_institutional (which is the
+# gate's reject bucket: persons, basins, natural features, geographic units,
+# infrastructure, projects, data systems, legal/reference/technical, OCR junk).
+# GSA/Consultant/Research/NGO are the focal institutional leaves; Institutional_other
+# is the generic residual (cities, counties, districts, state/federal/local
+# government bodies, companies, stakeholder committees).
 INSTITUTIONAL_TYPES <- c(
-  # ORG
-  "GSA", "Local_Gov", "State_Gov", "Federal_Gov",
-  "District", "Company", "Consultant", "NGO", "Research",
-  # GPE
-  "City", "County",
-  # NORP
-  "Group"
+  "GSA", "Consultant", "Research", "NGO", "Institutional_other"
 )
 
 # The three focal subnetworks and their pooled ("grouped") 4th run.
