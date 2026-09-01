@@ -1,4 +1,5 @@
 pattern,entity_type,match,notes
+journal|periodical|proceedings,Non_institutional,regex,"journals/periodicals are references, not the research org"
 woodard_curran,Consultant,regex,catches i_woodard_curran and woodard_curran_provost_pritchard fragments
 luhdorff,Consultant,regex,LSCE variants incl davids_engineering_luhdorff
 scalmanini,Consultant,regex,LSCE variants

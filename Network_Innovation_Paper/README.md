@@ -44,7 +44,12 @@ three bridge files into `data_products/`:
   from the plan-family manifest, plus `plan_section`/`submitted_date` and a
   derived `doc_rank` (1 = a plan's earliest submission). `doc_rank` — not the
   manifest `version` field — is how the paper selects one document per plan
-  (`select_plan_docs()` / `NIP_DOC_SELECT` in `_corpus.R`).
+  (`select_plan_docs()` / `NIP_DOC_SELECT` in `_corpus.R`). A plan's multiple
+  documents are chronological *resubmissions* of the whole plan (`plan_section` is
+  `original` vs. `resubmitted`), **not** volumes/parts of one plan — so selecting
+  by `doc_rank` chooses one complete submission (earliest by default), never one
+  half of a split plan. 79 plans were submitted once; 53 have an original and a
+  resubmission.
 - **`node_dictionary.csv`** — every unique entity name → one of 22 semantic types
   (`Local_GSA`, `Company`, `NGO`, `Group`, `District`, …). Core carries only
   spaCy NER tags, so these semantic labels are regenerated with an LLM classifier
@@ -69,7 +74,7 @@ Rscript Network_Innovation_Paper/Code/00_ingest_core.R      # CLOBBER=TRUE to re
 | `_paths.R` | Single source of truth for all paths. |
 | `_corpus.R` | Core clean-text corpus reader + id-crosswalk helpers (used by the text-reuse feeders). |
 | `00_ingest_core.R` | Core → paper bridge (above). |
-| `classify_entities.R` | LLM entity-type classifier (used by the ingest). |
+| `classify_entities.R` | LLM entity-type classifier (used by the ingest). See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md) for the whole tagging subsystem. |
 | `reference_extraction/` | Extract & match plan bibliographic references. |
 | `text_preprocessing/` | Build `page_metadata.RDS` from the core clean-text corpus (first step of the page-similarity rebuild). |
 | `text_reuse/` | Page/section text-similarity + spatial adjacency. |
