@@ -25,21 +25,24 @@ suppressPackageStartupMessages({
 })
 
 # ----- Functions -----
+# Core's step2_clean_text_pages.R already density-filters every page (blanks any
+# page whose TOTAL punctuation > 0.10, numeric > 0.25, whitespace > 0.75, or that
+# is empty / > 20000 chars). So the old per-symbol punctuation checks here
+# (periods / quotes / tildes each < 0.10) were fully subsumed by core's punct gate
+# and have been removed. What remains is the filtering core does NOT do:
+#   - short-page drop (chars > min_text_length): core keeps short prose pages;
+#   - all-caps drop (caps/chars < cut_prop): core has no caps filter;
+#   - STRICTER numeric (< 0.10 vs core's 0.25) and whitespace (< 0.50 vs 0.75)
+#     thresholds, kept deliberately for the page-similarity corpus.
 cleanText <- function(text, cut_prop = CONFIG$cut_prop,
                      space_prop_multiplier = CONFIG$space_prop_multiplier) {
   text = gsub('\"\"', '', text, fixed = TRUE)
   chars = nchar(text)
-  periods = stringr::str_count(text, "\\.")
   numbers = stringr::str_count(text, "[0-9]")
   caps = stringr::str_count(text, '[A-Z]')
-  tildes = stringr::str_count(text, '~')
-  quotes = stringr::str_count(text, '\\"')
   spaces = stringr::str_count(text, '\\s')
   valid_indices = chars > CONFIG$min_text_length &
      chars <= CONFIG$max_text_length &
-     (periods/chars) < cut_prop &
-     (quotes/chars) < cut_prop &
-     (tildes/chars) < cut_prop &
      (numbers/chars) < cut_prop &
      (caps/chars) < cut_prop &
      (spaces/chars) < (cut_prop * space_prop_multiplier)
@@ -69,9 +72,10 @@ main <- function(corpus = NULL) {
   documents[, file_name := gsp_doc_id]
   documents[, file_path := file.path(core_txt_clean(), paste0(gsp_doc_id, ".parquet"))]
 
-  # Load page-level section flags (paper-owned input; NOT in core), keyed on the
-  # legacy 4-digit gsp_id + 1-indexed page_num — same indexing as the core `page`.
-  page_info <- readRDS(nip_input("gsp_page_sections.RDS"))
+  # Load page-level section flags from core metadata, keyed on the legacy 4-digit
+  # gsp_id + 1-indexed page_num — same indexing as the core `page`. gsp_id is
+  # zero-padded ("0007"), so it MUST be read as character to join the crosswalk.
+  page_info <- fread(core_page_sections(), colClasses = list(character = "gsp_id"))
   page_info <- page_info[,.(gsp_id, page_num, admin, basin_plan, sust_criteria,
                             monitoring_networks, projects_mgmt_actions, is_comment, is_reference)]
 

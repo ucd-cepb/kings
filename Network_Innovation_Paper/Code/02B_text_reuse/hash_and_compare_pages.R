@@ -106,7 +106,7 @@ if (file.exists('Network_Innovation_Paper/data_products/page_metadata.RDS')) {
    documents <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
 } else {
    log_message("Preprocessed data not found. Running preprocessing")
-   source('Network_Innovation_Paper/Code/text_preprocessing/preprocess_portal_texts.R')
+   source('Network_Innovation_Paper/Code/01_text_preprocessing/preprocess_portal_texts.R')
    # Turn off logging temporarily for preprocessing
    sink_conn <- sink()
    documents <- main()

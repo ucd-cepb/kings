@@ -1,6 +1,6 @@
 #' Network_Innovation_Paper — core clean-text corpus + id-crosswalk helpers
 #'
-#' Shared by the text-reuse feeders (text_preprocessing/, text_reuse/). Core
+#' Shared by the text-reuse feeders (01_text_preprocessing/, 02B_text_reuse/). Core
 #' stores the clean plan-text corpus as ONE parquet per plan document under
 #' core_txt_clean(), named by the numeric gspDocId stem (e.g. `1147.parquet`),
 #' with two columns: `page` (1-indexed page number) and `text` (that page's

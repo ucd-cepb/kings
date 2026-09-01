@@ -17,17 +17,19 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 | `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`|`latest`), `latest_page_scores()`. Sourced by the text-reuse feeders. |
 | `00_ingest_core.R` | The only bridge to core; writes `data_products/{id_crosswalk,node_dictionary,all_gsa_edges}`. Detailed in the primary README. |
-| `classify_entities.R` | LLM entity-type classifier (Claude API) invoked by the ingest to label entity names into the 22 semantic types. Cached; needs an Anthropic key. |
+| `classify_entities.R` | LLM entity-type classifier (Claude API) invoked by the ingest to label entity names into the six-leaf controlled vocabulary (GSA / Consultant / Research / NGO / Institutional_other / Non_institutional). Deterministic gazetteer → cache → LLM precedence; needs an Anthropic key. Full subsystem doc: [`ENTITY_TAGGING.md`](ENTITY_TAGGING.md). |
 
-## `text_preprocessing/`
+## `01_text_preprocessing/`
 
 First step of the page-similarity rebuild.
 
 - `preprocess_portal_texts.R` — reads the core clean-text corpus via `_corpus.R`,
-  cleans page text, joins the id crosswalk + paper-owned section flags, and writes
-  `data_products/page_metadata.RDS` (the input to the whole `text_reuse/` chain).
+  applies the paper's page filter (`cleanText`: short-page + all-caps + stricter
+  numeric/whitespace, on top of core's `step2` punctuation cleaning), joins the id
+  crosswalk + the core page-section flags (`core_page_sections()`), and writes
+  `data_products/page_metadata.RDS` (the input to the whole `02B_text_reuse/` chain).
 
-## `text_reuse/`
+## `02B_text_reuse/`
 
 Page- and section-level similarity between plans, plus the spatial maps. Consumes
 `page_metadata.RDS`. Score outputs land in `data_products/score_results/`.
@@ -40,13 +42,13 @@ Rebuild order:
 
 Related, run independently of the page chain:
 
-- `compare_project_sections.R` — restricts the same idea to the *projects & management actions* pages (one concatenated doc per plan; Jaccard 10-grams) → `project_section_jaccard_scores_<date>.rds`, a `modeling/*` input. (The older `hash_and_compare_projects.R` variant is retired — see `unused/`.)
+- `compare_project_sections.R` — restricts the same idea to the *projects & management actions* pages (one concatenated doc per plan; Jaccard 10-grams) → `project_section_jaccard_scores_<date>.rds`, a `03_modeling/*` input. (The older `hash_and_compare_projects.R` variant is retired — see `unused/`.)
 
 Section-level and "total"-map exploration live in `exploratory/` (below).
 
-## `reference_extraction/`
+## `02A_reference_extraction/`
 
-Bibliographic reference extraction and matching. Numeric prefixes are the run order:
+Bibliographic reference extraction and matching. The file-level numeric prefixes are the run order:
 
 1. `01_extract_GSP_references.R` — extract reference strings from the plan PDFs (`referenceExtract`; depends on `anystyle`/ruby — see the notes in the script header).
 2. `02_aggregate_references.R` — classify & aggregate the extracted references (`referenceClassify`).
@@ -54,7 +56,7 @@ Bibliographic reference extraction and matching. Numeric prefixes are the run or
 4. `04_search_OA_titlematch_index.R` — build/search the title-match index → `gsp_solr_OA_matches.rds`.
 - `reference_set_similarity.R` — turn matched reference sets into plan-to-plan reference-overlap similarity (a modeling input).
 
-## `knowledge_tree/`
+## `02C_knowledge_tree/`
 
 Subject–predicate–object ("knowledge triple") extraction and similarity.
 
@@ -80,7 +82,7 @@ the old heuristic `tag_consultants/` (superseded by the `classify_entities.R`
 semantic types) and `tag_preparers/` notebook, plus
 `hash_and_compare_projects.R` (superseded by `compare_project_sections.R`).
 
-## `modeling/`
+## `03_modeling/`
 
 Analysis endpoint — assemble plan-to-plan networks from the upstream similarity
 products plus paper-owned covariates (`nip_input('gsp_covariates.csv')`), then fit

@@ -73,7 +73,7 @@ flowchart TD
 
     clf --> nd["data_products/node_dictionary.csv<br/>name → one of 6 types"]
     nd --> groups["_entity_groups.R<br/>institutional gate + focal subnetworks"]
-    groups --> model["modeling/* — shared-entity matrices → ERGMs"]
+    groups --> model["03_modeling/* — shared-entity matrices → ERGMs"]
 
     nd -.->|scored against seed| eval["eval_classifier.R<br/>agreement / confusion<br/>(separate eval cache)"]
     seed -.-> eval
@@ -137,7 +137,7 @@ Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
 | `00_ingest_core.R` | Calls the classifier (`build_node_dictionary()`), writes `data_products/node_dictionary.csv`. The only place the tagger runs in the pipeline. |
 | `build_overrides_from_dicts.R` | Bakes `core_code/dicts/*` into `inputs/entity_type_overrides.csv` (preserving hand rules). |
 | `eval_classifier.R` | Scores the model against the human seed (agreement / per-category recall / confusion). Uses a **separate** eval cache; never touches production. |
-| `_entity_groups.R` | Downstream groupings the six leaves feed (institutional gate, focal subnetworks). Consumed by `modeling/*`. |
+| `_entity_groups.R` | Downstream groupings the six leaves feed (institutional gate, focal subnetworks). Consumed by `03_modeling/*`. |
 | `inputs/entity_type_overrides.csv` | The deterministic gazetteer (exact + regex). |
 | `inputs/node_dictionary_seed.csv` | Frozen human labels: few-shot source **and** eval gold. |
 | `data_products/node_dictionary.csv` | The output: every unique name → one of the six types. |

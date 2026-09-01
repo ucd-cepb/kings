@@ -9,7 +9,7 @@ This paper proceeds from the **canonical pipeline outputs** in `data/core_data/`
 nothing from sibling paper directories, `data/Multipurpose_Files`, or foreign
 repos.
 
-## Contract: what the paper depends on
+## Root data:
 
 1. `data/core_data/` — canonical pipeline outputs (disambiguated textnet objects,
    igraph objects, the plan-family manifest, `sgma_gsa_full.csv`).
@@ -29,10 +29,10 @@ data/core_data ─┐
                 ├─►  Code/00_ingest_core.R  ─►  data_products/{id_crosswalk, node_dictionary, all_gsa_edges}
 inputs/ ────────┘                                        │
                                                          ▼
-   Code/{reference_extraction, text_reuse,                      ┌─► data_products/{gsp_reference_pairs,
-         knowledge_tree}  ──────────────────────────────────────┤     triple_similarity, project_jaccard, …}
+   Code/{02A_reference_extraction, 02B_text_reuse,              ┌─► data_products/{gsp_reference_pairs,
+         02C_knowledge_tree}  ──────────────────────────────────┤     triple_similarity, project_jaccard, …}
                                                                 ▼
-                                          Code/modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
+                                     Code/03_modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
 ```
 
 ### `Code/00_ingest_core.R` — the only bridge to core
@@ -49,14 +49,24 @@ three bridge files into `data_products/`:
   `original` vs. `resubmitted`), **not** volumes/parts of one plan — so selecting
   by `doc_rank` chooses one complete submission (earliest by default), never one
   half of a split plan. 79 plans were submitted once; 53 have an original and a
-  resubmission.
-- **`node_dictionary.csv`** — every unique entity name → one of 22 semantic types
-  (`Local_GSA`, `Company`, `NGO`, `Group`, `District`, …). Core carries only
-  spaCy NER tags, so these semantic labels are regenerated with an LLM classifier
+  resubmission. A submission is never spread across multiple documents: every
+  `gsp_id` in `id_crosswalk.csv` has exactly one or two rows, and every two-row
+  plan is one `original` + one `resubmitted` (distinct `plan_section` *and*
+  `submitted_date`) — no plan carries two documents of the same section, so
+  choosing one `doc_rank` selects a complete submission with all its content,
+  never one chapter of a split plan.
+
+- **`node_dictionary.csv`** — every unique entity name → one of the six-leaf
+  controlled vocabulary (`GSA`, `Consultant`, `Research`, `NGO`,
+  `Institutional_other`, `Non_institutional`). Core carries only spaCy NER tags,
+  so these semantic labels are regenerated with an LLM classifier
   (`Code/classify_entities.R`, few-shot-seeded from the prior hand labels in
   `inputs/node_dictionary_seed.csv`). Cached, so re-runs only classify new names.
   Requires an Anthropic API key (env `ANTHROPIC_API_KEY`, or the file the
-  classifier points at).
+  classifier points at). See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md)
+  for the vocabulary and the gazetteer → cache → LLM resolution.
+
+
 - **`all_gsa_edges.csv`** — per-plan agency × connected-entity mention-weight
   matrix, built from `core_data/igraph_objects/uniplex_weighted_graphs` by
   folding edges onto their `Local_GSA` endpoint. Consumed by `modeling/*`.
@@ -69,19 +79,24 @@ Rscript Network_Innovation_Paper/Code/00_ingest_core.R      # CLOBBER=TRUE to re
 
 ## `Code/` layout
 
-| Dir | Purpose |
-|---|---|
-| `_paths.R` | Single source of truth for all paths. |
-| `_corpus.R` | Core clean-text corpus reader + id-crosswalk helpers (used by the text-reuse feeders). |
-| `00_ingest_core.R` | Core → paper bridge (above). |
-| `classify_entities.R` | LLM entity-type classifier (used by the ingest). See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md) for the whole tagging subsystem. |
-| `reference_extraction/` | Extract & match plan bibliographic references. |
-| `text_preprocessing/` | Build `page_metadata.RDS` from the core clean-text corpus (first step of the page-similarity rebuild). |
-| `text_reuse/` | Page/section text-similarity + spatial adjacency. |
-| `knowledge_tree/` | Knowledge-triple extraction & similarity. |
-| `modeling/` | Build networks & fit ERGMs (analysis endpoint). |
-| `exploratory/` | One-off / interactive analysis scripts, not in the pipeline (see `Code/exploratory/README.md`). |
-| `unused/` | Deprecated / dead-end scripts, retired from the pipeline (see `Code/unused/README.md`). |
+Directory names carry their **stage number as a prefix**, so the on-disk order
+*is* the run order. A shared letter (`02A`/`02B`/`02C`) marks chains that run **in
+parallel** — they are mutually independent and all feed `03_modeling/`. The
+top-level helper/bridge scripts (`_paths.R`, `_corpus.R`, `00_ingest_core.R`,
+`classify_entities.R`) are unprefixed files, not stages of the page pipeline.
+
+| Dir / file | Stage | Purpose |
+|---|---|---|
+| `_paths.R`, `_corpus.R` | — | Helpers: the path resolver and the core clean-text corpus + id-crosswalk readers. Sourced everywhere; no run order. |
+| `00_ingest_core.R` | 00 | Core → paper bridge (above). Runs `classify_entities.R` internally. |
+| `classify_entities.R` | 00 | LLM entity-type classifier — **invoked by** `00_ingest_core.R`, not a separate downstream stage. See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md) for the whole tagging subsystem. |
+| `01_text_preprocessing/` | 01 | Stage-1 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Prerequisite of 02B and 02C. |
+| `02A_reference_extraction/` | 02A | Extract & match plan bibliographic references (independent of 01). |
+| `02B_text_reuse/` | 02B | Page/section text-similarity + spatial adjacency (consumes 01). |
+| `02C_knowledge_tree/` | 02C | Knowledge-triple extraction & similarity (consumes 01). |
+| `03_modeling/` | 03 | Build networks & fit ERGMs (analysis endpoint). Consumes the 02 chains. |
+| `exploratory/` | — | One-off / interactive analysis scripts, not in the pipeline (see `Code/exploratory/README.md`). |
+| `unused/` | — | Deprecated / dead-end scripts, retired from the pipeline (see `Code/unused/README.md`). |
 
 ## Regenerating the page-similarity products from current core
 
@@ -94,8 +109,8 @@ Page-entity keys throughout this chain are `<gspDocId>_<page_num>`. To rebuild
 from scratch, run in order (from the repo root):
 
 ```sh
-Rscript Network_Innovation_Paper/Code/text_preprocessing/preprocess_portal_texts.R  # -> page_metadata.RDS
-Rscript Network_Innovation_Paper/Code/text_reuse/hash_and_compare_pages.R           # -> score_results/portal_page_scores_<date>.rds
+Rscript Network_Innovation_Paper/Code/01_text_preprocessing/preprocess_portal_texts.R  # -> page_metadata.RDS
+Rscript Network_Innovation_Paper/Code/02B_text_reuse/hash_and_compare_pages.R          # -> score_results/portal_page_scores_<date>.rds
 # map_similarity.R / map_similarity_total.R / link_page_lda_results_to_meta.R read the newest score file
 ```
 
@@ -103,6 +118,8 @@ Rscript Network_Innovation_Paper/Code/text_reuse/hash_and_compare_pages.R       
 run `hash_and_compare_pages.R` before the map/link scripts on any rebuild —
 otherwise they consume a stale score file whose legacy `v*_gsp_num_id_*.txt`
 keys won't resolve against the `gspDocId` crosswalk.
+
+COMMENT: IF THERE ARE LEGACY RESULTS NOT BASED ON TEH CURRENT CORE DATA, DO A ONE TIME DELETE OF THOSE TO MAKE SURE THEY GET REPLACED. UPDATE THIS TEXT ABOVE ACCORDINGLY TO REFLECT THE NEW PROCESS AND DON'T NEED TO REFERENCE THE OLD ONE.
 
 ## Notes
 
