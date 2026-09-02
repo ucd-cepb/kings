@@ -13,7 +13,7 @@ own scripts never do.
 |---|---|---|
 | `gsp_covariates.csv` | Per-plan political/economic covariates (`Republican_Vote_Share`, `Agr_Share_Of_GDP`, `exante_collab`, `mult_gsas`, `priority_category`, `gwsum`), keyed on 4-digit `gsp_id`. Consumed by `modeling/*`. | Deduplicated per `gsp_id` from the covariate columns of the legacy `data/Multipurpose_Files/gsp_docs_w_meta`. 119 rows. |
 | `gsp_basin_ids.csv` | `gsp_id` → `basin_id` map. Consumed by `modeling/*` and `text_reuse/*`. | Copied verbatim from `EJ_DAC_Paper/Data/gsp_basin_ids.csv` (snapshot; the paper no longer reads the sibling path). |
-| `node_dictionary_seed.csv` | Frozen prior hand-coded entity→type labels. Used **only** as few-shot examples by `Code/classify_entities.R` so the classifier prompt is stable across rebuilds. | Snapshot of the pre-refactor `data_products/node_dictionary.csv`. |
+| `entity_type_overrides.csv` | The deterministic entity→type gazetteer (exact + regex rows) — the authoritative label source, applied over both the cache and the LLM. See [`Code/ENTITY_TAGGING.md`](../Code/ENTITY_TAGGING.md). | Baked from `core_code/dicts/*` by `Code/build_overrides_from_dicts.R`, plus hand-curated Consultant/Research/NGO rows. |
 | `GSP_Submitted/` | GSP boundary shapefile (`SubmittedGSP_Master.*`) for spatial adjacency. Consumed by `modeling/*` and `text_reuse/map_similarity*`. **git-ignored** (5.5 MB binary). | Copied from `data/Multipurpose_Files/GSP_Submitted/`. |
 
 ## Re-staging

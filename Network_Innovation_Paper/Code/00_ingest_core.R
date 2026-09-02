@@ -12,9 +12,10 @@
 #'
 #' The semantic entity types are NOT in core (core carries spaCy NER tags only)
 #' and had no reproducible generator, so they are regenerated here with an LLM
-#' classifier (see classify_entities.R), few-shot-seeded from the prior hand
-#' labels. This is the one step that calls an external API; it is cached, so
-#' re-runs are cheap and only newly-seen entity names hit the API.
+#' classifier (see classify_entities.R), few-shot-prompted from curated in-code
+#' exemplars and pinned by the core-dicts gazetteer. This is the one step that
+#' calls an external API; it is cached, so re-runs are cheap and only newly-seen
+#' entity names hit the API.
 #'
 #' Run from the repo root:  Rscript Network_Innovation_Paper/Code/00_ingest_core.R
 #' Set CLOBBER=TRUE to overwrite existing products.
@@ -83,14 +84,9 @@ build_crosswalk <- function() {
 # =============================================================================
 build_node_dictionary <- function() {
   out <- nip_product("node_dictionary.csv")
-  # Freeze the prior hand labels as the few-shot seed BEFORE overwriting, so the
-  # prompt stays stable across rebuilds.
-  seed <- nip_input("node_dictionary_seed.csv")
-  if (!file.exists(seed) && file.exists(out)) {
-    dir.create(dirname(seed), showWarnings = FALSE, recursive = TRUE)
-    file.copy(out, seed)
-    message("seeded few-shot examples -> ", seed)
-  }
+  # Few-shot examples are curated in-code (classify_entities.R: .FEWSHOT_EXAMPLES)
+  # and the known cast is pinned by the core-dicts gazetteer, so nothing needs to be
+  # frozen from the product -- the prompt is already stable across rebuilds.
   if (.skip(out)) return(fread(out))
 
   fs <- list.files(core_disambig(), pattern = "\\.RDS$", full.names = TRUE)

@@ -47,7 +47,6 @@ flowchart TD
     subgraph inputs["inputs & sources"]
         core["core disambiguated objects<br/>nodelist: entity_name, spaCy tag,<br/>num_appearances"]
         dicts["core_code/dicts/*<br/>GSA / entity / water-body /<br/>infrastructure gazetteers"]
-        seed["inputs/node_dictionary_seed.csv<br/>frozen human labels (legacy 23-way)"]
         key["Anthropic API key<br/>(env or ~/Documents/Github/anthropic_key_kings)"]
     end
 
@@ -56,14 +55,13 @@ flowchart TD
 
     core -->|00_ingest_core.R: aggregate to<br/>one row/name, modal spaCy tag +<br/>summed appearances → hint| agg["unique names + hints"]
 
-    seed -->|.remap_labels 23→6,<br/>few-shot examples| clf
     agg --> clf
 
     subgraph clf["classify_entities.R — per name, in order"]
         direction TB
         step1["1 · gazetteer override?<br/>exact/regex match → take it, skip API"]
         step2["2 · in entity_type_cache.csv?<br/>→ reuse, skip API"]
-        step3["3 · LLM batch call<br/>Haiku 4.5, temp 0, few-shot + hint<br/>→ append to cache"]
+        step3["3 · LLM batch call<br/>Haiku 4.5, temp 0, in-code few-shot + hint<br/>→ append to cache"]
         step4["4 · re-apply gazetteer LAST<br/>(authoritative over cache + LLM)"]
         step1 --> step2 --> step3 --> step4
     end
@@ -75,8 +73,7 @@ flowchart TD
     nd --> groups["_entity_groups.R<br/>institutional gate + focal subnetworks"]
     groups --> model["03_modeling/* — shared-entity matrices → ERGMs"]
 
-    nd -.->|scored against seed| eval["eval_classifier.R<br/>agreement / confusion<br/>(separate eval cache)"]
-    seed -.-> eval
+    nd -.->|stratified sample| eval["eval_classifier.R<br/>hand spot-check<br/>(no gold set)"]
 ```
 
 ## The classifier's three-layer decision (per name)
@@ -107,10 +104,10 @@ Order matters — this is the resolution precedence inside `classify_entities()`
 
 3. **LLM** (`classify_entities.R`) — Claude Haiku 4.5, `temperature = 0`,
    index-keyed JSON batches of 60. The system prompt carries the six-leaf
-   decision rules, few-shot examples drawn deterministically from the **frozen
-   human seed** (never the model's own output — that would be a drift loop), and
-   each name is passed with a `(spaCy=<tag>, n=<freq>)` hint used as a *noisy
-   prior only*. Parse failures / off-vocabulary answers default to
+   decision rules, a small set of **curated in-code few-shot exemplars**
+   (`.FEWSHOT_EXAMPLES` — one group per leaf, maintained by hand, not sampled from
+   any label file), and each name is passed with a `(spaCy=<tag>, n=<freq>)` hint
+   used as a *noisy prior only*. Parse failures / off-vocabulary answers default to
    `Non_institutional`.
 
 ## Where the gazetteer comes from
@@ -136,10 +133,9 @@ Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
 | `classify_entities.R` | The classifier: vocabulary, prompt, gazetteer + cache + LLM resolution. Public entry `classify_entities(names, hints)`. |
 | `00_ingest_core.R` | Calls the classifier (`build_node_dictionary()`), writes `data_products/node_dictionary.csv`. The only place the tagger runs in the pipeline. |
 | `build_overrides_from_dicts.R` | Bakes `core_code/dicts/*` into `inputs/entity_type_overrides.csv` (preserving hand rules). |
-| `eval_classifier.R` | Scores the model against the human seed (agreement / per-category recall / confusion). Uses a **separate** eval cache; never touches production. |
+| `eval_classifier.R` | Hand spot-check: draws a stratified sample of the shipped `node_dictionary.csv` labels (up to N per predicted leaf) for a human to eyeball. **No gold set, no agreement score** — writes `data_products/eval/spotcheck_*.csv` with an empty `looks_wrong` column. |
 | `_entity_groups.R` | Downstream groupings the six leaves feed (institutional gate, focal subnetworks). Consumed by `03_modeling/*`. |
-| `inputs/entity_type_overrides.csv` | The deterministic gazetteer (exact + regex). |
-| `inputs/node_dictionary_seed.csv` | Frozen human labels: few-shot source **and** eval gold. |
+| `inputs/entity_type_overrides.csv` | The deterministic gazetteer (exact + regex) — the only authoritative label source. |
 | `data_products/node_dictionary.csv` | The output: every unique name → one of the six types. |
 | `data_products/entity_type_cache.csv` | Name→type cache; delete to re-classify. |
 
@@ -152,8 +148,8 @@ Rscript Network_Innovation_Paper/Code/00_ingest_core.R        # CLOBBER=TRUE to 
 # Refresh the gazetteer after editing a core dictionary
 Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
 
-# Evaluate the taxonomy against the human seed
-NIP_EVAL_PER_CAT=30 Rscript Network_Innovation_Paper/Code/eval_classifier.R
+# Spot-check the shipped labels by hand (stratified sample, no gold set)
+NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/eval_classifier.R
 ```
 
 Needs an Anthropic API key: env `ANTHROPIC_API_KEY`, or the file the classifier
@@ -168,9 +164,13 @@ label distinctions.
   actors can surface as `PERSON` (consultant surnames), `NORP` (tribes), `LAW`,
   `FAC`, or `EVENT`. The hint helps the model; it is never treated as truth in
   either direction.
-- **The human seed is itself noisy.** Eval agreement is a *floor*, not accuracy —
-  on the ambiguous pairs the seed has been shown to be noisier than the model.
-  Read confusion by hand; don't chase the agreement number.
+- **There is no trusted gold label set.** The old `node_dictionary_seed.csv` was
+  the output of an early, ad hoc LLM pass — not human ground truth — and was retired
+  as noisier than the current model. So there is no agreement/accuracy number to
+  chase: quality is checked by hand (`eval_classifier.R` samples the shipped labels)
+  and anchored by the deterministic gazetteer, which pins the known cast as identity
+  fact. Few-shot examples are curated in code (`.FEWSHOT_EXAMPLES`), not derived from
+  any prior labels.
 - **`Non_institutional` is the reject bucket, by design.** Anything the gate
   excludes lands here; the downstream `institutional` grouping is simply "every
   leaf except this one."

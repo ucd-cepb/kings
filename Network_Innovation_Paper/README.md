@@ -60,8 +60,8 @@ three bridge files into `data_products/`:
   controlled vocabulary (`GSA`, `Consultant`, `Research`, `NGO`,
   `Institutional_other`, `Non_institutional`). Core carries only spaCy NER tags,
   so these semantic labels are regenerated with an LLM classifier
-  (`Code/classify_entities.R`, few-shot-seeded from the prior hand labels in
-  `inputs/node_dictionary_seed.csv`). Cached, so re-runs only classify new names.
+  (`Code/classify_entities.R`, few-shot-prompted from curated in-code exemplars and
+  pinned by the core-dicts gazetteer). Cached, so re-runs only classify new names.
   Requires an Anthropic API key (env `ANTHROPIC_API_KEY`, or the file the
   classifier points at). See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md)
   for the vocabulary and the gazetteer → cache → LLM resolution.

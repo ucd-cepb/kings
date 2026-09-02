@@ -6,10 +6,13 @@
 #' institutional actor at all (the noise gate), and (2) is it one of the three
 #' focal org types (Consultant / Research / NGO) or a GSA. So the vocabulary is
 #' exactly those distinctions -- six mutually-exclusive leaves -- and nothing
-#' finer. Historically the semantic labels were a hand-coded spreadsheet with no
-#' reproducible generator; this module regenerates them from current core naming
-#' by classifying each unique entity name with Claude, few-shot-prompted from the
-#' prior hand labels (the legacy 23-way seed is folded into the six via LABEL_REMAP).
+#' finer. Historically the semantic labels came from an early, ad hoc LLM pass with
+#' no reproducible generator; this module regenerates them from current core naming
+#' by classifying each unique entity name with Claude, few-shot-prompted from a small
+#' set of curated in-code exemplars (.FEWSHOT_EXAMPLES) -- maintained here as code,
+#' NOT sampled from any prior label file. The only authoritative label source is the
+#' deterministic gazetteer built from core_code/dicts (build_overrides_from_dicts.R),
+#' which pins the known, enumerable cast; the LLM handles the long tail.
 #'
 #' Design:
 #'   - Deterministic re-runs: every (name -> type) is cached; only unseen names
@@ -49,8 +52,7 @@ CLASSIFIER_CONFIG <- list(
                            # fails fast and is retried, instead of stalling ~600s
                            # on curl's low-speed timeout and killing the whole run
   cache_path    = NULL,    # set by 00_ingest_core.R; defaults below if NULL
-  overrides_path = NULL,   # paper-local name->type gazetteer; defaults below if NULL
-  examples_per_category = 4
+  overrides_path = NULL    # paper-local name->type gazetteer; defaults below if NULL
 )
 
 # The controlled vocabulary. Any label outside this set is coerced to
@@ -68,31 +70,6 @@ CLASSIFIER_CONFIG <- list(
 ENTITY_TYPES <- c(
   "GSA", "Consultant", "Research", "NGO", "Institutional_other", "Non_institutional"
 )
-
-# Legacy human labels -> current vocabulary. Applied when reading the prior-label
-# dictionary (few-shot source and eval gold) so the frozen 23-way seed folds into
-# the six leaves. GSA/Consultant/Research/NGO are identity mappings (omitted).
-LABEL_REMAP <- c(
-  Local_GSA = "GSA", Other_GSA = "GSA",
-  # generic institutional actors -> the residual institutional leaf
-  Local_Gov = "Institutional_other", State_Gov = "Institutional_other",
-  Federal_Gov = "Institutional_other", City = "Institutional_other",
-  County = "Institutional_other", District = "Institutional_other",
-  Company = "Institutional_other", Group = "Institutional_other",
-  # everything the gate excludes -> non-institutional
-  Person = "Non_institutional", Basin = "Non_institutional",
-  Natural_Feature = "Non_institutional", Geographic_Unit = "Non_institutional",
-  Infrastructure = "Non_institutional", Water_Project = "Non_institutional",
-  Data_System = "Non_institutional", Legal = "Non_institutional",
-  Reference = "Non_institutional", Technical = "Non_institutional",
-  Nonsense = "Non_institutional"
-)
-.remap_labels <- function(x) {
-  x <- as.character(x)
-  hit <- x %in% names(LABEL_REMAP)
-  x[hit] <- LABEL_REMAP[x[hit]]
-  x
-}
 
 # Six leaves on two axes: the noise gate (institutional vs Non_institutional) and,
 # within institutional, the focal type or the generic residual. Definitions carry
@@ -124,40 +101,55 @@ LABEL_REMAP <- c(
        " or place it at ", CLASSIFIER_CONFIG$key_file)
 }
 
-# ---- Few-shot examples from prior hand labels --------------------------------
-# Sampled deterministically (fixed seed) so the prompt is stable across runs.
-.build_examples <- function(per_cat = CLASSIFIER_CONFIG$examples_per_category) {
-  # Draw few-shot examples from the FROZEN human seed, never the regenerated
-  # node_dictionary.csv -- sampling the classifier's own past output would seed
-  # its future prompts, a feedback loop that drifts off the hand labels. Fall
-  # back to the product only on a first run, before the seed has been written.
-  f <- nip_input("node_dictionary_seed.csv")
-  if (!file.exists(f)) f <- nip_product("node_dictionary.csv")
-  if (!file.exists(f)) return(character(0))
-  d <- fread(f)
-  d[, entity_type := .remap_labels(entity_type)]
-  d <- d[entity_type %in% ENTITY_TYPES & !is.na(name) & nzchar(name)]
-  if (!nrow(d)) return(character(0))
-  set.seed(20260806)
-  ex <- d[, .SD[sample(.N, min(.N, per_cat))], by = entity_type]
-  ex <- ex[order(entity_type)]
-  paste0(sprintf('  "%s" -> %s', ex$name, ex$entity_type), collapse = "\n")
-}
-
-# Hand-seeded examples for Consultant and Research: these categories are new in
-# v3 (2026-08-10) and have NO instances in node_dictionary.csv, so .build_examples
-# (which samples from the human seed) can't produce any. Known members are pinned
-# deterministically by inputs/entity_type_overrides.csv; these examples just give
-# the model a pattern for generalizing to firms/institutes not on that list.
-.NEW_CATEGORY_EXAMPLES <- paste(
+# ---- Curated few-shot examples (in-code, maintained by hand) ------------------
+# A small, fixed exemplar set per leaf, written here as code -- NOT sampled from any
+# label file. Earlier versions drew few-shot examples from a frozen "seed"
+# dictionary, but that seed was itself the output of an early, ad hoc LLM pass, was
+# noisier than the current model, and is not a trustworthy authority -- so it was
+# retired. The only authoritative label source is the deterministic gazetteer built
+# from core_code/dicts (build_overrides_from_dicts.R), which pins the known,
+# enumerable cast; these exemplars just teach the model the PATTERN for generalizing
+# to firms/orgs/features not on that list, with emphasis on the trap pairs:
+# Consultant vs non-consulting company, Research vs NGO vs government agency.
+.FEWSHOT_EXAMPLES <- paste(
+  # GSA -- named or generic groundwater sustainability agencies
+  '  "aliso_water_district_gsa" -> GSA',
+  '  "kern_groundwater_authority_gsa" -> GSA',
+  '  "east_kaweah_gsa" -> GSA',
+  # Consultant -- private engineering/hydrogeology/technical consulting firms
   '  "woodard_curran" -> Consultant',
+  '  "luhdorff_and_scalmanini_consulting_engineers" -> Consultant',
   '  "gsi_water_solutions" -> Consultant',
   '  "provost_pritchard" -> Consultant',
   '  "kennedy_jenks_consultants" -> Consultant',
+  # Research -- knowledge-producing universities/labs/institutes (NON-government)
   '  "uc_davis" -> Research',
   '  "stanford_university" -> Research',
-  '  "public_policy_institute" -> Research',
+  '  "public_policy_institute_of_california" -> Research',
   '  "desert_research_institute" -> Research',
+  # NGO -- advocacy/conservation/membership nonprofits
+  '  "nature_conservancy" -> NGO',
+  '  "environmental_defense_fund" -> NGO',
+  '  "sierra_club" -> NGO',
+  '  "community_water_center" -> NGO',
+  # Institutional_other -- real actors that are none of the above: cities, counties,
+  # districts, state/federal/local government bodies (incl. government research/water
+  # agencies like usgs), non-consulting companies, stakeholder committees
+  '  "city_of_fresno" -> Institutional_other',
+  '  "county_of_kern" -> Institutional_other',
+  '  "department_of_water_resources" -> Institutional_other',
+  '  "kern_county_water_agency" -> Institutional_other',
+  '  "usgs" -> Institutional_other',
+  '  "board_of_supervisors" -> Institutional_other',
+  # Non_institutional -- the reject bucket: persons, basins/features/regions,
+  # infrastructure, projects, models/data systems, laws/citations, journals, bare
+  # technical concepts, document references, OCR junk
+  '  "kern_river" -> Non_institutional',
+  '  "san_joaquin_valley" -> Non_institutional',
+  '  "groundwater_sustainability_plan" -> Non_institutional',
+  '  "modflow" -> Non_institutional',
+  '  "specific_yield" -> Non_institutional',
+  '  "journal_of_hydrology" -> Non_institutional',
   sep = "\n"
 )
 
@@ -176,8 +168,7 @@ LABEL_REMAP <- c(
     "name clearly says otherwise.\n",
     "- Return the SINGLE best-fitting type from the allowed list, verbatim.\n",
     "- If a string is not a meaningful entity (fragment, OCR error), use Non_institutional.\n\n",
-    "Example labels (from prior human coding):\n", .build_examples(), "\n",
-    .NEW_CATEGORY_EXAMPLES
+    "Example labels:\n", .FEWSHOT_EXAMPLES
   )
 }
 
