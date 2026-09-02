@@ -16,10 +16,26 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 | `run_all.R` | Orchestrator — regenerates the page-similarity products from current core (ingest → preprocess → hash; optional maps). Resolves every path via `_paths.R` and runs each stage in its own Rscript process. `RUN_INGEST=1` / `RUN_MAPS=1` opt into the gated stages. |
 | `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`|`latest`), `latest_page_scores()`. Sourced by the text-reuse feeders. |
-| `00_ingest_core.R` | The only bridge to core; writes `data_products/{id_crosswalk,node_dictionary,all_gsa_edges}`. Detailed in the primary README. |
-| `classify_entities.R` | LLM entity-type classifier (Claude API) invoked by the ingest to label entity names into the six-leaf controlled vocabulary (GSA / Consultant / Research / NGO / Institutional_other / Non_institutional). Deterministic gazetteer → cache → LLM precedence; needs an Anthropic key. Full subsystem doc: [`ENTITY_TAGGING.md`](ENTITY_TAGGING.md). |
+| `00_ingest_core.R` | The only bridge to core; writes `data_products/{id_crosswalk,node_dictionary,all_gsa_edges}`. Detailed in the primary README. Invokes the entity classifier in `01_entity_classification/`. |
+| `_entity_groups.R` | Single source of truth for entity-type groupings over the six-leaf vocabulary. Shared: sourced by `01_entity_classification/classify_entities.R` **and** all three `04_modeling/*` scripts, so it stays at root. |
 
-## `01_text_preprocessing/`
+## `01_entity_classification/`
+
+The entity-type tagging subsystem, invoked *by* `00_ingest_core.R` (not a separate
+downstream stage). Labels entity names into the six-leaf controlled vocabulary
+(GSA / Consultant / Research / NGO / Institutional_other / Non_institutional). Full
+subsystem doc: [`ENTITY_TAGGING.md`](01_entity_classification/ENTITY_TAGGING.md).
+
+- `classify_entities.R` — LLM entity-type classifier (Claude API), sourced by
+  `00_ingest_core.R`. Deterministic gazetteer → cache → LLM precedence; needs an
+  Anthropic key. The grouping vocabulary lives in the root `_entity_groups.R`.
+- `build_overrides_from_dicts.R` — bakes the `core_code/dicts` gazetteers into
+  `inputs/entity_type_overrides.csv`, the authoritative label source that wins over
+  both cache and LLM. Run standalone: `Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R`.
+- `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
+  names per predicted leaf for a human to eyeball. Run standalone: `NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R`.
+
+## `02_text_preprocessing/`
 
 First step of the page-similarity rebuild.
 
@@ -27,9 +43,9 @@ First step of the page-similarity rebuild.
   applies the paper's page filter (`cleanText`: short-page + all-caps + stricter
   numeric/whitespace, on top of core's `step2` punctuation cleaning), joins the id
   crosswalk + the core page-section flags (`core_page_sections()`), and writes
-  `data_products/page_metadata.RDS` (the input to the whole `02B_text_reuse/` chain).
+  `data_products/page_metadata.RDS` (the input to the whole `03B_text_reuse/` chain).
 
-## `02B_text_reuse/`
+## `03B_text_reuse/`
 
 Page- and section-level similarity between plans, plus the spatial maps. Consumes
 `page_metadata.RDS`. Score outputs land in `data_products/score_results/`.
@@ -42,11 +58,11 @@ Rebuild order:
 
 Related, run independently of the page chain:
 
-- `compare_project_sections.R` — restricts the same idea to the *projects & management actions* pages (one concatenated doc per plan; Jaccard 10-grams) → `project_section_jaccard_scores_<date>.rds`, a `03_modeling/*` input. (The older `hash_and_compare_projects.R` variant is retired — see `unused/`.)
+- `compare_project_sections.R` — restricts the same idea to the *projects & management actions* pages (one concatenated doc per plan; Jaccard 10-grams) → `project_section_jaccard_scores_<date>.rds`, a `04_modeling/*` input. (The older `hash_and_compare_projects.R` variant is retired — see `unused/`.)
 
 Section-level and "total"-map exploration live in `exploratory/` (below).
 
-## `02A_reference_extraction/`
+## `03A_reference_extraction/`
 
 Bibliographic reference extraction and matching. The file-level numeric prefixes are the run order:
 
@@ -56,7 +72,7 @@ Bibliographic reference extraction and matching. The file-level numeric prefixes
 4. `04_search_OA_titlematch_index.R` — build/search the title-match index → `gsp_solr_OA_matches.rds`.
 - `reference_set_similarity.R` — turn matched reference sets into plan-to-plan reference-overlap similarity (a modeling input).
 
-## `02C_knowledge_tree/`
+## `03C_knowledge_tree/`
 
 Subject–predicate–object ("knowledge triple") extraction and similarity.
 
@@ -82,7 +98,7 @@ the old heuristic `tag_consultants/` (superseded by the `classify_entities.R`
 semantic types) and `tag_preparers/` notebook, plus
 `hash_and_compare_projects.R` (superseded by `compare_project_sections.R`).
 
-## `03_modeling/`
+## `04_modeling/`
 
 Analysis endpoint — assemble plan-to-plan networks from the upstream similarity
 products plus paper-owned covariates (`nip_input('gsp_covariates.csv')`), then fit

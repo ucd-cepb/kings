@@ -6,14 +6,14 @@
 # This runs the reliably core-runnable regeneration chain end to end:
 #
 #     [0] 00_ingest_core.R ......................... core -> paper bridge (optional)
-#      1  01_text_preprocessing/preprocess_...R .... -> data_products/page_metadata.RDS
-#      2  02B_text_reuse/hash_and_compare_pages.R .. -> score_results/portal_page_scores_<date>.rds
-#     [3] 02B_text_reuse/map_similarity.R + link ... exploratory maps (optional; no product)
+#      1  02_text_preprocessing/preprocess_...R .... -> data_products/page_metadata.RDS
+#      2  03B_text_reuse/hash_and_compare_pages.R .. -> score_results/portal_page_scores_<date>.rds
+#     [3] 03B_text_reuse/map_similarity.R + link ... exploratory maps (optional; no product)
 #
 # It deliberately STOPS at the page-score products. It does NOT run:
-#   - 02A_reference_extraction/  (needs anystyle/ruby + OpenAlex; external deps)
-#   - 02C_knowledge_tree/        (predates the core-parquet refactor)
-#   - 03_modeling/               (consumes the two chains above, so only runnable once
+#   - 03A_reference_extraction/  (needs anystyle/ruby + OpenAlex; external deps)
+#   - 03C_knowledge_tree/        (predates the core-parquet refactor)
+#   - 04_modeling/               (consumes the two chains above, so only runnable once
 #                             those products exist)
 # Run those by hand once their inputs are in place — see ../README.md.
 #
@@ -60,16 +60,16 @@ if (RUN_INGEST) {
 }
 
 # ----- Stage 1: page_metadata.RDS from the core parquet corpus -----
-run(nip_code("01_text_preprocessing", "preprocess_portal_texts.R"))
+run(nip_code("02_text_preprocessing", "preprocess_portal_texts.R"))
 
 # ----- Stage 2: minhash + LSH page similarity (memory-heavy) -----
-run(nip_code("02B_text_reuse", "hash_and_compare_pages.R"))
+run(nip_code("03B_text_reuse", "hash_and_compare_pages.R"))
 
 # ----- Stage 3 (optional): exploratory spatial maps + section linkage -----
 # These persist no product; they read the newest score file and draw/plot.
 if (RUN_MAPS) {
-  run(nip_code("02B_text_reuse", "map_similarity.R"))
-  run(nip_code("02B_text_reuse", "link_page_lda_results_to_meta.R"))
+  run(nip_code("03B_text_reuse", "map_similarity.R"))
+  run(nip_code("03B_text_reuse", "link_page_lda_results_to_meta.R"))
 }
 
 cat("\n==== done.\n")

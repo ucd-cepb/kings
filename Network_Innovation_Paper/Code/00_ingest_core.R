@@ -34,7 +34,7 @@ if (is.na(.this_dir)) {
 }
 source(file.path(.this_dir, "_paths.R"))
 source(file.path(.this_dir, "_corpus.R"))        # select_plan_docs()
-source(file.path(.this_dir, "classify_entities.R"))
+source(file.path(.this_dir, "01_entity_classification", "classify_entities.R"))
 
 # ---- config ------------------------------------------------------------------
 INGEST <- list(

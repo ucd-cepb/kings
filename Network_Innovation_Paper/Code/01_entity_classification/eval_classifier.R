@@ -12,7 +12,7 @@
 #' the long-tail LLM calls, which is where mistakes actually live.
 #'
 #' Usage (from repo root):
-#'   NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/eval_classifier.R
+#'   NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R
 #'   # optional: NIP_EVAL_TAG=run1  -> names output spotcheck_run1.csv
 
 source("Network_Innovation_Paper/Code/_paths.R")

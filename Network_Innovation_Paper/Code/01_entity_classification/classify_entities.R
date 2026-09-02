@@ -134,13 +134,21 @@ ENTITY_TYPES <- c(
   '  "community_water_center" -> NGO',
   # Institutional_other -- real actors that are none of the above: cities, counties,
   # districts, state/federal/local government bodies (incl. government research/water
-  # agencies like usgs), non-consulting companies, stakeholder committees
+  # agencies like usgs/usbr), non-consulting companies (ag/land/utility firms that are
+  # NOT technical consultants), college districts, stakeholder committees
   '  "city_of_fresno" -> Institutional_other',
   '  "county_of_kern" -> Institutional_other',
   '  "department_of_water_resources" -> Institutional_other',
   '  "kern_county_water_agency" -> Institutional_other',
   '  "usgs" -> Institutional_other',
+  '  "usbr" -> Institutional_other',
   '  "board_of_supervisors" -> Institutional_other',
+  # a non-consulting company: a corporate actor, but NOT a technical consulting firm
+  '  "j_g_boswell_company" -> Institutional_other',
+  # a college/community-college district is a government body, not a Research institute
+  '  "west_hills_community_college_district" -> Institutional_other',
+  # with the parenthetical hint: an ORG place-name -> an institution
+  '  "westlands_water_district (spaCy=ORG, n=57)" -> Institutional_other',
   # Non_institutional -- the reject bucket: persons, basins/features/regions,
   # infrastructure, projects, models/data systems, laws/citations, journals, bare
   # technical concepts, document references, OCR junk
@@ -150,6 +158,10 @@ ENTITY_TYPES <- c(
   '  "modflow" -> Non_institutional',
   '  "specific_yield" -> Non_institutional',
   '  "journal_of_hydrology" -> Non_institutional',
+  # with the parenthetical hint: a basin/natural-feature place (GPE) -> reject bucket
+  '  "tulare_lake_basin (spaCy=GPE, n=41)" -> Non_institutional',
+  # a university root wrapped in OCR garbage is not the institution -> reject bucket
+  '  "univ_of_califoria_xii_3" -> Non_institutional',
   sep = "\n"
 )
 

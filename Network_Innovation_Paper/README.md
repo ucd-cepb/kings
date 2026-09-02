@@ -29,10 +29,10 @@ data/core_data ─┐
                 ├─►  Code/00_ingest_core.R  ─►  data_products/{id_crosswalk, node_dictionary, all_gsa_edges}
 inputs/ ────────┘                                        │
                                                          ▼
-   Code/{02A_reference_extraction, 02B_text_reuse,              ┌─► data_products/{gsp_reference_pairs,
-         02C_knowledge_tree}  ──────────────────────────────────┤     triple_similarity, project_jaccard, …}
+   Code/{03A_reference_extraction, 03B_text_reuse,              ┌─► data_products/{gsp_reference_pairs,
+         03C_knowledge_tree}  ──────────────────────────────────┤     triple_similarity, project_jaccard, …}
                                                                 ▼
-                                     Code/03_modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
+                                     Code/04_modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
 ```
 
 ### `Code/00_ingest_core.R` — the only bridge to core
@@ -60,10 +60,10 @@ three bridge files into `data_products/`:
   controlled vocabulary (`GSA`, `Consultant`, `Research`, `NGO`,
   `Institutional_other`, `Non_institutional`). Core carries only spaCy NER tags,
   so these semantic labels are regenerated with an LLM classifier
-  (`Code/classify_entities.R`, few-shot-prompted from curated in-code exemplars and
+  (`Code/01_entity_classification/classify_entities.R`, few-shot-prompted from curated in-code exemplars and
   pinned by the core-dicts gazetteer). Cached, so re-runs only classify new names.
   Requires an Anthropic API key (env `ANTHROPIC_API_KEY`, or the file the
-  classifier points at). See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md)
+  classifier points at). See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md)
   for the vocabulary and the gazetteer → cache → LLM resolution.
 
 
@@ -80,21 +80,21 @@ Rscript Network_Innovation_Paper/Code/00_ingest_core.R      # CLOBBER=TRUE to re
 ## `Code/` layout
 
 Directory names carry their **stage number as a prefix**, so the on-disk order
-*is* the run order. A shared letter (`02A`/`02B`/`02C`) marks chains that run **in
-parallel** — they are mutually independent and all feed `03_modeling/`. The
-top-level helper/bridge scripts (`_paths.R`, `_corpus.R`, `00_ingest_core.R`,
-`classify_entities.R`) are unprefixed files, not stages of the page pipeline.
+*is* the run order. A shared letter (`03A`/`03B`/`03C`) marks chains that run **in
+parallel** — they are mutually independent and all feed `04_modeling/`. The
+top-level helper/bridge scripts (`_paths.R`, `_corpus.R`, `00_ingest_core.R`) are
+unprefixed files, not stages of the page pipeline.
 
 | Dir / file | Stage | Purpose |
 |---|---|---|
 | `_paths.R`, `_corpus.R` | — | Helpers: the path resolver and the core clean-text corpus + id-crosswalk readers. Sourced everywhere; no run order. |
-| `00_ingest_core.R` | 00 | Core → paper bridge (above). Runs `classify_entities.R` internally. |
-| `classify_entities.R` | 00 | LLM entity-type classifier — **invoked by** `00_ingest_core.R`, not a separate downstream stage. See [`Code/ENTITY_TAGGING.md`](Code/ENTITY_TAGGING.md) for the whole tagging subsystem. |
-| `01_text_preprocessing/` | 01 | Stage-1 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Prerequisite of 02B and 02C. |
-| `02A_reference_extraction/` | 02A | Extract & match plan bibliographic references (independent of 01). |
-| `02B_text_reuse/` | 02B | Page/section text-similarity + spatial adjacency (consumes 01). |
-| `02C_knowledge_tree/` | 02C | Knowledge-triple extraction & similarity (consumes 01). |
-| `03_modeling/` | 03 | Build networks & fit ERGMs (analysis endpoint). Consumes the 02 chains. |
+| `00_ingest_core.R` | 00 | Core → paper bridge (above). Runs `01_entity_classification/classify_entities.R` internally. |
+| `01_entity_classification/` | 01 | Entity-tagging subsystem (`classify_entities.R` + `build_overrides_from_dicts.R` + `eval_classifier.R`) — **invoked by** `00_ingest_core.R` (the stage-00 bridge), not run as a standalone downstream stage. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for the whole tagging subsystem. |
+| `02_text_preprocessing/` | 02 | Stage-2 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Prerequisite of 03B and 03C. |
+| `03A_reference_extraction/` | 03A | Extract & match plan bibliographic references (independent of 02). |
+| `03B_text_reuse/` | 03B | Page/section text-similarity + spatial adjacency (consumes 02). |
+| `03C_knowledge_tree/` | 03C | Knowledge-triple extraction & similarity (consumes 02). |
+| `04_modeling/` | 04 | Build networks & fit ERGMs (analysis endpoint). Consumes the 03 chains. |
 | `exploratory/` | — | One-off / interactive analysis scripts, not in the pipeline (see `Code/exploratory/README.md`). |
 | `unused/` | — | Deprecated / dead-end scripts, retired from the pipeline (see `Code/unused/README.md`). |
 
@@ -109,8 +109,8 @@ Page-entity keys throughout this chain are `<gspDocId>_<page_num>`. To rebuild
 from scratch, run in order (from the repo root):
 
 ```sh
-Rscript Network_Innovation_Paper/Code/01_text_preprocessing/preprocess_portal_texts.R  # -> page_metadata.RDS
-Rscript Network_Innovation_Paper/Code/02B_text_reuse/hash_and_compare_pages.R          # -> score_results/portal_page_scores_<date>.rds
+Rscript Network_Innovation_Paper/Code/02_text_preprocessing/preprocess_portal_texts.R  # -> page_metadata.RDS
+Rscript Network_Innovation_Paper/Code/03B_text_reuse/hash_and_compare_pages.R          # -> score_results/portal_page_scores_<date>.rds
 # map_similarity.R / map_similarity_total.R / link_page_lda_results_to_meta.R read the newest score file
 ```
 

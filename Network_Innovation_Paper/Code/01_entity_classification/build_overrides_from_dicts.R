@@ -22,11 +22,11 @@
 #'     beats generic). A dict name that collides with an existing hand regex of a
 #'     DIFFERENT type is dropped (never clobber a curated focal label).
 #'
-#' Run from the repo root:  Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
+#' Run from the repo root:  Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R
 
 suppressMessages(library(data.table))
 source(file.path(dirname(sub("^--file=", "",
-  grep("^--file=", commandArgs(FALSE), value = TRUE)[1])), "_paths.R"))
+  grep("^--file=", commandArgs(FALSE), value = TRUE)[1])), "..", "_paths.R"))
 if (!exists("REPO_ROOT")) source("Network_Innovation_Paper/Code/_paths.R")
 
 # --- name normalization (must match how core builds node_dictionary names) ----

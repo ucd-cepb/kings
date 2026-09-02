@@ -5,7 +5,7 @@ How raw entity **names** extracted by the core NER pipeline become the semantic
 spaCy's noisy `ORG`/`GPE`/`PERSON`/… tags into the six-leaf controlled vocabulary
 the paper actually reasons with.
 
-> The main [`README.md`](../README.md) documents the whole paper pipeline; this
+> The main [`README.md`](../../README.md) documents the whole paper pipeline; this
 > file zooms in on the `node_dictionary.csv` step of `00_ingest_core.R`. Its
 > one-line "22 semantic types" description there is legacy wording — the live
 > vocabulary is the **six** leaves below.
@@ -71,7 +71,7 @@ flowchart TD
 
     clf --> nd["data_products/node_dictionary.csv<br/>name → one of 6 types"]
     nd --> groups["_entity_groups.R<br/>institutional gate + focal subnetworks"]
-    groups --> model["03_modeling/* — shared-entity matrices → ERGMs"]
+    groups --> model["04_modeling/* — shared-entity matrices → ERGMs"]
 
     nd -.->|stratified sample| eval["eval_classifier.R<br/>hand spot-check<br/>(no gold set)"]
 ```
@@ -123,7 +123,7 @@ it would clash with a hand rule of a different type. Re-run after editing any
 dictionary:
 
 ```sh
-Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
+Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R
 ```
 
 ## Files
@@ -134,7 +134,7 @@ Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
 | `00_ingest_core.R` | Calls the classifier (`build_node_dictionary()`), writes `data_products/node_dictionary.csv`. The only place the tagger runs in the pipeline. |
 | `build_overrides_from_dicts.R` | Bakes `core_code/dicts/*` into `inputs/entity_type_overrides.csv` (preserving hand rules). |
 | `eval_classifier.R` | Hand spot-check: draws a stratified sample of the shipped `node_dictionary.csv` labels (up to N per predicted leaf) for a human to eyeball. **No gold set, no agreement score** — writes `data_products/eval/spotcheck_*.csv` with an empty `looks_wrong` column. |
-| `_entity_groups.R` | Downstream groupings the six leaves feed (institutional gate, focal subnetworks). Consumed by `03_modeling/*`. |
+| `_entity_groups.R` | Downstream groupings the six leaves feed (institutional gate, focal subnetworks). Consumed by `04_modeling/*`. |
 | `inputs/entity_type_overrides.csv` | The deterministic gazetteer (exact + regex) — the only authoritative label source. |
 | `data_products/node_dictionary.csv` | The output: every unique name → one of the six types. |
 | `data_products/entity_type_cache.csv` | Name→type cache; delete to re-classify. |
@@ -146,10 +146,10 @@ Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
 Rscript Network_Innovation_Paper/Code/00_ingest_core.R        # CLOBBER=TRUE to rebuild
 
 # Refresh the gazetteer after editing a core dictionary
-Rscript Network_Innovation_Paper/Code/build_overrides_from_dicts.R
+Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R
 
 # Spot-check the shipped labels by hand (stratified sample, no gold set)
-NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/eval_classifier.R
+NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R
 ```
 
 Needs an Anthropic API key: env `ANTHROPIC_API_KEY`, or the file the classifier
