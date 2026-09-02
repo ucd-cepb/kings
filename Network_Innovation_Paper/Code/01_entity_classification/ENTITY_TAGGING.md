@@ -164,12 +164,7 @@ label distinctions.
   actors can surface as `PERSON` (consultant surnames), `NORP` (tribes), `LAW`,
   `FAC`, or `EVENT`. The hint helps the model; it is never treated as truth in
   either direction.
-- **There is no trusted gold label set.** The old `node_dictionary_seed.csv` was
-  the output of an early, ad hoc LLM pass — not human ground truth — and was retired
-  as noisier than the current model. So there is no agreement/accuracy number to
-  chase: quality is checked by hand (`eval_classifier.R` samples the shipped labels)
-  and anchored by the deterministic gazetteer, which pins the known cast as identity
-  fact. Few-shot examples are curated in code (`.FEWSHOT_EXAMPLES`), not derived from
+- **There is no trusted gold label set.** Quality is checked by hand (`eval_classifier.R` samples the shipped labels) and anchored by the deterministic gazetteer, which pins the known cast as identity fact. Few-shot examples are curated in code (`.FEWSHOT_EXAMPLES`), not derived from
   any prior labels.
 - **`Non_institutional` is the reject bucket, by design.** Anything the gate
   excludes lands here; the downstream `institutional` grouping is simply "every
