@@ -67,6 +67,7 @@ CORE_DICT_KEYS <- c("water_entity_dictionary",
                     "water_bodies_dictionary",
                     "water_gsa_dictionary",
                     "ca_utilities_dictionary",
+                    "consultant_dictionary",
                     "gov_entities_dict_core")
 
 # === spaCy env ==============================================================
