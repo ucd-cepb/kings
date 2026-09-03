@@ -6,7 +6,7 @@ spaCy's noisy `ORG`/`GPE`/`PERSON`/… tags into the six-leaf controlled vocabul
 the paper actually reasons with.
 
 > The main [`README.md`](../../README.md) documents the whole paper pipeline; this
-> file zooms in on the `node_dictionary.csv` step of `00_ingest_core.R`. Its
+> file zooms in on the `node_dictionary.csv` step (`build_node_dictionary.R`). Its
 > one-line "22 semantic types" description there is legacy wording — the live
 > vocabulary is the **six** leaves below.
 
@@ -53,7 +53,7 @@ flowchart TD
     dicts -->|build_overrides_from_dicts.R<br/>bakes exact rows, preserves hand rules| ov
     ov["inputs/entity_type_overrides.csv<br/>deterministic gazetteer<br/>(exact + regex rows)"]
 
-    core -->|00_ingest_core.R: aggregate to<br/>one row/name, modal spaCy tag +<br/>summed appearances → hint| agg["unique names + hints"]
+    core -->|build_node_dictionary.R: aggregate to<br/>one row/name, modal spaCy tag +<br/>summed appearances → hint| agg["unique names + hints"]
 
     agg --> clf
 
@@ -131,7 +131,8 @@ Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_f
 | File | Role |
 |---|---|
 | `classify_entities.R` | The classifier: vocabulary, prompt, gazetteer + cache + LLM resolution. Public entry `classify_entities(names, hints)`. |
-| `00_ingest_core.R` | Calls the classifier (`build_node_dictionary()`), writes `data_products/node_dictionary.csv`. The only place the tagger runs in the pipeline. |
+| `build_node_dictionary.R` | Collects the unique entity names from the core disambig objects, calls the classifier, writes `data_products/node_dictionary.csv`. The only place the tagger runs in the pipeline (Stage 1b). |
+| `build_gsa_edges.R` | Folds the core weighted graphs down to the `GSA`-typed entities (from `node_dictionary.csv`) → `data_products/all_gsa_edges.csv` (Stage 1c). |
 | `build_overrides_from_dicts.R` | Bakes `core_code/dicts/*` into `inputs/entity_type_overrides.csv` (preserving hand rules). |
 | `eval_classifier.R` | Hand spot-check: draws a stratified sample of the shipped `node_dictionary.csv` labels (up to N per predicted leaf) for a human to eyeball. **No gold set, no agreement score** — writes `data_products/eval/spotcheck_*.csv` with an empty `looks_wrong` column. |
 | `_entity_groups.R` | Downstream groupings the six leaves feed (institutional gate, focal subnetworks). Consumed by `04_modeling/*`. |
@@ -142,11 +143,11 @@ Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_f
 ## Running it
 
 ```sh
-# Full ingest (classifies any new names, writes node_dictionary.csv)
-Rscript Network_Innovation_Paper/Code/00_ingest_core.R        # CLOBBER=TRUE to rebuild
-
-# Refresh the gazetteer after editing a core dictionary
+# Refresh the gazetteer after editing a core dictionary (run FIRST)
 Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R
+
+# Classify any new names, writes node_dictionary.csv
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R
 
 # Spot-check the shipped labels by hand (stratified sample, no gold set)
 NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R

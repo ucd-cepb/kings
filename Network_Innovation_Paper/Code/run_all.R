@@ -6,17 +6,26 @@
 # "Critical path" = everything that a 04_modeling/ script actually reads. This
 # runs the reliably core-runnable part of that chain end to end:
 #
-#     [0a] 01_entity_classification/build_overrides_from_dicts.R  core dicts -> gazetteer (optional)
-#     [0b] 00_ingest_core.R ........................ core -> paper bridge; classifies (optional)
-#                                                    -> data_products/{id_crosswalk,node_dictionary,all_gsa_edges}
-#      1   02_text_preprocessing/preprocess_...R ... -> data_products/page_metadata.RDS
-#      2   03B_text_reuse/compare_project_sections.R -> project_jaccard_results/project_section_jaccard_scores_<date>.rds
+#     [0]  00_ingest_core.R ........................ core manifest -> id_crosswalk.csv
+#                                                    (pure bridge; no derivation, no LLM)
+#     [1a] 01_entity_classification/build_overrides_from_dicts.R  core dicts -> gazetteer
+#     [1b] 01_entity_classification/build_node_dictionary.R ..... LLM classify -> node_dictionary.csv
+#     [1c] 01_entity_classification/build_gsa_edges.R ........... folds core graphs -> all_gsa_edges.csv
+#      2   02_text_preprocessing/additional_filter_texts.R ...... -> data_products/page_metadata.RDS
+#      3   03B_text_reuse/compare_project_sections.R ............ -> project_jaccard_results/project_section_jaccard_scores_<date>.rds
 #
 # 04_modeling/{make_networks,make_valued_networks,make_binary0.9_networks}.R read
-# exactly three similarity products — the project-Jaccard file built by Stage 2,
+# exactly three similarity products — the project-Jaccard file built by Stage 3,
 # plus the reference (03A) and knowledge-triple (03C) products — on top of the
-# ingest bridge files. This orchestrator produces the 03B modeling input; the
-# other two chains and the models themselves are run by hand (see below).
+# bridge (id_crosswalk) and entity products (node_dictionary, all_gsa_edges). This
+# orchestrator produces the 03B modeling input plus those bridge/entity products;
+# the other two similarity chains and the models themselves are run by hand.
+#
+# Entity classification (Stage 1) is IN-PROJECT analysis, not ingest: core carries
+# spaCy NER tags only, and the paper's semantic taxonomy has no upstream generator,
+# so node_dictionary.csv is (re)built here by an LLM classifier and all_gsa_edges.csv
+# is folded from the core graphs using those types. Both depend on the classifier,
+# so they run AFTER the pure crosswalk bridge — hence 00 (bridge) then 01 (classify).
 #
 # It does NOT run:
 #   - 03A_reference_extraction/  (needs anystyle/ruby + OpenAlex; external deps)
@@ -25,17 +34,13 @@
 #                                -> data_products/triple_similarity.csv
 #   - 04_modeling/               (consumes all three 03 products, so only runnable
 #                                once they exist)
-#   - the EXPLORATORY page-score branch: 03B_text_reuse/hash_and_compare_pages.R
-#     (-> portal_page_scores_<date>.rds) and its only consumers,
-#     map_similarity.R / link_page_lda_results_to_meta.R (which persist no product
-#     and feed nothing downstream). This branch is a dead end w.r.t. the models,
-#     so it is intentionally left out of run_all — run it by hand if you want the
-#     page-level scores or the spatial similarity maps.
+#   - the EXPLORATORY page-score branch under 03B_text_reuse/explore/ (page scores +
+#     the spatial similarity maps), a dead end w.r.t. the models — run it by hand.
 # Run any of the above by hand once their inputs are in place — see ../README.md.
 #
 # Usage (from anywhere):
 #     Network_Innovation_Paper/Code/run_all.R
-#     RUN_INGEST=1 Network_Innovation_Paper/Code/run_all.R   # refresh the gazetteer + rebuild the core->paper bridge first
+#     RUN_INGEST=1 Network_Innovation_Paper/Code/run_all.R   # rebuild the bridge + entity products first
 #
 # Notes:
 #   - Each stage runs in its own Rscript process, so its memory is reclaimed
@@ -50,7 +55,7 @@
 source(file.path(.here, "_paths.R"))    # defines REPO_ROOT, nip_*(), core_*()
 setwd(REPO_ROOT)                        # stages source _paths.R via a repo-relative path
 
-RUN_INGEST <- Sys.getenv("RUN_INGEST", "0") == "1"  # 1 = re-run 00_ingest_core.R (CLOBBER=TRUE) first
+RUN_INGEST <- Sys.getenv("RUN_INGEST", "0") == "1"  # 1 = rebuild bridge + entity products (CLOBBER=TRUE) first
 
 run <- function(script, env = character()) {
   cat("\n==== ", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "  Rscript ", script, "\n", sep = "")
@@ -61,33 +66,39 @@ run <- function(script, env = character()) {
 cat("run_all.R — regenerating critical-path modeling inputs from current core\n")
 cat("repo root:", REPO_ROOT, "\n")
 
-# ----- Stage 0 (optional): entity gazetteer + core -> paper bridge -----
-# 00_ingest_core.R writes data_products/{id_crosswalk,node_dictionary,all_gsa_edges}
-# and runs the entity classifier (01_entity_classification/classify_entities.R)
-# internally to build node_dictionary. The classifier reads its authoritative
-# override table, inputs/entity_type_overrides.csv, which is baked from the current
-# core_code/dicts gazetteers — so refresh that FIRST, then ingest. The crosswalk is
-# required by everything below, so ensure it exists (or rebuild it on request).
+# ----- Stage 0 + 1 (optional): core bridge + entity classification -----
+# Stage 0 is the ONLY ingest: id_crosswalk.csv, read straight from the core
+# manifest (no derivation, no LLM). The crosswalk is required by everything below.
+#
+# Stage 1 is in-project entity analysis, gated the same way because it is the one
+# API-touching, infrequently-changing block:
+#   1a build_overrides_from_dicts.R bakes the core-dicts gazetteer the classifier
+#      pins to, so it MUST run before the classifier;
+#   1b build_node_dictionary.R runs the (cached) LLM classifier -> node_dictionary.csv;
+#   1c build_gsa_edges.R folds the core weighted graphs down to the GSA-typed
+#      entities -> all_gsa_edges.csv, so it reads node_dictionary.csv and runs last.
 if (RUN_INGEST) {
-  run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"))
   run(nip_code("00_ingest_core.R"), env = "CLOBBER=TRUE")
+  run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"))
+  run(nip_code("01_entity_classification", "build_node_dictionary.R"), env = "CLOBBER=TRUE")
+  run(nip_code("01_entity_classification", "build_gsa_edges.R"),       env = "CLOBBER=TRUE")
 } else if (!file.exists(nip_product("id_crosswalk.csv"))) {
   stop("data_products/id_crosswalk.csv is missing.\n",
-       "  Run once with RUN_INGEST=1 to build the core->paper bridge first.",
+       "  Run once with RUN_INGEST=1 to build the core bridge + entity products first.",
        call. = FALSE)
 }
 
-# ----- Stage 1: page_metadata.RDS from the core parquet corpus -----
-run(nip_code("02_text_preprocessing", "preprocess_portal_texts.R"))
+# ----- Stage 2: page_metadata.RDS from the core parquet corpus -----
+run(nip_code("02_text_preprocessing", "additional_filter_texts.R"))
 
-# ----- Stage 2: project-section Jaccard similarity (the 03B modeling input) -----
-# Reads page_metadata.RDS directly (independent of the page-score branch) and
-# writes project_jaccard_results/project_section_jaccard_scores_<date>.rds, the
-# only 03B product any 04_modeling/ script consumes.
+# ----- Stage 3: project-section Jaccard similarity (the 03B modeling input) -----
+# Reads page_metadata.RDS directly and writes
+# project_jaccard_results/project_section_jaccard_scores_<date>.rds, the only 03B
+# product any 04_modeling/ script consumes.
 run(nip_code("03B_text_reuse", "compare_project_sections.R"))
 
 cat("\n==== done.\n")
-# Report the newest project-Jaccard product (Stage 2's output).
+# Report the newest project-Jaccard product (Stage 3's output).
 .jac_dir <- nip_product("project_jaccard_results")
 .jac <- if (dir.exists(.jac_dir))
   sort(list.files(.jac_dir, pattern = "^project_section_jaccard_scores_.*\\.rds$",

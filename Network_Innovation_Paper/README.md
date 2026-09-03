@@ -26,19 +26,22 @@ The core-facing helpers (`core_disambig()`, `core_igraph_weighted()`,
 
 ```
 data/core_data ─┐
-                ├─►  Code/00_ingest_core.R  ─►  data_products/{id_crosswalk, node_dictionary, all_gsa_edges}
-inputs/ ────────┘                                        │
-                                                         ▼
+                ├─►  Code/00_ingest_core.R  ─►  data_products/id_crosswalk        (pure bridge)
+inputs/ ────────┘            │
+                             ▼
+   Code/01_entity_classification/  ─►  data_products/{node_dictionary, all_gsa_edges}  (in-project; LLM)
+                             │
+                             ▼
    Code/{03A_reference_extraction, 03B_text_reuse,              ┌─► data_products/{gsp_reference_pairs,
          03C_knowledge_tree}  ──────────────────────────────────┤     triple_similarity, project_jaccard, …}
                                                                 ▼
                                      Code/04_modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
 ```
 
-### `Code/00_ingest_core.R` — the only bridge to core
+### `Code/00_ingest_core.R` — the only *ingest* bridge to core
 
-Starts from the disambiguated core objects (it reads **no** raw docs) and writes
-three bridge files into `data_products/`:
+"Ingest" means carrying a fact core already computed across into the paper, with
+**no** derivation. There is exactly one such product; it reads **no** raw docs:
 
 - **`id_crosswalk.csv`** — `gspDocId` ↔ legacy `gsp_id`/`version`, taken directly
   from the plan-family manifest, plus `plan_section`/`submitted_date` and a
@@ -56,25 +59,41 @@ three bridge files into `data_products/`:
   choosing one `doc_rank` selects a complete submission with all its content,
   never one chapter of a split plan.
 
-- **`node_dictionary.csv`** — every unique entity name → one of the six-leaf
-  controlled vocabulary (`GSA`, `Consultant`, `Research`, `NGO`,
-  `Institutional_other`, `Non_institutional`). Core carries only spaCy NER tags,
-  so these semantic labels are regenerated with an LLM classifier
-  (`Code/01_entity_classification/classify_entities.R`, few-shot-prompted from curated in-code exemplars and
-  pinned by the core-dicts gazetteer). Cached, so re-runs only classify new names.
-  Requires an Anthropic API key (env `ANTHROPIC_API_KEY`, or the file the
-  classifier points at). See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md)
-  for the vocabulary and the gazetteer → cache → LLM resolution.
-
-
-- **`all_gsa_edges.csv`** — per-plan agency × connected-entity mention-weight
-  matrix, built from `core_data/igraph_objects/uniplex_weighted_graphs` by
-  folding edges onto their `Local_GSA` endpoint. Consumed by `modeling/*`.
-
 Run from the repo root:
 
 ```sh
 Rscript Network_Innovation_Paper/Code/00_ingest_core.R      # CLOBBER=TRUE to rebuild
+```
+
+### `Code/01_entity_classification/` — entity classification (in-project, not ingest)
+
+Core carries only spaCy NER tags, and the paper's six-leaf semantic vocabulary has
+no upstream generator — so it is regenerated **here, in the paper**, not brought
+over from core. This stage runs its scripts in order and writes two
+`data_products/` files:
+
+- **`node_dictionary.csv`** — every unique entity name → one of the six-leaf
+  controlled vocabulary (`GSA`, `Consultant`, `Research`, `NGO`,
+  `Institutional_other`, `Non_institutional`). Collected from the disambiguated
+  core objects and labelled by an LLM classifier (`build_node_dictionary.R` calling
+  `classify_entities.R`, few-shot-prompted from curated in-code exemplars and pinned
+  by the core-dicts gazetteer). Cached, so re-runs only classify new names. Requires
+  an Anthropic API key (env `ANTHROPIC_API_KEY`, or the file the classifier points
+  at). See [`ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for
+  the vocabulary and the gazetteer → cache → LLM resolution.
+
+- **`all_gsa_edges.csv`** — per-plan agency × connected-entity mention-weight
+  matrix, built by `build_gsa_edges.R` from
+  `core_data/igraph_objects/uniplex_weighted_graphs` by folding edges onto their
+  GSA-typed endpoint (the `GSA` leaf in `node_dictionary.csv`). Depends on the
+  classifier, so it runs after the node dictionary. Consumed by `modeling/*`.
+
+Run from the repo root (in order):
+
+```sh
+Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_edges.R
 ```
 
 ## `Code/` layout
@@ -88,8 +107,8 @@ unprefixed files, not stages of the page pipeline.
 | Dir / file | Stage | Purpose |
 |---|---|---|
 | `_paths.R`, `_corpus.R` | — | Helpers: the path resolver and the core clean-text corpus + id-crosswalk readers. Sourced everywhere; no run order. |
-| `00_ingest_core.R` | 00 | Core → paper bridge (above). Runs `01_entity_classification/classify_entities.R` internally. |
-| `01_entity_classification/` | 01 | Entity-tagging subsystem (`classify_entities.R` + `build_overrides_from_dicts.R` + `eval_classifier.R`) — **invoked by** `00_ingest_core.R` (the stage-00 bridge), not run as a standalone downstream stage. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for the whole tagging subsystem. |
+| `00_ingest_core.R` | 00 | Core → paper *ingest* bridge (above): `id_crosswalk.csv` only, no derivation, no LLM. |
+| `01_entity_classification/` | 01 | Entity classification (in-project, not ingest): `build_overrides_from_dicts.R` → `build_node_dictionary.R` (→ `node_dictionary.csv`, LLM) → `build_gsa_edges.R` (→ `all_gsa_edges.csv`), plus `classify_entities.R` (sourced) and `eval_classifier.R`. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for the whole tagging subsystem. |
 | `02_text_preprocessing/` | 02 | Stage-2 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Prerequisite of 03B and 03C. |
 | `03A_reference_extraction/` | 03A | Extract & match plan bibliographic references (independent of 02). |
 | `03B_text_reuse/` | 03B | Page/section text-similarity + spatial adjacency (consumes 02). |
@@ -112,10 +131,10 @@ products a `04_modeling/*` script actually reads, in order (from the repo root):
 
 ```sh
 Rscript Network_Innovation_Paper/Code/run_all.R                # preprocess -> project-section Jaccard
-RUN_INGEST=1 Rscript Network_Innovation_Paper/Code/run_all.R   # also refresh gazetteer + rebuild the core->paper bridge first
+RUN_INGEST=1 Rscript Network_Innovation_Paper/Code/run_all.R   # also rebuild the core bridge + entity products first
 ```
 
-That runs `02_text_preprocessing/preprocess_portal_texts.R` (→ `page_metadata.RDS`)
+That runs `02_text_preprocessing/additional_filter_texts.R` (→ `page_metadata.RDS`)
 then `03B_text_reuse/compare_project_sections.R` (→
 `project_jaccard_results/project_section_jaccard_scores_<date>.rds`, the 03B
 modeling input). The reference (03A) and knowledge-triple (03C) inputs and the

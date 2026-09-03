@@ -86,7 +86,7 @@ if (file.exists('Network_Innovation_Paper/data_products/page_metadata.RDS')) {
   documents <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
 } else {
   cat("Preprocessed data not found. Running preprocessing...\n")
-  source('Network_Innovation_Paper/Code/02_text_preprocessing/preprocess_portal_texts.R')
+  source('Network_Innovation_Paper/Code/02_text_preprocessing/additional_filter_texts.R')
   documents <- main()
 }
 

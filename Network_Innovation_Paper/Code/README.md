@@ -13,25 +13,33 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 
 | File | Role |
 |---|---|
-| `run_all.R` | Orchestrator — regenerates the **critical-path** modeling inputs from current core (optional ingest → preprocess → project-section Jaccard). "Critical path" = only what a `04_modeling/*` script actually reads; it deliberately skips the exploratory page-score branch (`hash_and_compare_pages.R` + maps), which feeds nothing downstream. Resolves every path via `_paths.R` and runs each stage in its own Rscript process. `RUN_INGEST=1` opts into the gated bridge rebuild. |
+| `run_all.R` | Orchestrator — regenerates the **critical-path** modeling inputs from current core (optional bridge + entity classification → preprocess → project-section Jaccard). "Critical path" = only what a `04_modeling/*` script actually reads; it deliberately skips the exploratory page-score branch (`03B_text_reuse/explore/` maps), which feeds nothing downstream. Resolves every path via `_paths.R` and runs each stage in its own Rscript process. `RUN_INGEST=1` opts into the gated bridge + entity rebuild. |
 | `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`|`latest`), `latest_page_scores()`. Sourced by the text-reuse feeders. |
-| `00_ingest_core.R` | The only bridge to core; writes `data_products/{id_crosswalk,node_dictionary,all_gsa_edges}`. Detailed in the primary README. Invokes the entity classifier in `01_entity_classification/`. |
+| `00_ingest_core.R` | The only *ingest* bridge to core; writes `data_products/id_crosswalk.csv` straight from the manifest (no derivation, no LLM). Detailed in the primary README. The entity products (`node_dictionary`, `all_gsa_edges`) are in-project analysis and live in `01_entity_classification/`. |
 | `_entity_groups.R` | Single source of truth for entity-type groupings over the six-leaf vocabulary. Shared: sourced by `01_entity_classification/classify_entities.R` **and** all three `04_modeling/*` scripts, so it stays at root. |
 
 ## `01_entity_classification/`
 
-The entity-type tagging subsystem, invoked *by* `00_ingest_core.R` (not a separate
-downstream stage). Labels entity names into the six-leaf controlled vocabulary
-(GSA / Consultant / Research / NGO / Institutional_other / Non_institutional). Full
-subsystem doc: [`ENTITY_TAGGING.md`](01_entity_classification/ENTITY_TAGGING.md).
+The paper's own entity-classification stage (Stage 1) — in-project analysis, **not**
+ingest: core carries spaCy NER tags only, so the paper regenerates its six-leaf
+semantic vocabulary here (GSA / Consultant / Research / NGO / Institutional_other /
+Non_institutional) and derives the GSA edge product from it. Full subsystem doc:
+[`ENTITY_TAGGING.md`](01_entity_classification/ENTITY_TAGGING.md). Run order within
+the stage: `build_overrides_from_dicts.R` → `build_node_dictionary.R` → `build_gsa_edges.R`.
 
-- `classify_entities.R` — LLM entity-type classifier (Claude API), sourced by
-  `00_ingest_core.R`. Deterministic gazetteer → cache → LLM precedence; needs an
-  Anthropic key. The grouping vocabulary lives in the root `_entity_groups.R`.
 - `build_overrides_from_dicts.R` — bakes the `core_code/dicts` gazetteers into
   `inputs/entity_type_overrides.csv`, the authoritative label source that wins over
-  both cache and LLM. Run standalone: `Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R`.
+  both cache and LLM. Run FIRST. Run standalone: `Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R`.
+- `classify_entities.R` — LLM entity-type classifier (Claude API), sourced by
+  `build_node_dictionary.R`. Deterministic gazetteer → cache → LLM precedence; needs
+  an Anthropic key. The grouping vocabulary lives in the root `_entity_groups.R`.
+- `build_node_dictionary.R` — collects the unique entity names from the core disambig
+  objects and runs the (cached) classifier → `data_products/node_dictionary.csv`. The
+  one step that hits the API. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R`.
+- `build_gsa_edges.R` — folds the core weighted graphs down to the GSA-typed entities
+  (read from `node_dictionary.csv`) → `data_products/all_gsa_edges.csv`. Run AFTER the
+  node dictionary. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_edges.R`.
 - `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
   names per predicted leaf for a human to eyeball. Run standalone: `NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R`.
 
@@ -39,7 +47,7 @@ subsystem doc: [`ENTITY_TAGGING.md`](01_entity_classification/ENTITY_TAGGING.md)
 
 First step of the page-similarity rebuild.
 
-- `preprocess_portal_texts.R` — reads the core clean-text corpus via `_corpus.R`,
+- `additional_filter_texts.R` — reads the core clean-text corpus via `_corpus.R`,
   applies the paper's page filter (`cleanText`: short-page + all-caps + stricter
   numeric/whitespace, on top of core's `step2` punctuation cleaning), joins the id
   crosswalk + the core page-section flags (`core_page_sections()`), and writes
