@@ -86,3 +86,14 @@ latest_page_scores <- function() {
   if (!length(fs)) stop("No portal_page_scores_*.rds in ", nip_product("score_results"))
   utils::tail(sort(fs), 1)
 }
+
+#' Newest project-section Jaccard file written by compare_project_sections.R.
+#' Names are project_section_jaccard_scores_YYYYMMDD.rds, so lexical sort ==
+#' chronological. This is the 03B modeling input consumed by 04_modeling/*.
+latest_project_jaccard <- function() {
+  dir <- nip_product("project_jaccard_results")
+  fs <- list.files(dir, pattern = "^project_section_jaccard_scores_.*\\.rds$",
+                   full.names = TRUE)
+  if (!length(fs)) stop("No project_section_jaccard_scores_*.rds in ", dir)
+  utils::tail(sort(fs), 1)
+}

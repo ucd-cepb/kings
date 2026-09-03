@@ -5,6 +5,7 @@ library(tidyverse)
 
 bad <- c('0053','0089')
 source("Network_Innovation_Paper/Code/_paths.R")
+source("Network_Innovation_Paper/Code/_corpus.R")   # latest_project_jaccard()
 # Paper-owned political/economic covariates (NOT core; see inputs/README.md).
 meta <- fread(nip_input('gsp_covariates.csv'), colClasses = c(gsp_id = 'character'))
 meta <- meta[!duplicated(meta$gsp_id),]
@@ -79,7 +80,7 @@ kn_binary <- (kmat >= kn_threshold) * 1
 diag(kn_binary) <- 0  # Set diagonal to 0
 kn_net <- network(kn_binary, directed = FALSE)
 
-jac_dyads <- readRDS(nip_product('project_jaccard_results/project_section_jaccard_scores_20250903.rds'))
+jac_dyads <- readRDS(latest_project_jaccard())
 #jac_dyads <- jac_dyads[grepl('^v1',b)&grepl('^v1',a),]
 #jac_dyads$a <- str_extract(jac_dyads$a,'[0-9]{4}')
 #jac_dyads$b <- str_extract(jac_dyads$b,'[0-9]{4}')
@@ -445,15 +446,6 @@ texreg::htmlreg(list(mod3_jc_net,mod3_kn_net,mod3_ref_net),
                 file = 'Network_Innovation_Paper/data_products/mod3_html.html',single.row = T)
 
 
-
-
-
-c("edges (fixed)","twopath","gwdegree(decay = 1)","gwdsp(decay = 0.5)",
-  "Mult-GSA GSP","Low/v. low priority","medium priority","Repub. vote share %",
-  "Agr. % of local GDP",
-  "Neighbor","Shared firms^2**","Shared NGOs^2**","Shared persons^2**",
-  "Neighbor","Shared firms^2**","Shared NGOs^2**","Shared persons^2**",
-  "Neighbor","Shared firms^2**","Shared NGOs^2**","Shared persons^2**"),
 
 
 

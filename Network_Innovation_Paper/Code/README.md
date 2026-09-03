@@ -13,7 +13,7 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 
 | File | Role |
 |---|---|
-| `run_all.R` | Orchestrator — regenerates the page-similarity products from current core (ingest → preprocess → hash; optional maps). Resolves every path via `_paths.R` and runs each stage in its own Rscript process. `RUN_INGEST=1` / `RUN_MAPS=1` opt into the gated stages. |
+| `run_all.R` | Orchestrator — regenerates the **critical-path** modeling inputs from current core (optional ingest → preprocess → project-section Jaccard). "Critical path" = only what a `04_modeling/*` script actually reads; it deliberately skips the exploratory page-score branch (`hash_and_compare_pages.R` + maps), which feeds nothing downstream. Resolves every path via `_paths.R` and runs each stage in its own Rscript process. `RUN_INGEST=1` opts into the gated bridge rebuild. |
 | `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`|`latest`), `latest_page_scores()`. Sourced by the text-reuse feeders. |
 | `00_ingest_core.R` | The only bridge to core; writes `data_products/{id_crosswalk,node_dictionary,all_gsa_edges}`. Detailed in the primary README. Invokes the entity classifier in `01_entity_classification/`. |
@@ -48,17 +48,24 @@ First step of the page-similarity rebuild.
 ## `03B_text_reuse/`
 
 Page- and section-level similarity between plans, plus the spatial maps. Consumes
-`page_metadata.RDS`. Score outputs land in `data_products/score_results/`.
+`page_metadata.RDS`.
 
-Rebuild order:
+**On the critical path** (run by `run_all.R`) — the only 03B script whose output a
+`04_modeling/*` script reads:
+
+- `compare_project_sections.R` — Jaccard 10-gram similarity over the *projects &
+  management actions* pages (one concatenated doc per plan) →
+  `project_jaccard_results/project_section_jaccard_scores_<date>.rds`, the 03B
+  modeling input. Reads `page_metadata.RDS` directly, independent of the page-score
+  branch below. (The older `hash_and_compare_projects.R` variant is retired — see
+  `unused/`.)
+
+**Exploratory page-score branch** (NOT run by `run_all.R`; feeds nothing
+downstream) — run by hand only if you want the raw page scores or the maps:
 
 1. `hash_and_compare_pages.R` — minhash + LSH over all pages → `score_results/portal_page_scores_<date>.rds`. Memory-heavy.
-2. `map_similarity.R`, `map_similarity_total.R` — build the plan-to-plan networks from the newest page-score file and draw the spatial similarity maps. Vertices are one document per plan via `select_plan_docs()` (default `original`; set `NIP_DOC_SELECT=latest` to use resubmitted docs).
-3. `link_page_lda_results_to_meta.R` — join page scores back onto section metadata.
-
-Related, run independently of the page chain:
-
-- `compare_project_sections.R` — restricts the same idea to the *projects & management actions* pages (one concatenated doc per plan; Jaccard 10-grams) → `project_section_jaccard_scores_<date>.rds`, a `04_modeling/*` input. (The older `hash_and_compare_projects.R` variant is retired — see `unused/`.)
+2. `map_similarity.R`, `map_similarity_total.R` — build the plan-to-plan networks from the newest page-score file and draw the spatial similarity maps (persist no product). Vertices are one document per plan via `select_plan_docs()` (default `original`; set `NIP_DOC_SELECT=latest` to use resubmitted docs).
+3. `link_page_lda_results_to_meta.R` — join page scores back onto section metadata (in memory; persists no product).
 
 Section-level and "total"-map exploration live in `exploratory/` (below).
 

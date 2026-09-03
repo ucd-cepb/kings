@@ -105,21 +105,30 @@ plan document under `core_txt_clean()`, named by the numeric `gspDocId` stem,
 with columns `page`/`text` (the legacy `<<PAGE_BREAK>>`-delimited
 `v*_gsp_num_id_*.txt` layout is gone). `Code/_corpus.R` centralizes the parquet
 read and the `gspDocId → gsp_id/version` recovery via `id_crosswalk.csv`.
-Page-entity keys throughout this chain are `<gspDocId>_<page_num>`. To rebuild
-from scratch, run in order (from the repo root):
+Page-entity keys throughout this chain are `<gspDocId>_<page_num>`.
+
+**Critical-path rebuild — `Code/run_all.R`.** The orchestrator regenerates only the
+products a `04_modeling/*` script actually reads, in order (from the repo root):
 
 ```sh
-Rscript Network_Innovation_Paper/Code/02_text_preprocessing/preprocess_portal_texts.R  # -> page_metadata.RDS
-Rscript Network_Innovation_Paper/Code/03B_text_reuse/hash_and_compare_pages.R          # -> score_results/portal_page_scores_<date>.rds
-# map_similarity.R / map_similarity_total.R / link_page_lda_results_to_meta.R read the newest score file
+Rscript Network_Innovation_Paper/Code/run_all.R                # preprocess -> project-section Jaccard
+RUN_INGEST=1 Rscript Network_Innovation_Paper/Code/run_all.R   # also refresh gazetteer + rebuild the core->paper bridge first
 ```
 
-`latest_page_scores()` always picks the **newest** `portal_page_scores_*.rds`, so
-run `hash_and_compare_pages.R` before the map/link scripts on any rebuild —
-otherwise they consume a stale score file whose legacy `v*_gsp_num_id_*.txt`
-keys won't resolve against the `gspDocId` crosswalk.
+That runs `02_text_preprocessing/preprocess_portal_texts.R` (→ `page_metadata.RDS`)
+then `03B_text_reuse/compare_project_sections.R` (→
+`project_jaccard_results/project_section_jaccard_scores_<date>.rds`, the 03B
+modeling input). The reference (03A) and knowledge-triple (03C) inputs and the
+models themselves are run by hand — see `Code/README.md`.
 
-COMMENT: IF THERE ARE LEGACY RESULTS NOT BASED ON TEH CURRENT CORE DATA, DO A ONE TIME DELETE OF THOSE TO MAKE SURE THEY GET REPLACED. UPDATE THIS TEXT ABOVE ACCORDINGLY TO REFLECT THE NEW PROCESS AND DON'T NEED TO REFERENCE THE OLD ONE.
+**Exploratory page-score branch (not on the critical path).** `run_all.R` does *not*
+run `03B_text_reuse/hash_and_compare_pages.R` (→ `score_results/portal_page_scores_<date>.rds`)
+or its consumers `map_similarity.R` / `map_similarity_total.R` /
+`link_page_lda_results_to_meta.R`: those persist no product and feed nothing
+downstream. Run them by hand only for the page-level scores or the spatial maps.
+`latest_page_scores()` always picks the **newest** `portal_page_scores_*.rds`, so
+if you do rebuild that branch, run `hash_and_compare_pages.R` before the map/link
+scripts — otherwise they consume a stale score file.
 
 ## Notes
 

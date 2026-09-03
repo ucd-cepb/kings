@@ -2,6 +2,7 @@ library(statnet)
 library(coop)
 library(data.table)
 source("Network_Innovation_Paper/Code/_paths.R")
+source("Network_Innovation_Paper/Code/_corpus.R")   # latest_project_jaccard()
 
 bad <- c('0053','0089')
 # Paper-owned political/economic covariates (NOT core; see inputs/README.md).
@@ -80,7 +81,7 @@ edge_list <- as.edgelist(kn_net)
 cosim_values <- kmat_ordered[edge_list]
 set.edge.attribute(kn_net, "cosim", cosim_values)
 
-jac_dyads <- readRDS(nip_product('project_jaccard_results/project_section_jaccard_scores_20250903.rds'))
+jac_dyads <- readRDS(latest_project_jaccard())
 #jac_dyads <- jac_dyads[grepl('^v1',b)&grepl('^v1',a),]
 #jac_dyads$a <- str_extract(jac_dyads$a,'[0-9]{4}')
 #jac_dyads$b <- str_extract(jac_dyads$b,'[0-9]{4}')
@@ -267,11 +268,6 @@ ref_net
 
 summary(get.edge.attribute(ref_net,'cosim'))
 
-             
-             
-             control = control.ergm(init.method = "zeros",
-                                    MCMLE.maxit = 10))
-
 sum(ref_net != 0)
 
 
@@ -287,7 +283,7 @@ summary(c(ref_cosine))
 
 head(ref_cosine)
 ref_dyads[,.N,by=(V2)]
- <- coop::cosine(as.matrix(table(ref_dyads$V2,ref_dyads$V1)))
+ref_cosine <- coop::cosine(as.matrix(table(ref_dyads$V2,ref_dyads$V1)))
 
 
 library(proxy)
