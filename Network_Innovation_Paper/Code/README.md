@@ -119,8 +119,6 @@ kernelspec, so the kernel must be registered (`python -m ipykernel install --use
 - `02_semantic_kg_similarity.ipynb` — embeds those triples and scores plan-to-plan
   similarity → `triple_similarity.csv` (the 3C model input). Run by `run_all.R` via
   `jupyter nbconvert`; its `../../data_products/` paths already target modern layout.
-- `spo_extraction.py` / `spo_extraction*.ipynb` — alternative REBEL/Triplex SPO
-  extraction experiments (Python); NOT on the `run_all.R` path.
 
 ## `exploratory/`
 
