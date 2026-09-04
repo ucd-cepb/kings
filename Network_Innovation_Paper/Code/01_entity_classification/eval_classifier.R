@@ -6,7 +6,7 @@
 #' are the deterministic gazetteer built from core_code/dicts, which already pins the
 #' known, enumerable cast. So this script computes NO agreement/accuracy number
 #' (scoring against a reference noisier than the model is meaningless). Instead it
-#' draws a stratified sample of the SHIPPED labels in data_products/node_dictionary.csv
+#' draws a stratified sample of the SHIPPED labels in data_products/01_entity_classification/node_dictionary.csv
 #' -- up to PER_CAT names per predicted leaf -- and writes them out for a human to
 #' eyeball for obvious errors. That is the meaningful quality check here; it surfaces
 #' the long-tail LLM calls, which is where mistakes actually live.
@@ -21,7 +21,7 @@ suppressMessages(library(data.table))
 PER_CAT <- as.integer(Sys.getenv("NIP_EVAL_PER_CAT", "40"))
 TAG     <- Sys.getenv("NIP_EVAL_TAG", "current")
 
-nd_file <- nip_product("node_dictionary.csv")
+nd_file <- nip_product("01_entity_classification", "node_dictionary.csv")
 if (!file.exists(nd_file))
   stop("node_dictionary.csv not found -- run 00_ingest_core.R first: ", nd_file)
 
@@ -40,7 +40,7 @@ cat(sprintf("Spot-check sample: %d names across %d predicted leaves (up to %d ea
 cat("\nLabel distribution in the FULL node_dictionary:\n")
 print(nd[, .N, by = entity_type][order(-N)])
 
-out_dir <- nip_product("eval")
+out_dir <- nip_product("01_entity_classification", "eval")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 out <- file.path(out_dir, sprintf("spotcheck_%s.csv", TAG))
 # `looks_wrong` is an empty column for the reviewer to flag any clearly-off label

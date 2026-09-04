@@ -19,23 +19,26 @@ repos.
 
 Every path is resolved through `Code/_paths.R` — no script hardcodes a location.
 The core-facing helpers (`core_disambig()`, `core_igraph_weighted()`,
-`core_manifest()`, …) are the *only* contract with core; `nip_input()` and
-`nip_product()` resolve paper-local files.
+`core_manifest()`, …) are the *only* contract with core. `nip_input()` resolves
+curated inputs and `nip_product("<stage>", "<file>")` resolves stage-partitioned
+data products; `nip_output()`/`nip_figure()`/`nip_table()` resolve analysis
+*results* under `outputs/`.
 
 ## Flow
 
 ```
 data/core_data ─┐
-                ├─►  Code/00_ingest_core.R  ─►  data_products/id_crosswalk        (pure bridge)
+                ├─►  Code/00_ingest_core.R  ─►  data_products/00_ingest/id_crosswalk   (pure bridge)
 inputs/ ────────┘            │
                              ▼
-   Code/01_entity_classification/  ─►  data_products/{node_dictionary, all_gsa_edges}  (in-project; LLM)
+   Code/01_entity_classification/  ─►  data_products/01_entity_classification/{node_dictionary, all_gsa_edges}  (in-project; LLM)
                              │
                              ▼
-   Code/{03A_reference_extraction, 03B_text_reuse,              ┌─► data_products/{gsp_reference_pairs,
-         03C_knowledge_tree}  ──────────────────────────────────┤     triple_similarity, project_jaccard, …}
-                                                                ▼
-                                     Code/04_modeling/make_binary0.9_networks.R  ─► ERGMs
+   Code/{03A_reference_extraction, 03B_text_reuse,     ┌─► data_products/{03A_reference_extraction/gsp_reference_pairs,
+         03C_knowledge_tree}  ────────────────────────┤     03C_knowledge_tree/triple_similarity,
+                                                       │     03B_text_reuse/project_jaccard_results, …}
+                                                       ▼
+                          Code/04_modeling/make_binary0.9_networks.R  ─► ERGMs ─► outputs/{figures, tables}
 ```
 
 ### `Code/00_ingest_core.R` — the only *ingest* bridge to core
@@ -70,7 +73,7 @@ Rscript Network_Innovation_Paper/Code/00_ingest_core.R      # CLOBBER=TRUE to re
 Core carries only spaCy NER tags, and the paper's six-leaf semantic vocabulary has
 no upstream generator — so it is regenerated **here, in the paper**, not brought
 over from core. This stage runs its scripts in order and writes two
-`data_products/` files:
+`data_products/01_entity_classification/` files:
 
 - **`node_dictionary.csv`** — every unique entity name → one of the six-leaf
   controlled vocabulary (`GSA`, `Consultant`, `Research`, `NGO`,
@@ -117,6 +120,29 @@ unprefixed files, not stages of the page pipeline.
 | `exploratory/` | — | One-off / interactive analysis scripts, not in the pipeline (see `Code/exploratory/README.md`). |
 | `unused/` | — | Deprecated / dead-end scripts, retired from the pipeline (see `Code/unused/README.md`). |
 
+## `data_products/` & `outputs/` layout
+
+Generated files are split by intent. **Data products** live in `data_products/`,
+partitioned into subfolders that mirror the `Code/` stage that writes them, so a
+product is traceable to its script at a glance. Resolve one with
+`nip_product("<stage>", "<file>")`.
+
+| Subfolder | Written by | Key products |
+|---|---|---|
+| `00_ingest/` | `00_ingest_core.R` | `id_crosswalk.csv` |
+| `01_entity_classification/` | `01_entity_classification/*` | `node_dictionary.csv`, `all_gsa_edges.csv`, `entity_type_cache.csv`, `eval/` |
+| `02_text_preprocessing/` | `02_text_preprocessing/*` | `page_metadata.RDS` |
+| `03A_reference_extraction/` | `03A_reference_extraction/*` | `gsp_reference_pairs.rds`, `extracted_references/`, intermediate `.rds` |
+| `03B_text_reuse/` | `03B_text_reuse/*` | `project_jaccard_results/`, `score_results/` |
+| `03C_knowledge_tree/` | `03C_knowledge_tree/*` | `triple_similarity.csv`, `knowledge_triples_sustcrit.csv`, `kg_*.pkl` |
+| `04_modeling/` | `04_modeling/*` | `rds_placeholders/` |
+
+**Results** — figures and rendered model tables — live under `outputs/`, not
+`data_products/`, because they are analysis outputs rather than pipeline data:
+`outputs/figures/` (`figure1_dv_distributions.png`, `model1_plot.png`,
+`model2_plot.png`) and `outputs/tables/` (`mod0_html.html` … `mod3_html.html`).
+Resolve them with `nip_figure()` / `nip_table()`.
+
 ## Regenerating the page-similarity products from current core
 
 The text-reuse feeders read the **core clean-text corpus** — one parquet per
@@ -136,8 +162,8 @@ RUN_INGEST=1 Rscript Network_Innovation_Paper/Code/run_all.R   # also rebuild th
 
 By default that runs `02_text_preprocessing/additional_filter_texts.R` (→
 `page_metadata.RDS`) then `03B_text_reuse/compare_project_sections.R` (→
-`project_jaccard_results/project_section_jaccard_scores.rds`, the 3B modeling
-input). All **three** Stage 3 similarity products are now buildable from
+`03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds`, the 3B
+modeling input). All **three** Stage 3 similarity products are now buildable from
 `run_all.R`, each behind its own TRUE/FALSE toggle — 3A references
 (→ `gsp_reference_pairs.rds`) and 3C knowledge-tree (→ `triple_similarity.csv`)
 default OFF because they are intensive and need tools beyond R (anystyle/ruby +
@@ -147,7 +173,7 @@ hand — see `Code/README.md`.
 
 **Exploratory page-score branch (not a model input).** `run_all.R` does *not*
 run `03B_text_reuse/explore/hash_and_compare_pages.R`
-(→ `score_results/portal_page_scores_<date>.rds`) or its consumers
+(→ `03B_text_reuse/score_results/portal_page_scores_<date>.rds`) or its consumers
 `explore/map_similarity.R`, `explore/link_page_lda_results_to_meta.R`, and
 `exploratory/map_similarity_total.R`: they feed no model input. Run them by hand
 only for the page-level scores or the spatial maps. `latest_page_scores()` always

@@ -1,6 +1,6 @@
 library(statnet)
 library(tidyverse)
-jsim <- statnetjsim <- readRDS('Network_Innovation_Paper/data_products/score_results/section_jaccard_dissimilarity_20250709.rds')
+jsim <- statnetjsim <- readRDS('Network_Innovation_Paper/data_products/03B_text_reuse/score_results/section_jaccard_dissimilarity_20250709.rds')
 
 
 

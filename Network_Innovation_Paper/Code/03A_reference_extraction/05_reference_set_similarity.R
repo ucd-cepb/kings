@@ -3,7 +3,7 @@ library(stringr)
 source("Network_Innovation_Paper/Code/_paths.R")
 source("Network_Innovation_Paper/Code/_corpus.R")   # load_id_crosswalk()
 
-refs = readRDS(nip_product('gsp_solr_OA_matches.rds'))
+refs = readRDS(nip_product('03A_reference_extraction', 'gsp_solr_OA_matches.rds'))
 #first_year <- 1980
 cutoff_score <- 11
 refs2 <- refs[{score > cutoff_score | title.gsp == title.oa} & !is.na(source.id.oa),]
@@ -27,4 +27,4 @@ refs3 <- merge(refs3, xw[, .(gsp_id, doc_rank, gsp_doc_id)], by = c('gsp_id', 'd
 
 # V1 = OpenAlex work id, V2 = canonical gsp_doc_id (the plan-document vertex key).
 saveRDS(refs3[, .(V1 = work, V2 = gsp_doc_id)],
-        nip_product('gsp_reference_pairs.rds'))
+        nip_product('03A_reference_extraction', 'gsp_reference_pairs.rds'))

@@ -12,7 +12,7 @@
 CONFIG <- list(
    # Optimized for M2 Pro - using more cores but leaving some for system processes
    cores = min(8, parallel::detectCores() - 2),
-   output_dir = "Network_Innovation_Paper/data_products/project_jaccard_results/"
+   output_dir = "Network_Innovation_Paper/data_products/03B_text_reuse/project_jaccard_results/"
 )
 
 # ----- Setup -----
@@ -45,7 +45,7 @@ progressr::handlers("progress")
 # ----- Main Process -----
 source("Network_Innovation_Paper/Code/_paths.R")
 source("Network_Innovation_Paper/Code/_corpus.R")
-documents <- as.data.table(readRDS(nip_product('page_metadata.RDS')))
+documents <- as.data.table(readRDS(nip_product('02_text_preprocessing', 'page_metadata.RDS')))
 # One document per plan: the ORIGINAL (doc_rank == 1, i.e. the legacy '^v1'
 # selection). This MUST match every other modeling input so the Jaccard network
 # spans the same document universe as the rest: references (03A '^v1' filter),

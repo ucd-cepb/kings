@@ -20,7 +20,7 @@ CONFIG <- list(
    lsh_bands = 60,
    min_score = 50,
    page_delimiter = "<<PAGE_BREAK>>",
-   output_dir = "Network_Innovation_Paper/data_products/score_results/"
+   output_dir = "Network_Innovation_Paper/data_products/03B_text_reuse/score_results/"
 )
 
 # ----- Setup -----
@@ -101,9 +101,9 @@ report_memory <- function() {
 
 # ----- Main Process -----
 # Load preprocessed data or create it if needed
-if (file.exists('Network_Innovation_Paper/data_products/page_metadata.RDS')) {
+if (file.exists('Network_Innovation_Paper/data_products/02_text_preprocessing/page_metadata.RDS')) {
    log_message("Loading preprocessed page metadata")
-   documents <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
+   documents <- readRDS('Network_Innovation_Paper/data_products/02_text_preprocessing/page_metadata.RDS')
 } else {
    log_message("Preprocessed data not found. Running preprocessing")
    source('Network_Innovation_Paper/Code/02_text_preprocessing/additional_filter_texts.R')

@@ -4,7 +4,7 @@ library(devtools)
 library(referenceSearch)
 library(pbapply)
 library(tidyverse)
-refs <- readRDS('Network_Innovation_Paper/data_products/gsp_classified_refs.rds')
+refs <- readRDS('Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_classified_refs.rds')
 
 NEW_INDEX = T
 index_name = "GSP_OA_title_matches"
@@ -16,7 +16,7 @@ refs <- refs[!is.na(refs$title),]
 
 
 
-oa_candidates <- readRDS('Network_Innovation_Paper/data_products/gsp_openalex_title_results.rds')
+oa_candidates <- readRDS('Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_openalex_title_results.rds')
 setnames(oa_candidates,c('publication_year','source.display_name','author_display_name','host.display_name'),c('year','journal_title','authors','publisher'))
 oa_candidates <- oa_candidates[type %in% c('article','peer-review','review'),]
 oa_candidates$miscid <- oa_candidates$id
@@ -94,7 +94,7 @@ q_dt$source.id.oa <- oa_candidates$source.id[match(q_dt$miscid,oa_candidates$id)
 results <- merge(refs_to_search,q_dt)#[match(refs_to_search$query,q_dt$query),])
 setnames(results,'miscid','openalex.ID')
 
-saveRDS(results,'Network_Innovation_Paper/data_products/gsp_solr_OA_matches.rds')
+saveRDS(results,'Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_solr_OA_matches.rds')
 system('solr stop')
 #### roughly, scores > 11 seem to be pretty good
 

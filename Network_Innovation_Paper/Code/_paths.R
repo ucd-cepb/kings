@@ -57,9 +57,16 @@ core_page_sections    <- function() file.path(CORE, "metadata", "gsp_page_sectio
 core_dict <- function(name) file.path(CORE_DICTS, name)
 
 # ---- Paper-local helpers -----------------------------------------------------
-nip_input   <- function(...) file.path(NIP, "inputs", ...)         # curated, non-core
-nip_product <- function(...) file.path(NIP, "data_products", ...)  # generated (incl. ingest bridge)
+# `data_products/` is organized into stage subfolders that mirror the `Code/`
+# pipeline (00_ingest, 01_entity_classification, …); callers pass the stage as the
+# first segment, e.g. nip_product("03A_reference_extraction", "gsp_reference_pairs.rds").
+# `outputs/` holds *results* (figures, rendered model tables) — not data products.
+nip_input   <- function(...) file.path(NIP, "inputs", ...)          # curated, non-core
+nip_product <- function(...) file.path(NIP, "data_products", ...)   # generated, by pipeline stage
 nip_code    <- function(...) file.path(NIP, "Code", ...)
+nip_output  <- function(...) file.path(NIP, "outputs", ...)             # analysis results
+nip_figure  <- function(...) file.path(NIP, "outputs", "figures", ...)  # plots
+nip_table   <- function(...) file.path(NIP, "outputs", "tables", ...)   # rendered model tables
 
 # ---- gsp_doc_id filename helpers ---------------------------------------------
 # Core object files use the bare numeric gspDocId stem: "<stem>.RDS".

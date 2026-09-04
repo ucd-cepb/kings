@@ -14,9 +14,9 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 | File | Role |
 |---|---|
 | `run_all.R` | Orchestrator — regenerates the modeling inputs from current core (optional bridge + entity classification → preprocess → the three Stage 3 similarity products: 3A references, 3B project-Jaccard, 3C knowledge-tree). Every stage is an independent TRUE/FALSE toggle; 3A + 3C default OFF because they are intensive and need tools beyond R (anystyle/ruby + OpenAlex + Solr for 3A; a `jupyter` env for 3C). Builds only what a `04_modeling/*` script actually reads; skips the exploratory page-score branch (`03B_text_reuse/explore/` maps), which feeds nothing downstream. Resolves every path via `_paths.R`, runs each R stage in its own Rscript process, and the 3C similarity step via `jupyter nbconvert`. `RUN_INGEST=1` opts into the gated bridge + entity rebuild. |
-| `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. |
+| `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product("<stage>", …)`, `nip_output()`/`nip_figure()`/`nip_table()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. Data products sit under `data_products/<stage>/`; results (figures/tables) under `outputs/`. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`|`latest`), `latest_page_scores()`. Sourced by the text-reuse feeders. |
-| `00_ingest_core.R` | The only *ingest* bridge to core; writes `data_products/id_crosswalk.csv` straight from the manifest (no derivation, no LLM). Detailed in the primary README. The entity products (`node_dictionary`, `all_gsa_edges`) are in-project analysis and live in `01_entity_classification/`. |
+| `00_ingest_core.R` | The only *ingest* bridge to core; writes `data_products/00_ingest/id_crosswalk.csv` straight from the manifest (no derivation, no LLM). Detailed in the primary README. The entity products (`node_dictionary`, `all_gsa_edges`) are in-project analysis and live in `01_entity_classification/`. |
 | `_entity_groups.R` | Single source of truth for entity-type groupings over the six-leaf vocabulary. Shared: sourced by `01_entity_classification/classify_entities.R` **and** all three `04_modeling/*` scripts, so it stays at root. |
 
 ## `01_entity_classification/`
@@ -35,10 +35,10 @@ the stage: `build_overrides_from_dicts.R` → `build_node_dictionary.R` → `bui
   `build_node_dictionary.R`. Deterministic gazetteer → cache → LLM precedence; needs
   an Anthropic key. The grouping vocabulary lives in the root `_entity_groups.R`.
 - `build_node_dictionary.R` — collects the unique entity names from the core disambig
-  objects and runs the (cached) classifier → `data_products/node_dictionary.csv`. The
+  objects and runs the (cached) classifier → `data_products/01_entity_classification/node_dictionary.csv`. The
   one step that hits the API. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R`.
 - `build_gsa_edges.R` — folds the core weighted graphs down to the GSA-typed entities
-  (read from `node_dictionary.csv`) → `data_products/all_gsa_edges.csv`. Run AFTER the
+  (read from `node_dictionary.csv`) → `data_products/01_entity_classification/all_gsa_edges.csv`. Run AFTER the
   node dictionary. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_edges.R`.
 - `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
   names per predicted leaf for a human to eyeball. Run standalone: `NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R`.
@@ -51,7 +51,7 @@ First step of the page-similarity rebuild.
   applies the paper's page filter (`cleanText`: short-page + all-caps + stricter
   numeric/whitespace, on top of core's `step2` punctuation cleaning), joins the id
   crosswalk + the core page-section flags (`core_page_sections()`), and writes
-  `data_products/page_metadata.RDS`. This file is **metadata-only** (keys +
+  `data_products/02_text_preprocessing/page_metadata.RDS`. This file is **metadata-only** (keys +
   section flags, ~0.24 MB): the surviving rows define which `(gsp_doc_id, page_num)`
   pages passed the filter, and the full page text is *not* stored — core is the
   single source of truth. Consumers that need text re-attach it on demand with
@@ -67,7 +67,7 @@ reads:
 
 - `compare_project_sections.R` — Jaccard 10-gram similarity over the *projects &
   management actions* pages (one concatenated doc per plan) →
-  `project_jaccard_results/project_section_jaccard_scores.rds`, the 03B
+  `03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds`, the 03B
   modeling input. Reads the metadata-only `page_metadata.RDS`, filters to its
   pages, then re-attaches page text from the core corpus via `attach_page_text()`
   (`_corpus.R`) — the sole text consumer in the pipeline. Independent of the
@@ -77,7 +77,7 @@ reads:
 **Exploratory page-score branch** (in `explore/`; NOT run by `run_all.R`; feeds
 nothing downstream) — run by hand only if you want the raw page scores or the maps:
 
-1. `explore/hash_and_compare_pages.R` — minhash + LSH over all pages → `score_results/portal_page_scores_<date>.rds`. Memory-heavy.
+1. `explore/hash_and_compare_pages.R` — minhash + LSH over all pages → `03B_text_reuse/score_results/portal_page_scores_<date>.rds`. Memory-heavy.
 2. `explore/map_similarity.R` — builds the plan-to-plan network from the newest page-score file and draws the spatial similarity map (persists no product). Vertices are one document per plan via `select_plan_docs()` (default `original`; set `NIP_DOC_SELECT=latest` to use resubmitted docs).
 3. `explore/link_page_lda_results_to_meta.R` — join page scores back onto section metadata (in memory; persists no product).
 
@@ -118,7 +118,7 @@ kernelspec, so the kernel must be registered (`python -m ipykernel install --use
   `extract_advanced_triples_from_df` / `clean_triples` pair that this repo never defined.
 - `02_semantic_kg_similarity.ipynb` — embeds those triples and scores plan-to-plan
   similarity → `triple_similarity.csv` (the 3C model input). Run by `run_all.R` via
-  `jupyter nbconvert`; its `../../data_products/` paths already target modern layout.
+  `jupyter nbconvert`; its `../../data_products/03C_knowledge_tree/` paths already target modern layout.
 
 ## `exploratory/`
 
@@ -143,8 +143,9 @@ ERGMs.
 
 - `make_binary0.9_networks.R` — the paper's model: binarizes each similarity
   network at its 0.9-quantile cut and fits Bayesian ERGMs (`bergm`), writing the
-  manuscript figures (`figure1_dv_distributions.png`, `model[12]_plot.png`) and
-  the regression tables (`mod0/1/2/3_html.html`).
+  manuscript figures to `outputs/figures/` (`figure1_dv_distributions.png`,
+  `model[12]_plot.png`, via `nip_figure()`) and the regression tables to
+  `outputs/tables/` (`mod0/1/2/3_html.html`, via `nip_table()`).
 
 **Exploratory variants** (in `explore/`; off the critical path) — earlier
 valued-ERGM approaches, superseded by the binary/bergm model above; run by hand

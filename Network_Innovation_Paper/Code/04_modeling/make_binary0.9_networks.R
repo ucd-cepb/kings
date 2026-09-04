@@ -26,7 +26,7 @@ meta$Agr_Share_Of_GDP <- as.numeric(meta$Agr_Share_Of_GDP)
 meta <- merge(sel[, .(gsp_doc_id, gsp_id)], meta, by = 'gsp_id', all.x = TRUE)
 
 
-gs_edge <- fread(nip_product('all_gsa_edges.csv'))
+gs_edge <- fread(nip_product('01_entity_classification', 'all_gsa_edges.csv'))
 gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
 gs_edge[, gsp_doc_id := id_to_doc(gsp_id)]      # canonical plan-document key
 gs_edge <- gs_edge[!is.na(gsp_doc_id) & !gsp_doc_id %in% bad_doc, ]
@@ -34,7 +34,7 @@ gs_edge[, gsp_id := NULL]
 gs_melt <- melt(gs_edge,id.vars = c('gsp_doc_id','gsa'))
 
 source("Network_Innovation_Paper/Code/_entity_groups.R")
-dict <- fread(nip_product('node_dictionary.csv'))
+dict <- fread(nip_product('01_entity_classification', 'node_dictionary.csv'))
 
 gs_melt <- gs_melt[variable != 'inter_agency',]
 
@@ -49,7 +49,7 @@ gsp_ngo_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'NG
 gsp_crn_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'consultant_research_ngo'))
 
 ##### make reference similarity network #####
-ref_dyads <- readRDS(nip_product('gsp_reference_pairs.rds'))  # V1 = OpenAlex work id, V2 = gsp_doc_id
+ref_dyads <- readRDS(nip_product('03A_reference_extraction', 'gsp_reference_pairs.rds'))  # V1 = OpenAlex work id, V2 = gsp_doc_id
 # One document per plan via select_plan_docs() (was: grepl('^v1', V2) on the old
 # filename key). V2 is already the canonical gsp_doc_id, set in 05_reference_set_similarity.R.
 ref_dyads <- ref_dyads[V2 %in% sel$gsp_doc_id, ]
@@ -71,7 +71,7 @@ ref_net <- network(ref_binary, directed = FALSE)
 
 
 #### make knowledge graph similarity network ####
-knowledge_df <- read.csv(nip_product('triple_similarity.csv'))
+knowledge_df <- read.csv(nip_product('03C_knowledge_tree', 'triple_similarity.csv'))
 knowledge_df <- data.table(knowledge_df)
 # Get all unique nodes
 all_nodes <- unique(c(knowledge_df$X, knowledge_df$X.1))
@@ -226,7 +226,7 @@ library(gridExtra)
 
 ggsave(plot = grid.arrange(g1,g2,g3,ncol = 2,
              top = 'Distribution of dyadic values and 0.9 quantile threshold'),
-       filename = 'Network_Innovation_Paper/data_products/figure1_dv_distributions.png',units = 'in',dpi = 450,width = 6, height = 6)
+       filename = nip_figure('figure1_dv_distributions.png'),units = 'in',dpi = 450,width = 6, height = 6)
 
 
 
@@ -324,7 +324,7 @@ m1_dt$model <- fct_inorder(m1_dt$model)
    labs(caption = '**values in connection^2 units') + 
    scale_fill_manual(name = '95% CI spans 0',values = c('black','white')))
 
-ggsave(gg_mod1,filename = 'Network_Innovation_Paper/data_products/model1_plot.png',dpi = 450,units = 'in',height = 6,width = 6)
+ggsave(gg_mod1,filename = nip_figure('model1_plot.png'),dpi = 450,units = 'in',height = 6,width = 6)
 
 texreg::htmlreg(list(mod1_jc_net,mod1_kn_net,mod1_ref_net),
                 custom.coef.names = c("edges (fixed)","twopath","gwdegree(decay = 1)","gwdsp(decay = 0.5)",
@@ -332,7 +332,7 @@ texreg::htmlreg(list(mod1_jc_net,mod1_kn_net,mod1_ref_net),
                                       "Agr. % of local GDP",
                                       "Neighbor","Shared connection weight","Neighbor","Shared connection weight","Neighbor","Shared connection weight"),
                 custom.model.names = mlabs,custom.note = '*0 not within 95% credible interval\n**^2 is due to cross-product calculation',
-                file = 'Network_Innovation_Paper/data_products/mod1_html.html',
+                file = nip_table('mod1_html.html'),
                 single.row = T)
 
 
@@ -417,7 +417,7 @@ m2_dt$model <- fct_inorder(m2_dt$model)
       labs(caption = '**values in connection^2 units') + 
       scale_fill_manual(name = '95% CI spans 0',values = c('black','white')))
 
-ggsave(gg_mod2,filename = 'Network_Innovation_Paper/data_products/model2_plot.png',dpi = 450,units = 'in',height = 6.25,width = 6)
+ggsave(gg_mod2,filename = nip_figure('model2_plot.png'),dpi = 450,units = 'in',height = 6.25,width = 6)
 
 
 
@@ -430,7 +430,7 @@ texreg::htmlreg(list( mod2_jc_net, mod2_kn_net,mod2_ref_net),
                                       "Neighbor","Shared consultant weight","Shared research weight","Shared NGO weight",
                                       "Neighbor","Shared consultant weight","Shared research weight","Shared NGO weight"),
                 custom.model.names = mlabs,custom.note = '*0 not within 95% credible interval\n**^2 is due to cross-product calculation',
-                file = 'Network_Innovation_Paper/data_products/mod2_html.html',single.row = T)
+                file = nip_table('mod2_html.html'),single.row = T)
 
 # =====================================================================
 # Model 3 (grouped focal subnetworks): the 4th run -- consultant, research and
@@ -471,7 +471,7 @@ texreg::htmlreg(list(mod3_jc_net,mod3_kn_net,mod3_ref_net),
                                       "Neighbor","Shared consultant/research/NGO weight",
                                       "Neighbor","Shared consultant/research/NGO weight"),
                 custom.model.names = mlabs,custom.note = '*0 not within 95% credible interval\n**^2 is due to cross-product calculation',
-                file = 'Network_Innovation_Paper/data_products/mod3_html.html',single.row = T)
+                file = nip_table('mod3_html.html'),single.row = T)
 
 
 
@@ -486,6 +486,6 @@ mod2_kn_net <- str_remove(mod2_kn_net$specs ,'\\[[^0-9]+\\]')
 
 library(texreg)
 texreg::htmlreg(list(mod0_ref_net, mod0_kn_net, mod0_jc_net), custom.model.names = mlabs,
-                file = 'Network_Innovation_Paper/data_products/mod0_html.html',single.row = T)
+                file = nip_table('mod0_html.html'),single.row = T)
 
 

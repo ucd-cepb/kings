@@ -12,7 +12,7 @@ CONFIG <- list(
   cut_prop = 0.1,
   space_prop_multiplier = 5,
   page_delimiter = "<<PAGE_BREAK>>",
-  output_dir = "Network_Innovation_Paper/data_products/score_results/",
+  output_dir = "Network_Innovation_Paper/data_products/03B_text_reuse/score_results/",
   section_types = c("admin", "basin_plan", "sust_criteria", "monitoring_networks", "projects_mgmt_actions")
 )
 
@@ -81,9 +81,9 @@ create_section_chunks <- function(documents, section_types) {
 
 # ----- Main Process -----
 # Load preprocessed data or create it if needed
-if (file.exists('Network_Innovation_Paper/data_products/page_metadata.RDS')) {
+if (file.exists('Network_Innovation_Paper/data_products/02_text_preprocessing/page_metadata.RDS')) {
   cat("Loading preprocessed page metadata...\n")
-  documents <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
+  documents <- readRDS('Network_Innovation_Paper/data_products/02_text_preprocessing/page_metadata.RDS')
 } else {
   cat("Preprocessed data not found. Running preprocessing...\n")
   source('Network_Innovation_Paper/Code/02_text_preprocessing/additional_filter_texts.R')

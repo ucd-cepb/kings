@@ -7,7 +7,7 @@
 #' curated in-code exemplars and pinned by the core-dicts gazetteer.
 #'
 #' Reads the disambiguated core objects (textnet_objects/disambig) for the unique
-#' entity names, and writes into Network_Innovation_Paper/data_products/:
+#' entity names, and writes into Network_Innovation_Paper/data_products/01_entity_classification/:
 #'   - node_dictionary.csv  entity name -> semantic type (LLM-classified)
 #'
 #' This is the one step that calls an external API; it is cached
@@ -44,7 +44,7 @@ CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 
 # node_dictionary: unique core entity names -> semantic type (LLM)
 build_node_dictionary <- function() {
-  out <- nip_product("node_dictionary.csv")
+  out <- nip_product("01_entity_classification", "node_dictionary.csv")
   # Few-shot examples are curated in-code (classify_entities.R: .FEWSHOT_EXAMPLES)
   # and the known cast is pinned by the core-dicts gazetteer, so nothing needs to be
   # frozen from the product -- the prompt is already stable across rebuilds.

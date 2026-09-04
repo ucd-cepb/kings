@@ -313,7 +313,7 @@ ENTITY_TYPES <- c(
 classify_entities <- function(names, hints = NULL) {
   names <- as.character(names)
   stopifnot(is.null(hints) || length(hints) == length(names))
-  cache_path <- CLASSIFIER_CONFIG$cache_path %||% nip_product("entity_type_cache.csv")
+  cache_path <- CLASSIFIER_CONFIG$cache_path %||% nip_product("01_entity_classification", "entity_type_cache.csv")
 
   # Deterministic gazetteer: names it matches never hit the API (and its verdict
   # overrides the cache at the end), so exclude them from the todo set here.

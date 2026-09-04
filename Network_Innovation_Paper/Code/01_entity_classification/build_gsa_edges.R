@@ -9,7 +9,7 @@
 #' the vertex is ignored). Run build_node_dictionary.R first.
 #'
 #' Reads: id_crosswalk.csv + node_dictionary.csv (both paper products) and the core
-#' weighted graphs. Writes into Network_Innovation_Paper/data_products/:
+#' weighted graphs. Writes into Network_Innovation_Paper/data_products/01_entity_classification/:
 #'   - all_gsa_edges.csv   per-plan agency x connected-entity mention-weight matrix
 #'
 #' Run from the repo root:
@@ -63,9 +63,9 @@ CLOBBER  <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 }
 
 build_gsa_edges <- function(xw = load_id_crosswalk(),
-                            nodedict = fread(nip_product("node_dictionary.csv"),
+                            nodedict = fread(nip_product("01_entity_classification", "node_dictionary.csv"),
                                              colClasses = "character")) {
-  out <- nip_product("all_gsa_edges.csv")
+  out <- nip_product("01_entity_classification", "all_gsa_edges.csv")
   if (.skip(out)) return(invisible(NULL))
   # One document per plan (same selection the text-reuse maps use). Default keeps
   # the original submission; NIP_DOC_SELECT=latest switches to the resubmitted
@@ -86,7 +86,7 @@ build_gsa_edges <- function(xw = load_id_crosswalk(),
 }
 
 if (sys.nframe() == 0) {
-  if (!file.exists(nip_product("node_dictionary.csv"))) {
+  if (!file.exists(nip_product("01_entity_classification", "node_dictionary.csv"))) {
     stop("node_dictionary.csv is missing; run build_node_dictionary.R first.",
          call. = FALSE)
   }

@@ -7,7 +7,7 @@
 #' clean text). The legacy layout — one flat `v*_gsp_num_id_*.txt` per doc with
 #' pages joined by a `<<PAGE_BREAK>>` sentinel and the 4-digit gsp_id embedded in
 #' the filename — is gone. The gspDocId stem is the join key; recover the legacy
-#' 4-digit gsp_id and the version from `data_products/id_crosswalk.csv`.
+#' 4-digit gsp_id and the version from `data_products/00_ingest/id_crosswalk.csv`.
 
 # Resolve paths (scripts are run from the repo root; _paths.R defines helpers).
 if (!exists("nip_product") || !exists("core_txt_clean")) {
@@ -27,7 +27,7 @@ suppressPackageStartupMessages({
 #' adoption-cycle field and is NOT the original/resubmitted axis.
 load_id_crosswalk <- function() {
   cw <- data.table::fread(
-    nip_product("id_crosswalk.csv"),
+    nip_product("00_ingest", "id_crosswalk.csv"),
     colClasses = list(character = c("gsp_doc_id", "gsp_id"))
   )
   keep <- intersect(
@@ -136,9 +136,9 @@ attach_page_text <- function(meta, dir = core_txt_clean()) {
 #' Newest page-score file written by hash_and_compare_pages.R. Names are
 #' portal_page_scores_YYYYMMDD.rds, so lexical sort == chronological.
 latest_page_scores <- function() {
-  fs <- list.files(nip_product("score_results"),
+  fs <- list.files(nip_product("03B_text_reuse", "score_results"),
                    pattern = "^portal_page_scores_.*\\.rds$", full.names = TRUE)
-  if (!length(fs)) stop("No portal_page_scores_*.rds in ", nip_product("score_results"))
+  if (!length(fs)) stop("No portal_page_scores_*.rds in ", nip_product("03B_text_reuse", "score_results"))
   utils::tail(sort(fs), 1)
 }
 
@@ -148,7 +148,7 @@ latest_page_scores <- function() {
 #' compatibility we fall back to any leftover dated file if the fixed one is
 #' absent (older runs wrote project_section_jaccard_scores_YYYYMMDD.rds).
 latest_project_jaccard <- function() {
-  dir <- nip_product("project_jaccard_results")
+  dir <- nip_product("03B_text_reuse", "project_jaccard_results")
   fixed <- file.path(dir, "project_section_jaccard_scores.rds")
   if (file.exists(fixed)) return(fixed)
   fs <- list.files(dir, pattern = "^project_section_jaccard_scores_.*\\.rds$",

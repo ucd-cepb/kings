@@ -5,7 +5,7 @@
 #' straight from the plan-family manifest. It reads NO upstream raw docs
 #' (source_pdfs, plan_txts_*).
 #'
-#' Produces, into Network_Innovation_Paper/data_products/:
+#' Produces, into Network_Innovation_Paper/data_products/00_ingest/:
 #'   - id_crosswalk.csv     gspDocId <-> legacy gsp_id/version (from manifest; no derivation)
 #'
 #' The entity products that used to live here are NOT ingest — they are in-project
@@ -44,7 +44,7 @@ CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 # ID crosswalk (pure core; columns are pre-joined in the manifest)
 # =============================================================================
 build_crosswalk <- function() {
-  out <- nip_product("id_crosswalk.csv")
+  out <- nip_product("00_ingest", "id_crosswalk.csv")
   man <- fread(core_manifest(), colClasses = list(character = c("gspDocId", "gspId")))
   xw <- man[, .(
     gsp_doc_id     = gspDocId,

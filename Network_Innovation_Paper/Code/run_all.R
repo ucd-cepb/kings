@@ -3,16 +3,17 @@
 # run_all.R — rebuild the 04_modeling/ inputs from the core clean-text corpus
 # (one parquet per gspDocId under core_txt_clean()).
 #
-# Stages (-> = output written; under data_products/ unless a dir is shown):
-#   [0]  00_ingest_core.R ....................................... -> id_crosswalk.csv
+# Stages (-> = output written; products live under data_products/<stage>/ mirroring
+# the code stage that writes them; results (figures/tables) live under outputs/):
+#   [0]  00_ingest_core.R ....................................... -> 00_ingest/id_crosswalk.csv
 #   [1a] 01_entity_classification/build_overrides_from_dicts.R .. -> inputs/entity_type_overrides.csv
-#   [1b] 01_entity_classification/build_node_dictionary.R ....... -> node_dictionary.csv     (LLM)
-#   [1c] 01_entity_classification/build_gsa_edges.R ............. -> all_gsa_edges.csv
-#   [2]  02_text_preprocessing/additional_filter_texts.R ....... -> page_metadata.RDS
-#   [3A] 03A_reference_extraction/01..05 (5 scripts) ........... -> gsp_reference_pairs.rds
-#   [3B] 03B_text_reuse/compare_project_sections.R ............. -> project_jaccard_results/project_section_jaccard_scores.rds
+#   [1b] 01_entity_classification/build_node_dictionary.R ....... -> 01_entity_classification/node_dictionary.csv     (LLM)
+#   [1c] 01_entity_classification/build_gsa_edges.R ............. -> 01_entity_classification/all_gsa_edges.csv
+#   [2]  02_text_preprocessing/additional_filter_texts.R ....... -> 02_text_preprocessing/page_metadata.RDS
+#   [3A] 03A_reference_extraction/01..05 (5 scripts) ........... -> 03A_reference_extraction/gsp_reference_pairs.rds
+#   [3B] 03B_text_reuse/compare_project_sections.R ............. -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
 #   [3C] 03C_knowledge_tree/01_extract_knowledge_triples.R +
-#        03C_knowledge_tree/02_semantic_kg_similarity.ipynb ....... -> triple_similarity.csv
+#        03C_knowledge_tree/02_semantic_kg_similarity.ipynb ....... -> 03C_knowledge_tree/triple_similarity.csv
 #
 # Stage 0 is a bridge: it reads the core manifest into id_crosswalk.csv, no
 # derivation, no LLM. Stage 1 is analysis, not ingest — core carries spaCy NER
@@ -23,9 +24,9 @@
 #
 # The models read THREE plan-to-plan similarity products, one from each Stage 3
 # branch — all now buildable here (each behind its own toggle):
-#   - 3A references     -> gsp_reference_pairs.rds
-#   - 3B project-Jaccard -> project_jaccard_results/project_section_jaccard_scores.rds
-#   - 3C knowledge-tree -> triple_similarity.csv
+#   - 3A references     -> 03A_reference_extraction/gsp_reference_pairs.rds
+#   - 3B project-Jaccard -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
+#   - 3C knowledge-tree -> 03C_knowledge_tree/triple_similarity.csv
 # Only the 03B_text_reuse/explore/ page-score + map branch stays out (it feeds
 # nothing downstream — run it by hand). See ../README.md.
 #
@@ -117,7 +118,7 @@ run <- function(script, env = character()) {
 # copy is thrown away in a temp dir so the tracked .ipynb stays clean; the notebook
 # writes its real product (triple_similarity.csv) to data_products itself. nbconvert
 # runs the kernel in the notebook's own directory, so the notebook's ../../ paths
-# resolve to Network_Innovation_Paper/data_products/ regardless of our getwd().
+# resolve to Network_Innovation_Paper/data_products/03C_knowledge_tree/ regardless of getwd().
 run_nb <- function(nb) {
   cat("\n==== ", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "  jupyter nbconvert ", nb, "\n", sep = "")
   if (!nzchar(Sys.which("jupyter")))
@@ -160,7 +161,7 @@ if (STAGE_0_INGEST) {
 #   1c build_gsa_edges.R folds the core graphs to GSA-typed entities ->
 #      all_gsa_edges.csv; reads node_dictionary.csv, so runs last.
 if (STAGE_1_CLASSIFY) {
-  need("id_crosswalk.csv", "STAGE_0_INGEST")  # 1c's edge fold keys through the crosswalk
+  need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")  # 1c's edge fold keys through the crosswalk
   run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"))
   run(nip_code("01_entity_classification", "build_node_dictionary.R"), env = "CLOBBER=TRUE")
   run(nip_code("01_entity_classification", "build_gsa_edges.R"),       env = "CLOBBER=TRUE")
@@ -171,7 +172,7 @@ if (STAGE_1_CLASSIFY) {
 # table (keys + section flags, ~0.24 MB); full page text stays in core and is
 # re-attached on demand by 03B via attach_page_text() (_corpus.R).
 if (STAGE_2_PREPROCESS) {
-  need("id_crosswalk.csv", "STAGE_0_INGEST")
+  need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")
   run(nip_code("02_text_preprocessing", "additional_filter_texts.R"))
 }
 
@@ -194,7 +195,7 @@ if (STAGE_3A_REFERENCES) {
 # corpus (attach_page_text), and writes project_jaccard_results/project_section_jaccard_scores.rds
 # (single file, overwritten each run) — the only 03B product the models read.
 if (STAGE_3B_JACCARD) {
-  need("page_metadata.RDS", "STAGE_2_PREPROCESS")
+  need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
   run(nip_code("03B_text_reuse", "compare_project_sections.R"))
 }
 
@@ -206,7 +207,7 @@ if (STAGE_3B_JACCARD) {
 # the models read). The R step depends on page_metadata.RDS for the sust-criteria
 # page filter, so Stage 2 must have run.
 if (STAGE_3C_KNOWLEDGE) {
-  need("page_metadata.RDS", "STAGE_2_PREPROCESS")
+  need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
   run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"))
   run_nb(nip_code("03C_knowledge_tree", "02_semantic_kg_similarity.ipynb"))
 }
@@ -217,6 +218,6 @@ cat("\n==== done.\n")
   p <- nip_product(...)
   if (file.exists(p)) cat(label, ":", p, "\n")
 }
-.report("reference pairs   (3A)", "gsp_reference_pairs.rds")
-.report("project-Jaccard   (3B)", "project_jaccard_results", "project_section_jaccard_scores.rds")
-.report("triple similarity (3C)", "triple_similarity.csv")
+.report("reference pairs   (3A)", "03A_reference_extraction", "gsp_reference_pairs.rds")
+.report("project-Jaccard   (3B)", "03B_text_reuse", "project_jaccard_results", "project_section_jaccard_scores.rds")
+.report("triple similarity (3C)", "03C_knowledge_tree", "triple_similarity.csv")

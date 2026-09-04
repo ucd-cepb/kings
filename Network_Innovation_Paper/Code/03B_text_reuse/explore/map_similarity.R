@@ -29,7 +29,7 @@ score_dt$a_version <- cw$version[match(score_dt$a_file, cw$gsp_doc_id)]
 score_dt$b_version <- cw$version[match(score_dt$b_file, cw$gsp_doc_id)]
 
 
-documents <- readRDS('Network_Innovation_Paper/data_products/page_metadata.RDS')
+documents <- readRDS('Network_Innovation_Paper/data_products/02_text_preprocessing/page_metadata.RDS')
 
 # Define the columns to be vectorized
 columns_to_merge <- c("basin_plan", "sust_criteria", "monitoring_networks", "projects_mgmt_actions", "admin")

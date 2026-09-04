@@ -19,7 +19,7 @@ CONFIG <- list(
   max_text_length = 1e10,
   cut_prop = 0.1,
   space_prop_multiplier = 5,
-  output_file = nip_product("page_metadata.RDS")
+  output_file = nip_product("02_text_preprocessing", "page_metadata.RDS")
 )
 
 # ----- Setup -----

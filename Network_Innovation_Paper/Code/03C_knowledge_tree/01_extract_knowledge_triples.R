@@ -34,7 +34,7 @@ library(textNet)
 source("Network_Innovation_Paper/Code/_paths.R")
 
 # ---- sust-criteria pages of the original document per plan --------------------
-page_meta <- as.data.table(readRDS(nip_product("page_metadata.RDS")))
+page_meta <- as.data.table(readRDS(nip_product("02_text_preprocessing", "page_metadata.RDS")))
 sust_pages <- page_meta[doc_rank == 1 & sust_criteria == TRUE,
                         .(gsp_doc_id, gsp_id, page_num)]
 if (!nrow(sust_pages)) stop("no sust-criteria pages in page_metadata.RDS", call. = FALSE)
@@ -86,6 +86,6 @@ trips_dt <- rbindlist(trips, use.names = TRUE, fill = TRUE)
 if (!nrow(trips_dt)) stop("no triples extracted from any plan", call. = FALSE)
 setcolorder(trips_dt, c("file", "subject", "predicate", "object"))
 
-out <- nip_product("knowledge_triples_sustcrit.csv")
+out <- nip_product("03C_knowledge_tree", "knowledge_triples_sustcrit.csv")
 fwrite(trips_dt, out)
 cat("wrote", nrow(trips_dt), "triples across", uniqueN(trips_dt$file), "plans ->", out, "\n")

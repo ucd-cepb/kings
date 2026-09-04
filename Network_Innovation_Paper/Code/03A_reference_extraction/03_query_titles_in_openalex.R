@@ -9,7 +9,7 @@ core_set = detectCores()-1
 # Set CLOBBER flag
 CLOBBER <- F
 
-refs <- readRDS('Network_Innovation_Paper/data_products/gsp_classified_refs.rds')
+refs <- readRDS('Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_classified_refs.rds')
 refs$class[grepl('Journal',refs$journal_disambig)] <- 'journal'
 refs$class[!is.na(refs$doi)] <- 'journal'
 
@@ -32,8 +32,8 @@ refs$title <- str_remove_all(refs$title,'\\|')
 title_counts <- refs[,.N,by=.(title)][order(-N),]
 
 # Check for existing results unless CLOBBER is TRUE
-if(!CLOBBER && file.exists('Network_Innovation_Paper/data_products/gsp_openalex_title_results.rds')) {
-  existing_results <- readRDS('Network_Innovation_Paper/data_products/gsp_openalex_title_results.rds')
+if(!CLOBBER && file.exists('Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_openalex_title_results.rds')) {
+  existing_results <- readRDS('Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_openalex_title_results.rds')
   # Filter out titles that have already been queried
   title_counts <- title_counts[!title %in% existing_results$query_title,]
 }
@@ -98,8 +98,8 @@ host_id_names <- data.table(host.id = basename(host_orgs),host.display_name = un
 title_query_dt$host.display_name = host_id_names$host.display_name[match(basename(title_query_dt$source.host_organization),host_id_names$host.id)]
 
 # Combine with existing results if they exist and CLOBBER is FALSE
-if(!CLOBBER && file.exists('Network_Innovation_Paper/data_products/gsp_openalex_title_results.rds')) {
+if(!CLOBBER && file.exists('Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_openalex_title_results.rds')) {
   title_query_dt <- rbindlist(list(existing_results, title_query_dt), fill=TRUE)
 }
 
-saveRDS(title_query_dt,file = 'Network_Innovation_Paper/data_products/gsp_openalex_title_results.rds')
+saveRDS(title_query_dt,file = 'Network_Innovation_Paper/data_products/03A_reference_extraction/gsp_openalex_title_results.rds')
