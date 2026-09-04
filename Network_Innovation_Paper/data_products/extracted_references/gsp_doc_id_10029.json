@@ -1,0 +1,2502 @@
+[
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G."
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Ground-Water Resources of the South-Coast Basins of Santa Barbara County, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water Supply Paper 1108"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Lian",
+        "given": "H.M."
+      }
+    ],
+    "date": [
+      "1952"
+    ],
+    "title": [
+      "The Geology and Paleontology of the Carpinteria District"
+    ],
+    "location": [
+      "Santa Barbara, California"
+    ],
+    "note": [
+      "unpublished Ph."
+    ],
+    "genre": [
+      "D. dissertation,"
+    ],
+    "publisher": [
+      "University of California at Los Angeles"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "literal": " Evenson, R.E., H.D. Wilson, Jr., and K.S. Muir."
+      }
+    ],
+    "date": [
+      "1962",
+      "1941"
+    ],
+    "title": [
+      "Yield of the Carpinteria and Goleta Ground Water Basins"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "pages": [
+      "– 58"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Slade",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Hydrogeologic Investigation of the Carpinteria Ground Water Basin, unpublished M.A"
+    ],
+    "genre": [
+      "Thesis,"
+    ],
+    "publisher": [
+      "University of Southern California"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Geotechnical"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "Hydrogeologic Investigation of Carpinteria Ground Water Basin"
+    ],
+    "publisher": [
+      "Prepared for Carpinteria County Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Geotechnical"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Hydrogeologic Update, Carpinteria Groundwater Basin"
+    ],
+    "publisher": [
+      "Prepared for Carpinteria County Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sullwold",
+        "given": "H.H."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin, A Geological Up-date"
+    ],
+    "publisher": [
+      "Prepared for Carpinteria Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin, Hydrogeologic Update and Groundwater Model Project"
+    ],
+    "publisher": [
+      "Prepared for Carpinteria Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "volume": [
+      "13"
+    ],
+    "pages": [
+      "734 53 119 290 77 428 95 1,798 140 1,023 1,836 1,016 89 4,105 –2,307 –2,307"
+    ],
+    "issue": [
+      "08"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1986"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "24 28 1,087 827 4,152 257 111 170 113 6,716 75 786 2,032 1,184 89 4,166 2,551 244"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "518 82 0 338 96 103 152 1,289 42 613 2,363 1,057 89 4,163 –2,875 –2,631"
+    ],
+    "issue": [
+      "23"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "15"
+    ],
+    "pages": [
+      "873 102 564 303 107 56 194 2,199 41 519 2,342 1,193 89 4,185 –1,986 –4,616"
+    ],
+    "issue": [
+      "55"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "514 24 0 360 163 62 327 1,451 27 409 2,984 1,703 89 5,213 –3,762 –8,378"
+    ],
+    "issue": [
+      "15"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "pages": [
+      "7 96 447 4 0 341 209 73 485 1,559 22 334 3,413 2,249 89 6,107 –4,548 –12,926"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "1,004 730 1,075 225 243 68 502 3,846 41 341 3,014 2,544 89 6,028 –2,183 –15,109"
+    ],
+    "issue": [
+      "88"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "22"
+    ],
+    "pages": [
+      "1,087 971 3,373 196 249 96 316 6,288 57 391 1,560 2,442 89 4,538 1,750 –13,359"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Above Normal"
+    ],
+    "issue": [
+      "66"
+    ]
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "33"
+    ],
+    "pages": [
+      "6,641 174 282 186 106 9,817 84 698 1,261 2,744 89 4,875 4,942 –8,417"
+    ],
+    "issue": [
+      "33"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1994"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Above"
+      }
+    ],
+    "pages": [
+      "13 22 742 323 151 188 318 115 92 1,929 49 487 1,307 3,174 89 5,107 –3,177 –11,594"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "6,946 167 256 164 79 10,320 91 943 1,291 2,691 89 5,106 5,214 –6,380"
+    ],
+    "issue": [
+      "64"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "976 852 966 182 274 118 53 3,422 65 673 1,557 2,826 89 5,210 –1,788 –8,167"
+    ],
+    "issue": [
+      "39"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1997"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "16 10 904 910 693 194 276 71 45 3,092 54 574 1,317 2,810 89 4,843 –1,751 –9,918"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "45"
+    ],
+    "pages": [
+      "6,920 149 260 139 44 10,218 90 1,072 575 2,795 89 4,621 5,597 –4,321"
+    ],
+    "issue": [
+      "95"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "pages": [
+      "9 89 555 398 0 190 315 105 43 1,606 50 730 340 3,614 89 4,823 –3,217 –7,538"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "17 45 980 757 933 223 303 70 54 3,319 53 572 1,410 3,552 89 5,676 –2,357 –9,895"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2001"
+    ],
+    "volume": [
+      "20"
+    ],
+    "pages": [
+      "2,163 174 329 77 62 4,926 60 624 185 3,821 89 4,778 148 –9,747"
+    ],
+    "issue": [
+      "47"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2002"
+    ],
+    "volume": [
+      "7"
+    ],
+    "pages": [
+      "439 6 0 197 316 57 64 1,080 30 509 558 3,682 89 4,868 –3,787 –13,534"
+    ],
+    "issue": [
+      "82"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "21 81 1,087 516 2,820 189 291 60 61 5,023 52 541 402 3,296 89 4,380 643 –12,891"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2004"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "535 2 0 211 302 56 69 1,175 30 421 999 3,446 89 4,985 –3,810 –16,701"
+    ],
+    "issue": [
+      "53"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2005"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "6,793 180 235 135 112 10,083 83 849 1,152 2,609 89 4,781 5,302 –11,399"
+    ],
+    "issue": [
+      "76"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2006"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "1,033 882 1,078 182 261 110 82 3,628 62 603 1,120 2,791 89 4,665 –1,037 –12,436"
+    ],
+    "issue": [
+      "39"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2007"
+    ],
+    "pages": [
+      "7 38 414 8 0 210 299 72 150 1,155 31 466 1,418 3,120 89 5,125 –3,970 –16,407"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2008"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "969 985 820 224 300 56 99 3,454 49 440 661 3,296 89 4,535 –1,081 –17,487"
+    ],
+    "issue": [
+      "26"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2009"
+    ],
+    "volume": [
+      "13"
+    ],
+    "pages": [
+      "742 12 139 210 259 58 283 1,704 35 384 1,627 2,679 89 4,814 –3,110 –20,597"
+    ],
+    "issue": [
+      "22"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "1,087"
+    ],
+    "pages": [
+      "651 1,755 173 276 57 228 4,227 48 384 1,060 2,820 89 4,401 –173 –20,770"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2011"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "1,087 996 4,491 162 273 104 157 7,269 65 564 1,224 2,756 89 4,698 2,571 –18,199"
+    ],
+    "issue": [
+      "97"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2012"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Below"
+      }
+    ],
+    "pages": [
+      "9 80 550 6 0 211 270 83 143 1,265 35 407 1,013 2,829 89 4,372 –3,108 –21,307"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2013"
+    ],
+    "genre": [
+      "Critical 8.28"
+    ],
+    "pages": [
+      "465 0 0 238 331 52 135 1,222 25 297 641 3,475 89 4,527 –3,305 –24,612"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2014"
+    ],
+    "pages": [
+      "5 82 327 10 0 255 392 50 224 1,259 20 247 1,048 4,137 89 5,541 –4,282 –28,894"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2015"
+    ],
+    "genre": [
+      "Critical 8.64"
+    ],
+    "pages": [
+      "485 0 0 216 398 74 585 1,757 22 274 2,598 3,989 89 6,972 –5,215 –34,109"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2016"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "559 0 0 222 382 82 808 2,053 23 269 2,759 3,796 89 6,936 –4,884 –38,993"
+    ],
+    "issue": [
+      "95"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2017"
+    ],
+    "author": [
+      {
+        "family": "Normal",
+        "given": "Above"
+      }
+    ],
+    "pages": [
+      "21 85 1,087 844 2,855 202 417 107 639 6,151 52 276 1,239 4,188 89 5,844 307 –38,686"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "F.",
+        "given": "Blaney Harry"
+      },
+      {
+        "family": "Criddle",
+        "given": "W.D."
+      }
+    ],
+    "date": [
+      "1962"
+    ],
+    "title": [
+      "Determining Consumptive Use and Irrigation Water Requirements"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Department of Agriculture, Agriculture Research Service. Technical Bulletin"
+    ],
+    "issue": [
+      "1275"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Blaney",
+        "given": "Harry F."
+      }
+    ],
+    "date": [
+      "1933"
+    ],
+    "title": [
+      "Consumptive Use of Water by Native Plants Growing in Moist Areas"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bredehoeft",
+        "given": "J.D."
+      }
+    ],
+    "date": [
+      "2002",
+      "2002-07"
+    ],
+    "title": [
+      "The Water Budget Myth Revisited: Why Hydrogeologists Model"
+    ],
+    "volume": [
+      "40"
+    ],
+    "pages": [
+      "340–345"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ground Water"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bredehoeft",
+        "given": "J.D."
+      },
+      {
+        "family": "Papadopulos",
+        "given": "S.S."
+      },
+      {
+        "family": "Cooper",
+        "given": "H.H."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Groundwater: The Water Budget Myth"
+    ],
+    "container-title": [
+      "Scientific Basis of Water-Resource Management, Studies in Geophysics"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "publisher": [
+      "National Academy Press"
+    ],
+    "pages": [
+      "51–57"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "C.M.W.D."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "container-title": [
+      "Prepared by the Casitas Municipal Water District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Adopted by the Board of Directors on June 23"
+    ],
+    "date": [
+      "2021"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://www.casitaswater.org/home/showpublisheddocument/4108/637607539377570000."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Carpinteria",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2003",
+      "2003-04"
+    ],
+    "title": [
+      "City of Carpinteria General Plan/Local Coastal Land Use Plan & Environmental Impact Report"
+    ],
+    "volume": [
+      "Number 1997121111"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://carpinteriaca.gov/wp-content/uploads/2023/09/cd_General-Plan.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "State Clearinghouse"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Driscoll",
+        "given": "F.G."
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Groundwater and Wells"
+    ],
+    "edition": [
+      "Second"
+    ],
+    "translator": [
+      {
+        "family": "Johnson Screens",
+        "given": "Published",
+        "particle": "by"
+      },
+      {
+        "given": "St"
+      }
+    ],
+    "location": [
+      "Paul, MN"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Santa Barbara County Integrated Regional Water Management Plan, Update 2019"
+    ],
+    "container-title": [
+      "Prepared by Dudek Consultants. Prepared for the Santa Barbara County IRWM Cooperating Partners"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin"
+    ],
+    "volume": [
+      "118"
+    ],
+    "location": [
+      "Central Coast"
+    ],
+    "note": [
+      "Hydrologic Region. Available at",
+      "Last update February 27, 2004."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2003-Basin-Descriptions/3_018_Carpinteria.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Basin",
+      "California’s Groundwater Bulletin"
+    ],
+    "issue": [
+      "3-018"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "California Statewide Groundwater Elevation Monitoring (CASGEM) Program Procedures for Monitoring Entity Reporting"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: DRAFT Sustainable Management Criteria"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "SGMA Data Viewer. California Department of Water Resources"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#currentconditions."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "note": [
+      "Disadvantaged Communities Mapping (DAC) Tool. Available at",
+      "Accessed July 20, 2022."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/dacs/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2023"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin"
+    ],
+    "volume": [
+
+    ],
+    "location": [
+      "Central Coast"
+    ],
+    "note": [
+      "Hydrologic Region. Available at",
+      "Last updated August 11, 2023."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2003-Basin-Descriptions/3_018_Carpinteria.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Basin"
+    ],
+    "issue": [
+      "3-018"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Evenson",
+        "given": "R.E."
+      },
+      {
+        "family": "Wilson",
+        "given": "H.D.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Muir",
+        "given": "K.S."
+      }
+    ],
+    "date": [
+      "1962",
+      "1941"
+    ],
+    "title": [
+      "Yield of the Carpinteria and Goleta Ground Water Basins"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "pages": [
+      "– 58"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Open-File Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "G.T.C."
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "Hydrogeologic Investigation of Carpinteria Ground Water Basin. Prepared for Carpinteria County Water District"
+    ],
+    "publisher": [
+      "Geotechnical Consultants, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "G.T.C."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Hydrogeologic Update, Carpinteria Groundwater Basin. Prepared for Carpinteria County Water District"
+    ],
+    "publisher": [
+      "Geotechnical Consultants, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "MODFLOW-2005, the U.S. Geological Survey Modular Ground-Water Model – the Ground-Water Flow Process: U.S"
+    ],
+    "volume": [
+      "6-A16"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      },
+      {
+        "family": "Ibaraki",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "MODFLOW-NWT, A Newton Formulation for MODFLOW-2005: U.S"
+    ],
+    "volume": [
+      "6–A37"
+    ],
+    "pages": [
+      "44"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "N.M.F.S."
+      }
+    ],
+    "date": [
+      "2000",
+      "2000"
+    ],
+    "title": [
+      "Biological Opinion, U.S. Bureau of Reclamation Operation and Maintenance of the Cachuma Project on the Santa Ynez River in Santa Barbara County, California"
+    ],
+    "volume": [
+      "11"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Issued September"
+    ]
+  },
+  {
+    "container-title": [
+      "Issued by the National Marine Fisheries Service (NMFS"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Padre"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Aquifer Storage and Recovery Demonstration Project. Prepared for Carpinteria Valley Water District by Padre Associates"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "P.W.R."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Future Water Budget Methodology Technical Memo"
+    ],
+    "publisher": [
+      "Prepared by Pueblo Water Resources, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "P.W.R."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin, Hydrogeologic Update and Groundwater Model Project"
+    ],
+    "note": [
+      "Prepared by Pueblo Water Resources, Inc. Prepared for Carpinteria Valley Water District."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.M.S."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-04"
+    ],
+    "title": [
+      "Carpinteria Valley Recycled Water Facilities Plan, Final Report. Carpinteria Valley Water District, City of Carpinteria, and Carpinteria Sanitary District"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by RMS Water and Environment"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "note": [
+      "Agricultural Order No. R3-2017-0002,"
+    ],
+    "title": [
+      "Conditional Waiver of Waste Discharge Requirements for Discharges from Irrigated Lands"
+    ],
+    "publisher": [
+      "State of California, California Regional Water Quality Control Board Central Coast Region"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-04-15"
+    ],
+    "title": [
+      "Agricultural Order No. R3-2021-0040, General Waste Discharge Requirements for Discharges from Irrigated Lands. State of California, California Regional Water Quality Control Board Central Coast Region"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Santa Barbara County 2011 Groundwater Report"
+    ],
+    "publisher": [
+      "Prepared by Dennis Gibbs for Santa Barbara County Public Works Department, Water Resources Division"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Santa Barbara County Groundwater Basins Summary Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "California",
+        "given": "State",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-05-14"
+    ],
+    "title": [
+      "California Roars Back: Governor Newsom Presents $100 Billion California Comeback Plan"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://www.gov.ca.gov/2021/05/14/california-roars-back-governor-newsom-presents-100-billioncalifornia-comeback-plan/."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Office of Governor Gavin Newsom"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sullwold",
+        "given": "H.H."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin, A Geological Up-date"
+    ],
+    "publisher": [
+      "Prepared for Carpinteria Valley Water District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Theis",
+        "given": "C.V."
+      }
+    ],
+    "title": [
+      "The Source of Water Derived from Wells: Essential Factors Controlling the Response of an Aquifer to Development"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "277–280,"
+    ],
+    "date": [
+      "1940"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Civil Engineer"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "March 23"
+    ],
+    "title": [
+      "InSar Data Accuracy for California Groundwater Basins, CGPS Data Comparative Analysis, January 2015 to September 2019"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the California Department of Water Resources"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "ALTAMIRA",
+        "given": "T.R.E."
+      }
+    ],
+    "date": [
+      "2023"
+    ],
+    "title": [
+      "InSAR Land Surveying and Mapping Services to DWR Supporting SGMA"
+    ],
+    "note": [
+      "October 2023 Updated Technical Report."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "T.W.R.I."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Potential Water Savings in Irrigated Agriculture in the Lower Rio Grande Basin of Texas"
+    ],
+    "publisher": [
+      "Texas Water Resources Institute (TWRI"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G."
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Ground-Water Resources of the South-Coast Basins of Santa Barbara County, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water Supply Paper 1108"
+    ],
+    "url": [
+      "https://doi.org/10.3133/wsp1108."
+    ],
+    "doi": [
+      "10.3133/wsp1108."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.C.V.C."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "WCVC Integrated Regional Water Management Plan, Final Draft"
+    ],
+    "note": [
+      "Adopted in 2014, Amended in 2019. Watersheds Coalition of Ventura County (WCVC). Available at"
+    ],
+    "url": [
+      "https://watershedscoalition.org/2019-irwm-plans/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Groot-Hedlin",
+        "given": "C.",
+        "particle": "de"
+      },
+      {
+        "family": "Constable",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Occam’s inversion to generate smooth, twodimensional models from magnetotelluric data"
+    ],
+    "volume": [
+      "55"
+    ],
+    "pages": [
+      "1613–1624"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Edwards",
+        "given": "L.S."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "A modified pseudosection for resistivity and IP"
+    ],
+    "volume": [
+      "42"
+    ],
+    "pages": [
+      "1020–1036"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Goebel",
+        "given": "M."
+      },
+      {
+        "family": "Pidlisecky",
+        "given": "A."
+      },
+      {
+        "family": "Knight",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Resistivity imaging reveals complex pattern of saltwater intrusion along the Monterey coast"
+    ],
+    "volume": [
+      "551"
+    ],
+    "pages": [
+      "746–755"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Keary",
+        "given": "P."
+      },
+      {
+        "family": "Brooks",
+        "given": "M."
+      },
+      {
+        "family": "Hill",
+        "given": "I."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "An introduction to Geophysical Exploration"
+    ],
+    "edition": [
+      "3rd"
+    ],
+    "location": [
+      "MA, USA"
+    ],
+    "publisher": [
+      "Blackwell Publishing"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Loke",
+        "given": "M.H."
+      },
+      {
+        "family": "Barker",
+        "given": "R.D."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Rapid least-squares inversion of apparent resistivity pseudosections by a quasi-Newton method"
+    ],
+    "genre": [
+      "Geophys Prospect,"
+    ],
+    "pages": [
+      "131–152"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Minor",
+        "given": "S.A."
+      },
+      {
+        "family": "Kellogg",
+        "given": "K.S."
+      },
+      {
+        "family": "Stanley",
+        "given": "R.G."
+      },
+      {
+        "family": "Gurrola",
+        "given": "L.D."
+      },
+      {
+        "family": "Keller",
+        "given": "E.A."
+      },
+      {
+        "family": "Brandt",
+        "given": "T.R."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Geologic Map of the Santa Barbara Coastal Plain Area, Santa Barbara County, California"
+    ],
+    "volume": [
+      "3001",
+      1
+    ],
+    "pages": [
+      "25,000"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Scientific Investigations Map"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Oldenburg",
+        "given": "D.W."
+      },
+      {
+        "family": "Li",
+        "given": "Y."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Estimating depth of investigation of dc resistivity and IP surveys"
+    ],
+    "volume": [
+      "64"
+    ],
+    "pages": [
+      "403–416"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Pueblo Water Resources"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin: Hydrogeological Update and Groundwater Model Project"
+    ],
+    "genre": [
+      "(Report 06-0125),"
+    ],
+    "location": [
+      "Ventura, Ca"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Pueblo Water Resources"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Monitoring Well Completion Report: Carpinteria Groundwater Basin Sentinel Wells"
+    ],
+    "genre": [
+      "(Report 18-0061),"
+    ],
+    "location": [
+      "Ventura, Ca"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Reynolds",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "An Introduction to Applied and Environmental Geophysics"
+    ],
+    "edition": [
+      "2nd"
+    ],
+    "location": [
+      "West Sussex, UK"
+    ],
+    "publisher": [
+      "John Wiley and Sons"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Zonge",
+        "given": "K."
+      },
+      {
+        "family": "Wynn",
+        "given": "J."
+      },
+      {
+        "family": "Urquhart",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Resistivity, Induced Polarization, and Complex Resistivity"
+    ],
+    "container-title": [
+      "Near Surface Geophysics"
+    ],
+    "pages": [
+      "265–300"
+    ],
+    "location": [
+      "USA"
+    ],
+    "publisher": [
+      "Society of Exploration Geophysicists (SEG"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M.P."
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "The role of the postaudit in model validation"
+    ],
+    "volume": [
+      "15"
+    ],
+    "pages": [
+      "167–173"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Advances in Water Resources"
+    ],
+    "issue": [
+      "3"
+    ]
+  },
+  {
+    "title": [
+      "California Natural Resources Agency (CNRA",
+      "State of California Sea-Level Rise Guidance, 2018 Update"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "California’s Groundwater Update 2020 (Bulletin 118),",
+      "Retrieved July 2022"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/calgw_update2020,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Sustainable Management Groundwater Act (SGMA) Data Viewer"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer,"
+    ],
+    "note": [
+      "Retrieved July 2022"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "G.S.I."
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin Draft Groundwater Sustainability Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Guo",
+        "given": "W."
+      },
+      {
+        "family": "Langevin",
+        "given": "C.D."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "User’s Guide to SEAWAT: A Computer Program for Simulation of Three-Dimensional Variable-Density Ground-Water Flow: U.S"
+    ],
+    "volume": [
+      "6–A7"
+    ],
+    "pages": [
+      "77"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "title": [
+      "HydroMetrics Water Resources Inc",
+      "Carpinteria Valley Groundwater Model Development"
+    ],
+    "date": [
+      "2012"
+    ],
+    "publisher": [
+      "Prepared for Pueblo Water Resources"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "WRI"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Konikow",
+        "given": "L.F."
+      },
+      {
+        "family": "Hornberger",
+        "given": "G.Z."
+      },
+      {
+        "family": "Halford",
+        "given": "K.J."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Revised multi-node well (MNW2) package for MODFLOW ground-water flow model: U.S"
+    ],
+    "volume": [
+      "6–A30"
+    ],
+    "pages": [
+      "67"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Oceanic",
+        "given": "National"
+      },
+      {
+        "family": "Administration",
+        "given": "Atmospheric"
+      }
+    ],
+    "date": [
+      "2022"
+    ],
+    "title": [
+      "Datums for 9411270"
+    ],
+    "location": [
+      "Rincon Island, Pacific Ocean CA"
+    ],
+    "url": [
+      "https://tidesandcurrents.noaa.gov/datums.html?id=9411270,"
+    ],
+    "note": [
+      "Retrieved August 2022"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      },
+      {
+        "family": "Ibaraki",
+        "given": "M."
+      },
+      {
+        "given": "M.O.D.F.L.O.W.-N.W.T."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "A Newton formulation for MODFLOW-2005"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin Hydrogeologic Update and Groundwater Model Project"
+    ],
+    "genre": [
+      "Final Report"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-06"
+    ],
+    "title": [
+      "IPR Groundwater Modeling Assessment, Prepared for Carpinteria Valley Water District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      }
+    ],
+    "date": [
+      "2022",
+      "2022-04-11"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin GSP Development Project; Projected Water Budget Methodology, Prepared for Carpinteria Valley Water District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      }
+    ],
+    "date": [
+      "2023",
+      "2023-10-05"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin GSP Development Project; Projected Groundwater Modeling of the Carpinteria Advanced Purification Project (CAPP) Technical Memorandum, Prepared for Carpinteria Valley Water District"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United States Geological Survey (USGS",
+      "Geology and Ground-Water Resources of the South-Coast Basin of the Santa Barbara County"
+    ],
+    "editor": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G."
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "container-title": [
+      "California, United States Geological Survey Water Supply Paper 1108"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-10"
+    ],
+    "title": [
+      "Carpinteria Valley Water District 2020 Urban Water Management Plan, Prepared for Carpinteria Valley Water District"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "-234.005--274.005"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "804"
+    ],
+    "pages": [
+      "1044 005–1144 005"
+    ],
+    "issue": [
+      "005--864.005"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–172–272 –19 4 332–372 –472–",
+      "–133–233 –19 2 293–333 –433–",
+      "274–434",
+      "–126–166 –176–216 –266–19 2 –286 –306–346",
+      "–356–366"
+    ],
+    "volume": [
+      "0",
+      "0",
+      "0"
+    ],
+    "issue": [
+      "0",
+      "2 7% 11% 81% 0% 0% 0% 0% 0.0% 434 19J1 -10--300 38% 19% 43% 0% 0% 0% 0% 0.0% 19J2 -10--300 44% 20% 36% 0% 0% 0% 0% 0.0% 19J234 -42--142 100% 0% 0% 0% 0% 0% 0% 0.0% 19J5 -100--400 19% 17% 64% 0% 0% 0% 0% 0.0% 19J6 -100--400 13% 19% 68% 0% 0% 0% 0% 0.0% -134--254 |-19J7 22% 12% 66% 0% 0% 0% 0% 0.0",
+      "0",
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "pages": [
+      "273–463 19 1 –100–350",
+      "251–441 8–12 –52–92 –20 1",
+      "112–152 8–12",
+      "528–608 20 1 –156–596",
+      "220–318 20 1 –50–400",
+      "–306–326 –346–366 –566–20 4 –596 –656–676",
+      "–696–716 –776–836 –20 5 –119–619"
+    ],
+    "note": [
+      "Screening Model Layering Elevations"
+    ],
+    "issue": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "1 -22--542 8% 6% 83% 3% 0% 0% 0% 4.2% -20--40 |-60--80 20J2 |-120--200 |- 41% 14% 45% 0% 0% 0% 0% 0.0",
+      "0",
+      "0",
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "pages": [
+      "–187–227 –20 5 237–247 –257–",
+      "–70–120 –140–160 –190–215 20 4 –260–290 –",
+      "320–360 –380–425 –20 4 –77–207",
+      "345–645 –340–410 –21 1",
+      "430–707 21 2 24–316",
+      "–290–370 –21 6 460–670 –730–",
+      "412–662 21 2 –402–682",
+      "28–20 –10–40 –60–66 –120–130 –179–194 21 1 –204–208 – 35",
+      "230–231 –246–276 –302–306 22 1 114–54",
+      "179–166 152–143 141–137"
+    ],
+    "issue": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "0",
+      "0% 0% 24% 30% 39% 7% 0"
+    ],
+    "pages": [
+      "–140–380 –27 3 420–520 –580–",
+      "0 0"
+    ],
+    "issue": [
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "381–661 –161–176 –27 2 216–244 –258–",
+      "–286 –205–225 –27 3 365–385 –465–",
+      "–505 27 4 –10–300",
+      "27 5 38–162",
+      "–206–226 –27 5 366–386 –466–",
+      "–506 –100–160 –27 6 220–240 –340–",
+      "–360 –140–240 –28 1 260–280 –280–",
+      "279 –40–60 –90–28 2",
+      "120 –200–240 28 1 –141–357",
+      "–234–274 –28 2 804–864 – 2",
+      "1044–1144 28 3 –250–380",
+      "776–841"
+    ],
+    "volume": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "issue": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "pages": [
+      "–73–133 –153–28 2 233 –253–333",
+      "345–425 28 1 –50–350",
+      "–78–128 –148–168 –198–223 29 1 –268–298 – 43",
+      "328–368"
+    ],
+    "volume": [
+      "0",
+      "0",
+      "0"
+    ],
+    "note": [
+      "|-388--433 -Screening Model Layering Elevations"
+    ],
+    "issue": [
+      "0",
+      "0",
+      "0"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The CGB has been studied extensively over the last 60 years in previous investigations, most notably by the United States Geological Survey (USGS"
+    ],
+    "container-title": [
+      "Geology and Ground Water Reservoirs of the South-Coast Basin of Santa Barbara County, California, USGS Water Supply Paper 1108"
+    ],
+    "note": [
+      "J.E. Upson, 1951, Geotechnical Consultants, Inc. (GTC), Hydrogeologic"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Investigation of Carpinteria Ground Water Basin, dated June 1976, and most recently by Pueblo Water Resources",
+      "Hydrogeologic Update and Groundwater Model Project, dated June 2012. These documents have extensively documented the stratigraphy, structure, and hydraulic characteristics of the aquifer systems of the CGB"
+    ],
+    "producer": [
+      {
+        "given": "Inc"
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Carpinteria Valley Water District"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4"
+    ],
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "EC #2 ASR Demonstration Project; Summary of Operations, draft Technical Memorandum prepared for Carpinteria Valley Water District. 18-0102_CGB_GSP_CAPP_modeling_TM_draft_2023-10-05deo_accept.doc Technical Memorandum to CGSA October 2023"
+    ],
+    "note": [
+      "Project No. 18-0102) Page 4 of 10 DRAFT"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5"
+    ],
+    "author": [
+      {
+        "family": "Resources",
+        "given": "Pueblo Water"
+      },
+      {
+        "given": "Inc"
+      },
+      {
+        "family": "Resources",
+        "given": "HydroMetrics Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Carpinteria Groundwater Basin Hydrogeologic Update and Groundwater Model Project"
+    ],
+    "genre": [
+      "Final Report,"
+    ],
+    "note": [
+      "prepared for Carpinteria Valley Water District."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "18-0102_CGB_GSP_CAPP_modeling_TM_draft_2023-10-05deo_accept.doc Technical Memorandum to CGSA October 2023"
+    ],
+    "note": [
+      "Project No. 18-0102) Page 8 of 10 DRAFT"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "18-0102_CGB_GSP_CAPP_modeling_TM_draft_2023-10-05deo_accept.doc Technical Memorandum to CGSA October 2023"
+    ],
+    "note": [
+      "Project No. 18-0102"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "18-0102_CGB_GSP_CAPP_modeling_TM_draft_2023-10-05deo_accept.doc Technical Memorandum to CGSA October 2023"
+    ],
+    "note": [
+      "Project No. 18-0102) Page 10 of 10 DRAFT"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "18-0102_CGB_GSP_CAPP_modeling_TM_draft_2023-10-05deo_accept.doc"
+    ],
+    "note": [
+      "FIGURES October 2023 Project No. 18-0102"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Subsurface Inflow from Bedrock Phreatophyte Transpiration"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "FIGURE 19. PROJECTED WATER BUDGET SUMMARY - CAPP 6 SCENARIO Carpinteria Groundwater Basin GSP - CAPP Groundwater Modeling Carpinteria Groundwater Sustainability Agency"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Data Management System TECHNICAL MEMORANDUM Carpinteria Valley Groundwater Sustainability Agency Data Management Plan To: Carpinteria Valley Groundwater Sustainability Agency Consultants and Staff From: Tim Nicely and Josh Bale, GSI Water Solutions, Inc"
+    ],
+    "location": [
+      "Date"
+    ],
+    "date": [
+      "2022-05-25"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Curtis Thornton Section 6 9",
+      "Children’s 20230528.pdf These investigations are occurring under the authority of the RWQCB. Environmental https://www.nrdc.org/sites/default/files/2023-05/pfas-mcl-affordability-letter-Health Network) 20230528.pdf"
+    ],
+    "url": [
+      "https://www.nrdc.org/sites/default/files/2023-05/pfas-mcl-affordability-letter-"
+    ],
+    "title": [
+      "Thank you for the reference. The GSA is aware of the ongoing regulatory actions regarding PFAS"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Curtis Thornton General 9 https://www.nrdc.org/sites/default/files/2023-06/nrdc-pfda-iris-review-comments- References noted"
+    ],
+    "note": [
+      "Children’s Comment 20230609.pdf Environmental https://www.nrdc.org/sites/default/files/2023-06/nrdc-pfda-iris-review-comments-Health 20230609.pdf Network"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Jim Bailard Section 5 Page 5-39, This paragraph does a much better job discussing the current seawater intrusion Seawater intrusion is recognized in the GSP as a significant issue to be monitored and addressed Bottom of situation, describing it as an ongoing process that will require further monitoring and in the basin management, including a Tier 1 project for sentinel well network expansion. Page management action"
+    ],
+    "type": null
+  }
+]

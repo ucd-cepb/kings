@@ -1,0 +1,3911 @@
+[
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "Agricultural users, including farmers, ranchers, and dairy professionals"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Notice"
+      },
+      {
+        "family": "GSP",
+        "given": "Communications North American Subbasin"
+      }
+    ],
+    "pages": [
+      "11–2 2"
+    ],
+    "note": [
+      "Domestic well owners. 3. Municipal well operators. 4. Public water systems. 5. Local land use planning agencies."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6."
+    ],
+    "title": [
+      "Environmental users of groundwater"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Berkstresser",
+        "given": "C.F.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground-Water – Approximately 3,000 micromhos - in the Sacramento Valley and Sacramento-San Joaquin"
+    ],
+    "location": [
+      "Delta, California"
+    ],
+    "note": [
+      "U.S."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wri7340"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      },
+      {
+        "family": "V",
+        "given": "Fram"
+      },
+      {
+        "family": "M.S."
+      },
+      {
+        "family": "Belitz",
+        "given": "Kenneth"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Status of groundwater quality in the Southern, Middle, and Northern Sacramento Valley study units, 2005–08—California GAMA Priority Basin Project"
+    ],
+    "genre": [
+      "USGS Scientific Investigations Report 2011–5002."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2011/5002/"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Groundwater quality in the Sacramento Metropolitan Shallow Aquifer, California"
+    ],
+    "genre": [
+      "USGS Open-File Report 2019-1047."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr20191047"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Placer County Water Agency Integrated Water Resources Plan"
+    ],
+    "note": [
+      "Rancho Cordova, CA."
+    ],
+    "url": [
+      "http://www.pcwa.net/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bryan",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "1923"
+    ],
+    "title": [
+      "Geology and Ground-Water Resources of the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Supply Paper 495."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wsp495"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 23, Division 2, Chapter 1.5, Subchapter 2 Groundwater Sustainability Plans"
+    ],
+    "date": [
+      "2016"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/document/californiacode-of-regulations-title-23-waters-division-2-department-of-water-resources-chapter-1-5-groundwater-management-subchapter-2-groundwater-sustainability-plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Regulations",
+        "given": "California Code",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Title 22, Division 4, Chapter 15, Domestic Water Quality and Monitoring"
+    ],
+    "note": [
+      "accessed 2021."
+    ],
+    "url": [
+      "https://casetext.com/regulation/california-code-ofregulations/title-22-social-security/division-4-environmental-health/chapter-15-domesticwater-quality-and-monitoring-regulations"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Evaluation of Ground Water Resources: Sacramento County"
+    ],
+    "date": [
+      "1974-07"
+    ],
+    "volume": [
+      "118-3"
+    ],
+    "url": [
+      "https://www.csus.edu/indiv/h/hornert/Geologic%20maps%20and%20references/DWR_B"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Water Resources Bulletin"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Evaluation of Ground Water Resources: Sacramento Valley"
+    ],
+    "date": [
+      "1978-07"
+    ],
+    "volume": [
+      "118-6"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Water Resources Bulletin"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Bulletin 74-81 Water Well Standards: State of California"
+    ],
+    "date": [
+      "1981"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Bulletin 74-90. California Well Standards"
+    ],
+    "date": [
+      "1991"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Standards/Combined-Well-Standards"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1995",
+      "1995-07"
+    ],
+    "title": [
+      "Sacramento Delta San Joaquin Atlas"
+    ],
+    "edition": [
+      "Reprint"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/waterrights/water_issues/programs/bay_delta/deltaflow/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "genre": [
+      "Draft Feasibility Report,"
+    ],
+    "publisher": [
+      "American Basin Conjunctive Use Project"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "date": [
+      "1997"
+    ],
+    "genre": [
+      "Feasibility Report,"
+    ],
+    "publisher": [
+      "American Basin Conjunctive Use Project"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "California’s Groundwater"
+    ],
+    "volume": [
+      "118"
+    ],
+    "note": [
+      "–Update 2003, North American Subbasin, last update February 27, 2004."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/Statewide-Reports/Bulletin_118_Update_2003.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Geology of the"
+    ],
+    "location": [
+      "Northern Sacramento Valley, California"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/document/geology-of-the-northern-sacramentovalley-california/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater, Monitoring Networks and Identification of Data Gaps"
+    ],
+    "url": [
+      "https://groundwaterexchange.org/wp-content/uploads/2020/09/BMP-2-Monitoring-Networks-and-Identification-of-Data-Gaps_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater, Monitoring Protocols"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/SGMA-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Standards and Sites"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Water Budget"
+    ],
+    "genre": [
+      "December."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-4-Water-Budget_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best management Practices for the Sustainable Management of Groundwater, Sustainable Management Criteria DRAFT"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Disadvantaged Communities Mapping Tool"
+    ],
+    "note": [
+      "Accessed May 2021."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/dacs/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "container-title": [
+      "2017 GPS Survey of the Sacramento Valley Subsidence Network"
+    ],
+    "url": [
+      "https://scgah2o.saccounty.net/Documents/2017_GPS_Survey_of_the_Sacramento_Valley"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guidance Documentation for Groundwater Sustainability Plan, Stakeholder Communication and Engagement"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Assistance-and-Engagement/Files/Guidance-Doc-for-GSP---Stakeholder-Communication-and-Engagement.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "SGMA Basin Prioritization"
+    ],
+    "genre": [
+      "Phase 2."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/bp-dashboard/final/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2019"
+    ],
+    "genre": [
+      "Well Completion Reports,"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Wells/Well-Completion-Reports"
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "California Department of Water Resources"
+    ],
+    "date": [
+      "2020"
+    ],
+    "publisher": [
+      "SGMA Data Viewer"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "California’s Groundwater Update 2020, Bulletin 118. CalGW Online datasets, water level trend data"
+    ],
+    "note": [
+      "Groundwater Level Estimated Trends Dashboard (arcgis.com"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "Central Valley Regional Water Quality Control"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "The Water Quality Control Plan (Basin Plan) for the California Regional Water Quality Control Board Central Valley Region"
+    ],
+    "note": [
+      "Fourth Edition, Revised October 2007 (with Approved Amendments), The Sacramento River Basin & The San Joaquin River Basin, California Regional Water Quality Control Board Central Valley Region.",
+      "accessed 10/2008)."
+    ],
+    "url": [
+      "http://www.swrcb.ca.gov/rwqcb5/water_issues/basin_plans/"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Central Valley Region Regional Water Quality Control Board (CVRWQCB",
+      "Water Quality Control Plan for the Sacramento and San Joaquin Rivers"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/basin_plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CH2MHill"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Rice Specific - Groundwater Assessment Report"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/water_quality"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Quality Assessment Report on behalf of the Northern California Water Agencies and the Sacramento Valley Water Quality Coalition"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/water_quality"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Trend Monitoring Workplan and Data Gap Assessment Plan on behalf of the California Rice Commission"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/water_quality",
+      "https://qcode.us/codes/sacramentocounty/view.php?topic=6-6_28"
+    ],
+    "note": [
+      "County of Sacramento. Chapter 6.28 Wells and Pumps."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Davis"
+      },
+      {
+        "given": "Hall"
+      },
+      {
+        "family": "Davis",
+        "given": "S.N."
+      },
+      {
+        "family": "Hall",
+        "given": "F.R."
+      }
+    ],
+    "date": [
+      "1959",
+      "1959"
+    ],
+    "title": [
+      "Water quality of eastern Stanislaus and northern Merced Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "Stanford Univ. Pubs"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "112"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geol. Sci"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Davis"
+      },
+      {
+        "given": "Hall"
+      },
+      {
+        "family": "Davis",
+        "given": "S.N."
+      },
+      {
+        "family": "Hall",
+        "given": "F.R."
+      }
+    ],
+    "date": [
+      "1959",
+      "1959"
+    ],
+    "title": [
+      "Water quality of eastern Stanislaus and northern Merced Counties",
+      "Geol"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "Stanford Univ. Pubs"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "112"
+    ],
+    "url": [
+      "https://ngmdb.usgs.gov/Prodesc/proddesc_91644.htm"
+    ],
+    "note": [
+      "Department of Water Resources and United States Bureau of Reclamation (USBR) Water"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Sci"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Paper",
+        "given": "Transfer White"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/State-Water-Project/Management/Water-Transfers/Files/Draft_WTWhitePaper_20191203.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Harwood"
+      },
+      {
+        "given": "Helley"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Late Tectonism of the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geologic Survey Professional Paper 1359"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/pp/1359/report.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Helley"
+      },
+      {
+        "given": "Harwood"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Geologic Map of Late Cenozoic Deposits of the Sacramento Valley and Northern Sierran Foothills"
+    ],
+    "location": [
+      "California, U.S"
+    ],
+    "note": [
+      "Geological Survey, Miscellaneous Field Studies Map MF-1790."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/mf/1985/1790/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Howard",
+        "given": "Janet L."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Quercus lobata"
+    ],
+    "container-title": [
+      "Fire Effects Information System, [Online]. U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station, Fire Sciences Laboratory (Producer"
+    ],
+    "url": [
+      "https://www.fs.fed.us/database/feis/plants/tree/quelob/all.html"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "GEI",
+        "given": "March"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "State of the Basin Report 2013 through 2016 West Placer County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "G.E.I."
+      }
+    ],
+    "date": [
+      "2018-11-02"
+    ],
+    "title": [
+      "Technical Memorandum, Initial GSP Development Activities"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "G.E.I."
+      }
+    ],
+    "date": [
+      "2019-06-21"
+    ],
+    "title": [
+      "Technical Memorandum, Brackish Water Affected Areas Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "G.E.I."
+      }
+    ],
+    "date": [
+      "2020-03-11"
+    ],
+    "publisher": [
+      "Water Quality Sampling"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Kleinfelder"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Piezometer Reading Summary, 2018-2019 Flood Season Natomas Cross Canal Sacramento and American Rivers"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "note": [
+      "and Sutter Counties, CA. File No.: 20161893.005A."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Komex H20 Science",
+      "Summary of Studies Regarding Surface Water-Groundwater Interaction Along the American River Downstream of Nimbus Dam"
+    ],
+    "publisher": [
+      "Inc"
+    ],
+    "date": [
+      "2005"
+    ],
+    "location": [
+      "Sacramento County, California"
+    ],
+    "note": [
+      "Technical Memorandum. Prepared for Sacramento Groundwater Authority."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Land",
+        "given": "I.Q."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Draft report-2014 statewide land use mapping"
+    ],
+    "container-title": [
+      "In"
+    ],
+    "location": [
+      "Sacramento, California, USA"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/CADWRLandUseViewer/images/2014%20Statewide%20La"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": "North American Subbasin GSP 12-4 MBK"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "South Sutter Water District Agricultural Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Milby",
+        "given": "Barbara J."
+      },
+      {
+        "family": "V",
+        "given": "George L.Bennett"
+      },
+      {
+        "family": "Belitz",
+        "given": "Kenneth"
+      }
+    ],
+    "date": [
+      "2005",
+      "2005"
+    ],
+    "title": [
+      "Ground-Water Quality Data in the"
+    ],
+    "location": [
+      "Southern Sacramento Valley, California"
+    ],
+    "note": [
+      "from the California GAMA Program."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ds285"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Milby",
+        "given": "Barbara J."
+      },
+      {
+        "family": "V",
+        "given": "George L.Bennett"
+      },
+      {
+        "family": "Belitz",
+        "given": "Kenneth"
+      }
+    ],
+    "date": [
+      "2018",
+      "2005"
+    ],
+    "title": [
+      "Ground-Water Quality Data in the"
+    ],
+    "location": [
+      "Southern Sacramento Valley, California"
+    ],
+    "note": [
+      "from the California GAMA Program."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/ds/285/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Sacramento Groundwater Authority Data Management System, Summary of Basin Conditions"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2005-12"
+    ],
+    "title": [
+      "Western Placer County, Groundwater Storage Study Final Report"
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Natomas Basin Habitat Conservation Plan"
+    ],
+    "date": [
+      "2003"
+    ],
+    "url": [
+      "https://www.natomasbasin.org/helpfuldocuments/2003-nbhcp-related-documents/"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Natural Communities Commonly Associated with Groundwater (NCCAG) Dataset"
+    ],
+    "note": [
+      "accessed 2018."
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/NCDatasetViewer/sitedocs/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "O’Green",
+        "given": "M.Saal"
+      },
+      {
+        "family": "Dahlke",
+        "given": "H."
+      },
+      {
+        "family": "Doll",
+        "given": "D."
+      },
+      {
+        "family": "Elkins",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Soil suitability index identifies potential areas for groundwater banking on agricultural lands"
+    ],
+    "url": [
+      "http://calag.ucanr.edu/archive/?article=ca.v069n02p75"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Olmstead",
+        "given": "F.H."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1961"
+    ],
+    "title": [
+      "Geologic features and ground-water storage capacity of the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "note": [
+      "vi, 241. DOI 10.3133/wsp1497"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/1497/report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      },
+      {
+        "given": "Balding"
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Geology and quality of water in the Modesto-Merced area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "genre": [
+      "Water-Resources Investigations Report 73-6."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/1973/0006/report.pdf"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Page"
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Ground-Water Basin of the Central Valley, California, with Texture Maps and Sections"
+    ],
+    "container-title": [
+      "USGS Professional Paper 1401-C"
+    ],
+    "url": [
+      "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C38&as_vis=1&q=Page.+1971&"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Piper",
+        "given": "A.M."
+      },
+      {
+        "family": "Gale",
+        "given": "H.S."
+      },
+      {
+        "family": "Thomas",
+        "given": "H.E."
+      },
+      {
+        "family": "Robinson",
+        "given": "T.W."
+      }
+    ],
+    "date": [
+      "1939"
+    ],
+    "title": [
+      "Geology and ground-water hydrology of the Mokelumne area, California: U.S"
+    ],
+    "volume": [
+      "780"
+    ],
+    "pages": [
+      "230"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wsp780"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geol. Survey Water-Supply Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Placer"
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Water Well Construction Ordinance"
+    ],
+    "url": [
+      "https://www.placer.ca.gov/DocumentCenter/View/8877/County-Water-Well-Construction-Ordinance-PDF"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Placer"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Placer County Conservation Plan"
+    ],
+    "url": [
+      "https://www.placer.ca.gov/3362/Placer-County-Conservation-Program"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Redwine",
+        "given": "L.E."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "The Tertiary Princeton Submarine Valley System Beneath the"
+    ],
+    "location": [
+      "Sacramento Valley, California",
+      "Sacramento Valley, California"
+    ],
+    "publisher": [
+      "American Association"
+    ],
+    "container-title": [
+      "Petroleum Geologists publication Paleogene Submarine Canyons of the"
+    ],
+    "pages": [
+      "53–80"
+    ],
+    "url": [
+      "http://archives.datapages.com/data/pacific/data/069/069001/53_ps0690053.htm?q=%2Bt"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Regional Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "American River Basin Integrated Water Management Plan 2018"
+    ],
+    "url": [
+      "https://rwah2o.org/programs/integrated-regional-water-management/americanriver-basin-irwmp-2018-update/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.M.C."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater Quality Sustainability Report, Integrated Hydrologic Modeling, prepared for Sacramento Groundwater Authority"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Sacramento Groundwater Authority (SGA",
+      "Groundwater Quality Vulnerability Assessment"
+    ],
+    "date": [
+      "2011-10"
+    ],
+    "publisher": [
+      "Prepared by Kennedy/Jenks Consultants"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Sacramento Groundwater"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Groundwater Management Plan Sacramento County – North Basin"
+    ],
+    "url": [
+      "http://www.sgah2o.org/wpcontent/uploads/2016/06/GMP_SGA_2014_Final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Springhorn",
+        "given": "S.T."
+      }
+    ],
+    "date": [
+      "2008",
+      "2008"
+    ],
+    "title": [
+      "Stratigraphic Analysis and Hydrogeologic Characterization of Cenozoic Strata in the Sacramento Valley near the Sutter Buttes: Master of Science Dissertation"
+    ],
+    "publisher": [
+      "California State University"
+    ],
+    "location": [
+      "Chico"
+    ],
+    "url": [
+      "https://www.worldcat.org/title/stratigraphicanalysis-and-hydrogeologic-characterization-of-cenozoic-strata-in-the-sacramentovalley-near-the-sutter-buttes/oclc/636057707"
+    ],
+    "type": "book"
+  },
+  {
+    "container-title": [
+      "Soil Survey Survey Geographic Database (SSURGO), Natural Resources Conservation Service, United States Department of Agriculture. Web Soil Survey"
+    ],
+    "url": [
+      "https://websoilsurvey.nrcs.usda.gov/"
+    ],
+    "note": [
+      "Accessed [11/4/2019]."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "State Water Resources Control Board",
+      "SAFER Drinking Water Systems with Violations Tool"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/safer/dw_systems_violations_tool.html"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "State Water Resources Control Board",
+      "Drinking Water Needs Assessment"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/needs/2"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "State Water Resources Control Board",
+      "SAFER Aquifer Risk Tool"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://gispublic.waterboards.ca.gov/portal/apps/webappviewer/index.html?id=17825b2b"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Sutter"
+      }
+    ],
+    "date": [
+      "2005",
+      "2005",
+      "2010"
+    ],
+    "title": [
+      "County of Sutter Department of Public Works Improvement Standards"
+    ],
+    "edition": [
+      "rev"
+    ],
+    "url": [
+      "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKE"
+    ],
+    "pages": [
+      "2 2 2 2600 2 637554857279900 000 0 8 6 4 5 6"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Interior",
+        "given": "U.S.Department",
+        "particle": "of the"
+      }
+    ],
+    "title": [
+      "Bureau of Reclamation (Reclamation",
+      "American River Basin Study"
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://www.pcwa.net/planning/arbs"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Interior Region"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "U.S.Soil Conservation"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Soil Survey of Sacramento County, California"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/Internet/FSE_MANUSCRIPTS/california/CA067/0/sacrament"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "U.S.Soil Conservation"
+      }
+    ],
+    "date": [
+      "1980",
+      "2019"
+    ],
+    "title": [
+      "Soil Survey of Placer County, California, Western Part"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/Internet/FSE_MANUSCRIPTS/california/placerCA1980/plac",
+      "https://www.usbr.gov/mp/waterbanking/docs/groundwater-banking-guidelines-11-2014.pdf"
+    ],
+    "publisher": [
+      "USBR Groundwater Banking Guidelines for CVP Water"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2005",
+      "2005"
+    ],
+    "title": [
+      "Groundwater Quality Data in the Southern",
+      "‒Results from the California Groundwater Ambient Monitoring and Assessment (GAMA"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "USGS",
+        "given": "accessed"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "National Water Information System"
+    ],
+    "url": [
+      "https://waterdata.usgs.gov/nwis"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Foundation",
+        "given": "Water Education"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "The Water Forum Agreement: A model for collaborative problem solving"
+    ],
+    "url": [
+      "https://www.watereducation.org/publication/water-forum-agreementmodel-collaborative-problem-solving"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Forum",
+        "given": "Water"
+      }
+    ],
+    "date": [
+      "2000",
+      "2015"
+    ],
+    "title": [
+      "Water Forum Agreement"
+    ],
+    "url": [
+      "https://waterforum.org/wpcontent/uploads/2014/08/Water-Forum-Agreement-Update-2015-FINAL-FOR-PRINT2.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Updated October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "A."
+      }
+    ],
+    "title": [
+      "Agreement\" shall mean this Memorandum of Agreement Regarding Coordination Between Groundwater Sustainability Agencies and Implementation of the Groundwater Sustainability Plan for the North American Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R."
+      }
+    ],
+    "title": [
+      "NASb\" or “Subbasin” as used in this Agreement shall mean the North American Subbasin of the Sacramento Valley Groundwater Basin"
+    ],
+    "note": [
+      "DWR Basin No. 5-21.64 as its boundaries may be modified from time to time in accordance with California Water Code section 10722.2."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1984"
+    ],
+    "author": [
+      {
+        "family": "No",
+        "given": "Local Well"
+      }
+    ],
+    "date": [
+      "26 1/1/1986"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "container-title": [
+      "Local Well No"
+    ],
+    "volume": [
+      "32"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "1/1/1980"
+    ],
+    "note": [
+      "Local Well No. 53"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1980"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "note": [
+      "Local Well No. 73 1/1/1984"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1978"
+    ],
+    "note": [
+      "Local Well No. 87"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1980"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "note": [
+      "Local Well No. 88 1/1/1984"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1980"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "note": [
+      "Local Well No. 07 1/1/1984"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "note": [
+      "Local Well No. 19"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "note": [
+      "Local Well No. 21"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1984"
+    ],
+    "note": [
+      "Local Well No. 23"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1978"
+    ],
+    "note": [
+      "Local Well No. 34"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1980"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "note": [
+      "Local Well No. 51 1/1/1984"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1982"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1984"
+    ],
+    "note": [
+      "Local Well No. 54 1/1/1986"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1976"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1/1/1978"
+    ],
+    "note": [
+      "Local Well No. 74 1/1/1980"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389785N1213713W001"
+    ],
+    "title": [
+      "38.97846 -121.37132 MW-1 4/15/2020 8:36 77.47 Placer County"
+    ],
+    "pages": [
+      "30–40 40"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389764N1213710W001"
+    ],
+    "title": [
+      "38.976427 -121.371001 MW-2 4/15/2020 8:42 77.17 Placer County 24.3-44.3 45 38.639539 -121.561543 URS71000-700+00F 3/19/2020 9:30 6.53 Sacramento Groundwater Authority Unknown"
+    ],
+    "volume": [
+      "38"
+    ],
+    "pages": [
+      "–121 562435"
+    ],
+    "note": [
+      "URS71000-700+00C 3/19/2020 9:15 7.47 Sacramento Groundwater Authority Unknown 45 38.774911 -121.597535 SREL-1-27-F1 3/19/2020 8:00 14.06 Sacramento Groundwater Authority Unknown 46"
+    ],
+    "issue": [
+      "639704"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389950N1214148W002"
+    ],
+    "title": [
+      "38.994987 -121.414793 RDMW-103 3/19/2020 12:00 68.09 Placer County"
+    ],
+    "pages": [
+      "28–43 48"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389919N1214141W002"
+    ],
+    "title": [
+      "38.991944 -121.414066 RDMW-104 3/19/2020 12:00 67.2 Placer County"
+    ],
+    "pages": [
+      "28–43 48"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386160N1215054W001"
+    ],
+    "title": [
+      "38.61603 -121.5054 Bannon Creek Park 4/8/2020 9:54 1.66 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "33–48 48"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389857N1214880W004"
+    ],
+    "title": [
+      "38.9857 -121.488 BR-1A 3/11/2020 11:05 47.25 Yuba County Water Agency 28-48 48 38.882937 -121.611051 RDMW-101 3/19/2020 19.65 Sutter County"
+    ],
+    "pages": [
+      "28–43 48 38 879869 –121 588533"
+    ],
+    "note": [
+      "RDMW-102 3/19/2020 19.43 Sutter County 28-43 48"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387510N1212390W001"
+    ],
+    "title": [
+      "38.750989 -121.23895 WPMW-8A 4/15/2020 12:52 203.57 City of Roseville 30-50 50"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386292N1214877W001"
+    ],
+    "title": [
+      "38.62921 -121.4877 Chuckwagon Park 4/8/2020 10:11 -7.19 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "27–37 52"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388476N1212872W001"
+    ],
+    "title": [
+      "38.847609 -121.28719 WPMW-3A 4/15/2020 10:13 147.57 City of Roseville"
+    ],
+    "pages": [
+      "48–53 53"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388826N1213078W002"
+    ],
+    "title": [
+      "38.882583 -121.30775 MW 5-2 4/15/2020 8:19 110.51 City of Lincoln"
+    ],
+    "pages": [
+      "52–62 62"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "385841N1214185W001"
+    ],
+    "title": [
+      "38.58414 -121.41852 SGA_MW04 4/8/2020 9:11 2.59 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "55–65 65"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "385841N1214185W001"
+    ],
+    "title": [
+      "38.58414 -121.41852 SGA_MW04 4/8/2020 9:11 2.59 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "55–65 65"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "385828N1213385W001"
+    ],
+    "title": [
+      "38.58281 -121.33846 SGA_MW06 4/8/2020 8:36 12.59 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "62–72 72"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "38"
+    ],
+    "pages": [
+      "–121 330083"
+    ],
+    "note": [
+      "MW 3-2 4/15/2020 7:46 77.25 City of Lincoln 65-75 75"
+    ],
+    "issue": [
+      "897133"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389669N1214897W001"
+    ],
+    "title": [
+      "38.9669 -121.4897 13N04E23A002M 3/2/2020 0:00 45.28 Department of Water Resources Unknown"
+    ],
+    "volume": [
+      "38"
+    ],
+    "pages": [
+      "–121 356633"
+    ],
+    "note": [
+      "MW 2-3 4/15/2020 7:19 95.19 City of Lincoln 75-85 85"
+    ],
+    "issue": [
+      "925467"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388604N1213544W004"
+    ],
+    "title": [
+      "38.860383 -121.354383 MW 1-4 4/15/2020 10:00 58.17 City of Lincoln"
+    ],
+    "pages": [
+      "82–92 92"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389185N1213268W001"
+    ],
+    "title": [
+      "38.918461 -121.326842 Swainson 4/15/2020 9:58 112.59 Placer County 44.1-91.9 92"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389867N1213654W002"
+    ],
+    "title": [
+      "38.9867 -121.365 Spencer 4/15/2020 9:36 84.66 Placer County"
+    ],
+    "pages": [
+      "96–107 107"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387218N1214677W001"
+    ],
+    "title": [
+      "38.72178 -121.46771 SGA_MW01 4/8/2020 10:52 -15.66 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "100–110 110"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "38",
+      "10"
+    ],
+    "pages": [
+      "–121 45363",
+      "100–110 110"
+    ],
+    "date": [
+      "SGA_MW02 4/8/2020"
+    ],
+    "container-title": [
+      "-13.36 Sacramento Groundwater Authority"
+    ],
+    "issue": [
+      "68362",
+      "40"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "389740N1213606W001"
+    ],
+    "title": [
+      "38.974027 -121.360615 Cemetery 4/15/2020 9:17 78.66 Placer County"
+    ],
+    "pages": [
+      "70–111 111"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387786N1213737W001"
+    ],
+    "title": [
+      "38.778603 -121.373698 WPMW-1A 4/15/2020 9:27 -0.07 City of Roseville"
+    ],
+    "pages": [
+      "110–120 120"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388260N1215394W004"
+    ],
+    "title": [
+      "38.826 -121.5394 SUT-P1 3/10/2020 10:49 19.23 Sutter County"
+    ],
+    "pages": [
+      "110–120 120"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387626N1213651W001"
+    ],
+    "title": [
+      "38.762629 -121.365099 SVMW East-2A 4/15/2020 9:44 2.02 City of Roseville"
+    ],
+    "pages": [
+      "125–135 140"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387000N1212180W001"
+    ],
+    "title": [
+      "38.69998 -121.21795 SGA_MW08 4/8/2020 14:17 107.21 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "130–140 140"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387623N1213915W001"
+    ],
+    "title": [
+      "38.762324 -121.39153 SVMW West - 1A 4/15/2020 8:36 -12.35 City of Roseville"
+    ],
+    "pages": [
+      "120–140 145"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388235N1216079W001"
+    ],
+    "title": [
+      "38.823235 -121.60763 Sutter County MW-5A 4/23/2020 8:20 17.15 Department of Water Resources"
+    ],
+    "pages": [
+      "130–160 160"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386874N1212206W001"
+    ],
+    "title": [
+      "38.68739 -121.22058 SGA_MW09 4/8/2020 14:26 109.92 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "150–160 160"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388882N1214005W002"
+    ],
+    "title": [
+      "38.888164 -121.400463 WPMW-11A 4/15/2020 7:31 22.47 Placer County"
+    ],
+    "pages": [
+      "132–152 162"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387216N1213842W001"
+    ],
+    "title": [
+      "38.72163 -121.38417 Lone Oak Park 4/8/2020 11:12 -10.53 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "151–161 166"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386280N1213493W001"
+    ],
+    "title": [
+      "38.628 -121.349 WCMSS 4/8/2020 8:15 -15.26 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "130–150 170"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388116N1213054W001"
+    ],
+    "title": [
+      "38.811594 -121.305387 Tinker MW 4/15/2020 9:40 61.14 City of Roseville"
+    ],
+    "pages": [
+      "117–177 177"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389116N1215238W003"
+    ],
+    "title": [
+      "38.9116 -121.5238 AB-1 shallow 3/11/2020 11:45 34.32 Department of Water Resources"
+    ],
+    "pages": [
+      "170–180 190"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386964N1213120W001"
+    ],
+    "title": [
+      "38.6964 -121.31203 Twin Creeks Park 4/8/2020 13:37 -6.4 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "183–193 193"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386547N1215320W001"
+    ],
+    "title": [
+      "38.6547 -121.532 386547N1215320W001 3/2/2020 0:00 4.21 Department of Water Resources"
+    ],
+    "pages": [
+      "140–200 200"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389791N1213727W001"
+    ],
+    "title": [
+      "38.979133 -121.372694 Old Well #2 4/15/2020 8:24 78.3 Placer County"
+    ],
+    "pages": [
+      "144–209 209"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386635N1213486W001"
+    ],
+    "title": [
+      "38.66347 -121.34859 SGA_MW05 4/8/2020 12:01 -13.68 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "205–215 215"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388145N1213491W001"
+    ],
+    "title": [
+      "38.814497 -121.349144 WPMW-2A 4/15/2020 10:15 29.25 City of Roseville"
+    ],
+    "pages": [
+      "215–225 225"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387222N1212920W001"
+    ],
+    "title": [
+      "38.7222 -121.292 Whyte A 4/8/2020 13:21 10.21 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "200–220 226"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386016N1213761W001"
+    ],
+    "title": [
+      "38.6016 -121.3761 DWR_SGA_004 3/5/2020 0:00 -19.10 Department of Water Resources Unknown 238 388406N1215627W001 38.840601 -121.562699 S&O #17 4/25/2020 0:00 18.17 Sutter County"
+    ],
+    "pages": [
+      "152–240 240"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386038N1214357W001"
+    ],
+    "title": [
+      "38.6038 -121.4357 DWR_SGA_005 3/5/2020 0:00 -21.86 Department of Water Resources Unknown 250 387511N1213389W001 38.7511 -121.3389 3/4/2020 0:00 5.02 Department of Water Resources"
+    ],
+    "pages": [
+      "150–256 256"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386310N1213864W001"
+    ],
+    "title": [
+      "38.63101 -121.38641 Well 10 4/28/2020 9:00 -25.91 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "210–262 265"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "386038N1213882W002"
+    ],
+    "title": [
+      "38.6038 -121.38815 MW11B 4/3/2020 12:30 -20.09 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "258–268 278"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387957N1213813W001"
+    ],
+    "title": [
+      "38.795655 -121.38126 CVMW-1A 4/15/2020 9:14 1.61 City of Roseville"
+    ],
+    "pages": [
+      "260–280 285"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "385947N1213985W001"
+    ],
+    "title": [
+      "38.59472 -121.39847 WPMW12A 4/3/2020 9:20 -16.3 Sacramento Groundwater Authority"
+    ],
+    "pages": [
+      "260–280 300"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388029N1214145W001"
+    ],
+    "title": [
+      "38.8029 -121.4145 3/4/2020 0:00 -10.04 Department of Water Resources"
+    ],
+    "pages": [
+      "135–460 460"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "389292N1214056W001"
+    ],
+    "title": [
+      "38.9292 -121.4056 3/2/2020 0:00 50.50 Department of Water Resources NA NA"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "388667N1214513W001"
+    ],
+    "title": [
+      "38.8667 -121.4513 12N05E29D001M 3/4/2020 0:00 8.52 Department of Water Resources NA NA"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "387859N1216565W001"
+    ],
+    "title": [
+      "38.7859 -121.6565 RD 1500 Karnak 3/10/2020 0:00 17.03 Department of Water Resources Unknown Unknown"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The model area covers 888,548 acres and is bounded in the north by the Bear River, in the south by the Mokelumne River, in the west by the Sacramento River, and in the east by the Sierra Nevada foothills. The physical model boundaries are shown in Figure 1-1. Table 1-2: SacIWRM History and Application Year Study 1992 City-wide Model 1993 County-wide Model 1996 American River Water Resources Investigation 1996 Northridge Conjunctive Use Study 1996 Rio Linda Water Supply Analysis 1996 Hydrology Update 1996 Water Forum- Basin Yield 1999 Sunrise Douglas Water Supply Analysis 1999 Zone 40 (North Vineyard Well Field) 2000 American River Basin Cooperating Agencies Studies 2002 Aerojet Surface Water Discharge Permit 2004 Zone 40 Water Supply Master Plan Update 2005 Natomas Central Mutual Water Company Impacts Assessment 2005 Rio Del Oro Impacts Study"
+    ],
+    "date": [
+      "2007"
+    ],
+    "container-title": [
+      "Sutter Measure M Impact Study 2007 Sun Creek Development 2008 Model Comprehensive Update 2009 SCGA Well Protection Program 2009 Cosumnes River Hydrologic Study 2010 RWA Water Accounting Framework 2011 The Nature Conservancy (TNC) Reservoir Re-Operation Study 2012 South County Recycled Water Feasibility Study 2012 TNC Conjunctive Use Study 2012 TNC/California Water Foundation Central Valley Hydrologic Study 2014 TNC Groundwater Banking Feasibility 2015 SCGA Biennial Groundwater Management Plan Report 2016 Sacramento Regional County Sanitation District Climate Change Assessment & Environmental Impact Report Support Harvest Water, Water Storage Investment Program, 2017 City of Sacramento Groundwater Master Plan 2018 Dynamic linkage with the Yolo IGSM 2020 Grandpark Specific Plan Development"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "5.2.3.1.2"
+    ],
+    "author": [
+      {
+        "literal": "City of Lincoln • Demand"
+      }
+    ],
+    "date": [
+      "2040",
+      "2016"
+    ],
+    "title": [
+      "demand projections were 20,336 AFY for normal and wet years and 20,947 AFY for dry years, based on the 2015 UWMP (Table 4-6 and Table 7-2"
+    ],
+    "publisher": [
+      "City of Lincoln"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "5.2.3.1.4"
+    ],
+    "title": [
+      "California American Water Company (West Placer, Antelope, Lincoln Oaks, and Arden) • Demand: A 2035 demand projection was developed for each service area based on the 2015 UWMP"
+    ],
+    "genre": [
+      "(Table 4-2;"
+    ],
+    "publisher": [
+      "Cal-Am"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Demand remains the same in all water year types."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "o The City of Sacramento supply of 4,831 AFY was distributed between Arden (NASb"
+    ],
+    "note": [
+      "Parkway (SASb), and Suburban Rosemont (SASb) based on the 2015 UWMP (Table 5-9)."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5.2.3.1.5"
+    ],
+    "title": [
+      "Sacramento International Airport • Demand: Demand was estimated based on the average of 2017 and 2018 in the CCBL. • Supply: Demand was assumed to be met by surface water and groundwater"
+    ],
+    "note": [
+      "proportional to the volumes in 2017 and 2018."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5.2.3.1.6"
+    ],
+    "author": [
+      {
+        "family": "Linda",
+        "given": "Rio"
+      }
+    ],
+    "title": [
+      "Elverta Community Water District • Demand: A 2035 demand projection of 7,462 AFY for normal and wet years (Table 4-2) and 8,208 AFY for dry years"
+    ],
+    "note": [
+      "Table 7-3) was assumed based on the 2015 UWMP (RLECWD, 2016)."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5.2.3.1.12"
+    ],
+    "author": [
+      {
+        "family": "Agency",
+        "given": "Sacramento County Water"
+      }
+    ],
+    "title": [
+      "• Demand: 2045 demand projections for Arden Park Vista and Northgate were based on the Draft 2020 UWMP (Tables 4-10(b) and 4-10(c)) provided by SCWA and input from SCWA"
+    ],
+    "genre": [
+      "(M. Grinstead, personal communication,"
+    ],
+    "date": [
+      "2021-04"
+    ],
+    "type": "personal_communication"
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "Amador Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Urban Water Management Plan. Prepared by RMC Water and Environment"
+    ],
+    "publisher": [
+      "June"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Berkstresser",
+        "given": "C.F.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground Water – Approximately 3,000 Micromhos – in the Sacramento Valley and Sacramento-San Joaquin Delta, California"
+    ],
+    "note": [
+      "Accessed online at"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wri7340."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "December"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      },
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Development and Calibration of the California Central Valley Groundwater-Surface Water Simulation Model (C2VSim"
+    ],
+    "genre": [
+      "Version 3.02-CG."
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "http://baydeltaoffice.water.ca.gov/modeling/hydrology/C2VSim/download/C2VSim_Model_Report_2016-03_vR374.pdf."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "California American"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Final 2015 Urban Water Management Plan for the Northern Division-Sacramento District"
+    ],
+    "note": [
+      "Prepared by Water System Consulting, Inc. June 30."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "California Geological"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Preliminary Geologic Map of the Lodi 30’ x 60"
+    ],
+    "location": [
+      "Quadrangle, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "California Geological"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Preliminary Geologic Map of the Sacramento 30’ x 60"
+    ],
+    "location": [
+      "Quadrangle, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Sacramento",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "2015 Urban Water Management Plan. Prepared by West Yost Associates Consulting Engineers"
+    ],
+    "publisher": [
+      "June"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sacramento",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Groundwater Master Plan Final Report. Prepared by RMC Water and Environment"
+    ],
+    "publisher": [
+      "a Woodard & Curran Company. December"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      },
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Integrated Water Flow Model Theoretical Documentation (IWFM-2015"
+    ],
+    "volume": [
+      "630"
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "http://baydeltaoffice.water.ca.gov/modeling/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Revision"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      },
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "DWR Technical Memorandum: Theoretical Documentation and User’s Manual for IWFM Demand Calculator (IDC-2015"
+    ],
+    "volume": [
+      "63"
+    ],
+    "publisher": [
+      "Bay-Delta Office, California Department of Water Resources"
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "http://baydeltaoffice."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Revision"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Doherty",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Calibration and Uncertainty Analysis for Complex Environmental Models"
+    ],
+    "publisher": [
+      "Watermark Numerical Computing"
+    ],
+    "location": [
+      "Brisbane, Australia"
+    ],
+    "note": [
+      "ISBN: 978-0-9943786-0-6."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CoSANA Model Report 7-1 Woodard & Curran"
+    ],
+    "date": [
+      "2021-11"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Inc"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Environmental",
+        "given": "Dunn"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Groundwater Supply Study and Integrated Regional Groundwater Management Plan for the Lake Camanche Water Improvement"
+    ],
+    "note": [
+      "District No. 7. June."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1974",
+      "July"
+    ],
+    "title": [
+      "Evaluation of Ground Water Resources: Sacramento County"
+    ],
+    "pages": [
+      "118–3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Sacramento Valley Groundwater-Surface Water Simulation Model Technical Memorandum 1B"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "California Water Plan"
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/California-Water-Plan/Docs/Update2018/Final/California-Water-Plan-Update-2018.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "June"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "California Central Valley Groundwater-Surface Water Simulation Model – Fine Grid (C2VSimFG): Development and Calibration Version 1.0"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/b313f4b2-1f5a-4028-9680-277cc04f6ded/resource/4f904e97-a47b-4138-81df-9b74bd952948/download/c2vsimfg-report-draft-clean_12072020_adaaccessible.pdf."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Fair Oaks Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "publisher": [
+      "Prepared by Peterson Brustad Inc. Engineering Consulting. June"
+    ],
+    "type": "book"
+  },
+  {
+    "publisher": [
+      "Golden State Water Company"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "2015 Urban Water Management Plan Cordova. Prepared by Kennedy/Jenks Consultants. June."
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Golden State Water Company",
+      "Prepared by Holland Knight and Wood Rodgers. October"
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Supplement to the Water Supply Assessment for Lakeside at Sutter Pointe"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Company",
+        "given": "Orange Vale Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "2015 Urban Water Management Plan"
+    ],
+    "note": [
+      "Prepared by J."
+    ],
+    "publisher": [
+      "Crowley Group Water Resources Planning and Policy. June"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Page"
+      }
+    ],
+    "date": [
+      "1974",
+      "September"
+    ],
+    "title": [
+      "Base and Thickness of the Post Eocene Continental Deposits in the"
+    ],
+    "location": [
+      "Sacramento Valley, California"
+    ],
+    "publisher": [
+      "USGS Water-Resources Investigations"
+    ],
+    "pages": [
+      "45–73"
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/1973/0045/report.pdf."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "Placer County Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "publisher": [
+      "Prepared by Tully & Young. June"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "R.M.C."
+      },
+      {
+        "given": "Environment"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Camanche Area Regional Water Supply Plan Feasibility Study and Conceptual Design"
+    ],
+    "publisher": [
+      "January"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Rancho Murieta Community Services"
+      }
+    ],
+    "date": [
+      "2010",
+      "October"
+    ],
+    "title": [
+      "Integrated Water Supply Master Plan Update"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Brown and Caldwell"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "Rio Linda / Elverta Community Water District"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "note": [
+      "Prepared by J."
+    ],
+    "publisher": [
+      "Crowley Group Water Resources Planning and Policy. June"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Roseville",
+        "given": "City of"
+      },
+      {
+        "family": "Lincoln",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "title": [
+      "Placer County Water Agency"
+    ],
+    "publisher": [
+      "California American Water Company",
+      "Western Placer County Groundwater Management Plan. November"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "Sacramento County Water"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Draft Zone 40 Water Supply Master Plan Amendment"
+    ],
+    "note": [
+      "Prepared by Brown and Caldwell. January."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Sacramento Suburban Water"
+      }
+    ],
+    "date": [
+      "2016",
+      "June"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by Brown and Caldwell"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "San Juan Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Final 2015 Urban Water Management Plan"
+    ],
+    "note": [
+      "Prepared by Kennedy/Jenks Consultants. June."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Council",
+        "given": "South Area Water"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Basin Groundwater Management Plan. Prepared by RBI and WRIME"
+    ],
+    "genre": [
+      "October. CoSANA Model Report 7-2"
+    ],
+    "publisher": [
+      "Woodard & Curran, Inc"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "publisher": [
+      "Long-Term Water Transfer EIS/R. September"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      },
+      {
+        "family": "press",
+        "particle": "in"
+      }
+    ],
+    "title": [
+      "American River Basin Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "USDA",
+        "given": "N.R.C.S."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "National Engineering Handbook, Part 630 Hydrology, Chapter 7, Hydrologic Soil Groups"
+    ],
+    "note": [
+      "accessed online at"
+    ],
+    "url": [
+      "https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=17757.wba."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May"
+    ]
+  },
+  {
+    "date": [
+      "1/1/1954 1/1/1956 1/1/1958 1/1/1960 1/1/1962 1/1/1964 1/1/1966 1/1/1968 1/1/1970 1/1/1972 1/1/1974 1/1/1976 1/1/1978 1/1/1980"
+    ],
+    "note": [
+      "Representative Well 1/1/1982 1/1/1984 1/1/1986 1/1/1988 1/1/1990 1/1/1992 1/1/1994 1/1/1996 Local Well No. 14 - 13N0423A002M 1/1/1998 1/1/2000 1/1/2002 1/1/2004 1/1/2006 1/1/2008 1/1/2010 1/1/2012 1/1/2014 1/1/2016 1/1/2018 1/1/2020"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "0"
+    ],
+    "title": [
+      "Top of Domestic Well Screen"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "0"
+    ],
+    "title": [
+      "Top of Domestic Well Screen"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "assessment funding."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard SGMA and GSP status update, how the Placer County Board of Supervisors July 6, 2021 noticing procedures"
+    ],
+    "note": [
+      "public may engage in GSP development."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard SGMA and GSP status update, how the City of Lincoln Council Meeting July 13, 2021 noticing procedures"
+    ],
+    "note": [
+      "public may engage in GSP development."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard SGMA and GSP status update, how the Sheridan Municipal Advisory Committee July 14, 2021 noticing procedures"
+    ],
+    "note": [
+      "public may engage in GSP development."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard SGMA and GSP status update, how the Rural Lincoln Municipal Advisory Committee"
+    ],
+    "date": [
+      "2021-07-19"
+    ],
+    "note": [
+      "noticing procedures. public may engage in GSP development."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard SGMA and GSP status update, planned Reclamation District"
+    ],
+    "date": [
+      "1001-07-28"
+    ],
+    "note": [
+      "noticing procedures. notification to landowners."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard SGMA and GSP status update, NASb Reclamation District 1001 August 25, 2021 noticing procedures"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Memorandum of Agreement development"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "RELEASE",
+        "given": "P.U.B.L.I.C.D.R.A.F.T.G.S.P."
+      },
+      {
+        "family": "August",
+        "given": "P.U.B.L.I.C."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Opportunity to comment on draft chapters of GSP. COMMENT PERIOD Email notice to 300+ interested parties list, SGMA stakeholders list. Posted on NASb Notice of Public Comment Period September 1, 2021 website and social media outlets throughout Draft GSP available for public comment. basin. Direct mail postcards to agriculture / DAC in rural areas. Email notice to 300+ interested parties list, Public Draft GSP contents"
+    ],
+    "container-title": [
+      "update/changes NASB PUBLIC MEETING #4 SGMA stakeholders list. Posted on NASb September 8, 2021 to approach since Workshop #3, request for PUBLIC DRAFT GSP RELEASE website and social media outlets throughout public to comment on Public Draft GSP. basin. SGMA and GSP status update"
+    ],
+    "note": [
+      "how the Reclamation District 1001 September 9, 2021 Letter to landowners. public may comment on the GSP."
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Meetings",
+        "given": "Public"
+      }
+    ],
+    "title": [
+      "Individual agency standard Sacramento Groundwater Authority - Final GSP content. Request for approval for December 9, 2021 noticing procedures"
+    ],
+    "container-title": [
+      "Posted notice to SGA Board of Directors Meeting resolution to adopt. distribution list and website"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "title": [
+      "Department of Fish and Wildlife",
+      "Statewide Drought Response: Stressor Monitoring"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Howard",
+        "given": "Janet L."
+      }
+    ],
+    "title": [
+      "Quercus lobata",
+      "U.S. Department of Agriculture, Forest Service"
+    ],
+    "date": [
+      "1992"
+    ],
+    "publisher": [
+      "Rocky Mountain Research Station, Fire Sciences Laboratory"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Fire Effects Information System"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Lewis",
+        "given": "D.C."
+      },
+      {
+        "family": "Burgy",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "The Relationship between Oak Tree Roots and Groundwater in Fractured Rock as Determined by Tritium Tracing"
+    ],
+    "volume": [
+      "69"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ],
+    "issue": [
+      "12"
+    ],
+    "pages": [
+      "2579–2588"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Lund",
+        "given": "Jay"
+      },
+      {
+        "others": true
+      }
+    ],
+    "title": [
+      "Lessons from California’s 2012-2016 Drought. 2018"
+    ],
+    "volume": [
+      "144"
+    ],
+    "url": [
+      "https://doi.org/10.1061/(ASCE)WR.1943-5452.0000984"
+    ],
+    "date": [
+      "2021-09-29"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Water Resources Planning and Management"
+    ],
+    "issue": [
+      "10"
+    ],
+    "doi": [
+      "10.1061/(ASCE)WR.1943-5452.0000984"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06"
+    ],
+    "title": [
+      "Fish & Wildlife Groundwater Planning Considerations"
+    ],
+    "pages": [
+      "28"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/document/fish-wildlifegroundwater-planning-considerations/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Department of Fish and Wildlife, Groundwater Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater"
+    ],
+    "note": [
+      "Sustainable Management Criteria (Draft). Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Letter from Craig Altare (DWR) to Taylor Blakslee (Cuyama Basin GSA), re. Cuyama Valley - 2020 Groundwater Sustainability Plan"
+    ],
+    "note": [
+      "Available at https://sgma.water.ca.gov/portal/gsp/assessments/32 Cc: To the File ARN 151422-WCR2021-SA00121 Electronic copy only:"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Murvine",
+        "given": "Angela"
+      },
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "family": "Coordinator",
+        "given": "Wildlife Statewide S.G.M.A."
+      },
+      {
+        "family": "Gibbons",
+        "given": "AngelaMurvine@wildlifecagov Bridget"
+      }
+    ],
+    "title": [
+      "California Department of Fish and Wildlife Central Valley SGMA Biologist, Bridget.Gibbons@wildlife.ca.gov Craig Altare, California Department of Water Resources, Supervising Engineering Geologist, Craig.Altare@water.ca.gov Matti Siltanen, North American subbasin SGMA Point of Contact, California Department of Water Resources, Mattipohto.Siltanen@water.ca.gov Brett Storey, Principal Management Analyst, West Placer GSA"
+    ],
+    "note": [
+      "bstorey@placer.ca.gov Joe Henderson, Manager, Reclamation District No. 1001 GSA, rd1001@syix.com Guadalupe Rivera, Senior Civil Engineer, County of Sutter GSA - North American, grivera@co.sutter.ca.us Brad Arnold, General Manager, South Sutter Water District GSA, sswd@hughes.net Environmental Council of Sacramento P.O. Box 1526, Sacramento, California 95812 Phone: 916-444-0022"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The NASb GSPD includes “with and without climate change” in tables as if reviewers were fully familiar with the model parameters and they were generally agreed upon"
+    ],
+    "container-title": [
+      "While the document Environmental Council of Sacramento P.O. Box 1526"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "note": [
+      "95812 Phone: 916-444-0022"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "The Environmental Council of Sacramento (ECOS) is a 501c3 nonprofit, with the mission to achieve regional and community sustainability and a healthy environment for existing and future residents. Member organizations of ECOS include: 350 Sacramento, Breathe California Sacramento Region"
+    ],
+    "container-title": [
+      "Environmental Democrats of Sacramento, Friends of Stone Lakes NWR, International Dark-Sky Association, Physicians for Social Responsibility Sacramento Chapter, Environmental Council of Sacramento P.O. Box 1526"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "note": [
+      "95812 Phone: 916-444-0022"
+    ],
+    "type": "chapter"
+  },
+  {
+    "location": [
+      "Sacramento Audubon Society, Sacramento Citizens",
+      "Sacramento Housing Alliance, Sacramento"
+    ],
+    "publisher": [
+      "Climate Lobby, Sacramento Electric Vehicle Association"
+    ],
+    "title": [
+      "Natural Foods Coop, Sacramento Valley Chapter of the California Native Plant Society, Sacramento Vegetarian Society, Save Our Sandhill Cranes, Save the American River Association and Sierra Club Sacramento Group. Habitat 2020 is a coalition that works to protect the lands, waters, wildlife and native plants in the Sacramento region"
+    ],
+    "container-title": [
+      "Member organizations of Habitat 2020 include: the ECOS member groups italicized above, as well as the Friends of Swainson's Hawk, Sacramento Area Creeks Council and Sacramento Heron and Egret Rescue"
+    ],
+    "note": [
+      "Habitat 2020 also serves as ECOS' Habitat and Conservation committee."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "We thank you for the opportunity to provide comments. If you have any questions regarding this letter, please feel free to contact us"
+    ],
+    "container-title": [
+      "Sincerely, Ralph Propper President, ECOS Sean Wirth Robert Burness Co-Chair, Habitat 2020 Co-Chair, Habitat 2020 cc: Jessica Law, Executive Director, Water Forum, jlaw@waterforum.org John Woodling, Sacramento Central Groundwater Authority, jwoodling@rwah2o.org Environmental Council of Sacramento P.O. Box 1526"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "note": [
+      "95812 Phone: 916-444-0022"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2021-10-26"
+    ],
+    "title": [
+      "To: GSAs associated with the development of GSPs for the North and South American subbasins and the Cosumnes Subbasin North American Subbasin Reclamation District 1001 GSA; Michael Phillips, mphillips@rd1001.org Sacramento Groundwater Authority GSA"
+    ],
+    "author": [
+      {
+        "family": "Swartz",
+        "given": "Rob"
+      },
+      {
+        "family": "South Sutter Water District GSA",
+        "particle": "rswartz@rwah2o.org"
+      },
+      {
+        "family": "Arnold",
+        "given": "Brad"
+      },
+      {
+        "family": "Sutter County GSA",
+        "particle": "sswd@hughes.net"
+      },
+      {
+        "family": "Rivera",
+        "given": "Guadalupe"
+      },
+      {
+        "family": "West Placer County GSA",
+        "particle": "grivera@co.sutter.ca.us"
+      },
+      {
+        "family": "Hanson",
+        "given": "Christina"
+      }
+    ],
+    "note": [
+      "chanson@placer.ca.gov South American Subbasin Sacramento County; Linda Dorn, dornl@saccounty.net Northern Delta; Erik Ringelberg, erik@thefreshwatertrust.org Omochumne-Hartnell Water District, Mike Wackman, info@ohwd.org Sacramento Central Groundwtr Auth; John Woodling, jwoodling@geiconsultants.com Sloughhouse Resource Conservation Dist; Austin Miller, austin@sloughhouseRCD.org"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The Environmental Council of Sacramento (ECOS) is a 501c3 nonprofit, with the mission to achieve regional and community sustainability and a healthy environment for existing and future residents. Member organizations of ECOS include: 350 Sacramento, Breathe California Sacramento Region, Environmental Democrats of Sacramento, Friends of Stone Lakes NWR, International Dark-Sky Association, Physicians for Social Responsibility Sacramento Chapter"
+    ],
+    "location": [
+      "Sacramento Audubon Society, Sacramento Citizens",
+      "Sacramento Housing Alliance, Sacramento Natural Foods Coop, Sacramento Valley",
+      "Sacramento, California"
+    ],
+    "publisher": [
+      "Climate Lobby, Sacramento Electric Vehicle Association"
+    ],
+    "container-title": [
+      "Environmental Council of Sacramento P.O. Box 1526"
+    ],
+    "note": [
+      "95812 Phone: 916-444-0022"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Chapter of the California Native Plant Society, Sacramento Vegetarian Society, Save Our Sandhill Cranes"
+    ],
+    "publisher": [
+      "Save the American River Association and Sierra Club Sacramento Group"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ortiz-Partida",
+        "given": "Ngodoo Atume J.Pablo"
+      },
+      {
+        "given": "PhD"
+      }
+    ],
+    "title": [
+      "Water Policy Analyst Western States Climate and Water Scientist Clean Water Action/Clean Water Fund Union of Concerned Scientists Samantha Arthur Danielle V"
+    ],
+    "container-title": [
+      "Dolan Working Lands Program Director Water Program Director Audubon California Local Government Commission Melissa M. Rohde E.J. Remson Groundwater Scientist Senior Project Director, California Water Program The Nature Conservancy The Nature Conservancy"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Merrill",
+        "given": "Amy"
+      },
+      {
+        "given": "PhD"
+      }
+    ],
+    "title": [
+      "Kristan Culbert Associate Director, California Central Valley River Acting Director"
+    ],
+    "publisher": [
+      "California Program Conservation American Rivers American"
+    ],
+    "location": [
+      "Rivers"
+    ],
+    "type": "book"
+  },
+  {
+    "date": [
+      "2019-07"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "title": [
+      "NC Dataset Online Viewer: https://gis.water.ca.gov/app/NCDatasetViewer/ 2 California Department of Water Resources (DWR",
+      "Summary of the “Natural Communities Commonly Associated with Groundwater"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Statewide-Reports/Natural-Communities-Dataset-Summary-Document.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dataset and Online Web Viewer"
+    ]
+  },
+  {
+    "citation-number": [
+      "3"
+    ],
+    "title": [
+      "For more details on the mapping methods, refer to",
+      "Mapping Indicators of Groundwater Dependent Ecosystems in California: Methods Report"
+    ],
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at:",
+      "4 “Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6"
+    ],
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Water Budget Best Management Practice"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/sgm/pdfs/BMP_Water_Budget_Final_2016-12-23.pdf"
+    ],
+    "type": null
+  }
+]

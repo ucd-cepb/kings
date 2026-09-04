@@ -11,8 +11,8 @@
 #   [2]  02_text_preprocessing/additional_filter_texts.R ....... -> page_metadata.RDS
 #   [3A] 03A_reference_extraction/01..05 (5 scripts) ........... -> gsp_reference_pairs.rds
 #   [3B] 03B_text_reuse/compare_project_sections.R ............. -> project_jaccard_results/project_section_jaccard_scores.rds
-#   [3C] 03C_knowledge_tree/extract_knowledge_triples.R +
-#        03C_knowledge_tree/semantic_kg_similarity.ipynb ....... -> triple_similarity.csv
+#   [3C] 03C_knowledge_tree/01_extract_knowledge_triples.R +
+#        03C_knowledge_tree/02_semantic_kg_similarity.ipynb ....... -> triple_similarity.csv
 #
 # Stage 0 is a bridge: it reads the core manifest into id_crosswalk.csv, no
 # derivation, no LLM. Stage 1 is analysis, not ingest — core carries spaCy NER
@@ -34,8 +34,10 @@
 #   - 3A: anystyle/ruby (reference extraction, step 01) + OpenAlex API (step 03) +
 #         a Solr title-match index (step 04). Step 01 self-guards with CLOBBER and
 #         only re-parses PDFs it has not already cached.
-#   - 3C: a Python/Jupyter env on PATH (`jupyter nbconvert`) for the similarity
-#         notebook, which needs sentence-transformers + networkx.
+#   - 3C: `jupyter nbconvert` on PATH; the notebook is pinned to the `spacy-env`
+#         kernel, which carries its deps (sentence-transformers, scikit-learn,
+#         networkx, pandas, numpy). Register it once with
+#         `python -m ipykernel install --user --name spacy-env` from that env.
 #
 # Usage (from anywhere):
 #     Network_Innovation_Paper/Code/run_all.R
@@ -91,12 +93,12 @@ setwd(REPO_ROOT)                        # stages source _paths.R via a repo-rela
 # ============================================================================
 #  CONFIG — flip a stage TRUE/FALSE to run/skip it.  (edit here)
 # ============================================================================
-STAGE_0_INGEST      <- TRUE   # 00_ingest_core.R                     -> id_crosswalk.csv        (bridge; no LLM)
-STAGE_1_CLASSIFY    <- FALSE  # 01_entity_classification/* (3 steps) -> node_dictionary.csv, all_gsa_edges.csv  (LLM; needs API key)
-STAGE_2_PREPROCESS  <- TRUE   # 02_text_preprocessing/additional_filter_texts.R -> page_metadata.RDS
-STAGE_3A_REFERENCES <- FALSE  # 03A_reference_extraction/01..05      -> gsp_reference_pairs.rds  (anystyle/ruby + OpenAlex + Solr)
-STAGE_3B_JACCARD    <- TRUE   # 03B_text_reuse/compare_project_sections.R        -> project_section_jaccard_scores.rds
-STAGE_3C_KNOWLEDGE  <- FALSE  # 03C_knowledge_tree/{extract_knowledge_triples.R, semantic_kg_similarity.ipynb} -> triple_similarity.csv  (needs jupyter)
+STAGE_0_INGEST      <- FALSE   # 00_ingest_core.R                     -> id_crosswalk.csv        (bridge; no LLM)
+STAGE_1_CLASSIFY    <- FALSE # 01_entity_classification/* (3 steps) -> node_dictionary.csv, all_gsa_edges.csv  (LLM; needs API key)
+STAGE_2_PREPROCESS  <- FALSE   # 02_text_preprocessing/additional_filter_texts.R -> page_metadata.RDS
+STAGE_3A_REFERENCES <- TRUE  # 03A_reference_extraction/01..05      -> gsp_reference_pairs.rds  (anystyle/ruby + OpenAlex + Solr)
+STAGE_3B_JACCARD    <- FALSE   # 03B_text_reuse/compare_project_sections.R        -> project_section_jaccard_scores.rds
+STAGE_3C_KNOWLEDGE  <- FALSE  # 03C_knowledge_tree/{01_extract_knowledge_triples.R, 02_semantic_kg_similarity.ipynb} -> triple_similarity.csv  (needs jupyter)
 # ============================================================================
 
 # RUN_INGEST=1 forces stages 0 + 1 on for this run only.
@@ -165,7 +167,9 @@ if (STAGE_1_CLASSIFY) {
 }
 
 # ----- Stage 2: page_metadata.RDS from the core parquet corpus -----
-# Recovers legacy gsp_id/version via id_crosswalk.csv.
+# Recovers legacy gsp_id/version via id_crosswalk.csv. Writes a metadata-only
+# table (keys + section flags, ~0.24 MB); full page text stays in core and is
+# re-attached on demand by 03B via attach_page_text() (_corpus.R).
 if (STAGE_2_PREPROCESS) {
   need("id_crosswalk.csv", "STAGE_0_INGEST")
   run(nip_code("02_text_preprocessing", "additional_filter_texts.R"))
@@ -186,7 +190,8 @@ if (STAGE_3A_REFERENCES) {
 }
 
 # ----- Stage 3B: project-section Jaccard (the model input) -----
-# Reads page_metadata.RDS, writes project_jaccard_results/project_section_jaccard_scores.rds
+# Reads the metadata-only page_metadata.RDS, re-attaches page text from the core
+# corpus (attach_page_text), and writes project_jaccard_results/project_section_jaccard_scores.rds
 # (single file, overwritten each run) — the only 03B product the models read.
 if (STAGE_3B_JACCARD) {
   need("page_metadata.RDS", "STAGE_2_PREPROCESS")
@@ -194,16 +199,16 @@ if (STAGE_3B_JACCARD) {
 }
 
 # ----- Stage 3C: knowledge-tree similarity (model input) -----
-# Two heterogeneous steps: (1) extract_knowledge_triples.R reads the core
+# Two heterogeneous steps: (1) 01_extract_knowledge_triples.R reads the core
 # dependency parses (parsed_plans/*.parquet) over the sust-criteria pages and
-# writes knowledge_triples_sustcrit.csv; (2) semantic_kg_similarity.ipynb embeds
+# writes knowledge_triples_sustcrit.csv; (2) 02_semantic_kg_similarity.ipynb embeds
 # those triples and scores plan-to-plan similarity -> triple_similarity.csv (what
 # the models read). The R step depends on page_metadata.RDS for the sust-criteria
 # page filter, so Stage 2 must have run.
 if (STAGE_3C_KNOWLEDGE) {
   need("page_metadata.RDS", "STAGE_2_PREPROCESS")
-  run(nip_code("03C_knowledge_tree", "extract_knowledge_triples.R"))
-  run_nb(nip_code("03C_knowledge_tree", "semantic_kg_similarity.ipynb"))
+  run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"))
+  run_nb(nip_code("03C_knowledge_tree", "02_semantic_kg_similarity.ipynb"))
 }
 
 cat("\n==== done.\n")

@@ -5,6 +5,11 @@
 #' keyed by gspDocId — see Code/_corpus.R). The legacy `<<PAGE_BREAK>>`-delimited
 #' `.txt` layout is gone: pages come pre-split as parquet rows, and the legacy
 #' 4-digit gsp_id / version are recovered from the id crosswalk, not the filename.
+#'
+#' The output is METADATA-ONLY: page text is used to apply the filter, then dropped
+#' before saving (see the save block). The surviving rows enumerate the
+#' (gsp_doc_id, page_num) pages that passed; core remains the single source of the
+#' text itself, which 03B re-attaches on demand via attach_page_text() (_corpus.R).
 
 # ----- Configuration -----
 source("Network_Innovation_Paper/Code/_paths.R")
@@ -82,9 +87,19 @@ main <- function(corpus = NULL) {
   documents <- merge(documents, page_info, by = c("gsp_id", "page_num"), all.x = TRUE)
   documents <- documents[!is.na(text)]
 
-  # Save
+  # page_metadata is METADATA ONLY: the surviving rows above already define which
+  # (gsp_doc_id, page_num) pages passed filtering, so we drop the full page text
+  # (~96% of the object) rather than store a second copy of the core corpus. The
+  # sole downstream text consumer (03B) re-attaches it on demand via
+  # attach_page_text() in _corpus.R, keyed on (gsp_doc_id, page_num) — the same
+  # key page_num was derived from — reproducing this text byte-for-byte. 03C never
+  # reads text. See Code/_corpus.R for the read-back contract.
+  documents[, text := NULL]
+
+  # Save. The slim table is ~0.2 MB, so plain gzip is fine (xz's slower write buys
+  # nothing at this size). readRDS auto-detects the codec, so no reader changes.
   dir.create(dirname(CONFIG$output_file), showWarnings = FALSE, recursive = TRUE)
-  saveRDS(documents, CONFIG$output_file)
+  saveRDS(documents, CONFIG$output_file, compress = TRUE)
   cat(paste("Saved preprocessed data to", CONFIG$output_file, "\n"))
 
   return(documents)

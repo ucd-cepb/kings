@@ -1,0 +1,577 @@
+[
+  {
+    "author": [
+      {
+        "given": "K.D.S.A."
+      }
+    ],
+    "date": [
+      "2020-06-29"
+    ],
+    "publisher": [
+      "Pleasant Valley WD Aquifer Transmissivities"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "K.D.S.A."
+      }
+    ],
+    "date": [
+      "2020-06-29"
+    ],
+    "title": [
+      "Subsurface Geologic Conditions Near Pasajero and Polvadero Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Kings"
+      },
+      {
+        "family": "MacGillivray",
+        "given": "N.A."
+      },
+      {
+        "family": "Jones",
+        "given": "M.D."
+      }
+    ],
+    "date": [
+      "2002-07-30",
+      "1989-02-01"
+    ],
+    "title": [
+      "Revised Dairy Element of Kings County General Plan",
+      "Effective Precipitation-A Field Study to Assess Consumptive Use of Winter Rains by Spring and Summer Crops"
+    ],
+    "url": [
+      "https://www.countyofkings.com/departments/community-development-agency/information/dairy-element"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "McIntyre",
+        "given": "V.B."
+      },
+      {
+        "family": "Meffley",
+        "given": "R.W."
+      },
+      {
+        "family": "Stetson",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1964-05-22"
+    ],
+    "publisher": [
+      "Investigation Guijarral Hills Oil Field"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Resources Conservation"
+      },
+      {
+        "family": "Oster",
+        "given": "J.D."
+      },
+      {
+        "family": "Rhoades",
+        "given": "J.D."
+      }
+    ],
+    "date": [
+      "XXXX",
+      "1975-01-01"
+    ],
+    "title": [
+      "Soil Textural Classes and Related Saturated Hydraulic Conductivity Classes",
+      "Calculated Drainage water Compositions and Salt Burdens Resulting from Irrigation with River Water in the Western United States"
+    ],
+    "publisher": [
+      "USDA"
+    ],
+    "note": [
+      "Retrieved September 17, 2021,"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/ref/?cid=nrcs142p2_054253#soil_texture",
+      "https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/jeq1975.00472425000400010017x"
+    ],
+    "volume": [
+      "4"
+    ],
+    "pages": [
+      "73–79"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Environmental Quality"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Group",
+        "given": "Pritchard Consulting"
+      }
+    ],
+    "date": [
+      "2020-01-28"
+    ],
+    "title": [
+      "North Kings Groundwater Sustainability Agency Groundwater Sustainability Plan"
+    ],
+    "url": [
+      "https://northkingsgsa.org/groundwater-sustainability-plan/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "Provost&Pritchard Engineering"
+      }
+    ],
+    "date": [
+      "2005-09-01"
+    ],
+    "title": [
+      "Pleasant Valley Water District Groundwater Quality Monitoring Program Local Groundwater Assistance Fund Grant Final Report (AB303"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "Provost&Pritchard Engineering"
+      },
+      {
+        "given": "K.D.S.A."
+      }
+    ],
+    "date": [
+      "2003-06-01"
+    ],
+    "title": [
+      "Groundwater Storage Pilot Project and Feasibility Study"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rhoades",
+        "given": "J.D."
+      },
+      {
+        "family": "Ingvalson",
+        "given": "R.D."
+      },
+      {
+        "family": "Tucker",
+        "given": "J.M."
+      },
+      {
+        "family": "Clark",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1973-09-01"
+    ],
+    "title": [
+      "Salts in Irrigation Drainage Waters: I. Effects of Irrigation Water Composition, Leaching Fraction, and Time of Year on the Salt Compositions of Irrigation Drainage Waters"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "770–774"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Soil Science Society of America Journal"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "url": [
+      "https://acsess.onlinelibrary.wiley.com/doi/abs/10.2136/sssaj1973.03615995003700050038x"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rhoades",
+        "given": "J.D."
+      },
+      {
+        "family": "Oster",
+        "given": "J.D."
+      },
+      {
+        "family": "Ingvalson",
+        "given": "R.D."
+      },
+      {
+        "family": "Tucker",
+        "given": "J.M."
+      },
+      {
+        "family": "Clark",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1974-10-01"
+    ],
+    "title": [
+      "Minimizing the Salt Burdens of Irrigation Drainage Waters"
+    ],
+    "volume": [
+      "3"
+    ],
+    "pages": [
+      "311–316"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Environmental Quality"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "url": [
+      "https://acsess.onlinelibrary.wiley.com/doi/10.2134/jeq1974.00472425000300040002x"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Summers"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Pleasant Valley Water District"
+    ],
+    "location": [
+      "Coalinga, California, Groundwater"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "GSA GSA Member Agencies Pleasant Valley GSA Pleasant Valley Water District City of Coalinga GSA City of Coalinga Fresno County Pleasant Valley GSA Area County of Fresno"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "Completed Outreach Tracking Pleasant Valley GSA – Presentations & Meetings Event Date Location"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-10-24"
+    ],
+    "title": [
+      "Pleasant Valley Water District Board of Directors 10 a.m"
+    ],
+    "container-title": [
+      "April 25, 2017 Harris Ranch Conference Center Meeting Pleasant Valley Water District Board of Directors 9 a.m"
+    ],
+    "note": [
+      "Harris Ranch Conference Center Meeting 2018"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Directors Meeting",
+        "given": "Pleasant Valley G.S.A.Board",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018-01-09",
+      "2018"
+    ],
+    "container-title": [
+      "Harris Ranch Conference Center Pleasant Valley Subbasin Landowner/Stakeholder Following board meeting, Harris Ranch Conference Center Workshop January 23"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "literal": "Pleasant Valley GSA Board of Directors Meeting 10 a.m."
+      }
+    ],
+    "date": [
+      "2018-03-13",
+      "2018-05-22"
+    ],
+    "container-title": [
+      "Harris Ranch Conference Center Pleasant Valley GSA Board of Directors Meeting 9:30 a.m",
+      "Harris Ranch Conference Center Pleasant Valley Subbasin Landowner/Stakeholder 10 a.m., May 22, 2018 Harris Ranch Conference Center Workshop Pleasant Valley GSA Board of Directors Meeting 10 a.m., August 14, 2018 Harris Ranch Conference Center Pleasant Valley GSA Board of Directors Meeting"
+    ],
+    "note": [
+      "10 a.m., October 30, 2018 Harris Ranch Conference Center 2019"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Directors Meeting",
+        "given": "Pleasant Valley G.S.A.Board",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2019-01-10",
+      "2019-04-23",
+      "2019-07-23"
+    ],
+    "container-title": [
+      "Harris Ranch Conference Center Pleasant Valley GSA Board of Directors Meeting 10 a.m",
+      "Harris Ranch Conference Center Pleasant Valley GSA Board of Directors Meeting 11:30 a.m",
+      "Harris Ranch Conference Center Pleasant Valley GSA Board of Directors Meeting"
+    ],
+    "volume": [
+      "10"
+    ],
+    "note": [
+      "a.m., October 29, 2019 Harris Ranch Conference Center 2020"
+    ],
+    "issue": [
+      "30"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Directors Meeting",
+        "given": "Pleasant Valley G.S.A.Board",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020-01-10",
+      "2020-03-24"
+    ],
+    "container-title": [
+      "Harris Ranch Conference Center Online via video conference and Pleasant Valley GSA Board of Directors Meeting 10 a.m"
+    ],
+    "note": [
+      "teleconference Harris Ranch Conference Center;"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "New article 2 (section 351) and section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016. Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources (Register"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+
+    ],
+    "container-title": [
+      "Technical and Reporting Standards § 352. Introduction to Technical and Reporting Standards. This Article describes the monitoring protocols, standards for monitoring sites, and other technical elements related to the development or implementation of a Plan. NOTE: AUTHORITY CITED: SECTION 10733.2, WATER CODE REFERENCE: SECTION 10733.2, WATER CODE. HISTORY"
+    ],
+    "issue": [
+      "34). Article 3"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "New article 3 (sections 352-352.6) and section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016"
+    ],
+    "container-title": [
+      "Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+
+    ],
+    "issue": [
+      "34)"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "given": "R.E.F.E.R.E.N.C.E."
+      },
+      {
+        "family": "WATER",
+        "given": "C.O.D.E."
+      }
+    ],
+    "volume": [
+      "10727"
+    ],
+    "title": [
+      "HISTORY 1. New section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016"
+    ],
+    "container-title": [
+      "Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources",
+      "SECTIONS"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "2",
+      "34)"
+    ]
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "New section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016. Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources",
+      "Each Agency shall develop and maintain a data management system that is capable of storing and reporting information relevant to the development or implementation of the Plan and monitoring of the basin"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+
+    ],
+    "author": [
+      {
+        "family": "System",
+        "given": "Data Management"
+      }
+    ],
+    "container-title": [
+      "NOTE: AUTHORITY CITED: SECTION 10733.2, WATER CODE REFERENCE: SECTIONS 10727.2, 10728, 10728.2 AND 10733.2, WATER CODE. HISTORY"
+    ],
+    "issue": [
+      "34). § 352.6"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "New section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016. Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources (Register"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+
+    ],
+    "container-title": [
+      "Introduction to Procedures. This Article describes various procedural issues related to the submission of Plans and public comment to those Plans. NOTE: AUTHORITY CITED: SECTION 10733.2, WATER CODE REFERENCE: SECTION 10733.2, WATER CODE. HISTORY"
+    ],
+    "issue": [
+      "34). Article 4. Procedures § 353"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "New article 4 (sections 353-353.10) and section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016"
+    ],
+    "container-title": [
+      "Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+
+    ],
+    "issue": [
+      "34)"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "container-title": [
+      "REFERENCE: SECTIONS 10729 AND 10733.2, WATER CODE HISTORY"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "title": [
+      "New section filed 8-15-2016 as an emergency exempt from review by OAL pursuant to Water Code section 10733.2(d); operative 8-15-2016"
+    ],
+    "container-title": [
+      "Pursuant to Water Code section 10733.2(d), these regulations shall remain in effect until revised by the Department of Water Resources"
+    ],
+    "date": [
+      "2016"
+    ],
+    "volume": [
+
+    ],
+    "issue": [
+      "34)"
+    ],
+    "type": "article-journal"
+  }
+]

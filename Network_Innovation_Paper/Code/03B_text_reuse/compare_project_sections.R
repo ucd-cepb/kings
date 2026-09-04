@@ -12,11 +12,6 @@
 CONFIG <- list(
    # Optimized for M2 Pro - using more cores but leaving some for system processes
    cores = min(8, parallel::detectCores() - 2),
-   min_text_length = 400,
-   max_text_length = 1e10,
-   cut_prop = 0.1,
-   space_prop_multiplier = 5,
-   min_score = 10,
    output_dir = "Network_Innovation_Paper/data_products/project_jaccard_results/"
 )
 
@@ -24,7 +19,7 @@ CONFIG <- list(
 # Package management
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(
-   data.table, quanteda, tm, textclean, stringr,
+   data.table, quanteda, tm, textclean,
    future, future.apply, furrr, textreuse, dplyr, tidyverse,
    progressr, readr
 )
@@ -47,32 +42,10 @@ options(future.globals.onReference = "warning")
 progressr::handlers(global = TRUE)
 progressr::handlers("progress")
 
-# ----- Functions -----
-cleanText <- function(text, cut_prop = CONFIG$cut_prop, 
-                      space_prop_multiplier = CONFIG$space_prop_multiplier) {
-   text = gsub('\"\"', '', text, fixed = TRUE)
-   chars = nchar(text)
-   periods = stringr::str_count(text, "\\.")
-   numbers = stringr::str_count(text, "[0-9]")
-   caps = stringr::str_count(text, '[A-Z]')
-   tildes = stringr::str_count(text, '~')
-   quotes = stringr::str_count(text, '\\"')
-   spaces = stringr::str_count(text, '\\s')
-   valid_indices = chars > CONFIG$min_text_length & 
-      chars <= CONFIG$max_text_length & 
-      (periods/chars) < cut_prop & 
-      (quotes/chars) < cut_prop & 
-      (tildes/chars) < cut_prop & 
-      (numbers/chars) < cut_prop & 
-      (caps/chars) < cut_prop & 
-      (spaces/chars) < (cut_prop * space_prop_multiplier)
-   text[!valid_indices] <- NA
-   return(text)
-}
-
 # ----- Main Process -----
 source("Network_Innovation_Paper/Code/_paths.R")
-documents <- readRDS(nip_product('page_metadata.RDS'))
+source("Network_Innovation_Paper/Code/_corpus.R")
+documents <- as.data.table(readRDS(nip_product('page_metadata.RDS')))
 # One document per plan: the ORIGINAL (doc_rank == 1, i.e. the legacy '^v1'
 # selection). This MUST match every other modeling input so the Jaccard network
 # spans the same document universe as the rest: references (03A '^v1' filter),
@@ -80,10 +53,15 @@ documents <- readRDS(nip_product('page_metadata.RDS'))
 # 'original'). Without it the resubmitted doc of a plan is pooled into the same
 # gsp_id below, silently changing which text this network compares.
 documents <- documents[doc_rank == 1,]
-project_docs <- documents[projects_mgmt_actions == TRUE,]
-# Clean text on per-page basis before concatenating
-project_docs$text_cleaned <- cleanText(project_docs$text)
-project_docs_valid <- project_docs[!is.na(text_cleaned),]
+project_docs_valid <- documents[projects_mgmt_actions == TRUE,]
+# page_metadata is metadata-only; re-attach the clean page text on demand from the
+# core corpus, keyed on (gsp_doc_id, page_num). This reproduces exactly the text
+# stage 02 (additional_filter_texts.R) used to bundle — every surviving page here
+# already passed cleanText, so no re-filtering is needed. attach_page_text()
+# preserves row order, so we setorder on the page_num identifier before pasting:
+# the concatenation sequence must derive from the identifier, not incidental order.
+project_docs_valid <- attach_page_text(project_docs_valid)
+setorder(project_docs_valid, gsp_id, page_num)
 
 dim(project_docs_valid)
 
@@ -92,7 +70,7 @@ project_docs_valid[,.N,by=.(gsp_id)][,list(mean(N),median(N))]
 
 
 project_docs_combined <- project_docs_valid[, .(
-   text = paste(text_cleaned, collapse = " "),
+   text = paste(text, collapse = " "),
    total_pages = .N,
    gsp_id = first(gsp_id)
 ), by = gsp_id]

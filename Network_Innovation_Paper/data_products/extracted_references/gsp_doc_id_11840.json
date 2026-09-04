@@ -1,0 +1,3947 @@
+[
+  {
+    "author": [
+      {
+        "family": "Watson",
+        "given": "Aquilogic Thomas L."
+      },
+      {
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Principal Geologist EKI"
+    ],
+    "publisher": [
+      "Environment & Water, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dutton",
+        "given": "Anona L."
+      },
+      {
+        "family": "P.G.",
+        "given": "C.H.G.Vice President Christina E.Lucero"
+      },
+      {
+        "family": "Hydrogeologist",
+        "given": "P.G."
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Singh",
+        "given": "I.N.T.E.R.A.Abhishek"
+      },
+      {
+        "family": "PhD",
+        "given": "P.E.President"
+      },
+      {
+        "family": "Kahn",
+        "given": "Principal Hydrogeologist"
+      },
+      {
+        "given": "Soares"
+      },
+      {
+        "family": "Conway",
+        "given": "L.L.P.Theresa A."
+      }
+    ],
+    "title": [
+      "Water Resources and Supply, Principal Water Resources Engineer Trey Driscoll, P.G., CHG Managing Director, California Water Resources and Supply",
+      "Dunham Attorney at Law Kern-Tulare Water District Vanessa Yap, P.E"
+    ],
+    "publisher": [
+      "Engineer Kern Water Bank Authority Jonathan"
+    ],
+    "location": [
+      "Parker, P.G., CHG Geologist"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Reilly",
+        "given": "Todd Groundwater Maureen K."
+      },
+      {
+        "family": "Maley",
+        "given": "P.E.Principal Engineer Michael P."
+      },
+      {
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Principal Hydrogeologist"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "MT MO IMs (ft msl"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Local Site ID RMW ID HCM AREA GSA Aquifer Latitude Longitude (ft msl"
+    ],
+    "note": [
+      "ft msl) 2025 2030 2035 2040 MT Basis MO Estimation Method"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "29S29E33N001M"
+    ],
+    "title": [
+      "RMW-001 South Basin Arvin Primary Principal Alluvial 35.356"
+    ],
+    "pages": [
+      "–118 875 262 294 294 294 294"
+    ],
+    "note": [
+      "294 Local raise per 2015 Low SWRCB feedback"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "30S29E11N001M"
+    ],
+    "title": [
+      "RMW-002 South Basin Arvin Primary Principal Alluvial 35.326"
+    ],
+    "pages": [
+      "–118 842 302 378 340 321 350 378"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "30S30E19E001M"
+    ],
+    "title": [
+      "RMW-003 South Basin Arvin Primary Principal Alluvial 35.307"
+    ],
+    "pages": [
+      "–118 803 507 573 573 573 573"
+    ],
+    "note": [
+      "573 Recent Low Cap 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "30S29E29A001M"
+    ],
+    "title": [
+      "RMW-004 South Basin Arvin Primary Principal Alluvial 35.296"
+    ],
+    "pages": [
+      "–118 880 22 98 60 41 70 98",
+      "–118 892 14 90 52 33 62 90"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low 31S29E05E001M RMW-005 South Basin Arvin Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35"
+    ],
+    "note": [
+      "HCM Area Trend Linear interpolation between November 2013 and November 2019"
+    ],
+    "issue": [
+      "261"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "31S29E12M001M"
+    ],
+    "title": [
+      "RMW-006 South Basin Arvin Primary Principal Alluvial 35.245"
+    ],
+    "pages": [
+      "–118 823 –10 66 66 66 66 66"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "31S30E17K001M"
+    ],
+    "title": [
+      "RMW-007 South Basin Arvin Primary Principal Alluvial 35.231"
+    ],
+    "pages": [
+      "–118 779 5 81 81 81 81 81"
+    ],
+    "publisher": [
+      "HCM Area Trend Average of"
+    ],
+    "date": [
+      "2014-03"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "31S29E34A001M"
+    ],
+    "title": [
+      "RMW-008 South Basin Arvin Primary Principal Alluvial 35.194"
+    ],
+    "pages": [
+      "–118 843 –46 30 30 30 30 30"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "31S30E30J001M"
+    ],
+    "title": [
+      "RMW-009 South Basin Arvin Primary Principal Alluvial 35.202"
+    ],
+    "pages": [
+      "–118 790 86 162 124 105 134 162",
+      "–118 848 –52 24 24 24 24 24"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low ACSD Well #14 RMW-010 South Basin Arvin Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "194"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "32S29E12P001M"
+    ],
+    "title": [
+      "RMW-011 South Basin Arvin Primary Principal Alluvial 35.151"
+    ],
+    "pages": [
+      "–118 818 –12 64 64 64 64 64"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "32S29E20L001M"
+    ],
+    "title": [
+      "RMW-012R South Basin Arvin Primary Principal Alluvial 35.129"
+    ],
+    "pages": [
+      "–118 888 28 79 79 79 79"
+    ],
+    "note": [
+      "79 Corcoran Clay 2015 Low Adjustment"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "32S28E23F001M"
+    ],
+    "title": [
+      "RMW-013R South Basin Arvin Primary Principal Alluvial 35.129"
+    ],
+    "pages": [
+      "–118 944 –46 30 –8 –27"
+    ],
+    "note": [
+      "2 30 HCM Area Trend 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "32S29E31N001M"
+    ],
+    "title": [
+      "RMW-014 South Basin Arvin Primary Principal Alluvial 35.093"
+    ],
+    "pages": [
+      "–118 912 4 80 42 23 52 80"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "12N20W36G001S"
+    ],
+    "title": [
+      "RMW-015 South Basin Arvin Primary Principal Alluvial 35.083"
+    ],
+    "pages": [
+      "–118 963 40 116 78 59 88 116"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "11N20W05J001S"
+    ],
+    "container-title": [
+      "RMW-016 South Basin Arvin Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback DMW04 RMW-107 North Basin BV Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback DMW06 RMW-109 North Basin BV Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback DMW07 RMW-110 North Basin BV Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback DMW08 RMW-111 North Basin BV Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback DMW10a RMW-112a North Basin BV Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback DMW12b RMW-113b Kern River Fan BV Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Well 12H RMW-167 North Basin Cawelo Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Well 4R RMW-168 North Basin Cawelo Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 029 14 75 75 75 75",
+      "–119 618 129 160 160 160 160",
+      "–119 581 117 152 152 152 152 152",
+      "–119 598 171 218 218 218 218",
+      "–119 565 163 210 187 175 192 210",
+      "–119 535 133 187 187 187 187 187",
+      "–119 501 105 155 155 155 155 155",
+      "–119 448 97 145 121 109 127 145",
+      "–119 434 62 116 116 116 116 116",
+      "–119 375 21 66 21 44 55 66",
+      "–119 116 36 120 78 57 89 120",
+      "–119 169 –6 65 65 65 65"
+    ],
+    "title": [
+      "75 Recent Low Cap 2015 Low DMW01 RMW-105 North Basin BV Primary Principal Alluvial 35.601",
+      "160 Local raise per 2015 Low SWRCB feedback DMW02 RMW-106 North Basin BV Primary Principal Alluvial 35.572",
+      "218 Local raise per 2015 Low SWRCB feedback DMW05 RMW-108 North Basin BV Primary Principal Alluvial 35.485"
+    ],
+    "note": [
+      "65 Recent Low Cap Average of February 2011 and October 2020"
+    ],
+    "issue": [
+      "066",
+      "514",
+      "453",
+      "402",
+      "391",
+      "354",
+      "318",
+      "595",
+      "602"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "container-title": [
+      "Well 28L RMW-169 North Basin Cawelo Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Well 24R RMW-170 North Basin Cawelo Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Well 11M RMW-171 North Basin Cawelo Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 075 31 115 73 52 84 115",
+      "–119 117 –23 61 19 –2 30 61",
+      "–119 150 –67 17 –25 –46 –15 17"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "463",
+      "647",
+      "504"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "literal": "EWMA #11 RMW-296 East Margin KNDLA Santa Margarita and Olcese"
+      },
+      {
+        "family": "July",
+        "given": "H.C.M.Area Trend"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 036 –107 –13 –13 –13 –13 –13",
+      "–119 032 –107 –13 –13 –13 –13 –13",
+      "–119 076 –69 25 –22 –46 –10 25",
+      "–119 286 47 108 108 108 108 108",
+      "–119 278 –44 28 28 28 28",
+      "–119 252 –33 28 28 28 28",
+      "–119 236 11 87 87 87 87 87",
+      "–118 938 408 453 453 453 453 453",
+      "–119 182 21 105 63 42 74 105",
+      "–119 135 –8 66 66 66 66",
+      "–119 093 115 199 157 136 168 199",
+      "–119 009 307 322 322 322 322 322",
+      "–119 110 105 150 128 116 133 150",
+      "–118 966 70 146 108 89 118 146",
+      "–119 187 –33 46 46 46 46",
+      "–118 943 62 138 100 81 110 138",
+      "–119 173 68 113 113 113 113 113",
+      "–119 128 60 136 98 79 108 136",
+      "–118 941 64 140 102 83 112 140",
+      "–119 164 23 99 99 99 99 99",
+      "–119 193 –2 68 68 68 68",
+      "–119 128 50 111 81 65 88"
+    ],
+    "title": [
+      "HCM Area Trend 2015 Low from nearby well Principal Cameo Old Well #13 RMW-297 East Margin KNDLA Santa Margarita and Olcese 35.740",
+      "HCM Area Trend 2015 Low from nearby well Principal Poso Well #1 RMW-298 East Margin KNDLA Santa Margarita and Olcese 35.548",
+      "28 Recent Low Cap 2015 Low HMWD #27 RMW-116 South Basin HMWD Primary Principal Alluvial 35.209",
+      "28 Recent Low Cap 2015 Low HMWD #26 RMW-117 South Basin HMWD Primary Principal Alluvial 35.198 -119.236 -67 2 2 2 2 2 Recent Low Cap 2015 Low HMWD #18 RMW-118 South Basin HMWD Primary Principal Alluvial 35.181",
+      "HCM Area Trend 2015 Low Meadows of the Kern RMW-306 Kern River Fan KNDLA Primary Principal Alluvial 35.442",
+      "W3 The Nature RMW-322 East Margin KNDLA Primary Principal Alluvial 35.291 -118.622 (Note 1) Conservancy RMW-017 RMW-017 North Basin KRGSA Primary Principal Alluvial 35.421",
+      "66 Recent Low Cap 2015 Low RMW-019R RMW-019R North Basin KRGSA Primary Principal Alluvial 35.420",
+      "68 Recent Low Cap 2015 Low RMW-038R RMW-038R South Basin KRGSA Primary Principal Alluvial 35.223",
+      "111 Recent Low Cap Spatial Interpolation"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low from nearby well Principal HMWD #20 RMW-114 South Basin HMWD Primary Principal Alluvial",
+      "Recent Low Cap 2015 Low HMWD #28 RMW-115 South Basin HMWD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-018 RMW-018 North Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-020 RMW-020 Kern River Fan KRGSA Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback RMW-025 RMW-025 Kern River Fan KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-026 RMW-026 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-029 RMW-029 Kern River Fan KRGSA Primary Principal Alluvial",
+      "46 Range 2015 Low RMW-030 RMW-030 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-031 RMW-031 Kern River Fan KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-032 RMW-032 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-034 RMW-034 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend Spatial Interpolation RMW-035R RMW-035R South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-037 RMW-037 South Basin KRGSA Primary Principal Alluvial"
+    ],
+    "date": [
+      "2012"
+    ],
+    "issue": [
+      "713",
+      "229",
+      "209",
+      "433",
+      "405",
+      "354",
+      "351",
+      "325",
+      "334",
+      "296",
+      "295",
+      "274",
+      "245",
+      "225"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-041 R.M.W.-041 South Basin K.R.G.S.A.Primary Principal"
+      },
+      {
+        "family": "Trend",
+        "given": "H.C.M.Area"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–118 899 73 105 105 105 105",
+      "–119 205 –9 67 67 67 67 67",
+      "–119 000 42 118 118 118 118 118",
+      "–118 869 62 138 138 138 138 138",
+      "–119 116 44 120 120 120 120 120",
+      "–119 030 87 159 159 159 159 159",
+      "–118 924 7 39 39 39 39 39",
+      "–119 128 30 106 106 106 106 106"
+    ],
+    "title": [
+      "105 Corcoran Clay 2015 Low Adjustment RMW-042 RMW-042 South Basin KRGSA Primary Principal Alluvial 35.192",
+      "Low RMW-192 RMW-192 South Basin KRGSA Primary Principal Alluvial 35.221",
+      "HCM Area Trend 2015 Low RMW-193 RMW-193 South Basin KRGSA Primary Principal Alluvial 35.205"
+    ],
+    "date": [
+      "2015"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low RMW-195 RMW-195 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-196 RMW-196 South Basin KRGSA Primary Principal Alluvial",
+      "Recent Low Cap 2015 Low RMW-197 RMW-197 South Basin KRGSA Primary Principal Alluvial",
+      "Local raise per 2015 Low SWRCB feedback RMW-200 RMW-200 South Basin KRGSA Primary Principal Alluvial"
+    ],
+    "note": [
+      "HCM Area Trend Average of April 2010 and October 2019"
+    ],
+    "issue": [
+      "200",
+      "252",
+      "241",
+      "166",
+      "154"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-201 R.M.W.-201 Kern River Fan K.R.G.S.A.Primary Principal"
+      },
+      {
+        "family": "Trend",
+        "given": "H.C.M.Area"
+      },
+      {
+        "family": "Trend",
+        "given": "H.C.M.Area"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 104 107 152 130 118 135 152",
+      "–119 001 73 105 105 105 105",
+      "–119 083 101 132 132 132 132",
+      "–119 007 159 204 204 204 204 204",
+      "–119 020 105 150 150 150 150 150",
+      "–118 933 99 175 137 118 147 175",
+      "–119 053 121 190 156 138 164",
+      "–119 022 69 145 107 88 117 145",
+      "–118 992 84 160 122 103 132 160",
+      "–118 991 38 84 84 84 84",
+      "–118 905 9 85 47 28 57 85",
+      "–119 081 83 159 83 121 140 159",
+      "–118 946 56 111 111 111 111",
+      "–119 073 –112 –18 –18 –18 –18 –18",
+      "–119 090 –102 –41 –41 –41 –41",
+      "–119 058 –107 –13 –13 –13 –13 –13",
+      "–119 085 –110 –52 –52 –52 –52 –52"
+    ],
+    "date": [
+      "2015",
+      "2015",
+      "2015"
+    ],
+    "title": [
+      "Low RMW-202 RMW-202 South Basin KRGSA Primary Principal Alluvial 35.266",
+      "105 Local raise per 2015 Low SWRCB feedback RMW-209R RMW-209R North Basin KRGSA Primary Principal Alluvial 35.420",
+      "132 Local raise per 2015 Low SWRCB feedback RMW-210R RMW-210R Kern River Fan KRGSA Primary Principal Alluvial 35.383",
+      "Low RMW-211R RMW-211R Kern River Fan KRGSA Primary Principal Alluvial 35.367",
+      "HCM Area Trend 2015 Low RMW-212 RMW-212 South Basin KRGSA Primary Principal Alluvial 35.362",
+      "HCM Area Trend 2015 Low RMW-213R RMW-213R Kern River Fan KRGSA Primary Principal Alluvial 35.362",
+      "Low RMW-214R RMW-214R South Basin KRGSA Primary Principal Alluvial 35.320",
+      "111 Corcoran Clay 2015 Low Adjustment Well 4P1 RMW-175 East Margin KTWD"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low RMW-215R RMW-215R South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-216 RMW-216 South Basin KRGSA Primary Principal Alluvial",
+      "84 Local raise per April 2016 SWRCB feedback RMW-217 RMW-217 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-218 RMW-218 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low RMW-219 RMW-219 South Basin KRGSA Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Principal Well 20C1 RMW-176 East Margin KTWD Santa Margarita and Olcese",
+      "-41 Recent Low Cap 2015 Low Principal Well 15P1 RMW-177 East Margin KTWD Santa Margarita and Olcese",
+      "HCM Area Trend 2015 Low Principal Well 32M1 RMW-179 East Margin KTWD Santa Margarita and Olcese",
+      "Santa Margarita and Olcese"
+    ],
+    "note": [
+      "GSA Discretion 2015 Low Principal (Note 2"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "394",
+      "339",
+      "292",
+      "281",
+      "187",
+      "235",
+      "778",
+      "747",
+      "751",
+      "795"
+    ]
+  },
+  {
+    "title": [
+      "Well 12A RMW-290 East Margin KTWD Primary Principal Alluvial 35.777"
+    ],
+    "pages": [
+      "–119 116 58 159 109 83 121 159"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Well 15D1 RMW-291 East Margin KTWD Primary Principal Alluvial 35.762"
+    ],
+    "pages": [
+      "–119 063 58 159 109 83 121 159",
+      "–119 080 58 159 109 83 121 159"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low from nearby well Well 4D1 RMW-292 East Margin KTWD Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low from nearby well"
+    ],
+    "issue": [
+      "787"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "30S/25E-16L01"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-300 Kern River Fan K.W.B.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 297 –75 –13 –13 –13 –13",
+      "–119 171 –10 74 32 11 43 74"
+    ],
+    "container-title": [
+      "-13 Recent Low Cap 2015 Low 88-03-009R RMW-145R North Basin NKWSD Primary Principal Alluvial"
+    ],
+    "publisher": [
+      "HCM Area Trend Spring"
+    ],
+    "date": [
+      "2016"
+    ],
+    "issue": [
+      "318",
+      "318"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "88-09-009"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-146 North Basin N.K.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "–119 233 –89 –5 –5 –5 –5 –5"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low MT MO IMs (ft msl"
+    ],
+    "issue": [
+      "536"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Longitude",
+        "given": "Local Site I.D.R.M.W.I.D.H.C.M.A.R.E.A.G.S.A.Aquifer Latitude"
+      }
+    ],
+    "date": [
+      "2025"
+    ],
+    "container-title": [
+      "MT Basis MO Estimation Method 88-21-005 RMW-147 North Basin NKWSD Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "–119 227 –48 36 –6 –27"
+    ],
+    "note": [
+      "5 36 HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "588"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "88-29-014"
+    ],
+    "title": [
+      "RMW-148 North Basin NKWSD Primary Principal Alluvial 35.623"
+    ],
+    "pages": [
+      "–119 224 –136 –75 –75 –75 –75"
+    ],
+    "note": [
+      "-75 Recent Low Cap 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "99-00-003"
+    ],
+    "title": [
+      "RMW-149 North Basin NKWSD Primary Principal Alluvial 35.442"
+    ],
+    "pages": [
+      "–119 133 0 61 61 61 61"
+    ],
+    "note": [
+      "61 Recent Low Cap 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "99-00-081"
+    ],
+    "title": [
+      "RMW-150 North Basin NKWSD Primary Principal Alluvial 35.576"
+    ],
+    "pages": [
+      "–119 282 –96 –12 –12 –12 –12 –12"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "99-22-084"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-151 North Basin N.K.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 312 –133 –49 –49 –49 –49 –49",
+      "–119 207 –33 51 9 –12 20 51"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low Shafter Well 18 RMW-271 North Basin NKWSD Primary Principal Alluvial"
+    ],
+    "publisher": [
+      "HCM Area Trend Spatial Interpolation"
+    ],
+    "issue": [
+      "638",
+      "501"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "3361-62"
+    ],
+    "title": [
+      "RMW-284 North Basin NKWSD Primary Principal Alluvial 35.471"
+    ],
+    "pages": [
+      "–119 217 –22 62 20 –1 31 62"
+    ],
+    "publisher": [
+      "HCM Area Trend Spring"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "DW097 R.M.W.-285 North Basin N.K.W.S.D.Primary Principal"
+      },
+      {
+        "family": "Trend",
+        "given": "H.C.M.Area"
+      }
+    ],
+    "volume": [
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 219 7 91 49 28 60 91",
+      "–118 841 306 399 353 329 364 399",
+      "–118 803 466 527 527 527 527"
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Low Well #4 RMW-043 East Margin Olcese Santa Margarita and Olcese 35.431"
+    ],
+    "container-title": [
+      "HCM Area Trend Spring 2016 Principal Canyon View Ranch RMW-044 East Margin Olcese Santa Margarita and Olcese"
+    ],
+    "note": [
+      "527 Recent Low Cap Linear interpolation between February Principal 2000 and July 2017"
+    ],
+    "issue": [
+      "417",
+      "439"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "30S/26E-04D003M"
+    ],
+    "title": [
+      "RMW-045 Kern River Fan Pioneer Primary Principal Alluvial 35.354"
+    ],
+    "pages": [
+      "–119 197 –46 15 15 15 15"
+    ],
+    "note": [
+      "15 Range 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "30S/26E-10P004M"
+    ],
+    "title": [
+      "RMW-048 Kern River Fan Pioneer Primary Principal Alluvial 35.325"
+    ],
+    "pages": [
+      "–119 174 –51 29 29 29 29"
+    ],
+    "note": [
+      "29 Range 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "30S/26E-15N003M"
+    ],
+    "title": [
+      "RMW-049 Kern River Fan Pioneer Primary Principal Alluvial 35.312"
+    ],
+    "pages": [
+      "–119 181 –36 29 29 29 29"
+    ],
+    "note": [
+      "29 Range 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "30S/26E-04J003M"
+    ],
+    "title": [
+      "RMW-259 Kern River Fan Pioneer Primary Principal Alluvial 35.343"
+    ],
+    "pages": [
+      "–119 182 –142 –46 –46 –46 –46"
+    ],
+    "note": [
+      "-46 Recent Low Cap 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "30S/26E-04J002M"
+    ],
+    "title": [
+      "RMW-289 Kern River Fan Pioneer Primary Principal Alluvial 35.343",
+      "62 Range 2015 Low Bushnell RMW-050 North Basin RRBWSD Primary Principal Alluvial 35.435",
+      "Enns Domestic RMW-054 North Basin RRBWSD Primary Principal Alluvial 35.412"
+    ],
+    "pages": [
+      "–119 182 –6 62 62 62 62",
+      "–119 358 –111 –27 –69 –90 –59 –27",
+      "–119 286 –43 41 –1 –22 10 41",
+      "–119 254 –17 67 25 4 36 67",
+      "–119 262 –16 68 26 5 37 68",
+      "–119 345 2 47 25 13 30 47",
+      "–119 395 –48 36 –6 –27 5 36",
+      "–119 386 –22 23 23 23 23 23",
+      "–119 341 1 46 46 46 46 46"
+    ],
+    "author": [
+      {
+        "literal": "HCM Area Trend 2015 Low L.R. Stout RMW-052 North Basin RRBWSD Primary Principal Alluvial"
+      },
+      {
+        "family": "P",
+        "given": "H.C.M.Area Trend Spatial Interpolation"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low RBG School RMW-053 North Basin RRBWSD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Section 18 RMW-055 North Basin RRBWSD Primary Principal Alluvial",
+      "Recent Low Cap 2015 Low Blacco HQ RMW-056 Kern River Fan RRBWSD Primary Principal Alluvial 35.391",
+      "HCM Area Trend 2015 Low Cauzza RMW-057 North Basin RRBWSD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low Parsons New RMW-058R Kern River Fan RRBWSD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low estimated from surrogate data West I-5 RMW-059 Kern River Fan RRBWSD Primary Principal Alluvial"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low Virgil Bussell RMW-060 Kern River Fan RRBWSD Primary Principal Alluvial 35.363 -119.308 13 58 58 58 58 58 HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "431",
+      "420",
+      "408",
+      "399",
+      "366",
+      "356"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "27N"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "Mayer R.M.W.-061a Kern River Fan R.R.B.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "–119 286 15 62 62 62 62"
+    ],
+    "note": [
+      "62 Range 2015 Low"
+    ],
+    "issue": [
+      "369"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "25M"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "Enos R.M.W.-062a Kern River Fan R.R.B.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 252 31 77 77 77 77",
+      "–119 147 113 158 136 124 141 158",
+      "–119 204 64 109 109 109 109 109"
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Low Chet Reed RMW-063 Kern River Fan RRBWSD Primary Principal Alluvial 35.391"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low Home Place RMW-064 Kern River Fan RRBWSD Primary Principal Alluvial"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "374",
+      "382"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "31H"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "Greeley R.M.W.-065a Kern River Fan R.R.B.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "–119 217 7 69 69 69 69",
+      "–119 177 59 105 105 105 105 105"
+    ],
+    "title": [
+      "69 Range 2015 Low Harvest Ranch RMW-066 Kern River Fan RRBWSD Primary Principal Alluvial 35.363"
+    ],
+    "note": [
+      "Range 2015 Low"
+    ],
+    "issue": [
+      "362"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "35H"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.R.B.W.S.D.Shop R.M.W.-067a Kern River Fan R.R.B.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "–119 147 71 116 116 116 116 116"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "366"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "32N"
+    ],
+    "title": [
+      "Triple RMW-068a Kern River Fan RRBWSD Primary Principal Alluvial 35.267"
+    ],
+    "pages": [
+      "–119 214 73 118 118 118 118 118"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "28J"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "Triple R.M.W.-069b Kern River Fan R.R.B.W.S.D.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "4 4 4 4",
+      "35"
+    ],
+    "pages": [
+      "–119 181 100 145 145 145 145 145",
+      "–119 336 –154 –70 –70 –70 –70 –70",
+      "–119 205 –44",
+      "–119 304 –109 –26 –26 –26 –26"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low SSJMUD 8 RMW-157 North Basin SSJMUD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low SSJMUD 14 RMW-158 North Basin SSJMUD Primary Principal Alluvial",
+      "4 Local raise per 2015 Low SWRCB feedback SSJMUD 23 RMW-159 North Basin SSJMUD Primary Principal Alluvial"
+    ],
+    "note": [
+      "-26 Recent Low Cap 2015 Low MT MO IMs (ft msl"
+    ],
+    "issue": [
+      "289",
+      "747",
+      "739",
+      "719"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Longitude",
+        "given": "Local Site I.D.R.M.W.I.D.H.C.M.A.R.E.A.G.S.A.Aquifer Latitude"
+      }
+    ],
+    "date": [
+      "2025"
+    ],
+    "title": [
+      "MT Basis MO Estimation Method SSJMUD 53 RMW-160 North Basin SSJMUD Primary Principal Alluvial 35.631",
+      "34 Local raise per 2015 Low SWRCB feedback SSJMUD 67 RMW-161R North Basin SSJMUD Primary Principal Alluvial 35.675 -119.154 -45 -14 -14 -14 -14 -14 Local raise per 2015 Low from nearby well SWRCB feedback SSJMUD 62 RMW-162 North Basin SSJMUD Primary Principal Alluvial 35.718"
+    ],
+    "pages": [
+      "–119 191 –8 34 34 34 34",
+      "–119 145 46 100 100 100 100 100",
+      "–119 232 –4 65 65 65 65",
+      "–119 209 –69 15 –27 –48 –17 15",
+      "–119 230 –14 70 70 70 70 70",
+      "–119 259 –10 74 32 11 43 74"
+    ],
+    "container-title": [
+      "Local raise per 2015 Low SWRCB feedback SSJMUD 42 RMW-163 North Basin SSJMUD Primary Principal Alluvial",
+      "65 Recent Low Cap 2015 Low SSJMUD 47 RMW-208R North Basin SSJMUD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low from nearby well Delano 30 RMW-252 North Basin SSJMUD Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35"
+    ],
+    "note": [
+      "HCM Area Trend Average of July 2013 and July 2016 Delano 34 RMW-281 North Basin SSJMUD Primary Principal Alluvial 35.744",
+      "HCM Area Trend Spatial Interpolation SSJMUD 68 RMW-323 North Basin SSJMUD Primary Principal Alluvial 35.769 -119.281 (Note 1"
+    ],
+    "issue": [
+      "693",
+      "668",
+      "790"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "Shafter Well 15 RMW-204 North Basin SWID Primary Principal Alluvial 35.470 -119.279 -74 -4 -4 -4 -4 -4 Recent Low Cap 2015 Low Shafter Well 7 RMW-205 North Basin SWID Primary Principal Alluvial 35.508"
+    ],
+    "pages": [
+      "–119 278 –74 10 –32 –53 –22 10"
+    ],
+    "publisher": [
+      "HCM Area Trend Spatial Interpolation"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "28S/24E-35C"
+    ],
+    "container-title": [
+      "RMW-249 North Basin SWID Primary Principal Alluvial",
+      "-90 Recent Low Cap 2015 Low Shafter Well 14 RMW-257 North Basin SWID Primary Principal Alluvial",
+      "HCM Area Trend Spatial Interpolation Wasco 8A RMW-263 North Basin SWID Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 360 –76 8 –34 –55 –24",
+      "–119 259 –71 13 –29 –50 –19 13",
+      "–119 352 –134 –50 –50 –50 –50 –50"
+    ],
+    "title": [
+      "8 HCM Area Trend 2015 Low Shafter Well 12 RMW-254 North Basin SWID Primary Principal Alluvial 35.502 -119.275 -75 9 -33 -54 -23 9 HCM Area Trend Spatial Interpolation Wasco 12 RMW-256 North Basin SWID Primary Principal Alluvial"
+    ],
+    "publisher": [
+      "HCM Area Trend Spatial Interpolation"
+    ],
+    "issue": [
+      "456",
+      "616",
+      "494",
+      "587"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "28S25E19G"
+    ],
+    "container-title": [
+      "RMW-269 North Basin SWID Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low S-2 RMW-119 North Basin SWSD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low S-6 RMW-123 North Basin SWSD Primary Principal Alluvial",
+      "-76 Recent Low Cap 2015 Low S-8A Cluster 1 of 2 RMW-126 North Basin SWSD Primary Principal Alluvial",
+      "-70 HCM Area Trend 2015 Low S-9A Cluster 1 of 2 RMW-128 North Basin SWSD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low S-11 RMW-130 North Basin SWSD Primary Principal Alluvial",
+      "-108 Corcoran Clay 2015 Low Adjustment S-12 RMW-131 North Basin SWSD Primary Principal Alluvial",
+      "Low Adjustment S-13A Cluster 1 of 2 RMW-132 North Basin SWSD Primary Principal Alluvial",
+      "HCM Area Trend Spatial Interpolation S-14B Cluster 2 of 2 RMW-135 North Basin SWSD Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 315 –60 24 –18 –39 –8",
+      "–119 342 –158 –74 –74 –74 –74 –74",
+      "–119 562 –107 –25 –25 –25 –25",
+      "–119 527 –143 –59 –59 –59 –59 –59",
+      "–119 339 –145 –76 –76 –76 –76",
+      "–119 394 –113 –29 –71 –92 –61 –29",
+      "–119 562 –176 –108 –108 –108 –108",
+      "–119 554 –164 –121 –121 –121 –121 –121",
+      "–119 437 –188 –104 –104 –104 –104 –104",
+      "–119 384 –159 –75 –75 –75 –75 –75"
+    ],
+    "title": [
+      "24 HCM Area Trend 2015 Low Wasco 11 RMW-276 North Basin SWID Primary Principal Alluvial 35.589",
+      "-25 Recent Low Cap 2015 Low S-4 RMW-121 North Basin SWSD Primary Principal Alluvial 35.521 -119.582 -58 9 9 9 9 9 Recent Low Cap 2015 Low S-5 RMW-122 North Basin SWSD Primary Principal Alluvial 35.551"
+    ],
+    "location": [
+      "Corcoran Clay"
+    ],
+    "date": [
+      "2015"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "478",
+      "569",
+      "704",
+      "630",
+      "522",
+      "696",
+      "723",
+      "761",
+      "667"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "26S-23E-15A1"
+    ],
+    "title": [
+      "RMW-137 North Basin SWSD Primary Principal Alluvial 35.674"
+    ],
+    "pages": [
+      "–119 473 –179 –110 –110 –110 –110"
+    ],
+    "note": [
+      "-110 Recent Low Cap 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "948L02"
+    ],
+    "title": [
+      "Cluster1 of 2 RMW-139 North Basin SWSD Primary Principal Alluvial 35.419"
+    ],
+    "pages": [
+      "–119 422 –107 –41 –41 –41 –41",
+      "–119 581 130 185 185 185 185 185"
+    ],
+    "container-title": [
+      "-41 Recent Low Cap 2015 Low S-1 RMW-277 North Basin SWSD Primary Principal Alluvial"
+    ],
+    "volume": [
+      "35"
+    ],
+    "note": [
+      "Local raise per 2015 Low SWRCB feedback"
+    ],
+    "issue": [
+      "594"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "28/23/16/G"
+    ],
+    "title": [
+      "RMW-286 North Basin SWSD Primary Principal Alluvial 35.495"
+    ],
+    "pages": [
+      "–119 501 –110 –26 –68 –89 –58 –26"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "28/23/36/R"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-287 North Basin S.W.S.D.Primary Principal"
+      },
+      {
+        "family": "November",
+        "given": "H.C.M.Area Trend"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "1",
+      "35"
+    ],
+    "container-title": [
+      "Recent Low Cap 2015 Low Caratan Well (RMS- RMW-070 South Basin TCWD Primary Principal Alluvial",
+      "RMW-203 North Basin WDWA Primary Principal Alluvial"
+    ],
+    "pages": [
+      "–118 770 20 96 58 39 68 96",
+      "7106–63",
+      "–119 637 –23 51 51 51 51"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "51 Recent Low Cap March 2020"
+    ],
+    "issue": [
+      "443",
+      "200",
+      "551"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "7108-66"
+    ],
+    "title": [
+      "RMW-275 North Basin WDWA Primary Principal Alluvial 35.776"
+    ],
+    "pages": [
+      "–119 690 –73 –2 –2 –2 –2 –2"
+    ],
+    "collection-title": [
+      "Recent Low Cap"
+    ],
+    "date": [
+      "2021-03"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Berenda Mesa #3 RMW-299 Western Fold Belt WDWA Primary Principal Alluvial 35.637"
+    ],
+    "pages": [
+      "–119 949 306 363 363 363 363"
+    ],
+    "note": [
+      "363 Recent Low Cap Linear interpolation between May 2009 and May 2023"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "WKWD 23M-M RMW-085b Kern River Fan WKWD Primary Principal Alluvial"
+      }
+    ],
+    "volume": [
+      "35",
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 270 –9 40 40 40 40",
+      "–119 368 18 63 63 63 63 63",
+      "–119 297 –54 –9 –9 –9 –9 –9",
+      "–119 359 18 63 41 29 46 63",
+      "–119 359 17 62 40 28 45 62"
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Low NWM1-M RMW-266 Kern River Fan WKWD Primary Principal Alluvial 35.346",
+      "HCM Area Trend 2015 Low 7-01 RMW-293 Kern River Fan WKWD Primary Principal Alluvial 35.297"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low North Ag RMW-294 Kern River Fan WKWD Primary Principal Alluvial",
+      "HCM Area Trend 2015 Low South Ag RMW-295 Kern River Fan WKWD Primary Principal Alluvial"
+    ],
+    "note": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "issue": [
+      "304",
+      "347",
+      "333"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "citation-number": [
+      "32S26E20G001M"
+    ],
+    "title": [
+      "RMW-094 South Basin WRM Primary Principal Alluvial 35.134"
+    ],
+    "pages": [
+      "–119 208 –7 69 69 69 69 69"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "32S27E30N001M"
+    ],
+    "title": [
+      "RMW-095 South Basin WRM Primary Principal Alluvial 35.109"
+    ],
+    "pages": [
+      "–119 123 157 230 194 175 203"
+    ],
+    "note": [
+      "230 Recent Low Cap 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "32S27E35R001M"
+    ],
+    "title": [
+      "RMW-097 South Basin WRM Primary Principal Alluvial 35.096"
+    ],
+    "pages": [
+      "–119 041 62 138 100 81 110 138"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "32S26E24K001M"
+    ],
+    "title": [
+      "RMW-231 South Basin WRM Primary Principal Alluvial 35.130"
+    ],
+    "pages": [
+      "–119 137 –15 61 61 61 61 61"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "11N22W01D001S"
+    ],
+    "title": [
+      "RMW-232 South Basin WRM Primary Principal Alluvial 35.075"
+    ],
+    "pages": [
+      "–119 189 48 124 48 86 105 124"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "11N22W06H001S"
+    ],
+    "title": [
+      "RMW-233 South Basin WRM Primary Principal Alluvial 35.069"
+    ],
+    "pages": [
+      "–119 261 191 267 229 210 239 267"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "11N21W16E001S"
+    ],
+    "title": [
+      "RMW-234 South Basin WRM Primary Principal Alluvial 35.043"
+    ],
+    "pages": [
+      "–119 136 –112 –9 –9 –9 –9"
+    ],
+    "note": [
+      "-9 Range 2015 Low"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "12N21W34N001S"
+    ],
+    "title": [
+      "RMW-235R South Basin WRM Primary Principal Alluvial 35.077"
+    ],
+    "pages": [
+      "–119 117 26 68 68 68 68"
+    ],
+    "note": [
+      "68 Corcoran Clay 2015 Low Adjustment"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11N21W09C001S"
+    ],
+    "title": [
+      "RMW-236 South Basin WRM Primary Principal Alluvial 35.060"
+    ],
+    "pages": [
+      "–119 131 –23 23 23 23 23"
+    ],
+    "note": [
+      "23 Local raise per 2015 Low SWRCB feedback"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "32S26E34P001M"
+    ],
+    "title": [
+      "RMW-237 South Basin WRM Primary Principal Alluvial 35.094"
+    ],
+    "pages": [
+      "–119 174 110 186 186 186 186 186"
+    ],
+    "container-title": [
+      "HCM Area Trend 2015 Low"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "32S26E36P002M"
+    ],
+    "author": [
+      {
+        "family": "Alluvial",
+        "given": "R.M.W.-238 South Basin W.R.M.Primary Principal"
+      }
+    ],
+    "volume": [
+      "35",
+      "35"
+    ],
+    "pages": [
+      "–119 137 39 85 85 85 85",
+      "–119 313 166 234 234 234 234 234",
+      "–118 977 74 150 112 93 122 150"
+    ],
+    "title": [
+      "85 Local raise per 2015 Low SWRCB feedback 32S25E29Q001M RMW-239 South Basin WRM Primary Principal Alluvial 35.109"
+    ],
+    "container-title": [
+      "Recent Low Cap Spatial Interpolation 32S28E16P001M RMW-240 South Basin WRM Primary Principal Alluvial"
+    ],
+    "note": [
+      "HCM Area Trend Linear interpolation between February"
+    ],
+    "issue": [
+      "095",
+      "137"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "State • CEQA documentation, including one or more of the following",
+      "• California State Water Resources Control Board permits and regulations regarding recycled water use, waste discharge, and stormwater capture for recharge"
+    ],
+    "container-title": [
+      "Initial Study (IS), Categorical Exemption (CE), Negative Declaration (ND), Mitigated Negative Declaration (MND), or Notice of Exemption (NOE). • Environmental Impact Report (EIR",
+      "• California Surface Mining and Reclamation Act (SMARA) regulations. • California Division of Safety of Dams regulations"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "• Section 15.2 – Description of the Monitoring Network: Summarizes the site selection, spatial coverage, and network design for each sustainability indicator. • Section 15.3 – Monitoring Protocols: Describes the field methods and standards used to ensure consistent, high-quality data collection. • Section 15.4 – Representative Monitoring: Identifies the specific sites designated for application of SMCs. • Section 15.5 – Monitoring Network Assessment and Data Gaps: Evaluates network adequacy and outlines plans for addressing identified data gaps"
+    ],
+    "note": [
+      "• Section 15.6 – Reporting to the Department: Summarizes procedures for data management and submittal to the Department of Water Resources (DWR) via the Kern Subbasin’s Data Management System (DMS)."
+    ],
+    "type": "report"
+  },
+  {
+    "title": [
+      "• Phase 2 – Data Gap Filling with Existing Wells",
+      "• Whenever feasible, close confirmed data gaps by enrolling existing wells, including domestic, agricultural, USGS, public supply, and ILRP sites, provided they meet RMW-WQ requirements for construction depth, sampling frequency, and water quality COCs"
+    ],
+    "date": [
+      "2025"
+    ],
+    "container-title": [
+      "o Secure owner permission and long-term access agreements for each adopted well. o Update the RMN and assign SMCs"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Table 16-1. Summary of Data Collection Sustainability Indicator Data Start Date Frequency Reporting Groundwater Levels Field Measurements WY 1993 Semi-annual DMS, SGMA Portal"
+    ],
+    "container-title": [
+      "Annual Reports Groundwater Storage Simulated from the WY 1995 Annual Annual Reports numerical model Subsidence InSAR WY 2016 Annual DMS, Annual Benchmark Surveys Reports, Quarterly discussions with CASP/FWA Water Quality Collect Samples WY 2024* Semi-annual DMS, SGMA Portal, Annual Reports Interconnected Surface Water Not Applicable Seawater Intrusion Not Applicable"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "* Historic data is available from public databases with a limited amount of data available from Water Districts"
+    ],
+    "note": [
+      "Semi-annual monitoring for the Kern Subbasin defined Constituents of Concern (COCs) aligned with groundwater levels began in WY 2024."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Energy",
+        "given": "Aera"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2002",
+      "June"
+    ],
+    "title": [
+      "The application of satellite radar interferometry to subsidence monitoring in the Belridge and Lost Hills fields"
+    ],
+    "location": [
+      "California"
+    ],
+    "url": [
+      "https://ieeexplore.ieee.org/document/1024987."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Amec"
+      },
+      {
+        "family": "Bandy",
+        "given": "O.L."
+      },
+      {
+        "family": "E",
+        "given": "Arnal R."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017",
+      "1969"
+    ],
+    "title": [
+      "Groundwater Subsidence Study Report Concoran Subsidence Bowl San Joaquin Valley, California. Prepared for California High Speed Rail Authority. Prepared by Amec Foster Wheeler Environment & Infrastructure",
+      "Middle Tertiary Basin Development"
+    ],
+    "url": [
+      "https://sjvwater.org/wp-content/uploads/2023/02/2017-12-22-Amec-Foster-Wheeler_180680_Ground-Subsidence-Study-Rpt_Concoran-Subsiden...-1.pdf",
+      "https://www.semanticscholar.org/paper/Middle-Tertiary-Basin-Development%2C-San-Joaquin-Bandy-Arnal/1ffe7476857e069cc6284d3fd2ce1d6413f89c5c"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "Geological Society of America Bulletin"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "December"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bartow",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1984",
+      "1496",
+      "2020"
+    ],
+    "title": [
+      "Geologic Map and Cross Sections of the Southeastern Margin of the San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "collection-title": [
+      "IMAP series"
+    ],
+    "volume": [
+      "1"
+    ],
+    "url": [
+      "https://ngmdb.usgs.gov/Prodesc/proddesc_22.htm,"
+    ],
+    "note": [
+      "accessed January 14,"
+    ],
+    "issue": [
+      "25"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bartow",
+        "given": "J.A."
+      },
+      {
+        "family": "Pittman",
+        "given": "G.M."
+      },
+      {
+        "family": "Boggs",
+        "given": "J.L."
+      },
+      {
+        "family": "Sun",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "1983",
+      "1991",
+      "2011"
+    ],
+    "title": [
+      "The Kern River Formation, Southeastern San Joaquin Valley, California, Contributions to Stratigraphy, Geological Survey Bulletin 1529-D",
+      "Bertoldi and others",
+      "Groundwater in the Central Valley, California; a summary report",
+      "Urbanization alters watershed hydrology in the Piedmont of North Carolina"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/bul/1529d/report.pdf",
+      "https://doi.org/10.3133/pp1401A",
+      "https://www.fs.usda.gov/research/treesearch/38559"
+    ],
+    "genre": [
+      "Professional Paper 1401-A,"
+    ],
+    "volume": [
+      "4"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecohydrology"
+    ],
+    "pages": [
+      "256–264"
+    ],
+    "doi": [
+      "10.3133/pp1401A"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Corporation",
+        "given": "Boyle Engineering"
+      }
+    ],
+    "date": [
+      "1975",
+      "September"
+    ],
+    "title": [
+      "Engineering Report Setting Forth a Plan of Works for Acquisition of Kern Island Water Company, prepared for Kern-Delta Water District"
+    ],
+    "publisher": [
+      "Kern County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "PDF File"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Brush",
+        "given": "C.F."
+      },
+      {
+        "family": "Dogrul",
+        "given": "E.C."
+      },
+      {
+        "family": "Kadir",
+        "given": "T.N."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Development and Calibration the California Central Valley Groundwater-Surface Water Simulation Model (C2VSim), Version 3.02-CG"
+    ],
+    "location": [
+      "California, California"
+    ],
+    "collection-title": [
+      "Department of Water Resources Technical Memorandum"
+    ],
+    "url": [
+      "https://www.researchgate.net/profile/Charles_Brush/publication/258100739_Dev"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Oil",
+        "given": "California Division",
+        "particle": "of"
+      },
+      {
+        "given": "Gas"
+      }
+    ],
+    "date": [
+      "1973",
+      "1974",
+      "2023-05"
+    ],
+    "title": [
+      "California Oil and Gas Fields, Volume I North and East Central California. https://www.conservation.ca.gov/calgem/Pages/Aquifer_Exemptions.aspx California Division of Oil and Gas (DOGGR"
+    ],
+    "volume": [
+      "II"
+    ],
+    "container-title": [
+      "South, Central Coastal and Offshore California.https://www.conservation.ca.gov/calgem/general_information/Docume nts/Volume%20II%201973%20South_Central%20Coastala_Offshore%20Californ ia.pdf California Energy Commission, 2023. Impact of Drought-related Subsidence on Gas Infrastructure in California. Energy Research and Development Division Final Project Report. CEC-500-2023-029",
+      "California Oil and Gas Fields"
+    ],
+    "url": [
+      "https://www.energy.ca.gov/sites/default/files/2023-05/CEC-500-2023-029.pdf"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Castle",
+        "given": "R.O."
+      },
+      {
+        "family": "Church",
+        "given": "J.P."
+      },
+      {
+        "family": "Yates",
+        "given": "R.F."
+      },
+      {
+        "family": "Manning",
+        "given": "J.C."
+      }
+    ],
+    "date": [
+      "1983",
+      "1245"
+    ],
+    "title": [
+      "Historical Surface Deformation near Oildale"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "USGS Professional Paper"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "California Natural Resources"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "C2VSimFG Beta model, model files and data sets downloaded from https://data.cnra.ca.gov/dataset/c2vsimfgbeta-model on May 25, 2018"
+    ],
+    "container-title": [
+      "City of Bakersfield (COB), 1985-2023. Annual Kern River Hydrographic Reports from 1985 through 2023"
+    ],
+    "publisher": [
+      "Water Resources Department"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "Central Valley Regional Water Quality Control"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Tulare Lake Basin"
+    ],
+    "note": [
+      "Third Edition, May revision (with approved amendments)."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/basin_plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.V.R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Revisions to the amendments of the Sacramento and San Joaquin Basin Plan and Tulare Lake Basin Plan: Central Valley-wide Salt and Nitrate Control Program"
+    ],
+    "note": [
+      "Resolution No. R5-2020-0057). California Environmental Protection Agency."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/basin_plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Water Storage Investment Program Technical Reference"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "publisher": [
+      "Technical Memorandum",
+      "California Natural Resources Agency Open Data"
+    ],
+    "note": [
+      "Climate Change Projections for Water Storage Investment Program (WSIP) - Technical Reference -"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Cawelo Water"
+      }
+    ],
+    "date": [
+      "2007",
+      "July",
+      "1992",
+      "June"
+    ],
+    "title": [
+      "Draft Amended Groundwater Management Plan",
+      "Rock mechanics"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management",
+      "https://inis.iaea.org/search/search.aspx?orig_q=RN:25052130."
+    ],
+    "editor": [
+      {
+        "given": "Chevron"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 33rd U.S. symposium"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "editor": [
+      {
+        "given": "Chevron"
+      }
+    ],
+    "date": [
+      "1993",
+      "October"
+    ],
+    "title": [
+      "An Improved Recovery and Subsidence Mitigation Plan for the Lost Hills Field, California"
+    ],
+    "url": [
+      "https://onepetro.org/SPEATCE/proceedings-abstract/93SPE/All-93SPE/SPE-26626-MS/55171."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmsted",
+        "given": "F.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Groundwater Conditions and Storage Capacity in the San Joaquin Valley California, U.S"
+    ],
+    "container-title": [
+      "Geological Survey Water-Supply Paper 1469 prepared in cooperation with the California Department of Water Resources"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Dibblee"
+      },
+      {
+        "given": "Chesterman"
+      }
+    ],
+    "date": [
+      "1953",
+      "1953"
+    ],
+    "title": [
+      "Geology of the Breckenridge Mountain quadrangle, California"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      ","
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Division of Mines"
+    ],
+    "issue": [
+      "168 [56"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Design and Construction Studies of Shallow Land Subsidence for the California Aqueduct in the San Joaquin Valley-Interim Report"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Land Subsidence Along the California Aqueduct as Related to the Environment"
+    ],
+    "publisher": [
+      "May"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1975"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley, California, As of 1972"
+    ],
+    "container-title": [
+      "Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "437–"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      },
+      {
+        "given": "D.W.R."
+      },
+      {
+        "given": "D.W.R."
+      },
+      {
+        "given": "D.W.R."
+      },
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016",
+      "2017",
+      "2017-11",
+      "2017",
+      "2017-06",
+      "2018"
+    ],
+    "title": [
+      "California’s Groundwater, Bulletin 118 Interim Update 2016",
+      "Management Practices for the Sustainable Management of Groundwater, Modeling BMP",
+      "Draft Best Management Practices for the Sustainable Management of Groundwater",
+      "California Aqueduct Subsidence Study. San Luis Field Division",
+      "Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "location": [
+      "Sacramento, CA",
+      "Sacramento, CA",
+      "Sacramento, CA",
+      "Sacramento, CA"
+    ],
+    "publisher": [
+      "Technical Memorandum",
+      "Technical Memorandum",
+      "Technical Memorandum",
+      "Technical Memorandum"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/wpcontent/uploads/2017/05/Bulletin_118_Interim_Update_2016.pdf",
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-5-Modeling_ay_19.pdf",
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf",
+      "https://water.ca.gov/-/media/dwr-website/webpages/programs/engineering-andconstruction/files/subsidence/aqueduct_subsidence_studyaccessibility_compatibility.pdf",
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/Climate-Change-Guidance_Final_ay_19.pdf",
+      "https://water.ca.gov/-/media/dwr-website/webpages/programs/groundwater-management/sustainable-groundwatermanagement/best-management-practices-and-guidancedocuments/files/resource-guide-climate-change-guidance_v8_ay_19.pdf"
+    ],
+    "container-title": [
+      "DWR, 2018B. Resource Guide, DWR-Provided Climate Change Data and Guidance for Use During Groundwater Sustainability Plan Development",
+      "San Joaquin Field Division"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019",
+      "2020-05"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization Process and Results"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/13ebd2d3-4e62-4fee-9342-d7c3ef3e0079/resource/ffafd27b-5e7e-4db3-b846-e7b3cb5c614c/download/sgma_bp_process_document.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Chronological Reconstructed Sacramento and San Joaquin Valley Water Year Hydrologic Classification Indices"
+    ],
+    "note": [
+      "accessed California Data Exchange Center database:",
+      "accessed in July 2019."
+    ],
+    "url": [
+      "http://cdec.water.ca.gov/reportapp/javareports?name=WSIHIST"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Aqueduct Subsidence Study: Supplemental Report"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Engineering-And-Construction/Files/Subsidence/CASS_Supplement_final_a_1119.pdf."
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2023",
+      "March 2"
+    ],
+    "title": [
+      "Inadequate Determination of the Revised 2020 Groundwater Sustainability Plans Submitted for the San Joaquin Valley – Kern County Subbasin"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/water_issues/programs/sgma/docs/kern/kerngsp2023-inadequate-determination-mar2023.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2024",
+      "2024-02"
+    ],
+    "title": [
+      "California Department of Water Resources, Depletions of Interconnected Surface Water – An Introduction"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/68e0d8b6-a207-4b30-a16b-3daeb659faea/resource/218e3361-c142-400f-a97f-5dfa79cd4997/download/depletionsofisw_paper1_intro_draft.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2024"
+    ],
+    "title": [
+      "SWP Review of Westside District Water Authority Groundwater Sustainability Agency 2024 Groundwater Sustainability Plan"
+    ],
+    "volume": [
+      "16"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "September"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "E.C.I."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Draft Report Differential Interferometric Synthetic Aperture Radar (DInSAR"
+    ],
+    "container-title": [
+      "Study of Subsidence in the Kern County Subbasin (KCS"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "E.C.I."
+      }
+    ],
+    "date": [
+      "2023"
+    ],
+    "title": [
+      "Report Updated Differential Interferometric Synthetic Aperture Radar (DInSAR) Study of Subsidence in the Kern County Subbasin (KCS"
+    ],
+    "location": [
+      "August"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Everett",
+        "given": "R.R."
+      },
+      {
+        "family": "Brown",
+        "given": "A."
+      },
+      {
+        "family": "Gillespie",
+        "given": "J.M."
+      },
+      {
+        "family": "Kjos",
+        "given": "A."
+      },
+      {
+        "family": "Fenton",
+        "given": "N.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Multiplewell monitoring site adjacent to the North and South Belridge Oil Fields"
+    ],
+    "note": [
+      "Kern County, California."
+    ],
+    "url": [
+      "https://doi.org/10.3133/ofr20201116"
+    ],
+    "doi": [
+      "10.3133/ofr20201116"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fielding",
+        "given": "Blom"
+      },
+      {
+        "given": "Goldstein"
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Rapid subsidence over oil fields measured by SAR interferometry"
+    ],
+    "volume": [
+      "25"
+    ],
+    "pages": [
+      "3215–3218"
+    ],
+    "url": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/98GL52260"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysical Research Letters"
+    ],
+    "issue": [
+      "17"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Foss",
+        "given": "C.D."
+      },
+      {
+        "family": "Blaisdell",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1968",
+      "2020"
+    ],
+    "title": [
+      "Stratigraphy of the West Side Southern San Joaquin Valley, San Joaquin Geological Society abstracts"
+    ],
+    "url": [
+      "http://www.sanjoaquingeologicalsociety.org/wpcontent/abstracts/1968_Foss_Blaisdell.pdf,"
+    ],
+    "note": [
+      "accessed January 14,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Estimate of Future Friant Division Supplies for use in Groundwater Sustainability Plans"
+    ],
+    "location": [
+      "Fresno, CA"
+    ],
+    "note": [
+      "Future+Friant+Supplies+TM_2018.1228.pdf (squarespace.com"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "JW",
+        "given": "Frink"
+      },
+      {
+        "family": "HA",
+        "given": "Kues"
+      }
+    ],
+    "date": [
+      "1954",
+      "2005"
+    ],
+    "title": [
+      "Corcoran Clay—A Pleistocene Lacustrine Deposit in San Joaquin Valley, California"
+    ],
+    "volume": [
+      "33"
+    ],
+    "pages": [
+      "2357–2371"
+    ],
+    "url": [
+      "https://doi.org/10.1306/5CEAE0A0-16BB-11D7-8645000102C1865D"
+    ],
+    "publisher": [
+      "Galloway and Jones"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "AAPG Bulletin"
+    ],
+    "issue": [
+      "11"
+    ],
+    "doi": [
+      "10.1306/5CEAE0A0-16BB-11D7-8645000102C1865D"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Galloway",
+        "given": "D."
+      },
+      {
+        "family": "Jones",
+        "given": "D.R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "date": [
+      "1999",
+      "1182"
+    ],
+    "title": [
+      "Land Subsidence in the United States, U.S"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "G.E.I."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Kern River Hydrology Under Climate Change"
+    ],
+    "location": [
+      "Bakersfield, CA"
+    ],
+    "note": [
+      "Excel File"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Generic Mapping Tools Synthetic Aperture Radar (GMTSAR",
+      "Generate DEM files for use with GMTSAR"
+    ],
+    "date": [
+      "2023"
+    ],
+    "url": [
+      "http://topex.ucsd.edu/gmtsar/demgen/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Gillespie"
+      },
+      {
+        "others": true
+      },
+      {
+        "family": "Gillespie",
+        "given": "J.M."
+      },
+      {
+        "family": "Dalke",
+        "given": "S.C."
+      }
+    ],
+    "date": [
+      "2022",
+      "2016"
+    ],
+    "title": [
+      "Analysis of Groundwater Resources for Kern-Tulare Water District"
+    ],
+    "publisher": [
+      "PDF File"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Haugen"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2021",
+      "2021-01"
+    ],
+    "title": [
+      "Groundwater development leads to decreasing arsenic concentrations in the"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "url": [
+      "https://doi.org/10.1016/j.scitotenv.2021.145223"
+    ],
+    "doi": [
+      "10.1016/j.scitotenv.2021.145223"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hilton",
+        "given": "G.S."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      },
+      {
+        "family": "Kunkel",
+        "given": "F."
+      }
+    ],
+    "date": [
+      "1963"
+    ],
+    "title": [
+      "Geology, Hydrology and Quality of Water in the Terra Bella-Lost Hills Area"
+    ],
+    "genre": [
+      "Open File Report 63-47,"
+    ],
+    "url": [
+      "https://doi.org/10.3133/ofr6347"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U. S. Geological Survey"
+    ],
+    "doi": [
+      "10.3133/ofr6347"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Ingersoll"
+      },
+      {
+        "given": "Busby"
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Tectonics of Sedimentary Basins"
+    ],
+    "publisher": [
+      "Blackwell Scientific Publications"
+    ],
+    "url": [
+      "https://www.researchgate.net/publication/264739040_Tectonics_of_Sedimentary"
+    ],
+    "note": [
+      "_Basins/link/5a136b81aca27217b5a2f538/download?_tp=eyJjb250ZXh0Ijp7ImZp cnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "IPUMS National Historical Geographic Information System Database"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "accessed and download population data for Kern County from http://www.ipums.org, last accessed April 2018."
+    ],
+    "type": "chapter"
+  },
+  {
+    "container-title": [
+      "IPUMS National Historical Geographic Information System Database"
+    ],
+    "date": [
+      "2023"
+    ],
+    "note": [
+      "accessed and download population data for Kern County from http://www.ipums.org, last accessed April 2023."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Training",
+        "given": "Irrigation"
+      },
+      {
+        "family": "Center",
+        "given": "Research"
+      }
+    ],
+    "date": [
+      "2022",
+      "1998",
+      "September"
+    ],
+    "title": [
+      "1993-2022 ITRC-METRIC ETc for Kern County"
+    ],
+    "publisher": [
+      "California Polytechnic State University"
+    ],
+    "location": [
+      "San Luis Obispo",
+      "Fielding, E.J., Blom, R.G., Goldstein, R.M"
+    ],
+    "producer": [
+      {
+        "given": "C.A."
+      }
+    ],
+    "container-title": [
+      "Jet Propulsion Laboratory/California Institute of Technology (JPL/Caltech"
+    ],
+    "note": [
+      "Rapid subsidence over oil fields measured by SAR interferometry"
+    ],
+    "url": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/98GL52260."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Subbasin",
+        "given": "Kern County"
+      }
+    ],
+    "date": [
+      "2024"
+    ],
+    "title": [
+      "Kern Subbasin Groundwater Sustainability"
+    ],
+    "url": [
+      "www.kerngsp.com."
+    ],
+    "note": [
+      "Accessed November 8, 2024."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Foundation",
+        "given": "Kern Economic Development"
+      },
+      {
+        "family": "King",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "The Economic Contribution of the Oil and Gas Industry in Kern County",
+      "PNG 301: Introduction to Petroleum and Natural Gas Engineering"
+    ],
+    "url": [
+      "https://kernedc.com/wpcontent/uploads/2021/04/KEDF-Economic-Contribution-of-the-Oil-and-Gas-Industry-in-Kern-County_-2021.pdf",
+      "https://www.eeducation.psu.edu/png301/node/6"
+    ],
+    "container-title": [
+      "Lesson 2: Origin and Occurrence of Hydrocarbons, Professor of Practice, Petroleum and Natural Gas Engineering, The Pennsylvania State University"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Kiser",
+        "given": "S.C."
+      },
+      {
+        "family": "Bowersox",
+        "given": "J.R."
+      },
+      {
+        "family": "Miller",
+        "given": "E.E."
+      },
+      {
+        "family": "S.",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Upper Miocene turbidite deposition, Crocker Canyon area, section 18",
+      "22 E., southwest San Joaquin Valley, California"
+    ],
+    "volume": [
+      "31",
+      "7"
+    ],
+    "container-title": [
+      "Selected Papers: San Joaquin Geol. Society",
+      "T"
+    ],
+    "pages": [
+      "22–31"
+    ],
+    "url": [
+      "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=rv3_x3"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "given": "Kooij"
+      },
+      {
+        "given": "Mayer"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "The Application of Satellite Radar Interferometry to Subsidence Monitoring in the Belridge and Lost Hills Fields, California"
+    ],
+    "url": [
+      "https://ieeexplore.ieee.org/document/1024987"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Laboratory",
+        "given": "Lawrence Berkeley National"
+      }
+    ],
+    "date": [
+      "2023"
+    ],
+    "note": [
+      "KCS Subsidence Study]."
+    ],
+    "url": [
+      "https://kerngsp.com/wp-content/uploads/2024/10/2023_Lawrence-Berkeley-National-Laboratory-Study.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "W",
+        "given": "Levandowski"
+      },
+      {
+        "family": "CH",
+        "given": "Jones"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Linking Sierra Nevada, California, uplift to subsidence of the Tulare basin using a seismically derived density model"
+    ],
+    "volume": [
+      "34"
+    ],
+    "pages": [
+      "2349–2358"
+    ],
+    "doi": [
+      "10.1002/2015TC003824"
+    ],
+    "url": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2015TC003824"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Tectonics"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Lofgren"
+      },
+      {
+        "given": "Klausing"
+      },
+      {
+        "family": "Lofgren",
+        "given": "B.E."
+      },
+      {
+        "family": "Klausing",
+        "given": "R.L."
+      },
+      {
+        "family": "Medwedeff",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "1969",
+      "1969",
+      "1989"
+    ],
+    "title": [
+      "Land Subsidence due to Ground-Water Withdrawal Tulare-Wasco Area California",
+      "Growth Fault-Bend Folding at Southeast Lost Hills"
+    ],
+    "container-title": [
+      "U. S. Geological Survey: Professional Paper 437-B",
+      "AAPG Bulletin"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/pp/0437b/report.pdf",
+      "https://doi.org/10.1306/703C9AE6-1707-11D7-8645000102C1865D"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "volume": [
+      "73"
+    ],
+    "pages": [
+      "54–67"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "1"
+    ],
+    "doi": [
+      "10.1306/703C9AE6-1707-11D7-8645000102C1865D"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Miller",
+        "given": "D.D."
+      },
+      {
+        "family": "McPherson",
+        "given": "J.G."
+      },
+      {
+        "family": "Covington",
+        "given": "T.E."
+      },
+      {
+        "family": "Reservoir",
+        "given": "Fluviodeltaic"
+      },
+      {
+        "family": "Field",
+        "given": "South Belridge"
+      },
+      {
+        "family": "Valley",
+        "given": "San Joaquin"
+      }
+    ],
+    "date": [
+      "1990",
+      "1993",
+      "October"
+    ],
+    "title": [
+      "Fluvio-deltaic reservoir, South Belridge field",
+      "Sandstone petroleum reservoirs",
+      "California | SpringerLink Mobile"
+    ],
+    "location": [
+      "San Joaquin Valley, California",
+      "New York",
+      "Murer, A.S., Zambrano, L.G"
+    ],
+    "editor": [
+      {
+        "family": "W.Barwis",
+        "given": "JGMcPherson"
+      },
+      {
+        "family": "Studlick",
+        "given": "J.R.J."
+      }
+    ],
+    "publisher": [
+      "Springer-Verlag",
+      "R.E"
+    ],
+    "pages": [
+      "109–130"
+    ],
+    "genre": [
+      "[Fast,"
+    ],
+    "note": [
+      "Lost Hills Diatomite Simulation Study: Predicting Waterflood Performance in a Low-Permeability, Compacting Reservoir."
+    ],
+    "url": [
+      "https://onepetro.org/SPEATCE/proceedings-abstract/93SPE/All-93SPE/SPE-26627-MS/55237?redirectedFrom=PDF."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Nady",
+        "given": "P."
+      },
+      {
+        "family": "Larragueta",
+        "given": "L.L."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Estimated average annual streamflow into the Central Valley of California"
+    ],
+    "publisher": [
+      "USGS Hydrologic Atlas HA-657"
+    ],
+    "url": [
+      "https://doi.org/10.3133/ha657"
+    ],
+    "doi": [
+      "10.3133/ha657"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "Natural Resources Conservation"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Part 630 Hydrology, National Engineering Handbook"
+    ],
+    "volume": [
+      "9, 10, and 20"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "note": [
+      "National Engineering Handbook (hydrocad.net) NRCS, 2018. Published Soil Surveys for California."
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/wps/portal/nrcs/surveylist/soils/survey/state/?stateid-CA."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Chapters"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "North",
+        "given": "F.K."
+      }
+    ],
+    "date": [
+      "1985",
+      "1973"
+    ],
+    "title": [
+      "Petroleum Geology",
+      "Base of Fresh Ground Water (Approximately 3,000 Micromhos in the"
+    ],
+    "location": [
+      "Boston",
+      "Page, R.W",
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "Allen & Unwin. Anybook.com",
+      "USGS Hydrologic Investigations Atlas HA-489"
+    ],
+    "isbn": [
+      "9780045530045"
+    ],
+    "url": [
+      "https://archive.org/details/petroleumgeology0000nort",
+      "https://pubs.er.usgs.gov/"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Ground-Water Basin of the Central Valley"
+    ],
+    "container-title": [
+      "California, with Texture Maps and Sections, Regional Aquifer System Analysis, USGS Professional Paper 1401-C"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Reynolds"
+      },
+      {
+        "family": "Reynolds",
+        "given": "H.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1955",
+      "1955"
+    ],
+    "title": [
+      "Geology Report, Ground Water Resources of the Richgrove Area"
+    ],
+    "publisher": [
+      "PDF File"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Rodríguez-Flores"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2023",
+      "2023-11"
+    ],
+    "title": [
+      "Drivers of domestic wells vulnerability during droughts in California’s Central Valley"
+    ],
+    "volume": [
+      "19"
+    ],
+    "url": [
+      "https://doi.org/10.1088/1748-9326/ad0d39"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Research Letters"
+    ],
+    "doi": [
+      "10.1088/1748-9326/ad0d39"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Selley"
+      },
+      {
+        "family": "Shi",
+        "given": "J."
+      },
+      {
+        "family": "Xu",
+        "given": "B."
+      },
+      {
+        "family": "Chen",
+        "given": "Q."
+      },
+      {
+        "family": "Hu",
+        "given": "M.Zeng"
+      },
+      {
+        "given": "Y."
+      }
+    ],
+    "date": [
+      "2022",
+      "2022-06-11",
+      "2022"
+    ],
+    "title": [
+      "Elements of Petroleum Geology",
+      "Elements of Petroleum Geology",
+      "Monitoring and analyzing long-term vertical time-series deformation due to oil and gas extraction using multi-track SAR dataset: A study on Lost Hills Oilfield"
+    ],
+    "edition": [
+      "4th",
+      "4th"
+    ],
+    "volume": [
+      "v. 107"
+    ],
+    "location": [
+      "January"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "International Journal of Applied Earth Observation and Geoinformation"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Smith"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2018",
+      "2089-06"
+    ],
+    "title": [
+      "Overpumping leads to California groundwater arsenic threat"
+    ],
+    "volume": [
+      "9"
+    ],
+    "url": [
+      "https://doi.org/10.1038/s41467-018-04475-3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Nat Commun"
+    ],
+    "doi": [
+      "10.1038/s41467-018-04475-3"
+    ]
+  },
+  {
+    "container-title": [
+      "State Water Project (SWP), 2024. SWP Public Comment Letter on KCS Draft 2024 GSP Attachment A"
+    ],
+    "volume": [
+      "September 16"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Stanford"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Linking oil production to surface subsidence from satellite radar interferometry"
+    ],
+    "url": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2000GL012483."
+    ],
+    "publisher": [
+      "April"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Towill"
+      }
+    ],
+    "date": [
+      "2024",
+      "2024"
+    ],
+    "title": [
+      "InSAR Data Accuracy for California Groundwater Basins CGPS Data Comparative Analysis January 2015 to October 2023. Prepared for California Department of Water Resources"
+    ],
+    "volume": [
+      "22"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "February"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "U.S.Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Kern National Wildlife Refuge Water Management Plan"
+    ],
+    "url": [
+      "https://www.usbr.gov/mp/watershare/docs/2010/refuges/kernnational-wildlife-refuge.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Commerce",
+        "given": "U.S.Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018",
+      "2000",
+      "2010"
+    ],
+    "title": [
+      "Assessed online population database using census data for 1990"
+    ],
+    "url": [
+      "https://www.census.gov/data/developers/data-sets/decennial-census.html,"
+    ],
+    "note": [
+      "last accessed April 2018."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "and"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geologic"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Central Valley Hydrologic Model: Texture Model"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/projects/central-valley/cvhm-texture-model.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Underground Injection Control Program Memorandum of Agreement Between California Division of Oil and Gas and the United States Environmental Protection Agency Region 9"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/water_issues/programs/groundwater/sb4/additio"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.E.P.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Oversight of California’s Underground Injection Control (UIC"
+    ],
+    "note": [
+      "accessed on February 15."
+    ],
+    "url": [
+      "https://www.epa.gov/uic/epa-oversight-californiasunderground-injection-control-uic-program"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Wagoner"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "3D Geologic Modeling of the Southern San Joaquin Basin for the Westcarb Kimberlina Demonstration Project- A Status Report"
+    ],
+    "url": [
+      "https://doi.org/10.2172/948987"
+    ],
+    "doi": [
+      "10.2172/948987"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Wakabayashi"
+      },
+      {
+        "given": "Sawyer"
+      },
+      {
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2001",
+      "2024"
+    ],
+    "title": [
+      "Stream Incision, Tectonics, Uplift, and Evolution of Topography of the Sierra Nevada, California, http://geomorphology.sese.asu.edu/Papers/Wakabayashi_SierraNevada_JoG_2 001.pdf Western States Petroleum Association (WSPA"
+    ],
+    "genre": [
+      "[Reheis-Boyd,"
+    ],
+    "note": [
+      "May 2024 Draft Groundwater Sustainability Plans for the Kern County Subbasin Issues Related to Land Subsidence. August 29."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Williamson"
+      },
+      {
+        "others": true
+      },
+      {
+        "family": "Woessner",
+        "given": "W.W."
+      },
+      {
+        "family": "Poeter",
+        "given": "E.P."
+      }
+    ],
+    "date": [
+      "1989",
+      "2020"
+    ],
+    "title": [
+      "Ground-water flow in the Central Valley, California, Professional Paper 1401-D"
+    ],
+    "url": [
+      "https://doi.org/10.3133/pp1401D",
+      "https://doi.org/10.21083/978-1-7770541-2-0"
+    ],
+    "container-title": [
+      "Hydrogeologic Properties of Earth Materials and Principles of Groundwater Flow. The Groundwater Project"
+    ],
+    "doi": [
+      "10.3133/pp1401D",
+      "10.21083/978-1-7770541-2-0"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Wood"
+      },
+      {
+        "given": "Davis"
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Ground-water conditions in the Avenal - McKittrick area, Kings and Kern Counties"
+    ],
+    "location": [
+      "California, U.S"
+    ],
+    "note": [
+      "Geological Survey, Water-Supply Paper 1457."
+    ],
+    "url": [
+      "https://doi.org/10.3133/wsp1457"
+    ],
+    "doi": [
+      "10.3133/wsp1457"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Wood",
+        "given": "P.R."
+      },
+      {
+        "family": "Dale",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Geology and Ground-Water Features of the Edison-Maricopa Area, Kern County"
+    ],
+    "location": [
+      "California"
+    ],
+    "genre": [
+      "USGS Water-Supply Paper 1656."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/1656/report.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Woodring"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1932"
+    ],
+    "title": [
+      "Geology and Oil Resources of the Elk Hills"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "Including Naval Petroleum Reserve"
+    ],
+    "container-title": [
+      "No.1, Issues 835-837, U.S. Government Printing Office"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/bul/0835/report.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Xu",
+        "given": "Dvorkin"
+      },
+      {
+        "given": "Nur"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Linking Oil Production to Surface Subsidence from Satellite Radar Interferometry"
+    ],
+    "volume": [
+      "28"
+    ],
+    "pages": [
+      "1307–1310"
+    ],
+    "url": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2000GL012483"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geophysical Research Letters"
+    ],
+    "issue": [
+      "7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "BP-ES-1",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "HMWD GSA GSP Blue Page Crosswalk Index Section and Blue Section Title Description Page (BP) Numbers Section 5 Description of the Plan Additional information on beneficial users, land ownership, BP-5-1 to BP-5-6 Area and water rights within the GSA; over 90% of the GSA is comprised of a single landowner, and the majority of the parcels within the GSA have been zoned for agriculture. Section 8 Current and Historical Additional information on water levels within the GSA, BP-8-1 to BP-8-20 Groundwater Conditions including hydrographs for representative monitoring wells; additional information on subsidence and changes in groundwater pumping within the GSA before and after",
+      "Section 9 Water Budget Additional information related to the current and projected BP-9-1 to BP-9-23 Information water budgets, including historical land uses and demand management from increased land fallowing since the inception of SGMA. Section 14 Projects and Additional information on projects and management actions BP-14-1 to BP-14-14 Management Actions within the GSA to maintain sustainability and avoid undesirable results for sustainable management criteria"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Groundwater Sustainability Plan BP-9-1 order to operate sustainably, future fallowing is likely to align more closely with the amounts needed to meet each demand management interim milestone through"
+    ],
+    "date": [
+      "2040"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2017"
+    ],
+    "volume": [
+      "271% 11,441 11,996"
+    ],
+    "pages": [
+      "23,437"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "volume": [
+      "59% 13,269 10,194"
+    ],
+    "pages": [
+      "23,463"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "volume": [
+      "174% 13,299 10,130"
+    ],
+    "pages": [
+      "23,429"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2020"
+    ],
+    "volume": [
+      "54% 13,567 9,843"
+    ],
+    "pages": [
+      "23,410"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2021"
+    ],
+    "volume": [
+      "22% 15,267 8,136"
+    ],
+    "pages": [
+      "23,403"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2022"
+    ],
+    "volume": [
+      "29% 15,872 7,409"
+    ],
+    "pages": [
+      "23,281"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2023"
+    ],
+    "volume": [
+      "321% 11,847 11,528"
+    ],
+    "pages": [
+      "23,375"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1."
+    ],
+    "note": [
+      "Kern River Water Year Runoff Percent of Average (POA) based on mean from 1894-2024."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "title": [
+      "Developed area excludes land uses such as native vegetation, riparian vegetation, and other uses that don’t meet the criteria for developed uses"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "GSP",
+        "given": "H.M.W.D.G.S.A."
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Effective Precipitation: An average annual contribution of 5,170 AFY, also based on the 2000–2023 period, which represents more recent conditions and excludes the particularly wet period from the mid-to-late 1990s"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Scenario 1: Permanent acreage remains constant; variable row crop acreage increases from mid-2020s to early-2030, with no variable row crop acreage after 2030"
+    ],
+    "note": [
+      "Figure BP-9-4)."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Scenario 2: Permanent acreage remains constant through 2038, then phases out entirely by 2051. Low variable row crop acreage from 2024 to 2045, with higher variable row crop acreage in 2046-2060"
+    ],
+    "note": [
+      "Figure BP-9-5)."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "• Scenario 3: Permanent acreage remains constant from 2024-2060, with no variable row crop acreage throughout the period"
+    ],
+    "note": [
+      "Figure BP-9-6)."
+    ],
+    "type": null
+  }
+]

@@ -1,0 +1,8295 @@
+[
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Howell",
+        "given": "T.A."
+      },
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Tasumi",
+        "given": "M."
+      },
+      {
+        "family": "Morse",
+        "given": "A."
+      },
+      {
+        "family": "Trezza",
+        "given": "R."
+      },
+      {
+        "family": "Wright",
+        "given": "J.L."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Kramber",
+        "given": "W."
+      },
+      {
+        "family": "Lorite",
+        "given": "I."
+      },
+      {
+        "family": "Robison",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "2011",
+      "2007"
+    ],
+    "title": [
+      "Evapotranspiration Information Reporting: I. Factors Governing Measurement Accuracy",
+      "Satellite-based energy balance for mapping evapotranspiration with internalized calibration (METRIC)—Applications"
+    ],
+    "volume": [
+      "98",
+      "133"
+    ],
+    "pages": [
+      "899–920",
+      "395–406"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Agricultural Water Management",
+      "J. Irrig. and Drain. Engng"
+    ],
+    "issue": [
+      "6",
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R."
+      },
+      {
+        "family": "Irmak",
+        "given": "A."
+      },
+      {
+        "family": "Trezza",
+        "given": "R."
+      },
+      {
+        "family": "Hendrickx",
+        "given": "J.M."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Kjaersgaard",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Satellite‐based ET estimation in agriculture using SEBAL and METRIC"
+    ],
+    "volume": [
+      "25"
+    ],
+    "pages": [
+      "4011–4027"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrological Processes"
+    ],
+    "issue": [
+      "26"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "A.K.E.L.Engineering"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-09"
+    ],
+    "title": [
+      "City of Madera 2014 Water System Master Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Provost",
+        "given": "Cited",
+        "particle": "in"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "City of Madera Urban Water Management Plan 2015 Update"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agricultural",
+        "given": "American Society",
+        "particle": "of"
+      },
+      {
+        "family": "Engineers",
+        "given": "Biological"
+      },
+      {
+        "family": "Hoffman",
+        "given": "G.J."
+      },
+      {
+        "family": "Evans",
+        "given": "R.G."
+      },
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Martin",
+        "given": "D.L."
+      },
+      {
+        "family": "L",
+        "given": "R."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Walter",
+        "given": "I.A."
+      },
+      {
+        "family": "Elliott",
+        "given": "R.L."
+      },
+      {
+        "family": "Howell",
+        "given": "T.A."
+      },
+      {
+        "family": "Itenfisu",
+        "given": "D."
+      },
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "L",
+        "given": "R."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W.G.M."
+      },
+      {
+        "family": "Noordman",
+        "given": "E.J.M."
+      },
+      {
+        "family": "Pelgrum",
+        "given": "H."
+      },
+      {
+        "family": "Davids",
+        "given": "G."
+      },
+      {
+        "family": "Thoreson",
+        "given": "B.P."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "2007",
+      "2016",
+      "2005"
+    ],
+    "title": [
+      "Design and Operation of Farm Irrigation Systems",
+      "Evaporation, Evapotranspiration and Irrigation Water Requirements",
+      "SEBAL Model with Remotely Sensed Data to Improve Water Resources Management under Actual Field Conditions"
+    ],
+    "editor": [
+      {
+        "given": "Elliott"
+      },
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Engrs",
+        "given": "R.G.Allen Am Soc Civ"
+      },
+      {
+        "given": "Snyder"
+      }
+    ],
+    "container-title": [
+      "ASABE",
+      "ASCE Environmental and Water Resources Institute (ASCE-EWRI). 2005. The ASCE standardized reference evapotranspiration equation",
+      "Task Committee on Standardization of Reference Evapotranspiration of ASCE-EWRI",
+      "J. Irrig. Drain. Eng"
+    ],
+    "pages": [
+      "863",
+      "744",
+      "173",
+      "85–93"
+    ],
+    "publisher": [
+      "American Society of Civil Engineers (ASCE",
+      "VA"
+    ],
+    "edition": [
+      "Manual 70. Second"
+    ],
+    "location": [
+      "Reston"
+    ],
+    "volume": [
+      "131"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Blair",
+        "given": "L.E."
+      },
+      {
+        "family": "Westra",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1998",
+      "1998",
+      "2000"
+    ],
+    "title": [
+      "Gravelly Ford Water District Groundwater Management Plan"
+    ],
+    "volume": [
+      "13",
+      "3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted April",
+      "Amended October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Corporation",
+        "given": "Boyle Engineering"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Madera Irrigation District AB3030 Groundwater Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Environmental Protection Agency State Water Resources Control Board (SWRCB",
+      "Water Quality Control Plan for the San Francisco Bay/Sacramento-San Joaquin Delta Estuary"
+    ],
+    "date": [
+      "1995"
+    ],
+    "pages": [
+      "24"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1981",
+      "2019-07",
+      "2002"
+    ],
+    "title": [
+      "Water Well Standards, Bulletin 74-81 (and draft supplemental Bulletin 74-90) (http://wdl.water.ca.gov/well_standards/well_standards_content.html",
+      "Memorandum Report by Anthony Camoroda"
+    ],
+    "note": [
+      "AB3030 Groundwater Management Plan, Madera County, Final Draft, prepared for County of Madera Engineering and General Services."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Last accessed",
+      "Cited in Todd Engineers"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2003",
+      "2003"
+    ],
+    "title": [
+      "Bulletin 118: California’s Groundwater, Update"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "California’s Groundwater, Bulletin 118, San Joaquin Valley Groundwater Basin, Chowchilla Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2007",
+      "2007-05"
+    ],
+    "title": [
+      "California Central Valley Unimpaired Flow Data, Fourth Edition Draft"
+    ],
+    "publisher": [
+      "Bay-Delta Office, California Department of Water Resources"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "IWFM Demand Calculator: IDC-2015, revision 36. Theoretical Documentation and User’s Manual. Central Valley Modeling Unit, Modeling Support Branch, Bay-Delta Office"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Integrated Water Flow Model Demand Calculator (IDC"
+    ],
+    "container-title": [
+      "version 2015.0.0036"
+    ],
+    "note": [
+      "Retrieved from:"
+    ],
+    "url": [
+      "https://water.ca.gov/Library/Modeling-and-Analysis/Modeling-Platforms/Integrated-Water-Flow-Model-Demand-Calculator."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2015",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Water Budget BMP"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California DWR Sustainable Groundwater Management Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for Sustainable Management of Groundwater, Hydrogeologic Conceptual Model"
+    ],
+    "location": [
+      "BMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for Sustainable Management of Groundwater, Monitoring Networks and Identification of Data Gaps"
+    ],
+    "location": [
+      "BMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for Sustainable Management of Groundwater, Water Budget"
+    ],
+    "publisher": [
+      "BMP"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "California’s Groundwater, Bulletin 118 Interim Update"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best Management Practices for Sustainable Management of Groundwater, Sustainable Management Criteria"
+    ],
+    "location": [
+      "BMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Sustainable Management Criteria BMP (Draft"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California DWR Sustainable Groundwater Management Program"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Chronological Reconstructed Sacramento and San Joaquin Valley Water Year Hydrologic Classification Indices, California Cooperative Snow Surveys"
+    ],
+    "note": [
+      "Available at:",
+      "Last accessed on 2/22/2019."
+    ],
+    "url": [
+      "http://cdec.water.ca.gov/cgiprogs/iodir/WSIHIST."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Castle"
+      },
+      {
+        "given": "Cooke2018"
+      }
+    ],
+    "title": [
+      "Central California Irrigation District Hazard Mitigation Grant Program DR-4308: Attachment 1 - Subapplication Responses"
+    ],
+    "publisher": [
+      "MARPRO Red Top Joint Banking"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Madera",
+        "given": "City",
+        "particle": "of"
+      },
+      {
+        "given": "P.M.C."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "City of Madera General Plan"
+    ],
+    "note": [
+      "Adopted October 7, 2009 by the Madera City Council Resolution 09-243."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Clemmens",
+        "given": "A.J."
+      },
+      {
+        "family": "Burt",
+        "given": "C.M."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Accuracy of irrigation efficiency estimates"
+    ],
+    "volume": [
+      "123"
+    ],
+    "pages": [
+      "443–453"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. and Drain. Engng"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Madera",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1995",
+      "1995",
+      "2015"
+    ],
+    "title": [
+      "Madera County General Plan"
+    ],
+    "volume": [
+      "24",
+      "3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Adopted October",
+      "Updated November"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "C.P.A.D."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Protected Areas Database"
+    ],
+    "genre": [
+      "Website:"
+    ],
+    "url": [
+      "https://www.calands.org/cpad/"
+    ],
+    "note": [
+      "accessed July 2019]. Prepared by GreenInfo Network."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      },
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Technical Memorandum: Madera Subbasin Sustainable Groundwater Management Act"
+    ],
+    "note": [
+      "prepared for Madera Subbasin Coordination Committee."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Data Collection and Analysis"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "G.H."
+      },
+      {
+        "family": "Green",
+        "given": "J.H."
+      },
+      {
+        "family": "Olmsted",
+        "given": "P.H."
+      },
+      {
+        "family": "Brown",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1959",
+      "1469"
+    ],
+    "title": [
+      "Ground-Water Conditions and Storage Capacity in the"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "USGS Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Driscoll",
+        "given": "F.G."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Groundwater and Wells, Johnson Screens, St"
+    ],
+    "publisher": [
+      "Paul"
+    ],
+    "location": [
+      "Minnesota"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Englehardt",
+        "given": "J.D."
+      },
+      {
+        "family": "Wu",
+        "given": "T."
+      },
+      {
+        "family": "Bloetscher",
+        "given": "F."
+      },
+      {
+        "family": "Deng",
+        "given": "Y."
+      },
+      {
+        "family": "Pisani",
+        "given": "P.",
+        "particle": "Du"
+      },
+      {
+        "family": "Eilert",
+        "given": "S."
+      },
+      {
+        "family": "Elmir",
+        "given": "S."
+      },
+      {
+        "family": "Guo",
+        "given": "T."
+      },
+      {
+        "family": "Jacangelo",
+        "given": "J."
+      },
+      {
+        "family": "LeChevallier",
+        "given": "M."
+      },
+      {
+        "family": "Leverenz",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Net-zero Water Management: Achieving Energy-Positive Municipal Water Supply"
+    ],
+    "volume": [
+      "2"
+    ],
+    "pages": [
+      "250–260"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Science: Water Research & Technology"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12"
+    ],
+    "title": [
+      "Technical Memorandum: Estimate of Future Friant Division Supplies for use in Groundwater Sustainability Plans"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Gravelly Ford Water"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Gravelly Ford Water District 2009 Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Attorneys",
+        "given": "Herum Crabtree Suntag"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-01"
+    ],
+    "title": [
+      "Clayton Water District Municipal Service Review"
+    ],
+    "container-title": [
+      "Prepared for the Madera Local Agency Formation Commission (LAFCO"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hopkins",
+        "given": "J."
+      },
+      {
+        "family": "Anderson",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "1994",
+      "2016"
+    ],
+    "title": [
+      "Explanation of the Texas Water Development Board groundwater level monitoring program and water-level measuring manual",
+      "User Manual 52: A Field Manual for Groundwater-level Monitoring at the Texas Water Development Board"
+    ],
+    "pages": [
+      "23"
+    ],
+    "url": [
+      "http://www.twdb.texas.gov/groundwater/docs/UMs/UM-52.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Cited in Hopkins, J"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping indicators of groundwater dependent ecosystems in California"
+    ],
+    "url": [
+      "https://data.ca.gov/dataset/natural-communitiescommonly-associated-groundwater."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Loux",
+        "given": "J."
+      },
+      {
+        "family": "Winer-Skonovd",
+        "given": "R."
+      },
+      {
+        "family": "Gellerman",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Evaluation of Combined Rainwater and Greywater Systems for Multiple Development Types in Mediterranean climates"
+    ],
+    "volume": [
+      "2"
+    ],
+    "pages": [
+      "55–77"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Water Sustainability"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "publisher": [
+      "East San Joaquin Water Quality Coalition Groundwater Quality Assessment Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      },
+      {
+        "family": "Associates",
+        "given": "Larry Walker"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Region 5: Updated Groundwater Quality Analysis and High Resolution Mapping for"
+    ],
+    "publisher": [
+      "Central Valley Salt and Nitrate Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Madera"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-12-28"
+    ],
+    "title": [
+      "Madera County Storm Water Resource Plan (SWRP"
+    ],
+    "container-title": [
+      "Prepared by County of Madera, Fall Creek Engineering, Sierra Watershed Progressive"
+    ],
+    "volume": [
+      "and 2NDNATURE"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Madera County Department of Agriculture Weights and Measures"
+    ],
+    "container-title": [
+      "2017. 2017 Madera County Agricultural Crop and Livestock Report"
+    ],
+    "type": "chapter"
+  },
+  {
+    "editor": [
+      {
+        "given": "McBain"
+      },
+      {
+        "family": "Trush",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "San Joaquin River Restoration Study Background Report, prepared for Friant Water Users Authority"
+    ],
+    "location": [
+      "Lindsay, CA",
+      "San Francisco, CA"
+    ],
+    "publisher": [
+      "and Natural Resources Defense Council"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Mendenhall",
+        "given": "W.C."
+      },
+      {
+        "family": "Dole",
+        "given": "R.B."
+      },
+      {
+        "family": "Stabler",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "1916"
+    ],
+    "title": [
+      "Ground Water in San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "genre": [
+      "USGS Water-Supply Paper 398."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mitten",
+        "given": "H.T."
+      },
+      {
+        "family": "Bertoldi",
+        "given": "G.L."
+      },
+      {
+        "family": "R.A",
+        "given": "LeBlanc"
+      }
+    ],
+    "date": [
+      "1970",
+      "1970"
+    ],
+    "title": [
+      "Geology, Hydrology and Quality of Water in the Madera Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "genre": [
+      "USGS Open File Report 70-228,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "California Species List. Intersection of USGS Topographic Quadrangles with NOAA Fisheries ESA Listed Species, Critical Habitat, Essential Fish Habitat, and MMPA Species Data"
+    ],
+    "note": [
+      "Google Earth (KMZ) file available at:",
+      "accessed July 2019]."
+    ],
+    "url": [
+      "https://www.westcoast.fisheries.noaa.gov/maps_data/california_species_list_tools.html"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Olmos",
+        "given": "K.C."
+      },
+      {
+        "family": "Loge",
+        "given": "F.J."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Offsetting Water Conservation Costs to Achieve Net‐Zero Water Use"
+    ],
+    "volume": [
+      "105"
+    ],
+    "pages": [
+      "62– 72"
+    ],
+    "url": [
+      "https://awwa.onlinelibrary.wiley.com/doi/abs/10.5942/jawwa.2013.105.0002"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal‐American Water Works Association"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground Water (approximately 3,000 micromhos) in the San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "USGS Hydrologic Investigations Atlas HA-489"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Ground-Water Basin of the Central Valley"
+    ],
+    "container-title": [
+      "California, with Texture Maps and Sections, USGS Professional Paper 1401-C"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Council",
+        "given": "Pacific Fishery Management"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Appendix A to the Pacific Coast Salmon Fishery Management Plan, as modified by amendment 18 to the Pacific Coast Salmon Plan. Identification and description of essential fish habitat, adverse impacts, and recommended conservation measures for salmon"
+    ],
+    "url": [
+      "https://www.pcouncil.org/wp-content/uploads/Salmon_EFH_Appendix_A_FINAL_September-25.pdf"
+    ],
+    "note": [
+      "Provost & Pritchard, 2012, Root Creek Water District Groundwater Management Plan, Adopted October 13, 1997, Updated January 2012."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "family": "Pritchard",
+        "given": "Wood Rodgers"
+      },
+      {
+        "given": "K.D.S.A."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Madera Regional Groundwater Management Plan, prepared for City of Chowchilla, Chowchilla Water District"
+    ],
+    "publisher": [
+      "City of Madera",
+      "and South-Est Madera County United"
+    ],
+    "location": [
+      "Madera County, Madera"
+    ],
+    "genre": [
+      "irrigation District,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-02"
+    ],
+    "title": [
+      "Madera Integrated Regional Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "City of Madera Urban Water Management Plan 2015 Update"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "Regional Water Quality Control"
+      },
+      {
+        "family": "Region",
+        "given": "Central Valley"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Amendments to the Water Quality Control Plans for the Sacramento River and San Joaquin River Basins and Tulare Lake Basin to Incorporate a Central Valley-wide Salt and Nitrate Control Program"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "State Water Resources Control Board (SWRCB",
+      "Water Quality Control Plan for the San Francisco Bay/ Sacramento-San Joaquin Delta Estuary"
+    ],
+    "date": [
+      "1995"
+    ],
+    "container-title": [
+      "California Environmental Protection Agency SWRCB"
+    ],
+    "pages": [
+      "24"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Steiner",
+        "given": "D.B."
+      }
+    ],
+    "date": [
+      "2005",
+      "2005",
+      "2007",
+      "2007-11-09"
+    ],
+    "title": [
+      "Effects to Water Supply and Friant Operations Resulting From Plaintiffs’ Friant Release Requirements. Expert report prepared by Daniel B. Steiner for Friant Water Users Authority",
+      "Cited in Congressional Research Service",
+      "San Joaquin River Restoration Settlement"
+    ],
+    "volume": [
+      "16"
+    ],
+    "genre": [
+      "Report RL34237."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "September"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineers",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2002",
+      "2014"
+    ],
+    "title": [
+      "AB3030 Groundwater Management Plan, Madera County, Final Draft, prepared for County of Madera Engineering and General Services",
+      "Madera Regional Groundwater Management Plan, prepared for City of Chowchilla, Chowchilla Water District"
+    ],
+    "editor": [
+      {
+        "family": "Provost",
+        "given": "Cited",
+        "particle": "in"
+      },
+      {
+        "family": "Pritchard",
+        "given": "Wood Rodgers"
+      },
+      {
+        "given": "K.D.S.A."
+      }
+    ],
+    "publisher": [
+      "City of Madera",
+      "and South‐East Madera County United"
+    ],
+    "location": [
+      "Madera County, Madera"
+    ],
+    "genre": [
+      "Irrigation District,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Groundwater and stream interaction in California's Central Valley: insights for sustainable groundwater management"
+    ],
+    "publisher": [
+      "Prepared by RMC Water and Environment"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Thoreson",
+        "given": "B."
+      },
+      {
+        "family": "Clark",
+        "given": "B."
+      },
+      {
+        "family": "Soppe",
+        "given": "R."
+      },
+      {
+        "family": "Keller",
+        "given": "A."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Eckhardt",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "note": [
+      "Comparison of Evapotranspiration Estimates from Remote Sensing (SEBAL), Water Balance, and Crop Coefficient"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Approaches"
+      }
+    ],
+    "title": [
+      "Proceedings of the 2009 World Environmental & Water Resources Congress"
+    ],
+    "publisher": [
+      "American Society of Civil Engineers Environmental and Water Resources Institute"
+    ],
+    "location": [
+      "Kansa City, MO"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.R.C."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-07-21"
+    ],
+    "title": [
+      "Second quarter 2015 monitoring report, Former MacGillis and Gibbs Pole Treating Facility (Trigo Site"
+    ],
+    "location": [
+      "Madera, California"
+    ],
+    "note": [
+      "BNSF File No. 01002722,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "California Cooperative Extension",
+        "given": "University",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Leaflet 21427: Using reference evapotranspiration (ETo) and crop coefficients to estimate crop evapotranspiration (ETc) for agronomic crops, grasses, and vegetables, crops"
+    ],
+    "container-title": [
+      "University of California United States Department of Agriculture (USDA), Natural Resources Conservation Service (NRCS). 2004. National Engineering Handbook: Part 630—Hydrology. USDA, Natural Resources Conservation Service"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A.-N.R.C.S."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "National Engineering Handbook: Part 630, Hydrology, Chapters 9 and 10"
+    ],
+    "container-title": [
+      "USDA, Natural Resources Conservation Service"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A.-N.R.C.S."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "National Engineering Handbook"
+    ],
+    "container-title": [
+      "Part 630, Hydrology, Chapter 7. USDA, Natural Resources Conservation Service"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "National Primary Drinking Water Regulations"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf."
+    ],
+    "note": [
+      "Last accessed July 2019."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "United State Fish and Wildlife Services (USFWS",
+      "Threatened & Endangered Species Active Critical Habitat Report: online mapping tool"
+    ],
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://fws.maps.arcgis.com/home/webmap/viewer?"
+    ],
+    "note": [
+      "accessed May 2019]."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Riparian Habitat Mapping, Mitigation, and Monitoring Planning Project FINAL Field Survey Report and Vegetation Map. Prepared for San Joaquin River Restoration Program under contract with the Bureau by Stillwater Sciences"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Center",
+        "given": "California Data Exchange"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Chronological Reconstructed Sacramento and San Joaquin Valley Water Year Hydrologic Classification Indices"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "http://cdec.water.ca.gov/reportapp/javareports?name=WSIHIST"
+    ],
+    "note": [
+      "accessed July 2019]."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CDFW (California Department of Fish and Wildlife",
+      "Vegetation Classification and Mapping Program"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "Available from",
+      "accessed April 2019]."
+    ],
+    "url": [
+      "https://www.wildlife.ca.gov/Data/VegCAMP"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.N.D.D.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Rarefind Version 5. Internet Application"
+    ],
+    "publisher": [
+      "CDFW"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "url": [
+      "http://www.dfg.ca.gov/whdab/html/cnddb.html"
+    ],
+    "note": [
+      "accessed January 2019]."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.N.P.S."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "A Manual of California Vegetation"
+    ],
+    "edition": [
+      "online"
+    ],
+    "url": [
+      "https://www.cnps.org/vegetation"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "accessed July 2019]."
+    ],
+    "publisher": [
+      "California Native Plant Society"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CPAD (California Protected Areas Database",
+      "California Protected Areas Database"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Website:",
+      "accessed July 2019]."
+    ],
+    "url": [
+      "https://www.calands.org/cpad/"
+    ],
+    "publisher": [
+      "Prepared by GreenInfo Network"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "ESRI (Earth Systems Research Institute). 2017. National Agricultural Imagery Program (NAIP), 2017 color aerial imagery"
+    ],
+    "note": [
+      "Available at:",
+      "accessed August 2018]."
+    ],
+    "url": [
+      "https://livingatlas.arcgis.com/en/browse/#d=2&q=NAIP"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Groeneveld",
+        "given": "D.P."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Remotely-Sensed Groundwater Evapotranspiration from Alkali Scrub Affected by Declining Water Table"
+    ],
+    "volume": [
+      "385"
+    ],
+    "pages": [
+      "294–303"
+    ],
+    "url": [
+      "https://doi.org/10.1016/j.jhydrol.2008.06.011"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ],
+    "doi": [
+      "10.1016/j.jhydrol.2008.06.011"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "McGwire",
+        "given": "K."
+      },
+      {
+        "family": "Morton",
+        "given": "C."
+      },
+      {
+        "family": "Snyder",
+        "given": "K."
+      },
+      {
+        "family": "Peterson",
+        "given": "S."
+      },
+      {
+        "family": "Erickson",
+        "given": "T."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Smith",
+        "given": "G."
+      },
+      {
+        "family": "Allen",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "container-title": [
+      "Assessing the Role of Climate and Resource Management on Groundwater Dependent Ecosystem Changes in Arid Environments with the Landsat Archive"
+    ],
+    "type": "chapter"
+  },
+  {
+    "volume": [
+      "185"
+    ],
+    "pages": [
+      "186–197"
+    ],
+    "url": [
+      "https://doi.org/10.1016/j.rse.2016.07.004"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Remote Sensing of Environment"
+    ],
+    "doi": [
+      "10.1016/j.rse.2016.07.004"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Jones"
+      },
+      {
+        "given": "Stokes"
+      }
+    ],
+    "date": [
+      "2006",
+      "2007-12"
+    ],
+    "title": [
+      "Pacific Gas & Electric Company San Joaquin Valley operations and maintenance habitat conservation plan (includes updated Chapter 4 and Tables 5-3",
+      "December"
+    ],
+    "pages": [
+      "5–4 5–5,",
+      "02– 067"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping indicators of groundwater dependent ecosystems in California"
+    ],
+    "url": [
+      "https://data.ca.gov/dataset/natural-communities-commonly-associated-groundwater"
+    ],
+    "editor": [
+      {
+        "family": "Klausmeyer",
+        "given": "K.R."
+      },
+      {
+        "family": "Biswas",
+        "given": "T."
+      },
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Schuetzenmeister",
+        "given": "F."
+      },
+      {
+        "family": "Rindlaub",
+        "given": "N."
+      },
+      {
+        "family": "K",
+        "given": "J."
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Howard"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "GDE pulse: taking the pulse of groundwater dependent ecosystems with satellite data"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at",
+      "accessed May, June, and July 2019"
+    ],
+    "url": [
+      "https://gde.codefornature.org."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Lewis",
+        "given": "D.C."
+      },
+      {
+        "family": "Burgy",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "The relationship between oak tree roots and groundwater in fractured rock as determined by tritium testing"
+    ],
+    "volume": [
+      "69"
+    ],
+    "pages": [
+      "2,579–2,588"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Geophysical Research"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "given": "McBain"
+      },
+      {
+        "family": "Trush",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "San Joaquin River Restoration Study Background Report, prepared for Friant Water Users Authority"
+    ],
+    "location": [
+      "Lindsay, CA",
+      "San Francisco, CA"
+    ],
+    "publisher": [
+      "and Natural Resources Defense Council"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Naumberg",
+        "given": "E."
+      },
+      {
+        "family": "Mata-Gonzales",
+        "given": "R."
+      },
+      {
+        "family": "Hunter",
+        "given": "R.G."
+      },
+      {
+        "family": "McLendon",
+        "given": "T."
+      },
+      {
+        "family": "Martin",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Phreatophytic Vegetation and Groundwater Fluctuations: A Review of Current Research and Application of Ecosystem Response Modeling with an Emphasis on Great Basin Vegetation"
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "726–740"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Management"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.E.P.A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "A practitioner’s guide to the biological condition gradient: a framework to describe incremental change in aquatic ecosystems"
+    ],
+    "genre": [
+      "EPA-842-R-16-001."
+    ],
+    "publisher": [
+      "USEPA"
+    ],
+    "location": [
+      "Washington, D.C"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "National Wetlands Inventory website"
+    ],
+    "container-title": [
+      "U.S. Department of the Interior, Fish and Wildlife Service"
+    ],
+    "location": [
+      "Washington, D.C"
+    ],
+    "url": [
+      "http://www.fws.gov/wetlands/"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Threatened & Endangered Species Active Critical Habitat Report: online mapping tool"
+    ],
+    "url": [
+      "https://fws.maps.arcgis.com/home/webmap/viewer.html?webmap=9d8de5e265ad4fe09893cf75b8"
+    ],
+    "note": [
+      "accessed May 2019]."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Witham",
+        "given": "C.W."
+      },
+      {
+        "family": "Holland",
+        "given": "R.F."
+      },
+      {
+        "family": "Vollmar",
+        "given": "J.E."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Changes in the Distribution of Great Valley Vernal Pool Habitats from 2005 to 2012"
+    ],
+    "container-title": [
+      "Report. Prepared for the U.S. Fish and Wildlife Service and Bureau of Reclamation CVPIA Habitat Restoration Program under Grant Agreement No. F11AP00169 with the USFWS"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Path: X:\\2012 Job Files\\12-118\\Report\\Figures\\Final GIS Map Files\\Figure 5-12 Select Graphs of Nitrate Concentrations in Central Valley Floor Deep Wells.mxd"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Table A2.F.a-15. City of Madera GSA Surface Water System Historical Water Budget, 1989-2014 (Acre-Feet"
+    ],
+    "container-title": [
+      "Boundary Groundwater Precipitation Evapo- Infil. of Infil. of Infil. of Boundary Change in Surface Extraction transpiration1 Precipitation Surface Applied Surface SWS Water Year (Type) Inflows Water Water Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 0 9,982 10,073"
+    ],
+    "pages": [
+      "–13,192 –2,977 –628 –3,167 10 –101"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 0 10,733 9,393"
+    ],
+    "pages": [
+      "–13,802 –2,542 –776 –3,121 9 106"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 0 10,929 9,810"
+    ],
+    "pages": [
+      "–12,693 –3,695 –1,026 –3,347 9 13"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 0 12,933 8,018"
+    ],
+    "pages": [
+      "–15,012 –2,031 –581 –3,360 4 29"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 124,660 10,858 13,584",
+      "C) 2,520 11,774 7,698"
+    ],
+    "pages": [
+      "–15,673 –4,887 –5,392 –3,801 –119,286 –63",
+      "–14,109 –1,922 –1,390 –3,181 –1,334 –55"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 115,059 8,013 16,524"
+    ],
+    "pages": [
+      "–14,401 –6,213 –6,061 –3,237 –109,676 –9"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 75,230 11,228 10,097"
+    ],
+    "pages": [
+      "–15,675 –3,193 –5,127 –2,996 –69,695 131"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 195,455 13,822 11,541"
+    ],
+    "pages": [
+      "–14,926 –5,169 –3,101 –4,416 –193,339 133"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 134,172 8,523 13,874"
+    ],
+    "pages": [
+      "–13,871 –5,206 –4,994 –3,212 –128,982 –303"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 26,759 10,815 5,625"
+    ],
+    "pages": [
+      "–12,917 –1,400 –1,800 –2,578 –24,801 296"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 42,375 11,026 9,172",
+      "D) 1,514 10,449 8,555",
+      "0 11,727 7,765"
+    ],
+    "pages": [
+      "–14,326 –2,411 –2,228 –3,017 –40,412 –179",
+      "–13,805 –2,034 –858 –2,880 –975",
+      "–14,296 –1,931 –334 –3,070 8 131"
+    ],
+    "date": [
+      "2001"
+    ],
+    "note": [
+      "34 2002 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 11,173 6,822",
+      "D) 0 13,284 5,668"
+    ],
+    "pages": [
+      "–13,608 –1,496 –145 –2,740 4 –10",
+      "–14,895 –1,124 –89 –2,879 1 34"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 39,960 9,178 9,779"
+    ],
+    "pages": [
+      "–13,880 –2,304 –2,924 –2,913 –36,774 –122"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 106,267 8,828 10,769",
+      "C) 39,896 11,733 4,360",
+      "C) 0 11,504 6,630"
+    ],
+    "pages": [
+      "–14,219 –3,088 –4,742 –2,418 –101,319 –78",
+      "–13,007 –959 –1,640 –2,374 –38,159 150 2008",
+      "–13,737 –1,443 –361 –2,658 0 65"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 10,653 5,988"
+    ],
+    "pages": [
+      "–13,067 –1,090 –109 –2,311 2 –66"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 25,241 7,429 10,282"
+    ],
+    "pages": [
+      "–13,245 –2,826 –3,170 –2,245 –21,412 –53"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 139,506 7,970 10,763",
+      "365 11,482 3,664",
+      "C) 6,222 11,822 6,189"
+    ],
+    "pages": [
+      "–13,585 –3,223 –5,389 –2,374 –133,723",
+      "–11,709 –1,034 –402 –2,403 2 35 2013",
+      "–13,793 –1,544 –1,219 –2,876 –4,821 20"
+    ],
+    "note": [
+      "55 2012 (D"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Table A2.F.a-16. City of Madera GSA Surface Water System Current Water Budget, 1989-2014 (Acre-Feet"
+    ],
+    "container-title": [
+      "Boundary Groundwater Precipitation Evapo- Infil. of Infil. of Infil. of Boundary Change in Surface Extraction transpiration1 Precipitation Surface Applied Surface SWS Water Year (Type) Inflows Water Water Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 0 9,840 10,072"
+    ],
+    "pages": [
+      "–13,483 –2,873 –373 –2,975 –109 –99"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 0 10,355 9,390"
+    ],
+    "pages": [
+      "–13,990 –2,436 –557 –2,767 –88 93"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 0 9,940 9,811"
+    ],
+    "pages": [
+      "–12,535 –3,539 –823 –2,845 –73 64"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 0 12,070 8,018"
+    ],
+    "pages": [
+      "–14,873 –1,914 –453 –2,698 –49 –100"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 124,660 9,965 13,584",
+      "C) 2,520 10,996 7,697"
+    ],
+    "pages": [
+      "–15,426 –4,779 –5,334 –3,407 –119,219 –45",
+      "–14,044 –1,848 –1,286 –2,672 –1,376 12"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 115,059 6,927 16,523"
+    ],
+    "pages": [
+      "–13,984 –6,092 –6,035 –2,775 –109,594 –30"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 75,230 9,424 10,098"
+    ],
+    "pages": [
+      "–14,796 –3,102 –5,120 –2,182 –69,675 123"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 195,455 13,127 11,538"
+    ],
+    "pages": [
+      "–14,683 –5,134 –3,099 –3,918 –193,343 58"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 134,172 8,008 13,871"
+    ],
+    "pages": [
+      "–13,729 –5,101 –4,977 –3,097 –128,967 –180"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 26,759 10,643 5,626"
+    ],
+    "pages": [
+      "–12,919 –1,424 –1,793 –2,296 –24,802 205"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 42,375 10,311 9,171",
+      "D) 1,514 9,779 8,556",
+      "0 11,547 7,765"
+    ],
+    "pages": [
+      "–13,996 –2,385 –2,228 –2,654 –40,490 –105",
+      "–13,521 –2,023 –858 –2,470 –1,020",
+      "–14,260 –1,950 –334 –2,781 –34 48"
+    ],
+    "date": [
+      "2001"
+    ],
+    "note": [
+      "42 2002 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 11,110 6,822",
+      "D) 0 13,501 5,668"
+    ],
+    "pages": [
+      "–13,727 –1,521 –145 –2,567 –13 41 2004",
+      "–15,218 –1,135 –90 –2,689 –6 –31"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 39,960 9,206 9,778"
+    ],
+    "pages": [
+      "–14,016 –2,321 –2,924 –2,849 –36,796 –37"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 106,267 9,031 10,771",
+      "C) 39,896 12,501 4,362",
+      "0 12,313 6,628"
+    ],
+    "pages": [
+      "–14,511 –3,058 –4,742 –2,374 –101,333 –52",
+      "–13,654 –978 –1,635 –2,376 –38,160",
+      "–14,470 –1,442 –359 –2,718 –3 52"
+    ],
+    "date": [
+      "2007"
+    ],
+    "note": [
+      "44 2008 (C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 11,852 5,988"
+    ],
+    "pages": [
+      "–14,112 –1,103 –91 –2,508 –6 –20"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 25,241 7,953 10,283"
+    ],
+    "pages": [
+      "–13,772 –2,808 –3,159 –2,315 –21,413 –10"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 139,506 8,482 10,763",
+      "365 12,022 3,663",
+      "6,222 12,271 6,190"
+    ],
+    "pages": [
+      "–14,079 –3,205 –5,382 –2,429 –133,717",
+      "–12,207 –1,030 –395 –2,424 –1",
+      "–14,202 –1,537 –1,210 –2,927 –4,825 17"
+    ],
+    "note": [
+      "62 2012 (D",
+      "7 2013 (C"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 48,253 190,101 177,223"
+    ],
+    "pages": [
+      "–255,946 –1,134 –2,377 –45,621 –6,636 –8,328 –57,413 –36,722 –1,400"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 35,000 204,610 165,223"
+    ],
+    "pages": [
+      "–265,945 –1,019 –2,040 –38,595 –5,257 –7,063 –56,741 –28,752 579"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 46,729 215,820 172,632"
+    ],
+    "pages": [
+      "–254,436 –1,289 –2,733 –58,364 –8,890 –11,374 –63,799 –34,785 489"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 45,057 237,577 141,069"
+    ],
+    "pages": [
+      "–294,149 –1,358 –2,966 –29,154 –6,632 –8,022 –60,786 –32,333 11,697"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "W) 816,007 212,715 239,015"
+    ],
+    "pages": [
+      "–283,444 –3,677 –5,645 –78,723 –27,077 –38,034 –65,619 –756,602 –8,916"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "C) 61,444 220,174 135,437"
+    ],
+    "pages": [
+      "–266,816 –1,374 –2,715 –27,984 –5,359 –7,286 –56,981 –47,283 –1,257"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 840,985 174,126 290,726"
+    ],
+    "pages": [
+      "–267,302 –4,163 –5,120 –109,148 –35,751 –47,895 –57,570 –772,440 –6,447"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 793,158 224,659 177,667"
+    ],
+    "pages": [
+      "–295,647 –3,680 –5,411 –49,706 –22,251 –33,080 –56,755 –734,713 5,760"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 913,778 255,748 203,008"
+    ],
+    "pages": [
+      "–290,439 –3,961 –4,405 –87,006 –47,851 –57,378 –77,092 –816,686 12,284"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 848,497 180,465 244,052"
+    ],
+    "pages": [
+      "–255,889 –2,634 –5,169 –86,303 –28,564 –39,985 –56,949 –782,720 –14,801"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 237,038 214,793 98,985"
+    ],
+    "pages": [
+      "–255,415 –1,606 –3,226 –20,775 –10,933 –15,424 –49,728 –204,159 10,451"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 123,126 231,479 161,366",
+      "D) 72,246 229,546 150,550",
+      "D) 54,631 244,895 136,623"
+    ],
+    "pages": [
+      "–287,011 –1,344 –4,225 –35,637 –11,352 –15,559 –57,647 –98,476 –4,720",
+      "–288,443 –1,507 –3,099 –31,539 –6,623 –8,370 –57,688 –56,508 1,435 2002",
+      "–293,172 –1,191 –2,752 –29,367 –4,850 –5,816 –60,287 –43,193 4,479"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 52,695 236,865 120,025",
+      "D) 54,277 267,395 99,726",
+      "W) 382,430 211,852 172,037",
+      "W) 1,108,275 210,890 189,522",
+      "C) 122,290 247,735 76,757",
+      "C) 70,134 243,666 116,616"
+    ],
+    "pages": [
+      "–276,297 –1,053 –2,641 –22,710 –2,105 –2,654 –54,243 –44,249 –3,633",
+      "–301,822 –1,234 –2,862 –17,415 –2,456 –2,934 –57,474 –43,901 8,700",
+      "–279,716 –3,373 –4,403 –35,134 –19,325 –24,596 –55,683 –333,518 –10,570",
+      "–287,202 –4,076 –5,246 –48,491 –36,651 –57,755 –51,685 –1,013,262 –4,318",
+      "–274,616 –1,456 –2,868 –14,297 –16,872 –19,163 –51,550 –80,425 14,464 2008",
+      "–283,447 –1,147 –2,501 –21,742 –6,252 –7,366 –52,480 –56,540 1,059"
+    ],
+    "date": [
+      "2004",
+      "2005",
+      "2006",
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 44,379 229,476 105,355"
+    ],
+    "pages": [
+      "–268,105 –1,004 –2,298 –15,964 –1,558 –2,052 –46,443 –36,699 –5,087"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "volume": [
+      "AN) 90,159 196,206 180,927",
+      "W) 1,061,150 214,004 189,374",
+      "D) 46,214 263,511 64,461",
+      "C) 35,261 253,974 108,912",
+      "C) 10,664 257,621 53,196"
+    ],
+    "pages": [
+      "–276,536 –1,647 –4,108 –44,085 –9,551 –13,706 –46,455 –62,389 –8,814",
+      "–289,708 –3,775 –5,269 –50,591 –34,903 –48,977 –53,231 –976,630 –1,443",
+      "–270,067 –1,410 –2,370 –14,201 –1,353 –2,243 –53,958 –38,001 9,417",
+      "–287,576 –871 –1,938 –22,545 –2,178 –3,805 –55,949 –26,101 2,816",
+      "–256,793 –700 –761 –8,619 –1,230 –1,480 –48,706 –4,790"
+    ],
+    "note": [
+      "1,597 Average"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "308,226 225,765 152,711"
+    ],
+    "pages": [
+      "–277,152 –1,988 –3,429 –40,143 –13,941 –18,859 –56,266 –275,457 532"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 48,253 254,629 177,223"
+    ],
+    "pages": [
+      "–311,531 –1,134 –1,891 –44,708 –6,073 –7,442 –69,768 –36,722 –838"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 35,000 263,215 165,221"
+    ],
+    "pages": [
+      "–318,356 –1,019 –1,781 –37,396 –4,728 –6,349 –65,121 –28,752 66"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 46,729 266,427 172,630"
+    ],
+    "pages": [
+      "–300,729 –1,289 –2,569 –56,568 –8,355 –10,797 –71,176 –34,785 482"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 45,057 289,263 141,067"
+    ],
+    "pages": [
+      "–341,704 –1,358 –2,600 –28,446 –6,450 –7,848 –64,748 –32,333 10,099"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "W) 816,007 261,260 239,014"
+    ],
+    "pages": [
+      "–327,244 –3,677 –5,492 –77,604 –26,305 –37,391 –72,889 –756,602 –9,078"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "C) 61,444 268,425 135,436"
+    ],
+    "pages": [
+      "–313,539 –1,374 –2,654 –26,894 –5,003 –6,846 –62,246 –47,283 534"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 840,985 210,001 290,729"
+    ],
+    "pages": [
+      "–302,091 –4,163 –4,931 –106,096 –35,091 –47,402 –63,626 –772,440 –5,875"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 793,158 252,813 177,668"
+    ],
+    "pages": [
+      "–325,899 –3,680 –4,822 –47,778 –22,230 –33,156 –56,575 –734,713 5,214"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 913,778 294,349 203,007"
+    ],
+    "pages": [
+      "–325,361 –3,961 –4,244 –85,533 –47,570 –57,284 –80,897 –816,686 10,403"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 848,497 219,228 244,052"
+    ],
+    "pages": [
+      "–291,337 –2,634 –3,516 –84,570 –28,544 –40,104 –65,282 –782,720 –13,069"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 237,038 261,793 98,984"
+    ],
+    "pages": [
+      "–294,685 –1,606 –2,697 –20,374 –11,107 –15,569 –56,973 –204,159 9,356"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 123,126 255,557 161,368",
+      "D) 72,246 258,336 150,551",
+      "D) 54,631"
+    ],
+    "pages": [
+      "–310,945 –1,344 –2,189 –34,663 –12,599 –16,983 –58,801 –98,476 –4,051",
+      "–318,755 –1,507 –2,947 –30,167 –6,538 –8,407 –57,931 –56,508 1,626 2002",
+      "274,819 136,622 –321,924 –1,191 –2,289 –28,553 –4,986 –6,057 –61,552 –43,193 3,672"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 52,695 268,198 120,026",
+      "D) 54,277 299,766 99,725",
+      "W) 382,430 242,308 172,037",
+      "W) 1,108,275 243,592 189,522",
+      "C) 122,290 284,683 76,757",
+      "C) 70,134 283,043 116,617"
+    ],
+    "pages": [
+      "–306,374 –1,053 –2,365 –21,974 –2,115 –2,711 –56,654 –44,249 –3,423",
+      "–333,917 –1,234 –2,766 –16,743 –2,405 –2,909 –58,549 –43,901 8,657",
+      "–308,959 –3,373 –4,325 –34,416 –19,128 –24,460 –58,673 –333,518 –9,921",
+      "–318,860 –4,076 –5,127 –47,179 –36,277 –57,395 –55,407 –1,013,262 –3,806",
+      "–308,012 –1,456 –2,813 –13,704 –16,811 –19,096 –54,734 –80,425 13,321 2008",
+      "–319,252 –1,147 –1,954 –21,404 –6,261 –7,353 –56,484 –56,540 600"
+    ],
+    "date": [
+      "2004",
+      "2005",
+      "2006",
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 44,379 278,267 105,356"
+    ],
+    "pages": [
+      "–310,840 –1,004 –2,249 –15,870 –1,389 –1,812 –53,495 –36,699 –4,644"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "volume": [
+      "AN) 90,159 223,909 180,927",
+      "W) 1,061,150 229,648 189,374",
+      "D) 46,214 280,193 64,458",
+      "C) 35,261 271,152 108,912",
+      "C) 10,664 269,014 53,197"
+    ],
+    "pages": [
+      "–303,057 –1,647 –4,035 –43,397 –9,382 –13,472 –49,822 –62,389 –7,793",
+      "–305,329 –3,775 –5,091 –49,801 –35,027 –49,190 –54,344 –976,630 –985",
+      "–286,489 –1,410 –2,307 –13,708 –1,376 –2,240 –53,903 –38,001 8,569",
+      "–303,344 –871 –1,891 –22,255 –2,121 –3,672 –57,708 –26,101 2,636",
+      "–265,506 –700 –732 –8,710 –1,223 –1,469 –51,379 –4,790"
+    ],
+    "note": [
+      "1,635 Average"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "308,226 261,688 152,711"
+    ],
+    "pages": [
+      "–310,540 –1,988 –3,088 –39,173 –13,811 –18,747 –60,336 –275,457 515"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.c-17",
+        "given": "Figure"
+      }
+    ],
+    "title": [
+      "Madera Irrigation District GSA Surface Water System Historical Water Budget"
+    ],
+    "date": [
+      "1989"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.c-15",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Madera Irrigation District GSA Surface Water System Historical Water Budget, 1989-2014 (Acre-Feet"
+    ],
+    "container-title": [
+      "Boundary Change in Surface Groundwater Evapo- Infil. of Infil. of Surface Infil. of Applied Boundary SWS Water Year Inflows Extraction Precipitation transpiration1 Precipitation Water2 Water Surface Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 114,080 174,260 131,240"
+    ],
+    "pages": [
+      "–261,600 –39,080 –48,710 –68,830 –2,540 1,180"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 78,930 205,560 122,350"
+    ],
+    "pages": [
+      "–273,650 –32,730 –30,710 –66,940 –2,270 –540"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 114,940 185,350 127,850"
+    ],
+    "pages": [
+      "–264,860 –50,580 –34,520 –73,530 –3,170 –1,480"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 100,930 227,960 104,480"
+    ],
+    "pages": [
+      "–305,210 –25,950 –34,330 –70,020 –1,270 3,420"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 380,210 138,960 177,040",
+      "C) 149,480 167,630 100,340"
+    ],
+    "pages": [
+      "–295,160 –65,080 –155,600 –76,670 –101,650 –2,060",
+      "–289,650 –23,280 –31,880 –67,540 –3,310 –1,790"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 388,490 118,900 215,420"
+    ],
+    "pages": [
+      "–277,580 –81,670 –142,240 –69,180 –153,090 940"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 358,540 121,290 131,660"
+    ],
+    "pages": [
+      "–305,340 –39,590 –111,000 –64,340 –91,340 120"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 491,660 159,280 150,470"
+    ],
+    "pages": [
+      "–307,120 –66,780 –105,860 –91,140 –232,640 2,140"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 433,070 135,520 180,920"
+    ],
+    "pages": [
+      "–275,340 –67,960 –94,970 –70,050 –238,380 –2,800"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 234,500 150,810 73,390"
+    ],
+    "pages": [
+      "–282,770 –17,280 –54,740 –62,530 –45,150 3,770"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 231,940 166,420 119,670",
+      "D) 171,910 178,940 111,660",
+      "D) 146,010 207,940 101,290"
+    ],
+    "pages": [
+      "–303,770 –31,030 –68,700 –65,920 –46,970 –1,630",
+      "–307,000 –27,450 –54,030 –67,210 –7,220 410 2002",
+      "–311,660 –26,010 –43,070 –70,890 –4,160 550"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 150,000 193,070 88,940",
+      "D) 158,230 217,750 73,870"
+    ],
+    "pages": [
+      "–302,540 –18,730 –42,360 –61,970 –5,580 –840",
+      "–326,450 –14,760 –39,450 –64,750 –5,030 590"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 231,360 147,170 127,370"
+    ],
+    "pages": [
+      "–294,900 –29,880 –65,190 –63,850 –51,950 –140"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 360,080 142,780 140,250",
+      "C) 205,500 193,260 56,780",
+      "C) 159,570 194,050 86,220"
+    ],
+    "pages": [
+      "–300,680 –40,110 –85,420 –60,660 –154,450 –1,780",
+      "–296,230 –11,160 –80,120 –57,910 –13,090 2,970 2008",
+      "–304,490 –19,180 –53,740 –58,980 –3,950 500"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 129,620 189,020 77,860"
+    ],
+    "pages": [
+      "–293,150 –13,820 –30,160 –52,320 –4,130 –2,930"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 194,420 120,310 133,640"
+    ],
+    "pages": [
+      "–289,750 –34,470 –42,550 –52,350 –27,970 –1,290"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 371,790 120,490 139,820",
+      "D) 123,820 219,330 47,590",
+      "C) 100,640 230,990 80,410",
+      "C) 23,090 283,420 39,280",
+      "376,900 135,550 157,870"
+    ],
+    "pages": [
+      "–298,290 –39,330 –91,760 –59,960 –145,760 3,000",
+      "–294,290 –10,650 –9,080 –59,390 –17,110 –230",
+      "–303,220 –18,940 –22,020 –62,150 –6,660 950 2014",
+      "–281,510 –7,230 –4,220 –52,460 –2,250",
+      "1989–215,490 176,560 113,070 –294,080 –32,800 –60,630 –65,060 –52,730",
+      "–294,300 –53,800 –106,500 –69,480 –146,160 –70"
+    ],
+    "date": [
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "container-title": [
+      "1,890 Average",
+      "W"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.c-16",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Madera Irrigation District GSA Surface Water System Current Water Budget (Acre-Feet). Boundary Change in Surface Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Surface Infil. of Applied Boundary SWS Water Year Inflows Extraction Precipitation transpiration1 Precipitation Water2 Water Surface Outflows Storage 1989"
+    ],
+    "volume": [
+      "C) 115,530 232,490 133,400"
+    ],
+    "pages": [
+      "–315,770 –37,510 –48,140 –78,510 –2,540 1,040"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 80,120 258,080 124,370"
+    ],
+    "pages": [
+      "–324,460 –31,240 –30,170 –73,870 –2,270 –560"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 116,080 225,970 129,950"
+    ],
+    "pages": [
+      "–307,870 –48,460 –33,980 –77,750 –3,170 –770"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 101,660 269,770 106,190"
+    ],
+    "pages": [
+      "–348,310 –24,630 –34,150 –71,530 –1,270 2,280"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 381,040 177,840 179,920",
+      "C) 149,800 201,630 101,950"
+    ],
+    "pages": [
+      "–333,430 –64,470 –154,820 –81,440 –101,650 –3,010",
+      "–327,240 –21,810 –31,520 –69,570 –3,310 70"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 388,800 143,810 218,840"
+    ],
+    "pages": [
+      "–305,180 –80,110 –141,570 –72,160 –153,090 670"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 358,820 141,410 133,740"
+    ],
+    "pages": [
+      "–330,810 –37,750 –110,970 –63,220 –91,340 130"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 491,680 187,070 152,810"
+    ],
+    "pages": [
+      "–336,130 –66,460 –105,580 –92,170 –232,640 1,400"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 433,440 155,890 183,710"
+    ],
+    "pages": [
+      "–298,970 –66,270 –94,950 –72,040 –238,380 –2,430"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 234,720 175,440 74,510"
+    ],
+    "pages": [
+      "–308,000 –16,420 –54,920 –63,500 –45,150 3,320"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 232,730 180,000 121,470",
+      "D) 171,690 194,270 113,330",
+      "D) 146,030 225,280 102,840"
+    ],
+    "pages": [
+      "–322,000 –29,760 –69,960 –64,230 –46,970 –1,290",
+      "–327,330 –25,940 –53,950 –65,190 –7,220 340 2002",
+      "–332,660 –25,060 –43,210 –69,550 –4,160 490"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 150,020 212,680 90,350",
+      "D) 158,210 238,980 75,070"
+    ],
+    "pages": [
+      "–323,950 –18,060 –42,370 –62,050 –5,580 –1,050",
+      "–351,620 –14,020 –39,400 –63,740 –5,030 1,540"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 231,350 168,880 129,500"
+    ],
+    "pages": [
+      "–318,940 –29,060 –64,990 –64,380 –51,950 –420"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 360,250 166,570 142,660",
+      "C) 205,540 221,600 57,780",
+      "C) 159,900 226,760 87,780"
+    ],
+    "pages": [
+      "–327,580 –38,580 –85,040 –61,990 –154,450 –1,840",
+      "–324,680 –10,700 –80,060 –59,310 –13,090 2,910 2008",
+      "–336,110 –18,860 –53,750 –61,580 –3,950 –190"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 129,790 233,260 79,310"
+    ],
+    "pages": [
+      "–333,850 –13,760 –29,990 –58,410 –4,130 –2,220"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 194,610 143,290 136,190"
+    ],
+    "pages": [
+      "–313,240 –34,320 –42,370 –55,310 –27,970 –870"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 371,870 131,130 142,550",
+      "D) 123,900 232,970 48,520",
+      "C) 100,750 245,860 81,980",
+      "C) 23,120 292,300 40,040",
+      "203,200 114,950",
+      "377,160 159,080 160,470"
+    ],
+    "pages": [
+      "–311,510 –39,380 –91,890 –60,400 –145,760 3,400",
+      "–308,930 –10,460 –9,100 –59,210 –17,110 –580",
+      "–318,240 –18,980 –21,970 –63,580 –6,660 840 2014",
+      "–289,500 –7,410 –4,220 –54,020 –2,250",
+      "–322,170 –31,900 –60,500 –66,870 –52,730",
+      "–320,320 –52,760 –106,230 –70,970 –146,160 –260"
+    ],
+    "date": [
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "note": [
+      "1,940 Average (1989-215,820"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "W"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.d-15",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Madera Water District GSA Surface Water System Historical Water Budget, 1989-2014 (Acre-Feet"
+    ],
+    "container-title": [
+      "Boundary Infil. of Boundary Change in Water Year Surface Groundwater Evapo- Infil. of Infil. of Applied Surface SWS (Type) Inflows Extraction Precipitation transpiration1 Precipitation Surface Water Water Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 850 8,809 3,734"
+    ],
+    "pages": [
+      "–9,540 –1,119 –219 –2,552 0 36"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 850 9,092 3,478"
+    ],
+    "pages": [
+      "–9,982 –888 –238 –2,267 0 –46"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 1,258 10,034 3,637"
+    ],
+    "pages": [
+      "–10,077 –1,359 –503 –2,718 –220 –52"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 1,046 10,436 2,972"
+    ],
+    "pages": [
+      "–11,264 –737 –310 –2,384 –25 266"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "W) 5,988 8,033 5,034"
+    ],
+    "pages": [
+      "–10,834 –1,703 –860 –1,251 –4,497 90"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "pages": [
+      "995 8,864 2,853 –10,348 –623 –103 –1,532 0 –107"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 7,043 7,040 6,123"
+    ],
+    "pages": [
+      "–10,241 –2,110 –985 –1,593 –5,377 98"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 3,517 7,460 3,741"
+    ],
+    "pages": [
+      "–11,070 –1,101 –517 –408 –1,493 –130"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 14,022 7,032 4,273"
+    ],
+    "pages": [
+      "–11,263 –1,679 –917 –1,080 –10,224 –167"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 15,617 4,701 5,138"
+    ],
+    "pages": [
+      "–9,829 –1,800 –961 –796 –12,234 164"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 2,244 6,673 2,085"
+    ],
+    "pages": [
+      "–10,352 –461 –5 –123 0 –61"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 5,236 5,677 3,397",
+      "D) 1,459 7,758 3,172",
+      "D) 1,652 8,075"
+    ],
+    "pages": [
+      "–10,794 –831 –561 –1,015 –1,276 167",
+      "–11,091 –760 –134 –432 0 27 2002",
+      "2,877 –11,249 –727 –114 –586 0 71"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 2,881 7,158 2,528",
+      "D) 2,715 8,402 2,100",
+      "W) 7,796 4,891 3,622",
+      "W) 8,595 4,923 3,991",
+      "C) 1,187 7,888 1,616"
+    ],
+    "pages": [
+      "–10,998 –509 –39 –793 0 –229",
+      "–11,911 –413 –16 –887 0 10 2005",
+      "–10,737 –789 –697 –227 –4,050 189 2006",
+      "–11,016 –1,102 –835 –569 –4,048 60 2007",
+      "–10,967 –310 –9 –48 0 643 2008 2,006 8,205 2,457 –11,293 –518 –109 –470 0 –278"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 2,152 8,283 2,218"
+    ],
+    "pages": [
+      "–11,236 –381 –25 –1,083 0 72"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010",
+      "2012",
+      "1989"
+    ],
+    "volume": [
+      "AN) 3,391 5,776 3,810",
+      "W) 9,610 4,258 3,990",
+      "D) 2,436 7,618 1,357",
+      "2013",
+      "C) 2,064 9,072 1,121",
+      "0 -106 Average 4,207 7,450 3,216",
+      "33"
+    ],
+    "pages": [
+      "–10,374 –899 –288 –1,363 –197 144 2011",
+      "–10,478 –1,017 –834 –1,317 –4,052 –161",
+      "–10,477 –260 –37 –683",
+      "–10,683 –525 –39 –1,377 0 28 2014",
+      "–10,060 –210 –4 –1,877",
+      "–10,699 –878 –360 –1,135 –1,834"
+    ],
+    "issue": [
+      "C"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.d-16",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Madera Water District GSA Surface Water System Current Water Budget (Acre-Feet). Boundary Boundary Change in Water Year Surface Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Infil. of Surface SWS (Type) Inflows Extraction Precipitation transpiration1 Precipitation Surface Water Applied Water Outflows Storage 1989"
+    ],
+    "pages": [
+      "850 9,998 3,732 –10,568 –1,094 –164 –2,795 0 42"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 850 9,718 3,479"
+    ],
+    "pages": [
+      "–10,650 –869 –208 –2,285 0 –35"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 1,258 10,515 3,635"
+    ],
+    "pages": [
+      "–10,563 –1,305 –503 –2,737 –212 –89"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 1,046 10,539 2,971"
+    ],
+    "pages": [
+      "–11,578 –712 –335 –2,234 –3 305"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "W) 5,988 8,167 5,033"
+    ],
+    "pages": [
+      "–11,192 –1,661 –900 –1,127 –4,441 133"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "pages": [
+      "995 9,116 2,852 –10,860 –603 –76 –1,282 0 –142"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 7,043 7,068 6,122"
+    ],
+    "pages": [
+      "–10,194 –2,094 –984 –1,673 –5,386 98"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 3,517 7,573 3,741"
+    ],
+    "pages": [
+      "–11,075 –1,078 –507 –541 –1,487 –143"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 14,022 7,225 4,275"
+    ],
+    "pages": [
+      "–11,258 –1,670 –916 –1,269 –10,223 –186"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 15,617 4,851 5,139"
+    ],
+    "pages": [
+      "–10,057 –1,790 –989 –783 –12,173 184"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 2,244 6,888 2,084"
+    ],
+    "pages": [
+      "–10,410 –458 –4 –274 0 –70"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 5,236 5,671 3,398",
+      "D) 1,459 7,920 3,170",
+      "D) 1,652 8,221 2,877"
+    ],
+    "pages": [
+      "–10,720 –827 –561 –1,088 –1,283 175",
+      "–11,036 –752 –133 –653 –2 26 2002",
+      "–11,194 –724 –114 –788 –4 75"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 2,881 7,228 2,528",
+      "D) 2,715 8,580 2,100",
+      "W) 7,796 4,945 3,623",
+      "W) 8,595 4,966 3,991",
+      "C) 1,187 8,042 1,616",
+      "C) 2,006 8,331 2,456"
+    ],
+    "pages": [
+      "–10,952 –509 –39 –905 –3 –230",
+      "–11,877 –413 –15 –1,097 –2 10 2005",
+      "–10,727 –785 –696 –303 –4,053 201 2006",
+      "–11,032 –1,101 –834 –601 –4,049 65 2007",
+      "–11,014 –310 –7 496 –1 –10",
+      "–11,346 –520 –109 –536 –1 –281"
+    ],
+    "date": [
+      "2004",
+      "2008"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 2,152 8,355 2,219"
+    ],
+    "pages": [
+      "–11,329 –383 –23 –1,066 0 75"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010",
+      "2012",
+      "1989"
+    ],
+    "volume": [
+      "AN) 3,391 5,841 3,810",
+      "W) 9,610 4,272 3,988",
+      "D) 2,436 7,680 1,357",
+      "2013",
+      "C) 2,064 9,064 1,120",
+      "4,207 7,630 3,216",
+      "7"
+    ],
+    "pages": [
+      "–10,522 –899 –347 –1,296 –131 153 2011",
+      "–10,540 –1,016 –833 –1,264 –4,053 –163",
+      "–10,533 –260 –36 –697 –1",
+      "–10,730 –524 –37 –1,396 –1 31 2014",
+      "–10,030 –213 –4 –1,896 –1",
+      "–10,846 –868 –360 –1,157 –1,827"
+    ],
+    "note": [
+      "-105 Average"
+    ],
+    "issue": [
+      "C"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.e-15",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Gravelly Ford Water District GSA Surface Water System Historical Water Budget, 1989-2014 (Acre-Feet). Boundary Surface Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Surface Infil. of Applied Boundary Surface Change in Water Year Inflows Extraction Precipitation transpiration1 Precipitation Water2 Water Outflows SWS Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 1,707 19,386 8,350"
+    ],
+    "pages": [
+      "–18,055 –3,148 –369 –6,670 –1,374 173"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 426 20,515 7,785"
+    ],
+    "pages": [
+      "–18,821 –2,689 –172 –6,497 –398 –149"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 4,944 20,698 8,132"
+    ],
+    "pages": [
+      "–17,986 –3,987 –2,518 –6,651 –2,586 –46"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 1,084 22,522 6,647"
+    ],
+    "pages": [
+      "–20,678 –2,200 –277 –6,644 –658 204"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 35,061 6,242 11,262",
+      "C) 14,496 16,011 6,383"
+    ],
+    "pages": [
+      "–20,235 –5,124 –12,469 –6,942 –7,762 –33",
+      "–19,862 –1,925 –7,903 –6,621 –332 –247"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 34,311 5,316 13,700"
+    ],
+    "pages": [
+      "–18,700 –6,336 –15,900 –7,092 –5,501 202"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 29,265 6,120 8,372"
+    ],
+    "pages": [
+      "–20,211 –3,142 –11,149 –7,123 –2,042 –90"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 44,619 9,643 9,564"
+    ],
+    "pages": [
+      "–20,542 –4,959 –8,400 –8,200 –21,651 –74"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 39,691 6,713 11,497"
+    ],
+    "pages": [
+      "–18,484 –5,333 –14,149 –6,497 –13,457 19"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 19,403 13,786 4,662"
+    ],
+    "pages": [
+      "–18,821 –1,490 –9,859 –6,535 –1,416 270"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 28,484 12,443 7,604",
+      "D) 8,960 18,067 7,095",
+      "D) 9,045 16,932 6,438"
+    ],
+    "pages": [
+      "–19,637 –2,691 –9,151 –6,595 –10,379 –78",
+      "–19,721 –2,482 –3,312 –6,676 –1,820 –112",
+      "–20,286 –2,212 –3,161 –6,628 –61 –67"
+    ],
+    "date": [
+      "2001",
+      "2002"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 11,936 16,305 5,655",
+      "D) 15,768 17,998 4,700"
+    ],
+    "pages": [
+      "–19,972 –1,719 –5,887 –6,144 –17 –157",
+      "–21,578 –1,364 –9,207 –6,462 –8 153"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 22,860 11,745 8,106"
+    ],
+    "pages": [
+      "–19,492 –2,600 –7,537 –5,978 –7,281 176"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 25,058 12,237 8,931",
+      "C) 13,810 18,158 3,617",
+      "C) 10,247 18,725 5,495"
+    ],
+    "pages": [
+      "–20,060 –3,362 –8,456 –5,922 –8,170 –257",
+      "–20,147 –976 –5,735 –6,064 –2,705 41 2008",
+      "–21,021 –1,763 –5,081 –6,099 –721 218"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 4,810 20,862 4,966"
+    ],
+    "pages": [
+      "–20,363 –1,272 –1,738 –5,435 –1,643 –187"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 10,515 16,580 8,526"
+    ],
+    "pages": [
+      "–19,804 –2,871 –4,832 –5,135 –3,022 42"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 27,274 15,145 8,922",
+      "D) 3,045 22,670 3,036",
+      "C) 528 21,796 2,509",
+      "15,753 7,196",
+      "32,267 9,145 10,044"
+    ],
+    "pages": [
+      "–19,826 –3,242 –12,037 –5,701 –10,692 155 2012",
+      "–19,692 –883 –1,138 –5,828 –1,240 30 2013 519 22,954 5,132 –20,300 –1,613 –156 –6,005 –354 –177",
+      "–18,689 –660 –174 –5,284 –328",
+      "–19,730 –2,694 –6,183 –6,363 –4,062",
+      "–19,694 –4,262 –11,262 –6,682 –9,569 12"
+    ],
+    "date": [
+      "2014",
+      "2014"
+    ],
+    "note": [
+      "302 Average (1989-16,072"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "W"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.e-16",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Gravelly Ford Water District GSA Surface Water System Current Water Budget (Acre-Feet). Boundary Surface Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Surface Infil. of Applied Boundary Surface Change in Water Year Inflows Extraction Precipitation transpiration1 Precipitation Water2 Water Outflows SWS Storage 1989"
+    ],
+    "volume": [
+      "C) 1,707 22,384 8,351"
+    ],
+    "pages": [
+      "–20,505 –3,062 –369 –7,318 –1,320 132"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "pages": [
+      "426 22,622 7,786 –20,852 –2,596 –172 –6,786 –354 –74"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 4,944 22,317 8,135"
+    ],
+    "pages": [
+      "–19,628 –3,880 –2,518 –6,689 –2,554 –127"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 1,084 24,051 6,647"
+    ],
+    "pages": [
+      "–22,292 –2,132 –277 –6,639 –649 208"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 35,061 7,904 11,263",
+      "C) 14,499 17,022 6,382"
+    ],
+    "pages": [
+      "–21,764 –5,091 –12,468 –7,044 –7,744 –118",
+      "–21,324 –1,811 –7,903 –6,581 –327 44"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 34,312 6,112 13,700"
+    ],
+    "pages": [
+      "–19,981 –6,264 –15,900 –6,528 –5,499 48"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 29,265 5,834 8,372"
+    ],
+    "pages": [
+      "–21,439 –3,029 –11,150 –5,840 –2,041 28"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 44,619 11,057 9,566"
+    ],
+    "pages": [
+      "–21,921 –4,914 –8,404 –8,151 –21,653 –198"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 39,691 7,702 11,500"
+    ],
+    "pages": [
+      "–19,690 –5,199 –14,149 –6,361 –13,452 –43"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 19,403 14,421 4,664"
+    ],
+    "pages": [
+      "–20,050 –1,342 –9,858 –6,146 –1,416 325"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 28,484 12,735 7,604",
+      "D) 8,960 18,891 7,094",
+      "D) 9,045 17,910 6,438"
+    ],
+    "pages": [
+      "–20,740 –2,555 –9,152 –5,915 –10,383 –77",
+      "–21,196 –2,260 –3,312 –6,269 –1,816 –92",
+      "–21,659 –2,069 –3,161 –6,442 –61 –1"
+    ],
+    "date": [
+      "2001",
+      "2002"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 11,936 17,160 5,656",
+      "D) 15,768 18,796 4,699"
+    ],
+    "pages": [
+      "–21,176 –1,556 –5,887 –5,925 –15 –193",
+      "–22,843 –1,216 –9,207 –6,123 –7 133"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 22,860 12,703 8,107"
+    ],
+    "pages": [
+      "–20,699 –2,433 –7,537 –5,887 –7,281 168"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 25,058 12,970 8,931",
+      "C) 13,810 18,839 3,617",
+      "C) 10,247 19,543 5,495"
+    ],
+    "pages": [
+      "–21,158 –3,225 –8,453 –5,757 –8,166 –201",
+      "–21,162 –882 –5,735 –5,817 –2,704 35 2008",
+      "–22,011 –1,667 –5,081 –5,952 –718 144"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 4,810 22,579 4,965"
+    ],
+    "pages": [
+      "–21,901 –1,235 –1,738 –5,705 –1,638 –136"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 10,515 17,377 8,526"
+    ],
+    "pages": [
+      "–20,552 –2,867 –4,832 –5,201 –3,025 59"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 27,274 15,579 8,924",
+      "D) 3,045 22,932 3,037",
+      "519 23,307 5,132",
+      "16,714 7,196"
+    ],
+    "pages": [
+      "–20,183 –3,258 –12,038 –5,746 –10,706 154 2012",
+      "–19,996 –864 –1,139 –5,799 –1,241",
+      "–20,606 –1,601 –156 –6,043 –356 –196",
+      "528 21,805 2,507 –18,737 –657 –174 –5,246 –328",
+      "–20,926 –2,603 –6,183 –6,227 –4,056"
+    ],
+    "note": [
+      "25 2013 (C",
+      "302 Average (1989-16,072",
+      "13 2014"
+    ],
+    "date": [
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Table A2.F.f-15. New Stone Water District GSA Surface Water System Historical Water Budget, 1989-2014 (Acre-Feet). Boundary Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Infil. of Boundary Change in Surface Extraction Precipitation transpiration1 Precipitation Surface Applied Surface SWS Water Year (Type) Inflows Water Water Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 0 12,591 4,169"
+    ],
+    "pages": [
+      "–11,181 –1,371 –155 –3,868 0 –186"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 0 12,980 3,884"
+    ],
+    "pages": [
+      "–11,814 –1,179 –195 –3,929 0 252"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 0 13,455 4,058"
+    ],
+    "pages": [
+      "–11,337 –1,611 –262 –4,159 0 –145"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 0 14,432 3,317"
+    ],
+    "pages": [
+      "–12,818 –975 –121 –4,044 0 208"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 578,875 12,984 5,624",
+      "C) 0 13,598 3,186"
+    ],
+    "pages": [
+      "–12,448 –2,097 –3,507 –4,100 –575,310 –22",
+      "–12,093 –906 –65 –3,874 1 153"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 579,464 11,617 6,839"
+    ],
+    "pages": [
+      "–11,456 –2,459 –3,427 –4,060 –576,248 –270"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 597,233 12,713 4,178"
+    ],
+    "pages": [
+      "–12,215 –1,362 –4,313 –3,465 –592,679 –90"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 549,449 13,718 4,776"
+    ],
+    "pages": [
+      "–11,979 –2,103 –3,916 –4,525 –545,538 117"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 526,604 10,363 5,740"
+    ],
+    "pages": [
+      "–10,331 –2,314 –4,325 –3,611 –522,140 14"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 113,200 11,341 2,328"
+    ],
+    "pages": [
+      "–10,013 –744 –2,106 –3,161 –111,033 188"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 5,146 10,801 3,796",
+      "D) 0 10,202 3,540",
+      "0 11,043 3,214"
+    ],
+    "pages": [
+      "–10,063 –1,146 –589 –3,016 –4,721 –208",
+      "–9,711 –1,118 –89 –2,867",
+      "–9,906 –1,037 –92 –3,119 0 –104"
+    ],
+    "date": [
+      "2001"
+    ],
+    "note": [
+      "0 42 2002 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 10,315 2,822",
+      "D) 0 11,572 2,344"
+    ],
+    "pages": [
+      "–9,639 –791 –27 –2,639 0 –41",
+      "–10,387 –668 –13 –2,909 0 61"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 246,647 9,388 4,044"
+    ],
+    "pages": [
+      "–9,455 –1,220 –921 –2,862 –245,701 80"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 864,794 9,780 4,461",
+      "C) 0 10,845 1,804",
+      "0 10,588 2,740"
+    ],
+    "pages": [
+      "–9,828 –1,558 –14,204 –2,737 –850,602 –106",
+      "–9,425 –527 –10 –2,707",
+      "–9,780 –817 –114 –2,763 0 146"
+    ],
+    "date": [
+      "2007"
+    ],
+    "note": [
+      "0 20 2008 (C"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 10,502 2,476"
+    ],
+    "pages": [
+      "–9,606 –660 –24 –2,619 0 –69"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 0 8,781 4,256"
+    ],
+    "pages": [
+      "–9,068 –1,404 –56 –2,432 0 –78"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 785,848 9,187 4,452",
+      "D) 0 10,711 1,516",
+      "C) 0 10,361 2,562"
+    ],
+    "pages": [
+      "–9,151 –1,581 –6,704 –2,780 –779,184 –88",
+      "–9,071 –487 –35 –2,798 0 163 2013",
+      "–9,280 –800 –38 –2,864 0 59"
+    ],
+    "date": [
+      "2012"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Table A2.F.f-16. New Stone Water District GSA Surface Water System Current Water Budget, 1989-2014 (Acre-Feet). Boundary Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Infil. of Boundary Change in Surface Extraction Precipitation transpiration1 Precipitation Surface Applied Surface SWS Water Year (Type) Inflows Water Water Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 0 9,671 4,168"
+    ],
+    "pages": [
+      "–9,167 –1,488 –140 –3,228 0 184"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 0 10,144 3,886"
+    ],
+    "pages": [
+      "–9,330 –1,268 –199 –3,039 0 –194"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 0 10,076 4,060"
+    ],
+    "pages": [
+      "–8,806 –1,792 –293 –3,210 0 –34"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 0 10,624 3,318"
+    ],
+    "pages": [
+      "–9,998 –1,028 –141 –2,926 0 151"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "W) 578,875 9,603 5,621",
+      "C) 0 10,311 3,185"
+    ],
+    "pages": [
+      "–9,945 –2,272 –3,512 –3,075 –575,334 38 1994",
+      "–9,403 –960 –64 –2,859 0 –210"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 579,464 8,180 6,838"
+    ],
+    "pages": [
+      "–9,149 –2,770 –3,426 –2,916 –576,294 73"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 597,233 9,382 4,179"
+    ],
+    "pages": [
+      "–9,785 –1,476 –4,320 –2,527 –592,690 4"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 549,449 11,161 4,775"
+    ],
+    "pages": [
+      "–9,924 –2,198 –3,924 –3,692 –545,577 –70"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 526,604 8,373 5,740"
+    ],
+    "pages": [
+      "–9,033 –2,440 –4,338 –2,857 –522,159 110"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 113,200 9,841 2,328"
+    ],
+    "pages": [
+      "–8,918 –742 –2,106 –2,685 –111,034 117"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 5,146 9,625 3,795",
+      "D) 0 9,837 3,541",
+      "0 10,723 3,213"
+    ],
+    "pages": [
+      "–9,325 –1,176 –609 –2,658 –4,728 –70",
+      "–9,401 –1,119 –110 –2,755",
+      "–9,662 –1,038 –107 –3,035 0 –94"
+    ],
+    "date": [
+      "2001"
+    ],
+    "note": [
+      "0 6 2002 (D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 9,991 2,823",
+      "2004"
+    ],
+    "pages": [
+      "–9,434 –775 –32 –2,530",
+      "–10,214 –654 –15 –2,814 0 60"
+    ],
+    "issue": [
+      "D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 246,647 9,164 4,046"
+    ],
+    "pages": [
+      "–9,344 –1,198 –925 –2,759 –245,702 70"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 864,794 9,648 4,457",
+      "C) 0 10,663 1,805",
+      "C) 0 10,405 2,743"
+    ],
+    "pages": [
+      "–9,751 –1,567 –14,208 –2,671 –850,603 –99",
+      "–9,358 –499 –8 –2,588 0 –16",
+      "–9,781 –788 –109 –2,643 0 173"
+    ],
+    "date": [
+      "2007",
+      "2008"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "note": [
+      "BN"
+    ],
+    "volume": [
+      "0 10,492 2,478"
+    ],
+    "pages": [
+      "–9,689 –640 –19 –2,533 0 –89"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 0 8,720 4,255"
+    ],
+    "pages": [
+      "–9,152 –1,389 –42 –2,344 0 –48"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 785,848 9,190 4,454",
+      "D) 0 10,538 1,516",
+      "C) 0 10,173 2,562"
+    ],
+    "pages": [
+      "–9,264 –1,554 –6,693 –2,691 –779,174 –116",
+      "–9,097 –460 –30 –2,640 0 173 2013",
+      "–9,264 –766 –32 –2,747 0 74"
+    ],
+    "date": [
+      "2012"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Table A2.F.g-14. Root Creek Water District GSA Surface Water System Historical Water Budget, 1989-2014 (Acre-Feet"
+    ],
+    "container-title": [
+      "Boundary Groundwater Evapo- Infil. of Infil. of Infil. of Boundary Change in Surface Extraction Precipitation transpiration1 Precipitation Surface Applied Surface SWS Water Year (Type) Inflows Water Water Outflows Storage 1989"
+    ],
+    "volume": [
+      "C) 1,860 20,920 9,500",
+      "C) 1,860 22,470 8,860",
+      "C) 1,860 24,010 9,260",
+      "C) 1,860 25,890 7,560"
+    ],
+    "pages": [
+      "–24,290 –2,430 –330 –5,340 0 110",
+      "–25,830 –1,950 –380 –5,100 0 80 1991",
+      "–25,440 –3,150 –530 –5,720 0 –290",
+      "–28,850 –1,510 –230 –5,160 0 430"
+    ],
+    "date": [
+      "1990",
+      "1992"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 1,860 23,400 12,810",
+      "C) 1,860 24,250 7,260"
+    ],
+    "pages": [
+      "–27,320 –4,150 –570 –5,860 0 –180",
+      "–27,000 –1,310 –130 –4,860 0 –60"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 1,860 18,560 15,590"
+    ],
+    "pages": [
+      "–25,050 –5,050 –970 –5,000 0 60"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 1,860 23,670 9,520"
+    ],
+    "pages": [
+      "–27,590 –2,370 –230 –4,640 0 –220"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 1,860 26,930 10,880"
+    ],
+    "pages": [
+      "–28,200 –4,330 –630 –6,840 0 340"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 1,860 19,160 13,080"
+    ],
+    "pages": [
+      "–24,220 –4,290 –410 –5,210 0 40"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 1,860 19,050 5,300"
+    ],
+    "pages": [
+      "–21,610 –960 –40 –3,590 0 –10"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 1,860 22,800 8,640",
+      "D) 1,860 23,760 8,060",
+      "D) 1,860 25,530 7,310"
+    ],
+    "pages": [
+      "–26,770 –1,820 –340 –4,420",
+      "–27,480 –1,560 –180 –4,560 0 90 2002",
+      "–27,780 –1,570 –170 –5,000 0 –180"
+    ],
+    "date": [
+      "2001"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 1,860 23,830 6,420",
+      "2004"
+    ],
+    "pages": [
+      "–26,780 –1,070 –60 –4,210",
+      "–28,670 –830 –30 –4,200 0 190"
+    ],
+    "issue": [
+      "D"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 1,860 21,470 9,200"
+    ],
+    "pages": [
+      "–25,840 –1,760 –160 –4,390 0 –380"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 1,860 20,360 10,130",
+      "C) 1,860 23,650 4,100",
+      "C) 1,860 22,420 6,230"
+    ],
+    "pages": [
+      "–25,400 –2,430 –460 –4,110",
+      "–25,380 –640 –30 –3,830 0 260 2008",
+      "–25,450 –1,150 –260 –3,850 0 200"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 1,860 20,310 5,630"
+    ],
+    "pages": [
+      "–23,580 –800 –110 –3,190 0 –120"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 2,080 16,230 9,650"
+    ],
+    "pages": [
+      "–22,320 –2,070 –250 –3,150 0 –160"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 2,040 20,450 10,100",
+      "D) 1,920 23,580 3,440",
+      "C) 2,100 21,290 5,810",
+      "C) 2,120 23,200 2,840"
+    ],
+    "pages": [
+      "–25,430 –2,380 –380 –4,270 0 –130",
+      "–23,690 –710 –100 –4,600 0 160 2013",
+      "–23,450 –1,310 –160 –4,470 0 180",
+      "–24,180 –410 –20 –3,420 0 –120"
+    ],
+    "date": [
+      "2012",
+      "2014"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "A2.F.g-15",
+        "given": "Table"
+      }
+    ],
+    "title": [
+      "Root Creek Water District GSA Surface Water System Current Water Budget, 1989-2014 (Acre-Feet). Boundary Groundwater Evapo- Infil"
+    ],
+    "container-title": [
+      "Infil. of Infil. of Boundary Change in Surface Extraction Precipitation transpiration1 Precipitation Surface Applied Surface SWS Water Year (Type) Inflows Water Water Outflows Storage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "C) 1,860 23,090 9,520"
+    ],
+    "pages": [
+      "–25,630 –2,500 –340 –6,060 0 70"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "C) 1,860 23,740 8,870"
+    ],
+    "pages": [
+      "–26,450 –2,040 –450 –5,600 0 70"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "C) 1,860 24,470 9,270"
+    ],
+    "pages": [
+      "–25,390 –3,220 –670 –6,190 0 –130"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "C) 1,860 26,170 7,580"
+    ],
+    "pages": [
+      "–28,440 –1,600 –330 –5,480 0 260"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993",
+      "1994"
+    ],
+    "volume": [
+      "W) 1,860 23,710 12,840",
+      "C) 1,860 24,250 7,270"
+    ],
+    "pages": [
+      "–26,950 –4,220 –720 –6,170 0 –340",
+      "–26,670 –1,410 –180 –5,290 0 160"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "W) 1,860 18,700 15,610"
+    ],
+    "pages": [
+      "–24,560 –5,100 –1,180 –5,310 0 –20"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "W) 1,860 23,370 9,540"
+    ],
+    "pages": [
+      "–26,790 –2,480 –350 –4,920 0 –230"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "W) 1,860 26,540 10,900"
+    ],
+    "pages": [
+      "–27,360 –4,360 –820 –7,060 0 300"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "W) 1,860 19,680 13,110"
+    ],
+    "pages": [
+      "–24,070 –4,410 –530 –5,700 0 70"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "AN) 1,860 23,700 5,320"
+    ],
+    "pages": [
+      "–25,090 –1,040 –20 –4,660 0 –70"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2000"
+    ],
+    "volume": [
+      "AN) 1,860 22,700 8,670",
+      "D) 1,860 23,540 8,090",
+      "D) 1,860 25,120 7,340"
+    ],
+    "pages": [
+      "–26,030 –1,940 –490 –4,860 0 100",
+      "–26,670 –1,670 –290 –4,830 0 –10",
+      "–27,060 –1,650 –260 –5,230 0 –110"
+    ],
+    "date": [
+      "2001",
+      "2002"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2003"
+    ],
+    "volume": [
+      "BN) 1,860 23,950 6,450",
+      "D) 1,860 26,710 5,360"
+    ],
+    "pages": [
+      "–26,370 –1,150 –110 –4,550 0 –80",
+      "–28,670 –900 –60 –4,620 0 330"
+    ],
+    "date": [
+      "2004"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2005"
+    ],
+    "volume": [
+      "W) 1,860 21,940 9,240"
+    ],
+    "pages": [
+      "–25,880 –1,870 –220 –4,760 0 –310"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006"
+    ],
+    "volume": [
+      "W) 1,860 21,960 10,180",
+      "C) 1,860 25,530 4,120",
+      "C) 1,860 25,370 6,260"
+    ],
+    "pages": [
+      "–26,460 –2,470 –480 –4,640",
+      "–26,640 –680 –30 –4,370 0 220 2008",
+      "–27,500 –1,210 –250 –4,510 0 –20"
+    ],
+    "date": [
+      "2007"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2009"
+    ],
+    "volume": [
+      "BN) 1,860 25,030 5,660"
+    ],
+    "pages": [
+      "–27,430 –870 –60 –4,240 0 50"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2010"
+    ],
+    "volume": [
+      "AN) 2,080 20,090 9,720"
+    ],
+    "pages": [
+      "–25,410 –2,140 –150 –4,040 0 –140"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2011"
+    ],
+    "volume": [
+      "W) 2,040 20,500 10,170",
+      "D) 1,920 24,790 3,460",
+      "2013",
+      "C) 2,120 23,660 2,860"
+    ],
+    "pages": [
+      "–25,340 –2,430 –500 –4,490 0 50",
+      "–25,380 –620 –80 –4,150",
+      "–26,100 –1,210 –100 –4,540 0 100",
+      "–24,240 –470 –20 –3,930 0 20"
+    ],
+    "date": [
+      "2012",
+      "2014"
+    ],
+    "issue": [
+      "C"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Assessing integrity of weather data for use in reference evapotranspiration estimation"
+    ],
+    "volume": [
+      "122"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. And Drain. Engrg., ASCE"
+    ],
+    "issue": [
+      "2"
+    ],
+    "pages": [
+      "97–106"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "A.",
+        "given": "Walter I."
+      },
+      {
+        "family": "Elliot",
+        "given": "R."
+      },
+      {
+        "family": "Howell",
+        "given": "T."
+      },
+      {
+        "family": "Itenfisu",
+        "given": "D."
+      },
+      {
+        "family": "Jensen",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1998",
+      "2005"
+    ],
+    "title": [
+      "Crop Evapotranspiration: Guidelines for computing crop water requirements",
+      "The ASCE Standardized Reference Evapotranspiration Equation"
+    ],
+    "container-title": [
+      "Irrig. And Drain. Paper 56, Food and Agriculture Organization of the United Nations"
+    ],
+    "volume": [
+      "Rome"
+    ],
+    "pages": [
+      "300"
+    ],
+    "publisher": [
+      "Publication, American Society of Civil Engineers"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": "Madera II Weather Station data"
+      }
+    ],
+    "title": [
+      "Air Temperature: 2013: bad minimum temperature for 4-2, 10-7, 11-12, 2014: bad minimum temperature on 3-10, 4-7, 11-10, 11-12, 2015: bad minimum temperature on 3-9, 12-8, 2016"
+    ],
+    "note": [
+      "bad minimum temperature on 2-26, 5-27, 10-18, Solar Radiation: 2013: data values need replacement on 4-2, 7-2, 7-5, 8-12, 9-4, 9-11, 9-17, 2014: 1% increase until 6-29, 4% increase the rest of the year, data values need replacement on 3-10, 4-"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1991:"
+    ],
+    "title": [
+      "move data up 4% from 9-21 through end of the year 1992: move data up 1% all year 1993: Good 1994: Good 1995: Good 1996: Good 1997: Good 1998: Good 1999"
+    ],
+    "note": [
+      "Good Windspeed*: 1989-1999: Good Madera Weather Station Data: Air temperature: 1998: Bad minimum temperature on 10-1, 1999: bad minimum temperature on 4-23, 2000: bad minimum temperature on 3-7, 10-2, 2001: bad minimum temperature on 10-11,"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2002:"
+    ],
+    "title": [
+      "bad minimum temperature on 4-15, 4-22, 2-27, 2003: bad minimum temperature on 3-2, 4-8, 5-12, 10-29, 2004: bad minimum temperature on 4-21, 12-5, 12-9, 2005: bad minimum temperature on 1-6, 1-12, 1-31, 4-20, 2006: bad minimum temperature on 2-6, 2007: bad average temperature on 1-1, 2008: bad minimum temperature on 4-14, 2009: bad minimum temperature on 1-16, 3-13, 2010: bad minimum temperature on 1-27, 2011: bad minimum temperatures on 1-22 through 2-1"
+    ],
+    "volume": [
+      "2-16, 3-17"
+    ],
+    "pages": [
+      "4–14,"
+    ],
+    "note": [
+      "bad average temperature on 11-29, 2012: bad minimum temperature on 5-9, 2-6, 2-28, 1-23, 2013: good through 4-2 (end of record) Solar Radiation: 1998: Data points need replacement on 8-26, 12-23, 12-31, 1999: Data points need replacement on 4-2, 4-23, 6-11, 7-2, 9-7, move all data up 3.5%, 2000: move data down 1% until 6-6, and then move data up 1% through the rest of the year"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2001:"
+    ],
+    "title": [
+      "data points need replacement on 7-20, 8-13, 8-15, 9-10, move data up 3% until 5-10, then move data up 4% until 7-11, then unadjusted data through the end of the year"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2002:"
+    ],
+    "title": [
+      "move all data down 1.5%, data points need replacement on 8-21, 8-24, 8-25, 2003: From 7-15 on, move data up 3.5%, data points need replacement on 3-10"
+    ],
+    "volume": [
+      "4-8, 5-12, 7-10"
+    ],
+    "pages": [
+      "8–14,"
+    ],
+    "date": [
+      "2004"
+    ],
+    "note": [
+      "data points need replacement on 6-18, 7-19, 8-18, move all data up 2.5%, 2005: data points need replacement on 2-22, 3-15, move all data up 4%"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2006:"
+    ],
+    "title": [
+      "move data up 10% until 6-19, and then move data up 14% through the end of the year"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2007:"
+    ],
+    "title": [
+      "data points need replacement on 8-16, move data down 3% until 5-2, and then move data down 8% until 8-14, then move data up 3% for the rest of the year, 2008: move data up 13% until 4-13, then move data down 12% through the end of the year"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Crop evapotranspiration: Guidelines for computing crop water requirements"
+    ],
+    "volume": [
+      "56"
+    ],
+    "location": [
+      "Rome, Italy"
+    ],
+    "pages": [
+      "290"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "FAO Irrigation and Drainage Paper N°"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Tasumi",
+        "given": "M."
+      },
+      {
+        "family": "Trezza",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Satellite-based energy balance for mapping evapotranspiration with internalized calibration_METRIC—Model"
+    ],
+    "volume": [
+      "133"
+    ],
+    "pages": [
+      "380–394"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. Drain. Eng"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "Richard G."
+      },
+      {
+        "family": "Pereira",
+        "given": "Luis S."
+      },
+      {
+        "family": "Howell",
+        "given": "Terry A."
+      },
+      {
+        "family": "Jensen",
+        "given": "Marvin E."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Evapotranspiration information reporting: I. Factors governing measurement accuracy"
+    ],
+    "container-title": [
+      "Publications from USDA-ARS / UNL Faculty. Paper 829"
+    ],
+    "url": [
+      "http://digitalcommons.unl.edu/usdaarsfacpub/829."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "A.S.A.B.E."
+      }
+    ],
+    "date": [
+      "2007",
+      "2005"
+    ],
+    "title": [
+      "Design and Operation of Farm Irrigation Systems",
+      "The ASCE standardized reference evapotranspiration equation"
+    ],
+    "location": [
+      "Hoffman, G.J., Evans"
+    ],
+    "editor": [
+      {
+        "family": "Jensen",
+        "given": "R.G."
+      },
+      {
+        "family": "M.E.",
+        "given": "Martin"
+      },
+      {
+        "given": "D.L."
+      },
+      {
+        "family": "Elliott",
+        "given": "R.L."
+      }
+    ],
+    "container-title": [
+      "Am. Soc. Ag and Bio",
+      "ASCE-EWRI Standardization of Reference Evapotranspiration Task Committee Rep., ASCE Bookstore"
+    ],
+    "publisher": [
+      "Engrs"
+    ],
+    "pages": [
+      "863 –"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bastiaanssen",
+        "given": "W.G.M."
+      },
+      {
+        "family": "Noordman",
+        "given": "E.J.M."
+      },
+      {
+        "family": "Pelgrum",
+        "given": "H."
+      },
+      {
+        "family": "Davids",
+        "given": "G."
+      },
+      {
+        "family": "Thoreson",
+        "given": "B.P."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "SEBAL model with remotely sensed data to improve water-resources management under actual field conditions"
+    ],
+    "volume": [
+      "131"
+    ],
+    "pages": [
+      "85–93"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. Drain. Eng"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "IWFM Demand Calculator (IDC v4.0): Theoretical Documentation and User’s Manual"
+    ],
+    "container-title": [
+      "State of California, The Resources Agency, Department of Water Resources, Bay-Delta Office, Modeling Support Branch, Integrated Hydrological Models Development Unit"
+    ],
+    "pages": [
+      "83"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "IWFM Demand Calculator (IDC v36): Theoretical Documentation and User’s Manual"
+    ],
+    "container-title": [
+      "State of California, The Resources Agency, Department of Water Resources, Bay-Delta Office, Modeling Support Branch, Integrated Hydrological Models Development Unit"
+    ],
+    "pages": [
+      "270"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Saxton",
+        "given": "K.E."
+      },
+      {
+        "family": "Rawls",
+        "given": "W.J."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Soil Water Characteristic Estimates by Texture and Organic Matter for Hydrologic Solutions"
+    ],
+    "volume": [
+      "70"
+    ],
+    "pages": [
+      "1569–1578"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Soil Science Society of America Journal"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Natural Resources Conservation Service, United States Department of Agriculture"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Web Soil Survey Geographic (SSURGO) Database for Madera County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "Available online",
+      "Accessed November 29, 2017."
+    ],
+    "url": [
+      "http://websoilsurvey.nrcs.usda.gov/."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Thoreson",
+        "given": "B."
+      },
+      {
+        "family": "Clark",
+        "given": "B."
+      },
+      {
+        "family": "Soppe",
+        "given": "R."
+      },
+      {
+        "family": "Keller",
+        "given": "A."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Eckhardt",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Comparison of Evapotranspiration Estimates from Remote Sensing (SEBAL), Water Balance, and Crop Coefficient Approaches"
+    ],
+    "container-title": [
+      "Proceedings of the 2009 World Environmental & Water Resources Congress"
+    ],
+    "publisher": [
+      "American Society of Civil Engineers Environmental and Water Resources Institute"
+    ],
+    "location": [
+      "Kansas City, MO"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "USDA",
+        "given": "National Resources Conservation Service"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "National Engineering Handbook"
+    ],
+    "location": [
+      "Washington (DC"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture"
+    ],
+    "genre": [
+      "Part 630,"
+    ],
+    "note": [
+      "Hydrology, Chapters 9 and 10."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "USDA",
+        "given": "National Resources Conservation Service"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "National Engineering Handbook"
+    ],
+    "location": [
+      "Washington (DC"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture"
+    ],
+    "genre": [
+      "Part 630,"
+    ],
+    "note": [
+      "Hydrology, Chapter 7."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5a."
+    ],
+    "title": [
+      "Public Hearing on the Resolution of Necessity and for Eminent Domain Proceedings for the Acquisition of the Allende Basin to Use as a Regulating / Recharge Basin"
+    ],
+    "genre": [
+      "APN 047-310-039,"
+    ],
+    "note": [
+      "Resolution No. 2018-05 [Timed Item 3:00 p.m."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5b."
+    ],
+    "title": [
+      "Discussion / possible action on Engagement Letter with Wanger Jones Helsley for Allende Basin acquisition"
+    ],
+    "note": [
+      "Resolution No. 2018-06"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5c."
+    ],
+    "title": [
+      "Discussion / possible action on Rules and Regulations for Distribution of Water and Maintenance of Canals and Pipelines"
+    ],
+    "note": [
+      "Resolution No. 2018-07 5d. Discussion / possible action on acceptance of Madera Irrigation District Audited Financial Statements 2017, Resolution No. 2018-08 [Timed Item 3:30 p.m."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5e."
+    ],
+    "title": [
+      "Discussion / possible action on certifying United States Bureau of Reclamation Contractor Obligations related to the deannexation of approximately 320 acres, APN 049-024-010 from Madera Irrigation District and acknowledgement of Amendment to Annexation Agreement & Covenant Running with the Land"
+    ],
+    "note": [
+      "Resolution No. 2018-09 5f. Discussion / possible action on First Amended and Restated Memorandum of Understanding Regarding Coordination, Cooperation, and Cost Sharing on Preconstruction Activities related to the Temperance Flat Reservoir Project, Resolution No. 2018-10"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "This workshop will prepare you for future public workshops within the Madera Subbasin For More Information: Maria Herrera (559) 802-1676, MariaH@SelfHelpEnterprises.org or Stephanie Anagnoson (559) 675-7703, Stephanie.Anagnoson@maderacounty.com or Amanda Monaco"
+    ],
+    "volume": [
+      "559"
+    ],
+    "pages": [
+      "369–2788"
+    ],
+    "note": [
+      "ext. 1003, amonaco@leadershipcounsel.org or David Merchen, (559) 661-5430, dmerchen@cityofmadera.com Translation services will be available"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Para más información: Este taller lo preparará para futuros talleres públicos dentro de la Subcuenca de Madera Maria Herrera (559) 802-1676"
+    ],
+    "volume": [
+      "559"
+    ],
+    "pages": [
+      "675–7703,"
+    ],
+    "note": [
+      "Stephanie.Anagnoson@maderacounty.com o Amanda Monaco (559) 369-2788 ext. 1003, amonaco@leadershipcounsel.org o David Merchen, (559) 661-5435, dmerchen@cityofmadera.com Servicios de Traducción estarán Disponibles"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "MariaH@SelfHelpEnterprises.org o Stephanie Anagnoson"
+    ]
+  },
+  {
+    "citation-number": [
+      "1d."
+    ],
+    "author": [
+      {
+        "family": "COUNSEL",
+        "given": "C.O.N.F.E.R.E.N.C.E.W.I.T.H.L.E.G.A.L."
+      }
+    ],
+    "title": [
+      "EXISTING LITIGATION –Pursuant to Paragraph (1) of subdivision (d) of Section 54956.9; NRDC v"
+    ],
+    "note": [
+      "Murillo, et.al. U.S. District Court, Eastern District of California (Sacramento Division), Case No. 88-cv-1658-LKK-GGH."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1g."
+    ],
+    "author": [
+      {
+        "literal": "CONFERENCE WITH LEGAL COUNSEL – EXISTING LITIGATION –"
+      }
+    ],
+    "title": [
+      "Pursuant to Paragraph (1) of subdivision (d) of Government Code Section 54956.9; Madera Irrigation District, et"
+    ],
+    "note": [
+      "al. v. Cindy Reyna Castro, Case No. MCV078961"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "MINUTES",
+        "given": "A.P.P.R.O.V.A.L.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action of approval of minutes for the regular meeting of November 19, 2018 as emailed"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2018 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "MAINTENANCE",
+        "given": "S.Y.S.T.E.M."
+      }
+    ],
+    "title": [
+      "Report on system maintenance and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "given": "G.S.A./G.S.P."
+      }
+    ],
+    "title": [
+      "Report and update of activities and possible action on GSA/GSP"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "author": [
+      {
+        "family": "AUTHORITY",
+        "given": "F.R.I.A.N.T.N.O.R.T.H."
+      }
+    ],
+    "title": [
+      "Report on current activities and possible action regarding Friant North Authority"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "9."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "family": "REPORT",
+        "given": "F.I.N.A.N.C.I.A.L."
+      }
+    ],
+    "title": [
+      "Discussion and possible action on payment of bills, review of monthly and year-to-date financial statements for"
+    ],
+    "date": [
+      "2018-12"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "container-title": [
+      "CORRESPONDENCE & MANAGER’S REPORT"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "1d."
+    ],
+    "author": [
+      {
+        "family": "COUNSEL",
+        "given": "C.O.N.F.E.R.E.N.C.E.W.I.T.H.L.E.G.A.L."
+      }
+    ],
+    "title": [
+      "EXISTING LITIGATION –Pursuant to Paragraph (1) of subdivision (d) of Section 54956.9; NRDC v"
+    ],
+    "note": [
+      "Murillo, et.al. U.S. District Court, Eastern District of California (Sacramento Division), Case No. 88-cv-1658-LKK-GGH."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1g."
+    ],
+    "author": [
+      {
+        "literal": "CONFERENCE WITH LEGAL COUNSEL – EXISTING LITIGATION –"
+      }
+    ],
+    "title": [
+      "Pursuant to Paragraph (1) of subdivision (d) of Government Code Section 54956.9; Madera Irrigation District, et"
+    ],
+    "note": [
+      "al. v. Cindy Reyna Castro, Case No. MCV078961"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "MINUTES",
+        "given": "A.P.P.R.O.V.A.L.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action of approval of minutes for the regular meeting of December 17, 2018 as emailed"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "author": [
+      {
+        "family": "REORGANIZATION",
+        "given": "B.O.A.R.D."
+      }
+    ],
+    "title": [
+      "Discussion and possible action on District Board Reorganization and Committee and Staff assignments for"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2018 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "family": "MAINTENANCE",
+        "given": "S.Y.S.T.E.M."
+      }
+    ],
+    "title": [
+      "Report on system maintenance and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6."
+    ],
+    "author": [
+      {
+        "given": "G.S.A./G.S.P."
+      }
+    ],
+    "title": [
+      "Report and update of activities and possible action on GSA/GSP"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "given": "W.E.B.S.I.T.E."
+      }
+    ],
+    "title": [
+      "Report and possible action on contracting for a website"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "author": [
+      {
+        "family": "DATE",
+        "given": "F.E.B.R.U.A.R.Y.M.E.E.T.I.N.G."
+      }
+    ],
+    "title": [
+      "Discussion and possible action on change of February Board Meeting date which is currently scheduled on Presidents’ Day"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "12."
+    ],
+    "title": [
+      "FINANCIAL REPORT: a) Discussion and possible action on payment of bills, review of monthly and year-to-date financial statements for"
+    ],
+    "date": [
+      "2019-01"
+    ],
+    "note": [
+      "b) 2018 Year End Financial Summary"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "MINUTES",
+        "given": "A.P.P.R.O.V.A.L.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action of approval of minutes for the regular meeting of January 21, 2019 as emailed"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "3."
+    ],
+    "author": [
+      {
+        "family": "REORGANIZATION",
+        "given": "B.O.A.R.D."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "District Board Reorganization and Committee and Staff Assignments"
+    ],
+    "note": [
+      "as approved at January 21, 2019 meeting."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2019 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "given": "W.E.B.S.I.T.E."
+      }
+    ],
+    "title": [
+      "Report and possible action on District website"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "title": [
+      "700” FORMS: Discussion and possible action on e-file for “700” Conflict of Interest Forms"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "12."
+    ],
+    "title": [
+      "FINANCIAL REPORT: a) Discussion and possible action on payment of bills, review of monthly and year-to-date financial statements for February"
+    ],
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "13."
+    ],
+    "container-title": [
+      "CORRESPONDENCE & MANAGER’S REPORT"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "6a."
+    ],
+    "title": [
+      "Discussion / possible action on authorization for General Manager to manage water supplies"
+    ],
+    "note": [
+      "Resolution No. 2019-06 6b. Discussion / possible action on Annual Table Mountain Water Transfer Agreement, Resolution No. 2019-07"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6c."
+    ],
+    "title": [
+      "Discussion / possible action on Assignment and Assumption of Farm Road Access Agreement"
+    ],
+    "note": [
+      "Resolution No. 2019-08 6d. Discussion / possible action on Second Amendment to Easement for Permanent Access, Resolution No. 2019-09"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6e."
+    ],
+    "title": [
+      "Discussion / possible action on Madera Irrigation District and Madera Water District Detachment and Water Supply Agreement Memorandum of Understanding"
+    ],
+    "note": [
+      "Resolution No. 2019-10 6f. Discussion / possible action on Amendment to Water Transfer between Madera Irrigation District and Pacific Resources, Resolution No. 2019-11"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "MINUTES",
+        "given": "A.P.P.R.O.V.A.L.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action of approval of minutes for the regular meeting of February 18, 2019 as emailed"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2019 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "given": "W.E.B.S.I.T.E."
+      }
+    ],
+    "title": [
+      "Report and possible action on District website"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "title": [
+      "700” FORMS: Discussion and possible action on e-file for “700” Conflict of Interest Forms"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "12."
+    ],
+    "author": [
+      {
+        "family": "DIRECTORS",
+        "given": "E.L.E.C.T.I.O.N.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action on adoption of Resolution No. 2019-01 to conduct an election to fill vacancies on the Board of Directors"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "13."
+    ],
+    "title": [
+      "FINANCIAL REPORT: a) Discussion and possible action on payment of bills, review of monthly and year-to-date financial statements for"
+    ],
+    "date": [
+      "2019-03"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "14."
+    ],
+    "container-title": [
+      "CORRESPONDENCE & MANAGER’S REPORT"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "MINUTES",
+        "given": "A.P.P.R.O.V.A.L.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action of approval of minutes for the regular meeting of March 18, 2019 as emailed"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2019 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "family": "MAINTENANCE",
+        "given": "S.Y.S.T.E.M."
+      }
+    ],
+    "title": [
+      "Report on system maintenance and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6."
+    ],
+    "author": [
+      {
+        "given": "G.S.A./G.S.P."
+      }
+    ],
+    "title": [
+      "Report and update of activities and possible action on GSA/GSP"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "given": "W.E.B.S.I.T.E."
+      }
+    ],
+    "title": [
+      "Report and possible action on District website"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "title": [
+      "700” FORMS: Update on filing of “700” Conflict of Interest Forms"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "12."
+    ],
+    "author": [
+      {
+        "family": "LOCATION",
+        "given": "M.E.E.T.I.N.G."
+      }
+    ],
+    "title": [
+      "Discussion and possible action on a change in the Board Meeting location to one with a larger seating capacity"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "13."
+    ],
+    "title": [
+      "FINANCIAL REPORT: a) Discussion and possible action on payment of bills, review of monthly and year-to-date financial statements for"
+    ],
+    "date": [
+      "2019-04"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "14."
+    ],
+    "container-title": [
+      "CORRESPONDENCE & MANAGER’S REPORT"
+    ],
+    "type": "chapter"
+  },
+  {
+    "citation-number": [
+      "2."
+    ],
+    "author": [
+      {
+        "family": "MINUTES",
+        "given": "A.P.P.R.O.V.A.L.O.F."
+      }
+    ],
+    "title": [
+      "Discussion and possible action of approval of minutes for the regular meeting of May 20, 2019 as emailed"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2019 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "family": "MAINTENANCE",
+        "given": "S.Y.S.T.E.M."
+      }
+    ],
+    "title": [
+      "Report on system maintenance and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "given": "W.E.B.S.I.T.E."
+      }
+    ],
+    "title": [
+      "Report and possible action on District website"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "4."
+    ],
+    "author": [
+      {
+        "family": "SUPPLY",
+        "given": "W.A.T.E.R."
+      }
+    ],
+    "title": [
+      "Report on water supply for 2019 with discussion and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5."
+    ],
+    "author": [
+      {
+        "family": "MAINTENANCE",
+        "given": "S.Y.S.T.E.M."
+      }
+    ],
+    "title": [
+      "Report on system maintenance and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "7."
+    ],
+    "author": [
+      {
+        "given": "W.E.B.S.I.T.E."
+      }
+    ],
+    "title": [
+      "Report and possible action on District website"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "8."
+    ],
+    "title": [
+      "MADERA REGIONAL WATER MANAGEMENT GROUP: Report on activities and possible action"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "10."
+    ],
+    "author": [
+      {
+        "given": "A.N.N.E.X.A.T.I.O.N."
+      }
+    ],
+    "title": [
+      "Update on status of proposed Annexation"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11."
+    ],
+    "author": [
+      {
+        "family": "REPORT",
+        "given": "F.I.N.A.N.C.I.A.L."
+      }
+    ],
+    "title": [
+      "Discussion and possible action on payment of bills, review of monthly and year-to-date financial statements for"
+    ],
+    "date": [
+      "2019-07"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5a."
+    ],
+    "title": [
+      "Presentation by Madera County on the Flood Control and Water Conservation Agency’s proposed Proposition 218"
+    ],
+    "note": [
+      "Timed Item 3:00 p.m."
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5b."
+    ],
+    "title": [
+      "Discussion / possible action on acceptance of the 401(k"
+    ],
+    "note": [
+      "Pension Plan Report on Audited Financial Statements Years Ended December 31, 2018 and 2017, Resolution No. 2019-30"
+    ],
+    "type": "report"
+  },
+  {
+    "citation-number": [
+      "5c."
+    ],
+    "title": [
+      "Discussion / possible action on 2019 Budget Modification for Additional Water Purchases"
+    ],
+    "note": [
+      "Resolution No. 2019-31"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5f."
+    ],
+    "title": [
+      "Discussion / possible action on approval of Madera Integrated Regional Water Management Plan Proposition 1 Update"
+    ],
+    "note": [
+      "Resolution No. 2019-33 5g. Discussion / possible action on conflict waiver with Wanger Jones Helsley, Resolution No. 2019-34"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5h."
+    ],
+    "title": [
+      "Discussion / possible action on authorization for General Manager to enter into Madera Water District Detachment Agreements"
+    ],
+    "note": [
+      "Resolution No. 2019-35 5i. Discussion / possible action on Water Supply Agreement between Madera Irrigation District and Madera Water District, Resolution No. 2019-36"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "5j."
+    ],
+    "title": [
+      "Discussion / possible action on Pipeline Easement Agreement between Madera Irrigation District and Madera Water District"
+    ],
+    "note": [
+      "Resolution No. 2019-37"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Howell",
+        "given": "T.A."
+      },
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Evapotranspiration Information Reporting: I. Factors Governing Measurement Accuracy"
+    ],
+    "volume": [
+      "98"
+    ],
+    "pages": [
+      "899–920"
+    ],
+    "producer": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Tasumi",
+        "given": "M."
+      },
+      {
+        "family": "Morse",
+        "given": "A."
+      },
+      {
+        "family": "Trezza",
+        "given": "R."
+      },
+      {
+        "family": "Wright",
+        "given": "J.L."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Kramber",
+        "given": "W."
+      },
+      {
+        "family": "Lorite",
+        "given": "I."
+      },
+      {
+        "given": "and"
+      }
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Agricultural Water Management"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Robison",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Satellite-based energy balance for mapping evapotranspiration with internalized calibration (METRIC)—Applications"
+    ],
+    "volume": [
+      "133"
+    ],
+    "pages": [
+      "395–406",
+      "863"
+    ],
+    "container-title": [
+      "American Society of Agricultural and Biological Engineers (ASABE), 2007, Design and Operation of Farm Irrigation Systems",
+      "ASABE",
+      "J. Irrig. and Drain. Engng"
+    ],
+    "location": [
+      "Hoffman, G.J., Evans, R.G Jensen, M.E., Martin, D.L"
+    ],
+    "editor": [
+      {
+        "family": "Elliott",
+        "given": "R.L."
+      }
+    ],
+    "type": "article-journal",
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Civil Engineers",
+        "given": "American Society",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Evaporation, Evapotranspiration and Irrigation Water Requirements"
+    ],
+    "editor": [
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Itenfisu",
+        "given": "D.Jensen"
+      },
+      {
+        "family": "M.E."
+      },
+      {
+        "family": "Snyder",
+        "given": "R.L."
+      }
+    ],
+    "container-title": [
+      "ASCE Manual and Reports on Engineering Practice No",
+      "American Society of Civil Engineers Environmental and Water Resources Institute (ASCE-EWRI), 2005, The ASCE standardized reference evapotranspiration equation",
+      "Technical Committee Report to the Environmental and Water Resources Institute of the American Society of Civil Engineers from the Task Committee on Standardization of Reference Evapotranspiration"
+    ],
+    "edition": [
+      "70, Second"
+    ],
+    "publisher": [
+      "ASCE"
+    ],
+    "pages": [
+      "744",
+      "– , 173"
+    ],
+    "location": [
+      "Allen, R.G., Walter, I.A., Elliott, R.L., Howell, T.A"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bastiaanssen",
+        "given": "W.G.M."
+      },
+      {
+        "family": "Noordman",
+        "given": "E.J.M."
+      },
+      {
+        "family": "H.",
+        "given": "Pelgrum"
+      },
+      {
+        "family": "Davids",
+        "given": "G."
+      },
+      {
+        "family": "Thoreson",
+        "given": "B.P."
+      },
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      },
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      }
+    ],
+    "date": [
+      "2005",
+      "2016"
+    ],
+    "title": [
+      "SEBAL Model with Remotely Sensed Data to Improve Water Resources Management under Actual Field Conditions",
+      "DWR Technical Memorandum: Development and Calibration the California Central Valley Groundwater-Surface Water Simulation Model (C2VSim"
+    ],
+    "volume": [
+      "131"
+    ],
+    "pages": [
+      "85–93"
+    ],
+    "genre": [
+      "Version 3.02-CG, Version 1.1,"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Irrig. Drain. Eng"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Integrated Water Flow Model Demand Calculator"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "IDC), version 2015.0.0036"
+    ],
+    "note": [
+      "Retrieved from:"
+    ],
+    "url": [
+      "https://water.ca.gov/Library/Modeling-and-Analysis/Modeling-Platforms/Integrated-Water-Flow-Model-Demand-Calculator."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Modeling"
+    ],
+    "volume": [
+      "5"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "BMP"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Key Updates to the C2VSim - FG Model"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Carle",
+        "given": "S.F."
+      },
+      {
+        "family": "Fogg",
+        "given": "G.E."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Transition probability-based indicator geostatistics"
+    ],
+    "volume": [
+      "28"
+    ],
+    "pages": [
+      "453–477"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Mathematical Geology"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Carle",
+        "given": "S.F."
+      },
+      {
+        "family": "Fogg",
+        "given": "G.E."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Modeling spatial variability with one- and multi-dimensional Markov chains"
+    ],
+    "volume": [
+      "28"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Mathematical Geology"
+    ],
+    "issue": [
+      "7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      },
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Technical Memorandum: Chowchilla Subbasin Sustainable Groundwater Management Act, Data Collection and Analysis, prepared for Chowchilla Subbasin Coordination Committee"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      },
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Technical Memorandum: Madera Subbasin Sustainable Groundwater Management Act"
+    ],
+    "note": [
+      "prepared for Madera Subbasin Coordination Committee."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Data Collection and Analysis"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dogrul",
+        "given": "Emin C."
+      },
+      {
+        "family": "Kadir",
+        "given": "Tariq N."
+      },
+      {
+        "family": "Brush",
+        "given": "Charles F."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "DWR Technical Memorandum: Theoretical Documentation for the Integrated Water Flow Model (IWFM-2015"
+    ],
+    "genre": [
+      "Revision 630,"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Estimate of Future Friant Division Supplies for use in Groundwater Sustainability Plans"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Land Use"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "City of Chowchilla Sphere of Influence Expansion and Municipal Service Review"
+    ],
+    "note": [
+      "prepared for The Madera Local Agency Formation Commission (LAFCO)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground Water (approximately 3,000 micromhos) in the San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "USGS Hydrologic Investigations Atlas HA-489"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Geology of the Fresh Ground-Water Basin of the Central Valley"
+    ],
+    "container-title": [
+      "California, with Texture Maps and Sections, USGS Professional Paper 1401-C"
+    ],
+    "note": [
+      "SGMA Data Viewer (https://data.cnra.ca.gov/showcase/sgma-data-viewer), downloaded 11/29/18"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Steiner",
+        "given": "Daniel B."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Effects to Water Supply and Friant Operations Resulting From Plaintiffs"
+    ],
+    "note": [
+      "Friant Release Requirements, prepared for Friant Water Authority."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Thoreson",
+        "given": "B."
+      },
+      {
+        "family": "Clark",
+        "given": "B."
+      },
+      {
+        "family": "Soppe",
+        "given": "R."
+      },
+      {
+        "family": "Keller",
+        "given": "A."
+      },
+      {
+        "family": "Bastiaanssen",
+        "given": "W."
+      },
+      {
+        "family": "Eckhardt",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Comparison of Evapotranspiration Estimates from Remote Sensing (SEBAL"
+    ],
+    "container-title": [
+      "Water Balance, and Crop Coefficient Approaches, Proceedings of the 2009 World Environmental & Water Resources Congress"
+    ],
+    "publisher": [
+      "American Society of Civil Engineers Environmental and Water Resources Institute"
+    ],
+    "location": [
+      "Kansas City, MO"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "A.K."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Swain",
+        "given": "L.A."
+      }
+    ],
+    "date": [
+      "1989",
+      "1401"
+    ],
+    "title": [
+      "Ground-water flow in the"
+    ],
+    "location": [
+      "Central Valley, California, Washington, DC"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Professional Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "X:\\2017\\17-113 Madera Subbasin GSP Development\\GIS\\Map Files\\MODEL REPORT FIGURES\\Figure 4-34 Simulated vs"
+    ],
+    "publisher": [
+      "Observed Groundwater Elevations, By Layer.mxd"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2005"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Oct‐1999 Hydrograph 3"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Oct‐1999 Hydrograph 4"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "MCSim"
+      }
+    ],
+    "title": [
+      "Historic Oct‐2000 Oct‐2001"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2004"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2006"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2006"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2006"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2004"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Oct‐1999 Hydrograph 10"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Oct‐2003 San Joaquin River near Mendota 11254000 Oct‐2004"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2001"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐1988"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Oct‐2014"
+      }
+    ],
+    "type": null
+  }
+]

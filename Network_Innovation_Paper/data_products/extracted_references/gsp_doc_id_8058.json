@@ -1,0 +1,2835 @@
+[
+  {
+    "title": [
+      "characteristics (i.e., curve number or soil parameters) between the historical and projected conditions baseline scenarios"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figure 5-28: Projected Conditions Annual Water Budget – Urban Land Surface System"
+    ],
+    "location": [
+      "Modesto Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figure 5-29: Projected Conditions Groundwater Recharge and Extraction –Modesto Subbasin Figure 5-30: Projected Conditions Net Recharge"
+    ],
+    "location": [
+      "Modesto Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figure 5-31: Projected Conditions Groundwater Recharge and Extraction –Modesto Zone Figure 5-32: Projected Conditions Net Recharge"
+    ],
+    "location": [
+      "Modesto Zone"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figure 5-33: Projected Conditions Groundwater Recharge and Extraction – Oakdale South Zone"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figure 5-37: Groundwater Recharge and Extraction"
+    ],
+    "publisher": [
+      "Non-District West Zone"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "In the Modesto Subbasin, long-term declines have occurred in NDE MA (Figure 6-1) and have expanded into the Oakdale ID MA"
+    ],
+    "note": [
+      "Figure 6-2). Accordingly, 2027 target values below the MT have been developed for representative monitoring wells in the management areas."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Water Year Water Year Type San Joaquin Valley Water Year Index 2014 Critically Dry 2015 Critically Dry"
+    ],
+    "date": [
+      "2016"
+    ],
+    "note": [
+      "Wet 2018 Below Normal 2019 Wet 2020 Dry Source : :"
+    ],
+    "url": [
+      "https://cdec.water.ca.gov/reportapp/javareports?name=WSIHIST"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CASGEM Albers 232 03S10E26D001M 3559 Active Irrigation Eastern x 37.651020",
+      "based on measured data at the well ‐‐CASGEM Allen OID‐01 02S10E16M001M 4430 Active Irrigation Eastern x 37.759897"
+    ],
+    "pages": [
+      "–120 847696 145 4 145 7 460 196–288 60 76",
+      "–120 885401 145 6 145 7 415 0–120 72 81"
+    ],
+    "note": [
+      "based on measured data at the well 61"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CASGEM American 208 02S08E25P001M 3723 Active Irrigation Eastern x 37.728064",
+      "based on measured data at the well ‐‐CASGEM Bangs Ave 243 03S08E01K001M 3152 Active Irrigation Eastern x 37.703436"
+    ],
+    "pages": [
+      "–121 041430 99 9 99 9 320 79–272 48 55",
+      "–121 038476 90 0 90 0 346 141–251 32 46",
+      "37 715973 –120 866949 171 9 172 1 500 120–175 71 85"
+    ],
+    "container-title": [
+      "based on measured data at the well ‐‐CASGEM Bentley OID‐02 02S10E33J001M 4590 Active Irrigation Eastern x"
+    ],
+    "note": [
+      "based on measured data at the well 56"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "OID‐03",
+        "given": "C.A.S.G.E.M.Birnbaum"
+      }
+    ],
+    "genre": [
+      "02S10E15N001M 4429 Active Irrigation Eastern x 37.755921"
+    ],
+    "pages": [
+      "–120 863872 149 4 149 8 293 55–293 72 86",
+      "–120 801537 154 8 155 0 412 179–283 61 78",
+      "–121 130799 52 0 52 3 151 40–75 32 36",
+      "–120 911296 135 6 135 6 480 107–275 53 73",
+      "37 708526 –120 974280 114 1 114 5 650 96–550 49 62",
+      "–120 899126 160 1 160 4 505 155–198 66"
+    ],
+    "title": [
+      "based on measured data at the well 61 CASGEM Blossom 230 03S11E30K001M 3903 Active Irrigation Eastern x 37.645614",
+      "based on measured data at the well ‐‐CASGEM Canfield 90 04S08E06L001M 26633 Active Irrigation Western Upper x 37.613113",
+      "based on measured data at the well ‐‐CASGEM Cavil 214 03S10E06G001M 27057 Active Irrigation Eastern x 37.705044"
+    ],
+    "container-title": [
+      "based on measured data at the well ‐‐CASGEM Claribel 206 03S09E03D001M 2093 Active Irrigation Eastern x"
+    ],
+    "note": [
+      "based on measured data at the well ‐‐CASGEM Crane OID‐06 02S10E29E001M 29444 Active Irrigation Eastern x",
+      "77 based on measured data at the well 55"
+    ],
+    "volume": [
+      "37"
+    ],
+    "issue": [
+      "733378"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "CASGEM Curtis #2 100 03S08E09P001M 3303 Active Irrigation Western Upper x 37.685351",
+      "based on measured data at the well ‐‐CASGEM Furtado OID‐07 02S11E32L001M 2529 Active Irrigation Eastern x 37.718381"
+    ],
+    "pages": [
+      "–121 097462 63 6 63 6 124 79–100 34 41",
+      "–120 786289 212 0 212 5 590 200–580 69 81"
+    ],
+    "note": [
+      "based on measured data at the well 51"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CASGEM Gates Road 101 03S07E24M001M 3146 Active Irrigation Western Upper x 37.659699",
+      "based on measured data at the well ‐‐CASGEM Hart Road 88 03S08E08D001M 3301 Active Irrigation Western Upper x 37.694807",
+      "based on measured data at the well ‐‐CASGEM Head Lateral 3 215 03S10E17K001M 3552 Active Irrigation Eastern x 37.674398",
+      "based on measured data at the well ‐‐CASGEM Head Lateral 8 194 02S08E27N001M 38870 Active Irrigation Eastern x 37.727189",
+      "based on measured data at the well ‐‐CASGEM Jones WID 228 03S11E29J001M 38872 Active Irrigation Eastern x 37.641798",
+      "based on measured data at the well ‐‐CASGEM Katen 69 03S07E25P001M 3147 Active Irrigation Western Upper x",
+      "based on measured data at the well ‐‐CASGEM Langdon Merle 241 02S09E28H001M 3876 Active Irrigation Eastern x 37.734908",
+      "based on measured data at the well ‐‐CASGEM Lateral one 195 03S10E32G001M 3877 Active Irrigation Eastern x 37.632523"
+    ],
+    "pages": [
+      "–121 155215 44 2 44 2 64 – 24 33",
+      "–121 122902 54 9 55 2 130 73–85 35 40",
+      "–120 891430 135 8 135 6 476 116–400 56 73",
+      "–121 087002 79 5 79 8 302 148–211 40 47",
+      "–120 776177 166 4 166 4 324 188–280 55 75",
+      "–121 149890 45 1 45 1 160 13–148 27 33",
+      "–120 977526 128 4 128 5 595 160–300 50 62",
+      "–120 889283 126 0 126 0 260 141–210 42",
+      "–121 105038 59 1 59 3 80 – 31 40",
+      "–120 896930 138 4 138 8 125 27–125 85 91"
+    ],
+    "volume": [
+      "37",
+      "37",
+      "37"
+    ],
+    "note": [
+      "52 based on measured data at the well ‐‐CASGEM Machado 23 03S08E17R001M 3864 Active Irrigation Western Upper x",
+      "based on measured data at the well ‐‐CASGEM Marquis OID‐10 02S10E20C001M 29436 Active Irrigation Eastern x",
+      "based on measured data at the well 78"
+    ],
+    "issue": [
+      "637929",
+      "668045",
+      "753232"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CASGEM North Ave 103 03S08E14B001M 3854 Active Irrigation Western Upper x 37.678393",
+      "based on measured data at the well ‐‐CASGEM Paradise 235 04S08E02L001M 2151 Active Irrigation Western Upper x"
+    ],
+    "pages": [
+      "–121 054335 73 9 74 6 130 53–81 41 50",
+      "258 96–132 34 41",
+      "37 717864 –120 691876 195 9 197 5 815 195–410 88 117"
+    ],
+    "volume": [
+      "37"
+    ],
+    "container-title": [
+      "based on measured data at the well ‐‐CASGEM Paulsell 1 OID‐11 02S12E31K001M 26187 Active Irrigation Eastern x"
+    ],
+    "note": [
+      "based on measured data at the well 53"
+    ],
+    "issue": [
+      "614186"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "genre": [
+      "CASGEM Paulsell 2 OID‐12 02S12E32P001M 38865 Active Irrigation Eastern x 37.710953"
+    ],
+    "pages": [
+      "–120 676939 193 9 195 6 815 132–815 94 123",
+      "–120 951955 104 9 105 4 255 76–204 36 45",
+      "–121 050003 73 1 73 5 88 58–74 34 41",
+      "–120 689681 197 0 197 0 380 168–208 89 110"
+    ],
+    "title": [
+      "based on measured data at the well 58 CASGEM Perley 202 03S09E14P001M 2109 Active Irrigation Eastern x 37.667719",
+      "based on measured data at the well ‐‐CASGEM Philbrick 201 04S08E02H001M 26591 Active Irrigation Western Upper x 37.619159"
+    ],
+    "note": [
+      "based on measured data at the well ‐‐CASGEM Quesenberry 223 03S12E19G001M 27424 Active Irrigation Eastern x",
+      "based on measured data at the well 72"
+    ],
+    "volume": [
+      "37"
+    ],
+    "issue": [
+      "659773"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CASGEM Riverbank OID‐13 02S09E27G001M 49463 Active Irrigation Eastern x 37.735134",
+      "based on measured data at the well ‐‐CASGEM Schmidt 227 03S11E27G003M 3897 Active Irrigation Eastern x",
+      "based on measured data at the well ‐‐CASGEM Van Buren 43 03S08E21Q001M 3873 Active Irrigation Western Upper x 37.654644"
+    ],
+    "pages": [
+      "–120 964821 132 3 134 2 560 200–550 42 54",
+      "248 113–153 59 78",
+      "–121 094887 63 3 63 5 196 76–116 38 45"
+    ],
+    "volume": [
+      "37"
+    ],
+    "note": [
+      "based on measured data at the well ‐‐"
+    ],
+    "issue": [
+      "648671"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CASGEM Wellsford 233 03S10E16K001M 3551 Active Irrigation Eastern x 37.673607",
+      "based on measured data at the well ‐‐CASGEM Wood 210 03S10E18P001M 3553 Active Irrigation Eastern x 37.667487"
+    ],
+    "pages": [
+      "–120 875297 141 9 142 0 468 158–358 62 77",
+      "–120 912168 121 3 121 3 606 87–547"
+    ],
+    "note": [
+      "52 66 based on measured data at the well ‐‐"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ayers",
+        "given": "R.S."
+      },
+      {
+        "family": "Westcot",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1994",
+      "29 Rev.1"
+    ],
+    "title": [
+      "Water Quality for Agriculture, Chapter 4: Toxicity Problems, Food and Agriculture Organization (FAO) of the United Nations"
+    ],
+    "url": [
+      "https://www.fao.org/3/t0234e/T0234E05.htm#ch4."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "FAO Irrigation and Drainage Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bartow",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "The Cenozoic Evolution of the"
+    ],
+    "location": [
+      "San Joaquin Valley, California, U.S"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      "Geological Survey Professional Paper 1501"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/pp/1501/report.pdf."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bauder",
+        "given": "T.A."
+      },
+      {
+        "family": "Waskom",
+        "given": "P.L."
+      },
+      {
+        "family": "Sutherland",
+        "given": "P.L."
+      },
+      {
+        "family": "Davis",
+        "given": "J.G."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Irrigation Water Quality Criteria, Irrigation Water Quality Criteria"
+    ],
+    "note": [
+      "Fact Sheet No. 0506, Crop Series / Irrigation, Colorado State University Extension,"
+    ],
+    "url": [
+      "https://extension.colostate.edu/docs/pubs/crops/00506.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Belitz",
+        "given": "K."
+      },
+      {
+        "family": "Dubrovsky",
+        "given": "N.M."
+      },
+      {
+        "family": "Burow",
+        "given": "K.R."
+      },
+      {
+        "family": "Jurgens",
+        "given": "B."
+      },
+      {
+        "family": "Johnson",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Framework for a ground-water quality monitoring and assessment program for California: U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 03-4166,"
+    ],
+    "note": [
+      "78 p,"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/wri/wri034166/."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "Bookman-Edmonston"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Integrated Regional Groundwater Management Plan for the Modesto Subbasin, Stanislaus and Tuolumne Rivers Groundwater Basin Association"
+    ],
+    "note": [
+      "June,"
+    ],
+    "url": [
+      "https://www.mid.org/water/irgmp/default.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Burow",
+        "given": "K.R."
+      },
+      {
+        "family": "Shelton",
+        "given": "J.L."
+      },
+      {
+        "family": "Hevesi",
+        "given": "J.A."
+      },
+      {
+        "family": "Weissmann",
+        "given": "G.S."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Hydrogeologic Characterization of the Modesto Area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Scientific"
+    ],
+    "genre": [
+      "Investigations Report 2004-5232,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2004/5232/sir_2004-5232.pdf"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Burton",
+        "given": "C.A."
+      },
+      {
+        "family": "Shelton",
+        "given": "J.L."
+      },
+      {
+        "family": "Belitz",
+        "given": "Kenneth"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Status and understanding of groundwater quality in the two southern San Joaquin Valley study units"
+    ],
+    "container-title": [
+      "2005–2006—California GAMA Priority Basin Project: U.S. Geological Survey Scientific Investigations Report 2011–5218"
+    ],
+    "pages": [
+      "150 ,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2011/5218/."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Center",
+        "given": "California Data Exchange"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Chronological Reconstructed Sacramento and San Joaquin Valley Water Year Hydrologic Classification Indices"
+    ],
+    "url": [
+      "http://cdec.water.ca.gov/cgi-progs/iodir/WSIHIST."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Health Services",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "MCL Evaluation for 1,2-dibromo-3-chloropropane (DBCP"
+    ],
+    "container-title": [
+      "Division of Drinking Water and Environmental Management, Final Draft"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/mclrevi"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "date": [
+      "2003"
+    ],
+    "publisher": [
+      "California’s Groundwater"
+    ],
+    "location": [
+      "Bulletin"
+    ],
+    "type": "book"
+  },
+  {
+    "citation-number": [
+      "118"
+    ],
+    "date": [
+      "2003-10"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/Statewide-Reports/Bulletin_118_Update_2003.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "San Joaquin Valley Groundwater Basin, Turlock Subbasin, California’s Groundwater Bulletin 118, Groundwater Basin Descriptions"
+    ],
+    "note": [
+      "updated January 20, 2006,"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "Pages/Programs/Groundwater-Management/Bulletin-118/Files/2003-Basin-Descriptions/5_022_03_TurlockSubbasin.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "note": [
+      "2018a, Draft 2018 Basin Prioritization Results, May 18,"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Pages/Programs/Groundwater-Management/Basin-Prioritization/Files/2018-S.G.M.A.-Basin-Prioritization-Process-and-Results-Document_ay_19pdf"
+      }
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR",
+      "Draft Handbook for Water Budget Development, February"
+    ],
+    "date": [
+      "2020"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Water-Budget-Handbook.pdf."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "California Department of Water Resources (DWR"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/boundaries/."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Management Planning Tool"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources Well Completion Report Map Application"
+    ],
+    "date": [
+      "2021"
+    ],
+    "url": [
+      "https://www.arcgis.com/apps/webappviewer/index.html?id=181078580a214c0986e2da28f"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2005",
+      "November"
+    ],
+    "title": [
+      "OID Water Resources Plan"
+    ],
+    "genre": [
+      "Summary Report,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Modesto",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2008",
+      "October 14"
+    ],
+    "url": [
+      "https://www.modestogov.com/DocumentCenter/View/6625/Chapter-I-Introduction-to-the-Modesto-Urban-Area-General-Plan."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final Urban Area General Plan"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Riverbank",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2009",
+      "2002"
+    ],
+    "publisher": [
+      "City of Riverbank General Plan"
+    ],
+    "url": [
+      "https://www.riverbank.org/DocumentCenter/View/236/2005-2025-Riverbank-General-Plan-Adopted-April-2009-."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Stanislaus",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Stanislaus County General Plan 2015"
+    ],
+    "note": [
+      "Adopted August 23,"
+    ],
+    "url": [
+      "http://www.stancounty.com/bos/agenda/2016/20160823/PH910_Attach2_ExC_Part1.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Creely",
+        "given": "S."
+      },
+      {
+        "family": "Force",
+        "given": "E.R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Type Region of the Ione Formation (Eocene",
+      "Paleography, and Relation to Auriferous Gravels"
+    ],
+    "location": [
+      "Central California"
+    ],
+    "publisher": [
+      "Stratigraphy"
+    ],
+    "genre": [
+      "USGS Open-File Report 2006-1378,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/of/2006/1378/."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Dale",
+        "given": "R.H."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      },
+      {
+        "family": "Gordon",
+        "given": "G.V."
+      }
+    ],
+    "date": [
+      "1966",
+      "June 20"
+    ],
+    "title": [
+      "Ground-Water Geology and Hydrology of the Kern River Alluvial-Fan Area"
+    ],
+    "location": [
+      "California"
+    ],
+    "genre": [
+      "USGS Open-File Report,"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr6621."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2016",
+      "March"
+    ],
+    "title": [
+      "Agricultural Water Management Plan, Oakdale Irrigation District"
+    ],
+    "url": [
+      "https://www.oakdaleirrigation.com/files/52c08212b/OID+2015+AWMP.pdf."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "East San Joaquin Water Quality Coalition (ESJWQC"
+    ],
+    "date": [
+      "2018"
+    ],
+    "url": [
+      "https://www.esjcoalition.org/about/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Coalition",
+        "given": "East San Joaquin Water Quality"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Member Annual Report"
+    ],
+    "url": [
+      "https://www.esjcoalition.org/pdf/2020ESJAnnual.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "EDAW",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Master Plan, Tuolumne River Regional Park"
+    ],
+    "note": [
+      "prepared for the Joint Powers Authority: City of Modesto, City of Ceres, Stanislaus County, December,"
+    ],
+    "url": [
+      "https://www.modestogov.com/DocumentCenter/View/12181/Tuolumne-River-Regional-Park-Master-Plan-Printable-PDF."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fund",
+        "given": "Environmental Defense"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Advancing Strategic Land Repurposing and Groundwater Sustainability in"
+    ],
+    "location": [
+      "California, March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "E.S.A."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Oakdale 2030 General Plan"
+    ],
+    "note": [
+      "prepared for The City of Oakdale, Adopted August 8,"
+    ],
+    "url": [
+      "https://drive.google.com/file/d/0B8bSmVI_fyceWjJTS2g4c2ZvaFU/view?resourcekey=0-IVT_NlY3ccqT5LriVADa5w."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Traum",
+        "given": "J."
+      },
+      {
+        "family": "Brandt",
+        "given": "J.T."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Water Availability and Land Subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "note": [
+      "Hydrogeol J, November 15,"
+    ],
+    "url": [
+      "https://link.springer.com/content/pdf/10.1007/s10040-015-1339-x.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Authority",
+        "given": "Friant Water"
+      }
+    ],
+    "date": [
+      "2018",
+      "November 19"
+    ],
+    "title": [
+      "A Path Forward to Repair the Friant-Kern Canal"
+    ],
+    "url": [
+      "https://friantwater.org/waterline/2018/11/19/a-path-forward-to-repair-thefriant-kern-canal."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Galloway",
+        "given": "D."
+      },
+      {
+        "family": "Jones",
+        "given": "D.R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Land Subsidence in the United States, U.S"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Geological Survey Circular 1182,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/circ/1999/1182/report.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Grattan",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Irrigation water salinity and crop production"
+    ],
+    "publisher": [
+      "Farm Water Quality Planning"
+    ],
+    "url": [
+      "https://anrcatalog.ucanr.edu/pdf/8066.pdf."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Gurdak",
+        "given": "J.J."
+      },
+      {
+        "family": "Qi",
+        "given": "S.L."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Vulnerability of recently recharged groundwater in principal aquifers of the United States to nitrate contamination"
+    ],
+    "volume": [
+      "46"
+    ],
+    "pages": [
+      "6004–6012,"
+    ],
+    "doi": [
+      "10.1021/es300688b."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environmental Science and Technology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Izbicki",
+        "given": "J.A."
+      },
+      {
+        "family": "Stamos",
+        "given": "C.L."
+      },
+      {
+        "family": "Metzger",
+        "given": "L.F."
+      },
+      {
+        "family": "Halford",
+        "given": "K.J."
+      },
+      {
+        "family": "Kulp",
+        "given": "T.R."
+      },
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Source, distribution, and management of arsenic in water from wells, eastern San Joaquin ground-water subbasin"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 2008–1272, 8 p.,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/of/2008/1272/pdf/ofr20081272.pdf."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "James",
+        "given": "Jacobson"
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2017",
+      "December 20"
+    ],
+    "title": [
+      "Technical Memorandum, Stanislaus County Hydrologic Model: Development and Forecast Modeling"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Stanislaus County"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "James",
+        "given": "Jacobson"
+      },
+      {
+        "family": "Associates",
+        "given": "Inc"
+      },
+      {
+        "family": "Environmental",
+        "given": "Formation"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-04-26"
+    ],
+    "title": [
+      "Draft remedial investigation feasibility study workplan, City of Modesto Well Field RIFS, Prepared for City of Modesto Utilities Department by JJ&A and Formation Environmental"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Jurgens",
+        "given": "B.C."
+      },
+      {
+        "family": "Burow",
+        "given": "K.R."
+      },
+      {
+        "family": "Dalgish",
+        "given": "B.A."
+      },
+      {
+        "family": "Shelton",
+        "given": "J.L."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Hydrogeology, water chemistry, and factors affecting the transport of contaminants in the zone of contribution of a public-supply well in Modesto"
+    ],
+    "location": [
+      "eastern San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geological Survey Scientific Investigations Report 2008-5156, 78 p.,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/sir/2008/5156/."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Jurgens",
+        "given": "B.C."
+      },
+      {
+        "family": "Fram",
+        "given": "M.S."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      },
+      {
+        "family": "Burow",
+        "given": "K.R."
+      },
+      {
+        "family": "Landon",
+        "given": "M.K."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Effects of Groundwater Development on Uranium"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "publisher": [
+      "Groundwater"
+    ],
+    "volume": [
+      "48"
+    ],
+    "pages": [
+      "10 1111 1745–6584 2009 00635 , 913–928,"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/pubs/2010/JurgensEtAl2010.pdf."
+    ],
+    "issue": [
+      "6"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "K.S.N."
+      }
+    ],
+    "date": [
+      "2016",
+      "October 17"
+    ],
+    "title": [
+      "City of Riverbank 2015 Urban Water Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Landon",
+        "given": "M.K."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      },
+      {
+        "family": "Jurgens",
+        "given": "B.C."
+      },
+      {
+        "family": "Kulongoski",
+        "given": "J.T."
+      },
+      {
+        "family": "Johnson",
+        "given": "T.D."
+      }
+    ],
+    "title": [
+      "Status and understanding of groundwater quality in the Central–Eastside San Joaquin Basin, 2006: California GAMA Priority Basin project"
+    ],
+    "note": [
+      "Scientific Investigations Report (SIR) 2009–5266,"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/sir20095266."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Lankford",
+        "given": "B."
+      },
+      {
+        "family": "Closas",
+        "given": "A."
+      },
+      {
+        "family": "Dalton",
+        "given": "J."
+      },
+      {
+        "family": "Gunn",
+        "given": "E.L."
+      },
+      {
+        "family": "Hess",
+        "given": "T."
+      },
+      {
+        "family": "Knox",
+        "given": "J.W."
+      },
+      {
+        "family": "Kooij",
+        "given": "S.",
+        "particle": "Van Der"
+      },
+      {
+        "family": "Lautze",
+        "given": "J."
+      },
+      {
+        "family": "Molden",
+        "given": "D."
+      },
+      {
+        "family": "Orr",
+        "given": "S."
+      },
+      {
+        "family": "Pittock",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "A scale-based framework to understand the promises, pitfalls and paradoxes of irrigation efficiency to meet major water challenges"
+    ],
+    "type": null
+  },
+  {
+    "volume": [
+      "65"
+    ],
+    "pages": [
+      "102182"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Global Environmental Change"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      },
+      {
+        "family": "Borchers",
+        "given": "James"
+      },
+      {
+        "family": "Carpenter",
+        "given": "Michael"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "genre": [
+      "Report of Findings:"
+    ],
+    "note": [
+      "Land Subsidence from Groundwater Use in California, April,"
+    ],
+    "url": [
+      "https://cawaterlibrary.net/wp-content/uploads/2017/04/1397858208-SUBSIDENCEFULLREPORT_FINAL.pdf."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Marchand",
+        "given": "D.E."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Preliminary Geologic Maps Showing Quaternary Deposits of the Ceres, Denair and Montpelier 7 1⁄2 Quadrangles, Stanislaus and Merced Counties, California, United States Department of the Interior Geological Survey"
+    ],
+    "genre": [
+      "Open-file report 80-607,"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ofr80607."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "M.C.R."
+      }
+    ],
+    "date": [
+      "2015",
+      "2010-07"
+    ],
+    "title": [
+      "City of Oakdale Urban Water Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Modesto Irrigation District (MID), 2021,Historical Season Rainfall,"
+    ],
+    "url": [
+      "https://www.mid.org/weather/historical.jsp."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Moran",
+        "given": "T."
+      },
+      {
+        "family": "Belin",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "A Guide to Water Quality Requirements Under the Sustainable Groundwater Management Act, Stanford Water in the West"
+    ],
+    "publisher": [
+      "Spring"
+    ],
+    "url": [
+      "https://stacks.stanford.edu/file/druid:dw122nb4780/A%20Guide%20to%20Water%20Qualit"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      },
+      {
+        "family": "Balding",
+        "given": "G.O."
+      }
+    ],
+    "date": [
+      "1973",
+      "September"
+    ],
+    "title": [
+      "Geology and Quality of Water in the Modesto-Merced Area, San Joaquin Valley, California, with a Brief Section on Hydrology, U.S. Geological Survey, prepared in cooperation with the California Department of Water Resources"
+    ],
+    "genre": [
+      "Water-Resources Investigation 6-73,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/1973/0006/report.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1973"
+    ],
+    "title": [
+      "Base of Fresh Ground Water (Approximately 3,000 Micromhos in the San Joaquin Valley"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "USGS Hydrologic Investigations Atlas HA-489"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/ha489."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Page",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Guide for Data Collection to Calibrate a Predictive Digital Ground-water Model of the Unconfined Aquifer in and Near the City of Modesto"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geologic Survey Water-Resources Investigations report, 76-41, 46 pg,"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wri/1976/0041/report.pdf."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Phillips",
+        "given": "S.P."
+      },
+      {
+        "family": "Rewis",
+        "given": "D.L."
+      },
+      {
+        "family": "Traum",
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "2015",
+      "1960"
+    ],
+    "title": [
+      "Hydrologic Model of the Modesto Region",
+      "U.S"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "Geological Survey Scientific Investigations Report (SIR) 2015-5045,"
+    ],
+    "url": [
+      "https://doi.org/10.3133/sir20155045."
+    ],
+    "doi": [
+      "10.3133/sir20155045."
+    ],
+    "type": "report"
+  },
+  {
+    "container-title": [
+      "PRISM Climate Group, 2021, PRISM Climate Data"
+    ],
+    "url": [
+      "https://prism.oregonstate.edu/."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2015",
+      "December"
+    ],
+    "title": [
+      "Agricultural Water Management Plan, 2015 Update for the Modesto Irrigation District"
+    ],
+    "url": [
+      "https://www.mid.org/water/irrigation/documents/MID2015AWMPFinal.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Shelton",
+        "given": "J.L."
+      },
+      {
+        "family": "Pimentel",
+        "given": "I."
+      },
+      {
+        "family": "Fram",
+        "given": "M.S."
+      },
+      {
+        "family": "Belitz",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Ground-Water Quality Data in the Kern County Subbasin Study Unit, 2006—Results from the California GAMA Program, U.S"
+    ],
+    "container-title": [
+      "Geological Survey in cooperation with the California State Water Resources Control Board, USGS Data Series"
+    ],
+    "volume": [
+      "337"
+    ],
+    "pages": [
+      "75 ,"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/ds/337/."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Smith",
+        "given": "R."
+      },
+      {
+        "family": "Knight",
+        "given": "R."
+      },
+      {
+        "family": "Fendorf",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2018",
+      "December"
+    ],
+    "title": [
+      "Overpumping leads to California groundwater arsenic threat"
+    ],
+    "volume": [
+      "9"
+    ],
+    "url": [
+      "https://www.nature.com/articles/s41467-018-04475-3.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Nature Communications"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Soil Service Geographic Database(SSURGO"
+    ],
+    "container-title": [
+      "Natural Resources Conservation Service, United States Department of Agriculture, Web Soil Survey"
+    ],
+    "url": [
+      "https://websoilsurvey.nrcs.usda.gov/."
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "State Water Resources Control Board, State of California (SWRCB",
+      "Groundwater Information Sheet"
+    ],
+    "date": [
+      "2017"
+    ],
+    "note": [
+      "Tetrachloroethylene (PCE), Division of Water Quality, GAMA Program, 8 p.,"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/water_issues/programs/gama/docs/coc_pce.pdf."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "State Water Resources Control Board, State of California"
+    ],
+    "note": [
+      "SWRCB), 2021, GeoTracker Online Database,"
+    ],
+    "url": [
+      "https://geotracker.waterboards.ca.gov/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stollenwerk",
+        "given": "K.G."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Geochemical processes controlling transport of arsenic in groundwater, a review of adsorption"
+    ],
+    "editor": [
+      {
+        "family": "Welch",
+        "given": "A.H."
+      },
+      {
+        "family": "Stollenwerk",
+        "given": "K.G."
+      }
+    ],
+    "container-title": [
+      "Arsenic in groundwater—geochemistry and occurrence"
+    ],
+    "location": [
+      "Boston"
+    ],
+    "publisher": [
+      "Kluwer Academic Publishers"
+    ],
+    "pages": [
+      "488 ,"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/70198531."
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act, Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "note": [
+      "January,"
+    ],
+    "url": [
+      "https://www.scienceforconservation.org/assets/downloads/GDEsUnderSGMA.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Nature Conservancy"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2019",
+      "July"
+    ],
+    "title": [
+      "Identifying GDEs under SGMA, Best Practices for using the NC Dataset"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Groundwater",
+        "given": "Todd"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Characterization and Recharge Study, June"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2021",
+      "2015-01"
+    ],
+    "title": [
+      "InSAR Data Accuracy for California Groundwater Basins"
+    ],
+    "container-title": [
+      "CGPS Data Comparative Analysis"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/tre-altamira-insar-subsidence/resource/a1949b59-2435-4e5d-bb29-7a8d432454f5"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Viers",
+        "given": "J.H."
+      },
+      {
+        "family": "Liptzin",
+        "given": "D."
+      },
+      {
+        "family": "Rosenstock",
+        "given": "T.S."
+      },
+      {
+        "family": "Jensen",
+        "given": "V.B."
+      },
+      {
+        "family": "Hollander",
+        "given": "A.D."
+      },
+      {
+        "family": "McNally",
+        "given": "A."
+      },
+      {
+        "family": "King",
+        "given": "A.M."
+      },
+      {
+        "family": "Kourakos",
+        "given": "G."
+      },
+      {
+        "family": "Lopez",
+        "given": "E.M."
+      },
+      {
+        "family": "Mora",
+        "given": "N.",
+        "particle": "De La"
+      },
+      {
+        "family": "Fryjoff-Hung",
+        "given": "A."
+      },
+      {
+        "family": "Dzurella",
+        "given": "K.N."
+      },
+      {
+        "family": "Canada",
+        "given": "H.E."
+      },
+      {
+        "family": "Laybourne",
+        "given": "S."
+      },
+      {
+        "family": "McKenney",
+        "given": "C."
+      },
+      {
+        "family": "Darby",
+        "given": "J."
+      },
+      {
+        "family": "Quinn",
+        "given": "J.F."
+      },
+      {
+        "family": "Harter",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2012",
+      "July"
+    ],
+    "title": [
+      "Nitrogen Sources and Loading to Groundwater"
+    ],
+    "genre": [
+      "Technical Report 2"
+    ],
+    "container-title": [
+      "Addressing Nitrate in California’s Drinking Water with a Focus on Tulare Lake Basin and Salinas Valley Groundwater, Report for the State Water Resources Control Board Report to the Legislature"
+    ],
+    "publisher": [
+      "Center for Watershed Sciences, University of California"
+    ],
+    "location": [
+      "Davis"
+    ],
+    "url": [
+      "https://ucanr.edu/sites/groundwaternitrate/files/139110.pdf."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Wagner",
+        "given": "D.L."
+      },
+      {
+        "family": "Bortugno",
+        "given": "E.J."
+      },
+      {
+        "family": "McJunking",
+        "given": "R.D."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geologic Map of the San Francisco-San Jose Quadrangle"
+    ],
+    "volume": [
+      "1"
+    ],
+    "url": [
+      "https://ngmdb.usgs.gov/Prodesc/proddesc_519.htm."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California"
+    ],
+    "issue": [
+      "250"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Department",
+        "given": "Waterford Planning"
+      }
+    ],
+    "date": [
+      "2007",
+      "2025-06-21"
+    ],
+    "title": [
+      "City of Waterford General Plan Update Vision"
+    ],
+    "url": [
+      "https://www.cityofwaterford.org/v5/wp-content/uploads/2018/07/General-Plan-Final.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Welch",
+        "given": "A.H."
+      },
+      {
+        "family": "Oremland",
+        "given": "R.S."
+      },
+      {
+        "family": "Davis",
+        "given": "J.A."
+      },
+      {
+        "family": "Watkins",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Arsenic in groundwater—A review of current knowledge and relation to the CALFED solution area with recommendations for needed research"
+    ],
+    "volume": [
+      "4"
+    ],
+    "pages": [
+      "32 ,"
+    ],
+    "url": [
+      "https://escholarship.org/uc/item/8342704q."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "San Francisco Estuary and Watershed Science"
+    ],
+    "issue": [
+      "2, Article 4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Welch",
+        "given": "A.H."
+      },
+      {
+        "family": "Westjohn",
+        "given": "D.B."
+      },
+      {
+        "family": "Helsel",
+        "given": "D.R."
+      },
+      {
+        "family": "Wanty",
+        "given": "R.B."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Arsenic in ground water of the United States—Occurrence and geochemistry"
+    ],
+    "volume": [
+      "38"
+    ],
+    "pages": [
+      "589–604"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ground Water"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "West Yost"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "City of Modesto & Modesto Irrigation District Joint 2010 Urban Water Management Plan, May"
+    ],
+    "url": [
+      "https://www.mid.org/water/uwmp/uwdp.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "West Yost"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "City of Modesto 2015 Urban Water Management Plan"
+    ],
+    "note": [
+      "June,"
+    ],
+    "url": [
+      "https://www.modestogov.com/DocumentCenter/View/4608/City-of-Modesto-Final-2015-UWMP-PDF."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "West Yost"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "City of Turlock 2015 Urban Water Management Plan"
+    ],
+    "note": [
+      "June,"
+    ],
+    "url": [
+      "https://www.cityofturlock.org/_pdf/files/2015UWMP-PublicDraft.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "West Yost"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Joint 2020 Urban Water Management Plan, City of Modesto 2020 & Modesto Irrigation District"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "11021"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "June"
+    ],
+    "issue": [
+      "ttps://www.mid.org/water/uwmp/uwmp_2020/R418CityofModestoMIDFinal2020UWMP1"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      },
+      {
+        "given": "Provost"
+      },
+      {
+        "given": "Pritchard"
+      }
+    ],
+    "date": [
+      "2019",
+      "November"
+    ],
+    "title": [
+      "Northern and Central Delta-Mendota Regions"
+    ],
+    "url": [
+      "http://sldmwa.org/NDCP_Temporary/DM_NorthCentral_Adopted_GSP.pdf."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater Sustainability Plan"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Woodard"
+      },
+      {
+        "given": "Curran"
+      }
+    ],
+    "date": [
+      "2019",
+      "November"
+    ],
+    "title": [
+      "Merced Groundwater Subbasin Groundwater Sustainability Plan"
+    ],
+    "url": [
+      "http://mercedsgma.org/assets/pdf/gsp-sections/Merced-Subbasin-GSP-no-appendices_2019-11-12.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bartow",
+        "given": "J.A."
+      },
+      {
+        "family": "Doukas",
+        "given": "M.P."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Preliminary geologic map of the southeastern border of the San Joaquin Valley"
+    ],
+    "container-title": [
+      "California . U.S. Geological Survey Miscellaneous Field Studies Map MF-944"
+    ],
+    "pages": [
+      "125,000"
+    ],
+    "volume": [
+      1
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "S."
+      },
+      {
+        "family": "Hall",
+        "given": "F."
+      }
+    ],
+    "date": [
+      "1959"
+    ],
+    "title": [
+      "Water quality of eastern Stanislaus and northern Merced Counties, California"
+    ],
+    "publisher": [
+      "Stanford University Publications, Geological Science"
+    ],
+    "volume": [
+      "6"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dogrul",
+        "given": "E.C."
+      },
+      {
+        "family": "Brush",
+        "given": "C.F."
+      },
+      {
+        "family": "Kadir",
+        "given": "T.N."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater modeling in support of water resources management and planning under complex climate, regulatory, and economic stresses"
+    ],
+    "volume": [
+      "8"
+    ],
+    "pages": [
+      "592"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water"
+    ],
+    "issue": [
+      "12"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1967"
+    ],
+    "title": [
+      "Bulletin 146, San Joaquin County Investigation"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1978"
+    ],
+    "title": [
+      "Evaluation of ground water resources"
+    ],
+    "location": [
+      "Sacramento Valley. Sacramento, CA"
+    ],
+    "publisher": [
+      "California Department of Water Resources Bulleting"
+    ],
+    "pages": [
+      "118–6"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Criteria for Approximating Base of Fresh Groundwater"
+    ],
+    "publisher": [
+      "California Department of Water Resources"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "California Central Valley Groundwater-Surface Water Simulation Model – Fine Grid (C2VSimFG) Development and Calibration Version 1.0"
+    ],
+    "note": [
+      "Sustainable Groundwater Management Office (SGMO) California Department of Water Resources (DWR). Available at:"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/c2vsimfg-version-1-0/resource/4f904e97-a47b-4138-81df-9b74bd952948"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "E.S.J.G.A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Eastern San Joaquin Groundwater Subbasin Groundwater Sustainability Plan"
+    ],
+    "publisher": [
+      "Eastern San Joaquin Groundwater Authority"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Ferriz",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Groundwater Resources of"
+    ],
+    "location": [
+      "Northern California"
+    ],
+    "publisher": [
+      "An Overview"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hotchkiss",
+        "given": "W.R."
+      },
+      {
+        "family": "Balding",
+        "given": "G.O."
+      }
+    ],
+    "date": [
+      "1971"
+    ],
+    "title": [
+      "Geology, hydrology, and water quality of the Tracy-Dos Palo area"
+    ],
+    "location": [
+      "San Joaquin Valley, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Open-File Report 72-169."
+    ],
+    "type": "report"
+  },
+  {
+    "note": [
+      "Retrieved August 28, 2019, Available at:"
+    ],
+    "url": [
+      "https://doi.org/10.3133/ofr72169"
+    ],
+    "doi": [
+      "10.3133/ofr72169"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Marchand",
+        "given": "D.E."
+      },
+      {
+        "family": "Allwardt",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "1981",
+      "1470"
+    ],
+    "title": [
+      "Late Cenozoic stratigraphic units, northeastern San Joaquin Valley, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Modesto",
+        "given": "City of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "publisher": [
+      "Prepared by West Yost Associates"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Modesto Irrigation"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "note": [
+      "Agriculture Water Management Plan: 2015 Update, Prepared by Provost & Prichard"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Norris",
+        "given": "R.M."
+      },
+      {
+        "family": "Webb",
+        "given": "R.W."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Geology of California"
+    ],
+    "edition": [
+      "2nd"
+    ],
+    "location": [
+      "New York"
+    ],
+    "publisher": [
+      "John Wiley & Sons"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Oakdale",
+        "given": "City of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Urban Water Management Plan: 2015 Update, Prepared by Shoreline Environmental Engineering"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Oakdale Irrigation"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Agriculture Water Management Plan: 2015 Update, Prepared by Shoreline Environmental Engineering"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Olivera",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-04-08"
+    ],
+    "title": [
+      "Personal Communications",
+      "Conversation on Base of Fresh Water"
+    ],
+    "note": [
+      "M. Cayar, Interviewer)."
+    ],
+    "type": "interview"
+  },
+  {
+    "author": [
+      {
+        "family": "Olmsted",
+        "given": "F.H."
+      },
+      {
+        "family": "Davis",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1961",
+      "1497"
+    ],
+    "title": [
+      "Geologic features and ground-water storage capacity of the"
+    ],
+    "location": [
+      "Sacramento Valley, California. Washington, DC"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Rumbaugh",
+        "given": "J.O."
+      },
+      {
+        "family": "Rumbaugh",
+        "given": "D.B."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Guide to Using Groundwater Vistas, Version 7, Environmental Simulations"
+    ],
+    "pages": [
+      "420"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Inc"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Agriculture",
+        "given": "United States Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Urban hydrology for small watersheds"
+    ],
+    "volume": [
+      "55"
+    ],
+    "pages": [
+      "–55"
+    ],
+    "editor": [
+      {
+        "family": "ed.)",
+        "given": "Second"
+      }
+    ],
+    "container-title": [
+      "Natural Resources Conservation Service, Conservation Engineering Division",
+      "Technical Release"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Williamson",
+        "given": "A.K."
+      },
+      {
+        "family": "Prudic",
+        "given": "D.E."
+      },
+      {
+        "family": "Swain",
+        "given": "L.A."
+      }
+    ],
+    "date": [
+      "1989",
+      "1401"
+    ],
+    "title": [
+      "Ground-water flow in the"
+    ],
+    "location": [
+      "Central Valley, California. Washington, DC"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Professional Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Wood",
+        "given": "P.R."
+      },
+      {
+        "family": "Dale",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "1964",
+      "1656"
+    ],
+    "title": [
+      "Geology and groundwater features of the Edison-Maricopa area, Kern County"
+    ],
+    "location": [
+      "California. Washington, DC"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "A.C.O.E."
+      }
+    ],
+    "title": [
+      "Army Corps of Engineers"
+    ],
+    "date": [
+      "1987"
+    ],
+    "genre": [
+      "Technical Report Y87-1."
+    ],
+    "publisher": [
+      "U.S. Army Corps of Engineers Waterways Experiment Station"
+    ],
+    "location": [
+      "Vicksburg, MI"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "A.C.O.E."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Regional Supplement to the Corps of Engineers Wetland Delineation Manual: Arid West Region"
+    ],
+    "publisher": [
+      "U.S. Army Engineer Research and Development Center",
+      "September"
+    ],
+    "location": [
+      "Vicksburg, MS"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A./N.R.C.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Web Soil Survey"
+    ],
+    "publisher": [
+      "Stanislaus County"
+    ],
+    "location": [
+      "California"
+    ],
+    "url": [
+      "http://websoilsurvey.nrcs.usda.gov/app/WebSoilSurvey.aspx."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "National Wetlands Inventory"
+    ],
+    "url": [
+      "https://www.fws.gov/wetlands/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Riverbank",
+        "given": "A.T.T.E.N.D.E.E.S.Name Agency Miguel Alvarez City",
+        "particle": "of Modesto Michael Riddell City of"
+      }
+    ],
+    "title": [
+      "Dennis Wittchow Members of the public Jeff Gravel Members of the public John Brichetto Members of the public John Davids Members of the public Luis Uribe Members of the public Terpstra Hatfield Members of the public Thomas Helme Members of the public Gordon Enas Modesto Irrigation District* Chad Tienken Modesto Irrigation District* Melissa Williams Modesto Irrigation District* Samantha Wookey Modesto Irrigation District*"
+    ],
+    "note": [
+      "Eric Thorburn Oakdale Irrigation District* Walt Ward Stanislaus County* Khandriale Clark Stantec* Kirsten Pringle Stantec* Phyllis Stanin Todd Groundwater* N/A Unknown Callers"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "* This indicates that the agency is a member agency of the Stanislaus and Tuolumne Rivers Groundwater Basin Association Groundwater Sustainability Agency, Tuolumne County Groundwater Sustainability Agency, or consultant staff"
+    ],
+    "type": null
+  }
+]

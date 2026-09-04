@@ -2,7 +2,7 @@
 #'
 #' Assembles subject-predicate-object triples from the CORE dependency parses over
 #' the sustainability-criteria pages, and writes them for the similarity notebook
-#' (semantic_kg_similarity.ipynb) to embed and score -> triple_similarity.csv.
+#' (02_semantic_kg_similarity.ipynb) to embed and score -> triple_similarity.csv.
 #'
 #' Extractor: textNet::textnet_extract() — the maintained dependency-parse SPO
 #' extractor. It consumes the parsed parquet in its native textNet format

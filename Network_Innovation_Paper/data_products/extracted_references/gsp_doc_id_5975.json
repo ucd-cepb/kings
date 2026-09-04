@@ -1,0 +1,5766 @@
+[
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Bulletin 118 Basin Boundary Description 3-015, Santa Ynez River Valley"
+    ],
+    "note": [
+      "Prepared by the California Department of Water Resources (DWR). Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2016-Basin-Boundary-Descriptions/3_015_SantaYnezRiverValley.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "LaFreniere",
+        "given": "G.F."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Ground-Water Resources of the Santa Ynez Upland Ground-Water Basin, Santa Barbara County, California"
+    ],
+    "container-title": [
+      "Prepared by G.F. LaFreniere and J.J. French in cooperation with the Santa Barbara County Water Agency for the U. S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Santa Barbara County Integrated Regional Water Management Plan, Update 2019"
+    ],
+    "container-title": [
+      "Prepared for the Santa Barbara County IRWM Cooperating Partners"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "1985"
+    ],
+    "volume": [
+      "11 68% 1,800 2,700 1,300 700 2,900 4,100 100 4,800 1,200 0 7,200"
+    ],
+    "pages": [
+      "710 200 14,210 0 3,100 0 100 30,900 –10,990 2,600"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1986"
+    ],
+    "volume": [
+      "17 106% 1,800 12,300 1,300 500 3,000 4,100 110 4,700 1,100 0 7,700"
+    ],
+    "pages": [
+      "730 200 14,540 1,700 3,100 0 100 42,500 490 3,090"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1987"
+    ],
+    "volume": [
+      "9 56% 1,800 1,900"
+    ],
+    "pages": [
+      "1,300 700 3,300 4,100 100 4,000 700 0 7,800 740 200 13,540 0 3,100 0 100 29,700 –8,600 –5,510"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1988"
+    ],
+    "volume": [
+      "17 105% 1,800 4,100 1,400 700 3,100 4,100 30 4,600 1,100 0 7,800"
+    ],
+    "pages": [
+      "740 200 14,470 1,300 3,100 0 100 34,400 –940 –6,450"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1989"
+    ],
+    "volume": [
+      "7 46% 1,800 1,800 1,300 600 3,500 4,100 20 4,100 2,900 0 7,800"
+    ],
+    "pages": [
+      "750 200 15,770 0 3,100 0 100 32,000 –12,720 –19,170"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1990"
+    ],
+    "volume": [
+      "6 40",
+      "20 4,100 3,900 0 7,700"
+    ],
+    "pages": [
+      "1,800 600 1,400 700 3,300 4,200",
+      "760 200 16,680 0 3,100 0 100 31,700 –15,740 –34,910"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1991"
+    ],
+    "volume": [
+      "17 105% 1,800 12,400 1,100 1,600 2,900 4,100 150 4,800 1,200 0 7,600"
+    ],
+    "pages": [
+      "770 200 14,720 700 3,000 0 100 42,500 –5,690 –40,600"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1992"
+    ],
+    "volume": [
+      "25 155% 1,800 40,100 1,200 1,200 3,000 4,200 130 5,000 1,300 0 7,600"
+    ],
+    "pages": [
+      "780 200 15,010 3,700 3,100 0 100 73,400 3,630 –36,970"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1993"
+    ],
+    "volume": [
+      "28 174% 1,800 364,100"
+    ],
+    "pages": [
+      "400 1,400 2,000 4,200 470 4,200 2,100 0 7,400 780 200 15,150 8,300 3,100 0 100 400,600 12,460 –24,510"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1994"
+    ],
+    "volume": [
+      "14 84% 1,800 9,400 600 2,000 1,800 4,200 350 3,300 1,800 0 7,300"
+    ],
+    "pages": [
+      "790 300 13,840 200 3,100 0 100 36,800 –5,030 –29,540"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1995"
+    ],
+    "volume": [
+      "30 187% 1,800"
+    ],
+    "pages": [
+      "533,900 500 800 2,100 4,100 490 3,900 2,400 0 7,200 800 300 15,090 6,000 3,000 0 100 567,400 10,820 –18,720"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1996"
+    ],
+    "volume": [
+      "12 76% 1,800 15,900 1,000 1,100 2,100 4,200 310 4,500 3,000 0 7,100"
+    ],
+    "pages": [
+      "810 300 16,020 400 3,100 0 100 45,700 –6,210 –24,930"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1997"
+    ],
+    "volume": [
+      "12 73% 1,800 15,300 1,000 100 2,400 4,200 480 3,600 2,300 0 7,700"
+    ],
+    "pages": [
+      "810 300 15,190 2,100 3,100 0 100 45,300 120 –24,810"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1998"
+    ],
+    "volume": [
+      "36 226% 1,800"
+    ],
+    "pages": [
+      "655,500 900 0 2,300 4,100 500 3,000 1,800 60 8,300 820 300 14,780 10,900 3,000 0 100 693,300 14,550 –10,260"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1999"
+    ],
+    "volume": [
+      "12 76% 1,800"
+    ],
+    "pages": [
+      "11,000 900 1,500 3,000 4,000 480 3,300 1,900 20 9,000 830 300 15,830 600 3,000 0 100 41,700 –3,210 –13,470"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2000"
+    ],
+    "volume": [
+      "15 95% 1,800"
+    ],
+    "pages": [
+      "24,200 700 2,000 4,200 4,200 560 3,400 1,800 10 9,700 830 300 16,600 2,500 3,100 0 100 59,500 760 –12,710"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Press",
+        "given": "Associated"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021"
+    ],
+    "title": [
+      "Vandenberg Air Force Base to be Renamed Space Force Base"
+    ],
+    "volume": [
+      "14"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://apnews.com/article/donald-trump-20dac389eed3efe1da218a57900aaedc."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May",
+      "AP News"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Battany",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-04-22"
+    ],
+    "title": [
+      "An Initial Estimate of a Water Duty Factor for Field-Grown CBD Hemp in The Paso Robles Area. The University of California working in cooperation with San Luis Obispo County and the U.S"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Agriculture"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Public Health",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Nitrate Fact Sheet"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "California Geological"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "California Geomorphic Provinces, Note 36"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://www.conservation.ca.gov/cgs/Documents/Publications/CGS-Notes/CGS-Note-36.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Carpinteria County Water"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "1993",
+      "1993"
+    ],
+    "title": [
+      "Carpinteria County Water District, Central Coast Water Authority, Goleta Water District, La Cumbre Mutual Water Company, Montecito Water District, Santa Ynez Water Conservation District Improvement District No. 1, Summerland County Water District, and City of Santa Barbara"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Santa Ynez River/State Water Project Exchange Agreement. Dated February"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1950"
+    ],
+    "title": [
+      "Geology of Southwestern Santa Barbara County"
+    ],
+    "location": [
+      "California",
+      "Lompoc"
+    ],
+    "publisher": [
+      "Point Arguello",
+      "Point Conception, Los Olivos, and Gaviota Quadrangles"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Geologic Map of the Los Olivos Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California DF44"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Geologic Map of the Lake Cachuma Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Geologic Map of the San Marcos Pass Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Geologic Map of the Santa Ynez/Tajiguas Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California DF15"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Geologic Map of the Solvang and Gaviota Quadrangles"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geologic Map of the San Rafael Mountain DF188"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "title": [
+      "Geologic Map of the Figueroa Mountain Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1993"
+    ],
+    "publisher": [
+      "Zaca Creek Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California DF45"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1995"
+    ],
+    "title": [
+      "Zaca Lake Quadrangle"
+    ],
+    "location": [
+      "Santa Barbara County, California DF55"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.O.F."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Population and Housing Estimates. Prepared by the California Department of Finance"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Dudek"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Santa Ynez River Valley White Area Water Use Analysis. Prepared for Santa Ynez River Water Conservation District and Santa Barbara County Water Agency"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Ground Water in the Paso Robles Basin"
+    ],
+    "publisher": [
+      "California State Resources Agency, Department of Water Resources"
+    ],
+    "location": [
+      "Southern District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "1994",
+      "1994-10"
+    ],
+    "title": [
+      "California Water Plan Update"
+    ],
+    "genre": [
+      "Bulletin 160-93."
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/waterrights/water_issues/programs/bay_delta/wq_control_plans/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Water Resources of the Arroyo Grande – Nipomo Mesa Area"
+    ],
+    "container-title": [
+      "Southern District Report. Prepared by the California Department of Water Resources"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practice Framework"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Modeling"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Water Budget"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Bulletin 118 Basin Boundary Description 3-015, Santa Ynez River Valley"
+    ],
+    "note": [
+      "Prepared by the California Department of Water Resources (DWR). Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2016-Basin-Boundary-Descriptions/3_015_SantaYnezRiverValley.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guidance Document for the Sustainable Management of Groundwater: Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "The Final State Water Project Delivery Capability Report 2019. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "DRAFT Handbook for Water Budget Development With or Without Models"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L."
+      },
+      {
+        "family": "Flint",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-05"
+    ],
+    "title": [
+      "California Basin Characterization Model: A Dataset of Historical and Future Hydrologic Response to Climate Change"
+    ],
+    "url": [
+      "https://doi.org/10.5066/F76T0JPB:"
+    ],
+    "pages": [
+      "1 1"
+    ],
+    "note": [
+      "Retrieved October 2020."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Data Release"
+    ],
+    "doi": [
+      "10.5066/F76T0JPB:"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Consulting",
+        "given": "Flowline"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12-20"
+    ],
+    "title": [
+      "Fourth Quarter 2018 Monitoring Report and Request for Case Closure, 2015 Mission Drive (HWY 246"
+    ],
+    "location": [
+      "Solvang, California, LUFT"
+    ],
+    "container-title": [
+      "Site #50121, SWCRB Global ID"
+    ],
+    "pages": [
+      "0608300118"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Fugro"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Geophysical and Geotechnical Study, Sewer Force Main Crossing"
+    ],
+    "location": [
+      "Santa Ynez River, Solvang, California"
+    ],
+    "publisher": [
+      "Prepared by Fugro West, Inc. Prepared for Bennett/Staheli Engineers"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Geosyntec"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Foxen Canyon Closed Landfill Third and Fourth Quarter 2020 Water Quality Monitoring Report. Prepared by Geosyntec Consultants, Inc"
+    ],
+    "publisher": [
+      "Prepared for County of Santa Barbara Public Works Department, Resource Recovery and Waste Management Division"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Geosyntec"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Ballard Canyon Closed Landfill Fourth Quarter 2020 and First Quarter 2021 Semiannual Groundwater Monitoring Report"
+    ],
+    "publisher": [
+      "Geosyntec Consultants, Inc. Prepared for County of Santa Barbara Public Works Department, Resource Recovery and Waste Management Division"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "G.S.I."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Hydrologic Base Period Selection, Eastern Management Area Technical Memorandum"
+    ],
+    "publisher": [
+      "Prepared by GSI Water Solutions, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "B."
+      },
+      {
+        "family": "Grattan",
+        "given": "S."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Agriculture Salinity and Drainage"
+    ],
+    "genre": [
+      "Division of Agriculture and Natural Resources Publication 3375,"
+    ],
+    "publisher": [
+      "University of California Irrigation Program, University of California"
+    ],
+    "location": [
+      "Davis"
+    ],
+    "note": [
+      "Revised 2006."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "H.G.I."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-08"
+    ],
+    "title": [
+      "Geophysical Investigation of the Santa Ynez River Groundwater Basin – California. Prepared by hydroGEOPHYSICS, Inc"
+    ],
+    "genre": [
+      "(HGI)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Hoffman"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Revised Preliminary Summary Report regarding the Hydrogeology of the Basin, Santa Ynez Uplands Groundwater Basin"
+    ],
+    "location": [
+      "Santa Ynez Valley, California"
+    ],
+    "publisher": [
+      "Prepared by Rick Hoffman & Associates"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Hopkins"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Preliminary Hydrogeological Study, City of Solvang Santa Ynez Well Field Well Site Evaluation Project"
+    ],
+    "location": [
+      "Solvang, California"
+    ],
+    "note": [
+      "Prepared by Hopkins Groundwater Consultants, Inc. Prepared for the City of Solvang."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "H.T.O."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Santa Barbara County Groundwater Characterization Project: Santa Ynez River Valley Groundwater Basin"
+    ],
+    "publisher": [
+      "Prepared by Riles Haas for Heal the Ocean"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "LaFreniere",
+        "given": "G.F."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Ground-Water Resources of the Santa Ynez Upland Ground-Water Basin, Santa Barbara County, California"
+    ],
+    "container-title": [
+      "Prepared by G.F. LaFreniere and J.J. French in cooperation with the Santa Barbara County Water Agency for the U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Mann",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Concepts in Ground Water Management"
+    ],
+    "volume": [
+      "60"
+    ],
+    "pages": [
+      "1336–44"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "American Water Works Association"
+    ],
+    "issue": [
+      "12"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Meridian"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "City of Solvang Water System Master Plan Update Environmental Impact Report"
+    ],
+    "publisher": [
+      "Prepared by Meridian Consultants"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "NASA",
+        "given": "J.P.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "publisher": [
+      "Department of Water Resources. Ben Brezing. February"
+    ],
+    "type": "book"
+  },
+  {
+    "editor": [
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Hydrologic and Geochemical Characterization of the Santa Rosa Plain Watershed, Sonoma County"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Scientific Investigations Report 2013–5118."
+    ],
+    "note": [
+      "Prepared by the U.S. Geological Survey."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "N.M.F.S."
+      }
+    ],
+    "date": [
+      "2000",
+      "2000"
+    ],
+    "title": [
+      "Biological Opinion, U.S. Bureau of Reclamation Operation and Maintenance of the Cachuma Project on the Santa Ynez River in Santa Barbara County, California"
+    ],
+    "volume": [
+      "11"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Issued September"
+    ]
+  },
+  {
+    "container-title": [
+      "Issued by the National Marine Fisheries Service (NMFS"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans. Published by The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/gsp-guidance-document/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "M.M.",
+        "given": "Rohde"
+      },
+      {
+        "family": "Seapy",
+        "given": "B."
+      },
+      {
+        "family": "Rogers",
+        "given": "R."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Castañeda",
+        "given": "X."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A Compendium of California’s Threatened and Endangered Species for Sustainable Groundwater Management"
+    ],
+    "container-title": [
+      "Issued by The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.C.A.G."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Regional Growth Forecast 2010–2040. Prepared by the Santa Barbara County Association of Governments"
+    ],
+    "note": [
+      "Adopted December 2012. Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "http://www.sbcag.org/uploads/2/4/5/4/24540302/regional_growth_forecast_2010-2040.pdf."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Santa Barbara"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Santa Barbara County 2011 Groundwater Report"
+    ],
+    "publisher": [
+      "Prepared by Dennis Gibbs for Santa Barbara County Public Works Department, Water Resources Division"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Department",
+        "given": "Santa Barbara County Public Health"
+      }
+    ],
+    "date": [
+      "2019",
+      "0121-01-30"
+    ],
+    "title": [
+      "Mission Drive"
+    ],
+    "location": [
+      "Solvang, California; Jim’s Service Center"
+    ],
+    "publisher": [
+      "LUFT Site"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "S.F.R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Environmental Screening Levels (ESLs), Tier 1 ESLs Revision 2. Prepared by the San Francisco Bay Regional Water Quality Control Board (SFRWQCB"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/sanfranciscobay/water_issues/programs/esl.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Stetson"
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Water Resources Management Plan for the Santa Ynez River Water Conservation District"
+    ],
+    "publisher": [
+      "Prepared by Stetson Engineers, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Stetson"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Forty-third Annual Engineering and Survey Report on Water Supply Conditions of the Santa Ynez River Water Conservation District 2020-2021"
+    ],
+    "publisher": [
+      "Prepared by Stetson Engineers, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Stetson"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Description and Documentation for Santa Ynez River RiverWare Model Task 2: Operation Model- Draft"
+    ],
+    "publisher": [
+      "Prepared by Stetson Engineers, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Division of Water Rights Final Environmental Impact Report, Consideration of Modifications to the U.S. Bureau of Reclamation’s Water Right Permits 11308 and 11310 (Applications 11331 and 11332) to Protect Public Trust Values and Downstream Water Rights on the Santa Ynez River below Bradbury Dam (Cachuma Reservoir"
+    ],
+    "note": [
+      "Prepared by the California State Water Resources Control Board."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "State Clearinghouse #1999051051"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Frequently Asked Questions about Hexavalent Chromium in Public Water Systems. Prepared by the California State Water Resources Control Board"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Secondary Drinking Water Standards. Prepared by the California State Water Resources Control Board"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Order WR 2019-0148 In the Matter of Permits 11308 and 11310 (Applications 11331 and 11332) held by the United States Bureau of Reclamation for the Cachuma Project on the Santa Ynez River"
+    ],
+    "note": [
+      "Prepared by the California State Water Resources Control Board."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "MCLs, DLRs, and PHGs for Regulated Drinking Water Contaminants"
+    ],
+    "container-title": [
+      "August. Prepared by the California State Water Resources Control Board"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.Y.R.W.C.D."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Groundwater Production Information and Instructions. Prepared by Santa Ynez River Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Tech",
+        "given": "Tetra"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Assessment of Groundwater Availability on the Santa Ynez Chumash Reservation"
+    ],
+    "publisher": [
+      "Prepared by Tetra Tech, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "container-title": [
+      "Prepared by The Nature Conservancy (TNC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Groundwater Resource Hub: GDE Rooting Depths Database"
+    ],
+    "note": [
+      "Prepared by The Nature Conservancy (TNC). Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/gde-rootingdepths-database-for-gdes/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "March 23"
+    ],
+    "title": [
+      "InSar Data Accuracy for California Groundwater Basins, CGPS Data Comparative Analysis, January 2015 to September 2019"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the California Department of Water Resources"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2021",
+      "2015-01",
+      "March 23"
+    ],
+    "title": [
+      "InSar Data Accuracy for California Groundwater Basins, CGPS Data Comparative Analysis",
+      "Prepared for the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "ALTAMIRA",
+        "given": "T.R.E."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.N.A.V.C.O."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "UNAVCO Instrumentation Networks Map"
+    ],
+    "note": [
+      "Retrieved September 29, 2020, from UNAVCO Web Site:"
+    ],
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/map/map.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Water Resources of the Santa Ynez River Basin, Santa Barbara County, California"
+    ],
+    "editor": [
+      {
+        "family": "J.E. Upson",
+        "given": "Prepared",
+        "particle": "by"
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "container-title": [
+      "in cooperation with Santa Barbara County for the U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.B.R."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Revised Section 3 (Proposed Project) of the Biological Assessment for Cachuma Project Operations and the Lower Santa Ynez River. Prepared for the National Marine Fisheries Service"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "note": [
+      "Prepared by the U.S. Bureau of Reclamation (USBR), Fresno, California."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.D.A."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Web Soil Survey. Prepared by Soil Survey Staff for the Natural Resources Conservation Service, U.S"
+    ],
+    "url": [
+      "http://websoilsurvey.sc.egov.usda.gov/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Department of Agriculture"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "The National Map, Data Download and Visualization Services. NHD National Hydrography Dataset View (V1.0). Provided by the U.S"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/media/files/nhdplus-high-resolution-data-model-v10."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "T.A."
+      },
+      {
+        "family": "Landon",
+        "given": "M.K."
+      },
+      {
+        "family": "Bennett",
+        "given": "G.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Prioritization of Oil and Gas Fields for Regional Groundwater Monitoring Based on Preliminary Assessment of Petroleum Resource Development and Proximity to California's Groundwater Resources"
+    ],
+    "genre": [
+      "Scientific Investigation Report 2018-5065."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "California Statewide Groundwater Elevation Monitoring (CASGEM) Program Procedures for Monitoring Entity Reporting"
+    ],
+    "publisher": [
+      "December"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater – Monitoring Protocols, Standards, and Sites"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater – Monitoring Networks and Identification of Data Gaps"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Santa Ynez River Valley Groundwater Basin Bulletin 118 Update 2016. Prepared by the California Department of Water Resources"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "E.P.A."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Guidance on Systematic Planning Using the Data Quality Objective Process"
+    ],
+    "container-title": [
+      "Prepared by the U.S. Environmental Protection Agency"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Consulting",
+        "given": "Flowline"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12-20"
+    ],
+    "title": [
+      "Fourth Quarter 2018 Monitoring Report and Request for Case Closure, 2015 Mission Drive (Hwy 246"
+    ],
+    "location": [
+      "Solvang, California, LUFT"
+    ],
+    "container-title": [
+      "Site #50121, SWRCB Global ID"
+    ],
+    "pages": [
+      "0608300118"
+    ],
+    "type": "chapter"
+  },
+  {
+    "volume": [
+      "ID"
+    ],
+    "author": [
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Memorandum of Agreement for Formation of a Groundwater Sustainability Agency for the Eastern Management Area in the Santa Ynez River Valley Groundwater Basin Under the Sustainable Groundwater Management Act. Prepared by Santa Ynez River Water Conservation District"
+    ],
+    "publisher": [
+      "City of Solvang"
+    ],
+    "location": [
+      "Santa"
+    ],
+    "note": [
+      "Ynez River Water Conservation District, and Santa Barbara County Water Agency."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Improvement District"
+    ],
+    "issue": [
+      "1",
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "LaFreniere",
+        "given": "G.F."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Ground-Water Resources of the Santa Ynez Upland Ground-Water Basin, Santa Barbara County, California"
+    ],
+    "container-title": [
+      "Prepared by G.F. LaFreniere and J.J. French in cooperation with the Santa Barbara County Water Agency for the U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "NASA",
+        "given": "J.P.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Central Coastal Basin"
+    ],
+    "publisher": [
+      "June"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Proposed General Waste Discharge Requirements for Discharges from Irrigated Lands"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.C.P.H.D."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Mission Drive, Solvang, California; Jim’s Service Center, LUFT Site # 50121. Santa Barbara County Public Health Department, Environmental Health Services Division"
+    ],
+    "note": [
+      "Letter from E. Steven Nailor, REHS, EIT, SBCPHD, to Jim Enderle, Jim’s Service Center."
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "given": "Stetson"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Description and Documentation for Santa Ynez River RiverWare Model Task 2: Operation Model- Draft"
+    ],
+    "publisher": [
+      "Prepared by Stetson Engineers, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "container-title": [
+      "Prepared by The Nature Conservancy (TNC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "ALTAMIRA",
+        "given": "T.R.E."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "The National Map, Data Download and Visualization Services. NHD National Hydrography Dataset View (V1.0). Provided by the U.S"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 5, 2021."
+    ],
+    "url": [
+      "https://www.usgs.gov/media/files/nhdplus-high-resolution-data-model-v10."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Water Resources of the Santa Ynez River Basin, Santa Barbara County, California"
+    ],
+    "editor": [
+      {
+        "family": "J.E. Upson",
+        "given": "Prepared",
+        "particle": "by"
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "container-title": [
+      "in cooperation with Santa Barbara County for the U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "§ 354.4 General Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "b"
+      }
+    ],
+    "title": [
+      "Each Plan shall include the following general information: A list of references and technical studies relied upon by the Agency in developing the Plan. Each Agency shall provide to the Department electronic copies of reports and other documents and materials cited as references that are not generally available to the public"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: DRAFT Sustainable Management Criteria"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Consulting",
+        "given": "Flowline"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-12-20"
+    ],
+    "title": [
+      "Fourth Quarter 2018 Monitoring Report and Request for Case Closure, 2015 Mission Drive (Hwy 246"
+    ],
+    "location": [
+      "Solvang, California, LUFT"
+    ],
+    "container-title": [
+      "Site #50121, SWRCB Global ID"
+    ],
+    "pages": [
+      "0608300118"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Hoffman"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Revised Preliminary Summary Report regarding the Hydrogeology of the Basin, Santa Ynez Uplands Groundwater Basin"
+    ],
+    "location": [
+      "Santa Ynez Valley, California"
+    ],
+    "publisher": [
+      "Prepared by Rick Hoffman & Associates"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "LaFreniere",
+        "given": "G.F."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Ground-Water Resources of the Santa Ynez Upland Ground-Water Basin, Santa Barbara County, California"
+    ],
+    "container-title": [
+      "Prepared by G.F. LaFreniere and J.J. French in cooperation with the Santa Barbara County Water Agency for the U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "NASA",
+        "given": "J.P.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "publisher": [
+      "Department of Water Resources. Ben Brezing. February"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "R.W.Q.C.B."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-06"
+    ],
+    "title": [
+      "Water Quality Control Plan for the Central Coastal Basin",
+      "Edition. Prepared by the California State Water Resources Control Board"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/rwqcb3/publications_forms/publications/basin_plan/docs/2019_"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.B.C.P.H.D."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Mission Drive, Solvang, California; Jim’s Service Center, LUFT Site # 50121. Santa Barbara County Public Health Department, Environmental Health Services Division"
+    ],
+    "note": [
+      "Letter from E. Steven Nailor, REHS, EIT, SBCPHD, to Jim Enderle, Jim’s Service Center."
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Code of Regulations, Title 22"
+    ],
+    "volume": [
+      "16"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "State Water Resources Control Board (SWRCB)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "April"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "container-title": [
+      "Prepared by The Nature Conservancy (TNC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "March 23"
+    ],
+    "title": [
+      "InSar Data Accuracy for California Groundwater Basins, CGPS Data Comparative Analysis, January 2015 to September 2019"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared for the California Department of Water Resources"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "ALTAMIRA",
+        "given": "T.R.E."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "location": [
+      "March"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.N.A.V.C.O."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "ORES - Overview | Station Page"
+    ],
+    "genre": [
+      "September."
+    ],
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/status/nota/overview/ORES."
+    ],
+    "publisher": [
+      "University NAVSTAR Consortium"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "A.E.C.O.M."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Update to Los Olivos Wastewater System Preliminary Engineering Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Department of Water Resources"
+    ],
+    "note": [
+      "DWR) 2019 SWP Delivery Capability Report (DCR)."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "LaFreniere",
+        "given": "G.F."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1968",
+      "1968-04-10"
+    ],
+    "title": [
+      "Ground-Water Resources of the Santa Ynez Upland Ground-Water Basin, Santa Barbara County, California. United States Department of the Interior Geological Survey, Water Resources Division. Prepared in cooperation with the Santa Barbara County Water Agency"
+    ],
+    "genre": [
+      "USGS Open-File Report 68-163."
+    ],
+    "publisher": [
+      "Menlo Park"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "given": "S.Y.R.W.C.D."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Groundwater Production Information and Instructions. Prepared by Santa Ynez River Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-07"
+    ],
+    "title": [
+      "Identifying GDEs Under SGMA, Best Practices for Using the NC Dataset"
+    ],
+    "container-title": [
+      "Prepared by The Nature Conservancy (TNC"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "T.W.R.I."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Potential Water Savings in Irrigated Agriculture in the Lower Rio Grande Basin of Texas"
+    ],
+    "publisher": [
+      "Texas Water Resources Institute"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Water Resources of the Santa Ynez River Basin, Santa Barbara County, California"
+    ],
+    "editor": [
+      {
+        "family": "J.E. Upson",
+        "given": "Prepared",
+        "particle": "by"
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "container-title": [
+      "in cooperation with Santa Barbara County for the U.S. Geological Survey"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Dibblee",
+        "given": "T.W.",
+        "suffix": "JR"
+      }
+    ],
+    "date": [
+      "1987"
+    ],
+    "title": [
+      "Several geologic maps and cross sections"
+    ],
+    "container-title": [
+      "Published by the California Division of Mines and Geology and Dibblee Geological Foundation"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "West",
+        "given": "Fugro"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Geophysical and Geotechnical Study Sewer Force Main Crossing"
+    ],
+    "location": [
+      "Santa Ynez River Solvang, California"
+    ],
+    "note": [
+      "Fugro Job No. 3568.001. Prepared for Bennett/Staheli Engineers."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Consultant",
+        "given": "Hopkins Groundwater"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Preliminary Hydrogeological Study, City of Solvang, Santa Ynez River Well Field Well Site Evaluation Project"
+    ],
+    "location": [
+      "Solvang, California"
+    ],
+    "note": [
+      "Prepared for the City of Solvang."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Seequent",
+        "given": "Ltd"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "url": [
+      "https://www.seequent.com/leapfrog-interpolation-basics/"
+    ],
+    "note": [
+      "Accessed March 6,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Water Resources of the Santa Ynez River Basin, Santa Barbara County, California"
+    ],
+    "container-title": [
+      "US Geological Survey Water-Supply Paper 1107. Prepared in cooperation with Santa Barbara County"
+    ],
+    "type": "chapter"
+  },
+  {
+    "editor": [
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Jones",
+        "given": "D.R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Land subsidence in the United States: U.S"
+    ],
+    "volume": [
+      "1182"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/circ/circ1182/#pdf)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Circular"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Solutions",
+        "given": "G.S.I.Water"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "PUBLIC REVIEW DRAFT Santa Ynez River Valley Groundwater Basin – Eastern Management Area Groundwater Sustainability Plan"
+    ],
+    "note": [
+      "DRAFT Section 3"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "–"
+      }
+    ],
+    "title": [
+      "Basin Setting: HCM & Groundwater Conditions"
+    ],
+    "container-title": [
+      "prepared for Eastern Management Area Groundwater Sustainability Agency"
+    ],
+    "date": [
+      "November 20"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hoffmann",
+        "given": "Jörn"
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Galloway",
+        "given": "D.L."
+      },
+      {
+        "family": "Wilson",
+        "given": "Alicia M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "MODFLOW-2000 Ground-Water Model—User Guide to the Subsidence and Aquifer-System Compaction (SUB) Package, U.S"
+    ],
+    "publisher": [
+      "Geological Survey Ground-Water Resources Program"
+    ],
+    "genre": [
+      "Open-File Report 03-233."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Holtz",
+        "given": "R.D."
+      },
+      {
+        "family": "Kovacs",
+        "given": "W.D."
+      },
+      {
+        "family": "Sheahan",
+        "given": "T.C."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "An Introduction to Geotechnical Engineering"
+    ],
+    "editor": [
+      {
+        "given": "Second"
+      }
+    ],
+    "container-title": [
+      "Pearson Education Inc"
+    ],
+    "location": [
+      "Upper Saddle River, NJ"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Lowe",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Subsidence in Sedimentary Basins Due to Groundwater Withdrawal for Geothermal Energy Development"
+    ],
+    "volume": [
+      "601"
+    ],
+    "url": [
+      "https://ugspub.nr.utah.gov/publications/open_file_reports/OFR-601.pdf)."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Utah Geological Survey Open-File Report"
+    ]
+  },
+  {
+    "editor": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Guidebook to Studies of Land Subsidence Due to Ground-Water Withdrawal (https://wwwrcamnl.wr.usgs.gov/rgws/Unesco/), prepared for the International Hydrological Programme"
+    ],
+    "genre": [
+      "Working Group 8.4.,"
+    ],
+    "publisher": [
+      "United Nations Educational, Scientific and Cultural Organization (UNESCO"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Areas of Land Subsidence in California"
+    ],
+    "url": [
+      "https://ca.water.usgs.gov/land_subsidence/california-subsidence-areas.html,"
+    ],
+    "note": [
+      "accessed February 23."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      }
+    ],
+    "title": [
+      "Crop Evapotranspiration - Guidelines for Computing Crop Water Requirements"
+    ],
+    "container-title": [
+      "FAO Irrigation and Drainage Paper 56, Food and Agriculture Organization of the United Nations"
+    ],
+    "location": [
+      "Rome"
+    ],
+    "date": [
+      "1998"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Anderson",
+        "given": "M."
+      },
+      {
+        "family": "Woessner",
+        "given": "W."
+      },
+      {
+        "family": "Hunt",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015"
+    ],
+    "title": [
+      "Applied Groundwater Modeling Simulation of Flow and Advective Transport"
+    ],
+    "location": [
+      "Cambridge, Massachusetts"
+    ],
+    "publisher": [
+      "Academic Press"
+    ],
+    "pages": [
+      "564"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Press",
+        "given": "Associated"
+      }
+    ],
+    "date": [
+      "2021",
+      "2021"
+    ],
+    "title": [
+      "Vandenberg Air Force Base to be Renamed Space Force Base"
+    ],
+    "volume": [
+      "14"
+    ],
+    "note": [
+      "Available at",
+      "Accessed July 26, 2021."
+    ],
+    "url": [
+      "https://apnews.com/article/donald-trump-20dac389eed3efe1da218a57900aaedc."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May",
+      "AP News"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bear",
+        "given": "J."
+      },
+      {
+        "family": "Boyce",
+        "given": "S.E."
+      },
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Ferguson",
+        "given": "I.M."
+      },
+      {
+        "family": "Reimann",
+        "given": "T."
+      },
+      {
+        "family": "Henson",
+        "given": "W."
+      },
+      {
+        "family": "Mehl",
+        "given": "S."
+      },
+      {
+        "family": "Leake",
+        "given": "S."
+      },
+      {
+        "family": "Maddock",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1972",
+      "1972",
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Dynamics of Fluids in Porous Media",
+      "MODFLOW-OWHM v2: The Next Generation of Fully Integrated Hydrologic Simulation Software"
+    ],
+    "volume": [
+      "1"
+    ],
+    "location": [
+      "New York"
+    ],
+    "publisher": [
+      "American Elsevier Publishing Company",
+      "American Geophysical Union, Fall General Assembly"
+    ],
+    "pages": [
+      "764"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Department of Water Resources, Groundwater Elevation Contours 1960"
+    ],
+    "date": [
+      "2010"
+    ],
+    "url": [
+      "https://databasin.org/datasets/b05820cda86b4921a515065fa1deffcc."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CropScape"
+      }
+    ],
+    "date": [
+      "2016",
+      "2006"
+    ],
+    "title": [
+      "USDA National Agricultural Statistics Service Cropland Data Layer",
+      "Prepared by the U.S"
+    ],
+    "note": [
+      "Department of Agriculture (USDA). Published crop-specific data layer [Online]. Available at"
+    ],
+    "url": [
+      "http://nassgeodata.gmu.edu/CropScape/"
+    ],
+    "publisher": [
+      "USDA-NASS"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dastane",
+        "given": "N.G."
+      }
+    ],
+    "date": [
+      "1978"
+    ],
+    "title": [
+      "Effective Rainfall in Irrigated Agriculture” in Environmental Science"
+    ],
+    "location": [
+      "Rome, Italy"
+    ],
+    "publisher": [
+      "Publications Division, Food and Agriculture Organization of the United Nations"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "A.P."
+      },
+      {
+        "family": "King",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1917"
+    ],
+    "title": [
+      "Department of the Interior, Manual of the United States Reclamation Service 326"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Doherty",
+        "given": "J."
+      }
+    ],
+    "title": [
+      "PEST: Model-independent Parameter Estimation, User Manual"
+    ],
+    "edition": [
+      "5th"
+    ],
+    "location": [
+      "Brisbane, Australia"
+    ],
+    "publisher": [
+      "Watermark Numerical Computing"
+    ],
+    "date": [
+      "2010"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Modeling"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Sustainable Groundwater Management Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Bulletin B-118 Basin Boundary Description 3-015, Santa Ynez River Valley"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources (DWR). https://water.ca.gov/-/media/DWR-Santa Ynez River Basin EMA Hydrologic Model for GSP Development"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Website/Web-Pages/Programs/Groundwater-Management/Bulletin-118/Files/2016-Basin-Boundary-Descriptions/3_015_SantaYnezRiverValleypdf"
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Simulations",
+        "given": "Environmental"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Guide to Using Groundwater Vistas Version 7"
+    ],
+    "type": null
+  },
+  {
+    "editor": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      }
+    ],
+    "date": [
+      "2009",
+      "1766"
+    ],
+    "title": [
+      "Groundwater Availability of the Central Valley Aquifer"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Professional Paper"
+    ],
+    "pages": [
+      "225"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Faunt",
+        "given": "C.C."
+      },
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Traum",
+        "given": "J."
+      },
+      {
+        "family": "Brandt",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Water Availability and Land Subsidence in the"
+    ],
+    "location": [
+      "Central Valley, California, USA"
+    ],
+    "volume": [
+      "24"
+    ],
+    "pages": [
+      "675–84"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeol. J"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Freeze",
+        "given": "R.A."
+      },
+      {
+        "family": "Cherry",
+        "given": "J.A."
+      },
+      {
+        "given": "J.A."
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "title": [
+      "Groundwater"
+    ],
+    "location": [
+      "Englewood Cliffs, New Jersey"
+    ],
+    "publisher": [
+      "Prentice- Hall Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Flint",
+        "given": "A.L."
+      },
+      {
+        "family": "Thorne",
+        "given": "J.H."
+      },
+      {
+        "family": "Boynton",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Fine-Scale Hydrologic Modeling for Regional Landscape Applications: The California Basin Characterization Model Development and Performance"
+    ],
+    "volume": [
+      "2"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://doi.org/10.1186/2192-1709-2-25."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecological Processes"
+    ],
+    "issue": [
+      "25"
+    ],
+    "doi": [
+      "10.1186/2192-1709-2-25."
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "G.S.I."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Hydrologic Base Period Selection, Eastern Management Area Technical Memorandum"
+    ],
+    "publisher": [
+      "Prepared by GSI Water Solutions, Inc"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hanson",
+        "given": "R.T."
+      },
+      {
+        "family": "Boyce",
+        "given": "S.E."
+      },
+      {
+        "family": "Schmid",
+        "given": "W."
+      },
+      {
+        "family": "Hughes",
+        "given": "J.D."
+      },
+      {
+        "family": "Mehl",
+        "given": "S.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "S.A.",
+        "given": "T.Maddock"
+      },
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "One-Water Hydrologic Flow Model (MODFLOW-OWHM): U.S"
+    ],
+    "volume": [
+      "6–A51"
+    ],
+    "pages": [
+      "120"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://dx.doi.org/10.3133/tm6A51."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ],
+    "doi": [
+      "10.3133/tm6A51."
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "MODFLOW-2005, the U.S. Geological Survey Modular Ground-Water Model -- the Ground-Water Flow Process: U.S"
+    ],
+    "volume": [
+      "6-A16"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Hoffman"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Revised Preliminary Summary Report Regarding the Hydrogeology of the Basin, Santa Ynez Uplands Groundwater Basin"
+    ],
+    "location": [
+      "Santa Ynez Valley, California"
+    ],
+    "publisher": [
+      "Prepared by Rick Hoffman & Associates"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Hopkins"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Preliminary Hydrogeological Study, City of Solvang Santa Ynez Well Field Well Site Evaluation Project"
+    ],
+    "location": [
+      "Solvang, California"
+    ],
+    "note": [
+      "Prepared by Hopkins Groundwater Consultants, Inc. Prepared for the City of Solvang."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Köppen",
+        "given": "W."
+      }
+    ],
+    "title": [
+      "Das Geographische System der Klimate [The geographic system of climates"
+    ],
+    "editor": [
+      {
+        "family": "Rudolf",
+        "given": "From"
+      }
+    ],
+    "container-title": [
+      "Handbuch der Klimatologie"
+    ],
+    "location": [
+      "Berlin"
+    ],
+    "publisher": [
+      "Geiger"
+    ],
+    "date": [
+      "1936"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "LaFreniere",
+        "given": "G.F."
+      },
+      {
+        "family": "French",
+        "given": "J.J."
+      }
+    ],
+    "date": [
+      "1968"
+    ],
+    "title": [
+      "Ground-Water Resources of the Santa Ynez Upland Ground-Water Basin, Santa Barbara County, California"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by G. F. LaFreniere and J. J. French in cooperation with the Santa Barbara County Water Agency for the U. S. Geological Survey"
+    ]
+  },
+  {
+    "title": [
+      "Santa Ynez River Basin EMA Hydrologic Model for GSP Development"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Kresic",
+        "given": "N."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Numerical Groundwater Modelling in Karst"
+    ],
+    "container-title": [
+      "Advances in Karst Research: Theory, Fieldwork and Applications"
+    ],
+    "editor": [
+      {
+        "family": "Parise",
+        "given": "M."
+      },
+      {
+        "family": "Gabrovsek",
+        "given": "F."
+      },
+      {
+        "family": "Kaufmann",
+        "given": "G."
+      },
+      {
+        "family": "Ravbar",
+        "given": "N."
+      }
+    ],
+    "location": [
+      "London"
+    ],
+    "publisher": [
+      "The Geological Society"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "McDonald",
+        "given": "M.G."
+      },
+      {
+        "family": "Harbaugh",
+        "given": "A.W."
+      },
+      {
+        "family": "Mead",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "1988",
+      "1903"
+    ],
+    "title": [
+      "A Modular Three-Dimensional Finite-Difference Ground-Water Flow Model in Techniques of Water-Resources Investigations of the United States Geological Survey",
+      "Irrigation Institutions 116: A Discussion of the Economic and Legal Questions"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "586"
+    ],
+    "note": [
+      "Created by the Growth of Irrigated Agriculture in the West (Richard T. Ely ed."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Book"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "NASA",
+        "given": "J.P.L."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "InSar Land Surveying and Mapping Services in Support of the DWR SGMA Program Technical Report"
+    ],
+    "publisher": [
+      "Department of Water Resources. Ben Brezing. February"
+    ],
+    "type": "book"
+  },
+  {
+    "editor": [
+      {
+        "family": "Nishikawa",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Hydrologic and Geochemical Characterization of the Santa Rosa Plain Watershed, Sonoma County"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Scientific Investigations Report 2013–5118."
+    ],
+    "note": [
+      "Prepared by the U.S. Geological Survey."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Niswonger",
+        "given": "R.G."
+      },
+      {
+        "family": "Panday",
+        "given": "S."
+      },
+      {
+        "family": "Ibaraki",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "MODFLOW-NWT, A Newton Formulation for MODFLOW-2005: U.S"
+    ],
+    "volume": [
+      "6–A37"
+    ],
+    "pages": [
+      "44"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "N.M.F.S."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Endangered Species Act Section 7 Consultation – Biological Opinion"
+    ],
+    "container-title": [
+      "U.S. Bureau of Reclamation Operation and Maintenance of the Cachuma Project on the Santa Ynez River in Santa Barbara County"
+    ],
+    "location": [
+      "California"
+    ],
+    "note": [
+      "Prepared by the National Marine Fisheries Service, Southwest Region."
+    ],
+    "type": "chapter"
+  },
+  {
+    "publisher": [
+      "PRISM Climate Group, Oregon State University"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "http://prism.oregonstate.edu"
+    ],
+    "author": [
+      {
+        "family": "Pollock",
+        "given": "D.W."
+      }
+    ],
+    "date": [
+      "1994",
+      "September"
+    ],
+    "title": [
+      "User’s Guide for MODPATH/MODPATH-PLOT, Version 3: A Particle Tracking Postprocessing Package for MODFLOW, the U"
+    ],
+    "container-title": [
+      "S. Geological Survey Finite-Difference Ground-water Flow Model"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sneed",
+        "given": "M."
+      },
+      {
+        "family": "Brandt",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2015",
+      "2007",
+      "November 15-19, 2015"
+    ],
+    "title": [
+      "Land Subsidence in the San Joaquin Valley"
+    ],
+    "location": [
+      "California, USA",
+      "Nagoya, Japan"
+    ],
+    "container-title": [
+      "Proceedings of the Ninth International Symposium on Land Subsidence"
+    ],
+    "genre": [
+      "IAHS Publication 372,"
+    ],
+    "pages": [
+      "23–27"
+    ],
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Spitz",
+        "given": "K."
+      },
+      {
+        "family": "Moreno",
+        "given": "J."
+      },
+      {
+        "given": "J."
+      },
+      {
+        "family": "Engineers",
+        "given": "Stetson"
+      }
+    ],
+    "date": [
+      "1996",
+      "2008"
+    ],
+    "title": [
+      "A Practical Guide to Groundwater and Solute Transport Modeling",
+      "Draft Description and Documentation for Santa Ynez River Riverware Model Task 2"
+    ],
+    "location": [
+      "Hoboken, New Jersey"
+    ],
+    "publisher": [
+      "John Wiley & Sons"
+    ],
+    "pages": [
+      "461"
+    ],
+    "note": [
+      "Operation Model. prepared for the Santa Ynez River Water Conservation District. May 2008."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Santa Ynez River Basin EMA Hydrologic Model for GSP Development"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.Y.R.W.C.D."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Groundwater Production Information and Instructions. Prepared by Santa Ynez River Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Effects of Ground-Water Development on Ground-Water Flow To And From Surface-Water Bodies"
+    ],
+    "note": [
+      "Available at",
+      "Accessed August 13, 2021."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/circ/circ1186/html/gw_effect.html."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      },
+      {
+        "family": "Upson",
+        "given": "E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G."
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "title": [
+      "Geology and Water Resources of the Santa Ynez River Basin, Santa Barbara County, California",
+      "Jr"
+    ],
+    "container-title": [
+      "in cooperation with Santa Barbara County for the U. S. Geological Survey",
+      "Prepared by J"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Zheng",
+        "given": "C."
+      },
+      {
+        "family": "Neville",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "1994"
+    ],
+    "title": [
+      "Practical Modeling of Pump-and-Treat Systems Using MODFLOW, PATH3d and MT3D"
+    ],
+    "publisher": [
+      "Short Course Notes"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Mr",
+        "given": "Dear"
+      }
+    ],
+    "title": [
+      "Buelow: Enclosed with this letter are NOAA’s National Marine Fisheries Service’s (NMFS) comments on the Draft Santa Ynez River Valley Groundwater Basin – Eastern Management Area Groundwater Sustainability Plan"
+    ],
+    "note": [
+      "Basin Groundwater Budget (Draft Budget)."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "` Anthony P. Spina ` Chief, Southern California Branch California Coastal Office"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "NOAA’s National Marine Fisheries Service’s Comments on Draft Eastern Management Area Groundwater Budget for the"
+    ],
+    "location": [
+      "Santa Ynez River, Santa Barbara County"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Recovery needs of endangered steelhead.—Among other federally mandated responsibilities, NMFS is responsible for administering the U.S. Endangered Species Act for the protection and conservation of endangered steelhead inhabiting the Santa Ynez River Watershed. Consistent with this responsibility, NMFS developed the Southern California Steelhead Recovery Plan (NMFS 2012) 1 and through a comprehensive analysis of threats to this species, groundwater pumping and surface flow diversions were identified as “very high"
+    ],
+    "container-title": [
+      "threats to the long-term survival of endangered steelhead in the Santa Ynez River (NMFS 2012",
+      "through 9-17.) To address the identified water-related threats to endangered steelhead in the Santa Ynez River watershed, NMFS’ Southern California Steelhead Recovery Plan identifies a number of recovery actions targeting surface diversions and groundwater extraction (NMFS 2012"
+    ],
+    "pages": [
+      "9–1",
+      "8–6,",
+      "9–61"
+    ],
+    "volume": [
+      "Table 9-7"
+    ],
+    "note": [
+      "These include:"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "SYR-SCR-6.2 Develop and implement groundwater monitoring and management program. Develop and implement groundwater monitoring program to guide management of groundwater extractions to ensure surface flows provide essential support for all O. mykiss life history stages, including adult and juvenile O. mykiss spawning, incubation and rearing habitats to support the life history and habitat requirements of adult and juvenile steelhead"
+    ],
+    "genre": [
+      "(Table 9-2,"
+    ],
+    "pages": [
+      "9–37"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.L."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow Depletion of Well – Understanding and Managing the Effects of Groundwater Pumping on Streamflow"
+    ],
+    "note": [
+      "United State Geological Survey Circular 1376."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "A",
+        "given": "Belin"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guide to Compliance with California Sustainable Groundwater Management Act: How to avoid the “undesirable result” of “significant and unreasonable adverse impacts on surface waters”"
+    ],
+    "publisher": [
+      "Stanford University"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bond",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Importance of Estuarine Rearing to Central California Steelhead (Oncorhynchus mykiss) Growth and Marine Survival"
+    ],
+    "genre": [
+      "Master’s Thesis."
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Santa Cruz"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.H."
+      },
+      {
+        "family": "Fish",
+        "given": "H."
+      },
+      {
+        "family": "Pope",
+        "given": "J."
+      },
+      {
+        "family": "Holt",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Spatial patterning of habitat for Oncorhynchus mykiss in a system of intermittent and perennial stream"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "92–105"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecology of Freshwater Fishes"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.H."
+      },
+      {
+        "family": "Goslin",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Potential Steelhead Over-Summering Habitat in the South-Central/Southern California Coast Recovery Domain: Maps Based on the Envelope Method"
+    ],
+    "pages": [
+      "– – – –391"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "NOAA Technical Memorandum"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brunke",
+        "given": "M."
+      },
+      {
+        "family": "Gosner",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "The Ecological Significance of Exchange Processes between Rivers and Groundwater"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Freshwater Biology"
+    ],
+    "issue": [
+      "1977"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Bulletin 118"
+    ],
+    "location": [
+      "California Groundwater"
+    ],
+    "publisher": [
+      "Working Towards Sustainability, and Interim Update"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Central Coast Regional Water Quality Control Board",
+      "Water Quality Control Plan for the"
+    ],
+    "date": [
+      "2019"
+    ],
+    "location": [
+      "Central Coast"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croyle",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Analysis of Baseflow Trends Related to Upland Groundwater Pumping for Ls Garzas, San Clemente, Potrero, and San Jose Creeks"
+    ],
+    "genre": [
+      "Master’s Thesis."
+    ],
+    "publisher": [
+      "California State University"
+    ],
+    "location": [
+      "Monterey Bay"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Erman",
+        "given": "D.C."
+      },
+      {
+        "family": "Hawthorne",
+        "given": "V.M."
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "The quantitative importance of an intermittent stream in the spawning of rainbow trout"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "675–681"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transactions of the American Fisheries Society"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Statistical analysis of the impact of groundwater pumping on low-flow hydrology"
+    ],
+    "volume": [
+      "32"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of American Association"
+    ],
+    "issue": [
+      "4"
+    ],
+    "pages": [
+      "733–744"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Glasser",
+        "given": "S."
+      },
+      {
+        "family": "Gauthier-Warinner",
+        "given": "J."
+      },
+      {
+        "family": "Gurrieri",
+        "given": "J."
+      },
+      {
+        "family": "Kelly",
+        "given": "J."
+      },
+      {
+        "family": "Tucci",
+        "given": "P."
+      },
+      {
+        "family": "Summers",
+        "given": "P."
+      },
+      {
+        "family": "Wireman",
+        "given": "M."
+      },
+      {
+        "family": "McCormack",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Technical Guide to Managing Groundwater Resources"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture"
+    ],
+    "pages": [
+      "–881"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hayes",
+        "given": "S.A."
+      },
+      {
+        "family": "Bond",
+        "given": "M.H."
+      },
+      {
+        "family": "Hanson",
+        "given": "C.V."
+      },
+      {
+        "family": "Freund",
+        "given": "E.V."
+      },
+      {
+        "family": "Smith",
+        "given": "J.J."
+      },
+      {
+        "family": "Anderson",
+        "given": "E.C."
+      },
+      {
+        "family": "Ammann",
+        "given": "A.J."
+      },
+      {
+        "family": "McFarland",
+        "given": "R.B."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Steelhead growth in a small Central California watershed: upstream and downstream estuarine rearing patterns"
+    ],
+    "volume": [
+      "137"
+    ],
+    "pages": [
+      "114–128"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transactions of the American Fisheries Society"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Ground-Water Hydrology"
+    ],
+    "container-title": [
+      "U.S. Geological Survey. Water Supply Paper 2220"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hebert",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Impacts to Anadromous Fish through Groundwater Extraction"
+    ],
+    "volume": [
+      "366"
+    ],
+    "publisher": [
+      "University of San Francisco"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Master’s Project and Capstone"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "South-Central/Southern California Coast Steelhead Recovery Planning Domain. 5-Year Review: Summary and Evaluation. Southern California Coast Steelhead District Population segment National Marine Fisheries Service"
+    ],
+    "publisher": [
+      "West Coast Region. California Coastal Office"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Southern California Steelhead Recovery Plan"
+    ],
+    "publisher": [
+      "National Marine Fisheries Service, West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sax",
+        "given": "J.L."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Review of the Laws Establishing the SWRCB’s Permitting Authority over Appropriations of Groundwater Classified as Subterranean Streams and the SWRCB’s Implementation of those Laws"
+    ],
+    "volume": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "SWRCB"
+    ],
+    "issue": [
+      "0-076-300-0"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sophocleous",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2002",
+      "2002"
+    ],
+    "title": [
+      "Interactions between Groundwater and Surface Water: The State of the Science"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "52–67"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Final Environmental Impact Report for Consideration of Modifications to the U.S. Bureau of Reclamation’s Water Right Permits 11308 and 11310 (Applications 11331 and 11332) to Protect Public Trust Values and Downstream"
+    ],
+    "note": [
+      "Water Rights on the Santa Ynez River below Bradbury Dam (Cachuma Reservoir)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act"
+    ],
+    "publisher": [
+      "Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Box",
+        "given": "P.O."
+      }
+    ],
+    "pages": [
+      "719"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Ynez",
+        "given": "Santa"
+      }
+    ],
+    "title": [
+      "California 93460 Re: Santa Ynez River Valley Groundwater Basin – Eastern Management Area Groundwater Sustainability Plan Section 5"
+    ],
+    "note": [
+      "Sustainable Management Criteria (June 18, 2021"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Anthony",
+        "given": "P."
+      }
+    ],
+    "title": [
+      "Spina Chief, Southern California Branch California Coastal Office"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "NOAA’s National Marine Fisheries Service’s Comments on Draft Eastern Management Area Sustainable Management Criteria for the"
+    ],
+    "location": [
+      "Santa Ynez River, Santa Barbara County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.L."
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Streamflow Depletion of Well – Understanding and Managing the Effects of Groundwater Pumping on Streamflow"
+    ],
+    "note": [
+      "United State Geological Survey Circular 1376."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D."
+      },
+      {
+        "family": "Goslin",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Potential Steelhead Over-Summering Habitat in the South-Central/Southern California Recovery Domain: Maps Based on the Envelope Method"
+    ],
+    "publisher": [
+      "NOAA Technical Memorandum NMFS-SWFSC TM-391"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Boughton",
+        "given": "D.H."
+      },
+      {
+        "family": "Fish",
+        "given": "H."
+      },
+      {
+        "family": "Pope",
+        "given": "J."
+      },
+      {
+        "family": "Holt",
+        "given": "G."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Spatial patterning of habitat for Oncorhynchus mykiss in a system of intermittent and perennial stream"
+    ],
+    "volume": [
+      "18"
+    ],
+    "pages": [
+      "92–105"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecology of Freshwater Fishes"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brunke",
+        "given": "M."
+      },
+      {
+        "family": "Gosner",
+        "given": "T."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "The Ecological Significance of Exchange Processes between Rivers and Groundwater"
+    ],
+    "volume": [
+      "37"
+    ],
+    "pages": [
+      "1–33"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Freshwater Biology"
+    ],
+    "issue": [
+      "1977"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016"
+    ],
+    "title": [
+      "Bulletin 118"
+    ],
+    "location": [
+      "California Groundwater"
+    ],
+    "publisher": [
+      "Working Towards Sustainability, and Interim Update"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "Central Coast Regional Water Quality Control Board",
+      "Water Quality Control Plan for the"
+    ],
+    "date": [
+      "2019"
+    ],
+    "location": [
+      "Central Coast"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Croyle",
+        "given": "Z."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Analysis of Baseflow Trends Related to Upland Groundwater Pumping for Los Garzas, San Clemente, Potrero, and San Jose Creeks"
+    ],
+    "genre": [
+      "Master’s Thesis."
+    ],
+    "publisher": [
+      "California State University"
+    ],
+    "location": [
+      "Monterey Bay"
+    ],
+    "type": "thesis"
+  },
+  {
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Statistical analysis of the impact of groundwater pumping on low-flow hydrology"
+    ],
+    "volume": [
+      "32"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of American Association"
+    ],
+    "issue": [
+      "4"
+    ],
+    "pages": [
+      "733–744"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Glasser",
+        "given": "S."
+      },
+      {
+        "family": "Gauthier-Warinner",
+        "given": "J."
+      },
+      {
+        "family": "Gurrieri",
+        "given": "J."
+      },
+      {
+        "family": "Kelly",
+        "given": "J."
+      },
+      {
+        "family": "Tucci",
+        "given": "P."
+      },
+      {
+        "family": "Summers",
+        "given": "P."
+      },
+      {
+        "family": "Wireman",
+        "given": "M."
+      },
+      {
+        "family": "McCormack",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Technical Guide to Managing Groundwater Resources"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture"
+    ],
+    "pages": [
+      "–881"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hayes",
+        "given": "S.A."
+      },
+      {
+        "family": "Bond.",
+        "given": "M.H."
+      },
+      {
+        "family": "Hanson",
+        "given": "C.V."
+      },
+      {
+        "family": "Freund",
+        "given": "E.V."
+      },
+      {
+        "family": "Smith",
+        "given": "J.J."
+      },
+      {
+        "family": "Anderson",
+        "given": "E.C."
+      },
+      {
+        "family": "Ammann",
+        "given": "A.J."
+      },
+      {
+        "family": "MacFarlane",
+        "given": "R.B."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Steelhead growth in a small Central California watershed: upstream and estuarine rearing patterns"
+    ],
+    "volume": [
+      "137"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Transactions of the American Fisheries Society"
+    ],
+    "pages": [
+      "114–128"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hayes",
+        "given": "S.A."
+      },
+      {
+        "family": "Hanson",
+        "given": "M.H.Bond C.V."
+      },
+      {
+        "family": "Jones.",
+        "given": "A.W."
+      },
+      {
+        "family": "Ammann",
+        "given": "A.J."
+      },
+      {
+        "family": "Harding",
+        "given": "J.A."
+      },
+      {
+        "family": "Collins",
+        "given": "A.L."
+      },
+      {
+        "family": "Peres",
+        "given": "J."
+      },
+      {
+        "family": "MacFarlane",
+        "given": "R.B."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Down, up, down and “smolting” twice? Seasonal movement patterns by juvenile steelhead (Oncorhynchus mykiss) in a coastal watershed with a bar closing estuary"
+    ],
+    "volume": [
+      "80"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Canadian Journal of Fisheries and Aquatic Sciences"
+    ],
+    "pages": [
+      "1341–1350"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Basic Ground-Water Hydrology"
+    ],
+    "container-title": [
+      "U.S. Geological Survey. Water Supply Paper 2220"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hebert",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Impacts to Anadromous Fish through Groundwater Extraction"
+    ],
+    "volume": [
+      "366"
+    ],
+    "publisher": [
+      "University of San Francisco"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Master’s Project and Capstone"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "South-Central/Southern California Coast Steelhead Recovery Planning Domain. 5-Year Review: Summary and Evaluation. Southern California Coast Steelhead District Population segment National Marine Fisheries Service"
+    ],
+    "publisher": [
+      "West Coast Region. California Coastal Office"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Southern California Steelhead Recovery Plan"
+    ],
+    "publisher": [
+      "National Marine Fisheries Service, West Coast Region"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sophocleous",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2002",
+      "2002"
+    ],
+    "title": [
+      "Interactions between Groundwater and Surface Water: The State of the Science"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "52–67"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrogeology Journal"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Final Environmental Impact Report for Consideration of Modifications to the U.S. Bureau of Reclamation’s Water Right Permits 11308 and 11310 (Applications 11331 and 11332) to Protect Public Trust Values and Downstream"
+    ],
+    "note": [
+      "Water Rights on the Santa Ynez River below Bradbury Dam (Cachuma Reservoir)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Conservancy",
+        "given": "The Nature"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act"
+    ],
+    "publisher": [
+      "Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "literal": "State of California – Natural Resources Agency GAVIN NEWSOM, Governor DEPARTMENT OF FISH AND WILDLIFE CHARLTON H. BONHAM"
+      }
+    ],
+    "title": [
+      "Director South Coast Region 3883 Ruffin Road San Diego"
+    ],
+    "volume": [
+      "92123"
+    ],
+    "pages": [
+      "467–4201"
+    ],
+    "date": [
+      "2021-10-21~"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "CA"
+    ],
+    "issue": [
+      "858"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mail",
+        "given": "Via Electronic"
+      },
+      {
+        "family": "Online Submission Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Groundwater Program Manager Santa Ynez River Water Conservation District P.O"
+    ],
+    "container-title": [
+      "Box 719"
+    ],
+    "location": [
+      "Santa Ynez, CA 93460 BBuelow@syrwcd.com"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Santa Ynez River Water Conservation District October 21, 2021 Page 2 of 13"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Santa Ynez River Water Conservation District October 21, 2021 Page 3 of 13"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Recommendation #1(b): CDFW strongly recommends the EMA-GSA to map, identify, and analyze depletions of interconnected surface waters and areas with the potential for depletion of interconnected surface waters per Code of Regulations"
+    ],
+    "note": [
+      "Title 23 § 354.16(f). DocuSign Envelope ID: 751374BE-4626-4B5F-B04F-A7CF8B88759E Mr. Bill Buelow, P.G. Santa Ynez River Water Conservation District October 21, 2021 Page 4 of 13"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Santa Ynez River Water Conservation District October 21, 2021 Page 5 of 13"
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "Comment #3: Section 3.3.5.1.2 Projected Water Budget (Cannabis Cultivation) – Cannabis High Priority Watershed"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Santa Ynez River Water Conservation District October 21, 2021 Page 6 of 13"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Comment #4: Section 3.3.5.1.2 Projected Water Budget (Cannabis Cultivation)- Cannabis Impacts"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Recommendation #4.1(a): CDFW recommends a more careful review of the existing information on cannabis cultivation within the Santa Ynez alluvium and recommends the DocuSign Envelope ID"
+    ],
+    "note": [
+      "751374BE-4626-4B5F-B04F-A7CF8B88759E Mr. Bill Buelow, P.G. Santa Ynez River Water Conservation District October 21, 2021 Page 7 of 13"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Santa Ynez River Water Conservation District October 21, 2021 Page 8 of 13"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Recommendation #5(a): CDFW recommends the WMA-GSA evaluate potential effects on each GDE unit based on at least four criteria"
+    ],
+    "note": [
+      "such as: 1) groundwater dependence; 2) ecological value (high, moderate, low); DocuSign Envelope ID: 751374BE-4626-4B5F-B04F-A7CF8B88759E Mr. Bill Buelow, P.G. Santa Ynez River Water Conservation District October 21, 2021 Page 9 of 13"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mr. Bill Buelow",
+        "given": "P.G."
+      }
+    ],
+    "title": [
+      "Santa Ynez River Water Conservation District October 21, 2021 Page 12 of 13 Steve Gibson, Senior Environmental Scientist, Supervisor South Coast Region Steve.Gibson@wildlife.ca.gov Rich Burg"
+    ],
+    "container-title": [
+      "Environmental Program Manager South Coast Region Richard.Burg@wildlife.ca.gov"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Ngo",
+        "given": "Mary"
+      }
+    ],
+    "title": [
+      "Senior Environmental Scientist, Specialist South Coast Region Mary.Ngo@wildlife.ca.gov"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bauer",
+        "given": "S."
+      },
+      {
+        "family": "Cockrill",
+        "given": "Olson J."
+      },
+      {
+        "family": "A",
+        "given": "van Hattem"
+      },
+      {
+        "family": "M",
+        "given": "Miller"
+      },
+      {
+        "family": "L",
+        "given": "Tauzer"
+      },
+      {
+        "given": "M."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "container-title": [
+      "Impacts of Surface Water Diversions for Marijuana Cultivation on Aquatic Habitat in Four Northwestern California Watersheds"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Natural Diversity Data Base (CNDDB"
+    ],
+    "note": [
+      "https://www.wildlife.ca.gov/data/cnddb) DocuSign Envelope ID: 751374BE-4626-4B5F-B04F-A7CF8B88759E Mr. Bill Buelow, P.G. Santa Ynez River Water Conservation District October 21, 2021"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Dagit",
+        "given": "R."
+      },
+      {
+        "family": "Booth",
+        "given": "M.T."
+      },
+      {
+        "family": "Gomez",
+        "given": "M."
+      },
+      {
+        "family": "Hovey",
+        "given": "T."
+      },
+      {
+        "family": "Howard",
+        "given": "S."
+      },
+      {
+        "family": "Lewis",
+        "given": "S.D."
+      },
+      {
+        "family": "Jacobson",
+        "given": "S."
+      },
+      {
+        "family": "Larson",
+        "given": "M."
+      },
+      {
+        "family": "McCanne",
+        "given": "D."
+      },
+      {
+        "family": "Robinson",
+        "given": "T.H."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Occurrences of Steelhead Trout (Oncorhynchus mykiss) in southern California, 1994-2018"
+    ],
+    "volume": [
+      "106"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Fish and Wildlife"
+    ],
+    "issue": [
+      "1"
+    ],
+    "pages": [
+      "39–58"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "Bulletin 118",
+      "California’s Groundwater: Working Toward Sustainability"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/calgw_update2020"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Interim Update"
+    ]
+  },
+  {
+    "title": [
+      "Fortune Business Insights",
+      "Cannabis Market Size to be Worth $97.35 Billion by"
+    ],
+    "date": [
+      "2021-06-08"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "2026"
+    ],
+    "title": [
+      "Increased Use for Medical & Therapeutic Purposes to Aid Marijuana Industry Growth"
+    ],
+    "publisher": [
+      "Says Fortune Business InsightsTM"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Froend",
+        "given": "R."
+      },
+      {
+        "family": "Sommer",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Phreatophytic vegetation response to climatic and abstraction-induced groundwater drawdown: Examples of long-term spatial and temporal variability in community response"
+    ],
+    "volume": [
+      "36"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecological Engineering"
+    ],
+    "issue": [
+      "1191"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "National Marine Fisheries"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "South-central California coast steelhead recovery plan"
+    ],
+    "publisher": [
+      "West Coast Region, California Coastal Area Office"
+    ],
+    "location": [
+      "Long Beach, California"
+    ],
+    "url": [
+      "https://www.westcoast.fisheries.noaa.gov/publications/recovery_planning/salmon_steelhead/do"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "E.",
+        "given": "Naumburg"
+      },
+      {
+        "family": "R.",
+        "given": "Mata-Gonzalez"
+      },
+      {
+        "family": "R.G.",
+        "given": "Hunter"
+      },
+      {
+        "family": "T.",
+        "given": "McLendon"
+      },
+      {
+        "family": "D.W",
+        "given": "Martin"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Phreatophytic vegetation and groundwater fluctuations: a review of current research and application of ecosystem response modeling with an emphasis on great basin vegetation"
+    ],
+    "volume": [
+      "35"
+    ],
+    "note": [
+      "Joseph D. Hughes 661-328-5217 jhughes@kleinlaw.com 4550 California Ave., Second Floor,"
+    ],
+    "location": [
+      "Bakersfield, CA"
+    ],
+    "pages": [
+      "93309 661–395–1000 661–326–0418",
+      "726–40"
+    ],
+    "url": [
+      "www.kleinlaw.com"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Environment Management"
+    ],
+    "issue": [
+      "6"
+    ]
+  },
+  {
+    "title": [
+      "• Historical Water Budget"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "author": [
+      {
+        "family": "Howard",
+        "given": "J.K."
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Patterns of Freshwater Species Richness, Endemism, and Vulnerability in California"
+    ],
+    "volume": [
+      "11"
+    ],
+    "note": [
+      "Available at:",
+      "3 Science for Conservation:"
+    ],
+    "url": [
+      "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130710",
+      "https://www.wildlife.ca.gov/data/BIOS",
+      "https://www.scienceforconservation.org/products/california-freshwater-speciesdatabase"
+    ],
+    "container-title": [
+      "2 California Department of Fish and Wildlife BIOS",
+      "PLoSONE"
+    ],
+    "type": "article-journal",
+    "issue": [
+      "7"
+    ]
+  },
+  {
+    "date": [
+      "2019-07"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "1"
+    ],
+    "title": [
+      "NC Dataset Online Viewer: https://gis.water.ca.gov/app/NCDatasetViewer/ 2 California Department of Water Resources (DWR",
+      "Summary of the “Natural Communities Commonly Associated with Groundwater"
+    ],
+    "date": [
+      "2018"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Statewide-Reports/Natural-Communities-Dataset-Summary-Document.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dataset and Online Web Viewer"
+    ]
+  },
+  {
+    "citation-number": [
+      "3"
+    ],
+    "title": [
+      "For more details on the mapping methods, refer to",
+      "Mapping Indicators of Groundwater Dependent Ecosystems in California: Methods Report"
+    ],
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at:",
+      "4 “Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "6"
+    ],
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Water Budget Best Management Practice"
+    ],
+    "note": [
+      "Available at:"
+    ],
+    "url": [
+      "https://water.ca.gov/LegacyFiles/groundwater/sgm/pdfs/BMP_Water_Budget_Final_2016-12-23.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Freeze"
+      },
+      {
+        "given": "Cherry"
+      }
+    ],
+    "date": [
+      "1979"
+    ],
+    "publisher": [
+      "Prentice-Hall Inc. Groundwater"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Stetson Engineers"
+      }
+    ],
+    "title": [
+      "August 31, 1992.Santa Ynez River Water Conservation District Water Resources Management Planning Process, Phase 1: Baseline Data and Background Information"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stetson",
+        "given": "Thomas M."
+      }
+    ],
+    "date": [
+      "1977-02-15"
+    ],
+    "title": [
+      "Water System Master Plan, Buellton Community Services District"
+    ],
+    "location": [
+      "Santa Barbara County, CA"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Stetson Engineers Inc"
+    ],
+    "container-title": [
+      "October 2020. DRAFT Central Management Area Hydrogeologic Conceptual Model (HCM"
+    ],
+    "type": "chapter"
+  },
+  {
+    "date": [
+      "2021-04"
+    ],
+    "title": [
+      "Forty-third Annual Engineering and Survey Report on Water Supply Conditions of the Santa Ynez River Water Conservation District 2020-2021"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Stetson Engineers Inc"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "1951"
+    ],
+    "editor": [
+      {
+        "family": "Upson",
+        "given": "J.E."
+      },
+      {
+        "family": "Thomasson",
+        "given": "H.G.",
+        "suffix": "Jr"
+      }
+    ],
+    "title": [
+      "Geology and Water Resources of the Santa Ynez River Basin, Santa Barbara County, California"
+    ],
+    "container-title": [
+      "USGS Water Supply Paper 1107"
+    ],
+    "doi": [
+      "10.3133/wsp1107."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      },
+      {
+        "family": "Wilson",
+        "given": "H.D.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1959",
+      "1945"
+    ],
+    "title": [
+      "Ground-Water Appraisal of Santa Ynez River Basin"
+    ],
+    "location": [
+      "Santa Barbara County, California"
+    ],
+    "container-title": [
+      "USGS Water Supply Paper 1467"
+    ],
+    "doi": [
+      "10.3133/wsp1467."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      },
+      {
+        "family": "Sweetkind",
+        "given": "D.S."
+      },
+      {
+        "family": "Langenheim",
+        "given": "V.E."
+      },
+      {
+        "family": "McDougall-Reid",
+        "given": "K."
+      },
+      {
+        "family": "Sorlien",
+        "given": "C.C."
+      },
+      {
+        "family": "Demas",
+        "given": "S.C."
+      },
+      {
+        "family": "Tennyson",
+        "given": "M.E."
+      },
+      {
+        "family": "Johnson",
+        "given": "S.Y."
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "Geologic and Geophysical Maps of the Santa Maria and Part of the Point Conception 30'×60' Quadrangles, California"
+    ],
+    "source": [
+      "Scientific Investigations Map 3472"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Figure 3 - Underflow Water Level Response to Surface Flow upstream of Buellton Bend in January and March 1952 Source: U.S"
+    ],
+    "date": [
+      "1959"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Wilson"
+      }
+    ],
+    "title": [
+      "USGS Water Supply Paper 1467"
+    ],
+    "type": null
+  }
+]

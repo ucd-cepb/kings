@@ -109,7 +109,7 @@ unprefixed files, not stages of the page pipeline.
 | `_paths.R`, `_corpus.R` | — | Helpers: the path resolver and the core clean-text corpus + id-crosswalk readers. Sourced everywhere; no run order. |
 | `00_ingest_core.R` | 00 | Core → paper *ingest* bridge (above): `id_crosswalk.csv` only, no derivation, no LLM. |
 | `01_entity_classification/` | 01 | Entity classification (in-project, not ingest): `build_overrides_from_dicts.R` → `build_node_dictionary.R` (→ `node_dictionary.csv`, LLM) → `build_gsa_edges.R` (→ `all_gsa_edges.csv`), plus `classify_entities.R` (sourced) and `eval_classifier.R`. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for the whole tagging subsystem. |
-| `02_text_preprocessing/` | 02 | Stage-2 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Prerequisite of 03B and 03C. |
+| `02_text_preprocessing/` | 02 | Stage-2 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Output is **metadata-only** (keys + section flags, ~0.24 MB): surviving rows mark the pages that passed the filter; full page text stays in core and is re-attached on demand via `attach_page_text()` (`_corpus.R`). Prerequisite of 03B and 03C. |
 | `03A_reference_extraction/` | 03A | Extract & match plan bibliographic references (independent of 02). |
 | `03B_text_reuse/` | 03B | Page/section text-similarity + spatial adjacency (consumes 02). |
 | `03C_knowledge_tree/` | 03C | Knowledge-triple extraction & similarity (consumes 02). |
@@ -141,7 +141,7 @@ input). All **three** Stage 3 similarity products are now buildable from
 `run_all.R`, each behind its own TRUE/FALSE toggle — 3A references
 (→ `gsp_reference_pairs.rds`) and 3C knowledge-tree (→ `triple_similarity.csv`)
 default OFF because they are intensive and need tools beyond R (anystyle/ruby +
-OpenAlex + Solr for 3A; a `jupyter` env for 3C). Flip `STAGE_3A_REFERENCES` /
+OpenAlex + Solr for 3A; the `spacy-env` jupyter kernel for 3C). Flip `STAGE_3A_REFERENCES` /
 `STAGE_3C_KNOWLEDGE` on to rebuild them. The models themselves are still run by
 hand — see `Code/README.md`.
 

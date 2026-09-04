@@ -96,6 +96,43 @@ read_core_corpus <- function(dir = core_txt_clean()) {
   }))
 }
 
+#' Re-attach clean page text to a page_metadata table on demand.
+#'
+#' page_metadata.RDS is metadata-only (Stage 2 drops the text column); this reads
+#' the text back from the CORE clean-text corpus for exactly the rows in `meta`.
+#' It reads only the parquet stems present in `meta`, keys the join strictly on
+#' the identifiers (gsp_doc_id, page_num) — never on row position — and applies the
+#' same gsub('""','') Stage 2's cleanText applied, so the result is byte-identical
+#' to the text page_metadata used to bundle. `meta` must carry gsp_doc_id and
+#' page_num; the join is 1:1 (the corpus has one row per (stem, page)). Row order
+#' of the returned table follows `meta`; callers that concatenate pages (e.g. 03B)
+#' MUST setorder on page_num first so the sequence derives from the identifier, not
+#' incidental order. Returns `meta` plus a `text` column.
+attach_page_text <- function(meta, dir = core_txt_clean()) {
+  meta <- data.table::as.data.table(meta)
+  if (!all(c("gsp_doc_id", "page_num") %in% names(meta))) {
+    stop("attach_page_text: `meta` needs columns gsp_doc_id and page_num.")
+  }
+  if ("text" %in% names(meta)) meta[, text := NULL]
+  stems <- unique(meta$gsp_doc_id)
+  txt <- data.table::rbindlist(lapply(stems, function(s) {
+    f <- file.path(dir, paste0(s, ".parquet"))
+    if (!file.exists(f)) stop("attach_page_text: no core corpus file for ", s, " (", f, ")")
+    pg <- arrow::read_parquet(f)  # cols: page, text
+    data.table::data.table(
+      gsp_doc_id = s,
+      page_num   = as.integer(pg$page),
+      text       = gsub('""', '', pg$text, fixed = TRUE)
+    )
+  }))
+  # Left-join text onto meta by identifier, preserving meta's row order.
+  out <- txt[meta, on = .(gsp_doc_id, page_num)]
+  missing <- out[is.na(text), .N]
+  if (missing) warning("attach_page_text: ", missing,
+                       " page(s) had no matching text in the core corpus.")
+  out
+}
+
 #' Newest page-score file written by hash_and_compare_pages.R. Names are
 #' portal_page_scores_YYYYMMDD.rds, so lexical sort == chronological.
 latest_page_scores <- function() {

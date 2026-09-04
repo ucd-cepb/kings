@@ -51,7 +51,11 @@ First step of the page-similarity rebuild.
   applies the paper's page filter (`cleanText`: short-page + all-caps + stricter
   numeric/whitespace, on top of core's `step2` punctuation cleaning), joins the id
   crosswalk + the core page-section flags (`core_page_sections()`), and writes
-  `data_products/page_metadata.RDS` (the input to the whole `03B_text_reuse/` chain).
+  `data_products/page_metadata.RDS`. This file is **metadata-only** (keys +
+  section flags, ~0.24 MB): the surviving rows define which `(gsp_doc_id, page_num)`
+  pages passed the filter, and the full page text is *not* stored — core is the
+  single source of truth. Consumers that need text re-attach it on demand with
+  `attach_page_text()` (`_corpus.R`). Input to the whole `03B_text_reuse/` chain.
 
 ## `03B_text_reuse/`
 
@@ -64,9 +68,11 @@ reads:
 - `compare_project_sections.R` — Jaccard 10-gram similarity over the *projects &
   management actions* pages (one concatenated doc per plan) →
   `project_jaccard_results/project_section_jaccard_scores.rds`, the 03B
-  modeling input. Reads `page_metadata.RDS` directly, independent of the page-score
-  branch below. (The older `hash_and_compare_projects.R` variant is retired — see
-  `unused/`.)
+  modeling input. Reads the metadata-only `page_metadata.RDS`, filters to its
+  pages, then re-attaches page text from the core corpus via `attach_page_text()`
+  (`_corpus.R`) — the sole text consumer in the pipeline. Independent of the
+  page-score branch below. (The older `hash_and_compare_projects.R` variant is
+  retired — see `unused/`.)
 
 **Exploratory page-score branch** (in `explore/`; NOT run by `run_all.R`; feeds
 nothing downstream) — run by hand only if you want the raw page scores or the maps:
@@ -96,9 +102,13 @@ file-level numeric prefixes are the run order:
 Subject–predicate–object ("knowledge triple") extraction and similarity. **Stage 3C
 of `run_all.R`** (`STAGE_3C_KNOWLEDGE`, default OFF): the two-step canonical chain
 below produces the model input `triple_similarity.csv`. Needs a Python/Jupyter env
-on PATH (`jupyter nbconvert`, plus sentence-transformers + networkx for the notebook).
+on PATH (`jupyter nbconvert`); the notebook is pinned to the **`spacy-env`** kernel
+(conda env `spacy-env`), which carries its deps (sentence-transformers, scikit-learn,
+networkx, pandas, numpy). `run_nb()` in `run_all.R` executes via that recorded
+kernelspec, so the kernel must be registered (`python -m ipykernel install --user
+--name spacy-env` from within the env).
 
-- `extract_knowledge_triples.R` — assemble SPO triples from the CORE dependency
+- `01_extract_knowledge_triples.R` — assemble SPO triples from the CORE dependency
   parses (`parsed_plans/parsed_<stem>.parquet`) over the **sust-criteria** pages of
   the original document per plan → `knowledge_triples_sustcrit.csv` (`file` = 4-digit
   gsp_id). Migrated off the pre-refactor `data/Innovation_Paper/` + `page_metadata.csv`
@@ -106,7 +116,7 @@ on PATH (`jupyter nbconvert`, plus sentence-transformers + networkx for the note
   `source`/`head_verb_lemma`/`target` = subject/predicate/object; `keep_incomplete_edges=FALSE`
   drops edges missing a subject or object), replacing the pre-refactor
   `extract_advanced_triples_from_df` / `clean_triples` pair that this repo never defined.
-- `semantic_kg_similarity.ipynb` — embeds those triples and scores plan-to-plan
+- `02_semantic_kg_similarity.ipynb` — embeds those triples and scores plan-to-plan
   similarity → `triple_similarity.csv` (the 3C model input). Run by `run_all.R` via
   `jupyter nbconvert`; its `../../data_products/` paths already target modern layout.
 - `spo_extraction.py` / `spo_extraction*.ipynb` — alternative REBEL/Triplex SPO

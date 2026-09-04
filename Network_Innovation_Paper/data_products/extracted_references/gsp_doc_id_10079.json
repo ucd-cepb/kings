@@ -1,0 +1,2591 @@
+[
+  {
+    "author": [
+      {
+        "family": "Civil Engineers",
+        "given": "American Society",
+        "particle": "of"
+      },
+      {
+        "family": "Anning",
+        "given": "D.W."
+      },
+      {
+        "family": "Paul",
+        "given": "A.P."
+      },
+      {
+        "family": "McKinney",
+        "given": "T.S."
+      },
+      {
+        "family": "Huntington",
+        "given": "J.M."
+      },
+      {
+        "family": "Bexfield",
+        "given": "L.M."
+      },
+      {
+        "family": "Thiros",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2016",
+      "2012"
+    ],
+    "title": [
+      "Evaporation, Evapotranspiration, and Irrigation Water Requirements",
+      "Predicted nitrate and arsenic concentrations in basin-fill aquifers of the southwestern United States: U.S"
+    ],
+    "edition": [
+      "Manual 70. Second"
+    ],
+    "editor": [
+      {
+        "family": "Jensen",
+        "given": "M.E."
+      },
+      {
+        "family": "Engrs",
+        "given": "R.G.Allen Am Soc Civ"
+      }
+    ],
+    "pages": [
+      "744",
+      "78"
+    ],
+    "genre": [
+      "Geological Survey Scientific Investigations Report 2012–5065,"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "LLC",
+        "given": "Aqua Geo Frameworks"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Hydrogeologic Framework of Selected Areas in Butte and Glenn Counties, California, Prepared for the Butte County Department of Water and Resource Conservation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Barlow",
+        "given": "P.M."
+      },
+      {
+        "family": "Leake",
+        "given": "S.A."
+      },
+      {
+        "family": "Fienen",
+        "given": "M.N."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Capture versus capture zones: Clarifying terminology related to sources of water to wells"
+    ],
+    "volume": [
+      "56"
+    ],
+    "pages": [
+      "694–704"
+    ],
+    "url": [
+      "https://ngwa.onlinelibrary.wiley.com/doi/full/10.1111/gwat.12661"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Planning",
+        "given": "Bold"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Paskenta Band of Nomlaki Indians Multi-Hazard Mitigation Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bredehoeft",
+        "given": "J.D."
+      },
+      {
+        "family": "Papadopulos",
+        "given": "S.S."
+      },
+      {
+        "family": "Cooper",
+        "given": "H.H."
+      }
+    ],
+    "date": [
+      "1982"
+    ],
+    "title": [
+      "Groundwater: The water budget myth"
+    ],
+    "volume": [
+      "51"
+    ],
+    "pages": [
+      "57"
+    ],
+    "url": [
+      "https://www.eqb.state.mn.us/sites/default/files/documents/The_Water-budget_Myth.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Scientific basis of water resource management"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Brouwer",
+        "given": "C."
+      },
+      {
+        "family": "Prins",
+        "given": "K."
+      },
+      {
+        "family": "Heibloem",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Annex I: Irrigation Efficiencies"
+    ],
+    "container-title": [
+      "Irrigation Water Management: Irrigation Scheduling. Food and Agriculture Organization (FAO) of the United Nations. Training Manual"
+    ],
+    "pages": [
+      "4"
+    ],
+    "url": [
+      "http://www.fao.org/3/t7202e/t7202e08.htm#TopOfPage"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2008",
+      "July 1"
+    ],
+    "title": [
+      "Technical Memorandum for the Corning East Sub-Basin of Tehama County. Draft for Public Review and Comment"
+    ],
+    "container-title": [
+      "Proposed Groundwater Trigger Levels and Awareness Actions. Prepared for Tehama County Flood Control and Water Conservation District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Summary Report for Groundwater Recharge Area Location Study"
+    ],
+    "publisher": [
+      "Prepared for Tehama County Public Works Department"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Glenn County Groundwater Reliability and Recharge Pilot Project Summary Report"
+    ],
+    "container-title": [
+      "Prepared for Glenn County Department of Agriculture on behalf of Glenn County Water Advisory Committee"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "Brown"
+      },
+      {
+        "given": "Caldwell"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Tuscan Aquifer Investigation: Lower Tuscan Aquifer Monitoring, Recharge, and Data Management Project: Prepared for Butte County Department of Water and Resource Conservation"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Brown",
+        "given": "E."
+      },
+      {
+        "family": "Skougstad",
+        "given": "M.W."
+      },
+      {
+        "family": "Fishman",
+        "given": "M.J."
+      }
+    ],
+    "date": [
+      "1970"
+    ],
+    "title": [
+      "Methods for collection and analysis of water samples for dissolved minerals and gases"
+    ],
+    "container-title": [
+      "USGS Water-Supply Paper 1454"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/twri05A1_1970"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Land Management",
+        "given": "Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "May 14"
+    ],
+    "genre": [
+      "Personal Communication with Charles Wright,"
+    ],
+    "publisher": [
+      "Supervisory Realty Specialist"
+    ],
+    "type": "personal_communication"
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "given": "Game"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Comprehensive Management Plan for the Sacramento River Wildlife Area"
+    ],
+    "publisher": [
+      "February"
+    ],
+    "type": "book"
+  },
+  {
+    "title": [
+      "California Invasive Plant Council (Cal-IPC",
+      "Tamarix Ramosissima Plant Assessment Form"
+    ],
+    "date": [
+      "2003"
+    ],
+    "url": [
+      "https://www.cal-ipc.org/plants/paf/tamarix-ramosissima-plant-assessment-form/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Cal-I.P.C."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Central Valley Arundo: Distribution, Impacts, and Management. Final Report to the State of California Wildlife Conservation Board"
+    ],
+    "note": [
+      "Agreement No. WC-1561MM."
+    ],
+    "url": [
+      "https://www.cal-ipc.org/solutions/research/central-valley-arundo/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2016",
+      "November"
+    ],
+    "title": [
+      "Water Storage Investment Program"
+    ],
+    "url": [
+      "https://cwc.ca.gov/Water-Storage"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Technical Reference Document"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "California Water"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Urban Water Management Plan"
+    ],
+    "publisher": [
+      "Chico-Hamilton City District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.M."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Water Inventory and Analysis. Prepared in association with the California Department of Water Resources, Northern District. Prepared for the Tehama County Flood Control and Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Board",
+        "given": "Central Valley Region Water Quality Control"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "The Water Quality Control Plan (Basin Plan) for the California Regional Water Quality Control Board Central Valley Region"
+    ],
+    "edition": [
+      "Fifth"
+    ],
+    "note": [
+      "Revised May 2018 (with Approved Amendments)."
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/basin_plans/sacsjr_201805.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Groundwater Quality Assessment Report. Prepared for Central Valley Regional Water Quality Control Board"
+    ],
+    "container-title": [
+      "Prepared on behalf of Northern California Water Association and Sacramento Valley Water Quality Coalition. January"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/water_quality/co"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Sacramento Valley Comprehensive Groundwater Quality Management Plan. Prepared for Central Valley Regional Water Quality Control Board on behalf of Northern California Water Association and Sacramento Valley Water Quality Coalition, January"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/water_quality/co"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Sacramento Valley Regional Water Management Plan. Prepared for the Sacramento River Settlement Contractors"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "OUWUA Distribution System Modernization and Water Conservation Project. A CALFED Agricultural Conservation Program Grant Study, Prepared for: Orland Unit Water Users Association"
+    ],
+    "publisher": [
+      "January"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Agricultural Water Management Plan SBx7-7 Compliance for Participating Sacramento River Settlement Contractors"
+    ],
+    "publisher": [
+      "Prepared for Sacramento River Settlement Contractors"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hill",
+        "given": "CH2M"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Sacramento Valley Water Quality Coalition Groundwater Quality Assessment Report"
+    ],
+    "publisher": [
+      "Prepared for Northern California Water Association"
+    ],
+    "note": [
+      "June"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/centralvalley/water_issues/irrigated_lands/water_quality/co"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corning",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-12"
+    ],
+    "title": [
+      "Personal Communication with Robin Kampmann"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "City Engineer"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Corning Water"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "note": [
+      "Water Management Plan, 2008 Criteria."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corning",
+        "given": "W.D."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "note": [
+      "Water Management Plan, 2017 Criteria."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Cunningham",
+        "given": "W.L."
+      },
+      {
+        "family": "Schalk",
+        "given": "C.W."
+      },
+      {
+        "given": "Comps"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater technical procedures of the U.S"
+    ],
+    "container-title": [
+      "Geological Survey: U.S. Geological Survey Techniques and Methods"
+    ],
+    "pages": [
+      "1– 1"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/1a1/pdf/tm1-a1.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017"
+    ],
+    "title": [
+      "Orland Unit Water Users",
+      "Agricultural Water Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Association"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Glenn County Preliminary Water Budget"
+    ],
+    "publisher": [
+      "Prepared for County of Glenn"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Engineering",
+        "given": "Davids"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "2020 Water Management Plan. Prepared for: Corning Water District in Accordance with the Mid Pacific Region 2017 Standard Criteria"
+    ],
+    "location": [
+      "August"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Davids Engineering and West Yost Associates (Davids Engineering and West Yost"
+    ],
+    "date": [
+      "2018"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Monitoring Network Assessment Report: Prepared for County of Glenn and County of Colusa, May"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Novo Planning Group",
+        "particle": "De"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Existing Conditions Report for the Glenn County General Plan Update"
+    ],
+    "publisher": [
+      "Prepared for Glenn County"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Glenn County GPS Subsidence Project - 2004"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Project Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2004"
+    ],
+    "title": [
+      "Stony Creek Groundwater Recharge Investigation, 2003, Glenn County, California"
+    ],
+    "container-title": [
+      "Prepared by the Department of Water Resources Northern District Groundwater Section in cooperation with the Glenn County Department of Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "California Groundwater Bulletin 118"
+    ],
+    "location": [
+      "Sacramento Valley Groundwater Basin, Corning Subbasin"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Stony Creek Groundwater Recharge Investigation, 2005 Glenn County, California"
+    ],
+    "container-title": [
+      "Prepared by the Department of Water Resources Northern District on of behalf of the Glenn County Department of Agriculture"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Project Report: 2008 California Department of Water Resources and U.S"
+    ],
+    "publisher": [
+      "Bureau of Reclamation"
+    ],
+    "location": [
+      "Sacramento Valley"
+    ],
+    "container-title": [
+      "GPS Subsidence Project"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Glenn-Colusa Irrigation District Test-Production Well Installation and Aquifer Testing"
+    ],
+    "container-title": [
+      "Prepared by the California Department of Water Resources Northern District Groundwater Section in cooperation with Glenn-Colusa Irrigation District"
+    ],
+    "url": [
+      "https://www.buttecounty.net/Portals/26/Tuscan/AppendixA-2.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014-09"
+    ],
+    "title": [
+      "Geology of the Northern Sacramento Valley: prepared by the California Department of Water Resources Northern Region Office"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater and Geologic Investigations Section"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Letter Correspondence to the Glenn County Board of Supervisors and Glenn County Water Advisory Committee: Review and comparison of two GPS survey datasets (2004 and 2008) within Glenn County"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016",
+      "2020"
+    ],
+    "title": [
+      "Bulletin 118, Interim Update 2016"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Bulletin-118"
+    ],
+    "note": [
+      "Accessed April 21,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Protocols Standards and Sites"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-1-Monitoring-Protocols-Standards-and-Sites_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Monitoring Networks and Identification of Data Gaps"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-2-Monitoring-Networks-and-Identification-of-Data-Gaps_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Sustainable Management Criteria"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "GPS Survey of the Sacramento Valley Subsidence Network, Division of Integrated Regional Water Management"
+    ],
+    "publisher": [
+      "Northern Region Office"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guidance Document for the Sustainable Management of Groundwater, Guidance for Climate Change Data Use During Groundwater Sustainability Plan Development"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "Personal Communication with Benjamin Brezing (DWR) on May 30, 2019. Subject: Error bounds on subsidence raster."
+    ],
+    "type": "personal_communication"
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization"
+    ],
+    "url": [
+      "https://water.ca.gov/News/News-Releases/2019/April/DWR-Announces-Draft-Basin-Prioritization--under-SGMA-for-57-Modified-Basins."
+    ],
+    "note": [
+      "Accessed 5/28/2020"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "California Groundwater Conditions Update"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Maps/Groundwater-Level-Change/DOTMAP_Reports/Spring-2020-Groundwater-DOTMAP-Report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "California Central Valley Groundwater-Surface Water Simulation Model – Fine Grid (C2VSimFG) Development and Calibration"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Northern Sacramento Valley Dedicated Monitoring Well Groundwater Quality Assessment"
+    ],
+    "container-title": [
+      "Prepared by the Department of Water Resources Division of Regional Assistance Northern Region Office"
+    ],
+    "publisher": [
+      "January"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "Diaz"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "City of Corning, 2014-2034 General Plan"
+    ],
+    "publisher": [
+      "Prepared for City of Corning"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dudley",
+        "given": "T."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Conjunctive Water Management: What is it? What are the challenges?"
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "url": [
+      "https://ucanr.edu/sites/Tehama/files/20596.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dudley",
+        "given": "T."
+      },
+      {
+        "family": "Fulton",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2002?"
+    ],
+    "note": [
+      "Frequently Asked Questions About Glenn County Groundwater Ordinance No. 1115"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Consultants",
+        "given": "Geosyntec"
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "March 31"
+    ],
+    "title": [
+      "California Drywell Guidance Research and Recommendations, Prepared for: California Water Resources Control Board"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Gleick",
+        "given": "P.H."
+      },
+      {
+        "family": "Christian-Smith",
+        "given": "J."
+      },
+      {
+        "family": "Cooley",
+        "given": "H."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Water-use efficiency and productivity: rethinking the basin approach"
+    ],
+    "volume": [
+      "36"
+    ],
+    "pages": [
+      "784–798"
+    ],
+    "url": [
+      "https://pacinst.org/wp-content/uploads/2011/12/Water-use-efficiency-and-productivity_-rethinking-the-basin-approach.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water International"
+    ],
+    "issue": [
+      "7"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Supervisors",
+        "given": "Glenn County Board",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Basin Management Objective (BMO) for Groundwater Surface Elevations in Glenn County"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "G.C.B.S."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Basin Management Objective Glenn County Sub-area 8 East Corning Basin Private Pumpers Revision"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "G.C.B.S."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Basin Management Objective Glenn County Sub-area 4 Orland Unit Water users Association Revision"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "RCD",
+        "given": "Glenn County"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Community Wildfire Protection Plan - Lower Stony Creek Arundo Removal"
+    ],
+    "url": [
+      "https://www.glenncountyrcd.org/community-wildfire-protection-plan#body_file-565784e2-2413-42be-9445-e3c68f161021"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "RCD",
+        "given": "Glenn County"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Glenn County Wildfire Protection Plan"
+    ],
+    "url": [
+      "https://www.glenncountyrcd.org/community-wildfire-protection-plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "RCD",
+        "given": "Glenn County"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020-11-30"
+    ],
+    "title": [
+      "Personal communication with Kandi Manhart"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Executive Officer"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "Glenn Local Agency Formation"
+      }
+    ],
+    "date": [
+      "2014",
+      "December 8"
+    ],
+    "title": [
+      "Hamilton City Community Services District Municipal Service Review and Sphere of Influence"
+    ],
+    "genre": [
+      "Resolution 2015-05,"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Commission",
+        "given": "Glenn Local Agency Formation"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Final Municipal Service Reviews and Sphere of Influence Plans for the Levee and Reclamation Districts in Glenn County"
+    ],
+    "note": [
+      "Resolution No. 2019-01, February 11."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Glotfelty",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2017",
+      "March 31"
+    ],
+    "title": [
+      "Life-Cycle Economic Analysis of Water Wells"
+    ],
+    "url": [
+      "https://waterwelljournal.com/life-cycle-economic-analysis-of-water-wells/"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Water Well Journal"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Greene",
+        "given": "T.J."
+      },
+      {
+        "family": "Hoover",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Hydrostratigraphy and Pump-Test Analysis of the Lower Tuscan/Tehama Aquifer"
+    ],
+    "location": [
+      "Northern Sacramento Valley, CA"
+    ],
+    "publisher": [
+      "CSU-Chico Department of Geological and Environmental Sciences"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Heath",
+        "given": "R.C."
+      }
+    ],
+    "date": [
+      "1976"
+    ],
+    "title": [
+      "Design of ground-water level observation-well programs"
+    ],
+    "volume": [
+      "14"
+    ],
+    "pages": [
+      "71–77"
+    ],
+    "url": [
+      "https://ngwa.onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-6584.1976.tb03635.x"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ground Water"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Helly",
+        "given": "E.J."
+      },
+      {
+        "family": "Harwood",
+        "given": "D.S."
+      }
+    ],
+    "date": [
+      "1985"
+    ],
+    "title": [
+      "Geologic Map of the Late Cenozoic Deposits of the Sacramento Valley and Northern Sierran Foothills"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geological Survey Field Studies Map MF-1790, Scale 1:62,000."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/mf/1985/1790"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Hopkins",
+        "given": "J."
+      },
+      {
+        "family": "Anderson",
+        "given": "B."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "A Field Manual for Groundwater-level Monitoring at the Texas Water Development Board"
+    ],
+    "pages": [
+      "–52, 26"
+    ],
+    "url": [
+      "https://www.twdb.texas.gov/groundwater/docs/UMs/UM-52.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Johnson",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-02-13"
+    ],
+    "title": [
+      "Storms Cause Flooding, Evacuations"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Corning Observer"
+    ]
+  },
+  {
+    "note": [
+      "Accessed online:"
+    ],
+    "url": [
+      "https://www.appeal-democrat.com/corning_observer/storms-causeflooding-evacuations/article_0981b1b6-2ff2-11e9-bfa9-5b62865ecf90.html"
+    ],
+    "author": [
+      {
+        "given": "Knight"
+      },
+      {
+        "others": true
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Building Hydrogeologic Conceptual Models from Airborne Electromagnetic Data: Developing the Optimal Workflow"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Associates",
+        "given": "L.A.C.O."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Tribal Environmental Evaluation (TEE), Rolling Hills Casino Renovation and Expansion"
+    ],
+    "container-title": [
+      "Prepared for the Paskenta Band of Nomlaki Indians"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Land",
+        "given": "I.Q."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Tehama County 2018 Land Use, Personal Communication with Ryan Teubert, Water Resources Manager, Tehama County Flood Control and Water Conservation District"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Lankford",
+        "given": "B."
+      },
+      {
+        "family": "Closas",
+        "given": "A."
+      },
+      {
+        "family": "Dalton",
+        "given": "J."
+      },
+      {
+        "family": "Gunn",
+        "given": "E.L."
+      },
+      {
+        "family": "Hess",
+        "given": "T."
+      },
+      {
+        "family": "Knox",
+        "given": "J.W."
+      },
+      {
+        "family": "Kooij",
+        "given": "S.",
+        "particle": "van der"
+      },
+      {
+        "family": "Lautze",
+        "given": "J."
+      },
+      {
+        "family": "Molden",
+        "given": "D."
+      },
+      {
+        "family": "Orr",
+        "given": "S."
+      },
+      {
+        "family": "Pittock",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "A scale-based framework to understand the promises, pitfalls and paradoxes of irrigation efficiency to meet major water challenges"
+    ],
+    "volume": [
+      "65"
+    ],
+    "pages": [
+      "102182"
+    ],
+    "url": [
+      "https://www.sciencedirect.com/science/article/pii/S0959378020307652"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Global Environmental Change"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Leake",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Capture—Rates and directions of groundwater flow don't matter!"
+    ],
+    "volume": [
+      "49"
+    ],
+    "pages": [
+      "456–458"
+    ],
+    "url": [
+      "https://ngwa.onlinelibrary.wiley.com/doi/full/10.1111/j.1745-6584.2010.00797.x"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Groundwater"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Luhdorff"
+      },
+      {
+        "family": "Engineers",
+        "given": "Scalmanini Consulting"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Salt and Nitrate Conditions in the Central Valley Region"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "L.S.C.E."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Annual Groundwater Monitoring Results for the Sacramento Valley Water Quality Coalition"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "L.S.C.E."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Sacramento River Watershed: Groundwater Quality Conditions and High Resolution Nitrate and TDS Mapping"
+    ],
+    "publisher": [
+      "Prepared for Sacramento Valley Water Quality Coalition. August"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "L.S.C.E."
+      }
+    ],
+    "date": [
+      "2020",
+      "2019"
+    ],
+    "title": [
+      "Central Valley Dairy Representative Monitoring Program Year 8 Annual Report",
+      "April 1, 2020, bound in five parts"
+    ],
+    "type": null
+  },
+  {
+    "publisher": [
+      "Michael Baker International"
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Glenn County, CA Multi-Jurisdiction Hazard Mitigation Plan. Prepared on behalf of Glenn County Planning and Public Works Agency in cooperation with Cities of Orland and Willows"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "Natural Resources Conservation"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Soil Taxonomy, A Basin System of Soil Classification for Making and Interpreting Soil Surveys"
+    ],
+    "container-title": [
+      "United States Department of Agriculture, Agriculture Handbook #436"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Association",
+        "given": "Northern California Water"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Sacramento Valley Integrated Regional Water Management Plan"
+    ],
+    "publisher": [
+      "January"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "A.",
+        "given": "O.'Geen"
+      },
+      {
+        "family": "M.",
+        "given": "Saal"
+      },
+      {
+        "family": "H.",
+        "given": "Dahlke"
+      },
+      {
+        "family": "D.",
+        "given": "Doll"
+      },
+      {
+        "family": "R.",
+        "given": "Elkins"
+      },
+      {
+        "family": "A.",
+        "given": "Fulton"
+      },
+      {
+        "family": "G.",
+        "given": "Fogg"
+      },
+      {
+        "family": "T.",
+        "given": "Harter"
+      },
+      {
+        "family": "J.",
+        "given": "Hopmans"
+      },
+      {
+        "family": "C.",
+        "given": "Ingels"
+      },
+      {
+        "family": "F.",
+        "given": "Niederholzer"
+      },
+      {
+        "family": "S.",
+        "given": "Sandoval Solis"
+      },
+      {
+        "family": "P.",
+        "given": "Verdegaal"
+      },
+      {
+        "family": "M",
+        "given": "Walkinshaw"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Soil suitability index identifies potential areas for groundwater banking on agricultural lands"
+    ],
+    "volume": [
+      "69"
+    ],
+    "url": [
+      "https://doi.org/10.3733/ca.v069n02p75"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Calif Agr"
+    ],
+    "issue": [
+      "2"
+    ],
+    "pages": [
+      "75–84"
+    ],
+    "doi": [
+      "10.3733/ca.v069n02p75"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Olmstead",
+        "given": "F.H."
+      },
+      {
+        "family": "Davids",
+        "given": "G.H."
+      }
+    ],
+    "date": [
+      "1961",
+      "1497"
+    ],
+    "title": [
+      "Geologic Features and Groundwater Storage Capacity of the"
+    ],
+    "location": [
+      "Sacramento Valley"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water Supply Paper"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/1497/report.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Perry",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Efficient Irrigation; inefficient communication; flawed recommendations. Irrigation and Drainage"
+    ],
+    "volume": [
+      "56"
+    ],
+    "pages": [
+      "367–378"
+    ],
+    "url": [
+      "https://onlinelibrary.wiley.com/doi/epdf/10.1002/ird.323"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "The Journal of the International Commission on Irrigation and Drainage"
+    ],
+    "issue": [
+      "4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "P.M.C."
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Tehama County General Plan"
+    ],
+    "publisher": [
+      "Prepared for Tehama County"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "P.M.C."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "City of Orland General Plan 2010-2028"
+    ],
+    "publisher": [
+      "Prepared for City of Orland"
+    ],
+    "url": [
+      "https://www.cityoforland.com/wp-content/uploads/2021/06/DraftGeneralPlanOct2010.pdf"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Comment",
+        "given": "Public"
+      },
+      {
+        "family": "Ian Turnbull",
+        "given": "C.S.A.B.Board Alternate Member"
+      }
+    ],
+    "date": [
+      "2020-06-03"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Puls",
+        "given": "R.W."
+      },
+      {
+        "family": "Barcelona",
+        "given": "M.J."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Ground water issue: Low-flow (minimal drawdown) ground-water sampling procedures"
+    ],
+    "publisher": [
+      "U.S. Environmental Protection Agency"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "note": [
+      "EPA/540/S-95/504 (NTIS 97-118822)."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rice",
+        "given": "E.W."
+      },
+      {
+        "family": "Baire",
+        "given": "R.B."
+      },
+      {
+        "family": "Eaton",
+        "given": "A.D."
+      },
+      {
+        "family": "Clesceri",
+        "given": "L.S."
+      }
+    ],
+    "edition": [
+
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Standard methods for the examination of water and wastewater"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "publisher": [
+      "American Public Health Association, American Water Works Association, and Water Environment Federation"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "M.M.",
+        "given": "Rohde"
+      },
+      {
+        "family": "B.",
+        "given": "Seapy"
+      },
+      {
+        "family": "R.",
+        "given": "Rogers"
+      },
+      {
+        "given": "Castañeda"
+      }
+    ],
+    "editor": [
+      {
+        "given": "X."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A compendium of California’s threatened and endangered species for sustainable groundwater management"
+    ],
+    "container-title": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sanden",
+        "given": "B.L."
+      },
+      {
+        "family": "Prichard",
+        "given": "T.L."
+      },
+      {
+        "family": "Fulton",
+        "given": "A.E."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Assessing and Improving Water Penetration"
+    ],
+    "editor": [
+      {
+        "family": "Ferguson",
+        "given": "L."
+      },
+      {
+        "family": "Haviland",
+        "given": "D.R."
+      }
+    ],
+    "container-title": [
+      "Pistachio Production Manual"
+    ],
+    "genre": [
+      "Publication 3545."
+    ],
+    "publisher": [
+      "University of California Agriculture and Natural Resources (UCANR) Publications"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sears",
+        "given": "L."
+      },
+      {
+        "family": "Caparelli",
+        "given": "J."
+      },
+      {
+        "family": "Lee",
+        "given": "C."
+      },
+      {
+        "family": "Pan",
+        "given": "D."
+      },
+      {
+        "family": "Strandberg",
+        "given": "G."
+      },
+      {
+        "family": "Vuu",
+        "given": "L."
+      },
+      {
+        "family": "Lin Lawell",
+        "given": "C.Y.C."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Jevons’ paradox and efficient irrigation technology"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "1590"
+    ],
+    "url": [
+      "https://www.mdpi.com/2071-1050/10/5/1590/htm"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Sustainability"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Sophocleous",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Groundwater observation network design for the Kansas groundwater management districts"
+    ],
+    "volume": [
+      "61"
+    ],
+    "pages": [
+      "371–389"
+    ],
+    "url": [
+      "https://www.sciencedirect.com/science/article/abs/pii/0022169483900021"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "USA: Journal of Hydrology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Finance",
+        "given": "State",
+        "particle": "of California Department of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2019-01-01"
+    ],
+    "title": [
+      "E-1 Population Estimates for Cities, Counties and the State with Annual Percent Change"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Water Right Order 98-08"
+    ],
+    "container-title": [
+      "Matter of the Declaration of Fully Appropriated Stream Systems in California"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/waterrights/board_decisions/adopted_orders/orders/1998/w"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "S.W.R.C.B."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Dry Wells: Uses, Regulations, and Guidelines in California and Elsewhere"
+    ],
+    "url": [
+      "https://www.waterboards.ca.gov/board_reference/2014fall/docs/dry_wells_fs.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Tehama County Flood Control and Water Conservation District (TCFCWCD"
+    ],
+    "date": [
+      "2012"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Coordinated AB 3030 Groundwater Management Plan"
+    ],
+    "publisher": [
+      "Prepared for TCFCWCD Board of Directors"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Tehama"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018"
+    ],
+    "title": [
+      "Tehama County Multi-Jurisdictional Hazard Mitigation Plan",
+      "Plan Update"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The Nature Conservancy (TNC",
+      "California and GreenInfo Network GageGap"
+    ],
+    "date": [
+      "2019"
+    ],
+    "url": [
+      "https://gagegap.codefornature.org/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Theis",
+        "given": "C.V."
+      }
+    ],
+    "date": [
+      "1940"
+    ],
+    "title": [
+      "The source of water derived from wells"
+    ],
+    "volume": [
+      "10"
+    ],
+    "pages": [
+      "277–280"
+    ],
+    "url": [
+      "https://www.eqb.state.mn.us/sites/default/files/documents/Source_of_Water_Derived_from_"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Civil Engineering"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "District",
+        "given": "Thomes Creek Water"
+      }
+    ],
+    "date": [
+      "2020",
+      "July 30"
+    ],
+    "title": [
+      "Surface Water Delivery Data"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Obtained"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020",
+      "2015-01"
+    ],
+    "title": [
+      "InSAR Data Accuracy for California Groundwater Basins CGPS Data Comparative Analysis"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Reclamation",
+        "given": "United States Bureau",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Water Delivery Monthly Tables"
+    ],
+    "url": [
+      "https://www.usbr.gov/mp/cvo/vungvari/table_21_2020.pdf"
+    ],
+    "container-title": [
+      "United States Department of Agriculture – Natural Resources Conservation Service (USDA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "N.R.C.S."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Soil Infiltration: Soil Health – Guides for Educators"
+    ],
+    "note": [
+      "May 2014:"
+    ],
+    "url": [
+      "https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/nrcs142p2_051576.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "United States Geological"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Ground-Water Quality Data in the Middle Sacramento Valley Study Unit, 2006 – Results from the California GAMA Program"
+    ],
+    "container-title": [
+      "Data Series 385. U.S. Department of the Interior"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/ds/385/pdf/DS385.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "United States Geological"
+      }
+    ],
+    "date": [
+      "2009"
+    ],
+    "title": [
+      "Groundwater Availability of Central Valley Aquifer, California"
+    ],
+    "container-title": [
+      "Professional Paper 1766. U.S. Department of the Interior"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/pp/1766/PP_1766.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "United States Geological"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Status of Groundwater Quality in the Southern, Middle, and Northern Sacramento Valley Study Units, 2005-08: California GAMA Priority Basin Project. Prepared in cooperation with the California State Water Resources Control Board"
+    ],
+    "genre": [
+      "Scientific Investigations Report 2011-5002."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Resource",
+        "given": "V.E.S.T.R.A."
+      },
+      {
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-04"
+    ],
+    "title": [
+      "Tehama West Watershed Assessment: Prepared for Tehama County Resource Conservation District"
+    ],
+    "url": [
+      "https://www.yumpu.com/en/document/read/5263137/tehama-west-watershed-assessmentsacramento-river"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Yost",
+        "given": "West"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Aquifer Performance Testing Report: Prepared for Stony Creek Fan Partners"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Winter",
+        "given": "T.C."
+      },
+      {
+        "family": "Harvey",
+        "given": "J.W."
+      },
+      {
+        "family": "Franke",
+        "given": "O.L."
+      },
+      {
+        "family": "Alley",
+        "given": "W.M."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Ground water and surface water – A Single Resource"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geological Survey Circular 1139."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/cir1139"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "Wood Rodgers"
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Tehama County Flood Mitigation Plan"
+    ],
+    "container-title": [
+      "Prepared for: Tehama County Flood Control & Water Conservation District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "W.R.I.M.E."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Stony Creek Fan Integrated Groundwater and Surface Water Model Hydrogeology and Conceptual Model: Prepared for Orland-Artois Water District, Orland Unit Water Users"
+    ],
+    "container-title": [
+      "Association, and Glenn-Colusa Irrigation District in coordination with California Department of Water Resources"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Sacramento Valley Water Year Index WY Type: Wet Above Normal Below Normal Dry Critical Corning Subbasin −"
+    ],
+    "note": [
+      "State Well Number (SWN) 23N02W34A003M Upper Aquifer (Shallow Zone) Well Depth: 125 ft. Perforation top & bottom: 104 − 124 ft bgs"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Sacramento Valley Water Year Index WY Type: Wet Above Normal Below Normal Dry Critical Corning Subbasin −"
+    ],
+    "note": [
+      "State Well Number (SWN) 23N03W04H001M Upper Aquifer (Shallow Zone) Well Depth: 270 ft. Perforation top & bottom: 200 − 260 ft bgs"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Sacramento Valley Water Year Index WY Type: Wet Above Normal Below Normal Dry Critical Corning Subbasin −"
+    ],
+    "note": [
+      "State Well Number (SWN) 24N03W02R001M Upper Aquifer (Shallow Zone) Well Depth: 270 ft. Perforation top & bottom: Unknown 0.0"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Sacramento Valley Water Year Index WY Type: Wet Above Normal Below Normal Dry Critical Corning Subbasin −"
+    ],
+    "note": [
+      "State Well Number (SWN) 24N04W14N002M Upper Aquifer (Shallow Zone) Well Depth: 180 ft. Perforation top & bottom: Unknown 0.0"
+    ],
+    "type": null
+  }
+]

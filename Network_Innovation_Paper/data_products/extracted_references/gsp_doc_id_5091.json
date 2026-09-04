@@ -1,0 +1,6245 @@
+[
+  {
+    "author": [
+      {
+        "family": "Forestry",
+        "given": "Ca Dept",
+        "particle": "of"
+      },
+      {
+        "family": "Protection",
+        "given": "Fire"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "CAL FIRE Fire and Resource Assessment Program (FRAP) FVEG [ESRI File Geodatabase"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "note": [
+      "Accessed October 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Forestry",
+        "given": "Ca Dept",
+        "particle": "of"
+      },
+      {
+        "family": "Protection",
+        "given": "Fire"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "CAL FIRE Land Ownership geodatabase"
+    ],
+    "url": [
+      "https://frap.fire.ca.gov/mapping/gis-data/"
+    ],
+    "note": [
+      "Accessed"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "Ca Dept",
+        "particle": "of"
+      },
+      {
+        "family": "Wildlife",
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Fish Slough Digital vegetation map managed through the California Vegetation Classification and Mapping Program (VegCAMP"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Ca Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Preparation Checklist for GSP Submittal Guidance Document"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Ca Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "BMP 1: Best Management Practices for the Sustainable Management of Groundwater Monitoring Protocols"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-1-Monitoring-Protocols-Standards-and-Sites_ay_19.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Standards, and Sites"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Ca Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Land use viewer, map of farmed lands"
+    ],
+    "url": [
+      "https://gis.water.ca.gov/app/CADWRLandUseViewer/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Ca Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "BMP 5: Best Management Practices for Modeling"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Ca Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "BMP 6: Best Management Practices for the Sustainable Management Criteria"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "Ca Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Guidance Document for Groundwater Sustainability Plan, Stakeholder Communication and Engagement"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bishop",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "City of Bishop Water Master Plan"
+    ],
+    "url": [
+      "https://www.cityofbishop.com/Document%20Center/Department/Public%20works/Water/W"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bishop",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "General Plan for the City of Bishop"
+    ],
+    "url": [
+      "https://www.cityofbishop.com/departments/planning/general_plan.php"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Crowley",
+        "given": "J.L."
+      },
+      {
+        "family": "Schoene",
+        "given": "B."
+      },
+      {
+        "family": "Bowring",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "U-Pb dating of zircon in the Bishop Tuff at the millennial scale"
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "1123–1126"
+    ],
+    "url": [
+      "https://doi.org/10.1130/G24017A.1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geology"
+    ],
+    "issue": [
+      "12"
+    ],
+    "doi": [
+      "10.1130/G24017A.1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Mono",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Regional Transportation Plan and General Plan Update, Draft EIR SCH#2014061029"
+    ],
+    "url": [
+      "https://monocounty.ca.gov/sites/default/files/fileattachments/planning_division/page/8022/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Preliminary Evaluation of the Hydrogeologic System in Owens Valley, California. U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 88-4003."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the Hydrologic System and Selected Water-Management Alternatives in the Owens Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper 2370-H. In Hydrology and Soil-Water-Plant Relations in Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Plant Communities"
+    ],
+    "editor": [
+      {
+        "family": "Smith",
+        "given": "J."
+      }
+    ],
+    "container-title": [
+      "Sierra East, Edge of the Great Basin"
+    ],
+    "publisher": [
+      "University of California Press"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "F.W."
+      },
+      {
+        "family": "Stoms",
+        "given": "D.M."
+      },
+      {
+        "family": "Hollander",
+        "given": "A.D."
+      },
+      {
+        "family": "Thomas",
+        "given": "K.A."
+      },
+      {
+        "family": "Stine",
+        "given": "P.A."
+      },
+      {
+        "family": "Odion",
+        "given": "D."
+      },
+      {
+        "family": "Borchert",
+        "given": "M.I."
+      },
+      {
+        "family": "Thorne",
+        "given": "J.H."
+      },
+      {
+        "family": "Gray",
+        "given": "M.V."
+      },
+      {
+        "family": "Walker",
+        "given": "R.E."
+      },
+      {
+        "family": "Warner",
+        "given": "K."
+      },
+      {
+        "family": "Graae",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "The California Gap Analysis Project - Final Report"
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Santa Barbara, CA"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Elmore",
+        "given": "A.J."
+      },
+      {
+        "family": "Mustard",
+        "given": "J.F."
+      },
+      {
+        "family": "Manning",
+        "given": "S.J."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Regional patterns of community response to changes in water: Owens Valley, California"
+    ],
+    "volume": [
+      "12"
+    ],
+    "location": [
+      "Owens Valley Basin"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Ecol. Appl"
+    ],
+    "pages": [
+      "443–460"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Elmore",
+        "given": "A.J."
+      },
+      {
+        "family": "Manning",
+        "given": "S.J."
+      },
+      {
+        "family": "Mustard",
+        "given": "J.F."
+      },
+      {
+        "family": "Craine",
+        "given": "J.M."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Decline in alkali meadow vegetation cover in California: the effects of groundwater extraction and drought"
+    ],
+    "volume": [
+      "43"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "J. Appl. Ecol"
+    ],
+    "pages": [
+      "770–779"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Flint",
+        "given": "A.L."
+      },
+      {
+        "family": "Stern",
+        "given": "M.A."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "The basin characterization model – a regional water balance software package"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "85"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Techniques and Methods"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "Jones"
+      },
+      {
+        "given": "Stokes"
+      },
+      {
+        "family": "District",
+        "given": "Great Basin Unified Air Pollution Control"
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Delineation of Waters of the United States for the Owens Lake Playa. Prepared for the U.S"
+    ],
+    "container-title": [
+      "Army Corps of Engineers. Data provided by Grace Holder, Great Basin Unified Air Pollution Control District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Green Book for the LongTerm Groundwater Management Plan for the Owens Valley and Inyo County",
+      "Technical Appendix to the Inyo/Los Angeles LongTerm Groundwater Management Agreement, prepared by Inyo County and the Los Angeles Department of Water and Power"
+    ],
+    "date": [
+      "1990"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harrington",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Development of a Groundwater Flow Model for the Bishop/Laws Area: Final Report for Local Groundwater Assistance"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Grant Agreement"
+    ],
+    "issue": [
+      "4600004129 (54"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harrington",
+        "given": "R.H."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Hydrogeologic Conceptual Model for the Owners Valley Groundwater Basin (6-12), Inyo and Mono Counties. Prepared for submittal to the California Department of Water Resources"
+    ],
+    "container-title": [
+      "Prepared by Inyo County Water Department"
+    ],
+    "location": [
+      "Independence, CA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hollett",
+        "given": "K.J."
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      },
+      {
+        "family": "McCaffrey",
+        "given": "W.F."
+      },
+      {
+        "family": "Walti",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geology and Water Resources of Owens Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper 2370-B. In Hydrology and Soil-Water-Plant Relations in Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "McGuire",
+        "given": "K."
+      },
+      {
+        "family": "Morton",
+        "given": "C."
+      },
+      {
+        "family": "Snyder",
+        "given": "K."
+      },
+      {
+        "family": "Peterson",
+        "given": "S."
+      },
+      {
+        "family": "Erickson",
+        "given": "T."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Smith",
+        "given": "G."
+      },
+      {
+        "family": "Allen",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Assessing the role of climate change and resource management on groundwater dependent ecosystem changes in arid environments with the Landsat archive"
+    ],
+    "volume": [
+      "185"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Remote Sensing of Env"
+    ],
+    "pages": [
+      "186–197"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Jayko",
+        "given": "A.S."
+      },
+      {
+        "family": "Fatooh",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Fish Slough, a geologic and hydrologic summary, Inyo and Mono Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Administrative Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping indicators of groundwater dependent ecosystems in California"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Langridge",
+        "given": "R.B."
+      },
+      {
+        "family": "Sepaniak",
+        "given": "S."
+      },
+      {
+        "family": "Conrad",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "An evaluation of California’s special act groundwater districts"
+    ],
+    "container-title": [
+      "Report for the State Water Resources Control Board"
+    ],
+    "pages": [
+      "183"
+    ],
+    "url": [
+      "https://escholarship.org/uc/item/3cr8k66v"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Los Angeles Department",
+        "particle": "of"
+      },
+      {
+        "given": "Power"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-03"
+    ],
+    "title": [
+      "Owens Lake Habitat Management Plan"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Los Angeles Department",
+        "particle": "of"
+      },
+      {
+        "given": "Power"
+      }
+    ],
+    "date": [
+      "2020",
+      "2020"
+    ],
+    "title": [
+      "LADWP Urban Water Management Plan"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "LADWP"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Los Angeles Department",
+        "particle": "of"
+      },
+      {
+        "given": "Power"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-08"
+    ],
+    "title": [
+      "Habitat Conservation Plan for Los Angeles Department of Water and Power’s operations, maintenance, and management activities on its land in Mono and Inyo Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "DRAFT"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Los Angeles Department",
+        "particle": "of"
+      },
+      {
+        "given": "Power"
+      },
+      {
+        "family": "Inyo",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Agreement Between the County of Inyo and the City of Los Angeles and its Department of Water and Power on a Long Term Groundwater Management Plan for Owens Valley and Inyo County"
+    ],
+    "note": [
+      "Stipulation and Order for Judgement, Inyo County Superior Court, Case"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "95"
+    ],
+    "issue": [
+      "1"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Los Angeles Department of Water and Power and Ecosystem Sciences"
+    ],
+    "date": [
+      "2010"
+    ],
+    "publisher": [
+      "Owens Valley Land Management Plan"
+    ],
+    "pages": [
+      "426"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Manning",
+        "given": "S.J."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Plant communities of LADWP land in the Owens Valley: an exploratory analysis of baseline conditions"
+    ],
+    "genre": [
+      "Inyo County Water Department report,"
+    ],
+    "publisher": [
+      "Inyo County Water Department, Bishop",
+      "Owens Valley Basin"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Menke",
+        "given": "J."
+      },
+      {
+        "family": "Hepburn",
+        "given": "A."
+      },
+      {
+        "family": "Johnson",
+        "given": "D."
+      },
+      {
+        "family": "Reyes",
+        "given": "E."
+      },
+      {
+        "family": "Glass",
+        "given": "A."
+      },
+      {
+        "family": "Evens",
+        "given": "J."
+      },
+      {
+        "family": "Winitsky",
+        "given": "S."
+      },
+      {
+        "family": "Sikes",
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      ""
+    ],
+    "editor": [
+      {
+        "given": "progress)"
+      }
+    ],
+    "container-title": [
+      "Vegetation Mapping and Classification of the Jawbone Canyon Region and Owens Valley. Report to Bureau of Land Management"
+    ],
+    "publisher": [
+      "Aerial Information Systems"
+    ],
+    "location": [
+      "Redlands, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "M.H.A."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Task 1 Report: Preliminary Data Collection and Hydrologic Models for the USFilter Tri-Valley Surplus Groundwater Program"
+    ],
+    "location": [
+      "Mono County, California"
+    ],
+    "pages": [
+      "261"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Mono"
+      },
+      {
+        "family": "Mammoth Lakes",
+        "particle": "the Town of"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Multi-jurisdictional Hazard Mitigation Plan (including the Mono County Community Wildfire Protection Plan"
+    ],
+    "url": [
+      "https://www.monosheriff.org/sites/default/files/fileattachments/planning_division/pag"
+    ],
+    "pages": [
+      "3–3"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Final"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Confining Layer Characteristics Cooperative Study: Final Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-09",
+      "2013"
+    ],
+    "title": [
+      "TM: Evaluation of Geophysical Data - Phase I",
+      "Appendix Q of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-11"
+    ],
+    "title": [
+      "Report: Updated Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Appendix H of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-06"
+    ],
+    "title": [
+      "TM: Evaluation of Geophysical Data - Phase II"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Appendix R of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "date": [
+      "2013"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-01",
+      "2013"
+    ],
+    "title": [
+      "TM: Preliminary Updated Conceptual Model",
+      "Appendix C of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harza",
+        "given": "Montgomery Watson"
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Corporation",
+        "given": "Neponset Geophysical"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Tiltmeter Evaluation Project River Site Wells, Owens Lake, Inyo County, California, prepared for the Great Basin Unified Pollution Control District"
+    ],
+    "publisher": [
+      "Owens Valley Basin"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Pakiser",
+        "given": "L.C."
+      },
+      {
+        "family": "Kane",
+        "given": "M.F."
+      },
+      {
+        "family": "Jackson",
+        "given": "W.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Structural Geology and Volcanism of Owens Valley Region, California - A Geophysical Study"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 438"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Williams",
+        "given": "Phillip"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "The Hydrology of the Benton, Hammil, and Chalfant Valleys, Mono County"
+    ],
+    "container-title": [
+      "California, Final Report"
+    ],
+    "pages": [
+      "45"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "P.R.I.S.M.Climate"
+      }
+    ],
+    "date": [
+      "XXXX",
+      "2020-04"
+    ],
+    "title": [
+      "Oregon State University"
+    ],
+    "url": [
+      "http://prism.oregonstate.edu"
+    ],
+    "note": [
+      "retrieved 22"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Saint-Amand",
+        "given": "P."
+      },
+      {
+        "family": "Mathews",
+        "given": "L.A."
+      },
+      {
+        "family": "Gaines",
+        "given": "C."
+      },
+      {
+        "family": "Roger",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Dust Storms From Owens and Mono Valleys"
+    ],
+    "location": [
+      "California",
+      "Naval Weapons Center, China Lake, CA"
+    ],
+    "publisher": [
+      "NWC-TP-6731"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Slemmons",
+        "given": "D.B."
+      },
+      {
+        "family": "Vittori",
+        "given": "E."
+      },
+      {
+        "family": "Jayko",
+        "given": "A.S."
+      },
+      {
+        "family": "Carver",
+        "given": "G.A."
+      },
+      {
+        "family": "Bacon",
+        "given": "S.N."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Quaternary fault and lineament map of Owens Valley, Inyo County, eastern California"
+    ],
+    "container-title": [
+      "Geological Society of America map and chart series MCH096"
+    ],
+    "pages": [
+      "73,500"
+    ],
+    "volume": [
+      1
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Soil survey of Benton-Owens Valley area, California, parts of Inyo and Mono Counties, Natural Resources Conservation Service, United States Department of Agriculture"
+    ],
+    "note": [
+      "Soil Survey Geographic (SSURGO) Database. Available online at",
+      "Accessed [04/27/2020]."
+    ],
+    "url": [
+      "https://sdmdataaccess.sc.egov.usda.gov."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Steinwand",
+        "given": "A.L."
+      },
+      {
+        "family": "Harrington",
+        "given": "R.F."
+      },
+      {
+        "family": "Groeneveld",
+        "given": "D.P."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Transpiration coefficients for three Great Basin shrubs"
+    ],
+    "volume": [
+      "49"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Arid Environments"
+    ],
+    "pages": [
+      "555–567"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Steinwand",
+        "given": "A.L."
+      },
+      {
+        "family": "Harrington",
+        "given": "R.F."
+      },
+      {
+        "family": "Or",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Water balance for Great Basin phreatophytes derived from eddy covariance, soil water, and water table measurements"
+    ],
+    "volume": [
+      "329"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ],
+    "pages": [
+      "595–605"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Stevens",
+        "given": "C.H."
+      },
+      {
+        "family": "Stone",
+        "given": "P."
+      },
+      {
+        "family": "Blakely",
+        "given": "R.J."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Structural Evolution of the East Sierra Valley System (Owens Valley and Vicinity"
+    ],
+    "volume": [
+      "3"
+    ],
+    "pages": [
+      "176–15"
+    ],
+    "publisher": [
+      "Owens Valley Basin"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California: A Geologic and Geophysical Synthesis. Geosciences"
+    ],
+    "issue": [
+      "2"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "InSAR Data Accuracy for California Groundwater Basins CGPS Data Comparative Analysis January 2015 to September 2019"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/tre-"
+    ],
+    "pages": [
+      "– – 1949 59–2435–4 5 – 29–7 8 432454 5"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Inc",
+        "given": "T.R.E.Altamira"
+      }
+    ],
+    "date": [
+      "2021"
+    ],
+    "title": [
+      "InSAR datasets DWR’s SGMA Map Viewer"
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub)"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agriculture Forest Service",
+        "given": "U.S.Dept",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Existing Vegetation Great Basin, 1999–2009, v1 [ESRI File Geodatabase"
+    ],
+    "location": [
+      "MeClellan, CA"
+    ],
+    "note": [
+      "Accessed June 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2001",
+      "2001-03"
+    ],
+    "title": [
+      "EPA requirements for quality assurance project plans, EPA QA/R-5"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2016-06/documents/r5-final_0.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "EPA/240/B-01/003"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-02"
+    ],
+    "title": [
+      "Guidance on systematic planning using the data quality objectives process, EPA QA/G-4"
+    ],
+    "pages": [
+      "240 –06 001"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/g4-final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Owens Basin Wetland and Aquatic Species Recovery Plan, Inyo and Mono Counties"
+    ],
+    "location": [
+      "Portland, Oregon"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for Astragalus lentiginosus var. piscinensis (Fish Slough Milk-Vetch"
+    ],
+    "volume": [
+      "70"
+    ],
+    "pages": [
+      "33774–33795"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Federal Register"
+    ],
+    "issue": [
+      "10"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for the Sierra Nevada Bighorn Sheep (Ovis canadensis sierrae"
+    ],
+    "volume": [
+      "73"
+    ],
+    "pages": [
+      "45534–45604"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "and Taxonomic Revision; Final Rule. Federal Register"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for the Sierra Nevada yellow-legged frog, the Northern District Population Segment of the mountain yellow-legged frog, and the Yosemite toad; final rule"
+    ],
+    "volume": [
+      "81"
+    ],
+    "pages": [
+      "9046–59119"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Federal Register"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "National Wetlands Inventory website. U.S. Department of the Interior, Fish and Wildlife Service"
+    ],
+    "location": [
+      "Washington, D.C"
+    ],
+    "url": [
+      "http://www.fws.gov/wetlands/"
+    ],
+    "publisher": [
+      "Owens Valley Basin"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Fish",
+        "given": "U.S."
+      },
+      {
+        "family": "Service",
+        "given": "Wildlife"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; Revised designation of critical habitat for the Western Distinct (sic.) pollution segment of the Yellow billed cuckoo"
+    ],
+    "volume": [
+      "85"
+    ],
+    "pages": [
+      "11458–11594"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Federal Register"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Central Mojave vegetation database. Digital vegetation map managed through the California Vegetation Classification and Mapping Program (VegCAMP"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Prepared by USGS, Western Ecological Research Center"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater technical procedures of the U.S. Geological Survey: U.S. Geological Survey Techniques and Methods 1–A1"
+    ],
+    "note": [
+      "Compiled by Cunningham, W.L., and Schalk, C.W."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/1a1/pdf/tm1-a1.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "National hydrography dataset, high resolution, v220"
+    ],
+    "location": [
+      "Washington D.C"
+    ],
+    "note": [
+      "Retrieved from ftp://nhdftp.usgs.gov/DataSets/Staged/States/FileGDB/HighResolution/NHDH_CA_931v220.z ip."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2018",
+      "2018-06-01"
+    ],
+    "title": [
+      "General introduction for the “National Field Manual for the Collection of Water Quality Data",
+      "U.S. Geological Survey Techniques and Methods, book 9, chap"
+    ],
+    "note": [
+      "A0, 4 p.,",
+      "Supersedes USGS Techniques and Methods, book 9, chap. A0, version 1.0."
+    ],
+    "url": [
+      "https://doi.org/10.3133/tm9A0."
+    ],
+    "doi": [
+      "10.3133/tm9A0."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2019",
+      "2020"
+    ],
+    "title": [
+      "National Hydrography Dataset"
+    ],
+    "note": [
+      "available online at",
+      "accessed May 20,"
+    ],
+    "url": [
+      "https://viewer.nationalmap.gov/basic/,"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "U.S.National Park"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Geospatial Vegetation Information for the Manzanar National Historical Site Vegetation Inventory Project"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Zdon",
+        "given": "A."
+      },
+      {
+        "family": "Rainville",
+        "given": "K."
+      },
+      {
+        "family": "Buckmaster",
+        "given": "N."
+      },
+      {
+        "family": "Parmenter",
+        "given": "S."
+      },
+      {
+        "family": "Love",
+        "given": "A.H."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Identification of Source Water Mixing in the Fish Slough Spring Complex"
+    ],
+    "location": [
+      "Mono County, California, USA"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "26"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrology"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Bruce",
+        "given": "Paul N."
+      },
+      {
+        "family": "James",
+        "given": "County Counsel Edward A.Schlotman Gregory L."
+      }
+    ],
+    "title": [
+      "Special Counsel Assistant City Attorney of Antonio Rossmann, Special Counsel City of Los Angeles Office of the County Counsel P.O"
+    ],
+    "container-title": [
+      "Box 111, Beaudry 1848 County of Inyo Los Angeles, CA 90051"
+    ],
+    "location": [
+      "Independence, CA"
+    ],
+    "volume": [
+      "93526",
+      "619"
+    ],
+    "pages": [
+      "481–6370",
+      "878–2411"
+    ],
+    "issue": [
+      "213"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Allen",
+        "given": "R.G."
+      },
+      {
+        "family": "Pereira",
+        "given": "L.S."
+      },
+      {
+        "family": "Raes",
+        "given": "D."
+      },
+      {
+        "family": "Smith",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Crop evapotranspiration-Guidelines for computing crop water requirements-FAO Irrigation and drainage paper 56"
+    ],
+    "volume": [
+      "300"
+    ],
+    "pages": [
+      "05109"
+    ],
+    "url": [
+      "http://www.fao.org/3/x0490e/x0490e00.htm"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "FAO, Rome"
+    ],
+    "issue": [
+      "9"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Alpert",
+        "given": "H."
+      },
+      {
+        "family": "Kattelmann",
+        "given": "R."
+      },
+      {
+        "family": "Drew",
+        "given": "M."
+      },
+      {
+        "family": "Hatfield",
+        "given": "J."
+      },
+      {
+        "family": "Crall",
+        "given": "H."
+      },
+      {
+        "family": "Dodds",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Inyo-Mono Integrated Regional Water Management Plan: 2019 Update"
+    ],
+    "pages": [
+      "490"
+    ],
+    "url": [
+      "https://inyomonowater.org/our-work/inyo-mono-irwm-plan/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bateman",
+        "given": "P.C."
+      }
+    ],
+    "date": [
+      "1965"
+    ],
+    "title": [
+      "Geology and tungsten mineralization of the Bishop district, California, with a section on gravity study of Owens Valley and a section on seismic profile"
+    ],
+    "volume": [
+      "470"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/pp470"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Professional Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Chronological Reconstructed Sacramento and San Joaquin Valley Water Year Hydrologic Classification Indices"
+    ],
+    "url": [
+      "https://cdec.water.ca.gov/reportapp/javareports?name=WSIHIST"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "BMP 1: Best Management Practices for the Sustainable Management of Groundwater Monitoring Protocols"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-1-Monitoring-Protocols-Standards-and-Sites_ay_19.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Standards, and Sites"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "BMP 2: Best Management Practices for the Sustainable Management of Groundwater Monitoring Networks and Identification of Data Gaps"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-2-Monitoring-Networks-and-Identification-of-Data-Gaps_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Draft BMP 6: Best Management Practices for the Sustainable Management of Groundwater Sustainable Management Criteria"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf"
+    ],
+    "container-title": [
+      "Monitoring Plan and Data Gaps Analysis"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      },
+      {
+        "family": "Bishop",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2020",
+      "2008"
+    ],
+    "title": [
+      "Statewide Crop Mapping GIS Shapefiles"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/statewide-crop-mapping",
+      "https://www.cityofbishop.com/Document%20Center/Department/Public%20works/Water/W"
+    ],
+    "publisher": [
+      "City of Bishop Water Master Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Inyo",
+        "given": "City",
+        "particle": "of Los Angeles v. County of"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Superior Court of California, County of Inyo"
+    ],
+    "volume": [
+
+    ],
+    "url": [
+      "https://www.inyowater.org/wpcontent/uploads/legacy/Water_Resources/long_term_water_agreement.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Case"
+    ],
+    "issue": [
+      "12908"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Inyo",
+        "given": "County",
+        "particle": "of"
+      },
+      {
+        "family": "Los Angeles",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Green Book for the Long-Term Groundwater Management Plan for the Owens Valley and Inyo County"
+    ],
+    "url": [
+      "https://www.inyowater.org/wpcontent/themes/rttheme16child/documents/Greenbook.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mono",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Regional Transportation Plan and General Plan Update, Draft EIR SCH#2014061029"
+    ],
+    "url": [
+      "https://monocounty.ca.gov/sites/default/files/fileattachments/planning_division/page/8022/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Preliminary evaluation of the hydrogeologic system in Owens Valley"
+    ],
+    "volume": [
+      "88"
+    ],
+    "container-title": [
+      "Department of the Interior, US Geological Survey"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wri884003"
+    ],
+    "issue": [
+      "4003)"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the Hydrologic System and Selected Water-Management Alternatives in the Owens Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper 2370-H, in Hydrology and Soil-Water-Plant Relations in Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "url": [
+      "https://pubs.er.usgs.go/publication/wsp2370H"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Duell",
+        "given": "L.F.W."
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Estimates of Evapotranspiration in Alkaline Scrub and Meadow Communities of Owens Valley, California, Using the Bowen-Ratio, Eddy-Correlation, and Penman-Combination Methods"
+    ],
+    "genre": [
+      "U.S. Geological Survey Water-Supply Paper 2370-E."
+    ],
+    "url": [
+      "https://pubs.usgs.gov/wsp/2370e/report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Gill",
+        "given": "T.E."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Eolian sediments generated by anthropogenic disturbance of playas: human impacts on the geomorphic system and geomorphic impacts on the human system"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "207–228"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geomorphology"
+    ],
+    "issue": [
+      "1-3"
+    ]
+  },
+  {
+    "title": [
+      "Monitoring Plan and Data Gaps Analysis"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Harrington",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Hydrogeologic Conceptual Model for the Owens Valley Groundwater Basin (6-12"
+    ],
+    "volume": [
+      "43"
+    ],
+    "pages": [
+
+    ],
+    "url": [
+      "https://www.inyowater.org/wpcontent/uploads/2015/12/owens_valley_conceptual_model.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Inyo and Mono Counties"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hollett",
+        "given": "K.J."
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      },
+      {
+        "family": "McCaffrey",
+        "given": "W.F."
+      },
+      {
+        "family": "Walti",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geology and water resources of Owens Valley, California"
+    ],
+    "genre": [
+      "U.S. Geological Survey Water-Supply Paper 2370-B."
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/wsp2370B"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Howald",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Plant communities. Sierra East: Edge of the Great Basin"
+    ],
+    "publisher": [
+      "University of California Press"
+    ],
+    "location": [
+      "Berkeley, CA"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Jayko",
+        "given": "A.S."
+      },
+      {
+        "family": "Fatooh",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Fish Slough, a geologic and hydrologic summary, Inyo and Mono Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Administrative Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Langridge",
+        "given": "R."
+      },
+      {
+        "family": "Sepaniak",
+        "given": "S."
+      },
+      {
+        "family": "Conrad",
+        "given": "E."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "An Evaluation of California’s Special Act Groundwater Districts"
+    ],
+    "url": [
+      "https://escholarship.org/uc/item/3cr8k66v"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Murphy",
+        "given": "T.P."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Soils of the Owens Lake Playa, Report 1. Great Basin Unified Air Pollution Control District"
+    ],
+    "location": [
+      "Keeler, CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Mono"
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Tri-Valley Community Profile"
+    ],
+    "location": [
+      "Mono County, California"
+    ],
+    "pages": [
+      "49"
+    ],
+    "url": [
+      "https://monocounty.ca.gov/sites/default/files/fileattachments/planning_division/page/3157/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Confining Layer Characteristics Cooperative Study: Final Report"
+    ],
+    "pages": [
+      "159"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-01"
+    ],
+    "title": [
+      "Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "volume": [
+      "2012"
+    ],
+    "pages": [
+      "93"
+    ],
+    "publisher": [
+      "Monitoring Plan and Data Gaps Analysis"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "October"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2013",
+      "2011-11",
+      "2012-01"
+    ],
+    "title": [
+      "Updated Conceptual Model",
+      "Appendix H of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "pages": [
+      "108"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Pakiser",
+        "given": "L.C."
+      },
+      {
+        "family": "Kane",
+        "given": "M.F."
+      },
+      {
+        "family": "Jackson",
+        "given": "W.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Structural Geology and Volcanism of Owens Valley Region, California - A Geophysical Study"
+    ],
+    "volume": [
+      "438"
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/pp438"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Professional Paper"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "P.W.A."
+      }
+    ],
+    "date": [
+      "1980"
+    ],
+    "title": [
+      "Water Resources and Their Relationship to Agricultural and Urban Development of Hammil Valley"
+    ],
+    "pages": [
+      "54"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Saint-Armand",
+        "given": "P."
+      },
+      {
+        "family": "Mathews",
+        "given": "L.A."
+      },
+      {
+        "family": "Gaines",
+        "given": "C."
+      },
+      {
+        "family": "Roger",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Dust storms from Owens and Mono valleys, California"
+    ],
+    "location": [
+      "Naval Weapons Center, China Lake,CA"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-02"
+    ],
+    "title": [
+      "Guidance on systematic planning using the data quality objectives process"
+    ],
+    "genre": [
+      "EPA QA/G-4. EPA/240/B-06/001,"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/g4-final.pdf",
+      "https://doi.org/10.5066/F7ZS2TM0"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Gap Analysis Program, 20160513, GAP/LANDFIRE National Terrestrial Ecosystems 2011: U.S. Geological Survey"
+    ],
+    "doi": [
+      "10.5066/F7ZS2TM0"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Zdon",
+        "given": "A."
+      },
+      {
+        "family": "Rainville",
+        "given": "K."
+      },
+      {
+        "family": "Buckmaster",
+        "given": "N."
+      },
+      {
+        "family": "Parmenter",
+        "given": "S."
+      },
+      {
+        "family": "Love",
+        "given": "A.H."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Identification of Source Water Mixing in the Fish Slough Spring Complex"
+    ],
+    "location": [
+      "Mono County, California, USA"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "26"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrology"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "container-title": [
+      "• Guidance on Systematic Planning Using the Data Quality Objectives Process, EPA QA/G-4"
+    ],
+    "note": [
+      "EPA, 2006"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "• Requirements for Quality Assurance Project Plans, EPA QA/R-5 (U.S",
+      "• National Field Manual for the Collection of Water-Quality Data (USGS, individual Chapters published as separate documents) • Groundwater technical procedures of the U.S"
+    ],
+    "date": [
+      "2001"
+    ],
+    "container-title": [
+      "Geological Survey: U.S. Geological Survey Techniques and Methods",
+      "EPA"
+    ],
+    "pages": [
+      "1– 1"
+    ],
+    "note": [
+      "USGS, 2011"
+    ],
+    "type": "article-journal"
+  },
+  {
+    "title": [
+      "Bylaws of the Owens Valley Groundwater Authority",
+      "California Code of Regulations: Title 23, Division 2, Chapter 1.5, and Subchapter 2"
+    ],
+    "date": [
+      "2018-11-19"
+    ],
+    "url": [
+      "https://ovga.us/wp-content/uploads/2020/11/OVGA-Bylaws-Board-Approved.pdf",
+      "https://water.ca.gov/LegacyFiles/groundwater/sgm/pdfs/GSP_Emergency_Regulations.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Dated"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2016a, BMP 1: Best Management Practices for the Sustainable Management of Groundwater Monitoring Protocols"
+    ],
+    "date": [
+      "2016-12"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-1-Monitoring-Protocols-Standards-and-Sites_ay_19.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Standards, and Sites"
+    ]
+  },
+  {
+    "title": [
+      "California Department of Water Resources, 2016b, BMP 2: Best Management Practices for the Sustainable Management of Groundwater Monitoring Networks and Identification of Data Gaps"
+    ],
+    "date": [
+      "2016-12"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-2-Monitoring-Networks-and-Identification-of-Data-Gaps_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-11"
+    ],
+    "title": [
+      "Draft BMP 6: Best Management Practices for the Sustainable Management of Groundwater Sustainable Management Criteria"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-6-Sustainable-Management-Criteria-DRAFT_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Puls",
+        "given": "R.W."
+      },
+      {
+        "family": "Barcelona",
+        "given": "M.J."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "note": [
+      "Low-Flow (Minimal Drawdown) Ground-Water Sampling Procedures; US EPA, Ground Water Issue EPA/540/S-95/504."
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/lwflw2a.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2000",
+      "2000-07"
+    ],
+    "title": [
+      "Guidance for data quality assessment, practical methods for data analysis, EPA QA/G-9, QA00 update"
+    ],
+    "pages": [
+      "600 –96 084"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/g9-final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2001",
+      "2001-03"
+    ],
+    "title": [
+      "EPA requirements for quality assurance project plans, EPA QA/R-5"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2016-06/documents/r5-final_0.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "EPA/240/B-01/003"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2002",
+      "2002-11"
+    ],
+    "title": [
+      "Guidance on environmental data verification and data validation, EPA QA/G-8"
+    ],
+    "pages": [
+      "240 –02 004"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/g8-final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2006",
+      "2006-02"
+    ],
+    "title": [
+      "Guidance on systematic planning using the data quality objectives process, EPA QA/G-4"
+    ],
+    "pages": [
+      "240 –06 001"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2015-06/documents/g4-final.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Agency",
+        "given": "U.S.Environmental Protection"
+      }
+    ],
+    "date": [
+      "2009",
+      "2009"
+    ],
+    "title": [
+      "National drinking water regulations"
+    ],
+    "url": [
+      "https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "May"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "title": [
+      "Fact Sheet 088-00"
+    ],
+    "date": [
+      "2000-06"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/fs/fs-088-00/pdf/fs-088-00.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Cunningham",
+        "given": "U.S.Geological Survey Compiled",
+        "particle": "by"
+      },
+      {
+        "family": "W.L."
+      },
+      {
+        "family": "Schalk",
+        "given": "C.W."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Groundwater technical procedures of the U.S"
+    ],
+    "container-title": [
+      "Geological Survey: U.S. Geological Survey Techniques and Methods 1–A1"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/1a1/pdf/tm1-a1.pdf",
+      "https://www.usgs.gov/mission-areas/water-resources/science/national-field-manualcollection-water-quality-data-nfm?qt-science_center_objects=0#qt-science_center_objects"
+    ],
+    "collection-title": [
+      "U.S. Geological Survey. National Field Manual for the Collection of Water-Quality Data"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Preparations for water sampling: U.S"
+    ],
+    "volume": [
+      "9"
+    ],
+    "pages": [
+      "1"
+    ],
+    "url": [
+      "https://pubs.usgs.gov/tm/09/a1/tm9a1.pdf"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey Techniques and Methods, book"
+    ]
+  },
+  {
+    "date": [
+      "1418"
+    ],
+    "title": [
+      "| Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1418"
+    ],
+    "title": [
+      "| Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "citation-number": [
+      "11/30/2021"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1418"
+    ],
+    "title": [
+      "| Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1418"
+    ],
+    "title": [
+      "| Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1418"
+    ],
+    "title": [
+      "| Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Bateman",
+        "given": "P.C."
+      },
+      {
+        "family": "Pakiser",
+        "given": "L.C."
+      },
+      {
+        "family": "Kane",
+        "given": "M.F."
+      }
+    ],
+    "date": [
+      "1965"
+    ],
+    "title": [
+      "Geology and Tungsten Mineralization of the Bishop District California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 470"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "Hydrogeologic Conceptual Model"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Beanland",
+        "given": "S."
+      },
+      {
+        "family": "Clark",
+        "given": "M.M."
+      }
+    ],
+    "date": [
+      "1982",
+      "1982"
+    ],
+    "title": [
+      "The Owens Valley Fault Zone, Eastern California, and Surface Faulting Associated with the 1872 Earthquake"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "U.S. Geological Survey Bulletin"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2016",
+      "2016-12"
+    ],
+    "title": [
+      "Best Management Practices for the Sustainable Management of Groundwater: Hydrogeologic Conceptual Model"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Sustainable-Groundwater-Management/Best-Management-Practices-and-Guidance-Documents/Files/BMP-3-Hydrogeologic-Conceptual-Model_ay_19.pdf"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Crowley",
+        "given": "J.L."
+      },
+      {
+        "family": "Schoene",
+        "given": "B."
+      },
+      {
+        "family": "Bowring",
+        "given": "S.A."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "U-Pb dating of zircon in the Bishop Tuff at the millenial scale"
+    ],
+    "volume": [
+      "35"
+    ],
+    "pages": [
+      "1123–1126"
+    ],
+    "url": [
+      "https://doi.org/10.1130/G24017A.1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geology"
+    ],
+    "issue": [
+      "12"
+    ],
+    "doi": [
+      "10.1130/G24017A.1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1988"
+    ],
+    "title": [
+      "Preliminary Evaluation of the Hydrogeologic System in Owens Valley, California. U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Resources Investigations Report 88-4003."
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the Hydrologic System and Selected Water-Management Alternatives in the Owens Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper 2370-H. In Hydrology and Soil-Water-Plant Relations in Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "2000"
+    ],
+    "title": [
+      "Plant Communities"
+    ],
+    "editor": [
+      {
+        "family": "Smith",
+        "given": "J."
+      }
+    ],
+    "container-title": [
+      "Sierra East, Edge of the Great Basin"
+    ],
+    "publisher": [
+      "University of California Press"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Davis",
+        "given": "F.W."
+      },
+      {
+        "family": "Stoms",
+        "given": "D.M."
+      },
+      {
+        "family": "Hollander",
+        "given": "A.D."
+      },
+      {
+        "family": "Thomas",
+        "given": "K.A."
+      },
+      {
+        "family": "Stine",
+        "given": "P.A."
+      },
+      {
+        "family": "Odion",
+        "given": "D."
+      },
+      {
+        "family": "Borchert",
+        "given": "M.I."
+      },
+      {
+        "family": "Thorne",
+        "given": "J.H."
+      },
+      {
+        "family": "Gray",
+        "given": "M.V."
+      },
+      {
+        "family": "Walker",
+        "given": "R.E."
+      },
+      {
+        "family": "Warner",
+        "given": "K."
+      },
+      {
+        "family": "Graae",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "The California Gap Analysis Project - Final Report"
+    ],
+    "publisher": [
+      "University of California"
+    ],
+    "location": [
+      "Santa Barbara, CA"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Gill",
+        "given": "T.E."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Eolian sediments generated by anthropogenic disturbance of playas: human impacts on the geomorphic system and geomorphic impacts on the human system"
+    ],
+    "volume": [
+      "17"
+    ],
+    "pages": [
+      "207–228"
+    ],
+    "url": [
+      "https://doi.org/10.1016/0169-555X(95)00104-D"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geomorphology"
+    ],
+    "doi": [
+      "10.1016/0169-555X(95)00104-D"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harrington",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2007"
+    ],
+    "title": [
+      "Development of a Groundwater Flow Model for the Bishop/Laws Area: Final Report for Local Groundwater Assistance"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "54"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Grant Agreement"
+    ],
+    "issue": [
+      "4600004129"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Harrigton",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Hydrogeologic Conceptual Model for the Owens Valley Groundwater Basin (6-12"
+    ],
+    "container-title": [
+      "Inyo and Mono Counties"
+    ],
+    "pages": [
+      "43"
+    ],
+    "url": [
+      "https://www.inyowater.org/wpcontent/uploads/2015/12/owens_valley_conceptual_model.pdf"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hollett",
+        "given": "K.J."
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      },
+      {
+        "family": "McCaffrey",
+        "given": "W.F."
+      },
+      {
+        "family": "Walti",
+        "given": "C.L."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Geology and Water Resources of Owens Valley, California"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Water-Supply Paper 2370-B. In Hydrology and Soil-Water-Plant Relations in Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "literal": "DB18.1418 | Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model Jayko, A. S., & Fatooh, J."
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "title": [
+      "Fish Slough, a geologic and hydrologic summary, Inyo and Mono Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "publisher": [
+      "U.S. Geologial Survey Administrative Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Jennings",
+        "given": "C.W."
+      },
+      {
+        "family": "Strand",
+        "given": "R.G."
+      },
+      {
+        "family": "Rogers",
+        "given": "T.H."
+      }
+    ],
+    "date": [
+      "1977"
+    ],
+    "title": [
+      "Geologic Map of California"
+    ],
+    "volume": [
+      "1"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California Division of Mines and Geology, scale"
+    ],
+    "issue": [
+      "750"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      },
+      {
+        "family": "Inyo",
+        "given": "County",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Agreement Between the County of Inyo and the City of Los Angeles and its Department of Water and Power on a Long Term Groundwater Management Plan for Owens Valley and Inyo County, Stipulation and Order for Judgement, Inyo County Superior Court"
+    ],
+    "volume": [
+
+    ],
+    "pages": [
+      "95"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Case"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "M.H.A."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Task 1 Report: Preliminary Data Collection and Hydrologic Models for the USFilter Tri-Valley Surplus Groundwater Program"
+    ],
+    "location": [
+      "Mono County, California"
+    ],
+    "pages": [
+      "261"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Murphy",
+        "given": "T.P."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Soils of the Owens Lake Playa, Report I"
+    ],
+    "publisher": [
+      "Great Basin Unified Air Pollution Control District"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2003"
+    ],
+    "title": [
+      "Confining Layer Characteristics Cooperative Study: Final Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-09",
+      "2013"
+    ],
+    "title": [
+      "TM: Evaluation of Geophysical Data - Phase I",
+      "Appendix Q of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-11",
+      "2013"
+    ],
+    "title": [
+      "Report: Updated Conceptual Model",
+      "Appendix H of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-06",
+      "2013"
+    ],
+    "title": [
+      "TM: Evaluation of Geophysical Data - Phase II",
+      "Appendix R of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2011",
+      "2011-01",
+      "2013"
+    ],
+    "title": [
+      "TM: Preliminary Updated Conceptual Model",
+      "Appendix C of Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Final Report on the Owens Lake Groundwater Evaluation Project"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Pakiser",
+        "given": "L.C."
+      },
+      {
+        "family": "Kane",
+        "given": "M.F."
+      },
+      {
+        "family": "Jackson",
+        "given": "W.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Structural Geology and Volcanism of Owens Valley Region, California - A Geophysical Study"
+    ],
+    "container-title": [
+      "U.S. Geological Survey Professional Paper 438"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Williams",
+        "given": "Phillip"
+      },
+      {
+        "given": "Associates"
+      }
+    ],
+    "date": [
+      "1983"
+    ],
+    "title": [
+      "Water Resources and Their Relationship to Agricultural and Urban Development of Hammil Valley"
+    ],
+    "pages": [
+      "54"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Group",
+        "given": "P.R.I.S.M.Climate"
+      }
+    ],
+    "date": [
+      "XXXX",
+      "2020-04"
+    ],
+    "title": [
+      "Oregon State University"
+    ],
+    "url": [
+      "http://prism.oregonstate.edu"
+    ],
+    "note": [
+      "retrieved 22"
+    ],
+    "type": null
+  },
+  {
+    "date": [
+      "1418",
+      "1980"
+    ],
+    "title": [
+      "| Hydrogeologic Conceptual Model_FINAL.docx Owens Valley Groundwater Sustainability Plan Hydrogeologic Conceptual Model PW&A",
+      "The Hydrology of the Benton, Hammil, and Chalfant Valleys"
+    ],
+    "location": [
+      "Mono County, California"
+    ],
+    "container-title": [
+      "Final Report"
+    ],
+    "pages": [
+      "45"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Saint-Amand",
+        "given": "P."
+      },
+      {
+        "family": "Mathews",
+        "given": "L.A."
+      },
+      {
+        "family": "Gaines",
+        "given": "C."
+      },
+      {
+        "family": "Roger",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1986"
+    ],
+    "title": [
+      "Dust Storms From Owens and Mono Valleys"
+    ],
+    "location": [
+      "California",
+      "Naval Weapons Center, China Lake, CA"
+    ],
+    "publisher": [
+      "NWC-TP-6731"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Slemmons",
+        "given": "D.B."
+      },
+      {
+        "family": "Vittori",
+        "given": "E."
+      },
+      {
+        "family": "Jayko",
+        "given": "A.S."
+      },
+      {
+        "family": "Carver",
+        "given": "G.A."
+      },
+      {
+        "family": "Bacon",
+        "given": "S.N."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Quaternary fault and lineament map of Owens Valley, Inyo County, eastern California"
+    ],
+    "container-title": [
+      "Geological Society of America map and chart series MCH096"
+    ],
+    "pages": [
+      "73,500"
+    ],
+    "volume": [
+      1
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Quality Institute"
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Soil Quality Test Kit Guide. Natural Resources Conservation Service, U.S"
+    ],
+    "publisher": [
+      "Department of Agriculture"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Staff",
+        "given": "Soil Survey"
+      }
+    ],
+    "date": [
+      "XXXX"
+    ],
+    "title": [
+      "Natural Resources Conservation Service, United States Department of Agriculture"
+    ],
+    "note": [
+      "Soil Survey Geographic (SSURGO) Database. Available online at",
+      "Accessed [04/27/2020]."
+    ],
+    "url": [
+      "https://sdmdataaccess.sc.egov.usda.gov."
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Stewart",
+        "given": "J.H."
+      },
+      {
+        "family": "Carlson",
+        "given": "J.E."
+      }
+    ],
+    "date": [
+      "1978",
+      "1981"
+    ],
+    "title": [
+      "Geologic Map of Nevada. U.S. Geological Survey and Nevada Bureau of Mines and Geology, scale 1:500,000 (not part of any formal series, printed and distributed by the U.S"
+    ],
+    "volume": [
+      "G75163",
+      "G81386"
+    ],
+    "edition": [
+      "reprint"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Geological Survey"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2019",
+      "2020"
+    ],
+    "title": [
+      "National Hydrography Dataset"
+    ],
+    "note": [
+      "available online at",
+      "accessed May 20,"
+    ],
+    "url": [
+      "https://viewer.nationalmap.gov/basic/,"
+    ],
+    "type": "webpage"
+  },
+  {
+    "author": [
+      {
+        "family": "Zdon",
+        "given": "A."
+      },
+      {
+        "family": "Rainville",
+        "given": "K."
+      },
+      {
+        "family": "Buckmaster",
+        "given": "N."
+      },
+      {
+        "family": "Parmenter",
+        "given": "S."
+      },
+      {
+        "family": "Love",
+        "given": "A.H."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Identification of Source Water Mixing in the Fish Slough Spring Complex"
+    ],
+    "location": [
+      "Mono County, California, USA"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "26"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrology"
+    ],
+    "issue": [
+      "1"
+    ]
+  },
+  {
+    "title": [
+      "List of Figures 1-1 GSP Management Areas 4-1 Continuous Monitoring GPS Stations near Owens Valley 4-2 Representative CGPS Monitoring Time Series Data 4-3 LADWP Subsidence GPS Monitoring Stations 5-1 Representative InSAR Subsidence Measurement Points 5-2 Representative InSAR Subsidence Measurement Points"
+    ],
+    "source": [
+      "Time Series 6-1 LADWP Proposed Extensometer Installation Locations"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Water Resources",
+        "given": "California Department",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Summary of Recent, Historical, and Estimated Future Land Subsidence in California"
+    ],
+    "url": [
+      "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Groundwater-Management/Data-and-Tools/Files/Statewide-Reports/California-Groundwater-Update-2013/California-Groundwater-Update-2013---Appendix-F.pdf."
+    ],
+    "note": [
+      "Land Subsidence Technical Memorandum"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Mono Regional Transportation Plan",
+        "given": "County",
+        "particle": "of"
+      },
+      {
+        "family": "Update",
+        "given": "General Plan"
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-07-31"
+    ],
+    "title": [
+      "Draft EIR, Mono County Community Development Department"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "County",
+        "given": "Inyo"
+      },
+      {
+        "family": "Bishop",
+        "given": "City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2017",
+      "2017-12"
+    ],
+    "title": [
+      "Multi-Jurisdictional Hazard Mitigation Plan (Final Draft FEMA approved"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Power",
+        "given": "Los Angeles Department",
+        "particle": "of"
+      },
+      {
+        "given": "Water"
+      }
+    ],
+    "date": [
+      "2019",
+      "2019-01"
+    ],
+    "title": [
+      "Hydrologic Monitoring, Management, and Mitigation Plan for The Owens Lake Groundwater Development Program"
+    ],
+    "container-title": [
+      "a Component of Owens Lake Master Project"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "L.R.E."
+      },
+      {
+        "given": "L.L.C."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Final Report: Identification of the Vulnerability of the Major and Minor Aquifers of Texas to Subsidence with Regard to Groundwater Pumping"
+    ],
+    "note": [
+      "TWD Contract Number 1648302062."
+    ],
+    "url": [
+      "https://www.twdb.texas.gov/groundwater/docs/Subsidence_Vulnerability_Report.pdf"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Mono County and the Town of Mammoth Lakes"
+    ],
+    "date": [
+      "2019"
+    ],
+    "publisher": [
+      "Multi-jurisdictional Hazard Mitigation Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Corporation",
+        "given": "Neponset Geophysical"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Tiltmeter Evaluation Project River Site Wells"
+    ],
+    "note": [
+      "Owens Lake, Inyo County, California, prepared for Great Basin Unified Air Pollution Control District."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "Poland, J.F. and Davis, G.H.,1969"
+      }
+    ],
+    "title": [
+      "Land Subsidence Due to Withdrawal of Fluids"
+    ],
+    "volume": [
+      "2"
+    ],
+    "pages": [
+      "187–269"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Reviews in Engineering Geology"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Poland",
+        "given": "J.F."
+      }
+    ],
+    "date": [
+      "1984"
+    ],
+    "title": [
+      "Guidebook to studies of land subsidence due to ground-water withdrawal"
+    ],
+    "container-title": [
+      "Prepared for the International Hydrological Programme, Working Group 8.4"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      "SGMA Data Viewer"
+    ],
+    "note": [
+      "Accessed November 2020."
+    ],
+    "url": [
+      "https://sgma.water.ca.gov/webgis/?appid=SGMADataViewer#landsub)"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Towill",
+        "given": "Inc"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "InSAR Data Accuracy for California Groundwater Basins CGPS Data Comparative Analysis January 2015 to September 2019"
+    ],
+    "url": [
+      "https://data.cnra.ca.gov/dataset/trealtamira-insar-subsidence/resource/a1949b59-2435-4e5d-bb29-7a8d432454f5."
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "UNAVCO, Accessed 12/30/2020."
+    ],
+    "url": [
+      "https://www.unavco.org/instrumentation/networks/status/all."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "1999"
+    ],
+    "title": [
+      "Land Subsidence in the United States, Circular 1182"
+    ],
+    "editor": [
+      {
+        "family": "Galloway",
+        "given": "Devin"
+      },
+      {
+        "family": "Jones",
+        "given": "David R."
+      },
+      {
+        "family": "Ingebritsen",
+        "given": "S.E."
+      }
+    ],
+    "url": [
+      "https://pubs.er.usgs.gov/publication/cir1182."
+    ],
+    "note": [
+      "Land Subsidence Technical Memorandum"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Survey",
+        "given": "U.S.Geological"
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Land Subsidence: Cause & Effect"
+    ],
+    "url": [
+      "http://ca.water.usgs.gov/land_subsidence/california-subsidence-cause-effect.html."
+    ],
+    "type": null
+  },
+  {
+    "note": [
+      "o Central Mojave Vegetation Database (United States Geologic Survey [USGS] 2002) o Fish Slough (California Department of Fish and Wildlife [CDFW] 2014) o Manzanar National Historic Site (United States National Park Service 2012"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      " Classification and Assessment with Landsat of Visible Ecological Groupings (CalVeg) –United States Department of Agriculture"
+    ],
+    "note": [
+      "Forest Service (USDA 2014"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      " Fire and Resource Assessment Program (FRAP) – California Department of Forestry and Fire Protection"
+    ],
+    "date": [
+      "2015"
+    ],
+    "type": null
+  },
+  {
+    "container-title": [
+      " National Wetlands Inventory - Version 2.0 (NWI v2.0), U.S. Fish and Wildlife Service (USFWS 2018"
+    ],
+    "type": "chapter"
+  },
+  {
+    "title": [
+      " National Hydrography Dataset (NHD) – Springs and seeps"
+    ],
+    "note": [
+      "USGS (USGS 2016"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "The extent of the integrated data sources is shown in Table 2.1-1 and Figure 2.1-1"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CA Dept. of Forestry and Fire Protection (CalFire"
+    ],
+    "date": [
+      "2015"
+    ],
+    "publisher": [
+      "Fire and Resource Assessment Program"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "F.R.A.P."
+      }
+    ],
+    "title": [
+      "FVEG [ESRI File Geodatabase"
+    ],
+    "location": [
+      "Sacramento, CA"
+    ],
+    "note": [
+      "Accessed October 2016."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "CA Department of Water Resources"
+    ],
+    "date": [
+      "2016"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "VegCAMP",
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Fish Slough"
+    ],
+    "container-title": [
+      "Digital vegetation map managed through the California Vegetation Classification and Mapping Program (VegCAMP"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "California Natural Diversity Database"
+    ],
+    "genre": [
+      "RareFind 5 [Internet], Version 5.1.1."
+    ],
+    "note": [
+      "accessed: March 2019]."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Special Vascular Plants, Bryophytes, and Lichens List"
+    ],
+    "note": [
+      "Accessed November 2020."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.D.F.W."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Sensitive Natural Communities List"
+    ],
+    "note": [
+      "Accessed November 2020."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "C.N.P.S."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "A Manual of California Vegetation"
+    ],
+    "edition": [
+      "online"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "http://www.cnps.org/cnps/vegetation/"
+    ],
+    "date": [
+      "2019-07"
+    ],
+    "publisher": [
+      "California Native Plant Society"
+    ],
+    "location": [
+      "Sacramento, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Evaluation of the hydrologic system and selected water-management alternatives in the Owens Valley"
+    ],
+    "volume": [
+      "2370"
+    ],
+    "publisher": [
+      "US Geological Survey, Information Services"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "California"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "DWR 2020a."
+      }
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act 2019 Basin Prioritization Process and Results"
+    ],
+    "date": [
+      "2020-05"
+    ],
+    "url": [
+      "https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "D.W.R."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Natural Communities Commonly Associated with Groundwater Dataset Viewer"
+    ],
+    "type": null
+  },
+  {
+    "url": [
+      "https://gis.water.ca.gov/app/NCDatasetViewer/#."
+    ],
+    "note": [
+      "Accessed November 2020."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "eBird"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "eBird: An online database of bird distribution and abundance"
+    ],
+    "note": [
+      "accessed November 2020]. eBird,"
+    ],
+    "publisher": [
+      "Cornell Lab of Ornithology"
+    ],
+    "location": [
+      "Ithaca, New York"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Website"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fan",
+        "given": "Y."
+      },
+      {
+        "family": "Miguez-Macho",
+        "given": "G."
+      },
+      {
+        "family": "Jobbágy",
+        "given": "E.G."
+      },
+      {
+        "family": "Jackson",
+        "given": "R.B."
+      },
+      {
+        "family": "Otero-Casal",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Hydrologic regulation of plant rooting depth"
+    ],
+    "volume": [
+      "114"
+    ],
+    "pages": [
+      "10572–10577"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Proceedings of the National Academy of Sciences"
+    ],
+    "issue": [
+      "40"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Groeneveld",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "1992"
+    ],
+    "title": [
+      "Owens Valley, California, plant ecology: effects from export groundwater pumping and measures to conserve the local environment"
+    ],
+    "container-title": [
+      "The History of Water: Eastern Sierra Nevada, Owens Valley, White-Inyo Mountains"
+    ],
+    "volume": [
+      "4"
+    ],
+    "pages": [
+      "128–155"
+    ],
+    "publisher": [
+      "University of California Los"
+    ],
+    "location": [
+      "Angeles, CA"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Hall",
+        "given": "Clarence A.",
+        "suffix": "Jr"
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Natural History of the White-Inyo Range"
+    ],
+    "location": [
+      "Eastern California. Berkeley, California"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "http://ark.cdlib.org/ark:/13030/ft3t1nb2pn/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Herbst",
+        "given": "D.B."
+      },
+      {
+        "family": "Prather",
+        "given": "M."
+      }
+    ],
+    "date": [
+      "2014",
+      "2014"
+    ],
+    "title": [
+      "Owens Lake – from Dustbowl to Mosaic of Salt Water Habitats"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Lakeline Magazine"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hershler",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1989"
+    ],
+    "title": [
+      "Springsnails (Gastropoda: Hydrobiidae) of Owens and Amargosa River (exclusive of Ash Meadows) drainages, Death Valley System, California-Nevada"
+    ],
+    "volume": [
+      "102"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Proceedings of the Biological Society of Washington"
+    ],
+    "pages": [
+      "176–248"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Hollett",
+        "given": "K.J."
+      },
+      {
+        "family": "Danskin",
+        "given": "W.R."
+      },
+      {
+        "family": "McCaffrey",
+        "given": "W.F."
+      },
+      {
+        "family": "Walti",
+        "given": "C.L."
+      },
+      {
+        "family": "Huntington",
+        "given": "J."
+      },
+      {
+        "family": "McGwire",
+        "given": "K."
+      },
+      {
+        "family": "Morton",
+        "given": "C."
+      },
+      {
+        "family": "Snyder",
+        "given": "K."
+      },
+      {
+        "family": "Peterson",
+        "given": "S."
+      },
+      {
+        "family": "Erickson",
+        "given": "T."
+      },
+      {
+        "family": "Niswonger",
+        "given": "R."
+      },
+      {
+        "family": "Carroll",
+        "given": "R."
+      },
+      {
+        "family": "Smith",
+        "given": "G."
+      },
+      {
+        "family": "Allen",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "1991",
+      "2016"
+    ],
+    "title": [
+      "Geology and water resources of Owens",
+      "Assessing the role of climate and resource management on groundwater dependent ecosystem changes in arid environments with the Landsat archive"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "genre": [
+      "Geological Survey Water-Supply Paper 2370-B."
+    ],
+    "volume": [
+      "185"
+    ],
+    "pages": [
+      "186–197"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Remote sensing of Environment"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Los Angeles Technical Group",
+        "given": "Inyo County/City",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "1990"
+    ],
+    "title": [
+      "Green Book for the long-term groundwater management plan for the Owens Valley and Inyo County"
+    ],
+    "pages": [
+      "176"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "I.C.W.D."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Shapefile of kept and removed vegetation polygons from the DWR Natural Communities Commonly Associated With Groundwater Database"
+    ],
+    "note": [
+      "Shapefile provided by Aaron Steinwand."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Jones and Stokes and Great Basin Unified Air Pollution Control District",
+      "Delineation of Waters of the United States for the Owens Lake Playa. Prepared for the U.S"
+    ],
+    "date": [
+      "1996"
+    ],
+    "container-title": [
+      "Army Corps of Engineers. Data provided by Grace Holder, Great Basin Unified Air Pollution Control District"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Klausmeyer",
+        "given": "K."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Keeler-Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Davis-Fadtke",
+        "given": "K."
+      },
+      {
+        "family": "Hull",
+        "given": "R."
+      },
+      {
+        "family": "Lyons",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Mapping indicators of groundwater dependent ecosystems in California"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/public/uploads/pdfs/iGDE_data_paper_20180423.pdf"
+    ],
+    "editor": [
+      {
+        "family": "Klausmeyer",
+        "given": "K.R."
+      },
+      {
+        "family": "Biswas",
+        "given": "T."
+      },
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Schuetzenmeister",
+        "given": "F."
+      },
+      {
+        "family": "Rindlaub",
+        "given": "N."
+      },
+      {
+        "family": "K",
+        "given": "J."
+      }
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "Howard"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "GDE pulse: taking the pulse of groundwater dependent ecosystems with satellite data"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "note": [
+      "Available at"
+    ],
+    "url": [
+      "https://gde.codefornature.org"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Lahontan RWQCB (Regional Water Quality Control Board Lahontan Region",
+      "Water Quality Control Plan for the Lahontan Region, North and South Basins"
+    ],
+    "date": [
+      "2016"
+    ],
+    "publisher": [
+      "Lahontan RWQCB, South Lake Tahoe"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Lichvar",
+        "given": "R.W."
+      },
+      {
+        "family": "Banks",
+        "given": "D.L."
+      },
+      {
+        "family": "Kirchner",
+        "given": "W.N."
+      },
+      {
+        "family": "Melvin",
+        "given": "N.C."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "The National wetland plant list: 2016 wetland ratings"
+    ],
+    "volume": [
+      "2016–30"
+    ],
+    "pages": [
+      "1–17"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Phytoneuron"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Water",
+        "given": "Los Angeles Department",
+        "particle": "of"
+      },
+      {
+        "given": "Power"
+      }
+    ],
+    "date": [
+      "2010",
+      "2010-03"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Owens Lake Habitat Management Plan"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "date": [
+      "2015",
+      "2015-08"
+    ],
+    "title": [
+      "Habitat Conservation Plan for Los Angeles Department of Water and Power’s operations, maintenance, and management activities on its land in Mono and Inyo Counties"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Lower Owens River Project Annual Report"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "publisher": [
+      "Annual Owens Valley Report"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      }
+    ],
+    "date": [
+      "2021",
+      "2020-12"
+    ],
+    "title": [
+      "Consolidated Hydrologic Monitoring at Owens Lake"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Quarterly Report"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      },
+      {
+        "family": "Sciences",
+        "given": "Ecosystems"
+      }
+    ],
+    "date": [
+      "2010"
+    ],
+    "publisher": [
+      "Owens Valley Land Management Plan"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "L.A.D.W.P."
+      },
+      {
+        "given": "M.W.H."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Owens Lake Groundwater Evaluation Project"
+    ],
+    "container-title": [
+      "Updated Conceptial Model Report – FINAL"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Manning",
+        "given": "S.J."
+      }
+    ],
+    "date": [
+      "1997"
+    ],
+    "title": [
+      "Plant communities of LADWP land in the Owens Valley: an exploratory analysis of baseline conditions"
+    ],
+    "genre": [
+      "Inyo County Water Department report,"
+    ],
+    "publisher": [
+      "Inyo County Water Department, Bishop"
+    ],
+    "location": [
+      "California"
+    ],
+    "type": "report"
+  },
+  {
+    "author": [
+      {
+        "family": "Mathie",
+        "given": "A.M."
+      },
+      {
+        "family": "Welborn",
+        "given": "T.L."
+      },
+      {
+        "family": "Susong",
+        "given": "D.D."
+      },
+      {
+        "family": "Tumbusch",
+        "given": "M.L."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "Phreatophytic landcover map of the northern and central Great Basin Ecoregion"
+    ],
+    "location": [
+      "California, Idaho, Nevada, Utah, Oregon, and Wyoming"
+    ],
+    "publisher": [
+      "U.S"
+    ],
+    "note": [
+      "Geological Survey Scientific Investigations Map 3169. Available at"
+    ],
+    "url": [
+      "http://pubs.usgs.gov/sim/3169/."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Menke",
+        "given": "J."
+      },
+      {
+        "family": "Hepburn",
+        "given": "A."
+      },
+      {
+        "family": "Johnson",
+        "given": "D."
+      },
+      {
+        "family": "Reyes",
+        "given": "E."
+      },
+      {
+        "family": "Glass",
+        "given": "A."
+      },
+      {
+        "family": "Evens",
+        "given": "J."
+      },
+      {
+        "family": "Winitsky",
+        "given": "S.Sikes"
+      },
+      {
+        "given": "K."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Vegetation Mapping and Classification of the Jawbone Canyon Region and Owens Valley"
+    ],
+    "container-title": [
+      "Report to Bureau of Land Management"
+    ],
+    "publisher": [
+      "Aerial Information Systems"
+    ],
+    "location": [
+      "Redlands, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Moyle",
+        "given": "P.B."
+      },
+      {
+        "family": "Quiñones",
+        "given": "R.M."
+      },
+      {
+        "family": "Katz",
+        "given": "J.V."
+      },
+      {
+        "family": "Weaver",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2015"
+    ],
+    "title": [
+      "Fish species of special concern in California"
+    ],
+    "edition": [
+      "Third"
+    ],
+    "publisher": [
+      "California Department of Fish and Wildlife"
+    ],
+    "location": [
+      "Sacramento"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Sciences",
+        "given": "National Academies",
+        "particle": "of"
+      },
+      {
+        "family": "Engineering"
+      },
+      {
+        "given": "Medicine"
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Effectiveness and Impacts of Dust Control Measures for Owens Lake"
+    ],
+    "location": [
+      "Washington, DC"
+    ],
+    "publisher": [
+      "The National Academies Press"
+    ],
+    "url": [
+      "https://doi.org/10.17226/25658."
+    ],
+    "doi": [
+      "10.17226/25658."
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "Nuvis"
+      }
+    ],
+    "date": [
+      "2013",
+      "2013-04"
+    ],
+    "title": [
+      "Owens Lake Master Project. Prepared for the Los Angeles Department of Water and Power"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Orme",
+        "given": "A.R."
+      },
+      {
+        "family": "Orme",
+        "given": "A.J."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Late Pleistocene shorelines of Owens Lake, California, and their hydroclimatic and tectonic implication"
+    ],
+    "editor": [
+      {
+        "family": "Reheis",
+        "given": "M.C."
+      },
+      {
+        "family": "Hershler",
+        "given": "R."
+      },
+      {
+        "family": "Miller",
+        "given": "D.M."
+      }
+    ],
+    "container-title": [
+      "Late Cenozoic Drainage History of the Southwestern Great Basin and Lower Colorado River Region: Geologic and Biotic Perspectives: Geological Society of America Special Paper 439"
+    ],
+    "pages": [
+      "207–226"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Paskier",
+        "given": "L.C."
+      },
+      {
+        "family": "Kane",
+        "given": "M.F."
+      },
+      {
+        "family": "Jackson",
+        "given": "W.H."
+      }
+    ],
+    "date": [
+      "1964"
+    ],
+    "title": [
+      "Volcanism of Owens Valley Region, California—A Geophysical Study, Geological Survey Professional Paper 438 prepared partly in cooperation with the California Division of Mines and Geology"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Matsumoto",
+        "given": "S."
+      },
+      {
+        "family": "Howard",
+        "given": "J."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Riege",
+        "given": "L."
+      },
+      {
+        "family": "Remson",
+        "given": "E.J."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Groundwater Dependent Ecosystems under the Sustainable Groundwater Management Act: Guidance for Preparing Groundwater Sustainability Plans"
+    ],
+    "publisher": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Rohde",
+        "given": "M.M."
+      },
+      {
+        "family": "Seapy",
+        "given": "B."
+      },
+      {
+        "family": "Rogers",
+        "given": "R."
+      },
+      {
+        "given": "Castañeda"
+      }
+    ],
+    "editor": [
+      {
+        "given": "X."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Critical Species LookBook: A compendium of California’s threatened and endangered species for sustainable groundwater management"
+    ],
+    "container-title": [
+      "The Nature Conservancy"
+    ],
+    "location": [
+      "San Francisco, California"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Sorenson",
+        "given": "S.K."
+      },
+      {
+        "family": "Dileanis",
+        "given": "P.D."
+      },
+      {
+        "family": "Branson",
+        "given": "F.A."
+      }
+    ],
+    "date": [
+      "1991"
+    ],
+    "title": [
+      "Soil water and vegetation responses to precipitation and changes in depth to groundwater in Owens"
+    ],
+    "location": [
+      "Valley, California"
+    ],
+    "publisher": [
+      "U.S. Geological Survey Water-Supply Paper"
+    ],
+    "pages": [
+      "2370–"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "California",
+        "given": "State",
+        "particle": "of"
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Sustainable Groundwater Management Act"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Steinwand",
+        "given": "A.L."
+      },
+      {
+        "family": "Harrington",
+        "given": "R.F."
+      },
+      {
+        "family": "Groeneveld",
+        "given": "D.P."
+      }
+    ],
+    "date": [
+      "2001"
+    ],
+    "title": [
+      "Transpiration coefficients for three Great Basin shrubs"
+    ],
+    "volume": [
+      "49"
+    ],
+    "pages": [
+      "555–567"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Arid Environments"
+    ],
+    "issue": [
+      "3"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Steinwand",
+        "given": "A.L."
+      },
+      {
+        "family": "Harrington",
+        "given": "R.F."
+      },
+      {
+        "family": "Or",
+        "given": "D."
+      }
+    ],
+    "date": [
+      "2006"
+    ],
+    "title": [
+      "Water balance for Great Basin phreatophytes derived from eddy covariance, soil water, and water table measurements"
+    ],
+    "volume": [
+      "329"
+    ],
+    "pages": [
+      "595–605"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Hydrology"
+    ],
+    "issue": [
+      "3–4"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Swain",
+        "given": "D.L."
+      },
+      {
+        "family": "Langenbrunner",
+        "given": "B."
+      },
+      {
+        "family": "Neelin",
+        "given": "J.D."
+      },
+      {
+        "family": "Hall",
+        "given": "A."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "Increasing precipitation volatility in twenty-first-century California"
+    ],
+    "volume": [
+      "8"
+    ],
+    "pages": [
+      "427–433"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Nature Climate Change"
+    ],
+    "issue": [
+      "5"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Tallyn",
+        "given": "E.F."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Soil survey of Benton-Owens Valley area, California, parts of Inyo and Mono Counties"
+    ],
+    "publisher": [
+      "U.S. Department of Agriculture, Natural Resources Conservation Service"
+    ],
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Freshwater species list for Owens Valley and Fish Slough Groundwater Basins"
+    ],
+    "url": [
+      "https://groundwaterresourcehub.org/sgma-tools/environmental-surface-water-beneficiaries"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "T.N.C."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "GDE pulse"
+    ],
+    "url": [
+      "https://gde.codefornature.org/#/home"
+    ],
+    "note": [
+      "accessed July 2019]."
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Interactive map. Website"
+    ]
+  },
+  {
+    "author": [
+      {
+        "literal": "US Department of Agriculture - Forest Service."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Existing Vegetation Great Basin, 1999–2009, v1 [ESRI File Geodatabase"
+    ],
+    "location": [
+      "MeClellan, CA"
+    ],
+    "note": [
+      "Accessed June 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "US Department of Agriculture - Forest Service."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Existing Vegetation South Sierra, 2000–2008, v1 [ESRI File Geodatabase"
+    ],
+    "location": [
+      "MeClellan, CA"
+    ],
+    "note": [
+      "Accessed June 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "literal": "US Department of Agriculture - Forest Service."
+      }
+    ],
+    "date": [
+      "2014"
+    ],
+    "title": [
+      "Existing Vegetation South Interior, 2000–2008, v1 [ESRI File Geodatabase"
+    ],
+    "location": [
+      "MeClellan, CA"
+    ],
+    "note": [
+      "Accessed June 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.S."
+      }
+    ],
+    "date": [
+      "2011"
+    ],
+    "title": [
+      "FSM 2600 – Wildlife, Fish, and Sensitive Plant Habitat Management, Chapter 2670 – Threatened, Endangered, and Sensitive Plants and Animals"
+    ],
+    "volume": [
+      "2"
+    ],
+    "location": [
+      "Denver, CO"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Forest Service Manual Rocky Mountain Region (Region"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "1998"
+    ],
+    "title": [
+      "Owens Basin Wetland and Aquatic Species Recovery Plan, Inyo and Mono Counties"
+    ],
+    "location": [
+      "Portland, Oregon"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2005"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for Astragalus lentiginosus var. piscinensis (Fish Slough Milk-Vetch"
+    ],
+    "volume": [
+      "70"
+    ],
+    "pages": [
+      "33774–33795"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Federal Register"
+    ],
+    "issue": [
+      "10"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2008"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for the Sierra Nevada Bighorn Sheep (Ovis canadensis sierrae"
+    ],
+    "volume": [
+      "73"
+    ],
+    "pages": [
+      "45534–45604"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "and Taxonomic Revision; Final Rule. Federal Register"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for the Sierra Nevada yellow-legged frog, the Northern Distinct Population Segment of the mountain yellow-legged frog, and the Yosemite toad; final rule"
+    ],
+    "volume": [
+      "81"
+    ],
+    "pages": [
+      "9046–59119"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Federal Register"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2018"
+    ],
+    "title": [
+      "National Wetlands Inventory website. U.S. Department of the Interior, Fish and Wildlife Service"
+    ],
+    "location": [
+      "Washington, D.C"
+    ],
+    "url": [
+      "http://www.fws.gov/wetlands/"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.F.W.S."
+      }
+    ],
+    "date": [
+      "2020"
+    ],
+    "title": [
+      "Endangered and threatened wildlife and plants; designation of critical habitat for the Revised Designation of critical habitat for the Western Distinct Population Segment of the Yellow- Billed Cuckoo; proposed rule"
+    ],
+    "volume": [
+      "85"
+    ],
+    "pages": [
+      "11,458–11,594"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Federal Register"
+    ]
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2002"
+    ],
+    "title": [
+      "Central Mojave vegetation database"
+    ],
+    "container-title": [
+      "Digital vegetation map managed through the California Vegetation Classification and Mapping Program"
+    ],
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "given": "VegCAMP)"
+      }
+    ],
+    "title": [
+      "Prepared by USGS, Western Ecological Research Center"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "given": "U.S.G.S."
+      }
+    ],
+    "date": [
+      "2016"
+    ],
+    "title": [
+      "National hydrography dataset, high resolution, v220"
+    ],
+    "location": [
+      "Washington D.C"
+    ],
+    "note": [
+      "Retrieved from ftp://nhdftp.usgs.gov/DataSets/Staged/States/FileGDB/HighResolution/NHDH_CA_931v22 0.zip."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Service",
+        "given": "U.S.National Park"
+      }
+    ],
+    "date": [
+      "2012"
+    ],
+    "title": [
+      "Geospatial Vegetation Information for the Manzanar National Historical Site Vegetation Inventory Project"
+    ],
+    "note": [
+      "Accessed January 2016."
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Zdon",
+        "given": "A."
+      },
+      {
+        "family": "Rainville",
+        "given": "K."
+      },
+      {
+        "family": "N.Buckmaster",
+        "given": "S.Parmenter"
+      },
+      {
+        "family": "Love",
+        "given": "A.H."
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Identification of Source Water Mixing in the Fish Slough Spring Complex, Mono County, California"
+    ],
+    "volume": [
+      "6"
+    ],
+    "pages": [
+      "26"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Hydrology"
+    ]
+  },
+  {
+    "date": [
+      "2019"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Nocturnal short-tailed vole with limited range in Owens Valley and Fish Slough, most common in native meadows. Much of their time Owens Valley vole is spent underground in burrows; foraging takes place on above-Microtus californicus BLMS/SSC Likely CNDDB Indirect ground runways connecting burrows. Feeds on stems and leaves of vallicola forbs and grasses. Documented in Owens Valley, Owens Lake, Fish Slough, and Tri-Valley management areas",
+      "Roosts in rock crevices, tree hollows, mines, caves, and a variety of No known vacant and occupied buildings; feeds in a variety of open woodland Pallid bat FSS, BLMS/ Likely CNDDB reliance on habitats. Habitat and prey (e.g., insects and arachnids) not Antrozous pallidus SSC groundwater associated with aquatic ecosystems"
+    ],
+    "date": [
+      "2019"
+    ],
+    "note": [
+      "Documented in Owens Valley, Owens Lake, and Fish Slough management areas (CDFW 2019). Prefer open arid habitat including alpine meadows, summit plateaus, and hanging meadows fed by springs. It relies on Sierra Nevada bighorn groundwater-dependent herbaceous plants, grasses, and shrubs FE/SE"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Likely CNDDB Indirect",
+        "particle": "sheep"
+      }
+    ],
+    "date": [
+      "2019"
+    ],
+    "title": [
+      "Typically found at high elevations in the Ovis canadensis sierrae summer (10,000–14,000 ft) and lower elevations in the winter (5,000–9,000 feet). USFWS critical habitat overlaps with the Owens Lake and Owens Valley management areas"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Technical Appendix Owens Valley GDE Assessment"
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Buteo swainsoni eBird insects",
+      "Feeds in grasslands and agriculture fields; nesting habitat components include open accessible water with dense tall emergent vegetation, a protected nesting substrate (including flooded or Tricolored blackbird –/ST Unlikely CAFSD Indirect thorny vegetation), and a suitable nearby foraging space with Agelaius tricolor adequate insect prey. Relies on groundwater dependent ecosystems for breeding and roosting (Rohde et al 2019). No listed occurrences in management areas, outside of the species’ range (eBird 2020). Barren to sparsely vegetated beaches, barrier beaches, saltevaporation pond levees, and shores of alkali lakes; also nests on Western snowy plover gravel bars in rivers with wide flood plains; needs sandy, gravelly, Charadrius alexandrinus –/SSC Likely CNDDB Indirect or friable soils for nesting"
+    ],
+    "note": [
+      "Occurrences in Owens Valley, Tri-Valley (CDFW 2019, eBird 2020), Owens Lake, Fish Slough, management areas",
+      "Western snowy plovers can nest near nivosus wetlands that may be supported by groundwater, including near freshwater wetlands (Rhode et al. 2019). Occurrences in Owens Valley and Owens Lake management areas (CDFW 2019)."
+    ],
+    "date": [
+      "2020"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "CAFSD",
+        "given": "grasslands"
+      },
+      {
+        "given": "croplands"
+      }
+    ],
+    "title": [
+      "Feeds primarily on insects and seeds, Xanthocephalus –/SSC Likely Indirect eBird foraging in marshes, fields, or sometimes catching prey in the air. xanthocephalus Owens Valley and Fish Slough are used during breeding season, and pre- and post- breeding migration",
+      "Occurrences in Owens Valley, Owens Lake, and Fish Slough management areas (eBird 2020). Reptiles Prefers arid desert climates including sandy flats and rocky foothills to alluvial fans, washes, and canyons"
+    ],
+    "date": [
+      "2020"
+    ],
+    "note": [
+      "May rely on groundwater-Desert tortoise dependent vegetation for food sources (e.g., grasses, wildflowers, FT/ST Likely CNDDB Indirect Gopherus agassizii wild fruit, and herbs) and water intake from these food sources (Rhode et al. 2019). Occurrences in Owens Valley and Owens Lake management areas (CDFW 2019)."
+    ],
+    "type": null
+  },
+  {
+    "title": [
+      "Technical Appendix Owens Valley GDE Assessment"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "BLMS",
+        "given": "Panamint",
+        "particle": "alligator lizard"
+      }
+    ],
+    "title": [
+      "Likely CNDDB Indirect feet), including Panamint Mountains, the White Mountains, the Elgaria panamintina FSS/SSC Inyo Mountains, the Nelson Mountains, and the Cosos Mountains. Occurrences in Owens Valley and the vicinity of Fish Slough management areas (CDFW",
+      "Amphibians Lungless, nocturnal salamander; inhabiting springs, seeps, and surrounding riparian areas in dry mountain habitats of Inyo Inyo Mountains slender FSS, Mountains. Breeding occurs terrestrially in moist environments. salamander Likely CNDDB Direct BLMS/SSC Typical elevation range of 1,800–8,600 feet"
+    ],
+    "date": [
+      "2019"
+    ],
+    "container-title": [
+      "Occurrences in the Batrachoseps campi vicinity of Owens Valley and Owens Lake management areas (CDFW 2019). Native to Northern California and Owens Valley (California native populations thought to be extinct"
+    ],
+    "note": [
+      "introduced populations in central valley, Southern California coast, and Northern California); inhabits grasslands, wet meadows, forests, woodlands, and other Northern leopard frog CNDDB, –/SSC Unlikely Direct locations with permanent water below 6,500 feet. Breeding and"
+    ],
+    "type": "chapter"
+  },
+  {
+    "director": [
+      {
+        "family": "Canadell",
+        "given": "J."
+      },
+      {
+        "family": "Jackson",
+        "given": "R.B."
+      },
+      {
+        "family": "Ehleringer",
+        "given": "J.R."
+      },
+      {
+        "family": "Mooney",
+        "given": "H.A."
+      },
+      {
+        "family": "Sala",
+        "given": "O.E."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Schulze",
+        "given": "E.D."
+      }
+    ],
+    "date": [
+      "1996"
+    ],
+    "title": [
+      "Maximum rooting depth of vegetation types at the global scale"
+    ],
+    "volume": [
+      "108"
+    ],
+    "pages": [
+      "583–595"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Oecologia"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Fan",
+        "given": "Y."
+      },
+      {
+        "family": "Miguez-Macho",
+        "given": "G."
+      },
+      {
+        "family": "Jobbágy",
+        "given": "E.G."
+      },
+      {
+        "family": "Jackson",
+        "given": "R.B."
+      },
+      {
+        "family": "Otero-Casal",
+        "given": "C."
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "Hydrologic regulation of plant rooting depth"
+    ],
+    "volume": [
+      "114"
+    ],
+    "pages": [
+      "10572–10577"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Proceedings of the National Academy of Sciences"
+    ],
+    "issue": [
+      "40"
+    ]
+  },
+  {
+    "author": [
+      {
+        "family": "Naumovich",
+        "given": "Lech"
+      }
+    ],
+    "date": [
+      "2017"
+    ],
+    "title": [
+      "TNC Crowdsourcing Campaign Survey Response"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Stromberg",
+        "given": "J."
+      }
+    ],
+    "date": [
+      "2013",
+      "2013"
+    ],
+    "title": [
+      "Root patterns and hydrogeomorphic niches of riparian plants in the American Southwest"
+    ],
+    "volume": [
+      "94"
+    ],
+    "pages": [
+      "1–9"
+    ],
+    "note": [
+      "Appendix A. Rooting data for herbaceous plants"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Journal of Arid Environments"
+    ]
+  },
+  {
+    "title": [
+      "Tony Morgan, PG#4178, CHG#159 Douglas Tolley, PhD Principal Hydrogeologist Staff Hydrogeologist tmorgan@geo-logic.com gtolley@geo-logic.com 3916 State Street, Garden Suite 143E Spring Hill Drive"
+    ],
+    "location": [
+      "Santa Barbara, CA 93105 Grass Valley, CA 95945"
+    ],
+    "type": null
+  },
+  {
+    "author": [
+      {
+        "family": "Flint",
+        "given": "L.E."
+      },
+      {
+        "family": "Flint",
+        "given": "A.L."
+      },
+      {
+        "family": "Thorne",
+        "given": "J.H."
+      },
+      {
+        "family": "Boynton",
+        "given": "R."
+      }
+    ],
+    "date": [
+      "2013"
+    ],
+    "title": [
+      "Fine-scale hydrologic modeling for regional landscape applications: the California Basin Characterization Model development and performance: Ecol"
+    ],
+    "volume": [
+      "2"
+    ],
+    "type": "article-journal",
+    "container-title": [
+      "Processes"
+    ],
+    "issue": [
+      "25"
+    ]
+  }
+]
