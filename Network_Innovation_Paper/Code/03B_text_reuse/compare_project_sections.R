@@ -3,9 +3,10 @@
 #' This script processes project management action pages to identify similarities between documents
 #' using Jaccard similarity with 10-grams.
 #' 
-#' This version filters for pages with projects_mgmt_actions == T,
-#' removes page breaks, and concatenates pages by file to create one document per file.
-#' Then compares every document to every other document using Jaccard similarity.
+#' This version filters for pages with projects_mgmt_actions == T, keeps only the
+#' original document per plan (doc_rank == 1, the legacy '^v1' selection), and
+#' concatenates those pages to create one document per plan. Then compares every
+#' document to every other document using Jaccard similarity.
 
 # ----- Configuration -----
 CONFIG <- list(
@@ -72,6 +73,13 @@ cleanText <- function(text, cut_prop = CONFIG$cut_prop,
 # ----- Main Process -----
 source("Network_Innovation_Paper/Code/_paths.R")
 documents <- readRDS(nip_product('page_metadata.RDS'))
+# One document per plan: the ORIGINAL (doc_rank == 1, i.e. the legacy '^v1'
+# selection). This MUST match every other modeling input so the Jaccard network
+# spans the same document universe as the rest: references (03A '^v1' filter),
+# knowledge triples (03C doc_rank == 1), and entity edges (select_plan_docs
+# 'original'). Without it the resubmitted doc of a plan is pooled into the same
+# gsp_id below, silently changing which text this network compares.
+documents <- documents[doc_rank == 1,]
 project_docs <- documents[projects_mgmt_actions == TRUE,]
 # Clean text on per-page basis before concatenating
 project_docs$text_cleaned <- cleanText(project_docs$text)
@@ -148,8 +156,7 @@ score_dt_full <- rbind(score_dt, reverse_pairs)
 self_pairs <- data.table(a = gsp_id, b = gsp_id, score = 1.0)
 score_dt_complete <- rbind(score_dt_full, self_pairs)
 
-# Save results
+# Save results — one file, overwritten each run (no dated versions).
 dir.create(CONFIG$output_dir, showWarnings = FALSE, recursive = TRUE)
-output_file <- paste0(CONFIG$output_dir, "project_section_jaccard_scores_", 
-                      format(Sys.time(), "%Y%m%d"), ".rds")
+output_file <- paste0(CONFIG$output_dir, "project_section_jaccard_scores.rds")
 saveRDS(score_dt_complete, output_file, compress = TRUE)

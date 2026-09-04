@@ -1,5 +1,5 @@
 #' _entity_groups.R — single source of truth for entity-type groupings used by
-#' the modeling scripts (make_networks / make_valued_networks / make_binary0.9).
+#' the modeling scripts (make_binary0.9; explore/make_networks, explore/make_valued_networks).
 #'
 #' Every entity name in node_dictionary.csv carries ONE semantic type from the
 #' 6-way controlled vocabulary in classify_entities.R (GSA, Consultant, Research,
@@ -63,10 +63,10 @@ entity_names <- function(dict, group) {
 #'      would otherwise dominate the cross-product with uninformative ties
 #'   4. tcrossprod -> gsp x gsp count of shared (co-mentioned) entities
 #'
-#' @param gs_melt long data.table with columns gsp_id, variable (entity name), value
+#' @param gs_melt long data.table with columns gsp_doc_id, variable (entity name), value
 #' @param names   entity names to include (from entity_names())
 #' @param prevalence_max drop entities present in >= this share of plans (default .10)
-#' @return numeric gsp x gsp matrix (rownames/colnames = gsp_id); if no entity
+#' @return numeric doc x doc matrix (rownames/colnames = gsp_doc_id); if no entity
 #'   survives filtering, a 0 x 0 matrix (callers should guard).
 build_shared_entity_matrix <- function(gs_melt, names, prevalence_max = 0.10) {
   # Prevalence is a share of ALL plans, so take the denominator from the full
@@ -74,20 +74,20 @@ build_shared_entity_matrix <- function(gs_melt, names, prevalence_max = 0.10) {
   # plans that mention this group's entities, making the threshold far stricter
   # for sparse focal subnetworks (Consultant/Research/NGO) and dropping exactly
   # the most-shared focal entities.
-  n_plans <- length(unique(gs_melt$gsp_id))
+  n_plans <- length(unique(gs_melt$gsp_doc_id))
   sub <- gs_melt[gs_melt$variable %in% names, ]
   if (!nrow(sub)) return(matrix(numeric(0), 0, 0))
-  df  <- dcast(sub, gsp_id ~ variable, value.var = "value",
+  df  <- dcast(sub, gsp_doc_id ~ variable, value.var = "value",
                fun.aggregate = sum, na.rm = TRUE, fill = 0)
   mat <- as.matrix(df[, -1, with = FALSE])
-  rownames(mat) <- df$gsp_id
+  rownames(mat) <- df$gsp_doc_id
   keep <- (colSums(mat > 0) / n_plans) < prevalence_max
   mat  <- mat[, keep, drop = FALSE]
   tcrossprod(mat)
 }
 
-#' Re-index a gsp x gsp matrix onto a fixed set of gsp_ids, zero-filling any
-#' gsp absent from `mat`. Needed because the sparse focal subnetworks
+#' Re-index a doc x doc matrix onto a fixed set of ids (gsp_doc_id), zero-filling
+#' any id absent from `mat`. Needed because the sparse focal subnetworks
 #' (Consultant/Research) may not touch every plan, so `mat[ids, ids]` would
 #' fail; this returns a length(ids) x length(ids) matrix aligned to `ids`.
 align_gsp_matrix <- function(mat, ids) {

@@ -35,7 +35,7 @@ inputs/ ────────┘            │
    Code/{03A_reference_extraction, 03B_text_reuse,              ┌─► data_products/{gsp_reference_pairs,
          03C_knowledge_tree}  ──────────────────────────────────┤     triple_similarity, project_jaccard, …}
                                                                 ▼
-                                     Code/04_modeling/make_networks.R (+ valued / binary0.9)  ─► ERGMs
+                                     Code/04_modeling/make_binary0.9_networks.R  ─► ERGMs
 ```
 
 ### `Code/00_ingest_core.R` — the only *ingest* bridge to core
@@ -126,28 +126,33 @@ with columns `page`/`text` (the legacy `<<PAGE_BREAK>>`-delimited
 read and the `gspDocId → gsp_id/version` recovery via `id_crosswalk.csv`.
 Page-entity keys throughout this chain are `<gspDocId>_<page_num>`.
 
-**Critical-path rebuild — `Code/run_all.R`.** The orchestrator regenerates only the
-products a `04_modeling/*` script actually reads, in order (from the repo root):
+**Rebuilding the model inputs — `Code/run_all.R`.** The orchestrator regenerates only
+the products a `04_modeling/*` script actually reads, in order (from the repo root):
 
 ```sh
-Rscript Network_Innovation_Paper/Code/run_all.R                # preprocess -> project-section Jaccard
+Rscript Network_Innovation_Paper/Code/run_all.R                # preprocess -> project-section Jaccard (3B)
 RUN_INGEST=1 Rscript Network_Innovation_Paper/Code/run_all.R   # also rebuild the core bridge + entity products first
 ```
 
-That runs `02_text_preprocessing/additional_filter_texts.R` (→ `page_metadata.RDS`)
-then `03B_text_reuse/compare_project_sections.R` (→
-`project_jaccard_results/project_section_jaccard_scores_<date>.rds`, the 03B
-modeling input). The reference (03A) and knowledge-triple (03C) inputs and the
-models themselves are run by hand — see `Code/README.md`.
+By default that runs `02_text_preprocessing/additional_filter_texts.R` (→
+`page_metadata.RDS`) then `03B_text_reuse/compare_project_sections.R` (→
+`project_jaccard_results/project_section_jaccard_scores.rds`, the 3B modeling
+input). All **three** Stage 3 similarity products are now buildable from
+`run_all.R`, each behind its own TRUE/FALSE toggle — 3A references
+(→ `gsp_reference_pairs.rds`) and 3C knowledge-tree (→ `triple_similarity.csv`)
+default OFF because they are intensive and need tools beyond R (anystyle/ruby +
+OpenAlex + Solr for 3A; a `jupyter` env for 3C). Flip `STAGE_3A_REFERENCES` /
+`STAGE_3C_KNOWLEDGE` on to rebuild them. The models themselves are still run by
+hand — see `Code/README.md`.
 
-**Exploratory page-score branch (not on the critical path).** `run_all.R` does *not*
-run `03B_text_reuse/hash_and_compare_pages.R` (→ `score_results/portal_page_scores_<date>.rds`)
-or its consumers `map_similarity.R` / `map_similarity_total.R` /
-`link_page_lda_results_to_meta.R`: those persist no product and feed nothing
-downstream. Run them by hand only for the page-level scores or the spatial maps.
-`latest_page_scores()` always picks the **newest** `portal_page_scores_*.rds`, so
-if you do rebuild that branch, run `hash_and_compare_pages.R` before the map/link
-scripts — otherwise they consume a stale score file.
+**Exploratory page-score branch (not a model input).** `run_all.R` does *not*
+run `03B_text_reuse/explore/hash_and_compare_pages.R`
+(→ `score_results/portal_page_scores_<date>.rds`) or its consumers
+`explore/map_similarity.R`, `explore/link_page_lda_results_to_meta.R`, and
+`exploratory/map_similarity_total.R`: they feed no model input. Run them by hand
+only for the page-level scores or the spatial maps. `latest_page_scores()` always
+picks the **newest** `portal_page_scores_*.rds`, so run `hash_and_compare_pages.R`
+before the map/link scripts — otherwise they consume a stale score file.
 
 ## Notes
 

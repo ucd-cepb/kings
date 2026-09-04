@@ -13,7 +13,7 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 
 | File | Role |
 |---|---|
-| `run_all.R` | Orchestrator — regenerates the **critical-path** modeling inputs from current core (optional bridge + entity classification → preprocess → project-section Jaccard). "Critical path" = only what a `04_modeling/*` script actually reads; it deliberately skips the exploratory page-score branch (`03B_text_reuse/explore/` maps), which feeds nothing downstream. Resolves every path via `_paths.R` and runs each stage in its own Rscript process. `RUN_INGEST=1` opts into the gated bridge + entity rebuild. |
+| `run_all.R` | Orchestrator — regenerates the modeling inputs from current core (optional bridge + entity classification → preprocess → the three Stage 3 similarity products: 3A references, 3B project-Jaccard, 3C knowledge-tree). Every stage is an independent TRUE/FALSE toggle; 3A + 3C default OFF because they are intensive and need tools beyond R (anystyle/ruby + OpenAlex + Solr for 3A; a `jupyter` env for 3C). Builds only what a `04_modeling/*` script actually reads; skips the exploratory page-score branch (`03B_text_reuse/explore/` maps), which feeds nothing downstream. Resolves every path via `_paths.R`, runs each R stage in its own Rscript process, and the 3C similarity step via `jupyter nbconvert`. `RUN_INGEST=1` opts into the gated bridge + entity rebuild. |
 | `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`|`latest`), `latest_page_scores()`. Sourced by the text-reuse feeders. |
 | `00_ingest_core.R` | The only *ingest* bridge to core; writes `data_products/id_crosswalk.csv` straight from the manifest (no derivation, no LLM). Detailed in the primary README. The entity products (`node_dictionary`, `all_gsa_edges`) are in-project analysis and live in `01_entity_classification/`. |
@@ -58,28 +58,32 @@ First step of the page-similarity rebuild.
 Page- and section-level similarity between plans, plus the spatial maps. Consumes
 `page_metadata.RDS`.
 
-**On the critical path** (run by `run_all.R`) — the only 03B script whose output a
-`04_modeling/*` script reads:
+**Run by `run_all.R`** — the only 03B script whose output a `04_modeling/*` script
+reads:
 
 - `compare_project_sections.R` — Jaccard 10-gram similarity over the *projects &
   management actions* pages (one concatenated doc per plan) →
-  `project_jaccard_results/project_section_jaccard_scores_<date>.rds`, the 03B
+  `project_jaccard_results/project_section_jaccard_scores.rds`, the 03B
   modeling input. Reads `page_metadata.RDS` directly, independent of the page-score
   branch below. (The older `hash_and_compare_projects.R` variant is retired — see
   `unused/`.)
 
-**Exploratory page-score branch** (NOT run by `run_all.R`; feeds nothing
-downstream) — run by hand only if you want the raw page scores or the maps:
+**Exploratory page-score branch** (in `explore/`; NOT run by `run_all.R`; feeds
+nothing downstream) — run by hand only if you want the raw page scores or the maps:
 
-1. `hash_and_compare_pages.R` — minhash + LSH over all pages → `score_results/portal_page_scores_<date>.rds`. Memory-heavy.
-2. `map_similarity.R`, `map_similarity_total.R` — build the plan-to-plan networks from the newest page-score file and draw the spatial similarity maps (persist no product). Vertices are one document per plan via `select_plan_docs()` (default `original`; set `NIP_DOC_SELECT=latest` to use resubmitted docs).
-3. `link_page_lda_results_to_meta.R` — join page scores back onto section metadata (in memory; persists no product).
+1. `explore/hash_and_compare_pages.R` — minhash + LSH over all pages → `score_results/portal_page_scores_<date>.rds`. Memory-heavy.
+2. `explore/map_similarity.R` — builds the plan-to-plan network from the newest page-score file and draws the spatial similarity map (persists no product). Vertices are one document per plan via `select_plan_docs()` (default `original`; set `NIP_DOC_SELECT=latest` to use resubmitted docs).
+3. `explore/link_page_lda_results_to_meta.R` — join page scores back onto section metadata (in memory; persists no product).
 
-Section-level and "total"-map exploration live in `exploratory/` (below).
+The "total"-map variant `map_similarity_total.R` lives in `exploratory/` (below).
 
 ## `03A_reference_extraction/`
 
-Bibliographic reference extraction and matching. The file-level numeric prefixes are the run order:
+Bibliographic reference extraction and matching. **Stage 3A of `run_all.R`**
+(`STAGE_3A_REFERENCES`, default OFF): the five scripts run in numeric order,
+ending in the model input `gsp_reference_pairs.rds`. External deps: `anystyle`/ruby
+(step 01), the OpenAlex API (step 03), a Solr title-match index (step 04). The
+file-level numeric prefixes are the run order:
 
 1. `01_extract_GSP_references.R` — extract reference strings from the plan PDFs (`referenceExtract`; depends on `anystyle`/ruby — see the notes in the script header).
 2. `02_aggregate_references.R` — classify & aggregate the extracted references (`referenceClassify`).
@@ -89,14 +93,24 @@ Bibliographic reference extraction and matching. The file-level numeric prefixes
 
 ## `03C_knowledge_tree/`
 
-Subject–predicate–object ("knowledge triple") extraction and similarity.
+Subject–predicate–object ("knowledge triple") extraction and similarity. **Stage 3C
+of `run_all.R`** (`STAGE_3C_KNOWLEDGE`, default OFF): the two-step canonical chain
+below produces the model input `triple_similarity.csv`. Needs a Python/Jupyter env
+on PATH (`jupyter nbconvert`, plus sentence-transformers + networkx for the notebook).
 
-- `extract_knowledge_triples.R` — assemble triples from page metadata.
-- `spo_extraction.py` / `spo_extraction*.ipynb` — the SPO extraction experiments (Python).
-- `semantic_kg_similarity.ipynb` — knowledge-graph similarity scoring.
-
-> Note: these scripts predate the core-parquet refactor and still reference the
-> older `page_metadata.csv` / `^v1`-style layout; adapt paths before re-running.
+- `extract_knowledge_triples.R` — assemble SPO triples from the CORE dependency
+  parses (`parsed_plans/parsed_<stem>.parquet`) over the **sust-criteria** pages of
+  the original document per plan → `knowledge_triples_sustcrit.csv` (`file` = 4-digit
+  gsp_id). Migrated off the pre-refactor `data/Innovation_Paper/` + `page_metadata.csv`
+  + `^v1` layout. Extracts triples with `textNet::textnet_extract()` (its edgelist
+  `source`/`head_verb_lemma`/`target` = subject/predicate/object; `keep_incomplete_edges=FALSE`
+  drops edges missing a subject or object), replacing the pre-refactor
+  `extract_advanced_triples_from_df` / `clean_triples` pair that this repo never defined.
+- `semantic_kg_similarity.ipynb` — embeds those triples and scores plan-to-plan
+  similarity → `triple_similarity.csv` (the 3C model input). Run by `run_all.R` via
+  `jupyter nbconvert`; its `../../data_products/` paths already target modern layout.
+- `spo_extraction.py` / `spo_extraction*.ipynb` — alternative REBEL/Triplex SPO
+  extraction experiments (Python); NOT on the `run_all.R` path.
 
 ## `exploratory/`
 
@@ -119,6 +133,16 @@ Analysis endpoint — assemble plan-to-plan networks from the upstream similarit
 products plus paper-owned covariates (`nip_input('gsp_covariates.csv')`), then fit
 ERGMs.
 
-- `make_networks.R` — base network assembly.
-- `make_valued_networks.R` — valued-ERGM variant.
-- `make_binary0.9_networks.R` — binary variant thresholded at the 0.9 cut.
+- `make_binary0.9_networks.R` — the paper's model: binarizes each similarity
+  network at its 0.9-quantile cut and fits Bayesian ERGMs (`bergm`), writing the
+  manuscript figures (`figure1_dv_distributions.png`, `model[12]_plot.png`) and
+  the regression tables (`mod0/1/2/3_html.html`).
+
+**Exploratory variants** (in `explore/`; off the critical path) — earlier
+valued-ERGM approaches, superseded by the binary/bergm model above; run by hand
+only, they persist no manuscript output:
+
+- `explore/make_networks.R` — valued-ERGM variant fit with contrastive
+  divergence (`estimate = 'CD'`); prints console tables and saves intermediate
+  `*_object.rds` placeholders.
+- `explore/make_valued_networks.R` — valued-ERGM variant.

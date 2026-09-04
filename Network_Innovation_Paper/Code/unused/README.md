@@ -26,7 +26,7 @@ the `consulting_*` CSVs these scripts write are read by anything.
 ### `hash_and_compare_projects.R` — superseded by `compare_project_sections.R`
 Writes `project_page_scores_<date>.rds`, which **no script reads**. The
 projects/management-actions similarity that actually feeds `modeling/*` is
-`project_section_jaccard_scores_*.rds`, produced by
+`project_section_jaccard_scores.rds`, produced by
 `text_reuse/compare_project_sections.R` (still live). This file is the older
 "same idea" variant that lost out.
 

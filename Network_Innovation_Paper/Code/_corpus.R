@@ -63,6 +63,24 @@ select_plan_docs <- function(xw = load_id_crosswalk(),
   xw[, .SD[chooser(doc_rank)], by = gsp_id]
 }
 
+#' Per-plan document selection for the modeling stage, with ids formatted the way
+#' the 04_modeling/ scripts key on them. Wraps select_plan_docs() (so it honors
+#' NIP_DOC_SELECT) and returns one row per plan:
+#'   gsp_doc_id  canonical, version-unambiguous plan-document id (character) --
+#'               THE vertex key for every network in the modeling stage.
+#'   gsp_id      4-digit zero-padded legacy plan id (character) -- kept ONLY to
+#'               attach the plan-level covariates/shapefile (which have no document
+#'               version) onto the chosen document.
+#'   doc_rank    the selected document's rank.
+#' gsp_id is not unique across plan versions; gsp_doc_id is. Downstream code keys on
+#' gsp_doc_id and uses this table to translate the legacy gsp_id-keyed inputs onto it.
+modeling_plan_selection <- function() {
+  s <- select_plan_docs()
+  s[, .(gsp_doc_id = as.character(gsp_doc_id),
+        gsp_id     = formatC(as.integer(gsp_id), width = 4L, flag = "0"),
+        doc_rank   = doc_rank)]
+}
+
 #' Read the whole core clean-text corpus as a long data.table.
 #' Returns columns: gsp_doc_id (character stem), page_num (int), text (chr).
 read_core_corpus <- function(dir = core_txt_clean()) {
@@ -87,13 +105,17 @@ latest_page_scores <- function() {
   utils::tail(sort(fs), 1)
 }
 
-#' Newest project-section Jaccard file written by compare_project_sections.R.
-#' Names are project_section_jaccard_scores_YYYYMMDD.rds, so lexical sort ==
-#' chronological. This is the 03B modeling input consumed by 04_modeling/*.
+#' The project-section Jaccard file written by compare_project_sections.R.
+#' A single file, project_section_jaccard_scores.rds, overwritten each run.
+#' This is the 03B modeling input consumed by 04_modeling/*. For backward
+#' compatibility we fall back to any leftover dated file if the fixed one is
+#' absent (older runs wrote project_section_jaccard_scores_YYYYMMDD.rds).
 latest_project_jaccard <- function() {
   dir <- nip_product("project_jaccard_results")
+  fixed <- file.path(dir, "project_section_jaccard_scores.rds")
+  if (file.exists(fixed)) return(fixed)
   fs <- list.files(dir, pattern = "^project_section_jaccard_scores_.*\\.rds$",
                    full.names = TRUE)
-  if (!length(fs)) stop("No project_section_jaccard_scores_*.rds in ", dir)
+  if (!length(fs)) stop("No project_section_jaccard_scores.rds in ", dir)
   utils::tail(sort(fs), 1)
 }
