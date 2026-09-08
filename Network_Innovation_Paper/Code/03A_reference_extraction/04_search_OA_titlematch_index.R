@@ -43,8 +43,19 @@ refs_to_search$journal_title[grepl("Sci.*Total.*Environment",refs_to_search$jour
 
 
 refs_to_search$year <- str_extract(refs_to_search$year,'^[0-9]{4}')
+### referenceSearch::validate_years() hard-rejects the whole batch if any year is
+### <1800 or >2025 (a stale hardcoded ceiling in the installed package). Now that
+### references cite works dated 2026+, a handful of valid future years would abort
+### create_queries(). Year is only a query boost field, so drop out-of-window years
+### to NA (the ref still matches on title/journal) rather than fail the run.
+.yr <- suppressWarnings(as.numeric(refs_to_search$year))
+refs_to_search$year[!is.na(.yr) & (.yr < 1800 | .yr > 2025)] <- NA
 
-system('solr start -c')
+# Solr 10 makes SolrCloud the default and dropped the old `-c` start flag (passing
+# it now just prints help and never starts the server), so start plain. Requires a
+# `solr` on PATH and a JRE reachable via JAVA_HOME (Homebrew's openjdk is keg-only,
+# so e.g. `export JAVA_HOME=$(brew --prefix openjdk)` before running run_all.R).
+system('solr start')
 conn = solrium::SolrClient$new()
 
 if(NEW_INDEX){index_records(oa_index, collection_name=index_name,overwrite = T)}

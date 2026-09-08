@@ -8,22 +8,19 @@ refs = readRDS(nip_product('03A_reference_extraction', 'gsp_solr_OA_matches.rds'
 cutoff_score <- 11
 refs2 <- refs[{score > cutoff_score | title.gsp == title.oa} & !is.na(source.id.oa),]
 
-# Resolve the legacy GSP.File basename (e.g. 'v1_gsp_num_id_0124.json') to the
-# canonical, version-unambiguous gsp_doc_id, so the modeling stage can pick one
-# document per plan through select_plan_docs() -- exactly like every other input --
-# instead of the old '^v1' filename filter. The 'v' number IS the document rank
-# (v1 = original = doc_rank 1, v2 = resubmitted = doc_rank 2), so the
-# (gsp_id, v-number) -> (gsp_id, doc_rank) join to the crosswalk is exact. Both
-# documents of a resubmitted plan are kept here; the single-document selection
-# happens downstream in 04_modeling/.
+# The upstream GSP.File basename is now the canonical gsp_doc_id itself
+# (e.g. 'gsp_doc_id_3712.json'), so it already IS the version-unambiguous
+# plan-document vertex key -- no crosswalk translation from the legacy
+# '(gsp_id, v-number)' filename is needed any more. Parse it straight out and
+# keep only ids that resolve against the crosswalk manifest (a guard against a
+# stray/unknown doc id). Both documents of a resubmitted plan are kept here; the
+# single-document selection happens downstream in 04_modeling/.
 refs3 <- refs2[, .(
-  work     = basename(openalex.ID),
-  gsp_id   = as.integer(str_extract(basename(GSP.File), '[0-9]{4}')),
-  doc_rank = as.integer(str_extract(basename(GSP.File), '(?<=^v)[0-9]'))
+  work       = basename(openalex.ID),
+  gsp_doc_id = str_extract(basename(GSP.File), '(?<=gsp_doc_id_)[0-9]+')
 )]
 xw <- load_id_crosswalk()
-xw[, `:=`(gsp_id = as.integer(gsp_id), doc_rank = as.integer(doc_rank))]
-refs3 <- merge(refs3, xw[, .(gsp_id, doc_rank, gsp_doc_id)], by = c('gsp_id', 'doc_rank'))
+refs3 <- refs3[!is.na(gsp_doc_id) & gsp_doc_id %in% as.character(xw$gsp_doc_id)]
 
 # V1 = OpenAlex work id, V2 = canonical gsp_doc_id (the plan-document vertex key).
 saveRDS(refs3[, .(V1 = work, V2 = gsp_doc_id)],
