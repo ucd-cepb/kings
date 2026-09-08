@@ -14,6 +14,7 @@
 #   [3B] 03B_text_reuse/compare_project_sections.R ............. -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
 #   [3C] 03C_knowledge_tree/01_extract_knowledge_triples.R +
 #        03C_knowledge_tree/02_semantic_kg_similarity.ipynb ....... -> 03C_knowledge_tree/triple_similarity.csv
+#   [4]  04_modeling/make_binary0.9_networks.R .................... -> outputs/figures/*.png, outputs/tables/*.html
 #
 # Stage 0 is a bridge: it reads the core manifest into id_crosswalk.csv, no
 # derivation, no LLM. Stage 1 is analysis, not ingest — core carries spaCy NER
@@ -22,11 +23,14 @@
 # the core graphs into GSA edges. Stage 1 runs after Stage 0 because 1c keys
 # through the crosswalk.
 #
-# The models read THREE plan-to-plan similarity products, one from each Stage 3
-# branch — all now buildable here (each behind its own toggle):
+# Stage 4 (modeling) reads THREE plan-to-plan similarity products, one from each
+# Stage 3 branch — all now buildable here (each behind its own toggle):
 #   - 3A references     -> 03A_reference_extraction/gsp_reference_pairs.rds
 #   - 3B project-Jaccard -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
 #   - 3C knowledge-tree -> 03C_knowledge_tree/triple_similarity.csv
+# plus the Stage 1 entity products (all_gsa_edges.csv, node_dictionary.csv) and the
+# curated inputs/ covariates + GSP shapefile. It fits the Bayesian ERGMs and writes
+# the paper's figures/tables under outputs/.
 # Only the 03B_text_reuse/explore/ page-score + map branch stays out (it feeds
 # nothing downstream — run it by hand). See ../README.md.
 #
@@ -56,6 +60,9 @@
 #     Toggle on (per the run at hand) when you want to rebuild those two model
 #     inputs — the per-stage toggle is exactly what makes it safe to keep these
 #     heavy branches in run_all.
+#   * Stage 4 defaults OFF: it fits the Bayesian ERGMs (bergm MCMC, 10 chains per
+#     model) — heavy, and it needs all three Stage 3 model inputs on disk. Turn it
+#     on once those products are built.
 # RUN_INGEST=1 forces stages 0 + 1 on for one run without editing the toggles.
 #
 # Each stage runs in its own Rscript process (memory freed between stages) from
@@ -100,6 +107,7 @@ STAGE_2_PREPROCESS  <- FALSE   # 02_text_preprocessing/additional_filter_texts.R
 STAGE_3A_REFERENCES <- TRUE  # 03A_reference_extraction/01..05      -> gsp_reference_pairs.rds  (anystyle/ruby + OpenAlex + Solr)
 STAGE_3B_JACCARD    <- FALSE   # 03B_text_reuse/compare_project_sections.R        -> project_section_jaccard_scores.rds
 STAGE_3C_KNOWLEDGE  <- FALSE  # 03C_knowledge_tree/{01_extract_knowledge_triples.R, 02_semantic_kg_similarity.ipynb} -> triple_similarity.csv  (needs jupyter)
+STAGE_4_MODELING    <- FALSE  # 04_modeling/make_binary0.9_networks.R -> outputs/figures/*.png, outputs/tables/*.html  (bergm MCMC; heavy)
 # ============================================================================
 
 # RUN_INGEST=1 forces stages 0 + 1 on for this run only.
@@ -144,9 +152,9 @@ need <- function(product, toggle_name) {
 
 cat("run_all.R — rebuilding modeling inputs from current core\n")
 cat("repo root:", REPO_ROOT, "\n")
-cat(sprintf("stages: 0_ingest=%s  1_classify=%s  2_preprocess=%s  3A_references=%s  3B_jaccard=%s  3C_knowledge=%s\n",
+cat(sprintf("stages: 0_ingest=%s  1_classify=%s  2_preprocess=%s  3A_references=%s  3B_jaccard=%s  3C_knowledge=%s  4_modeling=%s\n",
             STAGE_0_INGEST, STAGE_1_CLASSIFY, STAGE_2_PREPROCESS,
-            STAGE_3A_REFERENCES, STAGE_3B_JACCARD, STAGE_3C_KNOWLEDGE))
+            STAGE_3A_REFERENCES, STAGE_3B_JACCARD, STAGE_3C_KNOWLEDGE, STAGE_4_MODELING))
 
 # ----- Stage 0: ingest -----
 # id_crosswalk.csv from the core manifest. Required by everything below.
@@ -210,6 +218,21 @@ if (STAGE_3C_KNOWLEDGE) {
   need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
   run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"))
   run_nb(nip_code("03C_knowledge_tree", "02_semantic_kg_similarity.ipynb"))
+}
+
+# ----- Stage 4: modeling (Bayesian ERGMs) -----
+# The terminal analysis. Reads the Stage 1 entity products and all three Stage 3
+# model inputs, builds the 0.9-quantile binary similarity networks, fits the bergm
+# models, and writes the paper's figures (outputs/figures/) and model tables
+# (outputs/tables/). Each input is guarded so a stale/skipped upstream stage stops
+# here rather than half-fitting.
+if (STAGE_4_MODELING) {
+  need("01_entity_classification/all_gsa_edges.csv",                 "STAGE_1_CLASSIFY")
+  need("01_entity_classification/node_dictionary.csv",               "STAGE_1_CLASSIFY")
+  need("03A_reference_extraction/gsp_reference_pairs.rds",           "STAGE_3A_REFERENCES")
+  need("03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds", "STAGE_3B_JACCARD")
+  need("03C_knowledge_tree/triple_similarity.csv",                   "STAGE_3C_KNOWLEDGE")
+  run(nip_code("04_modeling", "make_binary0.9_networks.R"))
 }
 
 cat("\n==== done.\n")
