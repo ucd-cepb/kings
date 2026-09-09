@@ -53,8 +53,11 @@ refs_to_search$year[!is.na(.yr) & (.yr < 1800 | .yr > 2025)] <- NA
 
 # Solr 10 makes SolrCloud the default and dropped the old `-c` start flag (passing
 # it now just prints help and never starts the server), so start plain. Requires a
-# `solr` on PATH and a JRE reachable via JAVA_HOME (Homebrew's openjdk is keg-only,
-# so e.g. `export JAVA_HOME=$(brew --prefix openjdk)` before running run_all.R).
+# `solr` on PATH (Homebrew symlinks it to /opt/homebrew/bin). `solr` locates a JRE
+# on its own here, so no JAVA_HOME is needed; if a host's `solr` can't find Java,
+# point JAVA_HOME at the installed JDK (e.g. `export JAVA_HOME=$(brew --prefix
+# openjdk@21)` -- note the version-pinned formula; the unversioned `openjdk` prefix
+# may not exist).
 system('solr start')
 conn = solrium::SolrClient$new()
 
