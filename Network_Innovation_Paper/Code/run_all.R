@@ -104,10 +104,10 @@ setwd(REPO_ROOT)                        # stages source _paths.R via a repo-rela
 STAGE_0_INGEST      <- FALSE   # 00_ingest_core.R                     -> id_crosswalk.csv        (bridge; no LLM)
 STAGE_1_CLASSIFY    <- FALSE # 01_entity_classification/* (3 steps) -> node_dictionary.csv, all_gsa_edges.csv  (LLM; needs API key)
 STAGE_2_PREPROCESS  <- FALSE   # 02_text_preprocessing/additional_filter_texts.R -> page_metadata.RDS
-STAGE_3A_REFERENCES <- TRUE  # 03A_reference_extraction/01..05      -> gsp_reference_pairs.rds  (anystyle/ruby + OpenAlex + Solr)
+STAGE_3A_REFERENCES <- FALSE  # 03A_reference_extraction/01..05      -> gsp_reference_pairs.rds  (anystyle/ruby + OpenAlex + Solr)
 STAGE_3B_JACCARD    <- FALSE   # 03B_text_reuse/compare_project_sections.R        -> project_section_jaccard_scores.rds
 STAGE_3C_KNOWLEDGE  <- FALSE  # 03C_knowledge_tree/{01_extract_knowledge_triples.R, 02_semantic_kg_similarity.ipynb} -> triple_similarity.csv  (needs jupyter)
-STAGE_4_MODELING    <- FALSE  # 04_modeling/make_binary0.9_networks.R -> outputs/figures/*.png, outputs/tables/*.html  (bergm MCMC; heavy)
+STAGE_4_MODELING    <- TRUE  # 04_modeling/make_binary0.9_networks.R -> outputs/figures/*.png, outputs/tables/*.html  (bergm MCMC; heavy)
 # ============================================================================
 
 # RUN_INGEST=1 forces stages 0 + 1 on for this run only.
