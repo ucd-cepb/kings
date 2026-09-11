@@ -77,14 +77,17 @@ main <- function(corpus = NULL) {
   documents[, file_name := gsp_doc_id]
   documents[, file_path := file.path(core_txt_clean(), paste0(gsp_doc_id, ".parquet"))]
 
-  # Load page-level section flags from core metadata, keyed on the legacy 4-digit
-  # gsp_id + 1-indexed page_num — same indexing as the core `page`. gsp_id is
-  # zero-padded ("0007"), so it MUST be read as character to join the crosswalk.
-  page_info <- fread(core_page_sections(), colClasses = list(character = "gsp_id"))
-  page_info <- page_info[,.(gsp_id, page_num, admin, basin_plan, sust_criteria,
+  # Load page-level section flags from core metadata, keyed on gsp_doc_id +
+  # 1-indexed page_num (same indexing as the core `page`). gsp_doc_id is the only
+  # identifier unique across plan versions, so every submitted document carries
+  # its own section flags — the legacy gsp_id key collapsed all versions of a
+  # plan onto a single document's flags, which dropped the resubmitted versions.
+  # Read gsp_doc_id as character to match the corpus filename stem.
+  page_info <- fread(core_page_sections(), colClasses = list(character = "gsp_doc_id"))
+  page_info <- page_info[,.(gsp_doc_id, page_num, admin, basin_plan, sust_criteria,
                             monitoring_networks, projects_mgmt_actions, is_comment, is_reference)]
 
-  documents <- merge(documents, page_info, by = c("gsp_id", "page_num"), all.x = TRUE)
+  documents <- merge(documents, page_info, by = c("gsp_doc_id", "page_num"), all.x = TRUE)
   documents <- documents[!is.na(text)]
 
   # page_metadata is METADATA ONLY: the surviving rows above already define which

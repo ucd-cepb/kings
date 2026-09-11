@@ -45,8 +45,14 @@
 #         `python -m ipykernel install --user --name spacy-env` from that env.
 #
 # Usage (from anywhere):
-#     Network_Innovation_Paper/Code/run_all.R
+#     Network_Innovation_Paper/Code/run_all.R                # incremental (only builds missing products)
+#     CLOBBER=TRUE Network_Innovation_Paper/Code/run_all.R   # force full rebuild of every enabled stage
 #     RUN_INGEST=1 Network_Innovation_Paper/Code/run_all.R   # also rebuild stages 0 + 1
+#
+# CLOBBER is the global incremental switch (default FALSE): an enabled stage is
+# SKIPPED when all its terminal products already exist, so a plain run only builds
+# what is missing. Set CLOBBER=TRUE to overwrite everything. See the CLOBBER block
+# below the CONFIG toggles for the full contract (and its existence-based caveat).
 #
 # ############################################################################
 # ##  WHICH STAGES RUN — this is the part you edit.                         ##
@@ -116,6 +122,29 @@ if (Sys.getenv("RUN_INGEST", "0") == "1") {
   STAGE_1_CLASSIFY <- TRUE
 }
 
+# ---- Global CLOBBER: the incremental switch --------------------------------
+# One flag governs the whole workflow (default FALSE):
+#   CLOBBER=FALSE  an enabled stage is SKIPPED when all of its terminal products
+#                  already exist on disk, so "run all" only builds what is missing
+#                  ("only new/undone work runs"). Stages that DO run still honor
+#                  their own internal caches (Stage 1 only classifies entity names
+#                  not already cached; 3A only parses PDFs / queries titles it has
+#                  not already cached).
+#   CLOBBER=TRUE   every enabled stage rebuilds from scratch, overwriting whatever
+#                  is there (and forces even 3A's incremental steps to redo all).
+# Usage:
+#     Network_Innovation_Paper/Code/run_all.R                 # incremental (default)
+#     CLOBBER=TRUE Network_Innovation_Paper/Code/run_all.R    # force full rebuild
+# NOTE: "done" means the product FILE EXISTS — this is existence-based, not
+# dependency-tracked. It does NOT notice that an input changed behind an existing
+# product (e.g. newly added plans). To rebuild against changed inputs, run with
+# CLOBBER=TRUE. And nothing here deletes stale/orphaned files left in the output
+# directories by earlier code versions — remove those by hand.
+CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
+# Threaded into every launched stage so the self-guarding ones see the same value
+# (normalized to TRUE/FALSE) as this orchestrator.
+clobber_env <- paste0("CLOBBER=", if (CLOBBER) "TRUE" else "FALSE")
+
 run <- function(script, env = character()) {
   cat("\n==== ", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "  Rscript ", script, "\n", sep = "")
   status <- system2("Rscript", shQuote(script), env = env)
@@ -150,16 +179,37 @@ need <- function(product, toggle_name) {
          call. = FALSE)
 }
 
+# Decide whether an ENABLED stage actually needs to run this pass. It runs if
+# CLOBBER is set, or if any of its terminal products is missing; otherwise it is
+# skipped (and says so). `products` is one or more FULL paths (use nip_product()/
+# nip_figure()/nip_table()); a stage that writes several files counts as "done"
+# only when ALL of them exist, so a dropped/renamed output re-triggers its stage.
+should_run <- function(stage_on, label, products) {
+  if (!stage_on) return(FALSE)
+  if (CLOBBER) { cat("---- run  ", label, " (CLOBBER=TRUE: full rebuild)\n", sep = ""); return(TRUE) }
+  missing <- products[!file.exists(products)]
+  if (!length(missing)) {
+    cat("---- skip ", label, " (all products present; CLOBBER=FALSE)\n", sep = "")
+    return(FALSE)
+  }
+  cat("---- run  ", label, " (missing: ", paste(basename(missing), collapse = ", "), ")\n", sep = "")
+  TRUE
+}
+
 cat("run_all.R — rebuilding modeling inputs from current core\n")
 cat("repo root:", REPO_ROOT, "\n")
+cat(sprintf("CLOBBER=%s  (%s)\n", CLOBBER,
+            if (CLOBBER) "full rebuild — every enabled stage overwrites"
+            else "incremental — enabled stages skip when their products already exist"))
 cat(sprintf("stages: 0_ingest=%s  1_classify=%s  2_preprocess=%s  3A_references=%s  3B_jaccard=%s  3C_knowledge=%s  4_modeling=%s\n",
             STAGE_0_INGEST, STAGE_1_CLASSIFY, STAGE_2_PREPROCESS,
             STAGE_3A_REFERENCES, STAGE_3B_JACCARD, STAGE_3C_KNOWLEDGE, STAGE_4_MODELING))
 
 # ----- Stage 0: ingest -----
 # id_crosswalk.csv from the core manifest. Required by everything below.
-if (STAGE_0_INGEST) {
-  run(nip_code("00_ingest_core.R"), env = "CLOBBER=TRUE")
+if (should_run(STAGE_0_INGEST, "Stage 0 ingest",
+               nip_product("00_ingest", "id_crosswalk.csv"))) {
+  run(nip_code("00_ingest_core.R"), env = clobber_env)
 }
 
 # ----- Stage 1: entity classification (LLM) -----
@@ -168,20 +218,25 @@ if (STAGE_0_INGEST) {
 #   1b build_node_dictionary.R runs the (cached) LLM classifier -> node_dictionary.csv.
 #   1c build_gsa_edges.R folds the core graphs to GSA-typed entities ->
 #      all_gsa_edges.csv; reads node_dictionary.csv, so runs last.
-if (STAGE_1_CLASSIFY) {
+if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
+      nip_product("01_entity_classification", "node_dictionary.csv"),
+      nip_product("01_entity_classification", "all_gsa_edges.csv")))) {
   need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")  # 1c's edge fold keys through the crosswalk
-  run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"))
-  run(nip_code("01_entity_classification", "build_node_dictionary.R"), env = "CLOBBER=TRUE")
-  run(nip_code("01_entity_classification", "build_gsa_edges.R"),       env = "CLOBBER=TRUE")
+  # 1a overrides recompute (deterministic, cheap); 1b/1c self-guard on CLOBBER and,
+  # under CLOBBER=FALSE, rebuild only the missing product (1b also reuses its LLM cache).
+  run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"), env = clobber_env)
+  run(nip_code("01_entity_classification", "build_node_dictionary.R"),      env = clobber_env)
+  run(nip_code("01_entity_classification", "build_gsa_edges.R"),            env = clobber_env)
 }
 
 # ----- Stage 2: page_metadata.RDS from the core parquet corpus -----
 # Recovers legacy gsp_id/version via id_crosswalk.csv. Writes a metadata-only
 # table (keys + section flags, ~0.24 MB); full page text stays in core and is
 # re-attached on demand by 03B via attach_page_text() (_corpus.R).
-if (STAGE_2_PREPROCESS) {
+if (should_run(STAGE_2_PREPROCESS, "Stage 2 preprocess",
+               nip_product("02_text_preprocessing", "page_metadata.RDS"))) {
   need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")
-  run(nip_code("02_text_preprocessing", "additional_filter_texts.R"))
+  run(nip_code("02_text_preprocessing", "additional_filter_texts.R"), env = clobber_env)
 }
 
 # ----- Stage 3A: reference-overlap similarity (model input) -----
@@ -190,21 +245,24 @@ if (STAGE_2_PREPROCESS) {
 # parses PDFs it has not cached), 02 aggregates/classifies them, 03 queries
 # OpenAlex, 04 searches the Solr title-match index, 05 folds matched reference
 # sets into plan-to-plan pairs -> gsp_reference_pairs.rds (what the models read).
-if (STAGE_3A_REFERENCES) {
-  run(nip_code("03A_reference_extraction", "01_extract_GSP_references.R"))
-  run(nip_code("03A_reference_extraction", "02_aggregate_references.R"))
-  run(nip_code("03A_reference_extraction", "03_query_titles_in_openalex.R"))
-  run(nip_code("03A_reference_extraction", "04_search_OA_titlematch_index.R"))
-  run(nip_code("03A_reference_extraction", "05_reference_set_similarity.R"))
+if (should_run(STAGE_3A_REFERENCES, "Stage 3A references",
+               nip_product("03A_reference_extraction", "gsp_reference_pairs.rds"))) {
+  run(nip_code("03A_reference_extraction", "01_extract_GSP_references.R"),   env = clobber_env)
+  run(nip_code("03A_reference_extraction", "02_aggregate_references.R"),     env = clobber_env)
+  run(nip_code("03A_reference_extraction", "03_query_titles_in_openalex.R"), env = clobber_env)
+  run(nip_code("03A_reference_extraction", "04_search_OA_titlematch_index.R"), env = clobber_env)
+  run(nip_code("03A_reference_extraction", "05_reference_set_similarity.R"), env = clobber_env)
 }
 
 # ----- Stage 3B: project-section Jaccard (the model input) -----
 # Reads the metadata-only page_metadata.RDS, re-attaches page text from the core
 # corpus (attach_page_text), and writes project_jaccard_results/project_section_jaccard_scores.rds
 # (single file, overwritten each run) — the only 03B product the models read.
-if (STAGE_3B_JACCARD) {
+if (should_run(STAGE_3B_JACCARD, "Stage 3B jaccard",
+               nip_product("03B_text_reuse", "project_jaccard_results",
+                           "project_section_jaccard_scores.rds"))) {
   need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
-  run(nip_code("03B_text_reuse", "compare_project_sections.R"))
+  run(nip_code("03B_text_reuse", "compare_project_sections.R"), env = clobber_env)
 }
 
 # ----- Stage 3C: knowledge-tree similarity (model input) -----
@@ -214,9 +272,10 @@ if (STAGE_3B_JACCARD) {
 # those triples and scores plan-to-plan similarity -> triple_similarity.csv (what
 # the models read). The R step depends on page_metadata.RDS for the sust-criteria
 # page filter, so Stage 2 must have run.
-if (STAGE_3C_KNOWLEDGE) {
+if (should_run(STAGE_3C_KNOWLEDGE, "Stage 3C knowledge",
+               nip_product("03C_knowledge_tree", "triple_similarity.csv"))) {
   need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
-  run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"))
+  run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"), env = clobber_env)
   run_nb(nip_code("03C_knowledge_tree", "02_semantic_kg_similarity.ipynb"))
 }
 
@@ -226,13 +285,20 @@ if (STAGE_3C_KNOWLEDGE) {
 # models, and writes the paper's figures (outputs/figures/) and model tables
 # (outputs/tables/). Each input is guarded so a stale/skipped upstream stage stops
 # here rather than half-fitting.
-if (STAGE_4_MODELING) {
+if (should_run(STAGE_4_MODELING, "Stage 4 modeling", c(
+      nip_figure("figure1_dv_distributions.png"),
+      nip_figure("model1_plot.png"),
+      nip_figure("model2_plot.png"),
+      nip_table("mod0_html.html"),
+      nip_table("mod1_html.html"),
+      nip_table("mod2_html.html"),
+      nip_table("mod3_html.html")))) {
   need("01_entity_classification/all_gsa_edges.csv",                 "STAGE_1_CLASSIFY")
   need("01_entity_classification/node_dictionary.csv",               "STAGE_1_CLASSIFY")
   need("03A_reference_extraction/gsp_reference_pairs.rds",           "STAGE_3A_REFERENCES")
   need("03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds", "STAGE_3B_JACCARD")
   need("03C_knowledge_tree/triple_similarity.csv",                   "STAGE_3C_KNOWLEDGE")
-  run(nip_code("04_modeling", "make_binary0.9_networks.R"))
+  run(nip_code("04_modeling", "make_binary0.9_networks.R"), env = clobber_env)
 }
 
 cat("\n==== done.\n")

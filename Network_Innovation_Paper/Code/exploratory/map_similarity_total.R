@@ -41,7 +41,6 @@ setnames(score_dt,columns_to_merge,paste0('b_',columns_to_merge))
 
 # Read the CSV file containing basin ids
 source("Network_Innovation_Paper/Code/_paths.R")
-basin_ids <- fread(nip_input('gsp_basin_ids.csv'))
 # Convert a_file and b_file to character vectors to ensure compatibility with data.table join
 score_dt$a_file <- as.character(score_dt$a_file)
 score_dt$b_file <- as.character(score_dt$b_file)
@@ -50,11 +49,11 @@ score_dt$b_file <- as.character(score_dt$b_file)
 
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
-# Read the GSP shapefile
-gsp_bounds <- st_read(nip_input("GSP_Submitted"))
+# Read the canonical core GSP boundary shapefile (keyed on GSP_ID).
+gsp_bounds <- st_read(core_gsp_boundaries())
 gsp_bounds <- sf::st_make_valid(gsp_bounds)
-# Make sure GSP.ID is formatted correctly with 4 digits
-gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP.ID), width = 4, flag = '0')
+# Make sure GSP_ID is formatted correctly with 4 digits
+gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP_ID), width = 4, flag = '0')
 
 # Calculate points inside polygons
 points_inside <- st_point_on_surface(gsp_bounds)

@@ -135,18 +135,15 @@ quantile(get.edge.attribute(jac_net,'jaccard'),0.9)
 library(sf) 
 library(spdep)
 # Read the CSV file containing basin ids
-basin_ids <- fread(nip_input('gsp_basin_ids.csv'))
-basin_ids$gsp_id <- formatC(basin_ids$gsp_id,width = 4,flag= '0')
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
-# Read the GSP shapefile
-gsp_bounds <- st_read(nip_input("GSP_Submitted"))
+# Read the canonical core GSP boundary shapefile (keyed on GSP_ID).
+gsp_bounds <- st_read(core_gsp_boundaries())
 gsp_bounds <- sf::st_make_valid(gsp_bounds)
-gsp_bounds$GSP.ID <- formatC(as.numeric(gsp_bounds$GSP.ID),width = 4,flag = '0')
-#gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP.ID), width = 4, flag = '0')
-gsp_bounds <- gsp_bounds |> arrange(GSP.ID)
-# Make sure GSP.ID is formatted correctly with 4 digits
-neighbors_list <- poly2nb(gsp_bounds, queen = F,useC = T,row.names = gsp_bounds$GSP.ID)
+gsp_bounds$GSP_ID <- formatC(as.numeric(gsp_bounds$GSP_ID),width = 4,flag = '0')
+gsp_bounds <- gsp_bounds |> arrange(GSP_ID)
+# Make sure GSP_ID is formatted correctly with 4 digits
+neighbors_list <- poly2nb(gsp_bounds, queen = F,useC = T,row.names = gsp_bounds$GSP_ID)
 neighbors_matrix <- nb2mat(neighbors_list,style = "B",zero.policy = T)
 colnames(neighbors_matrix) <- rownames(neighbors_matrix)
 # Relabel the spatial neighbor matrix from gsp_id (shapefile GSP.ID) to gsp_doc_id
@@ -184,21 +181,42 @@ jac_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.na
 jac_totalentities      <- jac_genericentities
 
 
+# --- mult_gsa: flagged when MULTIPLE GSAs jointly produced the plan document ---
+# Derived from the 00_ingest crosswalk `gsa_ids` (comma-separated integer GSA_IDs
+# per gsp_doc_id): TRUE when a document names 2+ distinct GSAs. Replaces the
+# legacy meta$mult_gsas column (gsp_covariates.csv, keyed per plan, stops at 0156).
+xw_gsa <- fread(nip_product("00_ingest", "id_crosswalk.csv"),
+                colClasses = list(character = c("gsp_doc_id", "gsa_ids")))
+xw_gsa[, mult_gsa := vapply(strsplit(gsa_ids, ","), function(v) {
+  ids <- unique(trimws(v)); length(ids[nzchar(ids)]) > 1L
+}, logical(1))]
+mult_gsa_lookup <- setNames(xw_gsa$mult_gsa, xw_gsa$gsp_doc_id)
+
+# --- priority: from authoritative core BASIN metadata (sgma_basin_full) ---
+# Basin (Bulletin 118 subbasin) property, joined per document via the crosswalk's
+# `basin` field ("<subbasin_number> <NAME>"; leading token = Basin_Subbasin_Number).
+# Replaces legacy meta$priority_category (gsp_covariates.csv, keyed per plan, NA for 0157+).
+basin_meta <- fread(core_basin_full(), colClasses = list(character = "Basin_Subbasin_Number"))
+xw_gsa[, subbasin_number := sub("^([0-9]+-[0-9.]+).*$", "\\1", basin)]
+priority_lookup <- setNames(
+  basin_meta$priority_category[match(xw_gsa$subbasin_number, basin_meta$Basin_Subbasin_Number)],
+  xw_gsa$gsp_doc_id)
+
 ref_net %v% 'joint_agency' <- meta$exante_collab[match(network.vertex.names(ref_net),meta$gsp_doc_id)]
-ref_net %v% 'mult_gsa' <- meta$mult_gsas[match(network.vertex.names(ref_net),meta$gsp_doc_id)]
-ref_net %v% 'priority' <- meta$priority_category[match(network.vertex.names(ref_net),meta$gsp_doc_id)]
+ref_net %v% 'mult_gsa' <- unname(mult_gsa_lookup[network.vertex.names(ref_net)])
+ref_net %v% 'priority' <- unname(priority_lookup[network.vertex.names(ref_net)])
 ref_net %v% "Republican_Vote_Share" <- meta$Republican_Vote_Share[match(network.vertex.names(ref_net),meta$gsp_doc_id)]
 ref_net %v% "Agr_Share_Of_GDP" <- meta$Agr_Share_Of_GDP[match(network.vertex.names(ref_net),meta$gsp_doc_id)]
 
 kn_net %v% 'joint_agency' <- meta$exante_collab[match(network.vertex.names(kn_net),meta$gsp_doc_id)]
-kn_net %v% 'mult_gsa' <- meta$mult_gsas[match(network.vertex.names(kn_net),meta$gsp_doc_id)]
-kn_net %v% 'priority' <- meta$priority_category[match(network.vertex.names(kn_net),meta$gsp_doc_id)]
+kn_net %v% 'mult_gsa' <- unname(mult_gsa_lookup[network.vertex.names(kn_net)])
+kn_net %v% 'priority' <- unname(priority_lookup[network.vertex.names(kn_net)])
 kn_net %v% "Republican_Vote_Share" <- meta$Republican_Vote_Share[match(network.vertex.names(kn_net),meta$gsp_doc_id)]
 kn_net %v% "Agr_Share_Of_GDP" <- meta$Agr_Share_Of_GDP[match(network.vertex.names(kn_net),meta$gsp_doc_id)]
 
 jac_net %v% 'joint_agency' <- meta$exante_collab[match(network.vertex.names(jac_net),meta$gsp_doc_id)]
-jac_net %v% 'mult_gsa' <- meta$mult_gsas[match(network.vertex.names(jac_net),meta$gsp_doc_id)]
-jac_net %v% 'priority' <- meta$priority_category[match(network.vertex.names(jac_net),meta$gsp_doc_id)]
+jac_net %v% 'mult_gsa' <- unname(mult_gsa_lookup[network.vertex.names(jac_net)])
+jac_net %v% 'priority' <- unname(priority_lookup[network.vertex.names(jac_net)])
 jac_net %v% "Republican_Vote_Share" <- meta$Republican_Vote_Share[match(network.vertex.names(jac_net),meta$gsp_doc_id)]
 jac_net %v% "Agr_Share_Of_GDP" <- meta$Agr_Share_Of_GDP[match(network.vertex.names(jac_net),meta$gsp_doc_id)]
 

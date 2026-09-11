@@ -56,14 +56,19 @@ build_crosswalk <- function() {
     gsa_ids, gsa_names, basin,
     out_basename
   )]
-  # doc_rank orders a plan's documents by submission date (1 = earliest). A plan
-  # resubmitted after its original gets rank 2; single-document plans are always
-  # 1. This — NOT the manifest `version` field, which is an unrelated
-  # adoption-cycle axis — is how the paper selects one document per plan (see
-  # select_plan_docs() / NIP_DOC_SELECT in _corpus.R).
+  # doc_rank orders a plan's documents by submission date (1 = earliest). Plan
+  # identity is canonical_gsp_id, NOT gsp_id: most resubmissions share their
+  # original's gsp_id (a second document under it, rank 2), but some were filed
+  # under a fresh gsp_id of their own -- those still carry the original's
+  # canonical_gsp_id, so ranking by canonical keeps EVERY version of a plan in one
+  # group (original rank 1, resubmissions rank 2+) however it was keyed.
+  # Single-document plans are always 1. This — NOT the manifest `version` field, an
+  # unrelated adoption-cycle axis — is how the paper selects one document per plan
+  # (see select_plan_docs() / NIP_DOC_SELECT in _corpus.R). gsp_doc_id stays the
+  # unique document id throughout.
   xw[, .subdate := as.IDate(submitted_date, format = "%m/%d/%Y")]
-  setorder(xw, gsp_id, .subdate, gsp_doc_id)  # gsp_doc_id breaks any date tie deterministically
-  xw[, doc_rank := seq_len(.N), by = gsp_id]
+  setorder(xw, canonical_gsp_id, .subdate, gsp_doc_id)  # gsp_doc_id breaks any date tie deterministically
+  xw[, doc_rank := seq_len(.N), by = canonical_gsp_id]
   xw[, .subdate := NULL]
   fwrite(xw, out)
   message("wrote ", out, " (", nrow(xw), " rows)")

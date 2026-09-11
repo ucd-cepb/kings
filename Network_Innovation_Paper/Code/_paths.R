@@ -51,7 +51,14 @@ core_igraph_multiplex <- function() file.path(CORE, "igraph_objects", "multiplex
 core_igraph_weighted  <- function() file.path(CORE, "igraph_objects", "uniplex_weighted_graphs")
 core_manifest         <- function() file.path(CORE, "source_pdfs", "plan_family_manifest.csv")
 core_gsa_full         <- function() file.path(CORE, "metadata", "sgma_gsa_full.csv")
+# Canonical per-basin metadata (DWR B118 SGMA 2019 prioritization), keyed on
+# Basin_Subbasin_Number. Built by core_code/metadata_generators/build_basin_metadata.R.
+core_basin_full       <- function() file.path(CORE, "metadata", "sgma_basin_full.csv")
 core_page_sections    <- function() file.path(CORE, "metadata", "gsp_page_sections.csv")
+# Canonical GSP boundary shapefile (spatial metadata), keyed on GSP_ID. Built by
+# core_code/metadata_generators/build_gsp_boundaries.R. Replaces the stale,
+# hand-downloaded inputs/GSP_Submitted/ local copy.
+core_gsp_boundaries   <- function() file.path(CORE, "spatial", "gsp_boundaries.shp")
 
 # NER dictionaries (used by the NER pipeline; NOT entity-type labels)
 core_dict <- function(name) file.path(CORE_DICTS, name)

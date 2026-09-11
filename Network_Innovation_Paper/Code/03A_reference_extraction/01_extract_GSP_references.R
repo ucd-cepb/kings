@@ -7,7 +7,10 @@ library(pbapply)
 #https://mac.install.guide/ruby/12.html
 #then you can install https://github.com/inukshuk/anystyle
 
-CLOBBER = F ### don't do this unless you want it to run for a very long time
+# CLOBBER=TRUE re-parses EVERY PDF from scratch (runs for a very long time);
+# the default (FALSE) only parses PDFs not already cached under extracted_references/.
+# Honors the global CLOBBER threaded by run_all.R; still defaults to incremental.
+CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 
 source("Network_Innovation_Paper/Code/_paths.R")
 # Source PDFs. Core names them gsp_doc_id_<stem>.pdf (not v*_gsp_num_id_*.pdf);

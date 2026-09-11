@@ -1,2 +1,2 @@
-# Large binary geodata — reproduce via inputs/README.md provenance, do not commit.
-GSP_Submitted/
+# (No large binary geodata here anymore — GSP boundaries are core spatial
+# metadata: data/core_data/spatial/gsp_boundaries.shp, via core_gsp_boundaries().)

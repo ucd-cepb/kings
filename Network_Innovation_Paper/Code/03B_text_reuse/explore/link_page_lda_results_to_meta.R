@@ -44,7 +44,6 @@ setnames(score_dt,columns_to_merge,paste0('b_',columns_to_merge))
 
 # Read the CSV file containing basin ids
 source("Network_Innovation_Paper/Code/_paths.R")
-basin_ids <- fread(nip_input('gsp_basin_ids.csv'))
 # Convert a_file and b_file to character vectors to ensure compatibility with data.table join
 score_dt$a_file <- as.character(score_dt$a_file)
 score_dt$b_file <- as.character(score_dt$b_file)

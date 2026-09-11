@@ -1,6 +1,7 @@
 gsp_doc_id,gsp_id,canonical_gsp_id,version,plan_section,submitted_date,from_gsp_id,gsa_ids,gsa_names,basin,out_basename,doc_rank
 944,0007,7,1,original,01/17/2020,,23,Aliso Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_944.pdf,1
 8770,0007,7,1,resubmitted,07/20/2022,,23,Aliso Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_8770.pdf,2
+11932,0174,7,2,original,05/28/2026,7,"17,220,13,231,30,23,66,71,302,237,10,57,62,67,360,206,214,269,271,301,70,298,308",Patterson Irrigation District GSA;Turner Island Water District GSA - Delta-Mendota;West Stanislaus Irrigation District GSA;County of Merced GSA - Delta-Mendota;Farmers Water District GSA;Aliso Water District GSA;City of Patterson GSA;City of Los Banos GSA;Oro Loma Water District GSA;Widren Water District GSA;San Joaquin River Exchange Contractors GSA;City of Newman GSA;Grasslands GSA;City of Mendota GSA;City of Dos Palos GSA;Central Delta-Mendota GSA;Northwestern Delta-Mendota GSA;City of Firebaugh GSA;City of Gustine GSA;DM-II GSA;County of Madera GSA - Delta-Mendota;County of Fresno GSA - Delta-Mendota Management Area A;County of Fresno GSA - Delta-Mendota Management Area B,5-022.07 DELTA-MENDOTA,gsp_doc_id_11932.pdf,3
 1979,0008,8,1,original,01/23/2020,,40,Westlands Water District GSA,5-022.09 WESTSIDE,gsp_doc_id_1979.pdf,1
 8785,0008,8,1,resubmitted,07/18/2022,,40,Westlands Water District GSA,5-022.09 WESTSIDE,gsp_doc_id_8785.pdf,2
 386,0009,9,1,original,01/28/2020,,"311,223,219",Merced Irrigation-Urban GSA;Turner Island Water District GSA - Merced;Merced Subbasin GSA,5-022.04 MERCED,gsp_doc_id_386.pdf,1
@@ -8,6 +9,7 @@ gsp_doc_id,gsp_id,canonical_gsp_id,version,plan_section,submitted_date,from_gsp_
 3166,0011,11,1,original,01/30/2020,,24,Santa Cruz Mid-County Groundwater Agency GSA,3-001 SANTA CRUZ MID-COUNTY,gsp_doc_id_3166.pdf,1
 2256,0012,12,1,original,01/29/2020,,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_2256.pdf,1
 9211,0012,12,1,resubmitted,07/27/2022,,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_9211.pdf,2
+11395,0160,12,2,original,07/14/2025,12,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_11395.pdf,3
 4342,0013,13,1,original,01/23/2020,,"214,301,66,206,237,302,17,13,23,360,269,271,71,67,57,70,30,298,308,62,231,10,220",Northwestern Delta-Mendota GSA (Exclusive);DM-II GSA (Exclusive);City of Patterson GSA (Exclusive);Central Delta-Mendota GSA (Exclusive);Widren Water District GSA (Exclusive);Oro Loma Water District GSA (Exclusive);Patterson Irrigation District GSA (Exclusive);West Stanislaus Irrigation District GSA (Exclusive);link,5-022.07 DELTA-MENDOTA,gsp_doc_id_4342.pdf,1
 8708,0013,13,1,resubmitted,07/20/2022,,"214,301,66,206,237,302,17,13,23,360,269,271,71,67,57,70,30,298,308,62,231,10,220",Northwestern Delta-Mendota GSA (Exclusive);DM-II GSA (Exclusive);City of Patterson GSA (Exclusive);Central Delta-Mendota GSA (Exclusive);Widren Water District GSA (Exclusive);Oro Loma Water District GSA (Exclusive);Patterson Irrigation District GSA (Exclusive);West Stanislaus Irrigation District GSA (Exclusive);link,5-022.07 DELTA-MENDOTA,gsp_doc_id_8708.pdf,2
 1147,0014,14,1,original,01/23/2020,,30,Farmers Water District GSA,5-022.07 DELTA-MENDOTA,gsp_doc_id_1147.pdf,1
@@ -65,6 +67,9 @@ gsp_doc_id,gsp_id,canonical_gsp_id,version,plan_section,submitted_date,from_gsp_
 9617,0049,49,1,resubmitted,03/21/2023,,59,New Stone Water District GSA,5-022.06 MADERA,gsp_doc_id_9617.pdf,2
 2842,0050,50,1,original,01/31/2020,,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_2842.pdf,1
 9093,0050,50,1,resubmitted,07/27/2022,,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_9093.pdf,2
+11703,0164,50,2,original,01/13/2026,50,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11703.pdf,3
+11777,0165,50,2,original,01/13/2026,50,281,Greater Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11777.pdf,4
+11822,0166,50,2,original,01/13/2026,50,314,East Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11822.pdf,5
 3162,0051,51,1,original,01/30/2020,,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_3162.pdf,1
 9238,0051,51,1,resubmitted,08/01/2022,,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_9238.pdf,2
 1683,0052,52,1,original,01/31/2020,,106,Yuba Water Agency GSA - South Yuba,5-021.61 SOUTH YUBA,gsp_doc_id_1683.pdf,1
@@ -169,18 +174,13 @@ gsp_doc_id,gsp_id,canonical_gsp_id,version,plan_section,submitted_date,from_gsp_
 11674,0149,149,1,resubmitted,11/26/2025,,212,Spadra Basin GSA,4-013 SAN GABRIEL VALLEY,gsp_doc_id_11674.pdf,2
 9056,0150,150,1,original,06/20/2022,,"482,481,484",Tejon-Castac Water District GSA;Arvin GSA;Wheeler Ridge-Maricopa GSA,5-022.14 KERN COUNTY,gsp_doc_id_9056.pdf,1
 8969,0150,150,1,resubmitted,07/27/2022,,"482,481,484",Tejon-Castac Water District GSA;Arvin GSA;Wheeler Ridge-Maricopa GSA,5-022.14 KERN COUNTY,gsp_doc_id_8969.pdf,2
+11781,0173,150,2,original,01/15/2026,150,506,Westside District Water Authority GSA,5-022.14 KERN COUNTY,gsp_doc_id_11781.pdf,3
+11827,0172,150,2,original,01/15/2026,150,277,Semitropic Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11827.pdf,4
+11840,0169,150,2,original,01/15/2026,150,254,Henry Miller Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11840.pdf,5
+11853,0170,150,2,original,01/15/2026,150,517,Kern-Tulare Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11853.pdf,6
+11866,0168,150,2,original,01/15/2026,150,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11866.pdf,7
+11894,0167,150,2,original,01/15/2026,150,"507,514,482,39,22,188,306,326,20,481,508,515,484,523",Shafter-Wasco Irrigation District GSA;Southern San Joaquin Municipal Utility District - GSA;Tejon-Castac Water District GSA;West Kern Water District GSA;Greenfield County Water District GSA;Pioneer GSA;Kern Non-Districted Land Authority GSA;Cawelo Water District GSA;Kern River GSA;Arvin GSA;North Kern Water Storage District GSA;Rosedale-Rio Bravo Water Storage District GSA;Wheeler Ridge-Maricopa GSA;Kern Water Bank GSA,5-022.14 KERN COUNTY,gsp_doc_id_11894.pdf,8
+11904,0171,150,2,original,01/15/2026,150,196,Olcese Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11904.pdf,9
 9704,0155,155,1,original,06/22/2023,,404,Montecito Groundwater Basin GSA,3-049 MONTECITO,gsp_doc_id_9704.pdf,1
 9918,0156,156,1,original,06/28/2023,,"434,49",Fox Canyon Groundwater Management Agency GSA - Arroyo Santa Rosa Valley;Arroyo Santa Rosa Valley Basin GSA,4-007 ARROYO SANTA ROSA VALLEY,gsp_doc_id_9918.pdf,1
 10029,0157,157,1,original,02/13/2024,,491,Carpinteria GSA,3-018 CARPINTERIA,gsp_doc_id_10029.pdf,1
-11395,0160,12,2,original,07/14/2025,12,"61,68,191,394",Chowchilla Water District GSA;County of Madera GSA - Chowchilla;County of Merced GSA - Chowchilla;Triangle T Water District GSA,5-022.05 CHOWCHILLA,gsp_doc_id_11395.pdf,1
-11703,0164,50,2,original,01/13/2026,50,7,Mid-Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11703.pdf,1
-11777,0165,50,2,original,01/13/2026,50,281,Greater Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11777.pdf,1
-11822,0166,50,2,original,01/13/2026,50,314,East Kaweah GSA,5-022.11 KAWEAH,gsp_doc_id_11822.pdf,1
-11894,0167,150,2,original,01/15/2026,150,"507,514,482,39,22,188,306,326,20,481,508,515,484,523",Shafter-Wasco Irrigation District GSA;Southern San Joaquin Municipal Utility District - GSA;Tejon-Castac Water District GSA;West Kern Water District GSA;Greenfield County Water District GSA;Pioneer GSA;Kern Non-Districted Land Authority GSA;Cawelo Water District GSA;Kern River GSA;Arvin GSA;North Kern Water Storage District GSA;Rosedale-Rio Bravo Water Storage District GSA;Wheeler Ridge-Maricopa GSA;Kern Water Bank GSA,5-022.14 KERN COUNTY,gsp_doc_id_11894.pdf,1
-11866,0168,150,2,original,01/15/2026,150,15,Buena Vista Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11866.pdf,1
-11840,0169,150,2,original,01/15/2026,150,254,Henry Miller Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11840.pdf,1
-11853,0170,150,2,original,01/15/2026,150,517,Kern-Tulare Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11853.pdf,1
-11904,0171,150,2,original,01/15/2026,150,196,Olcese Water District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11904.pdf,1
-11827,0172,150,2,original,01/15/2026,150,277,Semitropic Water Storage District GSA,5-022.14 KERN COUNTY,gsp_doc_id_11827.pdf,1
-11781,0173,150,2,original,01/15/2026,150,506,Westside District Water Authority GSA,5-022.14 KERN COUNTY,gsp_doc_id_11781.pdf,1
-11932,0174,7,2,original,05/28/2026,7,"17,220,13,231,30,23,66,71,302,237,10,57,62,67,360,206,214,269,271,301,70,298,308",Patterson Irrigation District GSA;Turner Island Water District GSA - Delta-Mendota;West Stanislaus Irrigation District GSA;County of Merced GSA - Delta-Mendota;Farmers Water District GSA;Aliso Water District GSA;City of Patterson GSA;City of Los Banos GSA;Oro Loma Water District GSA;Widren Water District GSA;San Joaquin River Exchange Contractors GSA;City of Newman GSA;Grasslands GSA;City of Mendota GSA;City of Dos Palos GSA;Central Delta-Mendota GSA;Northwestern Delta-Mendota GSA;City of Firebaugh GSA;City of Gustine GSA;DM-II GSA;County of Madera GSA - Delta-Mendota;County of Fresno GSA - Delta-Mendota Management Area A;County of Fresno GSA - Delta-Mendota Management Area B,5-022.07 DELTA-MENDOTA,gsp_doc_id_11932.pdf,1

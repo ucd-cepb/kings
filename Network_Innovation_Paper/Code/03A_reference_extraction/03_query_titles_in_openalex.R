@@ -7,8 +7,10 @@ source("Network_Innovation_Paper/Code/_paths.R")
 
 mailto = 'tascott@ucdavis.edu'
 
-# Set CLOBBER flag
-CLOBBER <- F
+# Set CLOBBER flag. CLOBBER=TRUE re-queries every title against OpenAlex; the
+# default (FALSE) only queries titles not already cached. Honors the global
+# CLOBBER threaded by run_all.R; still defaults to incremental.
+CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 
 ### OpenAlex API key: read from the file kept outside the repo and expose it as
 ### an env var. indexBuild's performOA()/readOA() pick this up and send it as an

@@ -11,10 +11,13 @@ own scripts never do.
 
 | File | What it is | Provenance (one-time staging) |
 |---|---|---|
-| `gsp_covariates.csv` | Per-plan political/economic covariates (`Republican_Vote_Share`, `Agr_Share_Of_GDP`, `exante_collab`, `mult_gsas`, `priority_category`, `gwsum`), keyed on 4-digit `gsp_id`. Consumed by `modeling/*`. | Deduplicated per `gsp_id` from the covariate columns of the legacy `data/Multipurpose_Files/gsp_docs_w_meta`. 119 rows. |
-| `gsp_basin_ids.csv` | `gsp_id` → `basin_id` map. Consumed by `modeling/*` and `text_reuse/*`. | Copied verbatim from `EJ_DAC_Paper/Data/gsp_basin_ids.csv` (snapshot; the paper no longer reads the sibling path). |
+| `gsp_covariates.csv` | Per-plan political/economic covariates keyed on 4-digit `gsp_id` (the canonical/original plan id, ≤0156). `modeling/*` consumes `Republican_Vote_Share`, `Agr_Share_Of_GDP`, and `exante_collab` (joined by `canonical_gsp_id`). The file also carries `mult_gsas`, `priority_category`, and `gwsum` from its original staging, but those are **no longer consumed**: `mult_gsa` now derives from `sgma_gsa_full.csv` (GSA-keyed) and `priority` from `sgma_basin_full.csv` (basin-keyed). | Deduplicated per `gsp_id` from the covariate columns of the legacy `data/Multipurpose_Files/gsp_docs_w_meta`. 119 rows. |
 | `entity_type_overrides.csv` | The deterministic entity→type gazetteer (exact + regex rows) — the authoritative label source, applied over both the cache and the LLM. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](../Code/01_entity_classification/ENTITY_TAGGING.md). | Baked from `core_code/dicts/*` by `Code/01_entity_classification/build_overrides_from_dicts.R`, plus hand-curated Consultant/Research/NGO rows. |
-| `GSP_Submitted/` | GSP boundary shapefile (`SubmittedGSP_Master.*`) for spatial adjacency. Consumed by `modeling/*` and `text_reuse/map_similarity*`. **git-ignored** (5.5 MB binary). | Copied from `data/Multipurpose_Files/GSP_Submitted/`. |
+
+**Retired inputs** (removed 2026-09-10):
+
+- `gsp_basin_ids.csv` — a `gsp_id` → `basin_id` map. It was read but never used by any active or exploratory script, so it was deleted. Basin identity now comes from the crosswalk `basin` field / `sgma_basin_full.csv`.
+- `GSP_Submitted/` — GSP boundary shapefile. Now core spatial metadata: `data/core_data/spatial/gsp_boundaries.shp` (filekey `gsp_boundaries_core`), read via `core_gsp_boundaries()`. The old local copy was a stale 2023 vintage (max GSP.ID 0156) missing the newer plans, which crashed `modeling/*`. Rebuild the core file with `Rscript core_code/metadata_generators/build_gsp_boundaries.R`.
 
 ## Re-staging
 

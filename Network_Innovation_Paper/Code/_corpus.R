@@ -28,21 +28,27 @@ suppressPackageStartupMessages({
 load_id_crosswalk <- function() {
   cw <- data.table::fread(
     nip_product("00_ingest", "id_crosswalk.csv"),
-    colClasses = list(character = c("gsp_doc_id", "gsp_id"))
+    colClasses = list(character = c("gsp_doc_id", "gsp_id", "canonical_gsp_id"))
   )
   keep <- intersect(
-    c("gsp_doc_id", "gsp_id", "version", "plan_section", "submitted_date", "doc_rank"),
+    c("gsp_doc_id", "gsp_id", "canonical_gsp_id", "version", "plan_section", "submitted_date", "doc_rank"),
     names(cw)
   )
   unique(cw[, ..keep])
 }
 
-#' Pick exactly ONE plan document per gsp_id.
+#' Pick exactly ONE plan document per plan (canonical_gsp_id).
 #'
-#' 79 plans were submitted once; 53 were resubmitted, so the corpus holds two
-#' documents for them (an `original` and a `resubmitted`). Every downstream
-#' plan-to-plan analysis needs a single document per plan. `doc_rank` (written by
-#' 00_ingest_core.R) orders a plan's documents by submission date, 1 = earliest.
+#' Plan identity is canonical_gsp_id, not gsp_id. 79 plans were submitted once; the
+#' rest were resubmitted, so the corpus holds multiple documents for them. Most
+#' resubmissions reuse the original's gsp_id (a second document under it); a few were
+#' filed under a fresh gsp_id of their own, but every version shares the original's
+#' canonical_gsp_id. Grouping on canonical_gsp_id therefore collapses ALL versions
+#' of a plan -- however they were keyed -- to one document, which is what every
+#' downstream plan-to-plan analysis needs (and what prevents a resubmission filed
+#' under a new gsp_id from entering as a second, duplicate vertex). `doc_rank`
+#' (written by 00_ingest_core.R, by canonical_gsp_id) orders a plan's documents by
+#' submission date, 1 = earliest.
 #'
 #' mode:
 #'   "original" (default) -> earliest submission  (reproduces the legacy '^v1' selection)
@@ -50,35 +56,42 @@ load_id_crosswalk <- function() {
 #'
 #' Single-document plans keep their sole document under either mode. Flip the
 #' whole pipeline at once by setting the NIP_DOC_SELECT env var. Returns one
-#' crosswalk row per gsp_id (columns gsp_id, gsp_doc_id, doc_rank).
+#' crosswalk row per plan (columns canonical_gsp_id, gsp_id, gsp_doc_id, doc_rank);
+#' gsp_doc_id remains the unique document identifier used downstream.
 select_plan_docs <- function(xw = load_id_crosswalk(),
                              mode = Sys.getenv("NIP_DOC_SELECT", "original")) {
   mode <- match.arg(mode, c("original", "latest"))
-  if (!"doc_rank" %in% names(xw)) {
-    stop("id_crosswalk is missing 'doc_rank'; rebuild it with 00_ingest_core.R ",
-         "(build_crosswalk / CLOBBER=TRUE).")
+  if (!all(c("doc_rank", "canonical_gsp_id") %in% names(xw))) {
+    stop("id_crosswalk is missing 'doc_rank'/'canonical_gsp_id'; rebuild it with ",
+         "00_ingest_core.R (build_crosswalk / CLOBBER=TRUE).")
   }
-  xw <- unique(xw[, .(gsp_doc_id, gsp_id, doc_rank)])
+  xw <- unique(xw[, .(gsp_doc_id, gsp_id, canonical_gsp_id, doc_rank)])
   chooser <- if (mode == "original") which.min else which.max
-  xw[, .SD[chooser(doc_rank)], by = gsp_id]
+  xw[, .SD[chooser(doc_rank)], by = canonical_gsp_id]
 }
 
 #' Per-plan document selection for the modeling stage, with ids formatted the way
 #' the 04_modeling/ scripts key on them. Wraps select_plan_docs() (so it honors
 #' NIP_DOC_SELECT) and returns one row per plan:
-#'   gsp_doc_id  canonical, version-unambiguous plan-document id (character) --
-#'               THE vertex key for every network in the modeling stage.
-#'   gsp_id      4-digit zero-padded legacy plan id (character) -- kept ONLY to
-#'               attach the plan-level covariates/shapefile (which have no document
-#'               version) onto the chosen document.
-#'   doc_rank    the selected document's rank.
-#' gsp_id is not unique across plan versions; gsp_doc_id is. Downstream code keys on
-#' gsp_doc_id and uses this table to translate the legacy gsp_id-keyed inputs onto it.
+#'   gsp_doc_id       version-unambiguous plan-DOCUMENT id (character) -- THE vertex
+#'                    key for every network in the modeling stage.
+#'   gsp_id           4-digit zero-padded legacy plan id of the SELECTED document
+#'                    (character) -- kept to translate the legacy gsp_id-keyed
+#'                    document inputs (entity edges, similarity products) onto it.
+#'   canonical_gsp_id 4-digit zero-padded plan identity (character) -- the same for a
+#'                    plan's original and every resubmission. Join plan-level
+#'                    covariates (gsp_covariates, shapefile) on THIS so a plan
+#'                    inherits its covariates no matter which document is selected.
+#'   doc_rank         the selected document's rank.
+#' gsp_id is not unique across plan versions and, for the few resubmissions filed
+#' under a fresh gsp_id, is not even stable across the original/latest choice;
+#' gsp_doc_id is the unique document id and canonical_gsp_id the stable plan id.
 modeling_plan_selection <- function() {
   s <- select_plan_docs()
-  s[, .(gsp_doc_id = as.character(gsp_doc_id),
-        gsp_id     = formatC(as.integer(gsp_id), width = 4L, flag = "0"),
-        doc_rank   = doc_rank)]
+  s[, .(gsp_doc_id       = as.character(gsp_doc_id),
+        gsp_id           = formatC(as.integer(gsp_id), width = 4L, flag = "0"),
+        canonical_gsp_id = formatC(as.integer(canonical_gsp_id), width = 4L, flag = "0"),
+        doc_rank         = doc_rank)]
 }
 
 #' Read the whole core clean-text corpus as a long data.table.
