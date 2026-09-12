@@ -3,7 +3,7 @@
 #'
 #' The classifier's deterministic override table (inputs/entity_type_overrides.csv)
 #' wins over both the cache and the LLM (see classify_entities.R). A handful of the
-#' six leaves are IDENTITY facts a string classifier can't infer -- which named
+#' types are IDENTITY facts a string classifier can't infer -- which named
 #' agencies are GSAs, which orgs are advocacy NGOs -- and the core NER dictionaries
 #' already enumerate them. This script flattens those dictionaries into exact
 #' name->type override rows, on top of the HAND-CURATED focal rows (Consultant /
@@ -39,7 +39,10 @@ if (!exists("REPO_ROOT")) source("Network_Innovation_Paper/Code/_paths.R")
 # Split a dict's `|`-delimited alias field into individual normalized names.
 .explode <- function(all_names) unique(unlist(lapply(strsplit(all_names, "\\|"), .norm)))
 
-# --- per-dict crosswalk: native type -> our 6-way leaf -------------------------
+# --- per-dict crosswalk: native type -> our controlled-vocab category ----------
+# (The gazetteer only ever pins SPECIFIC, named actors, so it emits GSA / NGO /
+# Institutional_other / Non_institutional -- never the generic Institutional_unresolved,
+# which is by definition a non-identity, LLM-only call.)
 # Returns data.table(name, entity_type) of normalized override rows for one dict.
 .rows_from <- function(dict_file, type_col, crosswalk, keep = NULL) {
   d <- fread(core_dict(dict_file), colClasses = "character")
@@ -88,7 +91,7 @@ auto <- rbindlist(list(
 prio <- c(GSA = 1L, NGO = 2L, Institutional_other = 3L, Non_institutional = 4L)
 auto[, .p := prio[entity_type]]
 setorder(auto, name, .p)
-auto <- auto[, .SD[1], by = name]           # keep highest-precedence leaf per name
+auto <- auto[, .SD[1], by = name]           # keep highest-precedence type per name
 auto[, notes := paste0("gaz:", dict)]
 auto <- auto[, .(pattern = name, entity_type, match = "exact", notes)]
 message(sprintf("  %d unique dict-derived exact rows", nrow(auto)))

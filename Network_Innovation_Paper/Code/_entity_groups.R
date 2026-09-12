@@ -1,16 +1,14 @@
 #' _entity_groups.R — single source of truth for entity-type groupings used by
 #' the modeling scripts (make_binary0.9; explore/make_networks, explore/make_valued_networks).
 #'
-#' Every entity name in node_dictionary.csv carries ONE semantic type from the
-#' 6-way controlled vocabulary in classify_entities.R (GSA, Consultant, Research,
-#' NGO, Institutional_other, Non_institutional). Those six sit on two axes: a
-#' NOISE GATE (institutional vs Non_institutional) and, within institutional, the
-#' focal type or the generic residual. `Institutional` is the SUPERSET of the five
-#' non-Non_institutional leaves -- it is the grouping defined here, not a label.
-#' The vocabulary is exhaustive, so the "all institutional" set (spaCy ORG u GPE u
-#' NORP, junk-pruned, water utilities/agencies rescued, water features/
-#' infrastructure removed) is exactly INSTITUTIONAL_TYPES below -- the raw spaCy
-#' gate is redundant to it.
+#' Every name in node_dictionary.csv has ONE type from the seven in
+#' classify_entities.R (GSA, Consultant, Research, NGO, Institutional_other,
+#' Institutional_unresolved, Non_institutional). Two of them never go into a
+#' network, so every grouping below leaves them out: Non_institutional (not an
+#' institution) and Institutional_unresolved (an institution named too vaguely to
+#' say which one -- "university", "the district" -- so two plans mentioning it
+#' aren't really connected). The `institutional` group used for the general network
+#' is therefore the four org types + Institutional_other.
 #'
 #' Groupings (see build_shared_entity_matrix() for how they become gsp x gsp
 #' shared-entity matrices):
@@ -20,12 +18,17 @@
 
 # --- semantic-type groupings --------------------------------------------------
 
-# All institutional actors = every leaf except Non_institutional (which is the
-# gate's reject bucket: persons, basins, natural features, geographic units,
-# infrastructure, projects, data systems, legal/reference/technical, OCR junk).
-# GSA/Consultant/Research/NGO are the focal institutional leaves; Institutional_other
-# is the generic residual (cities, counties, districts, state/federal/local
-# government bodies, companies, stakeholder committees).
+# The institutions that go into a network = the four org types + Institutional_other.
+# Two types are deliberately left out because they never form a real tie:
+#   - Non_institutional        not an institution (people, basins, features,
+#                              infrastructure, projects, models, citations, OCR junk).
+#   - Institutional_unresolved an institution named too vaguely to say which one
+#                              ("university", "the district", "a consultant"). Two
+#                              plans mentioning it aren't really connected, so it
+#                              must stay out -- that is the whole point of the type.
+# Institutional_other is a specific institution that isn't a GSA, consultant,
+# research org, or NGO (a named city, county, district, government body, company, or
+# committee).
 INSTITUTIONAL_TYPES <- c(
   "GSA", "Consultant", "Research", "NGO", "Institutional_other"
 )

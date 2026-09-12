@@ -1,18 +1,18 @@
 #' LLM entity-type classifier (Claude API)
 #'
-#' The core NER pipeline tags entities with spaCy categories (ORG/LOC/GPE/...),
-#' which are NOT the semantic entity types the modeling scripts need. Downstream
-#' (see _entity_groups.R) only ever asks two things of a label: (1) is this a real
-#' institutional actor at all (the noise gate), and (2) is it one of the three
-#' focal org types (Consultant / Research / NGO) or a GSA. So the vocabulary is
-#' exactly those distinctions -- six mutually-exclusive leaves -- and nothing
-#' finer. Historically the semantic labels came from an early, ad hoc LLM pass with
-#' no reproducible generator; this module regenerates them from current core naming
-#' by classifying each unique entity name with Claude, few-shot-prompted from a small
-#' set of curated in-code exemplars (.FEWSHOT_EXAMPLES) -- maintained here as code,
-#' NOT sampled from any prior label file. The only authoritative label source is the
-#' deterministic gazetteer built from core_code/dicts (build_overrides_from_dicts.R),
-#' which pins the known, enumerable cast; the LLM handles the long tail.
+#' The core NER pipeline tags each entity with a spaCy category (ORG/LOC/GPE/...),
+#' which is not the kind of type the modeling scripts need. The modeling only asks
+#' two things of a label (see _entity_groups.R): is this a real institution at all,
+#' and if so is it one of the org types we single out (Consultant / Research / NGO)
+#' or a GSA. So we sort each unique name into one of seven categories -- those
+#' distinctions plus Institutional_unresolved (an institution named too vaguely to
+#' pin down, which is kept out of the network) -- and nothing finer.
+#'
+#' These labels have no upstream source, so we regenerate them here by asking Claude
+#' to classify each unique name, guided by a few hand-written examples in code
+#' (.FEWSHOT_EXAMPLES). The one authoritative source is the gazetteer built from
+#' core_code/dicts (build_overrides_from_dicts.R), which pins the known orgs by
+#' name; the LLM handles the long tail.
 #'
 #' Design:
 #'   - Deterministic re-runs: every (name -> type) is cached; only unseen names
@@ -30,7 +30,7 @@ suppressMessages({
 })
 
 CLASSIFIER_CONFIG <- list(
-  # Any current Anthropic model id. Haiku is the default: this is a bulk 6-way
+  # Any current Anthropic model id. Haiku is the default: this is a bulk 7-way
   # classification of short names against a controlled vocabulary (few-shot +
   # spaCy/frequency hints), not a reasoning task, so Haiku's quality is ample at
   # ~1/4 the cost of Sonnet for ~90k names. Override with NIP_CLASSIFIER_MODEL
@@ -55,36 +55,42 @@ CLASSIFIER_CONFIG <- list(
   overrides_path = NULL    # paper-local name->type gazetteer; defaults below if NULL
 )
 
-# The controlled vocabulary. Any label outside this set is coerced to
-# "Non_institutional". v3 (2026-08-12): collapsed from the legacy 23-way taxonomy
-# to the six leaves downstream actually consumes (see _entity_groups.R). Two axes,
-# one label: the NOISE GATE (institutional vs Non_institutional) and, within
-# institutional, the FOCAL type (GSA / Consultant / Research / NGO) or the generic
-# residual (Institutional_other). "Institutional" is the SUPERSET of the first
-# five leaves -- it is a grouping in _entity_groups.R, never a label here.
-# Institutional_other is the leftover institutional leaf (city, county, district,
-# state/federal/local government body, company, stakeholder committee), i.e. a
-# real actor that is not a GSA, consulting firm, research institution, or advocacy
-# nonprofit. The prior v2 finding still holds: "is this the plan's own GSA" is a
-# name-join against the GSA roster, not an LLM guess. See eval_classifier.R.
+# The seven allowed labels. Anything outside this set becomes "Non_institutional".
+# History: v3 (2026-08-12) collapsed a 23-way taxonomy down to what the modeling
+# uses (see _entity_groups.R); v4 (2026-09-11) added Institutional_unresolved.
+# Two questions decide the label: is it an institution at all (if not,
+# Non_institutional), and if so which kind -- GSA / Consultant / Research / NGO, a
+# specific other institution (Institutional_other), or one too vague to identify
+# (Institutional_unresolved).
+#
+# Institutional_other: a specific, identifiable institution that is none of the four
+#   above -- a named city, county, district, government body, company, or committee.
+# Institutional_unresolved: clearly an institution, but named too generically to say
+#   WHICH one -- "university", "the district", "a consultant", "local agencies".
+#   Since you can't tell which actor it is, two plans that both mention it are not
+#   really connected, so it is kept out of the network entirely (see
+#   _entity_groups.R) -- but still labeled, so vague mentions are counted apart from
+#   junk. It exists so the model no longer has to choose between wrongly dropping a
+#   real institution and wrongly inventing a specific one.
+# (Whether a name is the plan's OWN GSA is a lookup against the GSA roster, not an
+#  LLM guess -- see eval_classifier.R.)
 ENTITY_TYPES <- c(
-  "GSA", "Consultant", "Research", "NGO", "Institutional_other", "Non_institutional"
+  "GSA", "Consultant", "Research", "NGO", "Institutional_other",
+  "Institutional_unresolved", "Non_institutional"
 )
 
-# Six leaves on two axes: the noise gate (institutional vs Non_institutional) and,
-# within institutional, the focal type or the generic residual. Definitions carry
-# an explicit decision rule and, for the org types that historically leaked, a
-# negative boundary (what to route elsewhere). The live trap pairs are now only
-# Consultant vs Institutional_other(company) and Research vs NGO vs Consultant --
-# the many fine non-institutional splits collapse into one leaf, so most of the
-# old confusion surface is gone by construction.
+# The per-category rules sent to the model. Each gives a decision rule and, for the
+# categories that used to get confused, a note on what to send elsewhere. The pairs
+# that still get confused: Consultant vs a plain company, Research vs NGO, and (new
+# in v4) a specific actor vs a too-vague one (Institutional_unresolved).
 .type_guidance <- paste(
   "GSA: a Groundwater Sustainability Agency -- named or generic. The name ends in _gsa or contains groundwater_sustainability_agency. Do NOT sub-split by how specific it is. (Institutional.)",
-  "Consultant: a private engineering, hydrogeology, environmental, or technical-services CONSULTING firm -- the contractors hired to study or write GSPs (woodard_curran, dudek, luhdorff_and_scalmanini_consulting_engineers, gsi_water_solutions, montgomery_associates, provost_pritchard). Names often contain _consultants, _engineers, _associates, or _consulting. A university or research lab -> Research; any OTHER institution (a non-consulting company, agency, district, city, county, or committee) -> Institutional_other. (Institutional.)",
-  "Research: an organization whose primary purpose is producing KNOWLEDGE -- studies, data, analysis, teaching: a university, college, cooperative-extension program, research laboratory, research center, or policy research institute / think tank (uc_davis, stanford_university, cal_poly, public_policy_institute, desert_research_institute). The demarcation from NGO is OUTPUT vs ADVOCACY: an entity that produces knowledge is Research; one whose purpose is advocacy, organizing, or representing members is NGO -- even a science-oriented nonprofit is Research if it mainly produces studies/data. A government research agency (usgs, usbr) -> Institutional_other; a private consulting firm -> Consultant; an advocacy nonprofit -> NGO; a community-college or school DISTRICT (name ends in ..._college_district) is a governance body -> Institutional_other; a university root with OCR garbage or stray tokens appended -> Non_institutional. A JOURNAL, periodical, or academic publication is NOT the research organization -- it is a citation/reference -> Non_institutional. (Institutional.)",
+  "Consultant: a private engineering, hydrogeology, environmental, or technical-services CONSULTING firm -- the contractors hired to study or write GSPs (woodard_curran, dudek, luhdorff_and_scalmanini_consulting_engineers, gsi_water_solutions, montgomery_associates, provost_pritchard). Names often contain _consultants, _engineers, _associates, or _consulting. A university or research lab -> Research; any OTHER institution (a non-consulting company, agency, district, city, county, or committee) -> Institutional_other. A BARE, unnamed reference to the role with no firm named (consultant, the_consultant, consulting_firm, the_consultants, technical_consultant) -> Institutional_unresolved, NOT Consultant. (Institutional.)",
+  "Research: an organization whose primary purpose is producing KNOWLEDGE -- studies, data, analysis, teaching: a university, college, cooperative-extension program, research laboratory, research center, or policy research institute / think tank (uc_davis, stanford_university, cal_poly, public_policy_institute, desert_research_institute). The demarcation from NGO is OUTPUT vs ADVOCACY: an entity that produces knowledge is Research; one whose purpose is advocacy, organizing, or representing members is NGO -- even a science-oriented nonprofit is Research if it mainly produces studies/data. A government research agency (usgs, usbr) -> Institutional_other; a private consulting firm -> Consultant; an advocacy nonprofit -> NGO; a community-college or school DISTRICT (name ends in ..._college_district) is a governance body -> Institutional_other; a university root with OCR garbage or stray tokens appended -> Non_institutional. A JOURNAL, periodical, or academic publication is NOT the research organization -- it is a citation/reference -> Non_institutional. A BARE, unnamed category with no specific institution named (university, the_university, college, a_university, research_institution, academia) is institutional but not disambiguated to an actual actor -> Institutional_unresolved, NOT Research. (Institutional.)",
   "NGO: a non-governmental, non-profit ADVOCACY, conservation, or membership organization (nature_conservancy, environmental_defense_fund, sierra_club, audubon, trout_unlimited). The demarcation from Research is ADVOCACY vs KNOWLEDGE-OUTPUT: if the organization primarily advocates, organizes, litigates, or represents members it is NGO; if it primarily produces studies, data, or analysis (a research institute or think tank, even a nonprofit one) it is Research. A university/research lab/policy institute -> Research; a government body or a stakeholder committee -> Institutional_other. (Institutional.)",
-  "Institutional_other: any real organization, government body, or place-acting-as-government that is NOT one of the four types above -- named cities and counties, special/water/irrigation/flood-control districts, California state agencies/boards/commissions, United States federal agencies, city/county government bodies (city_council, board_of_supervisors, county departments), private non-consulting companies (agricultural operations, land/water companies, investor-owned utilities, data/tech vendors), and stakeholder committees/coalitions/advisory boards. Use this for every institutional actor that is not a GSA, consulting firm, research institution, or advocacy nonprofit.",
-  "Non_institutional: NOT an institution. Includes an individual person or bare surname; a groundwater basin or subbasin; a natural feature (river, creek, lake, aquifer, watershed); an administrative/management region that is not a city or county (management_zone_6, planning_area, subregion); physical infrastructure (dam, canal, well, pipeline, treatment plant); a named project/program/management action; a database, monitoring network, or numerical model (modflow, iwfm, cvhm); a law, code, regulation, ordinance, agreement/MOU, or citation to one; a document/report/memo/table/figure/appendix reference; a journal, periodical, or academic publication (american_journal_of_science, journal_of_hydrology) -- the publication itself is a citation, not the organization that produced it; a bare technical concept, measurement, or parameter (specific_yield, hydraulic_conductivity); and OCR garbage or meaningless fragments. A named city or county is NOT here -> Institutional_other.",
+  "Institutional_other: any real, SPECIFIC organization, government body, or place-acting-as-government that is NOT one of the four types above -- NAMED cities and counties, named special/water/irrigation/flood-control districts, named California state agencies/boards/commissions, named United States federal agencies, specific city/county government bodies (city_council, board_of_supervisors, county departments), named private non-consulting companies (agricultural operations, land/water companies, investor-owned utilities, data/tech vendors), and named stakeholder committees/coalitions/advisory boards. Use this for every RESOLVABLE institutional actor that is not a GSA, consulting firm, research institution, or advocacy nonprofit. But a BARE institutional category with NO specific referent -- the_district, a_water_agency, local_agencies, water_districts, the_county / the_city (no place named), the_board, stakeholders, agencies, municipalities -- is institutional but not disambiguated to an actual actor -> Institutional_unresolved, NOT Institutional_other. The test is whether the string names WHICH actor.",
+  "Institutional_unresolved: an entity that IS institutional -- a real organization, agency, or governance actor -- but is stated too generically to disambiguate to a SPECIFIC actor. It names a category, role, or unnamed body, not a resolvable identity: university, college, the_university (no institution named); the_district, a_water_agency, water_districts, local_agencies, agencies, municipalities (no specific district/agency named); the_county, the_city (no county/city named); consultant, the_consultants, consulting_firm (no firm named); stakeholders, the_board, the_committee, working_group (no specific body named); state_agencies, federal_agencies, tribal_governments (as a bare class). It clears the NOISE GATE (it is institutional, not junk) but is NOT a disambiguated actor, so it never grounds a shared-actor tie. The test: could you point to WHICH real-world organization this is? If yes -> the specific category (GSA/Consultant/Research/NGO/Institutional_other); if it is only a category or role -> Institutional_unresolved. A non-institutional generic (a basin, a river, a project, a concept) is NOT here -> Non_institutional. (Institutional, but edge-inert.)",
+  "Non_institutional: NOT an institution at all. Includes an individual person or bare surname; a groundwater basin or subbasin; a natural feature (river, creek, lake, aquifer, watershed); an administrative/management region that is not a city or county (management_zone_6, planning_area, subregion); physical infrastructure (dam, canal, well, pipeline, treatment plant); a named project/program/management action; a database, monitoring network, or numerical model (modflow, iwfm, cvhm); a law, code, regulation, ordinance, agreement/MOU, or citation to one; a document/report/memo/table/figure/appendix reference; a journal, periodical, or academic publication (american_journal_of_science, journal_of_hydrology) -- the publication itself is a citation, not the organization that produced it; a bare technical concept, measurement, or parameter (specific_yield, hydraulic_conductivity); and OCR garbage or meaningless fragments. A named city or county is NOT here -> Institutional_other. A GENERIC-but-institutional category (university, the_district, a_consultant, local_agencies) is NOT here -> Institutional_unresolved: this bucket is for things that are not institutions in the first place.",
   sep = "\n"
 )
 
@@ -102,7 +108,7 @@ ENTITY_TYPES <- c(
 }
 
 # ---- Curated few-shot examples (in-code, maintained by hand) ------------------
-# A small, fixed exemplar set per leaf, written here as code -- NOT sampled from any
+# A small, fixed set of examples per category, written here as code -- NOT sampled from any
 # label file. Earlier versions drew few-shot examples from a frozen "seed"
 # dictionary, but that seed was itself the output of an early, ad hoc LLM pass, was
 # noisier than the current model, and is not a trustworthy authority -- so it was
@@ -149,6 +155,17 @@ ENTITY_TYPES <- c(
   '  "west_hills_community_college_district" -> Institutional_other',
   # with the parenthetical hint: an ORG place-name -> an institution
   '  "westlands_water_district (spaCy=ORG, n=57)" -> Institutional_other',
+  # Institutional_unresolved -- institutional, but a bare category/role with no
+  # specific actor named: clears the noise gate (it IS an institution) but is not a
+  # disambiguated actor, so it must NOT be forced into a specific category
+  '  "university" -> Institutional_unresolved',
+  '  "the_district" -> Institutional_unresolved',
+  '  "local_agencies" -> Institutional_unresolved',
+  '  "a_water_agency" -> Institutional_unresolved',
+  '  "the_consultants" -> Institutional_unresolved',
+  '  "stakeholders" -> Institutional_unresolved',
+  # with the parenthetical hint: an ORG that is only a category, not a named actor
+  '  "the_county (spaCy=ORG, n=9)" -> Institutional_unresolved',
   # Non_institutional -- the reject bucket: persons, basins/features/regions,
   # infrastructure, projects, models/data systems, laws/citations, journals, bare
   # technical concepts, document references, OCR junk
@@ -175,9 +192,11 @@ ENTITY_TYPES <- c(
     "- An entity may carry a parenthetical hint: its spaCy NER tag and frequency, ",
     "e.g. (GPE, n=12). Use the tag as a strong prior -- a named city/county place ",
     "(GPE) -> Institutional_other, but a basin/natural-feature/region place -> ",
-    "Non_institutional; PERSON -> Non_institutional; ORG -> an institution ",
-    "(GSA/Consultant/Research/NGO/Institutional_other) -- but override it when the ",
-    "name clearly says otherwise.\n",
+    "Non_institutional; PERSON -> Non_institutional; ORG -> an institution -- a ",
+    "SPECIFIC named one (GSA/Consultant/Research/NGO/Institutional_other) if you can ",
+    "point to which actor it is, else Institutional_unresolved for a bare category ",
+    "or role (university, the_district, a_consultant) -- but override the tag when ",
+    "the name clearly says otherwise.\n",
     "- Return the SINGLE best-fitting type from the allowed list, verbatim.\n",
     "- If a string is not a meaningful entity (fragment, OCR error), use Non_institutional.\n\n",
     "Example labels:\n", .FEWSHOT_EXAMPLES

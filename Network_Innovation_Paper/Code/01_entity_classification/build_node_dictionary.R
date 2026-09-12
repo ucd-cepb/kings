@@ -1,7 +1,7 @@
 #' build_node_dictionary.R — classify core entity names into semantic types.
 #'
 #' This is the paper's entity-classification step, and it happens ENTIRELY in this
-#' project: core carries spaCy NER tags only, and the paper's six-leaf semantic
+#' project: core carries spaCy NER tags only, and the paper's seven-category semantic
 #' taxonomy has no reproducible generator upstream. So the types are regenerated
 #' here with the LLM classifier (see classify_entities.R), few-shot-prompted from
 #' curated in-code exemplars and pinned by the core-dicts gazetteer.
