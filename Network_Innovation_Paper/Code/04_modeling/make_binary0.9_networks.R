@@ -22,9 +22,7 @@ bad_doc <- sel$gsp_doc_id[sel$gsp_id %in% bad]  # ... as their selected gsp_doc_
 # whichever DOCUMENT is selected: an original and its resubmission share one
 # canonical_gsp_id and therefore one set of covariates, regardless of NIP_DOC_SELECT.
 # gsp_covariates.csv is keyed on the 4-digit plan id, which for these (original)
-# plans IS the canonical id, so its gsp_id joins to sel$canonical_gsp_id. (Result is
-# byte-identical to the old gsp_id join in "original" mode, since there the selected
-# document's gsp_id equals its canonical_gsp_id.)
+# plans IS the canonical id, so its gsp_id joins to sel$canonical_gsp_id.
 meta <- fread(nip_input('gsp_covariates.csv'), colClasses = c(gsp_id = 'character'))
 meta <- meta[!duplicated(meta$gsp_id),]
 meta$Republican_Vote_Share <- as.numeric(meta$Republican_Vote_Share)
@@ -37,6 +35,7 @@ gs_edge <- fread(nip_product('01_entity_classification', 'all_gsa_edges.csv'))
 gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
 gs_edge[, gsp_doc_id := id_to_doc(gsp_id)]      # canonical plan-document key
 gs_edge <- gs_edge[!is.na(gsp_doc_id) & !gsp_doc_id %in% bad_doc, ]
+
 gs_edge[, gsp_id := NULL]
 gs_melt <- melt(gs_edge,id.vars = c('gsp_doc_id','gsa'))
 
@@ -45,6 +44,7 @@ dict <- fread(nip_product('01_entity_classification', 'node_dictionary.csv'))
 
 gs_melt <- gs_melt[variable != 'inter_agency',]
 
+head(gs_melt)
 # Entity co-mention structure, keyed to the semantic entity types:
 #   generic    = all institutional actors (spaCy ORG + GPE + NORP, junk-pruned)
 #   consultant / research / ngo = the three focal subnetworks, each on its own

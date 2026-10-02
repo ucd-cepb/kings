@@ -1,0 +1,76 @@
+name,pred,gold,n,freq_band,decided_by,gold_notes
+technical_advisory_committee_x,Institutional_other,Institutional_unresolved,101,6+,llm,""
+leadership_council,NGO,Institutional_unresolved,69,6+,llm,""
+ngo_consortium,NGO,Institutional_unresolved,56,6+,llm,""
+self_help,NGO,Non_institutional,54,6+,llm,""
+service,Institutional_unresolved,Non_institutional,32,6+,llm,""
+isws,Research,Non_institutional,23,6+,llm,unclear
+hrtw,Institutional_unresolved,Non_institutional,22,6+,llm,human right to water?
+windsor,Institutional_other,Non_institutional,21,6+,llm,""
+delta_sierra_group,NGO,Institutional_unresolved,14,6+,llm,unclear
+kings_basin_coordination_efforts,Institutional_unresolved,Non_institutional,12,6+,llm,""
+ipums,Research,Non_institutional,10,6+,llm,census database
+owners,Institutional_unresolved,Non_institutional,10,6+,llm,""
+ag_res,Institutional_unresolved,Non_institutional,9,6+,llm,""
+jurisdictions,Institutional_unresolved,Non_institutional,9,6+,llm,""
+aqua_geo_federal_railroad_administrationmeworks_llc,Consultant,Non_institutional,8,6+,llm,misparse of 2 entities
+adriana_renteria_well_permitting_center,Institutional_other,Non_institutional,6,6+,llm,""
+city_selection,Institutional_unresolved,Non_institutional,6,6+,llm,""
+otter_project,NGO,Non_institutional,6,6+,llm,""
+pioneer_gsa_p_management_area,GSA,Non_institutional,6,6+,llm,""
+australian_society_of_exploration_geophysicists,Research,NGO,5,5-Feb,llm,""
+you_tube,Institutional_other,Non_institutional,5,5-Feb,llm,""
+american_rivers_california_department_of_fish_and_wildlife,NGO,Institutional_other,4,5-Feb,llm,""
+central_valley_water,Institutional_other,Non_institutional,4,5-Feb,llm,""
+davis_poland,Consultant,Non_institutional,4,5-Feb,llm,usgs report citation
+international_agency_for_research,Institutional_unresolved,Research,4,5-Feb,llm,not actually sure what this is
+may_board,Institutional_unresolved,Non_institutional,4,5-Feb,llm,""
+natural_alliance,NGO,Institutional_unresolved,4,5-Feb,llm,""
+of_california_santa_barbara,Research,Institutional_unresolved,4,5-Feb,llm,""
+storage_panel,Institutional_unresolved,Institutional_other,4,5-Feb,llm,Formed of water district boards of directors
+us_geological_survey_measurable_objectivedflow,Institutional_other,Non_institutional,3,5-Feb,llm,But the measurement itself is research
+water_quality_consortium,Institutional_other,NGO,3,5-Feb,llm,"the California Water Data Consortium is an NGO, but the Klamath Tribal Water Quality Consortium is a research group"
+agricultural_commissioner_of_madera_county,Institutional_other,Non_institutional,2,5-Feb,llm,""
+american_society_of_civil_engineers_environmental_water_resources_institute,Institutional_other,Research,2,5-Feb,llm,""
+california_native_plant,NGO,Non_institutional,2,5-Feb,llm,""
+center_for_watershed,Research,Institutional_unresolved,2,5-Feb,llm,""
+community_service_area_16,Institutional_other,Institutional_unresolved,2,5-Feb,llm,""
+county_water_authority_groundwater_sustainability_agencies,GSA,Institutional_unresolved,2,5-Feb,llm,""
+davis_lofgren_and_mack,Consultant,Non_institutional,2,5-Feb,llm,usgs report citation
+domestic_well_ad_hoc,Institutional_unresolved,Non_institutional,2,5-Feb,llm,unclear
+galbraith_family_trust,Institutional_other,Non_institutional,2,5-Feb,llm,""
+greater_merced_area_chamber_of_commerce,NGO,Institutional_other,2,5-Feb,llm,""
+lwvf,NGO,Non_institutional,2,5-Feb,llm,unclear
+north_american_subbasin_groundwater_sustainability_plan,Non_institutional,GSA,2,5-Feb,llm,""
+outreach_engagement_communications_committee,Institutional_other,Institutional_unresolved,2,5-Feb,llm,""
+sierra_watershed_progressive,NGO,Consultant,2,5-Feb,llm,""
+storm_water_district,Institutional_unresolved,Institutional_other,2,5-Feb,llm,""
+water_resource_section,Institutional_unresolved,Institutional_other,2,5-Feb,llm,asumed water resource section of DWR
+wba,Institutional_unresolved,Non_institutional,2,5-Feb,llm,""
+wsip,Institutional_unresolved,Non_institutional,2,5-Feb,llm,water storage investment program is a california water commission initiative that manages funds
+appelate_court,Institutional_unresolved,Non_institutional,1,1,llm,""
+business_groups_interests,Institutional_unresolved,Non_institutional,1,1,llm,""
+california_agricultural_water_stewardship_initiative,NGO,Non_institutional,1,1,llm,""
+california_waterfowl_ducks,NGO,Non_institutional,1,1,llm,""
+clean_water_ngo018,NGO,Non_institutional,1,1,llm,""
+colaborativo_de_solano_parques_de_casas_moviles,Institutional_other,NGO,1,1,llm,mobile home cooperative
+etsgsa23,Non_institutional,GSA,1,1,llm,east turlock GSA + misparse
+gei_1684,Consultant,Non_institutional,1,1,llm,possibly consultant below
+gei_1701,Consultant,Non_institutional,1,1,llm,possibly consultant below
+grand_terrace,Institutional_other,Non_institutional,1,1,llm,""
+groundwater_guardian_communities_and_affiliates,NGO,Institutional_other,1,1,llm,"groudnwater guardians is an NGO, communities are cities"
+groundwater_sustainability_agency_atten,GSA,Institutional_unresolved,1,1,llm,""
+groundwater_sustainability_agency_joint_exercise,GSA,Institutional_unresolved,1,1,llm,""
+groundwater_sustainability_plan_1312_of_relevant,Non_institutional,GSA,1,1,llm,""
+gta,Institutional_unresolved,Non_institutional,1,1,llm,unclear
+kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan_1_7_todd_groundwater,Non_institutional,GSA,1,1,llm,""
+legal_authority_of_the_agency,Institutional_unresolved,Non_institutional,1,1,llm,""
+new_current,Consultant,Non_institutional,1,1,llm,""
+oregon_state_precipitation_elevation_regressions_on_independent_slopes_model_climate_group,Research,Non_institutional,1,1,llm,""
+rd_1606,Institutional_other,Non_institutional,1,1,llm,""
+subterranean_institute,Research,NGO,1,1,llm,"Was an initiative by G.O. Graening. Can't really find information about it. Had something to do with GIS layers, probably research or consulting"
+tehama_flood_control_and_water_conservation_district,Institutional_other,GSA,1,1,llm,""
+university_not_applicablevstar_consortium_p256_plate_boundary_observatory,Non_institutional,Research,1,1,llm,mis-parse of unavco and inserted page number
+virtual_water_leadership_institute,Research,NGO,1,1,llm,educational effort of RCAC and EDF
+water_right_utilization_new_stone_water_district_t_transmissivity_gsa,GSA,Non_institutional,1,1,llm,""
+western_policy_research,Research,Non_institutional,1,1,llm,""

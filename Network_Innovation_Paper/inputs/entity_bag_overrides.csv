@@ -1,0 +1,44 @@
+variant,bag_id,entity_type,note
+denovo_planning_group,con_de_novo_planning_group,Consultant,fuzzy 0.955 -> De Novo Planning Group
+luhdorff_scalmanini_consulting_engineers_2,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_3,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_5,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_8,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_7,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_9,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_1,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_4,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+a_luhdorff_scalmanini_consulting_engineers,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+oconnor_environmental_inc,con_o_connor_environmental_inc,Consultant,"fuzzy 0.962 -> O’Connor Environmental, Inc."
+provost_prichard_consulting_group,con_provost_pritchard_consulting_group,Consultant,fuzzy 0.971 -> Provost & Pritchard Consulting Group
+ss_papadopulos_associates,con_s_s_papadopulos_associates,Consultant,fuzzy 0.962 -> S.S. Papadopulos & Associates
+nork_fork_kings_gsa,gsa_187,GSA,fuzzy 0.9 -> North Fork Kings GSA
+south_fork_king_gsa,gsa_222,GSA,fuzzy 0.95 -> South Fork Kings GSA
+turner_island_water_district_gsa1,gsa_223,GSA,fuzzy 0.821 -> Turner Island Water District GSA - Merced
+turner_island_water_district_gsa1_and,gsa_223,GSA,fuzzy 0.846 -> Turner Island Water District GSA - Merced
+turner_island_water_district_gsa1_to,gsa_223,GSA,fuzzy 0.821 -> Turner Island Water District GSA - Merced
+turner_island_water_district_gsa1_governing,gsa_223,GSA,fuzzy 0.814 -> Turner Island Water District GSA - Merced
+v_hite_wolf_gsa,gsa_244,GSA,fuzzy 0.867 -> White Wolf GSA
+v_hite_v_olf_gsa,gsa_244,GSA,fuzzy 0.75 -> White Wolf GSA
+whitewolf_gsa,gsa_244,GSA,fuzzy 0.929 -> White Wolf GSA
+white_v_olf_gsa,gsa_244,GSA,fuzzy 0.867 -> White Wolf GSA
+white_rwolf_gsa,gsa_244,GSA,fuzzy 0.933 -> White Wolf GSA
+temescal_basin_gsa,gsa_260,GSA,fuzzy 0.857 -> Temescal Subbasin GSA
+great_kaweah_gsa,gsa_281,GSA,fuzzy 0.889 -> Greater Kaweah GSA
+kern_non_districted_lands_authority_gsa,gsa_306,GSA,fuzzy 0.974 -> Kern Non-Districted Land Authority GSA
+eastern_kaweah_gsa,gsa_314,GSA,fuzzy 0.833 -> East Kaweah GSA
+yucaipa_subbasin_gsa,gsa_349,GSA,fuzzy 0.85 -> Yucaipa Basin GSA
+indian_we_lls_valley_groundwater_authority,gsa_35,GSA,fuzzy 0.889 -> Indian Wells Valley Groundwater Authority GSA
+corning_sub_basin_gsa,gsa_390,GSA,fuzzy 0.952 -> Corning Subbasin GSA
+lower_tuie_river_irrigation_district_gsa,gsa_42,GSA,fuzzy 0.975 -> Lower Tule River Irrigation District GSA
+salinas_valley_groundwater_basin_gsa_180400_foot_aquifer,gsa_461,GSA,fuzzy 0.768 -> Salinas Valley Basin GSA - 180/400 Foot Aquifer
+tri_county_water_authority_gsa_jpa,gsa_490,GSA,fuzzy 0.886 -> Tri-County Water Authority GSA - Tule
+westside_districts_water_authority_gsa,gsa_506,GSA,fuzzy 0.974 -> Westside District Water Authority GSA
+westside_districts_water_authority_gsa_board,gsa_506,GSA,fuzzy 0.841 -> Westside District Water Authority GSA
+westside_districts_water_authority_gsa2,gsa_506,GSA,fuzzy 0.949 -> Westside District Water Authority GSA
+westside_districts_water_authority_gsa_p,gsa_506,GSA,fuzzy 0.925 -> Westside District Water Authority GSA
+southern_san_joaquin_municipal_utilities_district_gsa,gsa_514,GSA,fuzzy 0.943 -> Southern San Joaquin Municipal Utility District - GSA
+kern_tulare_water_distrct_gsa,gsa_517,GSA,fuzzy 0.967 -> Kern-Tulare Water District GSA
+grassland_gsa,gsa_62,GSA,fuzzy 0.929 -> Grasslands GSA
+north_king_gsa,gsa_65,GSA,fuzzy 0.933 -> North Kings GSA
+no_rth_kings_gsa,gsa_65,GSA,fuzzy 0.938 -> North Kings GSA
