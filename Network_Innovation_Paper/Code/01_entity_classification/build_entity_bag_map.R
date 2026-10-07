@@ -92,6 +92,12 @@ load_consultant_roster <- function() {
   unique(ros[nzchar(key)])
 }
 
+# join every tied candidate as "gsa_<id>=Label | ..." so a reviewer sees them all.
+.tie_lab <- function(best) {
+  cl <- unique(best[, .(gsa_id, label)])
+  paste(sprintf("gsa_%s=%s", cl$gsa_id, cl$label), collapse = " | ")
+}
+
 # ---- GSA matcher -------------------------------------------------------------
 # returns list(bag_id, label, method, score) ; bag_id NA_character_ when no auto.
 .match_gsa <- function(node, ros) {
@@ -108,7 +114,7 @@ load_consultant_roster <- function() {
       cand <- usable[ok]; best <- cand[ndt == max(ndt)]
       ib <- unique(best$gsa_id)
       if (length(ib) == 1) return(list(id = ib, lab = best$label[1], m = "subset", s = max(best$ndt)))
-      return(list(id = NA_character_, sug = best$gsa_id[1], lab = best$label[1], m = "subset_tie", s = length(ib)))
+      return(list(id = NA_character_, sug = ib[1], lab = .tie_lab(best), m = "subset_tie", s = length(ib)))
     }
   }
   # revsubset: node distinctive tokens all contained in a roster entry
@@ -118,7 +124,7 @@ load_consultant_roster <- function() {
       cand <- usable[ok]; best <- cand[ndt == min(ndt)]
       ib <- unique(best$gsa_id)
       if (length(ib) == 1) return(list(id = ib, lab = best$label[1], m = "revsubset", s = length(ndd)))
-      return(list(id = NA_character_, sug = best$gsa_id[1], lab = best$label[1], m = "revsubset_tie", s = length(ib)))
+      return(list(id = NA_character_, sug = ib[1], lab = .tie_lab(best), m = "revsubset_tie", s = length(ib)))
     }
   }
   # fuzzy suggestion
@@ -150,10 +156,18 @@ build_entity_bag_map <- function() {
   cros <- load_consultant_roster()
   message(sprintf("rosters: %d GSA bags, %d consultant firms", nrow(gros), nrow(cros)))
 
-  # curated overrides win over everything
-  ov_path <- nip_input("entity_bag_overrides.csv")
-  ov <- if (file.exists(ov_path)) fread(ov_path, colClasses = "character") else
-    data.table(variant = character(), bag_id = character())
+  # curated overrides win over everything; GSA and consultant kept in separate
+  # files so each can be reviewed independently (legacy combined file still read).
+  .read_ov <- function(fn) {
+    p <- nip_input(fn)
+    if (file.exists(p)) fread(p, colClasses = "character") else
+      data.table(variant = character(), bag_id = character())
+  }
+  ov <- unique(rbindlist(list(
+    .read_ov("entity_bag_overrides_gsa.csv"),
+    .read_ov("entity_bag_overrides_consultant.csv"),
+    .read_ov("entity_bag_overrides.csv")
+  ), use.names = TRUE, fill = TRUE), by = "variant")
 
   IN_NET <- c("GSA", "Consultant", "Research", "NGO", "Institutional_other")
   nodes <- nd[entity_type %in% IN_NET, .(variant = name, entity_type)]
@@ -191,6 +205,23 @@ build_entity_bag_map <- function() {
   }
   map <- rbindlist(map_rows)
   sugg <- rbindlist(lapply(map_rows, attr, "sugg"), fill = TRUE)
+
+  # ---- bag merges: roll geographically-split sub-ids of ONE agency up into a
+  # single parent bag (inputs/bag_merges.csv: member_bag_id,parent_bag_id,parent_label).
+  # Applied AFTER matching so it also catches sub-ids produced by the auto-matcher.
+  bm_path <- nip_input("bag_merges.csv")
+  if (file.exists(bm_path)) {
+    bm <- fread(bm_path, colClasses = "character")
+    bm <- bm[nzchar(member_bag_id) & nzchar(parent_bag_id)]
+    if (nrow(bm)) {
+      hit <- match(map$bag_id, bm$member_bag_id)
+      ix  <- which(!is.na(hit))
+      map[ix, `:=`(bag_id = bm$parent_bag_id[hit[ix]],
+                   bag_label = bm$parent_label[hit[ix]])]
+      message(sprintf("bag merges: %d rows rolled into %d parent bags",
+                      length(ix), length(unique(bm$parent_bag_id))))
+    }
+  }
 
   fwrite(map, out_map)
   fwrite(sugg, out_un)

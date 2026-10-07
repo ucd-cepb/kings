@@ -66,6 +66,7 @@ csu_,Research,regex,csu_fresno_foundation
 cal_poly,Research,regex,cal_poly and cal_poly_itrc variants
 pacific_institute,Research,regex,water policy think tank (future-proof)
 public_policy_institute,Research,regex,PPIC
+national_aeronautics_and_space_administration,Institutional_other,regex,"NASA is a federal agency, not a university research center; must precede research_center (catches armstrong_flight_research_center)"
 research_center,Research,regex,ITRC and other university research centers
 research_institute,Research,regex,desert_research_institute national_water_research_institute
 cooperative_extension,Research,regex,UC Cooperative Extension outreach/research

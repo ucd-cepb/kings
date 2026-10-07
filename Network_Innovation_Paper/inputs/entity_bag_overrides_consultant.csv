@@ -1,0 +1,14 @@
+variant,bag_id,entity_type,note
+denovo_planning_group,con_de_novo_planning_group,Consultant,fuzzy 0.955 -> De Novo Planning Group
+luhdorff_scalmanini_consulting_engineers_2,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_3,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_5,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_8,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_7,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_9,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_1,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+luhdorff_scalmanini_consulting_engineers_4,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+a_luhdorff_scalmanini_consulting_engineers,con_luhdorff_scalmanini_consulting_engineers,Consultant,fuzzy 0.952 -> Luhdorff & Scalmanini Consulting Engineers
+oconnor_environmental_inc,con_o_connor_environmental_inc,Consultant,"fuzzy 0.962 -> O’Connor Environmental, Inc."
+provost_prichard_consulting_group,con_provost_pritchard_consulting_group,Consultant,fuzzy 0.971 -> Provost & Pritchard Consulting Group
+ss_papadopulos_associates,con_s_s_papadopulos_associates,Consultant,fuzzy 0.962 -> S.S. Papadopulos & Associates
