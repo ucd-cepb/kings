@@ -1,0 +1,883 @@
+# DOC -> canonical GSA authors  (dictionary #2: DWR-scraped GSA x docid crosswalk)
+# Source: 00_ingest/id_crosswalk.csv  |  authors = gsa_ids resolved via core sgma_gsa_full.csv
+# Each gsp_doc_id is a DISTINCT submission (ordered by doc_rank / submitted_date), NOT a copy.
+# WARNING: the `version` column is coarse -- it labels BOTH the 2020 original and the 2022/23
+# resubmission 'v1'; 53 (gsp_id,version) pairs bundle >1 submission date. Use submitted_date/doc_rank.
+# docid != gspid; a canonical plan may span multiple gsp_ids across resubmissions.
+# [SCRAPE-NAME MISMATCH] = crosswalk gsa_names column disagrees with roster-resolved names.
+# 185 docs | 132 gspid | 120 canonical plans
+
+### canonical_gsp_id 7   (3 submission(s))
+  doc    944  gsp 0007  submitted 01/17/2020  rank 1  (1 author(s))
+       gsa_23   Aliso Water District GSA
+  doc   8770  gsp 0007  submitted 07/20/2022  rank 2  (1 author(s))
+       gsa_23   Aliso Water District GSA
+  doc  11932  gsp 0174  submitted 05/28/2026  rank 3  (23 author(s))
+       gsa_17   Patterson Irrigation District GSA
+       gsa_220  Turner Island Water District GSA - Delta-Mendota
+       gsa_13   West Stanislaus Irrigation District GSA
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_30   Farmers Water District GSA
+       gsa_23   Aliso Water District GSA
+       gsa_66   City of Patterson GSA
+       gsa_71   City of Los Banos GSA
+       gsa_302  Oro Loma Water District GSA
+       gsa_237  Widren Water District GSA
+       gsa_10   San Joaquin River Exchange Contractors GSA
+       gsa_57   City of Newman GSA
+       gsa_62   Grasslands GSA
+       gsa_67   City of Mendota GSA
+       gsa_360  City of Dos Palos GSA
+       gsa_206  Central Delta-Mendota GSA
+       gsa_214  Northwestern Delta-Mendota GSA
+       gsa_269  City of Firebaugh GSA
+       gsa_271  City of Gustine GSA
+       gsa_301  DM-II GSA
+       gsa_70   County of Madera GSA - Delta-Mendota
+       gsa_298  County of Fresno GSA - Delta-Mendota Management Area A
+       gsa_308  County of Fresno GSA - Delta-Mendota Management Area B
+
+### canonical_gsp_id 8   (2 submission(s))
+  doc   1979  gsp 0008  submitted 01/23/2020  rank 1  (1 author(s))
+       gsa_40   Westlands Water District GSA
+  doc   8785  gsp 0008  submitted 07/18/2022  rank 2  (1 author(s))
+       gsa_40   Westlands Water District GSA
+
+### canonical_gsp_id 9   (2 submission(s))
+  doc    386  gsp 0009  submitted 01/28/2020  rank 1  (3 author(s))
+       gsa_311  Merced Irrigation-Urban GSA
+       gsa_223  Turner Island Water District GSA - Merced
+       gsa_219  Merced Subbasin GSA
+  doc   8897  gsp 0009  submitted 07/26/2022  rank 2  (3 author(s))
+       gsa_311  Merced Irrigation-Urban GSA
+       gsa_223  Turner Island Water District GSA - Merced
+       gsa_219  Merced Subbasin GSA
+
+### canonical_gsp_id 11   (1 submission(s))
+  doc   3166  gsp 0011  submitted 01/30/2020  rank 1  (1 author(s))
+       gsa_24   Santa Cruz Mid-County Groundwater Agency GSA
+
+### canonical_gsp_id 12   (3 submission(s))
+  doc   2256  gsp 0012  submitted 01/29/2020  rank 1  (4 author(s))
+       gsa_61   Chowchilla Water District GSA
+       gsa_68   County of Madera GSA - Chowchilla
+       gsa_191  County of Merced GSA - Chowchilla
+       gsa_394  Triangle T Water District GSA
+  doc   9211  gsp 0012  submitted 07/27/2022  rank 2  (4 author(s))
+       gsa_61   Chowchilla Water District GSA
+       gsa_68   County of Madera GSA - Chowchilla
+       gsa_191  County of Merced GSA - Chowchilla
+       gsa_394  Triangle T Water District GSA
+  doc  11395  gsp 0160  submitted 07/14/2025  rank 3  (4 author(s))
+       gsa_61   Chowchilla Water District GSA
+       gsa_68   County of Madera GSA - Chowchilla
+       gsa_191  County of Merced GSA - Chowchilla
+       gsa_394  Triangle T Water District GSA
+
+### canonical_gsp_id 13   (2 submission(s))
+  doc   4342  gsp 0013  submitted 01/23/2020  rank 1  (23 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_214  Northwestern Delta-Mendota GSA
+       gsa_301  DM-II GSA
+       gsa_66   City of Patterson GSA
+       gsa_206  Central Delta-Mendota GSA
+       gsa_237  Widren Water District GSA
+       gsa_302  Oro Loma Water District GSA
+       gsa_17   Patterson Irrigation District GSA
+       gsa_13   West Stanislaus Irrigation District GSA
+       gsa_23   Aliso Water District GSA
+       gsa_360  City of Dos Palos GSA
+       gsa_269  City of Firebaugh GSA
+       gsa_271  City of Gustine GSA
+       gsa_71   City of Los Banos GSA
+       gsa_67   City of Mendota GSA
+       gsa_57   City of Newman GSA
+       gsa_70   County of Madera GSA - Delta-Mendota
+       gsa_30   Farmers Water District GSA
+       gsa_298  County of Fresno GSA - Delta-Mendota Management Area A
+       gsa_308  County of Fresno GSA - Delta-Mendota Management Area B
+       gsa_62   Grasslands GSA
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_10   San Joaquin River Exchange Contractors GSA
+       gsa_220  Turner Island Water District GSA - Delta-Mendota
+  doc   8708  gsp 0013  submitted 07/20/2022  rank 2  (23 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_214  Northwestern Delta-Mendota GSA
+       gsa_301  DM-II GSA
+       gsa_66   City of Patterson GSA
+       gsa_206  Central Delta-Mendota GSA
+       gsa_237  Widren Water District GSA
+       gsa_302  Oro Loma Water District GSA
+       gsa_17   Patterson Irrigation District GSA
+       gsa_13   West Stanislaus Irrigation District GSA
+       gsa_23   Aliso Water District GSA
+       gsa_360  City of Dos Palos GSA
+       gsa_269  City of Firebaugh GSA
+       gsa_271  City of Gustine GSA
+       gsa_71   City of Los Banos GSA
+       gsa_67   City of Mendota GSA
+       gsa_57   City of Newman GSA
+       gsa_70   County of Madera GSA - Delta-Mendota
+       gsa_30   Farmers Water District GSA
+       gsa_298  County of Fresno GSA - Delta-Mendota Management Area A
+       gsa_308  County of Fresno GSA - Delta-Mendota Management Area B
+       gsa_62   Grasslands GSA
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_10   San Joaquin River Exchange Contractors GSA
+       gsa_220  Turner Island Water District GSA - Delta-Mendota
+
+### canonical_gsp_id 14   (2 submission(s))
+  doc   1147  gsp 0014  submitted 01/23/2020  rank 1  (1 author(s))
+       gsa_30   Farmers Water District GSA
+  doc   8858  gsp 0014  submitted 07/20/2022  rank 2  (1 author(s))
+       gsa_30   Farmers Water District GSA
+
+### canonical_gsp_id 15   (2 submission(s))
+  doc    458  gsp 0015  submitted 01/23/2020  rank 1  (10 author(s))
+       gsa_220  Turner Island Water District GSA - Delta-Mendota
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_71   City of Los Banos GSA
+       gsa_10   San Joaquin River Exchange Contractors GSA
+       gsa_57   City of Newman GSA
+       gsa_67   City of Mendota GSA
+       gsa_360  City of Dos Palos GSA
+       gsa_269  City of Firebaugh GSA
+       gsa_271  City of Gustine GSA
+       gsa_70   County of Madera GSA - Delta-Mendota
+  doc   8825  gsp 0015  submitted 07/20/2022  rank 2  (10 author(s))
+       gsa_220  Turner Island Water District GSA - Delta-Mendota
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_71   City of Los Banos GSA
+       gsa_10   San Joaquin River Exchange Contractors GSA
+       gsa_57   City of Newman GSA
+       gsa_67   City of Mendota GSA
+       gsa_360  City of Dos Palos GSA
+       gsa_269  City of Firebaugh GSA
+       gsa_271  City of Gustine GSA
+       gsa_70   County of Madera GSA - Delta-Mendota
+
+### canonical_gsp_id 16   (1 submission(s))
+  doc    614  gsp 0016  submitted 01/13/2020  rank 1  (1 author(s))
+       gsa_433  Fox Canyon Groundwater Management Agency GSA - Oxnard
+
+### canonical_gsp_id 17   (1 submission(s))
+  doc    469  gsp 0017  submitted 01/13/2020  rank 1  (1 author(s))
+       gsa_432  Fox Canyon Groundwater Management Agency GSA - Pleasant Valley
+
+### canonical_gsp_id 18   (1 submission(s))
+  doc    468  gsp 0018  submitted 01/13/2020  rank 1  (1 author(s))
+       gsa_163  Fox Canyon Groundwater Management Agency GSA - Las Posas Valley
+
+### canonical_gsp_id 19   (1 submission(s))
+  doc   4922  gsp 0019  submitted 12/31/2021  rank 1  (1 author(s))
+       gsa_354  Mound Basin GSA
+
+### canonical_gsp_id 20   (2 submission(s))
+  doc   1384  gsp 0020  submitted 01/23/2020  rank 1  (2 author(s))
+       gsa_298  County of Fresno GSA - Delta-Mendota Management Area A
+       gsa_308  County of Fresno GSA - Delta-Mendota Management Area B
+  doc   8797  gsp 0020  submitted 07/20/2022  rank 2  (2 author(s))
+       gsa_298  County of Fresno GSA - Delta-Mendota Management Area A
+       gsa_308  County of Fresno GSA - Delta-Mendota Management Area B
+
+### canonical_gsp_id 21   (2 submission(s))
+  doc   3164  gsp 0021  submitted 01/31/2020  rank 1  (4 author(s))
+       gsa_47   City of Madera GSA
+       gsa_41   Madera Water District GSA
+       gsa_19   Madera Irrigation District GSA
+       gsa_69   County of Madera GSA - Madera
+  doc   9631  gsp 0021  submitted 03/21/2023  rank 2  (4 author(s))
+       gsa_47   City of Madera GSA
+       gsa_41   Madera Water District GSA
+       gsa_19   Madera Irrigation District GSA
+       gsa_69   County of Madera GSA - Madera
+
+### canonical_gsp_id 22   (2 submission(s))
+  doc   3848  gsp 0022  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_211  Central Kings GSA
+  doc   9121  gsp 0022  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_211  Central Kings GSA
+
+### canonical_gsp_id 23   (2 submission(s))
+  doc   2704  gsp 0023  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_18   Kings River East GSA
+  doc   9155  gsp 0023  submitted 07/28/2022  rank 2  (1 author(s))
+       gsa_18   Kings River East GSA
+
+### canonical_gsp_id 24   (2 submission(s))
+  doc   2664  gsp 0024  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_65   North Kings GSA
+  doc   9144  gsp 0024  submitted 07/28/2022  rank 2  (1 author(s))
+       gsa_65   North Kings GSA
+
+### canonical_gsp_id 25   (2 submission(s))
+  doc   2564  gsp 0025  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_187  North Fork Kings GSA
+  doc   9139  gsp 0025  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_187  North Fork Kings GSA
+
+### canonical_gsp_id 26   (2 submission(s))
+  doc   2149  gsp 0026  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_317  South Kings GSA
+  doc   9136  gsp 0026  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_317  South Kings GSA
+
+### canonical_gsp_id 28   (2 submission(s))
+  doc   3168  gsp 0028  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_266  McMullin Area GSA
+  doc   9152  gsp 0028  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_266  McMullin Area GSA
+
+### canonical_gsp_id 29   (1 submission(s))
+  doc   3862  gsp 0029  submitted 01/23/2020  rank 1  (3 author(s))
+       gsa_184  Marina Coast Water District GSA - 180/400 Foot Aquifer
+       gsa_461  Salinas Valley Basin GSA - 180/400 Foot Aquifer
+       gsa_487  County of Monterey GSA
+
+### canonical_gsp_id 30   (2 submission(s))
+  doc   3303  gsp 0030  submitted 01/31/2020  rank 1  (1 author(s))
+       gsa_281  Greater Kaweah GSA
+  doc   9110  gsp 0030  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_281  Greater Kaweah GSA
+
+### canonical_gsp_id 31   (2 submission(s))
+  doc   2655  gsp 0031  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_12   James GSA
+  doc   9921  gsp 0031  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_12   James GSA
+
+### canonical_gsp_id 32   (2 submission(s))
+  doc   2669  gsp 0032  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_327  Cuyama Basin GSA
+  doc   8757  gsp 0032  submitted 07/18/2022  rank 2  (1 author(s))
+       gsa_327  Cuyama Basin GSA
+
+### canonical_gsp_id 35   (2 submission(s))
+  doc   2847  gsp 0035  submitted 01/30/2020  rank 1  (4 author(s))
+       gsa_56   San Miguel Community Services District GSA
+       gsa_72   City of Paso Robles GSA
+       gsa_322  County of San Luis Obispo GSA - Paso Robles Area
+       gsa_319  Shandon-San Juan GSA
+  doc   8626  gsp 0035  submitted 07/19/2022  rank 2  (4 author(s))
+       gsa_56   San Miguel Community Services District GSA
+       gsa_72   City of Paso Robles GSA
+       gsa_322  County of San Luis Obispo GSA - Paso Robles Area
+       gsa_319  Shandon-San Juan GSA
+
+### canonical_gsp_id 36   (2 submission(s))
+  doc   2162  gsp 0036  submitted 01/30/2020  rank 1  (5 author(s))
+       gsa_277  Semitropic Water Storage District GSA
+       gsa_39   West Kern Water District GSA
+       gsa_188  Pioneer GSA
+       gsa_306  Kern Non-Districted Land Authority GSA
+       gsa_326  Cawelo Water District GSA
+  doc   9203  gsp 0036  submitted 07/27/2022  rank 2  (5 author(s))
+       gsa_277  Semitropic Water Storage District GSA
+       gsa_39   West Kern Water District GSA
+       gsa_188  Pioneer GSA
+       gsa_306  Kern Non-Districted Land Authority GSA
+       gsa_326  Cawelo Water District GSA
+
+### canonical_gsp_id 37   (2 submission(s))
+  doc   2994  gsp 0037  submitted 01/29/2020  rank 1  (1 author(s))
+       gsa_254  Henry Miller Water District GSA
+  doc   9188  gsp 0037  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_254  Henry Miller Water District GSA
+
+### canonical_gsp_id 38   (2 submission(s))
+  doc   1407  gsp 0038  submitted 01/23/2020  rank 1  (2 author(s))
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_62   Grasslands GSA
+  doc   8791  gsp 0038  submitted 07/20/2022  rank 2  (2 author(s))
+       gsa_231  County of Merced GSA - Delta-Mendota
+       gsa_62   Grasslands GSA
+
+### canonical_gsp_id 42   (2 submission(s))
+  doc   2810  gsp 0042  submitted 01/29/2020  rank 1  (5 author(s))
+       gsa_411  Tri-County Water Authority GSA - Tulare Lake
+       gsa_222  South Fork Kings GSA
+       gsa_73   Mid-Kings River GSA
+       gsa_226  Southwest Kings GSA
+       gsa_358  El Rico GSA
+  doc   9241  gsp 0042  submitted 07/27/2022  rank 2  (5 author(s))
+       gsa_411  Tri-County Water Authority GSA - Tulare Lake
+       gsa_222  South Fork Kings GSA
+       gsa_73   Mid-Kings River GSA
+       gsa_226  Southwest Kings GSA
+       gsa_358  El Rico GSA
+
+### canonical_gsp_id 43   (2 submission(s))
+  doc   3712  gsp 0043  submitted 01/29/2020  rank 1  (0 author(s))
+  doc   9090  gsp 0043  submitted 07/27/2022  rank 2  (0 author(s))
+
+### canonical_gsp_id 44   (2 submission(s))
+  doc   1516  gsp 0044  submitted 01/22/2020  rank 1  (1 author(s))
+       gsa_196  Olcese Water District GSA
+  doc   9064  gsp 0044  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_196  Olcese Water District GSA
+
+### canonical_gsp_id 45   (2 submission(s))
+  doc   2772  gsp 0045  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_33   Root Creek Water District GSA
+  doc   9607  gsp 0045  submitted 03/21/2023  rank 2  (1 author(s))
+       gsa_33   Root Creek Water District GSA
+
+### canonical_gsp_id 47   (2 submission(s))
+  doc   2509  gsp 0047  submitted 01/29/2020  rank 1  (16 author(s))
+       gsa_137  City of Stockton GSA
+       gsa_152  City of Lodi GSA
+       gsa_116  Stockton East Water District GSA
+       gsa_91   City of Manteca GSA
+       gsa_288  Eastside San Joaquin GSA
+       gsa_142  County of San Joaquin GSA - Eastern San Joaquin 1
+       gsa_140  Lockeford Community Service District GSA
+       gsa_189  Central San Joaquin Water Conservation District GSA
+       gsa_208  South Delta Water Agency GSA
+       gsa_201  Central Delta Water Agency GSA
+       gsa_159  North San Joaquin Water Conservation District GSA
+       gsa_249  South San Joaquin GSA
+       gsa_389  County of San Joaquin GSA - Eastern San Joaquin 2
+       gsa_151  Woodbridge Irrigation District GSA
+       gsa_99   Linden County Water District GSA
+       gsa_228  Oakdale Irrigation District GSA
+  doc   8901  gsp 0047  submitted 07/27/2022  rank 2  (16 author(s))
+       gsa_137  City of Stockton GSA
+       gsa_152  City of Lodi GSA
+       gsa_116  Stockton East Water District GSA
+       gsa_91   City of Manteca GSA
+       gsa_288  Eastside San Joaquin GSA
+       gsa_142  County of San Joaquin GSA - Eastern San Joaquin 1
+       gsa_140  Lockeford Community Service District GSA
+       gsa_189  Central San Joaquin Water Conservation District GSA
+       gsa_208  South Delta Water Agency GSA
+       gsa_201  Central Delta Water Agency GSA
+       gsa_159  North San Joaquin Water Conservation District GSA
+       gsa_249  South San Joaquin GSA
+       gsa_389  County of San Joaquin GSA - Eastern San Joaquin 2
+       gsa_151  Woodbridge Irrigation District GSA
+       gsa_99   Linden County Water District GSA
+       gsa_228  Oakdale Irrigation District GSA
+
+### canonical_gsp_id 48   (2 submission(s))
+  doc   3713  gsp 0048  submitted 01/23/2020  rank 1  (1 author(s))
+       gsa_25   Alpaugh GSA
+  doc   9115  gsp 0048  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_25   Alpaugh GSA
+
+### canonical_gsp_id 49   (2 submission(s))
+  doc   2710  gsp 0049  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_59   New Stone Water District GSA
+  doc   9617  gsp 0049  submitted 03/21/2023  rank 2  (1 author(s))
+       gsa_59   New Stone Water District GSA
+
+### canonical_gsp_id 50   (5 submission(s))
+  doc   2842  gsp 0050  submitted 01/31/2020  rank 1  (1 author(s))
+       gsa_7    Mid-Kaweah GSA
+  doc   9093  gsp 0050  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_7    Mid-Kaweah GSA
+  doc  11703  gsp 0164  submitted 01/13/2026  rank 3  (1 author(s))
+       gsa_7    Mid-Kaweah GSA
+  doc  11777  gsp 0165  submitted 01/13/2026  rank 4  (1 author(s))
+       gsa_281  Greater Kaweah GSA
+  doc  11822  gsp 0166  submitted 01/13/2026  rank 5  (1 author(s))
+       gsa_314  East Kaweah GSA
+
+### canonical_gsp_id 51   (2 submission(s))
+  doc   3162  gsp 0051  submitted 01/30/2020  rank 1  (1 author(s))
+       gsa_15   Buena Vista Water Storage District GSA
+  doc   9238  gsp 0051  submitted 08/01/2022  rank 2  (1 author(s))
+       gsa_15   Buena Vista Water Storage District GSA
+
+### canonical_gsp_id 52   (1 submission(s))
+  doc   1683  gsp 0052  submitted 01/31/2020  rank 1  (1 author(s))
+       gsa_106  Yuba Water Agency GSA - South Yuba
+
+### canonical_gsp_id 53   (1 submission(s))
+  doc   1682  gsp 0053  submitted 01/31/2020  rank 1  (3 author(s))
+       gsa_133  City of Marysville GSA
+       gsa_413  Yuba Water Agency GSA - North Yuba
+       gsa_111  Cordua Irrigation District GSA
+
+### canonical_gsp_id 54   (2 submission(s))
+  doc   2384  gsp 0054  submitted 01/28/2020  rank 1  (2 author(s))
+       gsa_22   Greenfield County Water District GSA
+       gsa_20   Kern River GSA
+  doc   9034  gsp 0054  submitted 07/29/2022  rank 2  (2 author(s))
+       gsa_22   Greenfield County Water District GSA
+       gsa_20   Kern River GSA
+
+### canonical_gsp_id 56   (2 submission(s))
+  doc   4306  gsp 0056  submitted 01/28/2020  rank 1  (1 author(s))
+       gsa_42   Lower Tule River Irrigation District GSA
+  doc   9024  gsp 0056  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_42   Lower Tule River Irrigation District GSA
+
+### canonical_gsp_id 57   (2 submission(s))
+  doc   3718  gsp 0057  submitted 01/30/2020  rank 1  (1 author(s))
+       gsa_490  Tri-County Water Authority GSA - Tule
+  doc   9230  gsp 0057  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_490  Tri-County Water Authority GSA - Tule
+
+### canonical_gsp_id 58   (2 submission(s))
+  doc   2672  gsp 0058  submitted 01/29/2020  rank 1  (1 author(s))
+       gsa_314  East Kaweah GSA
+  doc   9106  gsp 0058  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_314  East Kaweah GSA
+
+### canonical_gsp_id 59   (1 submission(s))
+  doc   3301  gsp 0059  submitted 01/31/2020  rank 1  (1 author(s))
+       gsa_35   Indian Wells Valley Groundwater Authority GSA
+
+### canonical_gsp_id 61   (2 submission(s))
+  doc   2840  gsp 0061  submitted 01/30/2020  rank 1  (1 author(s))
+       gsa_34   Gravelly Ford Water District GSA
+  doc   9625  gsp 0061  submitted 03/21/2023  rank 2  (1 author(s))
+       gsa_34   Gravelly Ford Water District GSA
+
+### canonical_gsp_id 63   (2 submission(s))
+  doc   3715  gsp 0063  submitted 01/30/2020  rank 1  (1 author(s))
+       gsa_29   Delano-Earlimart Irrigation District GSA
+  doc   9219  gsp 0063  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_29   Delano-Earlimart Irrigation District GSA
+
+### canonical_gsp_id 65   (2 submission(s))
+  doc   3714  gsp 0065  submitted 01/30/2020  rank 1  (1 author(s))
+       gsa_43   Pixley Irrigation District GSA
+  doc   9021  gsp 0065  submitted 07/27/2022  rank 2  (1 author(s))
+       gsa_43   Pixley Irrigation District GSA
+
+### canonical_gsp_id 67   (1 submission(s))
+  doc   4356  gsp 0067  submitted 11/04/2020  rank 1  (1 author(s))
+       gsa_400  Castac Basin GSA
+
+### canonical_gsp_id 70   (1 submission(s))
+  doc   7993  gsp 0070  submitted 01/31/2022  rank 1  (1 author(s))
+       gsa_493  County of Humboldt GSA
+
+### canonical_gsp_id 71   (1 submission(s))
+  doc   4539  gsp 0071  submitted 11/17/2021  rank 1  (1 author(s))
+       gsa_28   West San Jacinto GSA
+
+### canonical_gsp_id 72   (2 submission(s))
+  doc   6325  gsp 0072  submitted 01/26/2022  rank 1  (1 author(s))
+       gsa_468  Fillmore and Piru Basins GSA - Piru
+  doc  10230  gsp 0072  submitted 07/15/2024  rank 2  (1 author(s))
+       gsa_468  Fillmore and Piru Basins GSA - Piru
+
+### canonical_gsp_id 73   (2 submission(s))
+  doc   6324  gsp 0073  submitted 01/26/2022  rank 1  (1 author(s))
+       gsa_339  Fillmore and Piru Basins GSA - Fillmore
+  doc  10248  gsp 0073  submitted 07/16/2024  rank 2  (1 author(s))
+       gsa_339  Fillmore and Piru Basins GSA - Fillmore
+
+### canonical_gsp_id 74   (1 submission(s))
+  doc   5005  gsp 0074  submitted 01/03/2022  rank 1  (1 author(s))
+       gsa_338  Santa Margarita Groundwater Agency GSA
+
+### canonical_gsp_id 75   (1 submission(s))
+  doc   7827  gsp 0075  submitted 01/28/2022  rank 1  (1 author(s))
+       gsa_370  San Pasqual Valley GSA
+
+### canonical_gsp_id 76   (1 submission(s))
+  doc   7813  gsp 0076  submitted 01/31/2022  rank 1  (1 author(s))
+       gsa_359  Upper San Luis Rey Groundwater Management Authority GSA
+
+### canonical_gsp_id 77   (1 submission(s))
+  doc   6135  gsp 0077  submitted 01/24/2022  rank 1  (1 author(s))
+       gsa_248  Upper Ventura River Groundwater Agency GSA
+
+### canonical_gsp_id 78   (1 submission(s))
+  doc   5607  gsp 0078  submitted 01/18/2022  rank 1  (1 author(s))
+       gsa_5    Santa Ynez River Valley Basin Western Management Area GSA
+
+### canonical_gsp_id 79   (1 submission(s))
+  doc   5606  gsp 0079  submitted 01/18/2022  rank 1  (1 author(s))
+       gsa_11   Santa Ynez River Valley Basin Central Management Area GSA
+
+### canonical_gsp_id 80   (1 submission(s))
+  doc   5975  gsp 0080  submitted 01/19/2022  rank 1  (1 author(s))
+       gsa_273  Santa Ynez River Valley Basin Eastern Management Area GSA
+
+### canonical_gsp_id 81   (1 submission(s))
+  doc   7701  gsp 0081  submitted 01/27/2022  rank 1  (1 author(s))
+       gsa_260  Temescal Subbasin GSA
+
+### canonical_gsp_id 82   (1 submission(s))
+  doc   6110  gsp 0082  submitted 01/20/2022  rank 1  (1 author(s))
+       gsa_287  Enterprise-Anderson GSA - Enterprise
+
+### canonical_gsp_id 83   (1 submission(s))
+  doc   6111  gsp 0083  submitted 01/20/2022  rank 1  (1 author(s))
+       gsa_464  Enterprise-Anderson GSA - Anderson
+
+### canonical_gsp_id 84   (1 submission(s))
+  doc   7195  gsp 0084  submitted 01/28/2022  rank 1  (1 author(s))
+       gsa_342  Ukiah Valley Basin GSA
+
+### canonical_gsp_id 85   (2 submission(s))
+  doc   8058  gsp 0085  submitted 01/31/2022  rank 1  (2 author(s))
+       gsa_192  Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA
+       gsa_300  County of Tuolumne GSA
+  doc  10202  gsp 0085  submitted 07/12/2024  rank 2  (2 author(s))
+       gsa_192  Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA
+       gsa_300  County of Tuolumne GSA
+
+### canonical_gsp_id 86   (1 submission(s))
+  doc   6450  gsp 0086  submitted 01/28/2022  rank 1  (2 author(s))
+       gsa_178  Rock Creek Reclamation District GSA
+       gsa_409  Vina GSA
+
+### canonical_gsp_id 87   (1 submission(s))
+  doc   8197  gsp 0087  submitted 01/21/2022  rank 1  (1 author(s))
+       gsa_290  San Antonio Basin GSA
+
+### canonical_gsp_id 88   (2 submission(s))
+  doc   7652  gsp 0088  submitted 01/28/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_457  Siskiyou County Flood Control and Water Conservation District GS
+  doc  10224  gsp 0088  submitted 07/12/2024  rank 2  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_457  Siskiyou County Flood Control and Water Conservation District GS
+
+### canonical_gsp_id 89   (1 submission(s))
+  doc   6317  gsp 0089  submitted 01/28/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_253  Siskiyou County Flood Control and Water Conservation District GS
+
+### canonical_gsp_id 90   (1 submission(s))
+  doc   6461  gsp 0090  submitted 01/28/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_456  Siskiyou County Flood Control and Water Conservation District GS
+
+### canonical_gsp_id 91   (1 submission(s))
+  doc   7188  gsp 0091  submitted 01/26/2022  rank 1  (2 author(s))
+       gsa_104  East Bay Municipal Utility District GSA
+       gsa_200  City of Hayward GSA
+
+### canonical_gsp_id 92   (2 submission(s))
+  doc   6881  gsp 0092  submitted 01/28/2022  rank 1  (2 author(s))
+       gsa_369  Glenn Groundwater Authority GSA
+       gsa_323  Colusa Groundwater Authority GSA - Colusa
+  doc  10061  gsp 0092  submitted 04/22/2024  rank 2  (2 author(s))
+       gsa_369  Glenn Groundwater Authority GSA
+       gsa_323  Colusa Groundwater Authority GSA - Colusa
+
+### canonical_gsp_id 93   (1 submission(s))
+  doc   4918  gsp 0093  submitted 01/12/2022  rank 1  (1 author(s))
+       gsa_267  Bedford-Coldwater Subbasin GSA
+
+### canonical_gsp_id 94   (2 submission(s))
+  doc   5221  gsp 0094  submitted 01/28/2022  rank 1  (2 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_390  Corning Subbasin GSA
+       gsa_418  Tehama County Flood Control and Water Conservation District GSA
+  doc  10079  gsp 0094  submitted 04/22/2024  rank 2  (2 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_390  Corning Subbasin GSA
+       gsa_418  Tehama County Flood Control and Water Conservation District GSA
+
+### canonical_gsp_id 95   (2 submission(s))
+  doc   5806  gsp 0095  submitted 01/27/2022  rank 1  (2 author(s))
+       gsa_240  County of Lassen GSA
+       gsa_232  County of Modoc GSA - Big Valley
+  doc  10050  gsp 0095  submitted 04/22/2024  rank 2  (2 author(s))
+       gsa_240  County of Lassen GSA
+       gsa_232  County of Modoc GSA - Big Valley
+
+### canonical_gsp_id 96   (1 submission(s))
+  doc   7793  gsp 0096  submitted 01/28/2022  rank 1  (1 author(s))
+       gsa_217  Yolo Subbasin GSA
+
+### canonical_gsp_id 97   (2 submission(s))
+  doc   8090  gsp 0097  submitted 01/31/2022  rank 1  (4 author(s))
+       gsa_258  Tulelake Irrigation District GSA
+       gsa_256  County of Siskiyou GSA
+       gsa_280  City of Tulelake GSA
+       gsa_236  County of Modoc GSA - Tulelake
+  doc  10268  gsp 0097  submitted 07/16/2024  rank 2  (4 author(s))
+       gsa_258  Tulelake Irrigation District GSA
+       gsa_256  County of Siskiyou GSA
+       gsa_280  City of Tulelake GSA
+       gsa_236  County of Modoc GSA - Tulelake
+
+### canonical_gsp_id 98   (1 submission(s))
+  doc   6291  gsp 0098  submitted 01/28/2022  rank 1  (13 author(s))
+       gsa_120  Western Canal Water District GSA
+       gsa_112  Richvale Irrigation District GSA
+       gsa_128  City of Gridley GSA
+       gsa_173  City of Biggs GSA
+       gsa_117  Biggs-West Gridley Water District GSA
+       gsa_195  Reclamation District No. 2106 GSA
+       gsa_417  Butte Water District GSA - Butte
+       gsa_467  Colusa Groundwater Authority GSA - Butte
+       gsa_415  County of Glenn GSA - Butte
+       gsa_416  Reclamation District No. 1004 GSA - Butte 1
+       gsa_251  County of Butte GSA - Butte 2
+       gsa_122  County of Butte GSA - Butte 1
+       gsa_138  Reclamation District No. 1004 GSA - Butte 2
+
+### canonical_gsp_id 99   (1 submission(s))
+  doc   6455  gsp 0099  submitted 01/28/2022  rank 1  (1 author(s))
+       gsa_406  Wyandotte Creek GSA
+
+### canonical_gsp_id 100   (1 submission(s))
+  doc   6197  gsp 0100  submitted 01/24/2022  rank 1  (5 author(s))
+       gsa_118  Sacramento Groundwater Authority GSA
+       gsa_233  South Sutter Water District GSA
+       gsa_209  West Placer GSA
+       gsa_247  Reclamation District No. 1001 GSA
+       gsa_454  County of Sutter GSA - North American
+
+### canonical_gsp_id 101   (1 submission(s))
+  doc   7411  gsp 0101  submitted 01/29/2022  rank 1  (1 author(s))
+       gsa_263  Sonoma Valley GSA
+
+### canonical_gsp_id 103   (1 submission(s))
+  doc   5091  gsp 0103  submitted 01/26/2022  rank 1  (1 author(s))
+       gsa_403  Owens Valley Groundwater Authority GSA - Owens Valley
+
+### canonical_gsp_id 104   (1 submission(s))
+  doc   7680  gsp 0104  submitted 01/27/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_349  Yucaipa Basin GSA
+
+### canonical_gsp_id 105   (1 submission(s))
+  doc   5099  gsp 0105  submitted 01/12/2022  rank 1  (2 author(s))
+       gsa_89   San Benito County Water District GSA
+       gsa_345  Santa Clara Valley Water District GSA - North San Benito
+
+### canonical_gsp_id 106   (1 submission(s))
+  doc   5232  gsp 0106  submitted 01/27/2022  rank 1  (7 author(s))
+       gsa_155  Omochumne-Hartnell Water District GSA - Cosumnes
+       gsa_97   Galt Irrigation District GSA
+       gsa_182  Clay Water District GSA
+       gsa_193  Amador County Groundwater Management Authority GSA
+       gsa_312  City of Galt GSA
+       gsa_160  Sloughhouse Resource Conservation District GSA - Cosumnes
+       gsa_496  Sacramento County GSA - Cosumnes
+
+### canonical_gsp_id 110   (2 submission(s))
+  doc   7762  gsp 0110  submitted 01/28/2022  rank 1  (2 author(s))
+       gsa_225  West Turlock Subbasin GSA
+       gsa_238  East Turlock Subbasin GSA
+  doc  10217  gsp 0110  submitted 07/12/2024  rank 2  (2 author(s))
+       gsa_225  West Turlock Subbasin GSA
+       gsa_238  East Turlock Subbasin GSA
+
+### canonical_gsp_id 111   (1 submission(s))
+  doc   6252  gsp 0111  submitted 01/27/2022  rank 1  (10 author(s))
+       gsa_295  County of Sacramento GSA - South American
+       gsa_366  Reclamation District No. 551 GSA
+       gsa_387  Franklin Drainage District GSA
+       gsa_378  Reclamation District No. 369 GSA
+       gsa_376  Reclamation District No. 744 GSA
+       gsa_377  Reclamation District No. 813 GSA
+       gsa_364  Reclamation District No. 2110 GSA
+       gsa_373  Reclamation District No. 1002 GSA
+       gsa_156  Omochumne-Hartnell Water District GSA - South American
+       gsa_147  Sacramento Central Groundwater Authority GSA - 1
+
+### canonical_gsp_id 112   (1 submission(s))
+  doc   7787  gsp 0112  submitted 01/28/2022  rank 1  (9 author(s))
+       gsa_114  Sutter Community Service District GSA
+       gsa_121  Sutter Extension Water District GSA
+       gsa_320  Reclamation District No. 70 GSA
+       gsa_239  Reclamation District No. 1500 GSA
+       gsa_321  Reclamation District No. 1660 GSA
+       gsa_136  City of Live Oak GSA
+       gsa_119  Butte Water District GSA - Sutter
+       gsa_264  City of Yuba City GSA
+       gsa_218  County of Sutter GSA - Sutter
+
+### canonical_gsp_id 113   (1 submission(s))
+  doc   6290  gsp 0113  submitted 01/24/2022  rank 1  (1 author(s))
+       gsa_268  Salinas Valley Basin GSA - Langley Area
+
+### canonical_gsp_id 114   (1 submission(s))
+  doc   6533  gsp 0114  submitted 01/24/2022  rank 1  (1 author(s))
+       gsa_460  Salinas Valley Basin GSA - East Side Aquifer
+
+### canonical_gsp_id 115   (1 submission(s))
+  doc   6260  gsp 0115  submitted 01/24/2022  rank 1  (1 author(s))
+       gsa_459  Salinas Valley Basin GSA - Upper Valley Aquifer
+
+### canonical_gsp_id 116   (1 submission(s))
+  doc   6527  gsp 0116  submitted 01/24/2022  rank 1  (2 author(s))
+       gsa_261  Arroyo Seco GSA - 1
+       gsa_462  Salinas Valley Basin GSA - Forebay Aquifer
+
+### canonical_gsp_id 117   (1 submission(s))
+  doc   7741  gsp 0117  submitted 01/27/2022  rank 1  (6 author(s))
+       gsa_180  Solano Irrigation District GSA
+       gsa_272  City of Vacaville GSA
+       gsa_340  Solano Subbasin GSA
+       gsa_384  Reclamation District No. 501 GSA
+       gsa_385  Reclamation District No. 349 GSA
+       gsa_497  Sacramento County GSA - Solano
+
+### canonical_gsp_id 118   (1 submission(s))
+  doc   6428  gsp 0118  submitted 01/26/2022  rank 1  (2 author(s))
+       gsa_336  County of San Luis Obispo GSA - San Luis Obispo Valley
+       gsa_329  City of San Luis Obispo GSA
+
+### canonical_gsp_id 119   (1 submission(s))
+  doc   7521  gsp 0119  submitted 01/26/2022  rank 1  (1 author(s))
+       gsa_21   Elsinore Valley GSA
+
+### canonical_gsp_id 120   (1 submission(s))
+  doc   6617  gsp 0120  submitted 01/25/2022  rank 1  (7 author(s))
+       gsa_259  County of Contra Costa GSA
+       gsa_289  Diablo Water District GSA
+       gsa_265  Discovery Bay Community Services District GSA
+       gsa_252  East Contra Costa Irrigation District GSA
+       gsa_224  City of Brentwood GSA
+       gsa_299  City of Antioch GSA
+       gsa_463  Byron-Bethany Irrigation District GSA - East Contra Costa
+
+### canonical_gsp_id 121   (1 submission(s))
+  doc   6097  gsp 0121  submitted 01/25/2022  rank 1  (3 author(s))
+       gsa_330  Verbenia GSA
+       gsa_262  San Gorgonio Pass GSA
+       gsa_450  Desert Water Agency GSA - Statutory Area - San Gorgonio Pass
+
+### canonical_gsp_id 122   (1 submission(s))
+  doc   7514  gsp 0122  submitted 01/28/2022  rank 1  (6 author(s))
+       gsa_157  City of Tracy GSA
+       gsa_183  City of Lathrop GSA
+       gsa_149  Banta-Carbona Irrigation District GSA
+       gsa_286  Byron-Bethany Irrigation District GSA - Tracy
+       gsa_343  Stewart Tract GSA
+       gsa_146  County of San Joaquin GSA - Tracy
+
+### canonical_gsp_id 123   (1 submission(s))
+  doc   7769  gsp 0123  submitted 01/28/2022  rank 1  (1 author(s))
+       gsa_244  White Wolf GSA
+
+### canonical_gsp_id 124   (1 submission(s))
+  doc   8062  gsp 0124  submitted 01/31/2022  rank 1  (1 author(s))
+       gsa_488  County of Napa GSA
+
+### canonical_gsp_id 125   (1 submission(s))
+  doc   7517  gsp 0125  submitted 01/28/2022  rank 1  (2 author(s))
+       gsa_227  Sierra Valley Groundwater Management District GSA
+       gsa_234  County of Plumas GSA
+
+### canonical_gsp_id 127   (1 submission(s))
+  doc   7696  gsp 0127  submitted 01/31/2022  rank 1  (1 author(s))
+       gsa_480  Big Valley GSA
+
+### canonical_gsp_id 128   (1 submission(s))
+  doc   7894  gsp 0128  submitted 01/28/2022  rank 1  (2 author(s))
+       gsa_50   Marina Coast Water District GSA - Monterey
+       gsa_458  Salinas Valley Basin GSA - Monterey
+
+### canonical_gsp_id 129   (1 submission(s))
+  doc   6073  gsp 0129  submitted 01/27/2022  rank 1  (1 author(s))
+       gsa_337  Santa Monica Basin GSA
+
+### canonical_gsp_id 130   (1 submission(s))
+  doc   7953  gsp 0130  submitted 01/31/2022  rank 1  (1 author(s))
+       gsa_162  Ojai Basin Groundwater Management Agency GSA
+
+### canonical_gsp_id 131   (1 submission(s))
+  doc   6529  gsp 0131  submitted 01/24/2022  rank 1  (1 author(s))
+       gsa_315  Santa Clarita Valley GSA
+
+### canonical_gsp_id 132   (1 submission(s))
+  doc   9300  gsp 0132  submitted 01/29/2022  rank 1  (1 author(s))
+       gsa_350  Petaluma Valley GSA
+
+### canonical_gsp_id 133   (1 submission(s))
+  doc   7964  gsp 0133  submitted 01/30/2022  rank 1  (1 author(s))
+       gsa_296  Atascadero Basin GSA
+
+### canonical_gsp_id 134   (2 submission(s))
+  doc   8072  gsp 0134  submitted 01/31/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_422  Tehama County Flood Control and Water Conservation District GSA
+  doc  10082  gsp 0134  submitted 04/22/2024  rank 2  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_422  Tehama County Flood Control and Water Conservation District GSA
+
+### canonical_gsp_id 136   (1 submission(s))
+  doc   7442  gsp 0136  submitted 01/29/2022  rank 1  (1 author(s))
+       gsa_331  Santa Rosa Plain GSA
+
+### canonical_gsp_id 137   (1 submission(s))
+  doc   8078  gsp 0137  submitted 01/31/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_124  Tehama County Flood Control and Water Conservation District GSA
+
+### canonical_gsp_id 138   (1 submission(s))
+  doc   8630  gsp 0138  submitted 06/29/2022  rank 1  (1 author(s))
+       gsa_328  Bear Valley Basin GSA
+
+### canonical_gsp_id 139   (2 submission(s))
+  doc   8085  gsp 0139  submitted 01/31/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_420  Tehama County Flood Control and Water Conservation District GSA
+  doc  10064  gsp 0139  submitted 04/22/2024  rank 2  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_420  Tehama County Flood Control and Water Conservation District GSA
+
+### canonical_gsp_id 140   (2 submission(s))
+  doc   8089  gsp 0140  submitted 01/31/2022  rank 1  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_419  Tehama County Flood Control and Water Conservation District GSA
+  doc  10066  gsp 0140  submitted 04/22/2024  rank 2  (1 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_419  Tehama County Flood Control and Water Conservation District GSA
+
+### canonical_gsp_id 144   (1 submission(s))
+  doc   8634  gsp 0144  submitted 05/17/2022  rank 1  (1 author(s))
+       gsa_275  Western Municipal Water District GSA - Riverside-Arlington
+
+### canonical_gsp_id 145   (2 submission(s))
+  doc   8203  gsp 0145  submitted 04/04/2022  rank 1  (3 author(s))
+       gsa_190  Pleasant Valley GSA
+       gsa_408  County of Fresno GSA - Pleasant Valley
+       gsa_410  City of Coalinga GSA
+  doc  10265  gsp 0145  submitted 07/16/2024  rank 2  (3 author(s))
+       gsa_190  Pleasant Valley GSA
+       gsa_408  County of Fresno GSA - Pleasant Valley
+       gsa_410  City of Coalinga GSA
+
+### canonical_gsp_id 149   (2 submission(s))
+  doc   8591  gsp 0149  submitted 07/26/2022  rank 1  (1 author(s))
+       gsa_212  Spadra Basin GSA
+  doc  11674  gsp 0149  submitted 11/26/2025  rank 2  (1 author(s))
+       gsa_212  Spadra Basin GSA
+
+### canonical_gsp_id 150   (9 submission(s))
+  doc   9056  gsp 0150  submitted 06/20/2022  rank 1  (3 author(s))
+       gsa_482  Tejon-Castac Water District GSA
+       gsa_481  Arvin GSA
+       gsa_484  Wheeler Ridge-Maricopa GSA
+  doc   8969  gsp 0150  submitted 07/27/2022  rank 2  (3 author(s))
+       gsa_482  Tejon-Castac Water District GSA
+       gsa_481  Arvin GSA
+       gsa_484  Wheeler Ridge-Maricopa GSA
+  doc  11781  gsp 0173  submitted 01/15/2026  rank 3  (1 author(s))
+       gsa_506  Westside District Water Authority GSA
+  doc  11827  gsp 0172  submitted 01/15/2026  rank 4  (1 author(s))
+       gsa_277  Semitropic Water Storage District GSA
+  doc  11840  gsp 0169  submitted 01/15/2026  rank 5  (1 author(s))
+       gsa_254  Henry Miller Water District GSA
+  doc  11853  gsp 0170  submitted 01/15/2026  rank 6  (1 author(s))
+       gsa_517  Kern-Tulare Water District GSA
+  doc  11866  gsp 0168  submitted 01/15/2026  rank 7  (1 author(s))
+       gsa_15   Buena Vista Water Storage District GSA
+  doc  11894  gsp 0167  submitted 01/15/2026  rank 8  (14 author(s))
+       gsa_507  Shafter-Wasco Irrigation District GSA
+       gsa_514  Southern San Joaquin Municipal Utility District - GSA
+       gsa_482  Tejon-Castac Water District GSA
+       gsa_39   West Kern Water District GSA
+       gsa_22   Greenfield County Water District GSA
+       gsa_188  Pioneer GSA
+       gsa_306  Kern Non-Districted Land Authority GSA
+       gsa_326  Cawelo Water District GSA
+       gsa_20   Kern River GSA
+       gsa_481  Arvin GSA
+       gsa_508  North Kern Water Storage District GSA
+       gsa_515  Rosedale-Rio Bravo Water Storage District GSA
+       gsa_484  Wheeler Ridge-Maricopa GSA
+       gsa_523  Kern Water Bank GSA
+  doc  11904  gsp 0171  submitted 01/15/2026  rank 9  (1 author(s))
+       gsa_196  Olcese Water District GSA
+
+### canonical_gsp_id 155   (1 submission(s))
+  doc   9704  gsp 0155  submitted 06/22/2023  rank 1  (1 author(s))
+       gsa_404  Montecito Groundwater Basin GSA
+
+### canonical_gsp_id 156   (1 submission(s))
+  doc   9918  gsp 0156  submitted 06/28/2023  rank 1  (2 author(s)) [SCRAPE-NAME MISMATCH]
+       gsa_434  Fox Canyon Groundwater Management Agency GSA - Arroyo Santa Rosa
+       gsa_49   Arroyo Santa Rosa Valley Basin GSA
+
+### canonical_gsp_id 157   (1 submission(s))
+  doc  10029  gsp 0157  submitted 02/13/2024  rank 1  (1 author(s))
+       gsa_491  Carpinteria GSA

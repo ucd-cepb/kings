@@ -181,15 +181,18 @@ jac_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.na
 jac_totalentities      <- jac_genericentities
 
 
-# --- mult_gsa: flagged when MULTIPLE GSAs jointly produced the plan document ---
+# --- mult_gsa: COUNT of GSAs that jointly produced the plan document -----------
 # Derived from the 00_ingest crosswalk `gsa_ids` (comma-separated integer GSA_IDs
-# per gsp_doc_id): TRUE when a document names 2+ distinct GSAs. Replaces the
+# per gsp_doc_id): the number of distinct GSAs the document names. Replaces the
 # legacy meta$mult_gsas column (gsp_covariates.csv, keyed per plan, stops at 0156).
+# INTEGER, not binary (changed 2026-10-08, user) -- kept identical to
+# make_binary0.9_networks.R, which carries the full rationale; it controls the
+# authoring-agency exposure that the shared-entity covariates deliberately retain.
 xw_gsa <- fread(nip_product("00_ingest", "id_crosswalk.csv"),
                 colClasses = list(character = c("gsp_doc_id", "gsa_ids")))
 xw_gsa[, mult_gsa := vapply(strsplit(gsa_ids, ","), function(v) {
-  ids <- unique(trimws(v)); length(ids[nzchar(ids)]) > 1L
-}, logical(1))]
+  ids <- unique(trimws(v)); length(ids[nzchar(ids)])
+}, integer(1))]
 mult_gsa_lookup <- setNames(xw_gsa$mult_gsa, xw_gsa$gsp_doc_id)
 
 # --- priority: from authoritative core BASIN metadata (sgma_basin_full) ---
@@ -240,35 +243,35 @@ saveRDS(list(jac_net,jac_nb,jac_totalentities,jac_consultantentities,jac_researc
 saveRDS(list(kn_net,kn_nb,kn_totalentities,kn_consultantentities,kn_researchentities,kn_ngoentities,kn_crnentities),file = 'Network_Innovation_Paper/data_products/04_modeling/rds_placeholders/kn_object.rds')
 
 
-mod1_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') + 
+mod1_ref_net <- ergm(ref_net ~ sum + triangles + nodecov('mult_gsa') + 
                         nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(ref_nb) + edgecov(ref_totalentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(ref_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod1_kn_net <- ergm(kn_net ~ sum + triangles + nodefactor('mult_gsa') + 
+mod1_kn_net <- ergm(kn_net ~ sum + triangles + nodecov('mult_gsa') + 
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') + 
                        edgecov(kn_nb) + edgecov(kn_totalentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(kn_net,'cosim')), 1),estimate = 'CD',,control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod1_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod1_jc_net <- ergm(jac_net ~ sum + triangles + nodecov('mult_gsa') +
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(jac_nb) +  edgecov(jac_totalentities), response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
 
 # Model 2 (disaggregated focal subnetworks): consultant, research and ngo entered separately.
-mod2_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod2_ref_net <- ergm(ref_net ~ sum + triangles + nodecov('mult_gsa') +
                         nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(ref_nb) + edgecov(ref_consultantentities) + edgecov(ref_researchentities) + edgecov(ref_ngoentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(ref_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod2_kn_net <- ergm(kn_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod2_kn_net <- ergm(kn_net ~ sum + triangles + nodecov('mult_gsa') +
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(kn_nb) + edgecov(kn_consultantentities) + edgecov(kn_researchentities) + edgecov(kn_ngoentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(kn_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod2_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod2_jc_net <- ergm(jac_net ~ sum + triangles + nodecov('mult_gsa') +
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(jac_nb) + edgecov(jac_consultantentities) + edgecov(jac_researchentities) + edgecov(jac_ngoentities),response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
 
 # Model 3 (grouped focal subnetworks -- the 4th run): consultant+research+ngo pooled (crn).
-mod3_ref_net <- ergm(ref_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod3_ref_net <- ergm(ref_net ~ sum + triangles + nodecov('mult_gsa') +
                         nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(ref_nb) + edgecov(ref_crnentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(ref_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod3_kn_net <- ergm(kn_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod3_kn_net <- ergm(kn_net ~ sum + triangles + nodecov('mult_gsa') +
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(kn_nb) + edgecov(kn_crnentities),response = 'cosim',reference=~Unif(min(get.edge.attribute(kn_net,'cosim')), 1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
-mod3_jc_net <- ergm(jac_net ~ sum + triangles + nodefactor('mult_gsa') +
+mod3_jc_net <- ergm(jac_net ~ sum + triangles + nodecov('mult_gsa') +
                        nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(jac_nb) + edgecov(jac_crnentities),response = 'jaccard',reference=~Unif(min(get.edge.attribute(jac_net,'jaccard')),1),estimate = 'CD',control = control.ergm(parallel = 8,MCMC.samplesize = 1e5))
 

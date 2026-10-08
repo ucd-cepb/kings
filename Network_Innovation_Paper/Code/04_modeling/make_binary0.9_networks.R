@@ -186,18 +186,43 @@ jac_crnentities        <- align_gsp_matrix(gsp_crn_mat,        network.vertex.na
 jac_totalentities      <- jac_genericentities
 
 
-# --- mult_gsa: flagged when MULTIPLE GSAs jointly produced the plan document ---
-# A plan document is tagged mult_gsa if it was authored by more than one GSA,
-# i.e. its 00_ingest crosswalk `gsa_ids` (a comma-separated list of integer
-# GSA_IDs per gsp_doc_id) names 2+ distinct GSAs. This restores the legacy
-# meta$mult_gsas meaning (a count of authoring GSAs). It does NOT consult
-# sgma_gsa_full or formation_type; a document with a single GSA is FALSE even
-# when that GSA is itself a multi-entity (JPA/MOU) formation.
+# --- mult_gsa: COUNT of GSAs that jointly produced the plan document -----------
+# The number of distinct GSAs named in the document's 00_ingest crosswalk
+# `gsa_ids` (a comma-separated list of integer GSA_IDs per gsp_doc_id). It does
+# NOT consult sgma_gsa_full or formation_type; a document with a single GSA is 1
+# even when that GSA is itself a multi-entity (JPA/MOU) formation.
+#
+# INTEGER, not binary (changed 2026-10-08, user). It was TRUE/FALSE at 2+ GSAs
+# entered as nodefactor(); it is now a count entered as nodecov(), which is also
+# the form the legacy meta$mult_gsas had. Rationale: the shared-entity covariates
+# count entities BOTH plans have a parsed relation to, and that count rises with
+# how many agencies a plan involves. That breadth is substantive and is
+# deliberately KEPT in the covariate (see
+# _entity_groups.R::build_shared_entity_matrix); the exposure it carries is
+# controlled HERE instead, and a 1-vs-23 agency gap is not a binary contrast.
+#
+# HOW MUCH this controls, measured (scratchpad/multgsa.R, 118-plan frame): the
+# entity-breadth gradient tracks the number of GSA ROWS in all_gsa_edges.csv
+# (cor 0.794), and only weakly the AUTHORING count this term uses (cor 0.243,
+# spearman 0.30; the two agency counts correlate 0.461). The gap is because
+# build_gsa_edges.R folds on every GSA-typed vertex in a document, authors or
+# not. So treat this as a partial control until Step 3 (build_gsa_bag_edges.R)
+# restricts entity observation to the author set, after which it lines up.
+# Collinearity with the other collaboration term is a non-issue:
+# cor(mult_gsa, joint_agency) = 0.113.
+#
+# KNOWN GAP: 1 plan in the frame (gsp_doc_id 3712 / canonical 43, both of its
+# documents) has an EMPTY crosswalk `gsa_ids`, so it scores 0 authors -- not a
+# real value, since every plan has at least one GSA. Under the old binary coding
+# this was silently FALSE and indistinguishable from a single-author plan; as a
+# count it is a visible 0 that nodecov() will take literally. Distribution over
+# the frame: 0:1, 1:79, 2:16, 3:5, 4:4, 5:3, 6:2, 7:2, 9:1, 10:2, 13:1, 16:1,
+# 23:1. Resolve before the final run (backfill from gsa_names/roster, or exclude).
 xw_gsa <- fread(nip_product("00_ingest", "id_crosswalk.csv"),
                 colClasses = list(character = c("gsp_doc_id", "gsa_ids")))
 xw_gsa[, mult_gsa := vapply(strsplit(gsa_ids, ","), function(v) {
-  ids <- unique(trimws(v)); length(ids[nzchar(ids)]) > 1L
-}, logical(1))]
+  ids <- unique(trimws(v)); length(ids[nzchar(ids)])
+}, integer(1))]
 mult_gsa_lookup <- setNames(xw_gsa$mult_gsa, xw_gsa$gsp_doc_id)
 
 # --- priority: derived from authoritative core BASIN metadata (sgma_basin_full) ---
@@ -240,8 +265,11 @@ library(Bergm)
 
 vclass <- sapply(list.vertex.attributes(jac_net),function(x) class(jac_net %v% x))
 
-sapply(list.vertex.attributes(jac_net),function(x) summary(jac_net %v% x))[vclass=='numeric']
-sapply(list.vertex.attributes(jac_net),function(x) table(jac_net %v% x))[vclass!='numeric'][c('joint_agency','mult_gsa','priority')]
+# mult_gsa is now an integer count, so it belongs with the numeric summaries; its
+# full distribution is still worth eyeballing, hence the explicit table below.
+sapply(list.vertex.attributes(jac_net),function(x) summary(jac_net %v% x))[vclass %in% c('numeric','integer')]
+sapply(list.vertex.attributes(jac_net),function(x) table(jac_net %v% x))[!vclass %in% c('numeric','integer')][c('joint_agency','priority')]
+table(jac_net %v% 'mult_gsa')   # authoring-agency count distribution
 
 
 isSymmetric(jac_totalentities)
@@ -291,7 +319,7 @@ mod0_jc_net <- bergm(jac_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) +
 m1_ref_priors <- c(colMeans(mod0_ref_net$Theta),rep(0,7))
 m1_ref_sigma <-diag(10,length(m1_ref_priors))
 mod1_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) + 
-   nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+   nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(ref_nb[network.vertex.names(ref_net),network.vertex.names(ref_net)]) + 
       edgecov(ref_totalentities[network.vertex.names(ref_net),network.vertex.names(ref_net)]), 
                      offset.coef = log(network.density(ref_net)), 
@@ -302,7 +330,7 @@ mod1_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) 
 m1_kn_priors <- c(colMeans(mod0_kn_net$Theta),rep(0,7))
 m1_kn_sigma <-diag(10,length(m1_kn_priors))   
 mod1_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) + 
-                       nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(ref_nb[network.vertex.names(kn_net),network.vertex.names(kn_net)]) + edgecov(ref_totalentities[network.vertex.names(kn_net),network.vertex.names(kn_net)]), 
                     offset.coef = log(network.density(kn_net)), 
                     prior.mean = m1_kn_priors,
@@ -318,7 +346,7 @@ rowSums(jac_totalentities)
 m1_jc_priors <- c(colMeans(mod0_jc_net$Theta),rep(0,7))
 m1_jc_sigma <-diag(10,length(m1_jc_priors))   
 mod1_jc_net <- bergm(jac_net ~offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) + 
-                        nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(jac_nb[network.vertex.names(jac_net),network.vertex.names(jac_net)]) + 
                         edgecov(jac_totalentities[network.vertex.names(jac_net),network.vertex.names(jac_net)]), 
                      offset.coef = log(network.density(jac_net)), 
@@ -384,7 +412,7 @@ texreg::htmlreg(list(mod1_jc_net,mod1_kn_net,mod1_ref_net),
 m2_ref_priors <- c(colMeans(mod0_ref_net$Theta),rep(0,9))
 m2_ref_sigma <-diag(10,length(m2_ref_priors))
 mod2_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
-                         nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                         nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                          edgecov(ref_nb) +
                          edgecov(ref_consultantentities) +
                          edgecov(ref_researchentities) +
@@ -397,7 +425,7 @@ mod2_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) 
 m2_kn_priors <- c(colMeans(mod0_kn_net$Theta),rep(0,9))
 m2_kn_sigma <-diag(10,length(m2_kn_priors))
 mod2_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
-                        nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(kn_nb) +
                         edgecov(kn_consultantentities) +
                         edgecov(kn_researchentities) +
@@ -410,7 +438,7 @@ mod2_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + 
 m2_jc_priors <- c(colMeans(mod0_jc_net$Theta),rep(0,9))
 m2_jc_sigma <-diag(10,length(m2_jc_priors))
 mod2_jc_net <- bergm(jac_net ~offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
-                        nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(jac_nb) +
                         edgecov(jac_consultantentities) +
                         edgecov(jac_researchentities) +
@@ -480,7 +508,7 @@ texreg::htmlreg(list( mod2_jc_net, mod2_kn_net,mod2_ref_net),
 m3_ref_priors <- c(colMeans(mod0_ref_net$Theta),rep(0,7))
 m3_ref_sigma  <- diag(10,length(m3_ref_priors))
 mod3_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
-                        nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                        nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                         edgecov(ref_nb) + edgecov(ref_crnentities),
                       offset.coef = log(network.density(ref_net)),
                       prior.mean = m3_ref_priors, prior.sigma = m3_ref_sigma,
@@ -489,7 +517,7 @@ mod3_ref_net <- bergm(ref_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) 
 m3_kn_priors <- c(colMeans(mod0_kn_net$Theta),rep(0,7))
 m3_kn_sigma  <- diag(10,length(m3_kn_priors))
 mod3_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
-                       nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(kn_nb) + edgecov(kn_crnentities),
                      offset.coef = log(network.density(kn_net)),
                      prior.mean = m3_kn_priors, prior.sigma = m3_kn_sigma,
@@ -498,7 +526,7 @@ mod3_kn_net <- bergm(kn_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + 
 m3_jc_priors <- c(colMeans(mod0_jc_net$Theta),rep(0,7))
 m3_jc_sigma  <- diag(10,length(m3_jc_priors))
 mod3_jc_net <- bergm(jac_net ~ offset(edges) + twopath + gwdegree(1,fixed = T) + gwdsp(0.5,fixed = T) +
-                       nodefactor('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
+                       nodecov('mult_gsa') + nodefactor('priority') + nodecov('Republican_Vote_Share') + nodecov('Agr_Share_Of_GDP') +
                        edgecov(jac_nb) + edgecov(jac_crnentities),
                      offset.coef = log(network.density(jac_net)),
                      prior.mean = m3_jc_priors, prior.sigma = m3_jc_sigma,

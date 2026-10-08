@@ -1,0 +1,451 @@
+gsp_doc_id,gsp_id,canonical_gsp_id,submitted_date,doc_rank,version,author_bag_id,author_bag_label
+944,0007,7,01/17/2020,1,1,gsa_23,Aliso Water District GSA
+8770,0007,7,07/20/2022,2,1,gsa_23,Aliso Water District GSA
+11932,0174,7,05/28/2026,3,2,gsa_17,Patterson Irrigation District GSA
+11932,0174,7,05/28/2026,3,2,gsa_220,Turner Island Water District GSA - Delta-Mendota
+11932,0174,7,05/28/2026,3,2,gsa_13,West Stanislaus Irrigation District GSA
+11932,0174,7,05/28/2026,3,2,gsa_231,County of Merced GSA - Delta-Mendota
+11932,0174,7,05/28/2026,3,2,gsa_30,Farmers Water District GSA
+11932,0174,7,05/28/2026,3,2,gsa_23,Aliso Water District GSA
+11932,0174,7,05/28/2026,3,2,gsa_66,City of Patterson GSA
+11932,0174,7,05/28/2026,3,2,gsa_71,City of Los Banos GSA
+11932,0174,7,05/28/2026,3,2,gsa_302,Oro Loma Water District GSA
+11932,0174,7,05/28/2026,3,2,gsa_237,Widren Water District GSA
+11932,0174,7,05/28/2026,3,2,gsa_10,San Joaquin River Exchange Contractors GSA
+11932,0174,7,05/28/2026,3,2,gsa_57,City of Newman GSA
+11932,0174,7,05/28/2026,3,2,gsa_62,Grasslands GSA
+11932,0174,7,05/28/2026,3,2,gsa_67,City of Mendota GSA
+11932,0174,7,05/28/2026,3,2,gsa_360,City of Dos Palos GSA
+11932,0174,7,05/28/2026,3,2,gsa_206,Central Delta-Mendota GSA
+11932,0174,7,05/28/2026,3,2,gsa_214,Northwestern Delta-Mendota GSA
+11932,0174,7,05/28/2026,3,2,gsa_269,City of Firebaugh GSA
+11932,0174,7,05/28/2026,3,2,gsa_271,City of Gustine GSA
+11932,0174,7,05/28/2026,3,2,gsa_301,DM-II GSA
+11932,0174,7,05/28/2026,3,2,gsa_70,County of Madera GSA - Delta-Mendota
+11932,0174,7,05/28/2026,3,2,gsa_298,County of Fresno GSA - Delta-Mendota Management Area A
+11932,0174,7,05/28/2026,3,2,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B
+1979,0008,8,01/23/2020,1,1,gsa_40,Westlands Water District GSA
+8785,0008,8,07/18/2022,2,1,gsa_40,Westlands Water District GSA
+386,0009,9,01/28/2020,1,1,gsa_311,Merced Irrigation-Urban GSA
+386,0009,9,01/28/2020,1,1,gsa_223,Turner Island Water District GSA - Merced
+386,0009,9,01/28/2020,1,1,gsa_219,Merced Subbasin GSA
+8897,0009,9,07/26/2022,2,1,gsa_311,Merced Irrigation-Urban GSA
+8897,0009,9,07/26/2022,2,1,gsa_223,Turner Island Water District GSA - Merced
+8897,0009,9,07/26/2022,2,1,gsa_219,Merced Subbasin GSA
+3166,0011,11,01/30/2020,1,1,gsa_24,Santa Cruz Mid-County Groundwater Agency GSA
+2256,0012,12,01/29/2020,1,1,gsa_61,Chowchilla Water District GSA
+2256,0012,12,01/29/2020,1,1,gsa_68,County of Madera GSA - Chowchilla
+2256,0012,12,01/29/2020,1,1,gsa_191,County of Merced GSA - Chowchilla
+2256,0012,12,01/29/2020,1,1,gsa_394,Triangle T Water District GSA
+9211,0012,12,07/27/2022,2,1,gsa_61,Chowchilla Water District GSA
+9211,0012,12,07/27/2022,2,1,gsa_68,County of Madera GSA - Chowchilla
+9211,0012,12,07/27/2022,2,1,gsa_191,County of Merced GSA - Chowchilla
+9211,0012,12,07/27/2022,2,1,gsa_394,Triangle T Water District GSA
+11395,0160,12,07/14/2025,3,2,gsa_61,Chowchilla Water District GSA
+11395,0160,12,07/14/2025,3,2,gsa_68,County of Madera GSA - Chowchilla
+11395,0160,12,07/14/2025,3,2,gsa_191,County of Merced GSA - Chowchilla
+11395,0160,12,07/14/2025,3,2,gsa_394,Triangle T Water District GSA
+4342,0013,13,01/23/2020,1,1,gsa_214,Northwestern Delta-Mendota GSA
+4342,0013,13,01/23/2020,1,1,gsa_301,DM-II GSA
+4342,0013,13,01/23/2020,1,1,gsa_66,City of Patterson GSA
+4342,0013,13,01/23/2020,1,1,gsa_206,Central Delta-Mendota GSA
+4342,0013,13,01/23/2020,1,1,gsa_237,Widren Water District GSA
+4342,0013,13,01/23/2020,1,1,gsa_302,Oro Loma Water District GSA
+4342,0013,13,01/23/2020,1,1,gsa_17,Patterson Irrigation District GSA
+4342,0013,13,01/23/2020,1,1,gsa_13,West Stanislaus Irrigation District GSA
+4342,0013,13,01/23/2020,1,1,gsa_23,Aliso Water District GSA
+4342,0013,13,01/23/2020,1,1,gsa_360,City of Dos Palos GSA
+4342,0013,13,01/23/2020,1,1,gsa_269,City of Firebaugh GSA
+4342,0013,13,01/23/2020,1,1,gsa_271,City of Gustine GSA
+4342,0013,13,01/23/2020,1,1,gsa_71,City of Los Banos GSA
+4342,0013,13,01/23/2020,1,1,gsa_67,City of Mendota GSA
+4342,0013,13,01/23/2020,1,1,gsa_57,City of Newman GSA
+4342,0013,13,01/23/2020,1,1,gsa_70,County of Madera GSA - Delta-Mendota
+4342,0013,13,01/23/2020,1,1,gsa_30,Farmers Water District GSA
+4342,0013,13,01/23/2020,1,1,gsa_298,County of Fresno GSA - Delta-Mendota Management Area A
+4342,0013,13,01/23/2020,1,1,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B
+4342,0013,13,01/23/2020,1,1,gsa_62,Grasslands GSA
+4342,0013,13,01/23/2020,1,1,gsa_231,County of Merced GSA - Delta-Mendota
+4342,0013,13,01/23/2020,1,1,gsa_10,San Joaquin River Exchange Contractors GSA
+4342,0013,13,01/23/2020,1,1,gsa_220,Turner Island Water District GSA - Delta-Mendota
+8708,0013,13,07/20/2022,2,1,gsa_214,Northwestern Delta-Mendota GSA
+8708,0013,13,07/20/2022,2,1,gsa_301,DM-II GSA
+8708,0013,13,07/20/2022,2,1,gsa_66,City of Patterson GSA
+8708,0013,13,07/20/2022,2,1,gsa_206,Central Delta-Mendota GSA
+8708,0013,13,07/20/2022,2,1,gsa_237,Widren Water District GSA
+8708,0013,13,07/20/2022,2,1,gsa_302,Oro Loma Water District GSA
+8708,0013,13,07/20/2022,2,1,gsa_17,Patterson Irrigation District GSA
+8708,0013,13,07/20/2022,2,1,gsa_13,West Stanislaus Irrigation District GSA
+8708,0013,13,07/20/2022,2,1,gsa_23,Aliso Water District GSA
+8708,0013,13,07/20/2022,2,1,gsa_360,City of Dos Palos GSA
+8708,0013,13,07/20/2022,2,1,gsa_269,City of Firebaugh GSA
+8708,0013,13,07/20/2022,2,1,gsa_271,City of Gustine GSA
+8708,0013,13,07/20/2022,2,1,gsa_71,City of Los Banos GSA
+8708,0013,13,07/20/2022,2,1,gsa_67,City of Mendota GSA
+8708,0013,13,07/20/2022,2,1,gsa_57,City of Newman GSA
+8708,0013,13,07/20/2022,2,1,gsa_70,County of Madera GSA - Delta-Mendota
+8708,0013,13,07/20/2022,2,1,gsa_30,Farmers Water District GSA
+8708,0013,13,07/20/2022,2,1,gsa_298,County of Fresno GSA - Delta-Mendota Management Area A
+8708,0013,13,07/20/2022,2,1,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B
+8708,0013,13,07/20/2022,2,1,gsa_62,Grasslands GSA
+8708,0013,13,07/20/2022,2,1,gsa_231,County of Merced GSA - Delta-Mendota
+8708,0013,13,07/20/2022,2,1,gsa_10,San Joaquin River Exchange Contractors GSA
+8708,0013,13,07/20/2022,2,1,gsa_220,Turner Island Water District GSA - Delta-Mendota
+1147,0014,14,01/23/2020,1,1,gsa_30,Farmers Water District GSA
+8858,0014,14,07/20/2022,2,1,gsa_30,Farmers Water District GSA
+458,0015,15,01/23/2020,1,1,gsa_220,Turner Island Water District GSA - Delta-Mendota
+458,0015,15,01/23/2020,1,1,gsa_231,County of Merced GSA - Delta-Mendota
+458,0015,15,01/23/2020,1,1,gsa_71,City of Los Banos GSA
+458,0015,15,01/23/2020,1,1,gsa_10,San Joaquin River Exchange Contractors GSA
+458,0015,15,01/23/2020,1,1,gsa_57,City of Newman GSA
+458,0015,15,01/23/2020,1,1,gsa_67,City of Mendota GSA
+458,0015,15,01/23/2020,1,1,gsa_360,City of Dos Palos GSA
+458,0015,15,01/23/2020,1,1,gsa_269,City of Firebaugh GSA
+458,0015,15,01/23/2020,1,1,gsa_271,City of Gustine GSA
+458,0015,15,01/23/2020,1,1,gsa_70,County of Madera GSA - Delta-Mendota
+8825,0015,15,07/20/2022,2,1,gsa_220,Turner Island Water District GSA - Delta-Mendota
+8825,0015,15,07/20/2022,2,1,gsa_231,County of Merced GSA - Delta-Mendota
+8825,0015,15,07/20/2022,2,1,gsa_71,City of Los Banos GSA
+8825,0015,15,07/20/2022,2,1,gsa_10,San Joaquin River Exchange Contractors GSA
+8825,0015,15,07/20/2022,2,1,gsa_57,City of Newman GSA
+8825,0015,15,07/20/2022,2,1,gsa_67,City of Mendota GSA
+8825,0015,15,07/20/2022,2,1,gsa_360,City of Dos Palos GSA
+8825,0015,15,07/20/2022,2,1,gsa_269,City of Firebaugh GSA
+8825,0015,15,07/20/2022,2,1,gsa_271,City of Gustine GSA
+8825,0015,15,07/20/2022,2,1,gsa_70,County of Madera GSA - Delta-Mendota
+614,0016,16,01/13/2020,1,1,gsa_433,Fox Canyon Groundwater Management Agency GSA - Oxnard
+469,0017,17,01/13/2020,1,1,gsa_432,Fox Canyon Groundwater Management Agency GSA - Pleasant Valley
+468,0018,18,01/13/2020,1,1,gsa_163,Fox Canyon Groundwater Management Agency GSA - Las Posas Valley
+4922,0019,19,12/31/2021,1,1,gsa_354,Mound Basin GSA
+1384,0020,20,01/23/2020,1,1,gsa_298,County of Fresno GSA - Delta-Mendota Management Area A
+1384,0020,20,01/23/2020,1,1,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B
+8797,0020,20,07/20/2022,2,1,gsa_298,County of Fresno GSA - Delta-Mendota Management Area A
+8797,0020,20,07/20/2022,2,1,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B
+3164,0021,21,01/31/2020,1,1,gsa_47,City of Madera GSA
+3164,0021,21,01/31/2020,1,1,gsa_41,Madera Water District GSA
+3164,0021,21,01/31/2020,1,1,gsa_19,Madera Irrigation District GSA
+3164,0021,21,01/31/2020,1,1,gsa_69,County of Madera GSA - Madera
+9631,0021,21,03/21/2023,2,1,gsa_47,City of Madera GSA
+9631,0021,21,03/21/2023,2,1,gsa_41,Madera Water District GSA
+9631,0021,21,03/21/2023,2,1,gsa_19,Madera Irrigation District GSA
+9631,0021,21,03/21/2023,2,1,gsa_69,County of Madera GSA - Madera
+3848,0022,22,01/28/2020,1,1,gsa_211,Central Kings GSA
+9121,0022,22,07/27/2022,2,1,gsa_211,Central Kings GSA
+2704,0023,23,01/28/2020,1,1,gsa_18,Kings River East GSA
+9155,0023,23,07/28/2022,2,1,gsa_18,Kings River East GSA
+2664,0024,24,01/28/2020,1,1,gsa_65,North Kings GSA
+9144,0024,24,07/28/2022,2,1,gsa_65,North Kings GSA
+2564,0025,25,01/28/2020,1,1,gsa_187,North Fork Kings GSA
+9139,0025,25,07/27/2022,2,1,gsa_187,North Fork Kings GSA
+2149,0026,26,01/28/2020,1,1,gsa_317,South Kings GSA
+9136,0026,26,07/27/2022,2,1,gsa_317,South Kings GSA
+3168,0028,28,01/28/2020,1,1,gsa_266,McMullin Area GSA
+9152,0028,28,07/27/2022,2,1,gsa_266,McMullin Area GSA
+3862,0029,29,01/23/2020,1,1,gsa_184,Marina Coast Water District GSA - 180/400 Foot Aquifer
+3862,0029,29,01/23/2020,1,1,gsa_461,Salinas Valley Basin GSA - 180/400 Foot Aquifer
+3862,0029,29,01/23/2020,1,1,gsa_487,County of Monterey GSA
+3303,0030,30,01/31/2020,1,1,gsa_281,Greater Kaweah GSA
+9110,0030,30,07/27/2022,2,1,gsa_281,Greater Kaweah GSA
+2655,0031,31,01/28/2020,1,1,gsa_12,James GSA
+9921,0031,31,07/27/2022,2,1,gsa_12,James GSA
+2669,0032,32,01/28/2020,1,1,gsa_327,Cuyama Basin GSA
+8757,0032,32,07/18/2022,2,1,gsa_327,Cuyama Basin GSA
+2847,0035,35,01/30/2020,1,1,gsa_56,San Miguel Community Services District GSA
+2847,0035,35,01/30/2020,1,1,gsa_72,City of Paso Robles GSA
+2847,0035,35,01/30/2020,1,1,gsa_322,County of San Luis Obispo GSA - Paso Robles Area
+2847,0035,35,01/30/2020,1,1,gsa_319,Shandon-San Juan GSA
+8626,0035,35,07/19/2022,2,1,gsa_56,San Miguel Community Services District GSA
+8626,0035,35,07/19/2022,2,1,gsa_72,City of Paso Robles GSA
+8626,0035,35,07/19/2022,2,1,gsa_322,County of San Luis Obispo GSA - Paso Robles Area
+8626,0035,35,07/19/2022,2,1,gsa_319,Shandon-San Juan GSA
+2162,0036,36,01/30/2020,1,1,gsa_277,Semitropic Water Storage District GSA
+2162,0036,36,01/30/2020,1,1,gsa_39,West Kern Water District GSA
+2162,0036,36,01/30/2020,1,1,gsa_188,Pioneer GSA
+2162,0036,36,01/30/2020,1,1,gsa_306,Kern Non-Districted Land Authority GSA
+2162,0036,36,01/30/2020,1,1,gsa_326,Cawelo Water District GSA
+9203,0036,36,07/27/2022,2,1,gsa_277,Semitropic Water Storage District GSA
+9203,0036,36,07/27/2022,2,1,gsa_39,West Kern Water District GSA
+9203,0036,36,07/27/2022,2,1,gsa_188,Pioneer GSA
+9203,0036,36,07/27/2022,2,1,gsa_306,Kern Non-Districted Land Authority GSA
+9203,0036,36,07/27/2022,2,1,gsa_326,Cawelo Water District GSA
+2994,0037,37,01/29/2020,1,1,gsa_254,Henry Miller Water District GSA
+9188,0037,37,07/27/2022,2,1,gsa_254,Henry Miller Water District GSA
+1407,0038,38,01/23/2020,1,1,gsa_231,County of Merced GSA - Delta-Mendota
+1407,0038,38,01/23/2020,1,1,gsa_62,Grasslands GSA
+8791,0038,38,07/20/2022,2,1,gsa_231,County of Merced GSA - Delta-Mendota
+8791,0038,38,07/20/2022,2,1,gsa_62,Grasslands GSA
+2810,0042,42,01/29/2020,1,1,gsa_411,Tri-County Water Authority GSA - Tulare Lake
+2810,0042,42,01/29/2020,1,1,gsa_222,South Fork Kings GSA
+2810,0042,42,01/29/2020,1,1,gsa_73,Mid-Kings River GSA
+2810,0042,42,01/29/2020,1,1,gsa_226,Southwest Kings GSA
+2810,0042,42,01/29/2020,1,1,gsa_358,El Rico GSA
+9241,0042,42,07/27/2022,2,1,gsa_411,Tri-County Water Authority GSA - Tulare Lake
+9241,0042,42,07/27/2022,2,1,gsa_222,South Fork Kings GSA
+9241,0042,42,07/27/2022,2,1,gsa_73,Mid-Kings River GSA
+9241,0042,42,07/27/2022,2,1,gsa_226,Southwest Kings GSA
+9241,0042,42,07/27/2022,2,1,gsa_358,El Rico GSA
+1516,0044,44,01/22/2020,1,1,gsa_196,Olcese Water District GSA
+9064,0044,44,07/27/2022,2,1,gsa_196,Olcese Water District GSA
+2772,0045,45,01/28/2020,1,1,gsa_33,Root Creek Water District GSA
+9607,0045,45,03/21/2023,2,1,gsa_33,Root Creek Water District GSA
+2509,0047,47,01/29/2020,1,1,gsa_137,City of Stockton GSA
+2509,0047,47,01/29/2020,1,1,gsa_152,City of Lodi GSA
+2509,0047,47,01/29/2020,1,1,gsa_116,Stockton East Water District GSA
+2509,0047,47,01/29/2020,1,1,gsa_91,City of Manteca GSA
+2509,0047,47,01/29/2020,1,1,gsa_288,Eastside San Joaquin GSA
+2509,0047,47,01/29/2020,1,1,gsa_142,County of San Joaquin GSA - Eastern San Joaquin 1
+2509,0047,47,01/29/2020,1,1,gsa_140,Lockeford Community Service District GSA
+2509,0047,47,01/29/2020,1,1,gsa_189,Central San Joaquin Water Conservation District GSA
+2509,0047,47,01/29/2020,1,1,gsa_208,South Delta Water Agency GSA
+2509,0047,47,01/29/2020,1,1,gsa_201,Central Delta Water Agency GSA
+2509,0047,47,01/29/2020,1,1,gsa_159,North San Joaquin Water Conservation District GSA
+2509,0047,47,01/29/2020,1,1,gsa_249,South San Joaquin GSA
+2509,0047,47,01/29/2020,1,1,gsa_389,County of San Joaquin GSA - Eastern San Joaquin 2
+2509,0047,47,01/29/2020,1,1,gsa_151,Woodbridge Irrigation District GSA
+2509,0047,47,01/29/2020,1,1,gsa_99,Linden County Water District GSA
+2509,0047,47,01/29/2020,1,1,gsa_228,Oakdale Irrigation District GSA
+8901,0047,47,07/27/2022,2,1,gsa_137,City of Stockton GSA
+8901,0047,47,07/27/2022,2,1,gsa_152,City of Lodi GSA
+8901,0047,47,07/27/2022,2,1,gsa_116,Stockton East Water District GSA
+8901,0047,47,07/27/2022,2,1,gsa_91,City of Manteca GSA
+8901,0047,47,07/27/2022,2,1,gsa_288,Eastside San Joaquin GSA
+8901,0047,47,07/27/2022,2,1,gsa_142,County of San Joaquin GSA - Eastern San Joaquin 1
+8901,0047,47,07/27/2022,2,1,gsa_140,Lockeford Community Service District GSA
+8901,0047,47,07/27/2022,2,1,gsa_189,Central San Joaquin Water Conservation District GSA
+8901,0047,47,07/27/2022,2,1,gsa_208,South Delta Water Agency GSA
+8901,0047,47,07/27/2022,2,1,gsa_201,Central Delta Water Agency GSA
+8901,0047,47,07/27/2022,2,1,gsa_159,North San Joaquin Water Conservation District GSA
+8901,0047,47,07/27/2022,2,1,gsa_249,South San Joaquin GSA
+8901,0047,47,07/27/2022,2,1,gsa_389,County of San Joaquin GSA - Eastern San Joaquin 2
+8901,0047,47,07/27/2022,2,1,gsa_151,Woodbridge Irrigation District GSA
+8901,0047,47,07/27/2022,2,1,gsa_99,Linden County Water District GSA
+8901,0047,47,07/27/2022,2,1,gsa_228,Oakdale Irrigation District GSA
+3713,0048,48,01/23/2020,1,1,gsa_25,Alpaugh GSA
+9115,0048,48,07/27/2022,2,1,gsa_25,Alpaugh GSA
+2710,0049,49,01/28/2020,1,1,gsa_59,New Stone Water District GSA
+9617,0049,49,03/21/2023,2,1,gsa_59,New Stone Water District GSA
+2842,0050,50,01/31/2020,1,1,gsa_7,Mid-Kaweah GSA
+9093,0050,50,07/27/2022,2,1,gsa_7,Mid-Kaweah GSA
+11703,0164,50,01/13/2026,3,2,gsa_7,Mid-Kaweah GSA
+11777,0165,50,01/13/2026,4,2,gsa_281,Greater Kaweah GSA
+11822,0166,50,01/13/2026,5,2,gsa_314,East Kaweah GSA
+3162,0051,51,01/30/2020,1,1,gsa_15,Buena Vista Water Storage District GSA
+9238,0051,51,08/01/2022,2,1,gsa_15,Buena Vista Water Storage District GSA
+1683,0052,52,01/31/2020,1,1,gsa_106,Yuba Water Agency GSA - South Yuba
+1682,0053,53,01/31/2020,1,1,gsa_133,City of Marysville GSA
+1682,0053,53,01/31/2020,1,1,gsa_413,Yuba Water Agency GSA - North Yuba
+1682,0053,53,01/31/2020,1,1,gsa_111,Cordua Irrigation District GSA
+2384,0054,54,01/28/2020,1,1,gsa_22,Greenfield County Water District GSA
+2384,0054,54,01/28/2020,1,1,gsa_20,Kern River GSA
+9034,0054,54,07/29/2022,2,1,gsa_22,Greenfield County Water District GSA
+9034,0054,54,07/29/2022,2,1,gsa_20,Kern River GSA
+4306,0056,56,01/28/2020,1,1,gsa_42,Lower Tule River Irrigation District GSA
+9024,0056,56,07/27/2022,2,1,gsa_42,Lower Tule River Irrigation District GSA
+3718,0057,57,01/30/2020,1,1,gsa_490,Tri-County Water Authority GSA - Tule
+9230,0057,57,07/27/2022,2,1,gsa_490,Tri-County Water Authority GSA - Tule
+2672,0058,58,01/29/2020,1,1,gsa_314,East Kaweah GSA
+9106,0058,58,07/27/2022,2,1,gsa_314,East Kaweah GSA
+3301,0059,59,01/31/2020,1,1,gsa_35,Indian Wells Valley Groundwater Authority GSA
+2840,0061,61,01/30/2020,1,1,gsa_34,Gravelly Ford Water District GSA
+9625,0061,61,03/21/2023,2,1,gsa_34,Gravelly Ford Water District GSA
+3715,0063,63,01/30/2020,1,1,gsa_29,Delano-Earlimart Irrigation District GSA
+9219,0063,63,07/27/2022,2,1,gsa_29,Delano-Earlimart Irrigation District GSA
+3714,0065,65,01/30/2020,1,1,gsa_43,Pixley Irrigation District GSA
+9021,0065,65,07/27/2022,2,1,gsa_43,Pixley Irrigation District GSA
+4356,0067,67,11/04/2020,1,1,gsa_400,Castac Basin GSA
+7993,0070,70,01/31/2022,1,1,gsa_493,County of Humboldt GSA
+4539,0071,71,11/17/2021,1,1,gsa_28,West San Jacinto GSA
+6325,0072,72,01/26/2022,1,1,gsa_468,Fillmore and Piru Basins GSA - Piru
+10230,0072,72,07/15/2024,2,1,gsa_468,Fillmore and Piru Basins GSA - Piru
+6324,0073,73,01/26/2022,1,1,gsa_339,Fillmore and Piru Basins GSA - Fillmore
+10248,0073,73,07/16/2024,2,1,gsa_339,Fillmore and Piru Basins GSA - Fillmore
+5005,0074,74,01/03/2022,1,1,gsa_338,Santa Margarita Groundwater Agency GSA
+7827,0075,75,01/28/2022,1,1,gsa_370,San Pasqual Valley GSA
+7813,0076,76,01/31/2022,1,1,gsa_359,Upper San Luis Rey Groundwater Management Authority GSA
+6135,0077,77,01/24/2022,1,1,gsa_248,Upper Ventura River Groundwater Agency GSA
+5607,0078,78,01/18/2022,1,1,gsa_5,Santa Ynez River Valley Basin Western Management Area GSA
+5606,0079,79,01/18/2022,1,1,gsa_11,Santa Ynez River Valley Basin Central Management Area GSA
+5975,0080,80,01/19/2022,1,1,gsa_273,Santa Ynez River Valley Basin Eastern Management Area GSA
+7701,0081,81,01/27/2022,1,1,gsa_260,Temescal Subbasin GSA
+6110,0082,82,01/20/2022,1,1,gsa_287,Enterprise-Anderson GSA - Enterprise
+6111,0083,83,01/20/2022,1,1,gsa_464,Enterprise-Anderson GSA - Anderson
+7195,0084,84,01/28/2022,1,1,gsa_342,Ukiah Valley Basin GSA
+8058,0085,85,01/31/2022,1,1,gsa_192,Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA
+8058,0085,85,01/31/2022,1,1,gsa_300,County of Tuolumne GSA
+10202,0085,85,07/12/2024,2,1,gsa_192,Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA
+10202,0085,85,07/12/2024,2,1,gsa_300,County of Tuolumne GSA
+6450,0086,86,01/28/2022,1,1,gsa_178,Rock Creek Reclamation District GSA
+6450,0086,86,01/28/2022,1,1,gsa_409,Vina GSA
+8197,0087,87,01/21/2022,1,1,gsa_290,San Antonio Basin GSA
+7652,0088,88,01/28/2022,1,1,gsa_457,Siskiyou County Flood Control and Water Conservation District GS
+10224,0088,88,07/12/2024,2,1,gsa_457,Siskiyou County Flood Control and Water Conservation District GS
+6317,0089,89,01/28/2022,1,1,gsa_253,Siskiyou County Flood Control and Water Conservation District GS
+6461,0090,90,01/28/2022,1,1,gsa_456,Siskiyou County Flood Control and Water Conservation District GS
+7188,0091,91,01/26/2022,1,1,gsa_104,East Bay Municipal Utility District GSA
+7188,0091,91,01/26/2022,1,1,gsa_200,City of Hayward GSA
+6881,0092,92,01/28/2022,1,1,gsa_369,Glenn Groundwater Authority GSA
+6881,0092,92,01/28/2022,1,1,gsa_323,Colusa Groundwater Authority GSA - Colusa
+10061,0092,92,04/22/2024,2,1,gsa_369,Glenn Groundwater Authority GSA
+10061,0092,92,04/22/2024,2,1,gsa_323,Colusa Groundwater Authority GSA - Colusa
+4918,0093,93,01/12/2022,1,1,gsa_267,Bedford-Coldwater Subbasin GSA
+5221,0094,94,01/28/2022,1,1,gsa_390,Corning Subbasin GSA
+5221,0094,94,01/28/2022,1,1,gsa_418,Tehama County Flood Control and Water Conservation District GSA
+10079,0094,94,04/22/2024,2,1,gsa_390,Corning Subbasin GSA
+10079,0094,94,04/22/2024,2,1,gsa_418,Tehama County Flood Control and Water Conservation District GSA
+5806,0095,95,01/27/2022,1,1,gsa_240,County of Lassen GSA
+5806,0095,95,01/27/2022,1,1,gsa_232,County of Modoc GSA - Big Valley
+10050,0095,95,04/22/2024,2,1,gsa_240,County of Lassen GSA
+10050,0095,95,04/22/2024,2,1,gsa_232,County of Modoc GSA - Big Valley
+7793,0096,96,01/28/2022,1,1,gsa_217,Yolo Subbasin GSA
+8090,0097,97,01/31/2022,1,1,gsa_258,Tulelake Irrigation District GSA
+8090,0097,97,01/31/2022,1,1,gsa_256,County of Siskiyou GSA
+8090,0097,97,01/31/2022,1,1,gsa_280,City of Tulelake GSA
+8090,0097,97,01/31/2022,1,1,gsa_236,County of Modoc GSA - Tulelake
+10268,0097,97,07/16/2024,2,1,gsa_258,Tulelake Irrigation District GSA
+10268,0097,97,07/16/2024,2,1,gsa_256,County of Siskiyou GSA
+10268,0097,97,07/16/2024,2,1,gsa_280,City of Tulelake GSA
+10268,0097,97,07/16/2024,2,1,gsa_236,County of Modoc GSA - Tulelake
+6291,0098,98,01/28/2022,1,1,gsa_120,Western Canal Water District GSA
+6291,0098,98,01/28/2022,1,1,gsa_112,Richvale Irrigation District GSA
+6291,0098,98,01/28/2022,1,1,gsa_128,City of Gridley GSA
+6291,0098,98,01/28/2022,1,1,gsa_173,City of Biggs GSA
+6291,0098,98,01/28/2022,1,1,gsa_117,Biggs-West Gridley Water District GSA
+6291,0098,98,01/28/2022,1,1,gsa_195,Reclamation District No. 2106 GSA
+6291,0098,98,01/28/2022,1,1,gsa_417,Butte Water District GSA - Butte
+6291,0098,98,01/28/2022,1,1,gsa_467,Colusa Groundwater Authority GSA - Butte
+6291,0098,98,01/28/2022,1,1,gsa_415,County of Glenn GSA - Butte
+6291,0098,98,01/28/2022,1,1,gsa_416,Reclamation District No. 1004 GSA - Butte 1
+6291,0098,98,01/28/2022,1,1,gsa_251,County of Butte GSA - Butte 2
+6291,0098,98,01/28/2022,1,1,gsa_122,County of Butte GSA - Butte 1
+6291,0098,98,01/28/2022,1,1,gsa_138,Reclamation District No. 1004 GSA - Butte 2
+6455,0099,99,01/28/2022,1,1,gsa_406,Wyandotte Creek GSA
+6197,0100,100,01/24/2022,1,1,gsa_118,Sacramento Groundwater Authority GSA
+6197,0100,100,01/24/2022,1,1,gsa_233,South Sutter Water District GSA
+6197,0100,100,01/24/2022,1,1,gsa_209,West Placer GSA
+6197,0100,100,01/24/2022,1,1,gsa_247,Reclamation District No. 1001 GSA
+6197,0100,100,01/24/2022,1,1,gsa_454,County of Sutter GSA - North American
+7411,0101,101,01/29/2022,1,1,gsa_263,Sonoma Valley GSA
+5091,0103,103,01/26/2022,1,1,gsa_403,Owens Valley Groundwater Authority GSA - Owens Valley
+7680,0104,104,01/27/2022,1,1,gsa_349,Yucaipa Basin GSA
+5099,0105,105,01/12/2022,1,1,gsa_89,San Benito County Water District GSA
+5099,0105,105,01/12/2022,1,1,gsa_345,Santa Clara Valley Water District GSA - North San Benito
+5232,0106,106,01/27/2022,1,1,gsa_155,Omochumne-Hartnell Water District GSA - Cosumnes
+5232,0106,106,01/27/2022,1,1,gsa_97,Galt Irrigation District GSA
+5232,0106,106,01/27/2022,1,1,gsa_182,Clay Water District GSA
+5232,0106,106,01/27/2022,1,1,gsa_193,Amador County Groundwater Management Authority GSA
+5232,0106,106,01/27/2022,1,1,gsa_312,City of Galt GSA
+5232,0106,106,01/27/2022,1,1,gsa_160,Sloughhouse Resource Conservation District GSA - Cosumnes
+5232,0106,106,01/27/2022,1,1,gsa_496,Sacramento County GSA - Cosumnes
+7762,0110,110,01/28/2022,1,1,gsa_225,West Turlock Subbasin GSA
+7762,0110,110,01/28/2022,1,1,gsa_238,East Turlock Subbasin GSA
+10217,0110,110,07/12/2024,2,1,gsa_225,West Turlock Subbasin GSA
+10217,0110,110,07/12/2024,2,1,gsa_238,East Turlock Subbasin GSA
+6252,0111,111,01/27/2022,1,1,gsa_295,County of Sacramento GSA - South American
+6252,0111,111,01/27/2022,1,1,gsa_366,Reclamation District No. 551 GSA
+6252,0111,111,01/27/2022,1,1,gsa_387,Franklin Drainage District GSA
+6252,0111,111,01/27/2022,1,1,gsa_378,Reclamation District No. 369 GSA
+6252,0111,111,01/27/2022,1,1,gsa_376,Reclamation District No. 744 GSA
+6252,0111,111,01/27/2022,1,1,gsa_377,Reclamation District No. 813 GSA
+6252,0111,111,01/27/2022,1,1,gsa_364,Reclamation District No. 2110 GSA
+6252,0111,111,01/27/2022,1,1,gsa_373,Reclamation District No. 1002 GSA
+6252,0111,111,01/27/2022,1,1,gsa_156,Omochumne-Hartnell Water District GSA - South American
+6252,0111,111,01/27/2022,1,1,gsa_147,Sacramento Central Groundwater Authority GSA - 1
+7787,0112,112,01/28/2022,1,1,gsa_114,Sutter Community Service District GSA
+7787,0112,112,01/28/2022,1,1,gsa_121,Sutter Extension Water District GSA
+7787,0112,112,01/28/2022,1,1,gsa_320,Reclamation District No. 70 GSA
+7787,0112,112,01/28/2022,1,1,gsa_239,Reclamation District No. 1500 GSA
+7787,0112,112,01/28/2022,1,1,gsa_321,Reclamation District No. 1660 GSA
+7787,0112,112,01/28/2022,1,1,gsa_136,City of Live Oak GSA
+7787,0112,112,01/28/2022,1,1,gsa_119,Butte Water District GSA - Sutter
+7787,0112,112,01/28/2022,1,1,gsa_264,City of Yuba City GSA
+7787,0112,112,01/28/2022,1,1,gsa_218,County of Sutter GSA - Sutter
+6290,0113,113,01/24/2022,1,1,gsa_268,Salinas Valley Basin GSA - Langley Area
+6533,0114,114,01/24/2022,1,1,gsa_460,Salinas Valley Basin GSA - East Side Aquifer
+6260,0115,115,01/24/2022,1,1,gsa_459,Salinas Valley Basin GSA - Upper Valley Aquifer
+6527,0116,116,01/24/2022,1,1,gsa_261,Arroyo Seco GSA - 1
+6527,0116,116,01/24/2022,1,1,gsa_462,Salinas Valley Basin GSA - Forebay Aquifer
+7741,0117,117,01/27/2022,1,1,gsa_180,Solano Irrigation District GSA
+7741,0117,117,01/27/2022,1,1,gsa_272,City of Vacaville GSA
+7741,0117,117,01/27/2022,1,1,gsa_340,Solano Subbasin GSA
+7741,0117,117,01/27/2022,1,1,gsa_384,Reclamation District No. 501 GSA
+7741,0117,117,01/27/2022,1,1,gsa_385,Reclamation District No. 349 GSA
+7741,0117,117,01/27/2022,1,1,gsa_497,Sacramento County GSA - Solano
+6428,0118,118,01/26/2022,1,1,gsa_336,County of San Luis Obispo GSA - San Luis Obispo Valley
+6428,0118,118,01/26/2022,1,1,gsa_329,City of San Luis Obispo GSA
+7521,0119,119,01/26/2022,1,1,gsa_21,Elsinore Valley GSA
+6617,0120,120,01/25/2022,1,1,gsa_259,County of Contra Costa GSA
+6617,0120,120,01/25/2022,1,1,gsa_289,Diablo Water District GSA
+6617,0120,120,01/25/2022,1,1,gsa_265,Discovery Bay Community Services District GSA
+6617,0120,120,01/25/2022,1,1,gsa_252,East Contra Costa Irrigation District GSA
+6617,0120,120,01/25/2022,1,1,gsa_224,City of Brentwood GSA
+6617,0120,120,01/25/2022,1,1,gsa_299,City of Antioch GSA
+6617,0120,120,01/25/2022,1,1,gsa_463,Byron-Bethany Irrigation District GSA - East Contra Costa
+6097,0121,121,01/25/2022,1,1,gsa_330,Verbenia GSA
+6097,0121,121,01/25/2022,1,1,gsa_262,San Gorgonio Pass GSA
+6097,0121,121,01/25/2022,1,1,gsa_450,Desert Water Agency GSA - Statutory Area - San Gorgonio Pass
+7514,0122,122,01/28/2022,1,1,gsa_157,City of Tracy GSA
+7514,0122,122,01/28/2022,1,1,gsa_183,City of Lathrop GSA
+7514,0122,122,01/28/2022,1,1,gsa_149,Banta-Carbona Irrigation District GSA
+7514,0122,122,01/28/2022,1,1,gsa_286,Byron-Bethany Irrigation District GSA - Tracy
+7514,0122,122,01/28/2022,1,1,gsa_343,Stewart Tract GSA
+7514,0122,122,01/28/2022,1,1,gsa_146,County of San Joaquin GSA - Tracy
+7769,0123,123,01/28/2022,1,1,gsa_244,White Wolf GSA
+8062,0124,124,01/31/2022,1,1,gsa_488,County of Napa GSA
+7517,0125,125,01/28/2022,1,1,gsa_227,Sierra Valley Groundwater Management District GSA
+7517,0125,125,01/28/2022,1,1,gsa_234,County of Plumas GSA
+7696,0127,127,01/31/2022,1,1,gsa_480,Big Valley GSA
+7894,0128,128,01/28/2022,1,1,gsa_50,Marina Coast Water District GSA - Monterey
+7894,0128,128,01/28/2022,1,1,gsa_458,Salinas Valley Basin GSA - Monterey
+6073,0129,129,01/27/2022,1,1,gsa_337,Santa Monica Basin GSA
+7953,0130,130,01/31/2022,1,1,gsa_162,Ojai Basin Groundwater Management Agency GSA
+6529,0131,131,01/24/2022,1,1,gsa_315,Santa Clarita Valley GSA
+9300,0132,132,01/29/2022,1,1,gsa_350,Petaluma Valley GSA
+7964,0133,133,01/30/2022,1,1,gsa_296,Atascadero Basin GSA
+8072,0134,134,01/31/2022,1,1,gsa_422,Tehama County Flood Control and Water Conservation District GSA
+10082,0134,134,04/22/2024,2,1,gsa_422,Tehama County Flood Control and Water Conservation District GSA
+7442,0136,136,01/29/2022,1,1,gsa_331,Santa Rosa Plain GSA
+8078,0137,137,01/31/2022,1,1,gsa_124,Tehama County Flood Control and Water Conservation District GSA
+8630,0138,138,06/29/2022,1,1,gsa_328,Bear Valley Basin GSA
+8085,0139,139,01/31/2022,1,1,gsa_420,Tehama County Flood Control and Water Conservation District GSA
+10064,0139,139,04/22/2024,2,1,gsa_420,Tehama County Flood Control and Water Conservation District GSA
+8089,0140,140,01/31/2022,1,1,gsa_419,Tehama County Flood Control and Water Conservation District GSA
+10066,0140,140,04/22/2024,2,1,gsa_419,Tehama County Flood Control and Water Conservation District GSA
+8634,0144,144,05/17/2022,1,1,gsa_275,Western Municipal Water District GSA - Riverside-Arlington
+8203,0145,145,04/04/2022,1,1,gsa_190,Pleasant Valley GSA
+8203,0145,145,04/04/2022,1,1,gsa_408,County of Fresno GSA - Pleasant Valley
+8203,0145,145,04/04/2022,1,1,gsa_410,City of Coalinga GSA
+10265,0145,145,07/16/2024,2,1,gsa_190,Pleasant Valley GSA
+10265,0145,145,07/16/2024,2,1,gsa_408,County of Fresno GSA - Pleasant Valley
+10265,0145,145,07/16/2024,2,1,gsa_410,City of Coalinga GSA
+8591,0149,149,07/26/2022,1,1,gsa_212,Spadra Basin GSA
+11674,0149,149,11/26/2025,2,1,gsa_212,Spadra Basin GSA
+9056,0150,150,06/20/2022,1,1,gsa_482,Tejon-Castac Water District GSA
+9056,0150,150,06/20/2022,1,1,gsa_481,Arvin GSA
+9056,0150,150,06/20/2022,1,1,gsa_484,Wheeler Ridge-Maricopa GSA
+8969,0150,150,07/27/2022,2,1,gsa_482,Tejon-Castac Water District GSA
+8969,0150,150,07/27/2022,2,1,gsa_481,Arvin GSA
+8969,0150,150,07/27/2022,2,1,gsa_484,Wheeler Ridge-Maricopa GSA
+11781,0173,150,01/15/2026,3,2,gsa_506,Westside District Water Authority GSA
+11827,0172,150,01/15/2026,4,2,gsa_277,Semitropic Water Storage District GSA
+11840,0169,150,01/15/2026,5,2,gsa_254,Henry Miller Water District GSA
+11853,0170,150,01/15/2026,6,2,gsa_517,Kern-Tulare Water District GSA
+11866,0168,150,01/15/2026,7,2,gsa_15,Buena Vista Water Storage District GSA
+11894,0167,150,01/15/2026,8,2,gsa_507,Shafter-Wasco Irrigation District GSA
+11894,0167,150,01/15/2026,8,2,gsa_514,Southern San Joaquin Municipal Utility District - GSA
+11894,0167,150,01/15/2026,8,2,gsa_482,Tejon-Castac Water District GSA
+11894,0167,150,01/15/2026,8,2,gsa_39,West Kern Water District GSA
+11894,0167,150,01/15/2026,8,2,gsa_22,Greenfield County Water District GSA
+11894,0167,150,01/15/2026,8,2,gsa_188,Pioneer GSA
+11894,0167,150,01/15/2026,8,2,gsa_306,Kern Non-Districted Land Authority GSA
+11894,0167,150,01/15/2026,8,2,gsa_326,Cawelo Water District GSA
+11894,0167,150,01/15/2026,8,2,gsa_20,Kern River GSA
+11894,0167,150,01/15/2026,8,2,gsa_481,Arvin GSA
+11894,0167,150,01/15/2026,8,2,gsa_508,North Kern Water Storage District GSA
+11894,0167,150,01/15/2026,8,2,gsa_515,Rosedale-Rio Bravo Water Storage District GSA
+11894,0167,150,01/15/2026,8,2,gsa_484,Wheeler Ridge-Maricopa GSA
+11894,0167,150,01/15/2026,8,2,gsa_523,Kern Water Bank GSA
+11904,0171,150,01/15/2026,9,2,gsa_196,Olcese Water District GSA
+9704,0155,155,06/22/2023,1,1,gsa_404,Montecito Groundwater Basin GSA
+9918,0156,156,06/28/2023,1,1,gsa_434,Fox Canyon Groundwater Management Agency GSA - Arroyo Santa Rosa
+9918,0156,156,06/28/2023,1,1,gsa_49,Arroyo Santa Rosa Valley Basin GSA
+10029,0157,157,02/13/2024,1,1,gsa_491,Carpinteria GSA
