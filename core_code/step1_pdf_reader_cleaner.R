@@ -14,7 +14,7 @@
 # Uses pdftools (poppler) for text extraction with tesseract OCR fallback
 # for scanned/image-only PDFs. The filename stem comes from the source PDF
 # basename: gsp_doc_id_<gspDocId>.pdf -> stem "<gspDocId>". Plan-family
-# lookups (gspId, canonical_gspId, version, ...) are mediated by
+# lookups (gspId, plan_family_id, version, ...) are mediated by
 # core_data/source_pdfs/plan_family_manifest.csv, written by step0.
 #
 # The non-prose page filtering (TOCs, figures, references, etc.) is now
@@ -206,7 +206,7 @@ for (pdf_path in pdfs) {
   fname    <- basename(pdf_path)
   # Filename convention (from step0): gsp_doc_id_<gspDocId>.pdf.
   # We extract the trailing digits as the stem (= gspDocId). Plan-family
-  # lookups (gspId, canonical_gspId, version, ...) are done via
+  # lookups (gspId, plan_family_id, version, ...) are done via
   # core_data/source_pdfs/plan_family_manifest.csv, not from the filename.
   #
   # We also tolerate older filename forms — `(v<N>_)?gsp_num_id_<NNNN>.pdf` —

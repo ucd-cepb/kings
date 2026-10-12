@@ -28,46 +28,91 @@ suppressPackageStartupMessages({
 load_id_crosswalk <- function() {
   cw <- data.table::fread(
     nip_product("00_ingest", "id_crosswalk.csv"),
-    colClasses = list(character = c("gsp_doc_id", "gsp_id", "canonical_gsp_id"))
+    colClasses = list(character = c("gsp_doc_id", "gsp_id", "plan_family_id"))
   )
   keep <- intersect(
-    c("gsp_doc_id", "gsp_id", "canonical_gsp_id", "version", "plan_section", "submitted_date", "doc_rank"),
+    c("gsp_doc_id", "gsp_id", "plan_family_id", "version", "plan_section", "submitted_date", "doc_rank"),
     names(cw)
   )
   unique(cw[, ..keep])
 }
 
-#' Pick exactly ONE plan document per plan (canonical_gsp_id).
+#' Pick exactly ONE plan document per plan (plan_family_id).
 #'
-#' Plan identity is canonical_gsp_id, not gsp_id. 79 plans were submitted once; the
+#' Plan identity is plan_family_id, not gsp_id. 79 plans were submitted once; the
 #' rest were resubmitted, so the corpus holds multiple documents for them. Most
 #' resubmissions reuse the original's gsp_id (a second document under it); a few were
 #' filed under a fresh gsp_id of their own, but every version shares the original's
-#' canonical_gsp_id. Grouping on canonical_gsp_id therefore collapses ALL versions
+#' plan_family_id. Grouping on plan_family_id therefore collapses ALL versions
 #' of a plan -- however they were keyed -- to one document, which is what every
 #' downstream plan-to-plan analysis needs (and what prevents a resubmission filed
 #' under a new gsp_id from entering as a second, duplicate vertex). `doc_rank`
-#' (written by 00_ingest_core.R, by canonical_gsp_id) orders a plan's documents by
+#' (written by 00_ingest_core.R, by plan_family_id) orders a plan's documents by
 #' submission date, 1 = earliest.
 #'
 #' mode:
 #'   "original" (default) -> earliest submission  (reproduces the legacy '^v1' selection)
 #'   "latest"             -> most recent submission (the resubmitted doc where one exists)
+#'                           *** DISABLED -- see the known defect below ***
 #'
 #' Single-document plans keep their sole document under either mode. Flip the
 #' whole pipeline at once by setting the NIP_DOC_SELECT env var. Returns one
-#' crosswalk row per plan (columns canonical_gsp_id, gsp_id, gsp_doc_id, doc_rank);
+#' crosswalk row per plan (columns plan_family_id, gsp_id, gsp_doc_id, doc_rank);
 #' gsp_doc_id remains the unique document identifier used downstream.
+#'
+#' KNOWN DEFECT (noted 2026-10-11): plan_family_id OVER-COLLAPSES four groups,
+#' which makes mode="latest" unsafe. plan_family_id is not derived here -- it is
+#' DWR's own amendment chain, walked by compute_chain() in
+#' core_code/step0_download_from_sgma.R and carried across unchanged by the ingest
+#' bridge. In 2025-26 DWR began filing each GSA's separately amended plan as a child
+#' (`fromGspId`) of ONE sibling plan, so one plan family now holds several
+#' DISTINCT plans rather than versions of one plan. 12 of 185 docs are reparented
+#' this way, all submitted 2025-07-14 or later:
+#'   family 0150 "South of Kern River" <- 7 docs, each a different 2025-amended
+#'     GSA plan (Westside District WA 11781, Semitropic 11827, Henry Miller 11840,
+#'     Kern-Tulare 11853, Buena Vista WSD 11866, Kern County Subbasin 11894,
+#'     Olcese 11904); Henry Miller / Buena Vista / Olcese already have their own
+#'     families at 0037 / 0051 / 0044.
+#'   family 0050 "Mid-Kaweah"          <- 3 docs: MKGSA 11703 (correct),
+#'     GKGSA 11777 (belongs to Greater Kaweah), EKGSA 11822 (East Kaweah, 0058).
+#'   family 0007 <- 11932 and family 0012 <- 11395: localId "N/A", in-basin,
+#'     plausible true amendments.
+#' mode="original" is UNAFFECTED: it takes doc_rank 1, and every reparented doc
+#' ranks 3+, so the 118-plan modeling frame (2020-01-13 .. 2024-02-13) contains
+#' none of them. mode="latest" would select 11822 as if it were Mid-Kaweah and
+#' 11904 as if it were South of Kern River -- two plans standing in for plans they
+#' are not -- so it is refused here until the chain edges are corrected (by localId)
+#' or a submitted-date cutoff is applied. NIP_ALLOW_LATEST=1 forces it through with
+#' a warning, for diagnostics only; results so produced are wrong for those groups.
 select_plan_docs <- function(xw = load_id_crosswalk(),
                              mode = Sys.getenv("NIP_DOC_SELECT", "original")) {
   mode <- match.arg(mode, c("original", "latest"))
-  if (!all(c("doc_rank", "canonical_gsp_id") %in% names(xw))) {
-    stop("id_crosswalk is missing 'doc_rank'/'canonical_gsp_id'; rebuild it with ",
+  if (mode == "latest") {
+    msg <- paste0(
+      "NIP_DOC_SELECT='latest' is DISABLED: plan_family_id over-collapses 4 groups, ",
+      "so 'latest' substitutes the wrong plan for at least 2 of them.\n",
+      "  DWR's own fromGspId chain (core compute_chain()) files each GSA's separately ",
+      "amended 2025-26 plan as a child of ONE sibling plan, so a plan family can ",
+      "hold DISTINCT plans, not versions of one plan. 12 of 185 docs are affected, all ",
+      "submitted >= 2025-07-14.\n",
+      "  'latest' would pick doc 11822 (EKGSA 2nd Amended, East Kaweah) for family ",
+      "0050 Mid-Kaweah, and doc 11904 (2025 Amended Olcese GSA GSP) for family 0150 ",
+      "South of Kern River.\n",
+      "  'original' (the default) is unaffected: every reparented doc has doc_rank >= 3.\n",
+      "  Fix the chain edges by localId, or apply a submitted-date cutoff, before ",
+      "re-enabling. See the KNOWN DEFECT note above select_plan_docs() in _corpus.R.\n",
+      "  To force it anyway FOR DIAGNOSTICS ONLY: NIP_ALLOW_LATEST=1."
+    )
+    if (!nzchar(Sys.getenv("NIP_ALLOW_LATEST"))) stop(msg)
+    warning("NIP_ALLOW_LATEST set -- proceeding with KNOWN-BAD doc selection.\n", msg)
+  }
+  if (!all(c("doc_rank", "plan_family_id") %in% names(xw))) {
+    stop("id_crosswalk is missing 'doc_rank'/'plan_family_id'; rebuild it with ",
          "00_ingest_core.R (build_crosswalk / CLOBBER=TRUE).")
   }
-  xw <- unique(xw[, .(gsp_doc_id, gsp_id, canonical_gsp_id, doc_rank)])
+  xw <- unique(xw[, .(gsp_doc_id, gsp_id, plan_family_id, doc_rank)])
   chooser <- if (mode == "original") which.min else which.max
-  xw[, .SD[chooser(doc_rank)], by = canonical_gsp_id]
+  xw[, .SD[chooser(doc_rank)], by = plan_family_id]
 }
 
 #' Per-plan document selection for the modeling stage, with ids formatted the way
@@ -78,20 +123,20 @@ select_plan_docs <- function(xw = load_id_crosswalk(),
 #'   gsp_id           4-digit zero-padded legacy plan id of the SELECTED document
 #'                    (character) -- kept to translate the legacy gsp_id-keyed
 #'                    document inputs (entity edges, similarity products) onto it.
-#'   canonical_gsp_id 4-digit zero-padded plan identity (character) -- the same for a
+#'   plan_family_id   4-digit zero-padded plan identity (character) -- the same for a
 #'                    plan's original and every resubmission. Join plan-level
 #'                    covariates (gsp_covariates, shapefile) on THIS so a plan
 #'                    inherits its covariates no matter which document is selected.
 #'   doc_rank         the selected document's rank.
 #' gsp_id is not unique across plan versions and, for the few resubmissions filed
 #' under a fresh gsp_id, is not even stable across the original/latest choice;
-#' gsp_doc_id is the unique document id and canonical_gsp_id the stable plan id.
+#' gsp_doc_id is the unique document id and plan_family_id the stable plan id.
 modeling_plan_selection <- function() {
   s <- select_plan_docs()
-  s[, .(gsp_doc_id       = as.character(gsp_doc_id),
-        gsp_id           = formatC(as.integer(gsp_id), width = 4L, flag = "0"),
-        canonical_gsp_id = formatC(as.integer(canonical_gsp_id), width = 4L, flag = "0"),
-        doc_rank         = doc_rank)]
+  s[, .(gsp_doc_id     = as.character(gsp_doc_id),
+        gsp_id         = formatC(as.integer(gsp_id), width = 4L, flag = "0"),
+        plan_family_id = formatC(as.integer(plan_family_id), width = 4L, flag = "0"),
+        doc_rank       = doc_rank)]
 }
 
 #' Read the whole core clean-text corpus as a long data.table.

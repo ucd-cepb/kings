@@ -22,7 +22,7 @@
 # KEY: gsp_doc_id (the plan *document* id) is the only globally unique GSP
 # identifier -- one plan can have several submitted versions, each its own
 # document with its own page layout and its own Elements Guide. The table is
-# therefore keyed on (gsp_doc_id, page_num); gsp_id (4-digit canonical plan id)
+# therefore keyed on (gsp_doc_id, page_num); gsp_id (4-digit plan-family id)
 # and version are carried as attributes.
 #
 # Section flags (one per SubArticle of section 354, from the element id
@@ -109,7 +109,7 @@ cat("=== BUILD PAGE SECTIONS (core document-structure metadata) ===\n")
 if (!file.exists(MANIFEST)) stop("manifest not found: ", MANIFEST)
 man <- fread(MANIFEST, colClasses = "character")
 man <- man[!is.na(gspDocId) & nzchar(gspDocId)]
-man[, gsp_id := pad4(canonical_gspId)]
+man[, gsp_id := pad4(plan_family_id)]
 setnames(man, "gspDocId", "gsp_doc_id")
 man <- unique(man[, .(gsp_doc_id, gsp_id, version)])
 cat(sprintf("manifest: %d documents across %d plans\n",

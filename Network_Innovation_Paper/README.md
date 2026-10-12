@@ -47,7 +47,8 @@ inputs/ ────────┘            │
 **no** derivation. There is exactly one such product; it reads **no** raw docs:
 
 - **`id_crosswalk.csv`** — `gspDocId` ↔ legacy `gsp_id`/`version`, taken directly
-  from the plan-family manifest, plus `plan_section`/`submitted_date` and a
+  from the plan-family manifest (with one documented exception, the authoring-agency
+  overrides below), plus `plan_section`/`submitted_date` and a
   derived `doc_rank` (1 = a plan's earliest submission). `doc_rank` — not the
   manifest `version` field — is how the paper selects one document per plan
   (`select_plan_docs()` / `NIP_DOC_SELECT` in `_corpus.R`). A plan's multiple
@@ -61,6 +62,72 @@ inputs/ ────────┘            │
   `submitted_date`) — no plan carries two documents of the same section, so
   choosing one `doc_rank` selects a complete submission with all its content,
   never one chapter of a split plan.
+
+#### Known defect: `plan_family_id` over-collapse, and why `latest` is disabled
+
+`plan_family_id` is **not** derived by the paper — it is DWR's own amendment
+chain, walked by `compute_chain()` in `core_code/step0_download_from_sgma.R:106`
+and carried across unchanged. Starting 2025, DWR began filing each GSA's
+*separately amended* plan as a child (`fromGspId`) of **one** sibling plan, so a
+plan family can now hold several **distinct plans** rather than versions of
+one plan. 12 of 185 docs are reparented this way, all submitted on or after
+2025-07-14:
+
+| plan family | swallows | what the children actually are |
+|---|---|---|
+| `0150` South of Kern River | 7 docs | one 2025-amended plan per GSA — Westside District WA `11781`, Semitropic `11827`, Henry Miller `11840`, Kern-Tulare `11853`, Buena Vista WSD `11866`, Kern County Subbasin `11894`, Olcese `11904`. Henry Miller / Buena Vista / Olcese already have their own families at `0037` / `0051` / `0044`. |
+| `0050` Mid-Kaweah | 3 docs | MKGSA `11703` (correct), GKGSA `11777` (Greater Kaweah), EKGSA `11822` (East Kaweah, `0058`) |
+| `0007`, `0012` | 1 doc each | `11932`, `11395` — `localId` `"N/A"`, in-basin; plausible true amendments |
+
+**The published results are unaffected.** `original` mode takes `doc_rank` 1, and
+every reparented doc ranks 3 or later, so none of the 12 can enter the 118-plan
+modeling frame (which spans 2020-01-13 to 2024-02-13). The over-collapse is
+*latent*, not active.
+
+**`NIP_DOC_SELECT=latest` is therefore disabled** (`select_plan_docs()` in
+`_corpus.R` stops with the explanation). It would select doc `11822` (EKGSA) as if
+it were family `0050` Mid-Kaweah and doc `11904` (Olcese) as if it were
+family `0150` South of Kern River — two plans standing in for plans they are
+not. `NIP_ALLOW_LATEST=1` forces it through with a loud warning, for diagnostics
+only. Before re-enabling, correct the 10 bad chain edges (`localId` names the real
+plan in 10 of the 12 cases) or apply a submitted-date cutoff, and add an
+integrity assertion that a multi-doc plan family agrees on an informative
+`localId`.
+
+#### The one departure from "no derivation": authoring-agency overrides
+
+`gsa_ids` is the sole source of the authoring-agency count `mult_gsa`, a
+`nodecov()` term in the `04_modeling` ERGMs. DWR's portal published **no GSA list
+at all** for both documents of plan `0043` (docs `3712`, `9090`) — the only 2 of
+185 docs with `gsa_ids` *and* `gsa_names` blank — so that plan entered the model
+with `mult_gsa = 0`, a value no GSP can really have. The fields are blank in
+`plan_family_manifest.csv` too, so the gap is upstream at DWR and a re-scrape
+does not close it.
+
+`apply_author_overrides()` therefore fills blank authorship from the paper-owned
+[`inputs/doc_author_overrides.csv`](inputs/doc_author_overrides.csv). Applied
+2026-10-11: plan `0043` → **`gsa_ids = 205`, Eastern Tule GSA** (DWR's own
+manifest `localId` is "Basin 5-022.13 - **ETGSA** GSP"; 205 is the exclusive
+roster GSA for subbasin 5-022.13; it authors no other document in the corpus; and
+`eastern_tule_groundwater_sustainability_agency` carries 528 SVO triples in doc
+3712, >10× the next GSA). `mult_gsa` over the 118-plan frame goes from
+`min = 0` to `min = 1`; nothing else in the crosswalk changes.
+
+Three rules keep this from becoming a backdoor for editing core data:
+
+1. **Fill-only.** An override may only populate a field the portal left blank. If
+   DWR later publishes a GSA list for that document, ingest **stops** rather than
+   let a stale override shadow real upstream data — delete the override row.
+2. **Roster-checked.** Every overriding `GSA_ID` must exist in
+   `core_gsa_full()`, and the supplied `gsa_names` must match the roster's name
+   for that id. This is the guard against the id collision that makes this
+   particular repair easy to get wrong: **plan id 43 and GSA\_ID 43 are unrelated
+   agencies** — GSA 43 is Pixley Irrigation District GSA, author of plan `0065`,
+   so the correct value for plan `0043` is 205.
+3. **Provenance stamped.** The crosswalk gains a `gsa_ids_source` column —
+   `scrape` (183 docs), `override` (2), or `missing` (0) — so any consumer can
+   tell a repaired row from a scraped one. Downstream code keys on column names,
+   so the addition is backward-compatible.
 
 Run from the repo root:
 

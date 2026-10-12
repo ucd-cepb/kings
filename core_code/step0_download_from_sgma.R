@@ -10,7 +10,7 @@
 # Manifest (one row per plan PDF, additive across runs) at
 #   core_data_source_pdfs/plan_family_manifest.csv
 # Columns:
-#   out_basename, gspDocId, gspId, canonical_gspId, version, fromGspId,
+#   out_basename, gspDocId, gspId, plan_family_id, version, fromGspId,
 #   plan_section, submitted_date, posted_date, comment_end_date,
 #   gsa_ids, gsa_names, basin, localId, displayStatus, url,
 #   elements_url, elements_text, first_seen, last_seen
@@ -28,7 +28,7 @@
 #      lists from /portal/service/gsp/submittedgsps and
 #      /portal/service/gsp/archivedgsps, union them, dedupe by gspId.
 #      Each row carries the fromGspId chain (used to compute version +
-#      canonical_gspId per row).
+#      plan_family_id per row).
 #   2. Preview-page scrape. For each gspId, fetch /portal/gsp/preview/<gspId>
 #      and parse out every "Groundwater Sustainability Plan" PDF (rejecting
 #      Redline + Elements Guide variants from the plan-PDF list), their
@@ -102,7 +102,7 @@ strip_saveas <- function(u) {
 }
 
 # Walk fromGspId chain. Each "v1" row is a root; an amendment whose parent
-# is a v1 row is v2; chain back to the root yields canonical_gspId.
+# is a v1 row is v2; chain back to the root yields plan_family_id.
 compute_chain <- function(gsp_id, from_gsp_id) {
   parent <- setNames(from_gsp_id, gsp_id)
   walk <- function(g, seen) {
@@ -115,7 +115,7 @@ compute_chain <- function(gsp_id, from_gsp_id) {
   }
   r <- lapply(gsp_id, walk, seen = character(0))
   list(version          = vapply(r, function(x) x$version, integer(1)),
-       canonical_gspId  = vapply(r, function(x) as.character(x$root), character(1)))
+       plan_family_id   = vapply(r, function(x) as.character(x$root), character(1)))
 }
 
 # Atomic download with retry. Stages to <out>.tmp, renames on success.
@@ -310,7 +310,7 @@ if (SKIP_SCRAPE) {
   }
   manifest <- data.table::fread(manifest_path,
                                 colClasses = list(character = c("gspDocId", "gspId",
-                                                                "canonical_gspId",
+                                                                "plan_family_id",
                                                                 "fromGspId")))
   cat(sprintf("Loaded manifest: %s  (%d row(s))\n",
               manifest_path, nrow(manifest)))
@@ -365,14 +365,14 @@ json_tbl <- json_tbl[!is.na(gspId) & nzchar(as.character(gspId))]
 json_tbl <- unique(json_tbl, by = "gspId")
 cat("Portal lists ", nrow(json_tbl), " unique gspId(s) across feeds.\n", sep = "")
 
-# Compute (version, canonical_gspId) over the JSON's fromGspId chain. We
+# Compute (version, plan_family_id) over the JSON's fromGspId chain. We
 # attach this to each scraped row by gspId join below.
 chain <- compute_chain(json_tbl$gspId, json_tbl$fromGspId)
 json_tbl[, version_json     := chain$version]
-json_tbl[, canonical_gspId  := chain$canonical_gspId]
+json_tbl[, plan_family_id   := chain$plan_family_id]
 json_tbl[, gspId_padded     := pad4(gspId)]
 json_tbl[, fromGspId_padded := pad4(fromGspId)]
-json_tbl[, canonical_gspId  := pad4(canonical_gspId)]
+json_tbl[, plan_family_id   := pad4(plan_family_id)]
 for (col in c("basin", "localId", "displayStatus", "gsas", "gsaIds")) {
   if (!(col %in% names(json_tbl))) json_tbl[, (col) := NA_character_]
 }
@@ -384,7 +384,7 @@ json_tbl[, gsa_names_json := ifelse(is.na(gsas) | !nzchar(gsas), NA_character_,
 json_tbl[, gsa_ids_json   := ifelse(is.na(gsaIds) | !nzchar(gsaIds), NA_character_,
                                     gsub("\\s+", "", gsaIds, perl = TRUE))]
 lineage <- unique(json_tbl[, .(gspId          = gspId_padded,
-                               canonical_gspId,
+                               plan_family_id,
                                fromGspId      = fromGspId_padded,
                                version_json,
                                basin, localId, displayStatus,
@@ -444,7 +444,7 @@ fresh[, last_seen    := ts_now]
 fresh[, gsa_ids   := ifelse(!is.na(gsa_ids_json)   & nzchar(gsa_ids_json),   gsa_ids_json,   gsa_ids)]
 fresh[, gsa_names := ifelse(!is.na(gsa_names_json) & nzchar(gsa_names_json), gsa_names_json, gsa_names)]
 
-fresh <- fresh[, .(out_basename, gspDocId, gspId, canonical_gspId,
+fresh <- fresh[, .(out_basename, gspDocId, gspId, plan_family_id,
                    version, fromGspId, plan_section,
                    submitted_date, posted_date, comment_end_date,
                    gsa_ids, gsa_names, basin, localId, displayStatus,
@@ -454,7 +454,7 @@ fresh <- fresh[, .(out_basename, gspDocId, gspId, canonical_gspId,
 if (file.exists(manifest_path) && file.info(manifest_path)$size > 0L) {
   old <- data.table::fread(manifest_path,
                            colClasses = list(character = c("gspDocId", "gspId",
-                                                           "canonical_gspId",
+                                                           "plan_family_id",
                                                            "fromGspId")))
   # Backwards-compat: older manifests may lack first_seen/last_seen — fill
   # with the current timestamp so they participate in the merge.
@@ -483,7 +483,7 @@ if (file.exists(manifest_path) && file.info(manifest_path)$size > 0L) {
   cat(sprintf("Manifest bootstrap: %d new row(s)\n", nrow(manifest)))
 }
 
-setorder(manifest, canonical_gspId, version, gspId, gspDocId)
+setorder(manifest, plan_family_id, version, gspId, gspDocId)
 fwrite(manifest, manifest_path)
 cat(sprintf("Wrote manifest: %s  (%d row(s))\n", manifest_path, nrow(manifest)))
 

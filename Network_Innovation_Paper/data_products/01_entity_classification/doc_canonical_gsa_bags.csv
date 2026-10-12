@@ -1,4 +1,4 @@
-gsp_doc_id,gsp_id,canonical_gsp_id,submitted_date,doc_rank,version,author_bag_id,author_bag_label
+gsp_doc_id,gsp_id,plan_family_id,submitted_date,doc_rank,version,author_bag_id,author_bag_label
 944,0007,7,01/17/2020,1,1,gsa_23,Aliso Water District GSA
 8770,0007,7,07/20/2022,2,1,gsa_23,Aliso Water District GSA
 11932,0174,7,05/28/2026,3,2,gsa_17,Patterson Irrigation District GSA

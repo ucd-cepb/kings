@@ -67,10 +67,11 @@ build_gsa_edges <- function(xw = load_id_crosswalk(),
                                              colClasses = "character")) {
   out <- nip_product("01_entity_classification", "all_gsa_edges.csv")
   if (.skip(out)) return(invisible(NULL))
-  # One document per plan (same selection the text-reuse maps use). Default keeps
-  # the original submission; NIP_DOC_SELECT=latest switches to the resubmitted
-  # doc where one exists. Keying edges to one doc per plan avoids representing a
-  # resubmitted plan twice.
+  # One document per plan (same selection the text-reuse maps use): the original
+  # submission. NIP_DOC_SELECT=latest is DISABLED -- plan_family_id over-collapses
+  # four 2025-26 amendment groups, so 'latest' would substitute the wrong plan for
+  # two of them (see the KNOWN DEFECT note on select_plan_docs() in _corpus.R).
+  # Keying edges to one doc per plan avoids representing a resubmitted plan twice.
   keep <- select_plan_docs(xw)
   message("building all_gsa_edges for ", nrow(keep), " plans (",
           Sys.getenv("NIP_DOC_SELECT", "original"), " doc per plan)...")

@@ -91,7 +91,7 @@ source_elements/gsp_doc_id_944_elements.xlsx
 
 A single gspId (preview page identifier) maps to **multiple** gspDocIds when the agency has resubmitted — e.g., Aliso WD's preview page `/portal/gsp/preview/7` holds gspDocIds 944 (2020 submission) and 8770 (2022 resubmission) and 11932 (2026 amendment via separate gspId 174). Each gets its own file.
 
-Plan-family information — which gspDocId belongs to which gspId, which gspId chains back to which canonical (root) gspId via `fromGspId`, version numbers, submission dates, GSA membership — lives in `plan_family_manifest.csv`. Downstream code that needs "which plan family does file X belong to?" reads the manifest.
+Plan-family information — which gspDocId belongs to which gspId, which gspId chains back to which root gspId (`plan_family_id`) via `fromGspId`, version numbers, submission dates, GSA membership — lives in `plan_family_manifest.csv`. Downstream code that needs "which plan family does file X belong to?" reads the manifest.
 
 Legacy filenames `v<N>_gsp_num_id_<NNNN>.pdf` / `v<N>_<NNNN>.<ext>` still parse if they happen to be on disk (step1's regex tolerates the prefix), but the docId convention is what step0 produces going forward. A one-shot cleanup script `migrate_pdf_naming.R` is provided to move pre-docId files into per-directory `_legacy/` subdirs; see [Migration](#migration) below.
 

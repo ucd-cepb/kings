@@ -8,7 +8,9 @@ source("Network_Innovation_Paper/Code/_corpus.R")   # latest_project_jaccard(), 
 
 # The modeling stage is keyed on gsp_doc_id (the version-unambiguous plan-document
 # id). `sel` is the one canonical selection of a single document per plan (honors
-# NIP_DOC_SELECT); `id_to_doc` translates the legacy 4-digit gsp_id keys of the
+# NIP_DOC_SELECT, whose only enabled value is the default `original` -- `latest` is
+# disabled pending the plan_family_id over-collapse fix; see select_plan_docs());
+# `id_to_doc` translates the legacy 4-digit gsp_id keys of the
 # other inputs onto that gsp_doc_id. gsp_id is retained only to attach the
 # plan-level covariates/shapefile (which have no document version).
 sel <- modeling_plan_selection()
@@ -18,17 +20,17 @@ bad     <- c('0053','0089')                     # plans to drop, by 4-digit gsp_
 bad_doc <- sel$gsp_doc_id[sel$gsp_id %in% bad]  # ... as their selected gsp_doc_id
 
 # Paper-owned political/economic covariates (NOT core; see inputs/README.md).
-# These are PLAN-level, so they are keyed on the plan's canonical id and attached to
+# These are PLAN-level, so they are keyed on the plan-family id and attached to
 # whichever DOCUMENT is selected: an original and its resubmission share one
-# canonical_gsp_id and therefore one set of covariates, regardless of NIP_DOC_SELECT.
+# plan_family_id and therefore one set of covariates, regardless of NIP_DOC_SELECT.
 # gsp_covariates.csv is keyed on the 4-digit plan id, which for these (original)
-# plans IS the canonical id, so its gsp_id joins to sel$canonical_gsp_id.
+# plans IS the family id, so its gsp_id joins to sel$plan_family_id.
 meta <- fread(nip_input('gsp_covariates.csv'), colClasses = c(gsp_id = 'character'))
 meta <- meta[!duplicated(meta$gsp_id),]
 meta$Republican_Vote_Share <- as.numeric(meta$Republican_Vote_Share)
 meta$Agr_Share_Of_GDP <- as.numeric(meta$Agr_Share_Of_GDP)
-meta <- merge(sel[, .(gsp_doc_id, canonical_gsp_id)], meta,
-              by.x = 'canonical_gsp_id', by.y = 'gsp_id', all.x = TRUE)
+meta <- merge(sel[, .(gsp_doc_id, plan_family_id)], meta,
+              by.x = 'plan_family_id', by.y = 'gsp_id', all.x = TRUE)
 
 
 gs_edge <- fread(nip_product('01_entity_classification', 'all_gsa_edges.csv'))
@@ -211,13 +213,23 @@ jac_totalentities      <- jac_genericentities
 # Collinearity with the other collaboration term is a non-issue:
 # cor(mult_gsa, joint_agency) = 0.113.
 #
-# KNOWN GAP: 1 plan in the frame (gsp_doc_id 3712 / canonical 43, both of its
-# documents) has an EMPTY crosswalk `gsa_ids`, so it scores 0 authors -- not a
-# real value, since every plan has at least one GSA. Under the old binary coding
-# this was silently FALSE and indistinguishable from a single-author plan; as a
-# count it is a visible 0 that nodecov() will take literally. Distribution over
-# the frame: 0:1, 1:79, 2:16, 3:5, 4:4, 5:3, 6:2, 7:2, 9:1, 10:2, 13:1, 16:1,
-# 23:1. Resolve before the final run (backfill from gsa_names/roster, or exclude).
+# CLOSED GAP (fixed upstream 2026-10-11): 1 plan in the frame (gsp_doc_id 3712 /
+# family 43, both of its documents) had an EMPTY crosswalk `gsa_ids` and so
+# scored 0 authors -- not a real value, since every plan has at least one GSA.
+# Under the old binary coding this was silently FALSE and indistinguishable from
+# a single-author plan; as a count it was a visible 0 that nodecov() takes
+# literally.
+# It was a DWR scrape gap, not a parse gap -- doc 3712 has 3,892 SVO triples over
+# 33 GSA-typed vertices -- and the author is Eastern Tule GSA (GSA_ID 205): DWR's
+# own manifest localId is "Basin 5-022.13 - ETGSA GSP", it dominates the document
+# at 528 triples (>10x the next GSA), is the exclusive roster GSA for this basin
+# (5-022.13 TULE), authors zero documents anywhere in the crosswalk, and is the
+# only Tule agency left over once the subbasin's other five plans are matched to
+# their single authors. Repaired upstream in 00_ingest (not here) via
+# inputs/doc_author_overrides.csv -> apply_author_overrides(); the crosswalk's
+# `gsa_ids_source` column marks it "override". See BAG_REVIEW_FINDINGS §7.
+# Distribution over the frame after the fix (no remaining 0s):
+# 1:80, 2:16, 3:5, 4:4, 5:3, 6:2, 7:2, 9:1, 10:2, 13:1, 16:1, 23:1.
 xw_gsa <- fread(nip_product("00_ingest", "id_crosswalk.csv"),
                 colClasses = list(character = c("gsp_doc_id", "gsa_ids")))
 xw_gsa[, mult_gsa := vapply(strsplit(gsa_ids, ","), function(v) {

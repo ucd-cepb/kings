@@ -25,7 +25,7 @@
 #'       GSAs' full corpus-wide relational signature, not only what one
 #'       document's text happened to name.
 #'
-#'   (5) Keyed on gsp_doc_id + canonical_gsp_id directly (NO raw-gsp_id
+#'   (5) Keyed on gsp_doc_id + plan_family_id directly (NO raw-gsp_id
 #'       translation) — this is what fixes the stale-enumeration namespace trap
 #'       that dropped 26% of the old all_gsa_edges rows at the modeling join.
 #'
@@ -38,7 +38,7 @@
 #'        inputs/entity_bag_overrides_gsa.csv, core sgma_gsa_full.csv, and the
 #'        core per-document weighted graphs.
 #' Writes: data_products/01_entity_classification/gsa_bag_edges.csv
-#'   columns: gsp_doc_id, canonical_gsp_id, gsa (authoring bag label), then one
+#'   columns: gsp_doc_id, plan_family_id, gsa (authoring bag label), then one
 #'   column per alter node name (pooled co-mention weight, 0-filled).
 #'
 #' Run from the repo root:
@@ -134,7 +134,7 @@ build_gsa_bag_edges <- function() {
 
   # Raw crosswalk carries the per-document gsa_ids (load_id_crosswalk drops them).
   cw <- fread(nip_product("00_ingest", "id_crosswalk.csv"), colClasses = "character")
-  xw <- unique(cw[, .(gsp_doc_id, canonical_gsp_id, gsa_ids)])
+  xw <- unique(cw[, .(gsp_doc_id, plan_family_id, gsa_ids)])
   # author set per doc (bare numeric ids)
   xw[, aset := lapply(strsplit(gsa_ids, ","), function(z) trimws(z[z != ""]))]
 
@@ -155,7 +155,7 @@ build_gsa_bag_edges <- function() {
   pooled <- long[, .(weight = sum(weight, na.rm = TRUE)), by = .(member, alter)]
 
   # attach each member's pooled profile to every doc it authors
-  doc_member <- xw[, .(member = unlist(aset)), by = .(gsp_doc_id, canonical_gsp_id)]
+  doc_member <- xw[, .(member = unlist(aset)), by = .(gsp_doc_id, plan_family_id)]
   emit <- merge(doc_member, pooled, by = "member", allow.cartesian = TRUE)
   if (!nrow(emit)) stop("no (doc x authoring bag) rows after join.")
 
@@ -165,11 +165,11 @@ build_gsa_bag_edges <- function() {
   emit[, gsa := paste0("gsa_", member)]
   emit[, gsa_label := fifelse(member %in% names(lbl), lbl[member], gsa)]
 
-  wide <- dcast(emit, gsp_doc_id + canonical_gsp_id + gsa + gsa_label ~ alter,
+  wide <- dcast(emit, gsp_doc_id + plan_family_id + gsa + gsa_label ~ alter,
                 value.var = "weight", fun.aggregate = sum, fill = 0)
   fwrite(wide, out)
   message("wrote ", out, " (", nrow(wide), " rows x ", ncol(wide), " cols; ",
-          uniqueN(wide$gsp_doc_id), " docs, ", uniqueN(wide$canonical_gsp_id),
+          uniqueN(wide$gsp_doc_id), " docs, ", uniqueN(wide$plan_family_id),
           " plans, ", uniqueN(wide$gsa), " authoring bags)")
   invisible(wide)
 }

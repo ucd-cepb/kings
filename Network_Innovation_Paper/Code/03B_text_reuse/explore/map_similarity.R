@@ -79,10 +79,10 @@ shared_300_total[, min_page := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = c(
 shared_300_total$plus300_ratio <- shared_300_total$N/shared_300_total$min_page
 
 
-# One document per plan. Default = the original/earliest submission (reproduces
-# the legacy '^v1' selection); set NIP_DOC_SELECT=latest to use the resubmitted
-# doc where one exists. Filter on the gspDocId stem, not the manifest `version`
-# field (which is an unrelated adoption-cycle axis — see select_plan_docs()).
+# One document per plan = the original/earliest submission (reproduces the legacy
+# '^v1' selection). NIP_DOC_SELECT=latest is DISABLED (plan_family_id
+# over-collapse — see the KNOWN DEFECT note on select_plan_docs()). Filter on the
+# gspDocId stem, not the manifest `version` field (an unrelated adoption-cycle axis).
 sel_docs <- select_plan_docs(cw)$gsp_doc_id
 shared_v1 <- shared_300_total[a_file %in% sel_docs & b_file %in% sel_docs]
 # Network vertices = the selected-doc gspDocId stems of the core parquet corpus.

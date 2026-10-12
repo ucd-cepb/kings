@@ -71,7 +71,7 @@ source("core_code/_config.R")   # provides CLOBBER, filekey, fk()
 # nicknames for the curated list. Keys are filename stems — under the docId
 # convention that's the gspDocId string (e.g. "1683" or "1682" from the
 # manifest). Find the right docId by inspecting plan_family_manifest.csv:
-# filter by gspId or canonical_gspId for the plan you care about, then use
+# filter by gspId or plan_family_id for the plan you care about, then use
 # the gspDocId column as the key here.
 #
 # Uncomment both blocks (definition + hook) to use.
