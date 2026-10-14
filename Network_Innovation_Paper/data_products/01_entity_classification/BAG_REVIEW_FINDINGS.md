@@ -1,10 +1,10 @@
-# GSA entity bags — design and open items
+# GSA entity bags — workflow
 
 Entity names from the NER pipeline are fragmented across many spellings of the same
 agency (`aliso_gsa`, `aliso_water_district_gsa`, `aliso_wd_gsa`, …). A **bag** folds
 all spellings of one real entity onto a single canonical id so each agency is counted
-once. This file states the rules the bag system follows and lists what still needs
-doing.
+once. This file states the rules the bag system follows, how the bags are built, and
+what is still open.
 
 ---
 
@@ -18,14 +18,37 @@ display-only and not row-aligned with `gsa_ids`. A resolved GSA row is kept only
 `bag_id` is one of that document's `gsa_ids`; anything else is a mention and is dropped.
 259 ids are affiliated with at least one plan.
 
+> *Example.* Doc 944 (Aliso WD GSP, 2020) lists `gsa_ids = 23`. Its text also names
+> `city_of_mendota_gsa` (gsa_67), `madera_irrigation_district_gsa` (gsa_19) and about 20
+> other GSAs, all of which resolve to roster bags. Only gsa_23 is an author, so
+> `gsa_bag_edges.csv` has one row for doc 944 (gsa_23); the other GSAs are mentions.
+
 **Key on `gsp_doc_id`, never on `gsp_id`, `plan_family_id`, or `version`.** A plan can
 have several documents (2020 original, 2022/23 resubmission, later consolidation) whose
-author teams differ, so the author set belongs to the document. See §4.
+author teams differ, so the author set belongs to the document. `version` is not a
+submission key either: it labels both the 2020 original and its 2022/23 resubmission
+`version = 1` (53 `(gsp_id, version)` pairs cover more than one submission date), and
+`gsp_id` can be reassigned across resubmissions. Order documents by `doc_rank` (or
+`submitted_date`). Counts: 185 documents, 132 `gsp_id`s, 120 canonical plans.
+
+> *Example.* Canonical plan 7:
+>
+> | gsp_doc_id | gsp_id | submitted | doc_rank | version | authors |
+> |---|---|---|---|---|---|
+> | 944 | 0007 | 2020-01-17 | 1 | 1 | 1 (Aliso WD GSA) |
+> | 8770 | 0007 | 2022-07-20 | 2 | 1 | 1 (Aliso WD GSA) |
+> | 11932 | 0174 | 2026-05-28 | 3 | 2 | 23 (Delta-Mendota consolidated) |
+>
+> Keyed on the plan, the 2020 Aliso document would inherit all 23 consolidation authors.
 
 **Do not merge one roster id into another.** `inputs/bag_merges.csv` is empty and stays
-empty. A name variant folds to exactly one roster id (its bag); ids are never rewritten
+empty. A name variant folds to the roster id(s) it names; ids are never rewritten
 to each other. Merging would drop real authors, because a document that lists the member
 id but not the parent would fail the authorship test.
+
+> *Example.* Turner Island WD has two ids: gsa_220 (Delta-Mendota) and gsa_223 (Merced).
+> Docs 4342/8708 (plan 13) list 220 only; docs 386/8897 (plan 9) list 223 only. Merging
+> 220 into 223 would remove Turner Island as an author of plan 13.
 
 **Multi-management-area agencies: keep each area's id distinct.** About 41 organizations
 operate more than one management-area GSA that share a base name and differ only by a
@@ -36,6 +59,19 @@ resolves per document to whichever family member(s) that document lists as autho
 document lists more than one, keep all of them; if it lists none, the variant is a
 mention and is dropped.
 
+> *Example.* `turner_island_water_district_gsa` sits in bag gsa_223 in the map, but in
+> `gsa_bag_edges.csv` it becomes gsa_223 in docs 386/8897 (plan 9) and gsa_220 in docs
+> 4342, 8708, 458, 8825 and 11932 — whichever family member each document lists.
+
+**A name that refers to several GSAs counts in each of their bags.** It gets one
+override row per GSA it names, so it sits in every one of those bags. Strict authorship
+still applies per document: only the named GSAs that author that document are kept.
+
+> *Example.* `mcmullin_and_james_groundwater_sustainability_agencies` is in gsa_12 James
+> and gsa_266 McMullin Area. `cosumnes_groundwater_sustainability_agencies` is in all seven
+> Cosumnes subbasin GSAs, the authors of doc 5232. In `GSA_BAGS_review.txt` such names are
+> tagged `<override; also gsa_…>`.
+
 **Groups with no roster id stay as identity, which makes them non-authors.** Umbrellas,
 coalitions, and multi-agency plan areas have no single `GSA_ID`, never appear in any
 document's `gsa_ids`, and so can never be authors. Their coordination is represented
@@ -43,127 +79,134 @@ through their member GSAs, which avoids double-counting. Current cases: Kern Gro
 Authority; South of Kern River; Salinas Valley umbrella (`svbgsa` + `salinas_valley_*`);
 North Delta; McFarland; Pauma Valley; the Colusa + Glenn two-authority JPA.
 
+> *Example.* `kern_groundwater_authority` and `kern_groundwater_authority_board` stay on
+> their own identity bags. The KGA's members (e.g. Semitropic, Shafter-Wasco) appear as
+> authors under their own roster ids instead.
+
 ---
 
 ## 2. How bags are built
 
-- `build_entity_bag_map.R` → `entity_bag_map.csv` maps each variant to a bag. Tiers:
-  `exact` (variant equals a roster name), `subset` (the roster name's distinctive tokens
-  all appear in the variant), `revsubset` (the variant's distinctive tokens are all
-  within one roster name), then `fuzzy` (reviewed, not auto-applied). Only unambiguous
-  `subset`/`revsubset` matches auto-fold; ambiguous ones go to a review file. The
-  stoplist drops only SGMA boilerplate, so "county"/"city"/"water"/"district" stay and
-  keep sibling agencies apart.
-- Curated overrides win over the matcher and are the authoritative record of reviewed
-  decisions: `inputs/entity_bag_overrides_gsa.csv` (214 rows),
-  `inputs/entity_bag_overrides_consultant.csv` (295), `inputs/entity_bag_overrides_ngo.csv`
-  (108), `inputs/entity_bag_overrides_research.csv` (135). A variant with no match
-  defaults to its own identity bag.
+`build_entity_bag_map.R` → `entity_bag_map.csv` maps each variant to a bag;
+`entity_bag_unmatched.csv` holds everything sent to review, with the would-be target as
+`sugg_bag_id`. Tokens are compared after dropping SGMA boilerplate only, so
+"county"/"city"/"water"/"district" stay and keep sibling agencies apart. Tiers, in order:
 
-**Needed matcher guard (not yet added).** `revsubset` should not auto-fold when the
-variant has a single distinctive token and that token is a direction or feature word
-(south/north/east/west/upper/lower/central/river/valley/basin/county/mid) or is shared by
-more than one roster base name. It should go to review instead. This is the root cause of
-every item in §5.
+- **Override** — a row in `inputs/entity_bag_overrides_gsa.csv` (244 rows, 224 variants) wins over the
+  matcher. These are the authoritative reviewed decisions, and the only route for
+  abbreviations and for names that lack a GSA marker (below).
+  > *Example.* `pixid` → gsa_43 (Pixley ID GSA); `westland` → gsa_40 (Westlands WD GSA).
+- **`exact`** — the variant equals a roster name.
+  > *Example.* `kern_river_gsa` → gsa_20 Kern River GSA.
+- **`subset`** — all the roster name's distinctive tokens appear in the variant.
+  > *Example.* `james_id_gsa` and `vina_subbasin_gsa` → gsa_12 James GSA and gsa_409 Vina GSA.
+- **`revsubset`** — all the variant's distinctive tokens fall within one roster name.
+  > *Example.* `olcese_gsa` → gsa_196 Olcese Water District GSA.
+- **`fuzzy`** — near-miss spellings; reviewed, never auto-applied.
+  > *Example.* `el_rio_gsa` is suggested for gsa_358 El Rico GSA but does not fold.
+- **Identity** — anything left over stays on its own bag.
 
----
+Only an unambiguous `subset`/`revsubset` auto-folds. A match to more than one roster
+name goes to review as `subset_tie` / `revsubset_tie`.
 
-## 3. State
+**Matcher guards.** Four guards send a would-be auto-fold to review under their own
+`method`:
 
-- **GSA (ego) side: done.** Reviewed folds are in the 214-row override; `bag_merges.csv`
-  is retired. `build_gsa_bag_edges.R` → `gsa_bag_edges.csv` (Step 2) is built: it folds
-  authoring GSA rows, keeps only ids in each document's `gsa_ids`, expands multi-area
-  pointers per document, pools each bag's co-mentions across the corpus, and keys on
-  `gsp_doc_id` + `plan_family_id` (445 rows, 182 documents, 118 plans, 254 authoring
-  bags). Two of 120 plans drop under strict authorship — plan 43 (doc 3712, empty
-  `gsa_ids`) and plan 52 (doc 1683, whose sole author gsa_106 has no folding variant).
-  Plan 43's cause is **fixed as of 2026-10-11** (§7 author override: `gsa_ids = 205`,
-  Eastern Tule GSA); re-run `build_gsa_bag_edges.R` to pick it up — the 445/182/118/254
-  counts above predate the override.
-- **One open GSA correction:** §5 (bare-token false folds), not yet applied.
-- **Alter side: folded and reviewed, not wired into the network build**, with open
-  items: §6.
-- **Integration:** §7.
+- **`revsubset_bare`** (50): a `revsubset` match with no place name. Either every
+  distinctive token is a direction or feature word (north/south/east/west/upper/lower/
+  central/mid/river/valley/basin/subbasin/county), or the name rests on a single token that
+  is shorter than three characters or is shared by more than one roster base name ("kern",
+  "merced", "sacramento"). Bare tokens unique to one agency (aliso, olcese, yucaipa) still
+  fold.
+  > *Example.* `east_gsa` could be any of eight "East" GSAs (Kings River East, East
+  > Kaweah, Stockton East, …), so it is not folded. `yuba_gsa` matches both Yuba Water
+  > Agency areas and City of Yuba City, so it is not folded either. `b_gsa` and `el_gsa`
+  > rest on one- and two-letter tokens and are not folded. `upper_basin_gsa` had folded to
+  > Salinas Valley Basin GSA - Upper Valley Aquifer on "upper" and "basin" alone; it is now
+  > held.
+- **`revsubset_generic`** (17): a `revsubset` match where every distinctive token is an
+  entity-type word (water, district, storage, conservation, resource, irrigation,
+  reclamation, county, city, authority, …). Such a name describes a kind of agency, not
+  one agency.
+  > *Example.* `storage_district_gsa` could be Semitropic, North Kern, Buena Vista or any
+  > other water storage district, and `conservation_district_groundwater_sustainability_agency`
+  > could be any RCD GSA, so neither is folded. `district_water_authority_gsa` (only
+  > Westside) and `county_water_authority_…` (only Tri-County) were reviewed as unique and
+  > fold by override.
+- **`subset_geo`** (7): a `subset` match where the variant adds a direction word to the
+  roster name. Added feature words do not trigger it, since they are usually descriptors.
+  > *Example.* `south_of_kern_river_gsa` contains every token of "Kern River GSA" but
+  > names the South of Kern River group (Arvin, Wheeler Ridge-Maricopa, Tejon-Castac), so
+  > it is not folded. `madera_county_east_gsa` is held for the same reason. By contrast,
+  > `pleasant_valley_subbasin_gsa` adds only a feature word and folds to Pleasant Valley GSA.
+- **`no_gsa_marker`** (40): beyond the exact tier, a variant has to say it is a GSA to
+  fold. The markers are a `gsa`/`gsas`/`gssa`/`kgsa` token, a "groundwater sustainab…"
+  fragment (the extractor truncates and misspells "agency"), or a dedicated groundwater
+  agency/authority (Glenn Groundwater Authority, Upper Ventura River Groundwater Agency and
+  Fox Canyon GMA each are their GSA).
+  > *Example.* `kern_river` could be the river or Kern River GSA, and `mid_kaweah` could
+  > be the area or Mid-Kaweah GSA, so neither is folded. `mid_kaweah_grounwater_sustainability_agency`
+  > carries the misspelled marker fragment and folds to gsa_7.
 
----
+**Policy for names without a marker.** A district, city or county name with no marker
+folds only through a reviewed override row, never automatically. A bare place or feature
+name never folds, even by override.
 
-## 4. Crosswalk data quality
+> *Example.* `westlands_water_district` → gsa_40 is a reviewed override row.
+> `county_of_tulare` has no override, because it could be the county government;
+> `county_of_tulare_gsa` folds to gsa_470. `kern_river` and `san_diego_river_valley` have no
+> override and stay unfolded.
 
-**The `version` column is not a submission key.** It labels both the January-2020
-original GSP and its 2022/23 resubmission `version = 1`; 53 `(gsp_id, version)` pairs each
-cover more than one submission date. Order documents by `doc_rank` (or `submitted_date`),
-and join authorship on `gsp_doc_id`. `gsp_id` can also be reassigned across resubmissions
-(4 canonical plans span more than one: 7→{0007,0174}, 12→{0012,0160}, 50→{0050,0164–0166},
-150→{0150,0167–0173}). Counts: 185 documents, 132 `gsp_id`s, 120 canonical plans; of the
-canonical plans, 67 have one submission date, 49 have two, 4 have three.
+**Document author overrides.** Where DWR publishes no authors for a document,
+`inputs/doc_author_overrides.csv` + `apply_author_overrides()` in `Code/00_ingest_core.R`
+fill `gsa_ids` before the crosswalk is written. The step only fills blanks (it stops rather
+than overwrite a DWR value), requires ids and names to agree with the roster, and records
+the source in `id_crosswalk.csv`'s `gsa_ids_source` column (`scrape` / `override`).
 
-Example — canonical plan 7:
-
-| gsp_doc_id | gsp_id | submitted | doc_rank | version | authors |
-|---|---|---|---|---|---|
-| 944 | 0007 | 2020-01-17 | 1 | 1 | 1 (Aliso WD GSA) |
-| 8770 | 0007 | 2022-07-20 | 2 | 1 | 1 (Aliso WD GSA) |
-| 11932 | 0174 | 2026 | 3 | 2 | 23 (Delta-Mendota consolidated) |
-
-### Three review dictionaries
-1. **Variant → canonical GSA bag:** `01_entity_classification/GSA_BAGS_review.txt`.
-2. **Document → canonical GSA authors** (the DWR scrape, at document grain):
-   `00_ingest/DOC_AUTHORS_review.txt`. Authors are `gsa_ids` resolved through the core
-   roster; 17 documents are flagged where the `gsa_names` column disagrees with the roster.
-3. **Document → authoring GSA bags** (author side as `bag_id`s, the Step-2 join input):
-   `01_entity_classification/DOC_AUTHOR_BAGS_review.txt` plus the long-form
-   `doc_canonical_gsa_bags.csv` (450 doc×author rows). Two affiliated labels are shared
-   across ids and kept as distinct bags: Siskiyou FC&WCD {253,456,457}, Tehama FC&WCD
-   {124,418,419,420,422}.
-
-The generators for #2 and #3 currently exist only in a session scratchpad and must be
-committed to `Code/01_entity_classification/` (or folded into Step 2) to be regenerable.
-
----
-
-## 5. Open GSA correction — bare-token and geographic false folds
-
-These are auto-matcher folds (not override rows), so fixing them adds identity override
-rows or the §2 matcher guard; the 214-row override is untouched. Targets verified against
-the core roster and the crosswalk.
-
-### 5a. Kern River GSA (gsa_20) is absorbing three unrelated things
-`revsubset` pins a bare token to the affiliated agency with the fewest distinctive tokens,
-and Kern River = {kern, river} wins because the Kern Groundwater Authority umbrella (often
-written "Kern GSA") has no roster id.
-
-| variant | reason | fix |
-|---|---|---|
-| `south_of_kern_river_gsa`, `each_south_of_kern_river_gsa`, `south_of_kern_river_groundwater_sustainability_agencies_boards` | the South of Kern River plan group = Arvin (gsa_481), Wheeler Ridge-Maricopa (gsa_484), Tejon-Castac (gsa_482), authoring documents 9056/8969; gsa_20 does not author those documents | identity (no-roster group, §1) |
-| `kern_gsa` | bare "kern" is shared by gsa_39/306/508/517/518/523 and the Kern Groundwater Authority umbrella | identity |
-| `river_gsa` | bare "river" is within 9 affiliated "river" agencies | identity |
-| `kern_river` | the river itself (typed `Non_institutional`) | identity |
-
-### 5b. Same pattern elsewhere
-- gsa_314 East Kaweah: `east_gsa`, `gsa_east` — bare "east", within 8 agencies.
-- gsa_219 Merced Subbasin: `merced_gsa`, `of_merced_gsa`,
-  `merced_groundwater_sustainability_agencies` — bare "merced", shared with County of
-  Merced (191/231), Turner Island-Merced (223), Merced Irrigation-Urban (311).
-- gsa_7 Mid-Kaweah: `groundwater_sustainability_agency_mid` — bare "mid" fragment.
-
-Bare tokens that are unique to one agency (aliso, yucaipa, mcmullin, olcese, napa, vista…)
-are safe and stay folded.
-
-### 5c. Worth a look
-- gsa_69 County of Madera: `madera_county_east_gsa` and `triangle_t_water_madera_county_west_gsa`
-  (the second also names Triangle T Water District, gsa_394). County of Madera has
-  management-area ids; confirm the correct id per §1 rather than pinning both to gsa_69.
-- gsa_266 McMullin Area: `mcmullin_area_gsa_east_gsa` — a run-on; low risk.
+> *Example.* Both documents of plan 43 (doc 3712, 9090) are blank upstream; DWR's
+> `localId` is "Basin 5-022.13 - ETGSA GSP", so the override sets `gsa_ids = 205` (Eastern
+> Tule GSA). Note that canonical plan 43 ≠ GSA_ID 43 (Pixley ID GSA); the roster check
+> catches that collision.
 
 ---
 
-## 6. Alter side — consultants, NGOs, research
+## 3. Outputs and review files
+
+- **`gsa_bag_edges.csv`** (`build_gsa_bag_edges.R`): one row per (document, authoring
+  bag), keyed on `gsp_doc_id` + `plan_family_id`, with each bag's co-mentioned alters
+  as columns. It folds authoring GSA rows, keeps only ids in each document's `gsa_ids`,
+  expands multi-area pointers per document, and drops self-loops. Currently 447 rows,
+  184 documents, 119 plans, 255 authoring bags. Plan 52 (doc 1683) drops under strict
+  authorship because its sole author, gsa_106, has no folding variant.
+  - **GSA alters fold to bags too, without the authorship filter.** A GSA named in a plan
+    it did not write stays an alter. 413 GSA alter names fold into 209 `bag:` columns:
+    `bag:gsa_<id>`, or `bag:gsafam_<ids>` for a name pointing into a multi-area family,
+    since no author set picks the member on the alter side. A name carrying a token
+    unique to one member's area suffix keeps that member
+    (`merced_county_delta_mendota_gsa` → County of Merced - Delta-Mendota). A multi-GSA
+    name credits each bag; several names for one bag sum. Alters in the ego's own bag or
+    family (its other names) are dropped. GSA names held unmatched, and all non-GSA
+    alters, stay raw names. The `bag:` prefix avoids raw node names like `gsa_25`.
+- **Review dictionaries:**
+  1. Variant → GSA bag: `01_entity_classification/GSA_BAGS_review.txt`
+     (`write_bag_review.R`, run after `build_entity_bag_map.R`; lists every bag,
+     including single-name ones).
+  2. Document → GSA authors (`gsa_ids` resolved through the roster):
+     `00_ingest/DOC_AUTHORS_review.txt`; flags 17 documents where `gsa_names` disagrees
+     with the roster.
+  3. Document → authoring GSA bags: `01_entity_classification/DOC_AUTHOR_BAGS_review.txt`
+     plus long-form `doc_canonical_gsa_bags.csv`. Two affiliated labels shared across ids
+     stay distinct bags: Siskiyou FC&WCD {253,456,457}, Tehama FC&WCD {124,418,419,420,422}.
+
+---
+
+## 4. Alter side — consultants, NGOs, research
 
 The alter side folds the co-mentioned entities that a plan's authoring GSAs tie to. Each
 type folds in its own namespace so one type's network never merges into another's.
 Producers: `build_alter_bag_map.R` → `alter_bag_map.csv` (+ cluster audit and per-type
 review files); `build_entity_bag_lookup.R` → `entity_bag_lookup.csv` (the single join
-table, 13,833 variants → 12,088 bags).
+table).
 
 | type | namespace | authority | variants → bags |
 |---|---|---|---|
@@ -172,11 +215,14 @@ table, 13,833 variants → 12,088 bags).
 | Research | `res_*` | self-cluster (no roster) | 460 → 288 |
 | Institutional_other | `io_*` | identity only (deferred) | 10099 → 10099 |
 
-**Folder rules the matcher applies.** `tokset` requires a contiguous block rotation, so a
-harmless "X of Y" / "Y X" inversion folds but an interior swap does not (Cal Poly San Luis
-Obispo and Cal Poly Pomona stay separate). Only a pure-digit token, a comment-matrix row
-id, or a digit run trailing a ≥4-letter word is stripped, so load-bearing digits survive
-(`2ndnature`, `4creeks`, the whole CH2M Hill family on one bag). Entity-naming words
+Unmatched GSA variants sit on a bare (un-prefixed) identity bag, so carry the `bag_type`
+column rather than parsing the `bag_id` prefix.
+
+**Folder rules.** `tokset` requires a contiguous block rotation, so a harmless "X of Y" /
+"Y X" inversion folds but an interior swap does not (Cal Poly San Luis Obispo and Cal Poly
+Pomona stay separate). Only a pure-digit token, a comment-matrix row id, or a digit run
+trailing a ≥4-letter word is stripped, so load-bearing digits survive (`2ndnature`,
+`4creeks`, the whole CH2M Hill family on one bag). Entity-naming words
 (foundation/fund/institute/center/program/council/division/extension/laboratory/national)
 are not generic `contains` extras — which keeps Clean Water Action, the UC system, and the
 ITRC center/institute/program apart. `contains` requires a contiguous run and refuses a
@@ -190,151 +236,91 @@ that spells the initialism vetoes it; more than one matching expansion vetoes it
 directly to its bag representative, with a `joined` column (anchor/direct/transitive/
 singleton).
 
-Curated overrides seed the clustering and are read first (consultant 295, NGO 108,
-research 135 rows). Policy: a hosted center/lab folds into its host campus; UC Cooperative
-Extension / ANR is a separate statewide actor; bare "University of California" is the
-system; named local chapters (county Farm Bureaus, named Audubon and Sierra Club chapters,
-county Leagues of Women Voters) stay separate. `make_alter_overrides.R` regenerates the
-NGO and research specs — it unions with what is on disk and refuses to shrink a file.
-Deliberately left unfolded as genuinely ambiguous: `con_gsi` (two firms), `con_bgc`,
-`res_csu`, `res_lsu`, `res_scripps`, `res_irrigation_technology_and_research_center`
-(Fresno State CIT vs Cal Poly ITRC), `ngo_basin_pumpers_association`, RCAP vs RCAC,
-Putah Creek Council vs Putah Creek Streamkeeper.
+**Overrides.** Curated overrides seed the clustering and are read first (consultant 295,
+NGO 108, research 135 rows). Policy: a hosted center/lab folds into its host campus; UC
+Cooperative Extension / ANR is a separate statewide actor; bare "University of California"
+is the system; named local chapters (county Farm Bureaus, named Audubon and Sierra Club
+chapters, county Leagues of Women Voters) stay separate. `make_alter_overrides.R`
+regenerates the NGO and research specs — it unions with what is on disk and refuses to
+shrink a file. Deliberately left unfolded as genuinely ambiguous: `con_gsi` (two firms),
+`con_bgc`, `res_csu`, `res_lsu`, `res_scripps`,
+`res_irrigation_technology_and_research_center` (Fresno State CIT vs Cal Poly ITRC),
+`ngo_basin_pumpers_association`, RCAP vs RCAC, Putah Creek Council vs Putah Creek
+Streamkeeper.
 
-**Not wired in.** `build_gsa_bag_edges.R` still emits raw node names as alter columns and
-`_entity_groups.R::entity_names()` still groups alters by raw name. Folding alters means
-rewiring both to group by `bag_id` and `bag_type`.
+**Compound mentions.** `alter_bag_compounds.csv` (231 rows) lists mentions that name two
+organizations (`woodard_curran_and_davids_engineering`). The 1:1 variant → bag schema
+cannot carry two bags, so the second organization is recorded there.
 
 Review menu counts: Consultant 322, NGO 378, Research 306.
 
-### 6a. Must fix before using the alter side
-- **`entity_bag_lookup.csv` does not carry the signed-off GSA overrides.** 92 of 186
-  joinable rows disagree with `entity_bag_overrides_gsa.csv` (lookup holds the bare
-  identity string, override holds the roster bag), and 496 GSA lookup rows have an
-  un-namespaced `bag_id`. Fix: make `build_entity_bag_lookup.R` apply the GSA override
-  itself, with the same precedence `build_gsa_bag_edges.R` uses. `gsa_bag_edges.csv` is
-  not affected because it applies the override at read time.
+---
+
+## 5. Network construction (modeling)
+
+- **Non-actor filter.** `NON_ACTOR_ENTITIES` in `Code/_entity_groups.R` drops bare
+  state/nation placenames by name, in raw and `io_` spellings (`io_california`,
+  `io_calif`, `io_united_states`, `io_united_states_of_america`, `io_us`). Ubiquity alone
+  is not disqualifying — DWR is in 115/118 plans because it administers SGMA, and it
+  stays. Counties stay (shared county naming is real co-location, and counties are often
+  governmental actors). `build_shared_entity_matrix()` has an opt-in `prevalence_max`
+  argument, off (`NA`) by default.
+- **Binarized incidence.** `build_shared_entity_matrix()` reduces the plan × entity
+  incidence to mentioned/not before `tcrossprod()`, so a cell counts shared entities. A
+  uniplex `weight` is the number of parsed relations between two entities in a document
+  (`core_code/step5_build_igraphs.R`), so weighting would carry verbosity and coalition
+  size into the coefficients; binary is the direct operationalization and the least
+  DWR-concentrated reduction (DWR share of the institutional covariate: weighted 55.4%,
+  binary 41.3%). `binarize = FALSE` restores the weighted form.
+- **Direction discarded.** The construct is an observed relational event between two
+  entities, so the symmetric fold is the intended shape. Direction is recoverable from the
+  directed core graphs only as additional direction-preserving edgecovs.
+- **Self-loops.** Predictors are between-document values, so self-loops sit only on the
+  plan × plan diagonal, which every caller zeroes; `build_gsa_bag_edges.R` drops them.
+- **`mult_gsa`** is an integer count of a document's `gsa_ids`, used as
+  `nodecov('mult_gsa')` in `make_binary0.9_networks.R`, `explore/make_networks.R`, and
+  `explore/make_valued_networks.R`. Its minimum over the 118-plan frame is 1.
+
+---
+
+## 6. Open items
+
+- **Wiring.** `run_all.R` registers none of the bag scripts. Stage 1 still runs
+  `build_gsa_edges.R` → `all_gsa_edges.csv`, and `04_modeling/make_binary0.9_networks.R:36`
+  still reads it. Moving the model to `gsa_bag_edges.csv` (keyed on `gsp_doc_id`) replaces
+  the id-to-doc melt there and retires `build_gsa_edges.R`; update
+  `Code/01_entity_classification/ENTITY_TAGGING.md` in the same commit. Until then
+  `mult_gsa` is a partial control, because `build_gsa_edges.R` counts every GSA-typed
+  vertex, not just authors. The run checks are existence-based, so a changed input behind
+  an existing output is missed; add an mtime or input-hash check.
+- **Alters not wired in.** `build_gsa_bag_edges.R` folds GSA alters to bags but still
+  emits raw node names for every other alter type, and `_entity_groups.R::entity_names()`
+  groups alters by raw name; both need to group by `bag_id` and `bag_type`. Nothing consumes `alter_bag_compounds.csv` yet; wiring it in
+  would recover co-authorship ties that are currently lost.
+- **`entity_bag_lookup.csv` disagrees with the GSA overrides** on 115 of 209 joinable
+  rows. The lookup takes only `entity_type == "GSA"` rows from `entity_bag_map.csv`, so
+  override variants typed otherwise are taken from `alter_bag_map.csv` instead (e.g. `pixid`, typed `Institutional_other`, lands on `io_pixid` rather than gsa_43), and the
+  file predates the latest map rebuild. Fix: rebuild it, and apply the GSA override with
+  the same precedence `build_gsa_bag_edges.R` uses. `gsa_bag_edges.csv` is unaffected.
 - **`plan_family_id` in `gsa_bag_edges.csv` is a bare integer**, not 4-digit
   zero-padded, so it fails to join `modeling_plan_selection()`, `gsp_covariates.csv`, and
-  the shapefile on all 120 plans. `gsp_doc_id` joins fine. Fix: zero-pad.
+  the shapefile. `gsp_doc_id` joins fine.
+- **`Institutional_unresolved`** (2,848 variants, 17% of the institutional population) is
+  in no namespace and has no review file. It needs its own namespace, an explicit drop
+  decision, or a second classifier pass.
+- **Review-file generators** for `DOC_AUTHORS_review.txt` and `DOC_AUTHOR_BAGS_review.txt`
+  are not in `Code/`, so those files cannot be regenerated from the repo.
+- **EJZ markup of the bag review:** `EJZ_MARKUP_STATUS.md` tracks which flags the guards
+  obviated and which remain: one-to-many "agencies" names, generic-suffix folds, `b_gsa`, and the
+  `el_rico` regression.
+- **Run-on variants held by `subset_geo`:** `mcmullin_area_gsa_east_gsa` and
+  `north_kings_groundwater_sustainability_agency_western_boundary_groundwater`. Add
+  override rows if they should fold.
 
-### 6b. Scope gap
-`Institutional_unresolved` (2,848 variants, 17% of the institutional population) is in no
-namespace and has no review file. It needs its own namespace, an explicit drop decision,
-or a second classifier pass.
+### Upstream defects (fix outside the bag system)
 
-### 6c. Compound mentions
-`alter_bag_compounds.csv` (231 rows) lists mentions that name two organizations
-(`woodard_curran_and_davids_engineering`, `clean_water_action_california_waterfowl_association*`).
-The 1:1 variant → bag schema cannot carry two bags, so the second organization is recorded
-here rather than dropped. Nothing consumes it yet; wiring it into the edge builder would
-recover co-authorship ties that are currently lost. The `roster_subset` second-firm guard
-only sees roster firms, so a non-roster second organization (Davids Engineering, Holland &
-Knight) is captured only here.
-
----
-
-## 7. Integration
-
-- **Wiring.** `run_all.R` registers none of the bag scripts. Stage 1 still runs the
-  superseded `build_gsa_edges.R`, and `04_modeling/make_binary0.9_networks.R:34` still
-  reads `all_gsa_edges.csv`. Moving the model to `gsa_bag_edges.csv` (keyed on
-  `gsp_doc_id`) replaces the id-to-doc melt at lines 34–40 and retires `build_gsa_edges.R`.
-  In the same commit, update `Code/01_entity_classification/ENTITY_TAGGING.md` — its Files
-  table lists `build_gsa_edges.R` + `all_gsa_edges.csv` as the current Stage 1c, which
-  becomes obsolete the instant the model switches. The bag scripts and `run_all.R`'s run
-  check are existence-based, so a changed input behind an existing output is missed; add an
-  mtime or input-hash check.
-
-- **Non-actor filter (replaces `prevalence_max`).** The prevalence filter is gone. On the
-  118-plan modeling frame the old 0.10 cut fell at 12 plans and deleted the focal actors
-  the fold was built to surface (TNC, LCJA, CWC, GEI, LSCE, EKI, Self-Help). Ubiquity is
-  not disqualifying — DWR is in 115/118 plans because it administers SGMA, and it stays.
-  Not being an actor is disqualifying — "California" co-occurs with every plan by
-  construction. So `NON_ACTOR_ENTITIES` in `_entity_groups.R` drops bare state/nation
-  placenames by name, in the raw and `io_` spellings (`io_california`, `io_calif`,
-  `io_united_states`, `io_united_states_of_america`, `io_us`). Scope is state/nation only —
-  counties stay (shared county naming is real co-location, and counties are often
-  governmental actors). `build_shared_entity_matrix()` keeps `prevalence_max` as an opt-in
-  argument defaulted to `NA` (off) for reproducibility.
-
-- **Binarized incidence.** `build_shared_entity_matrix()` reduces the plan × entity
-  incidence to mentioned/not before `tcrossprod()`, so a cell counts shared entities. The
-  edge weights are not co-occurrence counts: per `core_code/step5_build_igraphs.R`, a
-  uniplex `weight` is the number of parsed source→target relations between two entities in
-  a document, so the weighted form carried verbosity (how much DWR boilerplate a plan
-  contains) and coalition size (a large joint GSP scoring high on breadth alone) into the
-  coefficients. Binary is the direct operationalization — the relational event was observed
-  or it was not — and is also the least DWR-concentrated reduction available (DWR share of
-  the institutional covariate: raw 55.4%, binary 41.3%; every intensity-preserving
-  alternative is higher). Dyad counts are unchanged; only values change. `binarize = FALSE`
-  restores the weighted form.
-
-- **Direction discarded.** The construct is an observed relational event between two
-  entities, so which end was the grammatical subject does not bear on it; the symmetric
-  fold (`build_gsa_edges.R:55-58`, `build_gsa_bag_edges.R:118-119`) is the intended shape.
-  It is recoverable later from the directed core uniplex graphs if a paper wants it, but
-  only as two additional direction-preserving edgecovs — not a transform of the symmetric
-  plan × plan matrix.
-
-- **GSA self-loops.** The `rbind` fold stores `from == to` edges at 2× (3,048 of 62,471
-  GSA-touching triples). Immaterial: predictors are between-document values, so self-loops
-  sit only on the plan × plan diagonal, which every caller zeroes. `build_gsa_bag_edges.R`
-  already drops self-loops (`[alter != v]`), so Step 3 needs no change.
-
-- **`mult_gsa` is an integer count.** `make_binary0.9_networks.R`, `explore/make_networks.R`,
-  and `explore/make_valued_networks.R` now return `length(ids[nzchar(ids)])` and use
-  `nodecov('mult_gsa')` in place of `nodefactor('mult_gsa')` (27 call sites). It is a
-  partial control while the covariate is built from raw names (`build_gsa_edges.R` counts
-  every GSA-typed vertex, not just authors) and an apt one after the bag rewire.
-  **Blocker:** `gsp_doc_id` 3712 (canonical plan 43, both documents) has empty `gsa_ids` —
-  the only two such rows in the crosswalk — so `mult_gsa = 0`, which is impossible (every
-  plan has ≥1 GSA). The old binary coding hid it as `FALSE`; `nodecov()` takes the 0
-  literally. This is the same gap §3 records as dropping plan 43 under strict authorship,
-  reached from the modeling side.
-
-  **It is a scrape gap, not an extraction gap, and the author is identifiable — recommended
-  fix = backfill `gsa_ids = 205`** (Eastern Tule GSA; `gsa_names` is empty too, so the
-  roster and the text are the only evidence). Doc 3712 holds 3,892 SVO triples over 2,650
-  edges and 33 GSA-typed vertices, so its agencies are richly present in the parse; what is
-  missing is DWR's record of *which* of them authored it. Four independent lines agree:
-  1. `eastern_tule_groundwater_sustainability_agency` carries **528 triples**, >10× the next
-     GSA vertex (Lower Tule 47, Pixley 35, Alpaugh 33) — the self-reference signature of an
-     authoring agency in its own plan; the `eastern_tule_gsa` spelling adds 26 more.
-  2. Eastern Tule GSA is roster **GSA_ID 205**, in this document's basin (5-022.13 TULE).
-  3. **gsa_205 authors zero documents anywhere in the crosswalk** — a real Tule GSA that
-     never appears as an author, which is exactly the shape of a dropped scrape value.
-  4. The Tule subbasin has six plans and they close one-to-one: 48→25 Alpaugh, 56→42 Lower
-     Tule, 57→490 Tri-County, 63→29 Delano-Earlimart, 65→43 Pixley, and **43→(none)**.
-     Eastern Tule is the one agency left over, matched to the one plan left over.
-  So plan 43 is a single-author Eastern Tule plan: `mult_gsa = 1`, and it stops being a
-  strict-authorship dropout. ⚠️ Beware the id collision when writing this: **canonical plan
-  43 is Eastern Tule's plan, while GSA_ID 43 is Pixley ID GSA**, which authors plan 65.
-  Fix belongs upstream in `00_ingest` as a documented author override (§4 already flags 17
-  further documents whose `gsa_names` disagrees with the roster, so the mechanism serves
-  both).
-
-  **✅ APPLIED 2026-10-11.** A fifth and more direct line of evidence turned up in
-  `plan_family_manifest.csv`, which the crosswalk does not carry: DWR's own `localId` for
-  both of plan 43's documents is **"Basin 5-022.13 - ETGSA GSP"** — Eastern Tule GSA named
-  in the plan title. The same file shows `gsa_ids`/`gsa_names` blank upstream as well, so
-  the gap is DWR's and not an ingest loss; a re-scrape would not close it.
-
-  Wired as `inputs/doc_author_overrides.csv` + `apply_author_overrides()` in
-  `Code/00_ingest_core.R`: **fill-only** (stops rather than overwrite a value DWR
-  publishes), **roster-checked** (ids *and* names must agree with `core_gsa_full()` —
-  this guard catches the 43/205 collision above; verified it fires), and it stamps a new
-  `gsa_ids_source` column into `id_crosswalk.csv` (`scrape` 183 / `override` 2 /
-  `missing` 0). Crosswalk rebuilt: exactly 2 rows changed. `mult_gsa` over the 118-plan
-  frame now runs `min = 1` (was 0), the 1-bucket 79→80, mean 2.237→2.246; no other value
-  moved. Documented in the primary README and `inputs/README.md`.
-
----
-
-## 8. Upstream defects (fix outside the bag system)
-
-Folding cannot repair these; tickets belong to `02_text_preprocessing`, the extractor, or
-the classifier.
+Folding cannot repair these; they belong to `02_text_preprocessing`, the extractor, or the
+classifier.
 - **Glossary acronym expansion corrupts text inside words** (22+ names), e.g.
   `california_davids_engineeringpartment_of_water_resources` ("DE" → Davids Engineering).
   It also misclassifies DWR, Kaweah Delta WCD, and Northern Delta as Consultant.

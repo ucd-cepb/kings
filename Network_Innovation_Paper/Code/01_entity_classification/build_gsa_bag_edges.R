@@ -29,17 +29,28 @@
 #'       translation) — this is what fixes the stale-enumeration namespace trap
 #'       that dropped 26% of the old all_gsa_edges rows at the modeling join.
 #'
-#' ALTERS stay as raw node_dictionary names (the modeling groups alters by node
-#' name/type via _entity_groups.R); only the ego side is folded here. Folding the
-#' alter side to bags (esp. consultants) is a separate, larger change and is NOT
-#' done in this step.
+#'   (6) GSA ALTERS FOLDED TO BAGS. A GSA-typed alter that resolves to a roster
+#'       id is folded through the same resolver, with NO authorship filter (a GSA
+#'       mentioned but not authoring still counts as an alter). Columns are
+#'       "bag:gsa_<id>". A name pointing into a multi-MA family folds to the whole
+#'       family, "bag:gsafam_<ids>", unless it carries a token unique to one
+#'       member's MA suffix (e.g. "..._delta_mendota_..." -> County of Merced -
+#'       Delta-Mendota), since no author set picks the member on the alter side.
+#'       A multi-GSA name credits each of its bags. Weights of several names for
+#'       the same bag sum. Alters in the ego's own bag (its other names, or its
+#'       own family) are dropped as self-ties.
+#'
+#' Non-GSA alters, and GSA names the bag map holds unmatched, stay as raw
+#' node_dictionary names (the modeling groups those by node name/type via
+#' _entity_groups.R). Folding consultant and other alters is a later step.
 #'
 #' Reads: id_crosswalk.csv, node_dictionary.csv, entity_bag_map.csv,
 #'        inputs/entity_bag_overrides_gsa.csv, core sgma_gsa_full.csv, and the
 #'        core per-document weighted graphs.
 #' Writes: data_products/01_entity_classification/gsa_bag_edges.csv
 #'   columns: gsp_doc_id, plan_family_id, gsa (authoring bag label), then one
-#'   column per alter node name (pooled co-mention weight, 0-filled).
+#'   column per alter (folded GSA bag key, else raw node name; pooled
+#'   co-mention weight, 0-filled).
 #'
 #' Run from the repo root:
 #'   Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_bag_edges.R
@@ -61,15 +72,16 @@ source(file.path(.this_dir, "..", "_corpus.R"))   # load_id_crosswalk()
 GSA_TYPE <- "GSA"
 CLOBBER  <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 
-# ---- resolver: node-variant -> bag_id (override wins over the auto map) -------
+# ---- resolver: node-variant -> bag_id(s) (override wins over the auto map) ----
+# A variant naming several GSAs has one override row per GSA, so the resolver
+# returns a list: variant -> character vector of bag_ids.
 .build_resolver <- function() {
   ov <- fread(nip_input("entity_bag_overrides_gsa.csv"), colClasses = "character")
   mp <- fread(nip_product("01_entity_classification", "entity_bag_map.csv"),
               colClasses = "character")[entity_type == GSA_TYPE, .(variant, bag_id)]
-  ov <- ov[, .(variant, bag_id)]
-  res <- rbind(ov, mp[!variant %in% ov$variant])
-  res <- res[!duplicated(variant)]
-  setNames(res$bag_id, res$variant)
+  ov <- unique(ov[, .(variant, bag_id)])
+  res <- rbind(ov, unique(mp[!variant %in% ov$variant]))
+  split(res$bag_id, res$variant)
 }
 
 # ---- roster base-name families (multi-MA) ------------------------------------
@@ -88,10 +100,40 @@ CLOBBER  <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 }
 .family_of <- function(x, fam) { f <- fam[[x]]; if (is.null(f)) x else f }
 
+# ---- alter-side fold: GSA variant -> bag key(s) -----------------------------
+# Returns data.table(variant, akey, ids): `akey` is the alter column name and
+# `ids` is ",<id>,<id>," (the roster ids the key covers, for the self-tie test).
+.build_alter_fold <- function(resolve, gtypes, fam) {
+  rost <- fread(core_gsa_full(), colClasses = "character")
+  .tok <- function(s) unique(strsplit(gsub("[^a-z0-9]+", " ", tolower(s)), " +")[[1]])
+  base <- setNames(sub("\\s+[-\u2013]\\s+.*$", "", rost$GSA_Name), rost$GSA_ID)
+  sfx  <- setNames(ifelse(grepl("\\s[-\u2013]\\s", rost$GSA_Name),
+                          sub("^.*?\\s[-\u2013]\\s+", "", rost$GSA_Name, perl = TRUE), ""), rost$GSA_ID)
+  # tokens unique to one member's MA suffix within its family
+  uniq <- lapply(setNames(nm = names(fam)), function(x) {
+    sib <- setdiff(fam[[x]], x)
+    setdiff(.tok(sfx[x]), c("", .tok(base[x]), unlist(lapply(sfx[sib], .tok))))
+  })
+  vs <- intersect(names(resolve), names(gtypes)[gtypes == GSA_TYPE])
+  rows <- lapply(vs, function(v) {
+    b <- resolve[[v]]; b <- b[!is.na(b) & grepl("^gsa_[0-9]+$", b)]
+    if (!length(b)) return(NULL)
+    vt <- strsplit(v, "_")[[1]]
+    rbindlist(lapply(sub("^gsa_", "", b), function(x) {
+      if (is.null(fam[[x]]) || any(uniq[[x]] %in% vt))
+        data.table(variant = v, akey = paste0("bag:gsa_", x), ids = paste0(",", x, ","))
+      else { f <- sort(as.integer(fam[[x]]))
+        data.table(variant = v, akey = paste0("bag:gsafam_", paste(f, collapse = "_")),
+                   ids = paste0(",", paste(f, collapse = ","), ",")) }
+    }))
+  })
+  unique(rbindlist(rows))
+}
+
 # ---- per-document authoring-ego alter contributions --------------------------
 # Returns a long data.table (member, alter, weight) for ONE document, where
 # `member` is the bare roster id actually authoring the doc that the ego folds to.
-.contrib_one <- function(stem, author_set, gtypes, resolve, fam) {
+.contrib_one <- function(stem, author_set, gtypes, resolve, fam, afold) {
   f <- core_rds_for_stem(core_igraph_weighted(), stem)
   if (!file.exists(f)) return(NULL)
   g   <- readRDS(f)
@@ -102,8 +144,8 @@ CLOBBER  <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
   # ego candidates: GSA-typed vertices whose resolved bag is a roster id
   cand <- vnames[vnames %in% names(gtypes)[gtypes == GSA_TYPE]]
   if (!length(cand)) return(NULL)
-  bag  <- resolve[cand]
-  keep <- !is.na(bag) & grepl("^gsa_[0-9]+$", bag)
+  bag  <- lapply(resolve[cand], function(b) b[!is.na(b) & grepl("^gsa_[0-9]+$", b)])
+  keep <- lengths(bag) > 0
   cand <- cand[keep]; bag <- bag[keep]
   if (!length(cand)) return(NULL)
 
@@ -111,17 +153,25 @@ CLOBBER  <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
   for (k in seq_along(cand)) {
     v  <- cand[k]
     X  <- sub("^gsa_", "", bag[[k]])
-    present <- intersect(.family_of(X, fam), author_set)   # per-doc multi-MA expand
+    # per-doc multi-MA expand; a multi-GSA variant credits each authoring GSA once
+    present <- intersect(unique(unlist(lapply(X, .family_of, fam))), author_set)
     if (!length(present)) next                             # mention, not author -> drop
     ie <- edf[from == v | to == v]
     if (!nrow(ie)) next
     alt <- ifelse(ie$from == v, ie$to, ie$from)
     aw  <- data.table(alter = alt, weight = ie$weight)[alter != v]
-    aw  <- aw[, .(weight = sum(weight, na.rm = TRUE)), by = alter]
+    # (6) fold GSA alters to bag keys; others keep their raw name
+    aw  <- merge(aw, afold, by.x = "alter", by.y = "variant", all.x = TRUE,
+                 allow.cartesian = TRUE)
+    aw[is.na(akey), `:=`(akey = alter, ids = "")]
     if (!nrow(aw)) next
-    # same-doc co-authors (both family members in the author set) -> keep all
-    out[[k]] <- rbindlist(lapply(present, function(m)
-      data.table(member = m, alter = aw$alter, weight = aw$weight)))
+    # same-doc co-authors (both family members in the author set) -> keep all;
+    # drop alters in the member's own bag (self-ties)
+    out[[k]] <- rbindlist(lapply(present, function(m) {
+      a <- aw[!grepl(paste0(",", m, ","), ids, fixed = TRUE),
+              .(weight = sum(weight, na.rm = TRUE)), by = akey]
+      if (nrow(a)) data.table(member = m, alter = a$akey, weight = a$weight)
+    }))
   }
   rbindlist(Filter(Negate(is.null), out))
 }
@@ -143,10 +193,14 @@ build_gsa_bag_edges <- function() {
   gtypes <- setNames(dict$entity_type, dict$name)
   resolve <- .build_resolver()
   fam     <- .build_families()
+  afold   <- .build_alter_fold(resolve, gtypes, fam)
+  message("GSA alter fold: ", uniqueN(afold$variant), " names -> ",
+          uniqueN(afold$akey), " bag keys (", sum(grepl("gsafam_", unique(afold$akey))),
+          " families)")
 
   message("building gsa_bag_edges over ", nrow(xw), " documents...")
   parts <- lapply(seq_len(nrow(xw)), function(i)
-    .contrib_one(xw$gsp_doc_id[i], xw$aset[[i]], gtypes, resolve, fam))
+    .contrib_one(xw$gsp_doc_id[i], xw$aset[[i]], gtypes, resolve, fam, afold))
   parts <- Filter(function(d) !is.null(d) && nrow(d), parts)
   long  <- rbindlist(parts)
   if (!nrow(long)) stop("no authoring-ego contributions produced; check inputs.")

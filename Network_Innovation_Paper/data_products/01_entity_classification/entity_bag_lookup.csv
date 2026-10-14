@@ -12,50 +12,50 @@ big_valley_gsa,GSA,gsa_480,Big Valley GSA,exact,,entity_bag_map,gsa,TRUE
 county_of_lassen_gsa,GSA,gsa_240,County of Lassen GSA,exact,,entity_bag_map,gsa,TRUE
 county_of_modoc_gsa,GSA,gsa_236,County of Modoc GSA - Tulelake,revsubset,,entity_bag_map,gsa,TRUE
 modoc_county_gsa,GSA,gsa_236,County of Modoc GSA - Tulelake,revsubset,,entity_bag_map,gsa,TRUE
-big_valley,GSA,gsa_480,Big Valley GSA,subset,,entity_bag_map,gsa,TRUE
+big_valley,GSA,big_valley,big_valley,identity,,entity_bag_map,gsa,FALSE
 lassen_county_gsa,GSA,gsa_240,County of Lassen GSA,subset,,entity_bag_map,gsa,TRUE
 modoc_groundwater_sustainability_agencies,GSA,gsa_236,County of Modoc GSA - Tulelake,revsubset,,entity_bag_map,gsa,TRUE
 tulelake_irrigation_district_gsa,GSA,gsa_258,Tulelake Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
 glenn_groundwater_authority_gsa,GSA,gsa_369,Glenn Groundwater Authority GSA,exact,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority_gsa,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority_x,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_gsa,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_x,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
 glenn_groundwater_authority_x,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
 south_sutter_water_district_gsa,GSA,gsa_233,South Sutter Water District GSA,exact,,entity_bag_map,gsa,TRUE
 corning_subbasin_gsa,GSA,gsa_390,Corning Subbasin GSA,exact,,entity_bag_map,gsa,TRUE
-los_angeles_gsa,GSA,los_angeles_gsa,los_angeles_gsa,identity,,entity_bag_map,gsa,FALSE
-sacramento_county_gsa,GSA,gsa_496,Sacramento County GSA,override,,entity_bag_map,gsa,TRUE
+los_angeles_gsa,GSA,gsa_293,gsa_293,override,,entity_bag_map,gsa,TRUE
+sacramento_county_gsa,GSA,gsa_496,gsa_496,override,,entity_bag_map,gsa,TRUE
 glenn_groundwater_authority_n,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
 western_canal_water_district_gsa,GSA,gsa_120,Western Canal Water District GSA,exact,,entity_bag_map,gsa,TRUE
 la_tarifa_de_operaciones_de_la_glenn_groundwater_authority_x,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
 groundwater_colusa_groundwater_authority_and_glenn_groundwater_authority,GSA,groundwater_colusa_groundwater_authority_and_glenn_groundwater_authority,groundwater_colusa_groundwater_authority_and_glenn_groundwater_authority,identity,,entity_bag_map,gsa,FALSE
 colusa_groundwater_authority_and_glenn_groundwater_authority,GSA,colusa_groundwater_authority_and_glenn_groundwater_authority,colusa_groundwater_authority_and_glenn_groundwater_authority,identity,,entity_bag_map,gsa,FALSE
 butte_water_district_gsa,GSA,gsa_417,Butte Water District GSA - Butte,subset,,entity_bag_map,gsa,TRUE
-colusa_gsa,GSA,gsa_323,Colusa Groundwater Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
+colusa_gsa,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,revsubset,,entity_bag_map,gsa,TRUE
 glenn_groundwater_colusa_groundwater_authority_and_glenn_groundwater_authority,GSA,glenn_groundwater_colusa_groundwater_authority_and_glenn_groundwater_authority,glenn_groundwater_colusa_groundwater_authority_and_glenn_groundwater_authority,identity,,entity_bag_map,gsa,FALSE
 colusa_subbasin_groundwater_sustainability_agencies,GSA,colusa_subbasin_groundwater_sustainability_agencies,colusa_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 yolo_subbasin_gsa,GSA,gsa_217,Yolo Subbasin GSA,exact,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
 county_of_glenn_gsa,GSA,gsa_415,County of Glenn GSA - Butte,revsubset,,entity_bag_map,gsa,TRUE
 glenn_groundwater_authority,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
 autoridad_de_agua_subterranea_de_colusa,GSA,autoridad_de_agua_subterranea_de_colusa,autoridad_de_agua_subterranea_de_colusa,identity,,entity_bag_map,gsa,FALSE
 autoridad_de_agua_subterraneas_de_glenn_aprenda,GSA,autoridad_de_agua_subterraneas_de_glenn_aprenda,autoridad_de_agua_subterraneas_de_glenn_aprenda,identity,,entity_bag_map,gsa,FALSE
-biggs_west_gridley_water_district,GSA,gsa_117,Biggs-West Gridley Water District GSA,subset,,entity_bag_map,gsa,TRUE
+biggs_west_gridley_water_district,GSA,biggs_west_gridley_water_district,biggs_west_gridley_water_district,identity,,entity_bag_map,gsa,FALSE
 butte_gsa,GSA,butte_gsa,butte_gsa,identity,,entity_bag_map,gsa,FALSE
 city_of_yuba_city_gsa,GSA,gsa_264,City of Yuba City GSA,exact,,entity_bag_map,gsa,TRUE
 colgwse,GSA,colgwse,colgwse,identity,,entity_bag_map,gsa,FALSE
 colgwsw,GSA,colgwsw,colgwsw,identity,,entity_bag_map,gsa,FALSE
-colusa_groundwater_sustainability_agencies,GSA,gsa_323,Colusa Groundwater Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority_groundwater_sustainability,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority_groundwater_sustainability_agency,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_sustainability_agencies,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,revsubset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_groundwater_sustainability,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_groundwater_sustainability_agency,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
 colusa_subbasin_gsa,GSA,colusa_subbasin_gsa,colusa_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
 cordua_irrigation_district_gsa,GSA,gsa_111,Cordua Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
 glenn_groundwater_authority_x_gsa,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-glenn_gsa,GSA,gsa_369,Glenn Groundwater Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
+glenn_gsa,GSA,glenn_gsa,glenn_gsa,identity,,entity_bag_map,gsa,FALSE
 glenn_gw_authority,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
 glenn_groundwater_authority_groundwater_sustainability_agency,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-joint_powers_colusa_groundwater_authority_x,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
+joint_powers_colusa_groundwater_authority_x,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
 kings_river_east_gsa,GSA,gsa_18,Kings River East GSA,exact,,entity_bag_map,gsa,TRUE
-mcmullin_area_gsa,GSA,gsa_266,McMullin Area GSA,exact,,entity_bag_map,gsa,TRUE
+mcmullin_area_gsa,GSA,gsa_266,gsa_266,override,,entity_bag_map,gsa,TRUE
 nature_groundwater_sustainability_agencies,GSA,nature_groundwater_sustainability_agencies,nature_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 richvale_irrigation_district_gsa,GSA,gsa_112,Richvale Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
 sonoma_valley_gsa,GSA,gsa_263,Sonoma Valley GSA,exact,,entity_bag_map,gsa,TRUE
@@ -73,21 +73,22 @@ water_bodies_gsa,GSA,water_bodies_gsa,water_bodies_gsa,identity,,entity_bag_map,
 yolo_county_gsa,GSA,yolo_county_gsa,yolo_county_gsa,identity,,entity_bag_map,gsa,FALSE
 tehama_county_flood_control_and_water_conservation_district_gsa,GSA,gsa_124,Tehama County Flood Control and Water Conservation District GSA,exact,,entity_bag_map,gsa,TRUE
 vina_gsa,GSA,gsa_409,Vina GSA,exact,,entity_bag_map,gsa,TRUE
-tehama_county_groundwater_sustainability_agency,GSA,gsa_124,Tehama County Flood Control and Water Conservation District GSA,override,,entity_bag_map,gsa,TRUE
+tehama_county_groundwater_sustainability_agency,GSA,gsa_124,gsa_124,override,,entity_bag_map,gsa,TRUE
 water_conservation_district_groundwater_sustainability_agency,GSA,water_conservation_district_groundwater_sustainability_agency,water_conservation_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 corning_sub_basin_gsa,GSA,gsa_390,gsa_390,override,,entity_bag_map,gsa,TRUE
 tcfcwd_gsa,GSA,tcfcwd_gsa,tcfcwd_gsa,identity,,entity_bag_map,gsa,FALSE
-tehama_gsa,GSA,gsa_124,Tehama County Flood Control and Water Conservation District GSA,override,,entity_bag_map,gsa,TRUE
-westlands_water_district_gsa,GSA,gsa_40,Westlands Water District GSA,exact,,entity_bag_map,gsa,TRUE
-corning_subbasin,GSA,gsa_390,Corning Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
-conservation_district_groundwater_sustainability_agency,GSA,gsa_160,Sloughhouse Resource Conservation District GSA - Cosumnes,revsubset,,entity_bag_map,gsa,TRUE
+tehama_gsa,GSA,gsa_124,gsa_124,override,,entity_bag_map,gsa,TRUE
+westlands_water_district_gsa,GSA,gsa_40,gsa_40,override,,entity_bag_map,gsa,TRUE
+corning_subbasin,GSA,corning_subbasin,corning_subbasin,identity,,entity_bag_map,gsa,FALSE
+conservation_district_groundwater_sustainability_agency,GSA,conservation_district_groundwater_sustainability_agency,conservation_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 gsgsa,GSA,gsgsa,gsgsa,identity,,entity_bag_map,gsa,FALSE
-corning_subbasin_groundwater_sustainability_agencies,GSA,gsa_390,Corning Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
-tehama_county_gsa,GSA,gsa_124,Tehama County Flood Control and Water Conservation District GSA,override,,entity_bag_map,gsa,TRUE
+corning_subbasin_groundwater_sustainability_agencies,GSA,gsa_390,gsa_390,override,,entity_bag_map,gsa,TRUE
+corning_subbasin_groundwater_sustainability_agencies,GSA,gsa_418,gsa_418,override,,entity_bag_map,gsa,TRUE
+tehama_county_gsa,GSA,gsa_124,gsa_124,override,,entity_bag_map,gsa,TRUE
 stanislaus_and_tuolumne_rivers_groundwater_basin_association_gsa,GSA,gsa_192,Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA,exact,,entity_bag_map,gsa,TRUE
 county_of_tuolumne_gsa,GSA,gsa_300,County of Tuolumne GSA,exact,,entity_bag_map,gsa,TRUE
 oakdale_irrigation_district_gsa,GSA,gsa_228,Oakdale Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
-tuolumne_gsa,GSA,gsa_300,County of Tuolumne GSA,revsubset,,entity_bag_map,gsa,TRUE
+tuolumne_gsa,GSA,tuolumne_gsa,tuolumne_gsa,identity,,entity_bag_map,gsa,FALSE
 tuolumne_county_gsa,GSA,gsa_300,County of Tuolumne GSA,subset,,entity_bag_map,gsa,TRUE
 esjga,GSA,esjga,esjga,identity,,entity_bag_map,gsa,FALSE
 kern_river_gsa,GSA,gsa_20,Kern River GSA,exact,,entity_bag_map,gsa,TRUE
@@ -108,14 +109,14 @@ west_turlock_subbasin_groundwater_sustainability_agency,GSA,gsa_225,West Turlock
 san_francisco_public_utilities_commission_gsa,GSA,san_francisco_public_utilities_commission_gsa,san_francisco_public_utilities_commission_gsa,identity,,entity_bag_map,gsa,FALSE
 turlock_groundwater_sustainability_agencies,GSA,turlock_groundwater_sustainability_agencies,turlock_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 turlock_subbasin_groundwater_sustainability_agencies,GSA,turlock_subbasin_groundwater_sustainability_agencies,turlock_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
-west_gsa,GSA,gsa_209,West Placer GSA,revsubset,,entity_bag_map,gsa,TRUE
+west_gsa,GSA,west_gsa,west_gsa,identity,,entity_bag_map,gsa,FALSE
 county_of_merced_gsa,GSA,gsa_191,County of Merced GSA - Chowchilla,revsubset,,entity_bag_map,gsa,TRUE
 east_turlock_subbasin_gsa_board,GSA,gsa_238,East Turlock Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 west_turlock_gsa,GSA,gsa_225,West Turlock Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
 etsga,GSA,etsga,etsga,identity,,entity_bag_map,gsa,FALSE
 etsgsa14_and_east_turlock_subbasin_groundwater_sustainability_agency21,GSA,gsa_238,East Turlock Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 east_turlock_subbasin_groundwater_sustainability_agency_02,GSA,gsa_238,East Turlock Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
-east_gsa,GSA,gsa_314,East Kaweah GSA,revsubset,,entity_bag_map,gsa,TRUE
+east_gsa,GSA,east_gsa,east_gsa,identity,,entity_bag_map,gsa,FALSE
 east_turlock_subbasin_groundwater_sustainability_agency_joint_powers_authority,GSA,gsa_238,East Turlock Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 west_turlock_groundwater_sustainability_agency,GSA,gsa_225,West Turlock Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
 turlock_subbasin_groundwater_sustainability_agency,GSA,turlock_subbasin_groundwater_sustainability_agency,turlock_subbasin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
@@ -127,7 +128,7 @@ east_turlock_gsa,GSA,gsa_238,East Turlock Subbasin GSA,revsubset,,entity_bag_map
 south_san_joaquin_gsa,GSA,gsa_249,South San Joaquin GSA,exact,,entity_bag_map,gsa,TRUE
 west_turlock_subbasin_groundater_sustainability_agency,GSA,gsa_225,West Turlock Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 siskiyou_county_flood_control_and_water_conservation_district_gs,GSA,gsa_253,Siskiyou County Flood Control and Water Conservation District GS,exact,,entity_bag_map,gsa,TRUE
-siskiyou_county_flood_control_and_water_conservation_district,GSA,gsa_256,County of Siskiyou GSA,subset,,entity_bag_map,gsa,TRUE
+siskiyou_county_flood_control_and_water_conservation_district,GSA,gsa_253,gsa_253,override,,entity_bag_map,gsa,TRUE
 county_of_siskiyou_gsa,GSA,gsa_256,County of Siskiyou GSA,exact,,entity_bag_map,gsa,TRUE
 pleasant_valley_gsa,GSA,gsa_190,Pleasant Valley GSA,exact,,entity_bag_map,gsa,TRUE
 butte_valley_gsa,GSA,butte_valley_gsa,butte_valley_gsa,identity,,entity_bag_map,gsa,FALSE
@@ -136,15 +137,15 @@ siskiyou_county_groundwater_sustainability_agency,GSA,gsa_256,County of Siskiyou
 tule_lake_gsa,GSA,tule_lake_gsa,tule_lake_gsa,identity,,entity_bag_map,gsa,FALSE
 cdfw009_gsa,GSA,cdfw009_gsa,cdfw009_gsa,identity,,entity_bag_map,gsa,FALSE
 city_of_tulelake_gsa,GSA,gsa_280,City of Tulelake GSA,exact,,entity_bag_map,gsa,TRUE
-fillmore_and_piru_basins_groundwater_sustainability_agency,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
-fillmore_and_piru_basins_gsa,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_gsa,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 fbga,GSA,fbga,fbga,identity,,entity_bag_map,gsa,FALSE
 santa_clarita_valley_gsa,GSA,gsa_315,Santa Clarita Valley GSA,exact,,entity_bag_map,gsa,TRUE
-fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_directors,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_directors,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 mound_basin_gsa,GSA,gsa_354,Mound Basin GSA,exact,,entity_bag_map,gsa,TRUE
 fox_canyon_groundwater_management_agency_gsa,GSA,gsa_433,Fox Canyon Groundwater Management Agency GSA - Oxnard,revsubset,,entity_bag_map,gsa,TRUE
-fillmore_and_piru_basins_groundwater_sustainability_agency_board,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
-fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_board,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 mound_basin_groundwater_sustainability_agency,GSA,gsa_354,Mound Basin GSA,subset,,entity_bag_map,gsa,TRUE
 fbgsa,GSA,fbgsa,fbgsa,identity,,entity_bag_map,gsa,FALSE
 fpgsa,GSA,fpgsa,fpgsa,identity,,entity_bag_map,gsa,FALSE
@@ -152,20 +153,22 @@ santa_clarita_valley_groundwater_sustainability_agency,GSA,gsa_315,Santa Clarita
 camrosa_water_district_gsa,GSA,camrosa_water_district_gsa,camrosa_water_district_gsa,identity,,entity_bag_map,gsa,FALSE
 fillmore_and_piru_basin_groundwater_sustainability_agency,GSA,fillmore_and_piru_basin_groundwater_sustainability_agency,fillmore_and_piru_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 fpbga,GSA,fpbga,fpbga,identity,,entity_bag_map,gsa,FALSE
-piru_basins_gsa,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+piru_basins_gsa,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 smga,GSA,smga,smga,identity,,entity_bag_map,gsa,FALSE
-fillmore_and_piru_basins_groundwater_sustainability_agency_joint,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_joint,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 fillmore_and_piru_basin_groundwater_sustainability,GSA,fillmore_and_piru_basin_groundwater_sustainability,fillmore_and_piru_basin_groundwater_sustainability,identity,,entity_bag_map,gsa,FALSE
-united_fillmore_and_piru_basins_groundwater_sustainability_agency,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+united_fillmore_and_piru_basins_groundwater_sustainability_agency,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 thefpbgsa,GSA,thefpbgsa,thefpbgsa,identity,,entity_bag_map,gsa,FALSE
-fillmore_and_piru_basins_groundwater_sustainability_agency_board_of,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_board_of,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 county_of_fresno_gsa,GSA,gsa_408,County of Fresno GSA - Pleasant Valley,revsubset,,entity_bag_map,gsa,TRUE
 city_of_coalinga_gsa,GSA,gsa_410,City of Coalinga GSA,exact,,entity_bag_map,gsa,TRUE
 fcpvgsa,GSA,fcpvgsa,fcpvgsa,identity,,entity_bag_map,gsa,FALSE
-pleasant_valley_subbasin_groundwater_sustainability_agencies,GSA,gsa_190,Pleasant Valley GSA,subset,,entity_bag_map,gsa,TRUE
+pleasant_valley_subbasin_groundwater_sustainability_agencies,GSA,gsa_190,gsa_190,override,,entity_bag_map,gsa,TRUE
+pleasant_valley_subbasin_groundwater_sustainability_agencies,GSA,gsa_408,gsa_408,override,,entity_bag_map,gsa,TRUE
+pleasant_valley_subbasin_groundwater_sustainability_agencies,GSA,gsa_410,gsa_410,override,,entity_bag_map,gsa,TRUE
 pleasant_valley_groundwater_sustainability_agency,GSA,gsa_190,Pleasant Valley GSA,subset,,entity_bag_map,gsa,TRUE
 pvgsas,GSA,pvgsas,pvgsas,identity,,entity_bag_map,gsa,FALSE
-westlands_water_district,GSA,gsa_40,Westlands Water District GSA,subset,,entity_bag_map,gsa,TRUE
+westlands_water_district,GSA,gsa_40,gsa_40,override,,entity_bag_map,gsa,TRUE
 tid_gsa,GSA,tid_gsa,tid_gsa,identity,,entity_bag_map,gsa,FALSE
 tulelake_irrigation_district_groundwater_sustainability_agency,GSA,gsa_258,Tulelake Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 city_of_tulelake_groundwater_sustainability_agency,GSA,gsa_280,City of Tulelake GSA,subset,,entity_bag_map,gsa,TRUE
@@ -194,15 +197,15 @@ madera_county_groundwater_sustainability_agency,GSA,gsa_69,County of Madera GSA 
 aliso_water_district_gsa,GSA,gsa_23,Aliso Water District GSA,exact,,entity_bag_map,gsa,TRUE
 chowchilla_gsa,GSA,chowchilla_gsa,chowchilla_gsa,identity,,entity_bag_map,gsa,FALSE
 county_of_merced_chowchilla_gsa,GSA,gsa_191,County of Merced GSA - Chowchilla,subset,,entity_bag_map,gsa,TRUE
-gsa_east,GSA,gsa_314,East Kaweah GSA,revsubset,,entity_bag_map,gsa,TRUE
+gsa_east,GSA,gsa_east,gsa_east,identity,,entity_bag_map,gsa,FALSE
 gsa_madera_county,GSA,gsa_69,County of Madera GSA - Madera,subset,,entity_bag_map,gsa,TRUE
-gsa_west,GSA,gsa_209,West Placer GSA,revsubset,,entity_bag_map,gsa,TRUE
-madera_county_east_gsa,GSA,gsa_69,County of Madera GSA - Madera,subset,,entity_bag_map,gsa,TRUE
-merced_gsa,GSA,gsa_219,Merced Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
+gsa_west,GSA,gsa_west,gsa_west,identity,,entity_bag_map,gsa,FALSE
+madera_county_east_gsa,GSA,madera_county_east_gsa,madera_county_east_gsa,identity,,entity_bag_map,gsa,FALSE
+merced_gsa,GSA,merced_gsa,merced_gsa,identity,,entity_bag_map,gsa,FALSE
 nswd_gsa,GSA,nswd_gsa,nswd_gsa,identity,,entity_bag_map,gsa,FALSE
 ttwdgsa,GSA,ttwdgsa,ttwdgsa,identity,,entity_bag_map,gsa,FALSE
 t_water_district_groundwater_sustainability_agencies,GSA,gsa_394,Triangle T Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
-triangle_t_water_madera_county_west_gsa,GSA,gsa_69,County of Madera GSA - Madera,subset,,entity_bag_map,gsa,TRUE
+triangle_t_water_madera_county_west_gsa,GSA,triangle_t_water_madera_county_west_gsa,triangle_t_water_madera_county_west_gsa,identity,,entity_bag_map,gsa,FALSE
 each_groundwater_sustainability_agency,GSA,each_groundwater_sustainability_agency,each_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 sjrecwa_gsa,GSA,sjrecwa_gsa,sjrecwa_gsa,identity,,entity_bag_map,gsa,FALSE
 tlie_gsaa,GSA,tlie_gsaa,tlie_gsaa,identity,,entity_bag_map,gsa,FALSE
@@ -227,11 +230,11 @@ widren_water_district_gsa,GSA,gsa_237,Widren Water District GSA,exact,,entity_ba
 city_of_stockton_gsa,GSA,gsa_137,City of Stockton GSA,exact,,entity_bag_map,gsa,TRUE
 fresno_county_management_area_a_gsa,GSA,gsa_298,County of Fresno GSA - Delta-Mendota Management Area A,revsubset,,entity_bag_map,gsa,TRUE
 spadra_basin_gsa,GSA,gsa_212,Spadra Basin GSA,exact,,entity_bag_map,gsa,TRUE
-city_of_pomona_gsa,GSA,city_of_pomona_gsa,city_of_pomona_gsa,identity,,entity_bag_map,gsa,FALSE
+city_of_pomona_gsa,GSA,gsa_368,gsa_368,override,,entity_bag_map,gsa,TRUE
 spadra_gsa,GSA,gsa_212,Spadra Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 spadra_basin_groundwater_sustainability_agency,GSA,gsa_212,Spadra Basin GSA,subset,,entity_bag_map,gsa,TRUE
 opportunities_for_public_involvement_spadra_basin_gsa,GSA,gsa_212,Spadra Basin GSA,subset,,entity_bag_map,gsa,TRUE
-spadra_basin,GSA,gsa_212,Spadra Basin GSA,subset,,entity_bag_map,gsa,TRUE
+spadra_basin,GSA,spadra_basin,spadra_basin,identity,,entity_bag_map,gsa,FALSE
 mid_kaweah_groundwater_sustainability_agency,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 east_kaweah_groundwater_sustainability_agency,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 greater_kaweah_groundwater_sustainability_agency,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
@@ -294,7 +297,7 @@ greater_kaweah_groundwater_sustainability_agency_board,GSA,gsa_281,Greater Kawea
 mid_kaweah_groundwater_sustainability_agency_advisory_committees,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 greater_kaweah_groundwater_sustainability_agency_joint_powers_authority,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 gkga,GSA,gkga,gkga,identity,,entity_bag_map,gsa,FALSE
-wwwgreaterkaweahgsaorg,GSA,wwwgreaterkaweahgsaorg,wwwgreaterkaweahgsaorg,identity,,entity_bag_map,gsa,FALSE
+wwwgreaterkaweahgsaorg,GSA,gsa_281,gsa_281,override,,entity_bag_map,gsa,TRUE
 el_rico_gsa,GSA,gsa_358,El Rico GSA,exact,,entity_bag_map,gsa,TRUE
 greater_kaweah_groundwater_sustainability_agency_6,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 gksa,GSA,gksa,gksa,identity,,entity_bag_map,gsa,FALSE
@@ -303,7 +306,7 @@ westside_district_water_authority_gsa,GSA,gsa_506,Westside District Water Author
 westside_districts_water_authority_gsa,GSA,gsa_506,gsa_506,override,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 shafter_wasco_irrigation_district_gsa,GSA,gsa_507,Shafter-Wasco Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
-semitropic_water_storage_district_gsa,GSA,gsa_277,Semitropic Water Storage District GSA,exact,,entity_bag_map,gsa,TRUE
+semitropic_water_storage_district_gsa,GSA,gsa_277,gsa_277,override,,entity_bag_map,gsa,TRUE
 kern_subbasin_groundwater_sustainability_agencies,GSA,kern_subbasin_groundwater_sustainability_agencies,kern_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 arvin_gsa,GSA,gsa_481,Arvin GSA,exact,,entity_bag_map,gsa,TRUE
 kern_non_districted_land_authority_gsa,GSA,gsa_306,Kern Non-Districted Land Authority GSA,exact,,entity_bag_map,gsa,TRUE
@@ -314,23 +317,23 @@ southern_san_joaquin_municipal_utility_district_gsa,GSA,gsa_514,Southern San Joa
 west_kern_water_district_gsa,GSA,gsa_39,West Kern Water District GSA,exact,,entity_bag_map,gsa,TRUE
 kern_tulare_water_district_gsa,GSA,gsa_517,Kern-Tulare Water District GSA,exact,,entity_bag_map,gsa,TRUE
 olcese_water_district_gsa,GSA,gsa_196,Olcese Water District GSA,exact,,entity_bag_map,gsa,TRUE
-bvgsa,GSA,bvgsa,bvgsa,identity,,entity_bag_map,gsa,FALSE
+bvgsa,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 kern_water_bank_gsa,GSA,gsa_523,Kern Water Bank GSA,exact,,entity_bag_map,gsa,TRUE
-buena_vista_water_storage_district_gsa,GSA,gsa_15,Buena Vista Water Storage District GSA,exact,,entity_bag_map,gsa,TRUE
+buena_vista_water_storage_district_gsa,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 cawelo_water_district_gsa,GSA,gsa_326,Cawelo Water District GSA,exact,,entity_bag_map,gsa,TRUE
 henry_miller_water_district_gsa,GSA,gsa_254,Henry Miller Water District GSA,exact,,entity_bag_map,gsa,TRUE
-westside_districts_water_authority_gsa_board_of_directors,GSA,westside_districts_water_authority_gsa_board_of_directors,westside_districts_water_authority_gsa_board_of_directors,identity,,entity_bag_map,gsa,FALSE
-river_gsa,GSA,gsa_20,Kern River GSA,revsubset,,entity_bag_map,gsa,TRUE
+westside_districts_water_authority_gsa_board_of_directors,GSA,gsa_506,gsa_506,override,,entity_bag_map,gsa,TRUE
+river_gsa,GSA,river_gsa,river_gsa,identity,,entity_bag_map,gsa,FALSE
 white_wolf_gsa,GSA,gsa_244,White Wolf GSA,exact,,entity_bag_map,gsa,TRUE
-buena_vista_gsa,GSA,gsa_15,Buena Vista Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
+buena_vista_gsa,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 cgsa,GSA,cgsa,cgsa,identity,,entity_bag_map,gsa,FALSE
 olcese_gsa,GSA,gsa_196,Olcese Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
-semitropic_gsa,GSA,gsa_277,Semitropic Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
+semitropic_gsa,GSA,gsa_277,gsa_277,override,,entity_bag_map,gsa,TRUE
 tejon_castac_water_district_gsa,GSA,gsa_482,Tejon-Castac Water District GSA,exact,,entity_bag_map,gsa,TRUE
 westside_district_water_authority_groundwater_sustainability_agency,GSA,gsa_506,Westside District Water Authority GSA,subset,,entity_bag_map,gsa,TRUE
 wheeler_ridge_maricopa_gsa,GSA,gsa_484,Wheeler Ridge-Maricopa GSA,exact,,entity_bag_map,gsa,TRUE
-south_of_kern_river_gsa,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
-westside_districts_water_authority_gsa_groundwater_sustainability_plan,GSA,westside_districts_water_authority_gsa_groundwater_sustainability_plan,westside_districts_water_authority_gsa_groundwater_sustainability_plan,identity,,entity_bag_map,gsa,FALSE
+south_of_kern_river_gsa,GSA,south_of_kern_river_gsa,south_of_kern_river_gsa,identity,,entity_bag_map,gsa,FALSE
+westside_districts_water_authority_gsa_groundwater_sustainability_plan,GSA,gsa_506,gsa_506,override,,entity_bag_map,gsa,TRUE
 groundwater_sustainability_agency_groundwater_sustainability_plan,GSA,groundwater_sustainability_agency_groundwater_sustainability_plan,groundwater_sustainability_agency_groundwater_sustainability_plan,identity,,entity_bag_map,gsa,FALSE
 wrm_gsa,GSA,wrm_gsa,wrm_gsa,identity,,entity_bag_map,gsa,FALSE
 henry_miller_gsa,GSA,gsa_254,Henry Miller Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -338,9 +341,9 @@ kern_subbasin_gsa,GSA,kern_subbasin_gsa,kern_subbasin_gsa,identity,,entity_bag_m
 delano_earlimart_irrigation_district_gsa,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
 greenfield_county_water_district_gsa,GSA,gsa_22,Greenfield County Water District GSA,exact,,entity_bag_map,gsa,TRUE
 kern_national_wildlife_direct_gsa,GSA,kern_national_wildlife_direct_gsa,kern_national_wildlife_direct_gsa,identity,,entity_bag_map,gsa,FALSE
-storage_district_gsa,GSA,gsa_277,Semitropic Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
+storage_district_gsa,GSA,storage_district_gsa,storage_district_gsa,identity,,entity_bag_map,gsa,FALSE
 water_district_gsa,GSA,water_district_gsa,water_district_gsa,identity,,entity_bag_map,gsa,FALSE
-westside_district_water_authority,GSA,gsa_506,Westside District Water Authority GSA,subset,,entity_bag_map,gsa,TRUE
+westside_district_water_authority,GSA,westside_district_water_authority,westside_district_water_authority,identity,,entity_bag_map,gsa,FALSE
 kern_fan_sustainability_agency,GSA,kern_fan_sustainability_agency,kern_fan_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 kern_non_districted_lands_authority_gsa,GSA,gsa_306,gsa_306,override,,entity_bag_map,gsa,TRUE
 westside_districts_water_authority_gsa_board,GSA,gsa_506,gsa_506,override,,entity_bag_map,gsa,TRUE
@@ -350,15 +353,15 @@ bravo_water_storage_districtgsa,GSA,bravo_water_storage_districtgsa,bravo_water_
 california_water_direct_gsa,GSA,california_water_direct_gsa,california_water_direct_gsa,identity,,entity_bag_map,gsa,FALSE
 cawelo_gsa,GSA,gsa_326,Cawelo Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 cawelo_groundwater_sustainability,GSA,gsa_326,Cawelo Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
-district_water_authority_gsa,GSA,gsa_506,Westside District Water Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
+district_water_authority_gsa,GSA,gsa_506,gsa_506,override,,entity_bag_map,gsa,TRUE
 district_water_supplemental_gsa,GSA,district_water_supplemental_gsa,district_water_supplemental_gsa,identity,,entity_bag_map,gsa,FALSE
 districted_lands_authority_groundwater_sustainability_agency,GSA,districted_lands_authority_groundwater_sustainability_agency,districted_lands_authority_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_gsa,GSA,eastern_tule_gsa,eastern_tule_gsa,identity,,entity_bag_map,gsa,FALSE
+eastern_tule_gsa,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
 gsas,GSA,gsas,gsas,identity,,entity_bag_map,gsa,FALSE
 greenfield_gsa,GSA,gsa_22,Greenfield County Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 intra_subbasin_coordination_kern_subbasin_gsa,GSA,intra_subbasin_coordination_kern_subbasin_gsa,intra_subbasin_coordination_kern_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
 kern_county_subbasin_gsa,GSA,kern_county_subbasin_gsa,kern_county_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
-kern_river,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
+kern_river,GSA,kern_river,kern_river,identity,,entity_bag_map,gsa,FALSE
 kern_river_groundwater_sustainability_agency_agricultural_management_area,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_banking_management_area,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_conservation_measures,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
@@ -371,7 +374,7 @@ mcfarland_gsa,GSA,mcfarland_gsa,mcfarland_gsa,identity,,entity_bag_map,gsa,FALSE
 miller_water_district_groundwater_sustainability_agency,GSA,gsa_254,Henry Miller Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 north_kern_water_storage_district_gsa_p_management_area,GSA,gsa_508,North Kern Water Storage District GSA,subset,,entity_bag_map,gsa,TRUE
 pioneer_gsa_p_management_area,GSA,gsa_188,Pioneer GSA,subset,,entity_bag_map,gsa,TRUE
-pixley_irrigation_district_gsa,GSA,gsa_43,Pixley Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
+pixley_irrigation_district_gsa,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
 rosedale_rio_bravo_gsa,GSA,gsa_515,Rosedale-Rio Bravo Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
 southern_san_joaquin_municipal_utilities_district_gsa,GSA,gsa_514,gsa_514,override,,entity_bag_map,gsa,TRUE
 rrbma_gsa,GSA,rrbma_gsa,rrbma_gsa,identity,,entity_bag_map,gsa,FALSE
@@ -392,69 +395,69 @@ public_mid_kaweah_groundwater_sustainability_agency,GSA,gsa_7,Mid-Kaweah GSA,sub
 al_east_kaweah_gsa,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 east_kaweah_groundwater_sustainability_agency_technical_advisory,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 east_kaweah_groundwater_sustainability_agency_well_mitigation_plan,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
-water_storage_district_groundwater_sustainability_agency,GSA,gsa_277,Semitropic Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
-alameda_county_water_district_gsa,GSA,alameda_county_water_district_gsa,alameda_county_water_district_gsa,identity,,entity_bag_map,gsa,FALSE
+water_storage_district_groundwater_sustainability_agency,GSA,water_storage_district_groundwater_sustainability_agency,water_storage_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+alameda_county_water_district_gsa,GSA,gsa_95,gsa_95,override,,entity_bag_map,gsa,TRUE
 semitropic_water_storage_district_gsa_groundwater_sustainability_plan,GSA,gsa_277,Semitropic Water Storage District GSA,subset,,entity_bag_map,gsa,TRUE
 zone_7_water_agency_gsa,GSA,zone_7_water_agency_gsa,zone_7_water_agency_gsa,identity,,entity_bag_map,gsa,FALSE
 henry_miller_water_district_gsa_groundwater_sustainability_plan,GSA,gsa_254,Henry Miller Water District GSA,subset,,entity_bag_map,gsa,TRUE
-eastern_tule_groundwater_sustainability_agency,GSA,eastern_tule_groundwater_sustainability_agency,eastern_tule_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-tri_county_water_authority_gsa,GSA,gsa_411,Tri-County Water Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-pixid_gsa,GSA,pixid_gsa,pixid_gsa,identity,,entity_bag_map,gsa,FALSE
+eastern_tule_groundwater_sustainability_agency,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
+tri_county_water_authority_gsa,GSA,gsa_490,Tri-County Water Authority GSA - Tule,revsubset,,entity_bag_map,gsa,TRUE
+pixid_gsa,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
 alpaugh_groundwater_sustainability_agency,GSA,gsa_25,Alpaugh GSA,subset,,entity_bag_map,gsa,TRUE
 alpaugh_gsa,GSA,gsa_25,Alpaugh GSA,exact,,entity_bag_map,gsa,TRUE
-tea_pot_dome_water_district,GSA,tea_pot_dome_water_district,tea_pot_dome_water_district,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_gsa_a1,GSA,eastern_tule_gsa_a1,eastern_tule_gsa_a1,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency,GSA,gsa_15,Buena Vista Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
+tea_pot_dome_water_district,GSA,gsa_528,gsa_528,override,,entity_bag_map,gsa,TRUE
+eastern_tule_gsa_a1,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 bgvsa,GSA,bgvsa,bgvsa,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_42,GSA,buena_vista_groundwater_sustainability_agency_42,buena_vista_groundwater_sustainability_agency_42,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_water_banking,GSA,buena_vista_groundwater_sustainability_agency_water_banking,buena_vista_groundwater_sustainability_agency_water_banking,identity,,entity_bag_map,gsa,FALSE
-bvsa,GSA,bvsa,bvsa,identity,,entity_bag_map,gsa,FALSE
-storage_district_groundwater_sustainability_agency,GSA,gsa_277,Semitropic Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_42,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_water_banking,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+bvsa,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+storage_district_groundwater_sustainability_agency,GSA,storage_district_groundwater_sustainability_agency,storage_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 buena_vista_groundwater_sustainability_agency_board,GSA,gsa_15,Buena Vista Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
-buena_vista_groundwater_sustainability_agency_groundwater_sustainability_plan,GSA,gsa_15,Buena Vista Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_groundwater_sustainability_plan,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 olcese_water_district_groundwater_sustainability_agency,GSA,gsa_196,Olcese Water District GSA,subset,,entity_bag_map,gsa,TRUE
 olcese_water_management_management_actions_district_gsa,GSA,gsa_196,Olcese Water District GSA,subset,,entity_bag_map,gsa,TRUE
 turner_island_water_district_gsa,GSA,gsa_223,Turner Island Water District GSA - Merced,revsubset,,entity_bag_map,gsa,TRUE
 city_of_patterson_gsa,GSA,gsa_66,City of Patterson GSA,exact,,entity_bag_map,gsa,TRUE
 oro_loma_water_district_gsa,GSA,gsa_302,Oro Loma Water District GSA,exact,,entity_bag_map,gsa,TRUE
-grasslands_gsa,GSA,gsa_62,Grasslands GSA,exact,,entity_bag_map,gsa,TRUE
+grasslands_gsa,GSA,gsa_62,gsa_62,override,,entity_bag_map,gsa,TRUE
 northwestern_delta_mendota_gsa,GSA,gsa_214,Northwestern Delta-Mendota GSA,exact,,entity_bag_map,gsa,TRUE
 northern_delta_mendota_gsa_group,GSA,northern_delta_mendota_gsa_group,northern_delta_mendota_gsa_group,identity,,entity_bag_map,gsa,FALSE
 san_joaquin_river_exchange_contractors_gsa_group,GSA,gsa_10,San Joaquin River Exchange Contractors GSA,subset,,entity_bag_map,gsa,TRUE
-grassland_gsa_group,GSA,grassland_gsa_group,grassland_gsa_group,identity,,entity_bag_map,gsa,FALSE
+grassland_gsa_group,GSA,gsa_62,gsa_62,override,,entity_bag_map,gsa,TRUE
 central_delta_mendota_gsa_group,GSA,gsa_206,Central Delta-Mendota GSA,subset,,entity_bag_map,gsa,TRUE
 delta_mendota_groundwater_sustainability_agencies,GSA,delta_mendota_groundwater_sustainability_agencies,delta_mendota_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 grassland_gsa,GSA,gsa_62,gsa_62,override,,entity_bag_map,gsa,TRUE
-mendota_gsa,GSA,gsa_67,City of Mendota GSA,revsubset,,entity_bag_map,gsa,TRUE
+mendota_gsa,GSA,mendota_gsa,mendota_gsa,identity,,entity_bag_map,gsa,FALSE
 aliso_gsa,GSA,gsa_23,Aliso Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 delta_mendota_gsa,GSA,delta_mendota_gsa,delta_mendota_gsa,identity,,entity_bag_map,gsa,FALSE
 northern_delta_mendota_gsa,GSA,northern_delta_mendota_gsa,northern_delta_mendota_gsa,identity,,entity_bag_map,gsa,FALSE
 northern_delta_mendota_gsa_group_del_puerto_water_district,GSA,northern_delta_mendota_gsa_group_del_puerto_water_district,northern_delta_mendota_gsa_group_del_puerto_water_district,identity,,entity_bag_map,gsa,FALSE
 northern_gsa,GSA,northern_gsa,northern_gsa,identity,,entity_bag_map,gsa,FALSE
-northern_and_central_delta_mendota_groundwater_sustainability_agencies,GSA,gsa_206,Central Delta-Mendota GSA,subset,,entity_bag_map,gsa,TRUE
+northern_and_central_delta_mendota_groundwater_sustainability_agencies,GSA,gsa_206,gsa_206,override,,entity_bag_map,gsa,TRUE
 san_joaquin_river_exchange_contractors_gsa_groups,GSA,gsa_10,San Joaquin River Exchange Contractors GSA,subset,,entity_bag_map,gsa,TRUE
 san_benito_county_water_district_gsa,GSA,gsa_89,San Benito County Water District GSA,exact,,entity_bag_map,gsa,TRUE
-of_merced_gsa,GSA,gsa_219,Merced Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
+of_merced_gsa,GSA,of_merced_gsa,of_merced_gsa,identity,,entity_bag_map,gsa,FALSE
 san_joaquin_river_exchange_contractors_san_joaquin_riverec_gsa_group,GSA,gsa_10,San Joaquin River Exchange Contractors GSA,subset,,entity_bag_map,gsa,TRUE
 fcma_gsa,GSA,fcma_gsa,fcma_gsa,identity,,entity_bag_map,gsa,FALSE
-grassland_groundwater_sustainability_agency,GSA,grassland_groundwater_sustainability_agency,grassland_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+grassland_groundwater_sustainability_agency,GSA,gsa_62,gsa_62,override,,entity_bag_map,gsa,TRUE
 merced_county_delta_mendota_groundwater_sustainability_agency,GSA,gsa_231,County of Merced GSA - Delta-Mendota,subset,,entity_bag_map,gsa,TRUE
 mc_dmgsa,GSA,mc_dmgsa,mc_dmgsa,identity,,entity_bag_map,gsa,FALSE
 sjrecgsa,GSA,sjrecgsa,sjrecgsa,identity,,entity_bag_map,gsa,FALSE
-b_gsa,GSA,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B,revsubset,,entity_bag_map,gsa,TRUE
-farmers_water_district,GSA,gsa_30,Farmers Water District GSA,subset,,entity_bag_map,gsa,TRUE
-grassland_groundwater_sustainability_agency_board_of_directors,GSA,grassland_groundwater_sustainability_agency_board_of_directors,grassland_groundwater_sustainability_agency_board_of_directors,identity,,entity_bag_map,gsa,FALSE
+b_gsa,GSA,b_gsa,b_gsa,identity,,entity_bag_map,gsa,FALSE
+farmers_water_district,GSA,farmers_water_district,farmers_water_district,identity,,entity_bag_map,gsa,FALSE
+grassland_groundwater_sustainability_agency_board_of_directors,GSA,gsa_62,gsa_62,override,,entity_bag_map,gsa,TRUE
 mcdm_gsa,GSA,mcdm_gsa,mcdm_gsa,identity,,entity_bag_map,gsa,FALSE
 olcese_groundwater_sustainability_agency,GSA,gsa_196,Olcese Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 olcese_gsa_board,GSA,gsa_196,Olcese Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 groundwater_sustainability_agency_olcese,GSA,gsa_196,Olcese Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 interagency_coordination_olcese_gsa,GSA,interagency_coordination_olcese_gsa,interagency_coordination_olcese_gsa,identity,,entity_bag_map,gsa,FALSE
-olcese_water_district,GSA,gsa_196,Olcese Water District GSA,subset,,entity_bag_map,gsa,TRUE
+olcese_water_district,GSA,olcese_water_district,olcese_water_district,identity,,entity_bag_map,gsa,FALSE
 olcese_groundwater_sustainability,GSA,gsa_196,Olcese Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 city_of_marysville_gsa,GSA,gsa_133,City of Marysville GSA,exact,,entity_bag_map,gsa,TRUE
 yuba_water_agency_formerly_yuba_county_water_agency_gsa,GSA,yuba_water_agency_formerly_yuba_county_water_agency_gsa,yuba_water_agency_formerly_yuba_county_water_agency_gsa,identity,,entity_bag_map,gsa,FALSE
-yuba_gsa,GSA,gsa_264,City of Yuba City GSA,revsubset,,entity_bag_map,gsa,TRUE
-westlands_gsa,GSA,gsa_40,Westlands Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
+yuba_gsa,GSA,yuba_gsa,yuba_gsa,identity,,entity_bag_map,gsa,FALSE
+westlands_gsa,GSA,gsa_40,gsa_40,override,,entity_bag_map,gsa,TRUE
 north_fork_kings_groundwater_sustainability_agency,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
 north_fork_kings_gsa,GSA,gsa_187,North Fork Kings GSA,exact,,entity_bag_map,gsa,TRUE
 southwest_kings_gsa,GSA,gsa_226,Southwest Kings GSA,exact,,entity_bag_map,gsa,TRUE
@@ -464,7 +467,7 @@ westlands_water_district_groundwater_sustainability_agency,GSA,gsa_40,Westlands 
 gsa_westlands_water_district,GSA,gsa_40,Westlands Water District GSA,subset,,entity_bag_map,gsa,TRUE
 kings_gsa,GSA,kings_gsa,kings_gsa,identity,,entity_bag_map,gsa,FALSE
 westland_gsa,GSA,westland_gsa,westland_gsa,identity,,entity_bag_map,gsa,FALSE
-westlands_groundwater_sustainability_agency,GSA,gsa_40,Westlands Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
+westlands_groundwater_sustainability_agency,GSA,gsa_40,gsa_40,override,,entity_bag_map,gsa,TRUE
 groundwater_sustainable_agency_of_the_westside_subbasin,GSA,groundwater_sustainable_agency_of_the_westside_subbasin,groundwater_sustainable_agency_of_the_westside_subbasin,identity,,entity_bag_map,gsa,FALSE
 south_kings_gsa,GSA,gsa_317,South Kings GSA,exact,,entity_bag_map,gsa,TRUE
 south_kings_groundwater_sustainability_agency,GSA,gsa_317,South Kings GSA,subset,,entity_bag_map,gsa,TRUE
@@ -495,11 +498,11 @@ semtrop_sustainability_agency,GSA,semtrop_sustainability_agency,semtrop_sustaina
 vista_gsa,GSA,gsa_15,Buena Vista Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
 el_kern_groundwater_authority_gsa,GSA,el_kern_groundwater_authority_gsa,el_kern_groundwater_authority_gsa,identity,,entity_bag_map,gsa,FALSE
 gravelly_ford_water_district_gsa,GSA,gsa_34,Gravelly Ford Water District GSA,exact,,entity_bag_map,gsa,TRUE
-merced_subbasin,GSA,gsa_219,Merced Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
+merced_subbasin,GSA,merced_subbasin,merced_subbasin,identity,,entity_bag_map,gsa,FALSE
 kern_river_groundwater_sustainability_agency_plan_managers,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_kern_river_groundwater_sustainability_agency,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_board_of_directors,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
-arvin,GSA,gsa_481,Arvin GSA,subset,,entity_bag_map,gsa,TRUE
+arvin,GSA,arvin,arvin,identity,,entity_bag_map,gsa,FALSE
 expand_recycled_water_the_kern_river_groundwater_sustainability_agency,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 final_kern_river_groundwater_sustainability_agency,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_123tcp_wellhead_treatment_draft_draft,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
@@ -531,12 +534,12 @@ eastside_san_joaquin_groundwater_sustainability_agency,GSA,gsa_288,Eastside San 
 79_sacramento_county_gsa,GSA,79_sacramento_county_gsa,79_sacramento_county_gsa,identity,,entity_bag_map,gsa,FALSE
 85_sacramento_county_gsa,GSA,85_sacramento_county_gsa,85_sacramento_county_gsa,identity,,entity_bag_map,gsa,FALSE
 solano_subbasin_gsa,GSA,gsa_340,Solano Subbasin GSA,exact,,entity_bag_map,gsa,TRUE
-eastern_san_joaquin_groundwater_sustainability_agency,GSA,gsa_142,County of San Joaquin GSA - Eastern San Joaquin,override,,entity_bag_map,gsa,TRUE
-eastern_san_joaquin_groundwater_sustainability_agencies,GSA,gsa_142,County of San Joaquin GSA - Eastern San Joaquin,override,,entity_bag_map,gsa,TRUE
+eastern_san_joaquin_groundwater_sustainability_agency,GSA,gsa_142,gsa_142,override,,entity_bag_map,gsa,TRUE
+eastern_san_joaquin_groundwater_sustainability_agencies,GSA,gsa_142,gsa_142,override,,entity_bag_map,gsa,TRUE
 north_kings_groundwater_sustainability_agency,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
 james_irrigation_district_gsa,GSA,gsa_12,James GSA,subset,,entity_bag_map,gsa,TRUE
 el_north_fork_kings_gsa,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
-mcmullin_area_groundwater_sustainability_agency,GSA,gsa_266,McMullin Area GSA,subset,,entity_bag_map,gsa,TRUE
+mcmullin_area_groundwater_sustainability_agency,GSA,gsa_266,gsa_266,override,,entity_bag_map,gsa,TRUE
 nfkgsa3,GSA,nfkgsa3,nfkgsa3,identity,,entity_bag_map,gsa,FALSE
 nkfgsa,GSA,nkfgsa,nkfgsa,identity,,entity_bag_map,gsa,FALSE
 conditions_north_fork_kings_gsa,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
@@ -551,12 +554,12 @@ nfkga,GSA,nfkga,nfkga,identity,,entity_bag_map,gsa,FALSE
 north_fork_kings_gsa_gsa,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
 north_fork_kings_gsa_board_of_directors,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
 north_fork_kings_gsa_resource_conservationac,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
-el_gsa,GSA,gsa_358,El Rico GSA,revsubset,,entity_bag_map,gsa,TRUE
+el_gsa,GSA,el_gsa,el_gsa,identity,,entity_bag_map,gsa,FALSE
 la_administracion_de_north_fork_kings_gsa,GSA,gsa_187,North Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
 nork_fork_kings_gsa,GSA,gsa_187,gsa_187,override,,entity_bag_map,gsa,TRUE
 james_groundwater_sustainability_agency,GSA,gsa_12,James GSA,subset,,entity_bag_map,gsa,TRUE
-county_of_fresno,GSA,gsa_408,County of Fresno GSA - Pleasant Valley,revsubset,,entity_bag_map,gsa,TRUE
-james,GSA,gsa_12,James GSA,subset,,entity_bag_map,gsa,TRUE
+county_of_fresno,GSA,county_of_fresno,county_of_fresno,identity,,entity_bag_map,gsa,FALSE
+james,GSA,james,james,identity,,entity_bag_map,gsa,FALSE
 mcmullin_groundwater_sustainability_agency,GSA,gsa_266,McMullin Area GSA,revsubset,,entity_bag_map,gsa,TRUE
 nfkgsa,GSA,nfkgsa,nfkgsa,identity,,entity_bag_map,gsa,FALSE
 board_of_the_james_groundwater_sustainability_agency,GSA,gsa_12,James GSA,subset,,entity_bag_map,gsa,TRUE
@@ -570,14 +573,15 @@ north_king_gsa,GSA,gsa_65,gsa_65,override,,entity_bag_map,gsa,TRUE
 32_north_kings_gsa,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
 leadership_north_kings_gsa,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
 north_kings_groundwater_sustainability_agency_board,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
-north_kings_groundwater_sustainability_agency_western_boundary_groundwater,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
+north_kings_groundwater_sustainability_agency_western_boundary_groundwater,GSA,north_kings_groundwater_sustainability_agency_western_boundary_groundwater,north_kings_groundwater_sustainability_agency_western_boundary_groundwater,identity,,entity_bag_map,gsa,FALSE
 north_kings_groundwater_sustainability_agency_additional_well_requirements_policy,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
 nkgssa,GSA,nkgssa,nkgssa,identity,,entity_bag_map,gsa,FALSE
 nksa,GSA,nksa,nksa,identity,,entity_bag_map,gsa,FALSE
 north_kings_gsa_board_of,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
-north_kings_groundwater,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
+north_kings_groundwater,GSA,north_kings_groundwater,north_kings_groundwater,identity,,entity_bag_map,gsa,FALSE
 north_kings_groundwater_sustainability,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
-mcmullin_and_james_groundwater_sustainability_agencies,GSA,gsa_12,James GSA,subset,,entity_bag_map,gsa,TRUE
+mcmullin_and_james_groundwater_sustainability_agencies,GSA,gsa_12,gsa_12,override,,entity_bag_map,gsa,TRUE
+mcmullin_and_james_groundwater_sustainability_agencies,GSA,gsa_266,gsa_266,override,,entity_bag_map,gsa,TRUE
 no_rth_kings_gsa,GSA,gsa_65,gsa_65,override,,entity_bag_map,gsa,TRUE
 north_kings_garfield_water_district_groundwater_sustainability_agency,GSA,gsa_65,North Kings GSA,subset,,entity_bag_map,gsa,TRUE
 cuyama_basin_groundwater_sustainability_agency,GSA,gsa_327,Cuyama Basin GSA,subset,,entity_bag_map,gsa,TRUE
@@ -589,7 +593,7 @@ cuyama_basin_groundwater_sustainability_agency_board_3_134,GSA,gsa_327,Cuyama Ba
 cuyama_basin_gsa_board,GSA,gsa_327,Cuyama Basin GSA,subset,,entity_bag_map,gsa,TRUE
 fringe_gsa,GSA,fringe_gsa,fringe_gsa,identity,,entity_bag_map,gsa,FALSE
 cuyama_basin_groundwater_sustainability_agency_sac,GSA,gsa_327,Cuyama Basin GSA,subset,,entity_bag_map,gsa,TRUE
-cuyama_basin,GSA,gsa_327,Cuyama Basin GSA,subset,,entity_bag_map,gsa,TRUE
+cuyama_basin,GSA,cuyama_basin,cuyama_basin,identity,,entity_bag_map,gsa,FALSE
 mid_kaweah_grounwater_sustainability_agency,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 gw_community_water_east_kaweah_groundwater_sustainability_agency,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 east_kaweah_groundwater_sustainability_agency_233,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
@@ -599,10 +603,10 @@ mid_kaweah_grounwater_sustainability_agency_4101,GSA,gsa_7,Mid-Kaweah GSA,subset
 mid_kaweah_grounwater_sustainability_agency_41012,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 mid_kaweah_grounwater_sustainability_agency_821,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 eastern_kaweah_gsa,GSA,gsa_314,gsa_314,override,,entity_bag_map,gsa,TRUE
-eastern_kaweah_groundwater_sustainability_agency,GSA,eastern_kaweah_groundwater_sustainability_agency,eastern_kaweah_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+eastern_kaweah_groundwater_sustainability_agency,GSA,gsa_314,gsa_314,override,,entity_bag_map,gsa,TRUE
 kings_river_east_groundwater_sustainability_agency,GSA,gsa_18,Kings River East GSA,subset,,entity_bag_map,gsa,TRUE
-kre_gsa,GSA,kre_gsa,kre_gsa,identity,,entity_bag_map,gsa,FALSE
-mcmullin_area_gsa_east_gsa,GSA,gsa_266,McMullin Area GSA,subset,,entity_bag_map,gsa,TRUE
+kre_gsa,GSA,gsa_18,gsa_18,override,,entity_bag_map,gsa,TRUE
+mcmullin_area_gsa_east_gsa,GSA,mcmullin_area_gsa_east_gsa,mcmullin_area_gsa_east_gsa,identity,,entity_bag_map,gsa,FALSE
 consolidated_irrigation_district_gsa,GSA,consolidated_irrigation_district_gsa,consolidated_irrigation_district_gsa,identity,,entity_bag_map,gsa,FALSE
 dwr_kings_river_east_gsa,GSA,gsa_18,Kings River East GSA,subset,,entity_bag_map,gsa,TRUE
 desert_water_agency_gsa,GSA,gsa_450,Desert Water Agency GSA - Statutory Area - San Gorgonio Pass,revsubset,,entity_bag_map,gsa,TRUE
@@ -619,7 +623,7 @@ new_stone_water_district_groundwater_sustainability_agency,GSA,gsa_59,New Stone 
 stone_water_district_groundwater_sustainability_agency,GSA,gsa_59,New Stone Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 nsgsa,GSA,nsgsa,nsgsa,identity,,entity_bag_map,gsa,FALSE
 nscdgsa,GSA,nscdgsa,nscdgsa,identity,,entity_bag_map,gsa,FALSE
-new_stone_wd_gsa,GSA,new_stone_wd_gsa,new_stone_wd_gsa,identity,,entity_bag_map,gsa,FALSE
+new_stone_wd_gsa,GSA,gsa_59,gsa_59,override,,entity_bag_map,gsa,TRUE
 water_district_groundwater_sustainability_agency,GSA,water_district_groundwater_sustainability_agency,water_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 rwcdgsa,GSA,rwcdgsa,rwcdgsa,identity,,entity_bag_map,gsa,FALSE
 creek_water_district_groundwater_sustainability_agency,GSA,gsa_33,Root Creek Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -633,16 +637,16 @@ mid_kings_river_groundwater_sustainability_agency,GSA,gsa_73,Mid-Kings River GSA
 south_fork_king_gsa,GSA,gsa_222,gsa_222,override,,entity_bag_map,gsa,TRUE
 southwest_kings_gsa_board,GSA,gsa_226,Southwest Kings GSA,subset,,entity_bag_map,gsa,TRUE
 mid_kings_river_gsa_board,GSA,gsa_73,Mid-Kings River GSA,subset,,entity_bag_map,gsa,TRUE
-county_water_authority_groundwater_sustainability_agencies,GSA,gsa_411,Tri-County Water Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-county_water_authority_groundwater_sustainability_agency,GSA,gsa_411,Tri-County Water Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-el_rico,GSA,gsa_358,El Rico GSA,subset,,entity_bag_map,gsa,TRUE
+county_water_authority_groundwater_sustainability_agencies,GSA,gsa_490,gsa_490,override,,entity_bag_map,gsa,TRUE
+county_water_authority_groundwater_sustainability_agency,GSA,gsa_490,gsa_490,override,,entity_bag_map,gsa,TRUE
+el_rico,GSA,el_rico,el_rico,identity,,entity_bag_map,gsa,FALSE
 el_rico_gsa_el_rico,GSA,gsa_358,El Rico GSA,subset,,entity_bag_map,gsa,TRUE
 el_rico_groundwater_sustainability_agency,GSA,gsa_358,El Rico GSA,subset,,entity_bag_map,gsa,TRUE
-groundwater_sustainability_agency_mid,GSA,gsa_7,Mid-Kaweah GSA,revsubset,,entity_bag_map,gsa,TRUE
+groundwater_sustainability_agency_mid,GSA,groundwater_sustainability_agency_mid,groundwater_sustainability_agency_mid,identity,,entity_bag_map,gsa,FALSE
 mid_kings_river_groundwater_sustainability_agency_board,GSA,gsa_73,Mid-Kings River GSA,subset,,entity_bag_map,gsa,TRUE
 mid_kings_river_gsa_board_of_directors,GSA,gsa_73,Mid-Kings River GSA,subset,,entity_bag_map,gsa,TRUE
-tri_county_gsa,GSA,gsa_411,Tri-County Water Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-tri_county_water_authority_gsa_jpa,GSA,gsa_411,Tri-County Water Authority GSA,override,,entity_bag_map,gsa,TRUE
+tri_county_gsa,GSA,gsa_490,Tri-County Water Authority GSA - Tule,revsubset,,entity_bag_map,gsa,TRUE
+tri_county_water_authority_gsa_jpa,GSA,gsa_490,gsa_490,override,,entity_bag_map,gsa,TRUE
 x_tri_county_water_gsa,GSA,x_tri_county_water_gsa,x_tri_county_water_gsa,identity,,entity_bag_map,gsa,FALSE
 el_rio_gsa,GSA,el_rio_gsa,el_rio_gsa,identity,,entity_bag_map,gsa,FALSE
 south_fork_kings_south_fork_kings_gsa,GSA,gsa_222,South Fork Kings GSA,subset,,entity_bag_map,gsa,TRUE
@@ -655,53 +659,53 @@ gravelly_ford_water_executive_officer_district_gsa,GSA,gsa_34,Gravelly Ford Wate
 mgksa,GSA,mgksa,mgksa,identity,,entity_bag_map,gsa,FALSE
 mid_kaweah_groundwater_sustainability_agency_535,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 mid_kaweah_groundwater_sustainability_agency_sustainable_groundwater_management_act,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
-midkaweah_groundwater_sustainability_agency,GSA,midkaweah_groundwater_sustainability_agency,midkaweah_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+midkaweah_groundwater_sustainability_agency,GSA,gsa_7,gsa_7,override,,entity_bag_map,gsa,TRUE
 mid_kaweah_groundwater_sustainability_agency_section_234_of_the,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
-mid_kaweah,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
+mid_kaweah,GSA,mid_kaweah,mid_kaweah,identity,,entity_bag_map,gsa,FALSE
 san_miguel_community_services_district_gsa,GSA,gsa_56,San Miguel Community Services District GSA,exact,,entity_bag_map,gsa,TRUE
 city_of_paso_robles_gsa,GSA,gsa_72,City of Paso Robles GSA,exact,,entity_bag_map,gsa,TRUE
 shandon_san_juan_gsa,GSA,gsa_319,Shandon-San Juan GSA,exact,,entity_bag_map,gsa,TRUE
-estrella_el_pomar_creston_water_district_gsa,GSA,estrella_el_pomar_creston_water_district_gsa,estrella_el_pomar_creston_water_district_gsa,identity,,entity_bag_map,gsa,FALSE
-heritage_ranch_community_services_district,GSA,heritage_ranch_community_services_district,heritage_ranch_community_services_district,identity,,entity_bag_map,gsa,FALSE
+estrella_el_pomar_creston_water_district_gsa,GSA,gsa_396,gsa_396,override,,entity_bag_map,gsa,TRUE
+heritage_ranch_community_services_district,GSA,gsa_197,gsa_197,override,,entity_bag_map,gsa,TRUE
 luis_obispo_gsa,GSA,gsa_329,City of San Luis Obispo GSA,revsubset,,entity_bag_map,gsa,TRUE
 atascadero_basin_gsa,GSA,gsa_296,Atascadero Basin GSA,exact,,entity_bag_map,gsa,TRUE
-heritage_ranch_community_services_district_gsa,GSA,heritage_ranch_community_services_district_gsa,heritage_ranch_community_services_district_gsa,identity,,entity_bag_map,gsa,FALSE
-robles_gsa,GSA,gsa_72,City of Paso Robles GSA,revsubset,,entity_bag_map,gsa,TRUE
+heritage_ranch_community_services_district_gsa,GSA,gsa_197,gsa_197,override,,entity_bag_map,gsa,TRUE
+robles_gsa,GSA,robles_gsa,robles_gsa,identity,,entity_bag_map,gsa,FALSE
 city_of_san_luis_obispo_gsa,GSA,gsa_329,City of San Luis Obispo GSA,exact,,entity_bag_map,gsa,TRUE
 3_luis_obispo_gsa,GSA,3_luis_obispo_gsa,3_luis_obispo_gsa,identity,,entity_bag_map,gsa,FALSE
 county_groundwater_sustainability_agency,GSA,county_groundwater_sustainability_agency,county_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 gsa_san_miguel_community_services_district,GSA,gsa_56,San Miguel Community Services District GSA,subset,,entity_bag_map,gsa,TRUE
 svbgsa,GSA,svbgsa,svbgsa,identity,,entity_bag_map,gsa,FALSE
-paso_gsa,GSA,gsa_72,City of Paso Robles GSA,revsubset,,entity_bag_map,gsa,TRUE
+paso_gsa,GSA,paso_gsa,paso_gsa,identity,,entity_bag_map,gsa,FALSE
 paso_basin_gsa,GSA,paso_basin_gsa,paso_basin_gsa,identity,,entity_bag_map,gsa,FALSE
 paso_robles_subbasin_groundwater_sustainability_agencies,GSA,paso_robles_subbasin_groundwater_sustainability_agencies,paso_robles_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 san_miguel_gsa,GSA,gsa_56,San Miguel Community Services District GSA,revsubset,,entity_bag_map,gsa,TRUE
-henry_miller_water_district,GSA,gsa_254,Henry Miller Water District GSA,subset,,entity_bag_map,gsa,TRUE
+henry_miller_water_district,GSA,henry_miller_water_district,henry_miller_water_district,identity,,entity_bag_map,gsa,FALSE
 henry_miller_water_district_groundwater_sustainability_agencies,GSA,gsa_254,Henry Miller Water District GSA,subset,,entity_bag_map,gsa,TRUE
 legal_authority_of_the_gsa_henry_miller_water_district,GSA,gsa_254,Henry Miller Water District GSA,subset,,entity_bag_map,gsa,TRUE
 hmgsa,GSA,hmgsa,hmgsa,identity,,entity_bag_map,gsa,FALSE
-bvsga,GSA,bvsga,bvsga,identity,,entity_bag_map,gsa,FALSE
+bvsga,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 authority_gsa,GSA,authority_gsa,authority_gsa,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_conditions,GSA,buena_vista_groundwater_sustainability_agency_conditions,buena_vista_groundwater_sustainability_agency_conditions,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_water_budget_flowpaths,GSA,buena_vista_groundwater_sustainability_agency_water_budget_flowpaths,buena_vista_groundwater_sustainability_agency_water_budget_flowpaths,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_well,GSA,buena_vista_groundwater_sustainability_agency_well,buena_vista_groundwater_sustainability_agency_well,identity,,entity_bag_map,gsa,FALSE
+buena_vista_groundwater_sustainability_agency_conditions,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_water_budget_flowpaths,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_well,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 kgagsa,GSA,kgagsa,kgagsa,identity,,entity_bag_map,gsa,FALSE
-to_buena_vista_groundwater_sustainability_agency,GSA,to_buena_vista_groundwater_sustainability_agency,to_buena_vista_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_monitoring_networks,GSA,buena_vista_groundwater_sustainability_agency_monitoring_networks,buena_vista_groundwater_sustainability_agency_monitoring_networks,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_water_budget,GSA,buena_vista_groundwater_sustainability_agency_water_budget,buena_vista_groundwater_sustainability_agency_water_budget,identity,,entity_bag_map,gsa,FALSE
+to_buena_vista_groundwater_sustainability_agency,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_monitoring_networks,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
+buena_vista_groundwater_sustainability_agency_water_budget,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 root_creek_water_district_united_states_geological_survey_united_states_geological_survey_gsa,GSA,gsa_33,Root Creek Water District GSA,subset,,entity_bag_map,gsa,TRUE
 mc_gsa,GSA,mc_gsa,mc_gsa,identity,,entity_bag_map,gsa,FALSE
 madera_irrigation_district_algorithm_for_land_gsa,GSA,gsa_19,Madera Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 new_stone_water_district_taf_thousand_acre_feet_gsa,GSA,gsa_59,New Stone Water District GSA,subset,,entity_bag_map,gsa,TRUE
 cm_gsa,GSA,cm_gsa,cm_gsa,identity,,entity_bag_map,gsa,FALSE
-madera_irrigation_district,GSA,gsa_19,Madera Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
+madera_irrigation_district,GSA,madera_irrigation_district,madera_irrigation_district,identity,,entity_bag_map,gsa,FALSE
 metropolitan_water_district_of_southern_california_gsa,GSA,metropolitan_water_district_of_southern_california_gsa,metropolitan_water_district_of_southern_california_gsa,identity,,entity_bag_map,gsa,FALSE
 contractors_gsa,GSA,gsa_10,San Joaquin River Exchange Contractors GSA,revsubset,,entity_bag_map,gsa,TRUE
 madera_irrigation_district_algorithm_for_land_madera_irrigation_district_algorithm_for_land_gsa_board,GSA,gsa_19,Madera Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 51537001_board_meetings_agenda_gsa,GSA,51537001_board_meetings_agenda_gsa,51537001_board_meetings_agenda_gsa,identity,,entity_bag_map,gsa,FALSE
 city_gsa,GSA,city_gsa,city_gsa,identity,,entity_bag_map,gsa,FALSE
 gravelly_ford_water_district_gsa_madera,GSA,gsa_34,Gravelly Ford Water District GSA,subset,,entity_bag_map,gsa,TRUE
-gravelly_ford_wd_gsa,GSA,gravelly_ford_wd_gsa,gravelly_ford_wd_gsa,identity,,entity_bag_map,gsa,FALSE
+gravelly_ford_wd_gsa,GSA,gsa_34,gsa_34,override,,entity_bag_map,gsa,TRUE
 groundwater_sustainability_agency_for_august,GSA,groundwater_sustainability_agency_for_august,groundwater_sustainability_agency_for_august,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_for_december,GSA,groundwater_sustainability_agency_for_december,groundwater_sustainability_agency_for_december,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_for_june,GSA,groundwater_sustainability_agency_for_june,groundwater_sustainability_agency_for_june,identity,,entity_bag_map,gsa,FALSE
@@ -709,90 +713,90 @@ groundwater_sustainability_agency_for_november,GSA,groundwater_sustainability_ag
 groundwater_sustainability_agency_for_october,GSA,groundwater_sustainability_agency_for_october,groundwater_sustainability_agency_for_october,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_for_september,GSA,groundwater_sustainability_agency_for_september,groundwater_sustainability_agency_for_september,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_for_thursday,GSA,groundwater_sustainability_agency_for_thursday,groundwater_sustainability_agency_for_thursday,identity,,entity_bag_map,gsa,FALSE
-madera_water_district,GSA,gsa_41,Madera Water District GSA,subset,,entity_bag_map,gsa,TRUE
+madera_water_district,GSA,madera_water_district,madera_water_district,identity,,entity_bag_map,gsa,FALSE
 madera_subbasin_gsa,GSA,madera_subbasin_gsa,madera_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
-madera_wd_gsa,GSA,madera_wd_gsa,madera_wd_gsa,identity,,entity_bag_map,gsa,FALSE
+madera_wd_gsa,GSA,gsa_41,gsa_41,override,,entity_bag_map,gsa,TRUE
 new_stone_water_district_taf_thousand_acre_feet_gsa_board_of_directors,GSA,gsa_59,New Stone Water District GSA,subset,,entity_bag_map,gsa,TRUE
 new_stone_water_district_taf_thousand_acre_feet_gsa_madera,GSA,gsa_59,New Stone Water District GSA,subset,,entity_bag_map,gsa,TRUE
 rcwdgsa,GSA,rcwdgsa,rcwdgsa,identity,,entity_bag_map,gsa,FALSE
-root_creek_wd_gsa,GSA,root_creek_wd_gsa,root_creek_wd_gsa,identity,,entity_bag_map,gsa,FALSE
+root_creek_wd_gsa,GSA,gsa_33,gsa_33,override,,entity_bag_map,gsa,TRUE
 of_madera_gsa,GSA,of_madera_gsa,of_madera_gsa,identity,,entity_bag_map,gsa,FALSE
-city_of_madera,GSA,gsa_47,City of Madera GSA,subset,,entity_bag_map,gsa,TRUE
+city_of_madera,GSA,city_of_madera,city_of_madera,identity,,entity_bag_map,gsa,FALSE
 city_of_madera_groundwater_sustainability_agency,GSA,gsa_47,City of Madera GSA,subset,,entity_bag_map,gsa,TRUE
-gravelly_ford_water_district,GSA,gsa_34,Gravelly Ford Water District GSA,subset,,entity_bag_map,gsa,TRUE
-new_stone_water_district,GSA,gsa_59,New Stone Water District GSA,subset,,entity_bag_map,gsa,TRUE
-root_creek_water_district,GSA,gsa_33,Root Creek Water District GSA,subset,,entity_bag_map,gsa,TRUE
+gravelly_ford_water_district,GSA,gravelly_ford_water_district,gravelly_ford_water_district,identity,,entity_bag_map,gsa,FALSE
+new_stone_water_district,GSA,new_stone_water_district,new_stone_water_district,identity,,entity_bag_map,gsa,FALSE
+root_creek_water_district,GSA,root_creek_water_district,root_creek_water_district,identity,,entity_bag_map,gsa,FALSE
 sjrec_gsa,GSA,sjrec_gsa,sjrec_gsa,identity,,entity_bag_map,gsa,FALSE
 santa_cruz_mid_county_groundwater_agency_gsa,GSA,gsa_24,Santa Cruz Mid-County Groundwater Agency GSA,exact,,entity_bag_map,gsa,TRUE
-county_of_santa_cruz_gsa,GSA,gsa_24,Santa Cruz Mid-County Groundwater Agency GSA,revsubset,,entity_bag_map,gsa,TRUE
-pajaro_valley_water_management_agency_gsa,GSA,pajaro_valley_water_management_agency_gsa,pajaro_valley_water_management_agency_gsa,identity,,entity_bag_map,gsa,FALSE
+county_of_santa_cruz_gsa,GSA,gsa_283,gsa_283,override,,entity_bag_map,gsa,TRUE
+pajaro_valley_water_management_agency_gsa,GSA,gsa_6,gsa_6,override,,entity_bag_map,gsa,TRUE
 santa_margarita_groundwater_agency_gsa,GSA,gsa_338,Santa Margarita Groundwater Agency GSA,exact,,entity_bag_map,gsa,TRUE
 fcgma,GSA,fcgma,fcgma,identity,,entity_bag_map,gsa,FALSE
 kings_gsa2,GSA,kings_gsa2,kings_gsa2,identity,,entity_bag_map,gsa,FALSE
-monterey_peninsula_water_management_district_gsa,GSA,monterey_peninsula_water_management_district_gsa,monterey_peninsula_water_management_district_gsa,identity,,entity_bag_map,gsa,FALSE
+monterey_peninsula_water_management_district_gsa,GSA,gsa_8,gsa_8,override,,entity_bag_map,gsa,TRUE
 borrego_valley_gsa,GSA,borrego_valley_gsa,borrego_valley_gsa,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_groundwater_basin_gsa,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 mcmullin_area_groundwater_sustainability_agency_joint_powers_authority,GSA,gsa_266,McMullin Area GSA,subset,,entity_bag_map,gsa,TRUE
-indian_wells_valley_groundwater_authority_gsa,GSA,gsa_35,Indian Wells Valley Groundwater Authority GSA,exact,,entity_bag_map,gsa,TRUE
+indian_wells_valley_groundwater_authority_gsa,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
 sacramento_groundwater_authority_gsa,GSA,gsa_118,Sacramento Groundwater Authority GSA,exact,,entity_bag_map,gsa,TRUE
 valley_groundwater_authority_july,GSA,valley_groundwater_authority_july,valley_groundwater_authority_july,identity,,entity_bag_map,gsa,FALSE
-valley_groundwater_authority,GSA,gsa_403,Owens Valley Groundwater Authority GSA - Owens Valley,revsubset,,entity_bag_map,gsa,TRUE
+valley_groundwater_authority,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
 sacramento_central_groundwater_authority_gsa,GSA,gsa_147,gsa_147,override,,entity_bag_map,gsa,TRUE
 ivwga,GSA,ivwga,ivwga,identity,,entity_bag_map,gsa,FALSE
-iwvgwa,GSA,iwvgwa,iwvgwa,identity,,entity_bag_map,gsa,FALSE
-iwv_ga,GSA,iwv_ga,iwv_ga,identity,,entity_bag_map,gsa,FALSE
+iwvgwa,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
+iwv_ga,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
 gsa_1,GSA,gsa_1,gsa_1,identity,,entity_bag_map,gsa,TRUE
 iwga,GSA,iwga,iwga,identity,,entity_bag_map,gsa,FALSE
 iwvga6,GSA,iwvga6,iwvga6,identity,,entity_bag_map,gsa,FALSE
 indian_we_lls_valley_groundwater_authority,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
 indian_wells_valley_groundwater_sustainability_agency,GSA,gsa_35,Indian Wells Valley Groundwater Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-iwv_groundwater_agency,GSA,iwv_groundwater_agency,iwv_groundwater_agency,identity,,entity_bag_map,gsa,FALSE
-indian_wells_valley_groundwater_authority_1,GSA,gsa_35,Indian Wells Valley Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-county_of_tulare,GSA,gsa_470,gsa_470,override,,entity_bag_map,gsa,TRUE
+iwv_groundwater_agency,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
+indian_wells_valley_groundwater_authority_1,GSA,gsa_35,gsa_35,override,,entity_bag_map,gsa,TRUE
+county_of_tulare,GSA,county_of_tulare,county_of_tulare,identity,,entity_bag_map,gsa,FALSE
 greater_kaweah_groundwater_sustainability_agency_23,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 greater_kaweah_groundwater_sustainability_agency_committee,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 mid_kaweah_groundwater_sustainability_agency_groundwater_sustainability_plans,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
-gspgreaterkaweahgsaorg,GSA,gspgreaterkaweahgsaorg,gspgreaterkaweahgsaorg,identity,,entity_bag_map,gsa,FALSE
+gspgreaterkaweahgsaorg,GSA,gsa_281,gsa_281,override,,entity_bag_map,gsa,TRUE
 greater_kaweah_groundwater_sustainability_agency_board_of,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 greater_kaweah_groundwater_sustainability,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
-greater_vs002_kaweah_board,GSA,gsa_281,Greater Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
-vandalia_water_district,GSA,vandalia_water_district,vandalia_water_district,identity,,entity_bag_map,gsa,FALSE
-deidgsa,GSA,deidgsa,deidgsa,identity,,entity_bag_map,gsa,FALSE
+greater_vs002_kaweah_board,GSA,greater_vs002_kaweah_board,greater_vs002_kaweah_board,identity,,entity_bag_map,gsa,FALSE
+vandalia_water_district,GSA,gsa_530,gsa_530,override,,entity_bag_map,gsa,TRUE
+deidgsa,GSA,gsa_29,gsa_29,override,,entity_bag_map,gsa,TRUE
 ltgsa,GSA,ltgsa,ltgsa,identity,,entity_bag_map,gsa,FALSE
 tule_subbasin_groundwater_sustainability_agencies,GSA,tule_subbasin_groundwater_sustainability_agencies,tule_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 earlimart_irrigation_district_groundwater_sustainability_agency,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,revsubset,,entity_bag_map,gsa,TRUE
-east_tule_gsa,GSA,east_tule_gsa,east_tule_gsa,identity,,entity_bag_map,gsa,FALSE
-ltridgsa,GSA,ltridgsa,ltridgsa,identity,,entity_bag_map,gsa,FALSE
+east_tule_gsa,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
+ltridgsa,GSA,gsa_42,gsa_42,override,,entity_bag_map,gsa,TRUE
 tule_subbasin_gsa,GSA,tule_subbasin_gsa,tule_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_groundwater_sustainability_agency_3_19,GSA,eastern_tule_groundwater_sustainability_agency_3_19,eastern_tule_groundwater_sustainability_agency_3_19,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_groundwater_sustainability_agency_board,GSA,eastern_tule_groundwater_sustainability_agency_board,eastern_tule_groundwater_sustainability_agency_board,identity,,entity_bag_map,gsa,FALSE
-pixley_gsa,GSA,gsa_43,Pixley Irrigation District GSA,revsubset,,entity_bag_map,gsa,TRUE
+eastern_tule_groundwater_sustainability_agency_3_19,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
+eastern_tule_groundwater_sustainability_agency_board,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
+pixley_gsa,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
 tcwa_gsa,GSA,tcwa_gsa,tcwa_gsa,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_groundwater_sustainability_agency_gsa,GSA,eastern_tule_groundwater_sustainability_agency_gsa,eastern_tule_groundwater_sustainability_agency_gsa,identity,,entity_bag_map,gsa,FALSE
+eastern_tule_groundwater_sustainability_agency_gsa,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
 pid_gsa,GSA,pid_gsa,pid_gsa,identity,,entity_bag_map,gsa,FALSE
-delanoearlimart_irrigation_district_groundwater_sustainability_agency,GSA,delanoearlimart_irrigation_district_groundwater_sustainability_agency,delanoearlimart_irrigation_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+delanoearlimart_irrigation_district_groundwater_sustainability_agency,GSA,gsa_29,gsa_29,override,,entity_bag_map,gsa,TRUE
 eggsa,GSA,eggsa,eggsa,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_groundwater_sustainability_agency_d30,GSA,eastern_tule_groundwater_sustainability_agency_d30,eastern_tule_groundwater_sustainability_agency_d30,identity,,entity_bag_map,gsa,FALSE
-eastern_tule_groundwater_sustainability_agency_section_437,GSA,eastern_tule_groundwater_sustainability_agency_section_437,eastern_tule_groundwater_sustainability_agency_section_437,identity,,entity_bag_map,gsa,FALSE
+eastern_tule_groundwater_sustainability_agency_d30,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
+eastern_tule_groundwater_sustainability_agency_section_437,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
 each_tule_subbasin_gsa,GSA,each_tule_subbasin_gsa,each_tule_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
-kern_gsa,GSA,gsa_20,Kern River GSA,revsubset,,entity_bag_map,gsa,TRUE
+kern_gsa,GSA,kern_gsa,kern_gsa,identity,,entity_bag_map,gsa,FALSE
 pidgsa,GSA,pidgsa,pidgsa,identity,,entity_bag_map,gsa,FALSE
 pxidgsa,GSA,pxidgsa,pxidgsa,identity,,entity_bag_map,gsa,FALSE
-pixley_irrigation_district_groundwater_sustainability_agency,GSA,gsa_43,Pixley Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
-pixley_irrigation_district,GSA,gsa_43,Pixley Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
+pixley_irrigation_district_groundwater_sustainability_agency,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
+pixley_irrigation_district,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
 tulare_county_gsa,GSA,gsa_470,gsa_470,override,,entity_bag_map,gsa,TRUE
 deid_gsa,GSA,deid_gsa,deid_gsa,identity,,entity_bag_map,gsa,FALSE
-porterville_irrigation_district_gsa,GSA,porterville_irrigation_district_gsa,porterville_irrigation_district_gsa,identity,,entity_bag_map,gsa,FALSE
-pix_gsa_board,GSA,pix_gsa_board,pix_gsa_board,identity,,entity_bag_map,gsa,FALSE
-pixidgsa,GSA,pixidgsa,pixidgsa,identity,,entity_bag_map,gsa,FALSE
-pix_gsa,GSA,pix_gsa,pix_gsa,identity,,entity_bag_map,gsa,FALSE
+porterville_irrigation_district_gsa,GSA,gsa_541,gsa_541,override,,entity_bag_map,gsa,TRUE
+pix_gsa_board,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
+pixidgsa,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
+pix_gsa,GSA,gsa_43,gsa_43,override,,entity_bag_map,gsa,TRUE
 pixey_irrigation_district_groundwater_sustainability_agency,GSA,pixey_irrigation_district_groundwater_sustainability_agency,pixey_irrigation_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 irrigation_district_gsa,GSA,irrigation_district_gsa,irrigation_district_gsa,identity,,entity_bag_map,gsa,FALSE
-tri_county_water_authority,GSA,gsa_411,Tri-County Water Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
+tri_county_water_authority,GSA,tri_county_water_authority,tri_county_water_authority,identity,,entity_bag_map,gsa,FALSE
 california_environmental_quality_act_delano_earlimart_irrigation_district_gsa,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 delano_earlimart_irrigation_district_delano_earlimart_irrigation_district_gsa_board_of_directors,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 delano_earlimart_irrigation_district_gsa_232,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
-eastern_tule_gsa_joint_powers_authority,GSA,eastern_tule_gsa_joint_powers_authority,eastern_tule_gsa_joint_powers_authority,identity,,entity_bag_map,gsa,FALSE
+eastern_tule_gsa_joint_powers_authority,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
 delano_earlimart_irrigation_district_gsa_ma,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 delano_gsa,GSA,gsa_29,Delano-Earlimart Irrigation District GSA,revsubset,,entity_bag_map,gsa,TRUE
 byron_bethany_irrigation_district_gsa,GSA,gsa_286,Byron-Bethany Irrigation District GSA - Tracy,revsubset,,entity_bag_map,gsa,TRUE
@@ -810,7 +814,7 @@ merced_irrigation_urban_groundwater_sustainability,GSA,gsa_311,Merced Irrigation
 turner_island_water_district_gsa1,GSA,gsa_223,gsa_223,override,,entity_bag_map,gsa,TRUE
 island_water_district_groundwater_sustainability_agency,GSA,gsa_223,Turner Island Water District GSA - Merced,revsubset,,entity_bag_map,gsa,TRUE
 mercedsgma,GSA,mercedsgma,mercedsgma,identity,,entity_bag_map,gsa,FALSE
-merced_groundwater_sustainability_agencies,GSA,gsa_219,Merced Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
+merced_groundwater_sustainability_agencies,GSA,merced_groundwater_sustainability_agencies,merced_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 turner_island_water_district_gsa1_and,GSA,gsa_223,gsa_223,override,,entity_bag_map,gsa,TRUE
 merced_subbasin_groundwater_sustainability_agencies,GSA,gsa_219,Merced Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 merced_subbasin_groundwater_sustainability_agency_governing_board,GSA,gsa_219,Merced Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
@@ -826,9 +830,9 @@ salinas_valley_groundwater_basin_gsa_180400_foot_aquifer,GSA,gsa_461,gsa_461,ove
 county_of_monterey_gsa,GSA,gsa_487,County of Monterey GSA,exact,,entity_bag_map,gsa,TRUE
 svgbgsa,GSA,svgbgsa,svgbgsa,identity,,entity_bag_map,gsa,FALSE
 asgsa,GSA,asgsa,asgsa,identity,,entity_bag_map,gsa,FALSE
-city_of_marina_gsa,GSA,city_of_marina_gsa,city_of_marina_gsa,identity,,entity_bag_map,gsa,FALSE
+city_of_marina_gsa,GSA,gsa_399,gsa_399,override,,entity_bag_map,gsa,TRUE
 salinas_valley_groundwater_basin_groundwater_sustainability_agency_mountain_counties_water_resources_association,GSA,salinas_valley_groundwater_basin_groundwater_sustainability_agency_mountain_counties_water_resources_association,salinas_valley_groundwater_basin_groundwater_sustainability_agency_mountain_counties_water_resources_association,identity,,entity_bag_map,gsa,FALSE
-arroyo_seco_gsa,GSA,gsa_261,Arroyo Seco GSA - 1,revsubset,,entity_bag_map,gsa,TRUE
+arroyo_seco_gsa,GSA,gsa_261,gsa_261,override,,entity_bag_map,gsa,TRUE
 salinas_valley_groundwater_basin_groundwater_sustainability_agency_bod,GSA,salinas_valley_groundwater_basin_groundwater_sustainability_agency_bod,salinas_valley_groundwater_basin_groundwater_sustainability_agency_bod,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_groundwater_basin_groundwater_sustainability_agency_board,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 salinas_valley_groundwater_basin_groundwater_sustainability_agency_board_of_directors,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
@@ -839,7 +843,7 @@ marina_groundwater_sustainability_a,GSA,gsa_50,Marina Coast Water District GSA -
 sybgsa,GSA,sybgsa,sybgsa,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_groundwater_sustainability_agency,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 a_sustainable_groundwater_management_act_gsa,GSA,a_sustainable_groundwater_management_act_gsa,a_sustainable_groundwater_management_act_gsa,identity,,entity_bag_map,gsa,FALSE
-city_of_marina_groundwater_sustainability_agency,GSA,city_of_marina_groundwater_sustainability_agency,city_of_marina_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+city_of_marina_groundwater_sustainability_agency,GSA,gsa_399,gsa_399,override,,entity_bag_map,gsa,TRUE
 marina_groundwater_sustainability_agency_area4_ii,GSA,marina_groundwater_sustainability_agency_area4_ii,marina_groundwater_sustainability_agency_area4_ii,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_basin_groundwater_sustainability_agency,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 232_marina_coast_water_district_gsa,GSA,232_marina_coast_water_district_gsa,232_marina_coast_water_district_gsa,identity,,entity_bag_map,gsa,FALSE
@@ -889,7 +893,7 @@ yucaipa_basin_gsa,GSA,gsa_349,Yucaipa Basin GSA,exact,,entity_bag_map,gsa,TRUE
 section_gsa,GSA,section_gsa,section_gsa,identity,,entity_bag_map,gsa,FALSE
 tiwd2_gsa,GSA,tiwd2_gsa,tiwd2_gsa,identity,,entity_bag_map,gsa,FALSE
 county_of_fresno_management_area_b_gsa,GSA,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B,revsubset,,entity_bag_map,gsa,TRUE
-grassland_water_district_gsa,GSA,grassland_water_district_gsa,grassland_water_district_gsa,identity,,entity_bag_map,gsa,FALSE
+grassland_water_district_gsa,GSA,gsa_62,gsa_62,override,,entity_bag_map,gsa,TRUE
 merced_county_delta_mendota_gsa,GSA,gsa_231,County of Merced GSA - Delta-Mendota,subset,,entity_bag_map,gsa,TRUE
 dos_palos_gsa,GSA,gsa_360,City of Dos Palos GSA,revsubset,,entity_bag_map,gsa,TRUE
 fresno_county_management_area_b_gsa,GSA,gsa_308,County of Fresno GSA - Delta-Mendota Management Area B,revsubset,,entity_bag_map,gsa,TRUE
@@ -901,23 +905,23 @@ san_joaquin_river_exchange_contractors_groundwater_sustainability_agency,GSA,gsa
 arroyo_santa_rosa_valley_basin_gsa,GSA,gsa_49,Arroyo Santa Rosa Valley Basin GSA,exact,,entity_bag_map,gsa,TRUE
 camrosa_gsa,GSA,camrosa_gsa,camrosa_gsa,identity,,entity_bag_map,gsa,FALSE
 arroyo_santa_rosa_basin_groundwater_sustainability_agency,GSA,gsa_49,Arroyo Santa Rosa Valley Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
-camrosa_las_posas_gsa,GSA,camrosa_las_posas_gsa,camrosa_las_posas_gsa,identity,,entity_bag_map,gsa,FALSE
+camrosa_las_posas_gsa,GSA,gsa_348,gsa_348,override,,entity_bag_map,gsa,TRUE
 fcgwma,GSA,fcgwma,fcgwma,identity,,entity_bag_map,gsa,FALSE
 fox_canyon_groundwater_management_authority,GSA,fox_canyon_groundwater_management_authority,fox_canyon_groundwater_management_authority,identity,,entity_bag_map,gsa,FALSE
 fox_canyon_groundwater_management_agency_fox_canyon_groundwater_management_agency,GSA,gsa_433,Fox Canyon Groundwater Management Agency GSA - Oxnard,revsubset,,entity_bag_map,gsa,TRUE
-las_posas_valley_outlying_areas_gsa,GSA,las_posas_valley_outlying_areas_gsa,las_posas_valley_outlying_areas_gsa,identity,,entity_bag_map,gsa,FALSE
-mound_basin,GSA,gsa_354,Mound Basin GSA,subset,,entity_bag_map,gsa,TRUE
-pleasant_valley_basin_outlying_areas_gsa,GSA,gsa_190,Pleasant Valley GSA,subset,,entity_bag_map,gsa,TRUE
+las_posas_valley_outlying_areas_gsa,GSA,gsa_357,gsa_357,override,,entity_bag_map,gsa,TRUE
+mound_basin,GSA,mound_basin,mound_basin,identity,,entity_bag_map,gsa,FALSE
+pleasant_valley_basin_outlying_areas_gsa,GSA,gsa_353,gsa_353,override,,entity_bag_map,gsa,TRUE
 gsa_fox_canyon_groundwater_management_agency,GSA,gsa_433,Fox Canyon Groundwater Management Agency GSA - Oxnard,revsubset,,entity_bag_map,gsa,TRUE
 los_angeles,GSA,los_angeles,los_angeles,identity,,entity_bag_map,gsa,FALSE
-pleasant_valley,GSA,gsa_190,Pleasant Valley GSA,subset,,entity_bag_map,gsa,TRUE
-camrosa_opv_gsa,GSA,camrosa_opv_gsa,camrosa_opv_gsa,identity,,entity_bag_map,gsa,FALSE
-camrosa_opv_management_area_gsa,GSA,camrosa_opv_management_area_gsa,camrosa_opv_management_area_gsa,identity,,entity_bag_map,gsa,FALSE
-bedford_coldwater_subbasin_gsa,GSA,gsa_267,Bedford-Coldwater Subbasin GSA,exact,,entity_bag_map,gsa,TRUE
-bedford_coldwater_groundwater_sustainability_agency,GSA,gsa_267,Bedford-Coldwater Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
+pleasant_valley,GSA,pleasant_valley,pleasant_valley,identity,,entity_bag_map,gsa,FALSE
+camrosa_opv_gsa,GSA,gsa_347,gsa_347,override,,entity_bag_map,gsa,TRUE
+camrosa_opv_management_area_gsa,GSA,gsa_347,gsa_347,override,,entity_bag_map,gsa,TRUE
+bedford_coldwater_subbasin_gsa,GSA,gsa_267,gsa_267,override,,entity_bag_map,gsa,TRUE
+bedford_coldwater_groundwater_sustainability_agency,GSA,gsa_267,gsa_267,override,,entity_bag_map,gsa,TRUE
 elsinore_valley_gsa,GSA,gsa_21,Elsinore Valley GSA,exact,,entity_bag_map,gsa,TRUE
 temescal_subbasin_gsa,GSA,gsa_260,Temescal Subbasin GSA,exact,,entity_bag_map,gsa,TRUE
-bedford_coldwater_groundwater_sustainability_authority,GSA,bedford_coldwater_groundwater_sustainability_authority,bedford_coldwater_groundwater_sustainability_authority,identity,,entity_bag_map,gsa,FALSE
+bedford_coldwater_groundwater_sustainability_authority,GSA,gsa_267,gsa_267,override,,entity_bag_map,gsa,TRUE
 bedford_coldwater_gsa,GSA,gsa_267,Bedford-Coldwater Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
 elsinore_valley_groundwater_sustainability_agency,GSA,gsa_21,Elsinore Valley GSA,subset,,entity_bag_map,gsa,TRUE
 mound_basin_groundwater_sustainability_agency_board_of_directors,GSA,gsa_354,Mound Basin GSA,subset,,entity_bag_map,gsa,TRUE
@@ -933,14 +937,14 @@ ms_gsa,GSA,ms_gsa,ms_gsa,identity,,entity_bag_map,gsa,FALSE
 mound_groundwater_sustainability_agency,GSA,gsa_354,Mound Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 margarita_groundwater_agency,GSA,gsa_338,Santa Margarita Groundwater Agency GSA,revsubset,,entity_bag_map,gsa,TRUE
 sgmwa,GSA,sgmwa,sgmwa,identity,,entity_bag_map,gsa,FALSE
-owens_valley_groundwater_authority_gsa,GSA,gsa_403,Owens Valley Groundwater Authority GSA - Owens Valley,subset,,entity_bag_map,gsa,TRUE
+owens_valley_groundwater_authority_gsa,GSA,gsa_403,gsa_403,override,,entity_bag_map,gsa,TRUE
 valley_water_gsa,GSA,gsa_345,Santa Clara Valley Water District GSA - North San Benito,revsubset,,entity_bag_map,gsa,TRUE
 pajaro_valley_gsa,GSA,pajaro_valley_gsa,pajaro_valley_gsa,identity,,entity_bag_map,gsa,FALSE
-santa_clara_valley_water_district,GSA,gsa_345,Santa Clara Valley Water District GSA - North San Benito,revsubset,,entity_bag_map,gsa,TRUE
+santa_clara_valley_water_district,GSA,santa_clara_valley_water_district,santa_clara_valley_water_district,identity,,entity_bag_map,gsa,FALSE
 corning_gsa,GSA,gsa_390,Corning Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
 mullin_area_groundwater_sustainability_agency,GSA,mullin_area_groundwater_sustainability_agency,mullin_area_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-corning_sub_basin_groundwater_sustainability_agencies,GSA,corning_sub_basin_groundwater_sustainability_agencies,corning_sub_basin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
-corning_sub_basin_groundwater_sustainability_agency,GSA,corning_sub_basin_groundwater_sustainability_agency,corning_sub_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+corning_sub_basin_groundwater_sustainability_agencies,GSA,gsa_390,gsa_390,override,,entity_bag_map,gsa,TRUE
+corning_sub_basin_groundwater_sustainability_agency,GSA,gsa_390,gsa_390,override,,entity_bag_map,gsa,TRUE
 amador_county_groundwater_management_authority_gsa,GSA,gsa_193,Amador County Groundwater Management Authority GSA,exact,,entity_bag_map,gsa,TRUE
 omochumne_hartnell_water_district_gsa,GSA,gsa_155,Omochumne-Hartnell Water District GSA - Cosumnes,revsubset,,entity_bag_map,gsa,TRUE
 galt_irrigation_district_gsa,GSA,gsa_97,Galt Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
@@ -950,13 +954,19 @@ galt_irrigation_district_groundwater_sustainability_agency,GSA,gsa_97,Galt Irrig
 west_placer_gsa,GSA,gsa_209,West Placer GSA,exact,,entity_bag_map,gsa,TRUE
 north_delta_gsa_board,GSA,north_delta_gsa_board,north_delta_gsa_board,identity,,entity_bag_map,gsa,FALSE
 san_joaquin_gsa,GSA,san_joaquin_gsa,san_joaquin_gsa,identity,,entity_bag_map,gsa,FALSE
-south_sutter_water_district,GSA,gsa_233,South Sutter Water District GSA,subset,,entity_bag_map,gsa,TRUE
+south_sutter_water_district,GSA,south_sutter_water_district,south_sutter_water_district,identity,,entity_bag_map,gsa,FALSE
 consumnes_groundwater_sustainability_agency,GSA,consumnes_groundwater_sustainability_agency,consumnes_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-cosumnes_groundwater_sustainability_agencies,GSA,gsa_496,Sacramento County GSA,revsubset,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_496,gsa_496,override,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_97,gsa_97,override,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_155,gsa_155,override,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_160,gsa_160,override,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_182,gsa_182,override,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_193,gsa_193,override,,entity_bag_map,gsa,TRUE
+cosumnes_groundwater_sustainability_agencies,GSA,gsa_312,gsa_312,override,,entity_bag_map,gsa,TRUE
 cosumnes_subbasin_groundwater_sustainability_agencies,GSA,cosumnes_subbasin_groundwater_sustainability_agencies,cosumnes_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 cosumnes_subbasin_groundwater_sustainability_agency,GSA,cosumnes_subbasin_groundwater_sustainability_agency,cosumnes_subbasin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-county_of_sacramento_gsa,GSA,gsa_496,Sacramento County GSA,override,,entity_bag_map,gsa,TRUE
-sacramento_county_groundwater_sustainability_agency,GSA,gsa_496,Sacramento County GSA,override,,entity_bag_map,gsa,TRUE
+county_of_sacramento_gsa,GSA,gsa_496,gsa_496,override,,entity_bag_map,gsa,TRUE
+sacramento_county_groundwater_sustainability_agency,GSA,gsa_496,gsa_496,override,,entity_bag_map,gsa,TRUE
 santa_ynez_river_valley_basin_central_management_area_gsa,GSA,gsa_11,Santa Ynez River Valley Basin Central Management Area GSA,exact,,entity_bag_map,gsa,TRUE
 central_management_area_gsa,GSA,gsa_11,Santa Ynez River Valley Basin Central Management Area GSA,revsubset,,entity_bag_map,gsa,TRUE
 eastern_management_area_gsa,GSA,gsa_273,Santa Ynez River Valley Basin Eastern Management Area GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -966,9 +976,9 @@ central_management_area_groundwater_sustainability_agency,GSA,gsa_11,Santa Ynez 
 gsa_agency,GSA,gsa_agency,gsa_agency,identity,,entity_bag_map,gsa,FALSE
 gsa_citizen,GSA,gsa_citizen,gsa_citizen,identity,,entity_bag_map,gsa,FALSE
 santa_ynez_river_valley_groundwater_basin_gsa,GSA,santa_ynez_river_valley_groundwater_basin_gsa,santa_ynez_river_valley_groundwater_basin_gsa,identity,,entity_bag_map,gsa,FALSE
-western_management_gsa,GSA,gsa_120,Western Canal Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
+western_management_gsa,GSA,gsa_5,gsa_5,override,,entity_bag_map,gsa,TRUE
 central_management_area_gsa41,GSA,central_management_area_gsa41,central_management_area_gsa41,identity,,entity_bag_map,gsa,FALSE
-central_management_gsa,GSA,gsa_211,Central Kings GSA,revsubset,,entity_bag_map,gsa,TRUE
+central_management_gsa,GSA,gsa_11,gsa_11,override,,entity_bag_map,gsa,TRUE
 eastern_management_area_groundwater_sustainability_agency,GSA,gsa_273,Santa Ynez River Valley Basin Eastern Management Area GSA,revsubset,,entity_bag_map,gsa,TRUE
 santa_ynez_river_valley_groundwater_basin_central_management_area_groundwater_sustainability_agency,GSA,gsa_11,Santa Ynez River Valley Basin Central Management Area GSA,subset,,entity_bag_map,gsa,TRUE
 santa_ynez_river_valley_groundwater_basin_groundwater_sustainability_agency,GSA,santa_ynez_river_valley_groundwater_basin_groundwater_sustainability_agency,santa_ynez_river_valley_groundwater_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
@@ -985,7 +995,7 @@ san_antonio_basin_gsa,GSA,gsa_290,San Antonio Basin GSA,exact,,entity_bag_map,gs
 ema_gsa_agency,GSA,ema_gsa_agency,ema_gsa_agency,identity,,entity_bag_map,gsa,FALSE
 ema_groundwater_sustainability_agency,GSA,ema_groundwater_sustainability_agency,ema_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 santa_ynez_basin_eastern_management_area_groundwater_sustainability_agency,GSA,gsa_273,Santa Ynez River Valley Basin Eastern Management Area GSA,revsubset,,entity_bag_map,gsa,TRUE
-santa_ynez_ema_gsa,GSA,santa_ynez_ema_gsa,santa_ynez_ema_gsa,identity,,entity_bag_map,gsa,FALSE
+santa_ynez_ema_gsa,GSA,gsa_273,gsa_273,override,,entity_bag_map,gsa,TRUE
 santa_monica_basin_gsa,GSA,gsa_337,Santa Monica Basin GSA,exact,,entity_bag_map,gsa,TRUE
 santa_monica_basin_groundwater_sustainability_agency,GSA,gsa_337,Santa Monica Basin GSA,subset,,entity_bag_map,gsa,TRUE
 santa_monica_gsa,GSA,gsa_337,Santa Monica Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -995,17 +1005,19 @@ mission_springs_water_district_gsa,GSA,mission_springs_water_district_gsa,missio
 san_gorgonio_pass_groundwater_sustainability_agency,GSA,gsa_262,San Gorgonio Pass GSA,subset,,entity_bag_map,gsa,TRUE
 dwagsa,GSA,dwagsa,dwagsa,identity,,entity_bag_map,gsa,FALSE
 coachella_valley_water_district_gsa,GSA,coachella_valley_water_district_gsa,coachella_valley_water_district_gsa,identity,,entity_bag_map,gsa,FALSE
-san_gorgonio_pass,GSA,gsa_262,San Gorgonio Pass GSA,subset,,entity_bag_map,gsa,TRUE
-san_gorgonio_pass_groundwater_sustainability_agencies,GSA,gsa_262,San Gorgonio Pass GSA,subset,,entity_bag_map,gsa,TRUE
+san_gorgonio_pass,GSA,san_gorgonio_pass,san_gorgonio_pass,identity,,entity_bag_map,gsa,FALSE
+san_gorgonio_pass_groundwater_sustainability_agencies,GSA,gsa_262,gsa_262,override,,entity_bag_map,gsa,TRUE
+san_gorgonio_pass_groundwater_sustainability_agencies,GSA,gsa_330,gsa_330,override,,entity_bag_map,gsa,TRUE
+san_gorgonio_pass_groundwater_sustainability_agencies,GSA,gsa_450,gsa_450,override,,entity_bag_map,gsa,TRUE
 vgsa,GSA,vgsa,vgsa,identity,,entity_bag_map,gsa,FALSE
 san_gorgonio_pass_groundwater_sustainability,GSA,gsa_262,San Gorgonio Pass GSA,subset,,entity_bag_map,gsa,TRUE
-enterprise_anderson_groundwater_sustainability_agency,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
-enterprise_anderson_gsa,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
-enterprise_anderson_groundwater_sustainability_agency_board,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
-enterprise_anderson_groundwater_sustainability_agency_management_committee,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
-enterprise_anderson_groundwater_sustainability_agency_board_of_directors,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
-enterprise_anderson_groundwater_sustainability_agency_measurable_objectiveu,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
-enterprise_anderson_groundwater_sustainability_agency_management_adjacent_basins,GSA,gsa_287,Enterprise-Anderson GSA,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_groundwater_sustainability_agency,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_gsa,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_groundwater_sustainability_agency_board,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_groundwater_sustainability_agency_management_committee,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_groundwater_sustainability_agency_board_of_directors,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_groundwater_sustainability_agency_measurable_objectiveu,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
+enterprise_anderson_groundwater_sustainability_agency_management_adjacent_basins,GSA,gsa_287,gsa_287,override,,entity_bag_map,gsa,TRUE
 upper_ventura_river_groundwater_agency_gsa,GSA,gsa_248,Upper Ventura River Groundwater Agency GSA,exact,,entity_bag_map,gsa,TRUE
 ojai_basin_groundwater_management_agency_gsa,GSA,gsa_162,Ojai Basin Groundwater Management Agency GSA,exact,,entity_bag_map,gsa,TRUE
 uvrgsa,GSA,uvrgsa,uvrgsa,identity,,entity_bag_map,gsa,FALSE
@@ -1013,8 +1025,8 @@ uvrgsa,GSA,uvrgsa,uvrgsa,identity,,entity_bag_map,gsa,FALSE
 714_monitoring_program_upper_ventura_river_groundwater_agency,GSA,gsa_248,Upper Ventura River Groundwater Agency GSA,subset,,entity_bag_map,gsa,TRUE
 uvrgas,GSA,uvrgas,uvrgas,identity,,entity_bag_map,gsa,FALSE
 upper_ventura_river_gsa,GSA,gsa_248,Upper Ventura River Groundwater Agency GSA,subset,,entity_bag_map,gsa,TRUE
-oxnard_outlying_area_gsa,GSA,oxnard_outlying_area_gsa,oxnard_outlying_area_gsa,identity,,entity_bag_map,gsa,FALSE
-oxnard_outlying_areas_gsa,GSA,oxnard_outlying_areas_gsa,oxnard_outlying_areas_gsa,identity,,entity_bag_map,gsa,FALSE
+oxnard_outlying_area_gsa,GSA,gsa_352,gsa_352,override,,entity_bag_map,gsa,TRUE
+oxnard_outlying_areas_gsa,GSA,gsa_352,gsa_352,override,,entity_bag_map,gsa,TRUE
 reclamation_district_no_1001_gsa,GSA,gsa_247,Reclamation District No. 1001 GSA,exact,,entity_bag_map,gsa,TRUE
 county_of_sutter_gsa,GSA,gsa_218,County of Sutter GSA - Sutter,subset,,entity_bag_map,gsa,TRUE
 west_placer_groundwater_sustainability_agency,GSA,gsa_209,West Placer GSA,subset,,entity_bag_map,gsa,TRUE
@@ -1025,7 +1037,7 @@ placer_gsa,GSA,gsa_209,West Placer GSA,revsubset,,entity_bag_map,gsa,TRUE
 reclamation_district_1001_gsa,GSA,gsa_247,Reclamation District No. 1001 GSA,revsubset,,entity_bag_map,gsa,TRUE
 reclamation_district_1001_groundwater_sustainability_agency,GSA,gsa_247,Reclamation District No. 1001 GSA,revsubset,,entity_bag_map,gsa,TRUE
 north_american_subbasin_groundwater_sustainability_agencies,GSA,north_american_subbasin_groundwater_sustainability_agencies,north_american_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
-rd1001_gsa,GSA,rd1001_gsa,rd1001_gsa,identity,,entity_bag_map,gsa,FALSE
+rd1001_gsa,GSA,gsa_247,gsa_247,override,,entity_bag_map,gsa,TRUE
 state_water_resources_control_board_groundwater_sustainability_agency,GSA,state_water_resources_control_board_groundwater_sustainability_agency,state_water_resources_control_board_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 west_placer_county_groundwater_sustainability_agency,GSA,gsa_209,West Placer GSA,subset,,entity_bag_map,gsa,TRUE
 reclamation_district_no_551_gsa,GSA,gsa_366,Reclamation District No. 551 GSA,exact,,entity_bag_map,gsa,TRUE
@@ -1046,7 +1058,7 @@ a_groundwater_agency_sustainability_agency,GSA,a_groundwater_agency_sustainabili
 south_american_subbasin_groundwater_sustainability_agencies,GSA,south_american_subbasin_groundwater_sustainability_agencies,south_american_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_basin_groundwater_sustainability_agency_board_of_directors,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 salinas_valley_basin_groundwater_agency,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
-arroyo_seco_groundwater_sustainability_agency,GSA,gsa_261,Arroyo Seco GSA - 1,revsubset,,entity_bag_map,gsa,TRUE
+arroyo_seco_groundwater_sustainability_agency,GSA,gsa_261,gsa_261,override,,entity_bag_map,gsa,TRUE
 salinas_valley_basin_groundwater_sustainability_agency_board,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 salinas_valley_groundwater_basin_sustainability_agency,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 salinas_valley_gsa,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
@@ -1054,7 +1066,7 @@ d_salinas_valley_basin_groundwater_sustainability_agency,GSA,d_salinas_valley_ba
 grant_cremers_gsa,GSA,grant_cremers_gsa,grant_cremers_gsa,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_atten,GSA,groundwater_sustainability_agency_atten,groundwater_sustainability_agency_atten,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_attention_ms_emily_gardner,GSA,groundwater_sustainability_agency_attention_ms_emily_gardner,groundwater_sustainability_agency_attention_ms_emily_gardner,identity,,entity_bag_map,gsa,FALSE
-marina_coast_water_district_groundwater_sustainability_agency,GSA,gsa_50,Marina Coast Water District GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
+marina_coast_water_district_groundwater_sustainability_agency,GSA,gsa_50,gsa_50,override,,entity_bag_map,gsa,TRUE
 mcwd_gsa_arroyo_seco_groundwater_sustainability_agency,GSA,mcwd_gsa_arroyo_seco_groundwater_sustainability_agency,mcwd_gsa_arroyo_seco_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_basin_groundwater_sustainability_agency_3,GSA,salinas_valley_basin_groundwater_sustainability_agency_3,salinas_valley_basin_groundwater_sustainability_agency_3,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_basin_groundwater_sustainability_agency_4,GSA,salinas_valley_basin_groundwater_sustainability_agency_4,salinas_valley_basin_groundwater_sustainability_agency_4,identity,,entity_bag_map,gsa,FALSE
@@ -1065,13 +1077,13 @@ groundwater_sustainability_plan_valley_basin_groundwater_sustainability_agency,G
 city_of_gridley_gsa,GSA,gsa_128,City of Gridley GSA,exact,,entity_bag_map,gsa,TRUE
 biggs_west_gridley_water_district_gsa,GSA,gsa_117,Biggs-West Gridley Water District GSA,exact,,entity_bag_map,gsa,TRUE
 reclamation_district_no_2106_gsa,GSA,gsa_195,Reclamation District No. 2106 GSA,exact,,entity_bag_map,gsa,TRUE
-reclamation_district_no_1004_gsa,GSA,gsa_138,Reclamation District No. 1004 GSA,override,,entity_bag_map,gsa,TRUE
+reclamation_district_no_1004_gsa,GSA,gsa_138,gsa_138,override,,entity_bag_map,gsa,TRUE
 butte_subbasin_gsa,GSA,butte_subbasin_gsa,butte_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
 butte_subbasin_groundwater_sustainability_agencies,GSA,butte_subbasin_groundwater_sustainability_agencies,butte_subbasin_groundwater_sustainability_agencies,identity,,entity_bag_map,gsa,FALSE
 scott_river_gsa,GSA,scott_river_gsa,scott_river_gsa,identity,,entity_bag_map,gsa,FALSE
 gsa_north_group,GSA,gsa_north_group,gsa_north_group,identity,,entity_bag_map,gsa,FALSE
-fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_director,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
-fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program_and_data_gap,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_director,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
+fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program_and_data_gap,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 san_luis_obispo_gsa,GSA,gsa_329,City of San Luis Obispo GSA,revsubset,,entity_bag_map,gsa,TRUE
 city_of_san_luis_obispo_groundwater_6b_sustainability_agency,GSA,gsa_329,City of San Luis Obispo GSA,subset,,entity_bag_map,gsa,TRUE
 rock_creek_reclamation_district_gsa,GSA,gsa_178,Rock Creek Reclamation District GSA,exact,,entity_bag_map,gsa,TRUE
@@ -1079,7 +1091,8 @@ vina_gsa_board,GSA,gsa_409,Vina GSA,subset,,entity_bag_map,gsa,TRUE
 vina_gsa_board_of_directors,GSA,gsa_409,Vina GSA,subset,,entity_bag_map,gsa,TRUE
 vina_groundwater_sustainability_agency,GSA,gsa_409,Vina GSA,subset,,entity_bag_map,gsa,TRUE
 vina_subbasin_gsa,GSA,gsa_409,Vina GSA,subset,,entity_bag_map,gsa,TRUE
-vina_subbasin_groundwater_sustainability_agencies,GSA,gsa_409,Vina GSA,subset,,entity_bag_map,gsa,TRUE
+vina_subbasin_groundwater_sustainability_agencies,GSA,gsa_409,gsa_409,override,,entity_bag_map,gsa,TRUE
+vina_subbasin_groundwater_sustainability_agencies,GSA,gsa_178,gsa_178,override,,entity_bag_map,gsa,TRUE
 wyandotte_creek_groundwater_sustainability_agency,GSA,gsa_406,Wyandotte Creek GSA,subset,,entity_bag_map,gsa,TRUE
 shasta_river_gsa,GSA,shasta_river_gsa,shasta_river_gsa,identity,,entity_bag_map,gsa,FALSE
 shasta_valley_gsa,GSA,shasta_valley_gsa,shasta_valley_gsa,identity,,entity_bag_map,gsa,FALSE
@@ -1092,17 +1105,17 @@ city_arroyo_seco_groundwater_sustainability_agency,GSA,city_arroyo_seco_groundwa
 agsa,GSA,agsa,agsa,identity,,entity_bag_map,gsa,FALSE
 die_airoyo_seco_groundwater_sustamability_agfflicy,GSA,die_airoyo_seco_groundwater_sustamability_agfflicy,die_airoyo_seco_groundwater_sustamability_agfflicy,identity,,entity_bag_map,gsa,FALSE
 non_salinas_valley_groundwater_basin_groundwater_sustainability_agency,GSA,non_salinas_valley_groundwater_basin_groundwater_sustainability_agency,non_salinas_valley_groundwater_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-arroyo_seco_groundwater_sustainability_agency_board_of_directors,GSA,gsa_261,Arroyo Seco GSA - 1,revsubset,,entity_bag_map,gsa,TRUE
-arroyo_seco_groundwater_sustain_ability_agency,GSA,arroyo_seco_groundwater_sustain_ability_agency,arroyo_seco_groundwater_sustain_ability_agency,identity,,entity_bag_map,gsa,FALSE
+arroyo_seco_groundwater_sustainability_agency_board_of_directors,GSA,gsa_261,gsa_261,override,,entity_bag_map,gsa,TRUE
+arroyo_seco_groundwater_sustain_ability_agency,GSA,gsa_261,gsa_261,override,,entity_bag_map,gsa,TRUE
 arroyo_seco_groundwater_sustainabiiity_agency,GSA,arroyo_seco_groundwater_sustainabiiity_agency,arroyo_seco_groundwater_sustainabiiity_agency,identity,,entity_bag_map,gsa,FALSE
-arroyo_seco_groundwater_sustainability,GSA,gsa_261,Arroyo Seco GSA - 1,revsubset,,entity_bag_map,gsa,TRUE
+arroyo_seco_groundwater_sustainability,GSA,gsa_261,gsa_261,override,,entity_bag_map,gsa,TRUE
 board_of_arroyo_seco_groundwater_sustainability_agency,GSA,gsa_261,Arroyo Seco GSA - 1,revsubset,,entity_bag_map,gsa,TRUE
 board_of_the_arroyo_seco_groundwater_sustainability_agency,GSA,gsa_261,Arroyo Seco GSA - 1,revsubset,,entity_bag_map,gsa,TRUE
 ctty_arroyo_seco_groundwater_sustainability_agency,GSA,ctty_arroyo_seco_groundwater_sustainability_agency,ctty_arroyo_seco_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_groundwater_sustainability,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,revsubset,,entity_bag_map,gsa,TRUE
 ppic_santa_clarita_valley_gsa,GSA,gsa_315,Santa Clarita Valley GSA,subset,,entity_bag_map,gsa,TRUE
-santa_clarita_valley,GSA,gsa_315,Santa Clarita Valley GSA,subset,,entity_bag_map,gsa,TRUE
-fillmore_piru_gsa,GSA,gsa_339,Fillmore and Piru Basins GSA,override,,entity_bag_map,gsa,TRUE
+santa_clarita_valley,GSA,santa_clarita_valley,santa_clarita_valley,identity,,entity_bag_map,gsa,FALSE
+fillmore_piru_gsa,GSA,gsa_339,gsa_339,override,,entity_bag_map,gsa,TRUE
 santa_clarita_valley_water_groundwater_sustainability_agency,GSA,gsa_315,Santa Clarita Valley GSA,subset,,entity_bag_map,gsa,TRUE
 groundwater_extraction_salinas_valley_basin_groundwater_sustainability_agency,GSA,groundwater_extraction_salinas_valley_basin_groundwater_sustainability_agency,groundwater_extraction_salinas_valley_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 salinas_valley_basin_groundwater_sustainability_agency_interlake_tunnel,GSA,salinas_valley_basin_groundwater_sustainability_agency_interlake_tunnel,salinas_valley_basin_groundwater_sustainability_agency_interlake_tunnel,identity,,entity_bag_map,gsa,FALSE
@@ -1118,10 +1131,10 @@ east_contra_costa_gsa,GSA,gsa_252,East Contra Costa Irrigation District GSA,revs
 east_contra_costa_groundwater_sustainability_agencies_board,GSA,gsa_252,East Contra Costa Irrigation District GSA,revsubset,,entity_bag_map,gsa,TRUE
 gsa_diablo_water_district,GSA,gsa_289,Diablo Water District GSA,subset,,entity_bag_map,gsa,TRUE
 29_glenn_groundwater_authority_x,GSA,gsa_369,Glenn Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority_x_15,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
-colusa_groundwater_authority_x_19,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_x_15,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_x_19,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
 colusa_groundwater_authority_x_and_glenn_groundwater_authority_x,GSA,colusa_groundwater_authority_x_and_glenn_groundwater_authority_x,colusa_groundwater_authority_x_and_glenn_groundwater_authority_x,identity,,entity_bag_map,gsa,FALSE
-colusa_groundwater_authority_x_gsa,GSA,gsa_323,Colusa Groundwater Authority GSA,subset,,entity_bag_map,gsa,TRUE
+colusa_groundwater_authority_x_gsa,GSA,gsa_323,Colusa Groundwater Authority GSA - Colusa,subset,,entity_bag_map,gsa,TRUE
 city_of_hayward_gsa,GSA,gsa_200,City of Hayward GSA,exact,,entity_bag_map,gsa,TRUE
 east_bay_municipal_utility_mt_minimum_thresholds_gsa,GSA,east_bay_municipal_utility_mt_minimum_thresholds_gsa,east_bay_municipal_utility_mt_minimum_thresholds_gsa,identity,,entity_bag_map,gsa,FALSE
 hayward_gsa,GSA,gsa_200,City of Hayward GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -1141,8 +1154,8 @@ uvbgas,GSA,uvbgas,uvbgas,identity,,entity_bag_map,gsa,FALSE
 santa_rosa_plain_groundwater_sustainability_agency,GSA,gsa_331,Santa Rosa Plain GSA,subset,,entity_bag_map,gsa,TRUE
 ukiah_valley_basin_groundater_sustainability_agency,GSA,gsa_342,Ukiah Valley Basin GSA,subset,,entity_bag_map,gsa,TRUE
 ukiah_valley_groundwater_basin_groundwater_sustainability_agency,GSA,gsa_342,Ukiah Valley Basin GSA,subset,,entity_bag_map,gsa,TRUE
-ukiah_valley_ground_water_sustainability_agency,GSA,ukiah_valley_ground_water_sustainability_agency,ukiah_valley_ground_water_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-ukiah_valley_basin,GSA,gsa_342,Ukiah Valley Basin GSA,subset,,entity_bag_map,gsa,TRUE
+ukiah_valley_ground_water_sustainability_agency,GSA,gsa_342,gsa_342,override,,entity_bag_map,gsa,TRUE
+ukiah_valley_basin,GSA,ukiah_valley_basin,ukiah_valley_basin,identity,,entity_bag_map,gsa,FALSE
 sonoma_valley_groundwater_sustainability_agency_board,GSA,gsa_263,Sonoma Valley GSA,subset,,entity_bag_map,gsa,TRUE
 sonoma_valley_groundwater_sustainability_agency,GSA,gsa_263,Sonoma Valley GSA,subset,,entity_bag_map,gsa,TRUE
 sebastopol_to_graton_gsa,GSA,sebastopol_to_graton_gsa,sebastopol_to_graton_gsa,identity,,entity_bag_map,gsa,FALSE
@@ -1160,7 +1173,7 @@ santa_rosa_plain_gsa_board,GSA,gsa_331,Santa Rosa Plain GSA,subset,,entity_bag_m
 groundwater_sustainability_agency_board_and_advisory,GSA,groundwater_sustainability_agency_board_and_advisory,groundwater_sustainability_agency_board_and_advisory,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_joint_exercise,GSA,groundwater_sustainability_agency_joint_exercise,groundwater_sustainability_agency_joint_exercise,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_meetings,GSA,groundwater_sustainability_agency_meetings,groundwater_sustainability_agency_meetings,identity,,entity_bag_map,gsa,FALSE
-santa_rosa_plain,GSA,gsa_331,Santa Rosa Plain GSA,subset,,entity_bag_map,gsa,TRUE
+santa_rosa_plain,GSA,santa_rosa_plain,santa_rosa_plain,identity,,entity_bag_map,gsa,FALSE
 board_of_the_santa_rosa_plain_groundwater_sustainability_agency,GSA,gsa_331,Santa Rosa Plain GSA,subset,,entity_bag_map,gsa,TRUE
 santa_rosa_plain_groundwater_sustainability_agriculturalency,GSA,gsa_331,Santa Rosa Plain GSA,subset,,entity_bag_map,gsa,TRUE
 banta_carbona_irrigation_district_gsa,GSA,gsa_149,Banta-Carbona Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
@@ -1169,7 +1182,7 @@ tracy_subbasin_groundwater_sustainability_agencies,GSA,tracy_subbasin_groundwate
 city_of_lathrop_groundwater_sustainability_agency,GSA,gsa_183,City of Lathrop GSA,subset,,entity_bag_map,gsa,TRUE
 tracy_subbasin_gsa,GSA,tracy_subbasin_gsa,tracy_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
 carbona_irrigation_district_groundwater_sustainability_agency,GSA,gsa_149,Banta-Carbona Irrigation District GSA,revsubset,,entity_bag_map,gsa,TRUE
-tracy_gsa,GSA,gsa_157,City of Tracy GSA,revsubset,,entity_bag_map,gsa,TRUE
+tracy_gsa,GSA,tracy_gsa,tracy_gsa,identity,,entity_bag_map,gsa,FALSE
 san_joaquin_county_gsa,GSA,gsa_146,County of San Joaquin GSA - Tracy,revsubset,,entity_bag_map,gsa,TRUE
 sierra_valley_groundwater_management_district_gsa,GSA,gsa_227,Sierra Valley Groundwater Management District GSA,exact,,entity_bag_map,gsa,TRUE
 county_of_plumas_gsa,GSA,gsa_234,County of Plumas GSA,exact,,entity_bag_map,gsa,TRUE
@@ -1177,41 +1190,41 @@ sierra_valley_groundwater_management_actionnagement_district_groundwater_sustain
 c_pc_technical_advisory_committee_gsa,GSA,c_pc_technical_advisory_committee_gsa,c_pc_technical_advisory_committee_gsa,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainably_agency,GSA,groundwater_sustainably_agency,groundwater_sustainably_agency,identity,,entity_bag_map,gsa,FALSE
 sierra_valley_groundwater_sustainability_agencies,GSA,gsa_227,Sierra Valley Groundwater Management District GSA,revsubset,,entity_bag_map,gsa,TRUE
-elsinore_valley,GSA,gsa_21,Elsinore Valley GSA,subset,,entity_bag_map,gsa,TRUE
+elsinore_valley,GSA,elsinore_valley,elsinore_valley,identity,,entity_bag_map,gsa,FALSE
 groundwater_sus_tainability_agency,GSA,groundwater_sus_tainability_agency,groundwater_sus_tainability_agency,identity,,entity_bag_map,gsa,FALSE
 yucaipa_gsa,GSA,gsa_349,Yucaipa Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
-san_timoteo_subbasin_gsa,GSA,san_timoteo_subbasin_gsa,san_timoteo_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
+san_timoteo_subbasin_gsa,GSA,gsa_344,gsa_344,override,,entity_bag_map,gsa,TRUE
 yucaipa_groundwater_sustainability_agency,GSA,gsa_349,Yucaipa Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 bear_valley_basin_gsa,GSA,gsa_328,Bear Valley Basin GSA,exact,,entity_bag_map,gsa,TRUE
 yucaipa_sub_basin_gsa,GSA,gsa_349,Yucaipa Basin GSA,subset,,entity_bag_map,gsa,TRUE
-yucaipa_smga,GSA,yucaipa_smga,yucaipa_smga,identity,,entity_bag_map,gsa,FALSE
+yucaipa_smga,GSA,gsa_349,gsa_349,override,,entity_bag_map,gsa,TRUE
 yucaipa_sustainable_groundwater_management_agency,GSA,gsa_349,Yucaipa Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 yucaipa_gsa_board,GSA,gsa_349,Yucaipa Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 bear_valley_basin_groundwater_sustainability_agency,GSA,gsa_328,Bear Valley Basin GSA,subset,,entity_bag_map,gsa,TRUE
-yucaipa_groundwater_sustainability_agency_for_the_yucaipa_subbasin,GSA,yucaipa_groundwater_sustainability_agency_for_the_yucaipa_subbasin,yucaipa_groundwater_sustainability_agency_for_the_yucaipa_subbasin,identity,,entity_bag_map,gsa,FALSE
+yucaipa_groundwater_sustainability_agency_for_the_yucaipa_subbasin,GSA,gsa_349,gsa_349,override,,entity_bag_map,gsa,TRUE
 yucaipa_sub_basin_groundwater_sustainability_agency,GSA,gsa_349,Yucaipa Basin GSA,subset,,entity_bag_map,gsa,TRUE
 yucaipa_subbasin_gsa,GSA,gsa_349,gsa_349,override,,entity_bag_map,gsa,TRUE
 yucaipa_sustainability_groundwater_management_agency,GSA,gsa_349,Yucaipa Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 big_valley_groundwater_sustainability_agency,GSA,gsa_480,Big Valley GSA,subset,,entity_bag_map,gsa,TRUE
 big_valley_groundwater_sustainability_agency_board_of_directors,GSA,gsa_480,Big Valley GSA,subset,,entity_bag_map,gsa,TRUE
-city_of_lakeport_gsa,GSA,city_of_lakeport_gsa,city_of_lakeport_gsa,identity,,entity_bag_map,gsa,FALSE
+city_of_lakeport_gsa,GSA,gsa_333,gsa_333,override,,entity_bag_map,gsa,TRUE
 temescal_gsa,GSA,gsa_260,Temescal Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
-temescal_sub_basin_groundwater_sustainability_agency,GSA,temescal_sub_basin_groundwater_sustainability_agency,temescal_sub_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+temescal_sub_basin_groundwater_sustainability_agency,GSA,gsa_260,gsa_260,override,,entity_bag_map,gsa,TRUE
 temescal_basin_gsa,GSA,gsa_260,gsa_260,override,,entity_bag_map,gsa,TRUE
 tbgsa,GSA,tbgsa,tbgsa,identity,,entity_bag_map,gsa,FALSE
-temescal_basin_groundwater_sustainability_agency,GSA,temescal_basin_groundwater_sustainability_agency,temescal_basin_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+temescal_basin_groundwater_sustainability_agency,GSA,gsa_260,gsa_260,override,,entity_bag_map,gsa,TRUE
 temescal_groundwater_sustainability_agency,GSA,gsa_260,Temescal Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
 arlington_gsa,GSA,gsa_275,Western Municipal Water District GSA - Riverside-Arlington,revsubset,,entity_bag_map,gsa,TRUE
 la_agencia_de_sostenibilidad_de_aguas_subterráneas_de_temescal,GSA,la_agencia_de_sostenibilidad_de_aguas_subterráneas_de_temescal,la_agencia_de_sostenibilidad_de_aguas_subterráneas_de_temescal,identity,,entity_bag_map,gsa,FALSE
 temescal_subbasin_groundwater_sustainability_agency,GSA,gsa_260,Temescal Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 el_distrito_hídrico_del_condado_sustainability_agency,GSA,el_distrito_hídrico_del_condado_sustainability_agency,el_distrito_hídrico_del_condado_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-temescal_sub_basin_groundwater_sustainability_agency_for_the_temescal_sub,GSA,temescal_sub_basin_groundwater_sustainability_agency_for_the_temescal_sub,temescal_sub_basin_groundwater_sustainability_agency_for_the_temescal_sub,identity,,entity_bag_map,gsa,FALSE
+temescal_sub_basin_groundwater_sustainability_agency_for_the_temescal_sub,GSA,gsa_260,gsa_260,override,,entity_bag_map,gsa,TRUE
 solano_irrigation_district_gsa,GSA,gsa_180,Solano Irrigation District GSA,exact,,entity_bag_map,gsa,TRUE
 city_of_vacaville_gsa,GSA,gsa_272,City of Vacaville GSA,exact,,entity_bag_map,gsa,TRUE
 reclamation_district_no_501_gsa,GSA,gsa_384,Reclamation District No. 501 GSA,exact,,entity_bag_map,gsa,TRUE
 reclamation_district_no_349_gsa,GSA,gsa_385,Reclamation District No. 349 GSA,exact,,entity_bag_map,gsa,TRUE
-solano_subbasin,GSA,gsa_340,Solano Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
-solano_gsa,GSA,gsa_340,Solano Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
+solano_subbasin,GSA,solano_subbasin,solano_subbasin,identity,,entity_bag_map,gsa,FALSE
+solano_gsa,GSA,solano_gsa,solano_gsa,identity,,entity_bag_map,gsa,FALSE
 ndgsa,GSA,ndgsa,ndgsa,identity,,entity_bag_map,gsa,FALSE
 groundwater_sustainability_agency_collaborative,GSA,groundwater_sustainability_agency_collaborative,groundwater_sustainability_agency_collaborative,identity,,entity_bag_map,gsa,FALSE
 vacaville_gsa,GSA,gsa_272,City of Vacaville GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -1222,18 +1235,23 @@ joaquin_gsa,GSA,joaquin_gsa,joaquin_gsa,identity,,entity_bag_map,gsa,FALSE
 local_supplies_city_of_vacaville_gsa,GSA,gsa_272,City of Vacaville GSA,subset,,entity_bag_map,gsa,TRUE
 north_delta_gsa,GSA,north_delta_gsa,north_delta_gsa,identity,,entity_bag_map,gsa,FALSE
 reclamation_district_2111_gsa,GSA,reclamation_district_2111_gsa,reclamation_district_2111_gsa,identity,,entity_bag_map,gsa,FALSE
-solano_irrigation_district,GSA,gsa_180,Solano Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
-sacramento_gsa,GSA,gsa_118,Sacramento Groundwater Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
+solano_irrigation_district,GSA,solano_irrigation_district,solano_irrigation_district,identity,,entity_bag_map,gsa,FALSE
+sacramento_gsa,GSA,sacramento_gsa,sacramento_gsa,identity,,entity_bag_map,gsa,FALSE
 solano_irrigation_district_groundwater_sustainability_agency,GSA,gsa_180,Solano Irrigation District GSA,subset,,entity_bag_map,gsa,TRUE
 solano_subbasin_groundwater_sustainability_agency_collaborative,GSA,gsa_340,Solano Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 nd_gsa,GSA,nd_gsa,nd_gsa,identity,,entity_bag_map,gsa,FALSE
 scga,GSA,scga,scga,identity,,entity_bag_map,gsa,FALSE
 vvvvyv_gsa,GSA,vvvvyv_gsa,vvvvyv_gsa,identity,,entity_bag_map,gsa,FALSE
 vacaville_groundwater_sustainability_agencies,GSA,gsa_272,City of Vacaville GSA,revsubset,,entity_bag_map,gsa,TRUE
-yolo_subbasin,GSA,gsa_217,Yolo Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
+yolo_subbasin,GSA,yolo_subbasin,yolo_subbasin,identity,,entity_bag_map,gsa,FALSE
 n_delta_gsa,GSA,n_delta_gsa,n_delta_gsa,identity,,entity_bag_map,gsa,FALSE
-sacramento_groundwater_sustainability_agency,GSA,gsa_118,Sacramento Groundwater Authority GSA,revsubset,,entity_bag_map,gsa,TRUE
-solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_340,Solano Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
+sacramento_groundwater_sustainability_agency,GSA,sacramento_groundwater_sustainability_agency,sacramento_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_340,gsa_340,override,,entity_bag_map,gsa,TRUE
+solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_180,gsa_180,override,,entity_bag_map,gsa,TRUE
+solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_272,gsa_272,override,,entity_bag_map,gsa,TRUE
+solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_384,gsa_384,override,,entity_bag_map,gsa,TRUE
+solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_385,gsa_385,override,,entity_bag_map,gsa,TRUE
+solano_subbasin_groundwater_sustainability_agencies,GSA,gsa_497,gsa_497,override,,entity_bag_map,gsa,TRUE
 a_turlock_subbasin_gsa,GSA,a_turlock_subbasin_gsa,a_turlock_subbasin_gsa,identity,,entity_bag_map,gsa,FALSE
 white_wolf_groundwater_sustainability_agency,GSA,gsa_244,White Wolf GSA,subset,,entity_bag_map,gsa,TRUE
 this_white_wolf_gsa,GSA,gsa_244,White Wolf GSA,subset,,entity_bag_map,gsa,TRUE
@@ -1256,11 +1274,11 @@ recharge_agency_gsa,GSA,recharge_agency_gsa,recharge_agency_gsa,identity,,entity
 ygsa,GSA,ygsa,ygsa,identity,,entity_bag_map,gsa,FALSE
 yolo_subbasin_proposed_yolo_subbasin_groundwater_agency,GSA,gsa_217,Yolo Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 subbasin_groundwater_agency_3yolo_subbasin,GSA,subbasin_groundwater_agency_3yolo_subbasin,subbasin_groundwater_agency_3yolo_subbasin,identity,,entity_bag_map,gsa,FALSE
-yolo_sub_basin_groundwater_agency,GSA,yolo_sub_basin_groundwater_agency,yolo_sub_basin_groundwater_agency,identity,,entity_bag_map,gsa,FALSE
+yolo_sub_basin_groundwater_agency,GSA,gsa_217,gsa_217,override,,entity_bag_map,gsa,TRUE
 yolo_county_flood_control_and_water_conservation_district_yolo_subbasin_groundwater_agency,GSA,gsa_217,Yolo Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
 yga,GSA,yga,yga,identity,,entity_bag_map,gsa,FALSE
 yolo_subbasin_groundwater_agency_entity,GSA,gsa_217,Yolo Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
-yolo_sga,GSA,yolo_sga,yolo_sga,identity,,entity_bag_map,gsa,FALSE
+yolo_sga,GSA,gsa_217,gsa_217,override,,entity_bag_map,gsa,TRUE
 yolo_sustainable_groundwater_agency,GSA,gsa_217,Yolo Subbasin GSA,revsubset,,entity_bag_map,gsa,TRUE
 groundwater_sustainability_agency_for_the_subbasin,GSA,groundwater_sustainability_agency_for_the_subbasin,groundwater_sustainability_agency_for_the_subbasin,identity,,entity_bag_map,gsa,FALSE
 yolo_subbasin_groundwater_sustainability_agency,GSA,gsa_217,Yolo Subbasin GSA,subset,,entity_bag_map,gsa,TRUE
@@ -1268,11 +1286,11 @@ upper_san_luis_rey_groundwater_management_authority_gsa,GSA,gsa_359,Upper San Lu
 pauma_valley_groundwater_sustainability_agency,GSA,pauma_valley_groundwater_sustainability_agency,pauma_valley_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
 pauma_valley_gsa,GSA,pauma_valley_gsa,pauma_valley_gsa,identity,,entity_bag_map,gsa,FALSE
 pauma_valley_ground_water_sustainability_agency,GSA,pauma_valley_ground_water_sustainability_agency,pauma_valley_ground_water_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
-upper_basin_gsa,GSA,gsa_459,Salinas Valley Basin GSA - Upper Valley Aquifer,revsubset,,entity_bag_map,gsa,TRUE
+upper_basin_gsa,GSA,upper_basin_gsa,upper_basin_gsa,identity,,entity_bag_map,gsa,FALSE
 san_pasqual_valley_gsa,GSA,gsa_370,San Pasqual Valley GSA,exact,,entity_bag_map,gsa,TRUE
-san_diego_river_valley_gsa,GSA,san_diego_river_valley_gsa,san_diego_river_valley_gsa,identity,,entity_bag_map,gsa,FALSE
+san_diego_river_valley_gsa,GSA,gsa_371,gsa_371,override,,entity_bag_map,gsa,TRUE
 san_pasqual_valley_groundwater_sustainability_agency,GSA,gsa_370,San Pasqual Valley GSA,subset,,entity_bag_map,gsa,TRUE
-san_pasqual_valley,GSA,gsa_370,San Pasqual Valley GSA,subset,,entity_bag_map,gsa,TRUE
+san_pasqual_valley,GSA,san_pasqual_valley,san_pasqual_valley,identity,,entity_bag_map,gsa,FALSE
 san_diego_river_valley,GSA,san_diego_river_valley,san_diego_river_valley,identity,,entity_bag_map,gsa,FALSE
 san_pasqual_valley_groundwater_sustainablity_agency,GSA,gsa_370,San Pasqual Valley GSA,subset,,entity_bag_map,gsa,TRUE
 salinas_valley_groundwater_basin_gsa_monterey,GSA,gsa_458,Salinas Valley Basin GSA - Monterey,subset,,entity_bag_map,gsa,TRUE
@@ -1343,7 +1361,7 @@ pest_eastern_san_joaquin_groundwater_authority,GSA,pest_eastern_san_joaquin_grou
 tejon_castac_water_district_groundwater_sustainability_agencies,GSA,gsa_482,Tejon-Castac Water District GSA,subset,,entity_bag_map,gsa,TRUE
 arvin_groundwater_sustainability_agency,GSA,gsa_481,Arvin GSA,subset,,entity_bag_map,gsa,TRUE
 krgsa,GSA,krgsa,krgsa,identity,,entity_bag_map,gsa,FALSE
-each_south_of_kern_river_gsa,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
+each_south_of_kern_river_gsa,GSA,each_south_of_kern_river_gsa,each_south_of_kern_river_gsa,identity,,entity_bag_map,gsa,FALSE
 48_wheeler_ridge_maricopa_gsa,GSA,gsa_484,Wheeler Ridge-Maricopa GSA,subset,,entity_bag_map,gsa,TRUE
 aewsd_gsa,GSA,aewsd_gsa,aewsd_gsa,identity,,entity_bag_map,gsa,FALSE
 castac_water_district_groundwater_sustainability_agency,GSA,gsa_482,Tejon-Castac Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
@@ -1352,7 +1370,7 @@ tejon_castac_water_district_gsa_board,GSA,gsa_482,Tejon-Castac Water District GS
 tejon_castac_gsa,GSA,gsa_482,Tejon-Castac Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 wheeler_ridge_maricopa_groundwater_sustainability_agency,GSA,gsa_484,Wheeler Ridge-Maricopa GSA,subset,,entity_bag_map,gsa,TRUE
 arvin_gsa_for_sustainable_groundwater_management_act,GSA,gsa_481,Arvin GSA,subset,,entity_bag_map,gsa,TRUE
-south_of_kern_river_groundwater_sustainability_agencies_boards,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
+south_of_kern_river_groundwater_sustainability_agencies_boards,GSA,south_of_kern_river_groundwater_sustainability_agencies_boards,south_of_kern_river_groundwater_sustainability_agencies_boards,identity,,entity_bag_map,gsa,FALSE
 tejon_castac_groundwater_sustainability_agency,GSA,gsa_482,Tejon-Castac Water District GSA,revsubset,,entity_bag_map,gsa,TRUE
 groundwater_sustainability_agency_land_subsidence_monitoring_plan,GSA,groundwater_sustainability_agency_land_subsidence_monitoring_plan,groundwater_sustainability_agency_land_subsidence_monitoring_plan,identity,,entity_bag_map,gsa,FALSE
 irrigation_district_groundwater_sustainability_agency,GSA,irrigation_district_groundwater_sustainability_agency,irrigation_district_groundwater_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
@@ -1364,7 +1382,7 @@ kern_river_groundwater_sustainability_agency_board_for_subbasin,GSA,gsa_20,Kern 
 kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan_banking_management_area,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_management_areas,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_plan_boundary,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
-eastern_tule_gsa_sustainability_agency,GSA,eastern_tule_gsa_sustainability_agency,eastern_tule_gsa_sustainability_agency,identity,,entity_bag_map,gsa,FALSE
+eastern_tule_gsa_sustainability_agency,GSA,gsa_205,gsa_205,override,,entity_bag_map,gsa,TRUE
 mid_kaweah_groundwater_sustainability_agency_drinking_water_well_mitigation_program,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 1_east_kaweah_groundwater_sustainability_agency,GSA,gsa_314,East Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
 mid_kaweah_groundwater_sustainability_agency_41012,GSA,gsa_7,Mid-Kaweah GSA,subset,,entity_bag_map,gsa,TRUE
@@ -1391,12 +1409,12 @@ delano_environmental_assessmentrlimart_irrigation_district_groundwater_sustainab
 detd_gsa,GSA,detd_gsa,detd_gsa,identity,,entity_bag_map,gsa,FALSE
 ifdeid_gsa,GSA,ifdeid_gsa,ifdeid_gsa,identity,,entity_bag_map,gsa,FALSE
 ofdeid_gsa,GSA,ofdeid_gsa,ofdeid_gsa,identity,,entity_bag_map,gsa,FALSE
-buena_vista_groundwater_sustainability_agency_section_2_basin_setting,GSA,buena_vista_groundwater_sustainability_agency_section_2_basin_setting,buena_vista_groundwater_sustainability_agency_section_2_basin_setting,identity,,entity_bag_map,gsa,FALSE
+buena_vista_groundwater_sustainability_agency_section_2_basin_setting,GSA,gsa_15,gsa_15,override,,entity_bag_map,gsa,TRUE
 kern_river_groundwater_sustainability_agency_agricultural_ma,GSA,gsa_20,Kern River GSA,subset,,entity_bag_map,gsa,TRUE
 board_of_the_buena_vista_groundwater_sustainability_agency,GSA,gsa_15,Buena Vista Water Storage District GSA,revsubset,,entity_bag_map,gsa,TRUE
 petaluma_valley_groundwater_sustainability_agency,GSA,gsa_350,Petaluma Valley GSA,subset,,entity_bag_map,gsa,TRUE
 petaluma_valley_groundwater_sustainability_agency_board,GSA,gsa_350,Petaluma Valley GSA,subset,,entity_bag_map,gsa,TRUE
-petaluma_valley,GSA,gsa_350,Petaluma Valley GSA,subset,,entity_bag_map,gsa,TRUE
+petaluma_valley,GSA,petaluma_valley,petaluma_valley,identity,,entity_bag_map,gsa,FALSE
 pvgwsa,GSA,pvgwsa,pvgwsa,identity,,entity_bag_map,gsa,FALSE
 board_of_directors_of_the_petaluma_valley_groundwater_sustainability_agency,GSA,gsa_350,Petaluma Valley GSA,subset,,entity_bag_map,gsa,TRUE
 petaluma_valley_gsa_board_of_directors,GSA,gsa_350,Petaluma Valley GSA,subset,,entity_bag_map,gsa,TRUE
@@ -1420,7 +1438,8 @@ montecito_groundwater_sustainability_agency,GSA,gsa_404,Montecito Groundwater Ba
 montecito_groundwater_basin_groundwater_sustainability_agency,GSA,gsa_404,Montecito Groundwater Basin GSA,subset,,entity_bag_map,gsa,TRUE
 mbgsa,GSA,mbgsa,mbgsa,identity,,entity_bag_map,gsa,FALSE
 mb_gsa,GSA,mb_gsa,mb_gsa,identity,,entity_bag_map,gsa,FALSE
-carpinteria_montecito_gsa,GSA,gsa_491,Carpinteria GSA,subset,,entity_bag_map,gsa,TRUE
+carpinteria_montecito_gsa,GSA,gsa_491,gsa_491,override,,entity_bag_map,gsa,TRUE
+carpinteria_montecito_gsa,GSA,gsa_404,gsa_404,override,,entity_bag_map,gsa,TRUE
 asrbga,GSA,asrbga,asrbga,identity,,entity_bag_map,gsa,FALSE
 arroyo_santa_rosa_basin_groundwater_sustainability_agency_board,GSA,gsa_49,Arroyo Santa Rosa Valley Basin GSA,revsubset,,entity_bag_map,gsa,TRUE
 arroyo_santa_rosa_valley_basin_groundwater_sustainability_agency,GSA,gsa_49,Arroyo Santa Rosa Valley Basin GSA,subset,,entity_bag_map,gsa,TRUE

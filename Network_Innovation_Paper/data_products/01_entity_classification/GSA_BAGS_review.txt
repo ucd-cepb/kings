@@ -1,10 +1,8 @@
 
-### Mid-Kaweah GSA  [gsa_7]  (39 names)
-    groundwater_sustainability_agency_mid                    <revsubset>
-    mid_kaweah                                               <subset>
+### Mid-Kaweah GSA  [gsa_7]  (38 names)
     mid_kaweah_groundwater_sustainability                    <subset>
     mid_kaweah_groundwater_sustainability_agency             <subset>
-    mid_kaweah_groundwater_sustainability_agency_2020_groundwater_sustainability_plan  <subset>
+    mid_kaweah_groundwater_sustainability_agency_2020_groundwater_sustainability_plan <subset>
     mid_kaweah_groundwater_sustainability_agency_251         <subset>
     mid_kaweah_groundwater_sustainability_agency_41012       <subset>
     mid_kaweah_groundwater_sustainability_agency_49_4_28     <subset>
@@ -12,21 +10,21 @@
     mid_kaweah_groundwater_sustainability_agency_8121        <subset>
     mid_kaweah_groundwater_sustainability_agency_821         <subset>
     mid_kaweah_groundwater_sustainability_agency_ac          <subset>
-    mid_kaweah_groundwater_sustainability_agency_advisory_committee  <subset>
-    mid_kaweah_groundwater_sustainability_agency_advisory_committees  <subset>
-    mid_kaweah_groundwater_sustainability_agency_coffee_shop_committee  <subset>
-    mid_kaweah_groundwater_sustainability_agency_communications_and_engagement_plan  <subset>
-    mid_kaweah_groundwater_sustainability_agency_drinking_water_well_mitigation_program  <subset>
-    mid_kaweah_groundwater_sustainability_agency_groundwater_sustainability_plan  <subset>
-    mid_kaweah_groundwater_sustainability_agency_groundwater_sustainability_plans  <subset>
-    mid_kaweah_groundwater_sustainability_agency_joint_powers_authority  <subset>
-    mid_kaweah_groundwater_sustainability_agency_mitigation_plan_plan  <subset>
-    mid_kaweah_groundwater_sustainability_agency_monitoring_network  <subset>
+    mid_kaweah_groundwater_sustainability_agency_advisory_committee <subset>
+    mid_kaweah_groundwater_sustainability_agency_advisory_committees <subset>
+    mid_kaweah_groundwater_sustainability_agency_coffee_shop_committee <subset>
+    mid_kaweah_groundwater_sustainability_agency_communications_and_engagement_plan <subset>
+    mid_kaweah_groundwater_sustainability_agency_drinking_water_well_mitigation_program <subset>
+    mid_kaweah_groundwater_sustainability_agency_groundwater_sustainability_plan <subset>
+    mid_kaweah_groundwater_sustainability_agency_groundwater_sustainability_plans <subset>
+    mid_kaweah_groundwater_sustainability_agency_joint_powers_authority <subset>
+    mid_kaweah_groundwater_sustainability_agency_mitigation_plan_plan <subset>
+    mid_kaweah_groundwater_sustainability_agency_monitoring_network <subset>
     mid_kaweah_groundwater_sustainability_agency_plan        <subset>
-    mid_kaweah_groundwater_sustainability_agency_representative_monitoring_site  <subset>
-    mid_kaweah_groundwater_sustainability_agency_section_234_of_the  <subset>
-    mid_kaweah_groundwater_sustainability_agency_sustainable_groundwater_management_act  <subset>
-    mid_kaweah_groundwater_sustainability_agency_water_banking_operation  <subset>
+    mid_kaweah_groundwater_sustainability_agency_representative_monitoring_site <subset>
+    mid_kaweah_groundwater_sustainability_agency_section_234_of_the <subset>
+    mid_kaweah_groundwater_sustainability_agency_sustainable_groundwater_management_act <subset>
+    mid_kaweah_groundwater_sustainability_agency_water_banking_operation <subset>
     mid_kaweah_grounwater_sustainability_agency              <subset>
     mid_kaweah_grounwater_sustainability_agency_4101         <subset>
     mid_kaweah_grounwater_sustainability_agency_41012        <subset>
@@ -34,49 +32,17 @@
     mid_kaweah_gsa                                           <exact>
     mid_kaweah_gsa_groundwater_sustainability_plan           <subset>
     mid_kaweah_kgsa                                          <subset>
+    midkaweah_groundwater_sustainability_agency              <override>
     public_mid_kaweah_groundwater_sustainability_agency      <subset>
     public_mid_kaweah_groundwater_sustainability_agency_ac   <subset>
-    public_mid_kaweah_groundwater_sustainability_agency_board_of_directors  <subset>
+    public_mid_kaweah_groundwater_sustainability_agency_board_of_directors <subset>
     small_for_mid_kaweah_gsa                                 <subset>
-    turlock_irrigation_district_mid_kaweah_groundwater_sustainability_agency  <subset>
+    turlock_irrigation_district_mid_kaweah_groundwater_sustainability_agency <subset>
 
-### Kern River GSA  [gsa_20]  (30 names)
-    each_south_of_kern_river_gsa                             <subset>
-    expand_recycled_water_the_kern_river_groundwater_sustainability_agency  <subset>
-    final_kern_river_groundwater_sustainability_agency       <subset>
-    kern_gsa                                                 <revsubset>
-    kern_river                                               <subset>
-    kern_river_groundwater_sustainability_agency             <subset>
-    kern_river_groundwater_sustainability_agency_123tcp_wellhead_treatment_draft_draft  <subset>
-    kern_river_groundwater_sustainability_agency_agricultural  <subset>
-    kern_river_groundwater_sustainability_agency_agricultural_ma  <subset>
-    kern_river_groundwater_sustainability_agency_agricultural_management_area  <subset>
-    kern_river_groundwater_sustainability_agency_banking     <subset>
-    kern_river_groundwater_sustainability_agency_banking_management_area  <subset>
-    kern_river_groundwater_sustainability_agency_board_for_subbasin  <subset>
-    kern_river_groundwater_sustainability_agency_board_of    <subset>
-    kern_river_groundwater_sustainability_agency_board_of_directors  <subset>
-    kern_river_groundwater_sustainability_agency_conservation_measures  <subset>
-    kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan  <subset>
-    kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan_banking_management_area  <subset>
-    kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan_todd_groundwater  <subset>
-    kern_river_groundwater_sustainability_agency_kern_river_groundwater_sustainability_agency  <subset>
-    kern_river_groundwater_sustainability_agency_management_areas  <subset>
-    kern_river_groundwater_sustainability_agency_notice      <subset>
-    kern_river_groundwater_sustainability_agency_p_management_area  <subset>
-    kern_river_groundwater_sustainability_agency_plan_boundary  <subset>
-    kern_river_groundwater_sustainability_agency_plan_managers  <subset>
-    kern_river_groundwater_sustainability_agency_urban_and_banking_management_areas  <subset>
-    kern_river_gsa                                           <exact>
-    river_gsa                                                <revsubset>
-    south_of_kern_river_groundwater_sustainability_agencies_boards  <subset>
-    south_of_kern_river_gsa                                  <subset>
-
-### East Kaweah GSA  [gsa_314]  (26 names)
+### East Kaweah GSA  [gsa_314]  (25 names)
     1_east_kaweah_groundwater_sustainability_agency          <subset>
     al_east_kaweah_gsa                                       <subset>
-    board_of_the_east_kaweah_groundwater_sustainability_agency  <subset>
-    east_gsa                                                 <revsubset>
+    board_of_the_east_kaweah_groundwater_sustainability_agency <subset>
     east_kaweah_groundwater_sustainability_agency            <subset>
     east_kaweah_groundwater_sustainability_agency_233        <subset>
     east_kaweah_groundwater_sustainability_agency_422        <subset>
@@ -90,31 +56,57 @@
     east_kaweah_groundwater_sustainability_agency_ac         <subset>
     east_kaweah_groundwater_sustainability_agency_board      <subset>
     east_kaweah_groundwater_sustainability_agency_board_of   <subset>
-    east_kaweah_groundwater_sustainability_agency_representative_monitoring_network  <subset>
+    east_kaweah_groundwater_sustainability_agency_representative_monitoring_network <subset>
     east_kaweah_groundwater_sustainability_agency_share      <subset>
-    east_kaweah_groundwater_sustainability_agency_technical_advisory  <subset>
-    east_kaweah_groundwater_sustainability_agency_well_mitigation_plan  <subset>
+    east_kaweah_groundwater_sustainability_agency_technical_advisory <subset>
+    east_kaweah_groundwater_sustainability_agency_well_mitigation_plan <subset>
     east_kaweah_gsa                                          <exact>
-    el_east_kaweah_gsa                                       <subset>
-    gsa_east                                                 <revsubset>
-    gw_community_water_east_kaweah_groundwater_sustainability_agency  <subset>
+    eastern_kaweah_groundwater_sustainability_agency         <override>
     eastern_kaweah_gsa                                       <override>
+    el_east_kaweah_gsa                                       <subset>
+    gw_community_water_east_kaweah_groundwater_sustainability_agency <subset>
+
+### Kern River GSA  [gsa_20]  (24 names)
+    expand_recycled_water_the_kern_river_groundwater_sustainability_agency <subset>
+    final_kern_river_groundwater_sustainability_agency       <subset>
+    kern_river_groundwater_sustainability_agency             <subset>
+    kern_river_groundwater_sustainability_agency_123tcp_wellhead_treatment_draft_draft <subset>
+    kern_river_groundwater_sustainability_agency_agricultural <subset>
+    kern_river_groundwater_sustainability_agency_agricultural_ma <subset>
+    kern_river_groundwater_sustainability_agency_agricultural_management_area <subset>
+    kern_river_groundwater_sustainability_agency_banking     <subset>
+    kern_river_groundwater_sustainability_agency_banking_management_area <subset>
+    kern_river_groundwater_sustainability_agency_board_for_subbasin <subset>
+    kern_river_groundwater_sustainability_agency_board_of    <subset>
+    kern_river_groundwater_sustainability_agency_board_of_directors <subset>
+    kern_river_groundwater_sustainability_agency_conservation_measures <subset>
+    kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan <subset>
+    kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan_banking_management_area <subset>
+    kern_river_groundwater_sustainability_agency_groundwater_sustainability_plan_todd_groundwater <subset>
+    kern_river_groundwater_sustainability_agency_kern_river_groundwater_sustainability_agency <subset>
+    kern_river_groundwater_sustainability_agency_management_areas <subset>
+    kern_river_groundwater_sustainability_agency_notice      <subset>
+    kern_river_groundwater_sustainability_agency_p_management_area <subset>
+    kern_river_groundwater_sustainability_agency_plan_boundary <subset>
+    kern_river_groundwater_sustainability_agency_plan_managers <subset>
+    kern_river_groundwater_sustainability_agency_urban_and_banking_management_areas <subset>
+    kern_river_gsa                                           <exact>
 
 ### Salinas Valley Basin GSA - Monterey  [gsa_458]  (20 names)
-    a_groundwater_sustainability_agency_for_the_salinas_valley_groundwater_basin  <revsubset>
+    a_groundwater_sustainability_agency_for_the_salinas_valley_groundwater_basin <revsubset>
     salinas_gsa                                              <revsubset>
     salinas_valley_basin_groundwater_agency                  <revsubset>
     salinas_valley_basin_groundwater_sustainability_agency   <revsubset>
-    salinas_valley_basin_groundwater_sustainability_agency_board  <revsubset>
-    salinas_valley_basin_groundwater_sustainability_agency_board_of_directors  <revsubset>
+    salinas_valley_basin_groundwater_sustainability_agency_board <revsubset>
+    salinas_valley_basin_groundwater_sustainability_agency_board_of_directors <revsubset>
     salinas_valley_groundwater_basin_groundwater_agency      <revsubset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency  <revsubset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency_board  <revsubset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency_board_of  <revsubset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency_board_of_directors  <revsubset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency_groundwater_sustainability_plans  <revsubset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency_monterey_subbasin_planning_committee  <subset>
-    salinas_valley_groundwater_basin_groundwater_sustainability_agency_salinas_valley_groundwater_basin_groundwater_sustainability_agency  <revsubset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency <revsubset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency_board <revsubset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency_board_of <revsubset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency_board_of_directors <revsubset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency_groundwater_sustainability_plans <revsubset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency_monterey_subbasin_planning_committee <subset>
+    salinas_valley_groundwater_basin_groundwater_sustainability_agency_salinas_valley_groundwater_basin_groundwater_sustainability_agency <revsubset>
     salinas_valley_groundwater_basin_gsa                     <revsubset>
     salinas_valley_groundwater_basin_gsa_monterey            <subset>
     salinas_valley_groundwater_basin_sustainability_agency   <revsubset>
@@ -122,25 +114,49 @@
     salinas_valley_groundwater_sustainability_agency         <revsubset>
     salinas_valley_gsa                                       <revsubset>
 
-### Aliso Water District GSA  [gsa_23]  (16 names)
-    aliso_gsa                                                <revsubset>
-    aliso_water_district_aliso_water_district_gsa            <subset>
-    aliso_water_district_aliso_water_district_gsa_board      <subset>
-    aliso_water_district_aliso_water_district_gsa_groundwater_sustainability_plan  <subset>
-    aliso_water_district_aliso_water_district_gsa_gsa        <subset>
-    aliso_water_district_aliso_water_district_gsa_gsa_groundwater_sustainability_plan  <subset>
-    aliso_water_district_aliso_water_district_gsa_office     <subset>
-    aliso_water_district_groundwater_sustainability_agency   <subset>
-    aliso_water_district_groundwater_sustainability_agency_board  <subset>
-    aliso_water_district_groundwater_sustainability_agency_chapter  <subset>
-    aliso_water_district_groundwater_sustainability_agency_figure  <subset>
-    aliso_water_district_groundwater_sustainability_agency_historical  <subset>
-    aliso_water_district_groundwater_sustainability_agency_joaquin_river  <subset>
-    aliso_water_district_groundwater_sustainability_agency_table  <subset>
-    aliso_water_district_gsa                                 <exact>
-    legal_authority_aliso_water_district_aliso_water_district_gsa  <subset>
+### Buena Vista Water Storage District GSA  [gsa_15]  (19 names)
+    board_of_the_buena_vista_groundwater_sustainability_agency <revsubset>
+    buena_vista_groundwater_sustainability_agency            <override>
+    buena_vista_groundwater_sustainability_agency_42         <override>
+    buena_vista_groundwater_sustainability_agency_board      <revsubset>
+    buena_vista_groundwater_sustainability_agency_conditions <override>
+    buena_vista_groundwater_sustainability_agency_groundwater_sustainability_plan <override>
+    buena_vista_groundwater_sustainability_agency_monitoring_networks <override>
+    buena_vista_groundwater_sustainability_agency_section_2_basin_setting <override>
+    buena_vista_groundwater_sustainability_agency_water_banking <override>
+    buena_vista_groundwater_sustainability_agency_water_budget <override>
+    buena_vista_groundwater_sustainability_agency_water_budget_flowpaths <override>
+    buena_vista_groundwater_sustainability_agency_well       <override>
+    buena_vista_gsa                                          <override>
+    buena_vista_water_storage_district_gsa                   <override>
+    bvgsa                                                    <override>
+    bvsa                                                     <override>
+    bvsga                                                    <override>
+    to_buena_vista_groundwater_sustainability_agency         <override>
+    vista_gsa                                                <revsubset>
 
-### Greater Kaweah GSA  [gsa_281]  (16 names)
+### Eastern Tule GSA  [gsa_205]  (18 names)
+    east_tule_gsa                                            <override>
+    east_tule_subbasin_joint_powers_authority                <override>
+    eastern_tule_groundwater_sustainability_agency           <override>
+    eastern_tule_groundwater_sustainability_agency_3_19      <override>
+    eastern_tule_groundwater_sustainability_agency_administration_staff <override>
+    eastern_tule_groundwater_sustainability_agency_board     <override>
+    eastern_tule_groundwater_sustainability_agency_board_and_advisory_committees <override>
+    eastern_tule_groundwater_sustainability_agency_board_of_directors <override>
+    eastern_tule_groundwater_sustainability_agency_d30       <override>
+    eastern_tule_groundwater_sustainability_agency_gsa       <override>
+    eastern_tule_groundwater_sustainability_agency_section_437 <override>
+    eastern_tule_groundwater_sustainability_agency_stakeholder_committee <override>
+    eastern_tule_groundwater_sustainability_agency_technical_advisory_group <override>
+    eastern_tule_groundwater_sustainability_agency_technical_group <override>
+    eastern_tule_gsa                                         <override>
+    eastern_tule_gsa_a1                                      <override>
+    eastern_tule_gsa_joint_powers_authority                  <override>
+    eastern_tule_gsa_sustainability_agency                   <override>
+
+### Greater Kaweah GSA  [gsa_281]  (17 names)
+    great_kaweah_gsa                                         <override>
     greater_kaweah_groundwater_sustainability                <subset>
     greater_kaweah_groundwater_sustainability_agency         <subset>
     greater_kaweah_groundwater_sustainability_agency_23      <subset>
@@ -148,47 +164,78 @@
     greater_kaweah_groundwater_sustainability_agency_551     <subset>
     greater_kaweah_groundwater_sustainability_agency_6       <subset>
     greater_kaweah_groundwater_sustainability_agency_board   <subset>
-    greater_kaweah_groundwater_sustainability_agency_board_of  <subset>
-    greater_kaweah_groundwater_sustainability_agency_board_of_directors  <subset>
-    greater_kaweah_groundwater_sustainability_agency_committee  <subset>
-    greater_kaweah_groundwater_sustainability_agency_joint_powers_authority  <subset>
-    greater_kaweah_groundwater_sustainability_agency_outreach_events  <subset>
-    greater_kaweah_groundwater_sustainability_agency_technical_advisory_committee_meeting  <subset>
+    greater_kaweah_groundwater_sustainability_agency_board_of <subset>
+    greater_kaweah_groundwater_sustainability_agency_board_of_directors <subset>
+    greater_kaweah_groundwater_sustainability_agency_committee <subset>
+    greater_kaweah_groundwater_sustainability_agency_joint_powers_authority <subset>
+    greater_kaweah_groundwater_sustainability_agency_outreach_events <subset>
+    greater_kaweah_groundwater_sustainability_agency_technical_advisory_committee_meeting <subset>
     greater_kaweah_gsa                                       <exact>
-    greater_vs002_kaweah_board                               <subset>
-    great_kaweah_gsa                                         <override>
+    gspgreaterkaweahgsaorg                                   <override>
+    wwwgreaterkaweahgsaorg                                   <override>
 
-### North Kings GSA  [gsa_65]  (16 names)
+### Aliso Water District GSA  [gsa_23]  (16 names)
+    aliso_gsa                                                <revsubset>
+    aliso_water_district_aliso_water_district_gsa            <subset>
+    aliso_water_district_aliso_water_district_gsa_board      <subset>
+    aliso_water_district_aliso_water_district_gsa_groundwater_sustainability_plan <subset>
+    aliso_water_district_aliso_water_district_gsa_gsa        <subset>
+    aliso_water_district_aliso_water_district_gsa_gsa_groundwater_sustainability_plan <subset>
+    aliso_water_district_aliso_water_district_gsa_office     <subset>
+    aliso_water_district_groundwater_sustainability_agency   <subset>
+    aliso_water_district_groundwater_sustainability_agency_board <subset>
+    aliso_water_district_groundwater_sustainability_agency_chapter <subset>
+    aliso_water_district_groundwater_sustainability_agency_figure <subset>
+    aliso_water_district_groundwater_sustainability_agency_historical <subset>
+    aliso_water_district_groundwater_sustainability_agency_joaquin_river <subset>
+    aliso_water_district_groundwater_sustainability_agency_table <subset>
+    aliso_water_district_gsa                                 <exact>
+    legal_authority_aliso_water_district_aliso_water_district_gsa <subset>
+
+### North Kings GSA  [gsa_65]  (14 names)
     32_north_kings_gsa                                       <subset>
     leadership_north_kings_gsa                               <subset>
-    north_kings_garfield_water_district_groundwater_sustainability_agency  <subset>
-    north_kings_groundwater                                  <subset>
+    no_rth_kings_gsa                                         <override>
+    north_king_gsa                                           <override>
+    north_kings_garfield_water_district_groundwater_sustainability_agency <subset>
     north_kings_groundwater_sustainability                   <subset>
     north_kings_groundwater_sustainability_agency            <subset>
-    north_kings_groundwater_sustainability_agency_additional_well_requirements_policy  <subset>
+    north_kings_groundwater_sustainability_agency_additional_well_requirements_policy <subset>
     north_kings_groundwater_sustainability_agency_board      <subset>
-    north_kings_groundwater_sustainability_agency_city_of_fresno  <subset>
-    north_kings_groundwater_sustainability_agency_western_boundary_groundwater  <subset>
+    north_kings_groundwater_sustainability_agency_city_of_fresno <subset>
     north_kings_gsa                                          <exact>
     north_kings_gsa_board_of                                 <subset>
     north_kings_gsa_joint_powers_authority                   <subset>
     north_kings_river_gsa                                    <subset>
-    no_rth_kings_gsa                                         <override>
-    north_king_gsa                                           <override>
 
-### Fillmore and Piru Basins GSA  [gsa_339]  (12 names)
-    fillmore_and_piru_basins_groundwater_sustainability_agency  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_board  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_board_of  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_director  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_directors  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_joint  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program  <override>
-    fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program_and_data_gap  <override>
+### Indian Wells Valley Groundwater Authority GSA  [gsa_35]  (13 names)
+    indian_we_lls_valley_groundwater_authority               <override>
+    indian_wells_valley_groundwater_authority_1              <override>
+    indian_wells_valley_groundwater_authority_board_of_directors <override>
+    indian_wells_valley_groundwater_authority_gsa            <override>
+    indian_wells_valley_groundwater_sustainability_agency    <revsubset>
+    iwv_ga                                                   <override>
+    iwv_groundwater_agency                                   <override>
+    iwvga_board                                              <override>
+    iwvga_board_of_directors                                 <override>
+    iwvga_joint_powers_authority                             <override>
+    iwvga_technical_advisory_committee                       <override>
+    iwvgwa                                                   <override>
+    valley_groundwater_authority                             <override>
+
+### Fillmore and Piru Basins GSA - Fillmore  [gsa_339]  (12 names)
+    fillmore_and_piru_basins_groundwater_sustainability_agency <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_board <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_board_of <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_director <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_board_of_directors <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_joint <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program <override>
+    fillmore_and_piru_basins_groundwater_sustainability_agency_monitoring_program_and_data_gap <override>
     fillmore_and_piru_basins_gsa                             <override>
     fillmore_piru_gsa                                        <override>
     piru_basins_gsa                                          <override>
-    united_fillmore_and_piru_basins_groundwater_sustainability_agency  <override>
+    united_fillmore_and_piru_basins_groundwater_sustainability_agency <override>
 
 ### North Fork Kings GSA  [gsa_187]  (12 names)
     bee_ry_north_fork_kings_gsa_board                        <subset>
@@ -196,18 +243,18 @@
     el_north_fork_kings_gsa                                  <subset>
     la_administracion_de_north_fork_kings_gsa                <subset>
     la_north_fork_kings_gsa                                  <subset>
+    nork_fork_kings_gsa                                      <override>
     north_fork_gsa                                           <revsubset>
     north_fork_kings_groundwater_sustainability_agency       <subset>
     north_fork_kings_gsa                                     <exact>
     north_fork_kings_gsa_board_of_directors                  <subset>
     north_fork_kings_gsa_gsa                                 <subset>
     north_fork_kings_gsa_resource_conservationac             <subset>
-    nork_fork_kings_gsa                                      <override>
 
-### Colusa Groundwater Authority GSA  [gsa_323]  (11 names)
+### Colusa Groundwater Authority GSA - Colusa  [gsa_323]  (11 names)
     colusa_groundwater_authority                             <subset>
     colusa_groundwater_authority_groundwater_sustainability  <subset>
-    colusa_groundwater_authority_groundwater_sustainability_agency  <subset>
+    colusa_groundwater_authority_groundwater_sustainability_agency <subset>
     colusa_groundwater_authority_gsa                         <subset>
     colusa_groundwater_authority_x                           <subset>
     colusa_groundwater_authority_x_15                        <subset>
@@ -217,152 +264,124 @@
     colusa_gsa                                               <revsubset>
     joint_powers_colusa_groundwater_authority_x              <subset>
 
-### East Turlock Subbasin GSA  [gsa_238]  (11 names)
-    east_turlock_gsa                                         <revsubset>
-    east_turlock_subbasin_groundater_sustainability_agency_joint_powers_authority  <subset>
-    east_turlock_subbasin_groundwater_sustainability_agency  <subset>
-    east_turlock_subbasin_groundwater_sustainability_agency_02  <subset>
-    east_turlock_subbasin_groundwater_sustainability_agency_agricultural_recharge  <subset>
-    east_turlock_subbasin_groundwater_sustainability_agency_joint_powers_agreement  <subset>
-    east_turlock_subbasin_groundwater_sustainability_agency_joint_powers_authority  <subset>
-    east_turlock_subbasin_gsa                                <exact>
-    east_turlock_subbasin_gsa_board                          <subset>
-    etsgsa14_and_east_turlock_subbasin_groundwater_sustainability_agency21  <subset>
-    water_source_and_reliability_east_turlock_subbasin_groundwater_sustainability_agency  <subset>
-
-### Merced Subbasin GSA  [gsa_219]  (11 names)
-    merced_groundwater_sustainability_agencies               <revsubset>
-    merced_gsa                                               <revsubset>
-    merced_subbasin                                          <subset>
-    merced_subbasin_groundwate_r_sustainability_agencies     <subset>
-    merced_subbasin_groundwater_sustainability_agencies      <subset>
-    merced_subbasin_groundwater_sustainability_agency        <subset>
-    merced_subbasin_groundwater_sustainability_agency_2016   <subset>
-    merced_subbasin_groundwater_sustainability_agency_board  <subset>
-    merced_subbasin_groundwater_sustainability_agency_governing_board  <subset>
-    merced_subbasin_gsa                                      <exact>
-    of_merced_gsa                                            <revsubset>
-
-### White Wolf GSA  [gsa_244]  (11 names)
-    this_white_wolf_gsa                                      <subset>
-    white_wolf_groundwater_sustainability_agency             <subset>
-    white_wolf_gsa                                           <exact>
-    white_wolf_sub_basin_gsa                                 <subset>
-    white_wolf_subbasin_gsa                                  <subset>
-    wolf_gsa                                                 <revsubset>
-    v_hite_v_olf_gsa                                         <override>
-    v_hite_wolf_gsa                                          <override>
-    white_rwolf_gsa                                          <override>
-    white_v_olf_gsa                                          <override>
-    whitewolf_gsa                                            <override>
-
-### County of Madera GSA - Madera  [gsa_69]  (10 names)
-    county_of_madera_3_gsa                                   <subset>
-    county_of_madera_gsa                                     <subset>
-    gsa_madera_county                                        <subset>
-    madera_county_east_gsa                                   <subset>
-    madera_county_groundwater_sustainability_agency          <subset>
-    madera_county_gsa                                        <subset>
-    madera_county_rpe_reference_point_elevation_gsa_board    <subset>
-    madera_county_rpe_reference_point_elevation_gsa_board_of_directors  <subset>
-    o_madera_county_rpe_reference_point_elevation_gsa        <subset>
-    triangle_t_water_madera_county_west_gsa                  <subset>
-
-### Glenn Groundwater Authority GSA  [gsa_369]  (10 names)
-    29_glenn_groundwater_authority_x                         <subset>
-    glenn_groundwater_authority                              <subset>
-    glenn_groundwater_authority_groundwater_sustainability_agency  <subset>
-    glenn_groundwater_authority_gsa                          <exact>
-    glenn_groundwater_authority_n                            <subset>
-    glenn_groundwater_authority_x                            <subset>
-    glenn_groundwater_authority_x_gsa                        <subset>
-    glenn_gsa                                                <revsubset>
-    glenn_gw_authority                                       <subset>
-    la_tarifa_de_operaciones_de_la_glenn_groundwater_authority_x  <subset>
-
-### New Stone Water District GSA  [gsa_59]  (10 names)
-    new_stone_gsa                                            <revsubset>
-    new_stone_water_district                                 <subset>
-    new_stone_water_district_groundwater_sustainability_agency  <subset>
-    new_stone_water_district_groundwater_sustainability_agency_board  <subset>
-    new_stone_water_district_gsa                             <exact>
-    new_stone_water_district_taf_thousand_acre_feet_gsa      <subset>
-    new_stone_water_district_taf_thousand_acre_feet_gsa_board_of_directors  <subset>
-    new_stone_water_district_taf_thousand_acre_feet_gsa_madera  <subset>
-    stone_water_district_groundwater_sustainability_agency   <revsubset>
-    water_right_utilization_new_stone_water_district_t_transmissivity_gsa  <subset>
-
-### Ukiah Valley Basin GSA  [gsa_342]  (10 names)
-    ukiah_valley_basin                                       <subset>
-    ukiah_valley_basin_groundater_sustainability_agency      <subset>
-    ukiah_valley_basin_groundwater_sustainability_agency     <subset>
-    ukiah_valley_basin_groundwater_sustainability_agency_board  <subset>
-    ukiah_valley_basin_groundwater_sustainability_agency_board_of  <subset>
-    ukiah_valley_basin_groundwater_sustainability_agency_board_of_directors  <subset>
-    ukiah_valley_basin_gsa                                   <exact>
-    ukiah_valley_groundwater_basin_groundwater_sustainability_agency  <subset>
-    ukiah_valley_groundwater_sustainability_agency           <revsubset>
-    ukiah_valley_gsa                                         <revsubset>
-
-### Cuyama Basin GSA  [gsa_327]  (9 names)
-    cuyama_basin                                             <subset>
-    cuyama_basin_groundwater_sustainability_agency           <subset>
-    cuyama_basin_groundwater_sustainability_agency_board_3_134  <subset>
-    cuyama_basin_groundwater_sustainability_agency_board_of_directors  <subset>
-    cuyama_basin_groundwater_sustainability_agency_sac       <subset>
-    cuyama_basin_gsa                                         <exact>
-    cuyama_basin_gsa_board                                   <subset>
-    cuyama_valley_groundwater_basin_groundwater_sustainability  <subset>
-    cuyama_valley_groundwater_basin_groundwater_sustainability_agency  <subset>
-
-### Delano-Earlimart Irrigation District GSA  [gsa_29]  (9 names)
-    california_environmental_quality_act_delano_earlimart_irrigation_district_gsa  <subset>
+### Delano-Earlimart Irrigation District GSA  [gsa_29]  (11 names)
+    california_environmental_quality_act_delano_earlimart_irrigation_district_gsa <subset>
+    deidgsa                                                  <override>
     delano_earlimart_gsa                                     <revsubset>
-    delano_earlimart_irrigation_district_delano_earlimart_irrigation_district_gsa_board_of_directors  <subset>
+    delano_earlimart_irrigation_district_delano_earlimart_irrigation_district_gsa_board_of_directors <subset>
     delano_earlimart_irrigation_district_gsa                 <exact>
     delano_earlimart_irrigation_district_gsa_232             <subset>
     delano_earlimart_irrigation_district_gsa_board           <subset>
     delano_earlimart_irrigation_district_gsa_ma              <subset>
     delano_gsa                                               <revsubset>
-    earlimart_irrigation_district_groundwater_sustainability_agency  <revsubset>
+    delanoearlimart_irrigation_district_groundwater_sustainability_agency <override>
+    earlimart_irrigation_district_groundwater_sustainability_agency <revsubset>
 
-### McMullin Area GSA  [gsa_266]  (9 names)
-    kings_subbasin_mcmullin_area_groundwater_sustainability_agency  <subset>
-    mcmullin_area_groundwater_sustainability_agency          <subset>
-    mcmullin_area_groundwater_sustainability_agency_groundwater  <subset>
-    mcmullin_area_groundwater_sustainability_agency_groundwater_bank  <subset>
-    mcmullin_area_groundwater_sustainability_agency_joint_powers_authority  <subset>
-    mcmullin_area_gsa                                        <exact>
-    mcmullin_area_gsa_east_gsa                               <subset>
+### East Turlock Subbasin GSA  [gsa_238]  (11 names)
+    east_turlock_gsa                                         <revsubset>
+    east_turlock_subbasin_groundater_sustainability_agency_joint_powers_authority <subset>
+    east_turlock_subbasin_groundwater_sustainability_agency  <subset>
+    east_turlock_subbasin_groundwater_sustainability_agency_02 <subset>
+    east_turlock_subbasin_groundwater_sustainability_agency_agricultural_recharge <subset>
+    east_turlock_subbasin_groundwater_sustainability_agency_joint_powers_agreement <subset>
+    east_turlock_subbasin_groundwater_sustainability_agency_joint_powers_authority <subset>
+    east_turlock_subbasin_gsa                                <exact>
+    east_turlock_subbasin_gsa_board                          <subset>
+    etsgsa14_and_east_turlock_subbasin_groundwater_sustainability_agency21 <subset>
+    water_source_and_reliability_east_turlock_subbasin_groundwater_sustainability_agency <subset>
+
+### McMullin Area GSA  [gsa_266]  (11 names)
+    kings_subbasin_mcmullin_area_groundwater_sustainability_agency <subset>
+    mcmullin_and_james_groundwater_sustainability_agencies   <override; also gsa_12>
+    mcmullin_area_groundwater_sustainability_agency          <override>
+    mcmullin_area_groundwater_sustainability_agency_board    <override>
+    mcmullin_area_groundwater_sustainability_agency_board_of_directors <override>
+    mcmullin_area_groundwater_sustainability_agency_groundwater <subset>
+    mcmullin_area_groundwater_sustainability_agency_groundwater_bank <subset>
+    mcmullin_area_groundwater_sustainability_agency_joint_powers_authority <subset>
+    mcmullin_area_gsa                                        <override>
     mcmullin_groundwater_sustainability_agency               <revsubset>
     mcmullin_gsa                                             <revsubset>
 
-### Olcese Water District GSA  [gsa_196]  (9 names)
-    groundwater_sustainability_agency_olcese                 <revsubset>
-    olcese_groundwater_sustainability                        <revsubset>
-    olcese_groundwater_sustainability_agency                 <revsubset>
-    olcese_gsa                                               <revsubset>
-    olcese_gsa_board                                         <revsubset>
-    olcese_water_district                                    <subset>
-    olcese_water_district_groundwater_sustainability_agency  <subset>
-    olcese_water_district_gsa                                <exact>
-    olcese_water_management_management_actions_district_gsa  <subset>
+### White Wolf GSA  [gsa_244]  (11 names)
+    this_white_wolf_gsa                                      <subset>
+    v_hite_v_olf_gsa                                         <override>
+    v_hite_wolf_gsa                                          <override>
+    white_rwolf_gsa                                          <override>
+    white_v_olf_gsa                                          <override>
+    white_wolf_groundwater_sustainability_agency             <subset>
+    white_wolf_gsa                                           <exact>
+    white_wolf_sub_basin_gsa                                 <subset>
+    white_wolf_subbasin_gsa                                  <subset>
+    whitewolf_gsa                                            <override>
+    wolf_gsa                                                 <revsubset>
 
-### Westside District Water Authority GSA  [gsa_506]  (9 names)
-    district_water_authority_gsa                             <revsubset>
-    westside_district_water_authority                        <subset>
-    westside_district_water_authority_groundwater_sustainability_agency  <subset>
+### Yucaipa Basin GSA  [gsa_349]  (11 names)
+    yucaipa_basin_gsa                                        <exact>
+    yucaipa_groundwater_sustainability_agency                <revsubset>
+    yucaipa_groundwater_sustainability_agency_for_the_yucaipa_subbasin <override>
+    yucaipa_gsa                                              <revsubset>
+    yucaipa_gsa_board                                        <revsubset>
+    yucaipa_smga                                             <override>
+    yucaipa_sub_basin_groundwater_sustainability_agency      <subset>
+    yucaipa_sub_basin_gsa                                    <subset>
+    yucaipa_subbasin_gsa                                     <override>
+    yucaipa_sustainability_groundwater_management_agency     <revsubset>
+    yucaipa_sustainable_groundwater_management_agency        <revsubset>
+
+### New Stone Water District GSA  [gsa_59]  (10 names)
+    new_stone_gsa                                            <revsubset>
+    new_stone_water_district_groundwater_sustainability_agency <subset>
+    new_stone_water_district_groundwater_sustainability_agency_board <subset>
+    new_stone_water_district_gsa                             <exact>
+    new_stone_water_district_taf_thousand_acre_feet_gsa      <subset>
+    new_stone_water_district_taf_thousand_acre_feet_gsa_board_of_directors <subset>
+    new_stone_water_district_taf_thousand_acre_feet_gsa_madera <subset>
+    new_stone_wd_gsa                                         <override>
+    stone_water_district_groundwater_sustainability_agency   <revsubset>
+    water_right_utilization_new_stone_water_district_t_transmissivity_gsa <subset>
+
+### Pixley Irrigation District GSA  [gsa_43]  (10 names)
+    pix_gsa                                                  <override>
+    pix_gsa_board                                            <override>
+    pixid                                                    <override>
+    pixid_gsa                                                <override>
+    pixidgsa                                                 <override>
+    pixley_gsa                                               <override>
+    pixley_irrigation_district                               <override>
+    pixley_irrigation_district_board_of_directors            <override>
+    pixley_irrigation_district_groundwater_sustainability_agency <override>
+    pixley_irrigation_district_gsa                           <override>
+
+### Ukiah Valley Basin GSA  [gsa_342]  (10 names)
+    ukiah_valley_basin_groundater_sustainability_agency      <subset>
+    ukiah_valley_basin_groundwater_sustainability_agency     <subset>
+    ukiah_valley_basin_groundwater_sustainability_agency_board <subset>
+    ukiah_valley_basin_groundwater_sustainability_agency_board_of <subset>
+    ukiah_valley_basin_groundwater_sustainability_agency_board_of_directors <subset>
+    ukiah_valley_basin_gsa                                   <exact>
+    ukiah_valley_ground_water_sustainability_agency          <override>
+    ukiah_valley_groundwater_basin_groundwater_sustainability_agency <subset>
+    ukiah_valley_groundwater_sustainability_agency           <revsubset>
+    ukiah_valley_gsa                                         <revsubset>
+
+### Westside District Water Authority GSA  [gsa_506]  (10 names)
+    district_water_authority_gsa                             <override>
+    westside_district_water_authority_groundwater_sustainability_agency <subset>
     westside_district_water_authority_gsa                    <exact>
-    westside_gsa                                             <revsubset>
     westside_districts_water_authority_gsa                   <override>
     westside_districts_water_authority_gsa2                  <override>
     westside_districts_water_authority_gsa_board             <override>
+    westside_districts_water_authority_gsa_board_of_directors <override>
+    westside_districts_water_authority_gsa_groundwater_sustainability_plan <override>
     westside_districts_water_authority_gsa_p                 <override>
+    westside_gsa                                             <revsubset>
 
-### Yolo Subbasin GSA  [gsa_217]  (9 names)
-    yolo_county_flood_control_and_water_conservation_district_yolo_subbasin_groundwater_agency  <subset>
+### Yolo Subbasin GSA  [gsa_217]  (10 names)
+    yolo_county_flood_control_and_water_conservation_district_yolo_subbasin_groundwater_agency <subset>
     yolo_gsa                                                 <revsubset>
-    yolo_subbasin                                            <subset>
+    yolo_sga                                                 <override>
+    yolo_sub_basin_groundwater_agency                        <override>
     yolo_subbasin_groundwater_agency                         <subset>
     yolo_subbasin_groundwater_agency_entity                  <subset>
     yolo_subbasin_groundwater_sustainability_agency          <subset>
@@ -370,192 +389,235 @@
     yolo_subbasin_proposed_yolo_subbasin_groundwater_agency  <subset>
     yolo_sustainable_groundwater_agency                      <revsubset>
 
-### Yucaipa Basin GSA  [gsa_349]  (9 names)
-    yucaipa_basin_gsa                                        <exact>
-    yucaipa_groundwater_sustainability_agency                <revsubset>
-    yucaipa_gsa                                              <revsubset>
-    yucaipa_gsa_board                                        <revsubset>
-    yucaipa_sub_basin_groundwater_sustainability_agency      <subset>
-    yucaipa_sub_basin_gsa                                    <subset>
-    yucaipa_sustainability_groundwater_management_agency     <revsubset>
-    yucaipa_sustainable_groundwater_management_agency        <revsubset>
-    yucaipa_subbasin_gsa                                     <override>
+### Glenn Groundwater Authority GSA  [gsa_369]  (9 names)
+    29_glenn_groundwater_authority_x                         <subset>
+    glenn_groundwater_authority                              <subset>
+    glenn_groundwater_authority_groundwater_sustainability_agency <subset>
+    glenn_groundwater_authority_gsa                          <exact>
+    glenn_groundwater_authority_n                            <subset>
+    glenn_groundwater_authority_x                            <subset>
+    glenn_groundwater_authority_x_gsa                        <subset>
+    glenn_gw_authority                                       <subset>
+    la_tarifa_de_operaciones_de_la_glenn_groundwater_authority_x <subset>
 
 ### Arroyo Santa Rosa Valley Basin GSA  [gsa_49]  (8 names)
-    arroyo_santa_rosa_basin_groundwater_sustainability_agency  <revsubset>
-    arroyo_santa_rosa_basin_groundwater_sustainability_agency_board  <revsubset>
-    arroyo_santa_rosa_basin_groundwater_sustainability_agency_board_of_director  <revsubset>
+    arroyo_santa_rosa_basin_groundwater_sustainability_agency <revsubset>
+    arroyo_santa_rosa_basin_groundwater_sustainability_agency_board <revsubset>
+    arroyo_santa_rosa_basin_groundwater_sustainability_agency_board_of_director <revsubset>
     arroyo_santa_rosa_basin_gsa                              <revsubset>
     arroyo_santa_rosa_valley_basin_groundwater_agency        <subset>
-    arroyo_santa_rosa_valley_basin_groundwater_sustainability_agency  <subset>
+    arroyo_santa_rosa_valley_basin_groundwater_sustainability_agency <subset>
     arroyo_santa_rosa_valley_basin_gsa                       <exact>
     arroyo_santa_rosa_valley_basin_sustainability_agency     <subset>
 
-### James GSA  [gsa_12]  (8 names)
-    board_of_the_james_groundwater_sustainability_agency     <subset>
-    james                                                    <subset>
-    james_groundwater_sustainability_agency                  <subset>
-    james_gsa                                                <exact>
-    james_gssa                                               <subset>
-    james_id_gsa                                             <subset>
-    james_irrigation_district_gsa                            <subset>
-    mcmullin_and_james_groundwater_sustainability_agencies   <subset>
+### Arroyo Seco GSA - 1  [gsa_261]  (8 names)
+    arroyo_seco_groundwater_sustain_ability_agency           <override>
+    arroyo_seco_groundwater_sustainability                   <override>
+    arroyo_seco_groundwater_sustainability_agency            <override>
+    arroyo_seco_groundwater_sustainability_agency_board      <override>
+    arroyo_seco_groundwater_sustainability_agency_board_of_directors <override>
+    arroyo_seco_gsa                                          <override>
+    board_of_arroyo_seco_groundwater_sustainability_agency   <revsubset>
+    board_of_the_arroyo_seco_groundwater_sustainability_agency <revsubset>
 
-### Mound Basin GSA  [gsa_354]  (8 names)
-    mound_basin                                              <subset>
-    mound_basin_groundwater_sustainability_agency            <subset>
-    mound_basin_groundwater_sustainability_agency_board      <subset>
-    mound_basin_groundwater_sustainability_agency_board_of_director  <subset>
-    mound_basin_groundwater_sustainability_agency_board_of_directors  <subset>
-    mound_basin_groundwater_sustainability_agency_public_hearing  <subset>
-    mound_basin_gsa                                          <exact>
-    mound_groundwater_sustainability_agency                  <revsubset>
+### County of Madera GSA - Madera  [gsa_69]  (8 names)
+    county_of_madera_3_gsa                                   <subset>
+    county_of_madera_gsa                                     <subset>
+    gsa_madera_county                                        <subset>
+    madera_county_groundwater_sustainability_agency          <subset>
+    madera_county_gsa                                        <subset>
+    madera_county_rpe_reference_point_elevation_gsa_board    <subset>
+    madera_county_rpe_reference_point_elevation_gsa_board_of_directors <subset>
+    o_madera_county_rpe_reference_point_elevation_gsa        <subset>
 
-### Santa Rosa Plain GSA  [gsa_331]  (8 names)
-    173_santa_rosa_plain_gsa                                 <subset>
-    board_of_the_santa_rosa_plain_groundwater_sustainability_agency  <subset>
-    santa_rosa_plain                                         <subset>
-    santa_rosa_plain_groundwater_sustainability_agency       <subset>
-    santa_rosa_plain_groundwater_sustainability_agency_board  <subset>
-    santa_rosa_plain_groundwater_sustainability_agriculturalency  <subset>
-    santa_rosa_plain_gsa                                     <exact>
-    santa_rosa_plain_gsa_board                               <subset>
+### Cuyama Basin GSA  [gsa_327]  (8 names)
+    cuyama_basin_groundwater_sustainability_agency           <subset>
+    cuyama_basin_groundwater_sustainability_agency_board_3_134 <subset>
+    cuyama_basin_groundwater_sustainability_agency_board_of_directors <subset>
+    cuyama_basin_groundwater_sustainability_agency_sac       <subset>
+    cuyama_basin_gsa                                         <exact>
+    cuyama_basin_gsa_board                                   <subset>
+    cuyama_valley_groundwater_basin_groundwater_sustainability <subset>
+    cuyama_valley_groundwater_basin_groundwater_sustainability_agency <subset>
+
+### Kings River East GSA  [gsa_18]  (8 names)
+    dwr_kings_river_east_gsa                                 <subset>
+    el_kings_river_east_gsa                                  <subset>
+    kings_river_east_groundwater_sustainability_agency       <subset>
+    kings_river_east_groundwater_sustainability_agency_kings_river_east <subset>
+    kings_river_east_groundwater_sustainability_agency_kings_river_east_gsa <subset>
+    kings_river_east_gsa                                     <exact>
+    kre_gsa                                                  <override>
+    la_kings_river_east_gsa                                  <subset>
+
+### Lower Tule River Irrigation District GSA  [gsa_42]  (8 names)
+    lower_tuie_river_irrigation_district_gsa                 <override>
+    lower_tule_river_gsa                                     <revsubset>
+    lower_tule_river_gsa_board                               <revsubset>
+    lower_tule_river_irrigation_district_gsa                 <exact>
+    lower_tule_river_irrigation_district_gsa_3548a3          <subset>
+    lower_tule_river_irrigation_groundwater_sustainability_agency <revsubset>
+    ltridgsa                                                 <override>
+    river_irrigation_district_groundwater_sustainability_agency <revsubset>
+
+### Olcese Water District GSA  [gsa_196]  (8 names)
+    groundwater_sustainability_agency_olcese                 <revsubset>
+    olcese_groundwater_sustainability                        <revsubset>
+    olcese_groundwater_sustainability_agency                 <revsubset>
+    olcese_gsa                                               <revsubset>
+    olcese_gsa_board                                         <revsubset>
+    olcese_water_district_groundwater_sustainability_agency  <subset>
+    olcese_water_district_gsa                                <exact>
+    olcese_water_management_management_actions_district_gsa  <subset>
 
 ### Sonoma Valley GSA  [gsa_263]  (8 names)
-    board_of_directors_of_the_sonoma_valley_groundwater_sustainability_agency  <subset>
-    board_of_the_sonoma_valley_groundwater_sustainability_agency  <subset>
+    board_of_directors_of_the_sonoma_valley_groundwater_sustainability_agency <subset>
+    board_of_the_sonoma_valley_groundwater_sustainability_agency <subset>
     sonoma_valley_groundwater_sustainab_il_ity_agency        <subset>
     sonoma_valley_groundwater_sustainability_agency          <subset>
     sonoma_valley_groundwater_sustainability_agency_board    <subset>
     sonoma_valley_gsa                                        <exact>
     sonoma_valley_gsa_board                                  <subset>
-    sonoma_valley_subbasin_groundwater_sustainability_agency  <subset>
+    sonoma_valley_subbasin_groundwater_sustainability_agency <subset>
 
-### Buena Vista Water Storage District GSA  [gsa_15]  (7 names)
-    board_of_the_buena_vista_groundwater_sustainability_agency  <revsubset>
-    buena_vista_groundwater_sustainability_agency            <revsubset>
-    buena_vista_groundwater_sustainability_agency_board      <revsubset>
-    buena_vista_groundwater_sustainability_agency_groundwater_sustainability_plan  <revsubset>
-    buena_vista_gsa                                          <revsubset>
-    buena_vista_water_storage_district_gsa                   <exact>
-    vista_gsa                                                <revsubset>
+### Temescal Subbasin GSA  [gsa_260]  (8 names)
+    temescal_basin_groundwater_sustainability_agency         <override>
+    temescal_basin_gsa                                       <override>
+    temescal_groundwater_sustainability_agency               <revsubset>
+    temescal_gsa                                             <revsubset>
+    temescal_sub_basin_groundwater_sustainability_agency     <override>
+    temescal_sub_basin_groundwater_sustainability_agency_for_the_temescal_sub <override>
+    temescal_subbasin_groundwater_sustainability_agency      <subset>
+    temescal_subbasin_gsa                                    <exact>
+
+### Westlands Water District GSA  [gsa_40]  (8 names)
+    gsa_westlands_water_district                             <subset>
+    westland                                                 <override>
+    westlands_groundwater_sustainability_agency              <override>
+    westlands_gsa                                            <override>
+    westlands_water_district                                 <override>
+    westlands_water_district_board                           <override>
+    westlands_water_district_groundwater_sustainability_agency <subset>
+    westlands_water_district_gsa                             <override>
 
 ### Carpinteria GSA  [gsa_491]  (7 names)
     carpinteria_basin_groundwater_sustainability_agency      <subset>
     carpinteria_groundwater_sustainability_agency            <subset>
     carpinteria_groundwater_sustainability_agency_board      <subset>
-    carpinteria_groundwater_sustainability_agency_board_of_directors  <subset>
+    carpinteria_groundwater_sustainability_agency_board_of_directors <subset>
     carpinteria_gsa                                          <exact>
-    carpinteria_montecito_gsa                                <subset>
+    carpinteria_montecito_gsa                                <override; also gsa_404>
     carpinteria_valley_water_district_gsa                    <subset>
+
+### Corning Subbasin GSA  [gsa_390]  (7 names)
+    corning_gsa                                              <revsubset>
+    corning_sub_basin_groundwater_sustainability_agencies    <override>
+    corning_sub_basin_groundwater_sustainability_agency      <override>
+    corning_sub_basin_gsa                                    <override>
+    corning_subbasin_groundwater_sustainability_agencies     <override; also gsa_418>
+    corning_subbasin_groundwater_sustainability_agency       <subset>
+    corning_subbasin_gsa                                     <exact>
 
 ### County of Napa GSA  [gsa_488]  (7 names)
     county_of_napa_gsa                                       <exact>
     napa_county_groundwater_sustainability_agency            <subset>
     napa_county_groundwater_sustainability_agency_board      <subset>
-    napa_county_groundwater_sustainability_agency_board_of_directors  <subset>
-    napa_county_groundwater_sustainability_agency_groundwater_sustainability_plan_implementation_team  <subset>
+    napa_county_groundwater_sustainability_agency_board_of_directors <subset>
+    napa_county_groundwater_sustainability_agency_groundwater_sustainability_plan_implementation_team <subset>
     napa_county_gsa                                          <subset>
     napa_gsa                                                 <revsubset>
 
-### Enterprise-Anderson GSA  [gsa_287]  (7 names)
+### Enterprise-Anderson GSA - Enterprise  [gsa_287]  (7 names)
     enterprise_anderson_groundwater_sustainability_agency    <override>
-    enterprise_anderson_groundwater_sustainability_agency_board  <override>
-    enterprise_anderson_groundwater_sustainability_agency_board_of_directors  <override>
-    enterprise_anderson_groundwater_sustainability_agency_management_adjacent_basins  <override>
-    enterprise_anderson_groundwater_sustainability_agency_management_committee  <override>
-    enterprise_anderson_groundwater_sustainability_agency_measurable_objectiveu  <override>
+    enterprise_anderson_groundwater_sustainability_agency_board <override>
+    enterprise_anderson_groundwater_sustainability_agency_board_of_directors <override>
+    enterprise_anderson_groundwater_sustainability_agency_management_adjacent_basins <override>
+    enterprise_anderson_groundwater_sustainability_agency_management_committee <override>
+    enterprise_anderson_groundwater_sustainability_agency_measurable_objectiveu <override>
     enterprise_anderson_gsa                                  <override>
 
 ### Gravelly Ford Water District GSA  [gsa_34]  (7 names)
     gravelly_ford_gsa                                        <revsubset>
-    gravelly_ford_water_district                             <subset>
     gravelly_ford_water_district_gsa                         <exact>
     gravelly_ford_water_district_gsa_area                    <subset>
     gravelly_ford_water_district_gsa_madera                  <subset>
     gravelly_ford_water_district_gsa_management_areadera     <subset>
     gravelly_ford_water_executive_officer_district_gsa       <subset>
+    gravelly_ford_wd_gsa                                     <override>
 
-### Henry Miller Water District GSA  [gsa_254]  (7 names)
-    henry_miller_gsa                                         <revsubset>
-    henry_miller_water_district                              <subset>
-    henry_miller_water_district_groundwater_sustainability_agencies  <subset>
-    henry_miller_water_district_gsa                          <exact>
-    henry_miller_water_district_gsa_groundwater_sustainability_plan  <subset>
-    legal_authority_of_the_gsa_henry_miller_water_district   <subset>
-    miller_water_district_groundwater_sustainability_agency  <revsubset>
+### James GSA  [gsa_12]  (7 names)
+    board_of_the_james_groundwater_sustainability_agency     <subset>
+    james_groundwater_sustainability_agency                  <subset>
+    james_gsa                                                <exact>
+    james_gssa                                               <subset>
+    james_id_gsa                                             <subset>
+    james_irrigation_district_gsa                            <subset>
+    mcmullin_and_james_groundwater_sustainability_agencies   <override; also gsa_266>
 
-### Kings River East GSA  [gsa_18]  (7 names)
-    dwr_kings_river_east_gsa                                 <subset>
-    el_kings_river_east_gsa                                  <subset>
-    kings_river_east_groundwater_sustainability_agency       <subset>
-    kings_river_east_groundwater_sustainability_agency_kings_river_east  <subset>
-    kings_river_east_groundwater_sustainability_agency_kings_river_east_gsa  <subset>
-    kings_river_east_gsa                                     <exact>
-    la_kings_river_east_gsa                                  <subset>
+### Merced Subbasin GSA  [gsa_219]  (7 names)
+    merced_subbasin_groundwate_r_sustainability_agencies     <subset>
+    merced_subbasin_groundwater_sustainability_agencies      <subset>
+    merced_subbasin_groundwater_sustainability_agency        <subset>
+    merced_subbasin_groundwater_sustainability_agency_2016   <subset>
+    merced_subbasin_groundwater_sustainability_agency_board  <subset>
+    merced_subbasin_groundwater_sustainability_agency_governing_board <subset>
+    merced_subbasin_gsa                                      <exact>
 
-### Lower Tule River Irrigation District GSA  [gsa_42]  (7 names)
-    lower_tule_river_gsa                                     <revsubset>
-    lower_tule_river_gsa_board                               <revsubset>
-    lower_tule_river_irrigation_district_gsa                 <exact>
-    lower_tule_river_irrigation_district_gsa_3548a3          <subset>
-    lower_tule_river_irrigation_groundwater_sustainability_agency  <revsubset>
-    river_irrigation_district_groundwater_sustainability_agency  <revsubset>
-    lower_tuie_river_irrigation_district_gsa                 <override>
-
-### Petaluma Valley GSA  [gsa_350]  (7 names)
-    board_of_directors_of_the_petaluma_valley_groundwater_sustainability_agency  <subset>
-    petaluma_valley                                          <subset>
-    petaluma_valley_groundwater_sustainability_agency        <subset>
-    petaluma_valley_groundwater_sustainability_agency_board  <subset>
-    petaluma_valley_gsa                                      <exact>
-    petaluma_valley_gsa_board                                <subset>
-    petaluma_valley_gsa_board_of_directors                   <subset>
+### Mound Basin GSA  [gsa_354]  (7 names)
+    mound_basin_groundwater_sustainability_agency            <subset>
+    mound_basin_groundwater_sustainability_agency_board      <subset>
+    mound_basin_groundwater_sustainability_agency_board_of_director <subset>
+    mound_basin_groundwater_sustainability_agency_board_of_directors <subset>
+    mound_basin_groundwater_sustainability_agency_public_hearing <subset>
+    mound_basin_gsa                                          <exact>
+    mound_groundwater_sustainability_agency                  <revsubset>
 
 ### San Joaquin River Exchange Contractors GSA  [gsa_10]  (7 names)
     contractors_gsa                                          <revsubset>
-    san_joaquin_river_exchange_contractors_groundwater_sustainability_agency  <subset>
+    san_joaquin_river_exchange_contractors_groundwater_sustainability_agency <subset>
     san_joaquin_river_exchange_contractors_gsa               <exact>
     san_joaquin_river_exchange_contractors_gsa_group         <subset>
     san_joaquin_river_exchange_contractors_gsa_groups        <subset>
-    san_joaquin_river_exchange_contractors_san_joaquin_riverec_gsa_group  <subset>
-    san_joaquin_river_exchange_contractors_water_authority_gsa  <subset>
+    san_joaquin_river_exchange_contractors_san_joaquin_riverec_gsa_group <subset>
+    san_joaquin_river_exchange_contractors_water_authority_gsa <subset>
 
-### Arroyo Seco GSA - 1  [gsa_261]  (6 names)
-    arroyo_seco_groundwater_sustainability                   <revsubset>
-    arroyo_seco_groundwater_sustainability_agency            <revsubset>
-    arroyo_seco_groundwater_sustainability_agency_board_of_directors  <revsubset>
-    arroyo_seco_gsa                                          <revsubset>
-    board_of_arroyo_seco_groundwater_sustainability_agency   <revsubset>
-    board_of_the_arroyo_seco_groundwater_sustainability_agency  <revsubset>
+### Santa Rosa Plain GSA  [gsa_331]  (7 names)
+    173_santa_rosa_plain_gsa                                 <subset>
+    board_of_the_santa_rosa_plain_groundwater_sustainability_agency <subset>
+    santa_rosa_plain_groundwater_sustainability_agency       <subset>
+    santa_rosa_plain_groundwater_sustainability_agency_board <subset>
+    santa_rosa_plain_groundwater_sustainability_agriculturalency <subset>
+    santa_rosa_plain_gsa                                     <exact>
+    santa_rosa_plain_gsa_board                               <subset>
 
-### Central Kings GSA  [gsa_211]  (6 names)
-    central_kings_groundwater_sustainability_agency          <subset>
-    central_kings_groundwater_sustainability_agency_board    <subset>
-    central_kings_groundwater_sustainability_agency_board_of_directors  <subset>
-    central_kings_groundwater_sustainably_agency             <subset>
-    central_kings_gsa                                        <exact>
-    central_management_gsa                                   <revsubset>
+### Santa Ynez River Valley Basin Western Management Area GSA  [gsa_5]  (7 names)
+    santa_ynez_river_valley_basin_western_management_area_gsa <exact>
+    santa_ynez_river_valley_groundwater_basin_western_management_area_groundwater_sustainability_agency <subset>
+    santa_ynez_river_valley_groundwater_basin_western_management_area_gsa <subset>
+    western_management_area_groundwater_sustainability_agency <revsubset>
+    western_management_area_gsa                              <revsubset>
+    western_management_gsa                                   <override>
+    western_management_western_management_area_gsa           <revsubset>
 
-### Corning Subbasin GSA  [gsa_390]  (6 names)
-    corning_gsa                                              <revsubset>
-    corning_subbasin                                         <subset>
-    corning_subbasin_groundwater_sustainability_agencies     <subset>
-    corning_subbasin_groundwater_sustainability_agency       <subset>
-    corning_subbasin_gsa                                     <exact>
-    corning_sub_basin_gsa                                    <override>
+### Grasslands GSA  [gsa_62]  (6 names)
+    grassland_groundwater_sustainability_agency              <override>
+    grassland_groundwater_sustainability_agency_board_of_directors <override>
+    grassland_gsa                                            <override>
+    grassland_gsa_group                                      <override>
+    grassland_water_district_gsa                             <override>
+    grasslands_gsa                                           <override>
 
-### County of Tuolumne GSA  [gsa_300]  (6 names)
-    county_of_tuolumne_groundwater_sustainability_agency     <subset>
-    county_of_tuolumne_gsa                                   <exact>
-    tuolumne_county_and_engagement_sustainability_agency     <subset>
-    tuolumne_county_groundwater_sustainability_agency        <subset>
-    tuolumne_county_gsa                                      <subset>
-    tuolumne_gsa                                             <revsubset>
+### Henry Miller Water District GSA  [gsa_254]  (6 names)
+    henry_miller_gsa                                         <revsubset>
+    henry_miller_water_district_groundwater_sustainability_agencies <subset>
+    henry_miller_water_district_gsa                          <exact>
+    henry_miller_water_district_gsa_groundwater_sustainability_plan <subset>
+    legal_authority_of_the_gsa_henry_miller_water_district   <subset>
+    miller_water_district_groundwater_sustainability_agency  <revsubset>
 
 ### Marina Coast Water District GSA - Monterey  [gsa_50]  (6 names)
     coast_water_district_groundwater_sustainability_agency   <revsubset>
-    marina_coast_water_district_groundwater_sustainability_agency  <revsubset>
+    marina_coast_water_district_groundwater_sustainability_agency <override>
     marina_coast_water_district_gsa                          <revsubset>
     marina_coast_water_district_gsa_board                    <revsubset>
     marina_groundwater_sustainability_a                      <revsubset>
@@ -569,51 +631,35 @@
     mid_kings_river_gsa_board                                <subset>
     mid_kings_river_gsa_board_of_directors                   <subset>
 
-### Pleasant Valley GSA  [gsa_190]  (6 names)
-    pleasant_valley                                          <subset>
-    pleasant_valley_basin_outlying_areas_gsa                 <subset>
-    pleasant_valley_groundwater_sustainability_agency        <subset>
-    pleasant_valley_gsa                                      <exact>
-    pleasant_valley_subbasin_groundwater_sustainability_agencies  <subset>
-    pleasant_valley_subbasin_gsa                             <subset>
+### Petaluma Valley GSA  [gsa_350]  (6 names)
+    board_of_directors_of_the_petaluma_valley_groundwater_sustainability_agency <subset>
+    petaluma_valley_groundwater_sustainability_agency        <subset>
+    petaluma_valley_groundwater_sustainability_agency_board  <subset>
+    petaluma_valley_gsa                                      <exact>
+    petaluma_valley_gsa_board                                <subset>
+    petaluma_valley_gsa_board_of_directors                   <subset>
 
 ### Root Creek Water District GSA  [gsa_33]  (6 names)
     creek_water_district_groundwater_sustainability_agency   <revsubset>
-    creek_water_district_groundwater_sustainability_agency_groundwater  <revsubset>
-    root_creek_water_district                                <subset>
+    creek_water_district_groundwater_sustainability_agency_groundwater <revsubset>
     root_creek_water_district_gsa                            <exact>
-    root_creek_water_district_sy_specific_yield_gsa_board_of_directors  <subset>
-    root_creek_water_district_united_states_geological_survey_united_states_geological_survey_gsa  <subset>
+    root_creek_water_district_sy_specific_yield_gsa_board_of_directors <subset>
+    root_creek_water_district_united_states_geological_survey_united_states_geological_survey_gsa <subset>
+    root_creek_wd_gsa                                        <override>
 
-### Santa Ynez River Valley Basin Western Management Area GSA  [gsa_5]  (6 names)
-    santa_ynez_river_valley_basin_western_management_area_gsa  <exact>
-    santa_ynez_river_valley_groundwater_basin_western_management_area_groundwater_sustainability_agency  <subset>
-    santa_ynez_river_valley_groundwater_basin_western_management_area_gsa  <subset>
-    western_management_area_groundwater_sustainability_agency  <revsubset>
-    western_management_area_gsa                              <revsubset>
-    western_management_western_management_area_gsa           <revsubset>
-
-### Semitropic Water Storage District GSA  [gsa_277]  (6 names)
-    semitropic_gsa                                           <revsubset>
-    semitropic_water_storage_district_gsa                    <exact>
-    semitropic_water_storage_district_gsa_groundwater_sustainability_plan  <subset>
-    storage_district_groundwater_sustainability_agency       <revsubset>
-    storage_district_gsa                                     <revsubset>
-    water_storage_district_groundwater_sustainability_agency  <revsubset>
-
-### Solano Subbasin GSA  [gsa_340]  (6 names)
-    solano_gsa                                               <revsubset>
-    solano_subbasin                                          <subset>
-    solano_subbasin_groundwater_sustainability_agencies      <subset>
-    solano_subbasin_groundwater_sustainability_agency        <subset>
-    solano_subbasin_groundwater_sustainability_agency_collaborative  <subset>
-    solano_subbasin_gsa                                      <exact>
+### Santa Ynez River Valley Basin Central Management Area GSA  [gsa_11]  (6 names)
+    central_management_area_groundwater_sustainability_agency <revsubset>
+    central_management_area_gsa                              <revsubset>
+    central_management_gsa                                   <override>
+    santa_ynez_river_valley_basin_central_management_area_gsa <exact>
+    santa_ynez_river_valley_groundwater_basin_central_management_area_groundwater_sustainability_agency <subset>
+    santa_ynez_river_valley_groundwater_basin_central_management_area_gsa <subset>
 
 ### South Kings GSA  [gsa_317]  (6 names)
     la_south_kings_gsa                                       <subset>
     south_kings_groundwater_sustainability_agency            <subset>
     south_kings_groundwater_sustainability_agency_board      <subset>
-    south_kings_groundwater_sustainability_agency_board_of_directors  <subset>
+    south_kings_groundwater_sustainability_agency_board_of_directors <subset>
     south_kings_groundwater_sustainability_agency_gsa        <subset>
     south_kings_gsa                                          <exact>
 
@@ -621,17 +667,9 @@
     castac_water_district_groundwater_sustainability_agency  <revsubset>
     tejon_castac_groundwater_sustainability_agency           <revsubset>
     tejon_castac_gsa                                         <revsubset>
-    tejon_castac_water_district_groundwater_sustainability_agencies  <subset>
+    tejon_castac_water_district_groundwater_sustainability_agencies <subset>
     tejon_castac_water_district_gsa                          <exact>
     tejon_castac_water_district_gsa_board                    <subset>
-
-### Tri-County Water Authority GSA  [gsa_411]  (6 names)
-    county_water_authority_groundwater_sustainability_agencies  <revsubset>
-    county_water_authority_groundwater_sustainability_agency  <revsubset>
-    tri_county_gsa                                           <revsubset>
-    tri_county_water_authority                               <revsubset>
-    tri_county_water_authority_gsa                           <revsubset>
-    tri_county_water_authority_gsa_jpa                       <override>
 
 ### Turner Island Water District GSA - Merced  [gsa_223]  (6 names)
     island_water_district_groundwater_sustainability_agency  <revsubset>
@@ -646,52 +684,50 @@
     vina_gsa                                                 <exact>
     vina_gsa_board                                           <subset>
     vina_gsa_board_of_directors                              <subset>
-    vina_subbasin_groundwater_sustainability_agencies        <subset>
+    vina_subbasin_groundwater_sustainability_agencies        <override; also gsa_178>
     vina_subbasin_gsa                                        <subset>
 
-### West Placer GSA  [gsa_209]  (6 names)
-    gsa_west                                                 <revsubset>
-    placer_gsa                                               <revsubset>
-    west_gsa                                                 <revsubset>
-    west_placer_county_groundwater_sustainability_agency     <subset>
-    west_placer_groundwater_sustainability_agency            <subset>
-    west_placer_gsa                                          <exact>
-
-### Westlands Water District GSA  [gsa_40]  (6 names)
-    gsa_westlands_water_district                             <subset>
-    westlands_groundwater_sustainability_agency              <revsubset>
-    westlands_gsa                                            <revsubset>
-    westlands_water_district                                 <subset>
-    westlands_water_district_groundwater_sustainability_agency  <subset>
-    westlands_water_district_gsa                             <exact>
-
-### Arvin GSA  [gsa_481]  (5 names)
-    arvin                                                    <subset>
-    arvin_groundwater_sustainability                         <subset>
-    arvin_groundwater_sustainability_agency                  <subset>
-    arvin_gsa                                                <exact>
-    arvin_gsa_for_sustainable_groundwater_management_act     <subset>
+### Bedford-Coldwater Subbasin GSA  [gsa_267]  (5 names)
+    bedford_coldwater_groundwater_basin_agency               <override>
+    bedford_coldwater_groundwater_sustainability_agency      <override>
+    bedford_coldwater_groundwater_sustainability_authority   <override>
+    bedford_coldwater_gsa                                    <revsubset>
+    bedford_coldwater_subbasin_gsa                           <override>
 
 ### Central Delta-Mendota GSA  [gsa_206]  (5 names)
     central_delta_mendota_gsa                                <exact>
     central_delta_mendota_gsa_group                          <subset>
     central_delta_mendota_subbasin_gsa                       <subset>
     delta_mendota_central_gsa                                <subset>
-    northern_and_central_delta_mendota_groundwater_sustainability_agencies  <subset>
+    northern_and_central_delta_mendota_groundwater_sustainability_agencies <override>
 
-### El Rico GSA  [gsa_358]  (5 names)
-    el_gsa                                                   <revsubset>
-    el_rico                                                  <subset>
-    el_rico_groundwater_sustainability_agency                <subset>
-    el_rico_gsa                                              <exact>
-    el_rico_gsa_el_rico                                      <subset>
+### Central Kings GSA  [gsa_211]  (5 names)
+    central_kings_groundwater_sustainability_agency          <subset>
+    central_kings_groundwater_sustainability_agency_board    <subset>
+    central_kings_groundwater_sustainability_agency_board_of_directors <subset>
+    central_kings_groundwater_sustainably_agency             <subset>
+    central_kings_gsa                                        <exact>
 
-### Farmers Water District GSA  [gsa_30]  (5 names)
-    farmers_gsa                                              <revsubset>
-    farmers_water_district                                   <subset>
-    farmers_water_district_groundwater_sustainability_agency  <subset>
-    farmers_water_district_gsa                               <exact>
-    farmers_water_district_gsa_board                         <subset>
+### City of Vacaville GSA  [gsa_272]  (5 names)
+    city_of_vacaville_gsa                                    <exact>
+    local_supplies_city_of_vacaville_gsa                     <subset>
+    solano_subbasin_groundwater_sustainability_agencies      <override; also gsa_340,gsa_180,gsa_384,gsa_385,gsa_497>
+    vacaville_groundwater_sustainability_agencies            <revsubset>
+    vacaville_gsa                                            <revsubset>
+
+### County of Tuolumne GSA  [gsa_300]  (5 names)
+    county_of_tuolumne_groundwater_sustainability_agency     <subset>
+    county_of_tuolumne_gsa                                   <exact>
+    tuolumne_county_and_engagement_sustainability_agency     <subset>
+    tuolumne_county_groundwater_sustainability_agency        <subset>
+    tuolumne_county_gsa                                      <subset>
+
+### Montecito Groundwater Basin GSA  [gsa_404]  (5 names)
+    carpinteria_montecito_gsa                                <override; also gsa_491>
+    montecito_groundwater_basin_groundwater_sustainability_agency <subset>
+    montecito_groundwater_basin_gsa                          <exact>
+    montecito_groundwater_sustainability_agency              <revsubset>
+    montecito_gsa                                            <revsubset>
 
 ### Pioneer GSA  [gsa_188]  (5 names)
     kern_county_water_agency_pioneer_gsa                     <subset>
@@ -700,47 +736,26 @@
     pioneer_gsa_p_management_area                            <subset>
     pioneer_project_gsa                                      <subset>
 
-### San Gorgonio Pass GSA  [gsa_262]  (5 names)
-    san_gorgonio_pass                                        <subset>
-    san_gorgonio_pass_groundwater_sustainability             <subset>
-    san_gorgonio_pass_groundwater_sustainability_agencies    <subset>
-    san_gorgonio_pass_groundwater_sustainability_agency      <subset>
-    san_gorgonio_pass_gsa                                    <exact>
+### Santa Ynez River Valley Basin Eastern Management Area GSA  [gsa_273]  (5 names)
+    eastern_management_area_groundwater_sustainability_agency <revsubset>
+    eastern_management_area_gsa                              <revsubset>
+    santa_ynez_basin_eastern_management_area_groundwater_sustainability_agency <revsubset>
+    santa_ynez_ema_gsa                                       <override>
+    santa_ynez_river_valley_basin_eastern_management_area_gsa <exact>
 
-### Santa Clarita Valley GSA  [gsa_315]  (5 names)
-    ppic_santa_clarita_valley_gsa                            <subset>
-    santa_clarita_valley                                     <subset>
-    santa_clarita_valley_groundwater_sustainability_agency   <subset>
-    santa_clarita_valley_gsa                                 <exact>
-    santa_clarita_valley_water_groundwater_sustainability_agency  <subset>
-
-### Santa Ynez River Valley Basin Central Management Area GSA  [gsa_11]  (5 names)
-    central_management_area_groundwater_sustainability_agency  <revsubset>
-    central_management_area_gsa                              <revsubset>
-    santa_ynez_river_valley_basin_central_management_area_gsa  <exact>
-    santa_ynez_river_valley_groundwater_basin_central_management_area_groundwater_sustainability_agency  <subset>
-    santa_ynez_river_valley_groundwater_basin_central_management_area_gsa  <subset>
-
-### Spadra Basin GSA  [gsa_212]  (5 names)
-    opportunities_for_public_involvement_spadra_basin_gsa    <subset>
-    spadra_basin                                             <subset>
-    spadra_basin_groundwater_sustainability_agency           <subset>
-    spadra_basin_gsa                                         <exact>
-    spadra_gsa                                               <revsubset>
-
-### Temescal Subbasin GSA  [gsa_260]  (5 names)
-    temescal_groundwater_sustainability_agency               <revsubset>
-    temescal_gsa                                             <revsubset>
-    temescal_subbasin_groundwater_sustainability_agency      <subset>
-    temescal_subbasin_gsa                                    <exact>
-    temescal_basin_gsa                                       <override>
+### Tri-County Water Authority GSA - Tule  [gsa_490]  (5 names)
+    county_water_authority_groundwater_sustainability_agencies <override>
+    county_water_authority_groundwater_sustainability_agency <override>
+    tri_county_gsa                                           <revsubset>
+    tri_county_water_authority_gsa                           <revsubset>
+    tri_county_water_authority_gsa_jpa                       <override>
 
 ### Triangle T Water District GSA  [gsa_394]  (5 names)
     t_water_district_groundwater_sustainability_agencies     <revsubset>
     t_water_district_groundwater_sustainability_agency       <revsubset>
     triangle_t_gsa                                           <revsubset>
     triangle_t_water_district_gsa                            <exact>
-    triangle_t_water_district_water_districtl_water_data_library_gsa  <subset>
+    triangle_t_water_district_water_districtl_water_data_library_gsa <subset>
 
 ### West Turlock Subbasin GSA  [gsa_225]  (5 names)
     west_turlock_groundwater_sustainability_agency           <revsubset>
@@ -749,47 +764,23 @@
     west_turlock_subbasin_groundwater_sustainability_agency  <subset>
     west_turlock_subbasin_gsa                                <exact>
 
+### Arvin GSA  [gsa_481]  (4 names)
+    arvin_groundwater_sustainability                         <subset>
+    arvin_groundwater_sustainability_agency                  <subset>
+    arvin_gsa                                                <exact>
+    arvin_gsa_for_sustainable_groundwater_management_act     <subset>
+
 ### Atascadero Basin GSA  [gsa_296]  (4 names)
     atascadero_basin_groundwater_sustainability_agency       <subset>
     atascadero_basin_gsa                                     <exact>
     atascadero_basin_sustainability_agency                   <subset>
     atascadero_gsa                                           <revsubset>
 
-### Big Valley GSA  [gsa_480]  (4 names)
-    big_valley                                               <subset>
-    big_valley_groundwater_sustainability_agency             <subset>
-    big_valley_groundwater_sustainability_agency_board_of_directors  <subset>
-    big_valley_gsa                                           <exact>
-
-### City of Madera GSA  [gsa_47]  (4 names)
-    city_of_madera                                           <subset>
-    city_of_madera_groundwater_sustainability_agency         <subset>
-    city_of_madera_gsa                                       <exact>
-    city_of_madera_gwe_groundwater_elevation_gsa_board_of_directors  <subset>
-
-### City of Paso Robles GSA  [gsa_72]  (4 names)
-    city_of_paso_robles_gsa                                  <exact>
-    paso_gsa                                                 <revsubset>
-    paso_robles_gsa                                          <revsubset>
-    robles_gsa                                               <revsubset>
-
 ### City of San Luis Obispo GSA  [gsa_329]  (4 names)
-    city_of_san_luis_obispo_groundwater_6b_sustainability_agency  <subset>
+    city_of_san_luis_obispo_groundwater_6b_sustainability_agency <subset>
     city_of_san_luis_obispo_gsa                              <exact>
     luis_obispo_gsa                                          <revsubset>
     san_luis_obispo_gsa                                      <revsubset>
-
-### City of Vacaville GSA  [gsa_272]  (4 names)
-    city_of_vacaville_gsa                                    <exact>
-    local_supplies_city_of_vacaville_gsa                     <subset>
-    vacaville_groundwater_sustainability_agencies            <revsubset>
-    vacaville_gsa                                            <revsubset>
-
-### County of Fresno GSA - Delta-Mendota Management Area B  [gsa_308]  (4 names)
-    b_gsa                                                    <revsubset>
-    county_of_fresno_management_area_b_gsa                   <revsubset>
-    fresno_county_area_b_gsa                                 <revsubset>
-    fresno_county_management_area_b_gsa                      <revsubset>
 
 ### County of Humboldt GSA  [gsa_493]  (4 names)
     county_of_humboldt_gsa                                   <exact>
@@ -797,101 +788,113 @@
     humboldt_county_gsa                                      <subset>
     humboldt_county_gsa_board                                <subset>
 
-### County of Siskiyou GSA  [gsa_256]  (4 names)
-    county_of_siskiyou_gsa                                   <exact>
-    siskiyou_county_flood_control_and_water_conservation_district  <subset>
-    siskiyou_county_groundwater_sustainability_agency        <subset>
-    siskiyou_county_gsa                                      <subset>
-
-### Indian Wells Valley Groundwater Authority GSA  [gsa_35]  (4 names)
-    indian_wells_valley_groundwater_authority_1              <subset>
-    indian_wells_valley_groundwater_authority_gsa            <exact>
-    indian_wells_valley_groundwater_sustainability_agency    <revsubset>
-    indian_we_lls_valley_groundwater_authority               <override>
+### Farmers Water District GSA  [gsa_30]  (4 names)
+    farmers_gsa                                              <revsubset>
+    farmers_water_district_groundwater_sustainability_agency <subset>
+    farmers_water_district_gsa                               <exact>
+    farmers_water_district_gsa_board                         <subset>
 
 ### Kern-Tulare Water District GSA  [gsa_517]  (4 names)
     kern_tulare_gsa                                          <revsubset>
+    kern_tulare_water_distrct_gsa                            <override>
     kern_tulare_water_district_gsa                           <exact>
     tulare_water_district_groundwater_sustainability_agency  <revsubset>
-    kern_tulare_water_distrct_gsa                            <override>
-
-### Madera Irrigation District GSA  [gsa_19]  (4 names)
-    madera_irrigation_district                               <subset>
-    madera_irrigation_district_algorithm_for_land_gsa        <subset>
-    madera_irrigation_district_algorithm_for_land_madera_irrigation_district_algorithm_for_land_gsa_board  <subset>
-    madera_irrigation_district_gsa                           <exact>
 
 ### Merced Irrigation-Urban GSA  [gsa_311]  (4 names)
     merced_irrigation_gsa                                    <revsubset>
     merced_irrigation_urban_groundwater_sustainability       <subset>
-    merced_irrigation_urban_groundwater_sustainability_agency  <subset>
+    merced_irrigation_urban_groundwater_sustainability_agency <subset>
     merced_irrigation_urban_gsa                              <exact>
 
-### Montecito Groundwater Basin GSA  [gsa_404]  (4 names)
-    montecito_groundwater_basin_groundwater_sustainability_agency  <subset>
-    montecito_groundwater_basin_gsa                          <exact>
-    montecito_groundwater_sustainability_agency              <revsubset>
-    montecito_gsa                                            <revsubset>
+### Owens Valley Groundwater Authority GSA - Owens Valley  [gsa_403]  (4 names)
+    owens_valley_groundwater_authority_board                 <override>
+    owens_valley_groundwater_authority_board_of_directors    <override>
+    owens_valley_groundwater_authority_gsa                   <override>
+    owens_valley_groundwater_authority_joint_exercise_of_powers_authority <override>
 
-### Pixley Irrigation District GSA  [gsa_43]  (4 names)
-    pixley_gsa                                               <revsubset>
-    pixley_irrigation_district                               <subset>
-    pixley_irrigation_district_groundwater_sustainability_agency  <subset>
-    pixley_irrigation_district_gsa                           <exact>
+### Pleasant Valley GSA  [gsa_190]  (4 names)
+    pleasant_valley_groundwater_sustainability_agency        <subset>
+    pleasant_valley_gsa                                      <exact>
+    pleasant_valley_subbasin_groundwater_sustainability_agencies <override; also gsa_408,gsa_410>
+    pleasant_valley_subbasin_gsa                             <subset>
 
-### Sacramento County GSA  [gsa_496]  (4 names)
-    cosumnes_groundwater_sustainability_agencies             <revsubset>
+### Reclamation District No. 1001 GSA  [gsa_247]  (4 names)
+    rd1001_gsa                                               <override>
+    reclamation_district_1001_groundwater_sustainability_agency <revsubset>
+    reclamation_district_1001_gsa                            <revsubset>
+    reclamation_district_no_1001_gsa                         <exact>
+
+### Sacramento Central Groundwater Authority GSA - 1  [gsa_147]  (4 names)
+    sacramento_central_groundwater_authority_gsa             <override>
+    sacramento_central_groundwater_authority_gsa3            <override>
+    sacramento_central_groundwater_authority_gsa3_to         <override>
+    sacramento_central_groundwater_authority_gsa3_to_complete_the <override>
+
+### Sacramento County GSA - Cosumnes  [gsa_496]  (4 names)
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_97,gsa_155,gsa_160,gsa_182,gsa_193,gsa_312>
     county_of_sacramento_gsa                                 <override>
     sacramento_county_groundwater_sustainability_agency      <override>
     sacramento_county_gsa                                    <override>
 
-### San Pasqual Valley GSA  [gsa_370]  (4 names)
-    san_pasqual_valley                                       <subset>
-    san_pasqual_valley_groundwater_sustainability_agency     <subset>
-    san_pasqual_valley_groundwater_sustainablity_agency      <subset>
-    san_pasqual_valley_gsa                                   <exact>
+### San Gorgonio Pass GSA  [gsa_262]  (4 names)
+    san_gorgonio_pass_groundwater_sustainability             <subset>
+    san_gorgonio_pass_groundwater_sustainability_agencies    <override; also gsa_330,gsa_450>
+    san_gorgonio_pass_groundwater_sustainability_agency      <subset>
+    san_gorgonio_pass_gsa                                    <exact>
 
-### Santa Ynez River Valley Basin Eastern Management Area GSA  [gsa_273]  (4 names)
-    eastern_management_area_groundwater_sustainability_agency  <revsubset>
-    eastern_management_area_gsa                              <revsubset>
-    santa_ynez_basin_eastern_management_area_groundwater_sustainability_agency  <revsubset>
-    santa_ynez_river_valley_basin_eastern_management_area_gsa  <exact>
+### Santa Clarita Valley GSA  [gsa_315]  (4 names)
+    ppic_santa_clarita_valley_gsa                            <subset>
+    santa_clarita_valley_groundwater_sustainability_agency   <subset>
+    santa_clarita_valley_gsa                                 <exact>
+    santa_clarita_valley_water_groundwater_sustainability_agency <subset>
+
+### Solano Subbasin GSA  [gsa_340]  (4 names)
+    solano_subbasin_groundwater_sustainability_agencies      <override; also gsa_180,gsa_272,gsa_384,gsa_385,gsa_497>
+    solano_subbasin_groundwater_sustainability_agency        <subset>
+    solano_subbasin_groundwater_sustainability_agency_collaborative <subset>
+    solano_subbasin_gsa                                      <exact>
 
 ### South Fork Kings GSA  [gsa_222]  (4 names)
+    south_fork_king_gsa                                      <override>
     south_fork_kings_groundwater_sustainability_agency       <subset>
     south_fork_kings_gsa                                     <exact>
     south_fork_kings_south_fork_kings_gsa                    <subset>
-    south_fork_king_gsa                                      <override>
+
+### Spadra Basin GSA  [gsa_212]  (4 names)
+    opportunities_for_public_involvement_spadra_basin_gsa    <subset>
+    spadra_basin_groundwater_sustainability_agency           <subset>
+    spadra_basin_gsa                                         <exact>
+    spadra_gsa                                               <revsubset>
 
 ### Stanislaus and Tuolumne Rivers Groundwater Basin Association GSA  [gsa_192]  (4 names)
-    stanislaus_and_tuolumne_rivers_groundwater_basin_association_groundwater_sustainability_agency  <subset>
-    stanislaus_and_tuolumne_rivers_groundwater_basin_association_gsa  <exact>
-    stanislaus_tuolumne_rivers_groundwater_basin_association_groundwater_sustainability_agency  <subset>
-    stanislaus_tuolumne_rivers_groundwater_sustainability_agency  <revsubset>
+    stanislaus_and_tuolumne_rivers_groundwater_basin_association_groundwater_sustainability_agency <subset>
+    stanislaus_and_tuolumne_rivers_groundwater_basin_association_gsa <exact>
+    stanislaus_tuolumne_rivers_groundwater_basin_association_groundwater_sustainability_agency <subset>
+    stanislaus_tuolumne_rivers_groundwater_sustainability_agency <revsubset>
 
 ### Tehama County Flood Control and Water Conservation District GSA  [gsa_124]  (4 names)
-    tehama_county_flood_control_and_water_conservation_district_gsa  <exact>
+    tehama_county_flood_control_and_water_conservation_district_gsa <exact>
     tehama_county_groundwater_sustainability_agency          <override>
     tehama_county_gsa                                        <override>
     tehama_gsa                                               <override>
 
 ### Upper Ventura River Groundwater Agency GSA  [gsa_248]  (4 names)
     5_upper_ventura_river_groundwater_agency                 <subset>
-    714_monitoring_program_upper_ventura_river_groundwater_agency  <subset>
+    714_monitoring_program_upper_ventura_river_groundwater_agency <subset>
     upper_ventura_river_groundwater_agency_gsa               <exact>
     upper_ventura_river_gsa                                  <subset>
+
+### West Placer GSA  [gsa_209]  (4 names)
+    placer_gsa                                               <revsubset>
+    west_placer_county_groundwater_sustainability_agency     <subset>
+    west_placer_groundwater_sustainability_agency            <subset>
+    west_placer_gsa                                          <exact>
 
 ### Wheeler Ridge-Maricopa GSA  [gsa_484]  (4 names)
     48_wheeler_ridge_maricopa_gsa                            <subset>
     wheeler_ridge_gsa                                        <revsubset>
-    wheeler_ridge_maricopa_groundwater_sustainability_agency  <subset>
+    wheeler_ridge_maricopa_groundwater_sustainability_agency <subset>
     wheeler_ridge_maricopa_gsa                               <exact>
-
-### gsa_147  [gsa_147]  (4 names)
-    sacramento_central_groundwater_authority_gsa             <override>
-    sacramento_central_groundwater_authority_gsa3            <override>
-    sacramento_central_groundwater_authority_gsa3_to         <override>
-    sacramento_central_groundwater_authority_gsa3_to_complete_the  <override>
 
 ### Alpaugh GSA  [gsa_25]  (3 names)
     alpaugh_groundwater_sustainability_agency                <subset>
@@ -900,18 +903,13 @@
 
 ### Bear Valley Basin GSA  [gsa_328]  (3 names)
     bear_valley_basin_groundwater_sustainability_agency      <subset>
-    bear_valley_basin_groundwater_sustainability_agency_board  <subset>
+    bear_valley_basin_groundwater_sustainability_agency_board <subset>
     bear_valley_basin_gsa                                    <exact>
 
-### Bedford-Coldwater Subbasin GSA  [gsa_267]  (3 names)
-    bedford_coldwater_groundwater_sustainability_agency      <revsubset>
-    bedford_coldwater_gsa                                    <revsubset>
-    bedford_coldwater_subbasin_gsa                           <exact>
-
-### Biggs-West Gridley Water District GSA  [gsa_117]  (3 names)
-    biggs_west_gridley_water_district                        <subset>
-    biggs_west_gridley_water_district_gsa                    <exact>
-    gridley_water_district_groundwater_sustainability_agency  <revsubset>
+### Big Valley GSA  [gsa_480]  (3 names)
+    big_valley_groundwater_sustainability_agency             <subset>
+    big_valley_groundwater_sustainability_agency_board_of_directors <subset>
+    big_valley_gsa                                           <exact>
 
 ### Castac Basin GSA  [gsa_400]  (3 names)
     castac_basin_groundwater_sustainability_agency           <subset>
@@ -924,7 +922,7 @@
     cawelo_water_district_gsa                                <exact>
 
 ### Chowchilla Water District GSA  [gsa_61]  (3 names)
-    chowchilla_water_district_groundwater_sustainability_agency  <subset>
+    chowchilla_water_district_groundwater_sustainability_agency <subset>
     chowchilla_water_district_gsa                            <exact>
     o_chowchilla_water_district_gsa                          <subset>
 
@@ -938,6 +936,16 @@
     hayward_groundwater_sustainability_agencies              <revsubset>
     hayward_gsa                                              <revsubset>
 
+### City of Madera GSA  [gsa_47]  (3 names)
+    city_of_madera_groundwater_sustainability_agency         <subset>
+    city_of_madera_gsa                                       <exact>
+    city_of_madera_gwe_groundwater_elevation_gsa_board_of_directors <subset>
+
+### County of Fresno GSA - Delta-Mendota Management Area B  [gsa_308]  (3 names)
+    county_of_fresno_management_area_b_gsa                   <revsubset>
+    fresno_county_area_b_gsa                                 <revsubset>
+    fresno_county_management_area_b_gsa                      <revsubset>
+
 ### County of Merced GSA - Chowchilla  [gsa_191]  (3 names)
     county_of_merced_chowchilla_gsa                          <subset>
     county_of_merced_gsa                                     <revsubset>
@@ -948,8 +956,13 @@
     modoc_county_gsa                                         <revsubset>
     modoc_groundwater_sustainability_agencies                <revsubset>
 
+### County of Siskiyou GSA  [gsa_256]  (3 names)
+    county_of_siskiyou_gsa                                   <exact>
+    siskiyou_county_groundwater_sustainability_agency        <subset>
+    siskiyou_county_gsa                                      <subset>
+
 ### East Contra Costa Irrigation District GSA  [gsa_252]  (3 names)
-    east_contra_costa_groundwater_sustainability_agencies_board  <revsubset>
+    east_contra_costa_groundwater_sustainability_agencies_board <revsubset>
     east_contra_costa_gsa                                    <revsubset>
     east_contra_costa_irrigation_district_gsa                <exact>
 
@@ -958,65 +971,65 @@
     eastside_san_joaquin_groundwater_sustainability_agency   <subset>
     eastside_san_joaquin_gsa                                 <exact>
 
-### Elsinore Valley GSA  [gsa_21]  (3 names)
-    elsinore_valley                                          <subset>
-    elsinore_valley_groundwater_sustainability_agency        <subset>
-    elsinore_valley_gsa                                      <exact>
+### El Rico GSA  [gsa_358]  (3 names)
+    el_rico_groundwater_sustainability_agency                <subset>
+    el_rico_gsa                                              <exact>
+    el_rico_gsa_el_rico                                      <subset>
 
 ### Fox Canyon Groundwater Management Agency GSA - Oxnard  [gsa_433]  (3 names)
-    fox_canyon_groundwater_management_agency_fox_canyon_groundwater_management_agency  <revsubset>
+    fox_canyon_groundwater_management_agency_fox_canyon_groundwater_management_agency <revsubset>
     fox_canyon_groundwater_management_agency_gsa             <revsubset>
     gsa_fox_canyon_groundwater_management_agency             <revsubset>
 
+### Galt Irrigation District GSA  [gsa_97]  (3 names)
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_496,gsa_155,gsa_160,gsa_182,gsa_193,gsa_312>
+    galt_irrigation_district_groundwater_sustainability_agency <subset>
+    galt_irrigation_district_gsa                             <exact>
+
+### Madera Irrigation District GSA  [gsa_19]  (3 names)
+    madera_irrigation_district_algorithm_for_land_gsa        <subset>
+    madera_irrigation_district_algorithm_for_land_madera_irrigation_district_algorithm_for_land_gsa_board <subset>
+    madera_irrigation_district_gsa                           <exact>
+
 ### Madera Water District GSA  [gsa_41]  (3 names)
-    madera_water_district                                    <subset>
     madera_water_district_groundwater_sustainability_agency  <subset>
     madera_water_district_gsa                                <exact>
-
-### Reclamation District No. 1001 GSA  [gsa_247]  (3 names)
-    reclamation_district_1001_groundwater_sustainability_agency  <revsubset>
-    reclamation_district_1001_gsa                            <revsubset>
-    reclamation_district_no_1001_gsa                         <exact>
+    madera_wd_gsa                                            <override>
 
 ### Rosedale-Rio Bravo Water Storage District GSA  [gsa_515]  (3 names)
     bravo_water_storage_district_gsa                         <revsubset>
     rosedale_rio_bravo_gsa                                   <revsubset>
     rosedale_rio_bravo_water_storage_district_gsa            <exact>
 
-### Sacramento Groundwater Authority GSA  [gsa_118]  (3 names)
-    sacramento_groundwater_authority_gsa                     <exact>
-    sacramento_groundwater_sustainability_agency             <revsubset>
-    sacramento_gsa                                           <revsubset>
-
 ### San Miguel Community Services District GSA  [gsa_56]  (3 names)
     gsa_san_miguel_community_services_district               <subset>
     san_miguel_community_services_district_gsa               <exact>
     san_miguel_gsa                                           <revsubset>
 
-### Santa Clara Valley Water District GSA - North San Benito  [gsa_345]  (3 names)
-    santa_clara_valley_water_district                        <revsubset>
-    santa_clara_valley_water_district_gsa                    <revsubset>
-    valley_water_gsa                                         <revsubset>
+### San Pasqual Valley GSA  [gsa_370]  (3 names)
+    san_pasqual_valley_groundwater_sustainability_agency     <subset>
+    san_pasqual_valley_groundwater_sustainablity_agency      <subset>
+    san_pasqual_valley_gsa                                   <exact>
 
 ### Santa Monica Basin GSA  [gsa_337]  (3 names)
     santa_monica_basin_groundwater_sustainability_agency     <subset>
     santa_monica_basin_gsa                                   <exact>
     santa_monica_gsa                                         <revsubset>
 
+### Semitropic Water Storage District GSA  [gsa_277]  (3 names)
+    semitropic_gsa                                           <override>
+    semitropic_water_storage_district_gsa                    <override>
+    semitropic_water_storage_district_gsa_groundwater_sustainability_plan <subset>
+
 ### Sierra Valley Groundwater Management District GSA  [gsa_227]  (3 names)
-    sierra_valley_groundwater_management_actionnagement_district_groundwater_sustainability_agency  <subset>
+    sierra_valley_groundwater_management_actionnagement_district_groundwater_sustainability_agency <subset>
     sierra_valley_groundwater_management_district_gsa        <exact>
     sierra_valley_groundwater_sustainability_agencies        <revsubset>
 
 ### Solano Irrigation District GSA  [gsa_180]  (3 names)
-    solano_irrigation_district                               <subset>
-    solano_irrigation_district_groundwater_sustainability_agency  <subset>
+    solano_irrigation_district_groundwater_sustainability_agency <subset>
     solano_irrigation_district_gsa                           <exact>
-
-### South Sutter Water District GSA  [gsa_233]  (3 names)
-    gsa_south_sutter_water_district                          <subset>
-    south_sutter_water_district                              <subset>
-    south_sutter_water_district_gsa                          <exact>
+    solano_subbasin_groundwater_sustainability_agencies      <override; also gsa_340,gsa_272,gsa_384,gsa_385,gsa_497>
 
 ### Southwest Kings GSA  [gsa_226]  (3 names)
     southwest_kings_groundwater_sustainability_agency        <subset>
@@ -1028,56 +1041,71 @@
     west_kern_water_district_gsa                             <exact>
     west_kern_water_district_west_kern_water_district_gsa    <subset>
 
-### gsa_470  [gsa_470]  (3 names)
-    county_of_tulare                                         <override>
-    county_of_tulare_gsa                                     <override>
-    tulare_county_gsa                                        <override>
+### Amador County Groundwater Management Authority GSA  [gsa_193]  (2 names)
+    amador_county_groundwater_management_authority_gsa       <exact>
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_496,gsa_97,gsa_155,gsa_160,gsa_182,gsa_312>
 
 ### Banta-Carbona Irrigation District GSA  [gsa_149]  (2 names)
     banta_carbona_irrigation_district_gsa                    <exact>
-    carbona_irrigation_district_groundwater_sustainability_agency  <revsubset>
+    carbona_irrigation_district_groundwater_sustainability_agency <revsubset>
+
+### Biggs-West Gridley Water District GSA  [gsa_117]  (2 names)
+    biggs_west_gridley_water_district_gsa                    <exact>
+    gridley_water_district_groundwater_sustainability_agency <revsubset>
+
+### Camrosa Water District GSA - Oxnard  [gsa_347]  (2 names)
+    camrosa_opv_gsa                                          <override>
+    camrosa_opv_management_area_gsa                          <override>
+
+### City of Coalinga GSA  [gsa_410]  (2 names)
+    city_of_coalinga_gsa                                     <exact>
+    pleasant_valley_subbasin_groundwater_sustainability_agencies <override; also gsa_190,gsa_408>
 
 ### City of Dos Palos GSA  [gsa_360]  (2 names)
     city_of_dos_palos_gsa                                    <exact>
     dos_palos_gsa                                            <revsubset>
 
+### City of Galt GSA  [gsa_312]  (2 names)
+    city_of_galt_gsa                                         <exact>
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_496,gsa_97,gsa_155,gsa_160,gsa_182,gsa_193>
+
 ### City of Lathrop GSA  [gsa_183]  (2 names)
     city_of_lathrop_groundwater_sustainability_agency        <subset>
     city_of_lathrop_gsa                                      <exact>
 
-### City of Mendota GSA  [gsa_67]  (2 names)
-    city_of_mendota_gsa                                      <exact>
-    mendota_gsa                                              <revsubset>
+### City of Marina GSA  [gsa_399]  (2 names)
+    city_of_marina_groundwater_sustainability_agency         <override>
+    city_of_marina_gsa                                       <override>
 
-### City of Tracy GSA  [gsa_157]  (2 names)
-    city_of_tracy_gsa                                        <exact>
-    tracy_gsa                                                <revsubset>
+### City of Paso Robles GSA  [gsa_72]  (2 names)
+    city_of_paso_robles_gsa                                  <exact>
+    paso_robles_gsa                                          <revsubset>
 
 ### City of Tulelake GSA  [gsa_280]  (2 names)
     city_of_tulelake_groundwater_sustainability_agency       <subset>
     city_of_tulelake_gsa                                     <exact>
 
-### City of Yuba City GSA  [gsa_264]  (2 names)
-    city_of_yuba_city_gsa                                    <exact>
-    yuba_gsa                                                 <revsubset>
+### Clay Water District GSA  [gsa_182]  (2 names)
+    clay_water_district_gsa                                  <exact>
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_496,gsa_97,gsa_155,gsa_160,gsa_193,gsa_312>
 
 ### County of Fresno GSA - Pleasant Valley  [gsa_408]  (2 names)
-    county_of_fresno                                         <revsubset>
     county_of_fresno_gsa                                     <revsubset>
+    pleasant_valley_subbasin_groundwater_sustainability_agencies <override; also gsa_190,gsa_410>
 
 ### County of Lassen GSA  [gsa_240]  (2 names)
     county_of_lassen_gsa                                     <exact>
     lassen_county_gsa                                        <subset>
 
 ### County of Merced GSA - Delta-Mendota  [gsa_231]  (2 names)
-    merced_county_delta_mendota_groundwater_sustainability_agency  <subset>
+    merced_county_delta_mendota_groundwater_sustainability_agency <subset>
     merced_county_delta_mendota_gsa                          <subset>
 
 ### County of Monterey GSA  [gsa_487]  (2 names)
     county_of_monterey_ground_water_sustainability_agency    <subset>
     county_of_monterey_gsa                                   <exact>
 
-### County of San Joaquin GSA - Eastern San Joaquin  [gsa_142]  (2 names)
+### County of San Joaquin GSA - Eastern San Joaquin 1  [gsa_142]  (2 names)
     eastern_san_joaquin_groundwater_sustainability_agencies  <override>
     eastern_san_joaquin_groundwater_sustainability_agency    <override>
 
@@ -1089,25 +1117,37 @@
     county_of_sutter_gsa                                     <subset>
     sutter_county_gsa                                        <subset>
 
+### County of Tulare GSA - Tule  [gsa_470]  (2 names)
+    county_of_tulare_gsa                                     <override>
+    tulare_county_gsa                                        <override>
+
+### County of Ventura GSA - Oxnard Basin Outlying Areas  [gsa_352]  (2 names)
+    oxnard_outlying_area_gsa                                 <override>
+    oxnard_outlying_areas_gsa                                <override>
+
 ### DM-II GSA  [gsa_301]  (2 names)
     dm_ii_gsa                                                <exact>
     dm_ii_multi_agency_gsa                                   <subset>
+
+### Desert Water Agency GSA - Statutory Area - San Gorgonio Pass  [gsa_450]  (2 names)
+    desert_water_agency_gsa                                  <revsubset>
+    san_gorgonio_pass_groundwater_sustainability_agencies    <override; also gsa_262,gsa_330>
 
 ### Diablo Water District GSA  [gsa_289]  (2 names)
     diablo_water_district_gsa                                <exact>
     gsa_diablo_water_district                                <subset>
 
-### Galt Irrigation District GSA  [gsa_97]  (2 names)
-    galt_irrigation_district_groundwater_sustainability_agency  <subset>
-    galt_irrigation_district_gsa                             <exact>
-
-### Grasslands GSA  [gsa_62]  (2 names)
-    grasslands_gsa                                           <exact>
-    grassland_gsa                                            <override>
+### Elsinore Valley GSA  [gsa_21]  (2 names)
+    elsinore_valley_groundwater_sustainability_agency        <subset>
+    elsinore_valley_gsa                                      <exact>
 
 ### Greenfield County Water District GSA  [gsa_22]  (2 names)
     greenfield_county_water_district_gsa                     <exact>
     greenfield_gsa                                           <revsubset>
+
+### Heritage Ranch Community Services District  [gsa_197]  (2 names)
+    heritage_ranch_community_services_district               <override>
+    heritage_ranch_community_services_district_gsa           <override>
 
 ### Kern Non-Districted Land Authority GSA  [gsa_306]  (2 names)
     kern_non_districted_land_authority_gsa                   <exact>
@@ -1117,50 +1157,328 @@
     north_kern_water_storage_district_gsa                    <exact>
     north_kern_water_storage_district_gsa_p_management_area  <subset>
 
-### Owens Valley Groundwater Authority GSA - Owens Valley  [gsa_403]  (2 names)
-    owens_valley_groundwater_authority_gsa                   <subset>
-    valley_groundwater_authority                             <revsubset>
+### Omochumne-Hartnell Water District GSA - Cosumnes  [gsa_155]  (2 names)
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_496,gsa_97,gsa_160,gsa_182,gsa_193,gsa_312>
+    omochumne_hartnell_water_district_gsa                    <revsubset>
+
+### Reclamation District No. 349 GSA  [gsa_385]  (2 names)
+    reclamation_district_no_349_gsa                          <exact>
+    solano_subbasin_groundwater_sustainability_agencies      <override; also gsa_340,gsa_180,gsa_272,gsa_384,gsa_497>
+
+### Reclamation District No. 501 GSA  [gsa_384]  (2 names)
+    reclamation_district_no_501_gsa                          <exact>
+    solano_subbasin_groundwater_sustainability_agencies      <override; also gsa_340,gsa_180,gsa_272,gsa_385,gsa_497>
+
+### Rock Creek Reclamation District GSA  [gsa_178]  (2 names)
+    rock_creek_reclamation_district_gsa                      <exact>
+    vina_subbasin_groundwater_sustainability_agencies        <override; also gsa_409>
 
 ### San Antonio Basin GSA  [gsa_290]  (2 names)
     san_antonio_basin_groundwater_sustainability_agency      <subset>
     san_antonio_basin_gsa                                    <exact>
 
-### Santa Cruz Mid-County Groundwater Agency GSA  [gsa_24]  (2 names)
-    county_of_santa_cruz_gsa                                 <revsubset>
-    santa_cruz_mid_county_groundwater_agency_gsa             <exact>
+### Santa Clara Valley Water District GSA - North San Benito  [gsa_345]  (2 names)
+    santa_clara_valley_water_district_gsa                    <revsubset>
+    valley_water_gsa                                         <revsubset>
 
 ### Santa Margarita Groundwater Agency GSA  [gsa_338]  (2 names)
     margarita_groundwater_agency                             <revsubset>
     santa_margarita_groundwater_agency_gsa                   <exact>
 
+### Siskiyou County Flood Control and Water Conservation District GS  [gsa_253]  (2 names)
+    siskiyou_county_flood_control_and_water_conservation_district <override>
+    siskiyou_county_flood_control_and_water_conservation_district_gs <exact>
+
 ### Sloughhouse Resource Conservation District GSA - Cosumnes  [gsa_160]  (2 names)
-    conservation_district_groundwater_sustainability_agency  <revsubset>
+    cosumnes_groundwater_sustainability_agencies             <override; also gsa_496,gsa_97,gsa_155,gsa_182,gsa_193,gsa_312>
     sloughhouse_resource_conservation_district_gsa           <revsubset>
 
+### South Sutter Water District GSA  [gsa_233]  (2 names)
+    gsa_south_sutter_water_district                          <subset>
+    south_sutter_water_district_gsa                          <exact>
+
 ### Southern San Joaquin Municipal Utility District - GSA  [gsa_514]  (2 names)
-    southern_san_joaquin_municipal_utility_district_gsa      <exact>
     southern_san_joaquin_municipal_utilities_district_gsa    <override>
+    southern_san_joaquin_municipal_utility_district_gsa      <exact>
 
 ### Tulelake Irrigation District GSA  [gsa_258]  (2 names)
-    tulelake_irrigation_district_groundwater_sustainability_agency  <subset>
+    tulelake_irrigation_district_groundwater_sustainability_agency <subset>
     tulelake_irrigation_district_gsa                         <exact>
+
+### Verbenia GSA  [gsa_330]  (2 names)
+    san_gorgonio_pass_groundwater_sustainability_agencies    <override; also gsa_262,gsa_450>
+    verbenia_gsa                                             <exact>
 
 ### West San Jacinto GSA  [gsa_28]  (2 names)
     west_san_jacinto_groundwater_sustainability_agency       <subset>
     west_san_jacinto_gsa                                     <exact>
-
-### Western Canal Water District GSA  [gsa_120]  (2 names)
-    western_canal_water_district_gsa                         <exact>
-    western_management_gsa                                   <revsubset>
 
 ### Western Municipal Water District GSA - Riverside-Arlington  [gsa_275]  (2 names)
     arlington_gsa                                            <revsubset>
     western_municipal_water_district_gsa                     <revsubset>
 
 ### Widren Water District GSA  [gsa_237]  (2 names)
-    widren_water_district_groundwater_sustainability_agencies  <subset>
+    widren_water_district_groundwater_sustainability_agencies <subset>
     widren_water_district_gsa                                <exact>
 
 ### Wyandotte Creek GSA  [gsa_406]  (2 names)
     wyandotte_creek_groundwater_sustainability_agency        <subset>
     wyandotte_creek_gsa                                      <exact>
+
+### Alameda County Water District GSA  [gsa_95]  (1 name)
+    alameda_county_water_district_gsa                        <override>
+
+### Butte Water District GSA - Butte  [gsa_417]  (1 name)
+    butte_water_district_gsa                                 <subset>
+
+### Byron-Bethany Irrigation District GSA - Tracy  [gsa_286]  (1 name)
+    byron_bethany_irrigation_district_gsa                    <revsubset>
+
+### Camrosa Water District GSA - Los Posas Valley  [gsa_348]  (1 name)
+    camrosa_las_posas_gsa                                    <override>
+
+### Central Delta Water Agency GSA  [gsa_201]  (1 name)
+    central_delta_water_agency_gsa                           <exact>
+
+### Central San Joaquin Water Conservation District GSA  [gsa_189]  (1 name)
+    central_san_joaquin_water_conservation_district_gsa      <exact>
+
+### City of Antioch GSA  [gsa_299]  (1 name)
+    city_of_antioch_gsa                                      <exact>
+
+### City of Biggs GSA  [gsa_173]  (1 name)
+    city_of_biggs_gsa                                        <exact>
+
+### City of Brentwood GSA  [gsa_224]  (1 name)
+    city_of_brentwood_gsa                                    <exact>
+
+### City of Firebaugh GSA  [gsa_269]  (1 name)
+    city_of_firebaugh_gsa                                    <exact>
+
+### City of Gridley GSA  [gsa_128]  (1 name)
+    city_of_gridley_gsa                                      <exact>
+
+### City of Lakeport GSA  [gsa_333]  (1 name)
+    city_of_lakeport_gsa                                     <override>
+
+### City of Live Oak GSA  [gsa_136]  (1 name)
+    city_of_live_oak_gsa                                     <exact>
+
+### City of Lodi GSA  [gsa_152]  (1 name)
+    city_of_lodi_gsa                                         <exact>
+
+### City of Los Banos GSA  [gsa_71]  (1 name)
+    city_of_los_banos_gsa                                    <exact>
+
+### City of Manteca GSA  [gsa_91]  (1 name)
+    city_of_manteca_gsa                                      <exact>
+
+### City of Marysville GSA  [gsa_133]  (1 name)
+    city_of_marysville_gsa                                   <exact>
+
+### City of Mendota GSA  [gsa_67]  (1 name)
+    city_of_mendota_gsa                                      <exact>
+
+### City of Newman GSA  [gsa_57]  (1 name)
+    city_of_newman_gsa                                       <exact>
+
+### City of Patterson GSA  [gsa_66]  (1 name)
+    city_of_patterson_gsa                                    <exact>
+
+### City of Pomona GSA  [gsa_368]  (1 name)
+    city_of_pomona_gsa                                       <override>
+
+### City of Stockton GSA  [gsa_137]  (1 name)
+    city_of_stockton_gsa                                     <exact>
+
+### City of Tracy GSA  [gsa_157]  (1 name)
+    city_of_tracy_gsa                                        <exact>
+
+### City of Yuba City GSA  [gsa_264]  (1 name)
+    city_of_yuba_city_gsa                                    <exact>
+
+### Cordua Irrigation District GSA  [gsa_111]  (1 name)
+    cordua_irrigation_district_gsa                           <exact>
+
+### County of Contra Costa GSA  [gsa_259]  (1 name)
+    county_of_contra_costa_gsa                               <exact>
+
+### County of Fresno GSA - Delta-Mendota Management Area A  [gsa_298]  (1 name)
+    fresno_county_management_area_a_gsa                      <revsubset>
+
+### County of Glenn GSA - Butte  [gsa_415]  (1 name)
+    county_of_glenn_gsa                                      <revsubset>
+
+### County of Madera GSA - Chowchilla  [gsa_68]  (1 name)
+    county_of_madera_chowchilla_gsa                          <subset>
+
+### County of Plumas GSA  [gsa_234]  (1 name)
+    county_of_plumas_gsa                                     <exact>
+
+### County of San Luis Obispo GSA - San Luis Obispo Valley  [gsa_336]  (1 name)
+    county_of_san_luis_obispo_gsa                            <revsubset>
+
+### County of Santa Cruz GSA - West Santa Cruz Terrace  [gsa_283]  (1 name)
+    county_of_santa_cruz_gsa                                 <override>
+
+### County of Ventura GSA - Las Posas Valley Basin Outlying Areas  [gsa_357]  (1 name)
+    las_posas_valley_outlying_areas_gsa                      <override>
+
+### County of Ventura GSA - Pleasant Valley Basin Outlying Areas  [gsa_353]  (1 name)
+    pleasant_valley_basin_outlying_areas_gsa                 <override>
+
+### Discovery Bay Community Services District GSA  [gsa_265]  (1 name)
+    discovery_bay_community_services_district_gsa            <exact>
+
+### East Bay Municipal Utility District GSA  [gsa_104]  (1 name)
+    east_bay_municipal_utility_district_gsa                  <exact>
+
+### Estrella-El Pomar-Creston Water District GSA  [gsa_396]  (1 name)
+    estrella_el_pomar_creston_water_district_gsa             <override>
+
+### Franklin Drainage District GSA  [gsa_387]  (1 name)
+    franklin_drainage_district_gsa                           <exact>
+
+### Kern Water Bank GSA  [gsa_523]  (1 name)
+    kern_water_bank_gsa                                      <exact>
+
+### Linden County Water District GSA  [gsa_99]  (1 name)
+    linden_county_water_district_gsa                         <exact>
+
+### Lockeford Community Service District GSA  [gsa_140]  (1 name)
+    lockeford_community_service_district_gsa                 <exact>
+
+### Los Angeles GSA  [gsa_293]  (1 name)
+    los_angeles_gsa                                          <override>
+
+### Monterey Peninsula Water Management District GSA  [gsa_8]  (1 name)
+    monterey_peninsula_water_management_district_gsa         <override>
+
+### North San Joaquin Water Conservation District GSA  [gsa_159]  (1 name)
+    north_san_joaquin_water_conservation_district_gsa        <exact>
+
+### Northwestern Delta-Mendota GSA  [gsa_214]  (1 name)
+    northwestern_delta_mendota_gsa                           <exact>
+
+### Oakdale Irrigation District GSA  [gsa_228]  (1 name)
+    oakdale_irrigation_district_gsa                          <exact>
+
+### Ojai Basin Groundwater Management Agency GSA  [gsa_162]  (1 name)
+    ojai_basin_groundwater_management_agency_gsa             <exact>
+
+### Oro Loma Water District GSA  [gsa_302]  (1 name)
+    oro_loma_water_district_gsa                              <exact>
+
+### Pajaro Valley Water Management Agency GSA  [gsa_6]  (1 name)
+    pajaro_valley_water_management_agency_gsa                <override>
+
+### Patterson Irrigation District GSA  [gsa_17]  (1 name)
+    patterson_irrigation_district_gsa                        <exact>
+
+### Porterville Irrigation District Groundwater Sustainability Agenc  [gsa_541]  (1 name)
+    porterville_irrigation_district_gsa                      <override>
+
+### Reclamation District No. 1002 GSA  [gsa_373]  (1 name)
+    reclamation_district_no_1002_gsa                         <exact>
+
+### Reclamation District No. 1004 GSA - Butte 2  [gsa_138]  (1 name)
+    reclamation_district_no_1004_gsa                         <override>
+
+### Reclamation District No. 1500 GSA  [gsa_239]  (1 name)
+    reclamation_district_no_1500_gsa                         <exact>
+
+### Reclamation District No. 1660 GSA  [gsa_321]  (1 name)
+    reclamation_district_no_1660_gsa                         <exact>
+
+### Reclamation District No. 2106 GSA  [gsa_195]  (1 name)
+    reclamation_district_no_2106_gsa                         <exact>
+
+### Reclamation District No. 2110 GSA  [gsa_364]  (1 name)
+    reclamation_district_no_2110_gsa                         <exact>
+
+### Reclamation District No. 369 GSA  [gsa_378]  (1 name)
+    reclamation_district_no_369_gsa                          <exact>
+
+### Reclamation District No. 551 GSA  [gsa_366]  (1 name)
+    reclamation_district_no_551_gsa                          <exact>
+
+### Reclamation District No. 70 GSA  [gsa_320]  (1 name)
+    reclamation_district_no_70_gsa                           <exact>
+
+### Reclamation District No. 744 GSA  [gsa_376]  (1 name)
+    reclamation_district_no_744_gsa                          <exact>
+
+### Reclamation District No. 813 GSA  [gsa_377]  (1 name)
+    reclamation_district_no_813_gsa                          <exact>
+
+### Richvale Irrigation District GSA  [gsa_112]  (1 name)
+    richvale_irrigation_district_gsa                         <exact>
+
+### Sacramento County GSA - Solano  [gsa_497]  (1 name)
+    solano_subbasin_groundwater_sustainability_agencies      <override; also gsa_340,gsa_180,gsa_272,gsa_384,gsa_385>
+
+### Sacramento Groundwater Authority GSA  [gsa_118]  (1 name)
+    sacramento_groundwater_authority_gsa                     <exact>
+
+### Salinas Valley Basin GSA - 180/400 Foot Aquifer  [gsa_461]  (1 name)
+    salinas_valley_groundwater_basin_gsa_180400_foot_aquifer <override>
+
+### San Benito County Water District GSA  [gsa_89]  (1 name)
+    san_benito_county_water_district_gsa                     <exact>
+
+### San Diego River Valley GSA  [gsa_371]  (1 name)
+    san_diego_river_valley_gsa                               <override>
+
+### San Timoteo Subbasin GSA  [gsa_344]  (1 name)
+    san_timoteo_subbasin_gsa                                 <override>
+
+### Santa Cruz Mid-County Groundwater Agency GSA  [gsa_24]  (1 name)
+    santa_cruz_mid_county_groundwater_agency_gsa             <exact>
+
+### Shafter-Wasco Irrigation District GSA  [gsa_507]  (1 name)
+    shafter_wasco_irrigation_district_gsa                    <exact>
+
+### Shandon-San Juan GSA  [gsa_319]  (1 name)
+    shandon_san_juan_gsa                                     <exact>
+
+### South Delta Water Agency GSA  [gsa_208]  (1 name)
+    south_delta_water_agency_gsa                             <exact>
+
+### South San Joaquin GSA  [gsa_249]  (1 name)
+    south_san_joaquin_gsa                                    <exact>
+
+### Stewart Tract GSA  [gsa_343]  (1 name)
+    stewart_tract_gsa                                        <exact>
+
+### Stockton East Water District GSA  [gsa_116]  (1 name)
+    stockton_east_water_district_gsa                         <exact>
+
+### Sutter Community Service District GSA  [gsa_114]  (1 name)
+    sutter_community_service_district_gsa                    <exact>
+
+### Sutter Extension Water District GSA  [gsa_121]  (1 name)
+    sutter_extension_water_district_gsa                      <exact>
+
+### Tea Pot Dome Water District  [gsa_528]  (1 name)
+    tea_pot_dome_water_district                              <override>
+
+### Tehama County Flood Control and Water Conservation District GSA  [gsa_418]  (1 name)
+    corning_subbasin_groundwater_sustainability_agencies     <override; also gsa_390>
+
+### Upper San Luis Rey Groundwater Management Authority GSA  [gsa_359]  (1 name)
+    upper_san_luis_rey_groundwater_management_authority_gsa  <exact>
+
+### Vandalia Water District  [gsa_530]  (1 name)
+    vandalia_water_district                                  <override>
+
+### West Stanislaus Irrigation District GSA  [gsa_13]  (1 name)
+    west_stanislaus_irrigation_district_gsa                  <exact>
+
+### Western Canal Water District GSA  [gsa_120]  (1 name)
+    western_canal_water_district_gsa                         <exact>
+
+### Woodbridge Irrigation District GSA  [gsa_151]  (1 name)
+    woodbridge_irrigation_district_gsa                       <exact>
+
+### gsa_1  [gsa_1]  (1 name)
+    gsa_1                                                    <identity>

@@ -26,12 +26,23 @@
 #'   subset      roster distinctive tokens ⊆ node tokens, 1 id   -> auto  (elaborated variant)
 #'   revsubset   node distinctive tokens ⊆ roster tokens, 1 id   -> auto  (abbreviated variant)
 #'   *_tie       the above but >1 candidate id                   -> review (suggest)
+#'   subset_geo  subset, but the variant adds a direction word       -> review (suggest)
+#'   revsubset_bare  revsubset with no place name: every distinctive token is a
+#'               direction/feature word ("upper_basin_gsa"), or ONE token
+#'               shorter than 3 characters ("b_gsa", "el_gsa") or shared by
+#'               >1 roster base                                    -> review (suggest)
+#'   revsubset_generic  revsubset where every distinctive token is an
+#'               entity-type word ("storage_district_gsa")          -> review (suggest)
+#'   no_gsa_marker  subset/revsubset, but the variant never says GSA
+#'               ("kern_river": the river or the GSA?)            -> review (suggest)
 #'   fuzzy       best base-R adist similarity                    -> review (suggest)
 #'   none        no candidate                                    -> review (no suggestion)
 #' Consultants: exact -> auto; anything else -> review (fuzzy suggestion), identity default.
 #'
 #' A curated inputs/entity_bag_overrides.csv (variant,bag_id[,entity_type]) wins
 #' over everything — this is where confirmed review decisions get promoted.
+#' A variant naming several GSAs ("mcmullin_and_james_..._agencies") gets one
+#' override row per GSA, and so one map row per bag: it counts in every bag.
 #'
 #' Reads : id_crosswalk.csv, node_dictionary.csv (paper products); sgma_gsa_full.csv
 #'         (core roster); consultant_dictionary.csv (core dict); optional override.
@@ -71,6 +82,22 @@ CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 # normalized edit-distance similarity (base R; avoids a stringdist dependency)
 .sim <- function(a, b) { d <- as.integer(adist(a, b)); 1 - d / pmax(nchar(a), nchar(b)) }
 FUZZY_SHOW <- 0.75   # below this, offer no suggestion (method = none)
+# Direction words. Added to a roster name they usually name a DIFFERENT agency
+# or a group ("south_of_kern_river_gsa" is not Kern River GSA;
+# "madera_county_east_gsa" is not one specific County of Madera id).
+.DIR <- c("north","south","east","west","northern","southern","eastern","western",
+          "upper","lower","central","mid")
+# Direction + geographic-feature words. Alone, none identifies an agency
+# ("east_gsa", "river_gsa"). Feature words added to a roster name are usually
+# descriptors ("pleasant_valley_subbasin_gsa"), so only .DIR guards the subset tier.
+.GEO <- c(.DIR, "river","valley","basin","subbasin","county")
+# Entity-type words. A variant whose distinctive tokens are ALL type words
+# ("storage_district_gsa", "conservation_district_gsa") names a kind of agency,
+# not one agency, so it never auto-folds.
+.TYPEW <- c("water","district","districts","storage","conservation","resource","resources",
+            "irrigation","reclamation","county","city","authority","mutual","company",
+            "community","services","service","municipal","utility","public","flood",
+            "control","joint","powers","area","region","regional","subbasin","basin","wd","id")
 
 # ---- rosters -----------------------------------------------------------------
 load_gsa_roster <- function(xw) {
@@ -82,8 +109,13 @@ load_gsa_roster <- function(xw) {
   ros <- ros[nzchar(key)]
   ros[, dt := lapply(key, .dtoks)]
   ros[, ndt := lengths(dt)]
+  # base name = roster name minus any " - <Management Area>" suffix; multi-MA
+  # siblings share one, so token sharing is counted over base names, not ids.
+  ros[, base := sub("\\s+[-\u2013]\\s+.*$", "", label)]
   ros[]
 }
+# number of distinct roster base names whose distinctive tokens include `tok`
+.n_bases <- function(tok, ros) uniqueN(ros$base[vapply(ros$dt, function(d) tok %in% d, logical(1))])
 load_consultant_roster <- function() {
   d <- fread(core_dict("consultant_dictionary.csv"), colClasses = "character")
   d <- d[!is.na(all_names) & nzchar(all_names)]
@@ -100,7 +132,23 @@ load_consultant_roster <- function() {
 
 # ---- GSA matcher -------------------------------------------------------------
 # returns list(bag_id, label, method, score) ; bag_id NA_character_ when no auto.
+# A variant must SAY it is a GSA to auto-fold past the exact tier. Roster names
+# are mostly place names, so a bare place string ("kern_river") could be the
+# river, a water district, or the GSA; it cannot be told apart, so -> review.
+# Markers: the GSA acronym (incl. "gssa"/"kgsa" typos), "groundwater
+# sustainab..." (the extractor often truncates or misspells "agency"), or a
+# dedicated groundwater agency/authority (Glenn Groundwater Authority, Upper
+# Ventura River Groundwater Agency, Fox Canyon GMA ARE their GSAs).
+.has_gsa_marker <- function(node)
+  any(.toks(node) %in% c("gsa", "gsas", "gssa", "kgsa")) ||
+    grepl("groundwater_sustainab|sustainab[a-z_]*_agenc|groundwater_(management_)?agenc|groundwater_authority|gw_authority", node)
 .match_gsa <- function(node, ros) {
+  m <- .match_gsa_tiers(node, ros)
+  if (!is.na(m$id) && m$m != "exact" && !.has_gsa_marker(node))
+    return(list(id = NA_character_, sug = m$id, lab = m$lab, m = "no_gsa_marker", s = m$s))
+  m
+}
+.match_gsa_tiers <- function(node, ros) {
   usable <- ros[ndt >= 1]
   nt  <- .toks(node)
   ndd <- .dtoks(node)
@@ -113,6 +161,10 @@ load_consultant_roster <- function() {
     if (any(ok)) {
       cand <- usable[ok]; best <- cand[ndt == max(ndt)]
       ib <- unique(best$gsa_id)
+      # guard: an extra direction word in the variant names a different agency
+      # or a group ("south_of_kern_river_gsa") -> review, not auto
+      if (length(ib) == 1 && any(setdiff(ndd, best$dt[[1]]) %in% .DIR))
+        return(list(id = NA_character_, sug = ib, lab = best$label[1], m = "subset_geo", s = max(best$ndt)))
       if (length(ib) == 1) return(list(id = ib, lab = best$label[1], m = "subset", s = max(best$ndt)))
       return(list(id = NA_character_, sug = ib[1], lab = .tie_lab(best), m = "subset_tie", s = length(ib)))
     }
@@ -120,6 +172,22 @@ load_consultant_roster <- function() {
   # revsubset: node distinctive tokens all contained in a roster entry
   if (length(ndd)) {
     ok <- vapply(usable$dt, function(d) all(ndd %in% d), logical(1))
+    if (any(ok) && all(ndd %in% .TYPEW)) {
+      cand <- usable[ok]
+      return(list(id = NA_character_, sug = cand$gsa_id[1], lab = .tie_lab(cand),
+                  m = "revsubset_generic", s = uniqueN(cand$base)))
+    }
+    # guard: a single distinctive token that is a direction/feature word or is
+    # shared by >1 roster base name ("kern", "merced") is not an identifier ->
+    # review. Bare tokens unique to one agency ("aliso", "olcese") still fold;
+    # a 1-2 letter token ("b", "el") never identifies one.
+    # Several tokens with no place name among them ("upper_basin_gsa") likewise.
+    if (any(ok) && (all(ndd %in% .GEO) ||
+                    length(ndd) == 1 && (nchar(ndd) < 3 || .n_bases(ndd, usable) > 1))) {
+      cand <- usable[ok]
+      return(list(id = NA_character_, sug = cand$gsa_id[1], lab = .tie_lab(cand),
+                  m = "revsubset_bare", s = uniqueN(cand$base)))
+    }
     if (any(ok)) {
       cand <- usable[ok]; best <- cand[ndt == min(ndt)]
       ib <- unique(best$gsa_id)
@@ -167,7 +235,7 @@ build_entity_bag_map <- function() {
     .read_ov("entity_bag_overrides_gsa.csv"),
     .read_ov("entity_bag_overrides_consultant.csv"),
     .read_ov("entity_bag_overrides.csv")
-  ), use.names = TRUE, fill = TRUE), by = "variant")
+  ), use.names = TRUE, fill = TRUE), by = c("variant", "bag_id"))
 
   IN_NET <- c("GSA", "Consultant", "Research", "NGO", "Institutional_other")
   nodes <- nd[entity_type %in% IN_NET, .(variant = name, entity_type)]
@@ -178,8 +246,8 @@ build_entity_bag_map <- function() {
     v <- nodes$variant[i]; et <- nodes$entity_type[i]
     ovr <- ov[variant == v]
     if (nrow(ovr)) {
-      map_rows[[i]] <- data.table(variant = v, entity_type = et, bag_id = ovr$bag_id[1],
-                                  bag_label = ovr$bag_id[1], method = "override", score = NA_real_)
+      map_rows[[i]] <- data.table(variant = v, entity_type = et, bag_id = ovr$bag_id,
+                                  bag_label = ovr$bag_id, method = "override", score = NA_real_)
       next
     }
     if (et == "GSA") {

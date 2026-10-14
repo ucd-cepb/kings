@@ -67,8 +67,10 @@ build_entity_bag_lookup <- function() {
   lk[, bag_type := BAG_TYPE_OF[entity_type]]
 
   # ---- assertions ----------------------------------------------------------
-  if (anyDuplicated(lk$variant)) {
-    d <- lk$variant[duplicated(lk$variant)]
+  # a GSA variant naming several GSAs has one row per bag; a variant claimed by
+  # BOTH processes is still an error
+  if (nrow(d <- lk[, uniqueN(source), by = variant][V1 > 1L])) {
+    d <- d$variant
     stop("variant appears in more than one process: ", paste(head(d, 5), collapse = ", "))
   }
   if (anyNA(lk$bag_type)) stop("entity_type with no owning namespace: ",
