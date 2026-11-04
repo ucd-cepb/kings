@@ -1,49 +1,45 @@
-# step_5c_hypo3.R
-# Hypothesis 3: Distance to Leadership (GSA)
-# Tests whether DAC places are farther from GSA leadership.
-# Models: Poisson GLM
-#   - leader_dist_nona ~ DAC + POP_log + incorporated + per_latino
-#   - leader_dist_nona ~ MHI_log + per_latino + POP_log + incorporated
+# step_5c_hypo_3.R
+# Hypothesis 3: Distance to leadership (GSA)
+# Tests whether DAC places named in the plan are farther from GSA leadership.
+# Models: ordinal logit with plan random intercept, N = network nodes with DAC data
+#   (places named in the plan; inclusion itself is H1)
+#   leader_cat: 1 (direct tie to a GSA) < 2 (one intermediary) < 3+ < unreachable (isolated, or no path to a GSA)
+#   positive coefficients = farther from leadership
+#   - lead_1: leader_cat ~ DAC * incorporated + POP_log + per_latino + pages_log
+#   - lead_2: leader_cat ~ MHI_log * incorporated + POP_log + per_latino + pages_log
+#   MHI_log is centered at the mean of the community-plan pairs (H1 sample), so incorporated is the effect at mean income
+# Run from the project root (kings.Rproj).
 
-library(dotenv)
 library(tidyverse)
-library(stargazer)
-library(igraph)
-library(migraph)
-library(sjPlot)
+library(ordinal)
+library(modelsummary)
 
-load_dot_env()
+data_dir <- "EJ_DAC_Paper/Data/"
+mod_dir <- "EJ_DAC_Paper/Out/mods/"
+if (!dir.exists(mod_dir)) dir.create(mod_dir, recursive = TRUE)
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_2026")
-extract_list <- list.files(network_fp)
-gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+place_nodes <- read_csv(paste0(data_dir, "community_plan.csv")) %>%
+   # DAC data not available: no ACS income for the place
+   filter(!is.na(DAC)) %>%
+   mutate(MHI_log = log(MHI) - mean(log(MHI))) %>%
+   # network nodes only
+   filter(included == 1) %>%
+   mutate(GSP_ID = as.factor(GSP_ID),
+          POP_log = log(POP),
+          pages_log = log(pages),
+          leader_cat = factor(leader_cat,
+                              levels = c("1", "2", "3+", "unreachable"),
+                              ordered = TRUE))
 
-all_place_nodes <- data.frame()
+lead_1 <- clmm(leader_cat ~ DAC * incorporated + POP_log + per_latino + pages_log + (1 | GSP_ID),
+               data = place_nodes)
+lead_2 <- clmm(leader_cat ~ MHI_log * incorporated + POP_log + per_latino + pages_log + (1 | GSP_ID),
+               data = place_nodes)
 
-for (g in seq_along(gsp_ids)) {
-   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+lead_mods <- list("(1)" = lead_1, "(2)" = lead_2)
 
-   nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
-   place_nodes <- nodes %>%
-      mutate(across(any_of(c('deg', 'pr', 'pr_w', 'alpha', 'in', 'out', 'eig', 'gsp_id')),
-                    as.numeric)) %>%
-      mutate(
-         MHI_log = log(MHI),
-         POP_log = log(POP),
-         is_place = ifelse(is.na(GEOID20), 0, 1)
-      ) %>%
-      filter(is_place == 1)
+modelsummary(lead_mods, stars = TRUE, output = "markdown")
 
-   all_place_nodes <- rbind(all_place_nodes, place_nodes)
-}
+modelsummary(lead_mods, stars = TRUE, output = paste0(mod_dir, "h3_leader.html"))
 
-
-lead_1 <- glm(leader_dist_nona ~ DAC + POP_log + incorporated + per_latino,
-                        family = poisson, data = all_place_nodes)
-lead_2 <- glm(leader_dist_nona ~ MHI_log + per_latino + POP_log + incorporated,
-                        family = poisson, data = all_place_nodes)
-
-stargazer(lead_1, lead_2, type = 'text')
-
-stargazer(lead_1, lead_2, type='html',
-          out = 'EJ_DAC_Paper/Out/mods/h3_leader.html')
+saveRDS(lead_mods, paste0(mod_dir, "h3_leader.RDS"))

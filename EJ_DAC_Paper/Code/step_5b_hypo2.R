@@ -1,49 +1,41 @@
 # step_5b_hypo2.R
-# Hypothesis 2: Network Influence (Total degree)
-# Tests whether places receive more/less influence based on DAC status.
-# Models: Poisson GLM
-#   - deg_w ~ DAC + POP_log + incorporated + per_latino
-#   - deg_w ~ MHI_log + POP_log + incorporated + per_latino
+# Hypothesis 2: Network engagement (degree = node strength)
+# Tests whether places named in the plan have fewer ties based on DAC status.
+# Models: negative binomial with plan random intercept, N = network nodes with DAC data
+#   (places named in the plan; inclusion itself is H1). Degree = 0 (isolates) are observed zeros.
+#   - deg_1: degree ~ DAC * incorporated + POP_log + per_latino + pages_log
+#   - deg_2: degree ~ MHI_log * incorporated + POP_log + per_latino + pages_log
+#   MHI_log is centered at the mean of the community-plan pairs (H1 sample), so incorporated is the effect at mean income
+# Run from the project root (kings.Rproj).
 
-library(dotenv)
 library(tidyverse)
-library(stargazer)
-library(igraph)
-library(migraph)
-library(sjPlot)
-library(ggpubr)
+library(glmmTMB)
+library(modelsummary)
 
-load_dot_env()
+data_dir <- "EJ_DAC_Paper/Data/"
+mod_dir <- "EJ_DAC_Paper/Out/mods/"
+if (!dir.exists(mod_dir)) dir.create(mod_dir, recursive = TRUE)
 
-network_fp <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/cleaned_extracts_2026")
-extract_list <- list.files(network_fp)
-gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
+place_nodes <- read_csv(paste0(data_dir, "community_plan.csv")) %>%
+   # DAC data not available: no ACS income for the place
+   filter(!is.na(DAC)) %>%
+   mutate(MHI_log = log(MHI) - mean(log(MHI))) %>%
+   # network nodes only
+   filter(included == 1) %>%
+   mutate(GSP_ID = as.factor(GSP_ID),
+          POP_log = log(POP),
+          pages_log = log(pages))
 
-all_place_nodes <- data.frame()
+deg_1 <- glmmTMB(degree ~ DAC * incorporated + POP_log + per_latino + pages_log + (1 | GSP_ID),
+                 family = nbinom2, data = place_nodes)
+deg_2 <- glmmTMB(degree ~ MHI_log * incorporated + POP_log + per_latino + pages_log + (1 | GSP_ID),
+                 family = nbinom2, data = place_nodes)
 
-for (g in seq_along(gsp_ids)) {
-   net <- readRDS(paste0(network_fp, "/", extract_list[g]))
+deg_mods <- list("(1)" = deg_1, "(2)" = deg_2)
 
-   nodes <- tibble(igraph::as_data_frame(net, what = "vertices"))
-   place_nodes <- nodes %>%
-      mutate(across(any_of(c('deg', 'pr', 'pr_w', 'alpha', 'in', 'out', 'eig', 'gsp_id')),
-                    as.numeric)) %>%
-      mutate(
-         MHI_log = log(MHI),
-         POP_log = log(POP),
-         is_place = ifelse(is.na(GEOID20), 0, 1)
-      ) %>%
-      filter(is_place == 1)
+modelsummary(deg_mods, stars = TRUE, shape = term + component ~ model, output = "markdown")
 
-   all_place_nodes <- rbind(all_place_nodes, place_nodes)
-}
+modelsummary(deg_mods, stars = TRUE, shape = term + component ~ model,
+             output = paste0(mod_dir, "h2_degree.html"))
 
-
-deg_1 <- glm(`deg_w` ~ DAC + POP_log + incorporated + per_latino,
-                     family = poisson, data = all_place_nodes)
-deg_2 <- glm(`deg_w` ~ MHI_log + POP_log + incorporated + per_latino,
-                     family = poisson, data = all_place_nodes)
-
-stargazer(deg_1, deg_2, type = 'text')
-
-stargazer(deg_1, deg_2, type='html', out = 'EJ_DAC_Paper/Out/mods/h2_degree.html')
+saveRDS(deg_mods, paste0(mod_dir, "h2_degree.RDS"))

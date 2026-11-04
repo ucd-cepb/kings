@@ -288,9 +288,6 @@ GSP_ID,NAME20,GEOID20,Basin_Subb
 52,olivehurst,653714,5-021.61
 52,plumas_lake,657829,5-021.61
 52,rio_oso,660970,5-021.61
-53,yuba_city,686972,5-021.60
-53,marysville,646170,5-021.60
-53,honcut,634428,5-021.60
 54,bakersfield,603526,5-022.14
 54,arvin,602924,5-022.14
 54,shafter,671106,5-022.14
@@ -447,9 +444,6 @@ GSP_ID,NAME20,GEOID20,Basin_Subb
 88,dorris,619584,1-003
 88,macdoel,644812,1-003
 88,mount_hebron,649768,1-003
-89,etna,622972,1-005
-89,fort_jones,625128,1-005
-89,greenview,631134,1-005
 90,yreka,686944,1-004
 90,montague,648690,1-004
 90,weed,683850,1-004
@@ -841,5 +835,3 @@ GSP_ID,NAME20,GEOID20,Basin_Subb
 155,toro_canyon,679529,3-049
 156,thousand_oaks,678582,4-007
 156,santa_rosa_valley,670130,4-007
-157,carpinteria,611446,3-018
-157,toro_canyon,679529,3-018
