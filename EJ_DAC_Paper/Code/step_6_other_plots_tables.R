@@ -3,6 +3,7 @@
 #   - Table 2: descriptives of the network-node sample (places named in their plan, with DAC data)
 #   - sample flow: pairs -> with DAC data -> in network (H1 = 1; H2 / H3 sample) -> path to a GSA, by incorporation
 #   - model-implied quantities by DAC x incorporated (fixed effects only, averaged over each model's sample)
+#   - model tables for H1-H3 in one Word file (for Google Docs)
 #   - Figure 2: model-implied inclusion, degree, and distance to leadership over ln(MHI), by incorporation
 # Run from the project root (kings.Rproj).
 
@@ -12,6 +13,8 @@ library(ordinal)
 library(skimr)
 library(scales)
 library(ggpubr)
+
+source("EJ_DAC_Paper/Code/utils/model_tables.R")
 
 data_dir <- "EJ_DAC_Paper/Data/"
 mod_dir <- "EJ_DAC_Paper/Out/mods/"
@@ -95,6 +98,15 @@ write_csv(sample_flow, paste0(out_dir, "sample_flow.csv"))
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# model tables (utils/model_tables.R), one Word file for Google Docs
+
+save_as_docx("H1. Inclusion in the plan network (mixed logit)" = make_table(incl_mods),
+             "H2. Degree (mixed negative binomial)" = make_table(deg_mods),
+             "H3. Distance to leadership (mixed ordinal logit)" = make_table(lead_mods),
+             path = paste0(mod_dir, "model_tables.docx"))
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # model-implied quantities (fixed effects only, averaged over each model's sample)
 
 # H1 and H2: mean predicted response
@@ -138,7 +150,8 @@ write_csv(cell_preds, paste0(out_dir, "predictions_dac_incorporated.csv"))
 mhi_grid <- expand_grid(MHI_log = seq(min(all_places$MHI_log), max(all_places$MHI_log), length.out = 50),
                         incorporated = c(0, 1))
 
-mhi_preds <- map2_dfr(mhi_grid$MHI_log, mhi_grid$incorporated, function(mhi, inc) {
+# model (2) predictions at one centered ln(MHI) value and incorporation status
+mhi_predictions <- function(mhi, inc) {
    lead_probs <- ordinal_probs(lead_mods[["(2)"]],
                                place_nodes %>% mutate(MHI_log = mhi, incorporated = inc))
 
@@ -148,8 +161,11 @@ mhi_preds <- map2_dfr(mhi_grid$MHI_log, mhi_grid$incorporated, function(mhi, inc
                                    all_places %>% mutate(MHI_log = mhi, incorporated = inc)),
           degree = mean_response(deg_mods[["(2)"]],
                                  place_nodes %>% mutate(MHI_log = mhi, incorporated = inc)),
+          unreachable = lead_probs[["unreachable"]],
           far = lead_probs[["3+"]] + lead_probs[["unreachable"]])
-})
+}
+
+mhi_preds <- map2_dfr(mhi_grid$MHI_log, mhi_grid$incorporated, mhi_predictions)
 
 # mean ln(MHI) of DAC and non-DAC places
 dac_lines <- all_places %>%
@@ -159,12 +175,14 @@ dac_lines <- all_places %>%
 create_model_plot <- function(y_var, y_label) {
    plot <- ggplot(mhi_preds, aes(x = MHI_log, y = .data[[y_var]], color = incorporated)) +
       geom_line(linewidth = 1) +
-      scale_color_manual(name = 'Incorporated',
+      scale_color_manual(name = NULL,
                          values = c('darkorange', 'forestgreen'),
-                         labels = c('0', '1')) +
+                         labels = c('Unincorporated', 'Incorporated')) +
       geom_vline(xintercept = dac_lines$MHI_log, linetype = "dashed", color = "black") +
-      annotate('text', x = dac_lines$MHI_log[dac_lines$DAC == 1], y = -Inf, hjust = 1.1, vjust = -0.5, label = 'DAC') +
-      annotate('text', x = dac_lines$MHI_log[dac_lines$DAC == 0], y = -Inf, hjust = -0.1, vjust = -0.5, label = 'non-DAC') +
+      annotate('text', x = dac_lines$MHI_log[dac_lines$DAC == 1], y = Inf,
+               hjust = 1.1, vjust = 1.5, label = 'DAC') +
+      annotate('text', x = dac_lines$MHI_log[dac_lines$DAC == 0], y = Inf,
+               hjust = -0.1, vjust = 1.5, label = 'non-DAC') +
       labs(y = y_label) +
       theme_minimal() +
       scale_x_continuous(
@@ -201,3 +219,93 @@ results_plot <- ggarrange(plots[[1]], plots[[2]], plots[[3]],
                           labels = "AUTO"); results_plot
 
 ggsave(paste0(out_dir, 'results_plot.png'), results_plot, width = 10, height = 4)
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# NUMBERS REPORTED IN THE TEXT
+# With the interaction, each main coefficient is the effect at the other variable = 0:
+#   incorporated = effect for non-DAC places (models 1) or at mean ln(MHI) (models 2)
+#   DAC / ln(MHI) = effect for unincorporated places
+# Effects at other values are sums of coefficients, with SEs from the model vcov.
+#   - incorporated for non-DAC and DAC places (models 1)
+#   - incorporated at the mean ln(MHI) of non-DAC and DAC places (models 2)
+#   - doubling MHI, for unincorporated and incorporated places (models 2)
+#     (doubling is about the gap between DAC and non-DAC mean MHI)
+# ratio: odds ratio (H1, H3) or incidence rate ratio (H2); H3 ratio < 1 = closer to a GSA
+
+# fixed-effect coefficients and their vcov
+fixed_coefs <- function(model) {
+   if (inherits(model, "clmm")) {
+      list(b = model$beta,
+           V = vcov(model)[names(model$beta), names(model$beta)])
+   } else {
+      list(b = fixef(model)$cond,
+           V = vcov(model)$cond)
+   }
+}
+
+# effect = sum(weights x coefficients), e.g. c(incorporated = 1, "DAC:incorporated" = 1)
+lincom <- function(model, weights) {
+   coefs <- fixed_coefs(model)
+   stopifnot(all(names(weights) %in% names(coefs$b)))
+
+   w <- setNames(rep(0, length(coefs$b)), names(coefs$b))
+   w[names(weights)] <- weights
+   estimate <- sum(w * coefs$b)
+   se <- sqrt(drop(t(w) %*% coefs$V %*% w))
+
+   tibble(estimate = estimate,
+          se = se,
+          p = 2 * pnorm(-abs(estimate / se)),
+          ratio = exp(estimate),
+          ratio_low = exp(estimate - 1.96 * se),
+          ratio_high = exp(estimate + 1.96 * se))
+}
+
+# centered ln(MHI) at the DAC and non-DAC means
+mhi_dac <- dac_lines$MHI_log[dac_lines$DAC == 1] - mhi_center
+mhi_nondac <- dac_lines$MHI_log[dac_lines$DAC == 0] - mhi_center
+
+hypo_mods <- list("H1 inclusion" = incl_mods,
+                  "H2 degree" = deg_mods,
+                  "H3 leader distance" = lead_mods)
+
+text_effects <- map_dfr(names(hypo_mods), function(h) {
+   mods <- hypo_mods[[h]]
+
+   bind_rows(
+      lincom(mods[["(1)"]], c(incorporated = 1)) %>%
+         mutate(effect = "incorporated", at = "non-DAC"),
+      lincom(mods[["(1)"]], c(incorporated = 1, "DAC:incorporated" = 1)) %>%
+         mutate(effect = "incorporated", at = "DAC"),
+      lincom(mods[["(2)"]], c(incorporated = 1, "MHI_log:incorporated" = mhi_nondac)) %>%
+         mutate(effect = "incorporated", at = "non-DAC mean MHI"),
+      lincom(mods[["(2)"]], c(incorporated = 1, "MHI_log:incorporated" = mhi_dac)) %>%
+         mutate(effect = "incorporated", at = "DAC mean MHI"),
+      lincom(mods[["(2)"]], c(MHI_log = log(2))) %>%
+         mutate(effect = "MHI doubled", at = "unincorporated"),
+      lincom(mods[["(2)"]], c(MHI_log = log(2), "MHI_log:incorporated" = log(2))) %>%
+         mutate(effect = "MHI doubled", at = "incorporated")
+   ) %>%
+      mutate(hypothesis = h)
+}) %>%
+   select(hypothesis, effect, at, everything()) %>%
+   mutate(across(where(is.numeric), ~ round(.x, 3)))
+
+# the same contrasts on the outcome scale (model 2, fixed effects only, no uncertainty)
+#   included = Pr(named in plan), degree = expected ties, unreachable / far = Pr(no path / 3+ or no path)
+text_levels <- expand_grid(at = c("DAC mean MHI", "non-DAC mean MHI"),
+                           incorporated = c(0, 1)) %>%
+   mutate(mhi = ifelse(at == "DAC mean MHI", mhi_dac, mhi_nondac)) %>%
+   mutate(preds = map2(mhi, incorporated, mhi_predictions)) %>%
+   select(at, preds) %>%
+   unnest(preds) %>%
+   mutate(MHI = round(exp(MHI_log)),
+          across(c(included, degree, unreachable, far), ~ round(.x, 3))) %>%
+   select(at, MHI, incorporated, included, degree, unreachable, far)
+
+text_effects
+text_levels
+
+write_csv(text_effects, paste0(out_dir, "text_effects.csv"))
+write_csv(text_levels, paste0(out_dir, "text_levels.csv"))

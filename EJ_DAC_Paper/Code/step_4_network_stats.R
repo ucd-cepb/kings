@@ -143,6 +143,7 @@ plan_pages <- tibble(readRDS(pages_fp)) %>%
 
 place_nodes <- list()
 plan_edges <- list()
+manual_tags <- list()
 
 for (g in seq_along(gsp_ids)) {
    graph_stats <- net_stats(network_graph = readRDS(paste0(network_fp, extract_list[g])),
@@ -160,6 +161,12 @@ for (g in seq_along(gsp_ids)) {
    plan_edges[[g]] <- tibble(GSP_ID = gsp_ids[g],
                              edges = ecount(graph_stats),
                              n_gsa = sum(V(graph_stats)$GSA))
+
+   # manual GSA entries that tag a node in this plan
+   gsa_ids <- unlist(strsplit(gsa_gsp$GSA_IDs[as.numeric(gsa_gsp$GSP_ID) == gsp_ids[g]], ","))
+   manual_tags[[g]] <- gsa_manual %>%
+      filter(GSA_ID %in% gsa_ids, GSA_Name %in% V(graph_stats)$name) %>%
+      mutate(GSP_ID = gsp_ids[g], .before = 1)
 
    print(paste0("Finished ", gsp_ids[g]))
 }
@@ -183,5 +190,5 @@ community_plan <- all_places %>%
 
 write_csv(community_plan, paste0(data_dir, "community_plan.csv"))
 
-# appendix table: manual GSA entries
-write_csv(gsa_manual, paste0(data_dir, "gsa_manual_list.csv"))
+# appendix table: manually tagged GSA nodes, by plan
+write_csv(bind_rows(manual_tags), paste0(data_dir, "gsa_manual_list.csv"))
