@@ -11,8 +11,10 @@ source("Network_Innovation_Paper/Code/_corpus.R")   # latest_project_jaccard(), 
 # NIP_DOC_SELECT, whose only enabled value is the default `original` -- `latest` is
 # disabled pending the plan_family_id over-collapse fix; see select_plan_docs());
 # `id_to_doc` translates the legacy 4-digit gsp_id keys of the
-# other inputs onto that gsp_doc_id. gsp_id is retained only to attach the
-# plan-level covariates/shapefile (which have no document version).
+# similarity inputs (3A/3B/3C) and the shapefile onto that gsp_doc_id. The
+# entity product (gsa_bag_edges.csv) is already keyed on gsp_doc_id and needs
+# no translation. gsp_id is retained only to attach the plan-level
+# covariates/shapefile (which have no document version).
 sel <- modeling_plan_selection()
 id_to_doc <- function(gsp_id) sel$gsp_doc_id[match(as.character(gsp_id), sel$gsp_id)]
 
@@ -33,29 +35,41 @@ meta <- merge(sel[, .(gsp_doc_id, plan_family_id)], meta,
               by.x = 'plan_family_id', by.y = 'gsp_id', all.x = TRUE)
 
 
-gs_edge <- fread(nip_product('01_entity_classification', 'all_gsa_edges.csv'))
-gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
-gs_edge[, gsp_doc_id := id_to_doc(gsp_id)]      # canonical plan-document key
-gs_edge <- gs_edge[!is.na(gsp_doc_id) & !gsp_doc_id %in% bad_doc, ]
-
-gs_edge[, gsp_id := NULL]
-gs_melt <- melt(gs_edge,id.vars = c('gsp_doc_id','gsa'))
+# --- Stage 1 entity product: gsa_bag_edges.csv (build_gsa_bag_edges.R) ---------
+# One row per (document, AUTHORING GSA bag), keyed on gsp_doc_id directly (no
+# gsp_id translation, so nothing drops at the join). Alter columns are bag keys
+# ("bag:<bag_id>": every spelling of one agency/firm/NGO folded to one column),
+# with raw names only for entities no bag namespace covers. The companion
+# gsa_bag_edges_alters.csv types every column by the namespace that OWNS its
+# bag; that is what entity_names() groups on. The ego side is restricted to the
+# plan's authors (crosswalk gsa_ids) and pooled corpus-wide per authoring bag --
+# see build_gsa_bag_edges.R (1)-(7) and _entity_groups.R.
+# Replaced all_gsa_edges.csv / build_gsa_edges.R on 2026-11-16.
+gs_edge <- fread(nip_product('01_entity_classification', 'gsa_bag_edges.csv'),
+                 colClasses = list(character = c('gsp_doc_id', 'plan_family_id', 'gsa', 'gsa_label')))
+gs_edge <- gs_edge[gsp_doc_id %in% sel$gsp_doc_id & !gsp_doc_id %in% bad_doc, ]  # one doc per plan
+stopifnot(nrow(gs_edge) > 0)
+cat(sprintf("gsa_bag_edges: %d of %d selected plans have an authoring-bag row\n",
+            uniqueN(gs_edge$gsp_doc_id), sum(!sel$gsp_doc_id %in% bad_doc)))
+gs_melt <- melt(gs_edge, id.vars = c('gsp_doc_id', 'plan_family_id', 'gsa', 'gsa_label'),
+                variable.factor = FALSE)
+gs_melt <- gs_melt[value > 0]
 
 source("Network_Innovation_Paper/Code/_entity_groups.R")
-dict <- fread(nip_product('01_entity_classification', 'node_dictionary.csv'))
-
-gs_melt <- gs_melt[variable != 'inter_agency',]
+alters <- fread(nip_product('01_entity_classification', 'gsa_bag_edges_alters.csv'),
+                colClasses = list(character = c('name', 'entity_type', 'bag_type', 'bag_id', 'bag_label')))
 
 head(gs_melt)
-# Entity co-mention structure, keyed to the semantic entity types:
-#   generic    = all institutional actors (spaCy ORG + GPE + NORP, junk-pruned)
+# Entity co-mention structure, keyed to the semantic entity types (of the bag's
+# owning namespace):
+#   generic    = all institutional actors (GSA + the three focal types + Institutional_other)
 #   consultant / research / ngo = the three focal subnetworks, each on its own
 #   crn        = the 4th "grouped" run: the three focal types pooled
-gsp_generic_mat    <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'institutional'))
-gsp_consultant_mat <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'Consultant'))
-gsp_research_mat   <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'Research'))
-gsp_ngo_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'NGO'))
-gsp_crn_mat        <- build_shared_entity_matrix(gs_melt, entity_names(dict, 'consultant_research_ngo'))
+gsp_generic_mat    <- build_shared_entity_matrix(gs_melt, entity_names(alters, 'institutional'))
+gsp_consultant_mat <- build_shared_entity_matrix(gs_melt, entity_names(alters, 'Consultant'))
+gsp_research_mat   <- build_shared_entity_matrix(gs_melt, entity_names(alters, 'Research'))
+gsp_ngo_mat        <- build_shared_entity_matrix(gs_melt, entity_names(alters, 'NGO'))
+gsp_crn_mat        <- build_shared_entity_matrix(gs_melt, entity_names(alters, 'consultant_research_ngo'))
 
 ##### make reference similarity network #####
 ref_dyads <- readRDS(nip_product('03A_reference_extraction', 'gsp_reference_pairs.rds'))  # V1 = OpenAlex work id, V2 = gsp_doc_id
@@ -203,13 +217,15 @@ jac_totalentities      <- jac_genericentities
 # _entity_groups.R::build_shared_entity_matrix); the exposure it carries is
 # controlled HERE instead, and a 1-vs-23 agency gap is not a binary contrast.
 #
-# HOW MUCH this controls, measured (scratchpad/multgsa.R, 118-plan frame): the
-# entity-breadth gradient tracks the number of GSA ROWS in all_gsa_edges.csv
-# (cor 0.794), and only weakly the AUTHORING count this term uses (cor 0.243,
-# spearman 0.30; the two agency counts correlate 0.461). The gap is because
-# build_gsa_edges.R folds on every GSA-typed vertex in a document, authors or
-# not. So treat this as a partial control until Step 3 (build_gsa_bag_edges.R)
-# restricts entity observation to the author set, after which it lines up.
+# HOW MUCH this controls, measured on the retired raw-name edge file
+# (scratchpad/multgsa.R, 118-plan frame): the entity-breadth gradient tracked
+# the number of GSA ROWS in all_gsa_edges.csv (cor 0.794), and only weakly the
+# AUTHORING count this term uses (cor 0.243, spearman 0.30; the two agency
+# counts correlate 0.461), because build_gsa_edges.R folded on every GSA-typed
+# vertex in a document, authors or not. Since 2026-11-16 the covariate comes
+# from gsa_bag_edges.csv, which restricts entity observation to the author set
+# (crosswalk gsa_ids -- the same ids counted here), so the breadth the covariate
+# scales with is the count this term controls.
 # Collinearity with the other collaboration term is a non-issue:
 # cor(mult_gsa, joint_agency) = 0.113.
 #

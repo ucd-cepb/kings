@@ -18,9 +18,10 @@
 #' The entity products that used to live here are NOT ingest — they are in-project
 #' analysis and now own their own scripts under 01_entity_classification/:
 #'   - node_dictionary.csv  (LLM classification)      -> build_node_dictionary.R
-#'   - all_gsa_edges.csv    (folds core graphs by GSA type) -> build_gsa_edges.R
+#'   - gsa_bag_edges.csv    (folds core graphs onto authoring-GSA bags) -> build_gsa_bag_edges.R
 #' Both depend on the semantic types core does not carry, so they run AFTER this
-#' bridge. See run_all.R for the order.
+#' bridge; the edge fold also keys authorship through this crosswalk's gsa_ids.
+#' See run_all.R for the order.
 #'
 #' Run from the repo root:  Rscript Network_Innovation_Paper/Code/00_ingest_core.R
 #' Set CLOBBER=TRUE to overwrite existing products.

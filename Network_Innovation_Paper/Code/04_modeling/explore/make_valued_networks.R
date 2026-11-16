@@ -26,17 +26,19 @@ meta$Agr_Share_Of_GDP <- as.numeric(meta$Agr_Share_Of_GDP)
 meta <- merge(sel[, .(gsp_doc_id, gsp_id)], meta, by = 'gsp_id', all.x = TRUE)
 
 
-gs_edge <- fread(nip_product('01_entity_classification', 'all_gsa_edges.csv'))
-gs_edge$gsp_id <- formatC(gs_edge$gsp_id,width = 4,flag = '0')
-gs_edge[, gsp_doc_id := id_to_doc(gsp_id)]      # canonical plan-document key
-gs_edge <- gs_edge[!is.na(gsp_doc_id), ]        # keep selected plans (incl. 'bad'; they drop at vertex alignment)
-gs_edge[, gsp_id := NULL]
-gs_melt <- melt(gs_edge,id.vars = c('gsp_doc_id','gsa'))
+# Stage 1 entity product: gsa_bag_edges.csv (build_gsa_bag_edges.R), keyed on
+# gsp_doc_id; alter columns are bag keys, typed by gsa_bag_edges_alters.csv.
+# Replaced all_gsa_edges.csv on 2026-11-16; see make_binary0.9_networks.R.
+gs_edge <- fread(nip_product('01_entity_classification', 'gsa_bag_edges.csv'),
+                 colClasses = list(character = c('gsp_doc_id', 'plan_family_id', 'gsa', 'gsa_label')))
+gs_edge <- gs_edge[gsp_doc_id %in% sel$gsp_doc_id, ]   # keep selected plans (incl. 'bad'; they drop at vertex alignment)
+gs_melt <- melt(gs_edge, id.vars = c('gsp_doc_id', 'plan_family_id', 'gsa', 'gsa_label'),
+                variable.factor = FALSE)
+gs_melt <- gs_melt[value > 0]
 
 source("Network_Innovation_Paper/Code/_entity_groups.R")
-dict <- fread(nip_product('01_entity_classification', 'node_dictionary.csv'))
-
-gs_melt <- gs_melt[variable != 'inter_agency',]
+dict <- fread(nip_product('01_entity_classification', 'gsa_bag_edges_alters.csv'),
+              colClasses = list(character = c('name', 'entity_type', 'bag_type', 'bag_id', 'bag_label')))
 
 # Entity co-mention structure, keyed to the semantic entity types:
 #   generic    = all institutional actors (spaCy ORG + GPE + NORP, junk-pruned)

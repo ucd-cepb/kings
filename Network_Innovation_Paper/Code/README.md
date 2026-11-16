@@ -16,7 +16,7 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 | `run_all.R` | Orchestrator — regenerates the modeling inputs from current core (optional bridge + entity classification → preprocess → the three Stage 3 similarity products: 3A references, 3B project-Jaccard, 3C knowledge-tree). Every stage is an independent TRUE/FALSE toggle; 3A + 3C default OFF because they are intensive and need tools beyond R (anystyle/ruby + OpenAlex + Solr for 3A; a `jupyter` env for 3C). Builds only what a `04_modeling/*` script actually reads; skips the exploratory page-score branch (`03B_text_reuse/explore/` maps), which feeds nothing downstream. Resolves every path via `_paths.R`, runs each R stage in its own Rscript process, and the 3C similarity step via `jupyter nbconvert`. `RUN_INGEST=1` opts into the gated bridge + entity rebuild. |
 | `_paths.R` | Path resolver — every location (`core_*()`, `nip_input()`, `nip_product("<stage>", …)`, `nip_output()`/`nip_figure()`/`nip_table()`, `core_txt_clean()`, `stem_from_filename()`). Sourced by everything; hardcode no paths. Data products sit under `data_products/<stage>/`; results (figures/tables) under `outputs/`. |
 | `_corpus.R` | Core clean-text corpus reader + id helpers: `read_core_corpus()` (one parquet per `gspDocId`, cols `page`/`text`), `load_id_crosswalk()` (`gspDocId → gsp_id`/`version`/`doc_rank`), `select_plan_docs()` (one document per plan; `NIP_DOC_SELECT`=`original`, the default — **`latest` is disabled**, see the `plan_family_id` over-collapse note in the [primary README](../README.md)), `latest_page_scores()`. Sourced by the text-reuse feeders. |
-| `00_ingest_core.R` | The only *ingest* bridge to core; writes `data_products/00_ingest/id_crosswalk.csv` straight from the manifest (no derivation, no LLM) — with one documented exception, `apply_author_overrides()`, which fills authoring-agency fields the DWR scrape left blank from `inputs/doc_author_overrides.csv` (fill-only, roster-checked, provenance in `gsa_ids_source`). Detailed in the primary README. The entity products (`node_dictionary`, `all_gsa_edges`) are in-project analysis and live in `01_entity_classification/`. |
+| `00_ingest_core.R` | The only *ingest* bridge to core; writes `data_products/00_ingest/id_crosswalk.csv` straight from the manifest (no derivation, no LLM) — with one documented exception, `apply_author_overrides()`, which fills authoring-agency fields the DWR scrape left blank from `inputs/doc_author_overrides.csv` (fill-only, roster-checked, provenance in `gsa_ids_source`). Detailed in the primary README. The entity products (`node_dictionary`, the entity bags, `gsa_bag_edges`) are in-project analysis and live in `01_entity_classification/`. |
 | `_entity_groups.R` | Single source of truth for entity-type groupings over the six-leaf vocabulary. Shared: sourced by `01_entity_classification/classify_entities.R` **and** all three `04_modeling/*` scripts, so it stays at root. |
 
 ## `01_entity_classification/`
@@ -24,9 +24,13 @@ e.g. `Rscript Network_Innovation_Paper/Code/<path>.R`.
 The paper's own entity-classification stage (Stage 1) — in-project analysis, **not**
 ingest: core carries spaCy NER tags only, so the paper regenerates its six-leaf
 semantic vocabulary here (GSA / Consultant / Research / NGO / Institutional_other /
-Non_institutional) and derives the GSA edge product from it. Full subsystem doc:
-[`ENTITY_TAGGING.md`](01_entity_classification/ENTITY_TAGGING.md). Run order within
-the stage: `build_overrides_from_dicts.R` → `build_node_dictionary.R` → `build_gsa_edges.R`.
+Non_institutional), folds the name variants onto entity **bags**, and derives the
+authoring-GSA edge product from them. Full subsystem doc:
+[`ENTITY_TAGGING.md`](01_entity_classification/ENTITY_TAGGING.md); bag design and
+open items: [`data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md`](../data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md).
+Run order within the stage: `build_overrides_from_dicts.R` → `build_node_dictionary.R` →
+`build_entity_bag_map.R` → `write_bag_review.R` → `build_alter_bag_map.R` →
+`build_entity_bag_lookup.R` → `build_gsa_bag_edges.R`.
 
 - `build_overrides_from_dicts.R` — bakes the `core_code/dicts` gazetteers into
   `inputs/entity_type_overrides.csv`, the authoritative label source that wins over
@@ -37,9 +41,25 @@ the stage: `build_overrides_from_dicts.R` → `build_node_dictionary.R` → `bui
 - `build_node_dictionary.R` — collects the unique entity names from the core disambig
   objects and runs the (cached) classifier → `data_products/01_entity_classification/node_dictionary.csv`. The
   one step that hits the API. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R`.
-- `build_gsa_edges.R` — folds the core weighted graphs down to the GSA-typed entities
-  (read from `node_dictionary.csv`) → `data_products/01_entity_classification/all_gsa_edges.csv`. Run AFTER the
-  node dictionary. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_edges.R`.
+- `build_entity_bag_map.R` — folds GSA name variants onto roster `gsa_<GSA_ID>` bags
+  (exact → subset → revsubset → fuzzy tiers, guards for bare/generic/geographic
+  names) and consultants onto the firm roster → `entity_bag_map.csv` + the review
+  file `entity_bag_unmatched.csv`. `inputs/entity_bag_overrides_gsa.csv` (signed off)
+  wins over the matcher. `write_bag_review.R` then prints the bags as `GSA_BAGS_review.txt`.
+- `build_alter_bag_map.R` — folds the alter side per type into its own namespace
+  (`con_*`, `ngo_*`, `res_*`, `io_*` identity) → `alter_bag_map.csv`, `alter_bag_clusters.csv`,
+  `alter_bag_compounds.csv` (multi-organization mentions), `alter_bag_review_<type>.csv`.
+- `build_entity_bag_lookup.R` — assembles the one variant → bag join table →
+  `entity_bag_lookup.csv`, with the GSA override taking precedence over the
+  classifier's type; asserts the namespaces are disjoint.
+- `build_gsa_bag_edges.R` — folds the core weighted graphs into per-document
+  **authoring**-GSA bag edges (authorship = crosswalk `gsa_ids`; alters folded to
+  bag keys, compound mentions credit every bag they name; pooled corpus-wide per
+  authoring bag) → `gsa_bag_edges.csv` + the column dictionary
+  `gsa_bag_edges_alters.csv`. This is what `04_modeling/*` reads. Run LAST. Run
+  standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_bag_edges.R`.
+- `make_alter_overrides.R` — one-off curation tool (not in `run_all.R`) that
+  regenerates the NGO/research override files from the specs inside it.
 - `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
   names per predicted leaf for a human to eyeball. Run standalone: `NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R`.
 

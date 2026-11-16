@@ -82,7 +82,9 @@ flowchart TD
     key -.-> clf
 
     clf --> nd["data_products/node_dictionary.csv<br/>name → one of 7 types"]
-    nd --> groups["_entity_groups.R<br/>institutional gate + focal subnetworks"]
+    nd --> bags["entity bags<br/>build_entity_bag_map.R · build_alter_bag_map.R<br/>build_entity_bag_lookup.R → entity_bag_lookup.csv"]
+    bags --> edges["build_gsa_bag_edges.R<br/>authoring-GSA bag × alter-bag edges<br/>gsa_bag_edges.csv + _alters.csv"]
+    edges --> groups["_entity_groups.R<br/>institutional gate + focal subnetworks<br/>(grouped by the bag's owning type)"]
     groups --> model["04_modeling/* — shared-entity matrices → ERGMs"]
 
     nd -.->|blind stratified sample<br/>of the LLM tail| eval["eval_classifier.R → goldsheet_&lt;tag&gt;.csv<br/>human labels it →<br/>score_classifier.R (network gate + per-type P/R/F1)"]
@@ -144,14 +146,43 @@ Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_f
 |---|---|
 | `classify_entities.R` | The classifier: vocabulary, prompt, gazetteer + cache + LLM resolution. Public entry `classify_entities(names, hints)`. |
 | `build_node_dictionary.R` | Collects the unique entity names from the core disambig objects, calls the classifier, writes `data_products/node_dictionary.csv`. The only place the tagger runs in the pipeline (Stage 1b). |
-| `build_gsa_edges.R` | Folds the core weighted graphs down to the `GSA`-typed entities (from `node_dictionary.csv`) → `data_products/all_gsa_edges.csv` (Stage 1c). |
+| `build_entity_bag_map.R` | Folds GSA name variants onto roster `gsa_<GSA_ID>` bags (and consultants onto the firm roster) → `entity_bag_map.csv` + review file `entity_bag_unmatched.csv` (Stage 1c). `inputs/entity_bag_overrides_gsa.csv` wins over the matcher. `write_bag_review.R` prints the result as `GSA_BAGS_review.txt` (1d). |
+| `build_alter_bag_map.R` | Folds the alter side per type into its own namespace (`con_*`, `ngo_*`, `res_*`, `io_*`) → `alter_bag_map.csv`, `alter_bag_clusters.csv`, `alter_bag_compounds.csv`, `alter_bag_review_<type>.csv` (Stage 1e). |
+| `build_entity_bag_lookup.R` | Assembles the one variant → bag join table → `entity_bag_lookup.csv` (Stage 1f). The GSA override takes precedence over the classifier's type, so an override name typed `Institutional_other` by the LLM still sits in the `gsa` namespace. |
+| `build_gsa_bag_edges.R` | Folds the core weighted graphs into per-document **authoring**-GSA bag edges, alters folded to bag keys → `gsa_bag_edges.csv` + the column dictionary `gsa_bag_edges_alters.csv` (Stage 1g). What `04_modeling/*` reads. Replaced `build_gsa_edges.R` / `all_gsa_edges.csv` on 2026-11-16. |
 | `build_overrides_from_dicts.R` | Bakes `core_code/dicts/*` into `inputs/entity_type_overrides.csv` (preserving hand rules). |
 | `eval_classifier.R` | **Gold-sheet generator.** Draws a BLIND sample of only the names the LLM decided (gazetteer-pinned names are correct by assertion, so excluded), oversampling the four org types + high-frequency names, and writes `data_products/eval/goldsheet_<tag>.csv` (name + spaCy + freq, **no prediction shown**) for a human to fill `gold_type` on, plus a hidden `strata_<tag>.csv` key and a cached `entity_frequencies.csv`. |
 | `score_classifier.R` | **Scorer.** Reads the filled `goldsheet_<tag>.csv`, rejoins the shipped prediction, and reports the metrics the modeling actually uses — the **network gate** (does a name go into a network) + **per-type** one-vs-rest P/R/F1 with Wilson 95% CIs, each **name-level and mention-weighted**, plus confusion tables for the pairs that get mixed up. Writes `errors_<tag>.csv`, `promote_candidates_<tag>.csv` (high-n institutional misses, ready to append to the gazetteer), and `metrics_<tag>.csv`. |
-| `_entity_groups.R` | The groupings the types feed (which names go into a network, the org-type subnetworks). Both `Non_institutional` and `Institutional_unresolved` are excluded from every grouping. Consumed by `04_modeling/*`. |
+| `_entity_groups.R` | The groupings the types feed (which columns go into a network, the org-type subnetworks). Groups a folded alter column by the type that **owns its bag** (`bag_type` in `gsa_bag_edges_alters.csv`), a raw column by its `node_dictionary` type. Both `Non_institutional` and `Institutional_unresolved` are excluded from every grouping. Consumed by `04_modeling/*`. |
 | `inputs/entity_type_overrides.csv` | The deterministic gazetteer (exact + regex) — the only authoritative label source. |
 | `data_products/node_dictionary.csv` | The output: every unique name → one of the seven types. |
 | `data_products/entity_type_cache.csv` | Name→type cache; delete to re-classify. |
+
+## From types to bags to edges
+
+The type is only the first half of the subsystem. The second half folds the
+thousands of spelling variants of one organization onto a single **bag** so the
+network counts an actor once, and then builds the edge product the models read:
+
+1. `build_entity_bag_map.R` — GSA variants → roster `gsa_<GSA_ID>` bags
+   (tiers exact → subset → revsubset → fuzzy, with guards for bare, generic and
+   geographic names); `inputs/entity_bag_overrides_gsa.csv` holds the signed-off
+   decisions and wins over the matcher, **including over the LLM type** (24
+   override names are typed `Institutional_other`, e.g. `pixid` → gsa_43).
+2. `build_alter_bag_map.R` — Consultant / NGO / Research / Institutional_other
+   each fold within their own namespace (`con_`, `ngo_`, `res_`, `io_`), so focal
+   subnetworks can never cross-merge.
+3. `build_entity_bag_lookup.R` — the one join table, namespaces asserted disjoint.
+4. `build_gsa_bag_edges.R` — per-document edges from the core graphs: an ego
+   counts only if its bag **authors** the document (crosswalk `gsa_ids`), alters
+   are folded to bag keys (a compound mention credits every bag it names), and
+   each authoring bag's profile is pooled corpus-wide. Writes `gsa_bag_edges.csv`
+   and `gsa_bag_edges_alters.csv`, the per-column dictionary (`name`,
+   `entity_type` of the owning namespace, `bag_type`, `bag_id`, `bag_label`,
+   `n_variants`, `folded`) that `_entity_groups.R::entity_names()` groups on.
+
+Rules, tiers, review markup and open items are documented in
+[`data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md`](../../data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md).
 
 ## Running it
 
@@ -161,6 +192,13 @@ Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_f
 
 # Classify any new names, writes node_dictionary.csv
 CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R
+
+# Fold names onto bags and build the edge product the models read (in order)
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_entity_bag_map.R
+Rscript Network_Innovation_Paper/Code/01_entity_classification/write_bag_review.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_alter_bag_map.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_entity_bag_lookup.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_bag_edges.R
 
 # Evaluate the LLM tail: 1) generate a blind gold sheet, 2) hand-label
 # goldsheet_current.csv, 3) score it

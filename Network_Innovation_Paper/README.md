@@ -31,7 +31,7 @@ data/core_data ─┐
                 ├─►  Code/00_ingest_core.R  ─►  data_products/00_ingest/id_crosswalk   (pure bridge)
 inputs/ ────────┘            │
                              ▼
-   Code/01_entity_classification/  ─►  data_products/01_entity_classification/{node_dictionary, all_gsa_edges}  (in-project; LLM)
+   Code/01_entity_classification/  ─►  data_products/01_entity_classification/{node_dictionary, entity bags, gsa_bag_edges}  (in-project; LLM)
                              │
                              ▼
    Code/{03A_reference_extraction, 03B_text_reuse,     ┌─► data_products/{03A_reference_extraction/gsp_reference_pairs,
@@ -152,18 +152,30 @@ over from core. This stage runs its scripts in order and writes two
   at). See [`ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for
   the vocabulary and the gazetteer → cache → LLM resolution.
 
-- **`all_gsa_edges.csv`** — per-plan agency × connected-entity mention-weight
-  matrix, built by `build_gsa_edges.R` from
-  `core_data/igraph_objects/uniplex_weighted_graphs` by folding edges onto their
-  GSA-typed endpoint (the `GSA` leaf in `node_dictionary.csv`). Depends on the
-  classifier, so it runs after the node dictionary. Consumed by `modeling/*`.
+- **Entity bags** (`entity_bag_map.csv`, `alter_bag_map.csv`, `entity_bag_lookup.csv`)
+  — every in-network name variant folded onto one canonical bag: GSAs onto roster
+  `gsa_<GSA_ID>` ids (signed-off decisions in `inputs/entity_bag_overrides_gsa.csv`),
+  consultants / NGOs / research orgs into their own `con_` / `ngo_` / `res_`
+  namespaces. Design, rules, and open items:
+  [`data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md`](data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md).
+- **`gsa_bag_edges.csv`** (+ `gsa_bag_edges_alters.csv`) — per-document
+  **authoring**-GSA-bag × alter-bag mention-weight matrix, built by
+  `build_gsa_bag_edges.R` from `core_data/igraph_objects/uniplex_weighted_graphs`:
+  an ego is kept only if its bag authors the document (crosswalk `gsa_ids`), its
+  alters are folded to bag keys, and its profile is pooled across every document
+  it authors. Keyed on `gsp_doc_id` + 4-digit `plan_family_id`. Consumed by
+  `04_modeling/*`. (Replaced `all_gsa_edges.csv` / `build_gsa_edges.R` on 2026-11-16.)
 
 Run from the repo root (in order):
 
 ```sh
 Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_from_dicts.R
 CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R
-CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_edges.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_entity_bag_map.R
+Rscript Network_Innovation_Paper/Code/01_entity_classification/write_bag_review.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_alter_bag_map.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_entity_bag_lookup.R
+CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_bag_edges.R
 ```
 
 ## `Code/` layout
@@ -178,7 +190,7 @@ unprefixed files, not stages of the page pipeline.
 |---|---|---|
 | `_paths.R`, `_corpus.R` | — | Helpers: the path resolver and the core clean-text corpus + id-crosswalk readers. Sourced everywhere; no run order. |
 | `00_ingest_core.R` | 00 | Core → paper *ingest* bridge (above): `id_crosswalk.csv` only, no derivation, no LLM. |
-| `01_entity_classification/` | 01 | Entity classification (in-project, not ingest): `build_overrides_from_dicts.R` → `build_node_dictionary.R` (→ `node_dictionary.csv`, LLM) → `build_gsa_edges.R` (→ `all_gsa_edges.csv`), plus `classify_entities.R` (sourced) and `eval_classifier.R`. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for the whole tagging subsystem. |
+| `01_entity_classification/` | 01 | Entity classification (in-project, not ingest): `build_overrides_from_dicts.R` → `build_node_dictionary.R` (→ `node_dictionary.csv`, LLM) → the bag scripts (`build_entity_bag_map.R`, `build_alter_bag_map.R`, `build_entity_bag_lookup.R`) → `build_gsa_bag_edges.R` (→ `gsa_bag_edges.csv`), plus `classify_entities.R` (sourced) and `eval_classifier.R`. See [`Code/01_entity_classification/ENTITY_TAGGING.md`](Code/01_entity_classification/ENTITY_TAGGING.md) for the whole tagging subsystem. |
 | `02_text_preprocessing/` | 02 | Stage-2 build of `page_metadata.RDS` — **not** obviated by core. Core supplies pre-split clean-text parquet, but this still applies the paper's own page filter (`cleanText`: short-page + all-caps + stricter numeric/whitespace; core's `step2` already handles total-punctuation), recovers legacy `gsp_id`/`version` via `id_crosswalk.csv`, and joins the core page-section flags (`core_page_sections()`). Output is **metadata-only** (keys + section flags, ~0.24 MB): surviving rows mark the pages that passed the filter; full page text stays in core and is re-attached on demand via `attach_page_text()` (`_corpus.R`). Prerequisite of 03B and 03C. |
 | `03A_reference_extraction/` | 03A | Extract & match plan bibliographic references (independent of 02). |
 | `03B_text_reuse/` | 03B | Page/section text-similarity + spatial adjacency (consumes 02). |
@@ -197,7 +209,7 @@ product is traceable to its script at a glance. Resolve one with
 | Subfolder | Written by | Key products |
 |---|---|---|
 | `00_ingest/` | `00_ingest_core.R` | `id_crosswalk.csv` |
-| `01_entity_classification/` | `01_entity_classification/*` | `node_dictionary.csv`, `all_gsa_edges.csv`, `entity_type_cache.csv`, `eval/` |
+| `01_entity_classification/` | `01_entity_classification/*` | `node_dictionary.csv`, `entity_bag_map.csv`, `alter_bag_map.csv`, `entity_bag_lookup.csv`, `gsa_bag_edges.csv`, `gsa_bag_edges_alters.csv`, `entity_type_cache.csv`, review files, `eval/` |
 | `02_text_preprocessing/` | `02_text_preprocessing/*` | `page_metadata.RDS` |
 | `03A_reference_extraction/` | `03A_reference_extraction/*` | `gsp_reference_pairs.rds`, `extracted_references/`, intermediate `.rds` |
 | `03B_text_reuse/` | `03B_text_reuse/*` | `project_jaccard_results/`, `score_results/` |

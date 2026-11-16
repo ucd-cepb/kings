@@ -1,6 +1,13 @@
 #' _entity_groups.R — single source of truth for entity-type groupings used by
 #' the modeling scripts (make_binary0.9; explore/make_networks, explore/make_valued_networks).
 #'
+#' Since 2026-11-16 the modeling reads gsa_bag_edges.csv, whose alter columns are
+#' BAG keys ("bag:<bag_id>", see build_gsa_bag_edges.R), and groups them with the
+#' companion gsa_bag_edges_alters.csv: one row per column, typed by the namespace
+#' that OWNS the bag (`bag_type`). entity_names() therefore groups by bag_type
+#' when it is present and falls back to entity_type (a raw name's node_dictionary
+#' type) otherwise.
+#'
 #' Every name in node_dictionary.csv has ONE type from the seven in
 #' classify_entities.R (GSA, Consultant, Research, NGO, Institutional_other,
 #' Institutional_unresolved, Non_institutional). Two of them never go into a
@@ -48,8 +55,9 @@ FOCAL_TYPES <- c("Consultant", "Research", "NGO")
 # plan at all. So the exclusion is by identity, not by frequency; see
 # build_shared_entity_matrix(), which no longer filters on prevalence.
 #
-# Listed in BOTH the raw node_dictionary spelling and the `io_` bag id, so the
-# exclusion holds before and after the modeling stage moves onto bags.
+# Listed in the raw node_dictionary spelling, the `io_` bag id, and the bag
+# column key the edge file uses ("bag:io_..."), so the exclusion holds whichever
+# form a caller's column names take.
 # Scope decision (2026-10-08): state/nation only. County names are NOT here --
 # two plans both naming Kern County share real co-location, and counties are
 # frequently governmental actors in these plans. The other bare-geography
@@ -59,7 +67,9 @@ FOCAL_TYPES <- c("Consultant", "Research", "NGO")
 NON_ACTOR_ENTITIES <- c(
   "california", "calif", "united_states", "united_states_of_america", "us",
   "io_california", "io_calif", "io_united_states",
-  "io_united_states_of_america", "io_us"
+  "io_united_states_of_america", "io_us",
+  "bag:io_california", "bag:io_calif", "bag:io_united_states",
+  "bag:io_united_states_of_america", "bag:io_us"
 )
 
 # Named group -> the set of semantic types it selects.
@@ -71,14 +81,34 @@ ENTITY_GROUPS <- list(
   consultant_research_ngo = FOCAL_TYPES
 )
 
-#' Names in `dict` whose entity_type belongs to a named group (or an explicit
-#' vector of types).
-#' @param dict data.table/data.frame with columns name, entity_type
+# bag namespace prefix -> the entity type that owns it (entity_bag_lookup.csv
+# `bag_type`; mirrored in build_gsa_bag_edges.R)
+BAG_TYPE_TO_ENTITY <- c(gsa = "GSA", con = "Consultant", ngo = "NGO",
+                        res = "Research", io = "Institutional_other")
+
+#' Column keys in `dict` whose OWNING type belongs to a named group (or an
+#' explicit vector of types).
+#'
+#' `dict` is normally gsa_bag_edges_alters.csv (columns name, entity_type,
+#' bag_type, bag_id, ...). A folded column ("bag:<bag_id>") is grouped by the
+#' type that owns its bag (`bag_type`), never by the LLM type of any one
+#' spelling -- so `pixid` (Institutional_other by the classifier, gsa_43 by the
+#' signed-off override) counts as a GSA, and every spelling of a firm lands in
+#' the Consultant group together. A raw (unfolded) column has no bag_type and is
+#' grouped by its node_dictionary entity_type. A plain node_dictionary.csv
+#' (name, entity_type) still works, for the legacy raw-name path.
+#' @param dict data.table/data.frame with columns name, entity_type[, bag_type]
 #' @param group either a name in ENTITY_GROUPS or a character vector of types
 entity_names <- function(dict, group) {
   types <- if (length(group) == 1L && group %in% names(ENTITY_GROUPS))
     ENTITY_GROUPS[[group]] else group
-  unique(dict$name[dict$entity_type %in% types])
+  et <- as.character(dict$entity_type)
+  if ("bag_type" %in% names(dict)) {
+    bt  <- as.character(dict$bag_type)
+    has <- !is.na(bt) & nzchar(bt)
+    et[has] <- unname(BAG_TYPE_TO_ENTITY[bt[has]])
+  }
+  unique(dict$name[!is.na(et) & et %in% types])
 }
 
 # --- gsp x gsp shared-entity matrix -------------------------------------------
@@ -103,8 +133,9 @@ entity_names <- function(dict, group) {
 #' NOT part of it: the direction of the relation, and its volume.
 #'
 #' UNDIRECTED BY DECISION (2026-10-08, user), not by accident.
-#' build_gsa_edges.R:55-58 rbinds both orientations into one (gsa, connected_to)
-#' cell, so a GSA->alter and an alter->GSA relation become the same number. The
+#' build_gsa_bag_edges.R (.contrib_one: `edf[from == v | to == v]`) folds both
+#' orientations into one (ego, alter) cell, exactly as the retired
+#' build_gsa_edges.R did, so a GSA->alter and an alter->GSA relation become the same number. The
 #' core uniplex graphs are directed and keep from/to, so this is recoverable --
 #' it is simply not wanted here: the construct is the existence of a relational
 #' event, and which end was the grammatical subject does not bear on it. Treat
@@ -148,16 +179,16 @@ entity_names <- function(dict, group) {
 #' not reachable by any transform here; it needs a modeling-side change (an
 #' author-count control, or separate terms).
 #'
-#' SCOPE of a 1, in the CURRENT (raw-name) pipeline: "a parsed relation to this
-#' entity from at least one GSA-TYPED VERTEX IN THE DOCUMENT" -- not "appears in
-#' the document", but also NOT restricted to the plan's authors. build_gsa_edges.R
-#' folds on every GSA-typed vertex it finds, so a GSA that is merely mentioned
-#' contributes its ego neighborhood too. (Step 3's build_gsa_bag_edges.R DOES
-#' restrict to the author set via `intersect(.family_of(X, fam), author_set)`, so
-#' the narrower "from >= 1 authoring agency" reading becomes true only after the
-#' bag rewire. Corrected 2026-10-08 -- an earlier version of this comment claimed
-#' the authoring reading for the current pipeline. It is wrong; doc 3712 has 32
-#' GSA rows in the edge file and 0 recorded authors.)
+#' SCOPE of a 1 (since the bag rewire, 2026-11-16): "a parsed relation to this
+#' entity from at least one AUTHORING agency of the plan, anywhere in the corpus"
+#' -- build_gsa_bag_edges.R keeps an ego only if its bag is in the document's
+#' crosswalk `gsa_ids` (`intersect(.family_of(X, fam), author_set)`), and pools
+#' each authoring bag's alters across every document it authors before attaching
+#' that profile to the plan. The retired raw-name pipeline (build_gsa_edges.R,
+#' all_gsa_edges.csv) folded on every GSA-typed vertex it found, authors or not,
+#' so a merely-mentioned GSA contributed its ego neighborhood too (doc 3712 had
+#' 32 GSA rows there and 0 recorded authors). The entity itself is now a BAG, so
+#' every spelling of one firm scores the same column.
 #'
 #' AGENCY BREADTH IS SIGNAL, NOT A CONFOUND (decided 2026-10-08, user). Documents
 #' touching more GSA vertices register more distinct entities -- cor = 0.794 with
@@ -167,10 +198,10 @@ entity_names <- function(dict, group) {
 #' Note which quantity that is, because it is NOT the one the models control:
 #' correlation with the count of AUTHORING agencies (crosswalk `gsa_ids`, the
 #' mult_gsa term) is only 0.243 (spearman 0.30), and the two agency counts
-#' correlate 0.461 with each other. So nodecov('mult_gsa') in the modeling
-#' scripts is a weak control for this gradient while the covariate is built from
-#' raw names; it becomes an apt one after the Step-3 rewire restricts entity
-#' observation to authors.
+#' correlate 0.461 with each other. Those figures are from the raw-name edge
+#' file; since the bag rewire restricts entity observation to the authoring
+#' agencies, the agency count the covariate scales with IS the one
+#' nodecov('mult_gsa') controls.
 #' The one thing that DID have to go is magnitude double-counting, and binarizing
 #' removes it in a provable form rather than approximately: because
 #' sum(value) > 0 is identical to any(value > 0), the binary cell is INVARIANT to
@@ -200,7 +231,8 @@ entity_names <- function(dict, group) {
 #' that do not belong in a tie are now removed by identity (step 2), which is the
 #' claim we can actually defend.
 #'
-#' @param gs_melt long data.table with columns gsp_doc_id, variable (entity name), value
+#' @param gs_melt long data.table with columns gsp_doc_id, variable (alter column
+#'   key: "bag:<bag_id>" or a raw name), value
 #' @param names   entity names to include (from entity_names())
 #' @param prevalence_max optional share-of-plans cut, OFF by default (NA). Retained
 #'   only so a reviewer can reproduce the old behaviour or run a robustness check;

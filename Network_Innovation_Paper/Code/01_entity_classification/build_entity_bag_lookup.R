@@ -2,7 +2,7 @@
 #'
 #' The bag redesign runs as several INDEPENDENT processes, each owning one entity
 #' type and one bag namespace. This script does no matching of its own; it just
-#' assembles their outputs into the single lookup the edge builders and the
+#' assembles their outputs into the single lookup the edge builder and the
 #' modeling grouping code join on, and proves the namespaces stay disjoint.
 #'
 #'   entity_type           bag namespace   authority / producer
@@ -14,18 +14,29 @@
 #'   Research              res_*           build_alter_bag_map.R (self-cluster)
 #'   Institutional_other   io_*            build_alter_bag_map.R (identity, DEFERRED)
 #'
-#' GSA rows are taken ONLY from entity_bag_map.csv: that process is the load-bearing
-#' one, it is signed off, and nothing in the alter processes may move a GSA bag. The
-#' alter types are taken ONLY from alter_bag_map.csv, which supersedes the identity
-#' passthrough those types still have inside entity_bag_map.csv.
+#' GSA rows follow the SAME precedence build_gsa_bag_edges.R uses to resolve a
+#' name (its .build_resolver()): every variant in the GSA override file is a GSA
+#' bag member whatever type the classifier gave it, then the entity_bag_map.csv
+#' rows typed GSA. The override is authoritative over the LLM type: 24 override
+#' names are typed Institutional_other ("pixid" -> gsa_43, the Eastern Tule GSA
+#' board/committee names -> gsa_205) and 4 Non_institutional
+#' ("greaterkaweahgsaorg" -> gsa_281). Before 2026-11-16 the lookup took only
+#' the map's GSA-typed rows, so those names landed in the alter namespaces
+#' (io_pixid) and disagreed with the edge builder on 43 variants.
+#' The alter types are taken ONLY from alter_bag_map.csv, minus any GSA override
+#' variant; alter_bag_map supersedes the identity passthrough those types still
+#' have inside entity_bag_map.csv.
 #'
-#' `bag_type` is the entity type that owns the bag. Every bag is type-homogeneous by
-#' construction (each process only ever folds within its own type), and that is
-#' asserted here rather than assumed.
+#' `entity_type` is what node_dictionary.csv says about the SPELLING (provenance);
+#' `bag_type` is the namespace that OWNS the bag, and is what downstream code
+#' groups on. Every bag is type-homogeneous by construction (each process only
+#' ever folds within its own type), and that is asserted here rather than assumed.
 #'
-#' Reads : entity_bag_map.csv, alter_bag_map.csv
+#' Reads : entity_bag_map.csv, alter_bag_map.csv, node_dictionary.csv,
+#'         inputs/entity_bag_overrides_gsa.csv
 #' Writes: data_products/01_entity_classification/entity_bag_lookup.csv
-#'   columns: variant, entity_type, bag_id, bag_label, bag_type, method, source
+#'   columns: variant, entity_type, bag_id, bag_label, method, joined, source,
+#'            bag_type, is_roster_gsa
 #'
 #' Run from the repo root:
 #'   Rscript Network_Innovation_Paper/Code/01_entity_classification/build_entity_bag_lookup.R
@@ -53,22 +64,46 @@ build_entity_bag_lookup <- function() {
     message("exists, skipping (set CLOBBER=TRUE to rebuild): ", out); return(invisible(NULL))
   }
 
-  ego <- fread(nip_product("01_entity_classification", "entity_bag_map.csv"),
-               colClasses = "character")[entity_type == "GSA"]
+  ego_all <- fread(nip_product("01_entity_classification", "entity_bag_map.csv"),
+                   colClasses = "character")
   alt <- fread(nip_product("01_entity_classification", "alter_bag_map.csv"),
                colClasses = "character")
+  nd  <- fread(nip_product("01_entity_classification", "node_dictionary.csv"),
+               colClasses = "character")
+  ov  <- fread(nip_input("entity_bag_overrides_gsa.csv"), colClasses = "character")
+  if (!"canonical_label" %in% names(ov)) ov[, canonical_label := ""]
+  ov  <- unique(ov[, .(variant, bag_id, canonical_label)], by = c("variant", "bag_id"))
 
-  keep <- c("variant", "entity_type", "bag_id", "bag_label", "method")
-  if (!"joined" %in% names(ego)) ego[, joined := NA_character_]
-  if (!"joined" %in% names(alt)) alt[, joined := NA_character_]
-  keep <- c(keep, "joined")
-  lk <- rbind(ego[, ..keep][, source := "entity_bag_map"],
-              alt[, ..keep][, source := "alter_bag_map"])
+  keep <- c("variant", "entity_type", "bag_id", "bag_label", "method", "joined")
+  if (!"joined" %in% names(ego_all)) ego_all[, joined := NA_character_]
+  if (!"joined" %in% names(alt))     alt[, joined := NA_character_]
+
+  # ---- GSA rows: override (any classifier type) wins, then the map's GSA rows --
+  ego <- ego_all[entity_type == "GSA" & !variant %in% ov$variant, ..keep]
+  ego[, source := "entity_bag_map"]
+
+  ovr <- ov[, .(variant, bag_id)]
+  ovr[, entity_type := nd$entity_type[match(variant, nd$name)]]
+  ovr[is.na(entity_type), entity_type := "GSA"]        # not in the dictionary: trust the override
+  # label: the map's real label for that bag, else the override's canonical label, else the id
+  maplab <- ego_all[bag_label != bag_id, .(lab = bag_label[1]), by = bag_id]
+  ovlab  <- ov[nzchar(canonical_label), .(lab = canonical_label[1]), by = bag_id]
+  ovr[, bag_label := fcoalesce(maplab$lab[match(bag_id, maplab$bag_id)],
+                               ovlab$lab[match(bag_id, ovlab$bag_id)], bag_id)]
+  ovr[, `:=`(method = "override", joined = NA_character_, source = "overrides_gsa")]
+  ovr <- ovr[, c(keep, "source"), with = FALSE]
+
+  # ---- alter rows: everything else, minus the GSA override variants -----------
+  alt <- alt[!variant %in% ov$variant, ..keep]
+  alt[, source := "alter_bag_map"]
+
+  lk <- rbind(ego, ovr, alt)
   lk[, bag_type := BAG_TYPE_OF[entity_type]]
+  lk[source %in% c("entity_bag_map", "overrides_gsa"), bag_type := "gsa"]
 
   # ---- assertions ----------------------------------------------------------
   # a GSA variant naming several GSAs has one row per bag; a variant claimed by
-  # BOTH processes is still an error
+  # more than ONE process is still an error
   if (nrow(d <- lk[, uniqueN(source), by = variant][V1 > 1L])) {
     d <- d$variant
     stop("variant appears in more than one process: ", paste(head(d, 5), collapse = ", "))
@@ -77,32 +112,41 @@ build_entity_bag_lookup <- function() {
                                paste(unique(lk[is.na(bag_type), entity_type]), collapse = ", "))
   leak <- lk[, uniqueN(bag_type), by = bag_id][V1 > 1L]
   if (nrow(leak)) stop("bag_id spans >1 namespace: ", paste(head(leak$bag_id, 5), collapse = ", "))
-  # The check above only catches one bag_id STRING claimed by two types, which the
-  # upstream processes already prevent — it never tested the stated invariant that a
-  # bag sits inside its own type's namespace. This does.
-  #
-  # The GSA namespace is the documented exception: build_entity_bag_map.R leaves an
-  # unmatched GSA variant on a BARE identity bag ("los_angeles_gsa"), so a gsa_* bag
-  # is not prefix-identifiable. Six of them are even spelled "gsa_<word>" because the
-  # VARIANT starts with "gsa_". Downstream code must therefore always carry bag_type
-  # and never re-derive a type from the bag_id prefix.
-  mis <- lk[entity_type != "GSA" & sub("_.*$", "", bag_id) != bag_type]
+  # A bag must sit inside its own type's namespace. The GSA namespace is the
+  # documented exception: build_entity_bag_map.R leaves an unmatched GSA variant on
+  # a BARE identity bag ("los_angeles_gsa"), and the override file holds the KGA
+  # umbrella on a bare id, so a gsa_* bag is not prefix-identifiable. Six are even
+  # spelled "gsa_<word>" because the VARIANT starts with "gsa_". Downstream code
+  # must therefore always carry bag_type and never re-derive a type from the prefix.
+  mis <- lk[bag_type != "gsa" & sub("_.*$", "", bag_id) != bag_type]
   if (nrow(mis)) stop(sprintf("%d bag_id(s) outside their type's namespace: %s",
                               nrow(mis), paste(head(mis$bag_id, 5), collapse = ", ")))
-  nbare <- lk[entity_type == "GSA" & !grepl("^gsa_", bag_id), .N]
+  # Same precedence as build_gsa_bag_edges.R::.build_resolver(): every override
+  # (variant, bag_id) pair is a gsa-namespace row, and every map GSA row survives.
+  res <- unique(rbind(ov[, .(variant, bag_id)],
+                      ego_all[entity_type == "GSA" & !variant %in% ov$variant, .(variant, bag_id)]))
+  got <- lk[bag_type == "gsa", .(variant, bag_id)]
+  if (!identical(nrow(fsetdiff(res, got)), 0L) || !identical(nrow(fsetdiff(got, res)), 0L))
+    stop("gsa-namespace rows disagree with the edge builder's resolver (",
+         nrow(fsetdiff(res, got)), " missing, ", nrow(fsetdiff(got, res)), " extra)")
+  nbare <- lk[bag_type == "gsa" & !grepl("^gsa_", bag_id), .N]
   # a GSA bag that resolves to a roster id is the only kind that can author a plan
   lk[, is_roster_gsa := grepl("^gsa_[0-9]+$", bag_id)]
 
   fwrite(lk, out)
   message(sprintf("wrote %s (%d variants -> %d bags)", out, nrow(lk), uniqueN(lk$bag_id)))
-  cat("\n== bags by owning type ==\n")
+  cat("\n== bags by owning namespace ==\n")
   print(lk[, .(variants = .N, bags = uniqueN(bag_id),
                folded = sum(!method %in% c("identity")),
                shrink = sprintf("%.1f%%", 100 * (1 - uniqueN(bag_id) / .N))),
-           by = .(entity_type, bag_type)][order(entity_type)])
-  cat(sprintf("\nGSA bags on a roster id (can author a plan): %d of %d GSA bags\n",
-              lk[is_roster_gsa == TRUE, uniqueN(bag_id)], lk[entity_type == "GSA", uniqueN(bag_id)]))
-  cat(sprintf("GSA variants on a BARE (un-prefixed) identity bag: %d — bag_type is NOT\n  derivable from the bag_id prefix for GSA; always carry the bag_type column.\n",
+           by = bag_type][order(bag_type)])
+  recl <- lk[source == "overrides_gsa" & entity_type != "GSA"]
+  cat(sprintf("\nGSA override variants the classifier typed otherwise, now in the gsa namespace: %d\n",
+              uniqueN(recl$variant)))
+  if (nrow(recl)) print(recl[, .N, by = entity_type])
+  cat(sprintf("GSA bags on a roster id (can author a plan): %d of %d gsa-namespace bags\n",
+              lk[is_roster_gsa == TRUE, uniqueN(bag_id)], lk[bag_type == "gsa", uniqueN(bag_id)]))
+  cat(sprintf("gsa-namespace variants on a BARE (un-prefixed) bag: %d — bag_type is NOT\n  derivable from the bag_id prefix for GSA; always carry the bag_type column.\n",
               nbare))
   invisible(lk)
 }

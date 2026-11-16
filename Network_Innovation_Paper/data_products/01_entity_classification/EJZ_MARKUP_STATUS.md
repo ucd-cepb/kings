@@ -23,7 +23,8 @@ EJZ flagged 43 names and left comments on 6 more without a code.
 | Fixed by a reviewed override | 2 |
 | Override removed (no longer folds) | 1 |
 | Resolved 2026-10-14: multi-GSA names, generic names, `b_gsa` | 13 |
-| Still open | 3 (`el_rico` regression, Northern Delta-Mendota members, gsa_458 tags) |
+| Decided 2026-11-16: `el_rico` stays unmatched (false negative accepted) | 1 |
+| Still open | 2 (Northern Delta-Mendota members, gsa_458 tags) |
 
 ## Obviated: the name no longer folds into any bag
 
@@ -123,7 +124,6 @@ distinctive token shorter than three characters, so `b_gsa` and `el_gsa` do not 
 
 ## Still open
 
-- `el_rico` (regression below).
 - **"Northern" in `northern_and_central_delta_mendota_…_agencies`.** EJZ could not tell
   which GSAs "Northern" means. The name has no ties, so this does not affect the edges.
 - **gsa_458 header comment** (Salinas Valley Basin GSA - Monterey): "if we ever
@@ -136,7 +136,8 @@ distinctive token shorter than three characters, so `b_gsa` and `el_gsa` do not 
 |---|---|---|---|
 | `el_rico` | gsa_358 El Rico | unmatched (`no_gsa_marker`) | "fine since El Rico isn't a town name" |
 
-The bare-name rule drops it. Add an override row for `el_rico` → gsa_358 to restore it.
+The bare-name rule drops it. Decided 2026-11-16: leave it. The guard is there to minimize
+false-positive folds, and one false negative is the accepted cost; no override row.
 
 ## Accepted by EJZ and unchanged
 

@@ -8,7 +8,11 @@
 #   [0]  00_ingest_core.R ....................................... -> 00_ingest/id_crosswalk.csv
 #   [1a] 01_entity_classification/build_overrides_from_dicts.R .. -> inputs/entity_type_overrides.csv
 #   [1b] 01_entity_classification/build_node_dictionary.R ....... -> 01_entity_classification/node_dictionary.csv     (LLM)
-#   [1c] 01_entity_classification/build_gsa_edges.R ............. -> 01_entity_classification/all_gsa_edges.csv
+#   [1c] 01_entity_classification/build_entity_bag_map.R ........ -> 01_entity_classification/entity_bag_map.csv (+ entity_bag_unmatched.csv)
+#   [1d] 01_entity_classification/write_bag_review.R ............ -> 01_entity_classification/GSA_BAGS_review.txt (review listing)
+#   [1e] 01_entity_classification/build_alter_bag_map.R ......... -> 01_entity_classification/alter_bag_map.csv (+ clusters, compounds, review menus)
+#   [1f] 01_entity_classification/build_entity_bag_lookup.R ..... -> 01_entity_classification/entity_bag_lookup.csv
+#   [1g] 01_entity_classification/build_gsa_bag_edges.R ......... -> 01_entity_classification/gsa_bag_edges.csv + gsa_bag_edges_alters.csv
 #   [2]  02_text_preprocessing/additional_filter_texts.R ....... -> 02_text_preprocessing/page_metadata.RDS
 #   [3A] 03A_reference_extraction/01..05 (5 scripts) ........... -> 03A_reference_extraction/gsp_reference_pairs.rds
 #   [3B] 03B_text_reuse/compare_project_sections.R ............. -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
@@ -19,17 +23,19 @@
 # Stage 0 is a bridge: it reads the core manifest into id_crosswalk.csv, no
 # derivation, no LLM. Stage 1 is analysis, not ingest — core carries spaCy NER
 # tags only, so the paper's semantic types are (re)built here: 1a bakes the
-# override table from core dicts, 1b classifies entity names with an LLM, 1c folds
-# the core graphs into GSA edges. Stage 1 runs after Stage 0 because 1c keys
-# through the crosswalk.
+# override table from core dicts, 1b classifies entity names with an LLM, 1c-1f
+# fold name variants onto entity BAGS (GSA roster ids; consultant/NGO/research/
+# other namespaces) and assemble the one lookup, 1g folds the core graphs into
+# per-document authoring-GSA bag edges. Stage 1 runs after Stage 0 because 1c and
+# 1g key through the crosswalk (authorship = crosswalk gsa_ids).
 #
 # Stage 4 (modeling) reads THREE plan-to-plan similarity products, one from each
 # Stage 3 branch — all now buildable here (each behind its own toggle):
 #   - 3A references     -> 03A_reference_extraction/gsp_reference_pairs.rds
 #   - 3B project-Jaccard -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
 #   - 3C knowledge-tree -> 03C_knowledge_tree/triple_similarity.csv
-# plus the Stage 1 entity products (all_gsa_edges.csv, node_dictionary.csv) and the
-# curated inputs/ covariates + GSP shapefile. It fits the Bayesian ERGMs and writes
+# plus the Stage 1 entity products (gsa_bag_edges.csv + gsa_bag_edges_alters.csv)
+# and the curated inputs/ covariates + GSP shapefile. It fits the Bayesian ERGMs and writes
 # the paper's figures/tables under outputs/.
 # Only the 03B_text_reuse/explore/ page-score + map branch stays out (it feeds
 # nothing downstream — run it by hand). See ../README.md.
@@ -50,9 +56,10 @@
 #     RUN_INGEST=1 Network_Innovation_Paper/Code/run_all.R   # also rebuild stages 0 + 1
 #
 # CLOBBER is the global incremental switch (default FALSE): an enabled stage is
-# SKIPPED when all its terminal products already exist, so a plain run only builds
-# what is missing. Set CLOBBER=TRUE to overwrite everything. See the CLOBBER block
-# below the CONFIG toggles for the full contract (and its existence-based caveat).
+# SKIPPED when all its terminal products already exist AND none of its declared
+# inputs is newer than them; a stale stage rebuilds (with CLOBBER=TRUE passed to
+# its scripts). Set CLOBBER=TRUE to overwrite everything. See the CLOBBER block
+# below the CONFIG toggles for the full contract.
 #
 # ############################################################################
 # ##  WHICH STAGES RUN — this is the part you edit.                         ##
@@ -108,7 +115,7 @@ setwd(REPO_ROOT)                        # stages source _paths.R via a repo-rela
 #  CONFIG — flip a stage TRUE/FALSE to run/skip it.  (edit here)
 # ============================================================================
 STAGE_0_INGEST      <- FALSE   # 00_ingest_core.R                     -> id_crosswalk.csv        (bridge; no LLM)
-STAGE_1_CLASSIFY    <- FALSE # 01_entity_classification/* (3 steps) -> node_dictionary.csv, all_gsa_edges.csv  (LLM; needs API key)
+STAGE_1_CLASSIFY    <- FALSE # 01_entity_classification/* (7 steps) -> node_dictionary.csv, entity bags, gsa_bag_edges.csv  (LLM; needs API key)
 STAGE_2_PREPROCESS  <- FALSE   # 02_text_preprocessing/additional_filter_texts.R -> page_metadata.RDS
 STAGE_3A_REFERENCES <- FALSE  # 03A_reference_extraction/01..05      -> gsp_reference_pairs.rds  (anystyle/ruby + OpenAlex + Solr)
 STAGE_3B_JACCARD    <- FALSE   # 03B_text_reuse/compare_project_sections.R        -> project_section_jaccard_scores.rds
@@ -135,15 +142,22 @@ if (Sys.getenv("RUN_INGEST", "0") == "1") {
 # Usage:
 #     Network_Innovation_Paper/Code/run_all.R                 # incremental (default)
 #     CLOBBER=TRUE Network_Innovation_Paper/Code/run_all.R    # force full rebuild
-# NOTE: "done" means the product FILE EXISTS — this is existence-based, not
-# dependency-tracked. It does NOT notice that an input changed behind an existing
-# product (e.g. newly added plans). To rebuild against changed inputs, run with
-# CLOBBER=TRUE. And nothing here deletes stale/orphaned files left in the output
-# directories by earlier code versions — remove those by hand.
+# NOTE: "done" means every product FILE EXISTS and is at least as new as each
+# declared INPUT of the stage (file mtimes; see should_run()). A stage whose
+# input moved -- an edited override CSV, a refreshed crosswalk, a new core
+# manifest -- is "stale" and rebuilds with CLOBBER=TRUE passed to its scripts, so
+# their own exists-skip guards do not swallow the rebuild. The check is only as
+# good as the declared input list (each stage names its direct inputs below; it
+# is not a full dependency graph, and a fresh checkout has uniform mtimes, so it
+# sees nothing as stale). To force a rebuild, run with CLOBBER=TRUE. Nothing here
+# deletes stale/orphaned files left in the output directories by earlier code
+# versions — remove those by hand.
 CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
-# Threaded into every launched stage so the self-guarding ones see the same value
-# (normalized to TRUE/FALSE) as this orchestrator.
-clobber_env <- paste0("CLOBBER=", if (CLOBBER) "TRUE" else "FALSE")
+# stage_env() threads CLOBBER into every launched stage so the self-guarding
+# ones see the same value (normalized to TRUE/FALSE) as this orchestrator --
+# TRUE also when should_run() found the stage stale.
+.stage <- new.env(); .stage$stale <- FALSE
+stage_env <- function() paste0("CLOBBER=", if (CLOBBER || .stage$stale) "TRUE" else "FALSE")
 
 run <- function(script, env = character()) {
   cat("\n==== ", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "  Rscript ", script, "\n", sep = "")
@@ -180,20 +194,38 @@ need <- function(product, toggle_name) {
 }
 
 # Decide whether an ENABLED stage actually needs to run this pass. It runs if
-# CLOBBER is set, or if any of its terminal products is missing; otherwise it is
-# skipped (and says so). `products` is one or more FULL paths (use nip_product()/
-# nip_figure()/nip_table()); a stage that writes several files counts as "done"
-# only when ALL of them exist, so a dropped/renamed output re-triggers its stage.
-should_run <- function(stage_on, label, products) {
+# CLOBBER is set, if any of its terminal products is missing, or if any declared
+# input is newer than the oldest product (stale: the stage is then launched with
+# CLOBBER=TRUE via stage_env()); otherwise it is skipped (and says so).
+# `products` and `inputs` are FULL paths (use nip_product()/nip_input()/
+# nip_figure()/nip_table()/core_*()); a stage that writes several files counts as
+# "done" only when ALL of them exist, so a dropped/renamed output re-triggers its
+# stage. An input that does not exist is ignored here (the stage's own need()
+# guard reports it).
+should_run <- function(stage_on, label, products, inputs = character()) {
+  .stage$stale <- FALSE
   if (!stage_on) return(FALSE)
   if (CLOBBER) { cat("---- run  ", label, " (CLOBBER=TRUE: full rebuild)\n", sep = ""); return(TRUE) }
   missing <- products[!file.exists(products)]
-  if (!length(missing)) {
-    cat("---- skip ", label, " (all products present; CLOBBER=FALSE)\n", sep = "")
-    return(FALSE)
+  if (length(missing)) {
+    cat("---- run  ", label, " (missing: ", paste(basename(missing), collapse = ", "), ")\n", sep = "")
+    return(TRUE)
   }
-  cat("---- run  ", label, " (missing: ", paste(basename(missing), collapse = ", "), ")\n", sep = "")
-  TRUE
+  inputs <- inputs[file.exists(inputs)]
+  if (length(inputs)) {
+    newest_in  <- max(file.mtime(inputs))
+    oldest_out <- min(file.mtime(products))
+    if (newest_in > oldest_out) {
+      stale <- inputs[file.mtime(inputs) > oldest_out]
+      cat("---- run  ", label, " (stale: ", paste(basename(stale), collapse = ", "),
+          " newer than ", basename(products[which.min(file.mtime(products))]),
+          "; rebuilding with CLOBBER=TRUE)\n", sep = "")
+      .stage$stale <- TRUE
+      return(TRUE)
+    }
+  }
+  cat("---- skip ", label, " (all products present and current; CLOBBER=FALSE)\n", sep = "")
+  FALSE
 }
 
 cat("run_all.R — rebuilding modeling inputs from current core\n")
@@ -208,25 +240,58 @@ cat(sprintf("stages: 0_ingest=%s  1_classify=%s  2_preprocess=%s  3A_references=
 # ----- Stage 0: ingest -----
 # id_crosswalk.csv from the core manifest. Required by everything below.
 if (should_run(STAGE_0_INGEST, "Stage 0 ingest",
-               nip_product("00_ingest", "id_crosswalk.csv"))) {
-  run(nip_code("00_ingest_core.R"), env = clobber_env)
+               nip_product("00_ingest", "id_crosswalk.csv"),
+               inputs = c(core_manifest(), nip_input("doc_author_overrides.csv")))) {
+  run(nip_code("00_ingest_core.R"), env = stage_env())
 }
 
-# ----- Stage 1: entity classification (LLM) -----
+# ----- Stage 1: entity classification (LLM) + entity bags -----
 #   1a build_overrides_from_dicts.R -> entity_type_overrides.csv, the table the
 #      classifier pins to; runs first.
 #   1b build_node_dictionary.R runs the (cached) LLM classifier -> node_dictionary.csv.
-#   1c build_gsa_edges.R folds the core graphs to GSA-typed entities ->
-#      all_gsa_edges.csv; reads node_dictionary.csv, so runs last.
+#   1c build_entity_bag_map.R folds GSA name variants onto roster ids (and
+#      consultants onto the firm roster) -> entity_bag_map.csv + the review file
+#      entity_bag_unmatched.csv. Signed-off decisions live in
+#      inputs/entity_bag_overrides_gsa.csv, which wins over the matcher.
+#   1d write_bag_review.R -> GSA_BAGS_review.txt, the human-readable bag listing
+#      (no product the model reads; regenerated whenever the stage runs).
+#   1e build_alter_bag_map.R folds the alter side per type into its own namespace
+#      (con_/ngo_/res_/io_) -> alter_bag_map.csv, alter_bag_clusters.csv,
+#      alter_bag_compounds.csv, alter_bag_review_<type>.csv.
+#   1f build_entity_bag_lookup.R assembles the one variant -> bag join table
+#      -> entity_bag_lookup.csv (GSA override precedence; namespaces asserted disjoint).
+#   1g build_gsa_bag_edges.R folds the core graphs into per-document AUTHORING-GSA
+#      bag edges, alters folded to bag keys -> gsa_bag_edges.csv +
+#      gsa_bag_edges_alters.csv (what Stage 4 reads); runs last.
+#   The bag scripts are deterministic (no LLM); only 1b costs API calls, and it
+#   reuses entity_type_cache.csv. See BAG_REVIEW_FINDINGS.md for the design.
 if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
       nip_product("01_entity_classification", "node_dictionary.csv"),
-      nip_product("01_entity_classification", "all_gsa_edges.csv")))) {
-  need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")  # 1c's edge fold keys through the crosswalk
-  # 1a overrides recompute (deterministic, cheap); 1b/1c self-guard on CLOBBER and,
-  # under CLOBBER=FALSE, rebuild only the missing product (1b also reuses its LLM cache).
-  run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"), env = clobber_env)
-  run(nip_code("01_entity_classification", "build_node_dictionary.R"),      env = clobber_env)
-  run(nip_code("01_entity_classification", "build_gsa_edges.R"),            env = clobber_env)
+      nip_product("01_entity_classification", "entity_bag_map.csv"),
+      nip_product("01_entity_classification", "alter_bag_map.csv"),
+      nip_product("01_entity_classification", "entity_bag_lookup.csv"),
+      nip_product("01_entity_classification", "gsa_bag_edges.csv"),
+      nip_product("01_entity_classification", "gsa_bag_edges_alters.csv")),
+      inputs = c(nip_product("00_ingest", "id_crosswalk.csv"),
+                 nip_input("entity_bag_overrides_gsa.csv"),
+                 nip_input("entity_bag_overrides_consultant.csv"),
+                 nip_input("entity_bag_overrides_ngo.csv"),
+                 nip_input("entity_bag_overrides_research.csv"),
+                 nip_input("bag_merges.csv"),
+                 core_gsa_full(), core_dict("consultant_dictionary.csv")))) {
+  need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")  # 1c/1g key through the crosswalk
+  # 1a overrides recompute (deterministic, cheap); the rest self-guard on CLOBBER
+  # and, under CLOBBER=FALSE, rebuild only the missing product (1b also reuses its
+  # LLM cache). A stale stage gets CLOBBER=TRUE from stage_env() so every step
+  # rebuilds in order.
+  s1 <- stage_env()
+  run(nip_code("01_entity_classification", "build_overrides_from_dicts.R"), env = s1)
+  run(nip_code("01_entity_classification", "build_node_dictionary.R"),      env = s1)
+  run(nip_code("01_entity_classification", "build_entity_bag_map.R"),       env = s1)
+  run(nip_code("01_entity_classification", "write_bag_review.R"),           env = s1)
+  run(nip_code("01_entity_classification", "build_alter_bag_map.R"),        env = s1)
+  run(nip_code("01_entity_classification", "build_entity_bag_lookup.R"),    env = s1)
+  run(nip_code("01_entity_classification", "build_gsa_bag_edges.R"),        env = s1)
 }
 
 # ----- Stage 2: page_metadata.RDS from the core parquet corpus -----
@@ -234,9 +299,10 @@ if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
 # table (keys + section flags, ~0.24 MB); full page text stays in core and is
 # re-attached on demand by 03B via attach_page_text() (_corpus.R).
 if (should_run(STAGE_2_PREPROCESS, "Stage 2 preprocess",
-               nip_product("02_text_preprocessing", "page_metadata.RDS"))) {
+               nip_product("02_text_preprocessing", "page_metadata.RDS"),
+               inputs = c(nip_product("00_ingest", "id_crosswalk.csv"), core_page_sections()))) {
   need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")
-  run(nip_code("02_text_preprocessing", "additional_filter_texts.R"), env = clobber_env)
+  run(nip_code("02_text_preprocessing", "additional_filter_texts.R"), env = stage_env())
 }
 
 # ----- Stage 3A: reference-overlap similarity (model input) -----
@@ -246,12 +312,14 @@ if (should_run(STAGE_2_PREPROCESS, "Stage 2 preprocess",
 # OpenAlex, 04 searches the Solr title-match index, 05 folds matched reference
 # sets into plan-to-plan pairs -> gsp_reference_pairs.rds (what the models read).
 if (should_run(STAGE_3A_REFERENCES, "Stage 3A references",
-               nip_product("03A_reference_extraction", "gsp_reference_pairs.rds"))) {
-  run(nip_code("03A_reference_extraction", "01_extract_GSP_references.R"),   env = clobber_env)
-  run(nip_code("03A_reference_extraction", "02_aggregate_references.R"),     env = clobber_env)
-  run(nip_code("03A_reference_extraction", "03_query_titles_in_openalex.R"), env = clobber_env)
-  run(nip_code("03A_reference_extraction", "04_search_OA_titlematch_index.R"), env = clobber_env)
-  run(nip_code("03A_reference_extraction", "05_reference_set_similarity.R"), env = clobber_env)
+               nip_product("03A_reference_extraction", "gsp_reference_pairs.rds"),
+               inputs = nip_product("00_ingest", "id_crosswalk.csv"))) {
+  s3a <- stage_env()
+  run(nip_code("03A_reference_extraction", "01_extract_GSP_references.R"),   env = s3a)
+  run(nip_code("03A_reference_extraction", "02_aggregate_references.R"),     env = s3a)
+  run(nip_code("03A_reference_extraction", "03_query_titles_in_openalex.R"), env = s3a)
+  run(nip_code("03A_reference_extraction", "04_search_OA_titlematch_index.R"), env = s3a)
+  run(nip_code("03A_reference_extraction", "05_reference_set_similarity.R"), env = s3a)
 }
 
 # ----- Stage 3B: project-section Jaccard (the model input) -----
@@ -260,9 +328,10 @@ if (should_run(STAGE_3A_REFERENCES, "Stage 3A references",
 # (single file, overwritten each run) — the only 03B product the models read.
 if (should_run(STAGE_3B_JACCARD, "Stage 3B jaccard",
                nip_product("03B_text_reuse", "project_jaccard_results",
-                           "project_section_jaccard_scores.rds"))) {
+                           "project_section_jaccard_scores.rds"),
+               inputs = nip_product("02_text_preprocessing", "page_metadata.RDS"))) {
   need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
-  run(nip_code("03B_text_reuse", "compare_project_sections.R"), env = clobber_env)
+  run(nip_code("03B_text_reuse", "compare_project_sections.R"), env = stage_env())
 }
 
 # ----- Stage 3C: knowledge-tree similarity (model input) -----
@@ -273,9 +342,10 @@ if (should_run(STAGE_3B_JACCARD, "Stage 3B jaccard",
 # the models read). The R step depends on page_metadata.RDS for the sust-criteria
 # page filter, so Stage 2 must have run.
 if (should_run(STAGE_3C_KNOWLEDGE, "Stage 3C knowledge",
-               nip_product("03C_knowledge_tree", "triple_similarity.csv"))) {
+               nip_product("03C_knowledge_tree", "triple_similarity.csv"),
+               inputs = nip_product("02_text_preprocessing", "page_metadata.RDS"))) {
   need("02_text_preprocessing/page_metadata.RDS", "STAGE_2_PREPROCESS")
-  run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"), env = clobber_env)
+  run(nip_code("03C_knowledge_tree", "01_extract_knowledge_triples.R"), env = stage_env())
   run_nb(nip_code("03C_knowledge_tree", "02_semantic_kg_similarity.ipynb"))
 }
 
@@ -292,13 +362,19 @@ if (should_run(STAGE_4_MODELING, "Stage 4 modeling", c(
       nip_table("mod0_html.html"),
       nip_table("mod1_html.html"),
       nip_table("mod2_html.html"),
-      nip_table("mod3_html.html")))) {
-  need("01_entity_classification/all_gsa_edges.csv",                 "STAGE_1_CLASSIFY")
-  need("01_entity_classification/node_dictionary.csv",               "STAGE_1_CLASSIFY")
+      nip_table("mod3_html.html")),
+      inputs = c(nip_product("01_entity_classification", "gsa_bag_edges.csv"),
+                 nip_product("01_entity_classification", "gsa_bag_edges_alters.csv"),
+                 nip_product("03A_reference_extraction", "gsp_reference_pairs.rds"),
+                 nip_product("03B_text_reuse", "project_jaccard_results", "project_section_jaccard_scores.rds"),
+                 nip_product("03C_knowledge_tree", "triple_similarity.csv"),
+                 nip_input("gsp_covariates.csv"), core_gsp_boundaries()))) {
+  need("01_entity_classification/gsa_bag_edges.csv",                 "STAGE_1_CLASSIFY")
+  need("01_entity_classification/gsa_bag_edges_alters.csv",          "STAGE_1_CLASSIFY")
   need("03A_reference_extraction/gsp_reference_pairs.rds",           "STAGE_3A_REFERENCES")
   need("03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds", "STAGE_3B_JACCARD")
   need("03C_knowledge_tree/triple_similarity.csv",                   "STAGE_3C_KNOWLEDGE")
-  run(nip_code("04_modeling", "make_binary0.9_networks.R"), env = clobber_env)
+  run(nip_code("04_modeling", "make_binary0.9_networks.R"), env = stage_env())
 }
 
 cat("\n==== done.\n")

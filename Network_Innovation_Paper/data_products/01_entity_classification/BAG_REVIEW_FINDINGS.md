@@ -173,20 +173,33 @@ the source in `id_crosswalk.csv`'s `gsa_ids_source` column (`scrape` / `override
 ## 3. Outputs and review files
 
 - **`gsa_bag_edges.csv`** (`build_gsa_bag_edges.R`): one row per (document, authoring
-  bag), keyed on `gsp_doc_id` + `plan_family_id`, with each bag's co-mentioned alters
-  as columns. It folds authoring GSA rows, keeps only ids in each document's `gsa_ids`,
-  expands multi-area pointers per document, and drops self-loops. Currently 447 rows,
-  184 documents, 119 plans, 255 authoring bags. Plan 52 (doc 1683) drops under strict
-  authorship because its sole author, gsa_106, has no folding variant.
+  bag), keyed on `gsp_doc_id` + 4-digit `plan_family_id`, with each bag's co-mentioned
+  alters as columns. It folds authoring GSA rows, keeps only ids in each document's
+  `gsa_ids`, expands multi-area pointers per document, and drops self-loops. Currently
+  447 rows, 184 documents, 119 plans, 255 authoring bags, 8,395 alter columns. Plan 52
+  (doc 1683) drops under strict authorship because its sole author, gsa_106, has no
+  folding variant. GSA-ness is decided by the resolver (override ∪ GSA-typed map rows),
+  not by the classifier's type (since 2026-11-16).
   - **GSA alters fold to bags too, without the authorship filter.** A GSA named in a plan
-    it did not write stays an alter. 413 GSA alter names fold into 209 `bag:` columns:
-    `bag:gsa_<id>`, or `bag:gsafam_<ids>` for a name pointing into a multi-area family,
-    since no author set picks the member on the alter side. A name carrying a token
-    unique to one member's area suffix keeps that member
-    (`merced_county_delta_mendota_gsa` → County of Merced - Delta-Mendota). A multi-GSA
-    name credits each bag; several names for one bag sum. Alters in the ego's own bag or
-    family (its other names) are dropped. GSA names held unmatched, and all non-GSA
-    alters, stay raw names. The `bag:` prefix avoids raw node names like `gsa_25`.
+    it did not write stays an alter. Columns are `bag:gsa_<id>`, or `bag:gsafam_<ids>`
+    for a name pointing into a multi-area family, since no author set picks the member
+    on the alter side. A name carrying a token unique to one member's area suffix keeps
+    that member (`merced_county_delta_mendota_gsa` → County of Merced - Delta-Mendota).
+    A GSA name on a non-roster bag (bare identity, the KGA umbrella) folds to
+    `bag:<bag_id>` with no family logic. A multi-GSA name credits each bag; several
+    names for one bag sum. Alters in the ego's own bag or family (its other names) are
+    dropped. The `bag:` prefix avoids raw node names like `gsa_25`.
+  - **Every other in-network alter folds too** (since 2026-11-16), through
+    `entity_bag_lookup.csv`: `bag:con_*`, `bag:ngo_*`, `bag:res_*`, `bag:io_*`. A
+    compound mention in `alter_bag_compounds.csv` credits every bag it names. Only
+    `Non_institutional` and `Institutional_unresolved` names stay raw, and no grouping
+    admits them. Column census: 2,022 bag keys (286 GSA, 61 Consultant, 87 NGO, 28
+    Research, 1,560 Institutional_other) and 6,373 raw names (5,888 Non_institutional,
+    485 Institutional_unresolved).
+- **`gsa_bag_edges_alters.csv`** (same script): one row per alter column — `name`,
+  `entity_type` (the namespace that OWNS the bag; a raw name's `node_dictionary` type),
+  `bag_type`, `bag_id`, `bag_label`, `n_variants` (names folded into the column,
+  corpus-wide), `folded`. This is what `_entity_groups.R::entity_names()` groups on.
 - **Review dictionaries:**
   1. Variant → GSA bag: `01_entity_classification/GSA_BAGS_review.txt`
      (`write_bag_review.R`, run after `build_entity_bag_map.R`; lists every bag,
@@ -206,7 +219,16 @@ The alter side folds the co-mentioned entities that a plan's authoring GSAs tie 
 type folds in its own namespace so one type's network never merges into another's.
 Producers: `build_alter_bag_map.R` → `alter_bag_map.csv` (+ cluster audit and per-type
 review files); `build_entity_bag_lookup.R` → `entity_bag_lookup.csv` (the single join
-table).
+table). The lookup applies the same precedence as the edge builder's resolver: every
+variant in `inputs/entity_bag_overrides_gsa.csv` is a `gsa`-namespace row whatever type
+the classifier gave it (24 override names are typed `Institutional_other`, e.g. `pixid` →
+gsa_43 and the Eastern Tule board/committee names → gsa_205; 4 are `Non_institutional`,
+e.g. `greaterkaweahgsaorg` → gsa_281), then the map's GSA-typed rows, then the alter
+maps minus those variants. `entity_type` records what the classifier said about the
+spelling; `bag_type` is the namespace that owns the bag, and is what downstream groups
+on. Asserted: no variant in two processes, no bag in two namespaces, and the
+`gsa`-namespace rows equal the resolver's set exactly (fixed 2026-11-16; before, the
+lookup took only GSA-typed map rows, so those 28 names landed on `io_*` bags).
 
 | type | namespace | authority | variants → bags |
 |---|---|---|---|
@@ -248,9 +270,11 @@ shrink a file. Deliberately left unfolded as genuinely ambiguous: `con_gsi` (two
 `ngo_basin_pumpers_association`, RCAP vs RCAC, Putah Creek Council vs Putah Creek
 Streamkeeper.
 
-**Compound mentions.** `alter_bag_compounds.csv` (231 rows) lists mentions that name two
+**Compound mentions.** `alter_bag_compounds.csv` (229 rows) lists mentions that name two
 organizations (`woodard_curran_and_davids_engineering`). The 1:1 variant → bag schema
-cannot carry two bags, so the second organization is recorded there.
+cannot carry two bags, so the second organization is recorded there, and
+`build_gsa_bag_edges.R` (`CREDIT_COMPOUNDS`, on) credits every bag the row names: 229
+names add 330 extra bag ties. Adds ties only.
 
 Review menu counts: Consultant 322, NGO 378, Research 306.
 
@@ -258,8 +282,15 @@ Review menu counts: Consultant 322, NGO 378, Research 306.
 
 ## 5. Network construction (modeling)
 
+- **Input.** Since 2026-11-16 `make_binary0.9_networks.R` (and the two `explore/`
+  scripts) read `gsa_bag_edges.csv`, filtered to the one selected document per plan
+  (`modeling_plan_selection()`), with no gsp_id translation. Alter columns are grouped
+  with `gsa_bag_edges_alters.csv` through `_entity_groups.R::entity_names()`, which
+  groups a folded column by the type that owns its bag (`bag_type`) and a raw column by
+  its `node_dictionary` type. `run_all.R` registers the whole chain (Stage 1c–1g) and
+  checks input mtimes against products, so an edited override file re-triggers the stage.
 - **Non-actor filter.** `NON_ACTOR_ENTITIES` in `Code/_entity_groups.R` drops bare
-  state/nation placenames by name, in raw and `io_` spellings (`io_california`,
+  state/nation placenames by name, in raw, `io_` and `bag:io_` spellings (`io_california`,
   `io_calif`, `io_united_states`, `io_united_states_of_america`, `io_us`). Ubiquity alone
   is not disqualifying — DWR is in 115/118 plans because it administers SGMA, and it
   stays. Counties stay (shared county naming is real co-location, and counties are often
@@ -285,42 +316,43 @@ Review menu counts: Consultant 322, NGO 378, Research 306.
 
 ## 6. Open items
 
-- **Wiring.** `run_all.R` registers none of the bag scripts. Stage 1 still runs
-  `build_gsa_edges.R` → `all_gsa_edges.csv`, and `04_modeling/make_binary0.9_networks.R:36`
-  still reads it. Moving the model to `gsa_bag_edges.csv` (keyed on `gsp_doc_id`) replaces
-  the id-to-doc melt there and retires `build_gsa_edges.R`; update
-  `Code/01_entity_classification/ENTITY_TAGGING.md` in the same commit. Until then
-  `mult_gsa` is a partial control, because `build_gsa_edges.R` counts every GSA-typed
-  vertex, not just authors. The run checks are existence-based, so a changed input behind
-  an existing output is missed; add an mtime or input-hash check.
-- **Alters not wired in.** `build_gsa_bag_edges.R` folds GSA alters to bags but still
-  emits raw node names for every other alter type, and `_entity_groups.R::entity_names()`
-  groups alters by raw name; both need to group by `bag_id` and `bag_type`. Nothing consumes `alter_bag_compounds.csv` yet; wiring it in
-  would recover co-authorship ties that are currently lost.
-- **`entity_bag_lookup.csv` disagrees with the GSA overrides** on 115 of 209 joinable
-  rows. The lookup takes only `entity_type == "GSA"` rows from `entity_bag_map.csv`, so
-  override variants typed otherwise are taken from `alter_bag_map.csv` instead (e.g. `pixid`, typed `Institutional_other`, lands on `io_pixid` rather than gsa_43), and the
-  file predates the latest map rebuild. Fix: rebuild it, and apply the GSA override with
-  the same precedence `build_gsa_bag_edges.R` uses. `gsa_bag_edges.csv` is unaffected.
-- **`plan_family_id` in `gsa_bag_edges.csv` is a bare integer**, not 4-digit
-  zero-padded, so it fails to join `modeling_plan_selection()`, `gsp_covariates.csv`, and
-  the shapefile. `gsp_doc_id` joins fine.
-- **`Institutional_unresolved`** (2,848 variants, 17% of the institutional population) is
-  in no namespace and has no review file. It needs its own namespace, an explicit drop
-  decision, or a second classifier pass.
-- **Review-file generators** for `DOC_AUTHORS_review.txt` and `DOC_AUTHOR_BAGS_review.txt`
-  are not in `Code/`, so those files cannot be regenerated from the repo.
+Closed 2026-11-16 (one commit): the model and `run_all.R` now run on the bag chain
+(`build_gsa_edges.R` / `all_gsa_edges.csv` retired; Stage 1 registers 1c–1g; the run
+check compares input and product mtimes); non-GSA alters fold to bag keys and
+`entity_names()` groups by `bag_type`, with `alter_bag_compounds.csv` consumed;
+`entity_bag_lookup.csv` is rebuilt with the GSA override taking precedence over the
+classifier type; `plan_family_id` is written 4-digit. One consequence to be aware of:
+GSA-ness on both the ego and alter side is now decided by the resolver (override ∪
+GSA-typed map rows), so the 28 override names the classifier typed otherwise count as
+their GSA; before they were gated out on type.
+
+- **`Institutional_unresolved`** (2,848 variants, 17% of the institutional population):
+  decided 2026-11-16, not open. These names are unresolvable by definition, so they have
+  no cross-document meaning and get no namespace, no bag, and no review file. They stay as
+  raw columns in `gsa_bag_edges.csv` for provenance only; no grouping in
+  `_entity_groups.R` admits them, so they never enter a network.
+- **Orphan author-side products.** `DOC_AUTHOR_BAGS_review.txt` and
+  `doc_canonical_gsa_bags.csv` (doc → authoring GSA bag, from the DWR crosswalk) were
+  committed in c2dfadc with no script in `Code/` that writes them, and nothing in `Code/`
+  reads them. `gsa_bag_edges.csv` now carries the same doc → authoring-bag rows
+  (`gsp_doc_id`, `plan_family_id`, `gsa`), so the two files are frozen snapshots. Either
+  delete them or add a writer; until then they will drift from the pipeline.
 - **EJZ markup of the bag review:** `EJZ_MARKUP_STATUS.md` tracks which flags the guards
-  obviated and which remain: one-to-many "agencies" names, generic-suffix folds, `b_gsa`, and the
-  `el_rico` regression.
-- **Run-on variants held by `subset_geo`:** `mcmullin_area_gsa_east_gsa` and
-  `north_kings_groundwater_sustainability_agency_western_boundary_groundwater`. Add
-  override rows if they should fold.
+  obviated and which remain (Northern Delta-Mendota members, gsa_458 tags). The `el_rico`
+  regression is decided 2026-11-16: it stays unmatched. The bare-name guard exists to
+  minimize false-positive folds, and a false negative on one name is the accepted cost.
+- **Run-on variants held by `subset_geo`:** decided 2026-11-16, not folded, same
+  false-negative policy. They are also inert: `mcmullin_area_gsa_east_gsa` occurs once, as
+  an isolated vertex in the Kings River East GSP (doc 2704), and
+  `north_kings_groundwater_sustainability_agency_western_boundary_groundwater` occurs only
+  in North Kings' own two GSPs with no GSA co-mention, so folding would be a dropped
+  self-tie. Neither name reaches `gsa_bag_edges.csv` either way.
 
-### Upstream defects (fix outside the bag system)
+### Upstream defects (recorded, not to be fixed)
 
-Folding cannot repair these; they belong to `02_text_preprocessing`, the extractor, or the
-classifier.
+Decided 2026-11-16: the text is taken as found. Folding cannot repair these and no
+preprocessing, extractor, or classifier fix is planned; the list stays as a record of
+known noise in the names.
 - **Glossary acronym expansion corrupts text inside words** (22+ names), e.g.
   `california_davids_engineeringpartment_of_water_resources` ("DE" → Davids Engineering).
   It also misclassifies DWR, Kaweah Delta WCD, and Northern Delta as Consultant.
