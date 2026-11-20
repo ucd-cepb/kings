@@ -47,21 +47,22 @@ expected_places <- intersections %>%
 
 write_csv(expected_places, paste0(data_dir, "expected_places.csv"))
 
-# map: California, GSPs in blue, places in green, place-GSP intersections in orange
+# map: California, GSPs in light blue, places in vermillion, place-GSP intersections in navy
+# (light / medium / dark, so the layers stay distinct in grayscale and for colorblind readers)
 gsa_map <- ggplot() +
    geom_sf(data = cal, fill = "white", color = "black", linewidth = 0.3) +
    geom_sf(data = gsp_bounds, aes(fill = "GSPs"), color = NA) +
    geom_sf(data = place_bounds_raw, aes(fill = "Places"), color = NA) +
    geom_sf(data = intersections, aes(fill = "Intersections"), color = NA) +
-   scale_fill_manual(values = c("GSPs" = "#1f77b4",
-                                "Places" = "#2ca02c",
-                                "Intersections" = "#ff7f0e"),
+   scale_fill_manual(values = c("GSPs" = "#C6DBEF",
+                                "Places" = "#D55E00",
+                                "Intersections" = "#08306B"),
                      breaks = c("GSPs", "Places", "Intersections"),
                      name = NULL) +
    theme_void() +
    theme(legend.position = c(0.85, 0.9))
 
-ggsave(paste0(out_dir, "gsa_over_california.png"), gsa_map, width = 6, height = 7, dpi = 300)
+ggsave(paste0(out_dir, "gsa_over_california.png"), gsa_map, width = 6, height = 7, dpi = 300, bg = "white")
 
 # gsas per gsp
 gsp_bounds_raw %>%
