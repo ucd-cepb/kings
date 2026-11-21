@@ -1,0 +1,19 @@
+hypothesis,effect,at,estimate,se,p,ratio,ratio_low,ratio_high
+H1 inclusion,incorporated,non-DAC,2.134,0.401,0,8.451,3.852,18.539
+H1 inclusion,incorporated,DAC,2.132,0.465,0,8.43,3.388,20.97
+H1 inclusion,incorporated,non-DAC mean MHI,2.068,0.405,0,7.912,3.58,17.488
+H1 inclusion,incorporated,DAC mean MHI,2.241,0.46,0,9.404,3.82,23.151
+H1 inclusion,MHI doubled,unincorporated,0.11,0.2,0.582,1.116,0.755,1.652
+H1 inclusion,MHI doubled,incorporated,-0.063,0.546,0.909,0.939,0.322,2.741
+H2 degree,incorporated,non-DAC,1.504,0.203,0,4.502,3.024,6.7
+H2 degree,incorporated,DAC,1.26,0.22,0,3.524,2.289,5.427
+H2 degree,incorporated,non-DAC mean MHI,1.633,0.205,0,5.119,3.427,7.646
+H2 degree,incorporated,DAC mean MHI,1.151,0.211,0,3.16,2.091,4.776
+H2 degree,MHI doubled,unincorporated,-0.04,0.154,0.797,0.961,0.711,1.299
+H2 degree,MHI doubled,incorporated,0.442,0.215,0.04,1.556,1.021,2.373
+H3 leader distance,incorporated,non-DAC,-1.925,0.314,0,0.146,0.079,0.27
+H3 leader distance,incorporated,DAC,-1.617,0.33,0,0.199,0.104,0.379
+H3 leader distance,incorporated,non-DAC mean MHI,-1.936,0.31,0,0.144,0.079,0.265
+H3 leader distance,incorporated,DAC mean MHI,-1.619,0.32,0,0.198,0.106,0.371
+H3 leader distance,MHI doubled,unincorporated,0.081,0.226,0.722,1.084,0.696,1.688
+H3 leader distance,MHI doubled,incorporated,-0.236,0.322,0.464,0.79,0.42,1.484

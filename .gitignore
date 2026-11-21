@@ -5,6 +5,8 @@ data_temp/*
 code/regex_test.R
 .DS_Store
 Policy_Instruments_Paper/Graphs/*
+Network_Structure_Paper/Out/*
+
 # Environment variable (API key) file
 .env
 # VS Code workspace file
@@ -51,4 +53,6 @@ New_Policy_Tool_Paper/Box_link/Network_policy_tool_paper
 data
 Box
 Supernetwork_Paper/data_products/page_metadata.csv
+.claude/
 core_code/logs/
+

@@ -1,256 +1,193 @@
+# step_3_generate_networks.R
+# Generates networks from supernetwork cleaned_unfiltered_extracts.
+# Applies place tagging to each network's nodelist.
+# Place aliases: nodes that name a Census place itself are renamed to the place before graphing
+#    R1  (the_)?(city|town|community|village)_of_(the_)?X
+#    R2  X_(city|town|community|ca|california|cdp)
+#    R3  X after dropping _ - . ' and folding accents, saint/st, mount/mt, fort/ft
+#  a node that is itself another Census place name is never an alias,
+#  and a node claimed by two places in the same plan stays separate
+# Self-loops are removed (including loops created by merging X with city_of_X).
+# Run from the project root (kings.Rproj).
+
 library(dotenv)
-library(ggraph)
 library(igraph)
 library(tidyverse)
-library(migraph)
-library(data.table)
+library(stringr)
 
 load_dot_env()
+
+data_dir <- "EJ_DAC_Paper/Data/"
+out_dir <- paste0(Sys.getenv("BOX_PATH"), "/EJ_Paper/processed_networks_final/")
+if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
+
+# --- Data sources ---
 
 network_fp <- paste0(Sys.getenv("BOX_PATH"),
                      "/Supernetwork_Paper/cleaned_unfiltered_extracts")
 extract_list <- list.files(network_fp)
+extract_list <- setdiff(extract_list, c("0053.RDS", "0089.RDS"))
+gsp_ids <- as.numeric(gsub("^0+", "", gsub("\\.RDS", "", extract_list)))
 
-# path to page-level data
-pages_fp <- paste0(Sys.getenv("BOX_PATH"), 
+all_places <- read.csv(paste0(data_dir, "all_places.csv"))
+census_place_names <- read.csv(paste0(data_dir, "places.csv"))$place_name
+wl <- readLines("EJ_DAC_Paper/Data/wl.txt")
+
+# page-level section data
+pages_fp <- paste0(Sys.getenv("BOX_PATH"),
                    "/Structural_Topic_Model_Paper/gsp_docs_lean")
-page_features <- tibble(readRDS(pages_fp))
+page_features <- tibble(readRDS(pages_fp)) %>%
+   mutate(gsp_id = as.numeric(gsp_id)) %>%
+   filter(is_comment == FALSE & is_reference == FALSE) %>%
+   mutate(original_page_num = as.numeric(page_num),
+          page_num = ave(1:nrow(.), gsp_id, FUN = seq_along)) %>%
+   dplyr::select(c("gsp_id", "page_num"))
 
-all_places <- read.csv('EJ_DAC_Paper/Data/all_places.csv')
+# verb-based edgelist
+edge_fp <- paste0(Sys.getenv("BOX_PATH"), "/Verb_Analysis_Paper/edgelist_with_verb_meta")
+ve <- readRDS(edge_fp) %>%
+   as_tibble() %>%
+   filter(!is.na(source) & !is.na(target)) %>%
+   filter(head_verb_lemma %in% wl) %>%
+   dplyr::select(-c(2:10)) %>%
+   mutate(GSP_ID = as.numeric(gsp_id),
+          page_num = as.numeric(stringr::str_remove(stringr::str_remove(doc_sent_verb,
+                                                                        ".*pdf"),
+                                                    "_.*"))) %>%
+   dplyr::select(-c(gsp_id, doc_sent_verb)) %>%
+   dplyr::select(source, target, GSP_ID, doc_sent_parent, everything()) %>%
+   dplyr::select(-c(24:124))
 
-gsp_ids <- gsub("^0+", "", gsub("\\.RDS", "", extract_list))
-gsa_gsp <- tibble(read.csv('EJ_DAC_Paper/Data/gsa_gsp.csv'))
-gsa_names <- read.csv('EJ_DAC_Paper/Data/gsa_names.csv')
+ve_w_sections <- ve %>%
+   left_join(page_features, by = c("GSP_ID" = "gsp_id",
+                                   "page_num" = "page_num"))
 
-# replace groundwater_sustainability_agency with gsa
-gsa_names_2 <- gsa_names
-gsa_names_2$GSA_Name <- str_replace(gsa_names$GSA_Name, 
-                                    "groundwater_sustainability_agency", 
-                                    "gsa")
 
-# add in gsa names with 'groundwater' in them already, removing 'groundwater_sustainability_agency'
-gsa_names_3 <- gsa_names %>% 
-   mutate(GSA_Name = str_replace(gsa_names$GSA_Name, 
-                                 "_groundwater_sustainability_agency", 
-                                 "")) %>% 
-   filter(grepl("groundwater", GSA_Name))
+# ============================================================================
+# place_aliases: which nodes name an expected place itself
+# ============================================================================
 
-gsa_names_4 <- data.frame(GSA_ID=c('147',
-                                   '461',
-                                   '457',
-                                   '253',
-                                   '456',
-                                   '106',
-                                   '415',
-                                   '418',
-                                   '384',
-                                   '432',
-                                   '163',
-                                   '433',
-                                   '434',
-                                   '49',
-                                   '24',
-                                   '403', 
-                                   '47'
-                                   ),
-                          GSA_Name = c('sacramento_central_groundwater_authority',
-                                        'salinas_valley_basin_groundwater_sustainability_agency',
-                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_butte_valley',
-                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_scott_river',
-                                        'siskiyou_county_flood_control_and_water_conservation_district_groundwater_sustainability_agency_shasta',
-                                        'yuba_water_agency',
-                                        'yuba_water_agency',
-                                        'tehama_county_flood_control_and_water_conservation_district',
-                                        'reclamation_district_no_501_groundwater_sustainability_agency_northern_delta_groundwater_sustainability_agency',
-                                        'fox_canyon_groundwater_management_agency',
-                                        'fox_canyon_groundwater_management_agency',
-                                        'fox_canyon_groundwater_management_agency',
-                                        'fox_canyon_groundwater_management_agency',
-                                        'arroyo_santa_rosa_groundwater_sustainability_agency',
-                                        'mga',
-                                        'owens_valley_groundwater_authority',
-                                        'madera_co_groundwater_sustainability_agency'
-                                       )
-                          )
-
-gsa_names <- rbind(gsa_names, gsa_names_2, gsa_names_3, gsa_names_4)
-
-# function to grab section columns from page_features to bind to edges
-parent_loc_to_section <- function(pointer_str){
-   # split str after '.pdf' and before '_'
-   pointer_str <- strsplit(pointer_str, "_")[[1]][5]
-   gsp_id_in <- as.numeric(strsplit(pointer_str, ".pdf")[[1]][1])
-   page_num_in <- as.numeric(strsplit(pointer_str, ".pdf")[[1]][2])
-   
-   page_sections <- page_features %>% 
-      mutate(gsp_id = as.numeric(gsp_id)) %>%
-      filter(gsp_id == gsp_id_in) %>% 
-      filter(page_num == page_num_in) %>% 
-      select(gsp_id, page_num, is_comment, is_reference, 
-             admin, basin_plan, sust_criteria, 
-             monitoring_networks, projects_mgmt_actions) %>% 
-      mutate(admin = as.numeric(admin),
-             basin_plan = as.numeric(basin_plan),
-             sust_criteria = as.numeric(sust_criteria),
-             monitoring_networks = as.numeric(monitoring_networks),
-             projects_mgmt_actions = as.numeric(projects_mgmt_actions))
-   return(page_sections)
+# R3 normalisation: fold accents and ligatures, unify saint/mount/fort, drop separators
+normalise_name <- function(name) {
+   name <- iconv(name, "UTF-8", "ASCII//TRANSLIT", sub = "")
+   name <- gsub("\\bsaint\\b|^st_|_st_", "st", name)
+   name <- gsub("^mount_|_mount_|^mt_|_mt_", "mt", name)
+   name <- gsub("^fort_|^ft_", "ft", name)
+   gsub("[_\\-\\.']", "", name)
 }
 
-# process node/edgelist for use
-net_process <- function(file, gsp_id){
-   # read in rds file
+alias_rule <- function(node, place) {
+   place_re <- gsub("([.^$|()\\[\\]{}*+?\\\\-])", "\\\\\\1", place, perl = TRUE)
+   case_when(
+      grepl(paste0("^(the_)?(city|town|community|village)_of_(the_)?", place_re, "$"), node) ~ "R1",
+      grepl(paste0("^", place_re, "_(city|town|community|ca|california|cdp)$"), node) ~ "R2",
+      normalise_name(node) == normalise_name(place) ~ "R3",
+      TRUE ~ NA_character_)
+}
+
+place_aliases <- function(nodes, places) {
+   candidates <- setdiff(nodes, census_place_names)  # other Census places are never aliases
+
+   # 4 plans contain no Census place
+   if (!length(places)) return(tibble(place = character(), alias = character(), rule = character()))
+
+   map_dfr(places, function(x) {
+      tibble(place = x,
+             alias = candidates,
+             rule = alias_rule(candidates, x))
+   }) %>%
+      filter(!is.na(rule), alias != place) %>%
+      # a node claimed by two places stays separate
+      group_by(alias) %>%
+      filter(n() == 1) %>%
+      ungroup()
+}
+
+
+# ============================================================================
+# net_process: place tagging
+# ============================================================================
+
+net_process <- function(file, gsp_id) {
    temp <- readRDS(file)
-   # grab nodelist
    nl <- tibble(temp$nodelist)
-   # tag places and DACs
-   all_places <- all_places %>% filter(GSP_ID == gsp_id )
-   nl <- nl %>% left_join(all_places, by=join_by(entity_name == NAME20))
+   places_gsp <- all_places %>% filter(GSP_ID == gsp_id)
 
-   el <- tibble(temp$edgelist)
-   edge_sources <- data.frame()
-   for (edge in el$doc_sent_parent) {
-      edge_source <- parent_loc_to_section(edge)
-      edge_sources <- rbind(edge_sources, edge_source)
-   }
-   el <- cbind(el, edge_sources)
+   el <- ve_w_sections %>%
+      filter(GSP_ID == gsp_id) %>%
+      mutate(weight = 1)
 
-   # filter out NA edges and irrelevant cols
-   el <- el %>% 
-      select(-doc_sent_verb) %>% 
-      filter(!is.na(source) & !is.na(target))
-   
-   networklist <- list("nodelist" = tibble(nl), "edgelist" = tibble(el))
+   aliases <- place_aliases(nl$entity_name, places_gsp$NAME20)
 
-   return(networklist)
+   # rename aliases to their place in both the nodelist and the edgelist
+   rename_alias <- function(x) coalesce(aliases$place[match(x, aliases$alias)], x)
+
+   nl <- nl %>%
+      mutate(entity_name = rename_alias(entity_name)) %>%
+      distinct(entity_name, .keep_all = TRUE) %>%
+      left_join(places_gsp, by = join_by(entity_name == NAME20)) %>%
+      dplyr::select(-c(entity_type, num_appearances))
+
+   el <- el %>%
+      mutate(source = rename_alias(source),
+             target = rename_alias(target))
+
+   list("nodelist" = tibble(nl),
+        "edgelist" = tibble(el),
+        "aliases" = aliases %>% mutate(GSP_ID = gsp_id))
 }
 
-# process node/edgelist to igraph object
-net_graph <- function(networklist, gsp_id, aggregate = FALSE){
-   
+
+# ============================================================================
+# net_graph
+# ============================================================================
+
+net_graph <- function(networklist, gsp_id) {
    network_graph <- igraph::graph_from_data_frame(networklist$edgelist,
                                                   vertices = networklist$nodelist)
-   
-   # get gsa names from gsa_gsp and gsa_names
-   gsas <- gsa_gsp %>% filter(GSP_ID == gsp_id)
-   gsa_ids <- as.integer(unlist(strsplit(gsas$GSA_IDs, ",")))
-   gsa_names2 <- merge(data.frame(GSA_ID = gsa_ids), 
-                       gsa_names, 
-                       by = "GSA_ID")$GSA_Name
-   gsa_names2 <- c(gsa_names2, 'groundwater_sustainability_agency', 'gsa') #add in deafult
-   gsa_ins <- c(which(V(network_graph)$name %in% gsa_names2))
-   
-   #distance to gsa(s)
-   dists <- data.frame(matrix(ncol = length(gsa_ins), 
-                              nrow = vcount(network_graph)))
-   colnames(dists) <- paste0('X', gsa_ins)
-   
-   for (i in gsa_ins){
-      dist <- distances(network_graph, 
-                        to=i,
-                        mode = 'in')
-      dist[is.infinite(dist)] <- NA # replace infinite distance with NA
-      dist[is.nan(dist)] <- NA # replace NA with NA
-      dists[[paste0('X', i)]] <- dist
-   }
-   colnames(dists) <- V(network_graph)$name[gsa_ins]
-   leader_dist_min <- apply(dists, 1, min, na.rm = TRUE)
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                    'leader_dist_min',
-                                    value = leader_dist_min)
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                         'GSA',
-                                         value = ifelse(V(network_graph)$name %in% gsa_names2, 1, 0))
-   
-   network_graph <- set_vertex_attr(network_graph,
-                                    'is_place',
-                                    value = ifelse(is.na(V(network_graph)$GEOID20), 0, 1))
-   
-   network_graph_simp <- igraph::simplify(network_graph, 
-                                          remove.multiple = TRUE,
-                                          remove.loops = FALSE,
-                                          edge.attr.comb = list(neg = 'mean',
-                                                                has_hedge = 'mean',
-                                                                is_future = 'mean',
-                                                                gsp_id = 'mean',
-                                                                page_num = 'concat',
-                                                                admin = 'sum',
-                                                                basin_plan = 'sum',
-                                                                sust_criteria = 'sum',
-                                                                monitoring_networks = 'sum',
-                                                                projects_mgmt_actions = 'sum',
-                                                                'ignore'))
-   
-   V(network_graph_simp)$admin_sum <- sapply(V(network_graph_simp), function(v) {
-      sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$admin)
-   })
-   V(network_graph_simp)$basin_plan_sum <- sapply(V(network_graph_simp), function(v) {
-      sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$basin_plan)
-   })
-   V(network_graph_simp)$sust_criteria_sum <- sapply(V(network_graph_simp), function(v) {
-      sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$sust_criteria)
-   })
-   V(network_graph_simp)$monitoring_networks_sum <- sapply(V(network_graph_simp), function(v) {
-      sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$monitoring_networks)
-   })
-   V(network_graph_simp)$projects_mgmt_actions_sum <- sapply(V(network_graph_simp), function(v) {
-      sum(E(network_graph_simp)[incident(network_graph_simp, v, mode = "all")]$projects_mgmt_actions)
-   })
-   
-   
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'degree',
-                                    value = node_degree(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'closeness',
-                                    value = node_closeness(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'betweeness',
-                                    value = node_betweenness(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp, 
-                                    'eigenvector',
-                                    value = node_eigenvector(network_graph_simp))  
-   network_graph_simp <- set_vertex_attr(network_graph_simp,
-                                    'indegree',
-                                    value = node_indegree(network_graph_simp))
-   network_graph_simp <- set_vertex_attr(network_graph_simp,
-                                    'outdegree',
-                                    value = node_outdegree(network_graph_simp))
-   
-   return(network_graph_simp)
+
+   network_graph <- igraph::simplify(network_graph,
+                                     remove.multiple = TRUE,
+                                     remove.loops = TRUE,
+                                     edge.attr.comb = list(weight = "sum",
+                                                           neg = "mean",
+                                                           has_hedge = "mean",
+                                                           is_future = "mean",
+                                                           gsp_id = "mean",
+                                                           page_num = "concat",
+                                                           original_page_num = "concat",
+                                                           admin = "sum",
+                                                           basin_plan = "sum",
+                                                           sust_criteria = "sum",
+                                                           monitoring_networks = "sum",
+                                                           projects_mgmt_actions = "sum",
+                                                           "ignore"))
+
+   return(network_graph)
 }
 
-# apply functions to all networks
+
+# ============================================================================
+# Main loop
+# ============================================================================
+
+all_aliases <- list()
+
 for (g in seq_along(gsp_ids)) {
-   gsp_id <- paste0("gsp_",gsp_ids[g])
-   
-   print(paste0("Processing ", gsp_id))
-   gsp_list <- net_process(file = paste0(network_fp, 
-                                         "/",
-                                         extract_list[g]),
-                           gsp_id = gsp_ids[g]
-                           )
-   
-   print(paste0("Graphing ", gsp_id))
-   gsp_graph <- net_graph(gsp_list, 
-                          gsp_id = gsp_ids[g])
-   
-   print(paste0("Saving Graph ", gsp_id))
-   saveRDS(object = gsp_graph,
-           file = paste0(Sys.getenv("BOX_PATH"),
-                         "/EJ_Paper/cleaned_extracts_DACified",
-                         "/",
-                         extract_list[g]))
+   gsp_id <- gsp_ids[g]
 
-   print(paste0("Finished ", gsp_id))
+   gsp_list <- net_process(file = paste0(network_fp, "/", extract_list[g]),
+                           gsp_id = gsp_id)
+
+   gsp_graph <- net_graph(gsp_list, gsp_id = gsp_id)
+
+   saveRDS(object = gsp_graph,
+           file = paste0(out_dir, extract_list[g]))
+
+   all_aliases[[extract_list[g]]] <- gsp_list$aliases
+
+   print(paste0("Graphed ", gsp_id))
 }
 
-# test functions for one network
-
-glt <- net_process(file = paste0(network_fp, "/",extract_list[92]),
-                             gsp_id = gsp_ids[92])
-
-ggt <- net_graph(glt,
-                 gsp_id = gsp_ids[92])
+# appendix table: every alias merged into a place node
+write_csv(bind_rows(all_aliases), paste0(data_dir, "place_aliases.csv"))
