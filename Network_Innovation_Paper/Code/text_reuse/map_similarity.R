@@ -48,7 +48,7 @@ score_dt$b_version <- str_extract(score_dt$b_file,'^v[1-9]')
 # Disable S2 geometry
 sf::sf_use_s2(FALSE)
 # Read the GSP shapefile
-gsp_bounds <- st_read("Multipurpose_Files/GSP_Submitted")
+gsp_bounds <- st_read("data/Multipurpose_Files/GSP_Submitted")
 gsp_bounds <- sf::st_make_valid(gsp_bounds)
 # Make sure GSP.ID is formatted correctly with 4 digits
 gsp_bounds$gsp_id <- formatC(as.numeric(gsp_bounds$GSP.ID), width = 4, flag = '0')
@@ -78,7 +78,7 @@ shared_300_total$plus300_ratio <- shared_300_total$N/shared_300_total$min_page
 
 shared_v1 <- shared_300_total[a_version == 'v1' & b_version == 'v1']
 # Get list of files for network vertices
-flist <- list.files('Multipurpose_Files/portal_files/', pattern = 'txt')
+flist <- list.files('data/Multipurpose_Files/portal_files/', pattern = 'txt')
 flist <- str_remove(flist, '\\.txt')
 flist_v1 <- flist[grepl('^v1', flist)]  
 # Initialize the network

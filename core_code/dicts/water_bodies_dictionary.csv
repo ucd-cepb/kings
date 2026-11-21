@@ -1,0 +1,167 @@
+all_names,body_type,watershed,notes
+Sacramento River|Upper Sacramento River|Lower Sacramento River,river,Sacramento Valley,
+Feather River|Upper Feather River|Lower Feather River,river,Sacramento Valley,
+Yuba River|North Fork Yuba River|South Fork Yuba River|Middle Fork Yuba River,river,Sacramento Valley,
+American River|North Fork American River|South Fork American River|Middle Fork American River,river,Sacramento Valley,
+Bear River,river,Sacramento Valley,tributary of Feather River
+Cosumnes River,river,Sacramento Valley,
+Mokelumne River|North Fork Mokelumne River|South Fork Mokelumne River,river,Sacramento Valley,
+Calaveras River,river,Sacramento Valley,
+Pit River|Upper Pit River|Lower Pit River,river,Sacramento Valley,largest tributary of Sacramento
+McCloud River,river,Sacramento Valley,
+Trinity River|Upper Trinity River|Lower Trinity River,river,North Coast,trans-basin diversion to Sacramento
+Cache Creek,river,Sacramento Valley,
+Putah Creek|Upper Putah Creek|Lower Putah Creek,river,Sacramento Valley,
+Stony Creek,river,Sacramento Valley,
+Cottonwood Creek,river,Sacramento Valley,tributary of Sacramento River
+Big Chico Creek,river,Sacramento Valley,
+Butte Creek,river,Sacramento Valley,
+Klamath River|Upper Klamath River|Lower Klamath River,river,North Coast,
+Smith River,river,North Coast,northernmost major CA river
+Eel River|South Fork Eel River|North Fork Eel River|Middle Fork Eel River,river,North Coast,
+Russian River|Upper Russian River|Lower Russian River,river,North Coast,
+Navarro River,river,North Coast,
+Garcia River,river,North Coast,
+Gualala River,river,North Coast,
+Mad River,river,North Coast,
+Van Duzen River,river,North Coast,tributary of Eel River
+Mattole River,river,North Coast,
+San Joaquin River|Upper San Joaquin River|Lower San Joaquin River,river,San Joaquin Valley,
+Stanislaus River|North Fork Stanislaus River|South Fork Stanislaus River,river,San Joaquin Valley,
+Tuolumne River|Upper Tuolumne River|Lower Tuolumne River,river,San Joaquin Valley,
+Merced River|Upper Merced River|Lower Merced River,river,San Joaquin Valley,
+Chowchilla River,river,San Joaquin Valley,
+Fresno River,river,San Joaquin Valley,
+Kings River|North Fork Kings River|South Fork Kings River|Middle Fork Kings River,river,San Joaquin Valley,
+Kaweah River|North Fork Kaweah River|South Fork Kaweah River|Middle Fork Kaweah River,river,San Joaquin Valley,
+Tule River|North Fork Tule River|South Fork Tule River,river,San Joaquin Valley,
+Kern River|North Fork Kern River|South Fork Kern River,river,San Joaquin Valley,
+Salinas River|Upper Salinas River|Lower Salinas River,river,Central Coast,
+Pajaro River,river,Central Coast,
+Soquel Creek,river,Central Coast,
+San Lorenzo River,river,Central Coast,
+Big Sur River,river,Central Coast,
+Carmel River,river,Central Coast,
+Nacimiento River,river,Central Coast,tributary of Salinas River
+San Antonio River,river,Central Coast,tributary of Salinas River
+Santa Ynez River,river,South Coast,
+Ventura River,river,South Coast,
+Santa Clara River|Upper Santa Clara River|Lower Santa Clara River,river,South Coast,
+Los Angeles River|Upper Los Angeles River|Lower Los Angeles River,river,South Coast,
+San Gabriel River|East Fork San Gabriel River|West Fork San Gabriel River|North Fork San Gabriel River,river,South Coast,
+Santa Ana River|Upper Santa Ana River|Lower Santa Ana River,river,South Coast,
+San Diego River,river,South Coast,
+Tijuana River,river,South Coast,US-Mexico border
+Otay River,river,South Coast,
+San Luis Rey River,river,South Coast,
+Santa Margarita River,river,South Coast,
+Murrieta Creek,river,South Coast,tributary of Santa Margarita River
+Whitewater River|Whitewater Creek,river,Colorado Desert,drains to Salton Sea
+Colorado River|Lower Colorado River,river,Colorado Desert,
+Truckee River,river,Great Basin,CA-Nevada
+Walker River,river,Great Basin,CA-Nevada
+Owens River|Upper Owens River|Lower Owens River,river,Great Basin,
+Mojave River,river,Great Basin,drains internally
+New River,river,Colorado Desert,drains to Salton Sea from Mexico
+Alamo River,river,Colorado Desert,drains to Salton Sea
+Dry Creek,river,Sacramento Valley,common name; multiple in CA
+Lake Shasta|Shasta Lake|Shasta Reservoir,reservoir,Sacramento Valley,largest reservoir in CA
+Lake Oroville|Oroville Reservoir,reservoir,Sacramento Valley,
+Folsom Lake|Folsom Reservoir,reservoir,Sacramento Valley,
+New Melones Lake|New Melones Reservoir,reservoir,San Joaquin Valley,
+San Luis Reservoir,reservoir,San Joaquin Valley,
+Don Pedro Reservoir|Lake Don Pedro,reservoir,San Joaquin Valley,
+Lake McClure|McClure Reservoir,reservoir,San Joaquin Valley,
+Millerton Lake|Millerton Reservoir,reservoir,San Joaquin Valley,
+Pine Flat Lake|Pine Flat Reservoir,reservoir,San Joaquin Valley,
+Lake Kaweah|Kaweah Reservoir,reservoir,San Joaquin Valley,
+Lake Success|Success Reservoir,reservoir,San Joaquin Valley,
+Lake Isabella|Isabella Reservoir,reservoir,San Joaquin Valley,
+Hetch Hetchy Reservoir|O'Shaughnessy Reservoir,reservoir,San Joaquin Valley,
+Lake Almanor,reservoir,Sacramento Valley,on North Fork Feather River
+Bullards Bar Reservoir|New Bullards Bar Reservoir,reservoir,Sacramento Valley,
+Englebright Reservoir|Englebright Lake,reservoir,Sacramento Valley,
+Pardee Reservoir,reservoir,Sacramento Valley,
+Camanche Reservoir,reservoir,Sacramento Valley,
+Lake Berryessa|Berryessa Reservoir,reservoir,Sacramento Valley,
+Lake Sonoma|Warm Springs Reservoir,reservoir,North Coast,
+Lake Mendocino|Coyote Valley Reservoir,reservoir,North Coast,
+Lake Cachuma|Cachuma Reservoir,reservoir,South Coast,
+Diamond Valley Lake,reservoir,South Coast,largest reservoir in Southern CA
+Lake Castaic|Castaic Reservoir,reservoir,South Coast,
+Pyramid Lake|Pyramid Reservoir,reservoir,South Coast,not to be confused with NV Pyramid Lake
+Lake Perris|Perris Reservoir,reservoir,South Coast,
+Silverwood Lake,reservoir,South Coast,
+Lake Havasu,reservoir,Colorado Desert,on Colorado River; AZ/CA border
+Lake Tahoe,lake,Great Basin,largest alpine lake in North America
+Mono Lake,lake,Great Basin,saline lake; Owens Valley
+Owens Lake,lake,Great Basin,dry lake bed
+Salton Sea,lake,Colorado Desert,California's largest lake by area
+Clear Lake,lake,North Coast,largest natural freshwater lake wholly in CA
+Eagle Lake,lake,Great Basin,Lassen County
+Lake Earl,lake,North Coast,Del Norte County; coastal lagoon
+San Francisco Bay|San Francisco Bay-Delta|San Francisco Estuary,bay,San Francisco Bay,
+San Pablo Bay,bay,San Francisco Bay,northern arm of SF Bay
+Suisun Bay,bay,San Francisco Bay,eastern arm of SF Bay
+Grizzly Bay,bay,San Francisco Bay,within Suisun Marsh
+Honker Bay,bay,San Francisco Bay,within Suisun Marsh
+Richardson Bay,bay,San Francisco Bay,
+Tomales Bay,bay,North Coast,
+Bodega Bay,bay,North Coast,
+Humboldt Bay,bay,North Coast,
+Monterey Bay,bay,Central Coast,
+Morro Bay,bay,Central Coast,
+Santa Monica Bay,bay,South Coast,
+San Diego Bay,bay,South Coast,
+Mission Bay,bay,South Coast,
+Newport Bay|Upper Newport Bay|Lower Newport Bay,bay,South Coast,
+Sacramento-San Joaquin Delta|Sacramento-San Joaquin River Delta|Bay Delta|California Delta,delta,San Francisco Bay,critical hub of CA water system
+Suisun Marsh,wetland,San Francisco Bay,largest tidal marsh on West Coast
+Elkhorn Slough,estuary,Central Coast,
+Bolinas Lagoon,estuary,North Coast,
+Sacramento Valley Groundwater Basin|Sacramento Valley Basin,groundwater_basin,Sacramento Valley,DWR Bulletin 118
+Redding Area Groundwater Basin,groundwater_basin,Sacramento Valley,
+Colusa Basin,groundwater_basin,Sacramento Valley,
+Yolo County Groundwater Basin,groundwater_basin,Sacramento Valley,
+North American Subbasin,groundwater_basin,Sacramento Valley,within Sacramento Valley Basin
+South American Subbasin,groundwater_basin,Sacramento Valley,within Sacramento Valley Basin
+San Joaquin Valley Groundwater Basin|San Joaquin Valley Basin,groundwater_basin,San Joaquin Valley,critically overdrafted
+Tulare Lake Subbasin|Tulare Lake Basin,groundwater_basin,San Joaquin Valley,SGMA critically overdrafted
+Kings Subbasin|Kings Groundwater Basin,groundwater_basin,San Joaquin Valley,SGMA critically overdrafted
+Kaweah Subbasin|Kaweah Groundwater Basin,groundwater_basin,San Joaquin Valley,SGMA critically overdrafted
+Tule Subbasin|Tule Groundwater Basin,groundwater_basin,San Joaquin Valley,SGMA critically overdrafted
+Kern County Subbasin|Kern Groundwater Basin,groundwater_basin,San Joaquin Valley,SGMA critically overdrafted
+Eastside Subbasin,groundwater_basin,San Joaquin Valley,
+Westside Subbasin,groundwater_basin,San Joaquin Valley,
+Delta-Mendota Subbasin,groundwater_basin,San Joaquin Valley,
+Tracy Subbasin,groundwater_basin,San Joaquin Valley,
+Modesto Subbasin,groundwater_basin,San Joaquin Valley,
+Turlock Subbasin,groundwater_basin,San Joaquin Valley,
+Merced Subbasin,groundwater_basin,San Joaquin Valley,
+Chowchilla Subbasin,groundwater_basin,San Joaquin Valley,
+Madera Subbasin,groundwater_basin,San Joaquin Valley,
+Fresno Subbasin|Fresno Groundwater Basin,groundwater_basin,San Joaquin Valley,
+Santa Clara Valley Groundwater Basin|Santa Clara Basin,groundwater_basin,San Francisco Bay,
+Niles Cone Groundwater Basin,groundwater_basin,San Francisco Bay,
+Livermore Valley Groundwater Basin,groundwater_basin,San Francisco Bay,
+San Jose Area Groundwater Basin,groundwater_basin,San Francisco Bay,
+Salinas Valley Groundwater Basin|Salinas Basin|Salinas Valley Basin,groundwater_basin,Central Coast,critically overdrafted
+Pajaro Valley Groundwater Basin|Pajaro Valley Basin,groundwater_basin,Central Coast,
+Santa Cruz Mid-County Groundwater Agency Basin,groundwater_basin,Central Coast,
+Monterey Peninsula Groundwater Basin,groundwater_basin,Central Coast,
+Los Angeles Coastal Plain Groundwater Basin|Los Angeles Basin,groundwater_basin,South Coast,
+San Gabriel Valley Groundwater Basin|San Gabriel Basin,groundwater_basin,South Coast,
+Central Basin Groundwater Basin|Central Basin,groundwater_basin,South Coast,
+West Basin Groundwater Basin|West Basin,groundwater_basin,South Coast,
+Chino Basin Groundwater Basin|Chino Basin,groundwater_basin,South Coast,
+Riverside Basin Groundwater|Riverside Basin,groundwater_basin,South Coast,
+Coachella Valley Groundwater Basin|Coachella Basin,groundwater_basin,Colorado Desert,
+Eastern Municipal Water District Area,groundwater_basin,South Coast,
+San Diego Formation Groundwater Basin,groundwater_basin,South Coast,
+Owens Valley Groundwater Basin|Owens Valley Basin,groundwater_basin,Great Basin,
+Antelope Valley Groundwater Basin|Antelope Valley Basin,groundwater_basin,South Coast,adjudicated
+Mojave Basin Area|Mojave Groundwater Basin,groundwater_basin,Great Basin,adjudicated
+Corcoran Clay|Corcoran Clay Member,aquifer,San Joaquin Valley,confining layer in San Joaquin Valley
+Principal Aquifer,aquifer,San Joaquin Valley,generic; below Corcoran Clay
+Unconfined Aquifer|Shallow Aquifer,aquifer,general,generic term
+Confined Aquifer|Deep Aquifer,aquifer,general,generic term

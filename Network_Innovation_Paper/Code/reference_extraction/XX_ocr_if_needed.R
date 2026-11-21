@@ -7,7 +7,7 @@ library(tesseract)
 
 # Set up directories
 base_dir <- ''
-savedir <- file.path('Multipurpose_Files/portal_files/')
+savedir <- file.path('data/Multipurpose_Files/portal_files/')
 
 # Function to check PDF readability
 check_pdf_readability <- function(savedir) {
@@ -72,7 +72,7 @@ for (file in need_ocr) {
 }
 
 # Create directory for machine-readable GSPs
-machine_readable_dir <- file.path(base_dir, 'Multipurpose_Files/ocrd_pdfs/')
+machine_readable_dir <- file.path(base_dir, 'data/Multipurpose_Files/ocrd_pdfs/')
 dir.create(machine_readable_dir, recursive = TRUE, showWarnings = FALSE)
 cat("\nCreated directory for machine-readable GSPs:", machine_readable_dir, "\n")
 

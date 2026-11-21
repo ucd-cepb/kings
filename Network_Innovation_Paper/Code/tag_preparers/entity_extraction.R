@@ -8,7 +8,7 @@ lapply(pack,require,character.only=T)
 ##### THIS WAS PERFORMED ON RAW PDF FILES (ALL PUBLICLY AVAILABLE FROM THE EPA) THAT ARE NOT STORED WITH THE PROJECT ###### 
 #########
   
-tfiles <- list.files('Multipurpose_Files/portal_files/',pattern = 'txt$',full.names = T)
+tfiles <- list.files('data/Multipurpose_Files/portal_files/',pattern = 'txt$',full.names = T)
 
 test <- fread(tfiles[1],'<<PAGE BREAK>>')
 

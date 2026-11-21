@@ -9,7 +9,7 @@ library(pbapply)
 
 CLOBBER = F ### don't do this unless you want it to run for a very long time
 
-doc_loc <- 'Multipurpose_Files/portal_files/'
+doc_loc <- 'data/Multipurpose_Files/portal_files/'
 js_loc <- 'Network_Innovation_Paper/data_products/extracted_references/'
 if(!dir.exists(js_loc)){dir.create(js_loc, recursive = TRUE)}
 fls <- list.files(doc_loc,full.names=T,pattern = 'pdf$|PDF$')

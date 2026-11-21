@@ -4,7 +4,7 @@ CLOBBER <- TRUE  # Set this to TRUE or FALSE to control overwriting behavior
 # Define a character threshold for filtering pages
 MAX_CHAR_THRESHOLD <- 100000  # 100k characters
 
-files <- list.files('Multipurpose_Files/portal_files', pattern = "\\.pdf$", full.names = TRUE)
+files <- list.files('data/Multipurpose_Files/portal_files', pattern = "\\.pdf$", full.names = TRUE)
 
 for (file_path in files) {
    tryCatch({
@@ -24,7 +24,7 @@ for (file_path in files) {
              "\n  Replaced pages:", paste(which(pages_too_long), collapse=", "), "\n")
       }
       
-      txt_file_path <- file.path('Multipurpose_Files/portal_files', paste0(tools::file_path_sans_ext(basename(file_path)), '.txt'))
+      txt_file_path <- file.path('data/Multipurpose_Files/portal_files', paste0(tools::file_path_sans_ext(basename(file_path)), '.txt'))
       
       if (CLOBBER || !file.exists(txt_file_path)) {
          page_delimiter <- "<<PAGE_BREAK>>"
