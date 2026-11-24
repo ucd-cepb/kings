@@ -13,6 +13,7 @@
 #   [1e] 01_entity_classification/build_alter_bag_map.R ......... -> 01_entity_classification/alter_bag_map.csv (+ clusters, compounds, review menus)
 #   [1f] 01_entity_classification/build_entity_bag_lookup.R ..... -> 01_entity_classification/entity_bag_lookup.csv
 #   [1g] 01_entity_classification/build_gsa_bag_edges.R ......... -> 01_entity_classification/gsa_bag_edges.csv + gsa_bag_edges_alters.csv
+#   [1h] 01_entity_classification/write_doc_review.R ............ -> 01_entity_classification/DOC_BAGS_review.txt (review listing; every run)
 #   [2]  02_text_preprocessing/additional_filter_texts.R ....... -> 02_text_preprocessing/page_metadata.RDS
 #   [3A] 03A_reference_extraction/01..05 (5 scripts) ........... -> 03A_reference_extraction/gsp_reference_pairs.rds
 #   [3B] 03B_text_reuse/compare_project_sections.R ............. -> 03B_text_reuse/project_jaccard_results/project_section_jaccard_scores.rds
@@ -262,7 +263,14 @@ if (should_run(STAGE_0_INGEST, "Stage 0 ingest",
 #      -> entity_bag_lookup.csv (GSA override precedence; namespaces asserted disjoint).
 #   1g build_gsa_bag_edges.R folds the core graphs into per-document AUTHORING-GSA
 #      bag edges, alters folded to bag keys -> gsa_bag_edges.csv +
-#      gsa_bag_edges_alters.csv (what Stage 4 reads); runs last.
+#      gsa_bag_edges_alters.csv (what Stage 4 reads).
+#   1h write_doc_review.R -> DOC_BAGS_review.txt, the human-readable check of
+#      what 1g hands the model: coverage flags (crosswalk authors with no edge
+#      row), family -> doc -> authoring bags, and each bag's in-network alter
+#      profile as _entity_groups.R selects it. It runs AFTER the stage guard on
+#      every run_all.R call (cheap, no model input), so it always reflects the
+#      current products and the current network grouping, even when Stage 1 is
+#      skipped as fresh or a grouping rule in _entity_groups.R changed.
 #   The bag scripts are deterministic (no LLM); only 1b costs API calls, and it
 #   reuses entity_type_cache.csv. See BAG_REVIEW_FINDINGS.md for the design.
 if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
@@ -292,6 +300,11 @@ if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
   run(nip_code("01_entity_classification", "build_alter_bag_map.R"),        env = s1)
   run(nip_code("01_entity_classification", "build_entity_bag_lookup.R"),    env = s1)
   run(nip_code("01_entity_classification", "build_gsa_bag_edges.R"),        env = s1)
+}
+# 1h: always refresh the review listings from whatever Stage 1 products exist.
+if (file.exists(nip_product("01_entity_classification", "gsa_bag_edges.csv")) &&
+    file.exists(nip_product("01_entity_classification", "gsa_bag_edges_alters.csv"))) {
+  run(nip_code("01_entity_classification", "write_doc_review.R"))
 }
 
 # ----- Stage 2: page_metadata.RDS from the core parquet corpus -----

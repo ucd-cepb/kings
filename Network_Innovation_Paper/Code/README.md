@@ -30,7 +30,7 @@ authoring-GSA edge product from them. Full subsystem doc:
 open items: [`data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md`](../data_products/01_entity_classification/BAG_REVIEW_FINDINGS.md).
 Run order within the stage: `build_overrides_from_dicts.R` → `build_node_dictionary.R` →
 `build_entity_bag_map.R` → `write_bag_review.R` → `build_alter_bag_map.R` →
-`build_entity_bag_lookup.R` → `build_gsa_bag_edges.R`.
+`build_entity_bag_lookup.R` → `build_gsa_bag_edges.R` → `write_doc_review.R`.
 
 - `build_overrides_from_dicts.R` — bakes the `core_code/dicts` gazetteers into
   `inputs/entity_type_overrides.csv`, the authoritative label source that wins over
@@ -56,8 +56,14 @@ Run order within the stage: `build_overrides_from_dicts.R` → `build_node_dicti
   **authoring**-GSA bag edges (authorship = crosswalk `gsa_ids`; alters folded to
   bag keys, compound mentions credit every bag they name; pooled corpus-wide per
   authoring bag) → `gsa_bag_edges.csv` + the column dictionary
-  `gsa_bag_edges_alters.csv`. This is what `04_modeling/*` reads. Run LAST. Run
+  `gsa_bag_edges_alters.csv`. This is what `04_modeling/*` reads. Run
   standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_gsa_bag_edges.R`.
+- `write_doc_review.R` — the review listing of what the model gets →
+  `DOC_BAGS_review.txt`: coverage flags (crosswalk authors with no edge row,
+  scrape-name mismatches, author overrides), family → document → authoring bags,
+  and each bag's in-network alter profile as `_entity_groups.R` selects it.
+  `run_all.R` runs it on every call, after the Stage 1 guard, so it never goes
+  stale. Run standalone: `Rscript Network_Innovation_Paper/Code/01_entity_classification/write_doc_review.R`.
 - `make_alter_overrides.R` — one-off curation tool (not in `run_all.R`) that
   regenerates the NGO/research override files from the specs inside it.
 - `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
