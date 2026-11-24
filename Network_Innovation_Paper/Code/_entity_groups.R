@@ -1,5 +1,5 @@
 #' _entity_groups.R — single source of truth for entity-type groupings used by
-#' the modeling scripts (make_binary0.9; explore/make_networks, explore/make_valued_networks).
+#' the modeling script (04_modeling/make_binary0.9_networks.R).
 #'
 #' Since 2026-11-16 the modeling reads gsa_bag_edges.csv, whose alter columns are
 #' BAG keys ("bag:<bag_id>", see build_gsa_bag_edges.R), and groups them with the

@@ -221,7 +221,7 @@ product is traceable to its script at a glance. Resolve one with
 | `03A_reference_extraction/` | `03A_reference_extraction/*` | `gsp_reference_pairs.rds`, `extracted_references/`, intermediate `.rds` |
 | `03B_text_reuse/` | `03B_text_reuse/*` | `project_jaccard_results/`, `score_results/` |
 | `03C_knowledge_tree/` | `03C_knowledge_tree/*` | `triple_similarity.csv`, `knowledge_triples_sustcrit.csv`, `kg_*.pkl` |
-| `04_modeling/` | `04_modeling/*` | `rds_placeholders/` |
+| `04_modeling/` | `04_modeling/*` | — (results go to `outputs/`) |
 
 **Results** — figures and rendered model tables — live under `outputs/`, not
 `data_products/`, because they are analysis outputs rather than pipeline data:

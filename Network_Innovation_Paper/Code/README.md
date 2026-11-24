@@ -64,8 +64,6 @@ Run order within the stage: `build_overrides_from_dicts.R` → `build_node_dicti
   and each bag's in-network alter profile as `_entity_groups.R` selects it.
   `run_all.R` runs it on every call, after the Stage 1 guard, so it never goes
   stale. Run standalone: `Rscript Network_Innovation_Paper/Code/01_entity_classification/write_doc_review.R`.
-- `make_alter_overrides.R` — one-off curation tool (not in `run_all.R`) that
-  regenerates the NGO/research override files from the specs inside it.
 - `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
   names per predicted leaf for a human to eyeball. Run standalone: `NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R`.
 
@@ -173,11 +171,5 @@ ERGMs.
   `model[12]_plot.png`, via `nip_figure()`) and the regression tables to
   `outputs/tables/` (`mod0/1/2/3_html.html`, via `nip_table()`).
 
-**Exploratory variants** (in `explore/`; off the critical path) — earlier
-valued-ERGM approaches, superseded by the binary/bergm model above; run by hand
-only, they persist no manuscript output:
-
-- `explore/make_networks.R` — valued-ERGM variant fit with contrastive
-  divergence (`estimate = 'CD'`); prints console tables and saves intermediate
-  `*_object.rds` placeholders.
-- `explore/make_valued_networks.R` — valued-ERGM variant.
+The earlier valued-ERGM variants (`make_networks.R`, `make_valued_networks.R`)
+were retired to `unused/modeling_explore/` on 2026-11-24.
