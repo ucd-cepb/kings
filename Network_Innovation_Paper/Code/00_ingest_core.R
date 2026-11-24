@@ -63,10 +63,14 @@ CLOBBER <- toupper(Sys.getenv("CLOBBER", "FALSE")) %in% c("TRUE", "1", "YES")
 #'
 #' Ingest is otherwise a pure copy, and this stays as near to that as a repair
 #' can. Three rules keep it honest:
-#'   1. FILL-ONLY. An override may only populate a field the portal left blank.
-#'      If DWR has since published a GSA list for that document, this STOPS —
-#'      the override has served its purpose and its row should be deleted, not
-#'      allowed to silently shadow real upstream data.
+#'   1. FILL-ONLY, unless the row says exactly what it replaces. An override may
+#'      only populate a field the portal left blank. If DWR has since published a
+#'      GSA list for that document, this STOPS — the override has served its
+#'      purpose and its row should be deleted, not allowed to silently shadow real
+#'      upstream data. The one exception is a row whose `replaces_gsa_ids` holds
+#'      the scraped value VERBATIM (a documented DWR error, e.g. plan 0013 listing
+#'      the whole Delta-Mendota coordination roster as its authors). It applies
+#'      only while the scrape still equals that value, and STOPS once it changes.
 #'   2. ROSTER-CHECKED. Every overriding GSA_ID must exist in the canonical
 #'      roster (`core_gsa_full()`) and the supplied name must match the roster's
 #'      name for that id. This is the guard against the id collision that makes
@@ -97,8 +101,18 @@ apply_author_overrides <- function(xw) {
          paste(unknown, collapse = ", "))
   }
 
-  # Rule 1: fill-only.
-  occupied <- xw[gsp_doc_id %in% ov$gsp_doc_id & gsa_ids_source == "scrape", gsp_doc_id]
+  # Rule 1: fill-only, or replace an exactly-named scraped value.
+  if (!"replaces_gsa_ids" %in% names(ov)) ov[, replaces_gsa_ids := ""]
+  ov[is.na(replaces_gsa_ids), replaces_gsa_ids := ""]
+  cur <- unique(xw[gsp_doc_id %in% ov$gsp_doc_id, .(gsp_doc_id, gsa_ids, gsa_ids_source)])
+  chk <- merge(ov[, .(gsp_doc_id, replaces_gsa_ids)], cur, by = "gsp_doc_id")
+  stale <- chk[nzchar(replaces_gsa_ids) & trimws(gsa_ids) != trimws(replaces_gsa_ids), gsp_doc_id]
+  if (length(stale)) {
+    stop("doc_author_overrides.csv replaces_gsa_ids no longer matches the scraped gsa_ids ",
+         "for doc(s) ", paste(stale, collapse = ", "),
+         ". DWR changed the value — re-check those rows.")
+  }
+  occupied <- chk[!nzchar(replaces_gsa_ids) & gsa_ids_source == "scrape", gsp_doc_id]
   if (length(occupied)) {
     stop("doc_author_overrides.csv would overwrite a gsa_ids value DWR now publishes ",
          "for doc(s) ", paste(occupied, collapse = ", "),
@@ -144,7 +158,8 @@ apply_author_overrides <- function(xw) {
      `:=`(gsa_ids = i..ids, gsa_names = i..names, gsa_ids_source = "override")]
   for (i in seq_len(nrow(ov))) {
     message("  author override: doc ", ov$gsp_doc_id[i], " <- gsa_ids ", ov$gsa_ids[i],
-            " (", ov$gsa_names[i], ")")
+            " (", ov$gsa_names[i], ")",
+            if (nzchar(ov$replaces_gsa_ids[i])) paste0(" REPLACING scraped ", ov$replaces_gsa_ids[i]) else "")
   }
   still <- xw[gsa_ids_source == "missing", gsp_doc_id]
   if (length(still)) {

@@ -115,9 +115,16 @@ roster GSA for subbasin 5-022.13; it authors no other document in the corpus; an
 
 Three rules keep this from becoming a backdoor for editing core data:
 
-1. **Fill-only.** An override may only populate a field the portal left blank. If
-   DWR later publishes a GSA list for that document, ingest **stops** rather than
-   let a stale override shadow real upstream data — delete the override row.
+1. **Fill-only, unless the row names what it replaces.** An override may only
+   populate a field the portal left blank. If DWR later publishes a GSA list for
+   that document, ingest **stops** rather than let a stale override shadow real
+   upstream data — delete the override row. The one exception is a documented DWR
+   error: a row whose `replaces_gsa_ids` holds the scraped value verbatim replaces
+   it, and ingest **stops** as soon as the scrape no longer equals that value.
+   Applied 2026-11-18: plan `0013` (docs 4342, 8708, the Northern & Central
+   Delta-Mendota Regions GSP) → the 8 GSAs the portal lists by name. Its scraped
+   `gsa_ids` carry all 23 Delta-Mendota coordination-agreement GSAs, 14 of which
+   author their own plan in the same rounds.
 2. **Roster-checked.** Every overriding `GSA_ID` must exist in
    `core_gsa_full()`, and the supplied `gsa_names` must match the roster's name
    for that id. This is the guard against the id collision that makes this
@@ -125,7 +132,7 @@ Three rules keep this from becoming a backdoor for editing core data:
    agencies** — GSA 43 is Pixley Irrigation District GSA, author of plan `0065`,
    so the correct value for plan `0043` is 205.
 3. **Provenance stamped.** The crosswalk gains a `gsa_ids_source` column —
-   `scrape` (183 docs), `override` (2), or `missing` (0) — so any consumer can
+   `scrape` (181 docs), `override` (4), or `missing` (0) — so any consumer can
    tell a repaired row from a scraped one. Downstream code keys on column names,
    so the addition is backward-compatible.
 
