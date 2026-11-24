@@ -250,9 +250,8 @@ if (should_run(STAGE_0_INGEST, "Stage 0 ingest",
 #   1a build_overrides_from_dicts.R -> entity_type_overrides.csv, the table the
 #      classifier pins to; runs first.
 #   1b build_node_dictionary.R runs the (cached) LLM classifier -> node_dictionary.csv.
-#   1c build_entity_bag_map.R folds GSA name variants onto roster ids (and
-#      consultants onto the firm roster) -> entity_bag_map.csv + the review file
-#      entity_bag_unmatched.csv. Signed-off decisions live in
+#   1c build_entity_bag_map.R folds GSA name variants onto roster ids
+#      -> entity_bag_map.csv + the review file entity_bag_unmatched.csv. Signed-off decisions live in
 #      inputs/entity_bag_overrides_gsa.csv, which wins over the matcher.
 #   1d write_bag_review.R -> GSA_BAGS_review.txt, the human-readable bag listing
 #      (no product the model reads; regenerated whenever the stage runs).
@@ -287,7 +286,6 @@ if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
                  nip_input("entity_bag_overrides_research.csv"),
                  nip_input("entity_bag_overrides_institutional_other.csv"),
                  nip_input("alter_bag_label_overrides.csv"),
-                 nip_input("bag_merges.csv"),
                  core_gsa_full(), core_dict("consultant_dictionary.csv")))) {
   need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")  # 1c/1g key through the crosswalk
   # 1a overrides recompute (deterministic, cheap); the rest self-guard on CLOBBER

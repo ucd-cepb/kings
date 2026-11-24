@@ -41,8 +41,8 @@ submission key either: it labels both the 2020 original and its 2022/23 resubmis
 >
 > Keyed on the plan, the 2020 Aliso document would inherit all 23 consolidation authors.
 
-**Do not merge one roster id into another.** `inputs/bag_merges.csv` is empty and stays
-empty. A name variant folds to the roster id(s) it names; ids are never rewritten
+**Do not merge one roster id into another.** (The unused `inputs/bag_merges.csv` hook was
+removed 2026-11-24.) A name variant folds to the roster id(s) it names; ids are never rewritten
 to each other. Merging would drop real authors, because a document that lists the member
 id but not the parent would fail the authorship test.
 

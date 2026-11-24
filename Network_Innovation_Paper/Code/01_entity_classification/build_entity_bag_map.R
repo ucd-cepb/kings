@@ -4,16 +4,16 @@
 #' node_dictionary fragments each real agency across dozens of spelling variants
 #' ("aliso_gsa", "aliso_water_district_gsa", "aliso_wd_gsa", ...). This script
 #' builds a variant -> bag_id map so downstream edge/matrix code can represent each
-#' agency (and each consultant) ONCE instead of once per spelling.
+#' agency ONCE instead of once per spelling. Alter-side bags (consultant, NGO,
+#' research, Institutional_other) are built by build_alter_bag_map.R.
 #'
 #' Bag authority (locked design decisions):
 #'   - GSA bags: the 259 canonical gsa_ids AFFILIATED with some plan, per
 #'     id_crosswalk.csv (gsa_ids column). Canonical names come from the core
 #'     roster sgma_gsa_full.csv (GSA_ID -> GSA_Name). bag_id = "gsa_<GSA_ID>".
-#'   - Consultant bags: the flat consultant_dictionary.csv firm roster.
-#'     bag_id = "con_<normalized firm name>".
-#'   - Research / NGO / Institutional_other: NO dictionary exists, so identity
-#'     passthrough (bag_id = the variant itself). YAGNI until a roster exists.
+#'   - Only GSA-typed variants are matched. A variant of another in-network type
+#'     appears here only when inputs/entity_bag_overrides_gsa.csv claims it for a
+#'     GSA (a board, a sole-member district); the classifier type is kept as-is.
 #'
 #' Matching is HIGH-PRECISION-auto / everything-else-to-review. A variant is folded
 #' automatically only when the evidence is unambiguous; every uncertain case is
@@ -37,15 +37,14 @@
 #'               ("kern_river": the river or the GSA?)            -> review (suggest)
 #'   fuzzy       best base-R adist similarity                    -> review (suggest)
 #'   none        no candidate                                    -> review (no suggestion)
-#' Consultants: exact -> auto; anything else -> review (fuzzy suggestion), identity default.
 #'
-#' A curated inputs/entity_bag_overrides.csv (variant,bag_id[,entity_type]) wins
-#' over everything — this is where confirmed review decisions get promoted.
+#' The curated inputs/entity_bag_overrides_gsa.csv (variant,bag_id,canonical_label)
+#' wins over everything — this is where confirmed review decisions get promoted.
 #' A variant naming several GSAs ("mcmullin_and_james_..._agencies") gets one
 #' override row per GSA, and so one map row per bag: it counts in every bag.
 #'
 #' Reads : id_crosswalk.csv, node_dictionary.csv (paper products); sgma_gsa_full.csv
-#'         (core roster); consultant_dictionary.csv (core dict); optional override.
+#'         (core roster); inputs/entity_bag_overrides_gsa.csv.
 #' Writes: data_products/01_entity_classification/entity_bag_map.csv
 #'         data_products/01_entity_classification/entity_bag_unmatched.csv
 #'
@@ -116,13 +115,6 @@ load_gsa_roster <- function(xw) {
 }
 # number of distinct roster base names whose distinctive tokens include `tok`
 .n_bases <- function(tok, ros) uniqueN(ros$base[vapply(ros$dt, function(d) tok %in% d, logical(1))])
-load_consultant_roster <- function() {
-  d <- fread(core_dict("consultant_dictionary.csv"), colClasses = "character")
-  d <- d[!is.na(all_names) & nzchar(all_names)]
-  ros <- data.table(label = d$all_names)
-  ros[, key := .norm(label)]
-  unique(ros[nzchar(key)])
-}
 
 # join every tied candidate as "gsa_<id>=Label | ..." so a reviewer sees them all.
 .tie_lab <- function(best) {
@@ -202,16 +194,6 @@ load_consultant_roster <- function() {
   list(id = NA_character_, lab = NA_character_, m = "none", s = NA_real_)
 }
 
-# ---- consultant matcher (exact -> auto; else fuzzy suggestion) ---------------
-.match_consultant <- function(node, ros) {
-  hit <- ros[key == node]
-  if (nrow(hit)) return(list(id = paste0("con_", hit$key[1]), lab = hit$label[1], m = "exact", s = 1))
-  s <- .sim(node, ros$key); j <- which.max(s)
-  if (length(j) && s[j] >= FUZZY_SHOW)
-    return(list(id = NA_character_, sug = paste0("con_", ros$key[j]), lab = ros$label[j], m = "fuzzy", s = round(s[j], 3)))
-  list(id = NA_character_, lab = NA_character_, m = "none", s = NA_real_)
-}
-
 build_entity_bag_map <- function() {
   out_map <- nip_product("01_entity_classification", "entity_bag_map.csv")
   out_un  <- nip_product("01_entity_classification", "entity_bag_unmatched.csv")
@@ -221,25 +203,17 @@ build_entity_bag_map <- function() {
   xw   <- fread(nip_product("00_ingest", "id_crosswalk.csv"), colClasses = "character")
   nd   <- fread(nip_product("01_entity_classification", "node_dictionary.csv"), colClasses = "character")
   gros <- load_gsa_roster(xw)
-  cros <- load_consultant_roster()
-  message(sprintf("rosters: %d GSA bags, %d consultant firms", nrow(gros), nrow(cros)))
+  message(sprintf("roster: %d GSA bags", nrow(gros)))
 
-  # curated overrides win over everything; GSA and consultant kept in separate
-  # files so each can be reviewed independently (legacy combined file still read).
-  .read_ov <- function(fn) {
-    p <- nip_input(fn)
-    if (file.exists(p)) fread(p, colClasses = "character") else
-      data.table(variant = character(), bag_id = character())
-  }
-  ov <- unique(rbindlist(list(
-    .read_ov("entity_bag_overrides_gsa.csv"),
-    .read_ov("entity_bag_overrides_consultant.csv"),
-    .read_ov("entity_bag_overrides.csv")
-  ), use.names = TRUE, fill = TRUE), by = c("variant", "bag_id"))
+  # curated overrides win over everything
+  ov <- unique(fread(nip_input("entity_bag_overrides_gsa.csv"), colClasses = "character"),
+               by = c("variant", "bag_id"))
 
+  # GSA-typed variants, plus any other in-network variant an override claims
   IN_NET <- c("GSA", "Consultant", "Research", "NGO", "Institutional_other")
-  nodes <- nd[entity_type %in% IN_NET, .(variant = name, entity_type)]
-  message(sprintf("classifying %d in-network variants...", nrow(nodes)))
+  nodes <- nd[entity_type == "GSA" | (entity_type %in% IN_NET & name %in% ov$variant),
+              .(variant = name, entity_type)]
+  message(sprintf("classifying %d GSA variants...", nrow(nodes)))
 
   map_rows <- vector("list", nrow(nodes))
   for (i in seq_len(nrow(nodes))) {
@@ -250,18 +224,11 @@ build_entity_bag_map <- function() {
                                   bag_label = ovr$bag_id, method = "override", score = NA_real_)
       next
     }
-    if (et == "GSA") {
-      m <- .match_gsa(v, gros)
-      # an unmatched token like "gsa_1" (a table label) must not keep an
-      # identity id that reads as a roster id downstream (ROSTER_RE)
-      bid <- if (!is.na(m$id)) paste0("gsa_", m$id)
-             else if (grepl("^gsa_[0-9]+$", v)) paste0(v, "_unrostered") else v
-    } else if (et == "Consultant") {
-      m <- .match_consultant(v, cros)
-      bid <- if (!is.na(m$id)) m$id else v
-    } else {
-      m <- list(id = NA_character_, lab = NA_character_, m = "identity", s = NA_real_); bid <- v
-    }
+    m <- .match_gsa(v, gros)
+    # an unmatched token like "gsa_1" (a table label) must not keep an
+    # identity id that reads as a roster id downstream (ROSTER_RE)
+    bid <- if (!is.na(m$id)) paste0("gsa_", m$id)
+           else if (grepl("^gsa_[0-9]+$", v)) paste0(v, "_unrostered") else v
     folded <- !is.na(m$id)
     map_rows[[i]] <- data.table(
       variant = v, entity_type = et, bag_id = bid,
@@ -269,30 +236,13 @@ build_entity_bag_map <- function() {
       method = if (folded) m$m else "identity",
       score = m$s)
     sug_id <- m$sug %||% ""
-    if (nzchar(sug_id) && et == "GSA") sug_id <- paste0("gsa_", sug_id)   # match map bag_id format
-    attr(map_rows[[i]], "sugg") <- if (!folded && et %in% c("GSA","Consultant") && m$m != "identity")
+    if (nzchar(sug_id)) sug_id <- paste0("gsa_", sug_id)   # match map bag_id format
+    attr(map_rows[[i]], "sugg") <- if (!folded)
       data.table(variant = v, entity_type = et, sugg_bag_id = sug_id,
                  sugg_label = m$lab %||% "", method = m$m, score = m$s, confirm_bag_id = "") else NULL
   }
   map <- rbindlist(map_rows)
   sugg <- rbindlist(lapply(map_rows, attr, "sugg"), fill = TRUE)
-
-  # ---- bag merges: roll geographically-split sub-ids of ONE agency up into a
-  # single parent bag (inputs/bag_merges.csv: member_bag_id,parent_bag_id,parent_label).
-  # Applied AFTER matching so it also catches sub-ids produced by the auto-matcher.
-  bm_path <- nip_input("bag_merges.csv")
-  if (file.exists(bm_path)) {
-    bm <- fread(bm_path, colClasses = "character")
-    bm <- bm[nzchar(member_bag_id) & nzchar(parent_bag_id)]
-    if (nrow(bm)) {
-      hit <- match(map$bag_id, bm$member_bag_id)
-      ix  <- which(!is.na(hit))
-      map[ix, `:=`(bag_id = bm$parent_bag_id[hit[ix]],
-                   bag_label = bm$parent_label[hit[ix]])]
-      message(sprintf("bag merges: %d rows rolled into %d parent bags",
-                      length(ix), length(unique(bm$parent_bag_id))))
-    }
-  }
 
   fwrite(map, out_map)
   fwrite(sugg, out_un)

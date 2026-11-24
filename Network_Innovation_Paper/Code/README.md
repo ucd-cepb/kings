@@ -43,8 +43,8 @@ Run order within the stage: `build_overrides_from_dicts.R` → `build_node_dicti
   one step that hits the API. Run standalone: `CLOBBER=TRUE Rscript Network_Innovation_Paper/Code/01_entity_classification/build_node_dictionary.R`.
 - `build_entity_bag_map.R` — folds GSA name variants onto roster `gsa_<GSA_ID>` bags
   (exact → subset → revsubset → fuzzy tiers, guards for bare/generic/geographic
-  names) and consultants onto the firm roster → `entity_bag_map.csv` + the review
-  file `entity_bag_unmatched.csv`. `inputs/entity_bag_overrides_gsa.csv` (signed off)
+  names) → `entity_bag_map.csv` + the review file `entity_bag_unmatched.csv`
+  (GSA only; the alter side is `build_alter_bag_map.R`). `inputs/entity_bag_overrides_gsa.csv` (signed off)
   wins over the matcher. `write_bag_review.R` then prints the bags as `GSA_BAGS_review.txt`.
 - `build_alter_bag_map.R` — folds the alter side per type into its own namespace
   (`con_*`, `ngo_*`, `res_*`, `io_*` identity) → `alter_bag_map.csv`, `alter_bag_clusters.csv`,
