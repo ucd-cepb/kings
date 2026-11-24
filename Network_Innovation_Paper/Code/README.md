@@ -64,8 +64,13 @@ Run order within the stage: `build_overrides_from_dicts.R` → `build_node_dicti
   and each bag's in-network alter profile as `_entity_groups.R` selects it.
   `run_all.R` runs it on every call, after the Stage 1 guard, so it never goes
   stale. Run standalone: `Rscript Network_Innovation_Paper/Code/01_entity_classification/write_doc_review.R`.
-- `eval_classifier.R` — no-gold hand spot-check: samples up to `NIP_EVAL_PER_CAT`
-  names per predicted leaf for a human to eyeball. Run standalone: `NIP_EVAL_PER_CAT=40 Rscript Network_Innovation_Paper/Code/01_entity_classification/eval_classifier.R`.
+- `eval_classifier.R` / `score_classifier.R` — evaluation only, not in `run_all.R`
+  and read by nothing downstream. `eval_classifier.R` draws a blind sample of
+  LLM-typed names into `data_products/01_entity_classification/eval/goldsheet_<tag>.csv`
+  for hand labeling (`NIP_EVAL_TARGET`, default 400; `NIP_EVAL_TAG`);
+  `score_classifier.R` scores the filled sheet → `metrics_<tag>.csv`, `errors_<tag>.csv`.
+  The labeled record is `goldsheet_sonnet7.csv` (400 names, 2026-09-25): network gate
+  precision 0.87, recall 0.97. See `ENTITY_TAGGING.md`.
 
 ## `02_text_preprocessing/`
 

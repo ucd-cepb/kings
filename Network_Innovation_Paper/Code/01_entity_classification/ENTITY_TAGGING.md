@@ -152,7 +152,7 @@ Rscript Network_Innovation_Paper/Code/01_entity_classification/build_overrides_f
 | `build_gsa_bag_edges.R` | Folds the core weighted graphs into per-document **authoring**-GSA bag edges, alters folded to bag keys → `gsa_bag_edges.csv` + the column dictionary `gsa_bag_edges_alters.csv` (Stage 1g). What `04_modeling/*` reads. Replaced `build_gsa_edges.R` / `all_gsa_edges.csv` on 2026-11-16. |
 | `write_doc_review.R` | Review listing of what the model gets → `DOC_BAGS_review.txt` (Stage 1h): coverage flags, family → document → authoring bags, each bag's in-network alter profile via `_entity_groups.R`. Run by `run_all.R` on every call, so it tracks the products and the grouping rules. Replaced three hand-committed snapshots on 2026-11-17. |
 | `build_overrides_from_dicts.R` | Bakes `core_code/dicts/*` into `inputs/entity_type_overrides.csv` (preserving hand rules). |
-| `eval_classifier.R` | **Gold-sheet generator.** Draws a BLIND sample of only the names the LLM decided (gazetteer-pinned names are correct by assertion, so excluded), oversampling the four org types + high-frequency names, and writes `data_products/eval/goldsheet_<tag>.csv` (name + spaCy + freq, **no prediction shown**) for a human to fill `gold_type` on, plus a hidden `strata_<tag>.csv` key and a cached `entity_frequencies.csv`. |
+| `eval_classifier.R` | **Gold-sheet generator.** Draws a BLIND sample of only the names the LLM decided (gazetteer-pinned names are correct by assertion, so excluded), oversampling the four org types + high-frequency names, and writes `data_products/01_entity_classification/eval/goldsheet_<tag>.csv` (name + spaCy + freq, **no prediction shown**) for a human to fill `gold_type` on, plus a hidden `strata_<tag>.csv` key and a cached `entity_frequencies.csv`. |
 | `score_classifier.R` | **Scorer.** Reads the filled `goldsheet_<tag>.csv`, rejoins the shipped prediction, and reports the metrics the modeling actually uses — the **network gate** (does a name go into a network) + **per-type** one-vs-rest P/R/F1 with Wilson 95% CIs, each **name-level and mention-weighted**, plus confusion tables for the pairs that get mixed up. Writes `errors_<tag>.csv`, `promote_candidates_<tag>.csv` (high-n institutional misses, ready to append to the gazetteer), and `metrics_<tag>.csv`. |
 | `_entity_groups.R` | The groupings the types feed (which columns go into a network, the org-type subnetworks). Groups a folded alter column by the type that **owns its bag** (`bag_type` in `gsa_bag_edges_alters.csv`), a raw column by its `node_dictionary` type. Both `Non_institutional` and `Institutional_unresolved` are excluded from every grouping. Consumed by `04_modeling/*`. |
 | `inputs/entity_type_overrides.csv` | The deterministic gazetteer (exact + regex) — the only authoritative label source. |
@@ -212,6 +212,11 @@ The eval knobs: `NIP_EVAL_TARGET` (sample size, default 400), `NIP_EVAL_TAG`
 (names the sheet/outputs, default `current`), `NIP_EVAL_REFRESH_FREQ=TRUE`
 (rebuild the frequency cache from disambig), and `NIP_EVAL_PROMOTE_N` (min `n` for
 a missed institutional name to land in `promote_candidates_*.csv`, default 6).
+
+The gold sheets are an accuracy check only: no pipeline step reads them. The one
+labeled run is `eval/goldsheet_sonnet7.csv` (400 names, finished 2026-09-25), scored
+in `metrics_sonnet7.csv`: network gate precision 0.87, recall 0.97 (mention-weighted
+F1 0.98). It predates the bag layer, which sits on top of these types.
 
 Needs an Anthropic API key: env `ANTHROPIC_API_KEY`, or the file the classifier
 points at (`~/Documents/Github/anthropic_key_kings`). Override the model with
