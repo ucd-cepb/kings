@@ -12,7 +12,7 @@
 #'   Consultant            con_*           build_alter_bag_map.R (consultant_dictionary)
 #'   NGO                   ngo_*           build_alter_bag_map.R (self-cluster)
 #'   Research              res_*           build_alter_bag_map.R (self-cluster)
-#'   Institutional_other   io_*            build_alter_bag_map.R (identity, DEFERRED)
+#'   Institutional_other   io_*            build_alter_bag_map.R (curated overrides, else identity)
 #'
 #' GSA rows follow the SAME precedence build_gsa_bag_edges.R uses to resolve a
 #' name (its .build_resolver()): every variant in the GSA override file is a GSA

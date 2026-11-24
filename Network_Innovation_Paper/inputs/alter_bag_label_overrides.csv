@@ -1,0 +1,15 @@
+bag_id,bag_label,note
+con_gei_consultant_inc,"GEI Consultants, Inc.","2026-11-24 bag review: roster typo"
+con_david_engineering,Davids Engineering,2026-11-24 bag review: stemmed label
+con_stillwater_science,Stillwater Sciences,2026-11-24 bag review: stemmed label
+con_hydrof_ocus_inc,"HydroFocus, Inc.",2026-11-24 bag review: OCR-split label
+con_dunn_e_nvironmental,Dunn Environmental,2026-11-24 bag review: OCR-split label
+con_consulting_engineering_firm_of_quad_knopf,Quad Knopf,2026-11-24 bag review: run-on label
+con_earth_consultant_international,Earth Consultants International,2026-11-24 bag review: stemmed label
+con_mcr_engineering,MCR Engineering,2026-11-24 bag review: label of the curated override bag
+ngo_leadership_counsel_of_justice_accountability,Leadership Counsel for Justice and Accountability,2026-11-24 bag review: stemmed label
+ngo_union_of_concerned_scientist,Union of Concerned Scientists,2026-11-24 bag review: stemmed label
+ngo_self_help_enterprise,Self-Help Enterprises,2026-11-24 bag review: stemmed label
+ngo_league_of_united_latin_american_citizen,League of United Latin American Citizens,2026-11-24 bag review: stemmed label
+res_irrigation_training_research_center,Irrigation Training and Research Center,2026-11-24 bag review: stemmed label
+res_irrigation_technology_center,"Irrigation Technology Center, Texas A&M",2026-11-24 bag review: disambiguate from Fresno State CIT

@@ -252,7 +252,10 @@ build_entity_bag_map <- function() {
     }
     if (et == "GSA") {
       m <- .match_gsa(v, gros)
-      bid <- if (!is.na(m$id)) paste0("gsa_", m$id) else v
+      # an unmatched token like "gsa_1" (a table label) must not keep an
+      # identity id that reads as a roster id downstream (ROSTER_RE)
+      bid <- if (!is.na(m$id)) paste0("gsa_", m$id)
+             else if (grepl("^gsa_[0-9]+$", v)) paste0(v, "_unrostered") else v
     } else if (et == "Consultant") {
       m <- .match_consultant(v, cros)
       bid <- if (!is.na(m$id)) m$id else v

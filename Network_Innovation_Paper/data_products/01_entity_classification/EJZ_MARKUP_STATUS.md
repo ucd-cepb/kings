@@ -24,7 +24,9 @@ EJZ flagged 43 names and left comments on 6 more without a code.
 | Override removed (no longer folds) | 1 |
 | Resolved 2026-10-14: multi-GSA names, generic names, `b_gsa` | 13 |
 | Decided 2026-11-16: `el_rico` stays unmatched (false negative accepted) | 1 |
-| Still open | 2 (Northern Delta-Mendota members, gsa_458 tags) |
+| Resolved 2026-11-18: Northern Delta-Mendota members (→ the 8 plan-0013 GSAs) | 1 |
+| Resolved 2026-11-24: gsa_458 Monterey tags (family logic already handles it) | 1 |
+| Still open | 0 |
 
 ## Obviated: the name no longer folds into any bag
 
@@ -99,7 +101,7 @@ matched EJZ's notes. Strict authorship still applies per document.
 | `vina_subbasin_groundwater_sustainability_agencies` | gsa_409 Vina, gsa_178 Rock Creek RD |
 | `san_gorgonio_pass_groundwater_sustainability_agencies` | gsa_262, gsa_330 Verbenia, gsa_450 Desert Water Agency - SGP |
 | `cosumnes_groundwater_sustainability_agencies` | all seven Cosumnes GSAs (97, 155, 160, 182, 193, 312, 496) |
-| `northern_and_central_delta_mendota_groundwater_sustainability_agencies` | gsa_206 Central Delta-Mendota only (see Still open) |
+| `northern_and_central_delta_mendota_groundwater_sustainability_agencies` | the 8 plan-0013 GSAs (resolved 2026-11-18) |
 
 The Corning row for gsa_108 (County of Glenn GSA - Corning, formed 2015) was removed. It
 appears to be the predecessor of gsa_390 (Corning Subbasin GSA, 2017), and it authors no
@@ -124,11 +126,14 @@ distinctive token shorter than three characters, so `b_gsa` and `el_gsa` do not 
 
 ## Still open
 
-- **"Northern" in `northern_and_central_delta_mendota_…_agencies`.** EJZ could not tell
-  which GSAs "Northern" means. The name has no ties, so this does not affect the edges.
-- **gsa_458 header comment** (Salinas Valley Basin GSA - Monterey): "if we ever
-  supernetwork, do we want these to get monterey tags?" This is a modeling decision that
-  the bag map does not settle.
+- ~~**"Northern" in `northern_and_central_delta_mendota_…_agencies`.**~~ Resolved
+  2026-11-18: the Northern & Central Delta-Mendota Regions are the 8 GSAs that author
+  plan 0013 (214, 301, 66, 206, 237, 302, 17, 13); the name now credits all 8.
+- ~~**gsa_458 header comment**~~ (Salinas Valley Basin GSA - Monterey): "if we ever
+  supernetwork, do we want these to get monterey tags?" Resolved 2026-11-24, no change
+  needed: generic SVBGSA names fold as alters to the whole family key
+  (`gsafam_268_458_459_460_461_462`), not to Monterey; only names that say "monterey"
+  go to gsa_458, and egos resolve by authorship. See BAG_REVIEW_FINDINGS §6.
 
 ## Regression: a name EJZ accepted no longer folds
 

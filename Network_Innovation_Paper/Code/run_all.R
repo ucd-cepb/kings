@@ -285,6 +285,8 @@ if (should_run(STAGE_1_CLASSIFY, "Stage 1 classify", c(
                  nip_input("entity_bag_overrides_consultant.csv"),
                  nip_input("entity_bag_overrides_ngo.csv"),
                  nip_input("entity_bag_overrides_research.csv"),
+                 nip_input("entity_bag_overrides_institutional_other.csv"),
+                 nip_input("alter_bag_label_overrides.csv"),
                  nip_input("bag_merges.csv"),
                  core_gsa_full(), core_dict("consultant_dictionary.csv")))) {
   need("00_ingest/id_crosswalk.csv", "STAGE_0_INGEST")  # 1c/1g key through the crosswalk

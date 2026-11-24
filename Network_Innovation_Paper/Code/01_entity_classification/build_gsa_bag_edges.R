@@ -116,10 +116,14 @@ TYPE_OF_BAG <- c(gsa = "GSA", con = "Consultant", ngo = "NGO",
 
 # ---- roster base-name families (multi-MA) ------------------------------------
 # base = roster GSA_Name with any trailing " - <MA>" / " – <MA>" stripped.
-# A family is the set of ids sharing a base name held by >1 id.
+# A family is the set of ids sharing a base name held by >1 id. The base is
+# compared in normal form ("County of X GSA" == "X County GSA") so the roster's
+# inconsistent naming does not split a family (gsa_295 "County of Sacramento
+# GSA - South American" is a sibling of 496/497 "Sacramento County GSA - ...").
 .build_families <- function() {
   rost <- fread(core_gsa_full(), colClasses = "character")
-  rost[, base := sub("\\s+[-\u2013]\\s+.*$", "", GSA_Name)]
+  rost[, base := tolower(sub("\\s+[-\u2013]\\s+.*$", "", GSA_Name))]
+  rost[, base := sub("^county of (.+) gsa$", "\\1 county gsa", base)]
   fam  <- rost[, .(ids = list(unique(GSA_ID))), by = base]
   lk <- list()
   for (i in seq_len(nrow(fam))) {

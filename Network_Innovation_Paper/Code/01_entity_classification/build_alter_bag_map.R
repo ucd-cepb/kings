@@ -15,8 +15,11 @@
 #'                                   advocacy groups and interest groups.)
 #'   Research            -> res_*   no roster exists -> SELF-CLUSTER within type.
 #'                                  (universities + research organizations)
-#'   Institutional_other -> io_*    DEFERRED by decision (10,099 variants): identity
-#'                                  passthrough only, no clustering this pass.
+#'   Institutional_other -> io_*    CURATED OVERRIDES ONLY (10,099 variants): no
+#'                                  self-clustering (it would collapse numbered
+#'                                  reclamation districts); folds come only from
+#'                                  entity_bag_overrides_institutional_other.csv
+#'                                  (2026-11-18), everything else is identity.
 #'
 #' Every variant gets a namespaced bag_id even when it folds to nobody (an unfolded
 #' variant becomes its own bag, e.g. ngo_<variant>). That makes the namespaces
@@ -102,7 +105,7 @@ TYPES <- data.table(
   override    = c("entity_bag_overrides_consultant.csv", "entity_bag_overrides_ngo.csv",
                   "entity_bag_overrides_research.csv",   "entity_bag_overrides_institutional_other.csv"),
   roster      = c("consultant_dictionary",               NA, NA, NA),
-  self_fold   = c(TRUE, TRUE, TRUE, FALSE)   # Institutional_other DEFERRED -> identity only
+  self_fold   = c(TRUE, TRUE, TRUE, FALSE)   # Institutional_other: curated overrides only, no self-cluster
 )
 
 # ---- normalization (identical convention to build_entity_bag_map.R) ----------
@@ -536,9 +539,16 @@ load_consultant_roster <- function() {
 # it onto one of them silently deletes the other's tie, so these are reported rather
 # than trusted. The 1:1 variant -> bag schema cannot carry two bags per variant, so
 # the second organization is emitted here for the edge builder to pick up later.
+# A candidate is credited only when its span in the mention is DISJOINT from another
+# organization's span: the variant's own bag (when that label is a proper part of the
+# mention) or another candidate. Overlapping spans are one organization and its
+# parent or generic form, not two: fresno_county_farm_bureau must not also credit
+# ngo_county_farm_bureau / ngo_farm_bureau, nor UC Davis credit
+# res_university_of_california. freshwater_trust_and_local_government_commission
+# (an identity bag) still credits both of its halves.
 .find_compounds <- function(res) {
   bl <- unique(res[, .(bag_id, bag_label)])
-  core <- lapply(bl$bag_label, .dseq)
+  core <- lapply(.norm(bl$bag_label), .dseq)   # roster labels ("Woodard & Curran") need .norm
   ok <- lengths(core) >= 2L
   bl <- bl[ok]; core <- core[ok]
   if (!nrow(bl)) return(data.table())
@@ -549,7 +559,18 @@ load_consultant_roster <- function() {
     if (length(vt) < 4L) next
     cnd <- unique(unlist(tix[intersect(names(tix), vt)], use.names = FALSE))
     cnd <- cnd[vapply(cnd, function(k) .run_in(core[[k]], vt), logical(1))]
-    cnd <- setdiff(bl$bag_id[cnd], res$bag_id[r])
+    cnd <- cnd[bl$bag_id[cnd] != res$bag_id[r]]
+    # spans as token-position sets; the own bag counts only as a proper part
+    span <- function(k, at) { s <- at[1]; s:(s + length(k) - 1L) }
+    sp  <- lapply(cnd, function(k) span(core[[k]], .run_at(core[[k]], vt)))
+    own <- .dseq(.norm(res$bag_label[r])); oat <- .run_at(own, vt)
+    osp <- if (length(oat) && length(own) < length(vt)) span(own, oat) else integer(0)
+    if (length(osp)) sp <- c(sp, list(osp))
+    keep <- vapply(seq_along(cnd), function(i)
+      !length(intersect(sp[[i]], osp)) &&
+        any(vapply(sp[-i], function(o) !length(intersect(sp[[i]], o)), logical(1))),
+      logical(1))
+    cnd <- bl$bag_id[cnd[keep]]
     if (!length(cnd)) next
     out[[length(out) + 1L]] <- data.table(
       entity_type = res$entity_type[r], variant = res$variant[r],
@@ -678,7 +699,7 @@ build_alter_bag_map <- function() {
     ov  <- .read_ov(TYPES$override[ti], pfx)
     message(sprintf("\n[%s] %d variants, namespace %s_*, %d override rows%s",
                     et, length(vars), pfx, nrow(ov),
-                    if (!TYPES$self_fold[ti]) "  (DEFERRED: identity only)" else ""))
+                    if (!TYPES$self_fold[ti]) "  (overrides only, no self-cluster)" else ""))
 
     # ---- 0. ANCHORS: curated override (wins) then roster authority -------------
     # Anchors are not held out of the clustering — they SEED it (step 2). Holding
@@ -842,7 +863,11 @@ build_alter_bag_map <- function() {
     # Only self-cluster/identity bags are renamed; roster- and override-anchored
     # bags keep their curated human-readable label. Reverted if cleaning would
     # make two distinct bags collide.
-    self_named <- TYPES$self_fold[ti] &
+    # An override bag's label is its id minus the prefix, so it looks self-named;
+    # exclude it by bag, or a curated id is rewritten (mcr_engineering ->
+    # con_engineering, because .depunct strips the "mcr" comment code).
+    ov_bags <- res[method == "override", unique(bag_id)]
+    self_named <- TYPES$self_fold[ti] & !res$bag_id %in% ov_bags &
       res$bag_label == sub(paste0("^", pfx, "_"), "", res$bag_id)
     res[, `:=`(cid = bag_id, clab = bag_label)]
     res[self_named, `:=`(clab = .clean_name(bag_label))]
@@ -904,10 +929,32 @@ build_alter_bag_map <- function() {
   if (nrow(bt)) stop("entity_type spans >1 namespace prefix: ",
                      paste(bt$entity_type, collapse = ", "))
 
+  # ---- display labels, set last so they never feed matching or compounds ----
+  # Roster labels can carry several pipe-joined forms; keep the first. Then
+  # apply the hand-written labels in alter_bag_label_overrides.csv.
+  cl_all <- rbindlist(all_cl, fill = TRUE)
+  relabel <- function(d) {
+    if (!nrow(d)) return(d)
+    d[, bag_label := sub("\\|.*$", "", bag_label)]
+    lp <- nip_input("alter_bag_label_overrides.csv")
+    if (file.exists(lp)) {
+      lo <- fread(lp, colClasses = "character")
+      h <- match(d$bag_id, lo$bag_id)
+      d[!is.na(h), bag_label := lo$bag_label[h[!is.na(h)]]]
+    }
+    d
+  }
+  map <- relabel(map); cl_all <- relabel(cl_all)
+  lp <- nip_input("alter_bag_label_overrides.csv")
+  if (file.exists(lp)) {
+    miss <- setdiff(fread(lp, colClasses = "character")$bag_id, map$bag_id)
+    if (length(miss)) warning("label override for absent bag(s): ", paste(miss, collapse = ", "))
+  }
+
   setcolorder(map, c("variant", "entity_type", "bag_id", "bag_label",
                      "method", "joined", "score", "bag_type"))
   fwrite(map, out_map)
-  fwrite(rbindlist(all_cl, fill = TRUE), out_cl)
+  fwrite(cl_all, out_cl)
   cpd <- rbindlist(all_cp, fill = TRUE)
   fwrite(cpd, out_cp)
 

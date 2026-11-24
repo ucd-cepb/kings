@@ -185,8 +185,8 @@ mcmullin_area_evaluation_kenneth_d_schmidt_associates,con_kenneth_d_schmidt_asso
 model_design_geosyntec,con_geosyntec_consultants,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
 modoc_ditch_company_gei_consultants,con_gei_consultant_inc,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
 mongomery_watson_harza,con_montgomery_watson_harza,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
-montgomery,con_montgomery_watson_harza,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
-montgomery_engineers,con_montgomery_watson_harza,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
+montgomery,con_montgomery,Consultant,"2026-11-18 review: HOLD identity; bare surname is MWH, Montgomery & Associates or James M. Montgomery"
+montgomery_engineers,con_james_m_montgomery_consulting_engineers,Consultant,"2026-11-18 review: James M. Montgomery Consulting Engineers (pre-MWH firm), not MWH"
 montgomery_watson,con_montgomery_watson_harza,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
 montgomery_watson_harza_laboratory,con_montgomery_watson_harza,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
 montgonery_associates,con_montgomery_associates,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
@@ -294,3 +294,29 @@ ch2_m_hill,con_ch2m_hill,Consultant,"bag audit 2026-10-08: same firm, see BAG_RE
 ch2_m_hill_inc,con_ch2m_hill,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
 ch2mhill,con_ch2m_hill,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
 ch2_m_hill_engineers_inc,con_ch2m_hill,Consultant,"bag audit 2026-10-08: same firm, see BAG_REVIEW_FINDINGS.md §7d"
+fall_creek_engineering,con_fall_creek_engineering,Consultant,"2026-11-18 review: HOLD identity; Fall Creek Engineering is not Creek Engineering, Inc. (roster_subset)"
+erler_kalinowski,con_eki_environment_water_inc,Consultant,"2026-11-24 bag review: SPLIT: Erler & Kalinowski, Inc. = EKI former/legal name"
+erler_kalinowski_inc,con_eki_environment_water_inc,Consultant,"2026-11-24 bag review: SPLIT: Erler & Kalinowski, Inc. = EKI former/legal name"
+wra,con_wra,Consultant,2026-11-24 bag review: identity HOLD: bare 3-letter acronym (n=50) was tokset-folded to WRA Inc; not verified as the firm
+wra_inc,con_wra_environmental_consultants,Consultant,"2026-11-24 bag review: SPLIT: WRA, Inc. = legal name of WRA Environmental Consultants"
+wrime,con_water_resources_and_information_management_engineering_inc,Consultant,2026-11-24 bag review: MISSED_FOLD: acronym of the same firm
+furgro_west,con_fugro_west,Consultant,2026-11-24 bag review: MISSED_FOLD: typo
+interra,con_intera_incorporated,Consultant,2026-11-24 bag review: MISSED_FOLD: typo
+balance_hydraulics_inc,con_balance_hydrologics_inc,Consultant,2026-11-24 bag review: MISSED_FOLD: typo
+akel,con_akel_engineering_group,Consultant,2026-11-24 bag review: MISSED_FOLD: short name
+bsk_laboratory,con_bsk_associates,Consultant,2026-11-24 bag review: MISSED_FOLD: bag already holds bsk_associates_laboratory
+reporting_limit_schafer_associates,con_rl_schafer_associates,Consultant,2026-11-24 bag review: MISSED_FOLD: glossary expanded RL; target unambiguous
+camp_dresser_mckee_inc,con_cdm_smith_inc,Consultant,2026-11-24 bag review: MISSED_FOLD: CDM = Camp Dresser & McKee
+6si_water_solutions,con_gsi_water_solutions_inc,Consultant,2026-11-24 bag review: MISSED_FOLD: OCR of GSI
+akm,con_akm_consulting_engineers,Consultant,2026-11-24 bag review: SPLIT: same firm
+mbk,con_mbk_engineers,Consultant,2026-11-24 bag review: SPLIT: same firm
+shn,con_shn_consulting_engineers,Consultant,2026-11-24 bag review: SPLIT: same firm
+dhi,con_dhi_water_environment,Consultant,2026-11-24 bag review: SPLIT: same firm
+trc_essex,con_trc,Consultant,2026-11-24 bag review: SPLIT: same firm
+aquaterra,con_aqua_terra_consultants,Consultant,2026-11-24 bag review: SPLIT: same firm
+aquaterra_consulting,con_aqua_terra_consultants,Consultant,2026-11-24 bag review: SPLIT: same firm
+pumpage_pace_engineering,con_pace_engineering,Consultant,2026-11-24 bag review: SPLIT: glossary prefix junk
+michael_baker,con_michael_baker_international_inc_michael_baker_international,Consultant,2026-11-24 bag review: SPLIT: same firm
+mcr_engineering,con_mcr_engineering,Consultant,2026-11-24 bag review: LABEL: bag came out as bare con_engineering and drew 37 junk review pairs
+aquatic_bioassay_and_consulting,con_aquatic_bioassay_consulting_laboratory,Consultant,2026-11-24 bag review: SPLIT: same firm
+department_of_defense_quality_systems_ahtna_environmental_inc,con_ahtna_environmental,Consultant,2026-11-24 bag review: SPLIT: DoD QSM prefix junk

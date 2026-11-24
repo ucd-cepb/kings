@@ -38,7 +38,7 @@ council_for_justice_and_accountability,ngo_leadership_counsel_of_justice_account
 counsel_for_justice_and_accountability,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
 counsel_for_justice,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
 kern_leadership_counsel,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
-leadership_council,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
+leadership_council,ngo_leadership_council,NGO,"2026-11-18 review: HOLD identity; generic phrase, not Leadership Counsel for Justice & Accountability"
 leadership_counsel,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
 leadership_counsel_for,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
 leadership_counsel_for_84,ngo_leadership_counsel_of_justice_accountability,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
@@ -107,3 +107,51 @@ madera_farm_bureau,ngo_madera_county_farm_bureau,NGO,"bag audit 2026-10-08: same
 merced_farm_bureau,ngo_merced_county_farm_bureau,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
 solano_farm_bureau,ngo_solano_county_farm_bureau,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
 environmental_tulare_county_farm_bureau,ngo_tulare_county_farm_bureau,NGO,"bag audit 2026-10-08: same organization, see BAG_REVIEW_FINDINGS.md §7d"
+aqua_alliance,ngo_aqualliance,NGO,2026-11-24 bag review: SPLIT ngo_aqua_alliance -> ngo_aqualliance (review queue ngo row 240)
+asociacion_de_gente_unida_par_el_agua,ngo_asociacion_de_gente_unida_por_el_agua,NGO,2026-11-24 bag review: SPLIT ngo_asociacion_de_gente_unida_par_el_agua -> ngo_asociacion_de_gente_unida_por_el_agua (review queue ngo row 225)
+board_of_petaluma_people_and_family_services_center,ngo_petaluma_people_services_center,NGO,2026-11-24 bag review: SPLIT ngo_board_of_petaluma_people_and_family_services_center -> ngo_petaluma_people_services_center (review queue ngo row 34)
+ca_poultry_federation,ngo_california_poultry_federation,NGO,2026-11-24 bag review: SPLIT ngo_ca_poultry_federation -> ngo_california_poultry_federation (bag review SPLIT finding)
+ca_water_foundation,ngo_california_water_foundation,NGO,2026-11-24 bag review: SPLIT ngo_ca_water_foundation -> ngo_california_water_foundation (bag review SPLIT finding)
+cal_invasive_plant_council,ngo_california_invasive_plant_council,NGO,2026-11-24 bag review: SPLIT ngo_cal_invasive_plant_council -> ngo_california_invasive_plant_council (review queue ngo row 304)
+california_native_plant,ngo_california_native_plant_society,NGO,2026-11-24 bag review: SPLIT ngo_california_native_plant -> ngo_california_native_plant_society (review queue ngo row 15)
+california_rural_legal,ngo_california_rural_legal_assistance,NGO,2026-11-24 bag review: SPLIT ngo_california_rural_legal -> ngo_california_rural_legal_assistance (review queue ngo row 16)
+california_rural_water_associa_on,ngo_california_rural_water_association,NGO,2026-11-24 bag review: SPLIT ngo_california_rural_water_associa_on -> ngo_california_rural_water_association (review queue ngo row 227)
+citizens_for_responsible_oil_and,ngo_citizen_for_responsible_oil_and_gas,NGO,2026-11-24 bag review: SPLIT ngo_citizens_for_responsible_oil_and -> ngo_citizen_for_responsible_oil_and_gas (review queue ngo row 17)
+clean_water_action_the_subbasin,ngo_clean_water_action,NGO,2026-11-24 bag review: SPLIT ngo_clean_water_action_the_subbasin -> ngo_clean_water_action (review queue ngo row 121)
+coastkeeper_alliance,ngo_california_coastkeeper_alliance,NGO,2026-11-24 bag review: SPLIT ngo_coastkeeper_alliance -> ngo_california_coastkeeper_alliance (review queue ngo row 35)
+environmental_defense,ngo_environmental_defense_fund,NGO,2026-11-24 bag review: SPLIT ngo_environmental_defense -> ngo_environmental_defense_fund (review queue ngo row 40)
+friends_of_ballona,ngo_friends_of_ballona_wetlands,NGO,2026-11-24 bag review: SPLIT ngo_friends_of_ballona -> ngo_friends_of_ballona_wetlands (review queue ngo row 42)
+friends_of_stone_lakes_nwr,ngo_friends_of_stone_lakes_national_wildlife_refuge,NGO,2026-11-24 bag review: SPLIT ngo_friends_of_stone_lakes_nwr -> ngo_friends_of_stone_lakes_national_wildlife_refuge (bag review SPLIT finding)
+friends_of_the_santa_clara,ngo_friends_of_the_santa_clara_river,NGO,2026-11-24 bag review: SPLIT ngo_friends_of_the_santa_clara -> ngo_friends_of_the_santa_clara_river (review queue ngo row 21)
+independent_grape_growers_of_the_paso_robles_areaiggpra,ngo_independent_grape_growers_of_the_paso_robles_area,NGO,2026-11-24 bag review: SPLIT ngo_independent_grape_growers_of_the_paso_robles_areaiggpra -> ngo_independent_grape_growers_of_the_paso_robles_area (review queue ngo row 231)
+international_associa_tion_of_public_participation,ngo_international_association_for_public_participation,NGO,2026-11-24 bag review: SPLIT ngo_international_associa_tion_of_public_participation -> ngo_international_association_for_public_participation (review queue ngo row 228)
+laguna_foundation,ngo_laguna_de_santa_rosa_foundation,NGO,2026-11-24 bag review: SPLIT ngo_laguna_foundation -> ngo_laguna_de_santa_rosa_foundation (review queue ngo row 98)
+land_trust_of_santa_cruz_county,ngo_santa_cruz_land_trust,NGO,2026-11-24 bag review: SPLIT ngo_land_trust_of_santa_cruz_county -> ngo_santa_cruz_land_trust (review queue ngo row 7)
+malef,ngo_maldef,NGO,2026-11-24 bag review: SPLIT ngo_malef -> ngo_maldef (review queue ngo row 116)
+mexican_american_legal_defense_and_educational_fund,ngo_maldef,NGO,2026-11-24 bag review: SPLIT ngo_mexican_american_legal_defense_and_educational_fund -> ngo_maldef (bag review SPLIT finding)
+napa_sierra_club_group,ngo_sierra_club_napa_group,NGO,2026-11-24 bag review: SPLIT ngo_napa_sierra_club_group -> ngo_sierra_club_napa_group (review queue ngo row 3)
+national_audubon,ngo_national_audubon_society,NGO,2026-11-24 bag review: SPLIT ngo_national_audubon -> ngo_national_audubon_society (review queue ngo row 43)
+national_fish_and_wildlife_foundation_scott_recharge,ngo_national_fish_wildlife_foundation,NGO,2026-11-24 bag review: SPLIT ngo_national_fish_and_wildlife_foundation_scott_recharge -> ngo_national_fish_wildlife_foundation (review queue ngo row 44)
+pacific_coast_federation_of_fisherman_s_associates,ngo_pacific_coast_federation_of_fishermens_associations,NGO,2026-11-24 bag review: SPLIT ngo_pacific_coast_federation_of_fisherman_s_associates -> ngo_pacific_coast_federation_of_fishermens_associations (review queue ngo row 114)
+pacific_coast_federation_of_fisherman_s_associations,ngo_pacific_coast_federation_of_fishermens_associations,NGO,2026-11-24 bag review: SPLIT ngo_pacific_coast_federation_of_fisherman_s_associations -> ngo_pacific_coast_federation_of_fishermens_associations (review queue ngo row 114)
+prunedale_preservation,ngo_prunedale_preservation_alliance,NGO,2026-11-24 bag review: SPLIT ngo_prunedale_preservation -> ngo_prunedale_preservation_alliance (review queue ngo row 47)
+resources_defense_council,ngo_natural_resources_defense_council,NGO,2026-11-24 bag review: SPLIT ngo_resources_defense_council -> ngo_natural_resources_defense_council (review queue ngo row 25)
+scott_water_river_water_trust,ngo_scott_river_water_trust,NGO,2026-11-24 bag review: SPLIT ngo_scott_water_river_water_trust -> ngo_scott_river_water_trust (review queue ngo row 4)
+sequoia_riverlands,ngo_sequoia_riverland_trust,NGO,2026-11-24 bag review: SPLIT ngo_sequoia_riverlands -> ngo_sequoia_riverland_trust (review queue ngo row 49)
+shasta_tehama_water_education_coalition,ngo_shasta_tehama_watershed_education_coalition,NGO,2026-11-24 bag review: SPLIT ngo_shasta_tehama_water_education_coalition -> ngo_shasta_tehama_watershed_education_coalition (review queue ngo row 229)
+sonoma_ecology,ngo_sonoma_ecology_center,NGO,2026-11-24 bag review: SPLIT ngo_sonoma_ecology -> ngo_sonoma_ecology_center (review queue ngo row 50)
+south_yuba_river_citizens_league_overhouse,ngo_south_yuba_river_citizens_league,NGO,2026-11-24 bag review: SPLIT ngo_south_yuba_river_citizens_league_overhouse -> ngo_south_yuba_river_citizens_league (review queue ngo row 6)
+surfriders,ngo_surfrider_foundation,NGO,2026-11-24 bag review: SPLIT ngo_surfriders -> ngo_surfrider_foundation (review queue ngo row 88)
+sustainable_groundwater_management_act_multiple_comment_response8_multiple_comment_response8_sierra_club,ngo_sierra_club,NGO,2026-11-24 bag review: SPLIT ngo_sustainable_groundwater_management_act_multiple_comment_response_multiple_comment_response_sierra_club -> ngo_sierra_club (review queue ngo row 224)
+tehama_county_cattlemen,ngo_tehama_county_cattlemen_s_association,NGO,2026-11-24 bag review: SPLIT ngo_tehama_county_cattlemen -> ngo_tehama_county_cattlemen_s_association (review queue ngo row 64)
+tulare_basin_wildlife_wetlands_partners,ngo_tulare_basin_wildlife_partners,NGO,2026-11-24 bag review: SPLIT ngo_tulare_basin_wildlife_wetlands_partners -> ngo_tulare_basin_wildlife_partners (review queue ngo row 8)
+26_ventura_farm_bureau,ngo_ventura_county_farm_bureau,NGO,2026-11-24 bag review: SPLIT ngo_ventura_farm_bureau -> ngo_ventura_county_farm_bureau (review queue ngo row 29)
+water_conservation_coalition_of_santa_cruz_county,ngo_santa_cruz_water_conservation_coalition,NGO,2026-11-24 bag review: SPLIT ngo_water_conservation_coalition_of_santa_cruz_county -> ngo_santa_cruz_water_conservation_coalition (review queue ngo row 5)
+western_riverside_agriculture_coalition,ngo_western_riverside_county_agricultural_coalition,NGO,2026-11-24 bag review: SPLIT ngo_western_riverside_agriculture_coalition -> ngo_western_riverside_county_agricultural_coalition (review queue ngo row 117)
+wishtoyo,ngo_wishtoyo_foundation,NGO,2026-11-24 bag review: SPLIT ngo_wishtoyo -> ngo_wishtoyo_foundation (review queue ngo row 92)
+wishtoyo_chumash_foundation,ngo_wishtoyo_foundation,NGO,2026-11-24 bag review: SPLIT ngo_wishtoyo_chumash_foundation -> ngo_wishtoyo_foundation (review queue ngo row 51)
+plant_society,ngo_california_native_plant_society,NGO,"2026-11-24 undecided review rows, checked in plan text: line-broken 'California Native Plant Society' (doc 9300)"
+institute_for_conservation,ngo_institute_for_conservation_advocacy_research_education,NGO,"2026-11-24 undecided review rows, checked in plan text: truncated ICARE, same doc 8062"
+ballona_ecosystem_education_group,ngo_ballona_ecosystem_education_foundation,NGO,"2026-11-24 undecided review rows, checked in plan text: same org (Ballona Ecosystem Education Project), same doc 6073"
+landwatch,ngo_landwatch_monterey_county,NGO,"2026-11-24 undecided review rows, checked in plan text: bare form occurs only in Salinas Valley plans"
+land_watch,ngo_landwatch_monterey_county,NGO,"2026-11-24 undecided review rows, checked in plan text: bare form occurs only in Salinas Valley plans"
