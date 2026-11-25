@@ -43,7 +43,9 @@
 #          reference (self-reference / coreference within the plan).
 #      Self-mappings (from == to) are filtered out — a dict row only
 #      contributes if it links an alias to a different canonical.
-#      Resolve any duplicate `from` keys so disambiguate() has a clean map.
+#      Resolve any duplicate `from` keys so disambiguate() has a clean map:
+#      the expansion observed in the plan's own text wins; if none or
+#      several are observed, the `from` is left as written.
 #   2. For each GSP, read step3's tabular extract, snapshot the pre-
 #      disambig nodelist entity_name as raw_entity_name, normalize the
 #      entity-name columns through clean_entities() so they match the
@@ -363,6 +365,102 @@ global_dict <- unique(global_dict[
 # or whose gsa_ids didn't match anything in sgma_gsa_full.
 empty_nicks <- data.table(to = list(), from = character())
 
+# Duplicate `from` keys are resolved by what the document itself says, not by
+# string length: two dictionaries can expand the same acronym to different
+# organizations (MCWRA = Monterey County Water Resources Agency in
+# water_entity, Mountain Counties Water Resources Association in
+# ca_utilities), and the longer expansion is not the likelier one.
+#
+# Candidates count as one organization only when their names are identical up
+# to case, initialism spelling (U_S_Geological_Survey = US_Geological_Survey)
+# and a California_/State_of_California_/US_ jurisdiction prefix
+# (Department_of_Fish_and_Wildlife = California_Department_of_Fish_and_Wildlife).
+# The prefix folds only onto the bare name, never across jurisdictions:
+# US_ and California_Department_of_Transportation stay two organizations.
+# Nothing looser (nesting, near-spellings) is grouped, since folding two
+# different organizations corrupts the network while leaving a `from`
+# unexpanded only leaves it messy. A candidate counts as observed if it occurs
+# in the plan's text (cleaned pages + raw pages, case-insensitive, whole words,
+# any punctuation/whitespace between tokens, U.S.-style dotted initialisms):
+#   - exactly one organization observed -> the `from` expands to it
+#   - none or several observed          -> the `from` is left as written
+# The winner's longest spelling is used. A per-GSP agency_nicknames candidate
+# (a list-valued `to`) comes from this plan's own GSA roster, so it wins
+# outright. Losing candidates are dropped, not aliased to the winner.
+#
+# Spelling variants of one organization (typos, plurals, truncations, glossary
+# parser debris such as a trailing _X or the next glossary row glued on) are
+# corrected only through acronym_spelling_fixes: a hand-reviewed table of exact
+# spellings. Grouping uses the corrected spelling; observation still searches
+# for the spelling as written, since that is what the plan's text contains.
+# Every expansion that survives is written in its corrected spelling.
+spelling_fixes <- fread(fk("acronym_spelling_fixes"))
+stopifnot(!anyDuplicated(spelling_fixes$variant),
+          !any(spelling_fixes$canonical %in% spelling_fixes$variant))
+fix_spelling <- function(x) {
+   canon <- spelling_fixes$canonical[match(x, spelling_fixes$variant)]
+   ifelse(is.na(canon), x, canon)
+}
+
+# Whole-word, case-insensitive regex for a concatenated entity name in prose.
+name_regex <- function(x) {
+   toks <- strsplit(x, "_", fixed = TRUE)[[1]]
+   toks <- stringr::str_escape(toks[nzchar(toks)])
+   inits <- grepl("^[A-Z]{2,5}$", toks)
+   toks[inits] <- vapply(strsplit(toks[inits], ""), paste, character(1), collapse = "\\.?")
+   paste0("(?i)\\b", paste(toks, collapse = "[^[:alnum:]]+"), "\\b")
+}
+
+# Identity key: lowercase, initialisms joined (U_S -> us), United_States -> us.
+name_key <- function(x) {
+   x <- tolower(x)
+   x <- stringr::str_replace_all(x, "(?<![a-z0-9])([a-z])_(?=[a-z](_|$))", "\\1")
+   stringr::str_replace_all(x, "(^|_)united_states(_|$)", "\\1us\\2")
+}
+
+# Group candidates into organizations: same name_key (of the corrected
+# spelling) once the jurisdiction prefix is set aside, and at most one
+# distinct prefix in the group.
+group_orgs <- function(cands) {
+   keys   <- name_key(fix_spelling(cands))
+   prefix <- stringr::str_extract(keys, "^(state_of_california|california|us)_")
+   bare   <- ifelse(is.na(prefix), keys, substring(keys, nchar(prefix) + 1L))
+   org    <- ifelse(is.na(prefix), bare, paste0(prefix, bare))
+   for (b in unique(bare)) {
+      pre_b <- unique(prefix[bare == b & !is.na(prefix)])
+      if (length(pre_b) == 1L) org[bare == b] <- paste0(pre_b, b)
+   }
+   split(cands, org)
+}
+
+# One string holding the plan's step2 cleaned text and step1 raw pages (the
+# raw pages keep front-matter glossaries that step2 may drop).
+plan_text <- function(stem) {
+   parquet_path   <- file.path(clean_dir,     paste0(stem, ".parquet"))
+   raw_pages_path <- file.path(raw_pages_dir, paste0(stem, ".RDS"))
+   txt <- c(if (file.exists(parquet_path))   arrow::read_parquet(parquet_path)$text,
+            if (file.exists(raw_pages_path)) unlist(readRDS(raw_pages_path)))
+   paste(txt[!is.na(txt)], collapse = "\n")
+}
+
+# Resolve one duplicated `from`: returns the `to` it expands to, or NULL to
+# leave the `from` as written.
+resolve_dup_from <- function(tos, txt) {
+   is_nick <- vapply(tos, function(x) length(x) > 1L, logical(1))
+   if (any(is_nick)) return(tos[is_nick][1])
+   cands <- unique(unlist(tos))
+   orgs  <- group_orgs(cands)
+   if (length(orgs) > 1L) {
+      observed <- vapply(orgs, function(names_o)
+         any(vapply(names_o, function(n) stringr::str_detect(txt, name_regex(n)), logical(1))),
+         logical(1))
+      if (sum(observed) != 1L) return(NULL)
+      orgs <- orgs[observed]
+   }
+   spellings <- unique(fix_spelling(orgs[[1]]))
+   spellings[which.max(nchar(spellings))]
+}
+
 message("== Section 4: building per-GSP customdt for ", length(todo_idx), " GSP(s) ==")
 customdt <- vector(mode="list",length=length(edges_and_nodes))
 # Same todo_idx as Section 2 — only build customdt for the GSPs that need it.
@@ -386,33 +484,27 @@ for(m in todo_idx){
    fromgroups <- fromgroups[fromgroups>1]
 
    if(length(fromgroups) > 0){
-      ### Resolve duplicate `from` keys: longest `to` wins as canonical;
-      ### the others become aliases mapping `from = makefrom -> to = keepto`.
-      ### This collapses the prefix-strip / two-lengths / catch-all branches
-      ### of the prior heuristic — "longer = more specific" handles all of
-      ### them (California_X > X, USDA_X > X, etc.).
+      ### Resolve duplicate `from` keys by observation in this plan's text
+      ### (see resolve_dup_from above).
+      txt_m <- plan_text(gspids[m])
       for(k in seq_along(fromgroups)){
          dup_from <- names(fromgroups)[k]
-         tos      <- customdt[[m]][from==dup_from]$to
-         # `to` is a list-column whenever any agency_nicknames row was
-         # rbind'd into customdt, so nchar(tos) would error on a list.
-         # Measure each candidate's length list-safely (longest surface
-         # form = most specific canonical wins), preserving the plain-
-         # character behavior on the common single-string case.
-         to_len   <- vapply(tos,
-                            function(x) max(nchar(as.character(unlist(x))), 0L),
-                            numeric(1))
-         keepto   <- tos[order(-to_len)][1]
-         makefrom <- setdiff(tos, keepto)
+         keepto   <- resolve_dup_from(customdt[[m]][from==dup_from]$to, txt_m)
          match_partial <- !(FALSE %in% customdt[[m]][from %in% dup_from]$match_partial_entity)
          customdt[[m]] <- customdt[[m]][!(from %in% dup_from)]
-         customdt[[m]] <- rbind(customdt[[m]], list(keepto, dup_from, match_partial))
-         for(mf in makefrom){
-            if(!is.na(mf) && nzchar(mf) && !(mf %in% customdt[[m]]$from)){
-               customdt[[m]] <- rbind(customdt[[m]], list(keepto, mf, match_partial))
-            }
+         if(!is.null(keepto)){
+            customdt[[m]] <- rbind(customdt[[m]], list(keepto, dup_from, match_partial))
          }
       }
+   }
+   ### Corrected spelling for expansions that never collided too
+   ### (nickname rows keep their list-valued `to`).
+   is_chr <- vapply(customdt[[m]]$to, is.character, logical(1)) &
+             lengths(customdt[[m]]$to) == 1L
+   if (is.list(customdt[[m]]$to)) {
+      customdt[[m]]$to[is_chr] <- as.list(fix_spelling(unlist(customdt[[m]]$to[is_chr])))
+   } else {
+      customdt[[m]]$to <- fix_spelling(customdt[[m]]$to)
    }
 }
 ###Section 5: Apply disambiguation####
