@@ -164,10 +164,25 @@ TYPES <- data.table(
 # tokenization/hyphenation ("uni_versity_of_california_davis", "labo_ratory",
 # "califor_nia") or in a citation digit — the same name, split differently.
 .flat <- function(x) gsub("[^a-z]", "", tolower(.depunct(x)))
+# IDENTITY NUMBERS: a digit run directly behind a numbering word names a distinct
+# entity, not a footnote — Reclamation District 108 vs 1001, Regional Board Region 5,
+# LA County Waterworks District 36, "rd108". Citation stripping and the letters-only
+# flat form both erase these, which collapsed 39 Reclamation Districts into one bag.
+# Two variants whose identity-number sets differ (including one numbered, one not)
+# are never folded by any automatic tier.
+.IDNUM_RX <- "(^|_)(district|districts|dist|region|no|number|zone|unit|rd|wd|id|csa|csd|cwd|mwc|ward)_?0*([0-9]{1,4})(?=_|$)"
+.idnum <- function(x) vapply(x, function(s) {
+  m <- regmatches(s, gregexpr(.IDNUM_RX, .depunct(s), perl = TRUE))[[1]]
+  if (!length(m)) return("")
+  paste(sort(unique(sub("^0+", "", sub(".*?([0-9]+)$", "\\1", m)))), collapse = ",")
+}, character(1), USE.NAMES = FALSE)
+
 # a name with its citation digits and extraction artifacts removed, for use as a
 # bag's own name. Reverts to the original if cleaning would leave nothing usable.
 .clean_name <- function(x) vapply(x, function(s) {
-  t <- .strip_cit(.toks(.depunct(s))); t <- t[nzchar(t)]
+  t <- .toks(.depunct(s))
+  if (!nzchar(.idnum(s))) t <- .strip_cit(t)   # never strip an identity number
+  t <- t[nzchar(t)]
   if (!length(t) || sum(nchar(t)) < 2L) s else paste(t, collapse = "_")
 }, character(1), USE.NAMES = FALSE)
 
@@ -383,17 +398,25 @@ load_consultant_roster <- function() {
   ds <- lapply(sq, function(z) .rsort(unique(z)))
   nd <- lengths(ds)
 
-  # inverted index on stemmed tokens -> only compare variants that share a token.
-  # Both token tiers require a shared token, so this prunes without losing pairs.
+  # Candidate pairs. Both token tiers need one variant's token set to be a subset
+  # of the other's (tokset: equal), so the smaller side's RAREST token is always
+  # shared: pairing each variant only with the holders of its own rarest token is
+  # lossless, and avoids the all-pairs blow-up of a token like "water" (2,009
+  # Institutional_other variants share it).
   idx <- split(rep(seq_len(n), nd), unlist(ds))
-  cand <- unique(rbindlist(lapply(idx[lengths(idx) > 1L], function(ii) {
-    cb <- combn(sort(ii), 2L); data.table(i = cb[1, ], j = cb[2, ])
+  df  <- lengths(idx)
+  cand <- unique(rbindlist(lapply(which(nd > 0L), function(i) {
+    r <- ds[[i]][which.min(df[ds[[i]]])]
+    jj <- idx[[r]]; jj <- jj[jj != i]
+    if (!length(jj)) return(NULL)
+    data.table(i = pmin(i, jj), j = pmax(i, jj))
   })))
   ei <- integer(0); ej <- integer(0); em <- character(0)
   ri <- integer(0); rj <- integer(0)         # rejected reorderings -> review
   # tier: collapse — identical once tokenization and citation digits are removed.
   # Computed globally (not through the shared-token index) so it cannot be missed.
-  fl <- split(seq_len(n), .flat(vars))
+  idn <- .idnum(vars)
+  fl <- split(seq_len(n), paste(.flat(vars), idn))
   for (ii in fl[lengths(fl) > 1L]) {
     cb <- combn(sort(ii), 2L)
     ei <- c(ei, cb[1, ]); ej <- c(ej, cb[2, ]); em <- c(em, rep("collapse", ncol(cb)))
@@ -402,6 +425,7 @@ load_consultant_roster <- function() {
     for (r in seq_len(nrow(cand))) {
       i <- cand$i[r]; j <- cand$j[r]
       if (nd[i] == 0L || nd[j] == 0L) next
+      if (idn[i] != idn[j]) next             # different numbered entities
       si <- ds[[i]]; sj <- ds[[j]]
       if (identical(si, sj)) {               # tier: tokset (rotations only)
         if (.is_rotation(sq[[i]], sq[[j]])) {
@@ -489,7 +513,8 @@ load_consultant_roster <- function() {
 }
 .acronym_merge <- function(res) {
   bags <- unique(res[, .(bag_id, bag_label)])
-  cand <- res[, .N, by = .(variant, bag_id, bag_label)][
+  # a curated override is a decision, not a candidate: never move it
+  cand <- res[is.na(method) | method != "override", .N, by = .(variant, bag_id, bag_label)][
     grepl("^[a-z]{2,7}$", variant) & nchar(variant) >= ACRO_MIN &
       nchar(variant) <= ACRO_MAX]
   if (!nrow(cand)) return(data.table())
@@ -507,6 +532,7 @@ load_consultant_roster <- function() {
   # GSI Water Solutions and GSI Environmental both exist.
   own <- split(bags$bag_id, seq_len(nrow(bags)))
   tok <- lapply(bags$bag_label, function(z) .dtoks(.norm(z)))
+  tix <- split(rep(seq_along(tok), lengths(tok)), unlist(tok))
   out <- list(); ref <- list()
   for (r in seq_len(nrow(cand))) {
     a <- cand$variant[r]
@@ -515,8 +541,7 @@ load_consultant_roster <- function() {
     # most single-token firm names land here ("aecom", "stantec", "psomas"). Skip
     # silently; these are not ambiguous, they are simply not acronyms.
     if (!nrow(tgt)) next
-    rival <- bags$bag_id[vapply(seq_along(tok), function(k)
-      a %in% tok[[k]] && bags$bag_id[k] != cand$bag_id[r], logical(1))]
+    rival <- setdiff(bags$bag_id[tix[[a]]], cand$bag_id[r])
     why <- NA_character_
     if (a %in% .ACRO_BLOCK)  why <- "conventional expansion absent from corpus"
     else if (length(rival))  why <- paste0("another bag spells it: ",
@@ -640,13 +665,24 @@ load_consultant_roster <- function() {
         note = paste0("extra: ", paste(extra, collapse = " ")))
     }
   }
-  m  <- adist(lab, lab)
-  s  <- 1 - m / outer(nchar(lab), nchar(lab), pmax)
-  s[lower.tri(s, diag = TRUE)] <- -Inf
-  fz <- which(s >= FUZZY_SHOW, arr.ind = TRUE)
+  # all-pairs adist in row blocks: the full n x n matrix does not fit for large
+  # types. Two strings can only reach FUZZY_SHOW if their lengths are within the
+  # ratio FUZZY_SHOW, so columns outside that window are skipped.
+  nc <- nchar(lab); fz <- list()
+  for (b0 in seq(1L, n, by = 500L)) {
+    rows <- b0:min(n, b0 + 499L)
+    cols <- which(nc >= FUZZY_SHOW * min(nc[rows]) & nc * FUZZY_SHOW <= max(nc[rows]) &
+                  seq_len(n) > min(rows))
+    if (!length(cols)) next
+    s <- 1 - adist(lab[rows], lab[cols]) / outer(nc[rows], nc[cols], pmax)
+    k <- which(s >= FUZZY_SHOW & outer(rows, cols, `<`), arr.ind = TRUE)
+    if (nrow(k)) fz[[length(fz) + 1L]] <- data.table(
+      i = rows[k[, 1]], j = cols[k[, 2]], score = s[k])
+  }
+  fz <- rbindlist(fz)
   if (nrow(fz)) pairs[[length(pairs) + 1L]] <- data.table(
-    i = fz[, 1], j = fz[, 2], method = "fuzzy",
-    score = round(s[fz], 3), sub = NA_integer_, note = "")
+    i = fz$i, j = fz$j, method = "fuzzy",
+    score = round(fz$score, 3), sub = NA_integer_, note = "")
 
   pr <- rbindlist(pairs, fill = TRUE)
   if (!nrow(pr)) return(data.table())
